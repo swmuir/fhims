@@ -373,7 +373,7 @@
             <styles xmi:type="umlnotation:UMLShapeCompartmentStyle" xmi:id="_XTYNFwqhEd-426xscrxYmQ"/>
           </children>
           <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_XTYNCQqhEd-426xscrxYmQ" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="13434879" lineColor="3342489" showStereotype="Text"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XTYNCgqhEd-426xscrxYmQ" x="14582" y="7291"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XTYNCgqhEd-426xscrxYmQ" x="13948" y="6340"/>
         </children>
         <children xmi:id="_XTYNGAqhEd-426xscrxYmQ" element="_420A62FD03B641886F630160">
           <children xmi:id="_XTYNGwqhEd-426xscrxYmQ" type="ImageCompartment">
@@ -615,7 +615,7 @@
             <styles xmi:type="umlnotation:UMLShapeCompartmentStyle" xmi:id="_XTh-WQqhEd-426xscrxYmQ"/>
           </children>
           <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_XTh-SwqhEd-426xscrxYmQ" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="13434879" lineColor="3342489" showStereotype="Text"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XTh-TAqhEd-426xscrxYmQ" x="14582" y="2853"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XTh-TAqhEd-426xscrxYmQ" x="14582" y="1902"/>
         </children>
         <children xmi:id="_XTh-WgqhEd-426xscrxYmQ" element="_420A62FD03B641886F630221">
           <children xmi:id="_XTh-XQqhEd-426xscrxYmQ" type="ImageCompartment">
@@ -1499,12 +1499,13 @@ deployed.</body>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
       </ownedAttribute>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B6418A8DCD02C2" name="MailingAddress" isAbstract="true">
+    <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B6418A8DCD02C2" name="Address" isAbstract="true">
       <eAnnotations xmi:id="_O1bEc-LiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <details xmi:id="_O1bEdOLiEduGJrQyRGTO1A" key="AD"/>
       </eAnnotations>
       <ownedComment xmi:id="_PSftQBAnEd-2E9qx-lgHBg" annotatedElement="_420A62FD03B6418A8DCD02C2">
-        <body>A&amp;nbsp;physical&amp;nbsp;address&amp;nbsp;at&amp;nbsp;which&amp;nbsp;the&amp;nbsp;person&amp;nbsp;resides&amp;nbsp;or&amp;nbsp;may&amp;nbsp;be&amp;nbsp;contacted.</body>
+        <body>A physical address at which the person resides or may be contacted.&#xD;
+7/8/10: Renamed from MailingAddress to Address.  Moved county from Person to here.</body>
       </ownedComment>
       <ownedAttribute xmi:id="_NrTfQPyaEd6COP7rUDIHOg" name="addressType" visibility="public" type="_xfYxMPybEd6COP7rUDIHOg">
         <ownedComment xmi:id="_-XSJ4AHvEd-VSqNkiZ4fOA" annotatedElement="_NrTfQPyaEd6COP7rUDIHOg">
@@ -1558,6 +1559,11 @@ TimeInterval, which includes both a start date and and end date, either of which
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eyoSzOLjEdutr_MT9HkPyQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eyoSy-LjEdutr_MT9HkPyQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ABqyEBAoEd-2E9qx-lgHBg" name="county" visibility="public" type="_Y_P74BAmEd-2E9qx-lgHBg">
+        <ownedComment xmi:id="_MTziwBqUEd-j8JC21F3W2A" annotatedElement="_ABqyEBAoEd-2E9qx-lgHBg">
+          <body>A region created by territorial division for the purpose of local government.  In the United States, a county (or parish in Louisiana) is the largest administrative district within a state.  This property is used primarily for statistical and pricing information (i.e., the same service may be more expensive in an affluent section of the country than in a less-affluent portion).</body>
+        </ownedComment>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B641886F6203D2" name="postalCode" visibility="public">
         <eAnnotations xmi:id="_O1RTduLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
@@ -2264,6 +2270,9 @@ transforming to a particular implementation platform.</body>
         <details xmi:id="_nzJ_4QqmEd-426xscrxYmQ" key="AD"/>
       </eAnnotations>
       <generalization xmi:id="_iQ9ioAqmEd-426xscrxYmQ" general="_420A62FD03B6418A8DCD02C2"/>
+      <ownedAttribute xmi:id="_mK9QUIrJEd-W_sKBWcwIbA" name="jurisdiction" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_Y_P74BAmEd-2E9qx-lgHBg" name="County">
       <eAnnotations xmi:id="_Y_P74RAmEd-2E9qx-lgHBg" source="http://www.eclipse.org/uml2/2.0.0/UML">
@@ -2341,4 +2350,5 @@ locations.</body>
   <Default:Documentation xmi:id="_RIn5QBprEd-j8JC21F3W2A" base_Comment="_RIU-UBprEd-j8JC21F3W2A"/>
   <Default:Documentation xmi:id="_b_6L4RprEd-j8JC21F3W2A" base_Comment="_b_6L4BprEd-j8JC21F3W2A"/>
   <Default:Documentation xmi:id="_Dq-dsBvyEd-afqIGzWhetA" base_Comment="_DqriwBvyEd-afqIGzWhetA"/>
+  <Default:Documentation xmi:id="_UknhMorIEd-W_sKBWcwIbA" base_Comment="_MTziwBqUEd-j8JC21F3W2A"/>
 </xmi:XMI>
