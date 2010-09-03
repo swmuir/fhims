@@ -17,7 +17,7 @@
           <children xmi:id="_GIOQ0ud8Ed6qdqXtvR-ZHQ" type="Description">
             <element xsi:nil="true"/>
           </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_GIOQ0-d8Ed6qdqXtvR-ZHQ" fontName="Arial" fontHeight="10" description="FHIM Datatypes&#xD;&#xA;  Version 0.1&#xD;&#xA;  11/20/2009" fillColor="16777088" lineColor="0" lineWidth="1"/>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_GIOQ0-d8Ed6qdqXtvR-ZHQ" fontName="Arial" fontHeight="10" description="FHIM Datatypes    Version 0.1    11/20/2009" fillColor="16777088" lineColor="0" lineWidth="1"/>
           <styles xmi:type="notation:TextStyle" xmi:id="_GIOQ1Od8Ed6qdqXtvR-ZHQ"/>
           <styles xmi:type="notation:LineTypeStyle" xmi:id="_GIOQ1ed8Ed6qdqXtvR-ZHQ"/>
           <element xsi:nil="true"/>
@@ -1095,35 +1095,38 @@
         </edges>
       </contents>
     </eAnnotations>
+    <ownedComment xmi:id="_4tkeoLa1Ed-Y0_knsxZjWg" annotatedElement="_KqYgwM3ZEdyMrbJiuKueSQ">
+      <body>Common Datatypes</body>
+    </ownedComment>
     <packagedElement xmi:type="uml:Class" xmi:id="_fImbAAEYEd-ZUM5xZsXWyw" name="Telecommunications">
       <ownedComment xmi:id="_O3O_IAE1Ed-ZUM5xZsXWyw" annotatedElement="_fImbAAEYEd-ZUM5xZsXWyw">
-        <body>A collection of electronic addresses at which the person may be reached.&amp;nbsp; This includes telephones, email addresses,&#xD;
+        <body>A collection of electronic addresses at which the person may be reached.  This includes telephones, email addresses, 
 etc.</body>
       </ownedComment>
       <ownedAttribute xmi:id="_o6XQAgEYEd-ZUM5xZsXWyw" name="addressType" visibility="public" type="_xfYxMPybEd6COP7rUDIHOg">
         <ownedComment xmi:id="_Ig9voAHwEd-VSqNkiZ4fOA" annotatedElement="_o6XQAgEYEd-ZUM5xZsXWyw">
-          <body>&lt;p>&#xD;
-    Indicates the kind of communications address that is contained within this class.&amp;nbsp; Examples include primaryHome,&#xD;
-    Work, etc.&amp;nbsp; Note that in HL7 V3, this concept is part of the Telecom datatype (the &quot;use code&quot;).&amp;nbsp; This concept&#xD;
-    is made explicit in this Telecommunications class, because this is a platform-independent model - non V3&#xD;
-    implementations will need other mechanisms to deal with the type.&#xD;
-&lt;/p></body>
+          <body> 
+    Indicates the kind of communications address that is contained within this class.  Examples include primaryHome, 
+    Work, etc.  Note that in HL7 V3, this concept is part of the Telecom datatype (the 'use code').  This concept 
+    is made explicit in this Telecommunications class, because this is a platform-independent model - non V3 
+    implementations will need other mechanisms to deal with the type. 
+</body>
         </ownedComment>
       </ownedAttribute>
       <ownedAttribute xmi:id="_o6XQAQEYEd-ZUM5xZsXWyw" name="effectiveDateRange" visibility="public">
         <ownedComment xmi:id="_6DnAIAHtEd-VSqNkiZ4fOA" annotatedElement="_o6XQAQEYEd-ZUM5xZsXWyw">
-          <body>The time period for which the phone number or communications address is valid for the person or organization.&amp;nbsp; The&#xD;
-datatype is a TimeInterval, which includes both a start date and and end date, either of which may be empty.</body>
+          <body>The time period for which the phone number or communications address is valid for the person or organization.  The 
+datatype is a TimeInterval, which includes both a start date and end date, either of which may be empty.</body>
         </ownedComment>
         <type xmi:type="uml:DataType" href="pathmap://UPIA_HOME/UPIAModelLibrary.emx#_Uv8vMMRDEdulS9c_UH4PZg?UPIAModelLibrary/AllView/TimeInterval?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_o6XQAAEYEd-ZUM5xZsXWyw" name="universalResourceId" visibility="public">
         <ownedComment xmi:id="_aXba4AHwEd-VSqNkiZ4fOA" annotatedElement="_o6XQAAEYEd-ZUM5xZsXWyw">
-          <body>&lt;p>&#xD;
-    Represents&amp;nbsp;a&amp;nbsp;telecommunications address&amp;nbsp;at&amp;nbsp;which&amp;nbsp;the person or organization may be&#xD;
-    reached.&amp;nbsp; Note that this property is a simply a string, the formatting of which will depend on the type of&#xD;
-    communications address employed.&#xD;
-&lt;/p></body>
+          <body> 
+    Represents a telecommunications address at which the person or organization may be 
+    reached.  Note that this property is a simply a string, the formatting of which will depend on the type of 
+    communications address employed. 
+</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
@@ -1134,7 +1137,7 @@ datatype is a TimeInterval, which includes both a start date and and end date, e
       </ownedComment>
       <ownedLiteral xmi:id="_3Md4QAILEd-VSqNkiZ4fOA" name="mobileContact" classifier="_xfYxMPybEd6COP7rUDIHOg">
         <ownedComment xmi:id="_5pEdkAILEd-VSqNkiZ4fOA" annotatedElement="_3Md4QAILEd-VSqNkiZ4fOA">
-          <body>A telecommunication device that moves and stays with its owner. May have characteristics of all other use codes, suitable&#xD;
+          <body>A telecommunication device that moves and stays with its owner. May have characteristics of all other use codes, suitable 
 for urgent matters, not the first choice for routine business.</body>
         </ownedComment>
       </ownedLiteral>
@@ -1150,8 +1153,8 @@ for urgent matters, not the first choice for routine business.</body>
       </ownedLiteral>
       <ownedLiteral xmi:id="_hmUWcAEfEd-ZUM5xZsXWyw" name="temporaryAddress" classifier="_xfYxMPybEd6COP7rUDIHOg">
         <ownedComment xmi:id="_gPqWYAHsEd-VSqNkiZ4fOA" annotatedElement="_hmUWcAEfEd-ZUM5xZsXWyw">
-          <body>The&amp;nbsp;temporary&amp;nbsp;address&amp;nbsp;where&amp;nbsp;a&amp;nbsp;person&amp;nbsp;resides.&amp;nbsp;&amp;nbsp;An&amp;nbsp;address&amp;nbsp;that&amp;nbsp;is&amp;nbsp;different&amp;nbsp;from&amp;nbsp;the&amp;nbsp;permanent&amp;nbsp;address,&amp;nbsp;but&amp;nbsp;at&amp;nbsp;which&amp;nbsp;the&amp;nbsp;person&amp;nbsp;is&amp;nbsp;residing&amp;nbsp;for&amp;nbsp;a&amp;nbsp;limited,&amp;nbsp;defined&amp;nbsp;period&amp;nbsp;of&amp;nbsp;time.&amp;nbsp;&#xD;
-Note that for miliary personnel, this address may represent a location at which the person is temporarily assigned or&#xD;
+          <body>The temporary address where a person resides.  An address that is different from the permanent address, but at which the person is residing for a limited, defined period of time.  
+Note that for military personnel, this address may represent a location at which the person is temporarily assigned or 
 deployed.</body>
         </ownedComment>
       </ownedLiteral>
@@ -1171,7 +1174,7 @@ deployed.</body>
         <details xmi:id="_O0OxpOLiEduGJrQyRGTO1A" key="AD"/>
       </eAnnotations>
       <ownedComment xmi:id="_0f0U8BAmEd-2E9qx-lgHBg" annotatedElement="_420A62FD03B6418A46B702C7">
-        <body>A&amp;nbsp;refinement&amp;nbsp;of&amp;nbsp;AD&amp;nbsp;that&amp;nbsp;contains&amp;nbsp;only&amp;nbsp;a&amp;nbsp;city,&amp;nbsp;state,&amp;nbsp;and&amp;nbsp;country,&amp;nbsp;all&amp;nbsp;of&amp;nbsp;which&amp;nbsp;are&amp;nbsp;optional.</body>
+        <body>A refinement of AD that contains only a city, state, and country, all of which are optional.</body>
       </ownedComment>
       <ownedAttribute xmi:id="_420A62FD03B6418A471F00B4" name="city" visibility="public">
         <eAnnotations xmi:id="_O0FApOLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
@@ -1202,7 +1205,7 @@ deployed.</body>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_OwVa0D-BEdy0ooNeIA2VyA" name="VACode" visibility="private">
       <ownedComment xmi:id="_YDT2sGAfEd6a0qoC8Dh7hA" annotatedElement="_OwVa0D-BEdy0ooNeIA2VyA">
-        <body>VA code class was created to support the  Vuids within the VA</body>
+        <body>VA code class was created to support the  VUID within the VA</body>
       </ownedComment>
       <generalization xmi:id="_agQ1sNYdEd62cosTNS-_lw" general="_GmKqYGAfEd6a0qoC8Dh7hA"/>
       <ownedAttribute xmi:id="_Rhzc7D-BEdy0ooNeIA2VyA" name="conceptVuid">
@@ -1494,7 +1497,7 @@ deployed.</body>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B64238AA3C023D" name="denominator" visibility="public">
         <ownedComment xmi:id="_OwgIN-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64238AA3C023D">
-          <body>The quantity that devides the numerator in the ratio. The default is the integer number 1 (one.) The denominator must not be zero.</body>
+          <body>The quantity that divides the numerator in the ratio. The default is the integer number 1 (one.) The denominator must not be zero.</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
       </ownedAttribute>
@@ -1504,23 +1507,23 @@ deployed.</body>
         <details xmi:id="_O1bEdOLiEduGJrQyRGTO1A" key="AD"/>
       </eAnnotations>
       <ownedComment xmi:id="_PSftQBAnEd-2E9qx-lgHBg" annotatedElement="_420A62FD03B6418A8DCD02C2">
-        <body>A physical address at which the person resides or may be contacted.&#xD;
+        <body>A physical address at which the person resides or may be contacted. 
 7/8/10: Renamed from MailingAddress to Address.  Moved county from Person to here.</body>
       </ownedComment>
       <ownedAttribute xmi:id="_NrTfQPyaEd6COP7rUDIHOg" name="addressType" visibility="public" type="_xfYxMPybEd6COP7rUDIHOg">
         <ownedComment xmi:id="_-XSJ4AHvEd-VSqNkiZ4fOA" annotatedElement="_NrTfQPyaEd6COP7rUDIHOg">
-          <body>&lt;p>&#xD;
-    Indicates the kind of address that is contained within this class.&amp;nbsp; Examples include primaryHome, Work, etc.&amp;nbsp;&#xD;
-    Note that in HL7 V3, this concept is part of the Address datatype (the &quot;use code&quot;).&amp;nbsp; This concept is made explicit&#xD;
-    in this Address class, because this is a platform-independent model - non V3 implementations will need other mechanisms&#xD;
-    to deal with the type.&#xD;
-&lt;/p></body>
+          <body> 
+    Indicates the kind of address that is contained within this class.  Examples include primaryHome, Work, etc.  
+    Note that in HL7 V3, this concept is part of the Address datatype (the 'use code').  This concept is made explicit 
+    in this Address class, because this is a platform-independent model - non V3 implementations will need other mechanisms 
+    to deal with the type. 
+</body>
         </ownedComment>
       </ownedAttribute>
       <ownedAttribute xmi:id="_FoSrEPyaEd6COP7rUDIHOg" name="effectiveDateRange" visibility="public">
         <ownedComment xmi:id="_1xTdcAHtEd-VSqNkiZ4fOA" annotatedElement="_FoSrEPyaEd6COP7rUDIHOg">
-          <body>The time period for which the address is a valid location for the person or organization.&amp;nbsp; The datatype is a&#xD;
-TimeInterval, which includes both a start date and and end date, either of which may be empty.</body>
+          <body>The time period for which the address is a valid location for the person or organization.  The datatype is a 
+TimeInterval, which includes both a start date and end date, either of which may be empty.</body>
         </ownedComment>
         <type xmi:type="uml:DataType" href="pathmap://UPIA_HOME/UPIAModelLibrary.emx#_Uv8vMMRDEdulS9c_UH4PZg?UPIAModelLibrary/AllView/TimeInterval?"/>
       </ownedAttribute>
@@ -1608,10 +1611,10 @@ TimeInterval, which includes both a start date and and end date, either of which
     <packagedElement xmi:type="uml:Class" xmi:id="_eEZAR0eDEdyIZay-9vWL7Q" name="NullableBoolean" visibility="private">
       <ownedAttribute xmi:id="_eEZASEeDEdyIZay-9vWL7Q" name="nullFlavor" type="_cJEi4AqcEd-426xscrxYmQ">
         <ownedComment xmi:id="_izeBgAqgEd-426xscrxYmQ" annotatedElement="_eEZASEeDEdyIZay-9vWL7Q">
-          <body>&quot;An indicator of a data value's exceptional status, sometimes also denoting the manner and rationale for that status.&amp;nbsp;&#xD;
-Null values are also known as exceptional values. This is to denote that the information contained in the value is an&#xD;
-exception to the expected value domain that applies to the type. The information may either be missing or partially&#xD;
-present, or even completely present but not valid with respect to the constraints imposed by the Constraining Model&quot; (HL7&#xD;
+          <body>'An indicator of a data value's exceptional status, sometimes also denoting the manner and rationale for that status.  
+Null values are also known as exceptional values. This is to denote that the information contained in the value is an 
+exception to the expected value domain that applies to the type. The information may either be missing or partially 
+present, or even completely present but not valid with respect to the constraints imposed by the Constraining Model' (HL7 
 Datatypes)</body>
         </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eEZASkeDEdyIZay-9vWL7Q" value="1"/>
@@ -1627,10 +1630,10 @@ Datatypes)</body>
       <generalization xmi:id="_mZnJoNYaEd62cosTNS-_lw" general="_GmKqYGAfEd6a0qoC8Dh7hA"/>
       <ownedAttribute xmi:id="_eCT8kEeDEdyIZay-9vWL7Q" name="nullFlavor" type="_cJEi4AqcEd-426xscrxYmQ">
         <ownedComment xmi:id="_iznygQqgEd-426xscrxYmQ" annotatedElement="_eCT8kEeDEdyIZay-9vWL7Q">
-          <body>&quot;An indicator of a data value's exceptional status, sometimes also denoting the manner and rationale for that status.&amp;nbsp;&#xD;
-Null values are also known as exceptional values. This is to denote that the information contained in the value is an&#xD;
-exception to the expected value domain that applies to the type. The information may either be missing or partially&#xD;
-present, or even completely present but not valid with respect to the constraints imposed by the Constraining Model&quot; (HL7&#xD;
+          <body>'An indicator of a data value's exceptional status, sometimes also denoting the manner and rationale for that status.  
+Null values are also known as exceptional values. This is to denote that the information contained in the value is an 
+exception to the expected value domain that applies to the type. The information may either be missing or partially 
+present, or even completely present but not valid with respect to the constraints imposed by the Constraining Model' (HL7 
 Datatypes)</body>
         </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eCT8kkeDEdyIZay-9vWL7Q" value="1"/>
@@ -1640,10 +1643,10 @@ Datatypes)</body>
     <packagedElement xmi:type="uml:Class" xmi:id="_eEZAXkeDEdyIZay-9vWL7Q" name="NullableDate" visibility="private">
       <ownedAttribute xmi:id="_eEZAX0eDEdyIZay-9vWL7Q" name="nullFlavor" type="_cJEi4AqcEd-426xscrxYmQ">
         <ownedComment xmi:id="_iz6tcQqgEd-426xscrxYmQ" annotatedElement="_eEZAX0eDEdyIZay-9vWL7Q">
-          <body>&quot;An indicator of a data value's exceptional status, sometimes also denoting the manner and rationale for that status.&amp;nbsp;&#xD;
-Null values are also known as exceptional values. This is to denote that the information contained in the value is an&#xD;
-exception to the expected value domain that applies to the type. The information may either be missing or partially&#xD;
-present, or even completely present but not valid with respect to the constraints imposed by the Constraining Model&quot; (HL7&#xD;
+          <body>'An indicator of a data value's exceptional status, sometimes also denoting the manner and rationale for that status.  
+Null values are also known as exceptional values. This is to denote that the information contained in the value is an 
+exception to the expected value domain that applies to the type. The information may either be missing or partially 
+present, or even completely present but not valid with respect to the constraints imposed by the Constraining Model' (HL7 
 Datatypes)</body>
         </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eEixMUeDEdyIZay-9vWL7Q" value="1"/>
@@ -1657,10 +1660,10 @@ Datatypes)</body>
     <packagedElement xmi:type="uml:Class" xmi:id="_eEixRUeDEdyIZay-9vWL7Q" name="NullableInteger" visibility="private">
       <ownedAttribute xmi:id="_eEixRkeDEdyIZay-9vWL7Q" name="nullFlavor" type="_cJEi4AqcEd-426xscrxYmQ">
         <ownedComment xmi:id="_i0NoYQqgEd-426xscrxYmQ" annotatedElement="_eEixRkeDEdyIZay-9vWL7Q">
-          <body>&quot;An indicator of a data value's exceptional status, sometimes also denoting the manner and rationale for that status.&amp;nbsp;&#xD;
-Null values are also known as exceptional values. This is to denote that the information contained in the value is an&#xD;
-exception to the expected value domain that applies to the type. The information may either be missing or partially&#xD;
-present, or even completely present but not valid with respect to the constraints imposed by the Constraining Model&quot; (HL7&#xD;
+          <body>'An indicator of a data value's exceptional status, sometimes also denoting the manner and rationale for that status.  
+Null values are also known as exceptional values. This is to denote that the information contained in the value is an 
+exception to the expected value domain that applies to the type. The information may either be missing or partially 
+present, or even completely present but not valid with respect to the constraints imposed by the Constraining Model' (HL7 
 Datatypes)</body>
         </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eEixSEeDEdyIZay-9vWL7Q" value="1"/>
@@ -1675,10 +1678,10 @@ Datatypes)</body>
     <packagedElement xmi:type="uml:Class" xmi:id="_eEixXEeDEdyIZay-9vWL7Q" name="NullablePhysicalQuantity" visibility="private">
       <ownedAttribute xmi:id="_eEsiMEeDEdyIZay-9vWL7Q" name="nullFlavor" type="_cJEi4AqcEd-426xscrxYmQ">
         <ownedComment xmi:id="_i0gjUQqgEd-426xscrxYmQ" annotatedElement="_eEsiMEeDEdyIZay-9vWL7Q">
-          <body>&quot;An indicator of a data value's exceptional status, sometimes also denoting the manner and rationale for that status.&amp;nbsp;&#xD;
-Null values are also known as exceptional values. This is to denote that the information contained in the value is an&#xD;
-exception to the expected value domain that applies to the type. The information may either be missing or partially&#xD;
-present, or even completely present but not valid with respect to the constraints imposed by the Constraining Model&quot; (HL7&#xD;
+          <body>'An indicator of a data value's exceptional status, sometimes also denoting the manner and rationale for that status.  
+Null values are also known as exceptional values. This is to denote that the information contained in the value is an 
+exception to the expected value domain that applies to the type. The information may either be missing or partially 
+present, or even completely present but not valid with respect to the constraints imposed by the Constraining Model' (HL7 
 Datatypes)</body>
         </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eEsiMkeDEdyIZay-9vWL7Q" value="1"/>
@@ -1696,10 +1699,10 @@ Datatypes)</body>
     <packagedElement xmi:type="uml:Class" xmi:id="_eEsiYEeDEdyIZay-9vWL7Q" name="NullableRange" visibility="private">
       <ownedAttribute xmi:id="_eEsiYUeDEdyIZay-9vWL7Q" name="nullFlavor" type="_cJEi4AqcEd-426xscrxYmQ">
         <ownedComment xmi:id="_i00FUQqgEd-426xscrxYmQ" annotatedElement="_eEsiYUeDEdyIZay-9vWL7Q">
-          <body>&quot;An indicator of a data value's exceptional status, sometimes also denoting the manner and rationale for that status.&amp;nbsp;&#xD;
-Null values are also known as exceptional values. This is to denote that the information contained in the value is an&#xD;
-exception to the expected value domain that applies to the type. The information may either be missing or partially&#xD;
-present, or even completely present but not valid with respect to the constraints imposed by the Constraining Model&quot; (HL7&#xD;
+          <body>'An indicator of a data value's exceptional status, sometimes also denoting the manner and rationale for that status.  
+Null values are also known as exceptional values. This is to denote that the information contained in the value is an 
+exception to the expected value domain that applies to the type. The information may either be missing or partially 
+present, or even completely present but not valid with respect to the constraints imposed by the Constraining Model' (HL7 
 Datatypes)</body>
         </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eE1sIUeDEdyIZay-9vWL7Q" value="1"/>
@@ -1721,10 +1724,10 @@ Datatypes)</body>
     <packagedElement xmi:type="uml:Class" xmi:id="_eE1sO0eDEdyIZay-9vWL7Q" name="NullableRatio" visibility="private">
       <ownedAttribute xmi:id="_eE1sPEeDEdyIZay-9vWL7Q" name="nullFlavor" type="_cJEi4AqcEd-426xscrxYmQ">
         <ownedComment xmi:id="_mzBnUAqgEd-426xscrxYmQ" annotatedElement="_eE1sPEeDEdyIZay-9vWL7Q">
-          <body>&quot;An indicator of a data value's exceptional status, sometimes also denoting the manner and rationale for that status.&amp;nbsp;&#xD;
-Null values are also known as exceptional values. This is to denote that the information contained in the value is an&#xD;
-exception to the expected value domain that applies to the type. The information may either be missing or partially&#xD;
-present, or even completely present but not valid with respect to the constraints imposed by the Constraining Model&quot; (HL7&#xD;
+          <body>'An indicator of a data value's exceptional status, sometimes also denoting the manner and rationale for that status.  
+Null values are also known as exceptional values. This is to denote that the information contained in the value is an 
+exception to the expected value domain that applies to the type. The information may either be missing or partially 
+present, or even completely present but not valid with respect to the constraints imposed by the Constraining Model' (HL7 
 Datatypes)</body>
         </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eE1sPkeDEdyIZay-9vWL7Q" value="1"/>
@@ -1742,10 +1745,10 @@ Datatypes)</body>
     <packagedElement xmi:type="uml:Class" xmi:id="_eEsiSUeDEdyIZay-9vWL7Q" name="NullableReal" visibility="private">
       <ownedAttribute xmi:id="_eEsiSkeDEdyIZay-9vWL7Q" name="nullFlavor" type="_cJEi4AqcEd-426xscrxYmQ">
         <ownedComment xmi:id="_mzKxQQqgEd-426xscrxYmQ" annotatedElement="_eEsiSkeDEdyIZay-9vWL7Q">
-          <body>&quot;An indicator of a data value's exceptional status, sometimes also denoting the manner and rationale for that status.&amp;nbsp;&#xD;
-Null values are also known as exceptional values. This is to denote that the information contained in the value is an&#xD;
-exception to the expected value domain that applies to the type. The information may either be missing or partially&#xD;
-present, or even completely present but not valid with respect to the constraints imposed by the Constraining Model&quot; (HL7&#xD;
+          <body>'An indicator of a data value's exceptional status, sometimes also denoting the manner and rationale for that status.  
+Null values are also known as exceptional values. This is to denote that the information contained in the value is an 
+exception to the expected value domain that applies to the type. The information may either be missing or partially 
+present, or even completely present but not valid with respect to the constraints imposed by the Constraining Model' (HL7 
 Datatypes)</body>
         </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eEsiTEeDEdyIZay-9vWL7Q" value="1"/>
@@ -1759,10 +1762,10 @@ Datatypes)</body>
     <packagedElement xmi:type="uml:Class" xmi:id="_eE_dLUeDEdyIZay-9vWL7Q" name="NullableText" visibility="private">
       <ownedAttribute xmi:id="_eE_dLkeDEdyIZay-9vWL7Q" name="nullFlavor" type="_cJEi4AqcEd-426xscrxYmQ">
         <ownedComment xmi:id="_mzUiQQqgEd-426xscrxYmQ" annotatedElement="_eE_dLkeDEdyIZay-9vWL7Q">
-          <body>&quot;An indicator of a data value's exceptional status, sometimes also denoting the manner and rationale for that status.&amp;nbsp;&#xD;
-Null values are also known as exceptional values. This is to denote that the information contained in the value is an&#xD;
-exception to the expected value domain that applies to the type. The information may either be missing or partially&#xD;
-present, or even completely present but not valid with respect to the constraints imposed by the Constraining Model&quot; (HL7&#xD;
+          <body>'An indicator of a data value's exceptional status, sometimes also denoting the manner and rationale for that status.  
+Null values are also known as exceptional values. This is to denote that the information contained in the value is an 
+exception to the expected value domain that applies to the type. The information may either be missing or partially 
+present, or even completely present but not valid with respect to the constraints imposed by the Constraining Model' (HL7 
 Datatypes)</body>
         </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eE_dMEeDEdyIZay-9vWL7Q" value="1"/>
@@ -1784,15 +1787,15 @@ Datatypes)</body>
       <ownedAttribute xmi:id="_3lzSFFVyEdyaooytdRFnxQ" name="prefix" visibility="public" isOrdered="true" isUnique="false">
         <eAnnotations xmi:id="_3lzSFVVyEdyaooytdRFnxQ" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <ownedComment xmi:id="_3lzSFlVyEdyaooytdRFnxQ" annotatedElement="_3lzSFFVyEdyaooytdRFnxQ">
-          <body>&quot;A prefix has a strong association to the immediately following name part. A prefix has no implicit trailing white space (it has implicit leading white space though). Note that prefixes can be inverted&quot; (HL7)
-A Person Name Prefix is usually an academic or nobility title. An Academic title includes a prefix like &quot;Dr.&quot; There are still people with nobility titles (aristocrats). German &quot;von&quot; is generally a nobility title, not a mere voorvoegsel. Others are &quot;Earl of&quot; or &quot;His Majesty King of...&quot; etc. Rarely used nowadays, but some systems do keep track of this.
+          <body>'A prefix has a strong association to the immediately following name part. A prefix has no implicit trailing white space (it has implicit leading white space though). Note that prefixes can be inverted' (HL7)
+A Person Name Prefix is usually an academic or nobility title. An Academic title includes a prefix like 'Dr.' There are still people with nobility titles (aristocrats). German 'von' is generally a nobility title, not a mere voorvoegsel. Others are 'Earl of' or 'His Majesty King of...' etc. Rarely used nowadays, but some systems do keep track of this.
 </body>
         </ownedComment>
         <ownedComment xmi:id="_XO-sAAEbEd-ZUM5xZsXWyw" annotatedElement="_3lzSFFVyEdyaooytdRFnxQ">
-          <body>&lt;p>&#xD;
-    Contains a set of honorific terms that typically appear before a person's name, for example Mr., Mrs., Dr.,&#xD;
-    etc.&amp;nbsp;&amp;nbsp;Prefixes&amp;nbsp;have&amp;nbsp;a&amp;nbsp;strong&amp;nbsp;association&amp;nbsp;to&amp;nbsp;the&amp;nbsp;immediately&amp;nbsp;following&amp;nbsp;name&amp;nbsp;part.&#xD;
-&lt;/p></body>
+          <body> 
+    Contains a set of honorific terms that typically appear before a person's name, for example Mr., Mrs., Dr., 
+    etc.  Prefixes have a strong association to the immediately following name part. 
+</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3lzSF1VyEdyaooytdRFnxQ" value="*"/>
@@ -1801,14 +1804,14 @@ A Person Name Prefix is usually an academic or nobility title. An Academic title
       <ownedAttribute xmi:id="_3lzSGVVyEdyaooytdRFnxQ" name="given" visibility="public" isOrdered="true" isUnique="false">
         <eAnnotations xmi:id="_3lzSGlVyEdyaooytdRFnxQ" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <ownedComment xmi:id="_3lzSG1VyEdyaooytdRFnxQ" annotatedElement="_3lzSGVVyEdyaooytdRFnxQ">
-          <body>&quot;Given name (don't call it &quot;first name&quot; since this given names do not always come first)&quot; (HL7)
+          <body>'Given name (don't call it 'first name' since this given names do not always come first)' (HL7)
 </body>
         </ownedComment>
         <ownedComment xmi:id="_8zB18BpmEd-j8JC21F3W2A" annotatedElement="_3lzSGVVyEdyaooytdRFnxQ">
-          <body>A set of names given to a person at birth, but not including the family name.&amp;nbsp; In western cultures, this property&#xD;
-would contain the &quot;first&quot; and &quot;middle&quot; names.&amp;nbsp; Note that in some cultures, the given name is placed after the family&#xD;
-name.&amp;nbsp; Note also that this property contains multiple elements, so it can handle those situations whre a person has&#xD;
-more than one &quot;middle&quot; name.</body>
+          <body>A set of names given to a person at birth, but not including the family name.  In western cultures, this property 
+would contain the 'first' and 'middle' names.  Note that in some cultures, the given name is placed after the family 
+name.  Note also that this property contains multiple elements, so it can handle those situations where a person has 
+more than one 'middle' name.</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3lzSHFVyEdyaooytdRFnxQ" value="*"/>
@@ -1817,7 +1820,7 @@ more than one &quot;middle&quot; name.</body>
       <ownedAttribute xmi:id="_3lzSHlVyEdyaooytdRFnxQ" name="nickname" visibility="public">
         <eAnnotations xmi:id="_3lzSH1VyEdyaooytdRFnxQ" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <ownedComment xmi:id="_3lzSIFVyEdyaooytdRFnxQ" annotatedElement="_3lzSHlVyEdyaooytdRFnxQ">
-          <body>&quot;A callme name is (usually a given name) that is preferred when a person is directly addressed.&quot; (HL7)
+          <body>'A callme name is (usually a given name) that is preferred when a person is directly addressed.' (HL7)
 </body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
@@ -1826,29 +1829,29 @@ more than one &quot;middle&quot; name.</body>
       </ownedAttribute>
       <ownedAttribute xmi:id="_3lzSI1VyEdyaooytdRFnxQ" name="family" visibility="public">
         <ownedComment xmi:id="_3lzSJFVyEdyaooytdRFnxQ" annotatedElement="_3lzSI1VyEdyaooytdRFnxQ">
-          <body>&quot;Family name, this is the name that links to the genealogy&quot; (HL7)
+          <body>'Family name, this is the name that links to the genealogy' (HL7)
 </body>
         </ownedComment>
         <ownedComment xmi:id="_RIU-UBprEd-j8JC21F3W2A" annotatedElement="_3lzSI1VyEdyaooytdRFnxQ">
-          <body>&lt;p>&#xD;
-    The portion of a person's name that reflects the geneology of the person.&amp;nbsp; In western cultures, this is the &quot;last&quot;&#xD;
-    name.&amp;nbsp; In eastern cultures, the family name appears before the person's given name(s).&amp;nbsp; In some cultures&#xD;
-    (e.g. Eritrea) the family name of a son is the first name of his father.&#xD;
-&lt;/p></body>
+          <body> 
+    The portion of a person's name that reflects the genealogy of the person.  In western cultures, this is the 'last' 
+    name.  In eastern cultures, the family name appears before the person's given name(s).  In some cultures 
+    (e.g. Eritrea) the family name of a son is the first name of his father. 
+</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_3lzSJVVyEdyaooytdRFnxQ" name="suffix" visibility="public" isOrdered="true" isUnique="false">
         <eAnnotations xmi:id="_3lzSJlVyEdyaooytdRFnxQ" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <ownedComment xmi:id="_3lzSJ1VyEdyaooytdRFnxQ" annotatedElement="_3lzSJVVyEdyaooytdRFnxQ">
-          <body>&quot;A suffix has a strong association to the immediately preceding name part. A prefix has no implicit leading white space (it has implicit trailing white space though). Suffices can not be inverted&quot; (HL7)
+          <body>'A suffix has a strong association to the immediately preceding name part. A prefix has no implicit leading white space (it has implicit trailing white space though). Suffices can not be inverted' (HL7)
 </body>
         </ownedComment>
         <ownedComment xmi:id="_b_6L4BprEd-j8JC21F3W2A" annotatedElement="_3lzSJVVyEdyaooytdRFnxQ">
-          <body>&lt;p>&#xD;
-    Contains a&amp;nbsp;list of honorific terms that typically appear after a person's name, for example Jr., Sr., MD, RN,&#xD;
-    etc.&amp;nbsp;&amp;nbsp;Prefixes&amp;nbsp;have&amp;nbsp;a&amp;nbsp;strong&amp;nbsp;association&amp;nbsp;to&amp;nbsp;the&amp;nbsp;immediately&amp;nbsp;following&amp;nbsp;name&amp;nbsp;part.&#xD;
-&lt;/p></body>
+          <body> 
+    Contains a list of honorific terms that typically appear after a person's name, for example Jr., Sr., MD, RN, 
+    etc.  Prefixes have a strong association to the immediately following name part. 
+</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3lzSKFVyEdyaooytdRFnxQ" value="*"/>
@@ -1926,14 +1929,14 @@ more than one &quot;middle&quot; name.</body>
 
 Semantically, however, time is independent from calendars and best described by its relationship to elapsed time (measured as a physical quantity in the dimension of time.) A point in time plus an elapsed time yields another point in time. Inversely, a point in time minus another point in time yields an elapsed time.
 
-As nobody knows when time began, a point in time is conceptualized as the amount of time that has elapsed from some arbitrary zero-point, called an epoch. Because there is no absolute zero-point on the time axis natural time is a difference-scale quantity, where only differences are defined but no ratios. (For example, no point in time is - absolutely speaking - &quot;twice as late&quot; as another point in time.)
+As nobody knows when time began, a point in time is conceptualized as the amount of time that has elapsed from some arbitrary zero-point, called an epoch. Because there is no absolute zero-point on the time axis natural time is a difference-scale quantity, where only differences are defined but no ratios. (For example, no point in time is - absolutely speaking - 'twice as late' as another point in time.)
 
 Given some arbitrary zero-point, one can express any point in time as an elapsed time measured from that offset. Such an arbitrary zero-point is called an epoch. This epoch-offset form is used as a semantic representation here, without implying that any system would have to implement the TS data type in that way. Systems that do not need to compute distances between points in time will not need any other representation than a calendar expression literal
 </body>
       </ownedComment>
       <ownedComment xmi:id="_QSxJoAqkEd-426xscrxYmQ" annotatedElement="_420A62FD03B64244824602F5">
-        <body>A datatype containing date/time information.&amp;nbsp; This datatype is a placeholder, as various platforms have differing&#xD;
-built-in date/time datatypes.&amp;nbsp; It is anticipated that this datatype will be replaced by a different datatype when&#xD;
+        <body>A datatype containing date/time information.  This datatype is a placeholder, as various platforms have differing 
+built-in date/time datatypes.  It is anticipated that this datatype will be replaced by a different datatype when 
 transforming to a particular implementation platform.</body>
       </ownedComment>
       <ownedAttribute xmi:id="_420A62FD03B643D930510248" name="literal" visibility="public">
@@ -1941,39 +1944,39 @@ transforming to a particular implementation platform.</body>
           <body>For the default Gregorian calendar the calendar expression literals of this specification conform to the constrained ISO 8601 that is defined in ISO 8824 (ASN.1) under clause 32 (generalized time) and to the HL7 version 2 TS data format.</body>
         </ownedComment>
         <ownedComment xmi:id="_9rN_sAqjEd-426xscrxYmQ" annotatedElement="_420A62FD03B643D930510248">
-          <body>&lt;p>&#xD;
-    &quot;TS literals are simple calendar expressions, as defined by the calendar definition table. By default, the western&#xD;
-    (Gregorian) calendar shall be used.&amp;nbsp; For the default Gregorian calendar the calendar expression literals of this&#xD;
-    specification conform to the constrained ISO 8601 that is defined in ISO 8824 (ASN.1) under clause 32 (generalized&#xD;
-    time) and to the HL7 Version 2 TS data type. Thus, ... western calendar expressions begin with the 4-digit year&#xD;
-    (beginning counting at zero); followed by the 2-digit month of the year (beginning counting at one); followed by the&#xD;
-    2-digit day of the month (beginning with one); followed by the 2-digit hour of the day (beginning with zero); and so&#xD;
-    forth. For example, &quot;200004010315&quot; is a valid expression for April 1, 2000, 3:15 am.&#xD;
-&lt;/p>&#xD;
-&lt;p>&#xD;
-    A calendar expression can be of variable precision, omitting parts from the right.&#xD;
-&lt;/p>&#xD;
-&lt;p>&#xD;
-    For example, &quot;20000401&quot; is precise only to the day of the month.&#xD;
-&lt;/p>&#xD;
-&lt;p>&#xD;
-    The least defined calendar period (i.e. the second) may be written as a REAL, with the number of integer digits&#xD;
-    specified, followed by the decimal point and any number of fractional digits.&#xD;
-&lt;/p>&#xD;
-&lt;p>&#xD;
-    For example, &quot;20000401031520.34&quot; means April 1, 2000, 3:15 and 20.34 seconds.&#xD;
-&lt;/p>&#xD;
-&lt;p>&#xD;
-    When other calendars are used in the future, a prefix &quot;GREG:&quot; can be placed before the western (Gregorian) calendar&#xD;
-    expression to disambiguate from other calendars. Each calendar shall have its own prefix. However, the western calendar&#xD;
-    is the default if no prefix is present.&#xD;
-&lt;/p>&#xD;
-&lt;p>&#xD;
-    In the modern Gregorian calendar (and all calendars where time of day is based on UTC), the calendar expression may&#xD;
-    contain a time zone suffix. The time zone suffix begins with a plus (+) or minus (-) followed by digits for the hour&#xD;
-    and, for non UTC times, minute cycles. UTC is designated as offset &quot;+00&quot; or &quot;-00&quot;; the ISO 8601 and ISO 8824 suffix &quot;Z&quot;&#xD;
-    for UTC is not permitted.&quot;&amp;nbsp; (HL7 v3 Datatypes).&#xD;
-&lt;/p></body>
+          <body> 
+    'TS literals are simple calendar expressions, as defined by the calendar definition table. By default, the western 
+    (Gregorian) calendar shall be used.  For the default Gregorian calendar the calendar expression literals of this 
+    specification conform to the constrained ISO 8601 that is defined in ISO 8824 (ASN.1) under clause 32 (generalized 
+    time) and to the HL7 Version 2 TS data type. Thus, ... western calendar expressions begin with the 4-digit year 
+    (beginning counting at zero); followed by the 2-digit month of the year (beginning counting at one); followed by the 
+    2-digit day of the month (beginning with one); followed by the 2-digit hour of the day (beginning with zero); and so 
+    forth. For example, '200004010315' is a valid expression for April 1, 2000, 3:15 am. 
+ 
+ 
+    A calendar expression can be of variable precision, omitting parts from the right. 
+ 
+ 
+    For example, '20000401' is precise only to the day of the month. 
+ 
+ 
+    The least defined calendar period (i.e. the second) may be written as a REAL, with the number of integer digits 
+    specified, followed by the decimal point and any number of fractional digits. 
+ 
+ 
+    For example, '20000401031520.34' means April 1, 2000, 3:15 and 20.34 seconds. 
+ 
+ 
+    When other calendars are used in the future, a prefix 'GREG:' can be placed before the western (Gregorian) calendar 
+    expression to disambiguate from other calendars. Each calendar shall have its own prefix. However, the western calendar 
+    is the default if no prefix is present. 
+ 
+ 
+    In the modern Gregorian calendar (and all calendars where time of day is based on UTC), the calendar expression may 
+    contain a time zone suffix. The time zone suffix begins with a plus (+) or minus (-) followed by digits for the hour 
+    and, for non UTC times, minute cycles. UTC is designated as offset '+00' or '-00'; the ISO 8601 and ISO 8824 suffix 'Z' 
+    for UTC is not permitted.'  (HL7 v3 Datatypes). 
+</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8f20ofRMEdyLkN7_Anv_Ag" value="1"/>
@@ -2008,7 +2011,7 @@ transforming to a particular implementation platform.</body>
         <details xmi:id="_O55U0eLiEduGJrQyRGTO1A" key="IVL_TS"/>
       </eAnnotations>
       <ownedComment xmi:id="_O5vjzOLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B642387187004E">
-        <body>An inteval of time specified as a IVL&lt;TS>.</body>
+        <body>An interval of time specified as an interval of points in time - TS.</body>
       </ownedComment>
       <ownedAttribute xmi:id="_420A62FD03B6423871C20233" name="low" visibility="public" type="_420A62FD03B64244824602F5">
         <eAnnotations xmi:id="_O55UxOLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
@@ -2040,7 +2043,7 @@ transforming to a particular implementation platform.</body>
         <details xmi:id="_O6Ceu-LiEduGJrQyRGTO1A" key="PQ"/>
       </eAnnotations>
       <ownedComment xmi:id="_O6CesOLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64239FAA800D9">
-        <body>A length of time specified as a Physical Quatity, e.g., 5 minutes, 2.5 hours.</body>
+        <body>A length of time specified as a Physical Quantity, e.g., 5 minutes, 2.5 hours.</body>
       </ownedComment>
       <ownedAttribute xmi:id="_420A62FD03B64239FABE01AD" name="value" visibility="public" type="_N-BAoNYeEd62cosTNS-_lw">
         <ownedComment xmi:id="_O6Ces-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64239FABE01AD">
@@ -2061,7 +2064,7 @@ transforming to a particular implementation platform.</body>
         <details xmi:id="_KPgZgSTeEdy0d_IHH17lcA" key="AD"/>
       </eAnnotations>
       <ownedComment xmi:id="_O2dmROLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B641886F6203C7">
-        <body>A specializion of MailingAddress that is used for U.S. addresses.  Note that the state attribute may only contain a code for a U.S. State, territory, or APO.</body>
+        <body>A specialization of MailingAddress that is used for U.S. addresses.  Note that the state attribute may only contain a code for a U.S. State, territory, or APO.</body>
       </ownedComment>
       <generalization xmi:id="_420A62FD03B6418A8DDF0368" general="_420A62FD03B6418A8DCD02C2"/>
       <ownedAttribute xmi:id="_420A62FD03B641886F6203D1" name="state" visibility="public" type="_GmKqYGAfEd6a0qoC8Dh7hA">
@@ -2103,7 +2106,7 @@ transforming to a particular implementation platform.</body>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SFW7wdOcEd2aQZomWdBJLg" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SFW7wNOcEd2aQZomWdBJLg"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_VCR1UNObEd2aQZomWdBJLg" name="nameRepresentation&quot;" visibility="public">
+      <ownedAttribute xmi:id="_VCR1UNObEd2aQZomWdBJLg" name="nameRepresentation'" visibility="public">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_YW6O0dObEd2aQZomWdBJLg" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YW6O0NObEd2aQZomWdBJLg"/>
@@ -2137,7 +2140,7 @@ transforming to a particular implementation platform.</body>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_GmKqYGAfEd6a0qoC8Dh7hA" name="Code" visibility="private" isAbstract="true">
       <ownedComment xmi:id="_ZGXPIGAfEd6a0qoC8Dh7hA" annotatedElement="_GmKqYGAfEd6a0qoC8Dh7hA">
-        <body>Code class was created to support the  Vuids outside of VA</body>
+        <body>Code class was created to support the  VUID outside of VA</body>
       </ownedComment>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_N-BAoNYeEd62cosTNS-_lw" name="Real">
@@ -2145,11 +2148,11 @@ transforming to a particular implementation platform.</body>
         <details xmi:id="_ysrrAQqiEd-426xscrxYmQ" key="REAL"/>
       </eAnnotations>
       <ownedComment xmi:id="_Y_uSsAqkEd-426xscrxYmQ" annotatedElement="_N-BAoNYeEd62cosTNS-_lw">
-        <body>&lt;p>&#xD;
-    A datatype containing non-whole numbers.&amp;nbsp; This datatype is a placeholder, as various platforms have differing&#xD;
-    built-in&amp;nbsp;floating-point datatypes.&amp;nbsp; It is anticipated that this datatype will be replaced by a different&#xD;
-    datatype when transforming to a particular implementation platform.&#xD;
-&lt;/p></body>
+        <body> 
+    A datatype containing non-whole numbers.  This datatype is a placeholder, as various platforms have differing 
+    built-in floating-point datatypes.  It is anticipated that this datatype will be replaced by a different 
+    datatype when transforming to a particular implementation platform. 
+</body>
       </ownedComment>
       <ownedAttribute xmi:id="_aZHukAqkEd-426xscrxYmQ" name="literal" visibility="private">
         <ownedComment xmi:id="_lWlsQAqlEd-426xscrxYmQ" annotatedElement="_aZHukAqkEd-426xscrxYmQ">
@@ -2279,7 +2282,7 @@ transforming to a particular implementation platform.</body>
         <details xmi:id="_Y_P74hAmEd-2E9qx-lgHBg" key="AD"/>
       </eAnnotations>
       <ownedComment xmi:id="_miNKkBAmEd-2E9qx-lgHBg" annotatedElement="_Y_P74BAmEd-2E9qx-lgHBg">
-        <body>Indicates a county or parish within a State of the United States of America.&amp;nbsp; This class is not to be used for non-US&#xD;
+        <body>Indicates a county or parish within a State of the United States of America.  This class is not to be used for non-US 
 locations.</body>
       </ownedComment>
       <ownedAttribute xmi:id="_Y_P77hAmEd-2E9qx-lgHBg" name="county" visibility="public" type="_GmKqYGAfEd6a0qoC8Dh7hA">
@@ -2351,4 +2354,5 @@ locations.</body>
   <Default:Documentation xmi:id="_b_6L4RprEd-j8JC21F3W2A" base_Comment="_b_6L4BprEd-j8JC21F3W2A"/>
   <Default:Documentation xmi:id="_Dq-dsBvyEd-afqIGzWhetA" base_Comment="_DqriwBvyEd-afqIGzWhetA"/>
   <Default:Documentation xmi:id="_UknhMorIEd-W_sKBWcwIbA" base_Comment="_MTziwBqUEd-j8JC21F3W2A"/>
+  <Default:Documentation xmi:id="_4tuPoLa1Ed-Y0_knsxZjWg" base_Comment="_4tkeoLa1Ed-Y0_knsxZjWg"/>
 </xmi:XMI>
