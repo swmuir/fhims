@@ -3472,6 +3472,9 @@
       </contents>
     </eAnnotations>
     <eAnnotations xmi:id="_Mmqt4OLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+    <ownedComment xmi:id="_50pbcLa1Ed-Y0_knsxZjWg" annotatedElement="_420A62FD03B6420A57DF03CA">
+      <body>Encounter Domain</body>
+    </ownedComment>
     <packagedElement xmi:type="uml:Dependency" xmi:id="_420A62FD03B643F57CB5019B" client="_420A62FD03B6420A57DF03CA">
       <supplier xmi:type="uml:Package" href="Common.efx#_420A62FD03B6422C7466026C?FHIM/Common?"/>
     </packagedElement>
@@ -3509,7 +3512,7 @@
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B64318AE7B0130" name="preAdmitTestInd" visibility="public">
         <ownedComment xmi:id="_MXBvZuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64318AE7B0130">
-          <body>Indicates whether tests are required prior to this encounterl.</body>
+          <body>Indicates whether tests are required prior to this encounter.</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
       </ownedAttribute>
@@ -3622,7 +3625,7 @@ For example, if a patient is moved from Surgery to Post-Op, a new encounter is g
         <ownedComment xmi:id="_MjF1e-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6426909FB02BE">
           <body>The act of transferring a patient from one location or responsible organization to another.
 
-Note that a transfer from organization to another will, by definition, trigger a new accounter.
+Note that a transfer from organization to another will, by definition, trigger a new encounter.
 
 Note that a transfer from one location to another may trigger a new encounter depending on whether the responsible organization has changed.  A movement from one bed within the same ward to another probably will not, but a movement from one ward to another probably would.
 </body>
@@ -3694,7 +3697,7 @@ Note that a transfer from one location to another may trigger a new encounter de
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B6426643090271" name="appointmentType" visibility="public">
         <ownedComment xmi:id="_MYg9KuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6426643090271">
-          <body>Indentifies the Type of visit.  Suggested Code Value:  'I' FOR IHS; 'C' FOR CONTRACT; 'T' FOR TRIBAL; 'O' FOR OTHER; '6' FOR 638 PROGRAM; 'V' FOR VA., ETC.
+          <body>Identifies the Type of visit.  Suggested Code Value:  'I' FOR IHS; 'C' FOR CONTRACT; 'T' FOR TRIBAL; 'O' FOR OTHER; '6' FOR 638 PROGRAM; 'V' FOR VA., ETC.
 
 </body>
         </ownedComment>
@@ -3726,7 +3729,7 @@ Note that a transfer from one location to another may trigger a new encounter de
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B643A199250011" name="clinicalServceId" visibility="public">
         <ownedComment xmi:id="_MYqHFeLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B643A199250011">
-          <body>Unique Idenfier for this Clinical servce .</body>
+          <body>Unique Identifier for this Clinical service .</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
       </ownedAttribute>
@@ -3750,7 +3753,7 @@ Note that a transfer from one location to another may trigger a new encounter de
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B64241F5C30343" name="arrivedBy" visibility="public">
         <ownedComment xmi:id="_MY9pFuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64241F5C30343">
-          <body>Identifies the mode of transportation.  ie. ambulance, car, walkin etc.</body>
+          <body>Identifies the mode of transportation.  ie. ambulance, car, walking etc.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
@@ -3773,7 +3776,7 @@ Note that a transfer from one location to another may trigger a new encounter de
     <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B64234584B0170" name="VirtualEncounter">
       <eAnnotations xmi:id="_MZGzB-LiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
       <ownedComment xmi:id="_MZGzBOLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64234584B0170">
-        <body>Services provided includes Telehealth, Webhealth etc.</body>
+        <body>Services provided includes Telehealth, Web health etc.</body>
       </ownedComment>
       <generalization xmi:id="_67VzMBgDEd-hgZpk8HjFRw" general="_420A62FD03B64213F5B40316"/>
     </packagedElement>
@@ -3851,7 +3854,7 @@ Note that a transfer from one location to another may trigger a new encounter de
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B642CEF06E0118" name="diagnosisRelatedGroup" visibility="public" type="_420A62FD03B642CEE9490169" isUnique="false" association="_420A62FD03B642CEF06D0013">
         <ownedComment xmi:id="_MjsSZ-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B642CEF06E0118">
-          <body>Provides the diagnosis grouping for the diagnosis/s prrovied for the patients vist</body>
+          <body>Provides the diagnosis grouping for the diagnosis/s provide for the patients visit</body>
         </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_MjsSauLiEduGJrQyRGTO1A" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MjsSaeLiEduGJrQyRGTO1A"/>
@@ -3904,7 +3907,7 @@ Note that a transfer from one location to another may trigger a new encounter de
       <ownedComment xmi:id="_MZje9OLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B642394F9A0060">
         <body>A collection of like Encounters for multiple patients i.e. Group Therapy sessions.
 
-Note that each patitient has its own Episode of Care.
+Note that each patient has its own Episode of Care.
 </body>
       </ownedComment>
       <ownedAttribute xmi:id="_420A62FD03B6424317420163" name="id" visibility="public">
@@ -3928,7 +3931,7 @@ Note that each patitient has its own Episode of Care.
       </ownedComment>
       <ownedAttribute xmi:id="_420A62FD03B6424316F60241" name="id" visibility="public">
         <ownedComment xmi:id="_MZtP8uLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6424316F60241">
-          <body>The unique identifier for the admin grouping encounters.</body>
+          <body>The unique identifier for the administrative grouping encounters.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
       </ownedAttribute>
@@ -3943,12 +3946,12 @@ Note that each patitient has its own Episode of Care.
     <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B64239A33400D4" name="OutpatientVisit">
       <eAnnotations xmi:id="_MaAK5eLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
       <ownedComment xmi:id="_MZtP9-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64239A33400D4">
-        <body>One or more encounters at one site within a specifie length of time.</body>
+        <body>One or more encounters at one site within a specified length of time.</body>
       </ownedComment>
       <generalization xmi:id="_8l3bUBgDEd-hgZpk8HjFRw" general="_420A62FD03B64213F5B40316"/>
       <ownedAttribute xmi:id="_420A62FD03B6426D4C03036D" name="serviceCategory" visibility="public">
         <ownedComment xmi:id="_MZ2Z4uLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6426D4C03036D">
-          <body>A categorization of the outpatient visit, based on the services provided and/or the circumstances under which the visit occurred.  Possible values include: Ambulatory, In-Hospital (i.e., an patient made an &quot;outpatient&quot; visit while concurrently being an inpatient), Day Surgery, Observation, Nursoing Home, Day Hospitalization, etc.</body>
+          <body>A categorization of the outpatient visit, based on the services provided and/or the circumstances under which the visit occurred.  Possible values include: Ambulatory, In-Hospital (i.e., an patient made an &quot;outpatient&quot; visit while concurrently being an inpatient), Day Surgery, Observation, Nursing Home, Day Hospitalization, etc.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
@@ -4097,11 +4100,11 @@ Note that each patitient has its own Episode of Care.
     <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B6423F39840388" name="CensusEvent">
       <eAnnotations xmi:id="_Ma5iweLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
       <ownedComment xmi:id="_Mavxx-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6423F39840388">
-        <body>Date that an Inpatient or ShortStay Encounter was included in the Census. Census is taken 3 or 4 times a year at 11:59 pm.  Only those Encounters that are active (admitted), at the time the Census Event triggers receive a datetimestamp.  </body>
+        <body>Date that an Inpatient or ShortStay Encounter was included in the Census. Census is taken 3 or 4 times a year at 11:59 pm.  Only those Encounters that are active (admitted), at the time the Census Event triggers receive a date timestamps.  </body>
       </ownedComment>
       <ownedAttribute xmi:id="_420A62FD03B6423F3AAC0347" name="censusDate" visibility="public">
         <ownedComment xmi:id="_MavxyuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6423F3AAC0347">
-          <body>This field contains the date the census was takedn for this Encounter
+          <body>This field contains the date the census was taken for this Encounter
 
 </body>
         </ownedComment>
@@ -4109,14 +4112,14 @@ Note that each patitient has its own Episode of Care.
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B6425EAE1C03B1" name="shortstayCensus" visibility="public" type="_420A62FD03B6425437EC017A" isUnique="false" association="_420A62FD03B6425EAE0C0187">
         <ownedComment xmi:id="_Mif_kuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6425EAE1C03B1">
-          <body>ShortStay Encounter was included in the Census. Census is taken 3 or 4 times a year at 11:59 pm.  Only those Encounters that are active (admitted), at the time the Censu Event triggers receive a datetimestamp.  </body>
+          <body>ShortStay Encounter was included in the Census. Census is taken 3 or 4 times a year at 11:59 pm.  Only those Encounters that are active (admitted), at the time the Census Event triggers receive a date timestamps.  </body>
         </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Mif_leLiEduGJrQyRGTO1A" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Mif_lOLiEduGJrQyRGTO1A"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B6425EAE5601DD" name="inpatientCensus" visibility="public" type="_420A62FD03B64213B28C01E9" isUnique="false" association="_420A62FD03B6425EAE4B0051">
         <ownedComment xmi:id="_Mif_meLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6425EAE5601DD">
-          <body>Inpatient Encounter was included in the Census. Census is taken 3 or 4 times a year at 11:59 pm.  Only those Encounters that are active (admitted), at the time the Census Event triggers receive a datetimestamp.  </body>
+          <body>Inpatient Encounter was included in the Census. Census is taken 3 or 4 times a year at 11:59 pm.  Only those Encounters that are active (admitted), at the time the Census Event triggers receive a date timestamps.  </body>
         </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Mif_nOLiEduGJrQyRGTO1A" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Mif_m-LiEduGJrQyRGTO1A"/>
@@ -4125,7 +4128,7 @@ Note that each patitient has its own Episode of Care.
     <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B6425437EC017A" name="ShortStay">
       <eAnnotations xmi:id="_MbMdtOLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
       <ownedComment xmi:id="_MbCst-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6425437EC017A">
-        <body>An encounter that is similar to outpatiet but the patient is admitted to a bed.</body>
+        <body>An encounter that is similar to outpatient but the patient is admitted to a bed.</body>
       </ownedComment>
       <generalization xmi:id="_56PikBgDEd-hgZpk8HjFRw" general="_420A62FD03B64213F5B40316"/>
       <ownedAttribute xmi:id="_420A62FD03B642663D530341" name="lengthOfStay" visibility="public">
@@ -4138,7 +4141,7 @@ Note that each patitient has its own Episode of Care.
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B64318AE8F02B7" name="preAdmitTestInd" visibility="public">
         <ownedComment xmi:id="_MbMdsuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64318AE8F02B7">
-          <body>Indicates whether tests are required prior to this encounterl.</body>
+          <body>Indicates whether tests are required prior to this encounter.</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
       </ownedAttribute>
@@ -4199,7 +4202,7 @@ Note that each patitient has its own Episode of Care.
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B642680482011F" name="reason" visibility="public">
         <ownedComment xmi:id="_MbpJpOLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B642680482011F">
-          <body>An indication of why the action occured.</body>
+          <body>An indication of why the action occurred.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
@@ -4214,7 +4217,7 @@ Note that each patitient has its own Episode of Care.
       <ownedComment xmi:id="_Mby6peLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B642690158012E">
         <body>The act of transferring a patient from one location or responsible organization to another.
 
-Note that a transfer from organization to another will, by definition, trigger a new accounter.
+Note that a transfer from organization to another will, by definition, trigger a new encounter.
 
 Note that a transfer from one location to another may trigger a new encounter depending on whether the responsible organization has changed.  A movement from one bed within the same ward to another probably will not, but a movement from one ward to another probably would.
 </body>
@@ -4283,7 +4286,7 @@ Note that a transfer from one location to another may trigger a new encounter de
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B642D6A2F20190" name="id" visibility="public">
         <ownedComment xmi:id="_McF1leLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B642D6A2F20190">
-          <body>Unique identifier for the is Examination occrurence.</body>
+          <body>Unique identifier for the is Examination occurrence.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
       </ownedAttribute>
@@ -4378,7 +4381,7 @@ Note that a transfer from one location to another may trigger a new encounter de
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B643089003024A" name="id" visibility="public">
         <ownedComment xmi:id="_McrreeLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B643089003024A">
-          <body>Unique Idenetifier for the Grouping type</body>
+          <body>Unique Identifier for the Grouping type</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
       </ownedAttribute>
@@ -4386,7 +4389,7 @@ Note that a transfer from one location to another may trigger a new encounter de
     <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B642CEE9A60249" name="DialysisEvent">
       <eAnnotations xmi:id="_Mc_NdeLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
       <ownedComment xmi:id="_Mc1ceuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B642CEE9A60249">
-        <body>dialysisType</body>
+        <body>dialysis type</body>
       </ownedComment>
       <generalization xmi:id="_420A62FD03B642CFD9DC036E" general="_420A62FD03B642142C63002F"/>
       <ownedAttribute xmi:id="_420A62FD03B642CEE9E602EB" name="dialysisType" visibility="public">
@@ -4462,7 +4465,7 @@ Note that a transfer from one location to another may trigger a new encounter de
       </ownedComment>
       <ownedAttribute xmi:id="_420A62FD03B642F122C801B9" name="isNormal" visibility="public">
         <ownedComment xmi:id="_Mdu0UuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B642F122C801B9">
-          <body>Indentifies  the results of the exam sugessted values: A=Abnormal, N=Normal, etc
+          <body>Identifies  the results of the exam suggested values: A=Abnormal, N=Normal, etc
 
 </body>
         </ownedComment>
@@ -4826,4 +4829,5 @@ Note that a transfer from one location to another may trigger a new encounter de
   <RIM:Observation xmi:id="_-QGwMJQxEd-GUpkbaCODYA" base_Class="_420A62FD03B642F1229D0121"/>
   <RIM:ActRelationship xmi:id="_bzKlcJQyEd-GUpkbaCODYA" base_Class="_Y5gQsJQyEd-GUpkbaCODYA"/>
   <RIM:Observation xmi:id="_g4YWUJQzEd-GUpkbaCODYA" base_Class="_420A62FD03B6425C0616011C"/>
+  <Default:Documentation xmi:id="_50zMcLa1Ed-Y0_knsxZjWg" base_Comment="_50pbcLa1Ed-Y0_knsxZjWg"/>
 </xmi:XMI>
