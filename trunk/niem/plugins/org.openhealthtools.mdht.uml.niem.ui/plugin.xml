@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2009 David A Carlson.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/legal/epl-v10.html
+  
+  Contributors:
+      David A Carlson (XMLmodeling.com) - initial API and implementation
+      
+  $Id$
+-->
+
+<plugin>
+
+   
+   
+  <!-- 
+    - Navigator Properties
+    -->
+ 
+ 
+	<!--
+      Template Editor Dialog
+   -->
+	<extension point="org.eclipse.ui.popupMenus">
+		<objectContribution adaptable="true"
+			objectClass="org.eclipse.uml2.uml.Element" 
+			id="org.openhealthtools.mdht.uml.niem.ui.dialogs.contribution1">
+			<menu label="%NIEMTools.menu.label" path="additions" id="niemtools">
+				<separator name="edit"/>
+			</menu>
+			<visibility>
+				<objectClass name="org.eclipse.uml2.uml.Class" />
+			</visibility>
+			<action label="%openTemplateEditor.label"
+				class="org.openhealthtools.mdht.uml.niem.ui.actions.OpenExtensionEditorAction"
+				menubarPath="niemtools/edit" enablesFor="1"
+				id="org.openhealthtools.mdht.uml.niem.ui.actions.openSubclassEditorAction">
+			</action>
+		</objectContribution>
+
+
+		<objectContribution adaptable="true"
+			objectClass="org.eclipse.gmf.runtime.notation.View" 
+			id="org.openhealthtools.mdht.uml.niem.ui.dialogs.contribution3">
+			<menu label="%NIEMTools.menu.label" path="additions" id="niemtools">
+				<separator name="edit"/>
+			</menu>
+			<action label="%openTemplateEditor.label"
+				class="org.openhealthtools.mdht.uml.niem.ui.actions.OpenExtensionEditorAction"
+				menubarPath="niemtools/edit" enablesFor="1"
+				id="org.openhealthtools.mdht.uml.niem.ui.actions.openSubclassEditorAction">
+			</action>
+		</objectContribution>
+	</extension>
+	
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution adaptable="true"
+			objectClass="org.eclipse.uml2.uml.Element"
+            id="mdht.objectContribution.uml">
+         <visibility>
+			<objectClass name="org.eclipse.uml2.uml.Element" />
+         </visibility>
+         <menu
+               label="%addNIEM.label"
+               path="group.new"
+               id="mdht.addNIEM">
+            <separator name="propertyGroup"/>
+            <separator name="classifierGroup"/>
+            <separator name="packageGroup"/>
+            <separator name="constraintGroup"/>
+            <separator name="commentGroup"/>
+         </menu>
+      </objectContribution>
+   </extension>
+     
+   <!-- UML Package menu items -->
+         
+   <!-- UML Package menu items -->
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution adaptable="true"
+			objectClass="org.eclipse.uml2.uml.Element"
+            id="mdht.objectContribution.uml.package.cda">
+         <visibility>
+			<objectClass name="org.eclipse.uml2.uml.Package" />
+			<!-- TODO and has CDA profile applied -->
+         </visibility>
+         
+         
+         <action
+               label="%addNIEMExtension.label"
+               icon="icons/full/obj16/Class.gif"
+               class="org.openhealthtools.mdht.uml.niem.ui.actions.CreateNewExtensionAction"
+               menubarPath="mdht.addNIEM/classifierGroup"
+               enablesFor="1"
+               id="mdht.actions.addNIEMExtension.class">
+         </action>
+         
+          <action
+               label="%addNIEMExchange.label"
+               icon="icons/full/obj16/Class.gif"
+               class="org.openhealthtools.mdht.uml.niem.ui.actions.CreateNewExchangeAction"
+               menubarPath="mdht.addNIEM/classifierGroup"
+               enablesFor="1"
+               id="mdht.actions.addNIEMExchange.class">
+         </action>
+         
+      </objectContribution>
+   </extension>
+       
+   <!-- UML Enumeration menu items -->
+         
+</plugin>
