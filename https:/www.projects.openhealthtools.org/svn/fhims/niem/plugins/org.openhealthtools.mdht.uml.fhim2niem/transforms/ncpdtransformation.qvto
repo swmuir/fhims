@@ -1,0 +1,170 @@
+
+modeltype uml uses 'http://www.eclipse.org/uml2/2.1.0/UML';
+
+modeltype ecore  uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+transformation ncpdtransformation(in umlDomain : uml, out umlConstrained : uml);
+
+main() {
+
+log("Map UML to Constraints");
+
+umlDomain.rootObjects()[Package]->mapConstraints();
+
+
+
+
+
+//umlDomain.rootObjects()[Package]->cloneDomain();
+
+}
+
+mapping uml::Package::mapConstraints() : uml::Package
+{
+	
+ 	init {
+		result := self.clone().oclAsType(Package);
+
+		result.profileApplication += self.profileApplication;
+	}
+	
+
+
+	var st := self.getAppliedStereotype('Ecore::EPackage');
+	
+	if (st.oclIsTypeOf(uml::Stereotype)) then
+	{
+
+	result.applyStereotype(st);
+	
+	result.setValue(st,'packageName',self.getValue(st,'packageName'));
+	result.setValue(st,'nsPrefix',self.getValue(st,'nsPrefix'));
+	result.setValue(st,'nsURI',self.getValue(st,'nsURI'));
+	result.setValue(st,'basePackage',self.getValue(st,'basePackage'));
+	result.setValue(st,'prefix',self.getValue(st,'prefix'));
+		
+	} endif;	
+
+	
+	log("Cloned Package");
+	result.ownedType +=  self.ownedType[uml::Class]->asSequence()->map mapConstraints();
+	
+	result.ownedType[uml::Class]->map mapEClass();
+}
+
+mapping inout uml::Class::mapEClass()
+{
+	
+	
+	var c := umlDomain.objectsOfType(uml::Class)->select(qualifiedName = self.qualifiedName)->asSequence();
+	
+	if (c->size() = 1) then
+	{
+	log("oneoneone"+c->size().repr());
+	
+	var st := c->at(1).getAppliedStereotype('Ecore::EClass');
+	
+	log(st.repr());
+	
+	if (st.oclIsTypeOf(uml::Stereotype)) then
+	{
+			log(st.repr());
+		applyStereotype(st);
+			log(st.repr());
+		setValue(st,'xmlName',c->at(1).getValue(st,'xmlName'));
+		
+		st := getAppliedStereotype('Ecore::EClass');
+		log(st.repr());
+			
+			
+	} endif;
+
+		
+	} endif;
+	
+//		var collectionTemplates := umlDomain [uml::Class]->asSequence()->select(combinedLabel !=  baseType.name );
+	
+}
+
+mapping uml::Class::mapConstraints() : uml::Class
+{
+	init {
+		result := self.clone().oclAsType(Class);
+	}
+	result.ownedRule +=  self.ownedElement[uml::Property]->asSequence()->map mapConstraints();
+	
+//	self.getStereotypeApplications()->asSequence(uml:: Stereotype)->map mapStereotypes();
+	
+//	self.getStereotypeApplications(); //->map mapStereotypes();
+	
+	result.generalization += self.generalization;
+
+
+	
+}
+
+mapping uml::Stereotype::mapStereotypes() : uml::Stereotype
+{
+	init {
+		result := self.clone().oclAsType(uml::Stereotype);
+	}
+}
+/*
+   <ownedRule xmi:id="_D81xoP_WEd6Y8ICOr4M99Q" name="MedicationSectionTemplateId" constrainedElement="_OvmR4HfUEd6ZeOKq_2_a9g">
+        <specification xmi:type="uml:OpaqueExpression" xmi:id="_D81xof_WEd6Y8ICOr4M99Q">
+          <language>OCL</language>
+          <body>self.hasTemplateId('2.16.840.1.113883.10.20.1.8')</body>
+        </specification>
+      </ownedRule>
+      
+      
+      	// only process properties that are owned by a Class
+		if (property.getClass_() == null) {
+			return null;
+		}
+
+		// don't process properties that are part of an Association
+		if (property.getAssociation() != null) {
+			return null;
+		}
+		
+		
+		result.specification := object uml::OpaqueExpression
+	{	
+		_body += "self.hasTemplateId('2.16.840.1.113883.10.20.1.8')";
+	}
+	
+	when { (self._class != null) and (self.association = null) }
+
+*/
+mapping uml::Property::mapConstraints() : uml::Constraint  
+{
+	log("aaaaaaaaa");
+	
+	var superClass : uml::Class  :=	self._class.superClass->asSequence()->select(superClass->asSequence()->size() = 0)->at(1);
+	
+	log("bbbbbbbbbbbbb" + superClass.repr());
+	
+	var superProperty : uml::Property := superClass.attribute->select(name = self.name)->asSequence()->at(1);
+	
+	log("cccccccccc" + superProperty.repr());
+	result.name := self._class.name+"::"+self.name;
+	
+	log("ddddddddd");
+	
+	if (self.lower > superProperty.lower) then
+	{
+	result.specification := object uml::OpaqueExpression
+	{	
+		_body += "not " + self.name + ".oclIsUndefined()";
+	}	
+	}
+	endif;
+
+	
+}
+
+mapping uml::Property::mapConstraintsa() : uml::OpaqueExpression
+{
+	
+}
