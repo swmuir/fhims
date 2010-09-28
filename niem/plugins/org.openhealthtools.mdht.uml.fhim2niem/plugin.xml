@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+	<extension point="org.eclipse.ui.popupMenus">
+		<objectContribution objectClass="org.eclipse.core.resources.IFile"
+			id="org.openhealthtools.mdht.fhim2niem.contribution1" nameFilter="*.uml">
+			<menu label="OHT Model Tools" path="additions"
+				id="org.openhealthtools.mdht.fhim2niem.menu1">
+				<separator name="group1">
+				</separator>
+			</menu>
+			<action label="Save FHIM As NIEM"
+				class="org.openhealthtools.mdht.uml.fhim2niem.popup.actions.FHIM2NIEM"
+				menubarPath="org.openhealthtools.mdht.fhim2niem.menu1/group1"
+				enablesFor="1" id="org.openhealthtools.mdht.fhim2niem.saveasuml">
+			</action>
+		</objectContribution>
+	</extension>
+
+</plugin>
