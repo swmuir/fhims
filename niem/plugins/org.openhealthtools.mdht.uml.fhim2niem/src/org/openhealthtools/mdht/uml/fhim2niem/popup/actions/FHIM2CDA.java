@@ -61,11 +61,11 @@ import org.openhealthtools.mdht.uml.fhim2niem.Activator;
 import org.openhealthtools.mdht.uml.term.core.util.TermResource;
 
 @SuppressWarnings("restriction")
-public class FHIM2NIEM implements IObjectActionDelegate {
+public class FHIM2CDA implements IObjectActionDelegate {
 
 	private Shell shell;
 
-	public FHIM2NIEM() {
+	public FHIM2CDA() {
 		super();
 	}
 
@@ -108,7 +108,7 @@ public class FHIM2NIEM implements IObjectActionDelegate {
 
 				String umlPath = hl7Path ;
 				
-				umlPath = umlPath.replaceFirst(f.getName(), "NIEM"+f.getName());
+				umlPath = umlPath.replaceFirst(f.getName(), "CDA"+f.getName());
 				
 				monitor.worked(2);
 				monitor.subTask("Execute QVT Transformation");
@@ -179,15 +179,15 @@ public class FHIM2NIEM implements IObjectActionDelegate {
 // 
 		//com.xmlmodeling.uml2.xsd.profile.XSDProfilePlugin.
 		// Create the URI's for all the moving parts
-		URI transformationURI = URI.createPlatformPluginURI(Activator.PLUGIN_ID + "/transforms/fhim2niem.qvto", false);
+		URI transformationURI = URI.createPlatformPluginURI(Activator.PLUGIN_ID + "/transforms/fhim2cda.qvto", false);
 
 		URI fhimModelURI = URI.createFileURI(fhimPath);
 
-		URI niemCoreModelURI = URI.createPlatformPluginURI(Activator.PLUGIN_ID + "/core/gov.us.niem.core.uml", false);
+		URI cdaBaseModelURI = URI.createPlatformPluginURI(Activator.PLUGIN_ID + "/core/cda.uml", false);
 		
-		URI niemModelURI = URI.createFileURI(niemPath);
+		URI cdaModelURI = URI.createFileURI(niemPath);
 		
-		URI terminologyProfile = URI.createPlatformPluginURI(TermResource.TERM_PROFILE_URI,false);
+//		URI terminologyProfile = URI.createPlatformPluginURI(TermResource.TERM_PROFILE_URI,false);
 
 //		URI hdfProfileURI = URI.createURI(HL7Resource.HDF_PROFILE_URI, true);
 		
@@ -206,13 +206,13 @@ public class FHIM2NIEM implements IObjectActionDelegate {
 		resourceSet.getLoadOptions().put(XMIResource.OPTION_DEFER_ATTACHMENT, Boolean.FALSE);
 
 		// Create the UML model target
-		Resource umlResource = UML22UMLResource.Factory.INSTANCE.createResource(niemModelURI);
+		Resource umlResource = UML22UMLResource.Factory.INSTANCE.createResource(cdaModelURI);
 
 		// Load the xlh7 model from the workspace
 //		HL7StaticModel staticModel = (HL7StaticModel) EcoreUtil.getObjectByType(resourceSet.getResource(hl7ModelURI, true).getContents(),
 //				StaticmetamodelFactory.eINSTANCE.createHL7StaticModel().eClass());
 
-		Model niemCoreModel =  (Model) EcoreUtil.getObjectByType(resourceSet.getResource(niemCoreModelURI, true).getContents(), UMLPackage.eINSTANCE.getModel());
+		Package cdaCoreModel =  (Package) EcoreUtil.getObjectByType(resourceSet.getResource(cdaBaseModelURI, true).getContents(), UMLPackage.eINSTANCE.getPackage());
 
 		
 		Model fhimModel =  (Model) EcoreUtil.getObjectByType(resourceSet.getResource(fhimModelURI, true).getContents(), UMLPackage.eINSTANCE.getModel());
@@ -233,7 +233,7 @@ public class FHIM2NIEM implements IObjectActionDelegate {
 
 		inModels.add(fhimModel);
 
-		inModels.add(niemCoreModel);
+		inModels.add(cdaCoreModel);
 
 //		inModels.add(datatypesLibrary);
 

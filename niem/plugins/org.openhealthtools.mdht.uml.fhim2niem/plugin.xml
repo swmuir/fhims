@@ -5,7 +5,7 @@
 	<extension point="org.eclipse.ui.popupMenus">
 		<objectContribution objectClass="org.eclipse.core.resources.IFile"
 			id="org.openhealthtools.mdht.fhim2niem.contribution1" nameFilter="*.uml">
-			<menu label="OHT Model Tools" path="additions"
+			<menu label="OHT Model Tools for NIEM" path="additions"
 				id="org.openhealthtools.mdht.fhim2niem.menu1">
 				<separator name="group1">
 				</separator>
@@ -14,6 +14,12 @@
 				class="org.openhealthtools.mdht.uml.fhim2niem.popup.actions.FHIM2NIEM"
 				menubarPath="org.openhealthtools.mdht.fhim2niem.menu1/group1"
 				enablesFor="1" id="org.openhealthtools.mdht.fhim2niem.saveasuml">
+			</action>
+			
+			<action label="Save FHIM As CDA"
+				class="org.openhealthtools.mdht.uml.fhim2niem.popup.actions.FHIM2CDA"
+				menubarPath="org.openhealthtools.mdht.fhim2niem.menu1/group1"
+				enablesFor="1" id="org.openhealthtools.mdht.fhim2cda.saveasuml">
 			</action>
 		</objectContribution>
 	</extension>

@@ -15,6 +15,45 @@
 
 <plugin>
 
+
+	<extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+		<propertyTabs contributorId="org.openhealthtools.mdht.uml.ui.properties">
+			<propertyTab category="domain" id="property.tab.NIEMPropertySection"
+				label="NIEM">
+			</propertyTab>
+		</propertyTabs>
+	</extension>
+
+	<extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+		<propertySections contributorId="org.openhealthtools.mdht.uml.ui.properties">
+
+	<!--  	<propertySection tab="property.tab.NIEMPropertySection"
+				class="org.openhealthtools.mdht.uml.term.ui.properties.VocabularyConstraintsSection"
+				id="property.section.hl7.HL7DefinitionSection">
+				<input type="org.eclipse.uml2.uml.Property" />
+			</propertySection>
+-->
+			<propertySection tab="property.tab.NIEMPropertySection"
+				class="org.openhealthtools.mdht.uml.term.ui.properties.ValueSetConstraintSection"
+				id="property.section.ValueSetConstraintSection"
+				filter="org.openhealthtools.mdht.uml.niem.ui.filters.ValueSetConstraintFilter">
+			</propertySection>
+<!--  
+			<propertySection tab="property.tab.NIEMPropertySection"
+				class="org.openhealthtools.mdht.uml.term.ui.properties.CodeSystemConstraintSection"
+				id="property.section.CodeSystemConstraintSection"
+				filter="org.openhealthtools.mdht.uml.term.ui.filters.CodeSystemConstraintFilter">
+			</propertySection>
+
+			<propertySection tab="property.tab.NIEMPropertySection"
+				class="org.openhealthtools.mdht.uml.term.ui.properties.ConceptDomainConstraintSection"
+				id="property.section.ConceptDomainConstraintSection"
+				filter="org.openhealthtools.mdht.uml.term.ui.filters.ConceptDomainConstraintFilter">
+			</propertySection>
+-->
+		</propertySections>
+	</extension>
+
    
    
   <!-- 
@@ -89,6 +128,15 @@
 			<!-- TODO and has CDA profile applied -->
          </visibility>
          
+         
+          <action
+               label="%addNIEMConstraint.label"
+               icon="icons/full/obj16/Class.gif"
+               class="org.openhealthtools.mdht.uml.niem.ui.actions.CreateNewConstraintAction"
+               menubarPath="mdht.addNIEM/classifierGroup"
+               enablesFor="1"
+               id="mdht.actions.addNIEMConstraint.class">
+         </action>
          
          <action
                label="%addNIEMExtension.label"

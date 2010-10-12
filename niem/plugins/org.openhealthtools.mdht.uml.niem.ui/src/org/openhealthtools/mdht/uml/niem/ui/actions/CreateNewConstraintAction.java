@@ -36,13 +36,13 @@ import org.openhealthtools.mdht.uml.niem.ui.dialogs.TemplateEditorViewContentPro
 import org.openhealthtools.mdht.uml.niem.ui.dialogs.TemplateEditorViewLabelProvider;
 import org.openhealthtools.mdht.uml.niem.ui.internal.Logger;
 
-public class CreateNewExtensionAction implements IObjectActionDelegate {
+public class CreateNewConstraintAction implements IObjectActionDelegate {
 	
 	protected IWorkbenchPart activePart;
 	protected ISelection currentSelection;
 	protected Package selectedPackage;
 	
-	public CreateNewExtensionAction() {
+	public CreateNewConstraintAction() {
 		super();
 	}
 

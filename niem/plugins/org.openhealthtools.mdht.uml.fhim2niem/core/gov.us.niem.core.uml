@@ -201,6 +201,30 @@
           <appliedProfile href="pathmap://CDA_PROFILES/CDA.profile.uml#_cxOJEIEVEd6H8o-hO3-B4Q"/>
         </profileApplication>
       </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_nPqyMM_AEd-MI_dJ7C2VPw" name="health">
+        <packagedElement xmi:type="uml:Class" xmi:id="_v5_eAM_AEd-MI_dJ7C2VPw" name="Act">
+          <ownedComment xmi:id="_v5_eAc_AEd-MI_dJ7C2VPw">
+            <body>HL7 RIM Act for NIEM Example&#xD;
+</body>
+          </ownedComment>
+          <generalization xmi:id="_v5_eAs_AEd-MI_dJ7C2VPw" general="_SsMG0MAMEd-aFZFTCZsFiQ"/>
+          <ownedAttribute xmi:id="_SgJZsM_BEd-MI_dJ7C2VPw" name="classCode" type="_SsyjtcAMEd-aFZFTCZsFiQ"/>
+          <ownedAttribute xmi:id="_cDGWoM_BEd-MI_dJ7C2VPw" name="moodCode" type="_SsyjtcAMEd-aFZFTCZsFiQ"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_JSNqgM_BEd-MI_dJ7C2VPw" name="IntoleranceCondition">
+          <ownedComment xmi:id="_JSNqgc_BEd-MI_dJ7C2VPw">
+            <body>A data type for an administrative step taken after an arrest subject is brought to a police station or detention facility.</body>
+          </ownedComment>
+          <generalization xmi:id="_JSNqgs_BEd-MI_dJ7C2VPw" general="_v5_eAM_AEd-MI_dJ7C2VPw"/>
+          <ownedAttribute xmi:id="_JSNqg8_BEd-MI_dJ7C2VPw" name="BookingAgencyRecordIdentification" type="_SsoyucAMEd-aFZFTCZsFiQ" aggregation="composite">
+            <ownedComment xmi:id="_JSNqhM_BEd-MI_dJ7C2VPw">
+              <body>A booking identifier of the originating case agency.</body>
+            </ownedComment>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JSNqhc_BEd-MI_dJ7C2VPw" value="*"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JSNqhs_BEd-MI_dJ7C2VPw"/>
+          </ownedAttribute>
+        </packagedElement>
+      </packagedElement>
       <profileApplication xmi:id="_FCRfCMANEd-v74TbOzD1BQ">
         <eAnnotations xmi:id="_FCRfCcANEd-v74TbOzD1BQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
           <references xmi:type="ecore:EPackage" href="http://www.openhealthtools.org/mdht/schemas/cda/4#/"/>
@@ -989,4 +1013,5 @@
   <xsd:Schema xmi:id="_St-2k8AMEd-aFZFTCZsFiQ" base_Package="_St-2ksAMEd-aFZFTCZsFiQ" targetNamespace="http://niem.gov/niem/niem-core/2.0" targetNamespacePrefix="nc"/>
   <xsd:Schema xmi:id="_St-2lcAMEd-aFZFTCZsFiQ" base_Package="_St-2lMAMEd-aFZFTCZsFiQ" targetNamespace="http://niem.gov/niem/proxy/xsd/2.0" targetNamespacePrefix="niem-xsd"/>
   <xsd:Schema xmi:id="_St-2l8AMEd-aFZFTCZsFiQ" base_Package="_St-2lsAMEd-aFZFTCZsFiQ" targetNamespace="http://niem.gov/niem/structures/2.0" targetNamespacePrefix="s"/>
+  <xsd:Schema xmi:id="_GpemUM_EEd-MI_dJ7C2VPw" base_Package="_nPqyMM_AEd-MI_dJ7C2VPw" targetNamespace="health" targetNamespacePrefix="niemhealth" schemaLocation="health.xsd"/>
 </xmi:XMI>
