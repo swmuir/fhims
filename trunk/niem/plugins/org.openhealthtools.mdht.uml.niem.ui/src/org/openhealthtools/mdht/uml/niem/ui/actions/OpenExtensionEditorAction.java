@@ -20,9 +20,11 @@ import org.eclipse.uml2.uml.Property;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.common.ui.actions.OpenSubclassEditorAction;
 import org.openhealthtools.mdht.uml.common.ui.dialogs.SubclassEditorDialog;
+//import org.openhealthtools.mdht.uml.common.ui.actions.OpenSubclassEditorAction;
+//import org.openhealthtools.mdht.uml.common.ui.dialogs.SubclassEditorDialog;
 import org.openhealthtools.mdht.uml.common.ui.dialogs.SubclassEditorViewContentProvider;
 import org.openhealthtools.mdht.uml.common.ui.dialogs.SubclassEditorViewLabelProvider;
-import org.openhealthtools.mdht.uml.common.ui.dialogs.SubclassHandler;
+//import org.openhealthtools.mdht.uml.common.ui.dialogs.SubclassHandler;
 import org.openhealthtools.mdht.uml.niem.ui.dialogs.TemplateEditorViewContentProvider;
 import org.openhealthtools.mdht.uml.niem.ui.dialogs.TemplateEditorViewLabelProvider;
 
@@ -36,6 +38,10 @@ public class OpenExtensionEditorAction extends OpenSubclassEditorAction {
 		try {
 			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(selectedClass);
 		
+			/*
+			 * For the purposes of not updating mdht - employed cut and paste reuse
+			 * 
+			 */
 			final SubclassHandler subclassHandler = new SubclassHandler(
 					activePart.getSite().getShell(), selectedClass,
 					getContentProvider(), getLabelProvider())

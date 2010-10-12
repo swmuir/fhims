@@ -75,23 +75,24 @@ public class CreateNewExchangeAction implements IObjectActionDelegate {
 					if (baseClass != null) {
 						newClass = selectedPackage.createOwnedClass(className, false);
 						
+						newClass.createOwnedAttribute(baseClass.getName(), baseClass);
 						// create new generalization
-						newClass.getGenerals().clear();
-						newClass.createGeneralization(baseClass);
+//						newClass.getGenerals().clear();
+//						newClass.createGeneralization(baseClass);
 					}
 					else {
 						return Status.CANCEL_STATUS;
 					}
 
-					SubclassHandler subclassHandler = new SubclassHandler(
-							activePart.getSite().getShell(), newClass,
-							getContentProvider(), getLabelProvider());
-					int resultStatus = subclassHandler.openSubclassDialog();
-					if (Dialog.OK != resultStatus) {
-						// can't figure out how to rollback operation transaction if canceled, so destroy here
-						newClass.destroy();
-						return Status.CANCEL_STATUS;
-					}
+//					SubclassHandler subclassHandler = new SubclassHandler(
+//							activePart.getSite().getShell(), newClass,
+//							getContentProvider(), getLabelProvider());
+//					int resultStatus = subclassHandler.openSubclassDialog();
+//					if (Dialog.OK != resultStatus) {
+//						// can't figure out how to rollback operation transaction if canceled, so destroy here
+//						newClass.destroy();
+//						return Status.CANCEL_STATUS;
+//					}
 					
 					//TODO this does not select in CommonNavigator.  maybe need a refresh first?
 					if (activePart instanceof ISetSelectionTarget) {

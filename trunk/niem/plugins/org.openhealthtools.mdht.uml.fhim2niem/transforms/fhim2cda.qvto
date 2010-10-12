@@ -1,7 +1,7 @@
 modeltype uml uses 'http://www.eclipse.org/uml2/2.1.0/UML';
 modeltype ecore "strict" uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 
-transformation fhim2niem(in fhimModel : uml,in niemCoreModel : uml, out niemModel : uml );
+transformation fhim2cda(in fhimModel : uml,in cdaBaseModel : uml, out cdaModel : uml );
 
 main() {
 	
@@ -10,8 +10,60 @@ main() {
 	// Currently hard coded vocabulary import - need to add dynamic discovery support
 	var vocabularyPackage :=  fhimModel.rootObjects()[uml::Model]->getPackageImport('HITSP-C80')->asSequence()->first();
 
-	// Create NIEM PSM
-	fhimModel.rootObjects()[uml::Model]-> map toNIEM();
+	// Create CDA PSM
+	fhimModel.rootObjects()[uml::Model]-> map toCDA();
+	
+}
+
+mapping uml::Model::toCDA() : uml::Model
+{
+	// Clone the FHIM instance to NIEM instance
+//	init{
+//		result := self.deepclone().oclAsType(Model);
+//	}
+
+	// Update the generalizations of the extension 
+//	result.allSubobjects()[uml::Generalization].map mapGeneralizations(); 
+	
+	// Update and bind to terminology model 
+//	 result.allSubobjects()[uml::Class] -> map mapTerminology();
+
+	// update the name - do this last
+	result.name := 'CDA '+self.name;
+
+
+ var clinicalDocument : uml::Class :=  result.createOwnedClass('ClinicalDocument',false);
+ 
+ clinicalDocument.general  := getCDAClass('ClinicalDocument');
+
+
+ 
+  var section : uml::Class :=  result.createOwnedClass('Section',false);
+ 
+ section.general  := getCDAClass('Section');
+ 
+ clinicalDocument.createOwnedAttribute('section',section,1,1);	
+ 
+ result.ownedType += self.allSubobjects()[uml::Class]->map toCDA(section);
+ 
+ 
+	
+	
+ 
+}
+
+mapping uml::Class::toCDA( section : uml::Class) : uml::Class
+{
+
+	init {
+		result := self.deepclone().oclAsType(uml::Class);
+		
+		
+		
+	}
+	
+	section.createOwnedAttribute(result.name,result,1,1);	
+	
 	
 }
 
@@ -66,7 +118,7 @@ mapping inout uml::Property::mapTerminology() : uml::Class when { self.type != n
 	init {
 		result := object uml::Class {
 		name := '_'+self.name;
-		general := getNiemClass('anyType');
+		general := getCDAClass('anyType');
 		};	
 	
 		// value property 
@@ -149,7 +201,7 @@ mapping inout uml::Property::createInnerClasses() : uml::Class
 	init {
 		result := object uml::Class {
 			name := '_' + self.name;
-			general := getNiemClass('anyType');
+			general := getCDAClass('anyType');
 		};	
 	}
 
@@ -168,14 +220,14 @@ mapping inout uml::Property::createInnerClasses() : uml::Class
 }
 
 
-query getNiemClass(in niemClassName: String ) : uml::Class
+query getCDAClass(in niemClassName: String ) : uml::Class
 {   
-   return niemCoreModel.objectsOfType(uml::Class)->asSequence()->select(niemClassName=name)->first();
+   return cdaBaseModel.objectsOfType(uml::Class)->asSequence()->select(niemClassName=name)->first();
 }
 
 query getNiemDataType(in niemClassName: String ) : uml::DataType
 {   
-   return niemCoreModel.objectsOfType(uml::DataType)->asSequence()->select(niemClassName=name)->first();
+   return cdaBaseModel.objectsOfType(uml::DataType)->asSequence()->select(niemClassName=name)->first();
 }
 
 query getFHIMProperty(in fhimPropertyName: String ) : uml::Property
@@ -187,7 +239,7 @@ query getFHIMProperty(in fhimPropertyName: String ) : uml::Property
 
 query getFHIMClass(in fhimClassName: String ) : uml::Class
 {   
-   return niemCoreModel.objectsOfType(uml::Class)->asSequence()->select(fhimClassName=name)->first();
+   return cdaBaseModel.objectsOfType(uml::Class)->asSequence()->select(fhimClassName=name)->first();
 }
 
 
