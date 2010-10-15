@@ -53,13 +53,13 @@ public class CreateNewConstraintAction implements IObjectActionDelegate {
 		try {
 			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(selectedPackage);
 			
-			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Create New NIEM Extension") {
+			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Create New FHIM Constraint") {
 			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 
 					// prompt for new class name
 					String className = null;
 					InputDialog inputDialog = new InputDialog(activePart.getSite().getShell(), 
-							"New NIEM Extension", "Enter extension name", "", null);
+							"New FHIM Constraint", "Enter Constraint name", "", null);
 					if (inputDialog.open() == InputDialog.OK) {
 						className = inputDialog.getValue();
 					}

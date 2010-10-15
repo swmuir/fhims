@@ -50,6 +50,7 @@ import org.eclipse.ui.internal.ObjectPluginAction;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.PackageableElement;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.resource.UML22UMLResource;
@@ -212,10 +213,10 @@ public class FHIM2NIEM implements IObjectActionDelegate {
 //		HL7StaticModel staticModel = (HL7StaticModel) EcoreUtil.getObjectByType(resourceSet.getResource(hl7ModelURI, true).getContents(),
 //				StaticmetamodelFactory.eINSTANCE.createHL7StaticModel().eClass());
 
-		Model niemCoreModel =  (Model) EcoreUtil.getObjectByType(resourceSet.getResource(niemCoreModelURI, true).getContents(), UMLPackage.eINSTANCE.getModel());
+		PackageableElement niemCoreModel =  (PackageableElement) EcoreUtil.getObjectByType(resourceSet.getResource(niemCoreModelURI, true).getContents(), UMLPackage.eINSTANCE.getPackageableElement());
 
 		
-		Model fhimModel =  (Model) EcoreUtil.getObjectByType(resourceSet.getResource(fhimModelURI, true).getContents(), UMLPackage.eINSTANCE.getModel());
+		PackageableElement fhimModel =  (PackageableElement) EcoreUtil.getObjectByType(resourceSet.getResource(fhimModelURI, true).getContents(), UMLPackage.eINSTANCE.getPackageableElement());
 
 		// Load the mdht uml profiles from the plugin
 //		Profile hdfProfile = (Profile) EcoreUtil.getObjectByType(resourceSet.getResource(hdfProfileURI, true).getContents(), UMLPackage.eINSTANCE.getProfile());
