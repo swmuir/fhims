@@ -1,5 +1,6 @@
 modeltype uml uses 'http://www.eclipse.org/uml2/2.1.0/UML';
 modeltype ecore "strict" uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+modeltype term uses 'http://www.openhealthtools.org/mdht/schemas/term/1';
 
 transformation fhim2cda(in fhimModel : uml,in cdaBaseModel : uml, out cdaModel : uml );
 
@@ -8,15 +9,33 @@ main() {
 	log('Transforming Federal Health Information Model (PIM) to National Information Exchange Model (PSM)');
 	
 	// Currently hard coded vocabulary import - need to add dynamic discovery support
-	var vocabularyPackage :=  fhimModel.rootObjects()[uml::Model]->getPackageImport('HITSP-C80')->asSequence()->first();
+	//var vocabularyPackage :=  fhimModel.rootObjects()[uml::Package]->getPackageImport('HITSP-C80')->asSequence()->first();
+	
+	var vocabularyPackage :=  fhimModel.rootObjects()[uml::Package].getImportedPackages()->select(name='HITSP-C80')->asSequence()->first();  
+	
+	log(vocabularyPackage.repr());
 
 	// Create CDA PSM
-	fhimModel.rootObjects()[uml::Model]-> map toCDA();
+	fhimModel.rootObjects()[uml::Package]-> map toCDA();
 	
 }
 
-mapping uml::Model::toCDA() : uml::Model
+mapping uml::Package::toCDA() : uml::Package
 {
+
+init{
+	result := self.deepclone().oclAsType(uml::Package);
+
+	result.ownedType.destroy();
+
+//	result.profileApplication += self.profileApplication;
+	//result.profileApplication += self->oclAsType(uml::Model).profileApplication;
+}
+
+
+log(self.profileApplication->size().repr());
+log(result.profileApplication->size().repr());
+
 	// Clone the FHIM instance to NIEM instance
 //	init{
 //		result := self.deepclone().oclAsType(Model);
@@ -25,11 +44,7 @@ mapping uml::Model::toCDA() : uml::Model
 	// Update the generalizations of the extension 
 //	result.allSubobjects()[uml::Generalization].map mapGeneralizations(); 
 	
-	// Update and bind to terminology model 
-//	 result.allSubobjects()[uml::Class] -> map mapTerminology();
 
-	// update the name - do this last
-	result.name := 'CDA '+self.name;
 
 
  var clinicalDocument : uml::Class :=  result.createOwnedClass('ClinicalDocument',false);
@@ -42,32 +57,196 @@ mapping uml::Model::toCDA() : uml::Model
  
  section.general  := getCDAClass('Section');
  
- clinicalDocument.createOwnedAttribute('section',section,1,1);	
+ //clinicalDocument.createOwnedAttribute('section',section,1,1);	
  
- result.ownedType += self.allSubobjects()[uml::Class]->map toCDA(section);
+ clinicalDocument.createAssociation(true,uml::AggregationKind::none,'section',1,1,section,false,uml::AggregationKind::none,'',1,1);
+ 
+ self.allSubobjects()[uml::Class]->map toCDA(result,section);
  
  
 	
+	// Update and bind to terminology model 
+//	 result.allSubobjects()[uml::Class] -> map mapTerminology();
+
+
+//<CDA:CodegenSupport xmi:id="_HzmFgJm0Ed6BO7rW3XxHIA" basePackage="org.openhealthtools.mdht.uml.cda" nsPrefix="ccd" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd" packageName="ccd" prefix="CCD" base_Namespace="_qQyD8jxVEd6JwqSGecoePg"/>
+
+	// update the name - do this last
+	result.name := self.name;	
+	
+	result.applyStereotype(result.getApplicableStereotype("CDA::CodegenSupport"));
+	
+	result.setValue(result.getAppliedStereotype("CDA::CodegenSupport"),"basePackage","gov.us.fhim.exchange.cda");
+	result.setValue(result.getAppliedStereotype("CDA::CodegenSupport"),"nsPrefix","lab");
+	result.setValue(result.getAppliedStereotype("CDA::CodegenSupport"),"nsURI","http://gov.us.fhim.exchange/cda/lab");
+	result.setValue(result.getAppliedStereotype("CDA::CodegenSupport"),"packageName","lab");
+	result.setValue(result.getAppliedStereotype("CDA::CodegenSupport"),"prefix","Lab");
+	//result.getApplicableStereotypes()->displayStereotype();
 	
  
 }
 
-mapping uml::Class::toCDA( section : uml::Class) : uml::Class
+mapping uml::Class::toCDA(inout package : uml::Package, inout section : uml::Class) 
 {
 
-	init {
-		result := self.deepclone().oclAsType(uml::Class);
-		
-		
-		
-	}
+
+	var rimStereotype : uml::Stereotype := self.general.getAppliedStereotypes()->select(qualifiedName.startsWith('RIM::'))->asSequence()->first();
 	
-	section.createOwnedAttribute(result.name,result,1,1);	
+	var cdaClass : uml::Class := getCDAClass(rimStereotype.name);
+	
+	log('rrrrrrrrrrrrrrrrrrrrrrr'+rimStereotype.name);
+	
+	var mappedClass : uml::Class :=  object uml::Class {
+		name := self.name;
+		general := cdaClass;
+	};	
+	
+	
+	var collectionTemplatesPosition : Integer := 1;
+	
+	var attribute : uml::Property;
+	
+	while (collectionTemplatesPosition <= self.ownedAttribute->size()) {
+
+
+		attribute := cdaClass.ownedAttribute->select(name=self.ownedAttribute->at(collectionTemplatesPosition).name)->asSequence()->first();
+		
+		attribute.lower := self.ownedAttribute->at(collectionTemplatesPosition).lower;
+		
+		attribute.upper := self.ownedAttribute->at(collectionTemplatesPosition).upper;
+		
+		mappedClass.ownedAttribute += attribute;
+		
+		collectionTemplatesPosition := collectionTemplatesPosition + 1;
+	
+	};
+	
+	
+	
+	package.ownedType += mappedClass;
+	
+	collectionTemplatesPosition:= 1;
+	
+		while (collectionTemplatesPosition <= mappedClass.ownedAttribute->size()) {
+		
+		mappedClass.ownedAttribute->at(collectionTemplatesPosition)->cloneAppliedStereotypes(self.ownedAttribute->at(collectionTemplatesPosition));
+		
+		collectionTemplatesPosition := collectionTemplatesPosition + 1;
+	
+	};
+	
+	section.createAssociation(true,uml::AggregationKind::none,mappedClass.name,1,1,mappedClass,false,uml::AggregationKind::none,'',1,1);
 	
 	
 }
 
+mapping inout uml::Property::cloneAppliedStereotypes(in  sourceProperty : uml::Property)
+{
 
+var termstereotype : uml::Stereotype := sourceProperty.getApplicableStereotype('Terminology::ValueSetConstraint');
+
+if (sourceProperty.isStereotypeApplied(termstereotype) ) then 
+{
+	applyStereotype(termstereotype);
+	
+	var vsv : term::ValueSetVersion := sourceProperty.getValue(termstereotype,"reference").oclAsType(term::ValueSetVersion);
+	
+	setValue(getAppliedStereotype('Terminology::ValueSetConstraint'),"reference",vsv);
+	
+	
+//	var enumerationSource : uml::Enumeration := getTerminologyEnumeration(sourceProperty.getValue(termstereotype,"reference").repr());
+	
+//	var termstereotype2   := enumerationSource.getAppliedStereotype('Terminology::ValueSetVersion');
+	
+	
+//	var id : String := enumerationSource.getValue(termstereotype2,"identifier")->oclAsType(String)->asSequence()->first();
+	
+	
+//	var wtf := getTerminologyValueSetVersion(id);
+	
+//	log('wwwwwwwwwwwwwwww'+wtf.repr());
+	
+	
+//	log('Terminology::ValueSetVersion Application is ' + termstereotype2.repr());
+	
+//	setValue(getAppliedStereotype('Terminology::ValueSetConstraint'),"name",'blahblah');
+	
+//	log('aaaaaaaaaaaaaaaaaaaaeeeeeeeeeeeeeeeeeeee'+getValue(getAppliedStereotype('Terminology::ValueSetConstraint'),"name").repr());
+	
+	
+	
+	
+ } endif;
+
+}
+
+mapping inout uml::Property::acloneAppliedStereotypes(in  sourceProperty : uml::Property)
+{
+		var collectionTemplatesPosition : Integer := 1;
+	
+	var cloned : uml::Stereotype;
+	
+	log(sourceProperty.qualifiedName);
+	
+	log(sourceProperty.getNearestPackage().profileApplication->size().repr());
+	
+	while (collectionTemplatesPosition <= sourceProperty.getAppliedStereotypes()->size()) {
+		
+		
+		log(sourceProperty.getAppliedStereotypes()->asSequence()->at(collectionTemplatesPosition).repr());
+		
+		cloned := sourceProperty.getAppliedStereotypes()->asSequence()->at(collectionTemplatesPosition);
+		
+		 log('cloning '+cloned.name);
+		
+		applyStereotype(cloned);
+
+
+		log(cloned.ownedAttribute->asSequence()->size().repr()  );
+		
+		var k  : Integer := 1;
+		
+		var valueName : String;
+		
+		while(k <= cloned.ownedAttribute->asSequence()->size())
+		{
+		
+			valueName := cloned.ownedAttribute->asSequence()->at(k).name;
+			
+			if (sourceProperty.hasValue(cloned,valueName)) then
+
+{		
+		
+		
+		 log('name '+cloned.ownedAttribute->asSequence()->at(k).name);
+		 
+		 log('value '+sourceProperty.getValue(cloned, cloned.ownedAttribute->asSequence()->at(k).name ).repr() );
+		 
+		 
+		 //ifsourceProperty.hasValue()
+		 
+			self.setValue(cloned,cloned.ownedAttribute->asSequence()->at(k).name,sourceProperty.getValue(cloned, cloned.ownedAttribute->asSequence()->at(k).name ));
+			} endif;
+			
+			k := k +1;
+		};
+		
+		
+		
+		
+		collectionTemplatesPosition := collectionTemplatesPosition + 1;
+		
+	};
+}
+
+
+mapping inout uml::Stereotype::mapStereotypeValues()
+{
+
+//self.getKeywords()
+
+	
+}
 
 mapping uml::Model::toNIEM() : uml::Model
 {
@@ -218,7 +397,17 @@ mapping inout uml::Property::createInnerClasses() : uml::Class
 
 
 }
+// http://www.openhealthtools.org/mdht/uml/cda/annotation
+query ecore::EClass::getAnnotation(in annotation : String) : ecore::EAnnotation
+{
+	return self.getEAnnotation(annotation);	
+}
 
+
+query ecore::EAnnotation::getKey() : ecore::EString
+{
+	return self.details->first().key;
+}
 
 query getCDAClass(in niemClassName: String ) : uml::Class
 {   
@@ -245,7 +434,7 @@ query getFHIMClass(in fhimClassName: String ) : uml::Class
 
 query getTerminologyEnumeration(in termClassName: String ) : uml::Enumeration
 {
-	var vocabularyPackage :=  fhimModel.rootObjects()[uml::Model]->getPackageImport('HITSP-C80')->asSequence()->first();   
+	var vocabularyPackage :=  fhimModel.rootObjects()[uml::Package].getImportedPackages()->select(name='HITSP-C80')->asSequence()->first();   
 	 
   var enumeration := vocabularyPackage.allSubobjects()[uml::Enumeration]->asSequence()->select(termClassName=qualifiedName)->first();
 
@@ -253,12 +442,29 @@ query getTerminologyEnumeration(in termClassName: String ) : uml::Enumeration
   
 }
 
+query getTerminologyValueSetVersion(in id: String ) : term::ValueSetVersion
+{
+log('aaaaaaaaaaaaaaaaaaaaaa');
+	var vocabularyPackage :=  fhimModel.rootObjects()[uml::Package].getImportedPackages()->select(name='HITSP-C80')->asSequence()->first();   
+	log(vocabularyPackage.repr()); 
+	log(vocabularyPackage.owner.ownedElement[term::ValueSetVersion]->asSequence()->size().repr());
+	
+ var enumeration := vocabularyPackage.allSubobjects()[term::ValueSetVersion]->asSequence()->select(identifier=id)->first();
+
+log('bbbbbbbbbbbbbbbbbbbbbbbbbbbb');
+
+  return enumeration;
+  
+}
+
+
 query uml::Model::getPackageImport(in packageName: String )  : uml::Package
 {
 	self.packageImport->displayPackage();
 
 	 return self.packageImport->select(packageName=importedPackage.name)->asSequence()->first().importedPackage;
 }
+
 
 // Add to general purpose qvt library  
  

@@ -50,6 +50,7 @@ import org.eclipse.ui.internal.ObjectPluginAction;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.PackageableElement;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.resource.UML22UMLResource;
@@ -105,10 +106,12 @@ public class FHIM2CDA implements IObjectActionDelegate {
 				File f = (File) selection.getFirstElement();
 
 				String hl7Path = myWorkspaceRoot.getLocation().toOSString() + f.getFullPath().toOSString();
+				
+				
 
 				String umlPath = hl7Path ;
 				
-				umlPath = umlPath.replaceFirst(f.getName(), "CDA"+f.getName());
+				umlPath = umlPath.replaceFirst(f.getName(), "lab.uml");
 				
 				monitor.worked(2);
 				monitor.subTask("Execute QVT Transformation");
@@ -212,10 +215,10 @@ public class FHIM2CDA implements IObjectActionDelegate {
 //		HL7StaticModel staticModel = (HL7StaticModel) EcoreUtil.getObjectByType(resourceSet.getResource(hl7ModelURI, true).getContents(),
 //				StaticmetamodelFactory.eINSTANCE.createHL7StaticModel().eClass());
 
-		Package cdaCoreModel =  (Package) EcoreUtil.getObjectByType(resourceSet.getResource(cdaBaseModelURI, true).getContents(), UMLPackage.eINSTANCE.getPackage());
+		PackageableElement cdaCoreModel =  (PackageableElement) EcoreUtil.getObjectByType(resourceSet.getResource(cdaBaseModelURI, true).getContents(), UMLPackage.eINSTANCE.getPackageableElement());
 
 		
-		Model fhimModel =  (Model) EcoreUtil.getObjectByType(resourceSet.getResource(fhimModelURI, true).getContents(), UMLPackage.eINSTANCE.getModel());
+		PackageableElement fhimModel =  (PackageableElement) EcoreUtil.getObjectByType(resourceSet.getResource(fhimModelURI, true).getContents(), UMLPackage.eINSTANCE.getPackageableElement());
 
 		// Load the mdht uml profiles from the plugin
 //		Profile hdfProfile = (Profile) EcoreUtil.getObjectByType(resourceSet.getResource(hdfProfileURI, true).getContents(), UMLPackage.eINSTANCE.getProfile());

@@ -1,5 +1,7 @@
 modeltype uml uses 'http://www.eclipse.org/uml2/2.1.0/UML';
 modeltype ecore "strict" uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+modeltype term uses 'http://www.openhealthtools.org/mdht/schemas/term/1';
+
 
 transformation fhim2niem(in fhimModel : uml,in niemCoreModel : uml, out niemModel : uml );
 
@@ -11,27 +13,65 @@ main() {
 	var vocabularyPackage :=  fhimModel.rootObjects()[uml::Model]->getPackageImport('HITSP-C80')->asSequence()->first();
 
 	// Create NIEM PSM
-	fhimModel.rootObjects()[uml::Model]-> map toNIEM();
+	fhimModel.rootObjects()[uml::Package]-> map toNIEM();
+	
+	
+
 	
 }
 
 
 
-mapping uml::Model::toNIEM() : uml::Model
+mapping uml::Package::toNIEM() : uml::Package
 {
 	// Clone the FHIM instance to NIEM instance
 	init{
-		result := self.deepclone().oclAsType(Model);
+		result := self.deepclone().oclAsType(Package);
+		
+		//result.ownedType.destroy();
+	
 	}
+	
 
 	// Update the generalizations of the extension 
 	result.allSubobjects()[uml::Generalization].map mapGeneralizations(); 
 	
 	// Update and bind to terminology model 
 	 result.allSubobjects()[uml::Class] -> map mapTerminology();
+	 
 
 	// update the name - do this last
-	result.name := 'NEIM'+self.name;
+	result.name := self.name;
+	
+	
+	var constraintPackage : uml::Package := object uml::Package  {
+		name := 'Constraints';
+	}	;
+	
+	constraintPackage.ownedType += result.ownedType;
+	
+	result.packagedElement += constraintPackage;
+	
+   var exchangePackage : uml::Package := object uml::Package  {
+		name := 'Exchange';
+	};
+	
+	var exchangeClass : uml::Class := object uml::Class
+	{
+		name := 'Exchange'
+	};
+	
+	exchangePackage.ownedType += exchangeClass;
+	
+	exchangeClass.ownedAttribute += constraintPackage.ownedType[uml::Class]->map mapConstraintsToExchange();
+	
+	
+	result.packagedElement += exchangePackage;
+	
+	 //update to niem naming convention
+	constraintPackage.ownedType[uml::Class]-> map mapNiemNaming();
+	
+	
 }
 
 
@@ -56,6 +96,28 @@ mapping inout uml::Class::mapTerminology() {
 	
 	// Appying xsd after the add so the profile is available
 	nestedClassifier[uml::Class]->map applyXSD(); 
+	
+}
+
+
+mapping inout uml::Class::mapNiemNaming() {
+	
+	log ('Mapping FHIM Naming ');
+	
+	name := name +'Type';
+	
+	
+}
+
+mapping  uml::Class::mapConstraintsToExchange() : uml::Property {
+
+	init {
+		result := object uml::Property {
+			name := self.name;
+			type := self;
+		};	
+	}
+	
 	
 }
 
@@ -193,7 +255,8 @@ query getFHIMClass(in fhimClassName: String ) : uml::Class
 
 query getTerminologyEnumeration(in termClassName: String ) : uml::Enumeration
 {
-	var vocabularyPackage :=  fhimModel.rootObjects()[uml::Model]->getPackageImport('HITSP-C80')->asSequence()->first();   
+
+	var vocabularyPackage :=  fhimModel.rootObjects()[uml::Package].getImportedPackages()->select(name='HITSP-C80')->asSequence()->first();   
 	 
   var enumeration := vocabularyPackage.allSubobjects()[uml::Enumeration]->asSequence()->select(termClassName=qualifiedName)->first();
 
