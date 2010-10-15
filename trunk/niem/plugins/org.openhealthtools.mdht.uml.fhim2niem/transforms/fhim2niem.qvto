@@ -61,12 +61,32 @@ mapping uml::Package::toNIEM() : uml::Package
 		name := 'Exchange'
 	};
 	
-	exchangePackage.ownedType += exchangeClass;
 	
-	exchangeClass.ownedAttribute += constraintPackage.ownedType[uml::Class]->map mapConstraintsToExchange();
+	//var xsdGlobalStereotype : uml::Stereotype := exchangeClass.getApplicableStereotype('XMLSchema::global');
+
+	//exchangeClass.applyStereotype(xsdGlobalStereotype);
+	
+	
+	
+	//exchangeClass.applyStereotype(exchangeClass.getApplicableStereotypes()->select(name='XMLSchema::global')[uml::Stereotype]);
+	
+	exchangePackage.ownedType += exchangeClass;
+
 	
 	
 	result.packagedElement += exchangePackage;
+	
+	
+	var xsdGlobalStereotype : uml::Stereotype := exchangeClass.getApplicableStereotype('XMLSchema::GlobalProperty');
+
+	exchangeClass.applyStereotype(xsdGlobalStereotype);
+	
+	exchangeClass.getApplicableStereotypes()->map displayStereotype();
+	
+	
+	exchangeClass.ownedAttribute += constraintPackage.ownedType[uml::Class]->map mapConstraintsToExchange();
+	
+	exchangeClass.ownedAttribute[uml::Property]->map mapApplyXSDGlobalElement();
 	
 	 //update to niem naming convention
 	constraintPackage.ownedType[uml::Class]-> map mapNiemNaming();
@@ -118,6 +138,14 @@ mapping  uml::Class::mapConstraintsToExchange() : uml::Property {
 		};	
 	}
 	
+	
+}
+
+mapping inout uml::Property::mapApplyXSDGlobalElement()  {
+
+	var xsdGlobalStereotype : uml::Stereotype := getApplicableStereotype('XMLSchema::GlobalElement');
+
+	applyStereotype(xsdGlobalStereotype);
 	
 }
 

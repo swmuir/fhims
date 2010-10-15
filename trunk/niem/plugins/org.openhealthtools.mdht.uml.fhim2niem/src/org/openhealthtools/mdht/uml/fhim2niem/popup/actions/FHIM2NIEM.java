@@ -109,7 +109,9 @@ public class FHIM2NIEM implements IObjectActionDelegate {
 
 				String umlPath = hl7Path ;
 				
-				umlPath = umlPath.replaceFirst(f.getName(), "NIEM"+f.getName());
+				//umlPath = umlPath.replaceFirst(f.getName(), "NIEM"+f.getName());
+				
+				umlPath = umlPath.replaceFirst(f.getName(), "niem.uml");
 				
 				monitor.worked(2);
 				monitor.subTask("Execute QVT Transformation");
@@ -189,10 +191,28 @@ public class FHIM2NIEM implements IObjectActionDelegate {
 		URI niemModelURI = URI.createFileURI(niemPath);
 		
 		URI terminologyProfile = URI.createPlatformPluginURI(TermResource.TERM_PROFILE_URI,false);
+		
+		
+		/*
+		 *     <profileApplication xmi:id="_H49GINhUEd-S8Jf8Zxy9eQ">
+      <eAnnotations xmi:id="_H5MWsNhUEd-S8Jf8Zxy9eQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://XMLmodeling_PROFILES/XSDGeneration.profile.uml#_NblMEc6UEdy3vZDTUklmRg"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://XMLmodeling_PROFILES/XSDGeneration.profile.uml#_yvqaMUtXEdqCydWod9T-cg"/>
+    </profileApplication>
+    <profileApplication xmi:id="_IEuRQNhUEd-S8Jf8Zxy9eQ">
+      <eAnnotations xmi:id="_IEu4UNhUEd-S8Jf8Zxy9eQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://XMLmodeling_PROFILES/XMLSchema.profile.uml#_eDH5EA-uEd2ng-v1tnpITw"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://XMLmodeling_PROFILES/XMLSchema.profile.uml#_ytRNgEtXEdqCydWod9T-cg"/>
+    </profileApplication>
+		 */
 
 //		URI hdfProfileURI = URI.createURI(HL7Resource.HDF_PROFILE_URI, true);
 		
-	//	URI xsdProfileURI = URI.createURI("pathmap://XMLModeling_PROFILES/XMLSchema.profile.uml", true);
+//		URI xsdSchemaProfileURI = URI.createPlatformPluginURI("pathmap://XMLModeling_PROFILES/XMLSchema.profile.uml", true);
+		
+//		URI xsdGenerationProfileURI = URI.createPlatformPluginURI("pathmap://XMLmodeling_PROFILES/XSDGeneration.profile.uml", true);
 
 //		URI rimProfileURI = URI.createURI(HL7Resource.RIM_PROFILE_URI, true);
 //
@@ -221,7 +241,9 @@ public class FHIM2NIEM implements IObjectActionDelegate {
 		// Load the mdht uml profiles from the plugin
 //		Profile hdfProfile = (Profile) EcoreUtil.getObjectByType(resourceSet.getResource(hdfProfileURI, true).getContents(), UMLPackage.eINSTANCE.getProfile());
 		
-		//Profile xsdProfile = (Profile) EcoreUtil.getObjectByType(resourceSet.getResource(xsdProfileURI, true).getContents(), UMLPackage.eINSTANCE.getProfile());
+//		Profile xsdSchemaProfile = (Profile) EcoreUtil.getObjectByType(resourceSet.getResource(xsdSchemaProfileURI, true).getContents(), UMLPackage.eINSTANCE.getProfile());
+		
+//		Profile xsdGenerationProfile = (Profile) EcoreUtil.getObjectByType(resourceSet.getResource(xsdGenerationProfileURI, true).getContents(), UMLPackage.eINSTANCE.getProfile());
 
 //		Profile rimProfile = (Profile) EcoreUtil.getObjectByType(resourceSet.getResource(rimProfileURI, true).getContents(), UMLPackage.eINSTANCE.getProfile());
 //
