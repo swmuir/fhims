@@ -6,14 +6,7 @@ transformation fhim2cda(in fhimModel : uml,in cdaBaseModel : uml, out cdaModel :
 
 main() {
 	
-	log('Transforming Federal Health Information Model (PIM) to National Information Exchange Model (PSM)');
-	
-	// Currently hard coded vocabulary import - need to add dynamic discovery support
-	//var vocabularyPackage :=  fhimModel.rootObjects()[uml::Package]->getPackageImport('HITSP-C80')->asSequence()->first();
-	
-	var vocabularyPackage :=  fhimModel.rootObjects()[uml::Package].getImportedPackages()->select(name='HITSP-C80')->asSequence()->first();  
-	
-	log(vocabularyPackage.repr());
+	log('Transforming Federal Health Information Model (PIM) to HL7 Clinical Document Architecture (PSM)');
 
 	// Create CDA PSM
 	fhimModel.rootObjects()[uml::Package]-> map toCDA();
@@ -23,53 +16,32 @@ main() {
 mapping uml::Package::toCDA() : uml::Package
 {
 
-init{
-	result := self.deepclone().oclAsType(uml::Package);
-
-	result.ownedType.destroy();
-
-//	result.profileApplication += self.profileApplication;
-	//result.profileApplication += self->oclAsType(uml::Model).profileApplication;
-}
-
-
-log(self.profileApplication->size().repr());
-log(result.profileApplication->size().repr());
-
-	// Clone the FHIM instance to NIEM instance
-//	init{
-//		result := self.deepclone().oclAsType(Model);
-//	}
-
-	// Update the generalizations of the extension 
-//	result.allSubobjects()[uml::Generalization].map mapGeneralizations(); 
 	
-
-
-
- var clinicalDocument : uml::Class :=  result.createOwnedClass('ClinicalDocument',false);
- 
- clinicalDocument.general  := getCDAClass('ClinicalDocument');
-
-
- 
-  var section : uml::Class :=  result.createOwnedClass('Section',false);
- 
- section.general  := getCDAClass('Section');
- 
- //clinicalDocument.createOwnedAttribute('section',section,1,1);	
- 
- clinicalDocument.createAssociation(true,uml::AggregationKind::none,'section',1,1,section,false,uml::AggregationKind::none,'',1,1);
- 
- self.allSubobjects()[uml::Class]->map toCDA(result,section);
- 
- 
 	
-	// Update and bind to terminology model 
-//	 result.allSubobjects()[uml::Class] -> map mapTerminology();
+	init{
+		log('Transforming Package : ' + self.name);
+
+		result := self.deepclone().oclAsType(uml::Package);
+
+		result.ownedType.destroy();
+	}
 
 
-//<CDA:CodegenSupport xmi:id="_HzmFgJm0Ed6BO7rW3XxHIA" basePackage="org.openhealthtools.mdht.uml.cda" nsPrefix="ccd" nsURI="http://www.openhealthtools.org/mdht/uml/cda/ccd" packageName="ccd" prefix="CCD" base_Namespace="_qQyD8jxVEd6JwqSGecoePg"/>
+
+ 	var clinicalDocument : uml::Class :=  result.createOwnedClass('ClinicalDocument',false);
+ 
+ 	clinicalDocument.general  := getCDAClass('ClinicalDocument');
+ 
+  	var section : uml::Class :=  result.createOwnedClass('Section',false);
+ 
+ 	section.general  := getCDAClass('Section');
+ 
+ 	clinicalDocument.createAssociation(true,uml::AggregationKind::none,'section',1,1,section,false,uml::AggregationKind::none,'',1,1);
+
+ 
+ 	self.allSubobjects()[uml::Class]->map toCDA(result,section);
+ 
+ 
 
 	// update the name - do this last
 	result.name := self.name;	
@@ -81,7 +53,6 @@ log(result.profileApplication->size().repr());
 	result.setValue(result.getAppliedStereotype("CDA::CodegenSupport"),"nsURI","http://gov.us.fhim.exchange/cda/lab");
 	result.setValue(result.getAppliedStereotype("CDA::CodegenSupport"),"packageName","lab");
 	result.setValue(result.getAppliedStereotype("CDA::CodegenSupport"),"prefix","Lab");
-	//result.getApplicableStereotypes()->displayStereotype();
 	
  
 }
@@ -90,12 +61,13 @@ mapping uml::Class::toCDA(inout package : uml::Package, inout section : uml::Cla
 {
 
 
+
 	var rimStereotype : uml::Stereotype := self.general.getAppliedStereotypes()->select(qualifiedName.startsWith('RIM::'))->asSequence()->first();
 	
 	var cdaClass : uml::Class := getCDAClass(rimStereotype.name);
-	
-	log('rrrrrrrrrrrrrrrrrrrrrrr'+rimStereotype.name);
-	
+
+	log('Mapping ' + self.name + ' to ' + rimStereotype.name);	
+
 	var mappedClass : uml::Class :=  object uml::Class {
 		name := self.name;
 		general := cdaClass;

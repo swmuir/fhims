@@ -80,10 +80,7 @@ mapping uml::Package::toNIEM() : uml::Package
 	var xsdGlobalStereotype : uml::Stereotype := exchangeClass.getApplicableStereotype('XMLSchema::GlobalProperty');
 
 	exchangeClass.applyStereotype(xsdGlobalStereotype);
-	
-	exchangeClass.getApplicableStereotypes()->map displayStereotype();
-	
-	
+		
 	exchangeClass.ownedAttribute += constraintPackage.ownedType[uml::Class]->map mapConstraintsToExchange();
 	
 	exchangeClass.ownedAttribute[uml::Property]->map mapApplyXSDGlobalElement();
