@@ -2,6 +2,10 @@
 SETLOCAL
 cls
 
+set /p svnuser=SVN User Name?
+
+set /p svnpasswd=SVN Password?
+
 
 
 IF '%1'=='-t' GOTO SETCOMPONENT
@@ -117,9 +121,14 @@ echo MDHT_BUILDTARGET=%MDHT_BUILDTARGET%
 
 echo "********************************************************************"
 
+echo "%svnuser%"
+echo "%svnpasswd%"
+
+
+
 echo Building : %JAVA_HOME%/java -cp %MDHT_LAUNCHER% org.eclipse.core.launcher.Main -application org.eclipse.ant.core.antRunner -buildfile %MDHT_BUILD_XML% -DbaseLocation=%MDHT_ECLIPSE% -Dbuilder=%MDHT_BUILDER%  -DbuildType=%MDHT_BUILDTARGET% -DbuildDirectory=%MDHT_BUILDDIRECTORY% -Drepodir=%MDHT_REPODIRECTORY% -DANT_HOME=%ANT_HOME% -Dmdhtcomponent=%MDHT_COMPONENT%
 
-%JAVA_HOME%/bin/java -cp %MDHT_LAUNCHER% org.eclipse.core.launcher.Main -application org.eclipse.ant.core.antRunner -buildfile %MDHT_BUILD_XML% -DbaseLocation=%MDHT_ECLIPSE% -Dbuilder=%MDHT_BUILDER%  -DbuildType=%MDHT_BUILDTARGET% -DbuildDirectory=%MDHT_BUILDDIRECTORY% -Drepodir=%MDHT_REPODIRECTORY% -DANT_HOME=%ANT_HOME% -Dmdhtcomponent=%MDHT_COMPONENT%
+%JAVA_HOME%/bin/java -cp %MDHT_LAUNCHER% org.eclipse.core.launcher.Main -application org.eclipse.ant.core.antRunner -buildfile %MDHT_BUILD_XML% -Dsvnuser=%svnuser% -Dsvnpasswd=%svnpasswd% -DbaseLocation=%MDHT_ECLIPSE% -Dbuilder=%MDHT_BUILDER%  -DbuildType=%MDHT_BUILDTARGET% -DbuildDirectory=%MDHT_BUILDDIRECTORY% -Drepodir=%MDHT_REPODIRECTORY% -DANT_HOME=%ANT_HOME% -Dmdhtcomponent=%MDHT_COMPONENT%
 
 echo Building : %JAVA_HOME%/java  -jar %MDHT_LAUNCHER% -application org.eclipse.equinox.p2.publisher.CategoryPublisher -metadataRepository file:%MDHT_REPODIRECTORY% -categoryDefinition file:%CATEGORY_XML% -Drepodir=%MDHT_REPODIRECTORY%
 
