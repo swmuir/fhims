@@ -222,8 +222,9 @@ public class VHIMBaseTask extends Task {
 			resourceSet.getLoadOptions().put(
 					XMIResource.OPTION_DEFER_ATTACHMENT, Boolean.FALSE);
 
-			model = (Model) UMLUtil.load(resourceSet, URI
-					.createFileURI(modelPath), UMLPackage.Literals.MODEL);
+	// Fix for 3.5		
+//			model = (Model) UMLUtil.load(resourceSet, URI
+//					.createFileURI(modelPath), UMLPackage.Literals.MODEL);
 
 			if (model != null) {
 
@@ -258,39 +259,40 @@ public class VHIMBaseTask extends Task {
 	 */
 	public Type getType(String typeName) {
 
-		debug("getType " + typeName);
-		
-		Type type = null;
+//		debug("getType " + typeName);
+//		
+//		Type type = null;
+//
+//		// Find in main model
+//		Collection elements = org.eclipse.uml2.uml.util.UMLUtil
+//				.findNamedElements(model.eResource(), typeName);
+//
+//		if (elements.iterator().hasNext()) {
+//			type = (Type) elements.iterator().next();
+//			debug("found " + type.getName());
+//		} else // search imported models
+//		{
+//			for (Object object : model.getImportedPackages()) {
+//				Model m = (Model) object;
+//
+//				// Rose model seem have no eresource and caused an exception
+//				if (m.eResource() != null) {
+//					elements = org.eclipse.uml2.uml.util.UMLUtil
+//							.findNamedElements(m.eResource(), typeName);
+//					if (elements.iterator().hasNext()) {
+//
+//						type = (Type) elements.iterator().next();
+//						debug("found " + type.getName());
+//						break;
+//					}
+//				}
+//
+//			}
+//		}
 
-		// Find in main model
-		Collection elements = org.eclipse.uml2.uml.util.UMLUtil
-				.findNamedElements(model.eResource(), typeName);
+//		return type;
 
-		if (elements.iterator().hasNext()) {
-			type = (Type) elements.iterator().next();
-			debug("found " + type.getName());
-		} else // search imported models
-		{
-			for (Object object : model.getImportedPackages()) {
-				Model m = (Model) object;
-
-				// Rose model seem have no eresource and caused an exception
-				if (m.eResource() != null) {
-					elements = org.eclipse.uml2.uml.util.UMLUtil
-							.findNamedElements(m.eResource(), typeName);
-					if (elements.iterator().hasNext()) {
-
-						type = (Type) elements.iterator().next();
-						debug("found " + type.getName());
-						break;
-					}
-				}
-
-			}
-		}
-
-		return type;
-
+		return null;
 	}
 
 	private static class SaveFragments extends UMLSwitch {
