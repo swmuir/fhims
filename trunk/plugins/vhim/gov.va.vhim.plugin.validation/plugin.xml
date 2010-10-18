@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+	<!--
+		VHIM UML Style EMF Validation Extension Definition
+		Categories
+			VHIM - All VHIM Profile related constraints
+	-->
+	<extension point="org.eclipse.emf.validation.constraintProviders">
+	
+		<category id="gov.va.vhim.plugin.validation" name="VHIM Style Constraints">Overall VHIM Model Constraints
+         	<category name="VHIM" id="vhim">VHIM Style Constraints</category>
+		</category>
+
+		<constraintProvider>
+			<package namespaceUri="http://www.eclipse.org/uml2/2.0.0/UML"/>
+			<constraints categories="gov.va.vhim.plugin.validation/vhim">
+			
+				<constraint class="gov.va.vhim.plugin.validation.constraints.vhim.MissingPackageComment" id="missingpackagecomment" lang="Java" mode="Batch" name="Missing Package Comment" severity="WARNING" statusCode="11">
+					<description>All UML Packages need to have supporting documentation.</description>
+					<message>{0} package  is missing required comment</message>
+					<target class="Package"/>
+				</constraint>			
+			
+				<constraint class="gov.va.vhim.plugin.validation.constraints.vhim.MissingClassComment" id="missingclasscomment" lang="Java" mode="Batch" name="Missing Class Comment" severity="WARNING" statusCode="11">
+					<description>All UML Classes need to have supporting documentation.</description>
+					<message>{0} class is missing required comment</message>
+					<target class="Class"/>
+				</constraint>
+				
+				<constraint class="gov.va.vhim.plugin.validation.constraints.vhim.MissingPropertyComment" id="missingpropertycomment" lang="Java" mode="Batch" name="Missing Property Comment" severity="WARNING" statusCode="11">
+					<description>All UML Properties need to have supporting documentation.</description>
+					<message>{0} property is missing required comment</message>
+					<target class="Property"/>
+				</constraint>
+				
+				<constraint class="gov.va.vhim.plugin.validation.constraints.uml.InvalidDefaultValue" id="invaliddefaultvalue" lang="Java" mode="Batch" name="Invalid Default Value" severity="ERROR" statusCode="11">
+					<description>No default values allowed for complex type attributes, only simple typed attributes.</description>
+					<message>{0}.{1}.{2} class has invalid default value. Default values are only allowed on simple types, not complex definitions.</message>
+					<target class="Property"/>
+				</constraint>
+				
+				<constraint class="gov.va.vhim.plugin.validation.constraints.vhim.MissingPackageStereotype" id="invalidpackagedefinition" lang="Java" mode="Batch" name="Invalid Package Definition" severity="WARNING" statusCode="11">
+					<description>All packages need to have the VHIMPackage stereotype.</description>
+					<message>{0} package is missing proper VHIMPackage stereotype!</message>
+					<target class="Package"/>
+				</constraint>
+				
+				<constraint class="gov.va.vhim.plugin.validation.constraints.hl7.ParticipationConstraint" id="participationconstraint" lang="Java" mode="Batch" name="Participation Constraint" severity="WARNING" statusCode="11">
+					<description>HL7 Act-Participation-Role Pattern alignment required for this relationship</description>
+					<message>The {0} association or property withtin {1} class is not properly stereotyped or stereotype is not completed correctly to support HL7 Act-Participation-Role-Entity.</message>
+					<target class="Property"/>
+					<target class="Association"/>
+				</constraint>
+				
+				<constraint class="gov.va.vhim.plugin.validation.constraints.vhim.MissingVHIMTimePropertyStereoType" id="missingVhimTimePropertySteroType" lang="Java" mode="Batch" name="Missing VHIM TimeProperty Stereotype" severity="WARNING" statusCode="11">
+					<description>All VHIM Domains (excluding Common and Base Datatype ) whose classes had attributes that had ‘PointInTime’ DataType should have VHIMTimeProperty stereotype.</description>
+					<message>{0} attribute is missing proper VHIMTimeProperty stereotype!</message>
+					<target class="Property"/>
+				</constraint>
+			
+<!--			
+				<constraint class="gov.va.vhim.plugin.validation.constraints.vhim.InvalidPackageDependency" id="invalidpackagedependency" lang="Java" mode="Batch" name="Invalid Package Dependency" severity="WARNING" statusCode="11">
+					<description>Domain packages can not reference other domain packages.</description>
+					<message>{0} package has invalid reference to package {1} based on property {2}</message>
+					<target class="Package"/>
+				</constraint>
+-->
+	
+			</constraints>
+
+		</constraintProvider>
+	</extension>
+</plugin>
