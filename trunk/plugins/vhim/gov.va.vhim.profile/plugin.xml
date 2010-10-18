@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+	<!-- Define Path Map for VHIM and MDA Profiles -->
+	<extension point="org.eclipse.emf.ecore.uri_mapping">
+		<mapping source="pathmap://VHIM_PROFILES/" target="profiles/"/>
+	</extension>
+	
+	<extension id="VHIMProfiles" name="VHIM Profiles" point="org.eclipse.gmf.runtime.emf.core.Pathmaps">
+		<pathmap name="VHIM_PROFILES" path="profiles" plugin="gov.va.vhim.profile"/>
+	</extension>
+	
+
+	
+	<!-- Define VHIM  Tab  Extension -->
+	<extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+		<propertyTabs contributorId="com.ibm.xtools.modeler.ui.properties">
+			<propertyTab category="Core" afterTab="modeler.property.tab.GeneralPropertySection" id="property.tab.gov.va.vhim" label="VHIM">           
+         </propertyTab>
+		</propertyTabs>
+	</extension>
+	
+	<!-- Define MDA Tab  Extension -->
+	<extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+		<propertyTabs contributorId="com.ibm.xtools.modeler.ui.properties">
+			<propertyTab category="Core" afterTab="modeler.property.tab.GeneralPropertySection" id="property.tab.gov.va.mda" label="MDA">           
+         </propertyTab>
+		</propertyTabs>
+	</extension>
+	
+	<!-- Define VHIM Tabbed Property Sections -->
+	<extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+		<propertySections contributorId="com.ibm.xtools.modeler.ui.properties">
+			<propertySection class="gov.va.vhim.profile.ui.properties.VHIMClassSection" id="property.section.vhim.class" tab="property.tab.gov.va.vhim" filter="gov.va.vhim.profile.ui.filters.VHIMClassFilter">               
+	      </propertySection>
+		</propertySections>
+	</extension>
+	
+	<extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+		<propertySections contributorId="com.ibm.xtools.modeler.ui.properties">
+			<propertySection class="gov.va.vhim.profile.ui.properties.VHIMPropertySection" id="property.section.vhim.property" tab="property.tab.gov.va.vhim" filter="gov.va.vhim.profile.ui.filters.VHIMPropertyFilter">               
+	      </propertySection>
+		</propertySections>
+	</extension>
+	
+	<!-- Define MDA Sections -->
+	<extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+		<propertySections contributorId="com.ibm.xtools.modeler.ui.properties">
+			<propertySection class="gov.va.vhim.profile.ui.properties.MDASection" id="property.section.mda.package" tab="property.tab.gov.va.mda" filter="gov.va.vhim.profile.ui.filters.MDAPackageFilter">               
+	      </propertySection>
+		</propertySections>
+	</extension>
+	
+	<extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+		<propertySections contributorId="com.ibm.xtools.modeler.ui.properties">
+			<propertySection class="gov.va.vhim.profile.ui.properties.MDASection" id="property.section.mda.class" tab="property.tab.gov.va.mda" filter="gov.va.vhim.profile.ui.filters.MDAClassFilter">               
+	      </propertySection>
+		</propertySections>
+	</extension>
+	
+	<extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+		<propertySections contributorId="com.ibm.xtools.modeler.ui.properties">
+			<propertySection class="gov.va.vhim.profile.ui.properties.MDASection" id="property.section.mda.property" tab="property.tab.gov.va.mda" filter="gov.va.vhim.profile.ui.filters.MDAPropertyFilter">               
+	      </propertySection>
+		</propertySections>
+	</extension>
+	
+</plugin>
