@@ -144,8 +144,8 @@ public class CopyModelTask extends VHIMBaseTask {
 
 				if (toFile != null)
 				{
-				model = (Model) UMLUtil.load(resourceSet, URI
-						.createFileURI(toFile.getAbsolutePath()), UMLPackage.Literals.MODEL);
+//				model = (Model) UMLUtil.load(resourceSet, URI
+//						.createFileURI(toFile.getAbsolutePath()), UMLPackage.Literals.MODEL);
 				}
 				if (model != null) {
 
