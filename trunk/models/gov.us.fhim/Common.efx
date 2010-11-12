@@ -3223,7 +3223,7 @@
             <styles xmi:type="umlnotation:UMLShapeCompartmentStyle" xmi:id="_xXcBrR2JEd-4VI-lpu-JjQ"/>
           </children>
           <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_xXcBrh2JEd-4VI-lpu-JjQ" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8519679" lineColor="3342489" showStereotype="Text"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xXcBrx2JEd-4VI-lpu-JjQ" x="9510" y="1268"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xXcBrx2JEd-4VI-lpu-JjQ" x="8876" y="951"/>
         </children>
         <children xmi:id="_xXcBsB2JEd-4VI-lpu-JjQ" element="_6chccCQuEdy5q9ASLdZxEA">
           <children xmi:id="_xXcBsR2JEd-4VI-lpu-JjQ" type="ImageCompartment">
@@ -3996,7 +3996,10 @@ Definition of Role:
       <ownedAttribute xmi:id="_230RkAJFEd-xr_JAHIdixg" name="name" visibility="public">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_kTup4nWJEd-2SM6vxH_lvw" name="organizationalProvider" visibility="public">
+      <ownedAttribute xmi:id="_kTup4nWJEd-2SM6vxH_lvw" name="asOrganizationalProvider" visibility="public">
+        <ownedComment xmi:id="_Yno6QO6rEd-crcWiXVDZrQ" annotatedElement="_kTup4nWJEd-2SM6vxH_lvw">
+          <body>Represents information about an organization which is authorized to provide health care services.</body>
+        </ownedComment>
         <type xmi:type="uml:Class" href="PersonDemographics.efx#_HC458BscEd--ZY2-pbJ-Pw?FHIM/PersonDemographics/OrganizationalProvider?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kTup5HWJEd-2SM6vxH_lvw" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_kTup43WJEd-2SM6vxH_lvw" value="1"/>
@@ -5049,6 +5052,18 @@ instruction to another person, typically the patient.</body>
       <ownedAttribute xmi:id="_lWEW0R2IEd-4VI-lpu-JjQ" name="name" visibility="public">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="__zk2oO6dEd-crcWiXVDZrQ" name="workAddress" visibility="public">
+        <ownedComment xmi:id="__zk2oe6dEd-crcWiXVDZrQ" annotatedElement="__zk2oO6dEd-crcWiXVDZrQ">
+          <body>The person's office address.  First choice for business related contacts during business hours.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B6418A8DCD02C2?FHIM/Datatypes/Address?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="__zldsO6dEd-crcWiXVDZrQ" name="workPhone" visibility="public">
+        <ownedComment xmi:id="__zldse6dEd-crcWiXVDZrQ" annotatedElement="__zldsO6dEd-crcWiXVDZrQ">
+          <body>The phone number for a person at their office location. First choice for business related contacts during business hours.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_fImbAAEYEd-ZUM5xZsXWyw?FHIM/Datatypes/Telecommunications?"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_mah68B18Ed-4VI-lpu-JjQ" memberEnd="_mah68R18Ed-4VI-lpu-JjQ _mah69B18Ed-4VI-lpu-JjQ">
       <ownedEnd xmi:id="_mah69B18Ed-4VI-lpu-JjQ" name="" visibility="private" type="_2I7i8B17Ed-4VI-lpu-JjQ" association="_mah68B18Ed-4VI-lpu-JjQ"/>
@@ -5386,4 +5401,7 @@ sugar.&quot; - HL7 V3</body>
   <Default:Documentation xmi:id="_eRE-EewxEd-kfrmay8LxLw" base_Comment="_eRE-EOwxEd-kfrmay8LxLw"/>
   <Default:Documentation xmi:id="_butSgewyEd-kfrmay8LxLw" base_Comment="_butSgOwyEd-kfrmay8LxLw"/>
   <Default:Documentation xmi:id="_txV0sOw2Ed-kfrmay8LxLw" base_Comment="_txSxYOw2Ed-kfrmay8LxLw"/>
+  <Default:Documentation xmi:id="__zldsu6dEd-crcWiXVDZrQ" base_Comment="__zk2oe6dEd-crcWiXVDZrQ"/>
+  <Default:Documentation xmi:id="__zmEwO6dEd-crcWiXVDZrQ" base_Comment="__zldse6dEd-crcWiXVDZrQ"/>
+  <Default:Documentation xmi:id="_YnyrQO6rEd-crcWiXVDZrQ" base_Comment="_Yno6QO6rEd-crcWiXVDZrQ"/>
 </xmi:XMI>
