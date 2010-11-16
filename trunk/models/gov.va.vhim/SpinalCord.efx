@@ -2,7 +2,7 @@
 <!--xtools2_universal_type_manager-->
 <?com.ibm.xtools.emf.core.signature <signature id="com.ibm.xtools.uml.msl.fragment" version="7.0.0"><feature description="" name="com.ibm.xtools.ruml.feature" url="" version="7.0.0"/></signature>?>
 <?com.ibm.xtools.emf.core.signature <signature id="com.ibm.xtools.mmi.ui.signatures.diagram" version="7.0.0"><feature description="" name="Rational Modeling Platform (com.ibm.xtools.rmp)" url="" version="7.0.0"/></signature>?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Default="http:///schemas/Default/1" xmlns:RIM="http:///schemas/RIM/_fvnwgAH4Ed6VH-9W1IVKXA/4" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.2/Umlnotation" xsi:schemaLocation="http:///schemas/Default/1 pathmap://UML2_MSL_PROFILES/Default.epx#_IN8k8MmBEdqBcN1R6EvWUw?Default/Default? http:///schemas/RIM/_fvnwgAH4Ed6VH-9W1IVKXA/4 pathmap://HL7_PROFILES/RIM.profile.uml#_fvsB8AH4Ed6VH-9W1IVKXA">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Default="http:///schemas/Default/1" xmlns:RIM="http:///schemas/RIM/_fvnwgAH4Ed6VH-9W1IVKXA/4" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.2/Umlnotation" xmlns:xsd="http:///schemas/XMLSchema/_eC-IEA-uEd2ng-v1tnpITw/3" xsi:schemaLocation="http:///schemas/Default/1 pathmap://UML2_MSL_PROFILES/Default.epx#_IN8k8MmBEdqBcN1R6EvWUw?Default/Default? http:///schemas/RIM/_fvnwgAH4Ed6VH-9W1IVKXA/4 pathmap://HL7_PROFILES/RIM.profile.uml#_fvsB8AH4Ed6VH-9W1IVKXA http:///schemas/XMLSchema/_eC-IEA-uEd2ng-v1tnpITw/3 pathmap://XMLmodeling_PROFILES/XMLSchema.profile.uml#_eDH5EA-uEd2ng-v1tnpITw">
   <uml:Package xmi:id="__tLSgMtKEdyaEqBbyq3Okw" name="SpinalCord">
     <eAnnotations xmi:id="_MKBcQNTkEdya-bU--xfX5g" source="com.ibm.xtools.uml.msl.fragments"/>
     <eAnnotations xmi:id="_MI4MwNTkEdya-bU--xfX5g" source="com.ibm.xtools.uml.msl.fragmentContainer">
@@ -3014,6 +3014,15 @@
       <generalization xmi:id="_iOvvgMtTEdyqc6mXtT1d5g">
         <general xmi:type="uml:Class" href="Common.efx#_420A62FD03B6428B45E201B4?VHIM/Common/PatientLite?"/>
       </generalization>
+      <ownedAttribute xmi:id="_ryku0MtWEdyqc6mXtT1d5g" name="patient" visibility="public">
+        <ownedComment xmi:id="_WyQAYBTREd6hYuDrrCr7RQ" annotatedElement="_ryku0MtWEdyqc6mXtT1d5g">
+          <body>Association to the class that identifies the Patient.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Common.efx#_420A62FD03B6428B45E201B4?VHIM/Common/PatientLite?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ryku0stWEdyqc6mXtT1d5g" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ryku0ctWEdyqc6mXtT1d5g"/>
+        <association href="VHIM.emx#_ryeoMMtWEdyqc6mXtT1d5g?VHIM/%3CAssociation%3E?"/>
+      </ownedAttribute>
       <ownedAttribute xmi:id="_4lbWQMtWEdyqc6mXtT1d5g" name="division" visibility="public" association="_4lVPoMtWEdyqc6mXtT1d5g">
         <ownedComment xmi:id="_YoI98O67EdyeTtxr2InFDA" annotatedElement="_4lbWQMtWEdyqc6mXtT1d5g">
           <body>Contains the Division with in the VA which provided the patient Education.&#xD;
@@ -3036,7 +3045,7 @@
 &#xD;
 </body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/Datatypes/PointInTime?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/BaseDatatypes/PointInTime?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_k298sMtYEdyqc6mXtT1d5g" name="scoreType" visibility="public">
         <ownedComment xmi:id="_kh8X0PTtEdy5Wqkr80CIPQ" annotatedElement="_k298sMtYEdyqc6mXtT1d5g">
@@ -3046,7 +3055,7 @@
           <body>Contains the Code Set that identifies the tyepe of score for the Assessment tool.&#xD;
 </body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?VHIM/Datatypes/Code?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_OwVa0D-BEdy0ooNeIA2VyA?VHIM/BaseDatatypes/VACode?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_oHwdUM6gEdyce4IOUiRz1Q" name="serviceDeliveryLocation" visibility="public" association="_oHqWsM6gEdyce4IOUiRz1Q">
         <ownedComment xmi:id="_KUpzcPUMEdy5Wqkr80CIPQ" annotatedElement="_oHwdUM6gEdyce4IOUiRz1Q">
@@ -3067,7 +3076,7 @@
           <body>Unique identifier for the Spinal Cord event.&#xD;
 </body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?VHIM/Datatypes/Id?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_eE_dREeDEdyIZay-9vWL7Q?VHIM/BaseDatatypes/HL72EntityIdentifier?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_1Ns0Uc6qEdyXMP2BMfWZfQ" name="medicalComplications" visibility="public" type="_iAW1sM6qEdyXMP2BMfWZfQ" association="_1Ns0UM6qEdyXMP2BMfWZfQ">
         <ownedComment xmi:id="_csle8PUKEdy5Wqkr80CIPQ" annotatedElement="_1Ns0Uc6qEdyXMP2BMfWZfQ">
@@ -3087,7 +3096,7 @@
         <ownedComment xmi:id="_CvP5oAqgEd6qw9bIVZ5Htg" annotatedElement="_M0YtcMtYEdyqc6mXtT1d5g">
           <body>Contains the codes to identify the tyeps of Epsiode of Care for the veteran i,e inpatient, rehab etc. </body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?VHIM/Datatypes/Code?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_OwVa0D-BEdy0ooNeIA2VyA?VHIM/BaseDatatypes/VACode?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_Pj00IdM4EdyWh-xi-xzdNQ" name="SpinalCordPatient" visibility="public" association="_Pj00INM4EdyWh-xi-xzdNQ">
         <ownedComment xmi:id="_FB-q0PUKEdy5Wqkr80CIPQ" annotatedElement="_Pj00IdM4EdyWh-xi-xzdNQ">
@@ -3171,7 +3180,7 @@
         <ownedComment xmi:id="_xFBeIAqgEd6qw9bIVZ5Htg" annotatedElement="_YQoWwNM5EdyWh-xi-xzdNQ">
           <body>Contains the codes that identify the type Assessment Form the Patient informations is being gathered for. ie. ASIA, FIN FAM CHARTSFetc</body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?VHIM/Datatypes/Code?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_OwVa0D-BEdy0ooNeIA2VyA?VHIM/BaseDatatypes/VACode?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_KggtUNTPEdya-bU--xfX5g" name="id" visibility="public">
         <ownedComment xmi:id="_lduaEPBMEdym3-emZ4rhQw" annotatedElement="_KggtUNTPEdya-bU--xfX5g">
@@ -3181,7 +3190,7 @@
           <body>Unique identifier for the SpinalCordAssessment &#xD;
 </body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?VHIM/Datatypes/Id?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_eE_dREeDEdyIZay-9vWL7Q?VHIM/BaseDatatypes/HL72EntityIdentifier?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_777kUNWkEdyMSoGS-ULFTg" name="remarks" visibility="public">
         <ownedComment xmi:id="_KHyjsPBMEdym3-emZ4rhQw" annotatedElement="_777kUNWkEdyMSoGS-ULFTg">
@@ -3343,7 +3352,7 @@
         <ownedComment xmi:id="_uUVCsAqhEd6qw9bIVZ5Htg" annotatedElement="_TG1bUOu3EdykfYQ46IUXCQ">
           <body>Contains the BMI dcore for the veteran.</body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B641886F630221?VHIM/Datatypes/PhysicalQuantity?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B641886F630221?VHIM/BaseDatatypes/PhysicalQuantity?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_ktpD8AjuEd6pUMCNq3NSwg" name="impairmentScale" visibility="public">
         <ownedComment xmi:id="_1OcVIAqhEd6qw9bIVZ5Htg" annotatedElement="_ktpD8AjuEd6pUMCNq3NSwg">
@@ -3368,7 +3377,7 @@
         <ownedComment xmi:id="_IuNtsAypEd6aYNLI5II8og" annotatedElement="_-gmz4MtZEdyqc6mXtT1d5g">
           <body>Contains date that the veteran supplied the assessment information.</body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/Datatypes/PointInTime?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/BaseDatatypes/PointInTime?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_ntOl4MtdEdyqc6mXtT1d5g" name="assessmentQuestion" visibility="public">
         <ownedComment xmi:id="_f1dRYPBJEdym3-emZ4rhQw" annotatedElement="_ntOl4MtdEdyqc6mXtT1d5g">
@@ -3378,7 +3387,7 @@
           <body>Contains the codeset that identifies the Assessment Question for the section and Form. ie, SWLS is the form, Education and Occupation is the section and the Assessment question Is Student Y or N. &#xD;
 </body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?VHIM/Datatypes/Code?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_OwVa0D-BEdy0ooNeIA2VyA?VHIM/BaseDatatypes/VACode?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_rxs8MNAkEdyHyuMbpKEXlg" name="count" visibility="public">
         <ownedComment xmi:id="_kTlpkPBJEdym3-emZ4rhQw" annotatedElement="_rxs8MNAkEdyHyuMbpKEXlg">
@@ -3399,7 +3408,7 @@
           <body>Unique identifier assign to the assessment question&#xD;
 </body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?VHIM/Datatypes/Id?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_eE_dREeDEdyIZay-9vWL7Q?VHIM/BaseDatatypes/HL72EntityIdentifier?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_jWQXgOrLEdyMaYi-M8wTQQ" name="score" visibility="public">
         <ownedComment xmi:id="_wPVp4PBJEdym3-emZ4rhQw" annotatedElement="_jWQXgOrLEdyMaYi-M8wTQQ">
@@ -3468,7 +3477,7 @@
 &#xD;
 </body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_eEZAR0eDEdyIZay-9vWL7Q?VHIM/Datatypes/NullableBoolean?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_eEZAR0eDEdyIZay-9vWL7Q?VHIM/BaseDatatypes/NullableBoolean?"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_0larMMtbEdyqc6mXtT1d5g" name="SpinalCordAssessmentCodedResponse">
@@ -3490,7 +3499,7 @@
 &#xD;
 </body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?VHIM/Datatypes/Code?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_OwVa0D-BEdy0ooNeIA2VyA?VHIM/BaseDatatypes/VACode?"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="__zJScMtcEdyqc6mXtT1d5g" name="SpinalCordAssessmentStringResponse">
@@ -3578,7 +3587,17 @@
 &#xD;
 </body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?VHIM/Datatypes/Id?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_eE_dREeDEdyIZay-9vWL7Q?VHIM/BaseDatatypes/HL72EntityIdentifier?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ftDYYeFYEdyikqVARkHmqw" name="treatmentFactor" visibility="public">
+        <ownedComment xmi:id="_6cUR0O61EdyeTtxr2InFDA" annotatedElement="_ftDYYeFYEdyikqVARkHmqw">
+          <body>Indicates whether the veterans injury is service related.&#xD;
+</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Common.efx#_420A62FD03B641BDF1430168?VHIM/Common/TreatmentFactor?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ftJfAeFYEdyikqVARkHmqw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ftJfAOFYEdyikqVARkHmqw" value="1"/>
+        <association href="VHIM.emx#_ftDYYOFYEdyikqVARkHmqw?VHIM/%3CAssociation%3E?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_kWKVgerwEdyMaYi-M8wTQQ" name="bcr" visibility="public" type="_5PaRwOrvEdyMaYi-M8wTQQ" association="_kWKVgOrwEdyMaYi-M8wTQQ">
         <ownedComment xmi:id="_c7pLcPUGEdy5Wqkr80CIPQ" annotatedElement="_kWKVgerwEdyMaYi-M8wTQQ">
@@ -3599,7 +3618,7 @@
           <body>Contains the Date the Episode of Care (EOC) began for the veteran.&#xD;
 </body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/Datatypes/PointInTime?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/BaseDatatypes/PointInTime?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_-XZkkNDrEdyG7OHWfYGHvg" name="eocClosedDate" visibility="public">
         <ownedComment xmi:id="_jkLqMO66EdyeTtxr2InFDA" annotatedElement="_-XZkkNDrEdyG7OHWfYGHvg">
@@ -3609,7 +3628,7 @@
         <ownedComment xmi:id="_CNizQAm6Ed6I04ySc2CGmQ" annotatedElement="_-XZkkNDrEdyG7OHWfYGHvg">
           <body>Contains the Date the Episode of Care (EOC) closed for the veteran</body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/Datatypes/PointInTime?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/BaseDatatypes/PointInTime?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_G54jANDsEdyG7OHWfYGHvg" name="eocFollowUpDate" visibility="public">
         <ownedComment xmi:id="_mSGB8O66EdyeTtxr2InFDA" annotatedElement="_G54jANDsEdyG7OHWfYGHvg">
@@ -3621,7 +3640,7 @@
 &#xD;
 </body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/Datatypes/PointInTime?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/BaseDatatypes/PointInTime?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_kgf7UQpYEd69CMBilJHYGQ" name="spinalcordevent" visibility="public" type="_Nl2dEMtMEdyaEqBbyq3Okw" association="_kgf7UApYEd69CMBilJHYGQ">
         <ownedComment xmi:id="_MTv_EAyrEd6aYNLI5II8og" annotatedElement="_kgf7UQpYEd69CMBilJHYGQ">
@@ -3646,7 +3665,7 @@
 &#xD;
 </body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?VHIM/Datatypes/Code?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_OwVa0D-BEdy0ooNeIA2VyA?VHIM/BaseDatatypes/VACode?"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_1Ns0UM6qEdyXMP2BMfWZfQ" memberEnd="_1Ns0Uc6qEdyXMP2BMfWZfQ _1Ny68M6qEdyXMP2BMfWZfQ">
@@ -3673,7 +3692,7 @@
 &#xD;
 </body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?VHIM/Datatypes/Code?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_OwVa0D-BEdy0ooNeIA2VyA?VHIM/BaseDatatypes/VACode?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_dMEoMNAnEdyHyuMbpKEXlg" name="etiologyNonTrauma" visibility="public">
         <ownedComment xmi:id="_poMtAO64EdyeTtxr2InFDA" annotatedElement="_dMEoMNAnEdyHyuMbpKEXlg">
@@ -3682,7 +3701,7 @@
         <ownedComment xmi:id="_eKg4oAmzEd6I04ySc2CGmQ" annotatedElement="_dMEoMNAnEdyHyuMbpKEXlg">
           <body>Contains code set indicating the nature of non-traumatic injury suffered by veteran</body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?VHIM/Datatypes/Code?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_OwVa0D-BEdy0ooNeIA2VyA?VHIM/BaseDatatypes/VACode?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_nIzXENAnEdyHyuMbpKEXlg" name="EtiologyOther" visibility="public">
         <ownedComment xmi:id="_52C0oO64EdyeTtxr2InFDA" annotatedElement="_nIzXENAnEdyHyuMbpKEXlg">
@@ -3705,7 +3724,7 @@ Contains information in textual format identifying other complicating health iss
 &#xD;
 </body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?VHIM/Datatypes/Code?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_OwVa0D-BEdy0ooNeIA2VyA?VHIM/BaseDatatypes/VACode?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="__TZ54NAnEdyHyuMbpKEXlg" name="onsetDate" visibility="public">
         <ownedComment xmi:id="_MPVgIO65EdyeTtxr2InFDA" annotatedElement="__TZ54NAnEdyHyuMbpKEXlg">
@@ -3715,7 +3734,7 @@ Contains information in textual format identifying other complicating health iss
           <body>Contains the date of the etiology injury for the veteran.&#xD;
 </body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/Datatypes/PointInTime?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/BaseDatatypes/PointInTime?"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_WHV2kNDqEdyG7OHWfYGHvg" name="SpinalCordMedicalCentersVisted">
@@ -3733,7 +3752,7 @@ Contains information in textual format identifying other complicating health iss
           <body>Contains code set that provides a list of the VAMC visted by the veteran. &#xD;
 </body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?VHIM/Datatypes/Code?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_OwVa0D-BEdy0ooNeIA2VyA?VHIM/BaseDatatypes/VACode?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Yu0DIe66EdyeTtxr2InFDA" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Yu0DIO66EdyeTtxr2InFDA" value="1"/>
       </ownedAttribute>
@@ -3829,7 +3848,7 @@ Contains information in textual format identifying other complicating health iss
           <body>Unique identifier that identifies this Episode of care for the veteran.&#xD;
 </body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?VHIM/Datatypes/Id?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_eE_dREeDEdyIZay-9vWL7Q?VHIM/BaseDatatypes/HL72EntityIdentifier?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_vor_YNAlEdyHyuMbpKEXlg" name="registrationStatus" visibility="public">
         <ownedComment xmi:id="_Em6BEO63EdyeTtxr2InFDA" annotatedElement="_vor_YNAlEdyHyuMbpKEXlg">
@@ -3840,7 +3859,7 @@ Contains information in textual format identifying other complicating health iss
 &#xD;
 </body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?VHIM/Datatypes/Code?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_OwVa0D-BEdy0ooNeIA2VyA?VHIM/BaseDatatypes/VACode?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_NSLMwNAmEdyHyuMbpKEXlg" name="changedDate" visibility="public">
         <ownedComment xmi:id="_HWEgkO64EdyeTtxr2InFDA" annotatedElement="_NSLMwNAmEdyHyuMbpKEXlg">
@@ -3852,7 +3871,7 @@ Contains information in textual format identifying other complicating health iss
 &#xD;
 </body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/Datatypes/PointInTime?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/BaseDatatypes/PointInTime?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_I6UNEeSdEdyN994-DOk4MA" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_I6UNEOSdEdyN994-DOk4MA" value="1"/>
       </ownedAttribute>
@@ -3866,7 +3885,7 @@ Contains information in textual format identifying other complicating health iss
 &#xD;
 </body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/Datatypes/PointInTime?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/BaseDatatypes/PointInTime?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_ELVcsNApEdyHyuMbpKEXlg" name="amtVaUsed" visibility="public">
         <ownedComment xmi:id="_KAcHAO62EdyeTtxr2InFDA" annotatedElement="_ELVcsNApEdyHyuMbpKEXlg">
@@ -3890,7 +3909,7 @@ Contains information in textual format identifying other complicating health iss
 &#xD;
 </body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/Datatypes/PointInTime?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/BaseDatatypes/PointInTime?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_rK4QMfQoEdyKRIzAtE3HZw" name="militaryStatus" visibility="public" association="_rK4QMPQoEdyKRIzAtE3HZw">
         <ownedComment xmi:id="_v9viQPQoEdyKRIzAtE3HZw" annotatedElement="_rK4QMfQoEdyKRIzAtE3HZw">
@@ -3957,7 +3976,7 @@ Contains information in textual format identifying other complicating health iss
 &#xD;
 </body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/Datatypes/PointInTime?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/BaseDatatypes/PointInTime?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8wSiwe65EdyeTtxr2InFDA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8wSiwO65EdyeTtxr2InFDA"/>
       </ownedAttribute>
@@ -4011,7 +4030,7 @@ Contains information in textual format identifying other complicating health iss
         <ownedComment xmi:id="_XgIWMAmxEd6I04ySc2CGmQ" annotatedElement="_qzpJsNDuEdyG7OHWfYGHvg">
           <body>Contains the codeSet that identifies where in the VA where additional care was provided to the veteran</body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?VHIM/Datatypes/Code?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_OwVa0D-BEdy0ooNeIA2VyA?VHIM/BaseDatatypes/VACode?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_jN65ANDvEdyG7OHWfYGHvg" name="initialRehabSite" visibility="public">
         <ownedComment xmi:id="_AVDFIO7JEdyeTtxr2InFDA" annotatedElement="_jN65ANDvEdyG7OHWfYGHvg">
@@ -4021,7 +4040,7 @@ Contains information in textual format identifying other complicating health iss
         <ownedComment xmi:id="_aicQoAmxEd6I04ySc2CGmQ" annotatedElement="_jN65ANDvEdyG7OHWfYGHvg">
           <body>Contains the code set that identifies the veterans initial rehabilitation site</body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?VHIM/Datatypes/Code?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_OwVa0D-BEdy0ooNeIA2VyA?VHIM/BaseDatatypes/VACode?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_ry38oNDvEdyG7OHWfYGHvg" name="initialRehabDischargeDate" visibility="public">
         <ownedComment xmi:id="_FbYs0O7JEdyeTtxr2InFDA" annotatedElement="_ry38oNDvEdyG7OHWfYGHvg">
@@ -4031,7 +4050,7 @@ Contains information in textual format identifying other complicating health iss
           <body>Contains the date veteran was discharged from rehabilitation.&#xD;
 </body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/Datatypes/PointInTime?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/BaseDatatypes/PointInTime?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_MYs_UNDwEdyG7OHWfYGHvg" name="remarks" visibility="public">
         <ownedComment xmi:id="_b7akMO7JEdyeTtxr2InFDA" annotatedElement="_MYs_UNDwEdyG7OHWfYGHvg">
@@ -4054,7 +4073,7 @@ Contains information in textual format identifying other complicating health iss
           <body>Contains uniquie identifier for this ancillary Registration event.&#xD;
 </body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?VHIM/Datatypes/Id?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_eE_dREeDEdyIZay-9vWL7Q?VHIM/BaseDatatypes/HL72EntityIdentifier?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_TZNvEO7IEdyeTtxr2InFDA" name="nonVamcCare" visibility="public">
         <ownedComment xmi:id="_scmNUPUFEdy5Wqkr80CIPQ" annotatedElement="_TZNvEO7IEdyeTtxr2InFDA">
@@ -4178,7 +4197,7 @@ This class servers the purpose of the Header.</body>
           <body>Contains the date the assistant care for the veteran was interrupted.&#xD;
 </body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/Datatypes/PointInTime?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/BaseDatatypes/PointInTime?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_g8RmQNZwEdyksYmSx-_jaA" name="attendantLossDate" visibility="public">
         <ownedComment xmi:id="_Ch40APUHEdy5Wqkr80CIPQ" annotatedElement="_g8RmQNZwEdyksYmSx-_jaA">
@@ -4190,7 +4209,7 @@ This class servers the purpose of the Header.</body>
 &#xD;
 </body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/Datatypes/PointInTime?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/BaseDatatypes/PointInTime?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_jDSQANAjEdyHyuMbpKEXlg" name="hours" visibility="public">
         <ownedComment xmi:id="_yo5VoO6xEdyeTtxr2InFDA" annotatedElement="_jDSQANAjEdyHyuMbpKEXlg">
@@ -4257,7 +4276,7 @@ This class servers the purpose of the Header.</body>
 &#xD;
 </body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/Datatypes/PointInTime?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/BaseDatatypes/PointInTime?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_ds0O0M6oEdyXMP2BMfWZfQ" name="offeredDate" visibility="public">
         <ownedComment xmi:id="_Wb6o4O65EdyeTtxr2InFDA" annotatedElement="_ds0O0M6oEdyXMP2BMfWZfQ">
@@ -4267,7 +4286,7 @@ This class servers the purpose of the Header.</body>
         <ownedComment xmi:id="_H_Le4AmzEd6I04ySc2CGmQ" annotatedElement="_ds0O0M6oEdyXMP2BMfWZfQ">
           <body>Contains the last AE date offered to the veteran</body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/Datatypes/PointInTime?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/BaseDatatypes/PointInTime?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_86xfoM6oEdyXMP2BMfWZfQ" name="receivedDate" visibility="public">
         <ownedComment xmi:id="_YJRikO65EdyeTtxr2InFDA" annotatedElement="_86xfoM6oEdyXMP2BMfWZfQ">
@@ -4277,7 +4296,7 @@ This class servers the purpose of the Header.</body>
         <ownedComment xmi:id="_KwzR8AmzEd6I04ySc2CGmQ" annotatedElement="_86xfoM6oEdyXMP2BMfWZfQ">
           <body>Contains the last AE date received by the veteran</body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/Datatypes/PointInTime?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/BaseDatatypes/PointInTime?"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_362usNv-Edyfi6kBZ4pnVQ" name="SciAdministration">
@@ -4298,7 +4317,7 @@ This class servers the purpose of the Header.</body>
 &#xD;
 </body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?VHIM/Datatypes/Code?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_OwVa0D-BEdy0ooNeIA2VyA?VHIM/BaseDatatypes/VACode?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_B2IJcexwEdywLMnZ819tBQ" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_B2IJcOxwEdywLMnZ819tBQ"/>
       </ownedAttribute>
@@ -4329,7 +4348,7 @@ This class servers the purpose of the Header.</body>
         <ownedComment xmi:id="_RAgwgAyoEd6aYNLI5II8og" annotatedElement="_j3M-IOVJEdyzF5SPyilcgg">
           <body>Contains the code set that identifies the section with in the Assessment form. SWLS , ASIA, FIN,FAM,CHARTSF etc.</body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?VHIM/Datatypes/Code?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_OwVa0D-BEdy0ooNeIA2VyA?VHIM/BaseDatatypes/VACode?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_tV5rEObnEdypU-RfyZwJog" name="weight" visibility="public">
         <ownedComment xmi:id="_TSQE8PBIEdyTVPP0X_6Ueg" annotatedElement="_tV5rEObnEdypU-RfyZwJog">
@@ -4373,7 +4392,7 @@ This class servers the purpose of the Header.</body>
           <body>Contains the date/s when attendant care is interrupted for the veteran&#xD;
 </body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/Datatypes/PointInTime?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/BaseDatatypes/PointInTime?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_27wpcex2EdywLMnZ819tBQ" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_27wpcOx2EdywLMnZ819tBQ" value="1"/>
       </ownedAttribute>
@@ -4385,7 +4404,7 @@ This class servers the purpose of the Header.</body>
           <body>Contains the Returns date/s after attendant care is interrupted for the veteran&#xD;
 </body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/Datatypes/PointInTime?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/BaseDatatypes/PointInTime?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_G0xUAOrLEdyMaYi-M8wTQQ" name="motorScoreLeft" visibility="public">
         <ownedComment xmi:id="_V-XFAO7LEdyeTtxr2InFDA" annotatedElement="_G0xUAOrLEdyMaYi-M8wTQQ">
@@ -4501,7 +4520,7 @@ This class servers the purpose of the Header.</body>
 &#xD;
 </body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?VHIM/Datatypes/Code?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_OwVa0D-BEdy0ooNeIA2VyA?VHIM/BaseDatatypes/VACode?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_XK5zENDvEdyG7OHWfYGHvg" name="referralVa" visibility="public">
         <ownedComment xmi:id="_z5BCQO7IEdyeTtxr2InFDA" annotatedElement="_XK5zENDvEdyG7OHWfYGHvg">
@@ -4511,7 +4530,7 @@ This class servers the purpose of the Header.</body>
           <body>Contains code set that identifies the VA referring veteran for care&#xD;
 </body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?VHIM/Datatypes/Code?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_OwVa0D-BEdy0ooNeIA2VyA?VHIM/BaseDatatypes/VACode?"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_5PaRwOrvEdyMaYi-M8wTQQ" name="BCREvent">
@@ -4541,7 +4560,7 @@ This class servers the purpose of the Header.</body>
           <body>Contains the date veteran was certified for bowel care.&#xD;
 </body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/Datatypes/PointInTime?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/BaseDatatypes/PointInTime?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_Fd8MoNDwEdyG7OHWfYGHvg" name="bcrProvider" visibility="public">
         <ownedComment xmi:id="_WIMBUO7JEdyeTtxr2InFDA" annotatedElement="_Fd8MoNDwEdyG7OHWfYGHvg">
@@ -4828,7 +4847,7 @@ This class servers the purpose of the Header.&#xD;
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_5_5GgtNtEd2LKtFhp7NOvA" name="time">
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/Datatypes/PointInTime?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/BaseDatatypes/PointInTime?"/>
       </ownedAttribute>
       <ownedEnd xmi:id="_5_5Gg9NtEd2LKtFhp7NOvA" name="transcriber" association="_5_5GgNNtEd2LKtFhp7NOvA">
         <ownedComment xmi:id="_IXLUwErFEd6TsY-grAKeTQ" annotatedElement="_5_5Gg9NtEd2LKtFhp7NOvA">
@@ -4843,7 +4862,7 @@ This class servers the purpose of the Header.&#xD;
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_6ACQctNtEd2LKtFhp7NOvA" name="time">
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/Datatypes/PointInTime?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/BaseDatatypes/PointInTime?"/>
       </ownedAttribute>
       <ownedEnd xmi:id="_6ACQc9NtEd2LKtFhp7NOvA" name="author" association="_6ACQcNNtEd2LKtFhp7NOvA">
         <type xmi:type="uml:Class" href="Common.efx#_420A62FD03B6428B455F0341?VHIM/Common/PractitionerLite?"/>
@@ -4855,7 +4874,7 @@ This class servers the purpose of the Header.&#xD;
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_6N5GQtNtEd2LKtFhp7NOvA" name="time">
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/Datatypes/PointInTime?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/BaseDatatypes/PointInTime?"/>
       </ownedAttribute>
       <ownedEnd xmi:id="_6N5GQ9NtEd2LKtFhp7NOvA" name="provider" association="_6N5GQNNtEd2LKtFhp7NOvA">
         <ownedComment xmi:id="_VvGYIErFEd6TsY-grAKeTQ" annotatedElement="_6N5GQ9NtEd2LKtFhp7NOvA">
@@ -4872,7 +4891,7 @@ This class servers the purpose of the Header.&#xD;
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_6OC3QtNtEd2LKtFhp7NOvA" name="time">
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/Datatypes/PointInTime?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/BaseDatatypes/PointInTime?"/>
       </ownedAttribute>
       <ownedEnd xmi:id="_6OC3Q9NtEd2LKtFhp7NOvA" name="primaryProvider" association="_6OC3QNNtEd2LKtFhp7NOvA">
         <ownedComment xmi:id="_72h3oErEEd6TsY-grAKeTQ" annotatedElement="_6OC3Q9NtEd2LKtFhp7NOvA">
@@ -4889,7 +4908,7 @@ This class servers the purpose of the Header.&#xD;
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_6OC3StNtEd2LKtFhp7NOvA" name="time">
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/Datatypes/PointInTime?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B64244824602F5?VHIM/BaseDatatypes/PointInTime?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_VZRPADDPEd6pw4714nTwcg" name="attribute1" visibility="private"/>
       <ownedEnd xmi:id="_6OC3S9NtEd2LKtFhp7NOvA" name="practitioner" association="_6OC3SNNtEd2LKtFhp7NOvA">
@@ -4951,7 +4970,7 @@ This class servers the purpose of the Header.&#xD;
         <ownedComment xmi:id="_G3UeIFzlEd6WkeJA5pW9UA" annotatedElement="_9EEGQFziEd6sk8EXGngHbw">
           <body>Contains the Date range for the Patients Military Episode</body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B642387187004E?VHIM/Datatypes/TimeInterval?"/>
+        <type xmi:type="uml:Class" href="BaseDatatypes.efx#_420A62FD03B642387187004E?VHIM/BaseDatatypes/TimeInterval?"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_YU4WoFzkEd6WkeJA5pW9UA" memberEnd="_YVBgkFzkEd6WkeJA5pW9UA _YVLRklzkEd6WkeJA5pW9UA">
@@ -4961,6 +4980,7 @@ This class servers the purpose of the Header.&#xD;
       </ownedEnd>
     </packagedElement>
   </uml:Package>
+  <xsd:Schema xmi:id="_wEXPoLSvEd2HdLiXSQnQ7g" base_Package="__tLSgMtKEdyaEqBbyq3Okw"/>
   <Default:Documentation xmi:id="_k7qhAOrJEdyMaYi-M8wTQQ" base_Comment="_kyZQQOrJEdyMaYi-M8wTQQ"/>
   <Default:Documentation xmi:id="_VcuWYO6xEdyeTtxr2InFDA"/>
   <Default:Documentation xmi:id="_yo_cQO6xEdyeTtxr2InFDA"/>
@@ -5293,6 +5313,7 @@ This class servers the purpose of the Header.&#xD;
   <Default:Documentation xmi:id="_Z_rOYBJPEd6H7Pg7Gt0I_w" base_Comment="_Z_iEcBJPEd6H7Pg7Gt0I_w"/>
   <Default:Documentation xmi:id="_mo6GIBJXEd660vZgntW8EQ" base_Comment="_mow8MBJXEd660vZgntW8EQ"/>
   <Default:Documentation xmi:id="_sfrFMBJXEd660vZgntW8EQ" base_Comment="_sfh7QBJXEd660vZgntW8EQ"/>
+  <Default:Documentation xmi:id="_WyZKUBTREd6hYuDrrCr7RQ" base_Comment="_WyQAYBTREd6hYuDrrCr7RQ"/>
   <Default:Documentation xmi:id="_c9aV4DDPEd6pw4714nTwcg" base_Comment="_c9Gz4DDPEd6pw4714nTwcg"/>
   <Default:Documentation xmi:id="_72-jkErEEd6TsY-grAKeTQ" base_Comment="_72h3oErEEd6TsY-grAKeTQ"/>
   <Default:Documentation xmi:id="_IXePsErFEd6TsY-grAKeTQ" base_Comment="_IXLUwErFEd6TsY-grAKeTQ"/>
