@@ -3351,6 +3351,99 @@
     <ownedComment xmi:id="_JF08YBUZEd-97Y1kTQbraw" annotatedElement="_420A62FD03B6428B455F0341">
       <body>deprecate</body>
     </ownedComment>
+    <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B645919EF10138" name="DrugClass">
+      <eAnnotations xmi:id="_L7Ah0eLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+      <ownedComment xmi:id="_SmHaAMDFEd2bZLhrQFm3Sw" annotatedElement="_420A62FD03B645919EF10138">
+        <body>This class identifies the drug class that is associated with this allergy event.</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="_420A62FD03B645919EFB029D" name="code" visibility="public">
+        <ownedComment xmi:id="_l-hQgMFyEd2PX4K6YaHU4Q" annotatedElement="_420A62FD03B645919EFB029D">
+          <body>This contains the code set that identifies the type of drug class for this patient for this Allergy.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fLMgIfTuEdy4NNd432ztnw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fLMgIPTuEdy4NNd432ztnw" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_jToVcM_3Ed-YeMSrwW6svA" name="DrugIngredient">
+      <ownedComment xmi:id="_QCEKYO6REd-crcWiXVDZrQ" annotatedElement="_jToVcM_3Ed-YeMSrwW6svA">
+        <body>&quot;Relates a product (typically medicine) to a substance which it contains as an ingredient. Ingredients can be specified for&#xD;
+medicines or other products, including devices, but they always mean the same thing: a material (here: chemical substance)&#xD;
+in the make-up of the main product, not a structural part or content of a container, and not a material added later into a&#xD;
+device for operation. For medicines and food this is obvious. For devices, an example for ingredient would be latex in a&#xD;
+chest tube (but not an inhalant in a nebulizer device).&quot; - HL7 V3</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="_ApaHMM_5Ed-YeMSrwW6svA" name="effectiveTime" visibility="public">
+        <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B642387187004E?FHIM/Datatypes/TimeInterval?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IASOIc_5Ed-YeMSrwW6svA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IASOIM_5Ed-YeMSrwW6svA"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_LpGScM_6Ed-YeMSrwW6svA" name="isActiveMoiety" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_4gR5YM_3Ed-YeMSrwW6svA" name="isConfidential" visibility="public">
+        <ownedComment xmi:id="_UYWzgM_4Ed-YeMSrwW6svA" annotatedElement="_4gR5YM_3Ed-YeMSrwW6svA">
+          <body>Used to indicate that the manufacturer considers the presence of the ingredient a trade secret. This could be the case for&#xD;
+inactive ingredients.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_j-wOsM_6Ed-YeMSrwW6svA" name="quantity" visibility="public">
+        <ownedComment xmi:id="_x4rL4M_6Ed-YeMSrwW6svA" annotatedElement="_j-wOsM_6Ed-YeMSrwW6svA">
+          <body>&lt;p>&#xD;
+    A ratio specifying the strength of the ingredient as amount of ingredient substance (numerator) in amount of medicine&#xD;
+    (denominator).&lt;br />&#xD;
+    For example, a 50 mg tablet contains 50 mg in 1 tablet; a 50 mg per 5 mL syrup contains 50 mg in 5 mL. Note that for&#xD;
+    countable dose forms (&quot;eaches&quot;) no unit is required in the denominator, i.e., the denominator is a dimensionless number&#xD;
+    with unit 1 (one, the unity). The fact that the dose is per tablet, capsule, or whatever the dose form may be is&#xD;
+    recorded in the formCode of the scoping product, not in a unit of measure&#xD;
+&lt;/p>&#xD;
+&lt;p>&#xD;
+    Constraint: The quantity expressed by Role quantity numerator and denominator must always be one of the following kinds&#xD;
+    of quantity:&#xD;
+&lt;/p>&#xD;
+&lt;p>&#xD;
+    1. count&lt;br />&#xD;
+    2. amount of substance&lt;br />&#xD;
+    3. mass&lt;br />&#xD;
+    4. volume&lt;br />&#xD;
+    5. arbitrary unit (representing some extensive property of Entity)&#xD;
+&lt;/p>&#xD;
+&lt;p>&#xD;
+    In the given context these five quantities can be clearly discriminated by examination of the unit in use. An Entity is&#xD;
+    either countable (case 1) or not countable, in which case some unit is required (cases 2-4). This must be derivable&#xD;
+    from the Entity formCode. The dimension of the denominator must be the same as the dimension of all of the quantity&#xD;
+    numerators of the scoper's (i.e., the product's) played roles (e.g., package content, part of kit, etc.).&#xD;
+&lt;/p></body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_2xsJQM_6Ed-YeMSrwW6svA?FHIM/Datatypes/PhysicalQuantityRatio?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_fQ5a8NrbEd-fKY5dgJoxiA" name="medicinalProduct" visibility="public">
+        <type xmi:type="uml:Class" href="Pharmacy.efx#_oDnb8AF2EeC0SO5AWIN0Qg?FHIM/Pharmacy/MedicinalProduct?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fQ6pENrbEd-fKY5dgJoxiA" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fQ6CANrbEd-fKY5dgJoxiA"/>
+        <association href="Pharmacy.efx#_fQz7YNrbEd-fKY5dgJoxiA?FHIM/Pharmacy/%3CAssociation%3E?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_0-pXUDlCEeCOabXzDmEF2w" name="ingredient" visibility="public" type="_420A62FD03B645919F1600B4" association="_0-mUADlCEeCOabXzDmEF2w">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0-qlcDlCEeCOabXzDmEF2w" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0-p-YDlCEeCOabXzDmEF2w" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B645919F1600B4" name="Ingredient">
+      <eAnnotations xmi:id="_L7Ah1uLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+      <ownedComment xmi:id="_4JOPAMDFEd2bZLhrQFm3Sw" annotatedElement="_420A62FD03B645919F1600B4">
+        <body>This class identifies the compound or component of the drug that is associated with this allergy event.</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="_TkY4kM_7Ed-YeMSrwW6svA" name="uniqueIngredientIdentifier" visibility="public">
+        <eAnnotations xmi:id="_TkY4kc_7Ed-YeMSrwW6svA" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+        <ownedComment xmi:id="_Rgq-AAF3EeC0SO5AWIN0Qg" annotatedElement="_TkY4kM_7Ed-YeMSrwW6svA">
+          <body>Uniquely identifies the Ingredient.  For drugs in the United States, this code should be a UNII code (Unique Ingredient Identifier), which is issued by FDA.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_TkY4ks_7Ed-YeMSrwW6svA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_TkY4k8_7Ed-YeMSrwW6svA"/>
+      </ownedAttribute>
+    </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_1K8PEIlHEd-pqcFAwb-XNw" name="suspendAct_author" memberEnd="_1KyeH4lHEd-pqcFAwb-XNw _1K8PEYlHEd-pqcFAwb-XNw">
       <eAnnotations xmi:id="_DzK3gDLgEeC936sxFTzdsQ" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
       <ownedEnd xmi:id="_1K8PEYlHEd-pqcFAwb-XNw" name="" visibility="private" type="_1KyeEIlHEd-pqcFAwb-XNw" association="_1K8PEIlHEd-pqcFAwb-XNw"/>
@@ -4966,6 +5059,12 @@ location at which analyis is performed and the organization which performs such 
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zHY-QASeEeCTBOHqmJ3gaQ" value="1"/>
       </ownedEnd>
     </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_0-mUADlCEeCOabXzDmEF2w" memberEnd="_0-pXUDlCEeCOabXzDmEF2w _0-rzkDlCEeCOabXzDmEF2w">
+      <ownedEnd xmi:id="_0-rzkDlCEeCOabXzDmEF2w" name="" visibility="private" type="_jToVcM_3Ed-YeMSrwW6svA" association="_0-mUADlCEeCOabXzDmEF2w">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0-tBsTlCEeCOabXzDmEF2w" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0-tBsDlCEeCOabXzDmEF2w" value="1"/>
+      </ownedEnd>
+    </packagedElement>
   </uml:Package>
   <Default:Documentation xmi:id="_L8pggOLiEduGJrQyRGTO1A" base_Comment="_L8fvieLiEduGJrQyRGTO1A"/>
   <Default:Documentation xmi:id="_L8pgg-LiEduGJrQyRGTO1A" base_Comment="_L8pgguLiEduGJrQyRGTO1A"/>
@@ -5228,4 +5327,14 @@ location at which analyis is performed and the organization which performs such 
   <Default:Documentation xmi:id="_D7aawBH1EeCBuOUrBnIXmQ" base_Comment="_D7QpwBH1EeCBuOUrBnIXmQ"/>
   <RIM:Participation xmi:id="_IgWVYC1bEeCa156qmneW2Q" base_Association="_plOuoHo9Ed-44ra0dfiJCw"/>
   <RIM:Participation xmi:id="_G9HoEC1bEeCa156qmneW2Q" base_Association="_1K8PEIlHEd-pqcFAwb-XNw"/>
+  <RIM:ManufacturedMaterial xmi:id="_gXFbEFz7Ed6WkeJA5pW9UA" base_Class="_420A62FD03B645919F1600B4"/>
+  <Default:Documentation xmi:id="_4JYAAMDFEd2bZLhrQFm3Sw" base_Comment="_4JOPAMDFEd2bZLhrQFm3Sw"/>
+  <Default:Documentation xmi:id="_QCNUUO6REd-crcWiXVDZrQ" base_Comment="_QCEKYO6REd-crcWiXVDZrQ"/>
+  <RIM:Role xmi:id="_tmEKAO0AEd-KQpEfY1umCw" base_Class="_jToVcM_3Ed-YeMSrwW6svA"/>
+  <Default:Documentation xmi:id="_x4084M_6Ed-YeMSrwW6svA" base_Comment="_x4rL4M_6Ed-YeMSrwW6svA"/>
+  <Default:Documentation xmi:id="_UYWzgc_4Ed-YeMSrwW6svA" base_Comment="_UYWzgM_4Ed-YeMSrwW6svA"/>
+  <Default:Documentation xmi:id="_t4vEkDlCEeCOabXzDmEF2w" base_Comment="_Rgq-AAF3EeC0SO5AWIN0Qg"/>
+  <RIM:ManufacturedMaterial xmi:id="_c05GsFz7Ed6WkeJA5pW9UA" base_Class="_420A62FD03B645919EF10138"/>
+  <Default:Documentation xmi:id="_l-qacMFyEd2PX4K6YaHU4Q" base_Comment="_l-hQgMFyEd2PX4K6YaHU4Q"/>
+  <Default:Documentation xmi:id="_SmQj8MDFEd2bZLhrQFm3Sw" base_Comment="_SmHaAMDFEd2bZLhrQFm3Sw"/>
 </xmi:XMI>
