@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CDA="http://www.openhealthtools.org/mdht/schemas/cda/4" xmlns:Default="http:///schemas/Default/1" xmlns:HDF="http:///schemas/HDF/_D_mP4FwxEd63D_E2UJKpvQ/12" xmlns:RIM="http:///schemas/RIM/_fvnwgAH4Ed6VH-9W1IVKXA/4" xmlns:RIM_1="http:///schemas/RIM/_lzuokFUQEd2G4uvn7_HPtw/2" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:term="http://www.openhealthtools.org/mdht/schemas/term/1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xsi:schemaLocation="http:///schemas/Default/1 pathmap://UML2_MSL_PROFILES/Default.epx#_IN8k8MmBEdqBcN1R6EvWUw?Default/Default? http:///schemas/HDF/_D_mP4FwxEd63D_E2UJKpvQ/12 pathmap://HL7_PROFILES/HDF.profile.uml#_D_tkoFwxEd63D_E2UJKpvQ http:///schemas/RIM/_fvnwgAH4Ed6VH-9W1IVKXA/4 pathmap://HL7_PROFILES/RIM.profile.uml#_fvsB8AH4Ed6VH-9W1IVKXA http:///schemas/RIM/_lzuokFUQEd2G4uvn7_HPtw/2 pathmap://HL7_PROFILES/RIM.profile.uml#_lz4ZkFUQEd2G4uvn7_HPtw">
-  <uml:Model xmi:id="420A62FD03B6" name="fhimsi">
+  <uml:Package xmi:id="420A62FD03B6" name="fhimsi">
     <eAnnotations xmi:id="_cZgQkFGLEeC_CoQ6_-1CkA" source="com.ibm.xtools.uml.msl.fragments"/>
     <eAnnotations xmi:id="_8Ra5kOLoEdu45_8D8ShJ7w" source="uml2.diagrams"/>
     <ownedComment xmi:id="_ebwRYFIpEeCGWJtbMGbNYw">
@@ -13,6 +13,12 @@ NOTE : In order to leverage MDHT Terminology - two general updates were required
     </packageImport>
     <packageImport xmi:id="_L6Q65OLiEduGJrQyRGTO1A">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packageImport xmi:id="_OqkpUCfbEd-4R4ealYN1gQ">
+      <importedPackage href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_KnCD4CFjEd-3s7f6mWX-3A"/>
+    </packageImport>
+    <packageImport xmi:id="_OqkpUCfbEd-4R4ealYN1gQ">
+      <importedPackage href="../../org.openhealthtools.mdht.uml.term.models/model/hitsp-c80.uml#_KnCD4CFjEd-3s7f6mWX-3A"/>
     </packageImport>
     <packagedElement xmi:type="uml:Package" xmi:id="_420A62FD03B6422C7466026C" name="Common" clientDependency="_420A62FD03B643F57CB300E6">
       <eAnnotations xmi:id="_MFcQLeLiEduGJrQyRGTO1A" source="uml2.diagrams"/>
@@ -1707,7 +1713,7 @@ location at which analyis is performed and the organization which performs such 
           <ownedComment xmi:id="_6DnAIAHtEd-VSqNkiZ4fOA" annotatedElement="_o6XQAQEYEd-ZUM5xZsXWyw">
             <body>The time period for which the phone number or communications address is valid for the person or organization. The datatype is a TimeInterval, which includes both a start date and end date, either of which may be empty.</body>
           </ownedComment>
-          <type xmi:type="uml:DataType" href="pathmap://UPIA_HOME/UPIAModelLibrary.emx#_Uv8vMMRDEdulS9c_UH4PZg?UPIAModelLibrary/AllView/TimeInterval?"/>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_o6XQAAEYEd-ZUM5xZsXWyw" name="universalResourceId" visibility="public">
           <ownedComment xmi:id="_aXba4AHwEd-VSqNkiZ4fOA" annotatedElement="_o6XQAAEYEd-ZUM5xZsXWyw">
@@ -2307,7 +2313,7 @@ be zero.&quot; - HL7 V3</body>
           <ownedComment xmi:id="_bhWtIPwDEd-3ndaGus2qMA" annotatedElement="_FoSrEPyaEd6COP7rUDIHOg">
             <body>The time period for which the address is a valid location for the person or organization.  The datatype is a TimeInterval, which includes both a start date and end date, either of which may be empty.</body>
           </ownedComment>
-          <type xmi:type="uml:DataType" href="pathmap://UPIA_HOME/UPIAModelLibrary.emx#_Uv8vMMRDEdulS9c_UH4PZg?UPIAModelLibrary/AllView/TimeInterval?"/>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_420A62FD03B641886F6203C9" name="line1" visibility="public">
           <eAnnotations xmi:id="_O1IJheLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
@@ -3861,7 +3867,7 @@ Plan for the purpose of providing healthcare services to members (i.e., patients
 </body>
         </ownedComment>
         <ownedAttribute xmi:id="_0IRVwEwWEeCc9OmUU3L5_A" name="amount" visibility="public">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://ROSE_LIBRARIES/RoseAnalysisDatatypes.emx#_EIDHMAf0EdmmcbnrymMrWg?RoseAnalysisDatatypes/Currency?"/>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_yESJEEyfEd-ir98gTBezYA" name="Deductible">
@@ -3870,7 +3876,7 @@ Plan for the purpose of providing healthcare services to members (i.e., patients
 </body>
         </ownedComment>
         <ownedAttribute xmi:id="_2MRN0EwWEeCc9OmUU3L5_A" name="amount" visibility="public">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://ROSE_LIBRARIES/RoseAnalysisDatatypes.emx#_EIDHMAf0EdmmcbnrymMrWg?RoseAnalysisDatatypes/Currency?"/>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_75QqIEyfEd-ir98gTBezYA" name="DiagnosisWeightedPayment">
@@ -4040,6 +4046,12 @@ Plan for the purpose of providing healthcare services to members (i.e., patients
     <packagedElement xmi:type="uml:Package" xmi:id="_420A62FD03B6420A57B401F1" name="Lab" clientDependency="_420A62FD03B643F57CB00081">
       <eAnnotations xmi:id="_NEeEM-LiEduGJrQyRGTO1A" source="uml2.diagrams"/>
       <eAnnotations xmi:id="_NE6wIOLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+      <packageImport xmi:id="_S00bwFIvEeCKwqfXbceczw">
+        <importedPackage href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_KnCD4CFjEd-3s7f6mWX-3A"/>
+      </packageImport>
+      <packageImport xmi:id="_S0-MwFIvEeCKwqfXbceczw">
+        <importedPackage href="../../org.openhealthtools.mdht.uml.term.models/model/hitsp-c80.uml#_KnCD4CFjEd-3s7f6mWX-3A"/>
+      </packageImport>
       <packagedElement xmi:type="uml:Association" xmi:id="_AssRoBp5EdyGEZE1_tomRg" memberEnd="_AssRoRp5EdyGEZE1_tomRg _AsyYQRp5EdyGEZE1_tomRg">
         <eAnnotations xmi:id="__AAvckzjEdyZ7YHHi9KCRg" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <ownedEnd xmi:id="_AsyYQRp5EdyGEZE1_tomRg" name="" visibility="private" type="_420A62FD03B64230F39A02CC" association="_AssRoBp5EdyGEZE1_tomRg">
@@ -7500,7 +7512,7 @@ This property contains the actual address - not the circumstances under which th
       </eAnnotations>
       <appliedProfile href="pathmap://CDA_PROFILES/CDA.profile.uml#_cxOJEIEVEd6H8o-hO3-B4Q"/>
     </profileApplication>
-  </uml:Model>
+  </uml:Package>
   <Default:Documentation xmi:id="_L8pggOLiEduGJrQyRGTO1A" base_Comment="_L8fvieLiEduGJrQyRGTO1A"/>
   <Default:Documentation xmi:id="_L8pgg-LiEduGJrQyRGTO1A" base_Comment="_L8pgguLiEduGJrQyRGTO1A"/>
   <Default:Documentation xmi:id="_L88bcOLiEduGJrQyRGTO1A" base_Comment="_L8zRjuLiEduGJrQyRGTO1A"/>
@@ -8527,9 +8539,4 @@ This property contains the actual address - not the circumstances under which th
   <Default:Documentation xmi:id="_vDN9W1-OEd-WjrW-OJ9BNQ" base_Comment="_vDN9U1-OEd-WjrW-OJ9BNQ"/>
   <Default:Documentation xmi:id="_vDN9Wl-OEd-WjrW-OJ9BNQ" base_Comment="_vDN9UV-OEd-WjrW-OJ9BNQ"/>
   <Default:Documentation xmi:id="_RgQkQEvnEeCrON7ycdFLuQ" base_Comment="_RgHaUEvnEeCrON7ycdFLuQ"/>
-  <term:CodeSystemConstraint xmi:id="_CglqcFGOEeCQLcswYKIZ1g" base_Property="_420A62FD03B64586CB4203A5"/>
-  <CDA:CodegenSupport xmi:id="_FfoOcFGOEeCQLcswYKIZ1g" base_Namespace="420A62FD03B6"/>
-  <CDA:CDATemplate xmi:id="_JtCqEFGOEeCQLcswYKIZ1g" base_Class="_420A62FD03B6420BEC8900C6"/>
-  <CDA:CodeSystemConstraint xmi:id="_8oCxMFImEeCGWJtbMGbNYw"/>
-  <CDA:ValueSetConstraint xmi:id="_9Q3rwFImEeCGWJtbMGbNYw"/>
 </xmi:XMI>
