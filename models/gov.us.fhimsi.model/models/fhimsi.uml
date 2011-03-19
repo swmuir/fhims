@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CDA="http://www.openhealthtools.org/mdht/schemas/cda/4" xmlns:Default="http:///schemas/Default/1" xmlns:HDF="http:///schemas/HDF/_D_mP4FwxEd63D_E2UJKpvQ/12" xmlns:RIM="http:///schemas/RIM/_fvnwgAH4Ed6VH-9W1IVKXA/4" xmlns:RIM_1="http:///schemas/RIM/_lzuokFUQEd2G4uvn7_HPtw/2" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:term="http://www.openhealthtools.org/mdht/schemas/term/1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xsi:schemaLocation="http:///schemas/Default/1 pathmap://UML2_MSL_PROFILES/Default.epx#_IN8k8MmBEdqBcN1R6EvWUw?Default/Default? http:///schemas/HDF/_D_mP4FwxEd63D_E2UJKpvQ/12 pathmap://HL7_PROFILES/HDF.profile.uml#_D_tkoFwxEd63D_E2UJKpvQ http:///schemas/RIM/_fvnwgAH4Ed6VH-9W1IVKXA/4 pathmap://HL7_PROFILES/RIM.profile.uml#_fvsB8AH4Ed6VH-9W1IVKXA http:///schemas/RIM/_lzuokFUQEd2G4uvn7_HPtw/2 pathmap://HL7_PROFILES/RIM.profile.uml#_lz4ZkFUQEd2G4uvn7_HPtw">
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CDA="http://www.openhealthtools.org/mdht/schemas/cda/4" xmlns:Default="http:///schemas/Default/1" xmlns:HDF="http:///schemas/HDF/_D_mP4FwxEd63D_E2UJKpvQ/12" xmlns:RIM="http:///schemas/RIM/_fvnwgAH4Ed6VH-9W1IVKXA/4" xmlns:RIM_1="http:///schemas/RIM/_lzuokFUQEd2G4uvn7_HPtw/2" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xsi:schemaLocation="http:///schemas/Default/1 pathmap://UML2_MSL_PROFILES/Default.epx#_IN8k8MmBEdqBcN1R6EvWUw?Default/Default? http:///schemas/HDF/_D_mP4FwxEd63D_E2UJKpvQ/12 pathmap://HL7_PROFILES/HDF.profile.uml#_D_tkoFwxEd63D_E2UJKpvQ http:///schemas/RIM/_fvnwgAH4Ed6VH-9W1IVKXA/4 pathmap://HL7_PROFILES/RIM.profile.uml#_fvsB8AH4Ed6VH-9W1IVKXA http:///schemas/RIM/_lzuokFUQEd2G4uvn7_HPtw/2 pathmap://HL7_PROFILES/RIM.profile.uml#_lz4ZkFUQEd2G4uvn7_HPtw">
   <uml:Package xmi:id="420A62FD03B6" name="fhimsi">
     <eAnnotations xmi:id="_cZgQkFGLEeC_CoQ6_-1CkA" source="com.ibm.xtools.uml.msl.fragments"/>
     <eAnnotations xmi:id="_8Ra5kOLoEdu45_8D8ShJ7w" source="uml2.diagrams"/>
     <ownedComment xmi:id="_ebwRYFIpEeCGWJtbMGbNYw">
       <body>The fhimsi model is subset model of the FHIM model created to support SI Integration work.  The model is fashioned to support the collection of the vocabulary constraints for lab and generate niem artifacts.  &#xD;
 &#xD;
-NOTE : In order to leverage MDHT Terminology - two general updates were required 1) Change basedatatypes from Code to CD and have Lab constructs inherit from a CDA  element.  A request to have the terminology ui extension not be bound so tightly to CDA has been made.</body>
+NOTE : In order to leverage MDHT Terminology - two general updates were required 1) Change basedatatypes from Code to CD</body>
     </ownedComment>
     <packageImport xmi:id="_L4VBNOLiEduGJrQyRGTO1A">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
@@ -4066,9 +4066,6 @@ Plan for the purpose of providing healthcare services to members (i.e., patients
           <body>The act of accepting the role of filler.  HL7 uses the terms promise and filler interchangeably with promise being the preferred term.  This promise act initiates the accessioning for lab actions.  Accession: &quot;An increase by means of something added to record as acquired&quot;  (Websters).  The act of accepting  a laboratory test, and entering the test into the laboratory's workload.&#xD;
 </body>
         </ownedComment>
-        <generalization xmi:id="_av-_sFIoEeCGWJtbMGbNYw">
-          <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_YiANsDxYEd6JwqSGecoePg"/>
-        </generalization>
         <ownedAttribute xmi:id="_420A62FD03B642FD1B7A02FE" name="accessionDate" visibility="public" type="_420A62FD03B64244824602F5">
           <eAnnotations xmi:id="_M42DAeLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
           <ownedComment xmi:id="_M4s5HOLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B642FD1B7A02FE">
@@ -4244,9 +4241,6 @@ the order number as seen from the laboratory.  This term can be seen as the &quo
 &#xD;
 In VA's VistA system, the following fields are specificaly called out, which would be contained in this class, along with potentially others: Body Height, Body Weight, Length Of Aortic Valve, Length Of Mitral Valve, Length Of Pulmonic Valve, Length Of Tricuspid Valve, Length Of Ventricle (Left), Length Of Ventricle (Right), Volume Of Pericardial Cavity, Volume Of Peritoneal Cavity, Volume Of Pleural Cavity (Left), Volume Of Pleural Cavity (Right), Weight Of Adrenal Gland (Left), Weight Of Adrenal Gland(Right), Weight Of Brain , Weight Of Heart , Weight Of Kidney (Left), Weight Of Kidney (Right), Weight Of Liver, Weight Of Lung (Left), Weight Of Lung (Right), Weight Of Ovary (Left), Weight Of Ovary (Right), Weight Of Pancreas, Weight Of Parathyroid (Left Lower), Weight Of Parathyroid (Left Upper), Weight Of Parathyroid (Right Lower), Weight Of Parathyroid (Right Upper), Weight Of Pituitary Gland, Weight Of Spleen, Weight Of Testis (Left), Weight Of Testis (Right), Weight Of Thyroid Gland</body>
         </ownedComment>
-        <generalization xmi:id="_OByOwFIoEeCGWJtbMGbNYw">
-          <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_YiANsDxYEd6JwqSGecoePg"/>
-        </generalization>
         <ownedAttribute xmi:id="_420A62FD03B642122444025D" name="bodySite" visibility="public" type="_GmKqYGAfEd6a0qoC8Dh7hA">
           <ownedComment xmi:id="_M5cf9uLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B642122444025D">
             <body>This property indicates the organ or structure that is being measured, e.g., the Brain.  Note that this property will require an extensive effort by the terminology team to define fully.&#xD;
@@ -4274,9 +4268,6 @@ In VA's VistA system, the following fields are specificaly called out, which wou
 &#xD;
 </body>
         </ownedComment>
-        <generalization xmi:id="_Joa3QFInEeCGWJtbMGbNYw">
-          <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_YiANsDxYEd6JwqSGecoePg"/>
-        </generalization>
         <ownedAttribute xmi:id="_420A62FD03B64586CB0302AA" name="ageAtDeath" visibility="public" type="_eEixXEeDEdyIZay-9vWL7Q">
           <ownedComment xmi:id="_M5mQ9-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64586CB0302AA">
             <body>Contains the age of the patient at the time of death.</body>
@@ -4436,9 +4427,6 @@ In VA's VistA system, the following fields are specificaly called out, which wou
 Note that loinc and procedure codes are identifying more specifically the type of test being performed.  Because there may be multiple methodologies available to measure the same substance, these codes are more specific than the analyte and testCode referenced in the ChemistryTest class.&#xD;
 Note that this class has 5 subtypes to handle the different kinds of result values.  Most chemistry tests are physical quanties (e.g., mg/dL).  Some are coded, and even those that normally are physical quantities might be replaced by a coded observation of Quantity Not Sufficient.</body>
         </ownedComment>
-        <generalization xmi:id="_UO54UFIoEeCGWJtbMGbNYw">
-          <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_YiANsDxYEd6JwqSGecoePg"/>
-        </generalization>
         <ownedAttribute xmi:id="_ooZB8LTeEd2sMvQnSCqOzA" name="dateAnalyzed" visibility="public" type="_420A62FD03B64244824602F5">
           <ownedComment xmi:id="_Bkmn4LTfEd2sMvQnSCqOzA" annotatedElement="_ooZB8LTeEd2sMvQnSCqOzA">
             <body>Required by OBX 19 versus OBX 14 which is the observation date.</body>
@@ -4520,9 +4508,6 @@ Note that this class has 5 subtypes to handle the different kinds of result valu
           <body>This class documents each Microbiology identification observation (note that in this case, &quot;Microbiology&quot; includes Bacteriology, Mycobacteriology, Mycology, Parasitology, and Virology).&#xD;
 </body>
         </ownedComment>
-        <generalization xmi:id="_cr0aQFIoEeCGWJtbMGbNYw">
-          <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_YiANsDxYEd6JwqSGecoePg"/>
-        </generalization>
         <ownedAttribute xmi:id="_420A62FD03B64586FAF3018D" name="id" visibility="public" type="_mZFS8ERREdyvWauSJSvkeQ">
           <ownedComment xmi:id="_M6fBxuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64586FAF3018D">
             <body>Contains the unique identifier for the microbiology result.&#xD;
@@ -4547,9 +4532,6 @@ Note that this class has 5 subtypes to handle the different kinds of result valu
         <ownedComment xmi:id="_M6fBy-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64263C8F8030F">
           <body>This class represents a drug challenge.   A drug challenge tests the susceptibility of a culture of the identified organism to an antibiotic.</body>
         </ownedComment>
-        <generalization xmi:id="_PCT3oFIoEeCGWJtbMGbNYw">
-          <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_YiANsDxYEd6JwqSGecoePg"/>
-        </generalization>
         <ownedAttribute xmi:id="_420A62FD03B64263C997039A" name="antibioticSensitivity" visibility="public" type="_eE_dLUeDEdyIZay-9vWL7Q">
           <ownedComment xmi:id="_M6oywOLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64263C997039A">
             <body>An indication of the susceptibility of an organism to a specific concentration of an antibiotic.  This field can contain EITHER a sensitivity code (S=Susceptible, R=Resistant, I=Intermediate, MS=Moderately Susceptible), OR an Minimum Inhibitory Concentration number.</body>
@@ -4599,9 +4581,6 @@ Note that this class has 5 subtypes to handle the different kinds of result valu
           <body>The organism identified as being present within a specimen sample.  &quot;Organism&quot; as used here is not the full spectrum of possible living things, but rather is limited to a member of the following: Bacteria, Fungus, Mycobacterium, Parasite, or Virus.&#xD;
 </body>
         </ownedComment>
-        <generalization xmi:id="_fQn5UFIoEeCGWJtbMGbNYw">
-          <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_YiANsDxYEd6JwqSGecoePg"/>
-        </generalization>
         <ownedAttribute xmi:id="_420A62FD03B64586C1770123" name="organism" visibility="public" type="_GmKqYGAfEd6a0qoC8Dh7hA">
           <ownedComment xmi:id="_M6yjyeLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64586C1770123">
             <body>The organism identified.  Since this unique identifier is a coded element, it contains both a code and a display name.&#xD;
@@ -4630,9 +4609,6 @@ Note that this class has 5 subtypes to handle the different kinds of result valu
           <body>This class documents each Anatomicalpathology observation event (note that in this case, &quot;AnatomicalPathology&quot; includes Cytopathology, ElectronMicroscopy, and SurgicalPathology and some autopsy observations.&#xD;
 </body>
         </ownedComment>
-        <generalization xmi:id="_hRhaEFIoEeCGWJtbMGbNYw">
-          <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_YiANsDxYEd6JwqSGecoePg"/>
-        </generalization>
         <ownedAttribute xmi:id="_420A62FD03B64587188B010F" name="briefClinicalHistory" visibility="public" type="_420A62FD03B64586C4B903A9">
           <ownedComment xmi:id="_M67tueLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64587188B010F">
             <body>Contains brief clinical history notes about the pathological observation in textual format.
@@ -4780,9 +4756,6 @@ Note that this class has 5 subtypes to handle the different kinds of result valu
 
 </body>
         </ownedComment>
-        <generalization xmi:id="_dQxhcFIoEeCGWJtbMGbNYw">
-          <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_YiANsDxYEd6JwqSGecoePg"/>
-        </generalization>
         <ownedAttribute xmi:id="_420A62FD03B64586BD3703AA" name="isAmended" visibility="public">
           <ownedComment xmi:id="_M71FkuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64586BD3703AA">
             <body>Identifies whether the Microbiology test performed was amended. 0 = no and 1 = yes.&#xD;
@@ -5021,9 +4994,6 @@ Note that this class has 5 subtypes to handle the different kinds of result valu
 
 </body>
         </ownedComment>
-        <generalization xmi:id="_RrI7EFIoEeCGWJtbMGbNYw">
-          <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_YiANsDxYEd6JwqSGecoePg"/>
-        </generalization>
         <ownedAttribute xmi:id="_420A62FD03B64586BEB603AA" name="drawTimeCode" visibility="public" type="_GmKqYGAfEd6a0qoC8Dh7hA">
           <ownedComment xmi:id="_M8udc-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64586BEB603AA">
             <body>'P' FOR PEAK; &#xD;
@@ -5049,9 +5019,6 @@ Note that this class has 5 subtypes to handle the different kinds of result valu
 
 </body>
         </ownedComment>
-        <generalization xmi:id="_XKp3wFIoEeCGWJtbMGbNYw">
-          <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_YiANsDxYEd6JwqSGecoePg"/>
-        </generalization>
         <ownedAttribute xmi:id="_420A62FD03B64586BF3202BC" name="value" visibility="public" type="_GmKqYGAfEd6a0qoC8Dh7hA">
           <ownedComment xmi:id="_M83nZ-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64586BF3202BC">
             <body>Contains the results of the Gram Stain Test in textual format.&#xD;
@@ -5067,9 +5034,6 @@ Note that this class has 5 subtypes to handle the different kinds of result valu
 
 </body>
         </ownedComment>
-        <generalization xmi:id="_mMFPkFIoEeCGWJtbMGbNYw">
-          <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_YiANsDxYEd6JwqSGecoePg"/>
-        </generalization>
         <ownedAttribute xmi:id="_420A62FD03B64586BF4E01D6" name="id" visibility="public" type="_mZFS8ERREdyvWauSJSvkeQ">
           <ownedComment xmi:id="_M83nb-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64586BF4E01D6">
             <body>Unique identifier for the Sterility Contril act.&#xD;
@@ -5102,9 +5066,6 @@ Note that this class has 5 subtypes to handle the different kinds of result valu
 
 </body>
         </ownedComment>
-        <generalization xmi:id="_gF0b8FIoEeCGWJtbMGbNYw">
-          <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_YiANsDxYEd6JwqSGecoePg"/>
-        </generalization>
         <ownedAttribute xmi:id="_420A62FD03B645870D860080" name="organismQuantity" visibility="public" type="_eEixXEeDEdyIZay-9vWL7Q">
           <ownedComment xmi:id="_M9LJYuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B645870D860080">
             <body>The quantification the organism detected.  e.g.,  >100,000 CFU/ML.</body>
@@ -5160,9 +5121,6 @@ Note that this class has 5 subtypes to handle the different kinds of result valu
 
 </body>
         </ownedComment>
-        <generalization xmi:id="_jbNDYFIoEeCGWJtbMGbNYw">
-          <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_YiANsDxYEd6JwqSGecoePg"/>
-        </generalization>
         <ownedAttribute xmi:id="_420A62FD03B64586FAD0012F" name="value" visibility="public">
           <ownedComment xmi:id="_M9eEWuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64586FAD0012F">
             <body>Contains the value results of the Smear/Prep test.&#xD;
@@ -5179,9 +5137,6 @@ Note that this class has 5 subtypes to handle the different kinds of result valu
 
 </body>
         </ownedComment>
-        <generalization xmi:id="_ZCwo4FIoEeCGWJtbMGbNYw">
-          <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_YiANsDxYEd6JwqSGecoePg"/>
-        </generalization>
         <ownedAttribute xmi:id="_420A62FD03B64586C4C5035C" name="text" visibility="public">
           <ownedComment xmi:id="_M9nOR-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64586C4C5035C">
             <body>Contains the lab report results in textual format.&#xD;
@@ -5198,9 +5153,6 @@ Note that this class has 5 subtypes to handle the different kinds of result valu
 
 </body>
         </ownedComment>
-        <generalization xmi:id="_X1RiEFIoEeCGWJtbMGbNYw">
-          <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_YiANsDxYEd6JwqSGecoePg"/>
-        </generalization>
         <ownedAttribute xmi:id="_420A62FD03B64586F615001D" name="qaCode" visibility="public" type="_GmKqYGAfEd6a0qoC8Dh7hA">
           <ownedComment xmi:id="_M9nOT-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64586F615001D">
             <body>Condtains the codes that describe the Quality Assurance for the Lab tests.&#xD;
@@ -5216,9 +5168,6 @@ Note that this class has 5 subtypes to handle the different kinds of result valu
 
 </body>
         </ownedComment>
-        <generalization xmi:id="_Px_oIFIoEeCGWJtbMGbNYw">
-          <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_YiANsDxYEd6JwqSGecoePg"/>
-        </generalization>
         <ownedAttribute xmi:id="_420A62FD03B64587F59D01F9" name="checksum" visibility="public">
           <ownedComment xmi:id="_M96wQ-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64587F59D01F9">
             <body>This field stores the checksum that is calculated at the time the report version is initially stored in TIU.  It will be used for comparison in future print/view requests.  A new checksum will be calculated whenever the report version is printed/viewed, and matching checksums are proof that the report version has not been illegally altered.</body>
@@ -5314,9 +5263,6 @@ Need to flesh out how to model both Panels and individual tests at the same time
 
 </body>
         </ownedComment>
-        <generalization xmi:id="_lD9J4FIoEeCGWJtbMGbNYw">
-          <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_YiANsDxYEd6JwqSGecoePg"/>
-        </generalization>
         <ownedAttribute xmi:id="_420A62FD03B64266BD80012F" name="accessionId" visibility="public" type="_mZFS8ERREdyvWauSJSvkeQ">
           <ownedComment xmi:id="_M_2p8uLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64266BD80012F">
             <body>Identification of test(s) ordered.  Used for identity of filler in the act of accepting  a specimen collection request, and entering the collection activity into the laboratory's workload.</body>
@@ -5340,9 +5286,6 @@ Need to flesh out how to model both Panels and individual tests at the same time
         <ownedComment xmi:id="_M_2p-uLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64263CF150098">
           <body>The actual gathering of portions or quantities of material for use in testing, examination, or study based upon the request (order).</body>
         </ownedComment>
-        <generalization xmi:id="_kDcIEFIoEeCGWJtbMGbNYw">
-          <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_YiANsDxYEd6JwqSGecoePg"/>
-        </generalization>
         <ownedAttribute xmi:id="_420A62FD03B64230FCD502CF" name="collectionDate" visibility="public" type="_420A62FD03B64244824602F5">
           <ownedComment xmi:id="_M_2p_eLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64230FCD502CF">
             <body>Date and time when the specimen was obtained from the patient.</body>
@@ -5768,9 +5711,6 @@ Need to flesh out how to model both Panels and individual tests at the same time
         <ownedComment xmi:id="_1ekzEL_HEd2cYoIY7XWEQw" annotatedElement="_1ACMsLThEd2sMvQnSCqOzA">
           <body>This class contains attributes that identifies an investigative procedures performed in the laboratory that are useful in the diagnosis of disease.</body>
         </ownedComment>
-        <generalization xmi:id="_U_7soFIoEeCGWJtbMGbNYw">
-          <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_YiANsDxYEd6JwqSGecoePg"/>
-        </generalization>
         <ownedAttribute xmi:id="_420A62FD03B64263CB45013F" name="analyte" visibility="public" type="_GmKqYGAfEd6a0qoC8Dh7hA">
           <ownedComment xmi:id="_M6CV2-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64263CB45013F">
             <body>&quot;A substance or chemical constituent that is undergoing analysis.&quot; - Stedman's Medical Dictionary.  Identifies the substance being analyzed.  Examples include Sodium, Blood Urea Nitrogen, White Blood Cells.</body>
@@ -5818,9 +5758,6 @@ Need to flesh out how to model both Panels and individual tests at the same time
         <ownedEnd xmi:id="_6eu_BH72Ed-6KMbY3gBFOQ" name="" visibility="private" type="_420A62FD03B64230F39A02CC" association="_6eu_AH72Ed-6KMbY3gBFOQ"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_NglJMH8AEd-6KMbY3gBFOQ" name="LabTest">
-        <generalization xmi:id="_ZmOiUFIoEeCGWJtbMGbNYw">
-          <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_YiANsDxYEd6JwqSGecoePg"/>
-        </generalization>
         <ownedAttribute xmi:id="_cfdvEX8bEd-6KMbY3gBFOQ" name="autopsyEvent" visibility="public" type="_420A62FD03B6420BEC8900C6" association="_cfdvEH8bEd-6KMbY3gBFOQ">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cfdvE38bEd-6KMbY3gBFOQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cfdvEn8bEd-6KMbY3gBFOQ"/>
@@ -5871,18 +5808,11 @@ Need to flesh out how to model both Panels and individual tests at the same time
       <packagedElement xmi:type="uml:Association" xmi:id="_cfdvEH8bEd-6KMbY3gBFOQ" memberEnd="_cfdvEX8bEd-6KMbY3gBFOQ _cfdvFH8bEd-6KMbY3gBFOQ">
         <ownedEnd xmi:id="_cfdvFH8bEd-6KMbY3gBFOQ" name="" visibility="private" type="_NglJMH8AEd-6KMbY3gBFOQ" association="_cfdvEH8bEd-6KMbY3gBFOQ"/>
       </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_61ai4MTBEd-6Z_53K--WsA" name="Subject">
-        <generalization xmi:id="_mmdecFIoEeCGWJtbMGbNYw">
-          <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_YiANsDxYEd6JwqSGecoePg"/>
-        </generalization>
-      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_61ai4MTBEd-6Z_53K--WsA" name="Subject"/>
       <packagedElement xmi:type="uml:Association" xmi:id="_8NyEAMTBEd-6Z_53K--WsA" memberEnd="_8N71AMTBEd-6Z_53K--WsA _8N71A8TBEd-6Z_53K--WsA">
         <ownedEnd xmi:id="_8N71A8TBEd-6Z_53K--WsA" name="" visibility="private" type="_420A62FD03B64230F39A02CC" association="_8NyEAMTBEd-6Z_53K--WsA"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_WUomEOOYEd-8X4J7aT-aiQ" name="RelatedLabPromise">
-        <generalization xmi:id="_iRS1AFIoEeCGWJtbMGbNYw">
-          <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_YiANsDxYEd6JwqSGecoePg"/>
-        </generalization>
         <ownedAttribute xmi:id="_ZgmLwOOYEd-8X4J7aT-aiQ" name="labTestPromise" visibility="public" type="_420A62FD03B64230F39A02CC" association="_ZgjvgOOYEd-8X4J7aT-aiQ">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZgnZ4eOYEd-8X4J7aT-aiQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ZgnZ4OOYEd-8X4J7aT-aiQ" value="1"/>
@@ -5902,9 +5832,6 @@ Need to flesh out how to model both Panels and individual tests at the same time
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_b_84MOOaEd-8X4J7aT-aiQ" name="LabReferral">
-        <generalization xmi:id="_Yf5MYFIoEeCGWJtbMGbNYw">
-          <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_YiANsDxYEd6JwqSGecoePg"/>
-        </generalization>
         <ownedAttribute xmi:id="_s5MGMOOaEd-8X4J7aT-aiQ" name="orderDate" visibility="public" type="_420A62FD03B64244824602F5">
           <eAnnotations xmi:id="_s5MGMeOaEd-8X4J7aT-aiQ" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
           <ownedComment xmi:id="_s5MGMuOaEd-8X4J7aT-aiQ" annotatedElement="_s5MGMOOaEd-8X4J7aT-aiQ">
@@ -5984,9 +5911,6 @@ Need to flesh out how to model both Panels and individual tests at the same time
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_iI8NkPZPEd-e1vPpWfL-Bw" name="Container">
-        <generalization xmi:id="_WWWtAFIoEeCGWJtbMGbNYw">
-          <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_YiANsDxYEd6JwqSGecoePg"/>
-        </generalization>
         <ownedAttribute xmi:id="_rgeksPZPEd-e1vPpWfL-Bw" name="containerType" visibility="public" type="_GmKqYGAfEd6a0qoC8Dh7hA"/>
         <ownedAttribute xmi:id="_ycJ9YPZPEd-e1vPpWfL-Bw" name="containerSize" visibility="public" type="_420A62FD03B641886F630221"/>
         <ownedAttribute xmi:id="_ADbEUPZQEd-e1vPpWfL-Bw" name="containerCondition" visibility="public" type="_GmKqYGAfEd6a0qoC8Dh7hA"/>
@@ -6003,9 +5927,6 @@ Need to flesh out how to model both Panels and individual tests at the same time
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_ta3YUPZQEd-e1vPpWfL-Bw" name="ShippingContainer">
-        <generalization xmi:id="_iztlkFIoEeCGWJtbMGbNYw">
-          <general xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.cda/model/cda.uml#_YiANsDxYEd6JwqSGecoePg"/>
-        </generalization>
         <ownedAttribute xmi:id="_xG_r0PZQEd-e1vPpWfL-Bw" name="container" visibility="public" type="_iI8NkPZPEd-e1vPpWfL-Bw" association="_xG6zUPZQEd-e1vPpWfL-Bw">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xHA58PZQEd-e1vPpWfL-Bw" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xHAS4PZQEd-e1vPpWfL-Bw" value="1"/>
@@ -8539,4 +8460,5 @@ This property contains the actual address - not the circumstances under which th
   <Default:Documentation xmi:id="_vDN9W1-OEd-WjrW-OJ9BNQ" base_Comment="_vDN9U1-OEd-WjrW-OJ9BNQ"/>
   <Default:Documentation xmi:id="_vDN9Wl-OEd-WjrW-OJ9BNQ" base_Comment="_vDN9UV-OEd-WjrW-OJ9BNQ"/>
   <Default:Documentation xmi:id="_RgQkQEvnEeCrON7ycdFLuQ" base_Comment="_RgHaUEvnEeCrON7ycdFLuQ"/>
+  <CDA:ValueSetConstraint xmi:id="_p5gwUFI4EeCwx764HAXUzQ" base_Property="_420A62FD03B642122495008D"/>
 </xmi:XMI>
