@@ -17,7 +17,7 @@
           <children xmi:id="_GIOQ0ud8Ed6qdqXtvR-ZHQ" type="Description">
             <element xsi:nil="true"/>
           </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_GIOQ0-d8Ed6qdqXtvR-ZHQ" fontName="Arial" fontHeight="10" description="FHIM Datatypes&#xD;&#xA;  Version 0.4&#xD;&#xA;  12/14/2010" fillColor="16777088" lineColor="0" lineWidth="1"/>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_GIOQ0-d8Ed6qdqXtvR-ZHQ" fontName="Arial" fontHeight="10" description="FHIM Datatypes&#xD;&#xA;  Version 0.5&#xD;&#xA;  3/28/2011" fillColor="16777088" lineColor="0" lineWidth="1"/>
           <styles xmi:type="notation:TextStyle" xmi:id="_GIOQ1Od8Ed6qdqXtvR-ZHQ"/>
           <styles xmi:type="notation:LineTypeStyle" xmi:id="_GIOQ1ed8Ed6qdqXtvR-ZHQ"/>
           <element xsi:nil="true"/>
@@ -1507,6 +1507,14 @@ as nursing unit, department, clinic, SNF, physician’s office.&quot; - HL7 v2</
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9cNIYvwLEd-3ndaGus2qMA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9cNIY_wLEd-3ndaGus2qMA"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_OyHbIFldEeCyw5g2lQh-Ug" name="idType" visibility="public">
+        <ownedComment xmi:id="_H12GYFl6EeCH--YpPiEryw" annotatedElement="_OyHbIFldEeCyw5g2lQh-Ug">
+          <body>Indicates what kind of identifier is being represented.  For example, the idType might be represent a Driver's Licence, in which case the assigning Authority might be the Virginia Department of Motor Vehicles.  Note that: a) this information can (and probably should) be also be made clear by the name and definition of the property whose datatype is an Id; and b) this property might be an enumeration in the future.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Tgq08VldEeCyw5g2lQh-Ug" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Tgq08FldEeCyw5g2lQh-Ug"/>
+      </ownedAttribute>
       <ownedAttribute xmi:id="_9cNIZPwLEd-3ndaGus2qMA" name="assigningAuthority">
         <ownedComment xmi:id="_9cNIZfwLEd-3ndaGus2qMA" annotatedElement="_9cNIZPwLEd-3ndaGus2qMA">
           <body>This is a placeholder for the &quot;assigning authority&quot;, which is a unique identifier of the system (or organization or agency or department) that creates the data.    Note that this property will be replaced by some other concept or group of concepts when this abstract class is replaced by a specific class for a given target platform.</body>
@@ -2888,4 +2896,5 @@ A Physical Quantity is &quot;a dimensioned quantity expressing the result of mea
   <Default:Documentation xmi:id="_zAm5NAexEeCPOdVNW49Akw" base_Comment="_zAlEAQexEeCPOdVNW49Akw"/>
   <Default:Documentation xmi:id="_zAngQAexEeCPOdVNW49Akw" base_Comment="_zAmSIQexEeCPOdVNW49Akw"/>
   <Default:Documentation xmi:id="_zAngQQexEeCPOdVNW49Akw" base_Comment="_zAm5MQexEeCPOdVNW49Akw"/>
+  <Default:Documentation xmi:id="_H2DhwFl6EeCH--YpPiEryw" base_Comment="_H12GYFl6EeCH--YpPiEryw"/>
 </xmi:XMI>
