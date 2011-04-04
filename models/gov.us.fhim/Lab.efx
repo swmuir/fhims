@@ -1282,6 +1282,19 @@
           <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_vTYk4U5PEeCImo76Wp605Q" fontName="Arial" fontHeight="10" showListVisibility="None" fillColor="13434879" lineColor="3342489" showStereotype="Label"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vTYk4k5PEeCImo76Wp605Q" x="37406" y="31066"/>
         </children>
+        <children xmi:id="_wXfewF7NEeCcBvMgXNMeOQ" type="Note">
+          <children xmi:id="_wXiiEF7NEeCcBvMgXNMeOQ" type="DiagramName">
+            <element xsi:nil="true"/>
+          </children>
+          <children xmi:id="_wXiiEV7NEeCcBvMgXNMeOQ" type="Description">
+            <element xsi:nil="true"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_wXfewV7NEeCcBvMgXNMeOQ" fontName="Arial" fontHeight="10" description="Need to revisit relationship between Request, Promise, and Accession.  There should be a many-to-many relationship between Request and Accession" fillColor="13369343" lineColor="6737151" lineWidth="1"/>
+          <styles xmi:type="notation:TextStyle" xmi:id="_wXfewl7NEeCcBvMgXNMeOQ"/>
+          <styles xmi:type="notation:LineTypeStyle" xmi:id="_wXfew17NEeCcBvMgXNMeOQ"/>
+          <element xsi:nil="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wXfexF7NEeCcBvMgXNMeOQ" x="13613" y="5706" width="5660" height="4100"/>
+        </children>
         <styles xmi:type="umlnotation:UMLDiagramStyle" xmi:id="_Ga92kX7uEd-6KMbY3gBFOQ"/>
         <element xsi:nil="true"/>
         <edges xmi:id="_oEDbJn7wEd-6KMbY3gBFOQ" element="_420A62FD03B6458957D6012F" source="_oD5qIH7wEd-6KMbY3gBFOQ" target="_ZoA6QH7uEd-6KMbY3gBFOQ">
@@ -4436,7 +4449,7 @@ Note that subpart K (Quality Systems for Nonwaived Testing) defines the quality 
     <packagedElement xmi:type="uml:Dependency" xmi:id="_420A62FD03B643F57CB00081" client="_420A62FD03B6420A57B401F1">
       <supplier xmi:type="uml:Package" href="Common.efx#_420A62FD03B6422C7466026C?FHIM/Common?"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B64230F39A02CC" name="LabTestPromise">
+    <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B64230F39A02CC" name="LabTestAccession">
       <eAnnotations xmi:id="_M4_0CeLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
       <ownedComment xmi:id="_M4s5GeLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64230F39A02CC">
         <body>The act of accepting the role of filler.  HL7 uses the terms promise and filler interchangeably with promise being the preferred term.  This promise act initiates the accessioning for lab actions.  Accession: &quot;An increase by means of something added to record as acquired&quot;  (Websters).  The act of accepting  a laboratory test, and entering the test into the laboratory's workload.&#xD;
@@ -4511,12 +4524,6 @@ the order number as seen from the laboratory.  This term can be seen as the &quo
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0Pw-UdOWEd2aQZomWdBJLg" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0Pw-UNOWEd2aQZomWdBJLg" value="1"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_rP8PwExKEdyVYrcEhQ5TbQ" name="testCategory" visibility="public">
-        <ownedComment xmi:id="_-JDacMI5Ed2hWP0WztcgDg" annotatedElement="_rP8PwExKEdyVYrcEhQ5TbQ">
-          <body>Categories the type of lab test ordered and performed.  Possible values include Chemistry/Hematology, Microbiology (to include bacteriology, parasitology, mycology, mycobateriology, and virology), Cytopathology, Anatomic Pathology, Autopsy, etc.</body>
-        </ownedComment>
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_6eu_AX72Ed-6KMbY3gBFOQ" name="commentEvent" visibility="public" association="_6eu_AH72Ed-6KMbY3gBFOQ">
         <ownedComment xmi:id="_-pKYEH72Ed-6KMbY3gBFOQ" annotatedElement="_6eu_AX72Ed-6KMbY3gBFOQ">
@@ -7847,7 +7854,6 @@ Need to flesh out how to model both Panels and individual tests at the same time
   <Default:Documentation xmi:id="_ibhWkcFAEd2cYoIY7XWEQw" base_Comment="_ibhWkMFAEd2cYoIY7XWEQw"/>
   <Default:Documentation xmi:id="_p8FlAMFAEd2cYoIY7XWEQw" base_Comment="_p770AMFAEd2cYoIY7XWEQw"/>
   <Default:Documentation xmi:id="_aW_YEcFDEd2cYoIY7XWEQw" base_Comment="_aW_YEMFDEd2cYoIY7XWEQw"/>
-  <Default:Documentation xmi:id="_-JNLcMI5Ed2hWP0WztcgDg" base_Comment="_-JDacMI5Ed2hWP0WztcgDg"/>
   <Default:Documentation xmi:id="_dxHzYMJFEd2hWP0WztcgDg" base_Comment="_dw-pcMJFEd2hWP0WztcgDg"/>
   <Default:Documentation xmi:id="_-h7t4FBqEd6RSacpjiYzHA" base_Comment="_-hoL4FBqEd6RSacpjiYzHA"/>
   <RIM:Act xmi:id="_NWBkclLIEd6-4-oWZUjasQ" base_Class="_420A62FD03B6458956DC035E"/>
