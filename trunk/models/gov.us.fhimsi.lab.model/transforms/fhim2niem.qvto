@@ -1,3 +1,6 @@
+import FHIMLibrary;
+import Strings;
+
 modeltype uml uses 'http://www.eclipse.org/uml2/3.0.0/UML';
 modeltype ecore "strict" uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 modeltype term uses 'http://www.openhealthtools.org/mdht/schemas/term/1';
@@ -10,8 +13,12 @@ main() {
 	log('Transforming Federal Health Information Model (PIM) to National Information Exchange Model (PSM)');
 	
 	// Currently hard coded vocabulary import - need to add dynamic discovery support
-	var vocabularyPackage :=  fhimModel.rootObjects()[uml::Model]->getPackageImport('HITSP-C80')->asSequence()->first();
+//	var vocabularyPackage :=  fhimModel.rootObjects()[uml::Model]->getPackageImport('HITSP-C80')->asSequence()->first();
 
+//	log('vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv');
+//	var xsdPackage :=  niemCoreModel.rootObjects()[uml::Model]->getPackageImport('XSDDataTypes')->asSequence()->first(); 
+//	log('vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv');
+	
 	// Create NIEM PSM
 	fhimModel.rootObjects()[uml::Package]-> map toNIEM();
 	
@@ -28,9 +35,9 @@ mapping uml::Package::toNIEM() : uml::Package
 	init{
 		result := self.deepclone().oclAsType(Package);
 		
-		//result.ownedType.destroy();
-	
 	}
+
+		//niemCoreModel.rootObjects()[uml::Package].getImportedPackages()->select(name='HITSP-C80')->asSequence();
 	
 
 	// Update the generalizations of the extension 
@@ -42,40 +49,34 @@ mapping uml::Package::toNIEM() : uml::Package
 
 	// update the name - do this last
 	result.name := self.name;
-	
-	
+
+	// Create the 3 niem packages for teh exchange
+	var extensionPackage : uml::Package := object uml::Package  {
+		name := 'Extension';
+	}	;
+
 	var constraintPackage : uml::Package := object uml::Package  {
 		name := 'Constraints';
 	}	;
-	
-	constraintPackage.ownedType += result.ownedType;
-	
-	result.packagedElement += constraintPackage;
-	
+
    var exchangePackage : uml::Package := object uml::Package  {
 		name := 'Exchange';
 	};
+
+	extensionPackage.ownedType += result.ownedType->select(ownedComment->getMappings('niem=')->asSequence()->first() = 'Extension');
 	
+	constraintPackage.ownedType += result.ownedType;
+	
+	
+
 	var exchangeClass : uml::Class := object uml::Class
 	{
 		name := 'Exchange'
 	};
 	
 	
-	//var xsdGlobalStereotype : uml::Stereotype := exchangeClass.getApplicableStereotype('XMLSchema::global');
-
-	//exchangeClass.applyStereotype(xsdGlobalStereotype);
-	
-	
-	
-	//exchangeClass.applyStereotype(exchangeClass.getApplicableStereotypes()->select(name='XMLSchema::global')[uml::Stereotype]);
 	
 	exchangePackage.ownedType += exchangeClass;
-
-	
-	
-	result.packagedElement += exchangePackage;
-	
 	
 	var xsdGlobalStereotype : uml::Stereotype := exchangeClass.getApplicableStereotype('XMLSchema::GlobalProperty');
 
@@ -87,23 +88,40 @@ mapping uml::Package::toNIEM() : uml::Package
 	
 	 //update to niem naming convention
 	constraintPackage.ownedType[uml::Class]-> map mapNiemNaming();
+
+
+	result.packagedElement += extensionPackage;
 	
+	result.packagedElement += constraintPackage;
+	
+	result.packagedElement += exchangePackage;	
 	
 		// update the name - do this last
 	result.name := 'niem'+self.name;
 }
 
 
+
 // map generalizations to niem core
 mapping  inout uml::Generalization::mapGeneralizations() 
 {
 	log('Maping FHIM generalizations');	
-	// use cda template profile for the meantime - need to create niem version
-	var cdastereotype : uml::Stereotype := self.general.getAppliedStereotype('CDA::CDATemplate');
+
+	var niemClassName : String = '';
 	
-	var templateId :=	self.general.getValue(cdastereotype,"templateId");
+	niemClassName :=  self.owner.ownedComment->getMappings('niem=')->asSequence()->first();
 	
-	self.general := getFHIMClass(templateId.repr());
+	log ('Extension '+niemClassName  );
+	
+	if (niemClassName='Extension') then
+	{
+	log('aaa');
+		self.destroy();
+	} else {
+	log('bbb');
+		self.general := getFHIMClass(niemClassName);	
+	} endif;
+	
 
 }
 
@@ -160,7 +178,10 @@ mapping inout uml::Property::mapTerminology() : uml::Class when { self.type != n
 	init {
 		result := object uml::Class {
 		name := '_'+self.name;
-		general := getNiemClass('anyType');
+		
+		//general := getNIEMDatatype('token');
+		
+//		base = 'asdf';
 		};	
 	
 		// value property 
@@ -192,6 +213,8 @@ mapping inout uml::Property::mapTerminology() : uml::Class when { self.type != n
 		var enumerationSource : uml::Enumeration := getTerminologyEnumeration(fhimProperty.getValue(termstereotype,"reference").repr());
 	
 		var enumerationTarget : uml::Enumeration  := enumerationSource.deepclone().oclAsType(uml::Enumeration );
+		
+		enumerationTarget.general += getXSDType('token'); 
 	
 		var termstereotype2 : uml::Stereotype := enumerationSource.getAppliedStereotype('Terminology::ValueSetVersion');
 
@@ -267,7 +290,22 @@ mapping inout uml::Property::createInnerClasses() : uml::Class
 
 }
 
-
+query getXSDType(in xsdTypeName : String): uml::DataType {
+	
+	log('ffffffffffffffffffffffffffffffff');
+	
+	niemCoreModel.rootObjects()[uml::Model].packageImport->map displayPackage();
+	
+	var xsdPackage :=  niemCoreModel.rootObjects()[uml::Model]->getPackageImport('XSDDataTypes')->asSequence()->first(); 
+	log('ffffffffffffffffffffffffffff');
+	
+	//var xsdPackage : uml::Package :=  niemCoreModel.rootObjects()[uml::Model]->getPackageImport('XSDDataTypes')->asSequence()->first();
+	var xsdType := xsdPackage.allSubobjects()[uml::DataType]->asSequence()->select(xsdTypeName=name)->first();
+	
+	log(xsdType.repr());
+	return xsdType;
+}
+	
 query getNiemClass(in niemClassName: String ) : uml::Class
 {   
    return niemCoreModel.objectsOfType(uml::Class)->asSequence()->select(niemClassName=name)->first();
@@ -296,34 +334,12 @@ query getTerminologyEnumeration(in termClassName: String ) : uml::Enumeration
 log('search for enumeration ' + termClassName);
 	var vocabularyPackage :=  fhimModel.rootObjects()[uml::Package].getImportedPackages()->select(name='HITSP-C80')->asSequence()->first();   
 	 
-  var enumeration := vocabularyPackage.allSubobjects()[uml::Enumeration]->asSequence()->select(termClassName=qualifiedName)->first();
+ var enumeration := vocabularyPackage.allSubobjects()[uml::Enumeration]->asSequence()->select(termClassName=qualifiedName)->first();
 
-  return enumeration;
+ return enumeration;
   
 }
 
-query uml::Model::getPackageImport(in packageName: String )  : uml::Package
-{
-	self.packageImport->displayPackage();
 
-	 return self.packageImport->select(packageName=importedPackage.name)->asSequence()->first().importedPackage;
-}
-
-// Add to general purpose qvt library  
- 
-mapping uml::PackageImport::displayPackage() 
-{
-	log('uml::Package is ' +self.importedPackage.qualifiedName);
-}
-
-mapping uml::Stereotype::displayStereotype()
-{
-	log('uml::Stereotype is ' + self.qualifiedName);	
-}
-mapping uml::NamedElement::displayNamedElement()
-{
-	log('uml::NameElement is ' + self.qualifiedName);	
-}
- 
  
 
