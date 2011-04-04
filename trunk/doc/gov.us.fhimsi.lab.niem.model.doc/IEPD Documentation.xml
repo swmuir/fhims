@@ -1,0 +1,977 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<article lang="">
+	<para/>
+	<para/>
+	<para/>
+	<para>
+		<anchor id="__RefHeading__3_1717173484"/>Table of Contents</para>
+	<para/>
+	<para>Information Exchange Package Documentation</para>
+	<para>California Department of Justice  Medical/Mental Health Transfer Summary</para>
+	<para/>
+	<para>V1.0 </para>
+	<para>October 6, 2008</para>
+	<para/>
+	<sect1>
+		<title>
+			<anchor id="__RefHeading__5_1717173484"/>Purpose and Scope</title>
+		<para/>
+		<para>This document provides Information Exchange Package Documentation (IEPD) for the California Department of Justice (CADOJ) Medical/Mental Health Transfer Summary. The purpose of this IEPD is to be a reference guide to support the California Department of Justice in the exchange of information that conforms to the National Information Exchange Model Version 2.0. For more information see <ulink url="http://www.niem.gov/">http//www.niem.gov</ulink>. This IEPD defines the format and content of an Information Exchange Package (IEP), and does not address the method used to transport the IEP from one system to another.</para>
+		<para/>
+		<para>
+			<anchor id="__RefHeading__7_1717173484"/>A.    Use Case</para>
+		<para/>
+		<para>The jail sends medical data about a subject if a subject is transferred from local custody to the jurisdiction of the California Department of Corrections and Rehabilitation. The information is sent to the reception center. </para>
+	</sect1>
+	<sect1>
+		<title>
+			<anchor id="__RefHeading__9_1717173484"/>List of Artifacts</title>
+		<para/>
+		<para>The following artifacts are included in the IEP:</para>
+		<informaltable frame="all">
+			<tgroup cols="2">
+				<tbody>
+					<row>
+						<entry>
+							<para>Artifact File Name</para>
+						</entry>
+						<entry>
+							<para>Purpose</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>IEPD Documentation.doc</para>
+						</entry>
+						<entry>
+							<para>This document</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>Class Model Diagram.pdf</para>
+						</entry>
+						<entry>
+							<para>UML class model diagram in pdf format </para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>NIEM Exchange Content Model.vsd</para>
+						</entry>
+						<entry>
+							<para>The VISIO UML class model diagram </para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>Business Form.pdf </para>
+						</entry>
+						<entry>
+							<para>Business form used in processing the information</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>NIEM Property Mapping.xls</para>
+						</entry>
+						<entry>
+							<para>Spreadsheet containing mapping of class model entities to NIEM</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>extension-schema.xsd</para>
+						</entry>
+						<entry>
+							<para>NIEM-conformant extension schema in xml</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>exchange-schema.xsd</para>
+						</entry>
+						<entry>
+							<para>NIEM-conformant document schema in xml</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>codes-schema.xsd</para>
+						</entry>
+						<entry>
+							<para>NIEM-conformant document containing codes used by the business forms in xml</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>Subset.zip</para>
+						</entry>
+						<entry>
+							<para>Directory containing NIEM subset package, including wantlist document that can be input into Georgia Tech Research Institutes (GTRI) subset schema generator</para>
+						</entry>
+					</row>
+				</tbody>
+			</tgroup>
+		</informaltable>
+	</sect1>
+	<sect1>
+		<title>
+			<anchor id="__RefHeading__11_1717173484"/>XML Schemas</title>
+		<para/>
+		<para>The primary purpose of the XML schemas is to define the contents and content structure of a message used for an information exchange. The XML schemas can optionally be used by a sending or receiving system for other purposes, such as to validate sent and/or received XML instances using XML schema validation, to automatically create classes corresponding to the XML properties, to automatically de-serialize the XML instance into a structure, or to automatically serialize the XML instance from a structure.</para>
+		<para>A description of each schema follows:</para>
+		<para>
+			<anchor id="__RefHeading__13_1717173484"/>A.        NIEM Subset Schemas</para>
+		<para/>
+		<para>In the zip file contained in this IEPD, the folder NIEM contains the NIEM Subset XML Schemas. This subset contains NIEM components required for a Medical/Mental Health Transfer Summary. The NIEM Subset XML Schema set was developed using the NIEM Schema Subset Generation Tool (SSGT). The wanted.xml file generated by the SSGT is included in the artifact set; this file can be loaded into the SSGT to provide a starting point should changes to the NIEM Subset XML Schema be necessary. All NIEM Subset XML Schemas in this IEPD use the standard NIEM namespaces.</para>
+		<para/>
+		<para>
+			<anchor id="OLE_LINK1"/>
+			<anchor id="OLE_LINK2"/>All NIEM schemas are located in the Schemas/NIEM2.0 directory within the IEPD directory. The following is a list of schemas that are under the governance of NIEM Project Management Office (PMO) or NIEM communities of interest. Each NIEM schema included in this IEPD is only a subset of the actual entire schema.</para>
+		<para/>
+		<orderedlist>
+			<listitem>
+				<para>niem-core.xsd  This is the NIEM core schema. NIEM core includes both Universal (U) and Common (C) components. The identities for U and C components in Core are maintained with metadata.</para>
+			</listitem>
+		</orderedlist>
+		<orderedlist>
+			<listitem>
+				<para/>
+			</listitem>
+		</orderedlist>
+		<orderedlist>
+			<listitem>
+				<para>appinfo.xsd - The appinfo schema provides support for high level data model concepts and additional syntax to support the NIEM conceptual model and validation of NIEM-conformant instances.</para>
+			</listitem>
+		</orderedlist>
+		<orderedlist>
+			<listitem>
+				<para/>
+			</listitem>
+		</orderedlist>
+		<orderedlist>
+			<listitem>
+				<para>immigration.xsd  A schema containing immigration-related concepts</para>
+			</listitem>
+		</orderedlist>
+		<para/>
+		<orderedlist>
+			<listitem>
+				<para>jxdm.xsd  A schema containing justice-related concepts.</para>
+			</listitem>
+		</orderedlist>
+		<orderedlist>
+			<listitem>
+				<para/>
+			</listitem>
+		</orderedlist>
+		<orderedlist>
+			<listitem>
+				<para>xsd.xsd  A schema that contains proxy types that carry dictionary metadata and have XML data type simple contents.</para>
+			</listitem>
+		</orderedlist>
+		<para/>
+		<orderedlist>
+			<listitem>
+				<para>structures.xsd - The structures schema provides support for fundamental NIEM linking mechanisms, as well as providing base types for definition of NIEM-conformant types.</para>
+			</listitem>
+		</orderedlist>
+		<para>
+			<anchor id="__RefHeading__15_1717173484"/>B.    California Department of Justice Schemas</para>
+		<para/>
+		<para>California Department of Justice-specific schemas are located in the Schemas/Local directory within the IEPD directory. The following is a list of schemas created by the State of Californias Department of Justice to accommodate local extensions to the NIEM.</para>
+		<para/>
+		<orderedlist>
+			<listitem>
+				<para>Exchange-Schema.xsd  This schema defines a local namespace (<ulink url="http://doj.ca.gov/niem/MMHTransSum/Document/1.0">http://doj.ca.gov/niem/MMHTransSum/Document/1.0</ulink>) and also defines the root element (cadojMMHTransSum:CaliforniaDOJMMHTransSum) for California Department of Justice Medical/Mental Health Transfer Summary IEPD.</para>
+			</listitem>
+		</orderedlist>
+		<orderedlist>
+			<listitem>
+				<para/>
+			</listitem>
+		</orderedlist>
+		<orderedlist>
+			<listitem>
+				<para>Extension-Schema.xsd  This schema defines a local namespace (<ulink url="http://doj.ca.gov/niem/MMHTransSum/Extension/1.0">http://doj.ca.gov/niem/MMHTransSum/Extension/1.0</ulink>) and also defines all extensions to NIEM that are needed to accommodate California Department of Justice local requirements.</para>
+			</listitem>
+		</orderedlist>
+		<orderedlist>
+			<listitem>
+				<para/>
+			</listitem>
+		</orderedlist>
+		<orderedlist>
+			<listitem>
+				<para>Codes-Schema.xsd  This schema defines enumerated values (<ulink url="http://doj.ca.gov/niem/MMHTransSum/Codes/1.0">http://doj.ca.gov/niem/MMHTransSum/Codes/1.0</ulink>). </para>
+			</listitem>
+		</orderedlist>
+		<orderedlist>
+			<listitem>
+				<para/>
+			</listitem>
+		</orderedlist>
+		<orderedlist>
+			<listitem>
+				<para>Constraint-Schema.xsd  This schema is not included. Data element cardinality is provided in the NIEM Property Mapping.xls file.</para>
+			</listitem>
+		</orderedlist>
+		<orderedlist>
+			<listitem>
+				<para/>
+			</listitem>
+		</orderedlist>
+	</sect1>
+	<sect1>
+		<title>
+			<anchor id="__RefHeading__17_1717173484"/>Additional IEP Provisions</title>
+		<para/>
+		<para>This section provides additional definitions, business rules, and other information required to implement the IEP over and above that specified in the XML schemas.</para>
+		<para>
+			<anchor id="__RefHeading__19_1717173484"/>A.    Additional Property Definitions</para>
+		<para/>
+		<para>The IEP currently contains no additional property definitions.</para>
+		<para>
+			<anchor id="__RefHeading__21_1717173484"/>B.    Minimal Property Set</para>
+		<para/>
+		<para>The minimal property set required for a meaningful information exchange is reflected in the XML schemas as follows:</para>
+		<orderedlist>
+			<listitem>
+				<para>Specification of a minOccurs facet value greater than or equal to 1 for each property that is always required (note that if minOccurs is not specified the default value is 1).</para>
+			</listitem>
+		</orderedlist>
+		<para>
+			<anchor id="__RefHeading__23_1717173484"/>C.    Other Information</para>
+		<para/>
+		<para>The IEP currently contains no other information.</para>
+		<para/>
+	</sect1>
+	<sect1>
+		<title>
+			<anchor id="__RefHeading__25_1717173484"/>Samples</title>
+		<para/>
+		<para>This section provides xml samples that would be useful to an implementer to facilitate understanding of the IEP.</para>
+		<para>
+			<anchor id="__RefHeading__27_1717173484"/>A.    Sample XML Instances</para>
+		<para/>
+		<para>This is to be considered as a reference guide only and will not include sample XML instances. </para>
+		<para>
+			<anchor id="__RefHeading__29_1717173484"/>B.    Sample XSL Stylesheets</para>
+		<para/>
+		<para>No sample XSL Style Sheets were developed for the Medical/Mental Health Transfer Summary IEPD.</para>
+		<para/>
+	</sect1>
+	<sect1>
+		<title>
+			<anchor id="__RefHeading__31_1717173484"/>Business Rules</title>
+		<para/>
+		<para>Though an XML schema can accommodate certain business rules, it is unable to capture all necessary rules. This section includes business rules that should be considered when generating an XML instance that conforms to this IEPD.</para>
+		<orderedlist>
+			<listitem>
+				<para>Due to the reuse of NIEM and the CADOJs extension complex type properties in different contexts, a NIEM subset XML schema or a CADOJ extension XML schema may include elements that are not used in some IEPDs. The XML schemas may permit sending elements for which there is no business requirement. Where this is the case, the Exchange Content Model diagram and the Exchange Content Mapping spreadsheet may be used as a guide.</para>
+			</listitem>
+		</orderedlist>
+		<para>**Please keep in mind, additional business rules may be defined at implementation time.</para>
+		<para/>
+		<orderedlist>
+			<listitem>
+				<para>The root element for this IEPD is defined as &lt;xsd:element name= CaliforniaDOJMMHTransSum type=cadojMMHTransSum:CaliforniaDOJMMHTransSumType /&gt;</para>
+			</listitem>
+		</orderedlist>
+		<orderedlist>
+			<listitem>
+				<para/>
+			</listitem>
+		</orderedlist>
+		<orderedlist>
+			<listitem>
+				<para>Many cases exist where substitution groups can be used for multiple forms of representation. Refer to the mapping spreadsheet to determine the correct substitution element(s).</para>
+			</listitem>
+		</orderedlist>
+		<orderedlist>
+			<listitem>
+				<para/>
+			</listitem>
+		</orderedlist>
+		<orderedlist>
+			<listitem>
+				<para>A decision was made early in the project that enumerated values (codes) will not be enforced at the schema level. Instead, open text elements are used systemically, validation for open text elements occur outside of XML schema validation.</para>
+			</listitem>
+		</orderedlist>
+		<orderedlist>
+			<listitem>
+				<para/>
+			</listitem>
+		</orderedlist>
+		<orderedlist>
+			<listitem>
+				<para>The signature class includes a signturemethod used to determine the method by which the signature was collected. Currently the state of California has no formally agreed method for collection of signatures. (Fax, wet, Digital, image, voice print, etc.)</para>
+			</listitem>
+			<listitem>
+				<para>The Medical/Mental Health Transfer Summary uses a Yes / No Code type for all flags. The Yes/No Code Type is found in the cadojMMHTRNSUMcodes:YesNoType in the file codes-schema.xsd.</para>
+			</listitem>
+		</orderedlist>
+		<orderedlist>
+			<listitem>
+				<para/>
+			</listitem>
+		</orderedlist>
+	</sect1>
+	<sect1>
+		<title>
+			<anchor id="__RefHeading__33_1717173484"/>Development</title>
+		<para/>
+		<para>This section describes the people, process, and artifacts used in the development of the IEPD.</para>
+		<para>
+			<anchor id="__RefHeading__35_1717173484"/>A.        Participants</para>
+		<para/>
+		<para>The California Attorney Generals Criminal Justice Integration Subcommittee was developed to facilitate data sharing between and among local criminal justice agencies and the state. Twelve entities were represented and involved in the identification of priority data exchanges within the criminal justice community. As the exchanges were identified, each entity provided those subject matter experts necessary to define the exchange details, and the data elements and definitions.</para>
+		<para>Participants Include:</para>
+		<para>Administrative Office of the Courts</para>
+		<para>California Chief Probation Officers Association</para>
+		<para>California County Information Systems Directors Association</para>
+		<para>California Court Executive Officers Advisory Committee</para>
+		<para>California Department of Corrections and Rehabilitation</para>
+		<para>California Department of Justice</para>
+		<para>California Department of Motor Vehicles</para>
+		<para>California District Attorneys Association</para>
+		<para>California Judicial Council </para>
+		<para>California Police Chiefs Association</para>
+		<para>California Public Defenders Association</para>
+		<para>California State Sheriffs Association </para>
+		<para>On-Target Information Technology Consulting</para>
+		<para>C Squared Consulting Services, LLC</para>
+		<para/>
+		<para>
+			<anchor id="__RefHeading__37_1717173484"/>B.    Process</para>
+		<para/>
+		<para>The Medical/Mental Health Transfer Summary IEPD is part of the DOJs Data Exchange Project (DEP). The Subcommittee members identified priority adult criminal exchanges within the state. The DOJ contracted with On-Target Information Technology Consulting to develop the data exchange requirements and document the data elements and their definitions. Forty-four adult criminal document exchanges were identified for development. On-Target held design team meetings with the appropriate subject matter experts to discuss each priority document exchange and documented the requirements using SEARCHs Justice Information Exchange Model (JIEM) tool. </para>
+		<para/>
+		<para>After completion of this first phase, the Subcommittee and the DOJ moved forward with mapping the data elements and definitions to the Global Justice XML Data Model version 3.0.3 (GJXDM). The U.S. Department of Homeland Security and the U.S. Department of Justice released the NIEM in 2005 which leveraged the use of the GJXDM and incorporated the data model into the NIEM structure. In order to continue to support national information sharing efforts, the current phase of the DEP requires mapping the data elements to the NIEM. The DOJ contracted with </para>
+		<para>C Squared Consulting Services to develop the IEPDs and map the data elements to the NIEM version 2.0. </para>
+		<para>
+			<anchor id="__RefHeading__39_1717173484"/>C.    Development Artifacts</para>
+		<para/>
+		<para>This section describes non-schema artifacts created during the development process. These artifacts are intended to help an implementer better understand the IEP, and could be re-used if the IEPD is later modified, extended, or re-purposed. These artifacts include:</para>
+		<para/>
+		<orderedlist>
+			<listitem>
+				<para>A Domain Content Model is provided as a Microsoft Visio file, with images in PDF format files. The Domain Content Model can be edited and maintained by opening the .vsd file using Microsoft Visio.</para>
+			</listitem>
+			<listitem>
+				<para>A document is provided in Microsoft Word to define and explain the UML notations used to help participants better understand the model.</para>
+			</listitem>
+			<listitem>
+				<para>A Domain Content Mapping is provided in a Microsoft Excel spreadsheet (xls). The Domain Content Mapping can be edited and maintained by opening the file using Excel or any other tool compatible with the Excel 2003 file format.</para>
+			</listitem>
+			<listitem>
+				<para>An SSGT WantList.xml file is provided to identify wanted NIEM components.</para>
+			</listitem>
+		</orderedlist>
+		<orderedlist>
+			<listitem>
+				<para/>
+			</listitem>
+		</orderedlist>
+		<para>It is important to note that while this paper form was reviewed in developing the domain model, the IEP domain model and schemas represent a reference for the data used.</para>
+	</sect1>
+	<sect1>
+		<title>
+			<anchor id="__RefHeading__41_1717173484"/>Testing and Conformance</title>
+		<para/>
+		<para>This section provides information on any testing or conformance activities.</para>
+		<para>
+			<anchor id="__RefHeading__43_1717173484"/>A.    Testing</para>
+		<para/>
+		<para>The DOJ staff tested the integrity of the IEP schemas by parsing a sample instance with Altova XMLSpy 2008.</para>
+		<para>
+			<anchor id="__RefHeading__45_1717173484"/>B.    Conformance</para>
+		<para/>
+		<para>The IEP has not been reviewed for conformance outside of the workgroup.</para>
+		<para/>
+	</sect1>
+	<sect1>
+		<title>
+			<anchor id="__RefHeading__47_1717173484"/>NIEM Feedback</title>
+		<para/>
+		<para>The DOJ staff will likely submit definitional changes to some NIEM properties and types through the feedback mechanisms provided by NIEM.</para>
+	</sect1>
+	<sect1>
+		<title>
+			<anchor id="__RefHeading__49_1717173484"/>NIEM Terms and Definitions<footnote>
+				<para>Excerpt of NIEM Terms and Conditions found at <ulink url="http://www.niem.gov/library.php">www.niem.gov/library.php</ulink>. The full list of definitions is available for download on the website.</para>
+			</footnote>
+		</title>
+		<para/>
+		<informaltable frame="all">
+			<tgroup cols="3">
+				<tbody>
+					<row>
+						<entry>
+							<para>Version 1.0, 6/30/06</para>
+						</entry>
+						<entry>
+							<para/>
+						</entry>
+						<entry>
+							<para/>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>Term</para>
+						</entry>
+						<entry>
+							<para>Acronym</para>
+						</entry>
+						<entry>
+							<para>Definition</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>Artifact</para>
+						</entry>
+						<entry>
+							<para/>
+						</entry>
+						<entry>
+							<para>Any tangible and potentially reusable documentation or output pertaining to an existing or potential information exchange.</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>Business Model</para>
+						</entry>
+						<entry>
+							<para/>
+						</entry>
+						<entry>
+							<para>A view of the business at any given point in time. The view can be from a process, data, event or resource perspective, and can be the past, present or future state of the business. Creating a business model is often one of the initial steps when exploring information sharing needs and potentials.</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>Business Need</para>
+						</entry>
+						<entry>
+							<para/>
+						</entry>
+						<entry>
+							<para>Often used as a justification for decisions or actions in a business setting, the business need addresses those outcomes that would most assuredly achieve business success.</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>Business Requirements</para>
+						</entry>
+						<entry>
+							<para/>
+						</entry>
+						<entry>
+							<para>The requirements implicit in a transaction or information exchange in order to satisfy the business need of the parties involved. Business requirements and rules are often documented within an IEPD.</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>Business Rules </para>
+						</entry>
+						<entry>
+							<para/>
+						</entry>
+						<entry>
+							<para>Policies and other restrictions, guidelines, and procedures that constrain the use of information exchanges. These rules are often not able to be documented directly within the XML Schema artifacts within an IEPD and thus must be documented separately and agreed upon by parties engaging in the exchange.</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>Cardinality</para>
+						</entry>
+						<entry>
+							<para/>
+						</entry>
+						<entry>
+							<para>A constraint that indicates the number of instances of an entity in relation to another entity, e.g., one-to-one, one-to-many, many-to-many.</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>Conformance</para>
+						</entry>
+						<entry>
+							<para/>
+						</entry>
+						<entry>
+							<para>The requirement that those who participate in NIEM by contributing data components or creating and sharing IEPD artifacts are following the agreed-upon procedures for doing so, and that all documentation meets minimum criteria and the NIEM Naming and Design Rules where applicable.</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>Constraint Schema</para>
+						</entry>
+						<entry>
+							<para/>
+						</entry>
+						<entry>
+							<para>A schema with the purpose of restricting or constraining content that appears in instances of the Subset Schema.</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>Data Dictionary</para>
+						</entry>
+						<entry>
+							<para/>
+						</entry>
+						<entry>
+							<para>A set of data elements and their definitions, including any metadata and representations associated with them.</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>Data Element</para>
+						</entry>
+						<entry>
+							<para/>
+						</entry>
+						<entry>
+							<para>A basic unit of data having definition, identification, representation and values; the lowest level of physical representation of data.</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>Data Exchange </para>
+						</entry>
+						<entry>
+							<para/>
+						</entry>
+						<entry>
+							<para>A transaction between parties, either periodic or unique, where data is moved from a sender to a receiver.</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>Data Model</para>
+						</entry>
+						<entry>
+							<para/>
+						</entry>
+						<entry>
+							<para>A graphical and/or lexical representation of data, specifying their properties, structure and inter-relationships.</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>Document Schema (aka Exchange Schema)</para>
+						</entry>
+						<entry>
+							<para/>
+						</entry>
+						<entry>
+							<para>A schema with the purpose of defining the actual content model of the information exchange within an IEPD. The document schema works in conjunction with the subset, extension, and constraint schemas to form a complete package that represents the exchange.</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>Domain Model</para>
+						</entry>
+						<entry>
+							<para/>
+						</entry>
+						<entry>
+							<para>A domain model is a conceptual view of a system or an information exchange that identifies the entities involved and their relationships.</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>Exchange Content Mapping Spreadsheet</para>
+						</entry>
+						<entry>
+							<para/>
+						</entry>
+						<entry>
+							<para>A spreadsheet which identifies the exchange model concepts and structures to NIEM types and elements. Cardinality, extensions, and data element definitions are also documented in the spreadsheet.</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>Exchange Content Model Diagram</para>
+						</entry>
+						<entry>
+							<para/>
+						</entry>
+						<entry>
+							<para>A UML based diagram which visually depicts the business process. Uses class diagrams for an extensive specification for modeling. </para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>Exchange Mapping</para>
+						</entry>
+						<entry>
+							<para/>
+						</entry>
+						<entry>
+							<para>The process of comparing desired exchange content to the exchange specifications in order to ensure semantic compatibility prior to information exchange.</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>Exchange Package </para>
+						</entry>
+						<entry>
+							<para/>
+						</entry>
+						<entry>
+							<para>A description of specific data exchanged between a sender and a receiver. The exchange package is usually coupled with additional documentation, sample XML instances, business rules, etc. to compose an IEPD.</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>Exchange Schema</para>
+						</entry>
+						<entry>
+							<para/>
+						</entry>
+						<entry>
+							<para>The XML Schema that describes the data to be exchanged.</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>eXtensible Markup Language</para>
+						</entry>
+						<entry>
+							<para>XML</para>
+						</entry>
+						<entry>
+							<para>A structured, extensible language for describing information being sent electronically by one entity to another. XML Schema is the preferred standard to define the rules and constraints for the characteristics of the data, such as structure, relationships, allowable values, and data types.</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>Extension Schema</para>
+						</entry>
+						<entry>
+							<para/>
+						</entry>
+						<entry>
+							<para>An XML Schema that defines data elements that are to be used in an exchange but do not exist in the NIEM model, which therefore must be extended.</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>Global Justice XML Data Model </para>
+						</entry>
+						<entry>
+							<para>GJXDM</para>
+						</entry>
+						<entry>
+							<para>A data model and dictionary sponsored by the US Department of Justice and governed by the Global Justice Information Sharing Initiative. The GJXDM and its related processes are the basis on which NIEM was built, in partnership with US Department of Homeland Security.</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>Information</para>
+						</entry>
+						<entry>
+							<para/>
+						</entry>
+						<entry>
+							<para>Contextual meaning associated with, or derived from data.</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>Information Exchange</para>
+						</entry>
+						<entry>
+							<para/>
+						</entry>
+						<entry>
+							<para>The transfer of information from one organization to another, specifically in concert with NIEM IEPD exchange processes and recommended procedures.</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>Information Exchange Package</para>
+						</entry>
+						<entry>
+							<para>IEP</para>
+						</entry>
+						<entry>
+							<para>A description of specific information exchanged between a sender and a receiver. The information exchange package is usually coupled with additional documentation, sample XML instances, business rules, etc. to compose an IEPD. IEP may sometimes be referred to simply as Exchange Package.</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>Information Exchange Package Documentation</para>
+						</entry>
+						<entry>
+							<para>IEPD</para>
+						</entry>
+						<entry>
+							<para>The aggregation of IEP information to form a complete set of documentation to completely describe an information exchange. This may include additional documentation, business rules, sample instance data, etc.</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>Information Sharing</para>
+						</entry>
+						<entry>
+							<para/>
+						</entry>
+						<entry>
+							<para>The broad concept of sharing information between agencies or organizations who do not inherently have access to such information. The need for robust nationwide information sharing is the guiding principle of the NIEM program.</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>Justice Information Exchange Model</para>
+						</entry>
+						<entry>
+							<para>JIEM</para>
+						</entry>
+						<entry>
+							<para>The JIEM was developed by SEARCH through funding from the U.S. Department of Justice, Bureau of Justice Assistance, to help jurisdictions across the country document their business information and sharing requirements. </para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>maxOccurs</para>
+						</entry>
+						<entry>
+							<para/>
+						</entry>
+						<entry>
+							<para>Determines the maximum number of times that an element may appear in a content model.</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>Metadata</para>
+						</entry>
+						<entry>
+							<para/>
+						</entry>
+						<entry>
+							<para>Information that describes data itself to add meaning or context, such as the creator, expiration dates, sensitivity levels, and so on.</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>Metadata</para>
+						</entry>
+						<entry>
+							<para/>
+						</entry>
+						<entry>
+							<para>Structured data about data. Metadata includes data associated with either an information system or an information object for purposes of description, administration, legal requirements, technical functionality, use and usage, and preservation.</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>minOccurs</para>
+						</entry>
+						<entry>
+							<para/>
+						</entry>
+						<entry>
+							<para>Determines the minimum number of times that an element must appear in a content model.</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>NIEM Domain</para>
+						</entry>
+						<entry>
+							<para/>
+						</entry>
+						<entry>
+							<para>A business domain that is assigned a NIEM namespace, has responsibility to act as an authoritative source and steward for domain-specific data, and is able to propose promotions of data to Universal or Common namespaces.</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>NIEM.gov</para>
+						</entry>
+						<entry>
+							<para/>
+						</entry>
+						<entry>
+							<para>The public website meant to serve as the primary entry point for all information and resources related to the NIEM program. http://www.niem.gov</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>Object-Oriented</para>
+						</entry>
+						<entry>
+							<para/>
+						</entry>
+						<entry>
+							<para>A type of programming in which programmers define not only the data type of a data structure, but also the types of operations that can be applied to the data structure.</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>Reference IEPD</para>
+						</entry>
+						<entry>
+							<para/>
+						</entry>
+						<entry>
+							<para>An IEPD that has been designated as a reference IEPD has been endorsed by an Authoritative Source as a shining example or base exchange template that should be reused as-is or modified to perform a similar business function.</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>The National Consortium for Justice Information and Statistics</para>
+						</entry>
+						<entry>
+							<para>SEARCH</para>
+						</entry>
+						<entry>
+							<para>It is a nonprofit membership organization created by and for the states. SEARCH's primary objective has been to identify and help solve the information management problems of state and local justice agencies confronted with the need to exchange information with other local agencies, state agencies, agencies in other states, or with the federal government.</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>Schema </para>
+						</entry>
+						<entry>
+							<para/>
+						</entry>
+						<entry>
+							<para>See XML Schema</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>Schema Subset Generation Tool</para>
+						</entry>
+						<entry>
+							<para>SSGT</para>
+						</entry>
+						<entry>
+							<para>The preferred tool used to generate schema subsets from the NIEM data model without needing to edit the model schema itself. Subsets are saved and shared via the Wantlist mechanism.</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>Subject Matter Expert</para>
+						</entry>
+						<entry>
+							<para>SME</para>
+						</entry>
+						<entry>
+							<para>Those people or organizations with experience in a particular business process, or those practitioners who have demonstrated knowledge of a certain line of business or information exchange area.</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>Subset Schema</para>
+						</entry>
+						<entry>
+							<para/>
+						</entry>
+						<entry>
+							<para>A subset of the primary NIEM schema, a schema whose components are taken entirely from the parent schema while excluding those components that are unnecessary for a given exchange.</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>Unified Modeling Language</para>
+						</entry>
+						<entry>
+							<para>UML</para>
+						</entry>
+						<entry>
+							<para>A general purpose notational language for specifying and visualizing complex object-oriented projects. </para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>Use Case</para>
+						</entry>
+						<entry>
+							<para/>
+						</entry>
+						<entry>
+							<para>A business process example of an information flow, most commonly used as a basis for exchange modeling around the business needs of an organization.</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>Validation</para>
+						</entry>
+						<entry>
+							<para/>
+						</entry>
+						<entry>
+							<para>The documented process of showing that a system is stable and capable of producing pre-determined outcomes; Answers the question of whether or not it does what the user really requires.</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>Wantlist</para>
+						</entry>
+						<entry>
+							<para/>
+						</entry>
+						<entry>
+							<para>A portable construct used in the SSGT to save and reuse schema subsets of the overall NIEM data model. A wantlist can be saved or loaded directly from the SSGT tool.</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>XML</para>
+						</entry>
+						<entry>
+							<para/>
+						</entry>
+						<entry>
+							<para>A structured, extensible language for describing information being sent electronically by one entity to another. XML Schema is the preferred standard to define the rules and constraints for the characteristics of the data, such as structure, relationships, allowable values, and data types.</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>XML Instance</para>
+						</entry>
+						<entry>
+							<para/>
+						</entry>
+						<entry>
+							<para>An instance of XML which contains actual data whose format and inclusion is controlled by the associated XML schema.</para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>XML Schema </para>
+						</entry>
+						<entry>
+							<para/>
+						</entry>
+						<entry>
+							<para>Defines the vocabulary (elements and attributes), the content model (structure, element nesting, and text content), and data types (value constraints) of a class of XML documents. NOTE: When written with a capital 'S', the term refers specifically to the XML Schema Definition (XSD or WXS) language developed by the W3C. However, when written with a lowercase 's', the meaning is more generic, referring to any of several schema languages for use with XML, such as DTDs, RELAX NG, Schematron, etc. In both cases, an XML schema is used to validate XML instances, to verify that the instances conform to the model that the schema describes. </para>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							<para>XML Style Sheet</para>
+						</entry>
+						<entry>
+							<para/>
+						</entry>
+						<entry>
+							<para>This document allows a style sheet to be associated with an XML document by including one or more processing instructions with a target of xml-style sheet in the document's prolog.</para>
+						</entry>
+					</row>
+				</tbody>
+			</tgroup>
+		</informaltable>
+		<para/>
+	</sect1>
+</article>
