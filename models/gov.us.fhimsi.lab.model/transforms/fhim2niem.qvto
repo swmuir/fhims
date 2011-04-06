@@ -27,7 +27,11 @@ main() {
 	
 }
 
-
+mapping uml::Package::toPackageImport() : uml::PackageImport
+{
+	importedPackage := self;
+	log(self.qualifiedName);
+}
 
 mapping uml::Package::toNIEM() : uml::Package
 {
@@ -36,6 +40,12 @@ mapping uml::Package::toNIEM() : uml::Package
 		result := self.deepclone().oclAsType(Package);
 		
 	}
+
+	niemCoreModel.rootObjects()[uml::Model]->getPackageImport('XSDDataTypes')->asSequence()->first();
+
+
+	result.packageImport += niemCoreModel.rootObjects()[uml::Model].packagedElement->select(name='appinfo')[uml::Package]->map toPackageImport();
+
 
 		//niemCoreModel.rootObjects()[uml::Package].getImportedPackages()->select(name='HITSP-C80')->asSequence();
 	
@@ -90,10 +100,13 @@ mapping uml::Package::toNIEM() : uml::Package
 	constraintPackage.ownedType[uml::Class]-> map mapNiemNaming();
 
 
+	extensionPackage.packageImport += niemCoreModel.rootObjects()[uml::Model].packagedElement->select(name='appinfo')[uml::Package]->map toPackageImport();
 	result.packagedElement += extensionPackage;
 	
+	constraintPackage.packageImport += niemCoreModel.rootObjects()[uml::Model].packagedElement->select(name='appinfo')[uml::Package]->map toPackageImport();
 	result.packagedElement += constraintPackage;
 	
+	exchangePackage.packageImport += niemCoreModel.rootObjects()[uml::Model].packagedElement->select(name='appinfo')[uml::Package]->map toPackageImport();	
 	result.packagedElement += exchangePackage;	
 	
 		// update the name - do this last
@@ -292,12 +305,12 @@ mapping inout uml::Property::createInnerClasses() : uml::Class
 
 query getXSDType(in xsdTypeName : String): uml::DataType {
 	
-	log('ffffffffffffffffffffffffffffffff');
+
 	
 	niemCoreModel.rootObjects()[uml::Model].packageImport->map displayPackage();
 	
 	var xsdPackage :=  niemCoreModel.rootObjects()[uml::Model]->getPackageImport('XSDDataTypes')->asSequence()->first(); 
-	log('ffffffffffffffffffffffffffff');
+	
 	
 	//var xsdPackage : uml::Package :=  niemCoreModel.rootObjects()[uml::Model]->getPackageImport('XSDDataTypes')->asSequence()->first();
 	var xsdType := xsdPackage.allSubobjects()[uml::DataType]->asSequence()->select(xsdTypeName=name)->first();
