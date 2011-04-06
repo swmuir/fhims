@@ -4,14 +4,17 @@
 	<comment></comment>
 	<projects>
 		<project>gov.us.fhimsi.lab.model</project>
+		<project>gov.us.fhimsi.model</project>
+		<project>gov.us.niem.core.model</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
-			<name>org.eclipse.m2m.qvt.oml.project.QVTOBuilder</name>
+			<name>org.eclipse.ui.externaltools.ExternalToolBuilder</name>
+			<triggers>full,incremental,</triggers>
 			<arguments>
 				<dictionary>
-					<key>src_container</key>
-					<value>transforms</value>
+					<key>LaunchConfigHandle</key>
+					<value>&lt;project&gt;/.externalToolBuilders/org.eclipse.m2m.qvt.oml.project.QVTOBuilder.launch</value>
 				</dictionary>
 			</arguments>
 		</buildCommand>
