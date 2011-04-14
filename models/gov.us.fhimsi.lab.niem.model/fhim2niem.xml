@@ -6,14 +6,13 @@
 		
 	<target name="fhim2niem">
 		
-		
+	
  		<qvto:transformation uri="platform:/resource/gov.us.fhimsi.lab.model/transforms/fhim2niem.qvto">
  			<in uri="platform:/resource/gov.us.fhimsi.lab.model/model/fhimsilab.uml" />
 			<in uri="platform:/resource/gov.us.niem.core.model/model/gov.us.niem.core.uml" /> 			
-			<out uri="platform:/resource/gov.us.fhimsi.lab.niem.model/model/niemsilab.uml" /> 			
-			<trace uri="platform:/resource/gov.us.fhimsi.lab.niem.model/trace/fhim2niem.qvtotrace" />
+			<out uri="platform:/resource/gov.us.fhimsi.lab.niem.model/model/niemsilab.uml" /> 						
 		</qvto:transformation>
-<!--		
+		
 	   	<replace dir="${basedir}" token="&lt;uml:Package " value="&lt;uml:Model ">
 			<include name="model/*.uml" />
 		</replace>
@@ -21,18 +20,16 @@
 	   	<replace dir="${basedir}" token="&lt;/uml:Package&gt;" value="&lt;/uml:Model&gt;">
 			<include name="model/*.uml" />
 		</replace>
-		
-		
--->		
-		
+	
+	
 		<xmlmodelingtask model="model/niemsilab.uml">
 
-			<GenerateXSD destdir="${basedir}\schemas" >
-				<modelElement qname="niemfhimsilab" nested="true" />
+			<GenerateXSD  destdir="${basedir}/schemas" >
+				<modelElement qname="niemfhimsilab" nested="true"  />
 			</GenerateXSD>
 
 		</xmlmodelingtask >
-		
+	
 	
 		<eclipse.refreshLocal resource="gov.us.fhimsi.lab.niem.model/model" depth="infinite"/>
 		<eclipse.refreshLocal resource="gov.us.fhimsi.lab.niem.model/schemas" depth="infinite"/>
