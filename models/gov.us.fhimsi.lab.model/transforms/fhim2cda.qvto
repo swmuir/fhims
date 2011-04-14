@@ -48,6 +48,7 @@ mapping uml::Class::toCDA(inout package : uml::Package, inout section : uml::Cla
 
 	var cdaClass : uml::Class := getCDAClass(cdaClassName);
 	
+	log('asdfasdfasdfasdf'+cdaClass.repr());
 
 	var mappedClass : uml::Class :=  object uml::Class {
 		name := self.name;
@@ -94,6 +95,9 @@ mapping inout uml::Property::cloneAppliedStereotypes(in  sourceProperty : uml::P
 
 query getCDAClass(in cdaClassName: String ) : uml::Class
 {   
+log('ffffffffffffffffffffffffffffffffff'+cdaClassName);
+	cdaBaseModel.objectsOfType(uml::Class)->asSequence()->dump();
+
 	return cdaBaseModel.objectsOfType(uml::Class)->asSequence()->select(cdaClassName=name)->first();
 }
 

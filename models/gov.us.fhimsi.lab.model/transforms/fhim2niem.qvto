@@ -12,107 +12,172 @@ main() {
 	
 	log('Transforming Federal Health Information Model (PIM) to National Information Exchange Model (PSM)');
 	
-	// Currently hard coded vocabulary import - need to add dynamic discovery support
-//	var vocabularyPackage :=  fhimModel.rootObjects()[uml::Model]->getPackageImport('HITSP-C80')->asSequence()->first();
-
-//	log('vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv');
-//	var xsdPackage :=  niemCoreModel.rootObjects()[uml::Model]->getPackageImport('XSDDataTypes')->asSequence()->first(); 
-//	log('vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv');
-	
 	// Create NIEM PSM
-	fhimModel.rootObjects()[uml::Package]-> map toNIEM();
-	
-	
-
-	
+	fhimModel.rootObjects()[uml::Package]-> map toNIEM();	
 }
 
 mapping uml::Package::toPackageImport() : uml::PackageImport
 {
+
 	importedPackage := self;
-	log(self.qualifiedName);
+	log('Package Import Mapping'+self.qualifiedName);
 }
 
 mapping uml::Package::toNIEM() : uml::Package
 {
-	// Clone the FHIM instance to NIEM instance
-	init{
-		result := self.deepclone().oclAsType(Package);
-		
-	}
 
 	niemCoreModel.rootObjects()[uml::Model]->getPackageImport('XSDDataTypes')->asSequence()->first();
 
+	var appInforPackage : uml::PackageableElement := getNiemPackage('appinfo'); 
 
-	result.packageImport += niemCoreModel.rootObjects()[uml::Model].packagedElement->select(name='appinfo')[uml::Package]->map toPackageImport();
-
-
-		//niemCoreModel.rootObjects()[uml::Package].getImportedPackages()->select(name='HITSP-C80')->asSequence();
+	result.packageImport += object uml::PackageImport
+	{
+		importedPackage := appInforPackage->asSequence()[uml::Package]->first();
+	};
 	
-
-	// Update the generalizations of the extension 
-	result.allSubobjects()[uml::Generalization].map mapGeneralizations(); 
+		// Create the 4 niem iepd packages 
+	var codesPackage : uml::Package := object uml::Package  {
+		name := 'codes';
+		packageImport += object uml::PackageImport {
+			importedPackage := appInforPackage->asSequence()[uml::Package]->first();
+		};
+	}	;
 	
-	// Update and bind to terminology model 
-	 result.allSubobjects()[uml::Class] -> map mapTerminology();
-	 
-
-	// update the name - do this last
-	result.name := self.name;
-
-	// Create the 3 niem packages for teh exchange
+	// Create the 3 niem iepd packages 
 	var extensionPackage : uml::Package := object uml::Package  {
-		name := 'Extension';
+		name := 'extension';
+		packageImport += object uml::PackageImport {
+			importedPackage := appInforPackage->asSequence()[uml::Package]->first();
+		};
 	}	;
 
 	var constraintPackage : uml::Package := object uml::Package  {
-		name := 'Constraints';
+		name := 'constraints';
+		packageImport += object uml::PackageImport {
+			importedPackage := appInforPackage->asSequence()[uml::Package]->first();
+		};
 	}	;
 
    var exchangePackage : uml::Package := object uml::Package  {
-		name := 'Exchange';
+		name := 'exchange';
+		packageImport += object uml::PackageImport {
+			importedPackage := appInforPackage->asSequence()[uml::Package]->first();
+		};
 	};
+	
+	result.packagedElement += codesPackage;
+	result.packagedElement += extensionPackage;
+	result.packagedElement += constraintPackage;
+	result.packagedElement += exchangePackage;
 
-	extensionPackage.ownedType += result.ownedType->select(ownedComment->getMappings('niem=')->asSequence()->first() = 'Extension');
-	
-	constraintPackage.ownedType += result.ownedType;
-	
-	
 
+	self.ownedType[uml::Class]->map mapEnumerations(codesPackage);
+
+	extensionPackage.ownedType += self.ownedType->select(ownedComment->getMappings('niem=')->asSequence()->first() = 'Extension')[uml::Class]->map cloneClass(codesPackage);
+	
+	extensionPackage.ownedType[uml::Class]-> map mapExtensions();
+	
+	constraintPackage.ownedType += self.ownedType->select(ownedComment->getMappings('niem=')->asSequence()->first() <> 'Extension');
+	
+	var exchangeName := self.ownedComment->getMappings('niemexchange=')->asSequence()->first();
+	
+	var focalName := self.ownedComment->getMappings('niemfocal=')->asSequence()->first();
+	
 	var exchangeClass : uml::Class := object uml::Class
 	{
-		name := 'Exchange'
+		name := exchangeName;
+	};
+	
+	
+	exchangeClass.generalization += object Generalization {
+		general := getNiemClass('ComplexObjectType');	
 	};
 	
 	
 	
-	exchangePackage.ownedType += exchangeClass;
 	
 	var xsdGlobalStereotype : uml::Stereotype := exchangeClass.getApplicableStereotype('XMLSchema::GlobalProperty');
 
 	exchangeClass.applyStereotype(xsdGlobalStereotype);
-		
-	exchangeClass.ownedAttribute += constraintPackage.ownedType[uml::Class]->map mapConstraintsToExchange();
+
+	exchangeClass.ownedAttribute += constraintPackage.ownedType[uml::Class]->map mapConstraintsToExchange(focalName) ;
+	
+	exchangeClass.ownedAttribute += extensionPackage.ownedType[uml::Class]->map mapConstraintsToExchange(focalName);
 	
 	exchangeClass.ownedAttribute[uml::Property]->map mapApplyXSDGlobalElement();
 	
-	 //update to niem naming convention
+	exchangePackage.ownedType += exchangeClass;
+	
+	extensionPackage.ownedType[uml::Class]-> map mapNiemNaming();
+	
+	codesPackage.ownedType[uml::Class]-> map mapNiemNaming();
+	
+	exchangePackage.ownedType[uml::Class]-> map mapNiemNaming();
+	
 	constraintPackage.ownedType[uml::Class]-> map mapNiemNaming();
-
-
-	extensionPackage.packageImport += niemCoreModel.rootObjects()[uml::Model].packagedElement->select(name='appinfo')[uml::Package]->map toPackageImport();
-	result.packagedElement += extensionPackage;
 	
-	constraintPackage.packageImport += niemCoreModel.rootObjects()[uml::Model].packagedElement->select(name='appinfo')[uml::Package]->map toPackageImport();
-	result.packagedElement += constraintPackage;
-	
-	exchangePackage.packageImport += niemCoreModel.rootObjects()[uml::Model].packagedElement->select(name='appinfo')[uml::Package]->map toPackageImport();	
-	result.packagedElement += exchangePackage;	
-	
-		// update the name - do this last
 	result.name := 'niem'+self.name;
 }
 
+mapping uml::Class::cloneClass(inout codesPackage : uml::Package) : uml::Class
+{
+	init{
+		result := self.deepclone().oclAsType(uml::Class);
+	}
+	
+	self.attribute->select(type != null and isStereotypeApplied(getApplicableStereotype('CDA::ValueSetConstraint'))) ->map mapCodeConstraint(result,codesPackage);
+}
+
+mapping uml::Property::mapCodeConstraint(inout cloneClass : uml::Class,inout codesPackage : uml::Package){
+
+	var termstereotype : uml::Stereotype := self.getAppliedStereotype('CDA::ValueSetConstraint');
+
+	var enumerationSource : uml::Enumeration := getTerminologyEnumeration(self.getValue(termstereotype,"reference").repr());		
+	
+	cloneClass.ownedAttribute->select(name=self.name)->asSequence()[uml::Property]->first().type := codesPackage.ownedType->select(name=enumerationSource.name)->asSequence()[uml::Type]->first();	
+}
+
+mapping uml::Class::mapEnumerations(inout codesPackage : uml::Package)
+{
+	codesPackage.ownedType += self.attribute->select(type != null and isStereotypeApplied(getApplicableStereotype('CDA::ValueSetConstraint'))) ->map mapTerminology();
+}
+
+mapping inout uml::Package::applyAppInfo()
+{
+	ownedComment += object uml::Comment{
+		body := '<xsd:appinfo><i:ConformantIndicator>true</i:ConformantIndicator></xsd:appinfo>';	
+	};	
+	
+	ownedComment->map applyAppInfo();
+}
+
+mapping inout uml::Comment::applyAppInfo()
+{
+	var xsdDocumentation : uml::Stereotype := getApplicableStereotype('XMLSchema::Documentation');
+	var xsdAppInfo : uml::Stereotype := getApplicableStereotype('XMLSchema::AppInfo');
+
+	applyStereotype(xsdDocumentation);
+	applyStereotype(xsdAppInfo);
+
+}
+
+mapping uml::Class::mapExtensionProperties(inout extensionPackage : uml::Package) 
+{
+
+
+	extensionPackage.ownedType +=  self.ownedAttribute->map mapExtensionProperties();
+}
+
+
+
+
+mapping uml::Property::mapExtensionProperties() : uml::Class when {self.type <> null and self.type.oclIsTypeOf(uml::Class)}
+{
+init{
+	self.type.deepclone();
+}
+	
+}
 
 
 // map generalizations to niem core
@@ -123,43 +188,60 @@ mapping  inout uml::Generalization::mapGeneralizations()
 	var niemClassName : String = '';
 	
 	niemClassName :=  self.owner.ownedComment->getMappings('niem=')->asSequence()->first();
-	
-	log ('Extension '+niemClassName  );
-	
+
 	if (niemClassName='Extension') then
 	{
-	log('aaa');
-		self.destroy();
+		self.general := getNiemClass('ComplexObjectType');	
 	} else {
-	log('bbb');
-		self.general := getFHIMClass(niemClassName);	
+		self.general := getNiemClass(niemClassName);	
 	} endif;
 	
 
 }
 
-mapping inout uml::Class::mapTerminology() {
+mapping uml::Classifier::mapGenerals(inout extensionClass : uml::Class)
+{
+	var attributePosition : Integer := 1;
+	var attribute : uml::Property;
+	while (attributePosition <= self.attribute->size()) {
+		attribute := self.attribute->asSequence()->at(attributePosition);
+		if (extensionClass.ownedAttribute->select(name=attribute.name)->isEmpty()) then
+		{
+			extensionClass.ownedAttribute += attribute;
+		} endif;
+		attributePosition  := attributePosition  + 1;	
+	};
+}
+
+mapping inout uml::Class::mapExtensions()
+{
+	self.general -> map mapGenerals(self);
 	
-	log ('Mapping FHIM terminology ');
+	self.ownedAttribute->select(type != null and type.name='Id') -> map mapDatatype('IdentificationType');
 	
-	nestedClassifier += self.ownedAttribute -> map mapTerminology();
+	self.ownedAttribute->select(type != null and type.name='PointInTime') -> map mapDatatype('TimeMeasureType');
+	
+	self.ownedAttribute->select(type != null and type.name='CD') -> map mapDatatype('TextType');
+
+	self.ownedAttribute->select(type != null and type.oclIsKindOf(uml::Class) and (type.qualifiedName.find('niem') = 0)) -> map mapDatatype('ComplexObjectType');
+	
+}
+
+
+mapping inout uml::Class::mapTerminology(inout codesPackage : uml::Package, inout extensionPackage : uml::Package) {
+	
+	codesPackage.ownedType += self.ownedAttribute-> select(type != null and isStereotypeApplied(getApplicableStereotype('CDA::ValueSetConstraint'))) ->map mapTerminology();
 	
 	// Appying xsd after the add so the profile is available
-	nestedClassifier[uml::Class]->map applyXSD(); 
-	
+	codesPackage.ownedType[uml::Class]->map applyXSD(); 	
 }
 
 
 mapping inout uml::Class::mapNiemNaming() {
-	
-	log ('Mapping FHIM Naming ');
-	
 	name := name +'Type';
-	
-	
 }
 
-mapping  uml::Class::mapConstraintsToExchange() : uml::Property {
+mapping  uml::Class::mapConstraintsToExchange(in focalName : String ) : uml::Property when { self.name=focalName } {
 
 	init {
 		result := object uml::Property {
@@ -179,96 +261,42 @@ mapping inout uml::Property::mapApplyXSDGlobalElement()  {
 	
 }
 
-mapping in uml::Stereotype::logAppliedStereotypes()
+mapping in uml::Stereotype::logAppliedStereotypes(in statusApplied : String)
 {
-	log(self.qualifiedName + ' is applied ');
+	log(self.qualifiedName + ' is ' + statusApplied);
 }
 
-mapping inout uml::Property::mapTerminology() : uml::Class when { self.type != null and  self.type.name = 'CD'  }
+
+mapping inout uml::Property::mapDatatype(in niemDataType : String )
 {	
+ 	self.type := getNiemDataType(niemDataType);
+}
 
-	// create the class restul
+
+
+ 
+mapping uml::Property::mapTerminology() : uml::Enumeration 
+{	
 	init {
-		result := object uml::Class {
-		name := '_'+self.name;
-		
-		//general := getNIEMDatatype('token');
-		
-//		base = 'asdf';
-		};	
-	
-		// value property 
-		var valueProperty : uml::Property := 
-		object uml::Property
-		{
-			name := 'value';
-			//type := getNiemDataType('string');
-		};
-	
-		// value set id attribute
-		var valueSetIdProperty : uml::Property := 
-		object uml::Property
-		{
-			name := 'valueSetId';
-		};
-	
-		// get the corresponding fhim property
-		var fhimProperty : uml::Property := getFHIMProperty(self.qualifiedName);
-
-		fhimProperty.getAppliedStereotypes()->map logAppliedStereotypes();
-
-		var termstereotype : uml::Stereotype := fhimProperty.getAppliedStereotype('CDA::ValueSetConstraint');
-	
-	log('stereotype'+termstereotype.repr());
-	
-	
-	
-		var enumerationSource : uml::Enumeration := getTerminologyEnumeration(fhimProperty.getValue(termstereotype,"reference").repr());
-	
-		var enumerationTarget : uml::Enumeration  := enumerationSource.deepclone().oclAsType(uml::Enumeration );
-		
-		enumerationTarget.general += getXSDType('token'); 
-	
-		var termstereotype2 : uml::Stereotype := enumerationSource.getAppliedStereotype('Terminology::ValueSetVersion');
-
-		valueSetIdProperty.defaultValue := object uml::LiteralString {
-			value  := enumerationSource.getValue(termstereotype2,"identifier")->oclAsType(String)->asSequence()->first();
-		};
-
-		result.ownedAttribute += valueProperty;
-
-		result.ownedAttribute += valueSetIdProperty ;
-	
-		result.nestedClassifier += enumerationTarget ;
-		
-		// set the value to the inlined enumeration
-		valueProperty.type := enumerationTarget;
-		
+		var termstereotype : uml::Stereotype := self.getAppliedStereotype('CDA::ValueSetConstraint');
+		var enumerationSource : uml::Enumeration := getTerminologyEnumeration(self.getValue(termstereotype,"reference").repr());		
+		result.name := enumerationSource.name;	
+		result := enumerationSource.deepclone().oclAsType(uml::Enumeration );		
+		result.general += getXSDType('token'); 	
+		//var termstereotype2 : uml::Stereotype := enumerationSource.getAppliedStereotype('Terminology::ValueSetVersion');
+	//	self.type := result;
 	}
-
-	// set the type of the property
-	self.type := result;
-
-}
-
-
-mapping  inout uml::Class::createInnerClasses() 
-{
-	nestedClassifier += self.ownedAttribute -> map createInnerClasses() ;
-
-}
-
-
-// apply xsd to valuesetid 
-mapping  inout uml::Property::applyXSD() 
-{
 	
+	log ('Creating Enumeration from '+self.qualifiedName);
+}
+
+mapping  inout uml::Property::applyXSD() 
+{	
 	if (name = 'valueSetId') then
 	{
 		var xsdstereotype : uml::Stereotype := getApplicableStereotype('XMLSchema::Attribute');
-
 		applyStereotype(xsdstereotype);
-		
+	
 	}endif;
 	 
 }
@@ -279,54 +307,28 @@ mapping  inout uml::Class::applyXSD()
 	self.ownedAttribute[uml::Property] ->map applyXSD();
 }
 
-mapping inout uml::Property::createInnerClasses() : uml::Class
-{
-	
-	init {
-		result := object uml::Class {
-			name := '_' + self.name;
-			general := getNiemClass('anyType');
-		};	
-	}
 
-	
-	var p : uml::Property := 
-	object uml::Property
-	{
-		name := 'valueSetId';
-	};
-
-	result.ownedAttribute += p;
-
-	self.type = result;
-
-
-}
-
-query getXSDType(in xsdTypeName : String): uml::DataType {
-	
-
-	
-	niemCoreModel.rootObjects()[uml::Model].packageImport->map displayPackage();
-	
+query getXSDType(in xsdTypeName : String): uml::DataType {	
 	var xsdPackage :=  niemCoreModel.rootObjects()[uml::Model]->getPackageImport('XSDDataTypes')->asSequence()->first(); 
-	
-	
-	//var xsdPackage : uml::Package :=  niemCoreModel.rootObjects()[uml::Model]->getPackageImport('XSDDataTypes')->asSequence()->first();
-	var xsdType := xsdPackage.allSubobjects()[uml::DataType]->asSequence()->select(xsdTypeName=name)->first();
-	
-	log(xsdType.repr());
+	var xsdType := xsdPackage.allSubobjects()[uml::DataType]->asSequence()->select(xsdTypeName=name)->first();	
 	return xsdType;
 }
+
+
+query getNiemPackage(in niemPackageName: String ) : uml::PackageableElement
+{   
+	return  niemCoreModel.rootObjects()[uml::Model].packagedElement->select(name=niemPackageName)->asSequence()->first();
+}
+
 	
 query getNiemClass(in niemClassName: String ) : uml::Class
 {   
    return niemCoreModel.objectsOfType(uml::Class)->asSequence()->select(niemClassName=name)->first();
 }
 
-query getNiemDataType(in niemClassName: String ) : uml::DataType
+query getNiemDataType(in niemClassName: String ) : uml::Type
 {   
-   return niemCoreModel.objectsOfType(uml::DataType)->asSequence()->select(niemClassName=name)->first();
+   return niemCoreModel.objectsOfType(uml::Type)->asSequence()->select(niemClassName=name)->first();
 }
 
 query getFHIMProperty(in fhimPropertyName: String ) : uml::Property
@@ -336,20 +338,13 @@ query getFHIMProperty(in fhimPropertyName: String ) : uml::Property
 
 
 
-query getFHIMClass(in fhimClassName: String ) : uml::Class
-{   
-   return niemCoreModel.objectsOfType(uml::Class)->asSequence()->select(fhimClassName=name)->first();
-}
 
 
 query getTerminologyEnumeration(in termClassName: String ) : uml::Enumeration
 {
-log('search for enumeration ' + termClassName);
-	var vocabularyPackage :=  fhimModel.rootObjects()[uml::Package].getImportedPackages()->select(name='HITSP-C80')->asSequence()->first();   
-	 
- var enumeration := vocabularyPackage.allSubobjects()[uml::Enumeration]->asSequence()->select(termClassName=qualifiedName)->first();
-
- return enumeration;
+	var vocabularyPackage :=  fhimModel.rootObjects()[uml::Package].getImportedPackages()->select(name='HITSP-C80')->asSequence()->first();  	 
+ 	var enumeration := vocabularyPackage.allSubobjects()[uml::Enumeration]->asSequence()->select(termClassName=qualifiedName)->first();
+	return enumeration;
   
 }
 
