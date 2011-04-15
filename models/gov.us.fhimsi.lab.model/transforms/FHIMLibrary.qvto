@@ -7,13 +7,14 @@ modeltype term uses 'http://www.openhealthtools.org/mdht/schemas/term/1';
 query uml::Comment::getMappings(in key: String ) : String
 {
 	var mappingValue : String := '';
-    var mappings : Sequence(String) := self.body.split('\n');
+    var mappings : Sequence(String) := self.body.split('\n<>');
     var pos : Integer := 1;
     var found : Boolean := false;
 	while(pos <= mappings->size() and found = false) {
 		if (mappings->at(pos).find(key) > 0) then {
 			found := true;
  			mappingValue  := mappings->at(pos).substringAfter(key).trim();
+ 			mappingValue  := mappingValue.split('<')->at(1);
 		} endif;
  		pos := pos + 1;
 	};
