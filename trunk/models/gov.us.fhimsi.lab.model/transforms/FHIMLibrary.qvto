@@ -44,7 +44,16 @@ mapping uml::Stereotype::displayStereotype()
 {
 	log('uml::Stereotype is ' + self.qualifiedName);	
 }
+
+mapping ecore::EClass::foo()
+{
+	self.dump();
+}
 mapping uml::NamedElement::displayNamedElement()
 {
-	log('uml::NameElement is ' + self.qualifiedName);	
+
+	var foo : uml::NamedElement := self.deepclone().oclAsType(uml::NamedElement);
+	
+
+	log('uml::NameElement is ' + foo.qualifiedName);	
 }

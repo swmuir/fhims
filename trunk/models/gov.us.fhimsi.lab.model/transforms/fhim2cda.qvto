@@ -8,22 +8,53 @@ modeltype term uses 'http://www.openhealthtools.org/mdht/schemas/term/1';
 transformation fhim2cda(in fhimModel : uml,in cdaBaseModel : uml, out cdaModel : uml );
 
 main() {
+	
+
 	log('Transforming Federal Health Information Model (PIM) to HL7 Clinical Document Architecture (PSM)');
 	fhimModel.rootObjects()[uml::Package]-> map toCDA();
 }
 
+
+mapping uml::Profile::applyProfiles(inout package : uml::Package) {
+	package.applyProfile(self);
+}
 mapping uml::Package::toCDA() : uml::Package
 {
 	init{
-		log('Transforming Package : ' + self.name);
-		result := self.deepclone().oclAsType(uml::Package);
+		log('Transforming Package : ' + self.name);		
 	}
 
- 	var clinicalDocument : uml::Class :=  result.createOwnedClass('ClinicalDocument',false); 
- 	clinicalDocument.general  := getCDAClass('ClinicalDocument');
+	self.getAppliedProfiles()->map applyProfiles(result);
+	
+	var cdaDocumentType : String = '';
+	
+	cdaDocumentType :=  self.ownedComment->getMappings('cdadocumenttype=')->asSequence()->first();
+	var cdaDocumentName : String = '';
+	
+	cdaDocumentName :=  self.ownedComment->getMappings('cdadocumentname=')->asSequence()->first();
+	var cdaDocumentTemplateID : String = '';
+	
+	cdaDocumentTemplateID  :=  self.ownedComment->getMappings('cdadocumenttemplate=')->asSequence()->first();
+ 	var clinicalDocument : uml::Class :=  result.createOwnedClass(cdaDocumentName,false); 
+ 	
+ 	clinicalDocument.general  := getCDAClass(cdaDocumentType);
  
-  	var section : uml::Class :=  result.createOwnedClass('Section',false); 
- 	section.general  := getCDAClass('Section');
+ 
+	var cdaSectionType : String = '';
+	
+	cdaSectionType :=  self.ownedComment->getMappings('cdasectiontype=')->asSequence()->first();
+ 
+ 	var cdaSectionName : String = '';
+	
+	cdaSectionName :=  self.ownedComment->getMappings('cdasectionname=')->asSequence()->first();
+ 
+ 	var cdaSectionTemplateID : String = '';
+	
+	cdaSectionTemplateID :=  self.ownedComment->getMappings('cdasectiontemplate=')->asSequence()->first();
+ 
+ 
+  	var section : uml::Class :=  result.createOwnedClass(cdaSectionName,false); 
+ 	section.general  := getCDAClass(cdaSectionType);
  
  	clinicalDocument.createAssociation(true,uml::AggregationKind::none,'section',1,1,section,false,uml::AggregationKind::none,'',1,1);
 
@@ -31,6 +62,43 @@ mapping uml::Package::toCDA() : uml::Package
 
 	// update the name - do this last
 	result.name := self.name;	
+					
+	 //map displayStereotype();
+	
+//	section.getApplicableStereotypes()->map displayStereotype();
+
+
+//	var ctr : Integer := 1;
+//	var attribute : uml::Property;
+//	while (ctr <= clinicalDocument.getApplicableStereotypes()->asSequence()->size()) {
+		
+//		clinicalDocument.getApplicableStereotypes()->asSequence()->at(ctr).dump();
+		
+//		clinicalDocument.applyStereotype(clinicalDocument.getApplicableStereotypes()->asSequence()->at(ctr));
+//		ctr := ctr + 1;
+//	};
+
+	clinicalDocument.applyStereotype(clinicalDocument.getApplicableStereotype('CDA::CDATemplate'));
+	
+	clinicalDocument.setValue(clinicalDocument.getAppliedStereotype("CDA::CDATemplate"),'templateId',cdaDocumentTemplateID);
+	
+	section.applyStereotype(section.getApplicableStereotype('CDA::CDATemplate'));
+
+	section.setValue(section.getAppliedStereotype("CDA::CDATemplate"),'templateId',cdaSectionTemplateID);
+	
+	
+//	templateStereotype  := ->select(name='CDA::CDATemplate')->asSequence()->first();
+	
+//	log('aaa');
+//	templateStereotype.dump();
+//	log('bbb');
+
+						  
+//	clinicalDocument.applyStereotype(templateStereotype);
+	
+//	section.applyStereotype(templateStereotype);
+	
+	//<CDA:CDATemplate xmi:id="_71B8UDuGEd-B8KE6Jx0UNQ" base_Class="_4hu_kDuGEd-B8KE6Jx0UNQ" templateId="1.3.6.1.4.1.19376.1.5.3.1.2.3" assigningAuthorityName="IHE PCC"/>
 	
 	result.applyStereotype(result.getApplicableStereotype("CDA::CodegenSupport"));	
 	result.setValue(result.getAppliedStereotype("CDA::CodegenSupport"),"basePackage","gov.us.fhim.exchange.cda");
@@ -48,12 +116,15 @@ mapping uml::Class::toCDA(inout package : uml::Package, inout section : uml::Cla
 
 	var cdaClass : uml::Class := getCDAClass(cdaClassName);
 	
-	log('asdfasdfasdfasdf'+cdaClass.repr());
+	
 
-	var mappedClass : uml::Class :=  object uml::Class {
-		name := self.name;
-		general := cdaClass;
-	};	
+	var mappedClass : uml::Class := self.deepclone().oclAsType(uml::Class);
+	mappedClass.general := cdaClass;
+	
+//	  object uml::Class {
+//		name := self.name;
+//		general := cdaClass;
+//	};	
 	
 	
 	var collectionTemplatesPosition : Integer := 1;
@@ -65,6 +136,7 @@ mapping uml::Class::toCDA(inout package : uml::Package, inout section : uml::Cla
 		mappedClass.ownedAttribute += attribute;		
 		collectionTemplatesPosition := collectionTemplatesPosition + 1;	
 	};
+
 
 	package.ownedType += mappedClass;
 
@@ -80,24 +152,21 @@ mapping uml::Class::toCDA(inout package : uml::Package, inout section : uml::Cla
 	
 	section.createAssociation(true,uml::AggregationKind::none,mappedClass.name,1,1,mappedClass,false,uml::AggregationKind::none,'',1,1);
 	
-	log ('Defined ' + mappedClass.qualifiedName + ' by transforming constraints from ' + self.qualifiedName + ' to ' +cdaClass.qualifiedName);
+	log ('Defined ' + mappedClass.name + ' by transforming constraints from ' + self.qualifiedName + ' to ' +cdaClass.qualifiedName);
 }
 
 mapping inout uml::Property::cloneAppliedStereotypes(in  sourceProperty : uml::Property)
 {
-	var termstereotype : uml::Stereotype := sourceProperty.getApplicableStereotype('Terminology::ValueSetConstraint');
+	var termstereotype : uml::Stereotype := sourceProperty.getApplicableStereotype('CDA::ValueSetConstraint');
 	if (sourceProperty.isStereotypeApplied(termstereotype) ) then {
 		applyStereotype(termstereotype);
 		var vsv : term::ValueSetVersion := sourceProperty.getValue(termstereotype,"reference").oclAsType(term::ValueSetVersion);	
-		setValue(getAppliedStereotype('Terminology::ValueSetConstraint'),"reference",vsv);
+		setValue(getAppliedStereotype('CDA::ValueSetConstraint'),"reference",vsv);
 	} endif;
 }
 
 query getCDAClass(in cdaClassName: String ) : uml::Class
 {   
-log('ffffffffffffffffffffffffffffffffff'+cdaClassName);
-	cdaBaseModel.objectsOfType(uml::Class)->asSequence()->dump();
-
 	return cdaBaseModel.objectsOfType(uml::Class)->asSequence()->select(cdaClassName=name)->first();
 }
 
