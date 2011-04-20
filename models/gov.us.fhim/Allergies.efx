@@ -1739,11 +1739,23 @@ Type B (bizarre) reactions represent a novel response not expected from the know
       <generalization xmi:id="_P5iC8DO9EeCBme_1raFDzg" general="_EoE80DO9EeCBme_1raFDzg"/>
       <ownedAttribute xmi:id="_hybbsEUXEeCUY8hq_icSiw" name="dateOfOnset" visibility="public">
         <ownedComment xmi:id="_hybbsUUXEeCUY8hq_icSiw" annotatedElement="_hybbsEUXEeCUY8hq_icSiw">
-          <body>Datewhen this particular allergy or intolerance was known to be active for the patient</body>
+          <body>Date when this particular Intolerance Condition or Allergy first manifested itself or was confirmed via testing if it had not yet manifested itself.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hybbskUXEeCUY8hq_icSiw" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hybbs0UXEeCUY8hq_icSiw" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_qMUt0GuCEeCZQ_Ui4wPHHw" name="intoleranceCategory" visibility="public">
+        <ownedComment xmi:id="_qMUt0WuCEeCZQ_Ui4wPHHw" annotatedElement="_qMUt0GuCEeCZQ_Ui4wPHHw">
+          <body>Categorizes the intolerance along two axes: whether the reactant is a Drug, Food, or other substance, and whether the intolerence is a true allergy, an intolerance, or propensity to adverse reaction.&#xD;
+Possible values are members of the SNOMED Allergy Event value set.  This property is required for Meaningful Use.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qMUt0muCEeCZQ_Ui4wPHHw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qMUt02uCEeCZQ_Ui4wPHHw" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_cANqIGYAEeCWgYu_gBZhWw" name="isAbsolutelyContraIndicated" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B6418BD7C9014C" name="mechanism" visibility="public">
         <ownedComment xmi:id="_L6HJ4eLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6418BD7C9014C">
@@ -1769,17 +1781,15 @@ The reactant will point to a value set, which will be a superset of valuesets fo
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_CeA3sGX_EeCWgYu_gBZhWw" name="reactantType" visibility="private">
+      <ownedAttribute xmi:id="_CeA3sGX_EeCWgYu_gBZhWw" name="reactantCategory" visibility="public">
         <ownedComment xmi:id="_Tpa28GYDEeCWgYu_gBZhWw" annotatedElement="_CeA3sGX_EeCWgYu_gBZhWw">
           <body>Categorizes the reactant to which the patient has demonstrated an intolerance or an allergy.&#xD;
-Possible values include Drug Product, Drug Class, Ingredient, Food Product, and Environmental.</body>
+Possible values include Drug Product, Drug Class, Ingredient, Food Product, and Environmental.&#xD;
+Note that this property may contain more than one value.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ThSLcGX_EeCWgYu_gBZhWw" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ThRkYGX_EeCWgYu_gBZhWw" value="1"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_cANqIGYAEeCWgYu_gBZhWw" name="isAbsolutelyContraIndicated" visibility="private">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_66MPAGYAEeCWgYu_gBZhWw" name="reaction" visibility="public" type="_KXfzkEUdEeCUY8hq_icSiw" association="_66KZ0GYAEeCWgYu_gBZhWw">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_66NdIWYAEeCWgYu_gBZhWw" value="*"/>
@@ -1854,12 +1864,6 @@ Possible values include Drug Product, Drug Class, Ingredient, Food Product, and 
         <ownedComment xmi:id="_XCwgsEm8EeCuWJu-uLQQaQ" annotatedElement="_-oGIoEm7EeCuWJu-uLQQaQ">
           <body>Indicates the state of the record, with additional states that are not represented in the Act State Machine.&#xD;
 In the case of allergies, the possible values include Active (the default) and Inactive.  An allergy may be inactivated if the patient has developed a tolerance to the substance (i.e., is no longer allergic to the substance).  From IHS RPMS.</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_gjhsUEm8EeCuWJu-uLQQaQ" name="eventCode" visibility="public">
-        <ownedComment xmi:id="_mkcBYGYBEeCWgYu_gBZhWw" annotatedElement="_gjhsUEm8EeCuWJu-uLQQaQ">
-          <body>This is a coded needed for meaningful use.  Request by IHS.  Ask them what this means.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
@@ -2011,7 +2015,7 @@ control purposes. This includes the transcriptionist for dictated text.&quot; - 
       </ownedAttribute>
       <ownedAttribute xmi:id="_EJuFgEm5EeCuWJu-uLQQaQ" name="relatedIntoleranceCategory" visibility="public">
         <ownedComment xmi:id="_EJuFgUm5EeCuWJu-uLQQaQ" annotatedElement="_EJuFgEm5EeCuWJu-uLQQaQ">
-          <body>Indicates how the &quot;target Specimen&quot; is related to the &quot;source Specimen&quot;.  Examples include Aliquot, etc.</body>
+          <body>Indicates how the &quot;Related Intolerance Condition&quot; is related to the original &quot;Intolerance Condition&quot;.  Examples include &quot;replaces&quot;, &quot;replaced by&quot;, &quot;parent&quot;, &quot;child&quot;, etc.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
@@ -2094,6 +2098,6 @@ control purposes. This includes the transcriptionist for dictated text.&quot; - 
   <Default:Documentation xmi:id="_XC8t8Em8EeCuWJu-uLQQaQ" base_Comment="_XCwgsEm8EeCuWJu-uLQQaQ"/>
   <Default:Documentation xmi:id="_klOSoFZeEeCCEtIqJxfTIg" base_Comment="_klEhoFZeEeCCEtIqJxfTIg"/>
   <Default:Documentation xmi:id="_1RHOAGX9EeCWgYu_gBZhWw" base_Comment="_1Q-EEGX9EeCWgYu_gBZhWw"/>
-  <Default:Documentation xmi:id="_mklLUGYBEeCWgYu_gBZhWw" base_Comment="_mkcBYGYBEeCWgYu_gBZhWw"/>
   <Default:Documentation xmi:id="_TpehUGYDEeCWgYu_gBZhWw" base_Comment="_Tpa28GYDEeCWgYu_gBZhWw"/>
+  <Default:Documentation xmi:id="_qMV78GuCEeCZQ_Ui4wPHHw" base_Comment="_qMUt0WuCEeCZQ_Ui4wPHHw"/>
 </xmi:XMI>
