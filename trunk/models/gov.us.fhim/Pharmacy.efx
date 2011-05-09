@@ -213,7 +213,7 @@
             <styles xmi:type="umlnotation:UMLShapeCompartmentStyle" xmi:id="_nFEmcTMCEeCX9s1PdmYNpg"/>
           </children>
           <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_nFBjITMCEeCX9s1PdmYNpg" fontName="Arial" fontHeight="10" showListVisibility="None" fillColor="8519679" lineColor="3342489" showStereotype="Image"/>
-          <element xmi:type="uml:Class" href="Common.efx#_bYKKMP2KEd-vp-CAyKeWfQ?FHIM/Common/PrescriberAgent?"/>
+          <element xmi:type="uml:Class" href="Common.efx#_bYKKMP2KEd-vp-CAyKeWfQ?FHIM/Common/Agent?"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nFBjIjMCEeCX9s1PdmYNpg" x="31066" y="634"/>
         </children>
         <children xmi:id="_wZ0IQDMCEeCX9s1PdmYNpg" element="_L_H44Cf2EeC-JKXSDMHR6A">
@@ -6166,6 +6166,11 @@ In the commercial world, &quot;release date&quot; typically corresponds to the d
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nBRPM3pgEd-44ra0dfiJCw" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nBRPMnpgEd-44ra0dfiJCw" value="1"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_js9_wHpfEeCYy4DzyFpAzQ" name="couponRedemption" visibility="public" association="_js68cHpfEeCYy4DzyFpAzQ">
+        <type xmi:type="uml:Class" href="EnrollEligCOB.efx#_B95dEHpfEeCYy4DzyFpAzQ?FHIM/EnrollEligCOB/CouponRedemption?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jtBDEHpfEeCYy4DzyFpAzQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_js9_wXpfEeCYy4DzyFpAzQ"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B64476CFDE0039" name="InpatientMedicationDispense">
       <eAnnotations xmi:id="_Nb3QiuLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
@@ -6379,7 +6384,7 @@ Note that while the term &quot;Co-Sign&quot; is commonly used throughout VistA, 
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NhYCqeLiEduGJrQyRGTO1A" value="1"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_1DEQgASNEeCTBOHqmJ3gaQ" name="prescriberAgent" visibility="public" association="_1C7GkASNEeCTBOHqmJ3gaQ">
-        <type xmi:type="uml:Class" href="Common.efx#_bYKKMP2KEd-vp-CAyKeWfQ?FHIM/Common/PrescriberAgent?"/>
+        <type xmi:type="uml:Class" href="Common.efx#_bYKKMP2KEd-vp-CAyKeWfQ?FHIM/Common/Agent?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1DEQggSNEeCTBOHqmJ3gaQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1DEQgQSNEeCTBOHqmJ3gaQ"/>
       </ownedAttribute>
@@ -8322,6 +8327,12 @@ DUR tends to be after the fact, while DUE tends to be before the fact, but basic
       <ownedEnd xmi:id="_YU4OQGnZEeCyXraDASYTcQ" name="" visibility="private" type="_420A62FD03B64476CF8400B2" association="_YUsBAGnZEeCyXraDASYTcQ">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_YU4OQmnZEeCyXraDASYTcQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YU4OQWnZEeCyXraDASYTcQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_js68cHpfEeCYy4DzyFpAzQ" memberEnd="_js9_wHpfEeCYy4DzyFpAzQ _jtBDEXpfEeCYy4DzyFpAzQ">
+      <ownedEnd xmi:id="_jtBDEXpfEeCYy4DzyFpAzQ" name="" visibility="private" type="_420A62FD03B64476CF8400B2" association="_js68cHpfEeCYy4DzyFpAzQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jtBDE3pfEeCYy4DzyFpAzQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jtBDEnpfEeCYy4DzyFpAzQ" value="1"/>
       </ownedEnd>
     </packagedElement>
   </uml:Package>
