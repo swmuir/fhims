@@ -3091,6 +3091,12 @@ This property is used primarily to accommodate the person's religious preference
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_egxXY2tbEeCaten32mlCMw" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_egxXYmtbEeCaten32mlCMw"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_LM4rUHwDEeCp-57mUxyZlg" name="administrativeGender" visibility="public">
+        <ownedComment xmi:id="_LM4rUXwDEeCp-57mUxyZlg" annotatedElement="_LM4rUHwDEeCp-57mUxyZlg">
+          <body>'The gender (i.e., the behavioral, cultural, or psychological traits typically associated with one sex) of a living subject as defined for administrative purposes.  This attribute does not include terms related to clinical gender.  Gender is a complex physiological, genetic, and sociological concept that requires multiple observations in order to be comprehensively described. The purpose of this attribute is to provide a high-level classification that can also be used for the appropriate allocation of inpatient bed assignment.'  HL7 RIM.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B6418A95BD037E" name="LanguageCapability">
       <eAnnotations xmi:id="_NRInM-LiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
@@ -3365,9 +3371,9 @@ Specialists may be Board Eligible or Board Certified.  Board certified in medici
         <body>This class represents an organism, whether it is currently alive or not.  This class is equivalent to the HL7 V3 Living Subject class.</body>
       </ownedComment>
       <generalization xmi:id="_covX0BA2Ed-2E9qx-lgHBg" general="_MF0JYOEVEd6EKMSYA1gKjA"/>
-      <ownedAttribute xmi:id="_420A62FD03B6455395A201F1" name="administrativeGender" visibility="public">
+      <ownedAttribute xmi:id="_420A62FD03B6455395A201F1" name="biologicalSex" visibility="public">
         <ownedComment xmi:id="_NQixVOLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6455395A201F1">
-          <body>'The gender (i.e., the behavioral, cultural, or psychological traits typically associated with one sex) of a living subject as defined for administrative purposes.  This attribute does not include terms related to clinical gender.  Gender is a complex physiological, genetic, and sociological concept that requires multiple observations in order to be comprehensively described. The purpose of this attribute is to provide a high-level classification that can also be used for the appropriate allocation of inpatient bed assignment.'  HL7 RIM.</body>
+          <body>The genetic sex of a biological entity, as opposed to the administrative gender, which is dependent on the behavioral, cultural, or psychological traits typically associated with one sex) of a living subject as defined for administrative purposes.  This attribute reflects the actual genetic sex of the patient, regardless of whether that sex may have been altered.  For example, a neutered dog or a person who has undergone a sex change operation will still have the same underlying chromosomes.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
@@ -3387,16 +3393,6 @@ Added 7/8/10 for vMR.</body>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B641886F630221?FHIM/Datatypes/PhysicalQuantity?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tmyfIfc6Ed-hU-zq4VwY5Q" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tmyfIvc6Ed-hU-zq4VwY5Q"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_NcRjUIq5Ed-W_sKBWcwIbA" name="ageGroup" visibility="public">
-        <ownedComment xmi:id="_HKlWkPdIEd-hU-zq4VwY5Q" annotatedElement="_NcRjUIq5Ed-W_sKBWcwIbA">
-          <body>A categorization of the length of time that an organism has lived, used in order to group subjects together, or for clinical decision support purposes (e.g., adults take x pills, children under 12 take y pills, not recommended for children under 2).&#xD;
-Note that this property will typically be derived or calculated as needed, and as such may not always be present as a separate concept.&#xD;
-Added 7/8/10 for vMR.</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Q1HHYYq5Ed-W_sKBWcwIbA" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Q1HHYIq5Ed-W_sKBWcwIbA"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_BKjZsPc7Ed-hU-zq4VwY5Q" name="causeOfDeath" visibility="public">
         <ownedComment xmi:id="_PtB4wPdIEd-hU-zq4VwY5Q" annotatedElement="_BKjZsPc7Ed-hU-zq4VwY5Q">
@@ -4205,7 +4201,6 @@ This property contains the actual address - not the circumstances under which th
   <Default:Documentation xmi:id="_RRcL8e6vEd-crcWiXVDZrQ" base_Comment="_RRcL8O6vEd-crcWiXVDZrQ"/>
   <Default:Documentation xmi:id="_sjImEe6wEd-crcWiXVDZrQ" base_Comment="_sjImEO6wEd-crcWiXVDZrQ"/>
   <Default:Documentation xmi:id="_EDEzEPdIEd-hU-zq4VwY5Q" base_Comment="_EC7pIPdIEd-hU-zq4VwY5Q"/>
-  <Default:Documentation xmi:id="_HKuggPdIEd-hU-zq4VwY5Q" base_Comment="_HKlWkPdIEd-hU-zq4VwY5Q"/>
   <Default:Documentation xmi:id="_PtLCsPdIEd-hU-zq4VwY5Q" base_Comment="_PtB4wPdIEd-hU-zq4VwY5Q"/>
   <Default:Documentation xmi:id="_3jk_kPv0Ed-3ndaGus2qMA" base_Comment="_3jjxcfv0Ed-3ndaGus2qMA"/>
   <Default:Documentation xmi:id="_rGmksPv4Ed-3ndaGus2qMA" base_Comment="_rGlWkfv4Ed-3ndaGus2qMA"/>
@@ -4220,4 +4215,5 @@ This property contains the actual address - not the circumstances under which th
   <Default:Documentation xmi:id="_9TUx9WrUEeCJbfIpPWFXRg" base_Comment="_9TUx8mrUEeCJbfIpPWFXRg"/>
   <RIM:Role xmi:id="_NrbMUGrWEeCJbfIpPWFXRg" base_Class="_4qz5QGrVEeCJbfIpPWFXRg"/>
   <RIM:Act xmi:id="_djeosGtbEeCaten32mlCMw" base_Class="_am_CYGtbEeCaten32mlCMw"/>
+  <Default:Documentation xmi:id="_LM55cHwDEeCp-57mUxyZlg" base_Comment="_LM4rUXwDEeCp-57mUxyZlg"/>
 </xmi:XMI>
