@@ -1108,6 +1108,28 @@
           <element xmi:type="uml:Class" href="Provider.efx#_420A62FD03B64243082500AD?FHIM/Provider/ServiceDepartment?"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ge-h4pYGEeCD7vwmJe8BlA" x="18632" y="28416"/>
         </children>
+        <children xmi:id="_9c1UQKy0EeCBdbmGd0l2eA" element="_9cvNoKy0EeCBdbmGd0l2eA">
+          <children xmi:id="_9c1UQ6y0EeCBdbmGd0l2eA" type="ImageCompartment">
+            <layoutConstraint xmi:type="notation:Size" xmi:id="_9c1URKy0EeCBdbmGd0l2eA" width="1320" height="1320"/>
+          </children>
+          <children xmi:id="_9c1URay0EeCBdbmGd0l2eA" type="Stereotype"/>
+          <children xmi:id="_9c1URqy0EeCBdbmGd0l2eA" type="Name"/>
+          <children xmi:id="_9c1UR6y0EeCBdbmGd0l2eA" type="Parent"/>
+          <children xmi:id="_9c4XkKy0EeCBdbmGd0l2eA" type="AttributeCompartment">
+            <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_9c4Xkay0EeCBdbmGd0l2eA"/>
+          </children>
+          <children xmi:id="_9c4Xkqy0EeCBdbmGd0l2eA" visible="false" type="OperationCompartment">
+            <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_9c4Xk6y0EeCBdbmGd0l2eA"/>
+          </children>
+          <children xmi:id="_9c4XlKy0EeCBdbmGd0l2eA" visible="false" type="SignalCompartment">
+            <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_9c4Xlay0EeCBdbmGd0l2eA"/>
+          </children>
+          <children xmi:id="_9c4Xlqy0EeCBdbmGd0l2eA" visible="false" type="StructureCompartment">
+            <styles xmi:type="umlnotation:UMLShapeCompartmentStyle" xmi:id="_9c4Xl6y0EeCBdbmGd0l2eA"/>
+          </children>
+          <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_9c1UQay0EeCBdbmGd0l2eA" fontName="Arial" fontHeight="10" showListVisibility="None" fillColor="13434879" lineColor="3342489" showStereotype="Label"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9c1UQqy0EeCBdbmGd0l2eA" x="28204" y="14975"/>
+        </children>
         <styles xmi:type="umlnotation:UMLDiagramStyle" xmi:id="_pnOiQQoSEeCTNeGQJWjJDA"/>
         <element xsi:nil="true"/>
         <edges xmi:id="_bMlEVwoXEeC_TY76TuIe4Q" element="_kLK5sN39Ed6yatlejfcw_g" source="_bLW8UgoXEeC_TY76TuIe4Q" target="_bLT5AAoXEeC_TY76TuIe4Q">
@@ -5169,6 +5191,16 @@ This model attempts to distinguish between that which is collected from the pati
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_fcah0bxQEeCjnsq0FtkmeA" name="specimenHandling" visibility="private" association="_fcah0LxQEeCjnsq0FtkmeA">
+        <type xmi:type="uml:Class" href="Lab.efx#_3fUokLxNEeCjnsq0FtkmeA?FHIM/Lab/SpecimenHandling?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fcah07xQEeCjnsq0FtkmeA" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fcah0rxQEeCjnsq0FtkmeA"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_pE9wcbxQEeCjnsq0FtkmeA" name="specimenEvaluation" visibility="private" association="_pE9wcLxQEeCjnsq0FtkmeA">
+        <type xmi:type="uml:Class" href="Lab.efx#_wJEwkLxJEeCjnsq0FtkmeA?FHIM/Lab/SpecimenEvaluation?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pFAzwbxQEeCjnsq0FtkmeA" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pFAzwLxQEeCjnsq0FtkmeA"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B6454F68ED028C" name="CancelAct">
       <eAnnotations xmi:id="_NcwoZuLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
@@ -6729,6 +6761,19 @@ This class speficially points to IndividualProvider to handle participations in 
       <ownedEnd xmi:id="_llDQk6vUEeC7K8o2Izdfnw" name="" visibility="private" type="_420A62FD03B64589572B02E8" association="_lk5fkKvUEeC7K8o2Izdfnw">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_llDQlavUEeC7K8o2Izdfnw" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_llDQlKvUEeC7K8o2Izdfnw" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_9cvNoKy0EeCBdbmGd0l2eA" name="Releaser"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_fcah0LxQEeCjnsq0FtkmeA" memberEnd="_fcah0bxQEeCjnsq0FtkmeA _fcdlILxQEeCjnsq0FtkmeA">
+      <ownedEnd xmi:id="_fcdlILxQEeCjnsq0FtkmeA" name="" visibility="private" type="_420A62FD03B642DBE3F101E7" association="_fcah0LxQEeCjnsq0FtkmeA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fcdlIrxQEeCjnsq0FtkmeA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fcdlIbxQEeCjnsq0FtkmeA" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_pE9wcLxQEeCjnsq0FtkmeA" memberEnd="_pE9wcbxQEeCjnsq0FtkmeA _pFAzwrxQEeCjnsq0FtkmeA">
+      <ownedEnd xmi:id="_pFAzwrxQEeCjnsq0FtkmeA" name="" visibility="private" type="_420A62FD03B642DBE3F101E7" association="_pE9wcLxQEeCjnsq0FtkmeA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pFAzxLxQEeCjnsq0FtkmeA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pFAzw7xQEeCjnsq0FtkmeA" value="1"/>
       </ownedEnd>
     </packagedElement>
   </uml:Package>
