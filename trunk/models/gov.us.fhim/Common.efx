@@ -17,7 +17,7 @@
           <children xmi:id="_taBecwoSEeCTNeGQJWjJDA" type="Description">
             <element xsi:nil="true"/>
           </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_taBedAoSEeCTNeGQJWjJDA" fontName="Arial" fontHeight="10" description="FHIM Common Classes&#xD;&#xA;  Version 0.41&#xD;&#xA;  6/9/2011" fillColor="16777088" lineColor="0" lineWidth="1"/>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_taBedAoSEeCTNeGQJWjJDA" fontName="Arial" fontHeight="10" description="FHIM Common Classes&#xD;&#xA;  Version 0.42&#xD;&#xA;  11/4/2011" fillColor="16777088" lineColor="0" lineWidth="1"/>
           <styles xmi:type="notation:TextStyle" xmi:id="_taBedQoSEeCTNeGQJWjJDA"/>
           <styles xmi:type="notation:LineTypeStyle" xmi:id="_taBedgoSEeCTNeGQJWjJDA"/>
           <element xsi:nil="true"/>
@@ -5605,11 +5605,28 @@ property is only to be used when the code property is using a coding scheme that
       <ownedComment xmi:id="_C4_nMBHDEeCBuOUrBnIXmQ" annotatedElement="_420A62FD03B64589572B02E8">
         <body>This class represents those properties which are common to all orders.  This class is &quot;owned&quot; by the Common package so as to avoid package interdependencies.  Information that is specific to given order types (e.g., Lab, Pharmacy) are contained in subtypes to this class.  These subtype classes are in the the respective domain packages (e.g., the LabRequest class is in the Lab package).</body>
       </ownedComment>
+      <ownedAttribute xmi:id="_jQbR8AcuEeGfLeiV6Brugg" name="callbackPhone" visibility="public">
+        <ownedComment xmi:id="_pQHjgAcuEeGfLeiV6Brugg" annotatedElement="_jQbR8AcuEeGfLeiV6Brugg">
+          <body>&quot;This field is the telephone number for reporting a status or a result using the standard format with extension and/or beeper number when applicable.&quot; HL7 V2 OBR 17</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_fImbAAEYEd-ZUM5xZsXWyw?FHIM/Datatypes/Telecommunications?"/>
+      </ownedAttribute>
       <ownedAttribute xmi:id="_Oya20OO6EeCbbuWBGGTBrA" name="confidentialityCode" visibility="public">
+        <ownedComment xmi:id="_OhGOEAcsEeGfLeiV6Brugg" annotatedElement="_Oya20OO6EeCbbuWBGGTBrA">
+          <body>&quot;This field contains information about the level of security and/or sensitivity surrounding the order (e.g., highly sensitive, not sensitive, sensitive, etc.).&quot; - HL7 V2 ORC 28</body>
+        </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_IovL0JkIEeCFEfqQZ7sMZg" name="cost" visibility="public">
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B641886F630160?FHIM/Datatypes/MonetaryAmount?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_mBZaMActEeGfLeiV6Brugg" name="dangerCode" visibility="public">
+        <ownedComment xmi:id="_vcO88ActEeGfLeiV6Brugg" annotatedElement="_mBZaMActEeGfLeiV6Brugg">
+          <body>&quot;This field is the code and/or text indicating any known or suspected patient or specimen hazards, e.g., patient with active tuberculosis or blood from a hepatitis patient.&quot; - HL7 V2 OBR 12</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qBDGoActEeGfLeiV6Brugg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qBCfkActEeGfLeiV6Brugg"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B6421B8C940052" name="dateTimeBegin" visibility="public">
         <ownedComment xmi:id="_NHAa3uLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6421B8C940052">
@@ -5626,7 +5643,7 @@ property is only to be used when the code property is using a coding scheme that
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eu5pLeLjEdutr_MT9HkPyQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eu5pLOLjEdutr_MT9HkPyQ"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_420A62FD03B642408DBC031C" name="dateTimeEnd" visibility="protected">
+      <ownedAttribute xmi:id="_420A62FD03B642408DBC031C" name="dateTimeEnd" visibility="public">
         <ownedComment xmi:id="_NHJkxeLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B642408DBC031C">
           <body>The date/time this order is considered complete.</body>
         </ownedComment>
@@ -5652,7 +5669,29 @@ property is only to be used when the code property is using a coding scheme that
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ettWXuLjEdutr_MT9HkPyQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ettWXeLjEdutr_MT9HkPyQ" value="1"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_kFoz8Ac0EeGfLeiV6Brugg" name="duplicateProcedureReason" visibility="public">
+        <ownedComment xmi:id="_xyNRoAc0EeGfLeiV6Brugg" annotatedElement="_kFoz8Ac0EeGfLeiV6Brugg">
+          <body>&quot;This field is used to document why the procedure found in OBR-44 (Procedure Code) is a duplicate of one ordered/charged previously for the same patient within the same date of service and has been determined to be medically necessary.&quot; - HL7 V2 OBR 48</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_Qzq9YAcbEeGfLeiV6Brugg" name="escortRequiredComment" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Vquy8QcbEeGfLeiV6Brugg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Vquy8AcbEeGfLeiV6Brugg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_E6tyYAcbEeGfLeiV6Brugg" name="isEscortRequired" visibility="public">
+        <ownedComment xmi:id="_5QnZYAczEeGfLeiV6Brugg" annotatedElement="_E6tyYAcbEeGfLeiV6Brugg">
+          <body>&quot;This field is an indicator that the patient needs to be escorted to the diagnostic service department.  Note: The nature of the escort requirements should be stated in the OBR-43-planned patient transport comment field.&quot; - HL7 V2 OBR 42</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_J-ZHoAcbEeGfLeiV6Brugg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_J-YgkAcbEeGfLeiV6Brugg"/>
+      </ownedAttribute>
       <ownedAttribute xmi:id="_lSyK4JkHEeCFEfqQZ7sMZg" name="isInpatientOrder" visibility="public">
+        <ownedComment xmi:id="_UGw2EAcsEeGfLeiV6Brugg" annotatedElement="_lSyK4JkHEeCFEfqQZ7sMZg">
+          <body>&quot;This field indicates whether the order is to be executed in an inpatient setting or an outpatient setting.&quot; HL7 V2 ORC 29</body>
+        </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B64589570A015B" name="placerOrderId" visibility="public">
@@ -5672,11 +5711,42 @@ property is only to be used when the code property is using a coding scheme that
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ettWYOLjEdutr_MT9HkPyQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ettWX-LjEdutr_MT9HkPyQ" value="1"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_X-gg4PjMEeCmc6EQPl3F9g" name="placerSupplementalInfo" visibility="public">
+        <ownedComment xmi:id="_u8W8sPjMEeCmc6EQPl3F9g" annotatedElement="_X-gg4PjMEeCmc6EQPl3F9g">
+          <body>&quot;This field contains supplemental service information sent from the placer system to the filler system for the universal procedure code reported in OBR-4 Universal Service ID.  This field will be used to provide ordering information detail that is not available in other, specific fields in the OBR segment.  Multiple supplemental service information elements may be reported....  This field can be used to describe details such as whether study is to be done on the right or left, for example where the study is of the arm and the order master file does not distinguish right from left or whether the study is to be done with or without contrast (when the order master file does not make such distinctions).&quot; - HL7 V2 46</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_FKoUUAc0EeGfLeiV6Brugg" name="plannedPatientTransportComment" visibility="public">
+        <ownedComment xmi:id="_KIac8Ac0EeGfLeiV6Brugg" annotatedElement="_FKoUUAc0EeGfLeiV6Brugg">
+          <body>&quot;This field is the code or free text comments on special requirements for the transport of the patient to the diagnostic service department&quot; - HL7 V2 OBR 43</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_4aBxgO3KEeCFZuasLkncZQ" name="reasonForStudy" visibility="public">
+        <ownedComment xmi:id="_l7FUgO3LEeCFZuasLkncZQ" annotatedElement="_4aBxgO3KEeCFZuasLkncZQ">
+          <body>This (optional) property is included for compatability to HL7 Version 2 OBR.32.&#xD;
+&#xD;
+Used to link various tests or procedures together in order to provide a more complete picture of a patient's condition.  Also used for billing purposes.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_mrMi0O3LEeCFZuasLkncZQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_mrL7wO3LEeCFZuasLkncZQ"/>
+      </ownedAttribute>
       <ownedAttribute xmi:id="_BaqREIlEEd-pqcFAwb-XNw" name="remarks" visibility="public">
         <ownedComment xmi:id="_fJjHEO62Ed-crcWiXVDZrQ" annotatedElement="_BaqREIlEEd-pqcFAwb-XNw">
           <body>General textual comments about this Order.</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_xo5mAPjNEeCmc6EQPl3F9g" name="resultHandling" visibility="public">
+        <ownedComment xmi:id="_E5XxIPjOEeCmc6EQPl3F9g" annotatedElement="_xo5mAPjNEeCmc6EQPl3F9g">
+          <body>&quot;Definition: Transmits information regarding the handling of the result.  For example, an order may specify that the result (e.g., an x-ray film) should be given to the patient for return to the requestor. Refer to User-defined Table 0507 Observation Result Handling for suggested values.  If this field is not populated then routine handling is implied.&quot; - HL7 V2 OBR 49&#xD;
+Note that the HL7 V2 value set only contains values pertinent to Radiology (e.g., give film to patient).  However, it is envisioned that other scenarios might be handled by this property.  This property is optional.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_F_JGYfjOEeCmc6EQPl3F9g" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_F_JGYPjOEeCmc6EQPl3F9g"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B64589570A016D" name="status" visibility="public">
         <ownedComment xmi:id="_MC55iOLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64589570A016D">
@@ -5693,6 +5763,24 @@ property is only to be used when the code property is using a coding scheme that
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7S27EfXCEdytsOh7tTzTwg" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7S27EPXCEdytsOh7tTzTwg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_1JHIkAcfEeGfLeiV6Brugg" name="transportationArrangementResponsibility" visibility="public">
+        <ownedComment xmi:id="_Ve2rYAchEeGfLeiV6Brugg" annotatedElement="_1JHIkAcfEeGfLeiV6Brugg">
+          <body>&quot;This field is an indicator of who is responsible for arranging transport to the planned diagnostic service.  Examples: Requester, Provider, Patient.&quot; - HL7 V2 OBR 40</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_P9cRQAchEeGfLeiV6Brugg" name="transportationMode" visibility="public">
+        <ownedComment xmi:id="_bmjCYAchEeGfLeiV6Brugg" annotatedElement="_P9cRQAchEeGfLeiV6Brugg">
+          <body>&quot;This field identifies how (or whether) to transport a patient, when applicable.&quot; - HL7 V2 OBR 30</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_uYHV4AcfEeGfLeiV6Brugg" name="wasTransportArranged" visibility="public">
+        <ownedComment xmi:id="_o1N98AczEeGfLeiV6Brugg" annotatedElement="_uYHV4AcfEeGfLeiV6Brugg">
+          <body>&quot;This field is an indicator of whether transport arrangements are known to have been made.&quot; - HL7 V2 OBR 41</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_276B8Yk9Ed-pqcFAwb-XNw" name="author" visibility="public" association="_276B8Ik9Ed-pqcFAwb-XNw">
         <ownedComment xmi:id="_6-5WQIk9Ed-pqcFAwb-XNw" annotatedElement="_276B8Yk9Ed-pqcFAwb-XNw">
@@ -5778,6 +5866,14 @@ property is only to be used when the code property is using a coding scheme that
         <type xmi:type="uml:Class" href="Provider.efx#_420A62FD03B64242CAB30303?FHIM/Provider/ServiceDeliveryLocation?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_siJKE4lDEd-pqcFAwb-XNw" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_siJKEolDEd-pqcFAwb-XNw" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_Q98HIQcwEeGfLeiV6Brugg" name="resultCopiesTo" visibility="public" association="_Q98HIAcwEeGfLeiV6Brugg">
+        <ownedComment xmi:id="_cTqCMAcwEeGfLeiV6Brugg" annotatedElement="_Q98HIQcwEeGfLeiV6Brugg">
+          <body>&quot;This field is the people who are to receive copies of the results.&quot; - HL7 V2 OBR 28</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Provider.efx#_420A62FD03B6418A6B760063?FHIM/Provider/IndividualProvider?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Q98HIwcwEeGfLeiV6Brugg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Q98HIgcwEeGfLeiV6Brugg"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_ScDqoJNjEeCyufOLCDZkFA" name="visit" visibility="public" type="_6ZkFgEsyEdyAjqPLu9xU6g" association="_Sb22UJNjEeCyufOLCDZkFA">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ScE4wZNjEeCyufOLCDZkFA" value="1"/>
@@ -6701,6 +6797,9 @@ This class speficially points to IndividualProvider to handle participations in 
     <packagedElement xmi:type="uml:Association" xmi:id="_82uvIOrREeCgerddwRbJUw" memberEnd="_824gIOrREeCgerddwRbJUw _824gI-rREeCgerddwRbJUw">
       <ownedEnd xmi:id="_824gI-rREeCgerddwRbJUw" name="" visibility="private" type="_420A62FD03B6425C004E004C" association="_82uvIOrREeCgerddwRbJUw"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_Q98HIAcwEeGfLeiV6Brugg" memberEnd="_Q98HIQcwEeGfLeiV6Brugg _Q-F4IAcwEeGfLeiV6Brugg">
+      <ownedEnd xmi:id="_Q-F4IAcwEeGfLeiV6Brugg" name="" visibility="private" type="_420A62FD03B64589572B02E8" association="_Q98HIAcwEeGfLeiV6Brugg"/>
+    </packagedElement>
   </uml:Package>
   <Default:Documentation xmi:id="_L8pggOLiEduGJrQyRGTO1A" base_Comment="_L8fvieLiEduGJrQyRGTO1A"/>
   <Default:Documentation xmi:id="_L8pgg-LiEduGJrQyRGTO1A" base_Comment="_L8pgguLiEduGJrQyRGTO1A"/>
@@ -6984,4 +7083,18 @@ This class speficially points to IndividualProvider to handle participations in 
   <Default:Documentation xmi:id="_gUIJL-OxEeCbbuWBGGTBrA" base_Comment="_NG2p1OLiEduGJrQyRGTO1A"/>
   <Default:Documentation xmi:id="_gUIJMOOxEeCbbuWBGGTBrA" base_Comment="_NHJkxeLiEduGJrQyRGTO1A"/>
   <Default:Documentation xmi:id="_gUIJMeOxEeCbbuWBGGTBrA" base_Comment="_NHAa2eLiEduGJrQyRGTO1A"/>
+  <Default:Documentation xmi:id="_jTMacAcgEeGfLeiV6Brugg" base_Comment="_l7FUgO3LEeCFZuasLkncZQ"/>
+  <Default:Documentation xmi:id="_Ve_1UAchEeGfLeiV6Brugg" base_Comment="_Ve2rYAchEeGfLeiV6Brugg"/>
+  <Default:Documentation xmi:id="_bmszYAchEeGfLeiV6Brugg" base_Comment="_bmjCYAchEeGfLeiV6Brugg"/>
+  <Default:Documentation xmi:id="_OhP_EAcsEeGfLeiV6Brugg" base_Comment="_OhGOEAcsEeGfLeiV6Brugg"/>
+  <Default:Documentation xmi:id="_UG6nEAcsEeGfLeiV6Brugg" base_Comment="_UGw2EAcsEeGfLeiV6Brugg"/>
+  <Default:Documentation xmi:id="_vcYG4ActEeGfLeiV6Brugg" base_Comment="_vcO88ActEeGfLeiV6Brugg"/>
+  <Default:Documentation xmi:id="_pQQtcAcuEeGfLeiV6Brugg" base_Comment="_pQHjgAcuEeGfLeiV6Brugg"/>
+  <Default:Documentation xmi:id="_cT89IAcwEeGfLeiV6Brugg" base_Comment="_cTqCMAcwEeGfLeiV6Brugg"/>
+  <Default:Documentation xmi:id="_r-ClggcyEeGfLeiV6Brugg" base_Comment="_u8W8sPjMEeCmc6EQPl3F9g"/>
+  <Default:Documentation xmi:id="_o1Xu8AczEeGfLeiV6Brugg" base_Comment="_o1N98AczEeGfLeiV6Brugg"/>
+  <Default:Documentation xmi:id="_5QwjUAczEeGfLeiV6Brugg" base_Comment="_5QnZYAczEeGfLeiV6Brugg"/>
+  <Default:Documentation xmi:id="_KIjm4Ac0EeGfLeiV6Brugg" base_Comment="_KIac8Ac0EeGfLeiV6Brugg"/>
+  <Default:Documentation xmi:id="_xyXCoAc0EeGfLeiV6Brugg" base_Comment="_xyNRoAc0EeGfLeiV6Brugg"/>
+  <Default:Documentation xmi:id="_-sf91Ac0EeGfLeiV6Brugg" base_Comment="_E5XxIPjOEeCmc6EQPl3F9g"/>
 </xmi:XMI>
