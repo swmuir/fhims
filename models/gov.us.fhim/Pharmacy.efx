@@ -996,8 +996,8 @@
           <children xmi:id="_CthVEvaTEeCbn6MPgQ_rxg" visible="false" type="StructureCompartment">
             <styles xmi:type="umlnotation:UMLShapeCompartmentStyle" xmi:id="_CthVE_aTEeCbn6MPgQ_rxg"/>
           </children>
-          <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_Cte40faTEeCbn6MPgQ_rxg" fontName="Arial" fontHeight="10" showListVisibility="None" fillColor="13434879" lineColor="3342489" showStereotype="Label"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Cte40vaTEeCbn6MPgQ_rxg" x="-8242" y="37089"/>
+          <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_Cte40faTEeCbn6MPgQ_rxg" fontName="Arial" fontHeight="10" showListVisibility="None" fillColor="12303359" lineColor="3342489" showStereotype="Label"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Cte40vaTEeCbn6MPgQ_rxg" x="-7925" y="36455"/>
         </children>
         <children xmi:id="_-WcmIPadEeCbn6MPgQ_rxg">
           <children xmi:id="_-WdNMPadEeCbn6MPgQ_rxg" type="ImageCompartment">
@@ -3867,12 +3867,6 @@ Do we need this???</body>
       <ownedComment xmi:id="_NYl6HeLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B641B4BDD30213">
         <body>This class represents the clinician's medication order as recorded by the Pharmacy.  The term &quot;Promise&quot; is used to indicate that this is the order as accepted (or possibly, rejected) by the Pharmacy and as the Pharmacy is now under an obligation to fulfill (unless the order was rejeted).</body>
       </ownedComment>
-      <ownedAttribute xmi:id="_420A62FD03B64592C435034B" name="administrationInstructions" visibility="public">
-        <ownedComment xmi:id="_NZVg--LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64592C435034B">
-          <body>This is any special instructions (using abbreviations whenever possible) needed for this order.  This would include the physician's reason for ordering a PRN.  This field utilizes the abbreviations and expansions from the MEDICATION INSTRUCTIONS file.</body>
-        </ownedComment>
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-      </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B64592C9DB00DB" name="appointmentTime" visibility="public">
         <eAnnotations xmi:id="_NZLv8eLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <ownedComment xmi:id="_NZB-_eLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64592C9DB00DB">
@@ -3930,7 +3924,7 @@ Note: this might correspond to Administration Unit Code?  Verify.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_420A62FD03B6419908A90067" name="numberOfRefillsAuthorized" visibility="public">
+      <ownedAttribute xmi:id="_420A62FD03B6419908A90067" name="numberOfRefillsRemaining" visibility="public">
         <ownedComment xmi:id="_NZyM5OLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6419908A90067">
           <body>Indicates the number of times the order may be filled without additional authorization.</body>
         </ownedComment>
@@ -3940,26 +3934,13 @@ Note: this might correspond to Administration Unit Code?  Verify.</body>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B64592C90801F1" name="orderModality" visibility="public">
         <ownedComment xmi:id="_NZVg8uLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64592C90801F1">
-          <body>This is the method the provider used to communicate to the user to enter (or take any other action) on the order.  W=Written, P=Telephoned, V=Verbal, E=Electronically Entered, I=Policy, S=Service Correction, D=Duplicate.</body>
+          <body>This is the method the provider used to communicate to the user to enter (or take any other action) on the order.  Examples include: Written, Telephoned, Verbal, Electronically Entered, Policy, Service Correction, Duplicate, etc.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_420A62FD03B64592D1F703C9" name="patientInstructions" visibility="public">
-        <eAnnotations xmi:id="_NZ7W0eLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
-        <ownedComment xmi:id="_NZyM7OLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64592D1F703C9">
-          <body>The complete textual representation of the signature, or &quot;sig&quot;, for the prescription. Contains all relevant information about the dosage instructions for the medication prescribed. For example, the signature might say &quot;take twice daily with food&quot;. From the Latin &quot;signare&quot; meaning &quot;to sign or mark.&quot;&#xD;
-Changes made June 2 2009 per CDS\Hdr order set issue.  VHIM disagrees with approach needs be re-reviewed in the future.  &#xD;
-Changes are set attribute patientInstructions multipilicity to '*'.&#xD;
-&#xD;
-</body>
-        </ownedComment>
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_evgGJeLjEdutr_MT9HkPyQ" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_evgGJOLjEdutr_MT9HkPyQ" value="1"/>
-      </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B64592C0E40340" name="pharmacyPatientCategory" visibility="public">
         <ownedComment xmi:id="_NY41AuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64592C0E40340">
-          <body>pointer to file 53. The status of the patient at the time the medication was filled (e.g., 1=SC, 5=OPT NSC, 9=Inpatient, etc.).</body>
+          <body>Categorizes the status of the patient at the time the medication was filled.  Examples include Inpatient, Outpatient, etc.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7JBNYfUkEdyqkvQ4FycnSQ" value="1"/>
@@ -3998,16 +3979,6 @@ Changes are set attribute patientInstructions multipilicity to '*'.&#xD;
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ibh-0S14EeCcBZN8gPxxdg" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ibh-0C14EeCcBZN8gPxxdg"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_420A62FD03B6431E0578020A" name="sig" visibility="public">
-        <ownedComment xmi:id="_NZ7W1OLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6431E0578020A">
-          <body>The complete textual representation of the signature, or &quot;sig&quot;, for the prescription. Contains all relevant information about the dosage instructions for the medication prescribed. For example, the signature might say &quot;take twice daily with food&quot;. From the Latin &quot;signare&quot; meaning &quot;to sign or mark.&quot;  Changes made June 2 2009 per CDS\Hdr order set issue.  VHIM disagrees with approach needs be re-reviewed in the future.  &#xD;
-Changes are set attributes sig multipilicity to '*'.&#xD;
-</body>
-        </ownedComment>
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UKX7kfUxEdyqkvQ4FycnSQ" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UKX7kPUxEdyqkvQ4FycnSQ" value="1"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B64592D407010A" name="cancel" visibility="public" isUnique="false" association="_420A62FD03B64592D406037B">
         <ownedComment xmi:id="_Nh0uneLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64592D407010A">
@@ -4356,7 +4327,10 @@ Note that HL7 does not appear to have an equivalent concept.&#xD;
         <ownedComment xmi:id="_NJGFg-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B642703FB801D7">
           <body>Indicates the number of times the order may be filled without additional authorization.</body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B641886F630086?FHIM/Datatypes/IntegerInterval?"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_n7qnMAP7EeGeisexxvNAWA" name="areRefillsAuthorizedAsNeeded" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_L9m8UCf-EeC-JKXSDMHR6A" name="patientInstructions" visibility="public">
         <eAnnotations xmi:id="_L9m8USf-EeC-JKXSDMHR6A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
@@ -4409,9 +4383,6 @@ Note: this attribute is a placeholder for a concept which will be modeled in a f
           <body>The date on which the patient is to discontinue (or discontinued, if historical) consuming the ordered medication.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_GfQcgGRzEeCsvJrE4KlOMA" name="substitutionCode" visibility="public">
-        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_0ciIAHpAEd-44ra0dfiJCw" name="cosigner" visibility="public" association="_0cYXAHpAEd-44ra0dfiJCw">
         <ownedComment xmi:id="_1bHQIHpAEd-44ra0dfiJCw" annotatedElement="_0ciIAHpAEd-44ra0dfiJCw">
@@ -5066,18 +5037,39 @@ DUR tends to be after the fact, while DUE tends to be before the fact, but basic
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Hw41cMd5EeCVr54V6VtSNQ" value="1"/>
       </ownedEnd>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_CtWV8PaTEeCbn6MPgQ_rxg" name="Substitution">
+    <packagedElement xmi:type="uml:Class" xmi:id="_CtWV8PaTEeCbn6MPgQ_rxg" name="PharmacyGeneratedOrderModification">
       <ownedAttribute xmi:id="_ssDgoPagEeCbn6MPgQ_rxg" name="substitutionCode" visibility="public">
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_OftBUPahEeCbn6MPgQ_rxg" name="reason" visibility="private"/>
       <ownedAttribute xmi:id="_3EhwUPagEeCbn6MPgQ_rxg" name="revisedSig" visibility="private">
+        <ownedComment xmi:id="_JbTRoAP6EeGeisexxvNAWA" annotatedElement="_3EhwUPagEeCbn6MPgQ_rxg">
+          <body>The complete textual representation of the signature, or &quot;sig&quot;, for the prescription. Contains all relevant information about the dosage instructions for the medication prescribed. For example, the signature might say &quot;take twice daily with food&quot;. From the Latin &quot;signare&quot; meaning &quot;to sign or mark.&quot;  Changes made June 2 2009 per CDS\Hdr order set issue.  VHIM disagrees with approach needs be re-reviewed in the future.  &#xD;
+Changes are set attributes sig multipilicity to '*'.&#xD;
+</body>
+        </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BuIMQPahEeCbn6MPgQ_rxg" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_BuHlMPahEeCbn6MPgQ_rxg"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_4uSjcPagEeCbn6MPgQ_rxg" name="revisedAdministrationInstructions" visibility="private">
+      <ownedAttribute xmi:id="_420A62FD03B64592C435034B" name="revisedAdministrationInstructions" visibility="public">
+        <ownedComment xmi:id="_NZVg--LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64592C435034B">
+          <body>This is any special instructions (using abbreviations whenever possible) needed for this order.  This would include the physician's reason for ordering a PRN.  This field utilizes the abbreviations and expansions from the MEDICATION INSTRUCTIONS file.</body>
+        </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_420A62FD03B64592D1F703C9" name="revisedPatientInstructions" visibility="public">
+        <eAnnotations xmi:id="_NZ7W0eLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+        <ownedComment xmi:id="_NZyM7OLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64592D1F703C9">
+          <body>The complete textual representation of the signature, or &quot;sig&quot;, for the prescription. Contains all relevant information about the dosage instructions for the medication prescribed. For example, the signature might say &quot;take twice daily with food&quot;. From the Latin &quot;signare&quot; meaning &quot;to sign or mark.&quot;&#xD;
+Changes made June 2 2009 per CDS\Hdr order set issue.  VHIM disagrees with approach needs be re-reviewed in the future.  &#xD;
+Changes are set attribute patientInstructions multipilicity to '*'.&#xD;
+&#xD;
+</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_evgGJeLjEdutr_MT9HkPyQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_evgGJOLjEdutr_MT9HkPyQ" value="1"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_BN1C8PaeEeCbn6MPgQ_rxg" memberEnd="_BN3fMPaeEeCbn6MPgQ_rxg _BN57cPaeEeCbn6MPgQ_rxg">
@@ -5191,12 +5183,9 @@ DUR tends to be after the fact, while DUE tends to be before the fact, but basic
   <RIM:Act xmi:id="_SCB2gCf2EeC-JKXSDMHR6A" base_Class="_L_H44Cf2EeC-JKXSDMHR6A"/>
   <Default:Documentation xmi:id="_Fi1_sCf7EeC-JKXSDMHR6A" base_Comment="_NZob5OLiEduGJrQyRGTO1A"/>
   <Default:Documentation xmi:id="_Fi1_sSf7EeC-JKXSDMHR6A" base_Comment="_NZyM5OLiEduGJrQyRGTO1A"/>
-  <Default:Documentation xmi:id="_Fi1_sif7EeC-JKXSDMHR6A" base_Comment="_NZyM7OLiEduGJrQyRGTO1A"/>
-  <Default:Documentation xmi:id="_Fi1_syf7EeC-JKXSDMHR6A" base_Comment="_NZ7W1OLiEduGJrQyRGTO1A"/>
   <Default:Documentation xmi:id="_9QO-YCf8EeC-JKXSDMHR6A" base_Comment="_NZB--OLiEduGJrQyRGTO1A"/>
   <Default:Documentation xmi:id="_9QO-YSf8EeC-JKXSDMHR6A" base_Comment="_NZB-_eLiEduGJrQyRGTO1A"/>
   <Default:Documentation xmi:id="_9QO-Yif8EeC-JKXSDMHR6A" base_Comment="_NZLv9OLiEduGJrQyRGTO1A"/>
-  <Default:Documentation xmi:id="_U0iWMCf9EeC-JKXSDMHR6A" base_Comment="_NZVg--LiEduGJrQyRGTO1A"/>
   <Default:Documentation xmi:id="_L9njYCf-EeC-JKXSDMHR6A" base_Comment="_L9m8Uif-EeC-JKXSDMHR6A"/>
   <Default:Documentation xmi:id="_RsJzgCf-EeC-JKXSDMHR6A" base_Comment="_RsJMcSf-EeC-JKXSDMHR6A"/>
   <Default:Documentation xmi:id="_jaAVUCf-EeC-JKXSDMHR6A" base_Comment="_NZLv_eLiEduGJrQyRGTO1A"/>
@@ -5224,4 +5213,8 @@ DUR tends to be after the fact, while DUE tends to be before the fact, but basic
   <Default:Documentation xmi:id="_t4TvsFlgEeCyw5g2lQh-Ug" base_Comment="_t4KlwFlgEeCyw5g2lQh-Ug"/>
   <RIM:Patient xmi:id="_qcR4QG9aEeC7Xu_kGrVjuQ" base_Class="_yrve8FlfEeCyw5g2lQh-Ug"/>
   <RIM:Supply xmi:id="_9wRFEMd4EeCVr54V6VtSNQ" base_Class="_wwMFEKDYEeC1WJi4dBiHRA"/>
+  <RIM:ActRelationship xmi:id="_8tW_YAP5EeGeisexxvNAWA" base_Class="_CtWV8PaTEeCbn6MPgQ_rxg" typeCode="MOD" typeCodeSystem="" typeConceptDomain=""/>
+  <Default:Documentation xmi:id="_JbXjEAP6EeGeisexxvNAWA" base_Comment="_JbTRoAP6EeGeisexxvNAWA"/>
+  <Default:Documentation xmi:id="_TlZuIAP6EeGeisexxvNAWA" base_Comment="_NZVg--LiEduGJrQyRGTO1A"/>
+  <Default:Documentation xmi:id="_KCMnpQP8EeGeisexxvNAWA" base_Comment="_NZyM7OLiEduGJrQyRGTO1A"/>
 </xmi:XMI>
