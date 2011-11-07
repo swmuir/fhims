@@ -5024,34 +5024,37 @@ This model attempts to distinguish between that which is collected from the pati
       </ownedAttribute>
       <ownedAttribute xmi:id="_0jvp8P8sEd-Koe9flR96lw" name="handlingCode" visibility="public">
         <ownedComment xmi:id="_Awh_sBHgEeCBuOUrBnIXmQ" annotatedElement="_0jvp8P8sEd-Koe9flR96lw">
-          <body>&quot;Describes how the specimen and/or container need to be handled from the time of collection through the initiation of testing&quot; - HL7 V2.  Examples include &quot;keep frozen&quot;.</body>
+          <body>&quot;Describes how the specimen and/or container need to be handled from the time of collection through the initiation of testing.&quot; - HL7 Version 2.8, SPM.15.  Examples include &quot;keep frozen&quot;.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B64586B8830199" name="id" visibility="public">
         <eAnnotations xmi:id="_M_jvAeLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <ownedComment xmi:id="_M_Z-DeLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64586B8830199">
-          <body>Contains a unique identifier for the specimen.&#xD;
-&#xD;
-</body>
+          <body>&quot;This field contains a unique identifier for the specimen as referenced by the Placer application, the Filler application, or both.&quot; - HL7 Version 2.8, SPM.2</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WOoG0QljEeGe4v7RnpTDUQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WOoG0AljEeGe4v7RnpTDUQ"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_0mIPkP8sEd-Koe9flR96lw" name="riskCode" visibility="public">
+      <ownedAttribute xmi:id="_0mIPkP8sEd-Koe9flR96lw" name="dangerCode" visibility="public">
         <ownedComment xmi:id="_QNljkBHgEeCBuOUrBnIXmQ" annotatedElement="_0mIPkP8sEd-Koe9flR96lw">
-          <body>&quot;Contains any known or suspected specimen hazards, e.g., exceptionally infectious agent or blood from a hepatitis patient&quot; - HL7 V2.</body>
+          <body>Describes &quot;any known or suspected specimen hazards, e.g., exceptionally infectious agent or blood from a hepatitis patient.&quot; - HL7 Version 2.8, SPM.16&#xD;
+&#xD;
+&quot;Contains the code and/or text indicating any known or suspected patient or specimen hazards, e.g., patient with active tuberculosis or blood from a hepatitis patient.&quot; - HL7 Version 2.8, OBR.12</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_QvNKsLxJEeCjnsq0FtkmeA" name="specimenExpirationDateTime" visibility="public">
         <ownedComment xmi:id="_QvNKsbxJEeCjnsq0FtkmeA" annotatedElement="_QvNKsLxJEeCjnsq0FtkmeA">
-          <body>&quot;This field is the date and time the specimen can no longer be used for the purpose implied by the order.&quot; - HL7 v2.5.1</body>
+          <body>&quot;The date and time the specimen can no longer be used for the purpose implied by the order.&quot; - HL7 Version 2.8, SPM.19</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_MqHUQPvQEd-3ndaGus2qMA" name="specimenRole" visibility="public">
         <ownedComment xmi:id="_hM_ZEBHiEeCBuOUrBnIXmQ" annotatedElement="_MqHUQPvQEd-3ndaGus2qMA">
-          <body>Provides an indication of how this sample relates to other aspects of the overall workflow and/or to other specimens gathered or processed during the workflow.  This property is populated from HL7 V2 user-defined Table 0369, which contains a mish-mash of concepts including &quot;group&quot; and &quot;pool&quot; which relate to aliquotting, &quot;calibarator&quot;, &quot;verifying calibrator&quot;, &quot;operator testing&quot;, etc. which relate to laboratory quality assurance, etc.</body>
+          <body>&quot;This field indicates the role of the sample. Refer to User-defined Table 0369 – Specimen role for suggested values....&quot; - HL7 Version 2.8, SPM.11&#xD;
+Provides an indication of how this sample relates to other aspects of the overall workflow and/or to other specimens gathered or processed during the workflow.  This property is populated from HL7 V2 user-defined Table 0369, which contains a mish-mash of concepts including &quot;group&quot; and &quot;pool&quot; which relate to aliquotting, &quot;calibarator&quot;, &quot;verifying calibrator&quot;, &quot;operator testing&quot;, etc. which relate to laboratory quality assurance, etc.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
@@ -5065,13 +5068,13 @@ This model attempts to distinguish between that which is collected from the pati
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B642DBE407001C" name="specimenType" visibility="public">
         <ownedComment xmi:id="_M_jvBOLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B642DBE407001C">
-          <body>&quot;Describes the precise nature of the entity that will be the source material for the observation.&quot; - HL7 V2.  Examples include: mucus, tissue, blood, stool.</body>
+          <body>&quot;This field describes the precise nature of the entity that will be the source material for the observation.  Any physical entity that may have observations made about it may qualify as a specimen.  The entry in this attribute describes the specific entity as precisely as possible, whether that is a complex organism (e.g., an ostrich) or a specific cellular mass (e.g., a specific muscle biopsy).&quot; - HL7 Version 2.8, SPM.4</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_v2X84P8hEd-Koe9flR96lw" name="specimenTypeModifier" visibility="public">
         <ownedComment xmi:id="_v2X84f8hEd-Koe9flR96lw" annotatedElement="_v2X84P8hEd-Koe9flR96lw">
-          <body>&quot;This field contains modifying or qualifying description(s) about the specimen type&quot; - HL7 V2.</body>
+          <body>&quot;This field contains modifying or qualifying description(s) about the specimen type.  The use of this attribute is to modify, qualify or further specify, the entity described by SPM-4 -Specimen Type.  This is particularly useful when the code set used in SPM-4-Specimen Type does not provide the precision required to fully describe the specimen.  For example, if the specimen was precisely described as ‘capillary venous blood’ but the code set employed only provided ‘venous blood,’ this attribute could be employed to add the modifier ‘capillary.’&quot; - HL7 Version 2.8, SPM.5</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dQOPMP8jEd-Koe9flR96lw" value="1"/>
@@ -5607,7 +5610,7 @@ property is only to be used when the code property is using a coding scheme that
       </ownedComment>
       <ownedAttribute xmi:id="_jQbR8AcuEeGfLeiV6Brugg" name="callbackPhone" visibility="public">
         <ownedComment xmi:id="_pQHjgAcuEeGfLeiV6Brugg" annotatedElement="_jQbR8AcuEeGfLeiV6Brugg">
-          <body>&quot;This field is the telephone number for reporting a status or a result using the standard format with extension and/or beeper number when applicable.&quot; HL7 V2 OBR 17</body>
+          <body>&quot;Contains the telephone number for reporting a status or a result using the standard format with extension and/or beeper number when applicable.&quot; - HL7 Version 2.8, OBR.17</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_fImbAAEYEd-ZUM5xZsXWyw?FHIM/Datatypes/Telecommunications?"/>
       </ownedAttribute>
@@ -5617,12 +5620,11 @@ property is only to be used when the code property is using a coding scheme that
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_IovL0JkIEeCFEfqQZ7sMZg" name="cost" visibility="public">
-        <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B641886F630160?FHIM/Datatypes/MonetaryAmount?"/>
-      </ownedAttribute>
       <ownedAttribute xmi:id="_mBZaMActEeGfLeiV6Brugg" name="dangerCode" visibility="public">
         <ownedComment xmi:id="_vcO88ActEeGfLeiV6Brugg" annotatedElement="_mBZaMActEeGfLeiV6Brugg">
-          <body>&quot;This field is the code and/or text indicating any known or suspected patient or specimen hazards, e.g., patient with active tuberculosis or blood from a hepatitis patient.&quot; - HL7 V2 OBR 12</body>
+          <body>&quot;Contains the code and/or text indicating any known or suspected patient or specimen hazards, e.g., patient with active tuberculosis or blood from a hepatitis patient.&quot; - HL7 Version 2.8, OBR.12&#xD;
+&#xD;
+Describes &quot;any known or suspected specimen hazards, e.g., exceptionally infectious agent or blood from a hepatitis patient.&quot; - HL7 Version 2.8, SPM.16</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qBDGoActEeGfLeiV6Brugg" value="1"/>
@@ -5671,7 +5673,7 @@ property is only to be used when the code property is using a coding scheme that
       </ownedAttribute>
       <ownedAttribute xmi:id="_kFoz8Ac0EeGfLeiV6Brugg" name="duplicateProcedureReason" visibility="public">
         <ownedComment xmi:id="_xyNRoAc0EeGfLeiV6Brugg" annotatedElement="_kFoz8Ac0EeGfLeiV6Brugg">
-          <body>&quot;This field is used to document why the procedure found in OBR-44 (Procedure Code) is a duplicate of one ordered/charged previously for the same patient within the same date of service and has been determined to be medically necessary.&quot; - HL7 V2 OBR 48</body>
+          <body>&quot;This field is used to document why the procedure found in OBR-44 - Procedure Code is a duplicate of one ordered/charged previously for the same patient within the same date of service and has been determined to be medically necessary.&quot; - HL7 Version 2.8, OBR.48</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
@@ -5682,7 +5684,7 @@ property is only to be used when the code property is using a coding scheme that
       </ownedAttribute>
       <ownedAttribute xmi:id="_E6tyYAcbEeGfLeiV6Brugg" name="isEscortRequired" visibility="public">
         <ownedComment xmi:id="_5QnZYAczEeGfLeiV6Brugg" annotatedElement="_E6tyYAcbEeGfLeiV6Brugg">
-          <body>&quot;This field is an indicator that the patient needs to be escorted to the diagnostic service department.  Note: The nature of the escort requirements should be stated in the OBR-43-planned patient transport comment field.&quot; - HL7 V2 OBR 42</body>
+          <body>Indicates whether &quot;the patient needs to be escorted to the diagnostic service department.&quot; - HL7 Version 2.8, OBR.42</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_J-ZHoAcbEeGfLeiV6Brugg" value="1"/>
@@ -5713,25 +5715,31 @@ property is only to be used when the code property is using a coding scheme that
       </ownedAttribute>
       <ownedAttribute xmi:id="_X-gg4PjMEeCmc6EQPl3F9g" name="placerSupplementalInfo" visibility="public">
         <ownedComment xmi:id="_u8W8sPjMEeCmc6EQPl3F9g" annotatedElement="_X-gg4PjMEeCmc6EQPl3F9g">
-          <body>&quot;This field contains supplemental service information sent from the placer system to the filler system for the universal procedure code reported in OBR-4 Universal Service ID.  This field will be used to provide ordering information detail that is not available in other, specific fields in the OBR segment.  Multiple supplemental service information elements may be reported....  This field can be used to describe details such as whether study is to be done on the right or left, for example where the study is of the arm and the order master file does not distinguish right from left or whether the study is to be done with or without contrast (when the order master file does not make such distinctions).&quot; - HL7 V2 46</body>
+          <body>&quot;This field contains supplemental service information sent from the placer system to the filler system for the universal procedure code reported in OBR-4 Universal Service ID.  This field will be used to provide ordering information detail that is not available in other specific fields in the OBR segment.&quot; - HL7 Version 2.8, OBR.46</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_FKoUUAc0EeGfLeiV6Brugg" name="plannedPatientTransportComment" visibility="public">
         <ownedComment xmi:id="_KIac8Ac0EeGfLeiV6Brugg" annotatedElement="_FKoUUAc0EeGfLeiV6Brugg">
-          <body>&quot;This field is the code or free text comments on special requirements for the transport of the patient to the diagnostic service department&quot; - HL7 V2 OBR 43</body>
+          <body>Contains &quot;comments on special requirements for the transport of the patient to the diagnostic service department.&quot; - HL7 Version 2.8, OBR.43</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_4aBxgO3KEeCFZuasLkncZQ" name="reasonForStudy" visibility="public">
         <ownedComment xmi:id="_l7FUgO3LEeCFZuasLkncZQ" annotatedElement="_4aBxgO3KEeCFZuasLkncZQ">
-          <body>This (optional) property is included for compatability to HL7 Version 2 OBR.32.&#xD;
+          <body>&quot;This is required for some studies to obtain proper reimbursement.&quot; - HL7 Version 2.8, OBR.31&#xD;
 &#xD;
 Used to link various tests or procedures together in order to provide a more complete picture of a patient's condition.  Also used for billing purposes.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_mrMi0O3LEeCFZuasLkncZQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_mrL7wO3LEeCFZuasLkncZQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_Wsp5EAmDEeGe4v7RnpTDUQ" name="relevantClinicalInformation" visibility="public">
+        <ownedComment xmi:id="_gTZJ0AmDEeGe4v7RnpTDUQ" annotatedElement="_Wsp5EAmDEeGe4v7RnpTDUQ">
+          <body>&quot;Contains the additional clinical information about the patient or specimen.  This field is used to report the suspected diagnosis and clinical findings on requests for interpreted diagnostic studies.&quot; - HL7 Version 2.8, OBR.13</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_BaqREIlEEd-pqcFAwb-XNw" name="remarks" visibility="public">
         <ownedComment xmi:id="_fJjHEO62Ed-crcWiXVDZrQ" annotatedElement="_BaqREIlEEd-pqcFAwb-XNw">
@@ -5741,7 +5749,8 @@ Used to link various tests or procedures together in order to provide a more com
       </ownedAttribute>
       <ownedAttribute xmi:id="_xo5mAPjNEeCmc6EQPl3F9g" name="resultHandling" visibility="public">
         <ownedComment xmi:id="_E5XxIPjOEeCmc6EQPl3F9g" annotatedElement="_xo5mAPjNEeCmc6EQPl3F9g">
-          <body>&quot;Definition: Transmits information regarding the handling of the result.  For example, an order may specify that the result (e.g., an x-ray film) should be given to the patient for return to the requestor. Refer to User-defined Table 0507 Observation Result Handling for suggested values.  If this field is not populated then routine handling is implied.&quot; - HL7 V2 OBR 49&#xD;
+          <body>&quot;Transmits information regarding the handling of the result.  For example, an order may specify that the result (e.g., an x-ray film) should be given to the patient for return to the requestor....  If this field is not populated then routine handling is implied.&quot; - HL7 Version 2.8, OBR.49&#xD;
+&#xD;
 Note that the HL7 V2 value set only contains values pertinent to Radiology (e.g., give film to patient).  However, it is envisioned that other scenarios might be handled by this property.  This property is optional.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
@@ -5766,25 +5775,31 @@ Note that the HL7 V2 value set only contains values pertinent to Radiology (e.g.
       </ownedAttribute>
       <ownedAttribute xmi:id="_1JHIkAcfEeGfLeiV6Brugg" name="transportationArrangementResponsibility" visibility="public">
         <ownedComment xmi:id="_Ve2rYAchEeGfLeiV6Brugg" annotatedElement="_1JHIkAcfEeGfLeiV6Brugg">
-          <body>&quot;This field is an indicator of who is responsible for arranging transport to the planned diagnostic service.  Examples: Requester, Provider, Patient.&quot; - HL7 V2 OBR 40</body>
+          <body>Indicates &quot;who is responsible for arranging transport to the planned diagnostic service.  Examples: Requester, Provider, Patient.&quot; - HL7 Version 2.8, OBR.40</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zlt4oQmPEeGe4v7RnpTDUQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zlt4oAmPEeGe4v7RnpTDUQ"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_P9cRQAchEeGfLeiV6Brugg" name="transportationMode" visibility="public">
         <ownedComment xmi:id="_bmjCYAchEeGfLeiV6Brugg" annotatedElement="_P9cRQAchEeGfLeiV6Brugg">
-          <body>&quot;This field identifies how (or whether) to transport a patient, when applicable.&quot; - HL7 V2 OBR 30</body>
+          <body>&quot;This field identifies how (or whether) to transport a patient, when applicable.&quot; - HL7 Version 2.8, OBR.30</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JxNKwQmNEeGe4v7RnpTDUQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JxNKwAmNEeGe4v7RnpTDUQ"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_uYHV4AcfEeGfLeiV6Brugg" name="wasTransportArranged" visibility="public">
         <ownedComment xmi:id="_o1N98AczEeGfLeiV6Brugg" annotatedElement="_uYHV4AcfEeGfLeiV6Brugg">
-          <body>&quot;This field is an indicator of whether transport arrangements are known to have been made.&quot; - HL7 V2 OBR 41</body>
+          <body>Indicates &quot;whether transport arrangements are known to have been made.&quot; - HL7 Version 2.8, OBR.41</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_276B8Yk9Ed-pqcFAwb-XNw" name="author" visibility="public" association="_276B8Ik9Ed-pqcFAwb-XNw">
         <ownedComment xmi:id="_6-5WQIk9Ed-pqcFAwb-XNw" annotatedElement="_276B8Yk9Ed-pqcFAwb-XNw">
-          <body>Identifies the practitioner who created the order</body>
+          <body>&quot;Identifies the provider who ordered the test.&quot; - HL7 Version 2.8, OBR.16&#xD;
+&#xD;
+Identifies the practitioner who created the order.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Provider.efx#_420A62FD03B6418A6B760063?FHIM/Provider/IndividualProvider?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_276B84k9Ed-pqcFAwb-XNw" value="1"/>
@@ -5851,14 +5866,6 @@ Note that the HL7 V2 value set only contains values pertinent to Radiology (e.g.
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wks7Y4lVEd-pqcFAwb-XNw" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wks7YolVEd-pqcFAwb-XNw"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_llDQkKvUEeC7K8o2Izdfnw" name="relevantClinicalInformation" visibility="public" association="_lk5fkKvUEeC7K8o2Izdfnw">
-        <ownedComment xmi:id="_sc-KoKvUEeC7K8o2Izdfnw" annotatedElement="_llDQkKvUEeC7K8o2Izdfnw">
-          <body>Specifies additional information, typically about the patient, that is necessary or useful for the order recipient to know in order to perform the request.  Examples include the administration time of an antibiotic for use by the laboratory to perform an antibiotic titer; whether the patient is acute or convalescing, etc.  In each case, the kind of information sent is identified by the Information Category code, and the value of the information is sent using the Value property, which is of type Any, so that it can hold times, codes, etc. as needed.</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Orders.efx#_cRVUYKvSEeC7K8o2Izdfnw?FHIM/Orders/RelevantClinicalInformation?"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_llDQkqvUEeC7K8o2Izdfnw" value="*"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_llDQkavUEeC7K8o2Izdfnw"/>
-      </ownedAttribute>
       <ownedAttribute xmi:id="_siJKEYlDEd-pqcFAwb-XNw" name="requestingLocation" visibility="public" association="_siJKEIlDEd-pqcFAwb-XNw">
         <ownedComment xmi:id="_kSVl0O62Ed-crcWiXVDZrQ" annotatedElement="_siJKEYlDEd-pqcFAwb-XNw">
           <body>Indicates the location from which this Order originated.</body>
@@ -5869,7 +5876,7 @@ Note that the HL7 V2 value set only contains values pertinent to Radiology (e.g.
       </ownedAttribute>
       <ownedAttribute xmi:id="_Q98HIQcwEeGfLeiV6Brugg" name="resultCopiesTo" visibility="public" association="_Q98HIAcwEeGfLeiV6Brugg">
         <ownedComment xmi:id="_cTqCMAcwEeGfLeiV6Brugg" annotatedElement="_Q98HIQcwEeGfLeiV6Brugg">
-          <body>&quot;This field is the people who are to receive copies of the results.&quot; - HL7 V2 OBR 28</body>
+          <body>&quot;Identifies the people who are to receive copies of the results.&quot; - HL7 Version 2.8, OBR.28</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Provider.efx#_420A62FD03B6418A6B760063?FHIM/Provider/IndividualProvider?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Q98HIwcwEeGfLeiV6Brugg" value="1"/>
@@ -6346,6 +6353,9 @@ physician will receive a report.&quot; - HL7 V3</body>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_4RieAMzHEeCMF_3VBil7Gw" name="groupedSpecimenCount" visibility="public">
+        <ownedComment xmi:id="_JnvM4AllEeGe4v7RnpTDUQ" annotatedElement="_4RieAMzHEeCMF_3VBil7Gw">
+          <body>&quot;This field refers to the number of individual specimens of a particular type represented by this instance of a specimen. The use of this field is restricted to specimens upon which all specimen related attributes are identical. This field would only be valued if the specimen role attribute has the value &quot;G&quot;.&quot; - HL7 Version 2.8, SPM.13</body>
+        </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_QH7Ugf8pEd-Koe9flR96lw" name="specimen" visibility="public" type="_420A62FD03B642DBE3F101E7" association="_QH7UgP8pEd-Koe9flR96lw">
@@ -6767,12 +6777,6 @@ This class speficially points to IndividualProvider to handle participations in 
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0UbToKc1EeCkJ6Eur_P0ag" value="1"/>
       </ownedEnd>
     </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_lk5fkKvUEeC7K8o2Izdfnw" memberEnd="_llDQkKvUEeC7K8o2Izdfnw _llDQk6vUEeC7K8o2Izdfnw">
-      <ownedEnd xmi:id="_llDQk6vUEeC7K8o2Izdfnw" name="" visibility="private" type="_420A62FD03B64589572B02E8" association="_lk5fkKvUEeC7K8o2Izdfnw">
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_llDQlavUEeC7K8o2Izdfnw" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_llDQlKvUEeC7K8o2Izdfnw" value="1"/>
-      </ownedEnd>
-    </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_9cvNoKy0EeCBdbmGd0l2eA" name="Releaser">
       <generalization xmi:id="_ReCDcMdpEeCVr54V6VtSNQ" general="_420A62FD03B6418CF92600E1"/>
     </packagedElement>
@@ -7073,7 +7077,6 @@ This class speficially points to IndividualProvider to handle participations in 
   <Default:Documentation xmi:id="_iJoscIyBEeCBU92aoqPk5w" base_Comment="_iJaC8IyBEeCBU92aoqPk5w"/>
   <Default:Documentation xmi:id="_oJGJwKc2EeCkJ6Eur_P0ag" base_Comment="_oJDGcac2EeCkJ6Eur_P0ag"/>
   <RIM:Device xmi:id="_sf5K4Kc2EeCkJ6Eur_P0ag" base_Class="_MsausFCxEeCsN-3dTKIrUA"/>
-  <Default:Documentation xmi:id="_sdHUkKvUEeC7K8o2Izdfnw" base_Comment="_sc-KoKvUEeC7K8o2Izdfnw"/>
   <Default:Documentation xmi:id="_MXRg4MHKEeCdLPayeDTWtA" base_Comment="_QvNKsbxJEeCjnsq0FtkmeA"/>
   <RIM:Participation xmi:id="_LCrJkMdpEeCVr54V6VtSNQ" base_Class="_9cvNoKy0EeCBdbmGd0l2eA"/>
   <RIM:Act xmi:id="_BHU88Md4EeCVr54V6VtSNQ" base_Class="_Lc8A0GRaEeCsvJrE4KlOMA"/>
@@ -7097,4 +7100,6 @@ This class speficially points to IndividualProvider to handle participations in 
   <Default:Documentation xmi:id="_KIjm4Ac0EeGfLeiV6Brugg" base_Comment="_KIac8Ac0EeGfLeiV6Brugg"/>
   <Default:Documentation xmi:id="_xyXCoAc0EeGfLeiV6Brugg" base_Comment="_xyNRoAc0EeGfLeiV6Brugg"/>
   <Default:Documentation xmi:id="_-sf91Ac0EeGfLeiV6Brugg" base_Comment="_E5XxIPjOEeCmc6EQPl3F9g"/>
+  <Default:Documentation xmi:id="_Jn494AllEeGe4v7RnpTDUQ" base_Comment="_JnvM4AllEeGe4v7RnpTDUQ"/>
+  <Default:Documentation xmi:id="_gTiTwAmDEeGe4v7RnpTDUQ" base_Comment="_gTZJ0AmDEeGe4v7RnpTDUQ"/>
 </xmi:XMI>
