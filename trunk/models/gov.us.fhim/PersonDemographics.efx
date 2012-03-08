@@ -1778,7 +1778,7 @@ Note that the this concept is restricted to those societal roles as perceived in
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_evNLLeLjEdutr_MT9HkPyQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_evNLLOLjEdutr_MT9HkPyQ"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_9TUx8GrUEeCJbfIpPWFXRg" name="birthname" visibility="public">
+      <ownedAttribute xmi:id="_9TUx8GrUEeCJbfIpPWFXRg" name="birthName" visibility="public">
         <eAnnotations xmi:id="_9TUx8WrUEeCJbfIpPWFXRg" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <ownedComment xmi:id="_9TUx8mrUEeCJbfIpPWFXRg" annotatedElement="_9TUx8GrUEeCJbfIpPWFXRg">
           <body>A name that a person had shortly after being born. Usually for family names but may be used to mark given names at birth that may have changed later.  In western cultures, this name can be used for &quot;maiden name.&quot;  Note that the datatype for this property is a PersonName, which includes the various parts that make up a person's name such as family name, prefixes, suffixes, etc.&#xD;
@@ -1818,7 +1818,7 @@ This property may contain more than one ethnicity for a given person, identified
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_LxgC8dmHEeChWYqvVB0Hpw" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LxgC8NmHEeChWYqvVB0Hpw"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_oFBQoOwVEd6PwKowkorMOw" name="legalname" visibility="public">
+      <ownedAttribute xmi:id="_oFBQoOwVEd6PwKowkorMOw" name="legalName" visibility="public">
         <eAnnotations xmi:id="_oFBQoewVEd6PwKowkorMOw" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <ownedComment xmi:id="_FeCvYBqVEd-j8JC21F3W2A" annotatedElement="_oFBQoOwVEd6PwKowkorMOw">
           <body>The name by which a person is known or legally identified such as the name on a driver's license or passport.  Note that the datatype for this property is a PersonName, which includes the various parts that make up a person's name such as family name, prefixes, suffixes, etc.&#xD;
@@ -2180,7 +2180,7 @@ in conjunction with other properties to determine any familial propensities for 
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_i87VcOwVEd6PwKowkorMOw" name="legalname" visibility="public">
+      <ownedAttribute xmi:id="_i87VcOwVEd6PwKowkorMOw" name="legalName" visibility="public">
         <eAnnotations xmi:id="_i87VcewVEd6PwKowkorMOw" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <ownedComment xmi:id="_PfS5QBqSEd-j8JC21F3W2A" annotatedElement="_i87VcOwVEd6PwKowkorMOw">
           <body>The name by which a person is known or legally identified such as the name on a driver's license or passport.  Note that the datatype for this property is a PersonName, which includes the various parts that make up a person's name such as family name, prefixes, suffixes, etc.</body>
@@ -2230,6 +2230,14 @@ in conjunction with other properties to determine any familial propensities for 
           <body>The phone number of a person at their primary home, to reach a person after business hours.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_fImbAAEYEd-ZUM5xZsXWyw?FHIM/Datatypes/Telecommunications?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_rutwwGfBEeGK0elVFnH6lw" name="workAddress" visibility="public">
+        <ownedComment xmi:id="_rutwwWfBEeGK0elVFnH6lw" annotatedElement="_rutwwGfBEeGK0elVFnH6lw">
+          <body>The contact party's office address.  First choice for business related contacts during business hours.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B6418A8DCD02C2?FHIM/Datatypes/Address?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rutwwmfBEeGK0elVFnH6lw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rutww2fBEeGK0elVFnH6lw"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_kz_jABArEd-2E9qx-lgHBg" name="workPhone" visibility="public">
         <ownedComment xmi:id="_ELRx4BqTEd-j8JC21F3W2A" annotatedElement="_kz_jABArEd-2E9qx-lgHBg">
@@ -2684,9 +2692,11 @@ This property contains the actual address - not the circumstances under which th
       <ownedAttribute xmi:id="_420A62FD03B6418A4EED03D4" name="veryImportantPerson" visibility="public">
         <eAnnotations xmi:id="_NPWegOLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <ownedComment xmi:id="_B_Ye4BqPEd-j8JC21F3W2A" annotatedElement="_420A62FD03B6418A4EED03D4">
-          <body>A code specifying the patient's special status granted by the organization at which they are a patient, often resulting in preferred treatment and special considerations. For example, board member, diplomat, etc.  &#xD;
+          <body>&quot;Identifies the type of VIP.&quot; - HL7 Version 2.8, PV1-16&#xD;
 &#xD;
-9/28/2011: Make this a boolean?  What other values are possible here?  Not in HL7 V2.  HL7 V3 has a code, but not sure whether they're applicable to US Govt uses.  Check with DoD and IHS.</body>
+A code specifying the patient's special status granted by the organization at which they are a patient, often resulting in preferred treatment and special considerations. For example, board member, diplomat, etc.  &#xD;
+&#xD;
+9/28/2011: Make this a boolean?  What other values are possible here?  The HL7 V2 table (99) does not have any suggested values.  HL7 V3 has a code, but not sure whether they're applicable to US Govt uses.  Check with DoD and IHS.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_evDaMeLjEdutr_MT9HkPyQ" value="1"/>
@@ -4318,4 +4328,5 @@ For more details, see http://www.cdc.gov/nchs/data/misc/hb_cod.pdf </body>
   <Default:Documentation xmi:id="_WO6EQFjvEeG6Pp3Py7p1bw" base_Comment="_WOw6UFjvEeG6Pp3Py7p1bw"/>
   <Default:Documentation xmi:id="_GYAAgFjwEeG6Pp3Py7p1bw" base_Comment="_GX22kFjwEeG6Pp3Py7p1bw"/>
   <Default:Documentation xmi:id="_XfXxIFjwEeG6Pp3Py7p1bw" base_Comment="_XfPOQFjwEeG6Pp3Py7p1bw"/>
+  <Default:Documentation xmi:id="_rvIAcGfBEeGK0elVFnH6lw" base_Comment="_rutwwWfBEeGK0elVFnH6lw"/>
 </xmi:XMI>
