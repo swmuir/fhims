@@ -462,7 +462,7 @@
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_64YIZ8dsEeCVr54V6VtSNQ" visible="false" type="OperationCompartment"/>
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_64YIacdsEeCVr54V6VtSNQ" visible="false" type="SignalCompartment"/>
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_64YIa8dsEeCVr54V6VtSNQ" visible="false" type="StructureCompartment"/>
-          <element xmi:type="uml:Class" href="Common.efx#_420A62FD03B64592E9E3037C?FHIM/Common/ProductInstance?"/>
+          <element xmi:type="uml:Class" href="Common.efx#_420A62FD03B64592E9E3037C?FHIM/Common/MedicinalProductInstance?"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_64OXYsdsEeCVr54V6VtSNQ" x="24092" y="49135"/>
         </children>
         <children xmi:type="umlnotation:UMLShape" xmi:id="_Xjyj8MdtEeCVr54V6VtSNQ" element="_0j3qsF7wEeCcBvMgXNMeOQ" fontName="Arial" fontHeight="10" showListVisibility="None" fillColor="8519679" lineColor="3342489" showStereotype="Image">
@@ -3042,7 +3042,7 @@ Question: Do all fills get a fill id, or only refills and partial fills?</body>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WREvsV7yEeCcBvMgXNMeOQ"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_XjTzoF7yEeCcBvMgXNMeOQ" name="productInstance" visibility="public" association="_XjSlgF7yEeCcBvMgXNMeOQ">
-        <type xmi:type="uml:Class" href="Common.efx#_420A62FD03B64592E9E3037C?FHIM/Common/ProductInstance?"/>
+        <type xmi:type="uml:Class" href="Common.efx#_420A62FD03B64592E9E3037C?FHIM/Common/MedicinalProductInstance?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XjUasV7yEeCcBvMgXNMeOQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XjUasF7yEeCcBvMgXNMeOQ"/>
       </ownedAttribute>
@@ -3064,120 +3064,6 @@ Question: Do all fills get a fill id, or only refills and partial fills?</body>
         <type xmi:type="uml:Class" href="Common.efx#_420A62FD03B6425C004E004C?FHIM/Common/Device?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dBCPMS2IEeGWR8bvqgjcQA" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dBCPMC2IEeGWR8bvqgjcQA"/>
-      </ownedAttribute>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B641A349EF0070" name="_MedicationAdministrationEvent">
-      <eAnnotations xmi:id="_NYl6GuLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
-      <ownedComment xmi:id="_NYSYGuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B641A349EF0070">
-        <body>&quot;Information about the actual consumption of medication by a patient. While is generally only relevant for hospital/institutional systems which track individual administrations, it could also be used in ambulatory care e.g. home-health environments which capture administrations such as insulin injections and which use messaging to communicate the information back to a central source; recording immunizations.&quot; (HL7 Version 3)&#xD;
-</body>
-      </ownedComment>
-      <ownedAttribute xmi:id="_420A62FD03B6425C0805022C" name="dateTime" visibility="public">
-        <ownedComment xmi:id="_NYSYHeLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6425C0805022C">
-          <body>The date and time that the medication was or will be administered.</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_420A62FD03B6459404F30126" name="dosageOrdered" visibility="public">
-        <ownedComment xmi:id="_NYcJEuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6459404F30126">
-          <body>This is the amount of the medication the patient is to receive as one dose for this order. This should be an amount with a unit of measure, such as '500MG' or '50cc'. THIS SHOULD NOT BE THE NUMBER OF TABLETS, ETC.</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_N-BAoNYeEd62cosTNS-_lw?FHIM/Datatypes/Real?"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_420A62FD03B641DEB346013F" name="frequency" visibility="public">
-        <ownedComment xmi:id="_NYcJFeLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B641DEB346013F">
-          <body>Specifies when the substance is to be administered and how frequently.  Note that this is a complex data type that may indicate specific times or intervals (e.g., 10:00 AM, MWF, etc).</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B642387187004E?FHIM/Datatypes/TimeInterval?"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_420A62FD03B641B4D20B0067" name="infusionRate" visibility="public">
-        <ownedComment xmi:id="_NYcJGOLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B641B4D20B0067">
-          <body>Infusion: &quot;Introduction of a solution into the body through a vein for therapeutic purposes.&quot;  (American Heritage Stedman's Medical Dictionary).  This is the rate at which the solution is introduced into the body.  Expressed as volume/time (e.g., 500 ml/hr)&#xD;
-</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B641886F63021C?FHIM/Datatypes/RateQuantity?"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_420A62FD03B641B9FDA00069" name="injectionSite" visibility="public">
-        <ownedComment xmi:id="_NYcJG-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B641B9FDA00069">
-          <body>&quot;The detailed anatomical site where the medication enters or is applied to the subject.&quot; (HL7 3.0)&#xD;
-</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_420A62FD03B6459404F30183" name="isPrnActivity" visibility="public">
-        <ownedComment xmi:id="_NYl6EuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6459404F30183">
-          <body>I'm guessing that this is a boolean.  Vista definition is: The PRN REASON FLAG field is to indicate whether the BCMA Med Log file entry is PRN activity and has an associated PRN REASON which has been set to require BCMA user attention or action.</body>
-        </ownedComment>
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_420A62FD03B6459404F300E7" name="patientLocation" visibility="public">
-        <ownedComment xmi:id="_NYl6FeLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6459404F300E7">
-          <body>Free text; location (room, bed and ward) of the patient at the time of the medication administration.</body>
-        </ownedComment>
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_420A62FD03B641B4D758015F" name="status" visibility="public">
-        <ownedComment xmi:id="_NYl6GOLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B641B4D758015F">
-          <body>The current state of the Substance Administration.  Possible values include: Infusing, Given, Held, Completed, etc.</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_420A62FD03B64304F50E0274" name="comments" visibility="public" isUnique="false" association="_420A62FD03B64304F50D0309">
-        <ownedComment xmi:id="_NgfR3-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64304F50E0274">
-          <body>Any additional comments regarding the SubstanceAdministrationEvent.</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Common.efx#_420A62FD03B642C044DB02ED?FHIM/Common/CommentEvent?"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NgobwuLiEduGJrQyRGTO1A" value="*"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NgobweLiEduGJrQyRGTO1A"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_420A62FD03B64304F6D2030A" name="performer" visibility="public" isUnique="false" association="_420A62FD03B64304F6D003A7">
-        <ownedComment xmi:id="_NgobxuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64304F6D2030A">
-          <body>&quot;Captures participation information (who, when, comments) of the person who performed the procedure.&#xD;
-&#xD;
-&quot;&#xD;
-&#xD;
-&quot;A person witnessing the action happening without doing anything. A witness is not necessarily aware, much less approves of anything stated in the service event.&quot;&quot; (HL7)&quot;&#xD;
-&#xD;
-</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Common.efx#_420A62FD03B6418CF92600E1?FHIM/Common/PractitionerParticipationLite?"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NgobyeLiEduGJrQyRGTO1A" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NgobyOLiEduGJrQyRGTO1A"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_420A62FD03B6459406780138" name="patientDivision" visibility="public" isUnique="false" association="_420A62FD03B645940677034B">
-        <ownedComment xmi:id="_NiRalOLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6459406780138">
-          <body>Division of the ward where the patient was located for this administration event.</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Provider.efx#_420A62FD03B645784009029B?FHIM/Provider/Institution?"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NibLguLiEduGJrQyRGTO1A" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NibLgeLiEduGJrQyRGTO1A" value="1"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_420A62FD03B645940F640221" name="administeredItem" visibility="public" type="_420A62FD03B645940EF003E6" isUnique="false" association="_420A62FD03B645940F6400F8">
-        <ownedComment xmi:id="_NikVfuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B645940F640221">
-          <body>The medication component administered to the patient.</body>
-        </ownedComment>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NiuGcuLiEduGJrQyRGTO1A" value="*"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NiuGceLiEduGJrQyRGTO1A"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_420A62FD03B6459411D20283" name="orderedItem" visibility="public" isUnique="false" association="_420A62FD03B6459411D1033E">
-        <ownedComment xmi:id="_Ni33e-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6459411D20283">
-          <body>The item that was ordered to be administered to the patient.</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Common.efx#_420A62FD03B6426545CB0072?FHIM/Common/OrderablePharmacyItem?"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_IHEEoDh9EeC17O99ZX8o-w" name="actualIvLimitation" visibility="public">
-        <ownedComment xmi:id="_IHEEoTh9EeC17O99ZX8o-w" annotatedElement="_IHEEoDh9EeC17O99ZX8o-w">
-          <body>This is the maximum length of time to administer, or the maximum volume to administer, for IV fluid orders. The value may be in ML or CC for  milliliters, L for liters, D for days, or H for hours.</body>
-        </ownedComment>
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_420A62FD03B64592CC1D0395" name="syringeSize" visibility="public">
-        <ownedComment xmi:id="_NdqAReLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64592CC1D0395">
-          <body>Size of the syringe to be used to administer IV.&#xD;
-&#xD;
-Do we need this???</body>
-        </ownedComment>
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B641B4BDD30213" name="PharmacyPromise" isAbstract="true">
@@ -3773,53 +3659,6 @@ Another possible name is infustionPersistance?&#xD;
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vxZIQF7yEeCcBvMgXNMeOQ" value="1"/>
       </ownedAttribute>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B645940EF003E6" name="_MedicationAdministrationComponent">
-      <eAnnotations xmi:id="_Ne2TGuLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
-      <ownedComment xmi:id="_NesiGuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B645940EF003E6">
-        <body>The medication component administered to the patient.</body>
-      </ownedComment>
-      <ownedAttribute xmi:id="_420A62FD03B645940F2C03A7" name="doseQuantityGiven" visibility="public">
-        <ownedComment xmi:id="_Ne2TEuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B645940F2C03A7">
-          <body>&quot;The amount of the therapeutic agent or other substance given at one administration event.&quot; (HL7 3.0)&#xD;
-</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_N-BAoNYeEd62cosTNS-_lw?FHIM/Datatypes/Real?"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_420A62FD03B645940F1C03A7" name="doseQuantityOrdered" visibility="public">
-        <ownedComment xmi:id="_Ne2TFeLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B645940F1C03A7">
-          <body>&quot;The amount of the therapeutic agent or other substance given at one administration event.&quot; (HL7 3.0)&#xD;
-</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_N-BAoNYeEd62cosTNS-_lw?FHIM/Datatypes/Real?"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_420A62FD03B645940F1C03A8" name="doseUnit" visibility="public">
-        <ownedComment xmi:id="_Ne2TGOLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B645940F1C03A8">
-          <body>Unit of administration (i.e., tablet, ml, vial).</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_N-BAoNYeEd62cosTNS-_lw?FHIM/Datatypes/Real?"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_420A62FD03B645940F83031B" name="drug" visibility="public" isUnique="false" association="_420A62FD03B645940F83008B">
-        <ownedComment xmi:id="_NiuGduLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B645940F83031B">
-          <body>The medication that is or was administered to the patient.</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Common.efx#_420A62FD03B64592E9E3037C?FHIM/Common/ProductInstance?"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NiuGeeLiEduGJrQyRGTO1A" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NiuGeOLiEduGJrQyRGTO1A" value="1"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_sZZ4wF7yEeCcBvMgXNMeOQ" name="pharmacyManufacturedProduct" visibility="private" type="_0j3qsF7wEeCcBvMgXNMeOQ" association="_sZYDkF7yEeCcBvMgXNMeOQ">
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sZbG4V7yEeCcBvMgXNMeOQ" value="*"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sZbG4F7yEeCcBvMgXNMeOQ"/>
-      </ownedAttribute>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_420A62FD03B64304F50D0309" memberEnd="_420A62FD03B64304F50E0274 _420A62FD03B64304F50E027E">
-      <ownedComment xmi:id="_NgfR3OLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64304F50D0309">
-        <body>Comments regarding the Medication order.</body>
-      </ownedComment>
-      <ownedEnd xmi:id="_420A62FD03B64304F50E027E" name="" visibility="public" type="_420A62FD03B641A349EF0070" isUnique="false" association="_420A62FD03B64304F50D0309"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_420A62FD03B64304F6D003A7" memberEnd="_420A62FD03B64304F6D2030A _420A62FD03B64304F6D2031E">
-      <ownedEnd xmi:id="_420A62FD03B64304F6D2031E" name="" visibility="public" type="_420A62FD03B641A349EF0070" isUnique="false" association="_420A62FD03B64304F6D003A7"/>
-    </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_420A62FD03B64586FA270029" memberEnd="_420A62FD03B64586FA280229 _420A62FD03B64586FA28022B">
       <ownedEnd xmi:id="_420A62FD03B64586FA28022B" name="" visibility="public" type="_420A62FD03B641B4BDD30213" isUnique="false" association="_420A62FD03B64586FA270029"/>
     </packagedElement>
@@ -3834,18 +3673,6 @@ Another possible name is infustionPersistance?&#xD;
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_420A62FD03B64592E9C2007D" memberEnd="_420A62FD03B64592E9C201A6 _420A62FD03B64592E9C201B6">
       <ownedEnd xmi:id="_420A62FD03B64592E9C201B6" name="" visibility="public" type="_420A62FD03B64476CFDE0039" isUnique="false" association="_420A62FD03B64592E9C2007D"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_420A62FD03B645940677034B" memberEnd="_420A62FD03B6459406780138 _420A62FD03B645940678013A">
-      <ownedEnd xmi:id="_420A62FD03B645940678013A" name="" visibility="public" type="_420A62FD03B641A349EF0070" isUnique="false" association="_420A62FD03B645940677034B"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_420A62FD03B645940F6400F8" memberEnd="_420A62FD03B645940F640221 _420A62FD03B645940F640223">
-      <ownedEnd xmi:id="_420A62FD03B645940F640223" name="" visibility="public" type="_420A62FD03B641A349EF0070" isUnique="false" association="_420A62FD03B645940F6400F8"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_420A62FD03B645940F83008B" memberEnd="_420A62FD03B645940F83031B _420A62FD03B645940F83032B">
-      <ownedEnd xmi:id="_420A62FD03B645940F83032B" name="" visibility="public" type="_420A62FD03B645940EF003E6" isUnique="false" association="_420A62FD03B645940F83008B"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_420A62FD03B6459411D1033E" memberEnd="_420A62FD03B6459411D20283 _420A62FD03B6459411D20285">
-      <ownedEnd xmi:id="_420A62FD03B6459411D20285" name="" visibility="public" type="_420A62FD03B641A349EF0070" isUnique="false" association="_420A62FD03B6459411D1033E"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_420A62FD03B645E32322007C" memberEnd="_420A62FD03B645E323220357 _420A62FD03B645E323220359">
       <ownedEnd xmi:id="_420A62FD03B645E323220359" name="" visibility="public" type="_420A62FD03B641B4BDD30213" isUnique="false" association="_420A62FD03B645E32322007C"/>
@@ -4096,24 +3923,6 @@ DUR tends to be after the fact, while DUE tends to be before the fact, but basic
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IsD1NDP1EeCVpeEy9E23XA" value="1"/>
       </ownedEnd>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_yQ2jIDh4EeC17O99ZX8o-w" name="_MedicationAdministrationPromise">
-      <ownedAttribute xmi:id="_420A62FD03B64592CCFD006D" name="administrationStatus" visibility="public">
-        <ownedComment xmi:id="_NdXFW-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64592CCFD006D">
-          <body>The latest BCMA (Bar Code Medication Administration) for this order.  VALUES: I=Infusing, S=Stop, H=Held, R=Refuse, C=Completed, G=Given.</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_-OJbkDh4EeC17O99ZX8o-w" name="medicationAdministrationEvent" visibility="private" type="_420A62FD03B641A349EF0070" association="_-N1SgDh4EeC17O99ZX8o-w">
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-OKpsDh4EeC17O99ZX8o-w" value="*"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-OKCoDh4EeC17O99ZX8o-w"/>
-      </ownedAttribute>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_-N1SgDh4EeC17O99ZX8o-w" memberEnd="_-OJbkDh4EeC17O99ZX8o-w _-OLQwDh4EeC17O99ZX8o-w">
-      <ownedEnd xmi:id="_-OLQwDh4EeC17O99ZX8o-w" name="" visibility="private" type="_yQ2jIDh4EeC17O99ZX8o-w" association="_-N1SgDh4EeC17O99ZX8o-w">
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-OL30Th4EeC17O99ZX8o-w" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-OL30Dh4EeC17O99ZX8o-w" value="1"/>
-      </ownedEnd>
-    </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_b9CpcEj4EeCSVeZMaVcw1Q" name="_MedicationList">
       <ownedAttribute xmi:id="_e_BMsEj4EeCSVeZMaVcw1Q" name="patientReportedMedication" visibility="private" type="_420A62FD03B641B4BE0F00E3" aggregation="shared" association="_e-9iUEj4EeCSVeZMaVcw1Q">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_e_Do8Ej4EeCSVeZMaVcw1Q" value="*"/>
@@ -4198,12 +4007,6 @@ DUR tends to be after the fact, while DUE tends to be before the fact, but basic
       <ownedEnd xmi:id="_XjVBwF7yEeCcBvMgXNMeOQ" name="" visibility="private" type="_420A62FD03B641928F4302E4" association="_XjSlgF7yEeCcBvMgXNMeOQ">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XjVo0F7yEeCcBvMgXNMeOQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XjVBwV7yEeCcBvMgXNMeOQ" value="1"/>
-      </ownedEnd>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_sZYDkF7yEeCcBvMgXNMeOQ" memberEnd="_sZZ4wF7yEeCcBvMgXNMeOQ _sZc8EF7yEeCcBvMgXNMeOQ">
-      <ownedEnd xmi:id="_sZc8EF7yEeCcBvMgXNMeOQ" name="" visibility="private" type="_420A62FD03B645940EF003E6" association="_sZYDkF7yEeCcBvMgXNMeOQ">
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sZdjIV7yEeCcBvMgXNMeOQ" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sZdjIF7yEeCcBvMgXNMeOQ" value="1"/>
       </ownedEnd>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_vxXTEF7yEeCcBvMgXNMeOQ" memberEnd="_vxYhMF7yEeCcBvMgXNMeOQ _vxZvUF7yEeCcBvMgXNMeOQ">
@@ -4369,15 +4172,6 @@ Changes are set attribute patientInstructions multipilicity to '*'.&#xD;
   <Default:Documentation xmi:id="_NYJOKeLiEduGJrQyRGTO1A" base_Comment="_NYJOKOLiEduGJrQyRGTO1A"/>
   <Default:Documentation xmi:id="_NYSYEOLiEduGJrQyRGTO1A" base_Comment="_NYJOK-LiEduGJrQyRGTO1A"/>
   <Default:Documentation xmi:id="_NYSYE-LiEduGJrQyRGTO1A" base_Comment="_NYSYEuLiEduGJrQyRGTO1A"/>
-  <Default:Documentation xmi:id="_NYSYG-LiEduGJrQyRGTO1A" base_Comment="_NYSYGuLiEduGJrQyRGTO1A"/>
-  <Default:Documentation xmi:id="_NYcJEOLiEduGJrQyRGTO1A" base_Comment="_NYSYHeLiEduGJrQyRGTO1A"/>
-  <Default:Documentation xmi:id="_NYcJE-LiEduGJrQyRGTO1A" base_Comment="_NYcJEuLiEduGJrQyRGTO1A"/>
-  <Default:Documentation xmi:id="_NYcJFuLiEduGJrQyRGTO1A" base_Comment="_NYcJFeLiEduGJrQyRGTO1A"/>
-  <Default:Documentation xmi:id="_NYcJGeLiEduGJrQyRGTO1A" base_Comment="_NYcJGOLiEduGJrQyRGTO1A"/>
-  <Default:Documentation xmi:id="_NYl6EOLiEduGJrQyRGTO1A" base_Comment="_NYcJG-LiEduGJrQyRGTO1A"/>
-  <Default:Documentation xmi:id="_NYl6E-LiEduGJrQyRGTO1A" base_Comment="_NYl6EuLiEduGJrQyRGTO1A"/>
-  <Default:Documentation xmi:id="_NYl6FuLiEduGJrQyRGTO1A" base_Comment="_NYl6FeLiEduGJrQyRGTO1A"/>
-  <Default:Documentation xmi:id="_NYl6GeLiEduGJrQyRGTO1A" base_Comment="_NYl6GOLiEduGJrQyRGTO1A"/>
   <Default:Documentation xmi:id="_NYvEAOLiEduGJrQyRGTO1A" base_Comment="_NYl6HeLiEduGJrQyRGTO1A"/>
   <Default:Documentation xmi:id="_NY41AOLiEduGJrQyRGTO1A" base_Comment="_NYvECuLiEduGJrQyRGTO1A"/>
   <Default:Documentation xmi:id="_NY41A-LiEduGJrQyRGTO1A" base_Comment="_NY41AuLiEduGJrQyRGTO1A"/>
@@ -4406,28 +4200,16 @@ Changes are set attribute patientInstructions multipilicity to '*'.&#xD;
   <Default:Documentation xmi:id="_NdgPRuLiEduGJrQyRGTO1A" base_Comment="_NdgPReLiEduGJrQyRGTO1A"/>
   <Default:Documentation xmi:id="_NdgPSeLiEduGJrQyRGTO1A" base_Comment="_NdgPSOLiEduGJrQyRGTO1A"/>
   <Default:Documentation xmi:id="_NdqAQ-LiEduGJrQyRGTO1A" base_Comment="_NdqAQuLiEduGJrQyRGTO1A"/>
-  <Default:Documentation xmi:id="_Ne2TEOLiEduGJrQyRGTO1A" base_Comment="_NesiGuLiEduGJrQyRGTO1A"/>
-  <Default:Documentation xmi:id="_Ne2TE-LiEduGJrQyRGTO1A" base_Comment="_Ne2TEuLiEduGJrQyRGTO1A"/>
-  <Default:Documentation xmi:id="_Ne2TFuLiEduGJrQyRGTO1A" base_Comment="_Ne2TFeLiEduGJrQyRGTO1A"/>
-  <Default:Documentation xmi:id="_Ne2TGeLiEduGJrQyRGTO1A" base_Comment="_Ne2TGOLiEduGJrQyRGTO1A"/>
-  <Default:Documentation xmi:id="_NgfR3eLiEduGJrQyRGTO1A" base_Comment="_NgfR3OLiEduGJrQyRGTO1A"/>
-  <Default:Documentation xmi:id="_NgobwOLiEduGJrQyRGTO1A" base_Comment="_NgfR3-LiEduGJrQyRGTO1A"/>
-  <Default:Documentation xmi:id="_Ngobx-LiEduGJrQyRGTO1A" base_Comment="_NgobxuLiEduGJrQyRGTO1A"/>
   <Default:Documentation xmi:id="_NhFHseLiEduGJrQyRGTO1A" base_Comment="_NhFHsOLiEduGJrQyRGTO1A"/>
   <Default:Documentation xmi:id="_NhYCqOLiEduGJrQyRGTO1A" base_Comment="_NhYCp-LiEduGJrQyRGTO1A"/>
   <Default:Documentation xmi:id="_NhhzoOLiEduGJrQyRGTO1A" base_Comment="_NhYCruLiEduGJrQyRGTO1A"/>
   <Default:Documentation xmi:id="_Nh0unuLiEduGJrQyRGTO1A" base_Comment="_Nh0uneLiEduGJrQyRGTO1A"/>
   <Default:Documentation xmi:id="_NiIQleLiEduGJrQyRGTO1A" base_Comment="_NiIQlOLiEduGJrQyRGTO1A"/>
-  <Default:Documentation xmi:id="_NibLgOLiEduGJrQyRGTO1A" base_Comment="_NiRalOLiEduGJrQyRGTO1A"/>
-  <Default:Documentation xmi:id="_NiuGcOLiEduGJrQyRGTO1A" base_Comment="_NikVfuLiEduGJrQyRGTO1A"/>
-  <Default:Documentation xmi:id="_NiuGd-LiEduGJrQyRGTO1A" base_Comment="_NiuGduLiEduGJrQyRGTO1A"/>
-  <Default:Documentation xmi:id="_Ni33fOLiEduGJrQyRGTO1A" base_Comment="_Ni33e-LiEduGJrQyRGTO1A"/>
   <Default:Documentation xmi:id="_NjKyY-LiEduGJrQyRGTO1A" base_Comment="_NjKyYuLiEduGJrQyRGTO1A"/>
   <Default:Documentation xmi:id="_2KrlE0tEEdyGhN1DL5AQjA" base_Comment="_2KrlEUtEEdyGhN1DL5AQjA"/>
   <Default:Documentation xmi:id="_eL-00LTbEd2sMvQnSCqOzA" base_Comment="_eL1q4LTbEd2sMvQnSCqOzA"/>
   <Default:Documentation xmi:id="_1b4_YL-vEd2cYoIY7XWEQw" base_Comment="_1bv1cL-vEd2cYoIY7XWEQw"/>
   <RIM:Supply xmi:id="_br8FAFwTEd6dhZ7uY2XV5Q" base_Class="_420A62FD03B641928F4302E4"/>
-  <RIM:SubstanceAdministration xmi:id="_br8FAVwTEd6dhZ7uY2XV5Q" base_Class="_420A62FD03B641A349EF0070"/>
   <RIM:SubstanceAdministration xmi:id="_br8FAlwTEd6dhZ7uY2XV5Q" base_Class="_420A62FD03B641B4BDD30213"/>
   <RIM:SubstanceAdministration xmi:id="_br8FA1wTEd6dhZ7uY2XV5Q" base_Class="_420A62FD03B641B4BE0F00E3"/>
   <RIM:Observation xmi:id="_br8FCVwTEd6dhZ7uY2XV5Q" base_Class="_420A62FD03B641B9FA54023F"/>
@@ -4435,7 +4217,6 @@ Changes are set attribute patientInstructions multipilicity to '*'.&#xD;
   <RIM:Supply xmi:id="_bsF2BFwTEd6dhZ7uY2XV5Q" base_Class="_420A62FD03B64476CFDE0039"/>
   <RIM:SubstanceAdministration xmi:id="_bsO_8FwTEd6dhZ7uY2XV5Q" base_Class="_420A62FD03B64592AF50014B"/>
   <RIM:SubstanceAdministration xmi:id="_bsYw8VwTEd6dhZ7uY2XV5Q" base_Class="_420A62FD03B64592CB8B0303"/>
-  <RIM:SubstanceAdministration xmi:id="_bsYw9lwTEd6dhZ7uY2XV5Q" base_Class="_420A62FD03B645940EF003E6"/>
   <Default:Documentation xmi:id="_y8Jd4HpBEd-44ra0dfiJCw" base_Comment="_y7174HpBEd-44ra0dfiJCw"/>
   <Default:Documentation xmi:id="_-qZNsXpBEd-44ra0dfiJCw" base_Comment="_-qZNsHpBEd-44ra0dfiJCw"/>
   <Default:Documentation xmi:id="_6Q0okXpFEd-44ra0dfiJCw" base_Comment="_6Q0okHpFEd-44ra0dfiJCw"/>
@@ -4480,11 +4261,7 @@ Changes are set attribute patientInstructions multipilicity to '*'.&#xD;
   <Default:Documentation xmi:id="_-b0PMC13EeCcBZN8gPxxdg" base_Comment="_NB8t4L-0Ed2cYoIY7XWEQw"/>
   <Default:Documentation xmi:id="_-b0PMS13EeCcBZN8gPxxdg" base_Comment="_QbqbsL-0Ed2cYoIY7XWEQw"/>
   <Default:Documentation xmi:id="_cSPFUi14EeCcBZN8gPxxdg" base_Comment="_NdXFUuLiEduGJrQyRGTO1A"/>
-  <Default:Documentation xmi:id="_69otEDh4EeC17O99ZX8o-w" base_Comment="_NdXFW-LiEduGJrQyRGTO1A"/>
   <Default:Documentation xmi:id="_jnRYsDh6EeC17O99ZX8o-w" base_Comment="_jnHAoDh6EeC17O99ZX8o-w"/>
-  <Default:Documentation xmi:id="_IHErsDh9EeC17O99ZX8o-w" base_Comment="_IHEEoTh9EeC17O99ZX8o-w"/>
-  <Default:Documentation xmi:id="_c02iUDh9EeC17O99ZX8o-w" base_Comment="_NdqAReLiEduGJrQyRGTO1A"/>
-  <RIM:SubstanceAdministration xmi:id="_d6-aoDkyEeCOabXzDmEF2w" base_Class="_yQ2jIDh4EeC17O99ZX8o-w"/>
   <Default:Documentation xmi:id="_dxluwDubEeCQ7Mi7IS1BrQ" base_Comment="_dxavoDubEeCQ7Mi7IS1BrQ"/>
   <RIM:Role xmi:id="_iy_YIF7yEeCcBvMgXNMeOQ" base_Class="_0j3qsF7wEeCcBvMgXNMeOQ"/>
   <Default:Documentation xmi:id="_gwm8YGYTEeC_U5wVHbS9Yw" base_Comment="_gwmVUWYTEeC_U5wVHbS9Yw"/>
