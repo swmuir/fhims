@@ -1471,65 +1471,47 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B6420B7198029C" name="ClinicalDocumentEvent">
       <eAnnotations xmi:id="_N2iaUeLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
       <ownedComment xmi:id="_N2FuY-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6420B7198029C">
-        <body>&quot;Document:&#xD;
-&quot;Specialization of Act to add the characteristics unique to document management services.&quot; (HL7 3.0)&#xD;
-&quot;ClinicalDocument:&#xD;
-&quot;A clinical document is a documentation of clinical observations and services, as defined in.&quot; (HL7 3.0 CDA 2.0)&#xD;
-&quot;An actual occurrence of an event (i.e., the documentation act already happened and is not just a request, intent, plan or promise to document).&quot;   (HL7 3.0)&#xD;
-This class servers the purpose of the Header.&#xD;
-&quot;The header identifies and classifies the document; provides information on authentication, the encounter, the patient, and the provider; and sets the context for the document as a whole.&quot; (HL7 3.0)&#xD;
-&#xD;
-</body>
+        <body>&amp;amp;quot;Document:  &amp;amp;quot;Specialization of Act to add the characteristics unique to document management services.&amp;amp;quot; (HL7 3.0)  &amp;amp;quot;ClinicalDocument:  &amp;amp;quot;A clinical document is a documentation of clinical observations and services, as defined in.&amp;amp;quot; (HL7 3.0 CDA 2.0)  &amp;amp;quot;An actual occurrence of an event (i.e., the documentation act already happened and is not just a request, intent, plan or promise to document).&amp;amp;quot;   (HL7 3.0)  This class servers the purpose of the Header.  &amp;amp;quot;The header identifies and classifies the document; provides information on authentication, the encounter, the patient, and the provider; and sets the context for the document as a whole.&amp;amp;quot; (HL7 3.0)    </body>
       </ownedComment>
       <ownedAttribute xmi:id="_mvYxMC6pEd6zd9zMuu5CyA" name="archiveDate" visibility="public">
         <ownedComment xmi:id="_zuRpgC6pEd6zd9zMuu5CyA" annotatedElement="_mvYxMC6pEd6zd9zMuu5CyA">
-          <body>&lt;p>&#xD;
-    This contains the date this document was archived.&#xD;
-&lt;/p></body>
+          <body>&amp;amp;lt;p&amp;amp;gt;      This contains the date this document was archived.  &amp;amp;lt;/p&amp;amp;gt;</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B642370B5C0015" name="confidentiality" visibility="public">
         <ownedComment xmi:id="_N2FuZuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B642370B5C0015">
-          <body>&quot;Confidentiality is a required contextual component of CDA, where the value expressed in the header holds true for the entire document, unless overridden by a nested value (as further described in CDA Context (§ 4.4 )).&quot;  (HL7 V3)&#xD;
-</body>
+          <body>&amp;amp;quot;Confidentiality is a required contextual component of CDA, where the value expressed in the header holds true for the entire document, unless overridden by a nested value (as further described in CDA Context (  4.4 )).&amp;amp;quot;  (HL7 V3)  </body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B6420B7222020F" name="dispensation" visibility="public">
         <ownedComment xmi:id="_N2FuaeLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6420B7222020F">
-          <body>A code depicting the storage status of a Clinical Document. Possible Values Include: Active, Archived, Purged etc.&#xD;
-&#xD;
-</body>
+          <body>A code depicting the storage status of a Clinical Document. Possible Values Include: Active, Archived, Purged etc.    </body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B6423058ED014E" name="documentTitle" visibility="public">
         <ownedComment xmi:id="_N2FubOLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6423058ED014E">
-          <body>&quot;Represents the title of the document. It's commonly the case that clinical documents do not have a title, and are collectively referred to by the display name of ClinicalDocument.code (e.g. a &quot;consultation&quot; or &quot;progress note&quot;). Where these display names are rendered to the clinician, or where the document has a unique title, the ClinicalDocument.title component should be used.&quot; (HL7 3.0)&#xD;
-</body>
+          <body>&amp;amp;quot;Represents the title of the document. It&amp;amp;apos;s commonly the case that clinical documents do not have a title, and are collectively referred to by the display name of ClinicalDocument.code (e.g. a &amp;amp;quot;consultation&amp;amp;quot; or &amp;amp;quot;progress note&amp;amp;quot;). Where these display names are rendered to the clinician, or where the document has a unique title, the ClinicalDocument.title component should be used.&amp;amp;quot; (HL7 3.0)  </body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B6420B71BF010E" name="documentType" visibility="public">
         <ownedComment xmi:id="_N2PfYuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6420B71BF010E">
-          <body>Classifies the document.  In VistA this is a pointer to file 8925.1.   In HL7 CDA, this is: &quot;The code specifying the particular kind of document (e.g. History and Physical, Discharge Summary, Progress Note). The value set is drawn from LOINC, and has a CWE coding strength.&quot; (HL7 3.0)&#xD;
-&#xD;
-&#xD;
-</body>
+          <body>Classifies the document.  In VistA this is a pointer to file 8925.1.   In HL7 CDA, this is: &amp;amp;quot;The code specifying the particular kind of document (e.g. History and Physical, Discharge Summary, Progress Note). The value set is drawn from LOINC, and has a CWE coding strength.&amp;amp;quot; (HL7 3.0)      </body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B6420B764403BD" name="id" visibility="public">
         <ownedComment xmi:id="_N2PfZeLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6420B764403BD">
-          <body>&quot;Represents the unique instance identifier of a clinical document&quot;  (HL7 3.0)</body>
+          <body>&amp;amp;quot;Represents the unique instance identifier of a clinical document&amp;amp;quot;  (HL7 3.0)</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_B6jbcNixEdyb35bKix456w" name="isCosignatureNeeded" visibility="public">
         <ownedComment xmi:id="_q2NLAMugEd2ggPdCmUn-VA" annotatedElement="_B6jbcNixEdyb35bKix456w">
-          <body>Indicates whether or not a cosignature is needed.  &#xD;
-</body>
+          <body>Indicates whether or not a cosignature is needed.    </body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VvxyEdi0Edyb35bKix456w" value="1"/>
@@ -1537,25 +1519,19 @@ This class servers the purpose of the Header.&#xD;
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B6425EE29D03D8" name="language" visibility="public">
         <ownedComment xmi:id="_N2PfaOLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6425EE29D03D8">
-          <body>&quot;Specifies the human language of character data (whether they be in contents or attribute values). The values of the attribute are language identifiers as defined by the IETF (Internet Engineering Task Force) RFC 3066 for the Identification of Languages, ed. H. Alvestrand. 1995, which obsoletes RFC 1766. Language is a contextual component of CDA., where the value expressed in the header holds true for the entire document, unless overridden by a nested value (as further described in CDA Context (§ 4.4 )).&quot;   (HL7 3.0 CDA 2.0)&#xD;
-</body>
+          <body>&amp;amp;quot;Specifies the human language of character data (whether they be in contents or attribute values). The values of the attribute are language identifiers as defined by the IETF (Internet Engineering Task Force) RFC 3066 for the Identification of Languages, ed. H. Alvestrand. 1995, which obsoletes RFC 1766. Language is a contextual component of CDA., where the value expressed in the header holds true for the entire document, unless overridden by a nested value (as further described in CDA Context (  4.4 )).&amp;amp;quot;   (HL7 3.0 CDA 2.0)  </body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B6420B7E0601B6" name="referenceDate" visibility="public">
         <ownedComment xmi:id="_N2Pfa-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6420B7E0601B6">
-          <body>In VistA, &quot;this is the Date (and time) by which the clinician will reference the document.  For Progress Notes, this will likely be the date of the provider's encounter with the patient.  For documents which have been dictated, and transcribed (e.g., discharge summaries), it will correspond to the dictation date of the record.  In all cases, this is the date by which the document will be referenced and sorted.&quot;&#xD;
-&#xD;
-In CDA, this is the creation date: &quot;Signifies the document creation time, when the document first came into being. &quot; (HL7 3.0, CDA 2.0)</body>
+          <body>In VistA, &amp;amp;quot;this is the Date (and time) by which the clinician will reference the document.  For Progress Notes, this will likely be the date of the provider&amp;amp;apos;s encounter with the patient.  For documents which have been dictated, and transcribed (e.g., discharge summaries), it will correspond to the dictation date of the record.  In all cases, this is the date by which the document will be referenced and sorted.&amp;amp;quot;    In CDA, this is the creation date: &amp;amp;quot;Signifies the document creation time, when the document first came into being. &amp;amp;quot; (HL7 3.0, CDA 2.0)</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B6420B788C0266" name="status" visibility="public">
         <ownedComment xmi:id="_N2ZQZeLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6420B788C0266">
-          <body>The current status of a given clinical document.  Possible values include: undictated, untranscribed, unreleased, unverified, unsigned, uncosigned, completed, etc. &#xD;
-&#xD;
-Displayed in CPRS. And is an automatic system change when updated (never through a prompt to the user). &#xD;
-</body>
+          <body>The current status of a given clinical document.  Possible values include: undictated, untranscribed, unreleased, unverified, unsigned, uncosigned, completed, etc.     Displayed in CPRS. And is an automatic system change when updated (never through a prompt to the user).   </body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
@@ -1573,17 +1549,13 @@ Displayed in CPRS. And is an automatic system change when updated (never through
       </ownedAttribute>
       <ownedAttribute xmi:id="_8Qq90C6oEd6zd9zMuu5CyA" name="updateDate" visibility="public">
         <ownedComment xmi:id="_lodlYC6pEd6zd9zMuu5CyA" annotatedElement="_8Qq90C6oEd6zd9zMuu5CyA">
-          <body>&lt;HTML>&lt;HEAD>&#xD;
-&lt;META content=&quot;MSHTML 6.00.2900.3492&quot; name=GENERATOR>&lt;/HEAD>&#xD;
-&lt;BODY>This contains the date and time this document was updated.&lt;/BODY>&lt;/HTML></body>
+          <body>&amp;amp;lt;HTML&amp;amp;gt;&amp;amp;lt;HEAD&amp;amp;gt;  &amp;amp;lt;META content=&amp;amp;quot;MSHTML 6.00.2900.3492&amp;amp;quot; name=GENERATOR&amp;amp;gt;&amp;amp;lt;/HEAD&amp;amp;gt;  &amp;amp;lt;BODY&amp;amp;gt;This contains the date and time this document was updated.&amp;amp;lt;/BODY&amp;amp;gt;&amp;amp;lt;/HTML&amp;amp;gt;</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B642237A4B0068" name="version" visibility="public">
         <ownedComment xmi:id="_N2ZQa-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B642237A4B0068">
-          <body>&quot;An integer value used to version successive replacement documents.&quot;  (HL7 V3)&#xD;
-&#xD;
-</body>
+          <body>&amp;amp;quot;An integer value used to version successive replacement documents.&amp;amp;quot;  (HL7 V3)    </body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
       </ownedAttribute>
@@ -1603,8 +1575,7 @@ Displayed in CPRS. And is an automatic system change when updated (never through
       </ownedAttribute>
       <ownedAttribute xmi:id="_8UCykRXnEdyN7Oa0heT2nw" name="divsion" visibility="public" association="_8UCykBXnEdyN7Oa0heT2nw">
         <ownedComment xmi:id="_MSkpkMugEd2ggPdCmUn-VA" annotatedElement="_8UCykRXnEdyN7Oa0heT2nw">
-          <body>This is the institution associated with the document. It is extracted from the document's hospital location if known; otherwise it is extracted from the user's log-on division.   Equivalent to a pointer to File #4.&#xD;
-</body>
+          <body>This is the institution associated with the document. It is extracted from the document&amp;amp;apos;s hospital location if known; otherwise it is extracted from the user&amp;amp;apos;s log-on division.   Equivalent to a pointer to File #4.  </body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Provider.efx#_420A62FD03B645784009029B?FHIM/Provider/Institution?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8UCykxXnEdyN7Oa0heT2nw" value="1"/>
@@ -1619,8 +1590,7 @@ Displayed in CPRS. And is an automatic system change when updated (never through
       </ownedAttribute>
       <ownedAttribute xmi:id="_lOgIcRXpEdyN7Oa0heT2nw" name="hospitalCreditStop" visibility="public" association="_lOgIcBXpEdyN7Oa0heT2nw">
         <ownedComment xmi:id="_bvHQEMugEd2ggPdCmUn-VA" annotatedElement="_lOgIcRXpEdyN7Oa0heT2nw">
-          <body>Identifies a node within a workflow process that is typically performed by the Service to facilitate collection of workload and financial information. &#xD;
-</body>
+          <body>Identifies a node within a workflow process that is typically performed by the Service to facilitate collection of workload and financial information.   </body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Provider.efx#_420A62FD03B6424309BD032B?FHIM/Provider/ClinicStop?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lOgIcxXpEdyN7Oa0heT2nw" value="1"/>
@@ -1676,7 +1646,7 @@ Displayed in CPRS. And is an automatic system change when updated (never through
       </ownedAttribute>
       <ownedAttribute xmi:id="_6fh24X-_Ed-Ure_vzgD_TA" name="retraction" visibility="public" association="_6fh24H-_Ed-Ure_vzgD_TA">
         <ownedComment xmi:id="_HPN1kH_AEd-Ure_vzgD_TA" annotatedElement="_6fh24X-_Ed-Ure_vzgD_TA">
-          <body>Records the retraction, or &quot;nullification&quot; of a clinical document.</body>
+          <body>Records the retraction, or &amp;amp;quot;nullification&amp;amp;quot; of a clinical document.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Common.efx#_420A62FD03B643BD69A10200?FHIM/Common/NullifyAct?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6fh243-_Ed-Ure_vzgD_TA" value="1"/>
@@ -1684,9 +1654,7 @@ Displayed in CPRS. And is an automatic system change when updated (never through
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B6422897A60217" name="section" visibility="public" type="_420A62FD03B64228976C03D6" isUnique="false" association="_420A62FD03B6422897A50324">
         <ownedComment xmi:id="_N3SBQeLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6422897A60217">
-          <body>A clinical document body is comprised of one or more document sections.
-
-</body>
+          <body>A clinical document body is comprised of one or more document sections.  </body>
         </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N3byMuLiEduGJrQyRGTO1A" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N3byMeLiEduGJrQyRGTO1A" value="1"/>
@@ -1737,19 +1705,11 @@ Displayed in CPRS. And is an automatic system change when updated (never through
     <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B6422491260300" name="DocumentGroup">
       <eAnnotations xmi:id="_N2sLU-LiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
       <ownedComment xmi:id="_N2iaVOLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6422491260300">
-        <body>This is a flat level document. The purpose of DocumentGroup class is to link a set of documents about a patient in clinically meaningful ways at the point-of-use.&#xD;
-&#xD;
-&quot;Specialization of Act to add the characteristics unique to document management services.&quot; (HL7 3.0)&#xD;
-&#xD;
-</body>
+        <body>This is a flat level document. The purpose of DocumentGroup class is to link a set of documents about a patient in clinically meaningful ways at the point-of-use.    &amp;amp;quot;Specialization of Act to add the characteristics unique to document management services.&amp;amp;quot; (HL7 3.0)    </body>
       </ownedComment>
       <ownedAttribute xmi:id="_420A62FD03B6424453AE0008" name="dateRange" visibility="public">
         <ownedComment xmi:id="_N2iaV-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6424453AE0008">
-          <body>This is a date range of the date and time for which the 1st document in the group is created and the date and time for which the recent document in the group is created.&#xD;
-&#xD;
-&#xD;
-&#xD;
-</body>
+          <body>This is a date range of the date and time for which the 1st document in the group is created and the date and time for which the recent document in the group is created.        </body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B642387187004E?FHIM/Datatypes/TimeInterval?"/>
       </ownedAttribute>
@@ -1761,9 +1721,7 @@ Displayed in CPRS. And is an automatic system change when updated (never through
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B642445398034E" name="groupName" visibility="public">
         <ownedComment xmi:id="_N2sLUeLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B642445398034E">
-          <body>A textual description of a  collection of documents in clinically meaningful ways.
-
-</body>
+          <body>A textual description of a  collection of documents in clinically meaningful ways.  </body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
@@ -1778,50 +1736,35 @@ Displayed in CPRS. And is an automatic system change when updated (never through
     <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B64228976C03D6" name="ClinicalDocumentSection">
       <eAnnotations xmi:id="_N21VSuLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
       <ownedComment xmi:id="_N2sLVuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64228976C03D6">
-        <body>This class serves the purpose of a  context that distinguishes the body of a document from the document header.&#xD;
-&quot;The body contains the clinical report, and can be either an unstructured blob, or can be comprised of structured markup. &quot; (HL7 3.0 CDA 2.0)&#xD;
-&quot;Document sections can nest, can override context propagated from the header (see CDA Context (§ 4.4 ), and can contain CDA entries.&quot; (HL7 3.0)&#xD;
-</body>
+        <body>This class serves the purpose of a  context that distinguishes the body of a document from the document header.  &amp;amp;quot;The body contains the clinical report, and can be either an unstructured blob, or can be comprised of structured markup. &amp;amp;quot; (HL7 3.0 CDA 2.0)  &amp;amp;quot;Document sections can nest, can override context propagated from the header (see CDA Context (  4.4 ), and can contain CDA entries.&amp;amp;quot; (HL7 3.0)  </body>
       </ownedComment>
       <ownedAttribute xmi:id="_420A62FD03B6425EE21A000E" name="confidentiality" visibility="public">
         <ownedComment xmi:id="_N2sLWeLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6425EE21A000E">
-          <body>&quot;A value for Section.confidentialityCode overrides the value propagated from StructuredBody. See CDA Context (§ 4.4 ) for more details.confidentialityCode is of type CE, and therefore must carry both a code and a codeSystem.&quot; (HL7 3.0 CDA 2.0)&#xD;
-&#xD;
-</body>
+          <body>&amp;amp;quot;A value for Section.confidentialityCode overrides the value propagated from StructuredBody. See CDA Context (  4.4 ) for more details.confidentialityCode is of type CE, and therefore must carry both a code and a codeSystem.&amp;amp;quot; (HL7 3.0 CDA 2.0)    </body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B6425EE23500AD" name="language" visibility="public">
         <ownedComment xmi:id="_N2sLXOLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6425EE23500AD">
-          <body>&quot;Specifies the human language of character data (whether they be in contents or attribute values). The values of the attribute are language identifiers as defined by the IETF (Internet Engineering Task Force) RFC 3066: Tags for the Identification of Languages, ed. H. Alvestrand. 1995 , which obsoletes RFC 1766. &quot; (HL7 3.0, CDA 2.0)
-</body>
+          <body>&amp;amp;quot;Specifies the human language of character data (whether they be in contents or attribute values). The values of the attribute are language identifiers as defined by the IETF (Internet Engineering Task Force) RFC 3066: Tags for the Identification of Languages, ed. H. Alvestrand. 1995 , which obsoletes RFC 1766. &amp;amp;quot; (HL7 3.0, CDA 2.0) </body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B6425EE3210323" name="sectionTitle" visibility="public">
         <ownedComment xmi:id="_N21VReLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6425EE3210323">
-          <body>&quot;Represents the label of a section. If valued, it is to be rendered as part of the narrative content of the clinical document body.&quot;   (Hl7 3.0 CDA 2.0)
-
-
-</body>
+          <body>&amp;amp;quot;Represents the label of a section. If valued, it is to be rendered as part of the narrative content of the clinical document body.&amp;amp;quot;   (Hl7 3.0 CDA 2.0)   </body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B6425EE32D0118" name="sectionType" visibility="public">
         <ownedComment xmi:id="_N21VSOLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6425EE32D0118">
-          <body>Corresponding to Section.Code:
-&quot;The code specifying the particular kind of section (e.g. Chief Complaint, Review of Systems, Assessment). The value set is drawn from LOINC, and has a CWE coding strength.&quot;Represents the label of a section. If valued, it is to be rendered as part of the narrative content of the clinical document body. &quot; (Hl7 3.0, CDA 2.0)
-
-
-</body>
+          <body>Corresponding to Section.Code: &amp;amp;quot;The code specifying the particular kind of section (e.g. Chief Complaint, Review of Systems, Assessment). The value set is drawn from LOINC, and has a CWE coding strength.&amp;amp;quot;Represents the label of a section. If valued, it is to be rendered as part of the narrative content of the clinical document body. &amp;amp;quot; (Hl7 3.0, CDA 2.0)   </body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B6420B795101DB" name="text" visibility="public">
         <ownedComment xmi:id="_N21VQuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6420B795101DB">
-          <body>&quot;A textual or multimedia description (or reference to a description) of the Act.  (e.g. For act definitions, the Act.text can contain textbook-like information about that act. For act orders, the description will contain particular instructions pertaining only to that order.) Free text descriptions are used to help an individual interpret the content and context of the act, but all information relevant for automated functions must be communicated using the proper attributes and associated objects.&quot; (HL7 3.0 CDA 2.0)
-
-</body>
+          <body>&amp;amp;quot;A textual or multimedia description (or reference to a description) of the Act.  (e.g. For act definitions, the Act.text can contain textbook-like information about that act. For act orders, the description will contain particular instructions pertaining only to that order.) Free text descriptions are used to help an individual interpret the content and context of the act, but all information relevant for automated functions must be communicated using the proper attributes and associated objects.&amp;amp;quot; (HL7 3.0 CDA 2.0)  </body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
@@ -1830,12 +1773,7 @@ Displayed in CPRS. And is an automatic system change when updated (never through
       <eAnnotations xmi:id="_szmb9n_LEd-Ure_vzgD_TA" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
       <ownedEnd xmi:id="_420A62FD03B64225C00800B2" name="" visibility="public" type="_420A62FD03B6420B7198029C" isUnique="false" association="_420A62FD03B64225C006031C">
         <ownedComment xmi:id="_N3SBNuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64225C00800B2">
-          <body>A Clinical Document.&#xD;
-A DocumentGroup atleast has one or more clinical document(s).&#xD;
-&#xD;
-&#xD;
-&#xD;
-</body>
+          <body>A Clinical Document.  A DocumentGroup atleast has one or more clinical document(s).        </body>
         </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N3SBOeLiEduGJrQyRGTO1A" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N3SBOOLiEduGJrQyRGTO1A" value="1"/>
@@ -1870,26 +1808,23 @@ A DocumentGroup atleast has one or more clinical document(s).&#xD;
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_5IzOkBU3EdyxsJkKJSeTqA" name="InterdisciplinaryNoteAction">
       <ownedComment xmi:id="_E7HMsMYiEd2ZAepatfUxXw" annotatedElement="_5IzOkBU3EdyxsJkKJSeTqA">
-        <body>The IN (Interdiscipl'ry Note) action is the universal action for operations on Interdisciplinary Notes.  This class contains attributes pertaining to the action (i.e., Attachment or Detachment) that was carried out for a given ID Entry.</body>
+        <body>The IN (Interdiscipl&amp;amp;apos;ry Note) action is the universal action for operations on Interdisciplinary Notes.  This class contains attributes pertaining to the action (i.e., Attachment or Detachment) that was carried out for a given ID Entry.</body>
       </ownedComment>
       <ownedAttribute xmi:id="_ejHT8BU4EdyxsJkKJSeTqA" name="action" visibility="public">
         <ownedComment xmi:id="_TpsbYEdhEdyAEMN_cocIBA" annotatedElement="_ejHT8BU4EdyxsJkKJSeTqA">
-          <body>The set of codes describes the action that was carried out for a given ID Entry.    Possible valuesw are Attachment, Detachment., etc.&#xD;
-</body>
+          <body>The set of codes describes the action that was carried out for a given ID Entry.    Possible valuesw are Attachment, Detachment., etc.  </body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_ejHT8RU4EdyxsJkKJSeTqA" name="date" visibility="public">
         <ownedComment xmi:id="_VO4QgEdhEdyAEMN_cocIBA" annotatedElement="_ejHT8RU4EdyxsJkKJSeTqA">
-          <body>The Date and Time at which the entry was attached to (or detached from) its ID Parent.&#xD;
-</body>
+          <body>The Date and Time at which the entry was attached to (or detached from) its ID Parent.  </body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_nlIuEBU4EdyxsJkKJSeTqA" name="status" visibility="public">
         <ownedComment xmi:id="_Xp_oEEdhEdyAEMN_cocIBA" annotatedElement="_nlIuEBU4EdyxsJkKJSeTqA">
-          <body>The STATUS of the Entry at the time of the action&#xD;
-</body>
+          <body>The STATUS of the Entry at the time of the action  </body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
@@ -1919,7 +1854,7 @@ A DocumentGroup atleast has one or more clinical document(s).&#xD;
       </ownedComment>
       <ownedAttribute xmi:id="_MP5vIBXkEdyN7Oa0heT2nw" name="procedureSummaryCode" visibility="public">
         <ownedComment xmi:id="_cEikABqvEdy9IMWyfVr5Ww" annotatedElement="_MP5vIBXkEdyN7Oa0heT2nw">
-          <body>It contains the summary code for this procedure once it is complete. Possible Values include: '1' for Normal, '2' for Abnormal, '3' for Borderline, '4' for Incomplete etc.</body>
+          <body>It contains the summary code for this procedure once it is complete. Possible Values include: &amp;amp;apos;1&amp;amp;apos; for Normal, &amp;amp;apos;2&amp;amp;apos; for Abnormal, &amp;amp;apos;3&amp;amp;apos; for Borderline, &amp;amp;apos;4&amp;amp;apos; for Incomplete etc.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
