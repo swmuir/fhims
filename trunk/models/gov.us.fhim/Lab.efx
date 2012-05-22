@@ -3167,20 +3167,13 @@
     </eAnnotations>
     <eAnnotations xmi:id="_NE6wIOLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
     <ownedComment xmi:id="_yWozoFlJEeCyw5g2lQh-Ug" annotatedElement="_420A62FD03B6420A57B401F1">
-      <body>This package contains information related to Laboratory in general, and in particular Laboratory Result Report to an EHR.&#xD;
-&#xD;
-This package used to contain certain classes gleaned from existing systems related to Quality Control, including Sterility Control Results and Lab QA.  These were removed for now, but may need to be re-visited if we include use-cases that would&#xD;
-Note that subpart K (Quality Systems for Nonwaived Testing) defines the quality assurance requirements of CLIA-certified laboratories</body>
+      <body>This package contains information related to Laboratory in general, and in particular Laboratory Result Report to an EHR.    This package used to contain certain classes gleaned from existing systems related to Quality Control, including Sterility Control Results and Lab QA.  These were removed for now, but may need to be re-visited if we include use-cases that would  Note that subpart K (Quality Systems for Nonwaived Testing) defines the quality assurance requirements of CLIA-certified laboratories</body>
     </ownedComment>
     <ownedComment xmi:id="_K5BdYMHOEeCdLPayeDTWtA">
       <body>Need to model more details regarding chain of custody in general and the storage and handling of specimens in specifica in future modeling iterations.  May also need a shipping-container assessment, not just specimen assessment</body>
     </ownedComment>
     <ownedComment xmi:id="_dp9-cMHPEeCdLPayeDTWtA" annotatedElement="_rWnUoMHPEeCdLPayeDTWtA">
-      <body>e.g., Peak/Trough (time since anitbiotic given)&#xD;
-Acute/Convelescent&#xD;
-Time since challenge (e.g., glucose load)&#xD;
-(note we deleted Timing of First Collection class)&#xD;
-</body>
+      <body>e.g., Peak/Trough (time since anitbiotic given)  Acute/Convelescent  Time since challenge (e.g., glucose load)  (note we deleted Timing of First Collection class)  </body>
     </ownedComment>
     <packagedElement xmi:type="uml:Dependency" xmi:id="_420A62FD03B643F57CB00081" client="_420A62FD03B6420A57B401F1">
       <supplier xmi:type="uml:Package" href="Common.efx#_420A62FD03B6422C7466026C?FHIM/Common?"/>
@@ -3188,8 +3181,7 @@ Time since challenge (e.g., glucose load)&#xD;
     <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B64230F39A02CC" name="LabTestPromise">
       <eAnnotations xmi:id="_M4_0CeLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
       <ownedComment xmi:id="_M4s5GeLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64230F39A02CC">
-        <body>The act of accepting the role of filler.  HL7 uses the terms promise and filler interchangeably with promise being the preferred term.  This promise act initiates the accessioning for lab actions.  Accession: &quot;An increase by means of something added to record as acquired&quot;  (Websters).  The act of accepting  a laboratory test, and entering the test into the laboratory's workload.&#xD;
-</body>
+        <body>The act of accepting the role of filler.  HL7 uses the terms promise and filler interchangeably with promise being the preferred term.  This promise act initiates the accessioning for lab actions.  Accession: &amp;amp;quot;An increase by means of something added to record as acquired&amp;amp;quot;  (Websters).  The act of accepting  a laboratory test, and entering the test into the laboratory&amp;amp;apos;s workload.  </body>
       </ownedComment>
       <ownedAttribute xmi:id="_Q--ZYO6jEd-crcWiXVDZrQ" name="dateExpected" visibility="public">
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
@@ -3205,7 +3197,7 @@ Time since challenge (e.g., glucose load)&#xD;
       </ownedAttribute>
       <ownedAttribute xmi:id="_eCP24PjKEeCmc6EQPl3F9g" name="dateScheduled" visibility="public">
         <ownedComment xmi:id="_UECE0PjLEeCmc6EQPl3F9g" annotatedElement="_eCP24PjKEeCmc6EQPl3F9g">
-          <body>&quot;This field is the date/time the filler scheduled an observation, when applicable (e.g., action code in OBR-11-specimen action code = &quot;S&quot;).  This is a result of a request to schedule a particular test and provides a way to inform the placer of the date/time a study is scheduled (result only).&quot; - HL7 V2</body>
+          <body>&amp;amp;quot;This field is the date/time the filler scheduled an observation, when applicable (e.g., action code in OBR-11-specimen action code = &amp;amp;quot;S&amp;amp;quot;).  This is a result of a request to schedule a particular test and provides a way to inform the placer of the date/time a study is scheduled (result only).&amp;amp;quot; - HL7 V2</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kq8pMfjKEeCmc6EQPl3F9g" value="1"/>
@@ -3213,13 +3205,13 @@ Time since challenge (e.g., glucose load)&#xD;
       </ownedAttribute>
       <ownedAttribute xmi:id="_O7_KQJNwEeCyufOLCDZkFA" name="dateStatusChanged" visibility="public">
         <ownedComment xmi:id="_FBMKoAmIEeGe4v7RnpTDUQ" annotatedElement="_O7_KQJNwEeCyufOLCDZkFA">
-          <body>&quot;Specifies the date/time when the results were reported or status changed....  (This is a results field only.) ...&quot; - HL7 Version 2.8, OBR.22</body>
+          <body>&amp;amp;quot;Specifies the date/time when the results were reported or status changed....  (This is a results field only.) ...&amp;amp;quot; - HL7 Version 2.8, OBR.22</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_J3phEMTEEd-6Z_53K--WsA" name="fillerOrderId" visibility="public">
         <ownedComment xmi:id="_srHDgMTFEd-6Z_53K--WsA" annotatedElement="_J3phEMTEEd-6Z_53K--WsA">
-          <body>&quot;The order number associated with the filling application. This is a permanent identifier for an order and its associated observations....&quot; - HL7 Version 2.8, OBR.3</body>
+          <body>&amp;amp;quot;The order number associated with the filling application. This is a permanent identifier for an order and its associated observations....&amp;amp;quot; - HL7 Version 2.8, OBR.3</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
       </ownedAttribute>
@@ -3240,7 +3232,7 @@ Time since challenge (e.g., glucose load)&#xD;
       </ownedAttribute>
       <ownedAttribute xmi:id="_avdfELTlEd2sMvQnSCqOzA" name="status" visibility="public">
         <ownedComment xmi:id="_gW7pQMDrEd2cYoIY7XWEQw" annotatedElement="_avdfELTlEd2sMvQnSCqOzA">
-          <body>&quot;Contains the status of results for this order.&quot; - HL7 Version 2.8, OBR.25</body>
+          <body>&amp;amp;quot;Contains the status of results for this order.&amp;amp;quot; - HL7 Version 2.8, OBR.25</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0Pw-UdOWEd2aQZomWdBJLg" value="1"/>
@@ -3252,8 +3244,7 @@ Time since challenge (e.g., glucose load)&#xD;
       </ownedAttribute>
       <ownedAttribute xmi:id="_rJ7CUPjLEeCmc6EQPl3F9g" name="billingProcedureList" visibility="public" association="_rJ3_APjLEeCmc6EQPl3F9g">
         <ownedComment xmi:id="_rxRPcAmQEeGe4v7RnpTDUQ" annotatedElement="_rJ7CUPjLEeCmc6EQPl3F9g">
-          <body>&quot;This field contains a unique identifier assigned to the procedure, if any, associated with the charge.&quot; - HL7 Version 2.8, OBR-44&#xD;
-&quot;This field contains the procedure code modifier to the procedure code reported in OBR-44-procedure code, when applicable....  Multiple modifiers may be reported....&quot; - HL7 Version 2.8, OBR-45</body>
+          <body>&amp;amp;quot;This field contains a unique identifier assigned to the procedure, if any, associated with the charge.&amp;amp;quot; - HL7 Version 2.8, OBR-44  &amp;amp;quot;This field contains the procedure code modifier to the procedure code reported in OBR-44-procedure code, when applicable....  Multiple modifiers may be reported....&amp;amp;quot; - HL7 Version 2.8, OBR-45</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Common.efx#_dP9loN3-Ed6yatlejfcw_g?FHIM/Common/ProcedureListEntry?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rJ7CUvjLEeCmc6EQPl3F9g" value="*"/>
@@ -3269,7 +3260,7 @@ Time since challenge (e.g., glucose load)&#xD;
       </ownedAttribute>
       <ownedAttribute xmi:id="_B07NgQmJEeGe4v7RnpTDUQ" name="performingOrganization" visibility="public" association="_B07NgAmJEeGe4v7RnpTDUQ">
         <ownedComment xmi:id="_GCD8UAmJEeGe4v7RnpTDUQ" annotatedElement="_B07NgQmJEeGe4v7RnpTDUQ">
-          <body>Represents &quot;the section of the diagnostic service where the observation was performed.  If the study was performed by an outside service, the identification of that service should be recorded here&quot; - HL7 Version 2.8, OBR-24</body>
+          <body>Represents &amp;amp;quot;the section of the diagnostic service where the observation was performed.  If the study was performed by an outside service, the identification of that service should be recorded here&amp;amp;quot; - HL7 Version 2.8, OBR-24</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Provider.efx#_420A62FD03B64242CAB30303?FHIM/Provider/ServiceDeliveryLocation?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_B07NgwmJEeGe4v7RnpTDUQ" value="*"/>
@@ -3296,10 +3287,7 @@ Time since challenge (e.g., glucose load)&#xD;
     <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B64230FF5D004A" name="MeasurementWithReferenceRangeResult">
       <eAnnotations xmi:id="_M6V32OLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
       <ownedComment xmi:id="_M6CV2OLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64230FF5D004A">
-        <body>An observation of the quantity of the analyte found within the sample.&#xD;
-&#xD;
-Note that loinc and procedure codes are identifying more specifically the type of test being performed.  Because there may be multiple methodologies available to measure the same substance, these codes are more specific than the analyte and testCode referenced in the ChemistryTest class.&#xD;
-Note that this class has 5 subtypes to handle the different kinds of result values.  Most chemistry tests are physical quanties (e.g., mg/dL).  Some are coded, and even those that normally are physical quantities might be replaced by a coded observation of Quantity Not Sufficient.</body>
+        <body>An observation of the quantity of the analyte found within the sample.    Note that loinc and procedure codes are identifying more specifically the type of test being performed.  Because there may be multiple methodologies available to measure the same substance, these codes are more specific than the analyte and testCode referenced in the ChemistryTest class.  Note that this class has 5 subtypes to handle the different kinds of result values.  Most chemistry tests are physical quanties (e.g., mg/dL).  Some are coded, and even those that normally are physical quantities might be replaced by a coded observation of Quantity Not Sufficient.</body>
       </ownedComment>
       <generalization xmi:id="_ANJX8Mp-EeC9Pb3leltpqQ" general="_NglJMH8AEd-6KMbY3gBFOQ"/>
       <ownedAttribute xmi:id="_JPilMLTdEd2sMvQnSCqOzA" name="id" visibility="public">
@@ -3313,7 +3301,7 @@ Note that this class has 5 subtypes to handle the different kinds of result valu
       <ownedAttribute xmi:id="_420A62FD03B642CD7FC800C1" name="interpretation" visibility="public">
         <eAnnotations xmi:id="_M6MG0eLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <ownedComment xmi:id="_M6CV3uLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B642CD7FC800C1">
-          <body>Provides an automated indication of the result, based upon &quot;normal&quot; values as indicated by the reference range.  Examples include High, Low, Critically High, Critically Low, etc.</body>
+          <body>Provides an automated indication of the result, based upon &amp;amp;quot;normal&amp;amp;quot; values as indicated by the reference range.  Examples include High, Low, Critically High, Critically Low, etc.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_euwfO-LjEdutr_MT9HkPyQ" value="1"/>
@@ -3358,33 +3346,25 @@ Note that this class has 5 subtypes to handle the different kinds of result valu
     <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B64230FF74014C" name="MicrobeIdentification">
       <eAnnotations xmi:id="_M6fByOLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
       <ownedComment xmi:id="_M6fBw-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64230FF74014C">
-        <body>This class documents each Microbiology identification observation (note that in this case, &quot;Microbiology&quot; includes Bacteriology, Mycobacteriology, Mycology, Parasitology, and Virology).&#xD;
-</body>
+        <body>This class documents each Microbiology identification observation (note that in this case, &amp;amp;quot;Microbiology&amp;amp;quot; includes Bacteriology, Mycobacteriology, Mycology, Parasitology, and Virology).  </body>
       </ownedComment>
       <generalization xmi:id="_kOll4Mp-EeC9Pb3leltpqQ" general="_NglJMH8AEd-6KMbY3gBFOQ"/>
       <ownedAttribute xmi:id="_420A62FD03B64230FFBF0068" name="organismObserved" visibility="public" type="_420A62FD03B64230FFB100BB" isUnique="false" association="_420A62FD03B64230FFBD0250">
         <ownedComment xmi:id="_NAmQ3-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64230FFBF0068">
-          <body>The organism identified as being present within a observation event.&#xD;
-&#xD;
-&#xD;
-&#xD;
-</body>
+          <body>The organism identified as being present within a observation event.        </body>
         </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NAwB0uLiEduGJrQyRGTO1A" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NAwB0eLiEduGJrQyRGTO1A" value="1"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B645870F1B03CA" name="organismQuantity" visibility="public">
         <ownedComment xmi:id="_M9UTVuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B645870F1B03CA">
-          <body>The quantification the organism detected.  e.g.,  >100,000 CFU/ML.</body>
+          <body>The quantification the organism detected.  e.g.,  &amp;amp;gt;100,000 CFU/ML.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B641886F630221?FHIM/Datatypes/PhysicalQuantity?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B642691855010A" name="antibioticSensitivity" visibility="public" type="_420A62FD03B64263C8F8030F" isUnique="false" association="_420A62FD03B6426918530274">
         <ownedComment xmi:id="_NA5LxuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B642691855010A">
-          <body>An association from BecteriologyResultt to AntibioticSensitivityObservationEvent identifying a drug challenge test of the susceptibility of an organism to a specific concentration of an antibiotic.&#xD;
-&#xD;
-&#xD;
-</body>
+          <body>An association from BecteriologyResultt to AntibioticSensitivityObservationEvent identifying a drug challenge test of the susceptibility of an organism to a specific concentration of an antibiotic.      </body>
         </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NA5LyeLiEduGJrQyRGTO1A" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NA5LyOLiEduGJrQyRGTO1A"/>
@@ -3405,7 +3385,7 @@ Note that this class has 5 subtypes to handle the different kinds of result valu
       <ownedAttribute xmi:id="_420A62FD03B64586C0D901BC" name="minimumInhibitoryConcentration" visibility="public">
         <eAnnotations xmi:id="_M6yjweLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <ownedComment xmi:id="_M6oyy-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64586C0D901BC">
-          <body>The minimum inhibitory dilution of the serum or body fluid, which inhibits reproduction of the patient's infecting organism.  Fluid is drawn from the patient who is undergoing antibiotic therapy.  Samples of the fluid is diluted between 1:2 and 1:16 and a sample of the infecting organism is cultured in each of the diluted samples.</body>
+          <body>The minimum inhibitory dilution of the serum or body fluid, which inhibits reproduction of the patient&amp;amp;apos;s infecting organism.  Fluid is drawn from the patient who is undergoing antibiotic therapy.  Samples of the fluid is diluted between 1:2 and 1:16 and a sample of the infecting organism is cultured in each of the diluted samples.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_N-BAoNYeEd62cosTNS-_lw?FHIM/Datatypes/Real?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_euwfSeLjEdutr_MT9HkPyQ" value="1"/>
@@ -3420,14 +3400,11 @@ Note that this class has 5 subtypes to handle the different kinds of result valu
     <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B64230FFB100BB" name="Organism">
       <eAnnotations xmi:id="_M6yjzuLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
       <ownedComment xmi:id="_M6yjxuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64230FFB100BB">
-        <body>The organism identified as being present within a specimen sample.  &quot;Organism&quot; as used here is not the full spectrum of possible living things, but rather is limited to a member of the following: Bacteria, Fungus, Mycobacterium, Parasite, or Virus.&#xD;
-</body>
+        <body>The organism identified as being present within a specimen sample.  &amp;amp;quot;Organism&amp;amp;quot; as used here is not the full spectrum of possible living things, but rather is limited to a member of the following: Bacteria, Fungus, Mycobacterium, Parasite, or Virus.  </body>
       </ownedComment>
       <ownedAttribute xmi:id="_420A62FD03B64586C1770123" name="organism" visibility="public">
         <ownedComment xmi:id="_M6yjyeLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64586C1770123">
-          <body>The organism identified.  Since this unique identifier is a coded element, it contains both a code and a display name.&#xD;
-&#xD;
-</body>
+          <body>The organism identified.  Since this unique identifier is a coded element, it contains both a code and a display name.    </body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
@@ -3435,23 +3412,18 @@ Note that this class has 5 subtypes to handle the different kinds of result valu
     <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B642DD3EE4017D" name="PathologyResult">
       <eAnnotations xmi:id="_M7Oop-LiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
       <ownedComment xmi:id="_M67ttuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B642DD3EE4017D">
-        <body>This class documents each Anatomicalpathology observation event (note that in this case, &quot;AnatomicalPathology&quot; includes Cytopathology, ElectronMicroscopy, and SurgicalPathology and some autopsy observations.&#xD;
-</body>
+        <body>This class documents each Anatomicalpathology observation event (note that in this case, &amp;amp;quot;AnatomicalPathology&amp;amp;quot; includes Cytopathology, ElectronMicroscopy, and SurgicalPathology and some autopsy observations.  </body>
       </ownedComment>
       <generalization xmi:id="_BSsY0MqAEeC9Pb3leltpqQ" general="_NglJMH8AEd-6KMbY3gBFOQ"/>
       <ownedAttribute xmi:id="_420A62FD03B64586C49300C6" name="comments" visibility="public">
         <ownedComment xmi:id="_M67tvOLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64586C49300C6">
-          <body>Contains comments about the pathological observation in textual format.&#xD;
-&#xD;
-</body>
+          <body>Contains comments about the pathological observation in textual format.    </body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B64586C49300B7" name="dateSpecimenReceived" visibility="public">
         <ownedComment xmi:id="_M7FesuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64586C49300B7">
-          <body>Contains the date the the specimen  was received.&#xD;
-&#xD;
-</body>
+          <body>Contains the date the the specimen  was received.    </body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
       </ownedAttribute>
@@ -3511,9 +3483,7 @@ Note that this class has 5 subtypes to handle the different kinds of result valu
     <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B64586C33802C1" name="StainResult">
       <eAnnotations xmi:id="_M9nOQeLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
       <ownedComment xmi:id="_M9eEV-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64586C33802C1">
-        <body>This class is a generalization of various kinds of stain tests, including Gram Stain, and Acid Fast Stain.  Of interest at the FHIM level is that a relatively quick general observation might be made and reported about a cultured sample before more detailed observations are possible, giving the treating physician a general indication of the type of treatment that might be appropriate.&#xD;
-&#xD;
-Independent Variables: Source, condition (aerobic/anaerobic),  present/absence of growth, slow growth vs. fast growth, length of time, gram positive/negative, morphology1 (cocci, bacilli), morphology2 (chains, clusters), morphology3 (intercellular, extracellular)</body>
+        <body>This class is a generalization of various kinds of stain tests, including Gram Stain, and Acid Fast Stain.  Of interest at the FHIM level is that a relatively quick general observation might be made and reported about a cultured sample before more detailed observations are possible, giving the treating physician a general indication of the type of treatment that might be appropriate.    Independent Variables: Source, condition (aerobic/anaerobic),  present/absence of growth, slow growth vs. fast growth, length of time, gram positive/negative, morphology1 (cocci, bacilli), morphology2 (chains, clusters), morphology3 (intercellular, extracellular)</body>
       </ownedComment>
       <generalization xmi:id="_k9vx8Mp-EeC9Pb3leltpqQ" general="_NglJMH8AEd-6KMbY3gBFOQ"/>
       <ownedAttribute xmi:id="_KPEvAFPREeC3dvg3Ss2k0Q" name="cultureCondition" visibility="public">
@@ -3527,17 +3497,13 @@ Independent Variables: Source, condition (aerobic/anaerobic),  present/absence o
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B64586FAD0012F" name="stainType" visibility="public">
         <ownedComment xmi:id="_M9eEWuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64586FAD0012F">
-          <body>Contains the value results of the Smear/Prep test.&#xD;
-&#xD;
-</body>
+          <body>Contains the value results of the Smear/Prep test.    </body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B64586BF3202BC" name="value" visibility="public">
         <ownedComment xmi:id="_M83nZ-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64586BF3202BC">
-          <body>Contains the results of the Gram Stain Test in textual format.&#xD;
-&#xD;
-</body>
+          <body>Contains the results of the Gram Stain Test in textual format.    </body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
@@ -3545,22 +3511,17 @@ Independent Variables: Source, condition (aerobic/anaerobic),  present/absence o
     <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B64586C4B903A9" name="LabReportSection">
       <eAnnotations xmi:id="_M9nOSeLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
       <ownedComment xmi:id="_M9nOROLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64586C4B903A9">
-        <body>Contains all the test results observations for the lab tests.
-
-</body>
+        <body>Contains all the test results observations for the lab tests.  </body>
       </ownedComment>
       <ownedAttribute xmi:id="_a4BoQOhQEeCUNuD9-34Rcg" name="sectionTitle" visibility="public">
         <ownedComment xmi:id="_FrpUoOhREeCUNuD9-34Rcg" annotatedElement="_a4BoQOhQEeCUNuD9-34Rcg">
-          <body>Categorizes the section of the report.  Possible values include: Brief Clinical History, Frozen Section, Gross Description, MicroscopicExamination, Operative Findings, Post-operative Diagnosis, Pre-operative Diagnosis, etc.&#xD;
-</body>
+          <body>Categorizes the section of the report.  Possible values include: Brief Clinical History, Frozen Section, Gross Description, MicroscopicExamination, Operative Findings, Post-operative Diagnosis, Pre-operative Diagnosis, etc.  </body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B64586C4C5035C" name="text" visibility="public">
         <ownedComment xmi:id="_M9nOR-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64586C4C5035C">
-          <body>Contains the lab report results in textual format.&#xD;
-&#xD;
-</body>
+          <body>Contains the lab report results in textual format.    </body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
@@ -3568,9 +3529,7 @@ Independent Variables: Source, condition (aerobic/anaerobic),  present/absence o
     <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B6458956DC035E" name="LabTestRequest">
       <eAnnotations xmi:id="_M_QND-LiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
       <ownedComment xmi:id="_D0KAQL_CEd2cYoIY7XWEQw" annotatedElement="_420A62FD03B6458956DC035E">
-        <body>This class contains attributes associated with a record of the investigative procedure requested to be performed in the laboratory.&#xD;
-&#xD;
-Need to flesh out how to model both Panels and individual tests at the same time.  It is not reasonable to expect to be able to standardize panels, but may have to enumerate the tests that make up the panel ordered.</body>
+        <body>This class contains attributes associated with a record of the investigative procedure requested to be performed in the laboratory.    Need to flesh out how to model both Panels and individual tests at the same time.  It is not reasonable to expect to be able to standardize panels, but may have to enumerate the tests that make up the panel ordered.</body>
       </ownedComment>
       <generalization xmi:id="_EZXY8H7zEd-6KMbY3gBFOQ">
         <general xmi:type="uml:Class" href="Orders.efx#_420A62FD03B64589572B02E8?FHIM/Orders/HealthcareOrder?"/>
@@ -3589,7 +3548,7 @@ Need to flesh out how to model both Panels and individual tests at the same time
       </ownedAttribute>
       <ownedAttribute xmi:id="_j2AvsLTsEd2sMvQnSCqOzA" name="labTestOrPanelOrdered" visibility="public" isUnique="false">
         <ownedComment xmi:id="_dw-pcMJFEd2hWP0WztcgDg" annotatedElement="_j2AvsLTsEd2sMvQnSCqOzA">
-          <body>&quot;This field contains the identifier code for the requested observation/test/battery.&quot; - HL7 Version 2.8, OBR-4</body>
+          <body>&amp;amp;quot;This field contains the identifier code for the requested observation/test/battery.&amp;amp;quot; - HL7 Version 2.8, OBR-4</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_j2AvsbTsEd2sMvQnSCqOzA" value="*"/>
@@ -3603,7 +3562,7 @@ Need to flesh out how to model both Panels and individual tests at the same time
       </ownedAttribute>
       <ownedAttribute xmi:id="_igjXMAl-EeGe4v7RnpTDUQ" name="specimenActionCode" visibility="public">
         <ownedComment xmi:id="_XSdRoAl_EeGe4v7RnpTDUQ" annotatedElement="_igjXMAl-EeGe4v7RnpTDUQ">
-          <body>&quot;Identifies the action to be taken with respect to the specimens that accompany or precede this order....&quot; - HL7 Version 2.8, OBR-11</body>
+          <body>&amp;amp;quot;Identifies the action to be taken with respect to the specimens that accompany or precede this order....&amp;amp;quot; - HL7 Version 2.8, OBR-11</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
@@ -3640,9 +3599,7 @@ Need to flesh out how to model both Panels and individual tests at the same time
     <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B64266BCE800E0" name="SpecimenCollectionPromise">
       <eAnnotations xmi:id="_M_2p9-LiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
       <ownedComment xmi:id="_M_s49uLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64266BCE800E0">
-        <body>Acceptance to perform test requested on the specimen submitted , such as of tissue, blood, or urine, used for analysis and diagnosis.
-
-</body>
+        <body>Acceptance to perform test requested on the specimen submitted , such as of tissue, blood, or urine, used for analysis and diagnosis.  </body>
       </ownedComment>
       <ownedAttribute xmi:id="_420A62FD03B64266BD800130" name="status" visibility="public">
         <ownedComment xmi:id="_M_2p9eLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64266BD800130">
@@ -3665,32 +3622,26 @@ Need to flesh out how to model both Panels and individual tests at the same time
       </ownedComment>
       <ownedAttribute xmi:id="_I8XO0MzDEeCMF_3VBil7Gw" name="collectionAmount" visibility="public">
         <ownedComment xmi:id="__Wm7UAlkEeGe4v7RnpTDUQ" annotatedElement="_I8XO0MzDEeCMF_3VBil7Gw">
-          <body>&quot;This field specifies the volume or mass of the collected specimen. For laboratory tests, the collection volume is the volume of a specimen....  This is a results-only field except when the placer or a party has already drawn the specimen.&quot; - HL7 Version 2.8, SPM.12</body>
+          <body>&amp;amp;quot;This field specifies the volume or mass of the collected specimen. For laboratory tests, the collection volume is the volume of a specimen....  This is a results-only field except when the placer or a party has already drawn the specimen.&amp;amp;quot; - HL7 Version 2.8, SPM.12</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B641886F630221?FHIM/Datatypes/PhysicalQuantity?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B64230FCD502CF" name="collectionDate" visibility="public">
         <ownedComment xmi:id="_M_2p_eLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64230FCD502CF">
-          <body>&quot;The date and time when the specimen was acquired from the source.  The use of the Date Range data type allows for description of specimens collected over a period of time, for example, 24-hour urine collection.  For specimens collected at a point in time, only the first component (start date/time) will be populated.&quot; - HL7 Version 2.8, SPM.17&#xD;
-&#xD;
-&quot;The clinically relevant date/time of the observation.  In the case of observations taken directly from a subject, it is the actual date and time the observation was obtained.  In the case of a specimen associated study, this field shall represent the date and time the specimen was collected or obtained.  (This is a results-only field except when the placer or a third party has already drawn the specimen.)  This field is conditionally required.  When the OBR is transmitted as part of a report message, the field must be filled in.  If it is transmitted as part of a request and a sample has been sent along as part of the request, this field must be filled in because this specimen time is the physiologically relevant date/time of the observation.&quot; - HL7 Version 2.8, OBR.7&#xD;
-&#xD;
-&quot;This field contains the end date and time of a study or timed specimen collection.  If an observation takes place over a substantial period of time, it will indicate when the observation period ended.  For observations made at a point in time, it will be null.  This is a results field except when the placer or a party other than the filler has already drawn the specimen.&quot; - HL7 Version 2.8, OBR.8&#xD;
-&#xD;
-Note that this property is a Time Interval.</body>
+          <body>&amp;amp;quot;The date and time when the specimen was acquired from the source.  The use of the Date Range data type allows for description of specimens collected over a period of time, for example, 24-hour urine collection.  For specimens collected at a point in time, only the first component (start date/time) will be populated.&amp;amp;quot; - HL7 Version 2.8, SPM.17    &amp;amp;quot;The clinically relevant date/time of the observation.  In the case of observations taken directly from a subject, it is the actual date and time the observation was obtained.  In the case of a specimen associated study, this field shall represent the date and time the specimen was collected or obtained.  (This is a results-only field except when the placer or a third party has already drawn the specimen.)  This field is conditionally required.  When the OBR is transmitted as part of a report message, the field must be filled in.  If it is transmitted as part of a request and a sample has been sent along as part of the request, this field must be filled in because this specimen time is the physiologically relevant date/time of the observation.&amp;amp;quot; - HL7 Version 2.8, OBR.7    &amp;amp;quot;This field contains the end date and time of a study or timed specimen collection.  If an observation takes place over a substantial period of time, it will indicate when the observation period ended.  For observations made at a point in time, it will be null.  This is a results field except when the placer or a party other than the filler has already drawn the specimen.&amp;amp;quot; - HL7 Version 2.8, OBR.8    Note that this property is a Time Interval.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B642387187004E?FHIM/Datatypes/TimeInterval?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_KYTcwn8YEd-6KMbY3gBFOQ" name="collectionMethod" visibility="public">
         <ownedComment xmi:id="_KYTcw38YEd-6KMbY3gBFOQ" annotatedElement="_KYTcwn8YEd-6KMbY3gBFOQ">
-          <body>&quot;Describes the procedure or process by which the specimen was collected.&quot; - HL7 Version 2.8, SPM.7</body>
+          <body>&amp;amp;quot;Describes the procedure or process by which the specimen was collected.&amp;amp;quot; - HL7 Version 2.8, SPM.7</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B64586B93403B1" name="comment" visibility="public">
         <eAnnotations xmi:id="_M__z6eLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <ownedComment xmi:id="_M__z5-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64586B93403B1">
-          <body>&quot;This field is for reporting additional comments related to the sample.&quot; - HL7 Version 2.8, OBR-39</body>
+          <body>&amp;amp;quot;This field is for reporting additional comments related to the sample.&amp;amp;quot; - HL7 Version 2.8, OBR-39</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eu5pJ-LjEdutr_MT9HkPyQ" value="1"/>
@@ -3706,7 +3657,7 @@ Note that this property is a Time Interval.</body>
       </ownedAttribute>
       <ownedAttribute xmi:id="_btFzwX8XEd-6KMbY3gBFOQ" name="performer" visibility="public" association="_btFzwH8XEd-6KMbY3gBFOQ">
         <ownedComment xmi:id="_fpqXAH8XEd-6KMbY3gBFOQ" annotatedElement="_btFzwX8XEd-6KMbY3gBFOQ">
-          <body>&quot;Identifies the person, department, or facility that collected the specimen.&quot; - HL7 Version 2.8, OBR-10</body>
+          <body>&amp;amp;quot;Identifies the person, department, or facility that collected the specimen.&amp;amp;quot; - HL7 Version 2.8, OBR-10</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Common.efx#_7NSfgH_lEd-Ure_vzgD_TA?FHIM/Common/PrimaryPerformer?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_btFzw38XEd-6KMbY3gBFOQ" value="1"/>
@@ -3731,26 +3682,20 @@ Note that this property is a Time Interval.</body>
     <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B64589A6CD0176" name="SpecimenCollectionRequest">
       <eAnnotations xmi:id="_NAmQ0eLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
       <ownedComment xmi:id="_NAcf1-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64589A6CD0176">
-        <body>The gathering of portions or quantities of material for use in testing, examination, or study based upon a request (order).&lt;a urine specimen> 
-
-</body>
+        <body>The gathering of portions or quantities of material for use in testing, examination, or study based upon a request (order).&amp;amp;lt;a urine specimen&amp;amp;gt;   </body>
       </ownedComment>
       <generalization xmi:id="_xzfqMH8XEd-6KMbY3gBFOQ">
         <general xmi:type="uml:Class" href="Orders.efx#_420A62FD03B64589572B02E8?FHIM/Orders/HealthcareOrder?"/>
       </generalization>
       <ownedAttribute xmi:id="_420A62FD03B64589A70201DC" name="bodySite" visibility="public">
         <ownedComment xmi:id="_NAcf2uLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64589A70201DC">
-          <body>The location on the patient's body from which the specimen was obtained.&#xD;
-&#xD;
-</body>
+          <body>The location on the patient&amp;amp;apos;s body from which the specimen was obtained.    </body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B64589A70201DD" name="collectionMethod" visibility="public">
         <ownedComment xmi:id="_NAcf3eLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64589A70201DD">
-          <body>This attribute captures the method by which the specimen was obtained from the patient's body; e.g., needle stick, thin needle aspirate.&#xD;
-&#xD;
-</body>
+          <body>This attribute captures the method by which the specimen was obtained from the patient&amp;amp;apos;s body; e.g., needle stick, thin needle aspirate.    </body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
@@ -3766,9 +3711,7 @@ Note that this property is a Time Interval.</body>
     <packagedElement xmi:type="uml:Association" xmi:id="_420A62FD03B64586BC3F0275" memberEnd="_420A62FD03B64586BC410090 _420A62FD03B64586BC410092">
       <eAnnotations xmi:id="_ZJJmEUzlEdyZ7YHHi9KCRg" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
       <ownedComment xmi:id="_NBV3xOLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64586BC3F0275">
-        <body>Contains the Instituion name for the site where the specimen was collected.
-
-</body>
+        <body>Contains the Instituion name for the site where the specimen was collected.  </body>
       </ownedComment>
       <ownedEnd xmi:id="_420A62FD03B64586BC410092" name="" visibility="public" type="_420A62FD03B64263CF150098" isUnique="false" association="_420A62FD03B64586BC3F0275">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_v8JE0RnkEdyQfodwAgrWbw" value="1"/>
@@ -3778,45 +3721,35 @@ Note that this property is a Time Interval.</body>
     <packagedElement xmi:type="uml:Association" xmi:id="_420A62FD03B64586C70E0357" memberEnd="_420A62FD03B64586C70F0318 _420A62FD03B64586C70F0328">
       <eAnnotations xmi:id="_ZLPQwEzlEdyZ7YHHi9KCRg" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
       <ownedComment xmi:id="_NCPPluLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64586C70E0357">
-        <body>The person in the role of responsible party the Pathologist.
-
-</body>
+        <body>The person in the role of responsible party the Pathologist.  </body>
       </ownedComment>
       <ownedEnd xmi:id="_420A62FD03B64586C70F0328" name="" visibility="public" type="_420A62FD03B642DD3EE4017D" isUnique="false" association="_420A62FD03B64586C70E0357"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_420A62FD03B64586C7470210" memberEnd="_420A62FD03B64586C7480174 _420A62FD03B64586C7480176">
       <eAnnotations xmi:id="_ZIs6IEzlEdyZ7YHHi9KCRg" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
       <ownedComment xmi:id="_NCPPneLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64586C7470210">
-        <body> Image associated with surgical pathology reports are stored in this multiple within the surgical pathology field of the lab data file.
-
-</body>
+        <body> Image associated with surgical pathology reports are stored in this multiple within the surgical pathology field of the lab data file.  </body>
       </ownedComment>
       <ownedEnd xmi:id="_420A62FD03B64586C7480176" name="" visibility="public" type="_420A62FD03B642DD3EE4017D" isUnique="false" association="_420A62FD03B64586C7470210"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_420A62FD03B64586C7E80282" memberEnd="_420A62FD03B64586C7E90262 _420A62FD03B64586C7E90282">
       <eAnnotations xmi:id="_ZL1GoEzlEdyZ7YHHi9KCRg" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
       <ownedComment xmi:id="_NCPPpOLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64586C7E80282">
-        <body>The person in the role of resident Pathologist.
-
-</body>
+        <body>The person in the role of resident Pathologist.  </body>
       </ownedComment>
       <ownedEnd xmi:id="_420A62FD03B64586C7E90282" name="" visibility="public" type="_420A62FD03B642DD3EE4017D" isUnique="false" association="_420A62FD03B64586C7E80282"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_420A62FD03B645870AF20274" memberEnd="_420A62FD03B645870AF3013B _420A62FD03B645870AF3014B">
       <eAnnotations xmi:id="_ZI2rIkzlEdyZ7YHHi9KCRg" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
       <ownedComment xmi:id="_NC1FduLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B645870AF20274">
-        <body>The process of determining by examination the nature and circumstances of a diseased condition.
-
-</body>
+        <body>The process of determining by examination the nature and circumstances of a diseased condition.  </body>
       </ownedComment>
       <ownedEnd xmi:id="_420A62FD03B645870AF3014B" name="" visibility="public" type="_420A62FD03B642DD3EE4017D" isUnique="false" association="_420A62FD03B645870AF20274"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_420A62FD03B64587FF840214" memberEnd="_420A62FD03B64587FF85011A _420A62FD03B64587FF85012A">
       <eAnnotations xmi:id="_ZLrVoEzlEdyZ7YHHi9KCRg" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
       <ownedComment xmi:id="_NDksXeLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64587FF840214">
-        <body>The person in the role of data enterer.
-
-</body>
+        <body>The person in the role of data enterer.  </body>
       </ownedComment>
       <ownedEnd xmi:id="_420A62FD03B64587FF85012A" name="" visibility="public" type="_420A62FD03B642DD3EE4017D" isUnique="false" association="_420A62FD03B64587FF840214"/>
     </packagedElement>
@@ -3826,9 +3759,7 @@ Note that this property is a Time Interval.</body>
     <packagedElement xmi:type="uml:Association" xmi:id="_420A62FD03B64589B041001C" memberEnd="_420A62FD03B64589B0410174 _420A62FD03B64589B0410176">
       <eAnnotations xmi:id="_ZJSwAkzlEdyZ7YHHi9KCRg" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
       <ownedComment xmi:id="_NEU6RuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64589B041001C">
-        <body>The gathering of specimens  for use in testing, examination, or study based upon a request (order).&lt;a urine specimen>. 
-
-</body>
+        <body>The gathering of specimens  for use in testing, examination, or study based upon a request (order).&amp;amp;lt;a urine specimen&amp;amp;gt;.   </body>
       </ownedComment>
       <ownedEnd xmi:id="_420A62FD03B64589B0410176" name="" visibility="public" type="_420A62FD03B64266BCE800E0" isUnique="false" association="_420A62FD03B64589B041001C"/>
     </packagedElement>
@@ -3861,15 +3792,13 @@ Note that this property is a Time Interval.</body>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B64586BD3703AA" name="isAmended" visibility="public">
         <ownedComment xmi:id="_M71FkuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64586BD3703AA">
-          <body>Identifies whether the Microbiology test performed was amended. 0 = no and 1 = yes.&#xD;
-&#xD;
-</body>
+          <body>Identifies whether the Microbiology test performed was amended. 0 = no and 1 = yes.    </body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_ptNP4PjPEeCmc6EQPl3F9g" name="probability" visibility="public">
         <ownedComment xmi:id="_29mH4PjPEeCmc6EQPl3F9g" annotatedElement="_ptNP4PjPEeCmc6EQPl3F9g">
-          <body>&quot;This field contains the probability of a result being true for results with categorical values.  It mainly applies to discrete coded results.  It is a decimal number represented as an ASCII string that must be between 0 and 1, inclusive. &quot; - HL7 V2</body>
+          <body>&amp;amp;quot;This field contains the probability of a result being true for results with categorical values.  It mainly applies to discrete coded results.  It is a decimal number represented as an ASCII string that must be between 0 and 1, inclusive. &amp;amp;quot; - HL7 V2</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_N-BAoNYeEd62cosTNS-_lw?FHIM/Datatypes/Real?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wEGggfjPEeCmc6EQPl3F9g" value="1"/>
@@ -3880,9 +3809,7 @@ Note that this property is a Time Interval.</body>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B64586FAF3018D" name="reportId" visibility="public">
         <ownedComment xmi:id="_M6fBxuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64586FAF3018D">
-          <body>Contains the unique identifier for the microbiology result.&#xD;
-&#xD;
-</body>
+          <body>Contains the unique identifier for the microbiology result.    </body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
       </ownedAttribute>
@@ -3921,7 +3848,7 @@ Note that this property is a Time Interval.</body>
       </ownedAttribute>
       <ownedAttribute xmi:id="_kWOscX8aEd-6KMbY3gBFOQ" name="performer" visibility="public" association="_kWOscH8aEd-6KMbY3gBFOQ">
         <ownedComment xmi:id="_oxf94H8aEd-6KMbY3gBFOQ" annotatedElement="_kWOscX8aEd-6KMbY3gBFOQ">
-          <body>&quot;This field identifies the performing technician.&quot; - HL7 Version 2.8, OBR-34</body>
+          <body>&amp;amp;quot;This field identifies the performing technician.&amp;amp;quot; - HL7 Version 2.8, OBR-34</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Provider.efx#_420A62FD03B6418A6B760063?FHIM/Provider/IndividualProvider?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kWOsc38aEd-6KMbY3gBFOQ" value="1"/>
@@ -3991,7 +3918,7 @@ Note that this property is a Time Interval.</body>
       </ownedAttribute>
       <ownedAttribute xmi:id="_jMUzIOtMEd-UtpmJtcZCZg" name="relatedPromiseCategory" visibility="public">
         <ownedComment xmi:id="_71tUkAPLEeGyxsUXi9XkTg" annotatedElement="_jMUzIOtMEd-UtpmJtcZCZg">
-          <body>Note that this includes &quot;Reflex Test&quot;, which is a test that is performed and is made necessary based on results from another test, such as results that need confirmation or tests that are indicated by standards of care, so that it is necessary to perform even though the clinician hasn't ordered.  Examples include when a CBC indicates a high white blood cell count, a differential is automatically performed.  These tests are usually defined within the laboratory's established procedures.</body>
+          <body>Note that this includes &amp;amp;quot;Reflex Test&amp;amp;quot;, which is a test that is performed and is made necessary based on results from another test, such as results that need confirmation or tests that are indicated by standards of care, so that it is necessary to perform even though the clinician hasn&amp;amp;apos;t ordered.  Examples include when a CBC indicates a high white blood cell count, a differential is automatically performed.  These tests are usually defined within the laboratory&amp;amp;apos;s established procedures.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
@@ -4023,7 +3950,7 @@ Note that this property is a Time Interval.</body>
       </ownedAttribute>
       <ownedAttribute xmi:id="_s5NUUOOaEd-8X4J7aT-aiQ" name="placerOrderId" visibility="public">
         <ownedComment xmi:id="_s5NUUeOaEd-8X4J7aT-aiQ" annotatedElement="_s5NUUOOaEd-8X4J7aT-aiQ">
-          <body>Uniquely identifies the order within the ordering provider's system.</body>
+          <body>Uniquely identifies the order within the ordering provider&amp;amp;apos;s system.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_s5NUUuOaEd-8X4J7aT-aiQ" value="1"/>
@@ -4079,7 +4006,7 @@ Note that this property is a Time Interval.</body>
     <packagedElement xmi:type="uml:Class" xmi:id="_iI8NkPZPEd-e1vPpWfL-Bw" name="SpecimenContainer">
       <ownedAttribute xmi:id="_JZc8IPvNEd-3ndaGus2qMA" name="additiveType" visibility="public">
         <ownedComment xmi:id="_2Uv3EAlVEeGe4v7RnpTDUQ" annotatedElement="_JZc8IPvNEd-3ndaGus2qMA">
-          <body>&quot;This field identifies any additives introduced to the specimen before or at the time of collection.  These additives may be introduced in order to preserve, maintain or enhance the particular nature or component of the specimen.  Refer to HL7 Table 0371 – Additive/Preservative for valid values.  When multiple additives are introduced and valid individual additive codes exist but a valid value for the combination does not exist, repeating the field with individual values is most appropriate.&quot; - HL7 Version 2.8, SPM.6</body>
+          <body>&amp;amp;quot;This field identifies any additives introduced to the specimen before or at the time of collection.  These additives may be introduced in order to preserve, maintain or enhance the particular nature or component of the specimen.  Refer to HL7 Table 0371   Additive/Preservative for valid values.  When multiple additives are introduced and valid individual additive codes exist but a valid value for the combination does not exist, repeating the field with individual values is most appropriate.&amp;amp;quot; - HL7 Version 2.8, SPM.6</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NpWEAfvNEd-3ndaGus2qMA" value="*"/>
@@ -4090,7 +4017,7 @@ Note that this property is a Time Interval.</body>
       </ownedAttribute>
       <ownedAttribute xmi:id="_rgeksPZPEd-e1vPpWfL-Bw" name="containerType" visibility="public">
         <ownedComment xmi:id="_8-uGoAlTEeGe4v7RnpTDUQ" annotatedElement="_rgeksPZPEd-e1vPpWfL-Bw">
-          <body>&quot;The container in or on which a specimen is transported.&quot; - HL7 Version 2.8, SPM.27</body>
+          <body>&amp;amp;quot;The container in or on which a specimen is transported.&amp;amp;quot; - HL7 Version 2.8, SPM.27</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
@@ -4106,7 +4033,7 @@ Note that this property is a Time Interval.</body>
       </ownedAttribute>
       <ownedAttribute xmi:id="_J28rIcp7EeC9Pb3leltpqQ" name="definedPatientEvent" visibility="public" type="_rWnUoMHPEeCdLPayeDTWtA" association="_J28rIMp7EeC9Pb3leltpqQ">
         <ownedComment xmi:id="_0RecwM6GEeCM-vbOXYpzjw" annotatedElement="_J28rIcp7EeC9Pb3leltpqQ">
-          <body>The specific patient-related event to which a specimen collection or collections (and subsequently, any tests performed on that specimen) are related or affected by time, sequence, directive, intent, etc.  Examples might include drug administration (peak and trough), beginning of fasting (lipids, FBS), glucose challenge (tolerances) or meal (postprandial), admission (pre- or post-admission studies), scheduled surgery/transfusion (compatibility testing), onset of symptoms (acute and convalescent), LMP (pregnancy test, Pap smear), lumbar puncture (CSF tubes 1, 2, and 3), treatment completion (test of cure, post-transfusion H&amp;H), use/ingestion (BAT, toxicology), start of 24-hour urine pooling (creatinine clearance), etc. </body>
+          <body>The specific patient-related event to which a specimen collection or collections (and subsequently, any tests performed on that specimen) are related or affected by time, sequence, directive, intent, etc.  Examples might include drug administration (peak and trough), beginning of fasting (lipids, FBS), glucose challenge (tolerances) or meal (postprandial), admission (pre- or post-admission studies), scheduled surgery/transfusion (compatibility testing), onset of symptoms (acute and convalescent), LMP (pregnancy test, Pap smear), lumbar puncture (CSF tubes 1, 2, and 3), treatment completion (test of cure, post-transfusion H&amp;amp;amp;H), use/ingestion (BAT, toxicology), start of 24-hour urine pooling (creatinine clearance), etc. </body>
         </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_J28rI8p7EeC9Pb3leltpqQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_J28rIsp7EeC9Pb3leltpqQ"/>
@@ -4132,19 +4059,19 @@ Note that this property is a Time Interval.</body>
       </ownedAttribute>
       <ownedAttribute xmi:id="_KYTcwH8YEd-6KMbY3gBFOQ" name="collectionSite" visibility="public">
         <ownedComment xmi:id="_KYTcwX8YEd-6KMbY3gBFOQ" annotatedElement="_KYTcwH8YEd-6KMbY3gBFOQ">
-          <body>&quot;This field differs from SPM-8-Specimen Source Site in those cases where the source site must be approached via a particular site (e.g., anatomic location).  For example, in the case where a liver biopsy is obtained via a percutaneous needle, the collection site would be the point of entry of the needle.  For venous blood collected from the left radial vein, the collection site could be &quot;antecubital fossa&quot;.&quot; - HL7 Version 2.8, SPM.10</body>
+          <body>&amp;amp;quot;This field differs from SPM-8-Specimen Source Site in those cases where the source site must be approached via a particular site (e.g., anatomic location).  For example, in the case where a liver biopsy is obtained via a percutaneous needle, the collection site would be the point of entry of the needle.  For venous blood collected from the left radial vein, the collection site could be &amp;amp;quot;antecubital fossa&amp;amp;quot;.&amp;amp;quot; - HL7 Version 2.8, SPM.10</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_DHxwkP8sEd-Koe9flR96lw" name="sourceSite" visibility="public">
         <ownedComment xmi:id="_TLXI8P8sEd-Koe9flR96lw" annotatedElement="_DHxwkP8sEd-Koe9flR96lw">
-          <body>&quot;Specifies the source from which the specimen was obtained.  For example, in the case where a liver biopsy is obtained via a percutaneous needle, the source would be ‘liver.’&quot; - HL7 Version 2.8, SPM.8</body>
+          <body>&amp;amp;quot;Specifies the source from which the specimen was obtained.  For example, in the case where a liver biopsy is obtained via a percutaneous needle, the source would be  liver. &amp;amp;quot; - HL7 Version 2.8, SPM.8</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_TlsUgP8sEd-Koe9flR96lw" name="sourceSiteModifier" visibility="public">
         <ownedComment xmi:id="_TlsUgf8sEd-Koe9flR96lw" annotatedElement="_TlsUgP8sEd-Koe9flR96lw">
-          <body>&quot;This field contains modifying or qualifying description(s) about the specimen source site.  The use of this attribute is to modify, qualify or further specify, the entity described by SPM-8 – Specimen Source Site.  This is particularly useful when the code set used in SPM-8 does not provide the precision required to fully describe the site from which the specimen originated.  For example, if the specimen source site was precisely described as ‘left radial vein’ but the code set employed only provided ‘radial vein,’ this attribute could be employed to add the modifier ‘left.’&quot; - HL7 Version 2.8, SPM.9</body>
+          <body>&amp;amp;quot;This field contains modifying or qualifying description(s) about the specimen source site.  The use of this attribute is to modify, qualify or further specify, the entity described by SPM-8   Specimen Source Site.  This is particularly useful when the code set used in SPM-8 does not provide the precision required to fully describe the site from which the specimen originated.  For example, if the specimen source site was precisely described as  left radial vein  but the code set employed only provided  radial vein,  this attribute could be employed to add the modifier  left. &amp;amp;quot; - HL7 Version 2.8, SPM.9</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
@@ -4153,9 +4080,7 @@ Note that this property is a Time Interval.</body>
       <generalization xmi:id="_rvtd8P8rEd-Koe9flR96lw" general="_420A62FD03B64263CF150098"/>
       <ownedAttribute xmi:id="_f-LJkP8rEd-Koe9flR96lw" name="collectionSite" visibility="public">
         <ownedComment xmi:id="_f-LJkf8rEd-Koe9flR96lw" annotatedElement="_f-LJkP8rEd-Koe9flR96lw">
-          <body>The location on the patient's body from which the specimen was obtained.&#xD;
-&#xD;
-</body>
+          <body>The location on the patient&amp;amp;apos;s body from which the specimen was obtained.    </body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
@@ -5300,18 +5225,13 @@ Note that this property is a Time Interval.</body>
     <packagedElement xmi:type="uml:Class" xmi:id="_3XW7MGH_EeCHAoM78Lf2xA" name="ReferenceRangeCriterion">
       <ownedAttribute xmi:id="__FOZQGIUEeCHAoM78Lf2xA" name="criterion" visibility="public">
         <ownedComment xmi:id="_hNPkgPjQEeCmc6EQPl3F9g" annotatedElement="__FOZQGIUEeCHAoM78Lf2xA">
-          <body>&quot;This field contains the nature of the abnormal test.  Refer to HL7 Table 0080 - Nature of abnormal testing for valid values.  As many of the codes as apply may be included, separated by repeat delimiters. For example, normal values based on age, sex, and race would be codes as A~S~R.  &#xD;
-The constraints on the use of the codes in this table must be consistent with those defined in the PID segment, specifically PID-35-Species Code, PID-36-Breed Code and PID-37-Strain.&quot; - HL7 V2&#xD;
-&#xD;
-This is the criteron by which the reference range is valid.  Different reference ranges may be defined based on the subject's age, race, sex, etc.</body>
+          <body>&amp;amp;quot;This field contains the nature of the abnormal test.  Refer to HL7 Table 0080 - Nature of abnormal testing for valid values.  As many of the codes as apply may be included, separated by repeat delimiters. For example, normal values based on age, sex, and race would be codes as A~S~R.    The constraints on the use of the codes in this table must be consistent with those defined in the PID segment, specifically PID-35-Species Code, PID-36-Breed Code and PID-37-Strain.&amp;amp;quot; - HL7 V2    This is the criteron by which the reference range is valid.  Different reference ranges may be defined based on the subject&amp;amp;apos;s age, race, sex, etc.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_cT9r8PjREeCmc6EQPl3F9g" name="effectiveDate" visibility="public">
         <ownedComment xmi:id="_p7q3wPjREeCmc6EQPl3F9g" annotatedElement="_cT9r8PjREeCmc6EQPl3F9g">
-          <body>&quot;When this field is present, it facilitates comparison between identical results with different reference ranges.  Reference range values may vary because of changes in laboratory practice over time.  Such variances could reflect updated practice in laboratory medicine, or the use of updated instrumentation.&quot; - HL7 V2&#xD;
-&#xD;
-Note that we may wish change this to a date range in the future.</body>
+          <body>&amp;amp;quot;When this field is present, it facilitates comparison between identical results with different reference ranges.  Reference range values may vary because of changes in laboratory practice over time.  Such variances could reflect updated practice in laboratory medicine, or the use of updated instrumentation.&amp;amp;quot; - HL7 V2    Note that we may wish change this to a date range in the future.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
       </ownedAttribute>
@@ -5809,17 +5729,11 @@ Note that we may wish change this to a date range in the future.</body>
       <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B6420CDAE00271" name="_AnatomicMeasurement">
         <eAnnotations xmi:id="_M5mQ8eLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <ownedComment xmi:id="_M5cf8-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6420CDAE00271">
-          <body>This class contains measurements of various organs and structures to include the entire body.  The bodySite property indicates the organ or structure to be measured, e.g., Brain.  The measurementType indicates whether we're measuring the length, volume, or weight.  The measurementValue property holds the actual measurement e.g., 1500 grams.&#xD;
-&#xD;
-In VA's VistA system, the following fields are specificaly called out, which would be contained in this class, along with potentially others: Body Height, Body Weight, Length Of Aortic Valve, Length Of Mitral Valve, Length Of Pulmonic Valve, Length Of Tricuspid Valve, Length Of Ventricle (Left), Length Of Ventricle (Right), Volume Of Pericardial Cavity, Volume Of Peritoneal Cavity, Volume Of Pleural Cavity (Left), Volume Of Pleural Cavity (Right), Weight Of Adrenal Gland (Left), Weight Of Adrenal Gland(Right), Weight Of Brain , Weight Of Heart , Weight Of Kidney (Left), Weight Of Kidney (Right), Weight Of Liver, Weight Of Lung (Left), Weight Of Lung (Right), Weight Of Ovary (Left), Weight Of Ovary (Right), Weight Of Pancreas, Weight Of Parathyroid (Left Lower), Weight Of Parathyroid (Left Upper), Weight Of Parathyroid (Right Lower), Weight Of Parathyroid (Right Upper), Weight Of Pituitary Gland, Weight Of Spleen, Weight Of Testis (Left), Weight Of Testis (Right), Weight Of Thyroid Gland</body>
+          <body>This class contains measurements of various organs and structures to include the entire body.  The bodySite property indicates the organ or structure to be measured, e.g., Brain.  The measurementType indicates whether we&amp;amp;apos;re measuring the length, volume, or weight.  The measurementValue property holds the actual measurement e.g., 1500 grams.    In VA&amp;amp;apos;s VistA system, the following fields are specificaly called out, which would be contained in this class, along with potentially others: Body Height, Body Weight, Length Of Aortic Valve, Length Of Mitral Valve, Length Of Pulmonic Valve, Length Of Tricuspid Valve, Length Of Ventricle (Left), Length Of Ventricle (Right), Volume Of Pericardial Cavity, Volume Of Peritoneal Cavity, Volume Of Pleural Cavity (Left), Volume Of Pleural Cavity (Right), Weight Of Adrenal Gland (Left), Weight Of Adrenal Gland(Right), Weight Of Brain , Weight Of Heart , Weight Of Kidney (Left), Weight Of Kidney (Right), Weight Of Liver, Weight Of Lung (Left), Weight Of Lung (Right), Weight Of Ovary (Left), Weight Of Ovary (Right), Weight Of Pancreas, Weight Of Parathyroid (Left Lower), Weight Of Parathyroid (Left Upper), Weight Of Parathyroid (Right Lower), Weight Of Parathyroid (Right Upper), Weight Of Pituitary Gland, Weight Of Spleen, Weight Of Testis (Left), Weight Of Testis (Right), Weight Of Thyroid Gland</body>
         </ownedComment>
         <ownedAttribute xmi:id="_420A62FD03B642122444025D" name="bodySite" visibility="public">
           <ownedComment xmi:id="_M5cf9uLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B642122444025D">
-            <body>This property indicates the organ or structure that is being measured, e.g., the Brain.  Note that this property will require an extensive effort by the terminology team to define fully.&#xD;
-&#xD;
-&#xD;
-&#xD;
-</body>
+            <body>This property indicates the organ or structure that is being measured, e.g., the Brain.  Note that this property will require an extensive effort by the terminology team to define fully.        </body>
           </ownedComment>
           <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
         </ownedAttribute>
@@ -5839,9 +5753,7 @@ In VA's VistA system, the following fields are specificaly called out, which wou
       <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B64587F4F2036A" name="_AutopsyDocumentReference">
         <eAnnotations xmi:id="_M96wReLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <ownedComment xmi:id="_M9w_ROLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64587F4F2036A">
-          <body>Contains all documentation produced as a result of the autopsy. 
-
-</body>
+          <body>Contains all documentation produced as a result of the autopsy.   </body>
         </ownedComment>
         <ownedAttribute xmi:id="_420A62FD03B64587F59D01F9" name="checksum" visibility="public">
           <ownedComment xmi:id="_M96wQ-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64587F59D01F9">
@@ -5863,7 +5775,7 @@ In VA's VistA system, the following fields are specificaly called out, which wou
         </ownedAttribute>
         <ownedAttribute xmi:id="_420A62FD03B64587F58C0302" name="wasDiagnosisModified" visibility="public">
           <ownedComment xmi:id="_M96wQOLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64587F58C0302">
-            <body>Diagnosis modified after report was electronically signed/released. 1=  ' YES'   or 0 = 'NO'.</body>
+            <body>Diagnosis modified after report was electronically signed/released. 1=  &amp;amp;apos; YES&amp;amp;apos;   or 0 = &amp;amp;apos;NO&amp;amp;apos;.</body>
           </ownedComment>
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         </ownedAttribute>
@@ -5871,9 +5783,7 @@ In VA's VistA system, the following fields are specificaly called out, which wou
       <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B6420BEC8900C6" name="_AutopsyEvent">
         <eAnnotations xmi:id="_M6CV1eLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <ownedComment xmi:id="_M5mQ9OLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6420BEC8900C6">
-          <body>Clinical documents commonly have 'Subjective' and 'Objective' findings, both of which are kinds of Observations. In addition, clinical documents commonly contain 'Assessments', which are also kinds of Observations. Thus, the establishment of a diagnosis is an Observation.&#xD;
-&#xD;
-</body>
+          <body>Clinical documents commonly have &amp;amp;apos;Subjective&amp;amp;apos; and &amp;amp;apos;Objective&amp;amp;apos; findings, both of which are kinds of Observations. In addition, clinical documents commonly contain &amp;amp;apos;Assessments&amp;amp;apos;, which are also kinds of Observations. Thus, the establishment of a diagnosis is an Observation.    </body>
         </ownedComment>
         <ownedAttribute xmi:id="_420A62FD03B64586CB0302AA" name="ageAtDeath" visibility="public">
           <ownedComment xmi:id="_M5mQ9-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64586CB0302AA">
@@ -5889,74 +5799,55 @@ In VA's VistA system, the following fields are specificaly called out, which wou
         </ownedAttribute>
         <ownedAttribute xmi:id="_420A62FD03B642122495008D" name="autopsyType" visibility="public">
           <ownedComment xmi:id="_M5mQ_eLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B642122495008D">
-            <body>Anatomical areas of the body the autopsy is performed on.  This can be as broad as a full autopsy or grouping of the body region such as chest, trunk, head. lower body.&#xD;
-&#xD;
-</body>
+            <body>Anatomical areas of the body the autopsy is performed on.  This can be as broad as a full autopsy or grouping of the body region such as chest, trunk, head. lower body.    </body>
           </ownedComment>
           <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_420A62FD03B64586CB580348" name="clinicalDiagnoses" visibility="public">
           <ownedComment xmi:id="_M5va4uLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64586CB580348">
-            <body>Contains information in textual format about the autopsy.&#xD;
-&#xD;
-</body>
+            <body>Contains information in textual format about the autopsy.    </body>
           </ownedComment>
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_420A62FD03B64586CB580338" name="comments" visibility="public">
           <ownedComment xmi:id="_M5va5eLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64586CB580338">
-            <body>Contains information in textual format about the autopsy.&#xD;
-&#xD;
-</body>
+            <body>Contains information in textual format about the autopsy.    </body>
           </ownedComment>
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_420A62FD03B64586CB03029B" name="dateOfDeath" visibility="public">
           <ownedComment xmi:id="_M5va6OLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64586CB03029B">
-            <body>This is the date and time of the death of the patient.&#xD;
-&#xD;
-</body>
+            <body>This is the date and time of the death of the patient.    </body>
           </ownedComment>
           <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_420A62FD03B64586CB4203A5" name="dxClarificationCode" visibility="public">
           <ownedComment xmi:id="_M55L4eLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64586CB4203A5">
-            <body>Contains the Code value to indicate whether the  clinical dx insufficient (ex. Intracranial hemorrhage) did autopsy clarify the dx (ex. ruptured aneurysm) ?  '1' FOR YES; '0' FOR NO; '2' FOR CONFIRMED;&#xD;
-&#xD;
-&#xD;
-</body>
+            <body>Contains the Code value to indicate whether the  clinical dx insufficient (ex. Intracranial hemorrhage) did autopsy clarify the dx (ex. ruptured aneurysm) ?  &amp;amp;apos;1&amp;amp;apos; FOR YES; &amp;amp;apos;0&amp;amp;apos; FOR NO; &amp;amp;apos;2&amp;amp;apos; FOR CONFIRMED;      </body>
           </ownedComment>
           <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_420A62FD03B64586CB16001A" name="finalDiagnosisDate" visibility="public">
           <ownedComment xmi:id="_M55L5OLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64586CB16001A">
-            <body>This is the date and time the final diagnosis was given.&#xD;
-&#xD;
-</body>
+            <body>This is the date and time the final diagnosis was given.    </body>
           </ownedComment>
           <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_420A62FD03B64586CB420395" name="isMajorDxDisagreement" visibility="public">
           <ownedComment xmi:id="_M55L5-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64586CB420395">
-            <body>Contains the Code value to indicate whether there is major disagreement with the clinical Diagnoses. 0 = No  1 = Yes. &#xD;
-&#xD;
-</body>
+            <body>Contains the Code value to indicate whether there is major disagreement with the clinical Diagnoses. 0 = No  1 = Yes.     </body>
           </ownedComment>
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_420A62FD03B64586CB580357" name="pathologicalDiagnoses" visibility="public">
           <ownedComment xmi:id="_M55L6uLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64586CB580357">
-            <body>These are the pathological diagnoses in textual format.&#xD;
-&#xD;
-</body>
+            <body>These are the pathological diagnoses in textual format.    </body>
           </ownedComment>
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_420A62FD03B64586CB3902CA" name="provisionalDiagnosisDate" visibility="public">
           <ownedComment xmi:id="_M6CV0uLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64586CB3902CA">
-            <body>Contains the date provisional anatomic diagnoses reported. &#xD;
-&#xD;
-</body>
+            <body>Contains the date provisional anatomic diagnoses reported.     </body>
           </ownedComment>
           <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
         </ownedAttribute>
@@ -6044,36 +5935,28 @@ In VA's VistA system, the following fields are specificaly called out, which wou
       <packagedElement xmi:type="uml:Association" xmi:id="_420A62FD03B645871A74033F" memberEnd="_420A62FD03B645871A75010D _420A62FD03B645871A75011C">
         <eAnnotations xmi:id="_ZIGdMkzlEdyZ7YHHi9KCRg" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <ownedComment xmi:id="_NDbiZuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B645871A74033F">
-          <body>Contains the name of treating specialty at time of patient's death.
-
-</body>
+          <body>Contains the name of treating specialty at time of patient&amp;amp;apos;s death.  </body>
         </ownedComment>
         <ownedEnd xmi:id="_420A62FD03B645871A75011C" name="" visibility="public" type="_420A62FD03B6420BEC8900C6" isUnique="false" association="_420A62FD03B645871A74033F"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_420A62FD03B6458712D2012F" memberEnd="_420A62FD03B6458712D203AF _420A62FD03B6458712D203B1">
         <eAnnotations xmi:id="_ZIZ_MkzlEdyZ7YHHi9KCRg" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <ownedComment xmi:id="_NC1FhOLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6458712D2012F">
-          <body>Images associated with Autopsy Organ/Tissue reports are stored in this multiple within the Autopsy Organ/Tissue field of the Lab Data file.
-
-</body>
+          <body>Images associated with Autopsy Organ/Tissue reports are stored in this multiple within the Autopsy Organ/Tissue field of the Lab Data file.  </body>
         </ownedComment>
         <ownedEnd xmi:id="_420A62FD03B6458712D203B1" name="" visibility="public" type="_420A62FD03B6420BEC8900C6" isUnique="false" association="_420A62FD03B6458712D2012F"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_420A62FD03B64586CBC9028E" memberEnd="_420A62FD03B64586CBCA0165 _420A62FD03B64586CBCA0174">
         <eAnnotations xmi:id="_ZIjJIkzlEdyZ7YHHi9KCRg" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <ownedComment xmi:id="_NCYZhuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64586CBC9028E">
-          <body>Contains the Diagnosis of the patient health Issue for the episode of care.
-
-</body>
+          <body>Contains the Diagnosis of the patient health Issue for the episode of care.  </body>
         </ownedComment>
         <ownedEnd xmi:id="_420A62FD03B64586CBCA0174" name="" visibility="public" type="_420A62FD03B6420BEC8900C6" isUnique="false" association="_420A62FD03B64586CBC9028E"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_420A62FD03B64587F5B40044" memberEnd="_420A62FD03B64587F5B40351 _420A62FD03B64587F5B40353">
         <eAnnotations xmi:id="_ZIQOMEzlEdyZ7YHHi9KCRg" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <ownedComment xmi:id="_NDbidOLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64587F5B40044">
-          <body>The text of the report in it's entirety, as signed by the practitioner.  Can also mean the text that comprises the report section.
-
-</body>
+          <body>The text of the report in it&amp;amp;apos;s entirety, as signed by the practitioner.  Can also mean the text that comprises the report section.  </body>
         </ownedComment>
         <ownedEnd xmi:id="_420A62FD03B64587F5B40353" name="" visibility="public" type="_420A62FD03B6420BEC8900C6" isUnique="false" association="_420A62FD03B64587F5B40044"/>
       </packagedElement>
@@ -6084,9 +5967,7 @@ In VA's VistA system, the following fields are specificaly called out, which wou
       <packagedElement xmi:type="uml:Association" xmi:id="_420A62FD03B64586CC030389" memberEnd="_420A62FD03B64586CC06032B _420A62FD03B64586CC06032D">
         <eAnnotations xmi:id="_ZIZ_MEzlEdyZ7YHHi9KCRg" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <ownedComment xmi:id="_NCYZjeLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64586CC030389">
-          <body>Images associated with Autopsy Organ/Tissue reports are stored in this multiple within the Autopsy Organ/Tissue field of the Lab Data (#63) file. 
-
-</body>
+          <body>Images associated with Autopsy Organ/Tissue reports are stored in this multiple within the Autopsy Organ/Tissue field of the Lab Data (#63) file.   </body>
         </ownedComment>
         <ownedEnd xmi:id="_420A62FD03B64586CC06032D" name="" visibility="public" type="_420A62FD03B6420BEC8900C6" isUnique="false" association="_420A62FD03B64586CC030389"/>
       </packagedElement>
@@ -6126,8 +6007,7 @@ In VA's VistA system, the following fields are specificaly called out, which wou
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B64230FA430262" name="accessionId" visibility="public">
         <ownedComment xmi:id="_M42DBOLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64230FA430262">
-          <body>Identification of test(s) ordered.  Used for identity of filler in the act of accepting  a laboratory test, and entering the test into the laboratory's workload.  An identifier assigned to the accepted laboratory test(s) identifying the samples, specimens, and results.&#xD;
-&quot;This field contains accession identifier(s) associated with the specimen....&quot; - HL7 Version 2.8, SPM.30</body>
+          <body>Identification of test(s) ordered.  Used for identity of filler in the act of accepting  a laboratory test, and entering the test into the laboratory&amp;amp;apos;s workload.  An identifier assigned to the accepted laboratory test(s) identifying the samples, specimens, and results.  &amp;amp;quot;This field contains accession identifier(s) associated with the specimen....&amp;amp;quot; - HL7 Version 2.8, SPM.30</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
       </ownedAttribute>
@@ -6157,19 +6037,19 @@ In VA's VistA system, the following fields are specificaly called out, which wou
       </ownedAttribute>
       <ownedAttribute xmi:id="_8G_wkLxIEeCjnsq0FtkmeA" name="dateTimeReceived" visibility="public">
         <ownedComment xmi:id="_LKrLILxJEeCjnsq0FtkmeA" annotatedElement="_8G_wkLxIEeCjnsq0FtkmeA">
-          <body>&quot;The specimen received date/time is the time that the specimen is received at the diagnostic service.  The actual time that is recorded is based on how specimen receipt is managed and may correspond to the time the sample is logged in.&quot; - HL7 Version 2.8, SPM.18</body>
+          <body>&amp;amp;quot;The specimen received date/time is the time that the specimen is received at the diagnostic service.  The actual time that is recorded is based on how specimen receipt is managed and may correspond to the time the sample is logged in.&amp;amp;quot; - HL7 Version 2.8, SPM.18</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_Tt_bcAl2EeGe4v7RnpTDUQ" name="shipmentId" visibility="public">
         <ownedComment xmi:id="_W4nkYAl2EeGe4v7RnpTDUQ" annotatedElement="_Tt_bcAl2EeGe4v7RnpTDUQ">
-          <body>&quot;The identifier assigned by the shipment transportation provider that uniquely identifies this shipment from all other shipments by the same provider.  The addressee for the shipment should be able to use this identifier to match a physical shipment with the electronic manifest for the shipment.&quot; - HL7 Version 2.8, SPM.32</body>
+          <body>&amp;amp;quot;The identifier assigned by the shipment transportation provider that uniquely identifies this shipment from all other shipments by the same provider.  The addressee for the shipment should be able to use this identifier to match a physical shipment with the electronic manifest for the shipment.&amp;amp;quot; - HL7 Version 2.8, SPM.32</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_MPcyAAcgEeGfLeiV6Brugg" name="transportationMethod" visibility="public">
         <ownedComment xmi:id="_TjzJYAcgEeGfLeiV6Brugg" annotatedElement="_MPcyAAcgEeGfLeiV6Brugg">
-          <body>Indicates &quot;the means by which a sample reaches the diagnostic service provider.  This information is to aid the lab in scheduling or interpretation of results.  Possible answers: routine transport van, public postal service, etc.&quot; - HL7 Version 2.8, OBR-38</body>
+          <body>Indicates &amp;amp;quot;the means by which a sample reaches the diagnostic service provider.  This information is to aid the lab in scheduling or interpretation of results.  Possible answers: routine transport van, public postal service, etc.&amp;amp;quot; - HL7 Version 2.8, OBR-38</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
@@ -6217,11 +6097,11 @@ In VA's VistA system, the following fields are specificaly called out, which wou
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_rWnUoMHPEeCdLPayeDTWtA" name="DefinedPatientEvent">
       <ownedComment xmi:id="_bUK4MM5mEeCM-vbOXYpzjw" annotatedElement="_rWnUoMHPEeCdLPayeDTWtA">
-        <body>The specific patient-related event to which a specimen collection or collections (and subsequently, any tests performed on that specimen) are related or affected by time, sequence, directive, intent, etc.  Examples might include drug administration (peak and trough), beginning of fasting (lipids, FBS), glucose challenge (tolerances) or meal (postprandial), admission (pre- or post-admission studies), scheduled surgery/transfusion (compatibility testing), onset of symptoms (acute and convalescent), LMP (pregnancy test, Pap smear), lumbar puncture (CSF tubes 1, 2, and 3), treatment completion (test of cure, post-transfusion H&amp;H), use/ingestion (BAT, toxicology), start of 24-hour urine pooling (creatinine clearance), etc. </body>
+        <body>The specific patient-related event to which a specimen collection or collections (and subsequently, any tests performed on that specimen) are related or affected by time, sequence, directive, intent, etc.  Examples might include drug administration (peak and trough), beginning of fasting (lipids, FBS), glucose challenge (tolerances) or meal (postprandial), admission (pre- or post-admission studies), scheduled surgery/transfusion (compatibility testing), onset of symptoms (acute and convalescent), LMP (pregnancy test, Pap smear), lumbar puncture (CSF tubes 1, 2, and 3), treatment completion (test of cure, post-transfusion H&amp;amp;amp;H), use/ingestion (BAT, toxicology), start of 24-hour urine pooling (creatinine clearance), etc. </body>
       </ownedComment>
       <ownedAttribute xmi:id="_9g-MQMHPEeCdLPayeDTWtA" name="eventType" visibility="public">
         <ownedComment xmi:id="_pPBpgM5mEeCM-vbOXYpzjw" annotatedElement="_9g-MQMHPEeCdLPayeDTWtA">
-          <body>Categorizes the patient event that triggered the speciment collection, or the patient state at the time of the specimen collection.  Examples might include drug administration (peak and trough), beginning of fasting (lipids, FBS), glucose challenge (tolerances) or meal (postprandial), admission (pre- or post-admission studies), scheduled surgery/transfusion (compatibility testing), onset of symptoms (acute and convalescent), LMP (pregnancy test, Pap smear), lumbar puncture (CSF tubes 1, 2, and 3), treatment completion (test of cure, post-transfusion H&amp;H), use/ingestion (BAT, toxicology), start of 24-hour urine pooling (creatinine clearance), etc. </body>
+          <body>Categorizes the patient event that triggered the speciment collection, or the patient state at the time of the specimen collection.  Examples might include drug administration (peak and trough), beginning of fasting (lipids, FBS), glucose challenge (tolerances) or meal (postprandial), admission (pre- or post-admission studies), scheduled surgery/transfusion (compatibility testing), onset of symptoms (acute and convalescent), LMP (pregnancy test, Pap smear), lumbar puncture (CSF tubes 1, 2, and 3), treatment completion (test of cure, post-transfusion H&amp;amp;amp;H), use/ingestion (BAT, toxicology), start of 24-hour urine pooling (creatinine clearance), etc. </body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
@@ -6235,19 +6115,19 @@ In VA's VistA system, the following fields are specificaly called out, which wou
     <packagedElement xmi:type="uml:Class" xmi:id="_A57aMMHSEeCdLPayeDTWtA" name="SpecimenAssessment">
       <ownedAttribute xmi:id="_dJUBEMHSEeCdLPayeDTWtA" name="appropriateness" visibility="public">
         <ownedComment xmi:id="_dJUBEcHSEeCdLPayeDTWtA" annotatedElement="_dJUBEMHSEeCdLPayeDTWtA">
-          <body>&quot;The suitability of the specimen for the particular planned use as determined by the filler.&quot; - HL7 Version 2.8, SPM.23</body>
+          <body>&amp;amp;quot;The suitability of the specimen for the particular planned use as determined by the filler.&amp;amp;quot; - HL7 Version 2.8, SPM.23</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_5Vj-8MHTEeCdLPayeDTWtA" name="containerCondition" visibility="public">
         <ownedComment xmi:id="_aRIGMAlTEeGe4v7RnpTDUQ" annotatedElement="_5Vj-8MHTEeCdLPayeDTWtA">
-          <body>&quot;In chain of custody cases where specimens are moved from lab to lab, the status of the container that the specimen is shipped in must be recorded at each receipt.  If the container is compromised in any way (seal broken, container cracked or leaking, etc) then this needs to be recorded for legal reasons.&quot; - HL7 Version 2.8, SPM.28</body>
+          <body>&amp;amp;quot;In chain of custody cases where specimens are moved from lab to lab, the status of the container that the specimen is shipped in must be recorded at each receipt.  If the container is compromised in any way (seal broken, container cracked or leaking, etc) then this needs to be recorded for legal reasons.&amp;amp;quot; - HL7 Version 2.8, SPM.28</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_K0C58MHSEeCdLPayeDTWtA" name="currentQuantity" visibility="public">
         <ownedComment xmi:id="_eHOyEAl0EeGe4v7RnpTDUQ" annotatedElement="_K0C58MHSEeCdLPayeDTWtA">
-          <body>&quot;Contains the amount of specimen that currently exists or is available for use in further testing.&quot; - HL7 Version 2.8, SPM.25</body>
+          <body>&amp;amp;quot;Contains the amount of specimen that currently exists or is available for use in further testing.&amp;amp;quot; - HL7 Version 2.8, SPM.25</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B641886F630221?FHIM/Datatypes/PhysicalQuantity?"/>
       </ownedAttribute>
@@ -6259,25 +6139,25 @@ In VA's VistA system, the following fields are specificaly called out, which wou
       </ownedAttribute>
       <ownedAttribute xmi:id="_kD68oLxJEeCjnsq0FtkmeA" name="isSpecimenAvailable" visibility="public">
         <ownedComment xmi:id="_PpGgIAlqEeGe4v7RnpTDUQ" annotatedElement="_kD68oLxJEeCjnsq0FtkmeA">
-          <body>&quot;This describes whether the specimen, as it exists, is currently available to use in an analysis.&quot; - HL7 Version 2.8, SPM.20</body>
+          <body>&amp;amp;quot;This describes whether the specimen, as it exists, is currently available to use in an analysis.&amp;amp;quot; - HL7 Version 2.8, SPM.20</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_OmhhYPZQEd-e1vPpWfL-Bw" name="numberOfContainers" visibility="public">
         <ownedComment xmi:id="_1U2nEAc2EeGfLeiV6Brugg" annotatedElement="_OmhhYPZQEd-e1vPpWfL-Bw">
-          <body>&quot;Identifies the number of containers for a given sample.  For sample receipt verification purposes; may be different from the total number of samples that accompany the order.&quot; - HL7 Version 2.8, SPM.26</body>
+          <body>&amp;amp;quot;Identifies the number of containers for a given sample.  For sample receipt verification purposes; may be different from the total number of samples that accompany the order.&amp;amp;quot; - HL7 Version 2.8, SPM.26</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_dFc0wMHSEeCdLPayeDTWtA" name="rejectReason" visibility="public">
         <ownedComment xmi:id="_dFc0wcHSEeCdLPayeDTWtA" annotatedElement="_dFc0wMHSEeCdLPayeDTWtA">
-          <body>&quot;Describes one or more reasons the specimen is rejected for the specified observation/result/analysis.&quot; - HL7 Version 2.8, SPM.21</body>
+          <body>&amp;amp;quot;Describes one or more reasons the specimen is rejected for the specified observation/result/analysis.&amp;amp;quot; - HL7 Version 2.8, SPM.21</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_jNUK4MHSEeCdLPayeDTWtA" name="specimenCondition" visibility="public">
         <ownedComment xmi:id="_jNUK4cHSEeCdLPayeDTWtA" annotatedElement="_jNUK4MHSEeCdLPayeDTWtA">
-          <body>&quot;A mode or state of being that describes the nature of the specimen.&quot; - HL7 Version 2.8, SPM.24</body>
+          <body>&amp;amp;quot;A mode or state of being that describes the nature of the specimen.&amp;amp;quot; - HL7 Version 2.8, SPM.24</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zx05QQlTEeGe4v7RnpTDUQ" value="*"/>
@@ -6285,7 +6165,7 @@ In VA's VistA system, the following fields are specificaly called out, which wou
       </ownedAttribute>
       <ownedAttribute xmi:id="_P70sEMHSEeCdLPayeDTWtA" name="specimenQuality" visibility="public">
         <ownedComment xmi:id="_YdZEgMHSEeCdLPayeDTWtA" annotatedElement="_P70sEMHSEeCdLPayeDTWtA">
-          <body>&quot;The degree or grade of excellence of the specimen at receipt.  The filler populates this attribute.&quot; - HL7 Version 2.8, SPM.22</body>
+          <body>&amp;amp;quot;The degree or grade of excellence of the specimen at receipt.  The filler populates this attribute.&amp;amp;quot; - HL7 Version 2.8, SPM.22</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
@@ -6351,7 +6231,7 @@ In VA's VistA system, the following fields are specificaly called out, which wou
     <packagedElement xmi:type="uml:Class" xmi:id="_eWYXgO3MEeCFZuasLkncZQ" name="InterpretationEvent">
       <ownedAttribute xmi:id="_oiRjwO3MEeCFZuasLkncZQ" name="principalResultInterpreter" visibility="public" association="_oiPHgO3MEeCFZuasLkncZQ">
         <ownedComment xmi:id="_QnbewO3NEeCFZuasLkncZQ" annotatedElement="_oiRjwO3MEeCFZuasLkncZQ">
-          <body>&quot;Identifies the physician or other clinician who interpreted the observation and is responsible for the report content.&quot; - HL7 Version 2.8, OBR-32</body>
+          <body>&amp;amp;quot;Identifies the physician or other clinician who interpreted the observation and is responsible for the report content.&amp;amp;quot; - HL7 Version 2.8, OBR-32</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Provider.efx#_420A62FD03B6418A6B760063?FHIM/Provider/IndividualProvider?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oiSx4O3MEeCFZuasLkncZQ" value="1"/>
@@ -6359,7 +6239,7 @@ In VA's VistA system, the following fields are specificaly called out, which wou
       </ownedAttribute>
       <ownedAttribute xmi:id="_r6RaUO3MEeCFZuasLkncZQ" name="assistantResultInterpreter" visibility="public" association="_r6PlIO3MEeCFZuasLkncZQ">
         <ownedComment xmi:id="_HQUlcO3NEeCFZuasLkncZQ" annotatedElement="_r6RaUO3MEeCFZuasLkncZQ">
-          <body>&quot;Identifies the clinical observer who assisted with the interpretation of this study.&quot; - HL7 Version 2.8, OBR-33</body>
+          <body>&amp;amp;quot;Identifies the clinical observer who assisted with the interpretation of this study.&amp;amp;quot; - HL7 Version 2.8, OBR-33</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Provider.efx#_420A62FD03B6418A6B760063?FHIM/Provider/IndividualProvider?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_r6TPgO3MEeCFZuasLkncZQ" value="1"/>
@@ -6387,7 +6267,7 @@ In VA's VistA system, the following fields are specificaly called out, which wou
       </ownedAttribute>
       <ownedAttribute xmi:id="_331KQfjJEeCmc6EQPl3F9g" name="transcriptionist" visibility="public" association="_331KQPjJEeCmc6EQPl3F9g">
         <ownedComment xmi:id="_KXocIAmOEeGe4v7RnpTDUQ" annotatedElement="_331KQfjJEeCmc6EQPl3F9g">
-          <body>&quot;This field identifies the report transcriber.&quot; - HL7 Version 2.8, OBR-35</body>
+          <body>&amp;amp;quot;This field identifies the report transcriber.&amp;amp;quot; - HL7 Version 2.8, OBR-35</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Provider.efx#_420A62FD03B6418A6B760063?FHIM/Provider/IndividualProvider?"/>
       </ownedAttribute>
