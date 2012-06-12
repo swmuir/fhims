@@ -526,6 +526,19 @@
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_YWIVYY8nEeG2ar1Lc1hB1g" visible="false" type="StructureCompartment"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YWF5IY8nEeG2ar1Lc1hB1g" x="35187" y="19337"/>
         </children>
+        <children xmi:type="umlnotation:UMLShape" xmi:id="_5EeGYKwcEeG4dfTp_XT2yg" element="_5EZ08KwcEeG4dfTp_XT2yg" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="16777088" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
+          <children xmi:type="notation:DecorationNode" xmi:id="_5EetcKwcEeG4dfTp_XT2yg" type="ImageCompartment">
+            <layoutConstraint xmi:type="notation:Size" xmi:id="_5EetcawcEeG4dfTp_XT2yg" width="1320" height="1320"/>
+          </children>
+          <children xmi:type="notation:BasicDecorationNode" xmi:id="_5EetcqwcEeG4dfTp_XT2yg" type="Stereotype"/>
+          <children xmi:type="notation:BasicDecorationNode" xmi:id="_5Eetc6wcEeG4dfTp_XT2yg" type="Name"/>
+          <children xmi:type="notation:BasicDecorationNode" xmi:id="_5EfUgKwcEeG4dfTp_XT2yg" type="Parent"/>
+          <children xmi:type="notation:SemanticListCompartment" xmi:id="_5EfUgawcEeG4dfTp_XT2yg" type="AttributeCompartment"/>
+          <children xmi:type="notation:SemanticListCompartment" xmi:id="_5EfUgqwcEeG4dfTp_XT2yg" visible="false" type="OperationCompartment"/>
+          <children xmi:type="notation:SemanticListCompartment" xmi:id="_5EfUg6wcEeG4dfTp_XT2yg" visible="false" type="SignalCompartment"/>
+          <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_5Ef7kKwcEeG4dfTp_XT2yg" visible="false" type="StructureCompartment"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5EeGYawcEeG4dfTp_XT2yg" x="20605" y="20605"/>
+        </children>
         <element xsi:nil="true"/>
         <edges xmi:type="umlnotation:UMLConnector" xmi:id="_bMlEVwoXEeC_TY76TuIe4Q" element="_kLK5sN39Ed6yatlejfcw_g" source="_bLW8UgoXEeC_TY76TuIe4Q" target="_bLT5AAoXEeC_TY76TuIe4Q" fontName="Arial" fontHeight="10" lineColor="3342489" lineWidth="1" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_bMlrYAoXEeC_TY76TuIe4Q" visible="false" type="NameLabel">
@@ -1225,6 +1238,14 @@
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bq7uAY8nEeG2ar1Lc1hB1g" y="-186"/>
           </children>
           <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_bq7G8Y8nEeG2ar1Lc1hB1g" points="[-41, -26, 283, 235]$[-323, -225, 1, 36]"/>
+        </edges>
+        <edges xmi:type="umlnotation:UMLConnector" xmi:id="_BPN6QKwdEeG4dfTp_XT2yg" element="_BPLeAKwdEeG4dfTp_XT2yg" source="_5EeGYKwcEeG4dfTp_XT2yg" target="_bL7kEAoXEeC_TY76TuIe4Q" fontName="Arial" fontHeight="10" routing="Tree" lineColor="3342489" lineWidth="1" showStereotype="Text">
+          <children xmi:type="notation:DecorationNode" xmi:id="_BPOhUKwdEeG4dfTp_XT2yg" type="NameLabel">
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_BPOhUqwdEeG4dfTp_XT2yg" type="Stereotype"/>
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_BPOhU6wdEeG4dfTp_XT2yg" type="Name"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BPOhUawdEeG4dfTp_XT2yg" y="-186"/>
+          </children>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_BPN6QawdEeG4dfTp_XT2yg" points="[11, -26, -36, 181]$[57, -171, 10, 36]"/>
         </edges>
       </contents>
       <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_2bg1gVANEeCNoo8JCSlflA" type="Class" name="_Medication">
@@ -2768,6 +2789,9 @@
       <ownedComment xmi:id="_NYSYGuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B641A349EF0070">
         <body>&amp;amp;quot;Information about the actual consumption of medication by a patient. While is generally only relevant for hospital/institutional systems which track individual administrations, it could also be used in ambulatory care e.g. home-health environments which capture administrations such as insulin injections and which use messaging to communicate the information back to a central source; recording immunizations.&amp;amp;quot; (HL7 Version 3)  </body>
       </ownedComment>
+      <generalization xmi:id="_gAwjkKwXEeG4dfTp_XT2yg">
+        <general xmi:type="uml:Class" href="ImmunizationandSkinTest.efx#_IRAJsKwXEeG4dfTp_XT2yg?FHIM/ImmunizationandSkinTest/ImmunizationListEntry?"/>
+      </generalization>
       <ownedAttribute xmi:id="_420A62FD03B6425C0805022C" name="dateTime" visibility="public">
         <ownedComment xmi:id="_NYSYHeLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6425C0805022C">
           <body>The date and time that the medication was or will be administered.</body>
@@ -2834,9 +2858,12 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_yQ2jIDh4EeC17O99ZX8o-w" name="_MedicationAdministrationPromise">
+      <generalization xmi:id="_e6uMwKwQEeG4dfTp_XT2yg">
+        <general xmi:type="uml:Class" href="Orders.efx#_3r94oOO5EeCbbuWBGGTBrA?FHIM/Orders/HealthcarePromise?"/>
+      </generalization>
       <ownedAttribute xmi:id="_420A62FD03B64592CCFD006D" name="administrationStatus" visibility="public">
         <ownedComment xmi:id="_NdXFW-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64592CCFD006D">
-          <body>The latest BCMA (Bar Code Medication Administration) for this order.  VALUES: I=Infusing, S=Stop, H=Held, R=Refuse, C=Completed, G=Given.</body>
+          <body>Indicates the latest or last state of the administration of the medication for this order.  Possible values (from the VA's Bar Code Medication Administration system) include: Infusing, Stop, Held, Refused, Completed, Given.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
@@ -4497,6 +4524,20 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_orWmMKqYEeGeRqsN3l6jrA" value="1"/>
       </ownedEnd>
     </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_2QCQ4KwREeG4dfTp_XT2yg" name="MedicationAdministrationRequest">
+      <generalization xmi:id="_F3DMkKwTEeG4dfTp_XT2yg">
+        <general xmi:type="uml:Class" href="Orders.efx#_420A62FD03B64589572B02E8?FHIM/Orders/HealthcareOrder?"/>
+      </generalization>
+      <ownedAttribute xmi:id="_RsJMcCf-EeC-JKXSDMHR6A" name="administrationInstructions" visibility="public">
+        <ownedComment xmi:id="_RsJMcSf-EeC-JKXSDMHR6A" annotatedElement="_RsJMcCf-EeC-JKXSDMHR6A">
+          <body>This is any special instructions (using abbreviations whenever possible) needed for this order.  This would include the physician&amp;amp;apos;s reason for ordering a PRN.  This field utilizes the abbreviations and expansions from the MEDICATION INSTRUCTIONS file.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_5EZ08KwcEeG4dfTp_XT2yg" name="Informant">
+      <generalization xmi:id="_BPLeAKwdEeG4dfTp_XT2yg" general="_420A62FD03B6418CF92600E1"/>
+    </packagedElement>
   </uml:Package>
   <Default:Documentation xmi:id="_L8pggOLiEduGJrQyRGTO1A" base_Comment="_L8fvieLiEduGJrQyRGTO1A"/>
   <Default:Documentation xmi:id="_L8pgg-LiEduGJrQyRGTO1A" base_Comment="_L8pgguLiEduGJrQyRGTO1A"/>
@@ -4523,7 +4564,6 @@
   <RIM:Entity xmi:id="_geHKUFYPEd6WMdl70LfmUg" base_Class="_420A62FD03B64586C73900D7"/>
   <RIM:ManufacturedMaterial xmi:id="_lUzMcFYPEd6WMdl70LfmUg" base_Class="_420A62FD03B643D7C2360379"/>
   <RIM:Observation xmi:id="_tNgOEFYPEd6WMdl70LfmUg" base_Class="_420A62FD03B6424070DB0209"/>
-  <RIM:Observation xmi:id="_tNgOElYPEd6WMdl70LfmUg" base_Class="_420A62FD03B64231004F0278"/>
   <RIM:Procedure xmi:id="_AHUzwFYQEd6WMdl70LfmUg" base_Class="_rr-pACaOEdyiJKb4ZqIfnw"/>
   <RIM:Role xmi:id="_WS9IdVYQEd6WMdl70LfmUg" base_Class="_420A62FD03B6419905DB00FB"/>
   <RIM_1:Participation xmi:id="_lra0wFz2Ed6WkeJA5pW9UA"/>
@@ -4750,4 +4790,7 @@
   <Default:Documentation xmi:id="_cfqOIqEQEeGnfe88WF3uxw" base_Comment="_Ne2TEuLiEduGJrQyRGTO1A"/>
   <Default:Documentation xmi:id="_cfq1MKEQEeGnfe88WF3uxw" base_Comment="_Ne2TFeLiEduGJrQyRGTO1A"/>
   <RIM:Role xmi:id="_RwgHUKEREeGnfe88WF3uxw" base_Class="_OaEXAKEREeGnfe88WF3uxw"/>
+  <RIM:SubstanceAdministration xmi:id="_8UP2EKwREeG4dfTp_XT2yg" base_Class="_2QCQ4KwREeG4dfTp_XT2yg"/>
+  <Default:Documentation xmi:id="_NM-GsKwSEeG4dfTp_XT2yg" base_Comment="_RsJMcSf-EeC-JKXSDMHR6A"/>
+  <RIM:Participation xmi:id="__2o9wKwcEeG4dfTp_XT2yg" base_Class="_5EZ08KwcEeG4dfTp_XT2yg"/>
 </xmi:XMI>
