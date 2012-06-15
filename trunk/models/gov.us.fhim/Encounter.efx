@@ -508,6 +508,18 @@
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_GXA2cI_BEeGMX5b1YJ6DNQ" visible="false" type="StructureCompartment"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GW_BQY_BEeGMX5b1YJ6DNQ" x="-2884" y="10133"/>
         </children>
+        <children xmi:type="notation:Shape" xmi:id="_g5Pa0LXHEeG5iLlDZ6ytzA" type="Note" fontName="Segoe UI" description="Note that SurgeryEvent is also a subclass" fillColor="13369343" transparency="0" lineColor="6737151" lineWidth="1">
+          <children xmi:type="notation:BasicDecorationNode" xmi:id="_g5U6YLXHEeG5iLlDZ6ytzA" type="DiagramName">
+            <element xsi:nil="true"/>
+          </children>
+          <children xmi:type="notation:BasicDecorationNode" xmi:id="_g5VhcLXHEeG5iLlDZ6ytzA" type="Description">
+            <element xsi:nil="true"/>
+          </children>
+          <styles xmi:type="notation:TextStyle" xmi:id="_g5Pa0bXHEeG5iLlDZ6ytzA"/>
+          <styles xmi:type="notation:LineTypeStyle" xmi:id="_g5Pa0rXHEeG5iLlDZ6ytzA"/>
+          <element xsi:nil="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_g5Pa07XHEeG5iLlDZ6ytzA" x="33919" y="29481" width="2829" height="2751"/>
+        </children>
         <element xsi:nil="true"/>
         <edges xmi:type="umlnotation:UMLConnector" xmi:id="_wT7QMGikEeG3pKm-C5y0hA" element="_420A62FD03B642CEF06D0013" source="_gQ6fkGikEeG3pKm-C5y0hA" target="_wT2XsGikEeG3pKm-C5y0hA" fontName="Arial" fontHeight="10" routing="Rectilinear" lineColor="3342489" lineWidth="1" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_wT73QGikEeG3pKm-C5y0hA" visible="false" type="NameLabel">
@@ -2312,6 +2324,13 @@
           </children>
           <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Lh94YY_BEeGMX5b1YJ6DNQ" points="[-9, -33, 54, 147]$[20, -182, 83, -2]"/>
         </edges>
+        <edges xmi:type="notation:Connector" xmi:id="_mCt2ELXHEeG5iLlDZ6ytzA" type="NoteAttachment" source="_g5Pa0LXHEeG5iLlDZ6ytzA" target="_c-u38Gi2EeG3pKm-C5y0hA" lineColor="0" lineWidth="1">
+          <styles xmi:type="notation:ArrowStyle" xmi:id="_mCt2EbXHEeG5iLlDZ6ytzA"/>
+          <styles xmi:type="notation:LineTypeStyle" xmi:id="_mCt2ErXHEeG5iLlDZ6ytzA"/>
+          <element xsi:nil="true"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_mCt2E7XHEeG5iLlDZ6ytzA" points="[-37, -21, 180, 84]$[-149, -105, 68, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_mC1x4LXHEeG5iLlDZ6ytzA" id="(0.5238600212089077,0.20901490367139222)"/>
+        </edges>
       </contents>
     </eAnnotations>
     <eAnnotations xmi:id="_Mmqt4OLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
@@ -2342,13 +2361,13 @@
       <generalization xmi:id="_KkBJwGiuEeG3pKm-C5y0hA" general="_qS7A8GitEeG3pKm-C5y0hA"/>
       <ownedAttribute xmi:id="_420A62FD03B64240706F01AB" name="accountId" visibility="public">
         <ownedComment xmi:id="_MZQkAuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64240706F01AB">
-          <body>&amp;amp;quot;Contains the identifier of a Service Episode in or for which the visit occurs.&amp;amp;quot; - HL7 Version 2.8, PV1-54    This field contains the unique identification number for this episode of care. This field associates the current encounter with a parent encounter.</body>
+          <body>&quot;Contains the identifier of a Service Episode in or for which the visit occurs.&quot; - HL7 Version 2.8, PV1-54    This field contains the unique identification number for this episode of care. This field associates the current encounter with a parent encounter.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_wJvnQGflEeGK0elVFnH6lw" name="accountStatus" visibility="public">
         <ownedComment xmi:id="_GiP6UGfmEeGK0elVFnH6lw" annotatedElement="_wJvnQGflEeGK0elVFnH6lw">
-          <body>&amp;amp;quot;Contains the account status.&amp;amp;quot; - HL7 Version 2.8, PV1-41    Note that HL7 does not suggest any values for this code (in User-defined Table 117).</body>
+          <body>&quot;Contains the account status.&quot; - HL7 Version 2.8, PV1-41    Note that HL7 does not suggest any values for this code (in User-defined Table 117).</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ytsKsGflEeGK0elVFnH6lw" value="1"/>
@@ -2356,7 +2375,8 @@
       </ownedAttribute>
       <ownedAttribute xmi:id="_slRB8ExgEdyVYrcEhQ5TbQ" name="alternateVisitId" visibility="public">
         <ownedComment xmi:id="_o8HWABHkEeCBuOUrBnIXmQ" annotatedElement="_slRB8ExgEdyVYrcEhQ5TbQ">
-          <body>&amp;amp;quot;Contains the alternative, temporary, or pending optional visit ID number to be used if needed.  Multiple alternate identifiers may be sent.&amp;amp;quot; - HL7 Version 2.8, PV1-50    Uniquely identifies this patient visit using an identification scheme other than the one used for the &amp;amp;quot;id&amp;amp;quot; property. This allows for different systems or organizations to assign different identifiers to the same visit.</body>
+          <body>&quot;Contains the alternative, temporary, or pending optional visit ID number to be used if needed.  Multiple alternate identifiers may be sent.&quot; - HL7 Version 2.8, PV1-50&#xD;
+Uniquely identifies this patient visit using an identification scheme other than the one used for the &quot;id&quot; property. This allows for different systems or organizations to assign different identifiers to the same visit.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_x8JnEUxgEdyVYrcEhQ5TbQ" value="*"/>
@@ -2364,7 +2384,7 @@
       </ownedAttribute>
       <ownedAttribute xmi:id="_5GwEIMUsEd2wc4B96SSc8g" name="ambulatoryStatus" visibility="public">
         <ownedComment xmi:id="_hwVIIGfZEeGK0elVFnH6lw" annotatedElement="_5GwEIMUsEd2wc4B96SSc8g">
-          <body>&amp;amp;quot;Indicates any permanent or transient handicapped conditions.&amp;amp;quot; - HL7 Version 2.8, PV1-15    Possible values include (from HL7 Table 9): No functional limitations; Ambulates with assistive device; Wheelchair/stretcher bound; Comatose; non-responsive; Disoriented; Vision impaired; Hearing impaired; Speech impaired; Non-English speaking; Functional level unknown; Oxygen therapy; Special equipment (tubes, IVs, catheters); Amputee; Mastectomy; Paraplegic; Pregnant.</body>
+          <body>&quot;Indicates any permanent or transient handicapped conditions.&quot; - HL7 Version 2.8, PV1-15    Possible values include (from HL7 Table 9): No functional limitations; Ambulates with assistive device; Wheelchair/stretcher bound; Comatose; non-responsive; Disoriented; Vision impaired; Hearing impaired; Speech impaired; Non-English speaking; Functional level unknown; Oxygen therapy; Special equipment (tubes, IVs, catheters); Amputee; Mastectomy; Paraplegic; Pregnant.</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jGV40WfZEeGK0elVFnH6lw" value="1"/>
@@ -2372,7 +2392,7 @@
       </ownedAttribute>
       <ownedAttribute xmi:id="_M4iDcFZxEdyiQOoaXOP6Kg" name="chargePriceIndicator" visibility="public">
         <ownedComment xmi:id="__xlfwCqKEd6tfJk2wVTfYw" annotatedElement="_M4iDcFZxEdyiQOoaXOP6Kg">
-          <body>&amp;amp;quot;Contains the code used to determine which price schedule is to be used for room and bed charges.&amp;amp;quot; - HL7 Version 2.8, PV1-21    Note that HL7 does not suggest any values for this code (in User-defined Table 32).</body>
+          <body>&quot;Contains the code used to determine which price schedule is to be used for room and bed charges.&quot; - HL7 Version 2.8, PV1-21    Note that HL7 does not suggest any values for this code (in User-defined Table 32).</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9gF-0fTqEdy4NNd432ztnw" value="1"/>
@@ -2389,13 +2409,13 @@
       </ownedAttribute>
       <ownedAttribute xmi:id="_BuH5cGflEeGK0elVFnH6lw" name="dietType" visibility="public">
         <ownedComment xmi:id="_OYc3AGflEeGK0elVFnH6lw" annotatedElement="_BuH5cGflEeGK0elVFnH6lw">
-          <body>&amp;amp;quot;Indicates a special diet type for a patient.&amp;amp;quot; - HL7 Version 2.8, PV1-38    Note that HL7 does not suggest any values for this code (in User-defined Table 114).</body>
+          <body>&quot;Indicates a special diet type for a patient.&quot; - HL7 Version 2.8, PV1-38    Note that HL7 does not suggest any values for this code (in User-defined Table 114).</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="__vs0AGfbEeGK0elVFnH6lw" name="financialClass" visibility="public">
         <ownedComment xmi:id="_Eek98GfcEeGK0elVFnH6lw" annotatedElement="__vs0AGfbEeGK0elVFnH6lw">
-          <body>&amp;amp;quot;Contains the financial class(es) assigned to the patient for the purpose of identifying sources of reimbursement.&amp;amp;quot; - HL7 Version 2.8, PV1-20    Note that HL7 does not suggest any values for this code (in User-defined Table 64).</body>
+          <body>&quot;Contains the financial class(es) assigned to the patient for the purpose of identifying sources of reimbursement.&quot; - HL7 Version 2.8, PV1-20    Note that HL7 does not suggest any values for this code (in User-defined Table 64).</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DdhwoGfcEeGK0elVFnH6lw" value="1"/>
@@ -2403,7 +2423,7 @@
       </ownedAttribute>
       <ownedAttribute xmi:id="_2-YMgGfUEeGK0elVFnH6lw" name="hospitalService" visibility="public">
         <ownedComment xmi:id="_fLKZgGfVEeGK0elVFnH6lw" annotatedElement="_2-YMgGfUEeGK0elVFnH6lw">
-          <body>&amp;amp;quot;Contains the treatment or type of surgery that the patient is scheduled to receive.&amp;amp;quot; - HL7 Version 2.8, PV1-10    Possible Values (from HL7 Table 69) include: Cardiac Service, Medical Service, Pulmonary Service, Surgical Service, Urology Service.</body>
+          <body>&quot;Contains the treatment or type of surgery that the patient is scheduled to receive.&quot; - HL7 Version 2.8, PV1-10    Possible Values (from HL7 Table 69) include: Cardiac Service, Medical Service, Pulmonary Service, Surgical Service, Urology Service.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_mcJ64WfVEeGK0elVFnH6lw" value="1"/>
@@ -2411,7 +2431,7 @@
       </ownedAttribute>
       <ownedAttribute xmi:id="_i684cGfqEeGK0elVFnH6lw" name="isEmploymentRelated" visibility="public">
         <ownedComment xmi:id="_vf3xkGfqEeGK0elVFnH6lw" annotatedElement="_i684cGfqEeGK0elVFnH6lw">
-          <body>&amp;amp;quot;Specifies whether a patient&amp;amp;apos;s illness was job-related.&amp;amp;quot; - HL7 Version 2.8, PV2-15</body>
+          <body>&quot;Specifies whether a patient's illness was job-related.&quot; - HL7 Version 2.8, PV2-15</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nlc4sGfqEeGK0elVFnH6lw" value="1"/>
@@ -2420,7 +2440,7 @@
       <ownedAttribute xmi:id="_oM514Es0EdyAjqPLu9xU6g" name="patientClass" visibility="public">
         <eAnnotations xmi:id="_C_4JIEs1EdyAjqPLu9xU6g" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <ownedComment xmi:id="_uVMhYCqKEd6tfJk2wVTfYw" annotatedElement="_oM514Es0EdyAjqPLu9xU6g">
-          <body>&amp;amp;quot;This field is used by systems to categorize patients by site.  It does not have a consistent industry-wide definition.  It is subject to site specific variations.&amp;amp;quot; - HL7 Version 2.8, PV1-2    Possible values include (from HL7 Table 4): Emergency; Inpatient; Outpatient; Preadmit; Recurring patient; Obstetrics; Commercial Account; Not Applicable; Unknown</body>
+          <body>&quot;This field is used by systems to categorize patients by site.  It does not have a consistent industry-wide definition.  It is subject to site specific variations.&quot; - HL7 Version 2.8, PV1-2    Possible values include (from HL7 Table 4): Emergency; Inpatient; Outpatient; Preadmit; Recurring patient; Obstetrics; Commercial Account; Not Applicable; Unknown</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_99JuQfTqEdy4NNd432ztnw" value="1"/>
@@ -2428,7 +2448,7 @@
       </ownedAttribute>
       <ownedAttribute xmi:id="_rVt4kGfaEeGK0elVFnH6lw" name="patientType" visibility="public">
         <ownedComment xmi:id="_SJsfkGfbEeGK0elVFnH6lw" annotatedElement="_rVt4kGfaEeGK0elVFnH6lw">
-          <body>&amp;amp;quot;Contains site-specific values that identify the patient type.&amp;amp;quot; - HL7 Version 2.8, PV1-18    Note that HL7 does not suggest any values for this code (in User-defined Table 18).</body>
+          <body>&quot;Contains site-specific values that identify the patient type.&quot; - HL7 Version 2.8, PV1-18    Note that HL7 does not suggest any values for this code (in User-defined Table 18).</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Qj8CsGfbEeGK0elVFnH6lw" value="1"/>
@@ -2436,7 +2456,7 @@
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B642D2D0CC0158" name="reason" visibility="public">
         <ownedComment xmi:id="_MXUqUuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B642D2D0CC0158">
-          <body>&amp;amp;quot;A set of values specifying the non-medical reasons for this encounter. Examples are &amp;amp;quot;Medical Necessity&amp;amp;quot;, &amp;amp;quot;Patient&amp;amp;apos;s Request&amp;amp;quot; and &amp;amp;quot;Dependency&amp;amp;quot;. Note: medical reason(s) for the encounter are specified as associated diagnoses.&amp;amp;quot; (HL7) </body>
+          <body>&quot;A set of values specifying the non-medical reasons for this encounter. Examples are &quot;Medical Necessity&quot;, &quot;Patient's Request&quot; and &quot;Dependency&quot;. Note: medical reason(s) for the encounter are specified as associated diagnoses.&quot; (HL7) </body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
@@ -2448,7 +2468,7 @@
       </ownedAttribute>
       <ownedAttribute xmi:id="_XytZYFZuEdyiQOoaXOP6Kg" name="servicingFacility" visibility="public">
         <ownedComment xmi:id="_jSSNkCqKEd6tfJk2wVTfYw" annotatedElement="_XytZYFZuEdyiQOoaXOP6Kg">
-          <body>&amp;amp;quot;This field is used in a multiple facility environment, e.g., multiple campuses or buildings, to indicate the healthcare facility with which this visit is associated.&amp;amp;quot; - HL7 Version 2.8, PV1-39    Note that HL7 does not suggest any values for this code (in User-defined Table 115).</body>
+          <body>&quot;This field is used in a multiple facility environment, e.g., multiple campuses or buildings, to indicate the healthcare facility with which this visit is associated.&quot; - HL7 Version 2.8, PV1-39    Note that HL7 does not suggest any values for this code (in User-defined Table 115).</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-YHzAfTqEdy4NNd432ztnw" value="1"/>
@@ -2462,19 +2482,19 @@
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B6431C49F10060" name="specialCourtesy" visibility="public">
         <ownedComment xmi:id="_MZaVAuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6431C49F10060">
-          <body>&amp;amp;quot;Indicates whether the patient will be extended certain special courtesies.&amp;amp;quot; - HL7 Version 2.8, PV1-22    Note that HL7 does not suggest any values for this code (in User-defined Table 45).</body>
+          <body>&quot;Indicates whether the patient will be extended certain special courtesies.&quot; - HL7 Version 2.8, PV1-22    Note that HL7 does not suggest any values for this code (in User-defined Table 45).</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B6424314CF0394" name="specialReason" visibility="public">
         <ownedComment xmi:id="_MZaVBeLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6424314CF0394">
-          <body>&amp;amp;quot;A set of values specifying the non-medical reasons for this encounter. Examples are &amp;amp;quot;Medical Necessity&amp;amp;quot;, &amp;amp;quot;Patient&amp;amp;apos;s Request&amp;amp;quot; and &amp;amp;quot;Dependency&amp;amp;quot;.  Note: medical reason(s) for the encounter are specified as associated diagnoses.&amp;amp;quot; (HL7)  </body>
+          <body>&quot;A set of values specifying the non-medical reasons for this encounter. Examples are &quot;Medical Necessity&quot;, &quot;Patient's Request&quot; and &quot;Dependency&quot;.  Note: medical reason(s) for the encounter are specified as associated diagnoses.&quot; (HL7)  </body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_s-sBgGfaEeGK0elVFnH6lw" name="visitId" visibility="public">
         <ownedComment xmi:id="_7k4O0GfaEeGK0elVFnH6lw" annotatedElement="_s-sBgGfaEeGK0elVFnH6lw">
-          <body>&amp;amp;quot;Contains the unique number assigned to each patient visit.&amp;amp;quot; - HL7 Version 2.8, PV1-19</body>
+          <body>&quot;Contains the unique number assigned to each patient visit.&quot; - HL7 Version 2.8, PV1-19</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8YcZwGfaEeGK0elVFnH6lw" value="1"/>
@@ -2482,7 +2502,7 @@
       </ownedAttribute>
       <ownedAttribute xmi:id="_fcoukGfWEeGK0elVFnH6lw" name="admitter" visibility="public" association="_fckdIGfWEeGK0elVFnH6lw">
         <ownedComment xmi:id="_wEB-oGfWEeGK0elVFnH6lw" annotatedElement="_fcoukGfWEeGK0elVFnH6lw">
-          <body>&amp;amp;quot;Contains the admitting physician information&amp;amp;quot; - HL7 Version 2.8, PV1-17</body>
+          <body>&quot;Contains the admitting physician information&quot; - HL7 Version 2.8, PV1-17</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Provider.efx#_420A62FD03B6418A6B760063?FHIM/Provider/IndividualProvider?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fcqjwGfWEeGK0elVFnH6lw" value="1"/>
@@ -2490,14 +2510,14 @@
       </ownedAttribute>
       <ownedAttribute xmi:id="_9UrQEGisEeG3pKm-C5y0hA" name="appointment" visibility="public" type="_420A62FD03B64214277401EB" association="_9UnlsGisEeG3pKm-C5y0hA">
         <ownedComment xmi:id="_Hnz5gGi9EeG3pKm-C5y0hA" annotatedElement="_9UrQEGisEeG3pKm-C5y0hA">
-          <body>&amp;amp;quot;An arrangement to meet a person or be at a place at a certain time&amp;amp;quot; - Dictionary.com  The scheduled time of the Encounter.</body>
+          <body>&quot;An arrangement to meet a person or be at a place at a certain time&quot; - Dictionary.com  The scheduled time of the Encounter.</body>
         </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9UtFQGisEeG3pKm-C5y0hA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9UseMGisEeG3pKm-C5y0hA"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_JVEO8GfgEeGK0elVFnH6lw" name="assignedPatientLocation" visibility="public" association="_JU_9gGfgEeGK0elVFnH6lw">
         <ownedComment xmi:id="_n9OrEGfgEeGK0elVFnH6lw" annotatedElement="_JVEO8GfgEeGK0elVFnH6lw">
-          <body>&amp;amp;quot;This field contains the patient&amp;amp;apos;s initial assigned location or the location to which the patient is being moved.  The first component may be the nursing station for inpatient locations, or clinic or department, for locations other than inpatient.  For canceling a transaction or discharging a patient, the current location (after the cancellation event or before the discharge event) should be in this field.&amp;amp;quot; - HL7 Version 2.8, PV1-3</body>
+          <body>&quot;This field contains the patient's initial assigned location or the location to which the patient is being moved.  The first component may be the nursing station for inpatient locations, or clinic or department, for locations other than inpatient.  For canceling a transaction or discharging a patient, the current location (after the cancellation event or before the discharge event) should be in this field.&quot; - HL7 Version 2.8, PV1-3</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Provider.efx#_420A62FD03B64242CAB30303?FHIM/Provider/ServiceDeliveryLocation?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JVGEIGfgEeGK0elVFnH6lw" value="1"/>
@@ -2505,7 +2525,7 @@
       </ownedAttribute>
       <ownedAttribute xmi:id="_1yT3cGfTEeGK0elVFnH6lw" name="attender" visibility="public" association="_1yO-8GfTEeGK0elVFnH6lw">
         <ownedComment xmi:id="_DbCW8GfUEeGK0elVFnH6lw" annotatedElement="_1yT3cGfTEeGK0elVFnH6lw">
-          <body>&amp;amp;quot;Contains the attending physician information.&amp;amp;quot; - HL7 Version 2.8, PV1-7</body>
+          <body>&quot;Contains the attending physician information.&quot; - HL7 Version 2.8, PV1-7</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Provider.efx#_420A62FD03B6418A6B760063?FHIM/Provider/IndividualProvider?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1yWTsGfTEeGK0elVFnH6lw" value="1"/>
@@ -2524,7 +2544,7 @@
       </ownedAttribute>
       <ownedAttribute xmi:id="_i1XxsGfmEeGK0elVFnH6lw" name="pendingLocation" visibility="public" association="_i1V8gGfmEeGK0elVFnH6lw">
         <ownedComment xmi:id="_nxlNAGfmEeGK0elVFnH6lw" annotatedElement="_i1XxsGfmEeGK0elVFnH6lw">
-          <body>&amp;amp;quot;Indicates the point of care, room, bed, healthcare facility ID, and bed status to which the patient may be moved.  The first component may be the nursing station for inpatient locations, or the clinic, department, or home for locations other than inpatient.&amp;amp;quot; - HL7 Version 2.8, PV1-42</body>
+          <body>&quot;Indicates the point of care, room, bed, healthcare facility ID, and bed status to which the patient may be moved.  The first component may be the nursing station for inpatient locations, or the clinic, department, or home for locations other than inpatient.&quot; - HL7 Version 2.8, PV1-42</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Provider.efx#_420A62FD03B64242CAB30303?FHIM/Provider/ServiceDeliveryLocation?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_i1Y_0GfmEeGK0elVFnH6lw" value="1"/>
@@ -2537,7 +2557,7 @@
       </ownedAttribute>
       <ownedAttribute xmi:id="_8kZUoGfmEeGK0elVFnH6lw" name="priorTemporaryLocation" visibility="public" association="_8kVDMGfmEeGK0elVFnH6lw">
         <ownedComment xmi:id="_CtrAAGfnEeGK0elVFnH6lw" annotatedElement="_8kZUoGfmEeGK0elVFnH6lw">
-          <body>&amp;amp;quot;This field is used to reflect the patient&amp;amp;apos;s temporary location (such as the operating room/theatre or x-ray) prior to a transfer from a temporary location to an actual location, or from a temporary location to another temporary location. The first component may be the nursing station for inpatient locations, or the clinic, department, or home for locations other than inpatient.&amp;amp;quot; - HL7 Version 2.8, PV1-43</body>
+          <body>&quot;This field is used to reflect the patient's temporary location (such as the operating room/theatre or x-ray) prior to a transfer from a temporary location to an actual location, or from a temporary location to another temporary location. The first component may be the nursing station for inpatient locations, or the clinic, department, or home for locations other than inpatient.&quot; - HL7 Version 2.8, PV1-43</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Provider.efx#_420A62FD03B64242CAB30303?FHIM/Provider/ServiceDeliveryLocation?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8kaiwWfmEeGK0elVFnH6lw" value="1"/>
@@ -2545,7 +2565,7 @@
       </ownedAttribute>
       <ownedAttribute xmi:id="_KUp6IGfUEeGK0elVFnH6lw" name="referer" visibility="public" association="_KUoE8GfUEeGK0elVFnH6lw">
         <ownedComment xmi:id="_MSHsYGfUEeGK0elVFnH6lw" annotatedElement="_KUp6IGfUEeGK0elVFnH6lw">
-          <body>&amp;amp;quot;Contains the referring physician information.&amp;amp;quot; - HL7 Version 2.8, PV1-8</body>
+          <body>&quot;Contains the referring physician information.&quot; - HL7 Version 2.8, PV1-8</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Provider.efx#_420A62FD03B6418A6B760063?FHIM/Provider/IndividualProvider?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KUqhMWfUEeGK0elVFnH6lw" value="1"/>
@@ -2553,7 +2573,7 @@
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B64318C0C200EF" name="serviceLocation" visibility="public" isUnique="false" association="_420A62FD03B64318C0C1001B">
         <ownedComment xmi:id="_MlLgJuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64318C0C200EF">
-          <body>&amp;amp;quot;The location to which the patient is assigned. It is a role played by a place at which services may be provided. Note that a single physical place can play multiple service delivery location roles each with its own attributes. For example, a Podiatry clinic and Research clinic may meet on alternate days in the same physical location; each clinic uses its own mailing address and telephone number.&amp;amp;quot; (HL7) </body>
+          <body>&quot;The location to which the patient is assigned. It is a role played by a place at which services may be provided. Note that a single physical place can play multiple service delivery location roles each with its own attributes. For example, a Podiatry clinic and Research clinic may meet on alternate days in the same physical location; each clinic uses its own mailing address and telephone number.&quot; (HL7) </body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Provider.efx#_420A62FD03B64242CAB30303?FHIM/Provider/ServiceDeliveryLocation?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_MlLgKeLiEduGJrQyRGTO1A" value="1"/>
@@ -2561,7 +2581,7 @@
       </ownedAttribute>
       <ownedAttribute xmi:id="_5q0koGfUEeGK0elVFnH6lw" name="temporaryLocation" visibility="public" association="_5qwTMGfUEeGK0elVFnH6lw">
         <ownedComment xmi:id="_86ry4GfUEeGK0elVFnH6lw" annotatedElement="_5q0koGfUEeGK0elVFnH6lw">
-          <body>&amp;amp;quot;Contains a location other than the assigned location required for a temporary period of time (e.g., OR, operating theatre, etc.).&amp;amp;quot; - HL7 Version 2.8, PV1-11</body>
+          <body>&quot;Contains a location other than the assigned location required for a temporary period of time (e.g., OR, operating theatre, etc.).&quot; - HL7 Version 2.8, PV1-11</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Provider.efx#_420A62FD03B64242CAB30303?FHIM/Provider/ServiceDeliveryLocation?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5q2Z0GfUEeGK0elVFnH6lw" value="1"/>
@@ -2575,7 +2595,7 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B64214277401EB" name="Appointment">
       <eAnnotations xmi:id="_MYg9LOLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
       <ownedComment xmi:id="_MYg9JOLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64214277401EB">
-        <body>&amp;amp;quot;An arrangement to meet a person or be at a place at a certain time&amp;amp;quot; - Dictionary.com  The scheduled time of the Encounter.</body>
+        <body>&quot;An arrangement to meet a person or be at a place at a certain time&quot; - Dictionary.com  The scheduled time of the Encounter.</body>
       </ownedComment>
       <ownedAttribute xmi:id="_420A62FD03B64243179F00B3" name="appointmentTime" visibility="public">
         <ownedComment xmi:id="_MYg9J-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64243179F00B3">
@@ -2625,7 +2645,7 @@
       <generalization xmi:id="_Zq_eAGiwEeG3pKm-C5y0hA" general="_420A62FD03B64213F5B40316"/>
       <ownedAttribute xmi:id="_420A62FD03B6423F48B30200" name="activityTime" visibility="public">
         <ownedComment xmi:id="_MY9pE-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6423F48B30200">
-          <body>&amp;amp;quot;The time interval starting with the administrative onset of the encounter (e.g. admission, registration, patient arrival) and ending with the patient&amp;amp;apos;s departure (e.g. discharge). (HL7). </body>
+          <body>&quot;The time interval starting with the administrative onset of the encounter (e.g. admission, registration, patient arrival) and ending with the patient's departure (e.g. discharge). (HL7). </body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
       </ownedAttribute>
@@ -2646,7 +2666,7 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B6423457A501AD" name="HomeBasePrimaryCareEncounter">
       <eAnnotations xmi:id="_MZGzAeLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
       <ownedComment xmi:id="_MY9pG-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6423457A501AD">
-        <body>Patient is being treated &amp;amp;quot;In-Home&amp;amp;quot; for this encounter. </body>
+        <body>Patient is being treated &quot;In-Home&quot; for this encounter. </body>
       </ownedComment>
       <generalization xmi:id="_hgFK8GiwEeG3pKm-C5y0hA" general="_nbMJYGiuEeG3pKm-C5y0hA"/>
     </packagedElement>
@@ -2660,17 +2680,17 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B64239451402E7" name="ServiceEpisode">
       <eAnnotations xmi:id="_MZje8eLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
       <ownedComment xmi:id="_MZGzCuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64239451402E7">
-        <body>&amp;amp;quot;...a Service Episode is the context in which the treatment or management of an arbitrary subset of a Patient s medical conditions occurs. The definition of the start time, stop time, and included events of a Service Episode is entirely arbitrary; it may include a single outpatient visit or a hospitalization, or extend over significant period of time, e.g., the duration of a pregnancy, or an oncology treatment regimen, or a cardiac episode from infarction through rehabilitation. A Service Episode may involve one or more Healthcare Organizations.&amp;amp;quot; - HL7 Version 2.8, PV1-53    A collection of encounters that can be clustered based on a common clinically relevant factor such as the provider, diagnosis, health factor, or long-term problem. </body>
+        <body>&quot;...a Service Episode is the context in which the treatment or management of an arbitrary subset of a Patient s medical conditions occurs. The definition of the start time, stop time, and included events of a Service Episode is entirely arbitrary; it may include a single outpatient visit or a hospitalization, or extend over significant period of time, e.g., the duration of a pregnancy, or an oncology treatment regimen, or a cardiac episode from infarction through rehabilitation. A Service Episode may involve one or more Healthcare Organizations.&quot; - HL7 Version 2.8, PV1-53    A collection of encounters that can be clustered based on a common clinically relevant factor such as the provider, diagnosis, health factor, or long-term problem. </body>
       </ownedComment>
       <ownedAttribute xmi:id="_Brjw0GfpEeGK0elVFnH6lw" name="description" visibility="public">
         <ownedComment xmi:id="_PxYcAGfpEeGK0elVFnH6lw" annotatedElement="_Brjw0GfpEeGK0elVFnH6lw">
-          <body>&amp;amp;quot;A brief user-defined description of a Service Episode in or for which the visit occurs.  A Service Episode is the context in which the treatment or management of an arbitrary subset of a Patient s medical conditions occurs. The definition of the start time, stop time, and included events of a Service Episode is entirely arbitrary; it may include a single outpatient visit or a hospitalization, or extend over significant period of time, e.g., the duration of a pregnancy, or an oncology treatment regimen, or a cardiac episode from infarction through rehabilitation. A Service Episode may involve one or more Healthcare Organizations.&amp;amp;quot; - HL7 Version 2.8, PV1-53</body>
+          <body>&quot;A brief user-defined description of a Service Episode in or for which the visit occurs.  A Service Episode is the context in which the treatment or management of an arbitrary subset of a Patient s medical conditions occurs. The definition of the start time, stop time, and included events of a Service Episode is entirely arbitrary; it may include a single outpatient visit or a hospitalization, or extend over significant period of time, e.g., the duration of a pregnancy, or an oncology treatment regimen, or a cardiac episode from infarction through rehabilitation. A Service Episode may involve one or more Healthcare Organizations.&quot; - HL7 Version 2.8, PV1-53</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_MZuFUJQpEd-GUpkbaCODYA" name="duration" visibility="public">
         <ownedComment xmi:id="_MZuFUZQpEd-GUpkbaCODYA" annotatedElement="_MZuFUJQpEd-GUpkbaCODYA">
-          <body>&amp;amp;quot;The time interval starting with the administrative onset of the encounter (e.g. admission, registration, patient arrival) and ending with the patient&amp;amp;apos;s departure (e.g. discharge).&amp;amp;quot; - HL7 V3  This is the start and end date/times of the Service Episode.</body>
+          <body>&quot;The time interval starting with the administrative onset of the encounter (e.g. admission, registration, patient arrival) and ending with the patient's departure (e.g. discharge).&quot; - HL7 V3  This is the start and end date/times of the Service Episode.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B642387187004E?FHIM/Datatypes/TimeInterval?"/>
       </ownedAttribute>
@@ -2690,7 +2710,7 @@
       </ownedAttribute>
       <ownedAttribute xmi:id="_FSl-UGisEeG3pKm-C5y0hA" name="serviceEpisodeId" visibility="public">
         <ownedComment xmi:id="_FSl-UWisEeG3pKm-C5y0hA" annotatedElement="_FSl-UGisEeG3pKm-C5y0hA">
-          <body>&amp;amp;quot;Contains the identifier of a Service Episode in or for which the visit occurs.&amp;amp;quot; - HL7 Version 2.8, PV1-54    This field contains the unique identification number for this episode of care. This field associates the current encounter with a parent encounter.</body>
+          <body>&quot;Contains the identifier of a Service Episode in or for which the visit occurs.&quot; - HL7 Version 2.8, PV1-54    This field contains the unique identification number for this episode of care. This field associates the current encounter with a parent encounter.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
       </ownedAttribute>
@@ -2745,7 +2765,7 @@
       <generalization xmi:id="_Xmi6AGiwEeG3pKm-C5y0hA" general="_420A62FD03B64213F5B40316"/>
       <ownedAttribute xmi:id="_420A62FD03B6426D4C03036D" name="serviceCategory" visibility="public">
         <ownedComment xmi:id="_MZ2Z4uLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6426D4C03036D">
-          <body>A categorization of the outpatient visit, based on the services provided and/or the circumstances under which the visit occurred.  Possible values include: Ambulatory, In-Hospital (i.e., an patient made an &amp;amp;quot;outpatient&amp;amp;quot; visit while concurrently being an inpatient), Day Surgery, Observation, Nursing Home, Day Hospitalization, etc.</body>
+          <body>A categorization of the outpatient visit, based on the services provided and/or the circumstances under which the visit occurred.  Possible values include: Ambulatory, In-Hospital (i.e., an patient made an &quot;outpatient&quot; visit while concurrently being an inpatient), Day Surgery, Observation, Nursing Home, Day Hospitalization, etc.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
@@ -2760,7 +2780,7 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B64239A40603D9" name="PractitionerOnlyEvent">
       <eAnnotations xmi:id="_Mac21-LiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
       <ownedComment xmi:id="_MaTF1OLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64239A40603D9">
-        <body>An action taken by a practitioner on the patient&amp;amp;apos;s behalf in which the patient is not present.  For example, a radiologist reading an x-ray.</body>
+        <body>An action taken by a practitioner on the patient's behalf in which the patient is not present.  For example, a radiologist reading an x-ray.</body>
       </ownedComment>
       <generalization xmi:id="_dgNG8GiuEeG3pKm-C5y0hA" general="_qS7A8GitEeG3pKm-C5y0hA"/>
     </packagedElement>
@@ -2890,7 +2910,7 @@
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B642CEEC0201B1" name="transferFromLocation" visibility="public" isUnique="false" association="_420A62FD03B642CEEBF702F6">
         <ownedComment xmi:id="_MjihbeLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B642CEEC0201B1">
-          <body>&amp;amp;quot;Contains the prior patient location if the patient is being transferred.  The old location is null if the patient is new.&amp;amp;quot; - HL7 Version 2.8, PV1-6</body>
+          <body>&quot;Contains the prior patient location if the patient is being transferred.  The old location is null if the patient is new.&quot; - HL7 Version 2.8, PV1-6</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Provider.efx#_420A62FD03B64242CAB30303?FHIM/Provider/ServiceDeliveryLocation?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_MjihcOLiEduGJrQyRGTO1A" value="1"/>
@@ -2898,7 +2918,7 @@
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B642CEEC190268" name="transferToLocation" visibility="public" isUnique="false" association="_420A62FD03B642CEEC100189">
         <ownedComment xmi:id="_MjsSYOLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B642CEEC190268">
-          <body>&amp;amp;quot;Contains the prior patient location if the patient is being transferred.  The old location is null if the patient is new.&amp;amp;quot; - HL7 Version 2.8, PV1-6</body>
+          <body>&quot;Contains the prior patient location if the patient is being transferred.  The old location is null if the patient is new.&quot; - HL7 Version 2.8, PV1-6</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Provider.efx#_420A62FD03B64242CAB30303?FHIM/Provider/ServiceDeliveryLocation?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_MjsSY-LiEduGJrQyRGTO1A" value="1"/>
@@ -2906,7 +2926,7 @@
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B642545C4F0241" name="transferReason" visibility="public">
         <ownedComment xmi:id="_MeBvReLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B642545C4F0241">
-          <body>&amp;amp;quot;Contains the short description of the reason for a patient location change.&amp;amp;quot; - HL7 Version 2.8, PV2-4</body>
+          <body>&quot;Contains the short description of the reason for a patient location change.&quot; - HL7 Version 2.8, PV2-4</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
@@ -2914,7 +2934,7 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B6426E871203C6" name="ExaminationEvent">
       <eAnnotations xmi:id="_McO_hOLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
       <ownedComment xmi:id="_Mb8El-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6426E871203C6">
-        <body>&amp;amp;quot;An investigation or inspection for the purpose of diagnosis&amp;amp;quot; (The American Heritage Stedman&amp;amp;apos;s Medical Dictionary) </body>
+        <body>&quot;An investigation or inspection for the purpose of diagnosis&quot; (The American Heritage Stedman's Medical Dictionary) </body>
       </ownedComment>
       <generalization xmi:id="_420A62FD03B6426E874601E1" general="_420A62FD03B642142C63002F"/>
       <ownedAttribute xmi:id="_420A62FD03B642D43ABE021E" name="date" visibility="public">
@@ -2965,7 +2985,7 @@
       </ownedComment>
       <ownedAttribute xmi:id="_9Uhg8NivEdyb35bKix456w" name="date" visibility="public">
         <ownedComment xmi:id="_zdw9sCqKEd6tfJk2wVTfYw" annotatedElement="_9Uhg8NivEdyb35bKix456w">
-          <body>&amp;amp;quot;This field contains the discharge date/time.  It is to be used if the event date/time is different than the discharge date and time, that is, a retroactive update.  This field is also used to reflect the date/time of an outpatient/emergency patient discharge.&amp;amp;quot; - HL7 Version 2.8, PV1-45</body>
+          <body>&quot;This field contains the discharge date/time.  It is to be used if the event date/time is different than the discharge date and time, that is, a retroactive update.  This field is also used to reflect the date/time of an outpatient/emergency patient discharge.&quot; - HL7 Version 2.8, PV1-45</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Leg6cdiwEdyb35bKix456w" value="1"/>
@@ -2973,7 +2993,7 @@
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B642397A330322" name="disposition" visibility="public">
         <ownedComment xmi:id="_McihiuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B642397A330322">
-          <body>&amp;amp;quot;Contains the disposition of the patient at time of discharge (i.e., discharged to home, expired, etc.).  ...use the Official Uniform Billing (UB) 04 2008 numeric codes found on form locator 17.&amp;amp;quot; - HL7 Version 2.8, PV1-36    Note that while the encounter is still &amp;amp;quot;active&amp;amp;quot; (i.e., the encounter does not have an end date yet) this attribute should be interpreted as the expected discharge disposition. When the encounter is &amp;amp;quot;completed&amp;amp;quot; this attribute contains the actual discharge disposition.</body>
+          <body>&quot;Contains the disposition of the patient at time of discharge (i.e., discharged to home, expired, etc.).  ...use the Official Uniform Billing (UB) 04 2008 numeric codes found on form locator 17.&quot; - HL7 Version 2.8, PV1-36    Note that while the encounter is still &quot;active&quot; (i.e., the encounter does not have an end date yet) this attribute should be interpreted as the expected discharge disposition. When the encounter is &quot;completed&quot; this attribute contains the actual discharge disposition.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
@@ -2982,7 +3002,7 @@
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B642CD396600D9" name="dischargeFromLocation" visibility="public" isUnique="false" association="_420A62FD03B642CD395F025F">
         <ownedComment xmi:id="_MjYwYOLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B642CD396600D9">
-          <body>&amp;amp;quot;The location to which the patient is assigned. It is a role played by a place at which services may be provided. Note that a single physical place can play multiple service delivery location roles each with its own attributes. For example, a Podiatry clinic and Research clinic may meet on alternate days in the same physical location; each clinic uses its own mailing address and telephone number.&amp;amp;quot; (HL7) </body>
+          <body>&quot;The location to which the patient is assigned. It is a role played by a place at which services may be provided. Note that a single physical place can play multiple service delivery location roles each with its own attributes. For example, a Podiatry clinic and Research clinic may meet on alternate days in the same physical location; each clinic uses its own mailing address and telephone number.&quot; (HL7) </body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Provider.efx#_420A62FD03B64242CAB30303?FHIM/Provider/ServiceDeliveryLocation?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_MjYwY-LiEduGJrQyRGTO1A" value="1"/>
@@ -2990,7 +3010,7 @@
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B642CD39B90255" name="dischargeToLocation" visibility="public" isUnique="false" association="_420A62FD03B642CD39B80339">
         <ownedComment xmi:id="_MjYwZ-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B642CD39B90255">
-          <body>&amp;amp;quot;Indicates the healthcare facility to which the patient was discharged and the date.&amp;amp;quot; - HL7 Version 2.8, PV1-37</body>
+          <body>&quot;Indicates the healthcare facility to which the patient was discharged and the date.&quot; - HL7 Version 2.8, PV1-37</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Provider.efx#_420A62FD03B64242CAB30303?FHIM/Provider/ServiceDeliveryLocation?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_MjYwauLiEduGJrQyRGTO1A" value="1"/>
@@ -3194,7 +3214,7 @@
       </ownedAttribute>
       <ownedAttribute xmi:id="_SZ3dIJQZEd-GUpkbaCODYA" name="duration" visibility="public">
         <ownedComment xmi:id="_SZ3dIZQZEd-GUpkbaCODYA" annotatedElement="_SZ3dIJQZEd-GUpkbaCODYA">
-          <body>&amp;amp;quot;The time interval starting with the administrative onset of the encounter (e.g. admission, registration, patient arrival) and ending with the patient&amp;amp;apos;s departure (e.g. discharge). Note_1: for active encounters the end of the effectiveTime range is the anticipated end date-time. Note_2: all messages, except the &amp;amp;quot;nullify&amp;amp;quot; message, require at least a starting time.&amp;amp;quot;  (HL7).   This is the start and end date/times of the Encounter.</body>
+          <body>&quot;The time interval starting with the administrative onset of the encounter (e.g. admission, registration, patient arrival) and ending with the patient's departure (e.g. discharge). Note_1: for active encounters the end of the effectiveTime range is the anticipated end date-time. Note_2: all messages, except the &quot;nullify&quot; message, require at least a starting time.&quot;  (HL7).   This is the start and end date/times of the Encounter.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B642387187004E?FHIM/Datatypes/TimeInterval?"/>
       </ownedAttribute>
@@ -3206,7 +3226,7 @@
       </ownedAttribute>
       <ownedAttribute xmi:id="_i1KgAJQbEd-GUpkbaCODYA" name="priority" visibility="public">
         <ownedComment xmi:id="_i1KgAZQbEd-GUpkbaCODYA" annotatedElement="_i1KgAJQbEd-GUpkbaCODYA">
-          <body>&amp;amp;quot;Contains the priority of the visit.&amp;amp;quot; - HL7 Version 2.8, PV2-25    Possible values include (from HL7 Table 217): Emergency; Urgent; Elective</body>
+          <body>&quot;Contains the priority of the visit.&quot; - HL7 Version 2.8, PV2-25    Possible values include (from HL7 Table 217): Emergency; Urgent; Elective</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
@@ -3245,7 +3265,7 @@
       <generalization xmi:id="_atrqEGiwEeG3pKm-C5y0hA" general="_420A62FD03B64213F5B40316"/>
       <ownedAttribute xmi:id="_kvGW8ExgEdyVYrcEhQ5TbQ" name="admissionDate" visibility="public">
         <ownedComment xmi:id="_TAidYCqKEd6tfJk2wVTfYw" annotatedElement="_kvGW8ExgEdyVYrcEhQ5TbQ">
-          <body>&amp;amp;quot;This field contains the admit date/time.  It is to be used if the event date/time is different than the admit date and time, i.e., a retroactive update.  This field is also used to reflect the date/time of an outpatient/emergency patient registration.&amp;amp;quot; - HL7 Version 2.8, PV1-44</body>
+          <body>&quot;This field contains the admit date/time.  It is to be used if the event date/time is different than the admit date and time, i.e., a retroactive update.  This field is also used to reflect the date/time of an outpatient/emergency patient registration.&quot; - HL7 Version 2.8, PV1-44</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rZH-8UxgEdyVYrcEhQ5TbQ" value="1"/>
@@ -3253,13 +3273,13 @@
       </ownedAttribute>
       <ownedAttribute xmi:id="_yJHhMGfpEeGK0elVFnH6lw" name="admissionReason" visibility="public">
         <ownedComment xmi:id="_7iiHoGfpEeGK0elVFnH6lw" annotatedElement="_yJHhMGfpEeGK0elVFnH6lw">
-          <body>&amp;amp;quot;Contains the short description of the reason for patient admission.&amp;amp;quot; - HL7 Version 2.8, PV2-3</body>
+          <body>&quot;Contains the short description of the reason for patient admission.&quot; - HL7 Version 2.8, PV2-3</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_xQr-AGfhEeGK0elVFnH6lw" name="admissionType" visibility="public">
         <ownedComment xmi:id="_3mGA4GfhEeGK0elVFnH6lw" annotatedElement="_xQr-AGfhEeGK0elVFnH6lw">
-          <body>&amp;amp;quot;indicates the circumstances under which the patient was or will be admitted. ...use the official Universal Billing (UB) 04 2008 numeric codes found on form locator 14.&amp;amp;quot; - HL7 Version 2.8, PV1-4</body>
+          <body>&quot;indicates the circumstances under which the patient was or will be admitted. ...use the official Universal Billing (UB) 04 2008 numeric codes found on form locator 14.&quot; - HL7 Version 2.8, PV1-4</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1qnysGfhEeGK0elVFnH6lw" value="1"/>
@@ -3267,7 +3287,7 @@
       </ownedAttribute>
       <ownedAttribute xmi:id="_NwXhIGfWEeGK0elVFnH6lw" name="needsPreAdmitTest" visibility="public">
         <ownedComment xmi:id="_Tfb8wGfWEeGK0elVFnH6lw" annotatedElement="_NwXhIGfWEeGK0elVFnH6lw">
-          <body>&amp;amp;quot;Indicates whether the patient must have pre admission testing done in order to be admitted.&amp;amp;quot; - HL7 Version 2.8, PV1-12</body>
+          <body>&quot;Indicates whether the patient must have pre admission testing done in order to be admitted.&quot; - HL7 Version 2.8, PV1-12</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_U4hPkGfWEeGK0elVFnH6lw" value="1"/>
@@ -3275,7 +3295,7 @@
       </ownedAttribute>
       <ownedAttribute xmi:id="_fIb9AGfSEeGK0elVFnH6lw" name="preAdmitAccount" visibility="public">
         <ownedComment xmi:id="_oCfG4GfSEeGK0elVFnH6lw" annotatedElement="_fIb9AGfSEeGK0elVFnH6lw">
-          <body>&amp;amp;quot;Uniquely identifies the patient&amp;amp;apos;s pre admit account.  Some systems will continue to use the pre admit number as the billing number after the patient has been admitted.&amp;amp;quot; - HL7 Version 2.8, PV1-5</body>
+          <body>&quot;Uniquely identifies the patient's pre admit account.  Some systems will continue to use the pre admit number as the billing number after the patient has been admitted.&quot; - HL7 Version 2.8, PV1-5</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
