@@ -103,7 +103,7 @@
     <packagedElement xmi:type="uml:Package" xmi:id="_BOqVgJ94EeGVHtLvLEEdog" name="NewbornHearingScreening">
       <eAnnotations xmi:id="_BOsKsJ94EeGVHtLvLEEdog" source="uml2.diagrams" references="_BOsKsZ94EeGVHtLvLEEdog">
         <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_BOsKsZ94EeGVHtLvLEEdog" type="Class" name="_NewbornHearingScreening">
-          <children xmi:type="notation:Shape" xmi:id="_I_P88Z94EeGVHtLvLEEdog" type="Note" fontName="Arial" fontHeight="10" description="FHIM Newborn Hearing Screening Domain&#xD;&#xA;   Version 0.1&#xD;&#xA;   5/15/2012" fillColor="16777088" transparency="0" lineColor="0" lineWidth="1">
+          <children xmi:type="notation:Shape" xmi:id="_I_P88Z94EeGVHtLvLEEdog" type="Note" fontName="Arial" fontHeight="10" description="FHIM Newborn Hearing Screening Domain&#xD;&#xA;   Version 0.2&#xD;&#xA;   6/22/2012" fillColor="16777088" transparency="0" lineColor="0" lineWidth="1">
             <children xmi:type="notation:BasicDecorationNode" xmi:id="_I_P88p94EeGVHtLvLEEdog" type="DiagramName">
               <element xsi:nil="true"/>
             </children>
@@ -399,22 +399,46 @@
         </contents>
       </eAnnotations>
       <packagedElement xmi:type="uml:Class" xmi:id="_2dI3MJ94EeGVHtLvLEEdog" name="NewbornHearingScreen">
-        <ownedAttribute xmi:id="_ZQHgIKA4EeGlSr96AT8gww" name="screenProcedure" visibility="public">
+        <ownedAttribute xmi:id="_BJVikKW4EeGMwKRzZx7F0w" name="diagnosis" visibility="public">
           <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
         </ownedAttribute>
-        <ownedAttribute xmi:id="_pl_F4KA5EeGlSr96AT8gww" name="screenProcedureDate" visibility="public">
-          <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
+        <ownedAttribute xmi:id="_bjGSUKW9EeGMwKRzZx7F0w" name="leftEarResult" visibility="public">
+          <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_bjFrQKW9EeGMwKRzZx7F0w" name="leftEarResultDescription" visibility="public">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_-CCacKW3EeGMwKRzZx7F0w" name="method" visibility="public">
+          <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_ol-aIKW6EeGMwKRzZx7F0w" name="procedureDescription" visibility="public">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="__3gVQKA7EeGlSr96AT8gww" name="reasonNotPerformed" visibility="public">
           <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
         </ownedAttribute>
-        <ownedAttribute xmi:id="_qB9MwKW2EeGMwKRzZx7F0w" name="reasonNotReferred" visibility="private">
+        <ownedAttribute xmi:id="_qB9MwKW2EeGMwKRzZx7F0w" name="reasonNotReferred" visibility="public">
           <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_11aacKW7EeGMwKRzZx7F0w" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_11ZzYKW7EeGMwKRzZx7F0w"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_I_uBkJ95EeGVHtLvLEEdog" name="reportDate" visibility="public">
           <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_cx_9IKW3EeGMwKRzZx7F0w" name="rightEarResult" visibility="public">
+          <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_vEn_8KW3EeGMwKRzZx7F0w" name="rightEarResultDescription" visibility="public">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_pl_F4KA5EeGlSr96AT8gww" name="screenProcedureDate" visibility="public">
+          <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_ZQHgIKA4EeGlSr96AT8gww" name="screenProcedureLeftEar" visibility="public">
+          <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_vvUXYLvfEeGQGoDxtoz2mA" name="screenProcedureRightEar" visibility="public">
+          <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_ApBm8J96EeGVHtLvLEEdog" name="birthCertificate" visibility="public" association="_Ao65QJ96EeGVHtLvLEEdog">
           <type xmi:type="uml:Class" href="PersonDemographics.efx#_BvzTEH2fEeGy1_tR17zNdw?FHIM/PersonDemographics/BirthCertificate/BirthCertificate?"/>
@@ -437,27 +461,6 @@
         <ownedAttribute xmi:id="_0RhYEKW2EeGMwKRzZx7F0w" name="referral" visibility="public" type="_4RzMEKW1EeGMwKRzZx7F0w" association="_0RT8sKW2EeGMwKRzZx7F0w">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0RimMaW2EeGMwKRzZx7F0w" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0RimMKW2EeGMwKRzZx7F0w"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:id="_ol-aIKW6EeGMwKRzZx7F0w" name="procedureDescription" visibility="public">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:id="_vEn_8KW3EeGMwKRzZx7F0w" name="RightEarResultDescription" visibility="public">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:id="_BJVikKW4EeGMwKRzZx7F0w" name="diagnosis" visibility="public">
-          <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:id="_-CCacKW3EeGMwKRzZx7F0w" name="method" visibility="public">
-          <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:id="_cx_9IKW3EeGMwKRzZx7F0w" name="RightEarResult" visibility="public">
-          <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:id="_bjFrQKW9EeGMwKRzZx7F0w" name="leftEarResultDescription" visibility="public">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:id="_bjGSUKW9EeGMwKRzZx7F0w" name="leftEarResult" visibility="public">
-          <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_9c--MJ94EeGVHtLvLEEdog" memberEnd="_9dFE0J94EeGVHtLvLEEdog _9dO10J94EeGVHtLvLEEdog">

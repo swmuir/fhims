@@ -3429,6 +3429,9 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eu5pM-LjEdutr_MT9HkPyQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eu5pMuLjEdutr_MT9HkPyQ"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_n7qnMAP7EeGeisexxvNAWA" name="areRefillsAuthorizedAsNeeded" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B6427039C90006" name="dispensingInstructions" visibility="public">
         <ownedComment xmi:id="_NIMtpOLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6427039C90006">
           <body>&quot;Identifies the ordering provider's instructions to the pharmacy or the non-pharmacy treatment provider (e.g., respiratory therapy)....&quot; - HL7 Version 2.8, RXO-6  The instructions to the pharmacy for the preparation of the requested medication.</body>
@@ -3491,9 +3494,6 @@
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_n7qnMAP7EeGeisexxvNAWA" name="areRefillsAuthorizedAsNeeded" visibility="public">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
-      </ownedAttribute>
       <ownedAttribute xmi:id="_L9m8UCf-EeC-JKXSDMHR6A" name="patientInstructions" visibility="public">
         <eAnnotations xmi:id="_L9m8USf-EeC-JKXSDMHR6A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <ownedComment xmi:id="_L9m8Uif-EeC-JKXSDMHR6A" annotatedElement="_L9m8UCf-EeC-JKXSDMHR6A">
@@ -3503,6 +3503,16 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_L9m8Uyf-EeC-JKXSDMHR6A" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_L9m8VCf-EeC-JKXSDMHR6A" value="1"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_Yz7RYL2aEeG_PZtvUC92nw" name="pharmacyOrderCategory" visibility="public">
+        <ownedComment xmi:id="_5RK_0L2aEeG_PZtvUC92nw" annotatedElement="_Yz7RYL2aEeG_PZtvUC92nw">
+          <body>&quot;Defines the general category of pharmacy order which may be used to determine the processing path the order will take....  This field may also be used for grouping of related orders for processing and/or reports.  For example, Medication Administration Records often group large volume solutions, medications and small volume solutions differently based upon site-specific workflow.&quot; - HL7 Version 2.8, RXA-26&#xD;
+&#xD;
+Valid values (from HL7 Table 0480) include: Medication; IV Large Volume Solutions; Other solution as medication orders.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_d1E3EL2aEeG_PZtvUC92nw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_d1BzwL2aEeG_PZtvUC92nw"/>
+      </ownedAttribute>
       <ownedAttribute xmi:id="_gwmVUGYTEeC_U5wVHbS9Yw" name="quanityOrdered" visibility="public">
         <ownedComment xmi:id="_gwmVUWYTEeC_U5wVHbS9Yw" annotatedElement="_gwmVUGYTEeC_U5wVHbS9Yw">
           <body>&quot;This field is the ordered amount.  In a variable dose order, this is the minimum ordered amount.  In a non-varying dose order, this is the exact amount of the order.&quot; - HL7 Version 2.8, RXO-2  &quot;In a variable dose order, this is the maximum ordered amount.  In a non-varying dose order, this field is not used.&quot; - HL7 Version 2.8, RXO-3    This property carries both the low (aka minimum), and high (aka maximum) amounts.  For example, given the order &quot;Acetaminophen 300 mg / codeine 30 mg (Tylenol 3).  Take 2-3 tablets every 4-6 hours as needed for pain for 7 days&quot;, this property would contain 2 (low) and 3 (high).</body>
@@ -3511,7 +3521,8 @@
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B64592BCD10203" name="route" visibility="public">
         <ownedComment xmi:id="_Nc6ZaOLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64592BCD10203">
-          <body>&quot;The method of introducing the therapeutic material into or onto the subject.&quot; (HL7 3.0)  </body>
+          <body>&quot;This field is the route of administration.&quot; - HL7 Version 2.8, RXR-1&#xD;
+&quot;The method of introducing the therapeutic material into or onto the subject.&quot; - HL7 Version 3</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
@@ -3539,6 +3550,14 @@
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_420A62FD03B64592B03A00C6" name="deliverToLocation" visibility="public" isUnique="false" association="_420A62FD03B64592B0390162">
+        <ownedComment xmi:id="_NhYCp-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64592B03A00C6">
+          <body>The location where the prescription order originated.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Provider.efx#_420A62FD03B64242CAB30303?FHIM/Provider/ServiceDeliveryLocation?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NhYCquLiEduGJrQyRGTO1A" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NhYCqeLiEduGJrQyRGTO1A" value="1"/>
+      </ownedAttribute>
       <ownedAttribute xmi:id="_NgioUCf2EeC-JKXSDMHR6A" name="drugCoverageStatus" visibility="public" type="_L_H44Cf2EeC-JKXSDMHR6A" association="_NggMECf2EeC-JKXSDMHR6A">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NgkdgSf2EeC-JKXSDMHR6A" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NgkdgCf2EeC-JKXSDMHR6A"/>
@@ -3551,14 +3570,6 @@
         <type xmi:type="uml:Class" href="Common.efx#_420A62FD03B6426545CB0072?FHIM/Common/OrderablePharmacyItem?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_otOpY4nEEd-_v4Q8joL6LQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_otOpYonEEd-_v4Q8joL6LQ" value="1"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_420A62FD03B64592B03A00C6" name="deliverToLocation" visibility="public" isUnique="false" association="_420A62FD03B64592B0390162">
-        <ownedComment xmi:id="_NhYCp-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64592B03A00C6">
-          <body>The location where the prescription order originated.</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Provider.efx#_420A62FD03B64242CAB30303?FHIM/Provider/ServiceDeliveryLocation?"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NhYCquLiEduGJrQyRGTO1A" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NhYCqeLiEduGJrQyRGTO1A" value="1"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_1DEQgASNEeCTBOHqmJ3gaQ" name="prescriberAgent" visibility="public" association="_1C7GkASNEeCTBOHqmJ3gaQ">
         <type xmi:type="uml:Class" href="Common.efx#_bYKKMP2KEd-vp-CAyKeWfQ?FHIM/Common/Agent?"/>
@@ -4227,4 +4238,5 @@
   <Default:Documentation xmi:id="_JKPr8C19EeGWR8bvqgjcQA" base_Comment="_JJ_NQC19EeGWR8bvqgjcQA"/>
   <Default:Documentation xmi:id="_J7aqMC19EeGWR8bvqgjcQA" base_Comment="_J7T8gC19EeGWR8bvqgjcQA"/>
   <Default:Documentation xmi:id="_KhDG0C19EeGWR8bvqgjcQA" base_Comment="_Kg9nQC19EeGWR8bvqgjcQA"/>
+  <Default:Documentation xmi:id="_5RRGcL2aEeG_PZtvUC92nw" base_Comment="_5RK_0L2aEeG_PZtvUC92nw"/>
 </xmi:XMI>
