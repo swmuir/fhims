@@ -2982,7 +2982,7 @@
       <generalization xmi:id="_1ZPIEIsdEeGv9r5ZNThaOw">
         <general xmi:type="uml:Class" href="ImmunizationandSkinTest.efx#_pnMdYIsdEeGv9r5ZNThaOw?FHIM/ImmunizationandSkinTest/PatientRisk?"/>
       </generalization>
-      <ownedAttribute xmi:id="_CLergIseEeGv9r5ZNThaOw" name="risk" visibility="public">
+      <ownedAttribute xmi:id="_CLergIseEeGv9r5ZNThaOw" name="indicationCode" visibility="public">
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_cNFzQIseEeGv9r5ZNThaOw" name="vaccineGroup" visibility="public">
@@ -3171,6 +3171,20 @@ Location (room, bed and ward) of the patient at the time of the medication admin
         <type xmi:type="uml:Class" href="Provider.efx#_420A62FD03B64242CAB30303?FHIM/Provider/ServiceDeliveryLocation?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Bo8iwLyNEeGK2djLWlLFew" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Bo77sLyNEeGK2djLWlLFew"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_wmzBwL_sEeG9Y6ZcZJMJaA" name="medicationAdministrationPromise" visibility="public" type="_yQ2jIDh4EeC17O99ZX8o-w" association="_wmpQwL_sEeG9Y6ZcZJMJaA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wm0P4L_sEeG9Y6ZcZJMJaA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wmzo0L_sEeG9Y6ZcZJMJaA" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_iMDkkL_uEeG9Y6ZcZJMJaA" name="contraIndication" visibility="public" association="_iL5zkL_uEeG9Y6ZcZJMJaA">
+        <type xmi:type="uml:Class" href="ImmunizationandSkinTest.efx#_tfPg8KwiEeG4dfTp_XT2yg?FHIM/ImmunizationandSkinTest/ContraIndication?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_iMELob_uEeG9Y6ZcZJMJaA" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_iMELoL_uEeG9Y6ZcZJMJaA"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_Fj-UYL_vEeG9Y6ZcZJMJaA" name="exemption" visibility="public" association="_Fjz8UL_vEeG9Y6ZcZJMJaA">
+        <type xmi:type="uml:Class" href="ImmunizationandSkinTest.efx#_3V9HYKwiEeG4dfTp_XT2yg?FHIM/ImmunizationandSkinTest/Exemption?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Fj-7cb_vEeG9Y6ZcZJMJaA" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Fj-7cL_vEeG9Y6ZcZJMJaA"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_yQ2jIDh4EeC17O99ZX8o-w" name="MedicationAdministrationPromise">
@@ -4925,6 +4939,22 @@ Location (room, bed and ward) of the patient at the time of the medication admin
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_fk5KsL2hEeG_PZtvUC92nw" memberEnd="_fk81EL2hEeG_PZtvUC92nw _flBtkL2hEeG_PZtvUC92nw">
       <ownedEnd xmi:id="_flBtkL2hEeG_PZtvUC92nw" name="" visibility="private" type="_2QCQ4KwREeG4dfTp_XT2yg" association="_fk5KsL2hEeG_PZtvUC92nw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_wmpQwL_sEeG9Y6ZcZJMJaA" memberEnd="_wmzBwL_sEeG9Y6ZcZJMJaA _wm9Z0L_sEeG9Y6ZcZJMJaA">
+      <ownedEnd xmi:id="_wm9Z0L_sEeG9Y6ZcZJMJaA" name="" visibility="private" type="_420A62FD03B641A349EF0070" association="_wmpQwL_sEeG9Y6ZcZJMJaA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_iL5zkL_uEeG9Y6ZcZJMJaA" memberEnd="_iMDkkL_uEeG9Y6ZcZJMJaA _iMNVkL_uEeG9Y6ZcZJMJaA">
+      <ownedEnd xmi:id="_iMNVkL_uEeG9Y6ZcZJMJaA" name="" visibility="private" type="_420A62FD03B641A349EF0070" association="_iL5zkL_uEeG9Y6ZcZJMJaA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_Fjz8UL_vEeG9Y6ZcZJMJaA" memberEnd="_Fj-UYL_vEeG9Y6ZcZJMJaA _FkIFYL_vEeG9Y6ZcZJMJaA">
+      <ownedEnd xmi:id="_FkIFYL_vEeG9Y6ZcZJMJaA" name="" visibility="private" type="_420A62FD03B641A349EF0070" association="_Fjz8UL_vEeG9Y6ZcZJMJaA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_7WaXYL_yEeG9Y6ZcZJMJaA">
+      <ownedEnd xmi:id="_7WtSUL_yEeG9Y6ZcZJMJaA" name="" visibility="private" association="_7WaXYL_yEeG9Y6ZcZJMJaA">
+        <type xmi:type="uml:Class" href="ImmunizationandSkinTest.efx#_HhemkH87EeG8JPxVazzwbQ?FHIM/ImmunizationandSkinTest/VaccinationEvent?"/>
+      </ownedEnd>
+      <memberEnd href="ImmunizationandSkinTest.efx#_7WjhUL_yEeG9Y6ZcZJMJaA?FHIM/ImmunizationandSkinTest/VaccinationEvent/evidenceOfImmunity?"/>
+      <memberEnd href="#_7WtSUL_yEeG9Y6ZcZJMJaA?FHIM/Common/%3CAssociation%3E/%3CProperty%3E?"/>
     </packagedElement>
   </uml:Package>
   <Default:Documentation xmi:id="_L8pggOLiEduGJrQyRGTO1A" base_Comment="_L8fvieLiEduGJrQyRGTO1A"/>
