@@ -375,7 +375,6 @@
       <ownedLiteral xmi:id="_Xx6BUqRMEeGZ6ueex_Me0w" name="EMER"/>
       <ownedLiteral xmi:id="_Xx6oYKRMEeGZ6ueex_Me0w" name="IMP"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_Xx5aQKRMEeGZ6ueex_Me0w" name="ActCode"/>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_XyDLQKRMEeGZ6ueex_Me0w" name="Personal Relationship Role Type Value Set">
       <ownedLiteral xmi:id="_XyJR4KRMEeGZ6ueex_Me0w" name="ADOPT"/>
       <ownedLiteral xmi:id="_XyJR4qRMEeGZ6ueex_Me0w" name="AUNT"/>
@@ -534,8 +533,6 @@
       <ownedLiteral xmi:id="_X8mOYqRMEeGZ6ueex_Me0w" name="new"/>
       <ownedLiteral xmi:id="_X8mOZKRMEeGZ6ueex_Me0w" name="suspended"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_X8vYUKRMEeGZ6ueex_Me0w" name="Vaccines administered (CVX)"/>
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_X837MKRMEeGZ6ueex_Me0w" name="Vaccines administered (CVX)"/>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_X9AeEKRMEeGZ6ueex_Me0w" name="Vital Sign Result Value Set">
       <ownedLiteral xmi:id="_X9Hy0KRMEeGZ6ueex_Me0w" name="8310-5"/>
       <ownedLiteral xmi:id="_X9IZ4aRMEeGZ6ueex_Me0w" name="8462-4"/>
@@ -548,6 +545,14 @@
       <ownedLiteral xmi:id="_X9JoBKRMEeGZ6ueex_Me0w" name="9279-1"/>
       <ownedLiteral xmi:id="_X9KPEaRMEeGZ6ueex_Me0w" name="3141-9"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_eIuzQMBVEeGOjJTiA9qJ1w" name="ImmunizationAndSkinTest">
+      <ownedComment xmi:id="_W28yQMBWEeGOjJTiA9qJ1w">
+        <body>This package contains the vocabulary bindings required by the Immunization Reporting sub-domain. It is based primarily on CDC requirements and reuses HITSP C80, NIP, and HL7 Immunization Domain Analysis Guidance.</body>
+      </ownedComment>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_X837MKRMEeGZ6ueex_Me0w" name="Vaccine"/>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_X8vYUKRMEeGZ6ueex_Me0w" name="Vaccines administered (CVX)"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_Xx5aQKRMEeGZ6ueex_Me0w" name="ActCode"/>
     <profileApplication xmi:id="_2B97WxSVEeGGzu7fmW9pXw">
       <eAnnotations xmi:id="_2B97XBSVEeGGzu7fmW9pXw" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="http://www.openhealthtools.org/mdht/schemas/term/1#/"/>
@@ -904,7 +909,6 @@
   <term:ValueSetVersion xmi:id="_Xne6AaRMEeGZ6ueex_Me0w" identifier="2.16.840.1.114222.4.11.3204" version="2" fullName="Non-Laboratory Intervention and Procedure" definition="This value set includes medical and surgical procedures performed on human body. This is based upon the concepts descending from the SNOMED CT Procedures (71388002) hierarchy. This value set does not include administrative billing procedure or laboratory procedure." revisionDate="07/07/2009" codeSystem="_WwluQaRMEeGZ6ueex_Me0w" base_Enumeration="_Xne6AKRMEeGZ6ueex_Me0w"/>
   <term:ValueSetVersion xmi:id="_Xus8UaRMEeGZ6ueex_Me0w" identifier="2.16.840.1.114222.4.11.1004" version="4" fullName="Ordered Test" definition="Lab test orderables that could be used in OBR segment. This value set also includes panels from LOINC. Keywords: Lab Test Orderables, Lab Test Order" revisionDate="08/11/2010" codeSystem="_W2h-MKRMEeGZ6ueex_Me0w" base_Enumeration="_Xus8UKRMEeGZ6ueex_Me0w"/>
   <term:ValueSetVersion xmi:id="_Xxz6saRMEeGZ6ueex_Me0w" identifier="2.16.840.1.113883.3.88.12.80.66" version="1" fullName="Patient Class Value Set" definition="This is used to categorize patients by site where encounter occurred" revisionDate="07/23/2009" codeSystem="_Xx5aQaRMEeGZ6ueex_Me0w" base_Enumeration="_Xxz6sKRMEeGZ6ueex_Me0w"/>
-  <term:CodeSystemVersion xmi:id="_Xx5aQaRMEeGZ6ueex_Me0w" identifier="2.16.840.1.113883.5.4" version="20090501" source="ACTCODE" base_Enumeration="_Xx5aQKRMEeGZ6ueex_Me0w"/>
   <term:ValueSetCode xmi:id="_Xx6BUaRMEeGZ6ueex_Me0w" conceptName="Ambulatory" usageNote="ActCode" base_EnumerationLiteral="_Xx6BUKRMEeGZ6ueex_Me0w"/>
   <term:ValueSetCode xmi:id="_Xx6BU6RMEeGZ6ueex_Me0w" conceptName="Emergency" usageNote="ActCode" base_EnumerationLiteral="_Xx6BUqRMEeGZ6ueex_Me0w"/>
   <term:ValueSetCode xmi:id="_Xx6oYaRMEeGZ6ueex_Me0w" conceptName="inpatient encounter" usageNote="ActCode" base_EnumerationLiteral="_Xx6oYKRMEeGZ6ueex_Me0w"/>
@@ -1058,8 +1062,6 @@
   <term:ValueSetCode xmi:id="_X8mOYaRMEeGZ6ueex_Me0w" conceptName="Held" usageNote="ActStatus" base_EnumerationLiteral="_X8mOYKRMEeGZ6ueex_Me0w"/>
   <term:ValueSetCode xmi:id="_X8mOY6RMEeGZ6ueex_Me0w" conceptName="New" usageNote="ActStatus" base_EnumerationLiteral="_X8mOYqRMEeGZ6ueex_Me0w"/>
   <term:ValueSetCode xmi:id="_X8m1cKRMEeGZ6ueex_Me0w" conceptName="Suspended" usageNote="ActStatus" base_EnumerationLiteral="_X8mOZKRMEeGZ6ueex_Me0w"/>
-  <term:ValueSetVersion xmi:id="_X8v_YKRMEeGZ6ueex_Me0w" identifier="2.16.840.1.114222.4.11.934" version="4" fullName="Vaccines administered (CVX)" definition="Vaccine Name Keyword: Clinical Vaccines, Vaccine Names" revisionDate="10/22/2008" codeSystem="_X837MaRMEeGZ6ueex_Me0w" base_Enumeration="_X8vYUKRMEeGZ6ueex_Me0w"/>
-  <term:CodeSystemVersion xmi:id="_X837MaRMEeGZ6ueex_Me0w" identifier="2.16.840.1.113883.12.292" version="20110915" source="CVX" base_Enumeration="_X837MKRMEeGZ6ueex_Me0w"/>
   <term:ValueSetVersion xmi:id="_X9BFIKRMEeGZ6ueex_Me0w" identifier="2.16.840.1.113883.3.88.12.80.62" version="1" fullName="Vital Sign Result Value Set" definition="This identifies the vital sign result type" revisionDate="07/23/2009" codeSystem="_W2h-MKRMEeGZ6ueex_Me0w" base_Enumeration="_X9AeEKRMEeGZ6ueex_Me0w"/>
   <term:ValueSetCode xmi:id="_X9IZ4KRMEeGZ6ueex_Me0w" conceptName="Body temperature:Temp:Pt:^Patient:Qn:" usageNote="LOINC" base_EnumerationLiteral="_X9Hy0KRMEeGZ6ueex_Me0w"/>
   <term:ValueSetCode xmi:id="_X9IZ4qRMEeGZ6ueex_Me0w" conceptName="Intravascular diastolic:Pres:Pt:Arterial system:Qn:" usageNote="LOINC" base_EnumerationLiteral="_X9IZ4aRMEeGZ6ueex_Me0w"/>
@@ -1071,4 +1073,7 @@
   <term:ValueSetCode xmi:id="_X9JoA6RMEeGZ6ueex_Me0w" conceptName="Oxygen saturation:SFr:Pt:BldC:Qn:Oximetry" usageNote="LOINC" base_EnumerationLiteral="_X9JoAqRMEeGZ6ueex_Me0w"/>
   <term:ValueSetCode xmi:id="_X9KPEKRMEeGZ6ueex_Me0w" conceptName="Breaths:NRat:Pt:Respiratory system:Qn:" usageNote="LOINC" base_EnumerationLiteral="_X9JoBKRMEeGZ6ueex_Me0w"/>
   <term:ValueSetCode xmi:id="_X9KPEqRMEeGZ6ueex_Me0w" conceptName="Body weight:Mass:Pt:^Patient:Qn:Measured" usageNote="LOINC" base_EnumerationLiteral="_X9KPEaRMEeGZ6ueex_Me0w"/>
+  <term:CodeSystemVersion xmi:id="_Xx5aQaRMEeGZ6ueex_Me0w" identifier="2.16.840.1.113883.5.4" version="20090501" source="ACTCODE" base_Enumeration="_Xx5aQKRMEeGZ6ueex_Me0w"/>
+  <term:CodeSystemVersion xmi:id="_X837MaRMEeGZ6ueex_Me0w" identifier="2.16.840.1.113883.12.292" version="20110915" source="CVX" base_Enumeration="_X837MKRMEeGZ6ueex_Me0w"/>
+  <term:ValueSetVersion xmi:id="_X8v_YKRMEeGZ6ueex_Me0w" identifier="2.16.840.1.114222.4.11.934" version="4" fullName="Vaccines administered (CVX)" definition="Vaccine Name Keyword: Clinical Vaccines, Vaccine Names" revisionDate="10/22/2008" codeSystem="_X837MaRMEeGZ6ueex_Me0w" base_Enumeration="_X8vYUKRMEeGZ6ueex_Me0w"/>
 </xmi:XMI>
