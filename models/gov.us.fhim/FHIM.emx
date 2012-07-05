@@ -26,7 +26,7 @@
       <references xmi:type="uml:Package" href="HealthFactors.efx#_420A62FD03B64294DBB901CD?FHIM/HealthFactors?"/>
       <references xmi:type="uml:Package" href="HomeBasedPrimaryCare.efx#_420A62FD03B643613746019D?FHIM/HomeBasedPrimaryCare?"/>
       <references xmi:type="uml:Package" href="Imaging.efx#_420A62FD03B6420A5A37025A?FHIM/Imaging?"/>
-      <references xmi:type="uml:Package" href="ImmunizationandSkinTest.efx#_420A62FD03B64294DF9F0087?FHIM/ImmunizationandSkinTest?"/>
+      <references xmi:type="uml:Package" href="ImmunizationandSkinTest.efx#_420A62FD03B64294DF9F0087?FHIM/ImmunizationAndSkinTest?"/>
       <references xmi:type="uml:Package" href="Lab.efx#_420A62FD03B6420A57B401F1?FHIM/Lab?"/>
       <references xmi:type="uml:Package" href="MentalHealth.efx#_420A62FD03B642A6E9450017?FHIM/MentalHealth?"/>
       <references xmi:type="uml:Package" href="OncologyRegistry.efx#_420A62FD03B64447DEE00169?FHIM/OncologyRegistry?"/>
@@ -212,7 +212,7 @@
           <children xmi:type="notation:BasicDecorationNode" xmi:id="_TBCwoOLiEduGJrQyRGTO1A" type="Name"/>
           <children xmi:type="notation:BasicDecorationNode" xmi:id="_TBCwoeLiEduGJrQyRGTO1A" type="Parent"/>
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_TBCwouLiEduGJrQyRGTO1A" type="PackageContents" collapsed="true" canonical="false"/>
-          <element xmi:type="uml:Package" href="ImmunizationandSkinTest.efx#_420A62FD03B64294DF9F0087?FHIM/ImmunizationandSkinTest?"/>
+          <element xmi:type="uml:Package" href="ImmunizationandSkinTest.efx#_420A62FD03B64294DF9F0087?FHIM/ImmunizationAndSkinTest?"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TBCwnOLiEduGJrQyRGTO1A" x="634" y="8876" width="3500" height="1500"/>
         </children>
         <children xmi:type="umlnotation:UMLShape" xmi:id="_TBCwpOLiEduGJrQyRGTO1A" fontName="Arial" fontHeight="8" showListStereotype="None" showListVisibility="None" fillColor="8421631" lineColor="3342489" showStereotype="Text">
@@ -538,7 +538,7 @@
           <element xmi:type="uml:Package" href="PatientJournaling.efx#_hGDWcFdOEeGnbKrig2As3Q?FHIM/PatientJournaling?"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hKACUVdOEeGnbKrig2As3Q" x="634" y="10778" width="3542" height="1213"/>
         </children>
-        <children xmi:type="notation:Shape" xmi:id="_8F3pMFjKEeG6Pp3Py7p1bw" type="Note" fontName="Arial" fontHeight="10" description="FHA Federal Health Information Model (FHIM)&#xD;&#xA;Version 1.13&#xD;&#xA;6/15/2012" fillColor="16777088" transparency="0" lineColor="0" lineWidth="1">
+        <children xmi:type="notation:Shape" xmi:id="_8F3pMFjKEeG6Pp3Py7p1bw" type="Note" fontName="Arial" fontHeight="10" description="FHA Federal Health Information Model (FHIM)&#xD;&#xA;Version 1.14&#xD;&#xA;6/30/2012" fillColor="16777088" transparency="0" lineColor="0" lineWidth="1">
           <children xmi:type="notation:BasicDecorationNode" xmi:id="_8F3pMVjKEeG6Pp3Py7p1bw" type="DiagramName">
             <element xsi:nil="true"/>
           </children>
@@ -593,7 +593,7 @@
     <packagedElement xmi:type="uml:Package" href="HealthFactors.efx#_420A62FD03B64294DBB901CD?FHIM/HealthFactors?"/>
     <packagedElement xmi:type="uml:Package" href="HomeBasedPrimaryCare.efx#_420A62FD03B643613746019D?FHIM/HomeBasedPrimaryCare?"/>
     <packagedElement xmi:type="uml:Package" href="Imaging.efx#_420A62FD03B6420A5A37025A?FHIM/Imaging?"/>
-    <packagedElement xmi:type="uml:Package" href="ImmunizationandSkinTest.efx#_420A62FD03B64294DF9F0087?FHIM/ImmunizationandSkinTest?"/>
+    <packagedElement xmi:type="uml:Package" href="ImmunizationandSkinTest.efx#_420A62FD03B64294DF9F0087?FHIM/ImmunizationAndSkinTest?"/>
     <packagedElement xmi:type="uml:Package" href="Lab.efx#_420A62FD03B6420A57B401F1?FHIM/Lab?"/>
     <packagedElement xmi:type="uml:Package" href="MentalHealth.efx#_420A62FD03B642A6E9450017?FHIM/MentalHealth?"/>
     <packagedElement xmi:type="uml:Package" href="OncologyRegistry.efx#_420A62FD03B64447DEE00169?FHIM/OncologyRegistry?"/>
@@ -643,6 +643,29 @@
     <packagedElement xmi:type="uml:Package" href="CarePlan.efx#_DVq1IAY0EeGz0dkadElrkQ?FHIM/CarePlan?"/>
     <packagedElement xmi:type="uml:Package" href="PatientJournaling.efx#_hGDWcFdOEeGnbKrig2As3Q?FHIM/PatientJournaling?"/>
     <packagedElement xmi:type="uml:Package" href="PublicHealthReporting.efx#_vKAdQJ93EeGVHtLvLEEdog?FHIM/PublicHealthReporting?"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_0V3ZQMLFEeGVnuEDZNmvgw" name="intoleranceConditionLogEntry_author">
+      <ownedEnd xmi:id="_0V3ZQcLFEeGVnuEDZNmvgw" name="" visibility="private" association="_0V3ZQMLFEeGVnuEDZNmvgw">
+        <type xmi:type="uml:Class" href="Allergies.efx#_0VIZcMLFEeGVnuEDZNmvgw?FHIM/Allergies/IntoleranceConditionLogEntry?"/>
+      </ownedEnd>
+      <memberEnd href="Allergies.efx#_0VIZdsLFEeGVnuEDZNmvgw?FHIM/Allergies/IntoleranceConditionLogEntry/author?"/>
+      <memberEnd href="#_0V3ZQcLFEeGVnuEDZNmvgw?FHIM/intoleranceConditionLogEntry_author/%3CProperty%3E?"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_0V4AUMLFEeGVnuEDZNmvgw" name="intoleranceConditionLogEntry_dataEnterer">
+      <ownedEnd xmi:id="_0V4AUcLFEeGVnuEDZNmvgw" name="" visibility="private" association="_0V4AUMLFEeGVnuEDZNmvgw">
+        <type xmi:type="uml:Class" href="Allergies.efx#_0VIZcMLFEeGVnuEDZNmvgw?FHIM/Allergies/IntoleranceConditionLogEntry?"/>
+      </ownedEnd>
+      <memberEnd href="Allergies.efx#_0VIZesLFEeGVnuEDZNmvgw?FHIM/Allergies/IntoleranceConditionLogEntry/dataEnterer?"/>
+      <memberEnd href="#_0V4AUcLFEeGVnuEDZNmvgw?FHIM/intoleranceConditionLogEntry_dataEnterer/%3CProperty%3E?"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_0V4AUsLFEeGVnuEDZNmvgw" name="intoleranceConditionLogEntry_visit">
+      <ownedEnd xmi:id="_0V4AU8LFEeGVnuEDZNmvgw" name="" visibility="private" association="_0V4AUsLFEeGVnuEDZNmvgw">
+        <type xmi:type="uml:Class" href="Allergies.efx#_0VIZcMLFEeGVnuEDZNmvgw?FHIM/Allergies/IntoleranceConditionLogEntry?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0V4AVMLFEeGVnuEDZNmvgw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0V4AVcLFEeGVnuEDZNmvgw" value="1"/>
+      </ownedEnd>
+      <memberEnd href="Allergies.efx#_0VIZgsLFEeGVnuEDZNmvgw?FHIM/Allergies/IntoleranceConditionLogEntry/visit?"/>
+      <memberEnd href="#_0V4AU8LFEeGVnuEDZNmvgw?FHIM/intoleranceConditionLogEntry_visit/%3CProperty%3E?"/>
+    </packagedElement>
     <profileApplication xmi:id="_Lo1MoeLiEduGJrQyRGTO1A">
       <eAnnotations xmi:id="_Lo1MouLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
