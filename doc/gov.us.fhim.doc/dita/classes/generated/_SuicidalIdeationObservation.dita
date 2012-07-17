@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Suicidal Ideation Observation - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>This class is used to record &amp;apos;thoughts of harming or killing oneself&amp;apos; (IOM                   2002) and is a specialization of HealthConcern. The severity of suicidal ideation                   can be determined by assessing the frequency, intensity, and duration of these                   thoughts. The CDC is in the process of developing Suicide Surveillance: Uniform                   Definitions and Recommended Data Elements. The severity of suicidal ideation can                   be determined by assessing the frequency, intensity, and duration of these                   thoughts (IOM 2002). CDC is in the process of developing Suicide Surveillance:                   Uniform Definitions and Recommended Data Elements. This publication is expected to                   be available starting in 2009. Reference: Goldsmith SK, Pellmar TC, Kleinman AM,                   Bunney WE, eds. Reducing suicide: a national imperative.</p>
+</section>
+<ol id="conformance">
+<li>Extends <xref href="../HealthConcern.dita">Health Concern</xref></li>
+<li>Contains exactly one [1..1] <tt><b>code</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li> The business stakeholders may specify what code is associated with                     SuicidalIdeationObservation. There is an ICDcode attribute in the class                     SuicideAttemptOrCompletion. Are there two different codes for these classes? If                     so, what is the definition for this code and as the name implies is an ICD-9                     code always used to specify this information. </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>type</b></tt> with data type <xref href="../../terminology/SelfDirectedType.dita">Self Directed Type</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>description</b></tt> with data type <xref href="../String.dita">String</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>frequency</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>intensity</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>The intensity may be specified using a value set or a scale of integer values.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>previousSuicideAttempts</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>&amp;apos;A non-fatal, self-inflicted destructive act with explicit or inferred                     intent to die&amp;apos; (IOM 2002).</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>alert</b></tt>, where its type is <xref href="../SuicideRisk.dita">Suicide Risk</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>suicideAttemptOrCompletion</b></tt>, where its type is <xref href="../SuicideAttemptOrCompletion.dita">Suicide Attempt Or Completion</xref>
+</li>
+</ol>
+<ol id="aggregate">
+<li>Extends <xref href="../HealthConcern.dita">Health Concern</xref></li>
+<li>Contains exactly one [1..1] <tt><b>ageAtOnset</b></tt> with data type <xref href="../TimeQuantity.dita">Time Quantity</xref>
+<ul><li>The age of the patient or subject at onset of the condition</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>certainty</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>&amp;quot;This field contains a qualitative representation of the certainty of a problem (e.g., high, low, medium, etc.)&amp;quot; - HL7 v2</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>chronicity</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>This is a flag to indicate how critical this problem is for this patient; problems marked as Acute will be flagged on the Problem List display. A=Acute, C=Chronic</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>classification</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>This field indicates the kind of problem.  This field can be used to categorize problems so that they may be managed and viewed independently within different applications (e.g., admission, final, post-operative, pre-operative, outpatient, discharge, etc.).</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>confirmationStatus</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dateCreated</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date and time that the record of the Problem being described was originally created.  Note that this property could be derived from the HealthConcernLifeCycle entries.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dateEstabished</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>&amp;quot;This field contains the date/time when the corresponding problem was initially identified by the caregiver.&amp;quot; - HL7 v2.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dateLastModified</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date and time that the Problem being described was last modified.  Note that this property could be derived from the HealthConcernLifeCycle entries.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dateOfOnset</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date and time that Problem being described began.  Note that this date may be inprecise (e.g., &amp;quot;sometime in 2006&amp;quot;).</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dateOfOnsetText</b></tt> with data type <xref href="../String.dita">String</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>dateResolved</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date and time that Problem being described was resolved (if it is resolved).</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>healthConcern</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Identifies the Problem or Health Concern being described.  This property is code, which should come from an approved subset of SNOMED-CT, e.g., the &amp;quot;VA-KP Problem List Subset&amp;quot;</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>Uniquely identifies the Health Concern (or &amp;quot;Problem&amp;quot;) entry. This property is akin to a record number, and may not be unique outside of the organization that created it. However, the Id datatype allows for a assigning authority, which when combined with the local identifier, should make the Id unique.  The id property allows on-going observations made on the same initial problem to be tracked as the same concern.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>informationSource</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Provides an indication of how the existence of the problem came to be known.  Possible values include Patient, Clinical Evidence, etc.  Added for Ahlta.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>narrative</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>A textual description of the Health Concern (or &amp;quot;Problem&amp;quot;).</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>severity</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>This property summarizes the current state of the Health Concern (or &amp;quot;Problem&amp;quot;), as indicated by the last observation made on this concern.  Possible values include: Active, Inactive, Nullified, etc.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>code</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li> The business stakeholders may specify what code is associated with                     SuicidalIdeationObservation. There is an ICDcode attribute in the class                     SuicideAttemptOrCompletion. Are there two different codes for these classes? If                     so, what is the definition for this code and as the name implies is an ICD-9                     code always used to specify this information. </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>type</b></tt> with data type <xref href="../../terminology/SelfDirectedType.dita">Self Directed Type</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>description</b></tt> with data type <xref href="../String.dita">String</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>frequency</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>intensity</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>The intensity may be specified using a value set or a scale of integer values.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>previousSuicideAttempts</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>&amp;apos;A non-fatal, self-inflicted destructive act with explicit or inferred                     intent to die&amp;apos; (IOM 2002).</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>diagnosis</b></tt>, where its type is <xref href="../DiagnosisListEntry.dita">Diagnosis List Entry</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>healthConcernLog</b></tt>, where its type is <xref href="../HealthConcernLog.dita">Health Concern Log</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>note</b></tt>, where its type is <xref href="../CommentEvent.dita">Comment Event</xref>
+<ul><li>Note/s providing additional textual description of the problem.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>problemManagementClassification</b></tt>, where its type is <xref href="../ProblemManagementClassification.dita">Problem Management Classification</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>relatedConcern</b></tt>, where its type is <xref href="../RelatedConcern.dita">Related Concern</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>responsibleClinic</b></tt>, where its type is <xref href="../HospitalLocation.dita">Hospital Location</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>responsibleProvider</b></tt>, where its type is <xref href="../ResponsibleParty.dita">Responsible Party</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>responsibleService</b></tt>, where its type is <xref href="../ServiceDepartment.dita">Service Department</xref>
+<ul><li>A pointer to the service file identifying the service primarily involved in the treatment of this problem.  </li></ul><ul><li>A pointer to the service file identifying the service primarily involved in the treatment of this problem.  </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>alert</b></tt>, where its type is <xref href="../SuicideRisk.dita">Suicide Risk</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>suicideAttemptOrCompletion</b></tt>, where its type is <xref href="../SuicideAttemptOrCompletion.dita">Suicide Attempt Or Completion</xref>
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Suicidal Ideation Observation</ph></p>
+</body>
+</topic>

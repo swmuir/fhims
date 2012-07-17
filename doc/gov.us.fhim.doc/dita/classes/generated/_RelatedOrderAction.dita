@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Related Order Action - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>This class relates an OrderAction to another OrderAction to which it is related in some way.  The relatedOrderCategory code indicates how the OrderActions are related.</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>relatedActionCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates how the &amp;quot;target OrderAction&amp;quot; is related to the &amp;quot;source OrderAction&amp;quot;.  Examples include Parent, Child, Replaces, Replaced By, etc.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>orderAction</b></tt>, where its type is <xref href="../OrderAction.dita">Order Action</xref>
+<ul><li>Points to the OrderAction (i.e., the &amp;quot;target OrderAction&amp;quot;) to which the &amp;quot;source OrderAction&amp;quot; (i.e., the OrderAction that points to this class) is somehow related.  </li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>relatedActionCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates how the &amp;quot;target OrderAction&amp;quot; is related to the &amp;quot;source OrderAction&amp;quot;.  Examples include Parent, Child, Replaces, Replaced By, etc.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>orderAction</b></tt>, where its type is <xref href="../OrderAction.dita">Order Action</xref>
+<ul><li>Points to the OrderAction (i.e., the &amp;quot;target OrderAction&amp;quot;) to which the &amp;quot;source OrderAction&amp;quot; (i.e., the OrderAction that points to this class) is somehow related.  </li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Related Order Action</ph></p>
+</body>
+</topic>

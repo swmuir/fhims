@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>HL73 Concept Descriptor - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>&amp;quot;A reference to a concept defined in a code system&amp;quot; - HL7 V3</p>
+</section>
+<ol id="conformance">
+<li>Extends <xref href="../Code.dita">Code</xref></li>
+<li>Contains exactly one [1..1] <tt><b>code</b></tt>
+<ul><li>&amp;quot;The plain code symbol defined by the code system, or an expression in a syntax defined by the code system which describes the concept.&amp;quot; - HL7 V3</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>codeSystem</b></tt>
+<ul><li>&amp;quot;The code system that defines the code.&amp;quot; - HL7 V3</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>codeSystemName</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>&amp;quot;The common name of the coding system.&amp;quot; - HL7 V3</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>codeSystemVersion</b></tt>
+<ul><li>&amp;quot;If applicable, a version descriptor defined specifically for the given code system.&amp;quot; - HL7 V3</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>valueSet</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>&amp;quot;The value set that applied when this CD was created.&amp;quot; - HL7 V3</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>valueSetVersion</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>&amp;quot;The version of the value set that applied when this CD was created&amp;quot; - HL7 V3</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>displayName</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>&amp;quot;A name, title, or representation for the code or expression as it exists in the code system identified by the value of codeSystem.&amp;quot; - HL7 V3</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>originalText</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>&amp;quot;The text as seen and/or selected by the user who entered the data which represents the intended meaning of the user.&amp;quot; - HL7 V3</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>codingRationale</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>&amp;quot;The reason a particular CD has been provided. &amp;quot; - HL7 V3</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>translation</b></tt> with data type <xref href="../HL73ConceptDescriptor.dita">HL73 Concept Descriptor</xref>
+<ul><li>&amp;quot;A set of other CDs that each represent a translation of this CD into equivalent codes within the same code system or into corresponding concepts from other code systems.&amp;quot; - HL7 V3</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>source</b></tt> with data type <xref href="../HL73ConceptDescriptor.dita">HL73 Concept Descriptor</xref>
+<ul><li>&amp;quot;The CD from which this CD was translated, if it was translated from another CD.&amp;quot; - HL7 V3</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Extends <xref href="../CD.dita">CD</xref></li>
+<li>Extends <xref href="../Code.dita">Code</xref></li>
+<li>Contains exactly one [1..1] <tt><b>code</b></tt>
+<ul><li>&amp;quot;The plain code symbol defined by the code system, or an expression in a syntax defined by the code system which describes the concept.&amp;quot; - HL7 V3</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>text</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>This is a placeholder for the &amp;quot;display text&amp;quot; or &amp;quot;designation&amp;quot;, which is the human-readable string representing the concept. Note that this property will be replaced by some other concept or group of concepts when this abstract class is replaced by a specific class for a given target platform.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>codeSystem</b></tt>
+<ul><li>&amp;quot;The code system that defines the code.&amp;quot; - HL7 V3</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>codeSystemVersion</b></tt>
+<ul><li>&amp;quot;If applicable, a version descriptor defined specifically for the given code system.&amp;quot; - HL7 V3</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>codeSystemName</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>&amp;quot;The common name of the coding system.&amp;quot; - HL7 V3</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>valueSet</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>&amp;quot;The value set that applied when this CD was created.&amp;quot; - HL7 V3</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>valueSetVersion</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>&amp;quot;The version of the value set that applied when this CD was created&amp;quot; - HL7 V3</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>displayName</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>&amp;quot;A name, title, or representation for the code or expression as it exists in the code system identified by the value of codeSystem.&amp;quot; - HL7 V3</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>originalText</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>&amp;quot;The text as seen and/or selected by the user who entered the data which represents the intended meaning of the user.&amp;quot; - HL7 V3</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>codingRationale</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>&amp;quot;The reason a particular CD has been provided. &amp;quot; - HL7 V3</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>translation</b></tt> with data type <xref href="../HL73ConceptDescriptor.dita">HL73 Concept Descriptor</xref>
+<ul><li>&amp;quot;A set of other CDs that each represent a translation of this CD into equivalent codes within the same code system or into corresponding concepts from other code systems.&amp;quot; - HL7 V3</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>source</b></tt> with data type <xref href="../HL73ConceptDescriptor.dita">HL73 Concept Descriptor</xref>
+<ul><li>&amp;quot;The CD from which this CD was translated, if it was translated from another CD.&amp;quot; - HL7 V3</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">HL73 Concept Descriptor</ph></p>
+</body>
+</topic>

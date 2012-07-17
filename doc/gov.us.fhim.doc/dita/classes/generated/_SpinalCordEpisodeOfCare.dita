@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Spinal Cord Episode Of Care - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>This Class contains  the process by which the Veterans Affairs documents  information to enroll the veteran in the spinal cord domain for the episode of care.</p>
+<p>This Class contains the process by which the Veterans Affairs documents information to enroll the veteran in the spinal cord domain for the episode of care.</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>Unique identifier that associates the registration with associated Episode of care.</li><li>Unique identifier that associates the registration with associated Episode of care.    </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>eocStartDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>Contains the Date the Episode of Care (EOC) began for the veteran.  </li><li>Contains the Date the Episode of Care (EOC) began for the veteran.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>eocClosedDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>Contains the Date the Episode of Care (EOC) closed for the veteran.  </li><li>Contains the Date the Episode of Care (EOC) closed for the veteran</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>eocFollowUpDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>Contains the Episode of Care (EOC) followup date for the veteran.  </li><li>Contains the Episode of Care (EOC) followup date for the veteran.    </li></ul></li>
+<li>Contains at least one [1..*] <tt><b>aeVamcLocation</b></tt>, where its type is <xref href="../ServiceDeliveryLocation.dita">Service Delivery Location</xref>
+<ul><li> Association to the class that identifies the VAMC location where Annual Evaluation (AE) took place.  </li><li>Association to the class that identifies the VAMC location where Annual Evaluation (AE) took place.    </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>bcr</b></tt>, where its type is <xref href="../BCREvent.dita">BCR Event</xref>
+<ul><li> Association to the class that identifies information about BCR treatment and support for the spinal cord injury of the veteran.</li><li>Association to the class that contains information about BCR treatment and support for the spinal cord injury of the veteran.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>primaryPerformer</b></tt>, where its type is <xref href="../PrimaryPerformer.dita">Primary Performer</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>spinalCordEvent</b></tt>, where its type is <xref href="../SpinalCordEvent.dita">Spinal Cord Event</xref>
+<ul><li>Summary information about the Spinal Injury of the patient.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>spinalCordImpairment</b></tt>, where its type is <xref href="../SpinalCordImpairment.dita">Spinal Cord Impairment</xref>
+<ul><li> Association to the class that identifies the information regarding the spinal cord injury impairment for the patient.</li><li>Association to the class that identifies the information regarding the spinal cord injury impairment for the patient.  </li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>Unique identifier that associates the registration with associated Episode of care.</li><li>Unique identifier that associates the registration with associated Episode of care.    </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>eocStartDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>Contains the Date the Episode of Care (EOC) began for the veteran.  </li><li>Contains the Date the Episode of Care (EOC) began for the veteran.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>eocClosedDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>Contains the Date the Episode of Care (EOC) closed for the veteran.  </li><li>Contains the Date the Episode of Care (EOC) closed for the veteran</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>eocFollowUpDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>Contains the Episode of Care (EOC) followup date for the veteran.  </li><li>Contains the Episode of Care (EOC) followup date for the veteran.    </li></ul></li>
+<li>Contains at least one [1..*] <tt><b>aeVamcLocation</b></tt>, where its type is <xref href="../ServiceDeliveryLocation.dita">Service Delivery Location</xref>
+<ul><li> Association to the class that identifies the VAMC location where Annual Evaluation (AE) took place.  </li><li>Association to the class that identifies the VAMC location where Annual Evaluation (AE) took place.    </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>bcr</b></tt>, where its type is <xref href="../BCREvent.dita">BCR Event</xref>
+<ul><li> Association to the class that identifies information about BCR treatment and support for the spinal cord injury of the veteran.</li><li>Association to the class that contains information about BCR treatment and support for the spinal cord injury of the veteran.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>primaryPerformer</b></tt>, where its type is <xref href="../PrimaryPerformer.dita">Primary Performer</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>spinalCordEvent</b></tt>, where its type is <xref href="../SpinalCordEvent.dita">Spinal Cord Event</xref>
+<ul><li>Summary information about the Spinal Injury of the patient.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>spinalCordImpairment</b></tt>, where its type is <xref href="../SpinalCordImpairment.dita">Spinal Cord Impairment</xref>
+<ul><li> Association to the class that identifies the information regarding the spinal cord injury impairment for the patient.</li><li>Association to the class that identifies the information regarding the spinal cord injury impairment for the patient.  </li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Spinal Cord Episode Of Care</ph></p>
+</body>
+</topic>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Radiation Therapy - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>The treatment of cancer with radiation, especially by selective irradiation with x-rays or other ionizing radiation and by ingestion of radioisotopes.  [Source &amp;lt;http://dictionary.reference.com/search?q=00-database-info&amp;amp;db=ahsmd&amp;gt;: The American Heritage  Stedman&amp;apos;s Medical Dictionary ]</p>
+</section>
+<ol id="conformance">
+<li>Extends <xref href="../CancerTreatment.dita">Cancer Treatment</xref></li>
+<li>Contains exactly one [1..1] <tt><b>radiation</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the type of radiation administered to the primary site or any metastatic site. Include all procedures that are part of the first course of treatment, whether delivered at the reporting institution or at other institutions. Possible values are None; Beam radiation; Radioactive implants; Radioisotopes; Beam rad w implants/radioisotopes; Radiation therapy, NOS; Refused radiation therapy; Recommended, unk if given; Unk if administered; etc. </li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Extends <xref href="../CancerTreatment.dita">Cancer Treatment</xref></li>
+<li>Contains exactly one [1..1] <tt><b>treatmentDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>Indicates the date on which this treatment was initiated.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>radiation</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the type of radiation administered to the primary site or any metastatic site. Include all procedures that are part of the first course of treatment, whether delivered at the reporting institution or at other institutions. Possible values are None; Beam radiation; Radioactive implants; Radioisotopes; Beam rad w implants/radioisotopes; Radiation therapy, NOS; Refused radiation therapy; Recommended, unk if given; Unk if administered; etc. </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>treatmentHospital</b></tt>, where its type is <xref href="../ServiceDeliveryLocation.dita">Service Delivery Location</xref>
+<ul><li>Indicates the name of the institution providing treatment.  </li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Radiation Therapy</ph></p>
+</body>
+</topic>

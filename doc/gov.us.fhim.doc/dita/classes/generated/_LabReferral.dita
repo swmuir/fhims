@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Lab Referral - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>cost</b></tt> with data type <xref href="../MonetaryAmount.dita">Monetary Amount</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>orderDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date/time that the order was created by the ordering provider.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>placerOrderId</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>Uniquely identifies the order within the ordering provider&amp;apos;s system.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>priority</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>A code (e.g., routine, emergency), specifying the urgency under which the order is requested to happen.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>remarks</b></tt> with data type <xref href="../String.dita">String</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>A code specifying the status of the order.  Valid status codes should reflect the HL7 state machine, e.g., Active, Held, Canceled, Aborted, New, Nullified, Obsolete).</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>statusModifier</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>performingOrganization</b></tt>, where its type is <xref href="../ServiceDeliveryLocation.dita">Service Delivery Location</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>fillerAccession</b></tt>, where its type is <xref href="../Accession.dita">Accession</xref>
+</li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>cost</b></tt> with data type <xref href="../MonetaryAmount.dita">Monetary Amount</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>orderDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date/time that the order was created by the ordering provider.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>placerOrderId</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>Uniquely identifies the order within the ordering provider&amp;apos;s system.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>priority</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>A code (e.g., routine, emergency), specifying the urgency under which the order is requested to happen.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>remarks</b></tt> with data type <xref href="../String.dita">String</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>A code specifying the status of the order.  Valid status codes should reflect the HL7 state machine, e.g., Active, Held, Canceled, Aborted, New, Nullified, Obsolete).</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>statusModifier</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>performingOrganization</b></tt>, where its type is <xref href="../ServiceDeliveryLocation.dita">Service Delivery Location</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>fillerAccession</b></tt>, where its type is <xref href="../Accession.dita">Accession</xref>
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Lab Referral</ph></p>
+</body>
+</topic>

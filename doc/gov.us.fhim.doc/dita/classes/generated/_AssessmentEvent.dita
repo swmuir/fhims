@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Assessment Event - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>A test or instrument, often a questionaire, used to evaluate or assess a patient&amp;apos;s mental health, within the context of a healthcare encounter.</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>assessmentInstrument</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Code indicating the assessment tool performed as part of this clinical service.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dateTimeAdmiinstered</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date and time the assessment was performed.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>A unique identifier for the assessment event.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>remarks</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Contains comments regarding the responses to the group of related assessment questions.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>totalScore</b></tt> with data type <xref href="../Real.dita">Real</xref>
+<ul><li>The total of the numeric values associated with each response in the assessment.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>assesmentSection</b></tt>, where its type is <xref href="../AssessmentInstrumentSection.dita">Assessment Instrument Section</xref>
+<ul><li>A group of responses to assessment questions.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>patient</b></tt>, where its type is <xref href="../Patient.dita">Patient</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>interviewer</b></tt>, where its type is <xref href="../PrimaryPerformer.dita">Primary Performer</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>responsibleProvider</b></tt>, where its type is <xref href="../ResponsibleParty.dita">Responsible Party</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>dateTimeCompleted</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date and time the assessment was performed.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>dataEnterer</b></tt>, where its type is <xref href="../DataEnterer.dita">Data Enterer</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>comments</b></tt>, where its type is <xref href="../CommentEvent.dita">Comment Event</xref>
+</li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>assessmentInstrument</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Code indicating the assessment tool performed as part of this clinical service.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dateTimeAdmiinstered</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date and time the assessment was performed.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>A unique identifier for the assessment event.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>remarks</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Contains comments regarding the responses to the group of related assessment questions.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>totalScore</b></tt> with data type <xref href="../Real.dita">Real</xref>
+<ul><li>The total of the numeric values associated with each response in the assessment.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dateTimeCompleted</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date and time the assessment was performed.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>assesmentSection</b></tt>, where its type is <xref href="../AssessmentInstrumentSection.dita">Assessment Instrument Section</xref>
+<ul><li>A group of responses to assessment questions.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>patient</b></tt>, where its type is <xref href="../Patient.dita">Patient</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>interviewer</b></tt>, where its type is <xref href="../PrimaryPerformer.dita">Primary Performer</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>responsibleProvider</b></tt>, where its type is <xref href="../ResponsibleParty.dita">Responsible Party</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>dataEnterer</b></tt>, where its type is <xref href="../DataEnterer.dita">Data Enterer</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>comments</b></tt>, where its type is <xref href="../CommentEvent.dita">Comment Event</xref>
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Assessment Event</ph></p>
+</body>
+</topic>

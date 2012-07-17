@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Document Group - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>This is a flat level document. The purpose of DocumentGroup class is to link a set of documents about a patient in clinically meaningful ways at the point-of-use.    &amp;quot;Specialization of Act to add the characteristics unique to document management services.&amp;quot; (HL7 3.0)</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>dateRange</b></tt> with data type <xref href="../TimeInterval.dita">Time Interval</xref>
+<ul><li>This is a date range of the date and time for which the 1st document in the group is created and the date and time for which the recent document in the group is created.        </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>groupId</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>A unique identifier for the Act.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>groupName</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>A textual description of a  collection of documents in clinically meaningful ways.  </li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>document</b></tt>, where its type is <xref href="../ClinicalDocumentEvent.dita">Clinical Document Event</xref>
+<ul><li>Documents can be aggregated into clinically meaningfully groups; each document in the group will usually reference the same patient.  A clinical document will typically belong to at most one Document Group.</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>dateRange</b></tt> with data type <xref href="../TimeInterval.dita">Time Interval</xref>
+<ul><li>This is a date range of the date and time for which the 1st document in the group is created and the date and time for which the recent document in the group is created.        </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>groupId</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>A unique identifier for the Act.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>groupName</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>A textual description of a  collection of documents in clinically meaningful ways.  </li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>document</b></tt>, where its type is <xref href="../ClinicalDocumentEvent.dita">Clinical Document Event</xref>
+<ul><li>Documents can be aggregated into clinically meaningfully groups; each document in the group will usually reference the same patient.  A clinical document will typically belong to at most one Document Group.</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Document Group</ph></p>
+</body>
+</topic>

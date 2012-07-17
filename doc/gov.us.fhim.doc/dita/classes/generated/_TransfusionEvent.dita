@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Transfusion Event - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>This class captures transfusion information associated with a specimen from the blood bank for a patient.</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>This is the unique identifier of the transfusion event.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>date</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>Indicates the reverse chronological order of blood components transfused.  </li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>transfusionReaction</b></tt>, where its type is <xref href="../TransfusionReaction.dita">Transfusion Reaction</xref>
+<ul><li>Indicates the transfusion reaction information associated with a transfusion.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>bloodComponent</b></tt>, where its type is <xref href="../BloodComponent.dita">Blood Component</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>aboGroupCode</b></tt> with data type <xref href="../String.dita">String</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>volumeTransfused</b></tt> with data type <xref href="../Double.dita">Double</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>wasReaction</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>crossmatchComment</b></tt> with data type <xref href="../String.dita">String</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>isRhPositive</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>transfusionDate</b></tt> with data type <xref href="../Date.dita">Date</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>comment</b></tt> with data type <xref href="../String.dita">String</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>nbrOfUnitsPooled</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+</li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>This is the unique identifier of the transfusion event.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>date</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>Indicates the reverse chronological order of blood components transfused.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>aboGroupCode</b></tt> with data type <xref href="../String.dita">String</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>volumeTransfused</b></tt> with data type <xref href="../Double.dita">Double</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>wasReaction</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>crossmatchComment</b></tt> with data type <xref href="../String.dita">String</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>isRhPositive</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>transfusionDate</b></tt> with data type <xref href="../Date.dita">Date</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>comment</b></tt> with data type <xref href="../String.dita">String</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>nbrOfUnitsPooled</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>transfusionReaction</b></tt>, where its type is <xref href="../TransfusionReaction.dita">Transfusion Reaction</xref>
+<ul><li>Indicates the transfusion reaction information associated with a transfusion.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>bloodComponent</b></tt>, where its type is <xref href="../BloodComponent.dita">Blood Component</xref>
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Transfusion Event</ph></p>
+</body>
+</topic>

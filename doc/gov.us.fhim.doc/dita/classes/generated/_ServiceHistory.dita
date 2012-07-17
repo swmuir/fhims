@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Service History - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>The type of services to determine if frequent inpatient detox vs. on-going                   treatment is more prevalent. This section is used to determine the effectiveness                   of the various services.</p>
+</section>
+<ol id="conformance">
+<li>Extends <xref href="../BehavioralHealthAssessmentDomain.dita">Behavioral Health Assessment Domain</xref></li>
+<li>Contains exactly one [1..1] <tt><b>serviceCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>This is a coded attribute describing the type of service that has been                     rendered to the client/patient that appears in this area of the behavioral                     health assessment,</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Extends <xref href="../BehavioralHealthAssessmentDomain.dita">Behavioral Health Assessment Domain</xref></li>
+<li>Contains zero or more [0..*] <tt><b>codedQuestion</b></tt> with data type <xref href="../CodedQuestion.dita">Coded Question</xref>
+<ul><li>This attribute corresponds to the set of questions that require a coded                     response.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>trueFalseQuestion</b></tt> with data type <xref href="../BooleanQuestion.dita">Boolean Question</xref>
+<ul><li>This attribute corresponds to the set of questions that require a true or                     false (boolean) response.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>numericQuestion</b></tt> with data type <xref href="../IntegerQuestion.dita">Integer Question</xref>
+<ul><li>This attribute corresponds to the set of questions that require a numeric                     (integer) response.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>frequencyQuestion</b></tt> with data type <xref href="../FrequencyQuestion.dita">Frequency Question</xref>
+<ul><li>This attribute corresponds to the set of questions that require a frequency                     response.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>quantityQuestion</b></tt> with data type <xref href="../QuantityQuestion.dita">Quantity Question</xref>
+<ul><li>This attribute corresponds to the set of questions that require a quantity                     response.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>serviceCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>This is a coded attribute describing the type of service that has been                     rendered to the client/patient that appears in this area of the behavioral                     health assessment,</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>outcome</b></tt>, where its type is <xref href="../Outcome.dita">Outcome</xref>
+<ul><li>This is a directed association describing the relationship between an                     assessment and the outcome measurements related to that assessment.</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Service History</ph></p>
+</body>
+</topic>

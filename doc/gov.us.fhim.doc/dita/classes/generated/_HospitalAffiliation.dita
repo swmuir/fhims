@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Hospital Affiliation - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+</section>
+<ol id="conformance">
+<li>Extends <xref href="../ProviderAffiliation.dita">Provider Affiliation</xref></li>
+<li>Contains exactly one [1..1] <tt><b>hospital</b></tt>, where its type is <xref href="../HospitalOrganization.dita">Hospital Organization</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>isFullUnrestrictedPrivilege</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>isTemporaryPrivilege</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+</li>
+</ol>
+<ol id="aggregate">
+<li>Extends <xref href="../ProviderAffiliation.dita">Provider Affiliation</xref></li>
+<li>Contains exactly one [1..1] <tt><b>description</b></tt> with data type <xref href="../String.dita">String</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>effectiveDateRange</b></tt> with data type <xref href="../TimeInterval.dita">Time Interval</xref>
+<ul><li>The date range during which the license is valid.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>isFullUnrestrictedPrivilege</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>isTemporaryPrivilege</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>position</b></tt>, where its type is <xref href="../Position.dita">Position</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>privilegeAndResponsibility</b></tt>, where its type is <xref href="../PrivilegeOrResponsibility.dita">Privilege Or Responsibility</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>hospital</b></tt>, where its type is <xref href="../HospitalOrganization.dita">Hospital Organization</xref>
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Hospital Affiliation</ph></p>
+</body>
+</topic>

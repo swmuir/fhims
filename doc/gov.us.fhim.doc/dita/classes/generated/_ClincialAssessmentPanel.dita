@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Clincial Assessment Panel - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>This class captures information about the type of assessment</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>assessmentDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>assessmentTitle</b></tt> with data type <xref href="../String.dita">String</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>assessmentType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>clinicalObservation</b></tt>, where its type is <xref href="../ClinicalObservation.dita">Clinical Observation</xref>
+<ul><li>A clinical observation being done by a practioner for a patient</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>patient</b></tt>, where its type is <xref href="../Patient.dita">Patient</xref>
+<ul><li>The patient whose problems are being  observed and documented.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>vitalsignObservation</b></tt>, where its type is <xref href="../VitalSignObservationEvent.dita">Vital Sign Observation Event</xref>
+<ul><li>An event in which an objective measurement is taken of an aspect of a patient.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>practitioner</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
+<ul><li>The practioner who is observing the care for the patient .</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>assessmentDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>assessmentTitle</b></tt> with data type <xref href="../String.dita">String</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>assessmentType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>clinicalObservation</b></tt>, where its type is <xref href="../ClinicalObservation.dita">Clinical Observation</xref>
+<ul><li>A clinical observation being done by a practioner for a patient</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>patient</b></tt>, where its type is <xref href="../Patient.dita">Patient</xref>
+<ul><li>The patient whose problems are being  observed and documented.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>vitalsignObservation</b></tt>, where its type is <xref href="../VitalSignObservationEvent.dita">Vital Sign Observation Event</xref>
+<ul><li>An event in which an objective measurement is taken of an aspect of a patient.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>practitioner</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
+<ul><li>The practioner who is observing the care for the patient .</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Clincial Assessment Panel</ph></p>
+</body>
+</topic>

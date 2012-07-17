@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Pathology Result - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>This class documents each Anatomicalpathology observation event (note that in this case, &amp;quot;AnatomicalPathology&amp;quot; includes Cytopathology, ElectronMicroscopy, and SurgicalPathology and some autopsy observations.</p>
+</section>
+<ol id="conformance">
+<li>Extends <xref href="../ReportableResult.dita">Reportable Result</xref></li>
+<li>Contains exactly one [1..1] <tt><b>comments</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Contains comments about the pathological observation in textual format.    </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dateSpecimenReceived</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>Contains the date the the specimen  was received.    </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>anatomicPathologist</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
+<ul><li>The person in the role of responsible party the Pathologist.  </li></ul><ul><li>A clinician who is board certifified in the field of Anatomic Pathology.  This person may or may not also be board certified in the field of Clinical Pathology.  This person is responsible for applying clinical judgement to arrive at an interpretation of the subject of the study.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>image</b></tt>, where its type is <xref href="../Image.dita">Image</xref>
+<ul><li> Image associated with surgical pathology reports are stored in this multiple within the surgical pathology field of the lab data file.  </li></ul><ul><li>Image associated with surgical pathology reports are stored in this multiple within the surgical pathology field of the lab data file.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>residentAnatomicPathologist</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
+<ul><li>The person in the role of resident Pathologist.  </li></ul><ul><li>A clinician who is currently undergoing a Anatomic Pathology residency program.  This person is responsible for applying clinical judgement to arrive at an interpretation of the subject of the study, subject to the delegated authority and confirmation from the anatomic pathologist.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>diagnosis</b></tt>, where its type is <xref href="../Diagnosis.dita">Diagnosis</xref>
+<ul><li>The process of determining by examination the nature and circumstances of a diseased condition.  </li></ul><ul><li>The process of determining by examination the nature and circumstances of a diseased condition.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dataEnterer</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
+<ul><li>The person in the role of data enterer.  </li></ul><ul><li>The person in the role of data enterer.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>labReportSection</b></tt>, where its type is <xref href="../LabReportSection.dita">Lab Report Section</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>clinicalPathologist</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
+<ul><li>A clinician who is board certifified in the field of Clinical Pathology.  This person may or may not also be board certified in the field of Anatomic Pathology.  This person is responsible for applying clinical judgement to arrive at an interpretation of the subject of the study, but limited to the clinical, non-anatomic pathology testing (e.g., hematology, chemistry)</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Extends <xref href="../ReportableResult.dita">Reportable Result</xref></li>
+<li>Contains exactly one [1..1] <tt><b>dateDeemedReportable</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>dateObserved</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>Contains the Date and Time the observation of the results were made.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>isAmended</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li>Identifies whether the Microbiology test performed was amended. 0 = no and 1 = yes.    </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>probability</b></tt> with data type <xref href="../Real.dita">Real</xref>
+<ul><li>&amp;quot;This field contains the probability of a result being true for results with categorical values.  It mainly applies to discrete coded results.  It is a decimal number represented as an ASCII string that must be between 0 and 1, inclusive. &amp;quot; - HL7 V2</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>reportDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>reportId</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>Contains the unique identifier for the microbiology result.    </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>reportStatus</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>testCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>An identifier code for the observation or ordered test. This can be based on local and/or universal codes.  The WKLD CODE file (#64) is used to identify the observed test. It contains the VA National Laboratory Test code. Future versions may utilize LOINC codes as an additional coding system.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>userDefinedAccessCheck</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>comments</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Contains comments about the pathological observation in textual format.    </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dateSpecimenReceived</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>Contains the date the the specimen  was received.    </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>author</b></tt>, where its type is <xref href="../Author.dita">Author</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>autopsyEvent</b></tt>, where its type is <xref href="../_AutopsyEvent.dita">_ Autopsy Event</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>commentEvent</b></tt>, where its type is <xref href="../CommentEvent.dita">Comment Event</xref>
+<ul><li>An association linking a comment pertinent to the result of the lab test promise.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>medicalDirector</b></tt>, where its type is <xref href="../ResponsibleParty.dita">Responsible Party</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>performer</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
+<ul><li>&amp;quot;This field identifies the performing technician.&amp;quot; - HL7 Version 2.8, OBR-34</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>interpretation</b></tt>, where its type is <xref href="../InterpretationEvent.dita">Interpretation Event</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>laboratoryDirector</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
+<ul><li>This is the director of the laboratory that is reporting the result to the Orderer.  This person may or may not be the director of the organization that actually performed the analysis, rather of the reporting organization.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>transcription</b></tt>, where its type is <xref href="../TranscriptionEvent.dita">Transcription Event</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>anatomicPathologist</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
+<ul><li>The person in the role of responsible party the Pathologist.  </li></ul><ul><li>A clinician who is board certifified in the field of Anatomic Pathology.  This person may or may not also be board certified in the field of Clinical Pathology.  This person is responsible for applying clinical judgement to arrive at an interpretation of the subject of the study.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>image</b></tt>, where its type is <xref href="../Image.dita">Image</xref>
+<ul><li> Image associated with surgical pathology reports are stored in this multiple within the surgical pathology field of the lab data file.  </li></ul><ul><li>Image associated with surgical pathology reports are stored in this multiple within the surgical pathology field of the lab data file.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>residentAnatomicPathologist</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
+<ul><li>The person in the role of resident Pathologist.  </li></ul><ul><li>A clinician who is currently undergoing a Anatomic Pathology residency program.  This person is responsible for applying clinical judgement to arrive at an interpretation of the subject of the study, subject to the delegated authority and confirmation from the anatomic pathologist.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>diagnosis</b></tt>, where its type is <xref href="../Diagnosis.dita">Diagnosis</xref>
+<ul><li>The process of determining by examination the nature and circumstances of a diseased condition.  </li></ul><ul><li>The process of determining by examination the nature and circumstances of a diseased condition.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dataEnterer</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
+<ul><li>The person in the role of data enterer.  </li></ul><ul><li>The person in the role of data enterer.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>labReportSection</b></tt>, where its type is <xref href="../LabReportSection.dita">Lab Report Section</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>clinicalPathologist</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
+<ul><li>A clinician who is board certifified in the field of Clinical Pathology.  This person may or may not also be board certified in the field of Anatomic Pathology.  This person is responsible for applying clinical judgement to arrive at an interpretation of the subject of the study, but limited to the clinical, non-anatomic pathology testing (e.g., hematology, chemistry)</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Pathology Result</ph></p>
+</body>
+</topic>

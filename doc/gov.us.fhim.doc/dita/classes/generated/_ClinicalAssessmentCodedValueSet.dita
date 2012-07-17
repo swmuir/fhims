@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Clinical Assessment Coded Value Set - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>Contains the value for a clinical observation that can be expressed as a code.</p>
+</section>
+<ol id="conformance">
+<li>Extends <xref href="../ClinicalObservation.dita">Clinical Observation</xref></li>
+<li>Contains exactly one [1..1] <tt><b>value</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+</ol>
+<ol id="aggregate">
+<li>Extends <xref href="../ClinicalObservation.dita">Clinical Observation</xref></li>
+<li>Contains zero or one [0..1] <tt><b>bodySite</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>clinicalObservationDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>clinicalObservationType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>isPresent</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>observationMethod</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>severity</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>value</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>device</b></tt>, where its type is <xref href="../Device.dita">Device</xref>
+<ul><li>A contrivance or an invention serving a particular purpose, especially a machine used to perform one or more relatively simple tasks.&amp;quot; (The American Heritage  Stedman&amp;apos;s Medical Dictionary)        </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>patientState</b></tt>, where its type is <xref href="../PatientStateObservation.dita">Patient State Observation</xref>
+<ul><li>The state of the patient being observed.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>practitioner</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
+<ul><li>The practioner who is observing the care for the patient .</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Clinical Assessment Coded Value Set</ph></p>
+</body>
+</topic>

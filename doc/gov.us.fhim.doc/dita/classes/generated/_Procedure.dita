@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Procedure - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>&amp;quot;An Act whose immediate and primary outcome (post-condition) is the alteration of the physical condition of the subject.&amp;quot; - HL7 V3.</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>procedureCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Contains a code indicating a procedure or a non-procedural event involving the patient. This code could come from various coding systems; typically the Common Procedure Terminology (CPT) is used, but other coding systems might be employed, especially to capture workload-related data.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>procedureModifier</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Contains an optional modifier to further describe the procedure.  Some coding systems employ combinations of procedure codes and modifiers, while others do not.  This property accomodates those systems which do permit the use of a modifier.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>timesPerformed</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>Indicates the number of times this procedure was performed for the patient at one setting.  Most procedures are only performed (and recorded) once; this property allows for the recording of multiple procedures in order to remove the necessity to record the same procedure multiple times.</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>procedureCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Contains a code indicating a procedure or a non-procedural event involving the patient. This code could come from various coding systems; typically the Common Procedure Terminology (CPT) is used, but other coding systems might be employed, especially to capture workload-related data.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>procedureModifier</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Contains an optional modifier to further describe the procedure.  Some coding systems employ combinations of procedure codes and modifiers, while others do not.  This property accomodates those systems which do permit the use of a modifier.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>timesPerformed</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>Indicates the number of times this procedure was performed for the patient at one setting.  Most procedures are only performed (and recorded) once; this property allows for the recording of multiple procedures in order to remove the necessity to record the same procedure multiple times.</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Procedure</ph></p>
+</body>
+</topic>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Issued Item - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>A role that stores the items issued in a prosthetics transaction.</p>
+</section>
+<ol id="conformance">
+<li>Contains zero or one [0..1] <tt><b>acquisitionSource</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>The source from which an item was acquired, either VA or Commercial.    </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>prostheticHCPCS</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>&amp;quot;The Prosthetics HCPCS code for the item. HCPCS is a uniform method to report professional services, procedures and supplies for healthcare providers and medical suppliers.  &amp;quot;  </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>quantity</b></tt> with data type <xref href="../IntegerRatio.dita">Integer Ratio</xref>
+<ul><li>The number of units that was issued or repaired for the transaction                                                                                                                                                               </li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>itemInformation</b></tt>, where its type is <xref href="../ProstheticsAppliance.dita">Prosthetics Appliance</xref>
+<ul><li>Informaiton pertinent to the prosthetic device for the  patient.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>vendor</b></tt>, where its type is <xref href="../Vendor.dita">Vendor</xref>
+<ul><li>The company from which an item was or is to be purchased.  The vendor may or may not be the same as the manufacturer.</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains zero or one [0..1] <tt><b>acquisitionSource</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>The source from which an item was acquired, either VA or Commercial.    </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>prostheticHCPCS</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>&amp;quot;The Prosthetics HCPCS code for the item. HCPCS is a uniform method to report professional services, procedures and supplies for healthcare providers and medical suppliers.  &amp;quot;  </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>quantity</b></tt> with data type <xref href="../IntegerRatio.dita">Integer Ratio</xref>
+<ul><li>The number of units that was issued or repaired for the transaction                                                                                                                                                               </li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>itemInformation</b></tt>, where its type is <xref href="../ProstheticsAppliance.dita">Prosthetics Appliance</xref>
+<ul><li>Informaiton pertinent to the prosthetic device for the  patient.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>vendor</b></tt>, where its type is <xref href="../Vendor.dita">Vendor</xref>
+<ul><li>The company from which an item was or is to be purchased.  The vendor may or may not be the same as the manufacturer.</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Issued Item</ph></p>
+</body>
+</topic>

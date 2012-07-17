@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Asp Patient - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>Contains identifying, demographic, and other clinical information for all patients seen in the Audiology and Speech Pathology clinics.  The entries in this file are pointers to the Patient file #2.  (file 509850.2)</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>aspFileNbr</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>An existing LOCAL file number associated with this Audiology and Speech Pathology patient.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>initialVisitDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date of this patient&amp;apos;s first visit to the Audiology and/or Speech Pathology clinic at this site. </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>diagnosticCondition</b></tt>, where its type is <xref href="../AspDiagnosticCondition.dita">Asp Diagnostic Condition</xref>
+<ul><li>Identifies ICD-9CM diagnostic condition code for the A&amp;amp;SP patient.  Equivalent to a pointer to File 509850.2.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>patient</b></tt>, where its type is <xref href="../Patient.dita">Patient</xref>
+</li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>aspFileNbr</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>An existing LOCAL file number associated with this Audiology and Speech Pathology patient.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>initialVisitDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date of this patient&amp;apos;s first visit to the Audiology and/or Speech Pathology clinic at this site. </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>diagnosticCondition</b></tt>, where its type is <xref href="../AspDiagnosticCondition.dita">Asp Diagnostic Condition</xref>
+<ul><li>Identifies ICD-9CM diagnostic condition code for the A&amp;amp;SP patient.  Equivalent to a pointer to File 509850.2.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>patient</b></tt>, where its type is <xref href="../Patient.dita">Patient</xref>
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Asp Patient</ph></p>
+</body>
+</topic>

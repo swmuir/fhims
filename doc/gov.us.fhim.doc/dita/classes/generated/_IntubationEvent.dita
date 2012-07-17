@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Intubation Event - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>The introduction of a tube into a hollow organ (as the trachea or intestine) to keep it open or restore its patency if obstructed</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>laryngoscopeType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Contains a code Set that identifies the type of scope or  laryngoscope blade used to facilitate endotracheal  intubation.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>Unique identifier for the type of larynoscope used.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>laryngoscope</b></tt>, where its type is <xref href="../SurgeryDevice.dita">Surgery Device</xref>
+<ul><li>Indicates the type of scope or  laryngoscope blade used to facilitate endotracheal intubation.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>stylet</b></tt>, where its type is <xref href="../SurgeryDevice.dita">Surgery Device</xref>
+<ul><li>Indicates the stylet that was used to shape the endotracheal tube during intubation.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>endotrachealTube</b></tt>, where its type is <xref href="../SurgeryDevice.dita">Surgery Device</xref>
+<ul><li>Indicates the endotracheal  tube used during the major portion of the procedure.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>biteBlock</b></tt>, where its type is <xref href="../SurgeryDevice.dita">Surgery Device</xref>
+<ul><li> Indicates whether a bite block is used to protect the endotracheal tube   </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>trauma</b></tt>, where its type is <xref href="../IntubationTrauma.dita">Intubation Trauma</xref>
+<ul><li>A fine wire that is run through a catheter, cannula, or hollow needle to keep it stiff or clear of debris.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>value</b></tt>, where its type is <xref href="../IntubationEvaluation.dita">Intubation Evaluation</xref>
+<ul><li>An assigned or calculated numerical quantity</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>laryngoscopeType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Contains a code Set that identifies the type of scope or  laryngoscope blade used to facilitate endotracheal  intubation.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>Unique identifier for the type of larynoscope used.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>laryngoscope</b></tt>, where its type is <xref href="../SurgeryDevice.dita">Surgery Device</xref>
+<ul><li>Indicates the type of scope or  laryngoscope blade used to facilitate endotracheal intubation.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>stylet</b></tt>, where its type is <xref href="../SurgeryDevice.dita">Surgery Device</xref>
+<ul><li>Indicates the stylet that was used to shape the endotracheal tube during intubation.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>endotrachealTube</b></tt>, where its type is <xref href="../SurgeryDevice.dita">Surgery Device</xref>
+<ul><li>Indicates the endotracheal  tube used during the major portion of the procedure.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>biteBlock</b></tt>, where its type is <xref href="../SurgeryDevice.dita">Surgery Device</xref>
+<ul><li> Indicates whether a bite block is used to protect the endotracheal tube   </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>trauma</b></tt>, where its type is <xref href="../IntubationTrauma.dita">Intubation Trauma</xref>
+<ul><li>A fine wire that is run through a catheter, cannula, or hollow needle to keep it stiff or clear of debris.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>value</b></tt>, where its type is <xref href="../IntubationEvaluation.dita">Intubation Evaluation</xref>
+<ul><li>An assigned or calculated numerical quantity</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Intubation Event</ph></p>
+</body>
+</topic>

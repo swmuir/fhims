@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Equipment Measurement Result - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>The dimension, quantity, or capacity determined by measuring:</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>measurementResult</b></tt> with data type <xref href="../PhysicalQuantity.dita">Physical Quantity</xref>
+<ul><li>Contains the result of the  dimension, quantity, or capacity determined being measured.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>Contains the unique Identifier for each measurement being captured,</li></ul></li>
+<li>Contains at least one [1..*] <tt><b>resultOfMeasurement</b></tt>, where its type is <xref href="../EquipmentMeasurementEvent.dita">Equipment Measurement Event</xref>
+<ul><li>The dimension, quantity, or capacity determined by measuring: </li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>measurementResult</b></tt> with data type <xref href="../PhysicalQuantity.dita">Physical Quantity</xref>
+<ul><li>Contains the result of the  dimension, quantity, or capacity determined being measured.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>Contains the unique Identifier for each measurement being captured,</li></ul></li>
+<li>Contains at least one [1..*] <tt><b>resultOfMeasurement</b></tt>, where its type is <xref href="../EquipmentMeasurementEvent.dita">Equipment Measurement Event</xref>
+<ul><li>The dimension, quantity, or capacity determined by measuring: </li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Equipment Measurement Result</ph></p>
+</body>
+</topic>

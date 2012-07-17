@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Radiologic Examination - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>This class contains attributes related to Radiology \ Nuclear Medicine imaging examinations.</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>cancellationReason</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the reason why the exam was canceled.  Possible values are HOLD; CANCELLED: DUPLICATE EXAM; etc. File 75.2.   </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>caseId</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>Uniquely identifies the order from within the filler&amp;apos;s system.  Traditionally also called an &amp;quot;accession number&amp;quot;.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>_clinicalHistory</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Clinical history of the patient that might be relevant to this case as well as instructions to the interpreting physician</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the status of this exam.  This should be a code from File 72.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>examCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>This field contains the exam category associated with this case number. Possible values are  INPATIENT, OUTPATIENT, CONTRACT,  SHARING, EMPLOYEE, RESEARCH; etc.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>researchSource</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>The name of the research source that referred the patient to Radiology/Nuclear Medicine for the exam.  This field is used for exams with a &amp;apos;category of exam&amp;apos; of &amp;apos;research&amp;apos;.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>wasContrastMediaUsed</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li>Indicate if an intravascular contrast was used during this Rad/Nuc Med exam.  Possible values are Yes, No; etc.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>complicationType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li> Iindicate if this patient experienced any complication during the exam procedure.  Codes from file 78.1.  Possible values are.... No Complication; etc.   </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>complicationText</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>A brief explanation of the exam complication.    </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>isCombinedReport</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li>Is it a Radiology and Nuclear Medicine comined Report? Possible values are Yes; No; etc.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>ward</b></tt>, where its type is <xref href="../Ward.dita">Ward</xref>
+<ul><li>Represents the hospital ward as known by the originating VistA system.  Equivalent to a pointer to File 42.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>report</b></tt>, where its type is <xref href="../RadNucReport.dita">Rad Nuc Report</xref>
+<ul><li>Represents the radiology/nuclear medicine report as known by the originating VistA system.  Equivalent to a pointer to File 74.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>contrastMediaAdministration</b></tt>, where its type is <xref href="../ContrastMediaAdministration.dita">Contrast Media Administration</xref>
+<ul><li>Identifies Constrat Media associated with the Examination</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>cameraEquipmentRoom</b></tt>, where its type is <xref href="../CameraEquipmentRoom.dita">Camera Equipment Room</xref>
+<ul><li>The primary camera/equipment/room where the imaging exam was performed. Equivalent to a pointer to File 78.6</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>activityLog</b></tt>, where its type is <xref href="../ActivityLog.dita">Activity Log</xref>
+<ul><li>A log of actions that have been taken on this outside film record.  Equivalent to File 70.07.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>requestingLocation</b></tt>, where its type is <xref href="../HospitalLocation.dita">Hospital Location</xref>
+<ul><li>Th name of the requesting hospital / clinic that that is requesting the exam..  Equivalent to File 44.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>principalClinic</b></tt>, where its type is <xref href="../HospitalLocation.dita">Hospital Location</xref>
+<ul><li>Th name of the principal clinic that referred the patient to Radiology/Nuclear Medicine for the exam.  Equivalent to File 44.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>service</b></tt>, where its type is <xref href="../ServiceDepartment.dita">Service Department</xref>
+<ul><li>Represents the service as known by the originating VistA system.  Equivalent to a pointer to File 49.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>bedSection</b></tt>, where its type is <xref href="../_Specialty.dita">_ Specialty</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>diagnosis</b></tt>, where its type is <xref href="../DiagnosisListEntry.dita">Diagnosis List Entry</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>radioPharmaceuticalAdministration</b></tt>, where its type is <xref href="../RadioPharmaceuticalAdministration.dita">Radio Pharmaceutical Administration</xref>
+<ul><li>A radiopharmaceutical associated with this examination should be entered here. Equivalent to a pointer to File 71.  </li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>procedure</b></tt>, where its type is <xref href="../ProcedureListEntry.dita">Procedure List Entry</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>encounter</b></tt>, where its type is <xref href="../EncounterEvent.dita">Encounter Event</xref>
+<ul><li>The encounter during which the Radiologic Examination took place.</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>cancellationReason</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the reason why the exam was canceled.  Possible values are HOLD; CANCELLED: DUPLICATE EXAM; etc. File 75.2.   </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>caseId</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>Uniquely identifies the order from within the filler&amp;apos;s system.  Traditionally also called an &amp;quot;accession number&amp;quot;.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>_clinicalHistory</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Clinical history of the patient that might be relevant to this case as well as instructions to the interpreting physician</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the status of this exam.  This should be a code from File 72.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>examCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>This field contains the exam category associated with this case number. Possible values are  INPATIENT, OUTPATIENT, CONTRACT,  SHARING, EMPLOYEE, RESEARCH; etc.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>researchSource</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>The name of the research source that referred the patient to Radiology/Nuclear Medicine for the exam.  This field is used for exams with a &amp;apos;category of exam&amp;apos; of &amp;apos;research&amp;apos;.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>wasContrastMediaUsed</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li>Indicate if an intravascular contrast was used during this Rad/Nuc Med exam.  Possible values are Yes, No; etc.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>complicationType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li> Iindicate if this patient experienced any complication during the exam procedure.  Codes from file 78.1.  Possible values are.... No Complication; etc.   </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>complicationText</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>A brief explanation of the exam complication.    </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>isCombinedReport</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li>Is it a Radiology and Nuclear Medicine comined Report? Possible values are Yes; No; etc.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>ward</b></tt>, where its type is <xref href="../Ward.dita">Ward</xref>
+<ul><li>Represents the hospital ward as known by the originating VistA system.  Equivalent to a pointer to File 42.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>report</b></tt>, where its type is <xref href="../RadNucReport.dita">Rad Nuc Report</xref>
+<ul><li>Represents the radiology/nuclear medicine report as known by the originating VistA system.  Equivalent to a pointer to File 74.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>contrastMediaAdministration</b></tt>, where its type is <xref href="../ContrastMediaAdministration.dita">Contrast Media Administration</xref>
+<ul><li>Identifies Constrat Media associated with the Examination</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>cameraEquipmentRoom</b></tt>, where its type is <xref href="../CameraEquipmentRoom.dita">Camera Equipment Room</xref>
+<ul><li>The primary camera/equipment/room where the imaging exam was performed. Equivalent to a pointer to File 78.6</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>activityLog</b></tt>, where its type is <xref href="../ActivityLog.dita">Activity Log</xref>
+<ul><li>A log of actions that have been taken on this outside film record.  Equivalent to File 70.07.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>requestingLocation</b></tt>, where its type is <xref href="../HospitalLocation.dita">Hospital Location</xref>
+<ul><li>Th name of the requesting hospital / clinic that that is requesting the exam..  Equivalent to File 44.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>principalClinic</b></tt>, where its type is <xref href="../HospitalLocation.dita">Hospital Location</xref>
+<ul><li>Th name of the principal clinic that referred the patient to Radiology/Nuclear Medicine for the exam.  Equivalent to File 44.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>service</b></tt>, where its type is <xref href="../ServiceDepartment.dita">Service Department</xref>
+<ul><li>Represents the service as known by the originating VistA system.  Equivalent to a pointer to File 49.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>bedSection</b></tt>, where its type is <xref href="../_Specialty.dita">_ Specialty</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>diagnosis</b></tt>, where its type is <xref href="../DiagnosisListEntry.dita">Diagnosis List Entry</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>radioPharmaceuticalAdministration</b></tt>, where its type is <xref href="../RadioPharmaceuticalAdministration.dita">Radio Pharmaceutical Administration</xref>
+<ul><li>A radiopharmaceutical associated with this examination should be entered here. Equivalent to a pointer to File 71.  </li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>procedure</b></tt>, where its type is <xref href="../ProcedureListEntry.dita">Procedure List Entry</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>encounter</b></tt>, where its type is <xref href="../EncounterEvent.dita">Encounter Event</xref>
+<ul><li>The encounter during which the Radiologic Examination took place.</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Radiologic Examination</ph></p>
+</body>
+</topic>

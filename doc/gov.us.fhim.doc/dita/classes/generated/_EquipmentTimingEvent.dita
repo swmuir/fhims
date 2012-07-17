@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Equipment Timing Event - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>Contains the Date and time  and  durationthe piece of Equipment was in use.</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>effectiveTime</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date and time the surgical device was in use. </li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>duration</b></tt> with data type <xref href="../TimeInterval.dita">Time Interval</xref>
+<ul><li>The length of time the device was used in the Surgical event.</li></ul></li>
+<li>Contains at least one [1..*] <tt><b>timeDuration</b></tt>, where its type is <xref href="../SurgeryDevice.dita">Surgery Device</xref>
+<ul><li>Contains the Date and time  and  urationthe piece of Equipment was in use.</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>effectiveTime</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date and time the surgical device was in use. </li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>duration</b></tt> with data type <xref href="../TimeInterval.dita">Time Interval</xref>
+<ul><li>The length of time the device was used in the Surgical event.</li></ul></li>
+<li>Contains at least one [1..*] <tt><b>timeDuration</b></tt>, where its type is <xref href="../SurgeryDevice.dita">Surgery Device</xref>
+<ul><li>Contains the Date and time  and  urationthe piece of Equipment was in use.</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Equipment Timing Event</ph></p>
+</body>
+</topic>

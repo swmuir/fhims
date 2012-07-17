@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Cigarette Smoking - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>US Standard Certificate Of Birth Field 37    Describes whether and how much the infant&amp;apos;s mother smoked before and/or during pregnancy.  The US Standard Certificate Of Birth Field 37 lists four time periods: Three months before pregnancy; first three months of pregnancy; second three months of pregnancy; and third trimester of pregnancy.  It then asks for the average number of cigarettes OR packs of cigarettes smoked per day for each of these time periods.  This class is modeled such that there is one instance per time period, and therefore will have up to (exactly?) four instances.</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>timePeriodCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>US Standard Certificate Of Birth Field 37    Describes whether and how much the infant&amp;apos;s mother smoked before and/or during pregnancy.  The US Standard Certificate Of Birth Field 37 lists four time periods: Three months before pregnancy; first three months of pregnancy; second three months of pregnancy; and third trimester of pregnancy.  It then asks for the average number of cigarettes OR packs of cigarettes smoked per day for each of these time periods.  This class is modeled such that there is one instance per time period, and therefore will have up to (exactly?) four instances.  This property indicates which of the four time periods is being documented by the number of cigarettes or number of packs of cigarettes properties.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>numberOfCigarettes</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>US Standard Certificate Of Birth Field 37    Describes the average number of cigarettes smoked per day for the time period identified by the timePeriodCategory property.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>numberOfPacks</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>US Standard Certificate Of Birth Field 37    Describes the average number of packs of cigarettes smoked per day for the time period identified by the timePeriodCategory property.</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>timePeriodCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>US Standard Certificate Of Birth Field 37    Describes whether and how much the infant&amp;apos;s mother smoked before and/or during pregnancy.  The US Standard Certificate Of Birth Field 37 lists four time periods: Three months before pregnancy; first three months of pregnancy; second three months of pregnancy; and third trimester of pregnancy.  It then asks for the average number of cigarettes OR packs of cigarettes smoked per day for each of these time periods.  This class is modeled such that there is one instance per time period, and therefore will have up to (exactly?) four instances.  This property indicates which of the four time periods is being documented by the number of cigarettes or number of packs of cigarettes properties.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>numberOfCigarettes</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>US Standard Certificate Of Birth Field 37    Describes the average number of cigarettes smoked per day for the time period identified by the timePeriodCategory property.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>numberOfPacks</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>US Standard Certificate Of Birth Field 37    Describes the average number of packs of cigarettes smoked per day for the time period identified by the timePeriodCategory property.</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Cigarette Smoking</ph></p>
+</body>
+</topic>

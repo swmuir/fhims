@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Consult Promise - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>The act of accepting the role of fulfiller. It is the act of accepting  a consult or procedure request. The receiving service will perform update tracking activities.</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>category</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>value which indicates whether the request is a consult or procedure request.(C:Consult P:Procedure) (VISTA)  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>date</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>Date/time of actual entry of consultation or procedure request into data repository</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>fillerId</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>A unique identifier for the Act.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>serviceSetting</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>value which allows the ordering person to indicate if the service is to be rendered on an outpatient or inpatient basis.  This is to alleviate the confusion if patient is currently an inpatient/outpatient but is just about to be discharged/admitted and become a outpatient/inpatient. (Data Type = Set of Codes I:inpatient,O:outpatient)  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>the current status of ConsultProcedureRequest in placer system (CPRS) </li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>activity</b></tt>, where its type is <xref href="../ProcessActivities.dita">Process Activities</xref>
+<ul><li>action activities for consultProcedurePromise,  it is used for tracking/auditing</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>associatedResult</b></tt>, where its type is <xref href="../ConsultResult.dita">Consult Result</xref>
+<ul><li>One or more results (from Medicine package) to be associated  with a instance of ConsultProcedurePromise.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>responsibleService</b></tt>, where its type is <xref href="../ServiceDepartment.dita">Service Department</xref>
+<ul><li>An organizational unit defined by the type of service that it provides to patients.  Examples include Surgery, Dentistry, Mental Health.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>consultRequest</b></tt>, where its type is <xref href="../ConsultRequest.dita">Consult Request</xref>
+<ul><li>The original consultation request (i.e., order) that initiated the consultation fulfillment.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>performingLocation</b></tt>, where its type is <xref href="../ServiceDeliveryLocation.dita">Service Delivery Location</xref>
+</li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>category</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>value which indicates whether the request is a consult or procedure request.(C:Consult P:Procedure) (VISTA)  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>date</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>Date/time of actual entry of consultation or procedure request into data repository</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>fillerId</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>A unique identifier for the Act.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>serviceSetting</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>value which allows the ordering person to indicate if the service is to be rendered on an outpatient or inpatient basis.  This is to alleviate the confusion if patient is currently an inpatient/outpatient but is just about to be discharged/admitted and become a outpatient/inpatient. (Data Type = Set of Codes I:inpatient,O:outpatient)  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>the current status of ConsultProcedureRequest in placer system (CPRS) </li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>activity</b></tt>, where its type is <xref href="../ProcessActivities.dita">Process Activities</xref>
+<ul><li>action activities for consultProcedurePromise,  it is used for tracking/auditing</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>associatedResult</b></tt>, where its type is <xref href="../ConsultResult.dita">Consult Result</xref>
+<ul><li>One or more results (from Medicine package) to be associated  with a instance of ConsultProcedurePromise.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>responsibleService</b></tt>, where its type is <xref href="../ServiceDepartment.dita">Service Department</xref>
+<ul><li>An organizational unit defined by the type of service that it provides to patients.  Examples include Surgery, Dentistry, Mental Health.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>consultRequest</b></tt>, where its type is <xref href="../ConsultRequest.dita">Consult Request</xref>
+<ul><li>The original consultation request (i.e., order) that initiated the consultation fulfillment.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>performingLocation</b></tt>, where its type is <xref href="../ServiceDeliveryLocation.dita">Service Delivery Location</xref>
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Consult Promise</ph></p>
+</body>
+</topic>

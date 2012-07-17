@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Clinical Document Section - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>This class serves the purpose of a  context that distinguishes the body of a document from the document header.  &amp;quot;The body contains the clinical report, and can be either an unstructured blob, or can be comprised of structured markup. &amp;quot; (HL7 3.0 CDA 2.0)  &amp;quot;Document sections can nest, can override context propagated from the header (see CDA Context (  4.4 ), and can contain CDA entries.&amp;quot; (HL7 3.0)</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>confidentiality</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>&amp;quot;A value for Section.confidentialityCode overrides the value propagated from StructuredBody. See CDA Context (  4.4 ) for more details.confidentialityCode is of type CE, and therefore must carry both a code and a codeSystem.&amp;quot; (HL7 3.0 CDA 2.0)    </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>language</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>&amp;quot;Specifies the human language of character data (whether they be in contents or attribute values). The values of the attribute are language identifiers as defined by the IETF (Internet Engineering Task Force) RFC 3066: Tags for the Identification of Languages, ed. H. Alvestrand. 1995 , which obsoletes RFC 1766. &amp;quot; (HL7 3.0, CDA 2.0) </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>sectionTitle</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>&amp;quot;Represents the label of a section. If valued, it is to be rendered as part of the narrative content of the clinical document body.&amp;quot;   (Hl7 3.0 CDA 2.0)   </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>sectionType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Corresponding to Section.Code: &amp;quot;The code specifying the particular kind of section (e.g. Chief Complaint, Review of Systems, Assessment). The value set is drawn from LOINC, and has a CWE coding strength.&amp;quot;Represents the label of a section. If valued, it is to be rendered as part of the narrative content of the clinical document body. &amp;quot; (Hl7 3.0, CDA 2.0)   </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>text</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>&amp;quot;A textual or multimedia description (or reference to a description) of the Act.  (e.g. For act definitions, the Act.text can contain textbook-like information about that act. For act orders, the description will contain particular instructions pertaining only to that order.) Free text descriptions are used to help an individual interpret the content and context of the act, but all information relevant for automated functions must be communicated using the proper attributes and associated objects.&amp;quot; (HL7 3.0 CDA 2.0)  </li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>confidentiality</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>&amp;quot;A value for Section.confidentialityCode overrides the value propagated from StructuredBody. See CDA Context (  4.4 ) for more details.confidentialityCode is of type CE, and therefore must carry both a code and a codeSystem.&amp;quot; (HL7 3.0 CDA 2.0)    </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>language</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>&amp;quot;Specifies the human language of character data (whether they be in contents or attribute values). The values of the attribute are language identifiers as defined by the IETF (Internet Engineering Task Force) RFC 3066: Tags for the Identification of Languages, ed. H. Alvestrand. 1995 , which obsoletes RFC 1766. &amp;quot; (HL7 3.0, CDA 2.0) </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>sectionTitle</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>&amp;quot;Represents the label of a section. If valued, it is to be rendered as part of the narrative content of the clinical document body.&amp;quot;   (Hl7 3.0 CDA 2.0)   </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>sectionType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Corresponding to Section.Code: &amp;quot;The code specifying the particular kind of section (e.g. Chief Complaint, Review of Systems, Assessment). The value set is drawn from LOINC, and has a CWE coding strength.&amp;quot;Represents the label of a section. If valued, it is to be rendered as part of the narrative content of the clinical document body. &amp;quot; (Hl7 3.0, CDA 2.0)   </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>text</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>&amp;quot;A textual or multimedia description (or reference to a description) of the Act.  (e.g. For act definitions, the Act.text can contain textbook-like information about that act. For act orders, the description will contain particular instructions pertaining only to that order.) Free text descriptions are used to help an individual interpret the content and context of the act, but all information relevant for automated functions must be communicated using the proper attributes and associated objects.&amp;quot; (HL7 3.0 CDA 2.0)  </li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Clinical Document Section</ph></p>
+</body>
+</topic>

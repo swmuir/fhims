@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Telcom Patient - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+</section>
+<ol id="conformance">
+<li>Extends <xref href="../HumanPatient.dita">Human Patient</xref></li>
+<li>Extends <xref href="../Patient.dita">Patient</xref></li>
+<li>Contains exactly one [1..1] <tt><b>isPregnant</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>isSmoker</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>residenceType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>N2</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Extends <xref href="../Patient.dita">Patient</xref></li>
+<li>Extends <xref href="../HumanPatient.dita">Human Patient</xref></li>
+<li>Contains at least one [1..*] <tt><b>patientId</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>An identification of the person or animal while in the role of Patient.  This id is basically an &amp;apos;account number&amp;apos;.  A single person will have multiple patient ids at various healthcare providers.  Indeed it is not uncommon for a person to have multiple patient ids or &amp;apos;account numbers&amp;apos; at a single institution - often a new account number is created for each episode of care.  This is also the case in long-term care situations, where a new account number may be created each month in order to facilitate monthly billing.    &amp;quot;This field contains the list of identifiers (one or more) used by the healthcare facility to uniquely identify a patient (e.g., medical record number, billing number, birth registry, national unique individual identifier, etc.).&amp;quot; - HL7 Version 2.8, PID-3    &amp;quot;This field contains the patient account number assigned by accounting to which all charges, payments, etc., are recorded.  It is used to identify the patient&amp;apos;s account.&amp;quot; - HL7 Version 2.8, PID-18</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the state of the Patient&amp;apos;s record, as defined in the state-transition model in the HL7 RIM.  Examples include Active, Pending, Terminated, etc.  Additional states might be defined such as &amp;apos;Temporary&amp;apos; or &amp;apos;Permanent&amp;apos;.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>confidentialityCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>&amp;apos;Codes that identify how sensitive a piece of information is and/or that indicate how the information may be made available or disclosed.&amp;apos;  HL7 RIM.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>bloodType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Identifies the patient&amp;apos;s blood type, if known.  Possible values include: 0+, O-, A+, A-, B+, B-, AB+, AB-</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>identityReliabilityCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>&amp;quot;This field contains a coded value used to communicate information regarding the reliability of patient/person identifying data transmitted via a transaction.  Values could indicate that certain fields on a PID segment for a given patient/person are known to be false (e.g., use of default or system-generated values for Date of Birth or Social Security Number).&amp;quot; - HL7 Version 2.8, PID-32</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>isIdentityUnknown</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li>&amp;quot;This field indicates whether or not the patient&amp;apos;s/person&amp;apos;s identity is known.&amp;quot; - HL7 Version 2.8, PID-31</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>isOrganDonor</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li>Indicates whether the patient has consented to be an organ donor upon their demise.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>lastUpdateDateTime</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>&amp;quot;This field contains the last update date and time for the patient&amp;apos;s/person&amp;apos;s identifying and demographic data, as defined in the PID segment.  Receiving systems will use this field to determine how to apply the transaction to their systems.  If the receiving system (such as an enterprise master patient index) already has a record for the person with a later last update date/time, then the EMPI could decide not to apply the patient&amp;apos;s/person&amp;apos;s demographic and identifying data from this transaction.&amp;quot; - HL7 Version 2.8, PID-33</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>lastUpdateFacility</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>&amp;quot;This field identifies the facility of the last update to a patient&amp;apos;s/person&amp;apos;s identifying and demographic data, as defined in the PID segment.  Receiving systems or users will use this field to determine how to apply the transaction to their systems.  If the receiving system (such as a hospital&amp;apos;s patient management system) already has a record for the patient/person, then it may decide to only update its data if the source is a &amp;quot;trusted&amp;quot; source.  A hospital might consider other hospitals trusted sources, but not &amp;quot;trust&amp;quot; updates from non-acute care facilities.&amp;quot; - HL7 Version 2.8, PID-34</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>veryImportantPerson</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>&amp;quot;Identifies the type of VIP.&amp;quot; - HL7 Version 2.8, PV1-16    A code specifying the patient&amp;apos;s special status granted by the organization at which they are a patient, often resulting in preferred treatment and special considerations. For example, board member, diplomat, etc.      9/28/2011: Make this a boolean?  What other values are possible here?  The HL7 V2 table (99) does not have any suggested values.  HL7 V3 has a code, but not sure whether they&amp;apos;re applicable to US Govt uses.  Check with DoD and IHS.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>isPregnant</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>isSmoker</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>residenceType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>N2</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>healthRecord</b></tt>, where its type is <xref href="../HealthRecord.dita">Health Record</xref>
+<ul><li>Records regarding the Patient&amp;apos;s healthcare that are subject to the consent rules in Consent Directives.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>primaryCareProvider</b></tt>, where its type is <xref href="../PrimaryCareProvider.dita">Primary Care Provider</xref>
+<ul><li>A doctor selected by the patient to be the first physician contacted for any medical problem. The doctor acts as the patient&amp;apos;s regular physician and coordinates any other care the patient needs, such as a visit to a specialist or hospitalization.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>patientRisk</b></tt>, where its type is <xref href="../PatientRisk.dita">Patient Risk</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>contactParty</b></tt>, where its type is <xref href="../ContactParty.dita">Contact Party</xref>
+<ul><li>The person who should be contacted on the patients behalf under specified situations.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>subject</b></tt>, where its type is <xref href="../Person.dita">Person</xref>
+<ul><li>Identifies the person who is playing the role of patient (HumanPatient).</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Telcom Patient</ph></p>
+</body>
+</topic>

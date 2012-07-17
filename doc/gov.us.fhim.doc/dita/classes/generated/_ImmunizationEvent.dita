@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Immunization Event - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>The act  of creating  immunity usually against a particular disease &amp;lt;immunization against smallpox&amp;gt;; especially : treatment of an organism for the purpose of making it immune to subsequent attack by a particular pathogen       Source: Merriam-Webster&amp;apos;s Medical Dictionary,   2002 Merriam-Webster, Inc.</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>category</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>What the immunization is for</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>contraIndication</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li>ContraIndicated is the indicator if this immunization should be continued or should be stopped due to an adverse reaction being opserved.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>date</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date and time the immunization was given.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>Unique id given to the immunization test</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>series</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates which type of series the patient has been given.  Current valid values are Series 1 through 8, Partially complete, booster,  or complete</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>reaction</b></tt>, where its type is <xref href="../ObservedReaction.dita">Observed Reaction</xref>
+<ul><li>The response of cells or tissues to an antigen, as in a test for immunization</li></ul><ul><li>The response of cells or tissues to an antigen, as in a test for immunization</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>subject</b></tt>, where its type is <xref href="../Patient.dita">Patient</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>visit</b></tt>, where its type is <xref href="../OutpatientVisit.dita">Outpatient Visit</xref>
+<ul><li>An encounter for the patient  at one site within a specifie length of time.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>author</b></tt>, where its type is <xref href="../Author.dita">Author</xref>
+</li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>category</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>What the immunization is for</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>contraIndication</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li>ContraIndicated is the indicator if this immunization should be continued or should be stopped due to an adverse reaction being opserved.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>date</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date and time the immunization was given.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>Unique id given to the immunization test</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>series</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates which type of series the patient has been given.  Current valid values are Series 1 through 8, Partially complete, booster,  or complete</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>reaction</b></tt>, where its type is <xref href="../ObservedReaction.dita">Observed Reaction</xref>
+<ul><li>The response of cells or tissues to an antigen, as in a test for immunization</li></ul><ul><li>The response of cells or tissues to an antigen, as in a test for immunization</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>subject</b></tt>, where its type is <xref href="../Patient.dita">Patient</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>visit</b></tt>, where its type is <xref href="../OutpatientVisit.dita">Outpatient Visit</xref>
+<ul><li>An encounter for the patient  at one site within a specifie length of time.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>author</b></tt>, where its type is <xref href="../Author.dita">Author</xref>
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Immunization Event</ph></p>
+</body>
+</topic>

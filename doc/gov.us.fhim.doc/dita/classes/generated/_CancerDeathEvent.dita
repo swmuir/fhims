@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Cancer Death Event - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>This class contains informatin about cancer related death.</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>isCauseOfDeathCancer</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>causeOfDeathCancer  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>icdCauseOfDeath</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>icdCauseOfDeath  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>placeOfDeath</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li> This is the place of death.  These codes include states of the United States as well as foreign countries.  Possible values are SEER Geocodes.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dateOfDeath</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date and tine of death.  </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>careCenterAtDeath</b></tt>, where its type is <xref href="../ServiceDeliveryLocation.dita">Service Delivery Location</xref>
+<ul><li>Care center at death .</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>autopsy</b></tt>, where its type is <xref href="../AutopsyEvent.dita">Autopsy Event</xref>
+<ul><li>Autopsy of cancer related death</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>isCauseOfDeathCancer</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>causeOfDeathCancer  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>icdCauseOfDeath</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>icdCauseOfDeath  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>placeOfDeath</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li> This is the place of death.  These codes include states of the United States as well as foreign countries.  Possible values are SEER Geocodes.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dateOfDeath</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date and tine of death.  </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>careCenterAtDeath</b></tt>, where its type is <xref href="../ServiceDeliveryLocation.dita">Service Delivery Location</xref>
+<ul><li>Care center at death .</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>autopsy</b></tt>, where its type is <xref href="../AutopsyEvent.dita">Autopsy Event</xref>
+<ul><li>Autopsy of cancer related death</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Cancer Death Event</ph></p>
+</body>
+</topic>

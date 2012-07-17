@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Drug Ingredient - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>&amp;quot;Relates a product (typically medicine) to a substance which it contains as an ingredient. Ingredients can be specified for  medicines or other products, including devices, but they always mean the same thing: a material (here: chemical substance)  in the make-up of the main product, not a structural part or content of a container, and not a material added later into a  device for operation. For medicines and food this is obvious. For devices, an example for ingredient would be latex in a  chest tube (but not an inhalant in a nebulizer device).&amp;quot; - HL7 V3</p>
+</section>
+<ol id="conformance">
+<li>Contains zero or one [0..1] <tt><b>effectiveTime</b></tt> with data type <xref href="../TimeInterval.dita">Time Interval</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>isActiveMoiety</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>isDiluent</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>isPreservative</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>isAdjuvant</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>isAntigen</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>isConfidential</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li>Used to indicate that the manufacturer considers the presence of the ingredient a trade secret. This could be the case for  inactive ingredients.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>quantity</b></tt> with data type <xref href="../PhysicalQuantityRatio.dita">Physical Quantity Ratio</xref>
+<ul><li>&amp;quot;A ratio specifying the strength of the ingredient as amount of ingredient substance (numerator) in amount of medicine  (denominator).  For example, a 50 mg tablet contains 50 mg in 1 tablet; a 50 mg per 5 mL syrup contains 50 mg in 5 mL. Note that for  countable dose forms (&amp;quot;eaches&amp;quot;) no unit is required in the denominator, i.e., the denominator is a dimensionless number  with unit 1 (one, the unity). The fact that the dose is per tablet, capsule, or whatever the dose form may be is  recorded in the formCode of the scoping product, not in a unit of measure .&amp;quot; - HL7 V3</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>medicinalProduct</b></tt>, where its type is <xref href="../MedicinalProduct.dita">Medicinal Product</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>ingredient</b></tt>, where its type is <xref href="../Ingredient.dita">Ingredient</xref>
+</li>
+</ol>
+<ol id="aggregate">
+<li>Contains zero or one [0..1] <tt><b>effectiveTime</b></tt> with data type <xref href="../TimeInterval.dita">Time Interval</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>isActiveMoiety</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>isDiluent</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>isPreservative</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>isAdjuvant</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>isAntigen</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>isConfidential</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li>Used to indicate that the manufacturer considers the presence of the ingredient a trade secret. This could be the case for  inactive ingredients.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>quantity</b></tt> with data type <xref href="../PhysicalQuantityRatio.dita">Physical Quantity Ratio</xref>
+<ul><li>&amp;quot;A ratio specifying the strength of the ingredient as amount of ingredient substance (numerator) in amount of medicine  (denominator).  For example, a 50 mg tablet contains 50 mg in 1 tablet; a 50 mg per 5 mL syrup contains 50 mg in 5 mL. Note that for  countable dose forms (&amp;quot;eaches&amp;quot;) no unit is required in the denominator, i.e., the denominator is a dimensionless number  with unit 1 (one, the unity). The fact that the dose is per tablet, capsule, or whatever the dose form may be is  recorded in the formCode of the scoping product, not in a unit of measure .&amp;quot; - HL7 V3</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>medicinalProduct</b></tt>, where its type is <xref href="../MedicinalProduct.dita">Medicinal Product</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>ingredient</b></tt>, where its type is <xref href="../Ingredient.dita">Ingredient</xref>
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Drug Ingredient</ph></p>
+</body>
+</topic>

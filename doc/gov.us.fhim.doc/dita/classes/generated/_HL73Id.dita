@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>HL73 Id - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>This class corresponds to the HL7 V3 II datatype, which is defined as: &amp;quot;An identifier that uniquely identifies a thing or  object. Examples are object identifier for HL7 RIM objects, medical record number, order id, service catalog item id,  Vehicle Identification Number (VIN), etc. Note that a II does not identify the type of the object being identified,  or the type of the association between the object and the identifier - it is only the identifier itself.&amp;quot;</p>
+</section>
+<ol id="conformance">
+<li>Extends <xref href="../Id.dita">Id</xref></li>
+<li>Contains exactly one [1..1] <tt><b>root</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>A unique identifier that guarantees the global uniqueness of the instance identifier. The root alone may be the entire instance identifier. This string should be one of the following RUID, OID or UUID</li><li>&amp;quot;A unique identifier that guarantees the global uniqueness of the instance identifier. The root alone may be the entire  instance identifier&amp;quot; - HL7 V3</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>extension</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>A character string as a unique identifier within the scope of the identifier root.</li><li>&amp;quot;A character string as a unique identifier within the scope of the identifier root.&amp;quot; - HL7 V3</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>identifierName</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>A human readable name or mnemonic for the assigning authority. The Assigning Authority Name has no computational value. The purpose of a Assigning Authority Name is to assist an unaided human interpreter of an II value to interpret the authority. Note: no automated processing must depend on the assigning authority name to be present in any form.</li><li>&amp;quot;This is a human-readable name for the namespace represented in the root. It is a descriptive name for the actual  namespace. e.g. &amp;quot;California, U.S. Driver&amp;apos;s License Number, 1970-&amp;quot;.&amp;quot; - HL7 V3</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Extends <xref href="../Id.dita">Id</xref></li>
+<li>Contains zero or one [0..1] <tt><b>identifier</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>This is a placeholder for the &amp;quot;entity identifier,&amp;quot; which is usually defined to be unique within the series of identifiers created by the &amp;quot;assigning authority&amp;quot;.  Note that this property will be replaced by some other concept or group of concepts when this abstract class is replaced by a specific class for a given target platform.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>idType</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Indicates what kind of identifier is being represented.  For example, the idType might be represent a Driver&amp;apos;s Licence, in which case the assigning Authority might be the Virginia Department of Motor Vehicles.  Note that: a) this information can (and probably should) be also be made clear by the name and definition of the property whose datatype is an Id; and b) this property might be an enumeration in the future.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>assigningAuthority</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>This is a placeholder for the &amp;quot;assigning authority&amp;quot;, which is a unique identifier of the system (or organization or agency or department) that creates the data.    Note that this property will be replaced by some other concept or group of concepts when this abstract class is replaced by a specific class for a given target platform.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>root</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>A unique identifier that guarantees the global uniqueness of the instance identifier. The root alone may be the entire instance identifier. This string should be one of the following RUID, OID or UUID</li><li>&amp;quot;A unique identifier that guarantees the global uniqueness of the instance identifier. The root alone may be the entire  instance identifier&amp;quot; - HL7 V3</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>extension</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>A character string as a unique identifier within the scope of the identifier root.</li><li>&amp;quot;A character string as a unique identifier within the scope of the identifier root.&amp;quot; - HL7 V3</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>identifierName</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>A human readable name or mnemonic for the assigning authority. The Assigning Authority Name has no computational value. The purpose of a Assigning Authority Name is to assist an unaided human interpreter of an II value to interpret the authority. Note: no automated processing must depend on the assigning authority name to be present in any form.</li><li>&amp;quot;This is a human-readable name for the namespace represented in the root. It is a descriptive name for the actual  namespace. e.g. &amp;quot;California, U.S. Driver&amp;apos;s License Number, 1970-&amp;quot;.&amp;quot; - HL7 V3</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">HL73 Id</ph></p>
+</body>
+</topic>

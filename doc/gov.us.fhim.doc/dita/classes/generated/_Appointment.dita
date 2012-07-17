@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Appointment - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>&amp;quot;An arrangement to meet a person or be at a place at a certain time&amp;quot; - Dictionary.com  The scheduled time of the Encounter.</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>appointmentTime</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date and time for the appointment of the scheduled visit.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>appointmentType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Identifies the Type of visit.  Possible values include: IHS; Contract; Tribal; VA; 638 program; VA; etc.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>performer</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
+</li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>appointmentTime</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date and time for the appointment of the scheduled visit.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>appointmentType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Identifies the Type of visit.  Possible values include: IHS; Contract; Tribal; VA; 638 program; VA; etc.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>performer</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Appointment</ph></p>
+</body>
+</topic>

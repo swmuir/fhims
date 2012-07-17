@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Observed Reaction - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>An adverse drug reaction is any unwanted or harmful reaction experienced following the administration of a drug or combination of drugs under normal conditions of use and suspected to be related to the drug. Adverse drug reactions can be divided into two types:  Type A (augmented) reactions result from an exaggeration of a drug&amp;apos;s normal pharmacological actions when given at the usual therapeutic dose and are normally dose-dependent (e.g. low blood pressure with antihypertensives, low blood sugar with insulin). They also include reactions that are not directly related to the desired clinical action of the drug (e.g. dry mouth associated with tricyclic antidepressants).  Type B (bizarre) reactions represent a novel response not expected from the known pharmacological actions of the drug (e.g. anaphylaxis with penicillin, angioedema with angiotensin-converting enzyme-inhibiting drugs). They are not normally dependent on the dose.</p>
+</section>
+<ol id="conformance">
+<li>Extends <xref href="../Reaction.dita">Reaction</xref></li>
+<li>Contains zero or one [0..1] <tt><b>observationTime</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>Date/time this allergy/adverse reaction was entered into the system.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>author</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
+</li>
+</ol>
+<ol id="aggregate">
+<li>Extends <xref href="../Reaction.dita">Reaction</xref></li>
+<li>Contains exactly one [1..1] <tt><b>dateRecorded</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>Date/time this allergy/adverse reaction was entered into the system.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>description</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Provides a textual narrative of the Reaction observed for the intolerance event of the patient.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>reaction</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the symptom observed that is suspected to have been caused by adverse reaction.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>severity</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>observationTime</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>Date/time this allergy/adverse reaction was entered into the system.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>author</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Observed Reaction</ph></p>
+</body>
+</topic>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Dietetics Order Action - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>A record of an action that has been taken on an order, including the signature and verification required to release the order.</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>actionType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>The action ordered (e.g., New, Hold, Discontinue, etc). VHIM will use HL7 3.0 vocabulary domain: ActCode (for ActOrderCode - not yet defined).</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>date</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>This is the date/time this action was taken on the dietetics request.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>startDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>This is the start date/time when the order action begins to be valid.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>stopDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>This is the stop date/time when the order action ceases to be valid.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>natureOfOrder</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>&amp;quot;This specifies the nature of the order or how it originated.&amp;quot; (VistA) </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>reason</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>A code specifying why this action has occurred.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>releaseStatus</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>This field tracks the status of the order action. This is different from the order status. Valid values are Unreleased, Pre-release, Rejected, or Discontinued due to Edit.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>text</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Contains particular instructions pertaining to the order action.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>reviewer</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>clerk</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>clinician</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>authorizer</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
+</li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>actionType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>The action ordered (e.g., New, Hold, Discontinue, etc). VHIM will use HL7 3.0 vocabulary domain: ActCode (for ActOrderCode - not yet defined).</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>date</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>This is the date/time this action was taken on the dietetics request.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>startDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>This is the start date/time when the order action begins to be valid.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>stopDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>This is the stop date/time when the order action ceases to be valid.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>natureOfOrder</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>&amp;quot;This specifies the nature of the order or how it originated.&amp;quot; (VistA) </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>reason</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>A code specifying why this action has occurred.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>releaseStatus</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>This field tracks the status of the order action. This is different from the order status. Valid values are Unreleased, Pre-release, Rejected, or Discontinued due to Edit.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>text</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Contains particular instructions pertaining to the order action.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>reviewer</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>clerk</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>clinician</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>authorizer</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Dietetics Order Action</ph></p>
+</body>
+</topic>

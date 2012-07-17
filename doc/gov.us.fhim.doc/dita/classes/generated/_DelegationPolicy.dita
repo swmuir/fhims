@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Delegation Policy - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>A delegation policy is intended to delegate access rights to a specific individual or organization (a grantee). ISO 22600-2 defines delegation as &amp;apos;conveyance of privilege from one entity that holds such privilege, to another entity&amp;apos; and a DelegationPolicy as &amp;apos;defines what authorizations can be delegated to whom&amp;apos;.</p>
+</section>
+<ol id="conformance">
+<li>Extends <xref href="../BasicPolicy.dita">Basic Policy</xref></li>
+<li>Contains at least one [1..*] <tt><b>accessRight</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>grantee</b></tt>, where its type is <xref href="../Grantee.dita">Grantee</xref>
+<ul><li>Designates who/what has been delegated a specific right.</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Extends <xref href="../Policy.dita">Policy</xref></li>
+<li>Extends <xref href="../BasicPolicy.dita">Basic Policy</xref></li>
+<li>Contains exactly one [1..1] <tt><b>description</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>This attribute specifies the narrative description of the policy. </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>effectiveTime</b></tt> with data type <xref href="../TimeInterval.dita">Time Interval</xref>
+<ul><li>This attribute specifies the period of time (e.g., start date, end date) during which the privacy policy described by ePolicy is in effect.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>Uniquely identifies the policy</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>name</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>A human discernible name for the policy</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>This attribute indicates whether the policy is active or not</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>uri</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>The location of published policy.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>purposeOfUse</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>This attribute is used to specify the purpose to permit a specific type of action/operation according to the policy. The vocabulary analysis section provides additional illustrative values for the concept embodied by this attribute. </li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>allowableAccessTime</b></tt> with data type <xref href="../TimeInterval.dita">Time Interval</xref>
+<ul><li>An access may be allowed only during specific time periods of the day (e.g., 9 am to 5 pm).</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>route</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>This attribute specifies whether access to protected information may only be granted for a specified route of access.  For example, access may be restricted to remote users using a Virtual Private Network (VPN). The route is a context qualifier as specified by ISO/IEC 10164-9.</li></ul></li>
+<li>Contains at least one [1..*] <tt><b>accessRight</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>authority</b></tt>, where its type is <xref href="../Authority.dita">Authority</xref>
+<ul><li>This is an association to the Authority that issued the policy.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>securityRole</b></tt>, where its type is <xref href="../SecurityRole.dita">Security Role</xref>
+<ul><li>ISO-22600 specifies a role as &amp;apos;set of competences and/or performances which is associated with a task&amp;apos;. A role is a specialization of CompositePolicy that define a group of policies (authorization, obligation, delegation and refrain policies).</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>operationType</b></tt>, where its type is <xref href="../Operation.dita">Operation</xref>
+<ul><li>This association refers to the operation associated with the policy.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>informationReference</b></tt>, where its type is <xref href="../InformationReference.dita">Information Reference</xref>
+<ul><li>This association references the attributes of the information referenced in the policy. </li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>grantee</b></tt>, where its type is <xref href="../Grantee.dita">Grantee</xref>
+<ul><li>Designates who/what has been delegated a specific right.</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Delegation Policy</ph></p>
+</body>
+</topic>

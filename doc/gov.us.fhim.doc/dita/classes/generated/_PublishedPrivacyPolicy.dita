@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Published Privacy Policy - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>This class encapsulates the location of a human-readable version of the Electronic Privacy Policy. The human-readable version is accessible to any authorized system and user via the supplied URI.</p>
+</section>
+<ol id="conformance">
+<li>Extends <xref href="../PrivacyPolicy.dita">Privacy Policy</xref></li>
+<li>Contains zero or one [0..1] <tt><b>uri</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>The location of published policy.</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Extends <xref href="../PrivacyPolicy.dita">Privacy Policy</xref></li>
+<li>Contains exactly one [1..1] <tt><b>policyId</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>This attribute specifies the unique identifier of for a privacy policy.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>description</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>This attribute is a narrative description of the privacy policy.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>uri</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>The location of published policy.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>privacyRuleList</b></tt>, where its type is <xref href="../PrivacyRuleList.dita">Privacy Rule List</xref>
+<ul><li>A list of zero or more privacy rules applicable to this consent directive.  A privacy rule specifies the permission allowed to a user type by the consenter for a specific type of information. The person consenting may be either the subject of the record or a designated Substitute Decision Maker. One or more consent rules comprise a consent directive or privacy policy.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>grantee</b></tt>, where its type is <xref href="../Grantee.dita">Grantee</xref>
+<ul><li>Designates who/what has been delegated a specific right.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>authority</b></tt>, where its type is <xref href="../Authority.dita">Authority</xref>
+<ul><li>This is an association to the Authority that issued the policy.</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Published Privacy Policy</ph></p>
+</body>
+</topic>

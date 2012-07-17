@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Time Interval - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>An interval of time specified as an interval of points in time - TS.</p>
+<p>This data type represents an Interval, where the Low and High Limits are Points In Time.  An Interval is a &amp;quot;set of consecutive values of an ordered base data type.&amp;quot; - HL7 V3  A PointInTime is &amp;quot;a quantity specifying a point on the axis of natural time. A point in time is most often represented as a  calendar expression.&amp;quot; - HL7 V3</p>
+</section>
+<ol id="conformance">
+<li>Contains zero or one [0..1] <tt><b>low</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>This is the low limit of the interval.</li><li>&amp;quot;The low limit of the interval.  The low limit SHALL NOT be positive infinity.&amp;quot; - HL7 V3</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>high</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>This is the high limit of the interval.</li><li>&amp;quot;The high limit of the interval.  The high limit SHALL NOT be negative infinity, and SHALL be higher than the low limit if one exists.&amp;quot; - HL7 V3</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>width</b></tt> with data type <xref href="../TimeQuantity.dita">Time Quantity</xref>
+<ul><li>The difference between high and low boundary. The purpose of distinguishing a width property is to handle all cases of incomplete information symmetrically. In any interval representation only two of the three properties high, low, and width need to be stated and the third can be derived.</li><li>&amp;quot;The difference between HIGH and LOW boundary. The purpose of distinguishing width is to handle all cases of incomplete information symmetrically. In any IVL representation only two of the three properties HIGH, LOW, and width need to be stated: the third can be derived.  When both boundaries are known, width can be derived as HIGH minus LOW. When one boundary and width is known, the other boundary is also known. When no boundary is known, width may still be known. For example, one knows that an activity takes about 30 minutes, but one may not yet know when that activity is started.&amp;quot; - HL7 V3</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains zero or one [0..1] <tt><b>low</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>This is the low limit of the interval.</li><li>&amp;quot;The low limit of the interval.  The low limit SHALL NOT be positive infinity.&amp;quot; - HL7 V3</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>high</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>This is the high limit of the interval.</li><li>&amp;quot;The high limit of the interval.  The high limit SHALL NOT be negative infinity, and SHALL be higher than the low limit if one exists.&amp;quot; - HL7 V3</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>width</b></tt> with data type <xref href="../TimeQuantity.dita">Time Quantity</xref>
+<ul><li>The difference between high and low boundary. The purpose of distinguishing a width property is to handle all cases of incomplete information symmetrically. In any interval representation only two of the three properties high, low, and width need to be stated and the third can be derived.</li><li>&amp;quot;The difference between HIGH and LOW boundary. The purpose of distinguishing width is to handle all cases of incomplete information symmetrically. In any IVL representation only two of the three properties HIGH, LOW, and width need to be stated: the third can be derived.  When both boundaries are known, width can be derived as HIGH minus LOW. When one boundary and width is known, the other boundary is also known. When no boundary is known, width may still be known. For example, one knows that an activity takes about 30 minutes, but one may not yet know when that activity is started.&amp;quot; - HL7 V3</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Time Interval</ph></p>
+</body>
+</topic>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Workstation Location - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>Access may be granted only to initiators on specific end-systems, workstations or terminals, or only to initiators in a specific physical location. This class is required to support user authorization as specified by the business requirements (use case S.1).</p>
+</section>
+<ol id="conformance">
+<li>Extends <xref href="../Location.dita">Location</xref></li>
+<li>Contains exactly one [1..1] <tt><b>organizationalProvider</b></tt>, where its type is <xref href="../OrganizationalProvider.dita">Organizational Provider</xref>
+<ul><li>The organizational provider with which the workstation is associated.</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Extends <xref href="../Location.dita">Location</xref></li>
+<li>Contains exactly one [1..1] <tt><b>address</b></tt> with data type <xref href="../Address.dita">Address</xref>
+<ul><li>The postal address of the location.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>Uniquely identifies the location.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>name</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>A moniker for the location.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>organizationalProvider</b></tt>, where its type is <xref href="../OrganizationalProvider.dita">Organizational Provider</xref>
+<ul><li>The organizational provider with which the workstation is associated.</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Workstation Location</ph></p>
+</body>
+</topic>

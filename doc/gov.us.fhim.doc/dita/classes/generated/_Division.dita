@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Division - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>Division: &amp;quot;A part of a government, business, country, etc, that has been made into a unit for administrative, political, or other reasons.&amp;quot; - Collins English Dictionary. The part of the organization responsible for the actions taken in the provision of healthcare services to the patient.  This class is primarily used for the tracking of financial and workload information.  This class is equivalent to File 40.8 in Vista.</p>
+</section>
+<ol id="conformance">
+<li>Extends <xref href="../Organization.dita">Organization</xref></li>
+</ol>
+<ol id="aggregate">
+<li>Extends <xref href="../Organization.dita">Organization</xref></li>
+<li>Contains exactly one [1..1] <tt><b>address</b></tt> with data type <xref href="../Address.dita">Address</xref>
+<ul><li>The person&amp;apos;s office address.  First choice for business related contacts during business hours.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>A unique string or token used to identify the organization</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>name</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>The name of the organization.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>asOrganizationalProvider</b></tt>, where its type is <xref href="../OrganizationalProvider.dita">Organizational Provider</xref>
+<ul><li>Represents information about an organization which is authorized to provide health care services.</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Division</ph></p>
+</body>
+</topic>

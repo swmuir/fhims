@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Patient Treatment Assessment - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>Contains information pertinent to patient&amp;apos;s pre treatment assessment.</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>dateFirstSurgicalProcedure</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The earliest date on which any first course surgical procedure was performed.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dateOfNoTreatment</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date on which it is decided not to treat the patient.  If the physician decides not to treat the patient, record the date of this decision as the DATE OF NO TREATMENT.  The physician may decide not to treat the patient because of co-morbid conditions, advanced disease, or because the accepted management of the cancer is to observe until the disease progresses or until the patient becomes symptomatic.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>readmissionWithinThirtyDaysSurgery</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Records a readmission to the same hospital within 30 days of discharge following a hospitalization for surgical resection of the primary site.  Possible values are No surgery/not readmitted; Unplanned readmission; Planned readmission; Planned and unplanned readmission; Unknown if surgery or readmission; etc.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>reasonForNoRadiation</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the reason that no regional radiation  therapy was administered to the primary site.  Possible values are Radiation administered; Not part of 1st course; Contraindicated; Patient died prior to tx; Not administered, no reason; Refused by patient; Unknown if administered; Unknown, death cert/autopsy cases; etc.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>reasonNoSurgeryOfPrimary</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the reason for no SURGERY OF PRIMARY SITE, SCOPE OF LYMPH NODE SURGERY, and SURGERY OF OTHER SITES/NODES.  Codes 1-2 and 6-9 are valid only when the field SURGERY OF PRIMARY SITE is coded 00, SCOPE OF LYMPH NODE SURGERY is coded 0, and SURGERY OF OTHER SITES/NODES is coded 0.  Possible values are Surgery performed; Not part of 1st course; Contraindicated/risk factors; Patient died prior to surgery; No reason in record; Refused by patient; Unknown if performed; Unknown/dx at autopsy/death cert; etc.  </li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>dateFirstSurgicalProcedure</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The earliest date on which any first course surgical procedure was performed.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dateOfNoTreatment</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date on which it is decided not to treat the patient.  If the physician decides not to treat the patient, record the date of this decision as the DATE OF NO TREATMENT.  The physician may decide not to treat the patient because of co-morbid conditions, advanced disease, or because the accepted management of the cancer is to observe until the disease progresses or until the patient becomes symptomatic.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>readmissionWithinThirtyDaysSurgery</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Records a readmission to the same hospital within 30 days of discharge following a hospitalization for surgical resection of the primary site.  Possible values are No surgery/not readmitted; Unplanned readmission; Planned readmission; Planned and unplanned readmission; Unknown if surgery or readmission; etc.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>reasonForNoRadiation</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the reason that no regional radiation  therapy was administered to the primary site.  Possible values are Radiation administered; Not part of 1st course; Contraindicated; Patient died prior to tx; Not administered, no reason; Refused by patient; Unknown if administered; Unknown, death cert/autopsy cases; etc.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>reasonNoSurgeryOfPrimary</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the reason for no SURGERY OF PRIMARY SITE, SCOPE OF LYMPH NODE SURGERY, and SURGERY OF OTHER SITES/NODES.  Codes 1-2 and 6-9 are valid only when the field SURGERY OF PRIMARY SITE is coded 00, SCOPE OF LYMPH NODE SURGERY is coded 0, and SURGERY OF OTHER SITES/NODES is coded 0.  Possible values are Surgery performed; Not part of 1st course; Contraindicated/risk factors; Patient died prior to surgery; No reason in record; Refused by patient; Unknown if performed; Unknown/dx at autopsy/death cert; etc.  </li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Patient Treatment Assessment</ph></p>
+</body>
+</topic>

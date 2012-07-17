@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Permission Catalog - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>The permission catalog specifies a set of standard permissions. The permission catalog is the subject of separate HL7 standards. This reference is intended to show it relates to the rest of the information classes required to support the use cases.</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Identifies the current state of the Permission.  The state should correspond to the HL7 Act State machine.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>version</b></tt> with data type <xref href="../String.dita">String</xref>
+</li>
+<li>Contains at least one [1..*] <tt><b>permission</b></tt>, where its type is <xref href="../Permission.dita">Permission</xref>
+<ul><li>A Role-Based Access Control (RBAC) permission. It specifies an information object and action/operation allowed on that object. A permission contains one operation and precisely one information reference. </li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Identifies the current state of the Permission.  The state should correspond to the HL7 Act State machine.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>version</b></tt> with data type <xref href="../String.dita">String</xref>
+</li>
+<li>Contains at least one [1..*] <tt><b>permission</b></tt>, where its type is <xref href="../Permission.dita">Permission</xref>
+<ul><li>A Role-Based Access Control (RBAC) permission. It specifies an information object and action/operation allowed on that object. A permission contains one operation and precisely one information reference. </li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Permission Catalog</ph></p>
+</body>
+</topic>
