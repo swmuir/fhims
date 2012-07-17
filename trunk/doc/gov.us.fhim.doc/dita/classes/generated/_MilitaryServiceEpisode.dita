@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Military Service Episode - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>Indicates a Veteran&amp;apos;s stint in active military service.</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>branchCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>The specific branch of the military.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dateRange</b></tt> with data type <xref href="../TimeInterval.dita">Time Interval</xref>
+<ul><li>The timeframe the Vet served in the military branch.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>The unique identifier for this military service stint.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>militaryServiceId</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>A unique identifier for this military service act.</li></ul></li>
+<li>Contains at least one [1..*] <tt><b>qualifyingServiceDetail</b></tt>, where its type is <xref href="../QualifyingServiceDetail.dita">Qualifying Service Detail</xref>
+<ul><li>qualifyingServiceDetail.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>militaryServiceConflict</b></tt>, where its type is <xref href="../MilitaryServiceConflict.dita">Military Service Conflict</xref>
+<ul><li>militaryServiceConflict.</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>branchCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>The specific branch of the military.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dateRange</b></tt> with data type <xref href="../TimeInterval.dita">Time Interval</xref>
+<ul><li>The timeframe the Vet served in the military branch.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>The unique identifier for this military service stint.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>militaryServiceId</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>A unique identifier for this military service act.</li></ul></li>
+<li>Contains at least one [1..*] <tt><b>qualifyingServiceDetail</b></tt>, where its type is <xref href="../QualifyingServiceDetail.dita">Qualifying Service Detail</xref>
+<ul><li>qualifyingServiceDetail.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>militaryServiceConflict</b></tt>, where its type is <xref href="../MilitaryServiceConflict.dita">Military Service Conflict</xref>
+<ul><li>militaryServiceConflict.</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Military Service Episode</ph></p>
+</body>
+</topic>

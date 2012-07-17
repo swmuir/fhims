@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Diagnostic Imaging Event - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>This class contains attributes associated with Diagnostic Imaging.</p>
+</section>
+<ol id="conformance">
+<li>Extends <xref href="../ImagingEvent.dita">Imaging Event</xref></li>
+</ol>
+<ol id="aggregate">
+<li>Extends <xref href="../ImagingEvent.dita">Imaging Event</xref></li>
+<li>Contains exactly one [1..1] <tt><b>dateLastAccessed</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date and time the image was last viewed or accessed.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dateTimeImageCreated</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>Contains the date and time on which the image was captured.  It is not the same as the date and time of the procedure or exam.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>externalImageId</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>When an image is created from an external PACS system, this property will contain the unique identifier for the image within that system.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>fileType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>This is a code for the type of data that is stored in the file that is described in the current record.  Possible values are Text; Large X-Ray; Targa(TM); Thumbnail; DICOM; etc.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>The Internal Entry Number of the Image File Entry  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>imageCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>A categorization of the image, which can be used for searching and sorting.  See VistA table 2005.82 for example values.  Possible values (from VA) include: Administrative, Clinical, Admin/Clinical.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>imageName</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>This is the natural language name of the object; usually consists of the patient name, social security number, and object description.     </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>imageType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>A categorization of the image, which can be used for searching and sorting.  See VistA table 2005.83 for example values.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>isDuplicate</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li>Identifies and enables screening of images that have duplicate instances in the archive file and the image file.   Possible values are YES; etc.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>isIntegrityQuestionable</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li>Indicates that this image entry has questionable integrity.  Possible values are YES etc.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>longDescription</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>This is the description of the image at length. </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>microscopicObjective</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Description of the Microscopic Objective selected by the pathologist.  It identifies the power of the microscope objective used when capturing the image of the slide.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>originCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>A categorization of the image based on the organization which originated the image.  For the VA, possible values include VA, Non-VA, DOD, Fee-Basis, etc.  Similar concepts can be generalized for other agencies.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>pathologyAccessionId</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Contains the Anatomic Pathology accession number - the identifying number for the slide.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>procedureCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Categorizes the procedure that generated the image.  Possible values include: Colonoscopy, Surgery, Surgical pathology, Radiology.  This property can be used to help locate individual images or even classes of images for research.    </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>procedureDateTime</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date and time the image was last viewed or accessed.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>procedureSubCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>A more finely grained categorizaton (than the procedureCategory) of the procedure that generated the image.  Used for sorting and searching of the images.  See VistA table 2005.85 for example values.      </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>shortDescription</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>A brief, one-line description of the image or object.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>softwareCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Categorizes the software system or package that generated and/or accesses the image.  Used to locate appropriate images when accessed by the software package.  Possible values include (from the VA): Radiology, Laboratory, Medicine, Clinical Document, Surgery, Photo ID, etc.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>specialtyCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>A categorization of the image by specialty/subspecialty, which can be used for searching and sorting.  See VistA table 2005.84 for example values.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>stainDescription</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Description of the Histological Stain used in the preparation of the specimen.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>radiologyReport</b></tt>, where its type is <xref href="../RadNucReport.dita">Rad Nuc Report</xref>
+<ul><li>Represents the radiology/nuclear medicine report as known by the originating VistA system.  Equivalent to File 74.  </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>acquisitionDevice</b></tt>, where its type is <xref href="../Device.dita">Device</xref>
+<ul><li>Device that performed the image Acquisition.  Pointer to file #2006.04.  </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>acquisitionSite</b></tt>, where its type is <xref href="../Institution.dita">Institution</xref>
+<ul><li>The location at which the image was taken  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>author</b></tt>, where its type is <xref href="../Author.dita">Author</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>clinic</b></tt>, where its type is <xref href="../HospitalLocation.dita">Hospital Location</xref>
+<ul><li>The location where the professional service was performed.  Pointer to file #44.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>fileStorage</b></tt>, where its type is <xref href="../ImageStorage.dita">Image Storage</xref>
+<ul><li>A pointer to the Network Location file giving the jukebox platter where the image is stored (provided there is a jukebox in the Imaging System). </li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>imageRouteEvent</b></tt>, where its type is <xref href="../ImageRouteEvent.dita">Image Route Event</xref>
+<ul><li>Contains the data elements and associations related to an DICOM (Digital Imaging and Communications in Medicine)-compliant image copy event.  Maintains an audit trail of the copy.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>nullifiedBy</b></tt>, where its type is <xref href="../NullifyAct.dita">Nullify Act</xref>
+<ul><li>Person who deletes/Nullifies this treatment record.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>patient</b></tt>, where its type is <xref href="../Patient.dita">Patient</xref>
+<ul><li>The patient that the image or object belongs to.  Pinter to File #2.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>relatedImage</b></tt>, where its type is <xref href="../RelatedImage.dita">Related Image</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>specimen</b></tt>, where its type is <xref href="../Specimen.dita">Specimen</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>treatingSpeciality</b></tt>, where its type is <xref href="../FacilityTreatingSpecialty.dita">Facility Treating Specialty</xref>
+<ul><li>Medical specialty that performed the Non OR procedure.  Equivalent to a pointer to File #2005.84</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Diagnostic Imaging Event</ph></p>
+</body>
+</topic>

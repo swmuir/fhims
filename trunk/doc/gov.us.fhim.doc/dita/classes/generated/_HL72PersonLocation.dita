@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>HL72 Person Location - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>This class corresponds to the HL7 V2 Person Location (PL) data type. A PL &amp;quot;is used to specify a patient location  within a healthcare institution. Which components are valued depends on the needs of the site. For example for a patient  treated at home, only the person location type is valued. It is most commonly used for specifying patient locations, but  may refer to other types of persons within a healthcare setting.&amp;quot; - HL7 v2</p>
+</section>
+<ol id="conformance">
+<li>Extends <xref href="../Id.dita">Id</xref></li>
+<li>Contains zero or one [0..1] <tt><b>pointOfCare</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>&amp;quot;Specifies the code for the point where patient care is administered. It is conditional on Person Location Type (e.g.,  nursing unit or department or clinic). After floor, it is the most general patient location designation.&amp;quot; - HL7 v2</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>room</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>&amp;quot;Specifies the code for the patient&amp;apos;s room. After point of care, it is the most general person location designation.&amp;quot; - HL7  v2</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>bed</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>&amp;quot;Specifies the code for the patient&amp;apos;s bed. After room, it is the most general person location designation.&amp;quot; - HL7 v2</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>facilityNamespaceId</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>The Facility is &amp;quot;is subject to site interpretation but generally describes the highest level physical designation of an institution, medical center or enterprise. It is the most general person location designation.&amp;quot; - HL7 v2.  Note that the Facility in HL7 v2 is a complex type (an HD datatype).  This property contains the Namespace Id sub-component, which is &amp;quot;used as the HL7 identifier for the user-defined table of values for this component.&amp;quot;</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>facilityUniversalId</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>The Facility is &amp;quot;is subject to site interpretation but generally describes the highest level physical designation of an  institution, medical center or enterprise. It is the most general person location designation.&amp;quot; - HL7 v2.  Note that the Facility in HL7 v2 is a complex type (an HD datatype).  This property contains the Universal Id sub-component, which is defined thusly: &amp;quot;The &amp;lt;universal ID&amp;gt; (UID), is a  string formatted according to the scheme defined by the &amp;lt;universal ID type&amp;gt; (UID type) component. The UID is intended  to be unique over time within the UID type. It is rigorously defined. Each UID must belong to one of the specifically  enumerated schemes for constructing UIDs (defined by the UID type). The UID must follow the syntactic rules of the  particular universal identifier scheme (defined by the third component). Note that these syntactic rules are not defined  within HL7 but are defined by the rules of the particular universal identifier scheme.&amp;quot; - HL7 v2</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>facilityUniversalIdType</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>The Facility is &amp;quot;is subject to site interpretation but generally describes the highest level physical designation of an  institution, medical center or enterprise. It is the most general person location designation.&amp;quot; - HL7 v2.  Note that the Facility in HL7 v2 is a complex type (an HD datatype).  This property contains the Universal Id Type sub-component, which is defined thusly: &amp;quot;The &amp;lt;universal ID type&amp;gt; (UID  type) component governs the interpretation of the &amp;lt;universal ID&amp;gt; (UID) component. If the UID type is a known  UID refer to HL7 Table 0301 - Universal ID type for valid values, then the UID is a universal ID of that type.&amp;quot; - HL7 v2</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>personLocationType</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>&amp;quot;Person location type is the categorization of the person s location defined by facility, building, floor, point of care,  room or bed. Although not a required field, when used, it may be the only populated field. It usually includes values such  as nursing unit, department, clinic, SNF, physician s office.&amp;quot; - HL7 v2</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>locationDescription</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>&amp;quot;Describes the location in free text&amp;quot; - HL7 v2</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Extends <xref href="../Id.dita">Id</xref></li>
+<li>Contains zero or one [0..1] <tt><b>identifier</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>This is a placeholder for the &amp;quot;entity identifier,&amp;quot; which is usually defined to be unique within the series of identifiers created by the &amp;quot;assigning authority&amp;quot;.  Note that this property will be replaced by some other concept or group of concepts when this abstract class is replaced by a specific class for a given target platform.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>idType</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Indicates what kind of identifier is being represented.  For example, the idType might be represent a Driver&amp;apos;s Licence, in which case the assigning Authority might be the Virginia Department of Motor Vehicles.  Note that: a) this information can (and probably should) be also be made clear by the name and definition of the property whose datatype is an Id; and b) this property might be an enumeration in the future.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>assigningAuthority</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>This is a placeholder for the &amp;quot;assigning authority&amp;quot;, which is a unique identifier of the system (or organization or agency or department) that creates the data.    Note that this property will be replaced by some other concept or group of concepts when this abstract class is replaced by a specific class for a given target platform.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>pointOfCare</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>&amp;quot;Specifies the code for the point where patient care is administered. It is conditional on Person Location Type (e.g.,  nursing unit or department or clinic). After floor, it is the most general patient location designation.&amp;quot; - HL7 v2</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>room</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>&amp;quot;Specifies the code for the patient&amp;apos;s room. After point of care, it is the most general person location designation.&amp;quot; - HL7  v2</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>bed</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>&amp;quot;Specifies the code for the patient&amp;apos;s bed. After room, it is the most general person location designation.&amp;quot; - HL7 v2</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>facilityNamespaceId</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>The Facility is &amp;quot;is subject to site interpretation but generally describes the highest level physical designation of an institution, medical center or enterprise. It is the most general person location designation.&amp;quot; - HL7 v2.  Note that the Facility in HL7 v2 is a complex type (an HD datatype).  This property contains the Namespace Id sub-component, which is &amp;quot;used as the HL7 identifier for the user-defined table of values for this component.&amp;quot;</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>facilityUniversalId</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>The Facility is &amp;quot;is subject to site interpretation but generally describes the highest level physical designation of an  institution, medical center or enterprise. It is the most general person location designation.&amp;quot; - HL7 v2.  Note that the Facility in HL7 v2 is a complex type (an HD datatype).  This property contains the Universal Id sub-component, which is defined thusly: &amp;quot;The &amp;lt;universal ID&amp;gt; (UID), is a  string formatted according to the scheme defined by the &amp;lt;universal ID type&amp;gt; (UID type) component. The UID is intended  to be unique over time within the UID type. It is rigorously defined. Each UID must belong to one of the specifically  enumerated schemes for constructing UIDs (defined by the UID type). The UID must follow the syntactic rules of the  particular universal identifier scheme (defined by the third component). Note that these syntactic rules are not defined  within HL7 but are defined by the rules of the particular universal identifier scheme.&amp;quot; - HL7 v2</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>facilityUniversalIdType</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>The Facility is &amp;quot;is subject to site interpretation but generally describes the highest level physical designation of an  institution, medical center or enterprise. It is the most general person location designation.&amp;quot; - HL7 v2.  Note that the Facility in HL7 v2 is a complex type (an HD datatype).  This property contains the Universal Id Type sub-component, which is defined thusly: &amp;quot;The &amp;lt;universal ID type&amp;gt; (UID  type) component governs the interpretation of the &amp;lt;universal ID&amp;gt; (UID) component. If the UID type is a known  UID refer to HL7 Table 0301 - Universal ID type for valid values, then the UID is a universal ID of that type.&amp;quot; - HL7 v2</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>personLocationType</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>&amp;quot;Person location type is the categorization of the person s location defined by facility, building, floor, point of care,  room or bed. Although not a required field, when used, it may be the only populated field. It usually includes values such  as nursing unit, department, clinic, SNF, physician s office.&amp;quot; - HL7 v2</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>locationDescription</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>&amp;quot;Describes the location in free text&amp;quot; - HL7 v2</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">HL72 Person Location</ph></p>
+</body>
+</topic>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Ancillary Service Event - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>An interaction between a patient and a practitioner in which the practitioner does not exercise independent judgement.  For example, a lab test.  The lab technician may generate results, but the physician issues the diagnosis.</p>
+</section>
+<ol id="conformance">
+<li>Extends <xref href="../AbstractEncounter.dita">Abstract Encounter</xref></li>
+</ol>
+<ol id="aggregate">
+<li>Extends <xref href="../AbstractEncounter.dita">Abstract Encounter</xref></li>
+<li>Contains exactly one [1..1] <tt><b>confidentiallyCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Contains a set of values that control the disclosure of information about this patient </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>comments</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Any remarks concerning this encounter.    </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>duration</b></tt> with data type <xref href="../TimeInterval.dita">Time Interval</xref>
+<ul><li>&amp;quot;The time interval starting with the administrative onset of the encounter (e.g. admission, registration, patient arrival) and ending with the patient&amp;apos;s departure (e.g. discharge). Note_1: for active encounters the end of the effectiveTime range is the anticipated end date-time. Note_2: all messages, except the &amp;quot;nullify&amp;quot; message, require at least a starting time.&amp;quot;  (HL7).   This is the start and end date/times of the Encounter.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>Unique identifier for this Encounter  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>priority</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>&amp;quot;Contains the priority of the visit.&amp;quot; - HL7 Version 2.8, PV2-25    Possible values include (from HL7 Table 217): Emergency; Urgent; Elective</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>A value specifying the state of this patient encounter (based on the RIM Act class state machine), for example, active, aborted, completed </li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>diagnosisList</b></tt>, where its type is <xref href="../DiagnosisListEntry.dita">Diagnosis List Entry</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>patient</b></tt>, where its type is <xref href="../Patient.dita">Patient</xref>
+<ul><li>The patient who is the subject of the Episode of Care.  </li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>relatedEncounter</b></tt>, where its type is <xref href="../RelatedEncounter.dita">Related Encounter</xref>
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Ancillary Service Event</ph></p>
+</body>
+</topic>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Person Name - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>The name of the person.  Uses the VHIM-constrained Person Name data type.</p>
+<p>&amp;quot;A word or term by which a person or thing is commonly and distinctively known.&amp;quot; - Collins English Dictionary.   This datatype represents a person&amp;apos;s name.</p>
+</section>
+<ol id="conformance">
+<li>Contains zero or more [0..*] <tt><b>prefix</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>&amp;apos;A prefix has a strong association to the immediately following name part. A prefix has no implicit trailing white space (it has implicit leading white space though). Note that prefixes can be inverted&amp;apos; (HL7) A Person Name Prefix is usually an academic or nobility title. An Academic title includes a prefix like &amp;apos;Dr.&amp;apos; There are still people with nobility titles (aristocrats). German &amp;apos;von&amp;apos; is generally a nobility title, not a mere voorvoegsel. Others are &amp;apos;Earl of&amp;apos; or &amp;apos;His Majesty King of...&amp;apos; etc. Rarely used nowadays, but some systems do keep track of this. </li><li>&amp;quot;Contains a set of honorific terms that typically appear before a person&amp;apos;s name, for example Mr., Mrs., Dr., etc. Prefixes have a strong association to the immediately following name part.&amp;quot; -  HL7 V3</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>given</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>&amp;apos;Given name (don&amp;apos;t call it &amp;apos;first name&amp;apos; since this given names do not always come first)&amp;apos; (HL7) </li><li>&amp;quot;A set of names given to a person at birth, but not including the family name.  In western cultures, this property would contain the &amp;apos;first&amp;apos; and &amp;apos;middle&amp;apos; names.  Note that in some cultures, the given name is placed after the family name.  Note also that this property contains multiple elements, so it can handle those situations where a person has more than one &amp;apos;middle&amp;apos; name.&amp;quot; - HL7 V3</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>nickname</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>&amp;apos;A callme name is (usually a given name) that is preferred when a person is directly addressed.&amp;apos; (HL7) </li><li>A name added to or substituted for the proper name of a person.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>family</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>&amp;apos;Family name, this is the name that links to the genealogy&amp;apos; (HL7) </li><li>&amp;quot;The portion of a person&amp;apos;s name that reflects the genealogy of the person.  In western cultures, this is the &amp;apos;last&amp;apos; name.  In eastern cultures, the family name appears before the person&amp;apos;s given name(s).  In some cultures (e.g. Eritrea) the family name of a son is the first name of his father.&amp;quot; - HL7 V3</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>suffix</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>&amp;apos;A suffix has a strong association to the immediately preceding name part. A prefix has no implicit leading white space (it has implicit trailing white space though). Suffices can not be inverted&amp;apos; (HL7) </li><li>&amp;quot;Contains a list of honorific terms that typically appear after a person&amp;apos;s name, for example Jr., Sr., MD, RN, etc. Prefixes have a strong association to the immediately following name part.&amp;quot; - HL7 V3</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>initials</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>The first letter of each part of a proper name. This property stores the initials of a person&amp;apos;s name, which is used  in research studies to identify the patient without divulging the person&amp;apos;s entire name.</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains zero or more [0..*] <tt><b>prefix</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>&amp;apos;A prefix has a strong association to the immediately following name part. A prefix has no implicit trailing white space (it has implicit leading white space though). Note that prefixes can be inverted&amp;apos; (HL7) A Person Name Prefix is usually an academic or nobility title. An Academic title includes a prefix like &amp;apos;Dr.&amp;apos; There are still people with nobility titles (aristocrats). German &amp;apos;von&amp;apos; is generally a nobility title, not a mere voorvoegsel. Others are &amp;apos;Earl of&amp;apos; or &amp;apos;His Majesty King of...&amp;apos; etc. Rarely used nowadays, but some systems do keep track of this. </li><li>&amp;quot;Contains a set of honorific terms that typically appear before a person&amp;apos;s name, for example Mr., Mrs., Dr., etc. Prefixes have a strong association to the immediately following name part.&amp;quot; -  HL7 V3</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>given</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>&amp;apos;Given name (don&amp;apos;t call it &amp;apos;first name&amp;apos; since this given names do not always come first)&amp;apos; (HL7) </li><li>&amp;quot;A set of names given to a person at birth, but not including the family name.  In western cultures, this property would contain the &amp;apos;first&amp;apos; and &amp;apos;middle&amp;apos; names.  Note that in some cultures, the given name is placed after the family name.  Note also that this property contains multiple elements, so it can handle those situations where a person has more than one &amp;apos;middle&amp;apos; name.&amp;quot; - HL7 V3</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>nickname</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>&amp;apos;A callme name is (usually a given name) that is preferred when a person is directly addressed.&amp;apos; (HL7) </li><li>A name added to or substituted for the proper name of a person.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>family</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>&amp;apos;Family name, this is the name that links to the genealogy&amp;apos; (HL7) </li><li>&amp;quot;The portion of a person&amp;apos;s name that reflects the genealogy of the person.  In western cultures, this is the &amp;apos;last&amp;apos; name.  In eastern cultures, the family name appears before the person&amp;apos;s given name(s).  In some cultures (e.g. Eritrea) the family name of a son is the first name of his father.&amp;quot; - HL7 V3</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>suffix</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>&amp;apos;A suffix has a strong association to the immediately preceding name part. A prefix has no implicit leading white space (it has implicit trailing white space though). Suffices can not be inverted&amp;apos; (HL7) </li><li>&amp;quot;Contains a list of honorific terms that typically appear after a person&amp;apos;s name, for example Jr., Sr., MD, RN, etc. Prefixes have a strong association to the immediately following name part.&amp;quot; - HL7 V3</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>initials</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>The first letter of each part of a proper name. This property stores the initials of a person&amp;apos;s name, which is used  in research studies to identify the patient without divulging the person&amp;apos;s entire name.</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Person Name</ph></p>
+</body>
+</topic>

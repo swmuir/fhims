@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Detected Issue Event - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>&amp;quot;An observation identifying a potential adverse outcome as a result of an Act or combination of Acts.  Examples: Detection of a drug-drug interaction; Identification of a late-submission for an invoice; Requesting discharge for a patient who does not meet hospital-defined discharge criteria.  Discussion: This class is commonly used for identifying &amp;apos;business rule&amp;apos; or &amp;apos;process&amp;apos; problems that may result in a refusal to carry out a particular request. In some circumstances it may be possible to &amp;apos;bypass&amp;apos; a problem by modifying the request to acknowledge the issue and/or by providing some form of mitigation.  Constraints: the Act or Acts that may cause the the adverse outcome are the target of a subject ActRelationship. The subbtypes of this concept indicate the type of problem being detected (e.g. drug-drug interaction) while the Observation.value is used to repesent a specific problem code (e.g. specific drug-drug interaction id).&amp;quot; - HL7 Version 3</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>dangerLevel</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>This is the clinical danger level associated with this detected issue. Those having a High danger level will require a justification for override and release. Valid values are High, Moderate, or Low.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>detectedIssue</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the issue that was detected (also called an &amp;quot;order check&amp;quot;).</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>text</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Contains the actual text of the detected issue.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>detectedIssueOverride</b></tt>, where its type is <xref href="../DetectedIssueOverride.dita">Detected Issue Override</xref>
+<ul><li>Provides a record that the Detected Issue (or &amp;quot;Order Check&amp;quot;) was acknowledged and was disregarded.  For example, perhaps a warning was displayed indicating that the patient has a mild allergy to an antibiotic that the clinician wishes to order.  If the antibiotic is the only one that could possibly save the patient&amp;apos;s life, the clinician would likely choose to order the antibiotic anyway.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>detectedIssueOrderRevision</b></tt>, where its type is <xref href="../DetectedIssueOrderRevision.dita">Detected Issue Order Revision</xref>
+<ul><li>Provides a record of a revision to the originally proposed Order Action - the resulting revision reflecting a decision to change the Order Action based on information presented by the Detected Issue (aka Order Check).</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>dangerLevel</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>This is the clinical danger level associated with this detected issue. Those having a High danger level will require a justification for override and release. Valid values are High, Moderate, or Low.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>detectedIssue</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the issue that was detected (also called an &amp;quot;order check&amp;quot;).</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>text</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Contains the actual text of the detected issue.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>detectedIssueOverride</b></tt>, where its type is <xref href="../DetectedIssueOverride.dita">Detected Issue Override</xref>
+<ul><li>Provides a record that the Detected Issue (or &amp;quot;Order Check&amp;quot;) was acknowledged and was disregarded.  For example, perhaps a warning was displayed indicating that the patient has a mild allergy to an antibiotic that the clinician wishes to order.  If the antibiotic is the only one that could possibly save the patient&amp;apos;s life, the clinician would likely choose to order the antibiotic anyway.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>detectedIssueOrderRevision</b></tt>, where its type is <xref href="../DetectedIssueOrderRevision.dita">Detected Issue Order Revision</xref>
+<ul><li>Provides a record of a revision to the originally proposed Order Action - the resulting revision reflecting a decision to change the Order Action based on information presented by the Detected Issue (aka Order Check).</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Detected Issue Event</ph></p>
+</body>
+</topic>

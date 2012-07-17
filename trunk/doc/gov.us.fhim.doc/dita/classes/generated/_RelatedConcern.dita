@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Related Concern - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>This class links Health Concern (aka &amp;quot;Problem&amp;quot;) entries.  The relatedConcernCategory code provides an indication of how the entries are related.</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>healthConcernEntry</b></tt>, where its type is <xref href="../HealthConcern.dita">Health Concern</xref>
+<ul><li>Identifies the Health Concern (aka &amp;quot;Problem&amp;quot;) entry to which the original entry (i.e., the entry that points to this class) is related.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>relatedConcernCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>This property provides an indication of how the entries are related.  Possible values include: Replaces, Replaced By, Parent, Child, etc.</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>relatedConcernCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>This property provides an indication of how the entries are related.  Possible values include: Replaces, Replaced By, Parent, Child, etc.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>healthConcernEntry</b></tt>, where its type is <xref href="../HealthConcern.dita">Health Concern</xref>
+<ul><li>Identifies the Health Concern (aka &amp;quot;Problem&amp;quot;) entry to which the original entry (i.e., the entry that points to this class) is related.</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Related Concern</ph></p>
+</body>
+</topic>

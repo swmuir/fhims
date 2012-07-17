@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Radiation Treatment Evaluation - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>Contains information pertinent to the followup of the radiation treatment.</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>boostDosage</b></tt> with data type <xref href="../Real.dita">Real</xref>
+<ul><li>Additional boost dosage delivered to that part of the treatment volume encompassed by the boost fields or devices. The unit of measure is centiGray (cGy).  Possible values are 00000 thru (5 9 s) 99999.  (Manually entered)  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>boostTreatmentModality</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Identifies the dominant modality of radiation therapy used to deliver the most clinically significant boost dose to the primary volume of interest during the first course of treatment. This is accomplished with external beam fields of reduced size (relative to the regional treatment fields), implants, stereotactic radiosurgery, conformal therapy, or IMRT. External beam boosts may consist of two or more successive phases with progressively smaller fields generally coded as a single entry. Posible values are  Neutrons (w or w/o X-Ray/electrons); Megavoltage, NOS; Brachytherapy, High-Dose-Rate (HDR); Photons (2-5 MV); etc.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dateRadiationTherapyEnded</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date on which the patient completes or receives the last radiation treatment at any facility.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>locationOfRadiationTx</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Identifies the location of the facility where radiation therapy was administered during the first course of treatment.  Possible values are No radiation tx; All radiation tx at this fac; Regional tx at this fac, boost elsewhere; Boost at this fac, regional elsewhere; All radiation tx elsewhere; Other; Unknown; etc.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>numberOfTxsToThisVolume</b></tt> with data type <xref href="../Real.dita">Real</xref>
+<ul><li>Indicates the total number of treatment sessions (fractions) administered during the first course of treatment.  Number between 0 and 99.    </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>radiationSurgerySequence</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the sequencing of radiation and surgical procedures given as part of the first course of treatment.  Possible values are No rad and/or surgery; Rad before surgery; Rad after surgery; Rad both before/after surgery; Intraoperative rad; Intraoperative rad w rad before/after surgery; Sequence unknown; etc.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>radiationTreatmentVolume</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Identifies the volume or anatomic target of the most clinically significant regional radiation therapy delivered to the patient during the first course of treatment.  Possible values are Eye/orbit; Chest/lung (NOS); Lung (limited); Esophagus; Breast/lymph nodes; Chest Wall;  Lower extended field; etc.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>regionalDoseCgy</b></tt> with data type <xref href="../Real.dita">Real</xref>
+<ul><li>The dominant or most clinically significant total dose of regional radiation therapy delivered to the patient during the first course of treatment.  The unit of measure is centiGray (cGy).  Possible values are 0000 thru 9999 (Manually entered)  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>regionalTreatmentModality</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Iidentifies the dominant modality of radiation therapy used to deliver the most clinically significant regional dose to the primary volume of interest during the first course of treatment.  Posible values are  Neutrons (w or w/o X-Ray/electrons); Megavoltage, NOS; Brachytherapy, High-Dose-Rate (HDR); Photons (2-5 MV); etc.  </li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>boostDosage</b></tt> with data type <xref href="../Real.dita">Real</xref>
+<ul><li>Additional boost dosage delivered to that part of the treatment volume encompassed by the boost fields or devices. The unit of measure is centiGray (cGy).  Possible values are 00000 thru (5 9 s) 99999.  (Manually entered)  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>boostTreatmentModality</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Identifies the dominant modality of radiation therapy used to deliver the most clinically significant boost dose to the primary volume of interest during the first course of treatment. This is accomplished with external beam fields of reduced size (relative to the regional treatment fields), implants, stereotactic radiosurgery, conformal therapy, or IMRT. External beam boosts may consist of two or more successive phases with progressively smaller fields generally coded as a single entry. Posible values are  Neutrons (w or w/o X-Ray/electrons); Megavoltage, NOS; Brachytherapy, High-Dose-Rate (HDR); Photons (2-5 MV); etc.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dateRadiationTherapyEnded</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date on which the patient completes or receives the last radiation treatment at any facility.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>locationOfRadiationTx</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Identifies the location of the facility where radiation therapy was administered during the first course of treatment.  Possible values are No radiation tx; All radiation tx at this fac; Regional tx at this fac, boost elsewhere; Boost at this fac, regional elsewhere; All radiation tx elsewhere; Other; Unknown; etc.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>numberOfTxsToThisVolume</b></tt> with data type <xref href="../Real.dita">Real</xref>
+<ul><li>Indicates the total number of treatment sessions (fractions) administered during the first course of treatment.  Number between 0 and 99.    </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>radiationSurgerySequence</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the sequencing of radiation and surgical procedures given as part of the first course of treatment.  Possible values are No rad and/or surgery; Rad before surgery; Rad after surgery; Rad both before/after surgery; Intraoperative rad; Intraoperative rad w rad before/after surgery; Sequence unknown; etc.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>radiationTreatmentVolume</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Identifies the volume or anatomic target of the most clinically significant regional radiation therapy delivered to the patient during the first course of treatment.  Possible values are Eye/orbit; Chest/lung (NOS); Lung (limited); Esophagus; Breast/lymph nodes; Chest Wall;  Lower extended field; etc.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>regionalDoseCgy</b></tt> with data type <xref href="../Real.dita">Real</xref>
+<ul><li>The dominant or most clinically significant total dose of regional radiation therapy delivered to the patient during the first course of treatment.  The unit of measure is centiGray (cGy).  Possible values are 0000 thru 9999 (Manually entered)  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>regionalTreatmentModality</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Iidentifies the dominant modality of radiation therapy used to deliver the most clinically significant regional dose to the primary volume of interest during the first course of treatment.  Posible values are  Neutrons (w or w/o X-Ray/electrons); Megavoltage, NOS; Brachytherapy, High-Dose-Rate (HDR); Photons (2-5 MV); etc.  </li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Radiation Treatment Evaluation</ph></p>
+</body>
+</topic>

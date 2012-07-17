@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Behavioral Health Summary Report - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>This class specifies the summary report intended to exchange selected                   information relevant across specialties. It may not include the details of an                   assessment but it will contain many data elements that are based on the                   information collected through the assessment and generated from its                 processing.</p>
+</section>
+<ol id="conformance">
+<li>Extends <xref href="../ClinicalDocumentEvent.dita">Clinical Document Event</xref></li>
+<li>Contains zero or more [0..*] <tt><b>personDemographics</b></tt>, where its type is <xref href="../PatientBehavioralHealth.dita">Patient Behavioral Health</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>confidentialityCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li> This attribute is used to specify that the content of this clinical                     document is sensitive because it contains Behavioral Health information. This                     attribute corresponds to the Act.confidentialityCode in the HL7 Version 3 RIM                     but is constrained to specify sensitivity and for the purpose of data                     segmentation. </li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>behavioralHealthSection</b></tt>, where its type is <xref href="../ResultsSection.dita">Results Section</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>alertsSection</b></tt>, where its type is <xref href="../AlertsSection.dita">Alerts Section</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>functionalStatusSection</b></tt>, where its type is <xref href="../FunctionalStatusSection.dita">Functional Status Section</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>socialHistorySection</b></tt>, where its type is <xref href="../SocialHistorySection.dita">Social History Section</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>problemSection</b></tt>, where its type is <xref href="../ProblemSection.dita">Problem Section</xref>
+</li>
+</ol>
+<ol id="aggregate">
+<li>Extends <xref href="../ClinicalDocumentEvent.dita">Clinical Document Event</xref></li>
+<li>Contains exactly one [1..1] <tt><b>archiveDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>&amp;lt;p&amp;gt;      This contains the date this document was archived.  &amp;lt;/p&amp;gt;</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>confidentiality</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>&amp;quot;Confidentiality is a required contextual component of CDA, where the value expressed in the header holds true for the entire document, unless overridden by a nested value (as further described in CDA Context (  4.4 )).&amp;quot;  (HL7 V3)  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dispensation</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>A code depicting the storage status of a Clinical Document. Possible Values Include: Active, Archived, Purged etc.    </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>documentTitle</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>&amp;quot;Represents the title of the document. It&amp;apos;s commonly the case that clinical documents do not have a title, and are collectively referred to by the display name of ClinicalDocument.code (e.g. a &amp;quot;consultation&amp;quot; or &amp;quot;progress note&amp;quot;). Where these display names are rendered to the clinician, or where the document has a unique title, the ClinicalDocument.title component should be used.&amp;quot; (HL7 3.0)  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>documentType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Classifies the document.  In VistA this is a pointer to file 8925.1.   In HL7 CDA, this is: &amp;quot;The code specifying the particular kind of document (e.g. History and Physical, Discharge Summary, Progress Note). The value set is drawn from LOINC, and has a CWE coding strength.&amp;quot; (HL7 3.0)      </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>&amp;quot;Represents the unique instance identifier of a clinical document&amp;quot;  (HL7 3.0)</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>isCosignatureNeeded</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li>Indicates whether or not a cosignature is needed.    </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>language</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>&amp;quot;Specifies the human language of character data (whether they be in contents or attribute values). The values of the attribute are language identifiers as defined by the IETF (Internet Engineering Task Force) RFC 3066 for the Identification of Languages, ed. H. Alvestrand. 1995, which obsoletes RFC 1766. Language is a contextual component of CDA., where the value expressed in the header holds true for the entire document, unless overridden by a nested value (as further described in CDA Context (  4.4 )).&amp;quot;   (HL7 3.0 CDA 2.0)  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>referenceDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>In VistA, &amp;quot;this is the Date (and time) by which the clinician will reference the document.  For Progress Notes, this will likely be the date of the provider&amp;apos;s encounter with the patient.  For documents which have been dictated, and transcribed (e.g., discharge summaries), it will correspond to the dictation date of the record.  In all cases, this is the date by which the document will be referenced and sorted.&amp;quot;    In CDA, this is the creation date: &amp;quot;Signifies the document creation time, when the document first came into being. &amp;quot; (HL7 3.0, CDA 2.0)</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>The current status of a given clinical document.  Possible values include: undictated, untranscribed, unreleased, unverified, unsigned, uncosigned, completed, etc.     Displayed in CPRS. And is an automatic system change when updated (never through a prompt to the user).   </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>treatmentBeginDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date/time at which the treatment episode associated with this document was initiated (e.g., Admission date/time for a discharge summary, Visit date/time for a clinic note, Transfer date/time for an interim summary)</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>treatmentEndDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The ending date/time for the treatment episode associated with this document (e.g.Time is optional)</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>updateDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>&amp;lt;HTML&amp;gt;&amp;lt;HEAD&amp;gt;  &amp;lt;META content=&amp;quot;MSHTML 6.00.2900.3492&amp;quot; name=GENERATOR&amp;gt;&amp;lt;/HEAD&amp;gt;  &amp;lt;BODY&amp;gt;This contains the date and time this document was updated.&amp;lt;/BODY&amp;gt;&amp;lt;/HTML&amp;gt;</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>version</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>&amp;quot;An integer value used to version successive replacement documents.&amp;quot;  (HL7 V3)    </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>confidentialityCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li> This attribute is used to specify that the content of this clinical                     document is sensitive because it contains Behavioral Health information. This                     attribute corresponds to the Act.confidentialityCode in the HL7 Version 3 RIM                     but is constrained to specify sensitivity and for the purpose of data                     segmentation. </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>administrativeClosure</b></tt>, where its type is <xref href="../AdministrativeClosureAct.dita">Administrative Closure Act</xref>
+<ul><li>This document was closed by Administrative Action.  </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>amendment</b></tt>, where its type is <xref href="../AmendmentAct.dita">Amendment Act</xref>
+<ul><li>Records the amendment of a clinical document.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>divsion</b></tt>, where its type is <xref href="../Institution.dita">Institution</xref>
+<ul><li>This is the institution associated with the document. It is extracted from the document&amp;apos;s hospital location if known; otherwise it is extracted from the user&amp;apos;s log-on division.   Equivalent to a pointer to File #4.  </li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>documentGroup</b></tt>, where its type is <xref href="../DocumentGroup.dita">Document Group</xref>
+<ul><li>Documents can be aggregated into clinically meaningfully groups; each document in the group will usually reference the same patient.  A clinical document will typically belong to at most one Document Group.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>hospitalCreditStop</b></tt>, where its type is <xref href="../ClinicStop.dita">Clinic Stop</xref>
+<ul><li>Identifies a node within a workflow process that is typically performed by the Service to facilitate collection of workload and financial information.   </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>hospitalLocation</b></tt>, where its type is <xref href="../HospitalLocation.dita">Hospital Location</xref>
+<ul><li>Hospital Location assiciated with this document.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>image</b></tt>, where its type is <xref href="../Image.dita">Image</xref>
+<ul><li>The pointer to the Image File.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>linkedDataObject</b></tt>, where its type is <xref href="../LinkedDataObject.dita">Linked Data Object</xref>
+<ul><li>The document for which the linkage is beding made.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>patientTransfer</b></tt>, where its type is <xref href="../PatientTransfer.dita">Patient Transfer</xref>
+<ul><li>The inpatient movement with which the document is associated. </li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>procedureSummary</b></tt>, where its type is <xref href="../ProcedureSummary.dita">Procedure Summary</xref>
+<ul><li>The summary for the clinical procedure performed.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>recordTarget</b></tt>, where its type is <xref href="../Patient.dita">Patient</xref>
+<ul><li>A Role of a Person as a recipient of health care services from a healthcare provider.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>relatedDocument</b></tt>, where its type is <xref href="../RelatedDocument.dita">Related Document</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>retraction</b></tt>, where its type is <xref href="../NullifyAct.dita">Nullify Act</xref>
+<ul><li>Records the retraction, or &amp;quot;nullification&amp;quot; of a clinical document.</li></ul></li>
+<li>Contains at least one [1..*] <tt><b>section</b></tt>, where its type is <xref href="../ClinicalDocumentSection.dita">Clinical Document Section</xref>
+<ul><li>A clinical document body is comprised of one or more document sections.  </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>service</b></tt>, where its type is <xref href="../ServiceDepartment.dita">Service Department</xref>
+<ul><li>The treating speciality associated with this document.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>treatingSpecialty</b></tt>, where its type is <xref href="../FacilityTreatingSpecialty.dita">Facility Treating Specialty</xref>
+<ul><li>The treating speciality associated with this document.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>visit</b></tt>, where its type is <xref href="../OutpatientVisit.dita">Outpatient Visit</xref>
+<ul><li>Indicates the visit to which the clinical document is related.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>visitLocation</b></tt>, where its type is <xref href="../HospitalLocation.dita">Hospital Location</xref>
+<ul><li>This is the Admitting/Screening Clinic associated with this document     </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>attender</b></tt>, where its type is <xref href="../Attender.dita">Attender</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>author</b></tt>, where its type is <xref href="../Author.dita">Author</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>personDemographics</b></tt>, where its type is <xref href="../PatientBehavioralHealth.dita">Patient Behavioral Health</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>behavioralHealthSection</b></tt>, where its type is <xref href="../ResultsSection.dita">Results Section</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>alertsSection</b></tt>, where its type is <xref href="../AlertsSection.dita">Alerts Section</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>functionalStatusSection</b></tt>, where its type is <xref href="../FunctionalStatusSection.dita">Functional Status Section</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>socialHistorySection</b></tt>, where its type is <xref href="../SocialHistorySection.dita">Social History Section</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>problemSection</b></tt>, where its type is <xref href="../ProblemSection.dita">Problem Section</xref>
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Behavioral Health Summary Report</ph></p>
+</body>
+</topic>

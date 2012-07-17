@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Power Of Attorney - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>&amp;quot;A power of attorney (POA) ... is an authorization to act on someone else&amp;apos;s behalf in a legal or business matter.&amp;quot; - wikipedia</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>effectiveDateRange</b></tt> with data type <xref href="../TimeInterval.dita">Time Interval</xref>
+<ul><li>The time period over which the Power of Attorney is effective.  Note that the end date is typically blank for active Power of Attorneys.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>purpose</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Categorizes the Power of Attorney</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>attorney</b></tt>, where its type is <xref href="../ContactParty.dita">Contact Party</xref>
+<ul><li>&amp;quot;The person authorizing the other to act is the principal, granter, or donor (of the power), and the one authorized to act is the agent or attorney-in-fact or, in many common law jurisdictions, simply the attorney.&amp;quot; - wikipedia.  This role identifies the person who has been granted the power.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the state of the Power of Attorney, as defined in the state-transition model in the HL7 RIM.  Examples include Active, Pending, Terminated, etc.</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>effectiveDateRange</b></tt> with data type <xref href="../TimeInterval.dita">Time Interval</xref>
+<ul><li>The time period over which the Power of Attorney is effective.  Note that the end date is typically blank for active Power of Attorneys.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>purpose</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Categorizes the Power of Attorney</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the state of the Power of Attorney, as defined in the state-transition model in the HL7 RIM.  Examples include Active, Pending, Terminated, etc.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>attorney</b></tt>, where its type is <xref href="../ContactParty.dita">Contact Party</xref>
+<ul><li>&amp;quot;The person authorizing the other to act is the principal, granter, or donor (of the power), and the one authorized to act is the agent or attorney-in-fact or, in many common law jurisdictions, simply the attorney.&amp;quot; - wikipedia.  This role identifies the person who has been granted the power.</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Power Of Attorney</ph></p>
+</body>
+</topic>

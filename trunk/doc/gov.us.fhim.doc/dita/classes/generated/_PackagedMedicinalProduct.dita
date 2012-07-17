@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Packaged Medicinal Product - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>&amp;quot;A product in a container, or package. Represents the entirety of a product that has been packaged in a container for sale  or supply; this representation of the Packaged Medicine may be in its real or actual form as something made, or described  more conceptually, generically, or virtually, but it must represent a product contained in a package.&amp;quot; - HL7 V3</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>capType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>&amp;lt;p&amp;gt;      &amp;quot;The type of container cap. In some cases, it is important for this to be consistent with decapping, piercing or other      automated manipulation. Notions such as &amp;quot;child-proof cap&amp;quot; or &amp;quot;resealable bag&amp;quot; may also be indicated here.&amp;quot; - HL7 V3  &amp;lt;/p&amp;gt;</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>code</b></tt> with data type null
+</li>
+<li>Contains zero or more [0..*] <tt><b>codeModifier</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>description</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>A text description of the packaged product. This may include a discussion of the container.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>name</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>A name for the packaged product, usually the same as the name of the product (except where the name contains some reference  to the packaging (e.g., &amp;quot;tempo super-pack&amp;quot;, &amp;quot;tic-tac easy-box&amp;quot;).</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>nationalDrugCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>&amp;quot;Each drug product listed under Section 510 of the Federal Food, Drug, and Cosmetic Act is assigned a unique 10-digit, 3-segment number. This number, known as the National Drug Code (NDC), identifies the labeler/vendor, product, and trade package size.&amp;quot; (FDA)  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>packageCapacity</b></tt> with data type <xref href="../PhysicalQuantity.dita">Physical Quantity</xref>
+<ul><li>Captures the number of product units the package would contain if fully loaded.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>packageType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>The package type, such as &amp;quot;box&amp;quot; or &amp;quot;bottle&amp;quot;.  Terminology: Equivelent to HL7 V3 ContainerEntityType.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>manufacturer</b></tt>, where its type is <xref href="../Manufacturer.dita">Manufacturer</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>medicinalProduct</b></tt>, where its type is <xref href="../MedicinalProduct.dita">Medicinal Product</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>productInstance</b></tt>, where its type is <xref href="../MedicinalProductInstance.dita">Medicinal Product Instance</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>labeler</b></tt>, where its type is <xref href="../Labeler.dita">Labeler</xref>
+</li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>capType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>&amp;lt;p&amp;gt;      &amp;quot;The type of container cap. In some cases, it is important for this to be consistent with decapping, piercing or other      automated manipulation. Notions such as &amp;quot;child-proof cap&amp;quot; or &amp;quot;resealable bag&amp;quot; may also be indicated here.&amp;quot; - HL7 V3  &amp;lt;/p&amp;gt;</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>code</b></tt> with data type null
+</li>
+<li>Contains zero or more [0..*] <tt><b>codeModifier</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>description</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>A text description of the packaged product. This may include a discussion of the container.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>name</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>A name for the packaged product, usually the same as the name of the product (except where the name contains some reference  to the packaging (e.g., &amp;quot;tempo super-pack&amp;quot;, &amp;quot;tic-tac easy-box&amp;quot;).</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>nationalDrugCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>&amp;quot;Each drug product listed under Section 510 of the Federal Food, Drug, and Cosmetic Act is assigned a unique 10-digit, 3-segment number. This number, known as the National Drug Code (NDC), identifies the labeler/vendor, product, and trade package size.&amp;quot; (FDA)  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>packageCapacity</b></tt> with data type <xref href="../PhysicalQuantity.dita">Physical Quantity</xref>
+<ul><li>Captures the number of product units the package would contain if fully loaded.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>packageType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>The package type, such as &amp;quot;box&amp;quot; or &amp;quot;bottle&amp;quot;.  Terminology: Equivelent to HL7 V3 ContainerEntityType.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>manufacturer</b></tt>, where its type is <xref href="../Manufacturer.dita">Manufacturer</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>medicinalProduct</b></tt>, where its type is <xref href="../MedicinalProduct.dita">Medicinal Product</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>productInstance</b></tt>, where its type is <xref href="../MedicinalProductInstance.dita">Medicinal Product Instance</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>labeler</b></tt>, where its type is <xref href="../Labeler.dita">Labeler</xref>
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Packaged Medicinal Product</ph></p>
+</body>
+</topic>

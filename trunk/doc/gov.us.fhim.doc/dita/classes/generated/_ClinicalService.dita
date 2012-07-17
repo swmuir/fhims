@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Clinical Service - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>The provision of healthcare-related service(s) within the context of an encounter.</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>clinicalServceId</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>Unique Identifier for this Clinical service .</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>typeOfService</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Clinical Speciality ID</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>clinicalProcedureRecord</b></tt>, where its type is <xref href="../ClinicalProcedureRecord.dita">Clinical Procedure Record</xref>
+</li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>clinicalServceId</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>Unique Identifier for this Clinical service .</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>typeOfService</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Clinical Speciality ID</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>clinicalProcedureRecord</b></tt>, where its type is <xref href="../ClinicalProcedureRecord.dita">Clinical Procedure Record</xref>
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Clinical Service</ph></p>
+</body>
+</topic>

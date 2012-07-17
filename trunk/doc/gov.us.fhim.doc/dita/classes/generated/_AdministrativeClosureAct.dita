@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Administrative Closure Act - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>This class contains attributes associated with the closure of a document by an Administrative Action.  Whether the document was closed manually by an administrative person (in order to satisfy authentication requirements), or automatically by scanning a paper document bearing the signature of the patient (e.g., Consents, Advanced Directives, etc.) and not requiring the signature of an author.</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>comment</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Contains any remarks about the administrative closure.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dateTime</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date/time that the document was closed by administrative action.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>mode</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates whether the document was closed manually by an administrative person (in order to satisfy authentication requirements), or automatically by scanning a paper document bearing the signature of the patient (e.g., Consents, Advanced Directives, etc.) and not requiring the signature of an author.  Possible values include Manual or Scanned document</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>reason</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Provides a reason why the document was administratively closed.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>author</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
+<ul><li>Identifies the person who closed the document.</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>comment</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Contains any remarks about the administrative closure.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dateTime</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date/time that the document was closed by administrative action.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>mode</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates whether the document was closed manually by an administrative person (in order to satisfy authentication requirements), or automatically by scanning a paper document bearing the signature of the patient (e.g., Consents, Advanced Directives, etc.) and not requiring the signature of an author.  Possible values include Manual or Scanned document</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>reason</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Provides a reason why the document was administratively closed.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>author</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
+<ul><li>Identifies the person who closed the document.</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Administrative Closure Act</ph></p>
+</body>
+</topic>

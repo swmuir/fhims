@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Specimen Transportation - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+</section>
+<ol id="conformance">
+<li>Extends <xref href="../SpecimenHandling.dita">Specimen Handling</xref></li>
+<li>Contains exactly one [1..1] <tt><b>dateTimeSent</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>dateTimeReceived</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>&amp;quot;The specimen received date/time is the time that the specimen is received at the diagnostic service.  The actual time that is recorded is based on how specimen receipt is managed and may correspond to the time the sample is logged in.&amp;quot; - HL7 Version 2.8, SPM.18</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>shipmentId</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>&amp;quot;The identifier assigned by the shipment transportation provider that uniquely identifies this shipment from all other shipments by the same provider.  The addressee for the shipment should be able to use this identifier to match a physical shipment with the electronic manifest for the shipment.&amp;quot; - HL7 Version 2.8, SPM.32</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>transportationMethod</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Indicates &amp;quot;the means by which a sample reaches the diagnostic service provider.  This information is to aid the lab in scheduling or interpretation of results.  Possible answers: routine transport van, public postal service, etc.&amp;quot; - HL7 Version 2.8, OBR-38</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Extends <xref href="../SpecimenHandling.dita">Specimen Handling</xref></li>
+<li>Contains exactly one [1..1] <tt><b>lowTemperature</b></tt> with data type <xref href="../PhysicalQuantity.dita">Physical Quantity</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>highTemperature</b></tt> with data type <xref href="../PhysicalQuantity.dita">Physical Quantity</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>dateTimeSent</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>dateTimeReceived</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>&amp;quot;The specimen received date/time is the time that the specimen is received at the diagnostic service.  The actual time that is recorded is based on how specimen receipt is managed and may correspond to the time the sample is logged in.&amp;quot; - HL7 Version 2.8, SPM.18</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>shipmentId</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>&amp;quot;The identifier assigned by the shipment transportation provider that uniquely identifies this shipment from all other shipments by the same provider.  The addressee for the shipment should be able to use this identifier to match a physical shipment with the electronic manifest for the shipment.&amp;quot; - HL7 Version 2.8, SPM.32</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>transportationMethod</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Indicates &amp;quot;the means by which a sample reaches the diagnostic service provider.  This information is to aid the lab in scheduling or interpretation of results.  Possible answers: routine transport van, public postal service, etc.&amp;quot; - HL7 Version 2.8, OBR-38</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Specimen Transportation</ph></p>
+</body>
+</topic>

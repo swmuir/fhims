@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Contact Party - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>The person who should be contacted on the patients behalf under specified situations.  Note that because all we need is the person&amp;apos;s name and contact information (address, phone numbers), this class does not have an association to the Person class (although logically it should).  This is because the other properties of Person, such as sex and date of birth, are irrelevant to the usage.  The HL7 Role class allows for names and addresses on the Role, which technically should be only those names or addresses as the relate to the role (i.e., as they differ from those in Person class), but since these are available for use, we are utilizing them in this manner, even though it is somewhat irregular.</p>
+</section>
+<ol id="conformance">
+<li>Contains zero or one [0..1] <tt><b>ageAtDeath</b></tt> with data type <xref href="../PhysicalQuantity.dita">Physical Quantity</xref>
+<ul><li>If the person related to the patient is deceased, this property contains that person&amp;apos;s age upon their death. This is used  in conjunction with other properties to determine any familial propensities for fatal conditions.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>contactCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the circumstances under which this person is the contact party for the person identified in the owning Person class.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>effectiveDateRange</b></tt> with data type <xref href="../TimeInterval.dita">Time Interval</xref>
+<ul><li>The date range during which this person is a contact party for the patient.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>isPrimaryContact</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li>Indicates whether this person is the primary one to contact.  Added for MyHealtheVet.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>legalName</b></tt> with data type <xref href="../PersonName.dita">Person Name</xref>
+<ul><li>The name by which a person is known or legally identified such as the name on a driver&amp;apos;s license or passport.  Note that the datatype for this property is a PersonName, which includes the various parts that make up a person&amp;apos;s name such as family name, prefixes, suffixes, etc.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>preferredContactMethod</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Identifies the preffered method by which this person should be contacted.  Possible values include: primaryHomePhone, temporaryEmail, etc.  Added for MyHealtheVet.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>relationshipCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates how the person is related to the person identified in the owning Person class.  Examples include Spouse, Child, Parent, Legal Guardian, etc.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>The status of the record of the relationship with the person identified in the Person class.  Example values include Active, Deprecated, etc.  Paired with the effectiveDateRange which indicates the valid range of dates for which this person is a relation.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>mobilePhone</b></tt> with data type <xref href="../Telecommunications.dita">Telecommunications</xref>
+<ul><li>A telecommunication device that moves and stays with its owner. Suitable for urgent matters, the mobile phone is not the first choice for routine business.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>primaryHomeAddress</b></tt> with data type <xref href="../Address.dita">Address</xref>
+<ul><li>A communications address for the person&amp;apos;s primary place of residence.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>primaryHomePhone</b></tt> with data type <xref href="../Telecommunications.dita">Telecommunications</xref>
+<ul><li>The phone number of a person at their primary home, to reach a person after business hours.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>workAddress</b></tt> with data type <xref href="../Address.dita">Address</xref>
+<ul><li>The contact party&amp;apos;s office address.  First choice for business related contacts during business hours.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>workPhone</b></tt> with data type <xref href="../Telecommunications.dita">Telecommunications</xref>
+<ul><li>The phone number for a person at their office location. First choice for business related contacts during business hours.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>asEmployee</b></tt>, where its type is <xref href="../Employee.dita">Employee</xref>
+<ul><li>Represents information about a person while in the role of an employee of some organization.</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains zero or one [0..1] <tt><b>ageAtDeath</b></tt> with data type <xref href="../PhysicalQuantity.dita">Physical Quantity</xref>
+<ul><li>If the person related to the patient is deceased, this property contains that person&amp;apos;s age upon their death. This is used  in conjunction with other properties to determine any familial propensities for fatal conditions.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>contactCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the circumstances under which this person is the contact party for the person identified in the owning Person class.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>effectiveDateRange</b></tt> with data type <xref href="../TimeInterval.dita">Time Interval</xref>
+<ul><li>The date range during which this person is a contact party for the patient.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>isPrimaryContact</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li>Indicates whether this person is the primary one to contact.  Added for MyHealtheVet.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>legalName</b></tt> with data type <xref href="../PersonName.dita">Person Name</xref>
+<ul><li>The name by which a person is known or legally identified such as the name on a driver&amp;apos;s license or passport.  Note that the datatype for this property is a PersonName, which includes the various parts that make up a person&amp;apos;s name such as family name, prefixes, suffixes, etc.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>preferredContactMethod</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Identifies the preffered method by which this person should be contacted.  Possible values include: primaryHomePhone, temporaryEmail, etc.  Added for MyHealtheVet.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>relationshipCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates how the person is related to the person identified in the owning Person class.  Examples include Spouse, Child, Parent, Legal Guardian, etc.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>The status of the record of the relationship with the person identified in the Person class.  Example values include Active, Deprecated, etc.  Paired with the effectiveDateRange which indicates the valid range of dates for which this person is a relation.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>mobilePhone</b></tt> with data type <xref href="../Telecommunications.dita">Telecommunications</xref>
+<ul><li>A telecommunication device that moves and stays with its owner. Suitable for urgent matters, the mobile phone is not the first choice for routine business.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>primaryHomeAddress</b></tt> with data type <xref href="../Address.dita">Address</xref>
+<ul><li>A communications address for the person&amp;apos;s primary place of residence.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>primaryHomePhone</b></tt> with data type <xref href="../Telecommunications.dita">Telecommunications</xref>
+<ul><li>The phone number of a person at their primary home, to reach a person after business hours.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>workAddress</b></tt> with data type <xref href="../Address.dita">Address</xref>
+<ul><li>The contact party&amp;apos;s office address.  First choice for business related contacts during business hours.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>workPhone</b></tt> with data type <xref href="../Telecommunications.dita">Telecommunications</xref>
+<ul><li>The phone number for a person at their office location. First choice for business related contacts during business hours.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>asEmployee</b></tt>, where its type is <xref href="../Employee.dita">Employee</xref>
+<ul><li>Represents information about a person while in the role of an employee of some organization.</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Contact Party</ph></p>
+</body>
+</topic>

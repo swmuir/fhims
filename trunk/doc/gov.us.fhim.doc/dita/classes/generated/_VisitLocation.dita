@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Visit Location - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>A location at which an outpatient visit can take place.  This is equivalent to File 9999999.06 in Vista.</p>
+</section>
+<ol id="conformance">
+<li>Extends <xref href="../ServiceDeliveryLocation.dita">Service Delivery Location</xref></li>
+</ol>
+<ol id="aggregate">
+<li>Extends <xref href="../ServiceDeliveryLocation.dita">Service Delivery Location</xref></li>
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>A unique string or token used to identify the Organization - Location combination.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>name</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>The name of the Organization-Location.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>address</b></tt> with data type <xref href="../Address.dita">Address</xref>
+<ul><li>The business address of the Organization-Location.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>phone</b></tt> with data type <xref href="../Telecommunications.dita">Telecommunications</xref>
+<ul><li>The business phone number of the Organization-Location.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>organization</b></tt>, where its type is <xref href="../Organization.dita">Organization</xref>
+<ul><li>Points to the Organization operating at the Location.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>location</b></tt>, where its type is <xref href="../Location.dita">Location</xref>
+<ul><li>Points to the Location at which the Organization is operating.</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Visit Location</ph></p>
+</body>
+</topic>

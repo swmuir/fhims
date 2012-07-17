@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>History Of Abuse Or Neglect Record - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>This class is intended to capture details related to any past abuse/violence                   and/or neglect. Violence is a significant problem in the United States (U.S.).                   From infants to the elderly, it affects people in all stages of life. In 2006,                   18,573 people died as a result of homicide and 33,300 took their own life. The                   number of violent deaths tells only part of the story. Many more survive violence                   and are left with permanent physical and emotional scars. Violence also erodes                   communities by reducing productivity, decreasing property values, and disrupting                   social services. In 1979, violent behavior was identified by the U.S. Surgeon                   General as a key public health priority. Shortly thereafter, in 1980, CDC began                   studying patterns of violence. These early activities grew into a national program                   to reduce the death and disability associated with injuries outside the workplace.                   In 1992, CDC established the National Center for Injury Prevention and Control                   (NCIPC) as the lead federal organization for violence prevention. The Division of                   Violence Prevention (DVP) is one of three divisions within NCIPC.</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>code</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>This is the coded attribute describing the type of abuse or neglect. It is                     not currently associated with any particular value set, but this may be captured                     using ICD-9-CM diagnostic codes.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>mostRecentIncidentDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>This attribute is the date of the most recent incident of neglect or abuse                     that has been identified by the assessment.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>statusCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>This attributes whether the abuse or neglect is still in progress (&amp;apos;active&amp;apos;)                     or was in the past (&amp;apos;completed&amp;apos;).</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>dateOfOnset</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>This attribute is the date when the neglect or abuse started (e.g. first                     incident). (An imprecise date would be appropriate).</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>typeCode</b></tt> with data type <xref href="../../terminology/AbuseType.dita">Abuse Type</xref>
+<ul><li> This attribute specifies whether the history of abuse refers to neglect,                     physical, or sexual abuse. </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>clinicalNoteText</b></tt> with data type <xref href="../String.dita">String</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>historyOfAbuse/Neglect</b></tt>, where its type is <xref href="../HistoryOfAbuseOrNeglectRecord.dita">History Of Abuse Or Neglect Record</xref>
+<ul><li>This is an association between a client/patient and their History of Abuse                     and Neglect records.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>patientbehavioralhealth</b></tt>, where its type is <xref href="../PatientBehavioralHealth.dita">Patient Behavioral Health</xref>
+<ul><li>This is an association between a client/patient and their History of Abuse                     and Neglect records.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>riskOfViolence</b></tt>, where its type is <xref href="../ViolentBehaviorRisk.dita">Violent Behavior Risk</xref>
+</li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>code</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>This is the coded attribute describing the type of abuse or neglect. It is                     not currently associated with any particular value set, but this may be captured                     using ICD-9-CM diagnostic codes.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>mostRecentIncidentDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>This attribute is the date of the most recent incident of neglect or abuse                     that has been identified by the assessment.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>statusCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>This attributes whether the abuse or neglect is still in progress (&amp;apos;active&amp;apos;)                     or was in the past (&amp;apos;completed&amp;apos;).</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>dateOfOnset</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>This attribute is the date when the neglect or abuse started (e.g. first                     incident). (An imprecise date would be appropriate).</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>typeCode</b></tt> with data type <xref href="../../terminology/AbuseType.dita">Abuse Type</xref>
+<ul><li> This attribute specifies whether the history of abuse refers to neglect,                     physical, or sexual abuse. </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>clinicalNoteText</b></tt> with data type <xref href="../String.dita">String</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>historyOfAbuse/Neglect</b></tt>, where its type is <xref href="../HistoryOfAbuseOrNeglectRecord.dita">History Of Abuse Or Neglect Record</xref>
+<ul><li>This is an association between a client/patient and their History of Abuse                     and Neglect records.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>patientbehavioralhealth</b></tt>, where its type is <xref href="../PatientBehavioralHealth.dita">Patient Behavioral Health</xref>
+<ul><li>This is an association between a client/patient and their History of Abuse                     and Neglect records.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>riskOfViolence</b></tt>, where its type is <xref href="../ViolentBehaviorRisk.dita">Violent Behavior Risk</xref>
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">History Of Abuse Or Neglect Record</ph></p>
+</body>
+</topic>

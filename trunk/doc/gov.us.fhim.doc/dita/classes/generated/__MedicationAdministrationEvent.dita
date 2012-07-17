@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>_ Medication Administration Event - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>&amp;quot;Information about the actual consumption of medication by a patient. While is generally only relevant for hospital/institutional systems which track individual administrations, it could also be used in ambulatory care e.g. home-health environments which capture administrations such as insulin injections and which use messaging to communicate the information back to a central source; recording immunizations.&amp;quot; (HL7 Version 3)</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>dateTime</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date and time that the medication was or will be administered.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>bodySite</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>doseForm</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>doseQuantityGiven</b></tt> with data type <xref href="../Real.dita">Real</xref>
+<ul><li>&amp;quot;The amount of the therapeutic agent or other substance given at one administration event.&amp;quot; (HL7 3.0)  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>doseQuantityOrdered</b></tt> with data type <xref href="../Real.dita">Real</xref>
+<ul><li>&amp;quot;The amount of the therapeutic agent or other substance given at one administration event.&amp;quot; (HL7 3.0)  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>route</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>The current state of the Substance Administration.  Possible values include: Infusing, Given, Held, Completed, etc.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>administeredDrug</b></tt>, where its type is <xref href="../AdministeredDrug.dita">Administered Drug</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>administeringProvider</b></tt>, where its type is <xref href="../PrimaryPerformer.dita">Primary Performer</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>comments</b></tt>, where its type is <xref href="../CommentEvent.dita">Comment Event</xref>
+<ul><li>Comments regarding the Medication order.</li></ul><ul><li>Any additional comments regarding the SubstanceAdministrationEvent.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>observedReaction</b></tt>, where its type is <xref href="../ObservedReaction.dita">Observed Reaction</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>orderedItem</b></tt>, where its type is <xref href="../OrderablePharmacyItem.dita">Orderable Pharmacy Item</xref>
+<ul><li>The item that was ordered to be administered to the patient.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>patient</b></tt>, where its type is <xref href="../Patient.dita">Patient</xref>
+</li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>dateTime</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date and time that the medication was or will be administered.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>bodySite</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>doseForm</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>doseQuantityGiven</b></tt> with data type <xref href="../Real.dita">Real</xref>
+<ul><li>&amp;quot;The amount of the therapeutic agent or other substance given at one administration event.&amp;quot; (HL7 3.0)  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>doseQuantityOrdered</b></tt> with data type <xref href="../Real.dita">Real</xref>
+<ul><li>&amp;quot;The amount of the therapeutic agent or other substance given at one administration event.&amp;quot; (HL7 3.0)  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>route</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>The current state of the Substance Administration.  Possible values include: Infusing, Given, Held, Completed, etc.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>administeredDrug</b></tt>, where its type is <xref href="../AdministeredDrug.dita">Administered Drug</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>administeringProvider</b></tt>, where its type is <xref href="../PrimaryPerformer.dita">Primary Performer</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>comments</b></tt>, where its type is <xref href="../CommentEvent.dita">Comment Event</xref>
+<ul><li>Comments regarding the Medication order.</li></ul><ul><li>Any additional comments regarding the SubstanceAdministrationEvent.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>observedReaction</b></tt>, where its type is <xref href="../ObservedReaction.dita">Observed Reaction</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>orderedItem</b></tt>, where its type is <xref href="../OrderablePharmacyItem.dita">Orderable Pharmacy Item</xref>
+<ul><li>The item that was ordered to be administered to the patient.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>patient</b></tt>, where its type is <xref href="../Patient.dita">Patient</xref>
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">_ Medication Administration Event</ph></p>
+</body>
+</topic>

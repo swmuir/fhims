@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Health Concern Log - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>dateCreated</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date and time that the record of the Problem being described was originally created.  Note that this property could be derived from the HealthConcernLifeCycle entries.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>This is the current activity status of this problem, whether active or inactive; if more detail is needed, a notation may be filed with this problem. A=Active,  I=Inactive.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>author</b></tt>, where its type is <xref href="../Author.dita">Author</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>dataEnterer</b></tt>, where its type is <xref href="../DataEnterer.dita">Data Enterer</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>facility</b></tt>, where its type is <xref href="../VisitLocation.dita">Visit Location</xref>
+<ul><li>A pointer to Location file identifying the location at which this problem was originally observed and documented.</li></ul><ul><li>A pointer to Location file identifying the location at which this problem was originally observed and documented.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>visit</b></tt>, where its type is <xref href="../EncounterEvent.dita">Encounter Event</xref>
+</li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>dateCreated</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date and time that the record of the Problem being described was originally created.  Note that this property could be derived from the HealthConcernLifeCycle entries.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>This is the current activity status of this problem, whether active or inactive; if more detail is needed, a notation may be filed with this problem. A=Active,  I=Inactive.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>author</b></tt>, where its type is <xref href="../Author.dita">Author</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>dataEnterer</b></tt>, where its type is <xref href="../DataEnterer.dita">Data Enterer</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>facility</b></tt>, where its type is <xref href="../VisitLocation.dita">Visit Location</xref>
+<ul><li>A pointer to Location file identifying the location at which this problem was originally observed and documented.</li></ul><ul><li>A pointer to Location file identifying the location at which this problem was originally observed and documented.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>visit</b></tt>, where its type is <xref href="../EncounterEvent.dita">Encounter Event</xref>
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Health Concern Log</ph></p>
+</body>
+</topic>

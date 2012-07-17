@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Related Medication Promise - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>This class identifies Inpatient Medication Promises (Orders) that are related to each other.  There are primarily two reasons why an order is related to another: a) if one is replacing the other, or b) if one is the &amp;quot;child&amp;quot; of another.   The relationCategory indicates how the referenced order is related to the &amp;quot;owning&amp;quot; order.    For example, say that Order1 and Order2 are instances of InpatientMedicationPromise, and that Order2 is replacing Order1.  Then:    Order1.relatedInpatientPromise.relationCategory = (a code that means &amp;quot;replaced by&amp;quot;)  Order1.relatedInpatientPromise.inpatientMedicationPromise = Order2    and:    Order2.relatedInpatientPromise.relationCategory = (a code that means &amp;quot;replaces&amp;quot;)  Order2.relatedInpatientPromise.inpatientMedicationPromise = Order1</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>relationCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates how the referenced order is related to the &amp;quot;owning&amp;quot; order.  There are primarily four reasons why an order is related to another: a) if one is replacing the other, b) if one is the &amp;quot;child&amp;quot; of another, c) one is a renewal of a previous order, or d) one is an update or an edit of another</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>pharmacyPromise</b></tt>, where its type is <xref href="../PharmacyPromise.dita">Pharmacy Promise</xref>
+</li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>relationCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates how the referenced order is related to the &amp;quot;owning&amp;quot; order.  There are primarily four reasons why an order is related to another: a) if one is replacing the other, b) if one is the &amp;quot;child&amp;quot; of another, c) one is a renewal of a previous order, or d) one is an update or an edit of another</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>pharmacyPromise</b></tt>, where its type is <xref href="../PharmacyPromise.dita">Pharmacy Promise</xref>
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Related Medication Promise</ph></p>
+</body>
+</topic>

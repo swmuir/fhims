@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Lab Test Promise - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>The act of accepting the role of filler.  HL7 uses the terms promise and filler interchangeably with promise being the preferred term.  This promise act initiates the accessioning for lab actions.  Accession: &amp;quot;An increase by means of something added to record as acquired&amp;quot;  (Websters).  The act of accepting  a laboratory test, and entering the test into the laboratory&amp;apos;s workload.</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>dateExpected</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>dateReportCompleted</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>This attribute is added to indicate the date lab report is completed.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>dateScheduled</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>&amp;quot;This field is the date/time the filler scheduled an observation, when applicable (e.g., action code in OBR-11-specimen action code = &amp;quot;S&amp;quot;).  This is a result of a request to schedule a particular test and provides a way to inform the placer of the date/time a study is scheduled (result only).&amp;quot; - HL7 V2</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dateStatusChanged</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>&amp;quot;Specifies the date/time when the results were reported or status changed....  (This is a results field only.) ...&amp;quot; - HL7 Version 2.8, OBR.22</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>fillerOrderId</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>&amp;quot;The order number associated with the filling application. This is a permanent identifier for an order and its associated observations....&amp;quot; - HL7 Version 2.8, OBR.3</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>priority</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>This field has been retained for backward compatibility only.  It is not used.  Previously priority (e.g., STAT, ASAP), but that information is carried as the sixth component of OBR-27-quantity/timing.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>producersReference</b></tt> with data type <xref href="../String.dita">String</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>reportableResult</b></tt>, where its type is <xref href="../ReportableResult.dita">Reportable Result</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>&amp;quot;Contains the status of results for this order.&amp;quot; - HL7 Version 2.8, OBR.25</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>accession</b></tt>, where its type is <xref href="../Accession.dita">Accession</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>billingProcedureList</b></tt>, where its type is <xref href="../ProcedureListEntry.dita">Procedure List Entry</xref>
+<ul><li>&amp;quot;This field contains a unique identifier assigned to the procedure, if any, associated with the charge.&amp;quot; - HL7 Version 2.8, OBR-44  &amp;quot;This field contains the procedure code modifier to the procedure code reported in OBR-44-procedure code, when applicable....  Multiple modifiers may be reported....&amp;quot; - HL7 Version 2.8, OBR-45</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>labReferral</b></tt>, where its type is <xref href="../LabReferral.dita">Lab Referral</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>labTestRequest</b></tt>, where its type is <xref href="../LabTestRequest.dita">Lab Test Request</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>performingOrganization</b></tt>, where its type is <xref href="../ServiceDeliveryLocation.dita">Service Delivery Location</xref>
+<ul><li>Represents &amp;quot;the section of the diagnostic service where the observation was performed.  If the study was performed by an outside service, the identification of that service should be recorded here&amp;quot; - HL7 Version 2.8, OBR-24</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>relatedLabPromise</b></tt>, where its type is <xref href="../RelatedLabPromise.dita">Related Lab Promise</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>specimenAssessment</b></tt>, where its type is <xref href="../SpecimenAssessment.dita">Specimen Assessment</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>specimenCollectionEvent</b></tt>, where its type is <xref href="../SpecimenCollectionEvent.dita">Specimen Collection Event</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>verifier</b></tt>, where its type is <xref href="../Verifier.dita">Verifier</xref>
+</li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>dateExpected</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>dateReportCompleted</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>This attribute is added to indicate the date lab report is completed.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>dateScheduled</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>&amp;quot;This field is the date/time the filler scheduled an observation, when applicable (e.g., action code in OBR-11-specimen action code = &amp;quot;S&amp;quot;).  This is a result of a request to schedule a particular test and provides a way to inform the placer of the date/time a study is scheduled (result only).&amp;quot; - HL7 V2</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dateStatusChanged</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>&amp;quot;Specifies the date/time when the results were reported or status changed....  (This is a results field only.) ...&amp;quot; - HL7 Version 2.8, OBR.22</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>fillerOrderId</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>&amp;quot;The order number associated with the filling application. This is a permanent identifier for an order and its associated observations....&amp;quot; - HL7 Version 2.8, OBR.3</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>priority</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>This field has been retained for backward compatibility only.  It is not used.  Previously priority (e.g., STAT, ASAP), but that information is carried as the sixth component of OBR-27-quantity/timing.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>producersReference</b></tt> with data type <xref href="../String.dita">String</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>&amp;quot;Contains the status of results for this order.&amp;quot; - HL7 Version 2.8, OBR.25</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>reportableResult</b></tt>, where its type is <xref href="../ReportableResult.dita">Reportable Result</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>accession</b></tt>, where its type is <xref href="../Accession.dita">Accession</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>billingProcedureList</b></tt>, where its type is <xref href="../ProcedureListEntry.dita">Procedure List Entry</xref>
+<ul><li>&amp;quot;This field contains a unique identifier assigned to the procedure, if any, associated with the charge.&amp;quot; - HL7 Version 2.8, OBR-44  &amp;quot;This field contains the procedure code modifier to the procedure code reported in OBR-44-procedure code, when applicable....  Multiple modifiers may be reported....&amp;quot; - HL7 Version 2.8, OBR-45</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>labReferral</b></tt>, where its type is <xref href="../LabReferral.dita">Lab Referral</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>labTestRequest</b></tt>, where its type is <xref href="../LabTestRequest.dita">Lab Test Request</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>performingOrganization</b></tt>, where its type is <xref href="../ServiceDeliveryLocation.dita">Service Delivery Location</xref>
+<ul><li>Represents &amp;quot;the section of the diagnostic service where the observation was performed.  If the study was performed by an outside service, the identification of that service should be recorded here&amp;quot; - HL7 Version 2.8, OBR-24</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>relatedLabPromise</b></tt>, where its type is <xref href="../RelatedLabPromise.dita">Related Lab Promise</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>specimenAssessment</b></tt>, where its type is <xref href="../SpecimenAssessment.dita">Specimen Assessment</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>specimenCollectionEvent</b></tt>, where its type is <xref href="../SpecimenCollectionEvent.dita">Specimen Collection Event</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>verifier</b></tt>, where its type is <xref href="../Verifier.dita">Verifier</xref>
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Lab Test Promise</ph></p>
+</body>
+</topic>

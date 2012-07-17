@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Administrative Encounter Event - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>A (perhaps artificial) grouping of encounters for administrative or financial purposes.  There is no specific requirement that the encounters have anything particular in common.</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>The unique identifier for the administrative grouping encounters.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>encounter</b></tt>, where its type is <xref href="../EncounterEvent.dita">Encounter Event</xref>
+<ul><li>An interaction between a patient and a practitioner at a given location under the auspices of a given organization for the purpose of providing healthcare-related service(s).</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>The unique identifier for the administrative grouping encounters.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>encounter</b></tt>, where its type is <xref href="../EncounterEvent.dita">Encounter Event</xref>
+<ul><li>An interaction between a patient and a practitioner at a given location under the auspices of a given organization for the purpose of providing healthcare-related service(s).</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Administrative Encounter Event</ph></p>
+</body>
+</topic>

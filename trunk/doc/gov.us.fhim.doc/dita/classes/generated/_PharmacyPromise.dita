@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Pharmacy Promise - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>This class represents the clinician&amp;apos;s medication order as recorded by the Pharmacy.  The term &amp;quot;Promise&amp;quot; is used to indicate that this is the order as accepted (or possibly, rejected) by the Pharmacy and as the Pharmacy is now under an obligation to fulfill (unless the order was rejeted).</p>
+</section>
+<ol id="conformance">
+<li>Contains zero or one [0..1] <tt><b>appointmentTime</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>Date and time of the appointment for this clinic location.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>discontinueDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>This is the date the order was discontinued.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>expirationDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date after which the order may no longer be filled.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>isHospitalSuppliedSelfAdministered</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li>A flag indicating that the medication given to the patient is to be self administered and is to be supplied by the hospitals pharmacy while they are an inpatient. </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>isSelfAdministered</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li>A flag indicating that the medication given to the patient is to be self administered.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>lastDispenseDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The most recent date the order was filled.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>medicationType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>This identifies the type of medication ordered: A=Admixture, C=Chemotherapy, P=Piggy Back, T=TPN, U=Unit Dose.    Note: this might correspond to Administration Unit Code?  Verify.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>numberOfRefillsRemaining</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>Indicates the number of times the order may be filled without additional authorization.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>orderModality</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>This is the method the provider used to communicate to the user to enter (or take any other action) on the order.  Examples include: Written, Telephoned, Verbal, Electronically Entered, Policy, Service Correction, Duplicate, etc.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>pharmacyPatientCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Categorizes the status of the patient at the time the medication was filled.  Examples include Inpatient, Outpatient, etc.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>prescriptionId</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>Uniquely identifies the medication order, from the filler&amp;apos;s (pharmacy) perspective.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>requestedAdministrationTime</b></tt> with data type <xref href="../TimeInterval.dita">Time Interval</xref>
+<ul><li>Specifies when the service is to be performed and how frequently.  Note that this is a complex data type that may indicate specific times or intervals (e.g., 10:00 AM, MWF, etc).</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>requestedDuration</b></tt> with data type <xref href="../TimeQuantity.dita">Time Quantity</xref>
+<ul><li>The duration of an order as requested by the ordering clinician.  The duration would be expressed as a number of days, weeks, hours, etc.  Note that this length of time might be determined by a business rule of the facilty.  For example, most facilties will have a limit of 7 days for antibiotics, and 3 days for schedule 1 drugs.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>scheduleType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>&amp;quot;This describes the type of schedule for the dispensing of the medication(s) that make up the order.  PRE-OP orders are usually considered to be ON-CALL orders, and orders dispensed as MULTI-DOSE CONTAINERS are usually considered to be FILL ON REQUEST orders. C=Continuous, O=One Time, P=PRN, R=Fill On Request, OC=On Call.&amp;quot; (VistA)  </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>cancel</b></tt>, where its type is <xref href="../CancelAct.dita">Cancel Act</xref>
+<ul><li>The reason the order was canceled.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>author</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>dataEnterer</b></tt>, where its type is <xref href="../DataEnterer.dita">Data Enterer</xref>
+<ul><li>Captures participation information (who, when, comments) of the person performing data entry.    &amp;quot;A person entering the data into the originating system. The data entry person is collected optionally for internal quality control purposes. This includes the transcriptionist for dictated text&amp;quot; (HL7)</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>dispense</b></tt>, where its type is <xref href="../MedicationDispense.dita">Medication Dispense</xref>
+<ul><li>Captures information about the REFILL dispense of a medication to an outpatient in fulfillment of this request.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>drugSubstitution</b></tt>, where its type is <xref href="../DrugSubstitution.dita">Drug Substitution</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>finisher</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
+<ul><li>The party who completed the Outpatient Pharmacy order.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>patientReportedMedicationEvent</b></tt>, where its type is <xref href="../PatientReportedMedication.dita">Patient Reported Medication</xref>
+<ul><li>Contains information about a medication which the patient has received or is receiving, as reported by the patient.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>pharmacyRequest</b></tt>, where its type is <xref href="../PharmacyRequest.dita">Pharmacy Request</xref>
+<ul><li>Contains generic order information for the pharmacy request.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>prnEffectivenessObservation</b></tt>, where its type is <xref href="../_PrnEffectivenessObservation.dita">_ Prn Effectiveness Observation</xref>
+<ul><li>Indicates why the nurse determined to administer a medication that was ordered as &amp;quot;Pro re nata&amp;quot; (take as needed).  Includes a narrative of the efficacy of the PRN medication.  </li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>relatedPharmacyPromise</b></tt>, where its type is <xref href="../RelatedMedicationPromise.dita">Related Medication Promise</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>renewAct</b></tt>, where its type is <xref href="../RenewAct.dita">Renew Act</xref>
+<ul><li>Captures participation information (who, when, comments) of the person who renewed the prescription</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>pharmacyInferredDiagnosis</b></tt>, where its type is <xref href="../DiagnosisListEntry.dita">Diagnosis List Entry</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>return</b></tt>, where its type is <xref href="../Return.dita">Return</xref>
+</li>
+</ol>
+<ol id="aggregate">
+<li>Contains zero or one [0..1] <tt><b>appointmentTime</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>Date and time of the appointment for this clinic location.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>discontinueDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>This is the date the order was discontinued.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>expirationDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date after which the order may no longer be filled.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>isHospitalSuppliedSelfAdministered</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li>A flag indicating that the medication given to the patient is to be self administered and is to be supplied by the hospitals pharmacy while they are an inpatient. </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>isSelfAdministered</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li>A flag indicating that the medication given to the patient is to be self administered.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>lastDispenseDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The most recent date the order was filled.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>medicationType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>This identifies the type of medication ordered: A=Admixture, C=Chemotherapy, P=Piggy Back, T=TPN, U=Unit Dose.    Note: this might correspond to Administration Unit Code?  Verify.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>numberOfRefillsRemaining</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>Indicates the number of times the order may be filled without additional authorization.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>orderModality</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>This is the method the provider used to communicate to the user to enter (or take any other action) on the order.  Examples include: Written, Telephoned, Verbal, Electronically Entered, Policy, Service Correction, Duplicate, etc.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>pharmacyPatientCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Categorizes the status of the patient at the time the medication was filled.  Examples include Inpatient, Outpatient, etc.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>prescriptionId</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>Uniquely identifies the medication order, from the filler&amp;apos;s (pharmacy) perspective.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>requestedAdministrationTime</b></tt> with data type <xref href="../TimeInterval.dita">Time Interval</xref>
+<ul><li>Specifies when the service is to be performed and how frequently.  Note that this is a complex data type that may indicate specific times or intervals (e.g., 10:00 AM, MWF, etc).</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>requestedDuration</b></tt> with data type <xref href="../TimeQuantity.dita">Time Quantity</xref>
+<ul><li>The duration of an order as requested by the ordering clinician.  The duration would be expressed as a number of days, weeks, hours, etc.  Note that this length of time might be determined by a business rule of the facilty.  For example, most facilties will have a limit of 7 days for antibiotics, and 3 days for schedule 1 drugs.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>scheduleType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>&amp;quot;This describes the type of schedule for the dispensing of the medication(s) that make up the order.  PRE-OP orders are usually considered to be ON-CALL orders, and orders dispensed as MULTI-DOSE CONTAINERS are usually considered to be FILL ON REQUEST orders. C=Continuous, O=One Time, P=PRN, R=Fill On Request, OC=On Call.&amp;quot; (VistA)  </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>cancel</b></tt>, where its type is <xref href="../CancelAct.dita">Cancel Act</xref>
+<ul><li>The reason the order was canceled.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>author</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>dataEnterer</b></tt>, where its type is <xref href="../DataEnterer.dita">Data Enterer</xref>
+<ul><li>Captures participation information (who, when, comments) of the person performing data entry.    &amp;quot;A person entering the data into the originating system. The data entry person is collected optionally for internal quality control purposes. This includes the transcriptionist for dictated text&amp;quot; (HL7)</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>dispense</b></tt>, where its type is <xref href="../MedicationDispense.dita">Medication Dispense</xref>
+<ul><li>Captures information about the REFILL dispense of a medication to an outpatient in fulfillment of this request.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>drugSubstitution</b></tt>, where its type is <xref href="../DrugSubstitution.dita">Drug Substitution</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>finisher</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
+<ul><li>The party who completed the Outpatient Pharmacy order.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>patientReportedMedicationEvent</b></tt>, where its type is <xref href="../PatientReportedMedication.dita">Patient Reported Medication</xref>
+<ul><li>Contains information about a medication which the patient has received or is receiving, as reported by the patient.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>pharmacyRequest</b></tt>, where its type is <xref href="../PharmacyRequest.dita">Pharmacy Request</xref>
+<ul><li>Contains generic order information for the pharmacy request.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>prnEffectivenessObservation</b></tt>, where its type is <xref href="../_PrnEffectivenessObservation.dita">_ Prn Effectiveness Observation</xref>
+<ul><li>Indicates why the nurse determined to administer a medication that was ordered as &amp;quot;Pro re nata&amp;quot; (take as needed).  Includes a narrative of the efficacy of the PRN medication.  </li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>relatedPharmacyPromise</b></tt>, where its type is <xref href="../RelatedMedicationPromise.dita">Related Medication Promise</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>renewAct</b></tt>, where its type is <xref href="../RenewAct.dita">Renew Act</xref>
+<ul><li>Captures participation information (who, when, comments) of the person who renewed the prescription</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>pharmacyInferredDiagnosis</b></tt>, where its type is <xref href="../DiagnosisListEntry.dita">Diagnosis List Entry</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>return</b></tt>, where its type is <xref href="../Return.dita">Return</xref>
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Pharmacy Promise</ph></p>
+</body>
+</topic>

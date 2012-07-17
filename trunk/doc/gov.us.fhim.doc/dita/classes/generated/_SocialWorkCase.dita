@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Social Work Case - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>Various professional services, activities, or methods concretely concerned with the support, treatment, and material  designed to aid and to increase the welfare of the patient.</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>costCenter</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Contains information that is used for the Cost Distribution Center section of the patient.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dateCaseClosed</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>Contains the date closed to a particular social worker.   </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dateCaseOpened</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>Contains the date the case was opened to the Social Work service.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>diagnosticCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>A categorization of the patient&amp;apos;s diagnosis, typically used for Residential Care Homes.  Possible values include: Medical/Surgical, Psychosis, Organic and Senile Brain Disease, Substance Abuse, etc.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dispositionFromRch</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Contains the codes that identify the patient&amp;apos;s disposition from the residential care home.  &amp;apos;1&amp;apos; FOR INDIVIDUAL; &amp;apos;2&amp;apos; FOR HOSPITAL; &amp;apos;3&amp;apos; FOR OTHER INSTITUTIONAL; &amp;apos;4&amp;apos; FOR DEATH; &amp;apos;5&amp;apos; FOR TRANSFER;  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>This is the unique Id number to identify each case that is opened.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>isConsultationOnly</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li>This field is used to indicate if the case is for consultation purposes only.  &amp;apos;1&amp;apos; FOR YES; &amp;apos;0&amp;apos; FOR NO;  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>isPatientCompetent</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li>Indicates  the competency status of the residential care home patient.  &amp;apos;I&amp;apos; FOR INCOMPETENT; &amp;apos;0&amp;apos; FOR COMPETENT;  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>levelOfCare</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Contains information used to show the level of care that a patient receives while in the residential care home program.  &amp;apos;1&amp;apos; FOR LIGHT; &amp;apos;2&amp;apos; FOR MODERATE; &amp;apos;3&amp;apos; FOR HEAVY;  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>priorLivingArrangement</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Contains information that identifies the location of the patient prior to being placed in a residential care home.  (RCH only).  &amp;apos;1&amp;apos; FOR OWN HOME; &amp;apos;2&amp;apos; FOR VA NHCU;   &amp;apos;3&amp;apos; FOR VA HOSPITAL- EXCESS OF 60 DAYS; &amp;apos;4&amp;apos; FOR NON-VA HOSPITAL; &amp;apos;5&amp;apos; FOR VA DOMICILIARY; &amp;apos;6&amp;apos; FOR VA CONTRACT NH; &amp;apos;7&amp;apos; FOR NON-VA NH; &amp;apos;8&amp;apos; FOR NON-VA RESIDENTIAL RESOURCE; &amp;apos;9&amp;apos; FOR VA CONTRACT CARE (NON NH); &amp;apos;10&amp;apos; FOR OTHER;&amp;quot;   </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>reasonCaseOpened</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Contains a short textual description of why the case was opened.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>remarks</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Contains information that allows workers to enter identifying information on certain cases. For instance, if a patient is placed in a contract nursing home, the worker can use this field to abbreviate the name of the nursing home - Civic Center would be Civic.  This field can be used as a ready reference to where their cases are.  It can be used to identify special categories on wards such as POW, Agent Orange, etc.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>specialPopulationCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Contains information that is used to show what special population the patient may be a member of, for example, HIV, Homeless, RCH, etc.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>wereResourcesOrReferralsAssigned</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li>Indicates if any resources/referrals are being assigned.  &amp;apos;1&amp;apos; FOR YES; &amp;apos;0&amp;apos; FOR NO;  </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>accomondationArrangement</b></tt>, where its type is <xref href="../SocialWorkPlacement.dita">Social Work Placement</xref>
+<ul><li>This is the association to the social workers placement of the patient.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>directServiceProvided</b></tt>, where its type is <xref href="../ServiceProvision.dita">Service Provision</xref>
+<ul><li>Identifies the various professional services, activities, or methods concretely concerned with the support, treatment, and material designed to aid and to increase the welfare of the patient.  </li></ul><ul><li>Contains information of the various directed professional services, activities, or methods concretely concerned with the support, treatment, and material designed to aid and to increase the welfare of the patient.  </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>problemsEncountered</b></tt>, where its type is <xref href="../ProblemsEncountered.dita">Problems Encountered</xref>
+<ul><li>Identifies information about problems encountered for the patients case.    </li></ul><ul><li>This the association to the information about problems encountered for the patients case.    </li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>resourceOrReferral</b></tt>, where its type is <xref href="../ResourceOrReferral.dita">Resource Or Referral</xref>
+<ul><li>Contains the information for the resources and referrals for the case.</li></ul><ul><li>This is the association to the  information about the resources or referrals that were made for this case.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>socialWorker</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>socialWorkPatient</b></tt>, where its type is <xref href="../SocialWorkPatient.dita">Social Work Patient</xref>
+</li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>costCenter</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Contains information that is used for the Cost Distribution Center section of the patient.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dateCaseClosed</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>Contains the date closed to a particular social worker.   </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dateCaseOpened</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>Contains the date the case was opened to the Social Work service.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>diagnosticCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>A categorization of the patient&amp;apos;s diagnosis, typically used for Residential Care Homes.  Possible values include: Medical/Surgical, Psychosis, Organic and Senile Brain Disease, Substance Abuse, etc.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dispositionFromRch</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Contains the codes that identify the patient&amp;apos;s disposition from the residential care home.  &amp;apos;1&amp;apos; FOR INDIVIDUAL; &amp;apos;2&amp;apos; FOR HOSPITAL; &amp;apos;3&amp;apos; FOR OTHER INSTITUTIONAL; &amp;apos;4&amp;apos; FOR DEATH; &amp;apos;5&amp;apos; FOR TRANSFER;  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>This is the unique Id number to identify each case that is opened.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>isConsultationOnly</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li>This field is used to indicate if the case is for consultation purposes only.  &amp;apos;1&amp;apos; FOR YES; &amp;apos;0&amp;apos; FOR NO;  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>isPatientCompetent</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li>Indicates  the competency status of the residential care home patient.  &amp;apos;I&amp;apos; FOR INCOMPETENT; &amp;apos;0&amp;apos; FOR COMPETENT;  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>levelOfCare</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Contains information used to show the level of care that a patient receives while in the residential care home program.  &amp;apos;1&amp;apos; FOR LIGHT; &amp;apos;2&amp;apos; FOR MODERATE; &amp;apos;3&amp;apos; FOR HEAVY;  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>priorLivingArrangement</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Contains information that identifies the location of the patient prior to being placed in a residential care home.  (RCH only).  &amp;apos;1&amp;apos; FOR OWN HOME; &amp;apos;2&amp;apos; FOR VA NHCU;   &amp;apos;3&amp;apos; FOR VA HOSPITAL- EXCESS OF 60 DAYS; &amp;apos;4&amp;apos; FOR NON-VA HOSPITAL; &amp;apos;5&amp;apos; FOR VA DOMICILIARY; &amp;apos;6&amp;apos; FOR VA CONTRACT NH; &amp;apos;7&amp;apos; FOR NON-VA NH; &amp;apos;8&amp;apos; FOR NON-VA RESIDENTIAL RESOURCE; &amp;apos;9&amp;apos; FOR VA CONTRACT CARE (NON NH); &amp;apos;10&amp;apos; FOR OTHER;&amp;quot;   </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>reasonCaseOpened</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Contains a short textual description of why the case was opened.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>remarks</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Contains information that allows workers to enter identifying information on certain cases. For instance, if a patient is placed in a contract nursing home, the worker can use this field to abbreviate the name of the nursing home - Civic Center would be Civic.  This field can be used as a ready reference to where their cases are.  It can be used to identify special categories on wards such as POW, Agent Orange, etc.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>specialPopulationCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Contains information that is used to show what special population the patient may be a member of, for example, HIV, Homeless, RCH, etc.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>wereResourcesOrReferralsAssigned</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li>Indicates if any resources/referrals are being assigned.  &amp;apos;1&amp;apos; FOR YES; &amp;apos;0&amp;apos; FOR NO;  </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>accomondationArrangement</b></tt>, where its type is <xref href="../SocialWorkPlacement.dita">Social Work Placement</xref>
+<ul><li>This is the association to the social workers placement of the patient.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>directServiceProvided</b></tt>, where its type is <xref href="../ServiceProvision.dita">Service Provision</xref>
+<ul><li>Identifies the various professional services, activities, or methods concretely concerned with the support, treatment, and material designed to aid and to increase the welfare of the patient.  </li></ul><ul><li>Contains information of the various directed professional services, activities, or methods concretely concerned with the support, treatment, and material designed to aid and to increase the welfare of the patient.  </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>problemsEncountered</b></tt>, where its type is <xref href="../ProblemsEncountered.dita">Problems Encountered</xref>
+<ul><li>Identifies information about problems encountered for the patients case.    </li></ul><ul><li>This the association to the information about problems encountered for the patients case.    </li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>resourceOrReferral</b></tt>, where its type is <xref href="../ResourceOrReferral.dita">Resource Or Referral</xref>
+<ul><li>Contains the information for the resources and referrals for the case.</li></ul><ul><li>This is the association to the  information about the resources or referrals that were made for this case.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>socialWorker</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>socialWorkPatient</b></tt>, where its type is <xref href="../SocialWorkPatient.dita">Social Work Patient</xref>
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Social Work Case</ph></p>
+</body>
+</topic>

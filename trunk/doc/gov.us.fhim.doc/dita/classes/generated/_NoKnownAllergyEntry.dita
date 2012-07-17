@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>No Known Allergy Entry - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+</section>
+<ol id="conformance">
+<li>Extends <xref href="../IntoleranceConditionEntry.dita">Intolerance Condition Entry</xref></li>
+</ol>
+<ol id="aggregate">
+<li>Extends <xref href="../IntoleranceConditionEntry.dita">Intolerance Condition Entry</xref></li>
+<li>Contains exactly one [1..1] <tt><b>dateRecorded</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>Date/time this allergy/adverse reaction was entered into the system.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>Uniquely identifies the Intolerance Condition record.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>informationSourceCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates whether the Intolerance Condition was observed by a clinician (or was medically verified) or was merely reported by the patient.  Provides a measure of trustworthiness of the information.    Note that in VistA, this is called Observed if observed by a clinician, or Historical if patient-reported.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>A code specifying the state of the Intolerance Condition Observation record.  See HL7 V3 Act.statusCode.  When the StatusCode is set to &amp;apos;Nullified&amp;apos; iindicates the allergy was entered in error.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>author</b></tt>, where its type is <xref href="../Author.dita">Author</xref>
+<ul><li>&amp;quot;A party that originates the Act and therefore has responsibility for the information given in the Act and ownership of this Act.&amp;quot; - HL7 V3</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>comment</b></tt>, where its type is <xref href="../CommentEvent.dita">Comment Event</xref>
+<ul><li>Contains all l comments reqarding the allergy event that were not captured in the Clinical Document process.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dataEnterer</b></tt>, where its type is <xref href="../DataEnterer.dita">Data Enterer</xref>
+<ul><li>&amp;quot;A person entering the data into the originating system. The data entry person is collected optionally for internal quality  control purposes. This includes the transcriptionist for dictated text.&amp;quot; - HL7 V3</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>inactivateAct</b></tt>, where its type is <xref href="../InactivateAct.dita">Inactivate Act</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>nullify</b></tt>, where its type is <xref href="../NullifyAct.dita">Nullify Act</xref>
+<ul><li>Records the nullification of an Act.  Typically used when an erroneous record is &amp;quot;deleted&amp;quot;.   Because medical records should never be deleted, the record is instead &amp;quot;nullified&amp;quot;, and is rendered not visible to typical users, but still exists in the system for the purpose of audit trails, etc.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>obsoleteAct</b></tt>, where its type is <xref href="../ObsoleteAct.dita">Obsolete Act</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>reactivateAct</b></tt>, where its type is <xref href="../ReactivateAct.dita">Reactivate Act</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>relatedIntoleranceCondition</b></tt>, where its type is <xref href="../RelatedIntoleranceCondition.dita">Related Intolerance Condition</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>serviceDeliveryLocation</b></tt>, where its type is <xref href="../ServiceDeliveryLocation.dita">Service Delivery Location</xref>
+<ul><li>The location at which the Intolerance condition was noted.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>verifier</b></tt>, where its type is <xref href="../Verifier.dita">Verifier</xref>
+<ul><li>&amp;quot;A person who verifies the correctness and appropriateness of the service (plan, order, event, etc.) and hence takes on accountability.&amp;quot;- HL7 V3</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>visit</b></tt>, where its type is <xref href="../EncounterEvent.dita">Encounter Event</xref>
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">No Known Allergy Entry</ph></p>
+</body>
+</topic>

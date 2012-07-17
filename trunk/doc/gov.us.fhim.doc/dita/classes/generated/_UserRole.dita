@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>User Role - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>This class is used to specify the role of a user of a computer system. The role is typically associated with the Information Requester and specifies what capabilities are available to a specific type of computer user (i.e., in the Windows operating system, a user may have the role of Administrator which enables the capability to add new users).</p>
+</section>
+<ol id="conformance">
+<li>Contains zero or one [0..1] <tt><b>allowedSensitivity</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Coded attribute that describes the level sensitivity of the protected information (including IIHI) that the user may access or use. Sensitivity is a characteristic of a resource which implies its value or importance.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>name</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>This attribute is used to specify the role name, if available.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>roleCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>This coded descriptor is used to specify a user role. It is an identifier of a hierarchical group in which membership is asserted, for example, organizational position. Structural roles provide authorizations on objects at a global level without regard to internal details (ASTM E2595). Examples include authorization to participate in a session, connect authorization to a database, authorization to participate in an order workflow, or connection to a protected uniform resource locator (URL). A structural role applies to the business process task as a group. This attribute refers to a coded structural role specified by an external coding system.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>roleId</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>This attribute is used to represent a unique role identifier.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>functional Role</b></tt>, where its type is <xref href="../FunctionalRole.dita">Functional Role</xref>
+<ul><li>This attribute refers to a coded structural role specified by an external coding system.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>organizationalProvider</b></tt>, where its type is <xref href="../OrganizationalProvider.dita">Organizational Provider</xref>
+<ul><li>The organizational provider with which the user is associated.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>userIdentity</b></tt>, where its type is <xref href="../UserIdentity.dita">User Identity</xref>
+<ul><li>A unique identifier for the role.</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains zero or one [0..1] <tt><b>allowedSensitivity</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Coded attribute that describes the level sensitivity of the protected information (including IIHI) that the user may access or use. Sensitivity is a characteristic of a resource which implies its value or importance.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>name</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>This attribute is used to specify the role name, if available.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>roleCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>This coded descriptor is used to specify a user role. It is an identifier of a hierarchical group in which membership is asserted, for example, organizational position. Structural roles provide authorizations on objects at a global level without regard to internal details (ASTM E2595). Examples include authorization to participate in a session, connect authorization to a database, authorization to participate in an order workflow, or connection to a protected uniform resource locator (URL). A structural role applies to the business process task as a group. This attribute refers to a coded structural role specified by an external coding system.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>roleId</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>This attribute is used to represent a unique role identifier.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>functional Role</b></tt>, where its type is <xref href="../FunctionalRole.dita">Functional Role</xref>
+<ul><li>This attribute refers to a coded structural role specified by an external coding system.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>organizationalProvider</b></tt>, where its type is <xref href="../OrganizationalProvider.dita">Organizational Provider</xref>
+<ul><li>The organizational provider with which the user is associated.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>userIdentity</b></tt>, where its type is <xref href="../UserIdentity.dita">User Identity</xref>
+<ul><li>A unique identifier for the role.</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">User Role</ph></p>
+</body>
+</topic>
