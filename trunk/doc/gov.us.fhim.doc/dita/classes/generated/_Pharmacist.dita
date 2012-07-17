@@ -20,18 +20,18 @@
 <ul><li>Contains a categorization for the practitioner.</li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>taxId</b></tt> with data type <xref href="../Id.dita">Id</xref>
 <ul><li>This contains the tax ID for the practitioner, used for billing purposes.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>workAddress</b></tt> with data type <xref href="../Address.dita">Address</xref>
+<ul><li>The person's office address.  First choice for business related contacts during business hours.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>workEmail</b></tt> with data type <xref href="../Telecommunications.dita">Telecommunications</xref>
+<ul><li>The email address that a person uses while at their place of business.  First choice for business related contacts during business hours.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>workPhone</b></tt> with data type <xref href="../Telecommunications.dita">Telecommunications</xref>
+<ul><li>The phone number for a person at their office location. First choice for business related contacts during business hours.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>signatureBlockName</b></tt> with data type <xref href="../PersonName.dita">Person Name</xref>
 <ul><li>Contains the name and title of the Practitioner as they wish it to be displayed with the notation that they signed the document electronically.  For example, a practitioner who routinely uses a nickname for most correspondence would likely want their legal name on the signature block.  In addition, this property would contain the title that they would use when electronically signing a document.  For example, a practitioner may hold multiple titles, but would choose one to be used for signing.  Examples of titles are Chief of Surgery, Dietician, Clinical Pharmacist, etc.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>mobilePhone</b></tt> with data type <xref href="../Telecommunications.dita">Telecommunications</xref>
 <ul><li>A telecommunication device that moves and stays with its owner. Suitable for urgent matters, the mobile phone is not the first choice for routine business.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>pager</b></tt> with data type <xref href="../Telecommunications.dita">Telecommunications</xref>
 <ul><li>A paging device suitable to solicit a callback or to leave a very short message.</li></ul></li>
-<li>Contains exactly one [1..1] <tt><b>workAddress</b></tt> with data type <xref href="../Address.dita">Address</xref>
-<ul><li>The person&amp;apos;s office address.  First choice for business related contacts during business hours.</li></ul></li>
-<li>Contains exactly one [1..1] <tt><b>workEmail</b></tt> with data type <xref href="../Telecommunications.dita">Telecommunications</xref>
-<ul><li>The email address that a person uses while at their place of business.  First choice for business related contacts during business hours.</li></ul></li>
-<li>Contains exactly one [1..1] <tt><b>workPhone</b></tt> with data type <xref href="../Telecommunications.dita">Telecommunications</xref>
-<ul><li>The phone number for a person at their office location. First choice for business related contacts during business hours.</li></ul></li>
 <li>Contains zero or more [0..*] <tt><b>asLlicensedProvider</b></tt>, where its type is <xref href="../LicensedProvider.dita">Licensed Provider</xref>
 <ul><li>A practitioner who has been authorized to perform certain activities that fall under the jurisdiction of the issuer of the license.</li></ul></li>
 <li>Contains zero or more [0..*] <tt><b>providerPlanParticipation</b></tt>, where its type is <xref href="../ProviderPlanParticipation.dita">Provider Plan Participation</xref>

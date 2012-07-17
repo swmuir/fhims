@@ -15,13 +15,13 @@
 <li>Contains exactly one [1..1] <tt><b>destinationName</b></tt> with data type <xref href="../String.dita">String</xref>
 <ul><li>Identifies the destination organization of the transmission.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>logId</b></tt> with data type <xref href="../Id.dita">Id</xref>
-<ul><li>It is an integer number that indicates the entry in the &amp;quot;permanent&amp;quot; log of all routed copies of the current image (as required by HIPAA).  This value is used to record when images are purged from their routed destination.  </li></ul></li>
+<ul><li>It is an integer number that indicates the entry in the "permanent" log of all routed copies of the current image (as required by HIPAA).  This value is used to record when images are purged from their routed destination.  </li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>purgeTime</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
 <ul><li>The date and time when the copy of the current image was purged from the location that is described in the current record.  </li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>transmitTime</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
 <ul><li>The date and time when the current image was transmitted to the location described in the current record.  </li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>copyToLocation</b></tt>, where its type is <xref href="../ImageStorage.dita">Image Storage</xref>
-<ul><li>A pointer to the Network Location when an image is transmitted using the &amp;quot;copy&amp;quot; method.  </li></ul></li>
+<ul><li>A pointer to the Network Location when an image is transmitted using the "copy" method.  </li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>imageType</b></tt> with data type <xref href="../Code.dita">Code</xref>
 <ul><li>Indicates what type of image file was transmitted).  Possible values are NON-DICOM; IMAGE; CURVE; OVERLAY; LUT; PRES_STATE; AVEFORM; SR; etc.  [non-dicom images might need more classification]</li></ul></li>
 </ol>
@@ -31,7 +31,7 @@
 <li>Contains exactly one [1..1] <tt><b>destinationName</b></tt> with data type <xref href="../String.dita">String</xref>
 <ul><li>Identifies the destination organization of the transmission.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>logId</b></tt> with data type <xref href="../Id.dita">Id</xref>
-<ul><li>It is an integer number that indicates the entry in the &amp;quot;permanent&amp;quot; log of all routed copies of the current image (as required by HIPAA).  This value is used to record when images are purged from their routed destination.  </li></ul></li>
+<ul><li>It is an integer number that indicates the entry in the "permanent" log of all routed copies of the current image (as required by HIPAA).  This value is used to record when images are purged from their routed destination.  </li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>purgeTime</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
 <ul><li>The date and time when the copy of the current image was purged from the location that is described in the current record.  </li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>transmitTime</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
@@ -39,7 +39,7 @@
 <li>Contains exactly one [1..1] <tt><b>imageType</b></tt> with data type <xref href="../Code.dita">Code</xref>
 <ul><li>Indicates what type of image file was transmitted).  Possible values are NON-DICOM; IMAGE; CURVE; OVERLAY; LUT; PRES_STATE; AVEFORM; SR; etc.  [non-dicom images might need more classification]</li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>copyToLocation</b></tt>, where its type is <xref href="../ImageStorage.dita">Image Storage</xref>
-<ul><li>A pointer to the Network Location when an image is transmitted using the &amp;quot;copy&amp;quot; method.  </li></ul></li>
+<ul><li>A pointer to the Network Location when an image is transmitted using the "copy" method.  </li></ul></li>
 </ol>
 <codeblock id="example"><![CDATA[]]></codeblock>
 <section id="changes">

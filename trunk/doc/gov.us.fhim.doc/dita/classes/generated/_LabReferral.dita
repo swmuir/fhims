@@ -7,46 +7,47 @@
 </prolog>
 <body>
 <section id="description">
+<p>An order placed by a laboratory to another laboratory to perform a test that the originating laboratory had taken on.  This action typically occurs when the originating laboratory cannot perform the requested test in-house.</p>
 </section>
 <ol id="conformance">
 <li>Contains exactly one [1..1] <tt><b>cost</b></tt> with data type <xref href="../MonetaryAmount.dita">Monetary Amount</xref>
-</li>
+<ul><li>Indicates the amount charged by the performing lab to perform the referred test.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>orderDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
 <ul><li>The date/time that the order was created by the ordering provider.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>placerOrderId</b></tt> with data type <xref href="../Id.dita">Id</xref>
-<ul><li>Uniquely identifies the order within the ordering provider&amp;apos;s system.</li></ul></li>
+<ul><li>"This field is the placer application's order number." - HL7 Version 2.8, ORC-2</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>priority</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>A code (e.g., routine, emergency), specifying the urgency under which the order is requested to happen.</li></ul></li>
+<ul><li>"This field describes the urgency of the request.  If this field is blank, the default is R" (Routine) - HL7 Version 2.8, TQ1-9</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>remarks</b></tt> with data type <xref href="../String.dita">String</xref>
-</li>
+<ul><li>Any comments regarding the referral.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>A code specifying the status of the order.  Valid status codes should reflect the HL7 state machine, e.g., Active, Held, Canceled, Aborted, New, Nullified, Obsolete).</li></ul></li>
+<ul><li>"Specifies the status of an order....  The purpose of this field is to report the status of an order either upon request (solicited), or when the status changes (unsolicited).  It does not initiate action.  It is assumed that the order status always reflects the status as it is known to the sending application at the time that the message is sent.  Only the filler can originate the value of this field." - HL7 Version 2.8, ORC-5
+
+A code specifying the status of the Order.  Valid status codes should reflect the HL7 state machine, e.g., Active, Held, Canceled, Aborted, New, Nullified, Obsolete.</li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>statusModifier</b></tt> with data type <xref href="../Code.dita">Code</xref>
-</li>
-<li>Contains zero or one [0..1] <tt><b>performingOrganization</b></tt>, where its type is <xref href="../ServiceDeliveryLocation.dita">Service Delivery Location</xref>
-</li>
-<li>Contains zero or one [0..1] <tt><b>fillerAccession</b></tt>, where its type is <xref href="../Accession.dita">Accession</xref>
-</li>
+<ul><li>"This field is a modifier or refiner of the ORC-5-Order status field. This field may be used to provide additional levels of specificity or additional information for the defined order status codes." - HL7 Version 2.8, ORC-25</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>performingLabsPromise</b></tt>, where its type is <xref href="../LabTestPromise.dita">Lab Test Promise</xref>
+<ul><li>Points to the performing laboratory's promise to perform the requested test(s).  This allows navigation to the results, etc.</li></ul></li>
 </ol>
 <ol id="aggregate">
 <li>Contains exactly one [1..1] <tt><b>cost</b></tt> with data type <xref href="../MonetaryAmount.dita">Monetary Amount</xref>
-</li>
+<ul><li>Indicates the amount charged by the performing lab to perform the referred test.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>orderDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
 <ul><li>The date/time that the order was created by the ordering provider.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>placerOrderId</b></tt> with data type <xref href="../Id.dita">Id</xref>
-<ul><li>Uniquely identifies the order within the ordering provider&amp;apos;s system.</li></ul></li>
+<ul><li>"This field is the placer application's order number." - HL7 Version 2.8, ORC-2</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>priority</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>A code (e.g., routine, emergency), specifying the urgency under which the order is requested to happen.</li></ul></li>
+<ul><li>"This field describes the urgency of the request.  If this field is blank, the default is R" (Routine) - HL7 Version 2.8, TQ1-9</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>remarks</b></tt> with data type <xref href="../String.dita">String</xref>
-</li>
+<ul><li>Any comments regarding the referral.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>A code specifying the status of the order.  Valid status codes should reflect the HL7 state machine, e.g., Active, Held, Canceled, Aborted, New, Nullified, Obsolete).</li></ul></li>
+<ul><li>"Specifies the status of an order....  The purpose of this field is to report the status of an order either upon request (solicited), or when the status changes (unsolicited).  It does not initiate action.  It is assumed that the order status always reflects the status as it is known to the sending application at the time that the message is sent.  Only the filler can originate the value of this field." - HL7 Version 2.8, ORC-5
+
+A code specifying the status of the Order.  Valid status codes should reflect the HL7 state machine, e.g., Active, Held, Canceled, Aborted, New, Nullified, Obsolete.</li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>statusModifier</b></tt> with data type <xref href="../Code.dita">Code</xref>
-</li>
-<li>Contains zero or one [0..1] <tt><b>performingOrganization</b></tt>, where its type is <xref href="../ServiceDeliveryLocation.dita">Service Delivery Location</xref>
-</li>
-<li>Contains zero or one [0..1] <tt><b>fillerAccession</b></tt>, where its type is <xref href="../Accession.dita">Accession</xref>
-</li>
+<ul><li>"This field is a modifier or refiner of the ORC-5-Order status field. This field may be used to provide additional levels of specificity or additional information for the defined order status codes." - HL7 Version 2.8, ORC-25</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>performingLabsPromise</b></tt>, where its type is <xref href="../LabTestPromise.dita">Lab Test Promise</xref>
+<ul><li>Points to the performing laboratory's promise to perform the requested test(s).  This allows navigation to the results, etc.</li></ul></li>
 </ol>
 <codeblock id="example"><![CDATA[]]></codeblock>
 <section id="changes">

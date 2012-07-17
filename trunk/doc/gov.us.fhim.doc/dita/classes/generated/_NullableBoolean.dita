@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Nullable Boolean - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>This datatype represents a boolean value which may be unknown.  In other words, this datatype can represent Yes, No, and Unknown; unlike a traditional boolean which can only represent True and False.  For this logical model, this class has been modeled in the HL7 V3 style, which has the advantage of being able to account for different kinds of "unknowns", but has the disadvantage of having two fields, one of which must always be populated while the other must always be empty.  Implementers may choose to implement this class using a single field instead.</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>value</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li>This property contains either a True or a False (or Yes or No).  If "unknown" is needed, this property will be empty, and the nullFlavor property will be valued.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>nullFlavor</b></tt> with data type <xref href="../../terminology/NullFlavor.dita">Null Flavor</xref>
+<ul><li>This property indicates why the value property is empty.  It uses the NullFlavor enumeration.  This property must be valued when the value property is empty, and must be empty when the value property is valued.</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>value</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li>This property contains either a True or a False (or Yes or No).  If "unknown" is needed, this property will be empty, and the nullFlavor property will be valued.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>nullFlavor</b></tt> with data type <xref href="../../terminology/NullFlavor.dita">Null Flavor</xref>
+<ul><li>This property indicates why the value property is empty.  It uses the NullFlavor enumeration.  This property must be valued when the value property is empty, and must be empty when the value property is valued.</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Nullable Boolean</ph></p>
+</body>
+</topic>

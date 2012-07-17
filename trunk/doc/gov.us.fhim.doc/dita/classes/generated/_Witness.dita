@@ -7,18 +7,19 @@
 </prolog>
 <body>
 <section id="description">
+<p>"Only with service events. A person witnessing the action happening without doing anything. A witness is not necessarily aware, much less approves of anything stated in the service event. Example for a witness is students watching an operation or an advanced directive witness." - HL7 V3</p>
 </section>
 <ol id="conformance">
-<li>Contains exactly one [1..1] <tt><b>comment</b></tt> with data type <xref href="../String.dita">String</xref>
-</li>
-<li>Contains exactly one [1..1] <tt><b>time</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
-</li>
+<li>Extends <xref href="../PractitionerParticipationLite.dita">Practitioner Participation Lite</xref></li>
 </ol>
 <ol id="aggregate">
-<li>Contains exactly one [1..1] <tt><b>comment</b></tt> with data type <xref href="../String.dita">String</xref>
-</li>
-<li>Contains exactly one [1..1] <tt><b>time</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
-</li>
+<li>Extends <xref href="../PractitionerParticipationLite.dita">Practitioner Participation Lite</xref></li>
+<li>Contains zero or one [0..1] <tt><b>comment</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>"Contains any comments or notes made by the practitioner in reference to the action in which they participated." - HL7 V3.  </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>time</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>"An interval of time specifying the time during which the participant is involved in the act through this Participation." - HL7 V3.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>practitioner</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
+<ul><li>Represents information about a person who is authorized to provide health care services in the role of practitioner for a health care provider organization.  The role of practitioner includes all functions performed for a health care provider organization in order to provide patient care and treatment.</li></ul></li>
 </ol>
 <codeblock id="example"><![CDATA[]]></codeblock>
 <section id="changes">

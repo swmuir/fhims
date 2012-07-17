@@ -14,11 +14,14 @@
 <li>Contains exactly one [1..1] <tt><b>comments</b></tt> with data type <xref href="../String.dita">String</xref>
 <ul><li>Any remarks concerning this encounter.    </li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>duration</b></tt> with data type <xref href="../TimeInterval.dita">Time Interval</xref>
-<ul><li>&amp;quot;The time interval starting with the administrative onset of the encounter (e.g. admission, registration, patient arrival) and ending with the patient&amp;apos;s departure (e.g. discharge). Note_1: for active encounters the end of the effectiveTime range is the anticipated end date-time. Note_2: all messages, except the &amp;quot;nullify&amp;quot; message, require at least a starting time.&amp;quot;  (HL7).   This is the start and end date/times of the Encounter.</li></ul></li>
+<ul><li>"The time interval starting with the administrative onset of the encounter (e.g. admission, registration, patient arrival) and ending with the patient's departure (e.g. discharge). Note_1: for active encounters the end of the effectiveTime range is the anticipated end date-time. Note_2: all messages, except the "nullify" message, require at least a starting time."  (HL7).   This is the start and end date/times of the Encounter.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
-<ul><li>Unique identifier for this Encounter  </li></ul></li>
+<ul><li>This property uniquely identifies the Encounter.  This property can be used, among other purposes, to associate the current Encounter with other Encounters, or with events that occurred during the Encounter.
+
+"Contains the unique number assigned to each patient visit." - HL7 Version 2.8, PV1-19
+"Contains the identifier of a Service Episode in or for which the visit occurs." - HL7 Version 2.8, PV1-54</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>priority</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>&amp;quot;Contains the priority of the visit.&amp;quot; - HL7 Version 2.8, PV2-25    Possible values include (from HL7 Table 217): Emergency; Urgent; Elective</li></ul></li>
+<ul><li>"Contains the priority of the visit." - HL7 Version 2.8, PV2-25    Possible values include (from HL7 Table 217): Emergency; Urgent; Elective</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
 <ul><li>A value specifying the state of this patient encounter (based on the RIM Act class state machine), for example, active, aborted, completed </li></ul></li>
 <li>Contains zero or more [0..*] <tt><b>diagnosisList</b></tt>, where its type is <xref href="../DiagnosisListEntry.dita">Diagnosis List Entry</xref>
@@ -34,11 +37,14 @@
 <li>Contains exactly one [1..1] <tt><b>comments</b></tt> with data type <xref href="../String.dita">String</xref>
 <ul><li>Any remarks concerning this encounter.    </li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>duration</b></tt> with data type <xref href="../TimeInterval.dita">Time Interval</xref>
-<ul><li>&amp;quot;The time interval starting with the administrative onset of the encounter (e.g. admission, registration, patient arrival) and ending with the patient&amp;apos;s departure (e.g. discharge). Note_1: for active encounters the end of the effectiveTime range is the anticipated end date-time. Note_2: all messages, except the &amp;quot;nullify&amp;quot; message, require at least a starting time.&amp;quot;  (HL7).   This is the start and end date/times of the Encounter.</li></ul></li>
+<ul><li>"The time interval starting with the administrative onset of the encounter (e.g. admission, registration, patient arrival) and ending with the patient's departure (e.g. discharge). Note_1: for active encounters the end of the effectiveTime range is the anticipated end date-time. Note_2: all messages, except the "nullify" message, require at least a starting time."  (HL7).   This is the start and end date/times of the Encounter.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
-<ul><li>Unique identifier for this Encounter  </li></ul></li>
+<ul><li>This property uniquely identifies the Encounter.  This property can be used, among other purposes, to associate the current Encounter with other Encounters, or with events that occurred during the Encounter.
+
+"Contains the unique number assigned to each patient visit." - HL7 Version 2.8, PV1-19
+"Contains the identifier of a Service Episode in or for which the visit occurs." - HL7 Version 2.8, PV1-54</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>priority</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>&amp;quot;Contains the priority of the visit.&amp;quot; - HL7 Version 2.8, PV2-25    Possible values include (from HL7 Table 217): Emergency; Urgent; Elective</li></ul></li>
+<ul><li>"Contains the priority of the visit." - HL7 Version 2.8, PV2-25    Possible values include (from HL7 Table 217): Emergency; Urgent; Elective</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
 <ul><li>A value specifying the state of this patient encounter (based on the RIM Act class state machine), for example, active, aborted, completed </li></ul></li>
 <li>Contains zero or more [0..*] <tt><b>diagnosisList</b></tt>, where its type is <xref href="../DiagnosisListEntry.dita">Diagnosis List Entry</xref>

@@ -9,43 +9,79 @@
 <section id="description">
 </section>
 <ol id="conformance">
-<li>Contains exactly one [1..1] <tt><b>procedureDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<li>Contains exactly one [1..1] <tt><b>diagnosis</b></tt> with data type <xref href="../Code.dita">Code</xref>
 </li>
-<li>Contains exactly one [1..1] <tt><b>reportDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<li>Contains exactly one [1..1] <tt><b>leftEarResult</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>leftEarResultDescription</b></tt> with data type <xref href="../String.dita">String</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>method</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>procedureDescription</b></tt> with data type <xref href="../String.dita">String</xref>
 </li>
 <li>Contains exactly one [1..1] <tt><b>reasonNotPerformed</b></tt> with data type <xref href="../Code.dita">Code</xref>
 </li>
-<li>Contains exactly one [1..1] <tt><b>newborn</b></tt>, where its type is <xref href="../Patient.dita">Patient</xref>
+<li>Contains zero or more [0..*] <tt><b>reasonNotReferred</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>reportDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>rightEarResult</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>rightEarResultDescription</b></tt> with data type <xref href="../String.dita">String</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>screenProcedureDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>screenProcedureLeftEar</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>screenProcedureRightEar</b></tt> with data type <xref href="../Code.dita">Code</xref>
 </li>
 <li>Contains exactly one [1..1] <tt><b>birthCertificate</b></tt>, where its type is <xref href="../BirthCertificate.dita">Birth Certificate</xref>
 </li>
-<li>Contains zero or more [0..*] <tt><b>newbornHearingObservation</b></tt>, where its type is <xref href="../NewbornHearingObservation.dita">Newborn Hearing Observation</xref>
-</li>
-<li>Contains zero or more [0..*] <tt><b>cranialFacialAnomoly</b></tt>, where its type is <xref href="../CranialFacialAnomoly.dita">Cranial Facial Anomoly</xref>
-</li>
-<li>Contains exactly one [1..1] <tt><b>procedure</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<li>Contains zero or more [0..*] <tt><b>cranialFacialAnomaly</b></tt>, where its type is <xref href="../CranialFacialAnomaly.dita">Cranial Facial Anomaly</xref>
 </li>
 <li>Contains zero or more [0..*] <tt><b>hearingLossRiskFactor</b></tt>, where its type is <xref href="../HearingLossRiskFactor.dita">Hearing Loss Risk Factor</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>newborn</b></tt>, where its type is <xref href="../Patient.dita">Patient</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>referral</b></tt>, where its type is <xref href="../Referral.dita">Referral</xref>
 </li>
 </ol>
 <ol id="aggregate">
-<li>Contains exactly one [1..1] <tt><b>procedureDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<li>Contains exactly one [1..1] <tt><b>diagnosis</b></tt> with data type <xref href="../Code.dita">Code</xref>
 </li>
-<li>Contains exactly one [1..1] <tt><b>reportDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<li>Contains exactly one [1..1] <tt><b>leftEarResult</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>leftEarResultDescription</b></tt> with data type <xref href="../String.dita">String</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>method</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>procedureDescription</b></tt> with data type <xref href="../String.dita">String</xref>
 </li>
 <li>Contains exactly one [1..1] <tt><b>reasonNotPerformed</b></tt> with data type <xref href="../Code.dita">Code</xref>
 </li>
-<li>Contains exactly one [1..1] <tt><b>procedure</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<li>Contains zero or more [0..*] <tt><b>reasonNotReferred</b></tt> with data type <xref href="../Code.dita">Code</xref>
 </li>
-<li>Contains exactly one [1..1] <tt><b>newborn</b></tt>, where its type is <xref href="../Patient.dita">Patient</xref>
+<li>Contains exactly one [1..1] <tt><b>reportDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>rightEarResult</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>rightEarResultDescription</b></tt> with data type <xref href="../String.dita">String</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>screenProcedureDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>screenProcedureLeftEar</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>screenProcedureRightEar</b></tt> with data type <xref href="../Code.dita">Code</xref>
 </li>
 <li>Contains exactly one [1..1] <tt><b>birthCertificate</b></tt>, where its type is <xref href="../BirthCertificate.dita">Birth Certificate</xref>
 </li>
-<li>Contains zero or more [0..*] <tt><b>newbornHearingObservation</b></tt>, where its type is <xref href="../NewbornHearingObservation.dita">Newborn Hearing Observation</xref>
-</li>
-<li>Contains zero or more [0..*] <tt><b>cranialFacialAnomoly</b></tt>, where its type is <xref href="../CranialFacialAnomoly.dita">Cranial Facial Anomoly</xref>
+<li>Contains zero or more [0..*] <tt><b>cranialFacialAnomaly</b></tt>, where its type is <xref href="../CranialFacialAnomaly.dita">Cranial Facial Anomaly</xref>
 </li>
 <li>Contains zero or more [0..*] <tt><b>hearingLossRiskFactor</b></tt>, where its type is <xref href="../HearingLossRiskFactor.dita">Hearing Loss Risk Factor</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>newborn</b></tt>, where its type is <xref href="../Patient.dita">Patient</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>referral</b></tt>, where its type is <xref href="../Referral.dita">Referral</xref>
 </li>
 </ol>
 <codeblock id="example"><![CDATA[]]></codeblock>

@@ -7,57 +7,77 @@
 </prolog>
 <body>
 <section id="description">
-<p>&amp;quot;This class is used to track a patient&amp;apos;s health concern observed by various providers at various points in time and locations. The name and nature of the concern is derived from the first health concern observation made, which could be an indication of a negative assertion for an health concern, if necessary (e.g. not a diabetic).&amp;quot; - HL7 v3.  A &amp;quot;health concern&amp;quot; can be anything that a clinician wishes to track about the patient, including items which the patient might not consider to be a &amp;quot;problem&amp;quot;, such as the fact that the patient smokes.</p>
+<p>"This class is used to track a patient's health concern observed by various providers at various points in time and locations. The name and nature of the concern is derived from the first health concern observation made, which could be an indication of a negative assertion for an health concern, if necessary (e.g. not a diabetic)." - HL7 v3.  A "health concern" can be anything that a clinician wishes to track about the patient, including items which the patient might not consider to be a "problem", such as the fact that the patient smokes.</p>
 </section>
 <ol id="conformance">
 <li>Contains exactly one [1..1] <tt><b>ageAtOnset</b></tt> with data type <xref href="../TimeQuantity.dita">Time Quantity</xref>
 <ul><li>The age of the patient or subject at onset of the condition</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>certainty</b></tt> with data type <xref href="../String.dita">String</xref>
-<ul><li>&amp;quot;This field contains a qualitative representation of the certainty of a problem (e.g., high, low, medium, etc.)&amp;quot; - HL7 v2</li></ul></li>
+<ul><li>"Contains a qualitative representation of the certainty of a problem" (e.g., high, low, medium, etc.) - HL7 Version 2.8, PRB-19</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>chronicity</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>This is a flag to indicate how critical this problem is for this patient; problems marked as Acute will be flagged on the Problem List display. A=Acute, C=Chronic</li></ul></li>
+<ul><li>"Contains the perseverance of a problem (e.g., acute, chronic, etc.)." - HL7 Version 2.8, PRB-12.  Note that HL7does not provide any suggested values for this code.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>classification</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>This field indicates the kind of problem.  This field can be used to categorize problems so that they may be managed and viewed independently within different applications (e.g., admission, final, post-operative, pre-operative, outpatient, discharge, etc.).</li></ul></li>
+<ul><li>"Indicates the kind of problem.  This field can be used to categorize problems so that they may be managed and viewed independently within different applications (e.g., admission, final, post-operative, pre-operative, outpatient, discharge, etc.)." - HL7 Version 2.8, PRB-10.  Note that HL7does not provide any suggested values for this code.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>confirmationStatus</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>  </li></ul></li>
+<ul><li>"Contains the verification status of a problem (e.g., confirmed, differential, provisional, rule-out, etc.)." - HL7 Version 2.8, PRB-13.  Note that HL7does not provide any suggested values for this code.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>dateCreated</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
 <ul><li>The date and time that the record of the Problem being described was originally created.  Note that this property could be derived from the HealthConcernLifeCycle entries.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>dateEstabished</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
-<ul><li>&amp;quot;This field contains the date/time when the corresponding problem was initially identified by the caregiver.&amp;quot; - HL7 v2.</li></ul></li>
+<ul><li>"Contains the date/time when the corresponding problem was initially identified by the caregiver." - HL7 Version 2.8, PRB-7</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>dateLastModified</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
-<ul><li>The date and time that the Problem being described was last modified.  Note that this property could be derived from the HealthConcernLifeCycle entries.</li></ul></li>
+<ul><li>"Indicates the effective date/time of the current problem life cycle status." - HL7 Version 2.8, PRB-15
+
+The date and time that the Problem being described was last modified.  It is assumed that the status of the problem is valid as of the last modified date.  Note that this property could be derived from the HealthConcernLifeCycle entries.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>dateOfOnset</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
-<ul><li>The date and time that Problem being described began.  Note that this date may be inprecise (e.g., &amp;quot;sometime in 2006&amp;quot;).</li></ul></li>
+<ul><li>"Contains the date/time when the problem began." - HL7 Version 2.8, PRB-16.  Note that this date may be inprecise (e.g., "sometime in 2006").</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>dateOfOnsetText</b></tt> with data type <xref href="../String.dita">String</xref>
-</li>
+<ul><li>"This field allows for a textual representation of the time when the problem began." - HL7 Version 2.8, PRB-17</li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>dateResolved</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
-<ul><li>The date and time that Problem being described was resolved (if it is resolved).</li></ul></li>
+<ul><li>"Contains the date/time that the problem was actually resolved." - HL7 Version 2.8, PRB-9</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>familyPrognosisAwareness</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"Indicates the individual's family or significant other's comprehension of the actual problem/prognosis." - HL7 Version 2.8, PRB-24</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>healthConcern</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>Identifies the Problem or Health Concern being described.  This property is code, which should come from an approved subset of SNOMED-CT, e.g., the &amp;quot;VA-KP Problem List Subset&amp;quot;</li></ul></li>
+<ul><li>Identifies the Problem or Health Concern being described.  This property is code, which should come from an approved subset of SNOMED-CT, e.g., the "VA-KP Problem List Subset."  Note that the Health Concern class does not have a separate property to indicate "Family History Of", therefore as currently designed, the health concern value set must include pre-coordinated terms such as "Diabetes", "Family History Of Diabetes", etc.  We may wish to add some sort of qualifying properties so as to not need to overload the terminology.
+
+"Identifies the problem. This is the identifier from an institution's master list of problems." - HL7 Version 2.8, PRB-3</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
-<ul><li>Uniquely identifies the Health Concern (or &amp;quot;Problem&amp;quot;) entry. This property is akin to a record number, and may not be unique outside of the organization that created it. However, the Id datatype allows for a assigning authority, which when combined with the local identifier, should make the Id unique.  The id property allows on-going observations made on the same initial problem to be tracked as the same concern.</li></ul></li>
+<ul><li>Uniquely identifies the Health Concern (or "Problem") entry. This property is akin to a record number, and may not be unique outside of the organization that created it. However, the Id datatype allows for a assigning authority, which when combined with the local identifier, should make the Id unique.  The id property allows on-going observations made on the same initial problem to be tracked as the same concern.
+
+"Contains the identifier assigned by an initiating system to an instance of a problem." - HL7 Version 2.8, PRB-4</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>informationSource</b></tt> with data type <xref href="../Code.dita">Code</xref>
 <ul><li>Provides an indication of how the existence of the problem came to be known.  Possible values include Patient, Clinical Evidence, etc.  Added for Ahlta.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>narrative</b></tt> with data type <xref href="../String.dita">String</xref>
-<ul><li>A textual description of the Health Concern (or &amp;quot;Problem&amp;quot;).</li></ul></li>
+<ul><li>A textual description of the Health Concern (or "Problem").</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>patientsProblemAwareness</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"Contains the individual's comprehension of the problem (e.g., full, marginal, partial, etc.)." - HL7 Version 2.8, PRB-21.  Note that HL7does not provide any suggested values for this code.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>patientsPrognosisAwareness</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"Contains the individual's comprehension of the prognosis for the problem (e.g., full, marginal, partial, etc.)." - HL7 Version 2.8, PRB-23.  Note that HL7does not provide any suggested values for this code.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>probability</b></tt> with data type <xref href="../Real.dita">Real</xref>
+<ul><li>"Contains a quantitative or numeric representation of the certainty that the problem exists for this patient.  This field has a valid range of 0 to 1.  For example, a healthcare provider may be 75% (.75) sure that the problem has been correctly identified." - HL7 Version 2.8, PRB-20</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>prognosis</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"Contains the prognosis for the individual's problem (e.g., good, poor, etc.)." - HL7 Version 2.8, PRB-22.  Note that HL7does not provide any suggested values for this code.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>sensitivity</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"Contains information about the level of security and/or sensitivity surrounding the problem (e.g., highly sensitive, not sensitive, sensitive, etc.)." - HL7 Version 2.8, PRB-25.  Note that HL7does not provide any suggested values for this code.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>severity</b></tt> with data type <xref href="../Code.dita">Code</xref>
-</li>
+<ul><li>"Indicates the severity of the Problem." - HL7 Version 2.8, PRB-26.  Note that HL7 does not suggest values for this code.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>This property summarizes the current state of the Health Concern (or &amp;quot;Problem&amp;quot;), as indicated by the last observation made on this concern.  Possible values include: Active, Inactive, Nullified, etc.</li></ul></li>
+<ul><li>"Contains the current status of the problem at this particular date/time (e.g., active, active-improving, active-stable, active-worsening, inactive, resolved, etc.)." - HL7 Version 2.8, PRB-14
+
+This property summarizes the current state of the Health Concern (or "Problem"), as indicated by the last observation made on this concern.</li></ul></li>
 <li>Contains zero or more [0..*] <tt><b>diagnosis</b></tt>, where its type is <xref href="../DiagnosisListEntry.dita">Diagnosis List Entry</xref>
-</li>
-<li>Contains zero or more [0..*] <tt><b>healthConcernLog</b></tt>, where its type is <xref href="../HealthConcernLog.dita">Health Concern Log</xref>
-</li>
+<ul><li>Provides a list of diagnoses that are related to the Health Concern</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>healthConcernLog</b></tt>, where its type is <xref href="../HealthConcernLogEntry.dita">Health Concern Log Entry</xref>
+<ul><li>This class contains a history of updates to the Health Concern, and relates the Health Concern record to various encounters over time.</li></ul></li>
 <li>Contains zero or more [0..*] <tt><b>note</b></tt>, where its type is <xref href="../CommentEvent.dita">Comment Event</xref>
 <ul><li>Note/s providing additional textual description of the problem.</li></ul></li>
-<li>Contains zero or more [0..*] <tt><b>problemManagementClassification</b></tt>, where its type is <xref href="../ProblemManagementClassification.dita">Problem Management Classification</xref>
-</li>
+<li>Contains zero or more [0..*] <tt><b>problemManagementDiscipline</b></tt>, where its type is <xref href="../ProblemManagementDiscipline.dita">Problem Management Discipline</xref>
+<ul><li>"Indicates the category of caregiver with responsibility for managing this specific problem (e.g., care team, nursing, medicine, respiratory therapy, occupational therapy, dietary, etc.)." - HL7 Version 2.8, PRB-11.</li></ul></li>
 <li>Contains zero or more [0..*] <tt><b>relatedConcern</b></tt>, where its type is <xref href="../RelatedConcern.dita">Related Concern</xref>
-</li>
-<li>Contains zero or one [0..1] <tt><b>responsibleClinic</b></tt>, where its type is <xref href="../HospitalLocation.dita">Hospital Location</xref>
-</li>
+<ul><li>Identifies other the Health Concern (aka "Problem") entries to which the original entry (i.e., the entry that points to this class) is related.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>responsibleClinic</b></tt>, where its type is <xref href="../ServiceDeliveryLocation.dita">Service Delivery Location</xref>
+<ul><li>Identifies the organization/location responsible for treating the Health Concern.  Used primarily in inpatient situations.</li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>responsibleProvider</b></tt>, where its type is <xref href="../ResponsibleParty.dita">Responsible Party</xref>
-</li>
+<ul><li>Identifies the provider responsible for treating the Health Concern.</li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>responsibleService</b></tt>, where its type is <xref href="../ServiceDepartment.dita">Service Department</xref>
 <ul><li>A pointer to the service file identifying the service primarily involved in the treatment of this problem.  </li></ul><ul><li>A pointer to the service file identifying the service primarily involved in the treatment of this problem.  </li></ul></li>
 </ol>
@@ -65,51 +85,71 @@
 <li>Contains exactly one [1..1] <tt><b>ageAtOnset</b></tt> with data type <xref href="../TimeQuantity.dita">Time Quantity</xref>
 <ul><li>The age of the patient or subject at onset of the condition</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>certainty</b></tt> with data type <xref href="../String.dita">String</xref>
-<ul><li>&amp;quot;This field contains a qualitative representation of the certainty of a problem (e.g., high, low, medium, etc.)&amp;quot; - HL7 v2</li></ul></li>
+<ul><li>"Contains a qualitative representation of the certainty of a problem" (e.g., high, low, medium, etc.) - HL7 Version 2.8, PRB-19</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>chronicity</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>This is a flag to indicate how critical this problem is for this patient; problems marked as Acute will be flagged on the Problem List display. A=Acute, C=Chronic</li></ul></li>
+<ul><li>"Contains the perseverance of a problem (e.g., acute, chronic, etc.)." - HL7 Version 2.8, PRB-12.  Note that HL7does not provide any suggested values for this code.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>classification</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>This field indicates the kind of problem.  This field can be used to categorize problems so that they may be managed and viewed independently within different applications (e.g., admission, final, post-operative, pre-operative, outpatient, discharge, etc.).</li></ul></li>
+<ul><li>"Indicates the kind of problem.  This field can be used to categorize problems so that they may be managed and viewed independently within different applications (e.g., admission, final, post-operative, pre-operative, outpatient, discharge, etc.)." - HL7 Version 2.8, PRB-10.  Note that HL7does not provide any suggested values for this code.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>confirmationStatus</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>  </li></ul></li>
+<ul><li>"Contains the verification status of a problem (e.g., confirmed, differential, provisional, rule-out, etc.)." - HL7 Version 2.8, PRB-13.  Note that HL7does not provide any suggested values for this code.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>dateCreated</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
 <ul><li>The date and time that the record of the Problem being described was originally created.  Note that this property could be derived from the HealthConcernLifeCycle entries.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>dateEstabished</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
-<ul><li>&amp;quot;This field contains the date/time when the corresponding problem was initially identified by the caregiver.&amp;quot; - HL7 v2.</li></ul></li>
+<ul><li>"Contains the date/time when the corresponding problem was initially identified by the caregiver." - HL7 Version 2.8, PRB-7</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>dateLastModified</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
-<ul><li>The date and time that the Problem being described was last modified.  Note that this property could be derived from the HealthConcernLifeCycle entries.</li></ul></li>
+<ul><li>"Indicates the effective date/time of the current problem life cycle status." - HL7 Version 2.8, PRB-15
+
+The date and time that the Problem being described was last modified.  It is assumed that the status of the problem is valid as of the last modified date.  Note that this property could be derived from the HealthConcernLifeCycle entries.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>dateOfOnset</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
-<ul><li>The date and time that Problem being described began.  Note that this date may be inprecise (e.g., &amp;quot;sometime in 2006&amp;quot;).</li></ul></li>
+<ul><li>"Contains the date/time when the problem began." - HL7 Version 2.8, PRB-16.  Note that this date may be inprecise (e.g., "sometime in 2006").</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>dateOfOnsetText</b></tt> with data type <xref href="../String.dita">String</xref>
-</li>
+<ul><li>"This field allows for a textual representation of the time when the problem began." - HL7 Version 2.8, PRB-17</li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>dateResolved</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
-<ul><li>The date and time that Problem being described was resolved (if it is resolved).</li></ul></li>
+<ul><li>"Contains the date/time that the problem was actually resolved." - HL7 Version 2.8, PRB-9</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>familyPrognosisAwareness</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"Indicates the individual's family or significant other's comprehension of the actual problem/prognosis." - HL7 Version 2.8, PRB-24</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>healthConcern</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>Identifies the Problem or Health Concern being described.  This property is code, which should come from an approved subset of SNOMED-CT, e.g., the &amp;quot;VA-KP Problem List Subset&amp;quot;</li></ul></li>
+<ul><li>Identifies the Problem or Health Concern being described.  This property is code, which should come from an approved subset of SNOMED-CT, e.g., the "VA-KP Problem List Subset."  Note that the Health Concern class does not have a separate property to indicate "Family History Of", therefore as currently designed, the health concern value set must include pre-coordinated terms such as "Diabetes", "Family History Of Diabetes", etc.  We may wish to add some sort of qualifying properties so as to not need to overload the terminology.
+
+"Identifies the problem. This is the identifier from an institution's master list of problems." - HL7 Version 2.8, PRB-3</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
-<ul><li>Uniquely identifies the Health Concern (or &amp;quot;Problem&amp;quot;) entry. This property is akin to a record number, and may not be unique outside of the organization that created it. However, the Id datatype allows for a assigning authority, which when combined with the local identifier, should make the Id unique.  The id property allows on-going observations made on the same initial problem to be tracked as the same concern.</li></ul></li>
+<ul><li>Uniquely identifies the Health Concern (or "Problem") entry. This property is akin to a record number, and may not be unique outside of the organization that created it. However, the Id datatype allows for a assigning authority, which when combined with the local identifier, should make the Id unique.  The id property allows on-going observations made on the same initial problem to be tracked as the same concern.
+
+"Contains the identifier assigned by an initiating system to an instance of a problem." - HL7 Version 2.8, PRB-4</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>informationSource</b></tt> with data type <xref href="../Code.dita">Code</xref>
 <ul><li>Provides an indication of how the existence of the problem came to be known.  Possible values include Patient, Clinical Evidence, etc.  Added for Ahlta.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>narrative</b></tt> with data type <xref href="../String.dita">String</xref>
-<ul><li>A textual description of the Health Concern (or &amp;quot;Problem&amp;quot;).</li></ul></li>
+<ul><li>A textual description of the Health Concern (or "Problem").</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>patientsProblemAwareness</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"Contains the individual's comprehension of the problem (e.g., full, marginal, partial, etc.)." - HL7 Version 2.8, PRB-21.  Note that HL7does not provide any suggested values for this code.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>patientsPrognosisAwareness</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"Contains the individual's comprehension of the prognosis for the problem (e.g., full, marginal, partial, etc.)." - HL7 Version 2.8, PRB-23.  Note that HL7does not provide any suggested values for this code.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>probability</b></tt> with data type <xref href="../Real.dita">Real</xref>
+<ul><li>"Contains a quantitative or numeric representation of the certainty that the problem exists for this patient.  This field has a valid range of 0 to 1.  For example, a healthcare provider may be 75% (.75) sure that the problem has been correctly identified." - HL7 Version 2.8, PRB-20</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>prognosis</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"Contains the prognosis for the individual's problem (e.g., good, poor, etc.)." - HL7 Version 2.8, PRB-22.  Note that HL7does not provide any suggested values for this code.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>sensitivity</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"Contains information about the level of security and/or sensitivity surrounding the problem (e.g., highly sensitive, not sensitive, sensitive, etc.)." - HL7 Version 2.8, PRB-25.  Note that HL7does not provide any suggested values for this code.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>severity</b></tt> with data type <xref href="../Code.dita">Code</xref>
-</li>
+<ul><li>"Indicates the severity of the Problem." - HL7 Version 2.8, PRB-26.  Note that HL7 does not suggest values for this code.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>This property summarizes the current state of the Health Concern (or &amp;quot;Problem&amp;quot;), as indicated by the last observation made on this concern.  Possible values include: Active, Inactive, Nullified, etc.</li></ul></li>
+<ul><li>"Contains the current status of the problem at this particular date/time (e.g., active, active-improving, active-stable, active-worsening, inactive, resolved, etc.)." - HL7 Version 2.8, PRB-14
+
+This property summarizes the current state of the Health Concern (or "Problem"), as indicated by the last observation made on this concern.</li></ul></li>
 <li>Contains zero or more [0..*] <tt><b>diagnosis</b></tt>, where its type is <xref href="../DiagnosisListEntry.dita">Diagnosis List Entry</xref>
-</li>
-<li>Contains zero or more [0..*] <tt><b>healthConcernLog</b></tt>, where its type is <xref href="../HealthConcernLog.dita">Health Concern Log</xref>
-</li>
+<ul><li>Provides a list of diagnoses that are related to the Health Concern</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>healthConcernLog</b></tt>, where its type is <xref href="../HealthConcernLogEntry.dita">Health Concern Log Entry</xref>
+<ul><li>This class contains a history of updates to the Health Concern, and relates the Health Concern record to various encounters over time.</li></ul></li>
 <li>Contains zero or more [0..*] <tt><b>note</b></tt>, where its type is <xref href="../CommentEvent.dita">Comment Event</xref>
 <ul><li>Note/s providing additional textual description of the problem.</li></ul></li>
-<li>Contains zero or more [0..*] <tt><b>problemManagementClassification</b></tt>, where its type is <xref href="../ProblemManagementClassification.dita">Problem Management Classification</xref>
-</li>
+<li>Contains zero or more [0..*] <tt><b>problemManagementDiscipline</b></tt>, where its type is <xref href="../ProblemManagementDiscipline.dita">Problem Management Discipline</xref>
+<ul><li>"Indicates the category of caregiver with responsibility for managing this specific problem (e.g., care team, nursing, medicine, respiratory therapy, occupational therapy, dietary, etc.)." - HL7 Version 2.8, PRB-11.</li></ul></li>
 <li>Contains zero or more [0..*] <tt><b>relatedConcern</b></tt>, where its type is <xref href="../RelatedConcern.dita">Related Concern</xref>
-</li>
-<li>Contains zero or one [0..1] <tt><b>responsibleClinic</b></tt>, where its type is <xref href="../HospitalLocation.dita">Hospital Location</xref>
-</li>
+<ul><li>Identifies other the Health Concern (aka "Problem") entries to which the original entry (i.e., the entry that points to this class) is related.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>responsibleClinic</b></tt>, where its type is <xref href="../ServiceDeliveryLocation.dita">Service Delivery Location</xref>
+<ul><li>Identifies the organization/location responsible for treating the Health Concern.  Used primarily in inpatient situations.</li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>responsibleProvider</b></tt>, where its type is <xref href="../ResponsibleParty.dita">Responsible Party</xref>
-</li>
+<ul><li>Identifies the provider responsible for treating the Health Concern.</li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>responsibleService</b></tt>, where its type is <xref href="../ServiceDepartment.dita">Service Department</xref>
 <ul><li>A pointer to the service file identifying the service primarily involved in the treatment of this problem.  </li></ul><ul><li>A pointer to the service file identifying the service primarily involved in the treatment of this problem.  </li></ul></li>
 </ol>

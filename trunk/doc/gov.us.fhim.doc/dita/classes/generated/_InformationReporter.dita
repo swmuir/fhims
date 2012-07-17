@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Information Reporter - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>The person who reported information on the patient's behalf.  This may be the patient him/herself.  Note that because all we need is the person's name and contact information (address, phone numbers), this class does not have an association to the Person class (although logically it should).  This is because the other properties of Person, such as sex and date of birth, are irrelevant to the usage.  The HL7 Role class allows for names and addresses on the Role, which technically should be only those names or addresses as the relate to the role (i.e., as they differ from those in Person class), but since these are available for use, we are utilizing them in this manner, even though it is somewhat irregular.</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>legalName</b></tt> with data type <xref href="../PersonName.dita">Person Name</xref>
+<ul><li>The name by which a person is known or legally identified such as the name on a driver's license or passport.  Note that the datatype for this property is a PersonName, which includes the various parts that make up a person's name such as family name, prefixes, suffixes, etc.
+
+"Contains the name of the person reporting the allergy to a caregiver at the time reported in [dateReported]" - HL7 Version 2.8, IAM-14</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>relationshipCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"Contains the personal relationship that the person reporting the allergy has to the patient." - HL7 Version 2.8, IAM-15.  HL7 Version 2 suggested values (table 63) include: Self; Spouse; Parent; Friend, etc.   </li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>legalName</b></tt> with data type <xref href="../PersonName.dita">Person Name</xref>
+<ul><li>The name by which a person is known or legally identified such as the name on a driver's license or passport.  Note that the datatype for this property is a PersonName, which includes the various parts that make up a person's name such as family name, prefixes, suffixes, etc.
+
+"Contains the name of the person reporting the allergy to a caregiver at the time reported in [dateReported]" - HL7 Version 2.8, IAM-14</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>relationshipCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"Contains the personal relationship that the person reporting the allergy has to the patient." - HL7 Version 2.8, IAM-15.  HL7 Version 2 suggested values (table 63) include: Self; Spouse; Parent; Friend, etc.   </li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Information Reporter</ph></p>
+</body>
+</topic>
