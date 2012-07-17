@@ -7,71 +7,79 @@
 </prolog>
 <body>
 <section id="description">
-<p>A drug used to produce anesthesia. causing a loss of normal sensation or feeling. The loss of sensation and usually of consciousness without loss of vital functions artificially produced by the administration of one or more agents that block the passage of pain impulses along nerve pathways to the brain   Source: Merriam-Webster&amp;apos;s Medical Dictionary,   2002 Merriam-Webster, Inc.</p>
+<p>A drug used to produce anesthesia. causing a loss of normal sensation or feeling. The loss of sensation and usually of consciousness without loss of vital functions artificially produced by the administration of one or more agents that block the passage of pain impulses along nerve pathways to the brain   Source: Merriam-Webster's Medical Dictionary,   2002 Merriam-Webster, Inc.</p>
 </section>
 <ol id="conformance">
-<li>Contains exactly one [1..1] <tt><b>inductionComplete</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
-<ul><li>Date and Time the induction was completed.</li></ul></li>
-<li>Contains exactly one [1..1] <tt><b>duration</b></tt> with data type <xref href="../TimeInterval.dita">Time Interval</xref>
-<ul><li>Contains the duration of the anesthesia event.</li></ul></li>
-<li>Contains exactly one [1..1] <tt><b>catheterRemovedDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
-<ul><li>Date and Time the catheter  was removed. from the patient.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>anesthetistCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
 <ul><li>A Code set that identifies the category to which the Anesthesist belongs.</li></ul></li>
-<li>Contains exactly one [1..1] <tt><b>supervisionLevel</b></tt>, where its type is <xref href="../SurgerySupervisionAct.dita">Surgery Supervision Act</xref>
-<ul><li>Level of supervisory for the anesthesia event.</li></ul><ul><li>Level of supervisory for the anesthesia event.</li></ul></li>
-<li>Contains exactly one [1..1] <tt><b>dispositionLocation</b></tt>, where its type is <xref href="../ServiceDeliveryLocation.dita">Service Delivery Location</xref>
-<ul><li>Transferring the Care from Anesthesist</li></ul><ul><li>Transferring the Care from Anesthesist</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>catheterRemovedDateTime</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>Date and Time the catheter  was removed. from the patient.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>duration</b></tt> with data type <xref href="../TimeInterval.dita">Time Interval</xref>
+<ul><li>Contains the duration of the anesthesia event.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>inductionCompleteDateTime</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>Date and Time the induction was completed.</li></ul></li>
 <li>Contains at least one [1..*] <tt><b>admin</b></tt>, where its type is <xref href="../AnesthesiaAdministrativeEvent.dita">Anesthesia Administrative Event</xref>
 <ul><li>To manage the Anesthesia administered.</li></ul></li>
-<li>Contains exactly one [1..1] <tt><b>anesthesiaVentilator </b></tt>, where its type is <xref href="../SurgeryDevice.dita">Surgery Device</xref>
-<ul><li>A device that circulates fresh air and expels stale or foul air. Medicine. A respirator. </li></ul></li>
-<li>Contains zero or one [0..1] <tt><b>asaClass</b></tt>, where its type is <xref href="../AsaClassEvent.dita">Asa Class Event</xref>
-<ul><li>Contains the patient&amp;apos;s physiologic status. Conforming to  American Society of Anesthesiologists classification  </li></ul></li>
-<li>Contains at least one [1..*] <tt><b>anesthesiaAgent</b></tt>, where its type is <xref href="../SkinPrepEvent.dita">Skin Prep Event</xref>
-<ul><li>Identifies the type of agent used to wash and prepare the anesthesia site  </li></ul></li>
 <li>Contains at least one [1..*] <tt><b>anesthesiaAssessment</b></tt>, where its type is <xref href="../SurgeryAssessment.dita">Surgery Assessment</xref>
-<ul><li>A test or instrument, often a questionaire, used to evaluate or assess the patient&amp;apos;s health, within the context of the anesthesia event.</li></ul></li>
-<li>Contains exactly one [1..1] <tt><b>inductionCompleteDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
-<ul><li>Date and Time the induction was completed.</li></ul></li>
-<li>Contains exactly one [1..1] <tt><b>precedent</b></tt>, where its type is <xref href="../AnesthesiaSubEvent.dita">Anesthesia Sub Event</xref>
-<ul><li>An order, arrangement, or significance in which the anestheis is done </li></ul></li>
-<li>Contains at least one [1..*] <tt><b>anesthesiaDevice</b></tt>, where its type is <xref href="../Device.dita">Device</xref>
-<ul><li>A contrivance or an invention serving a particular purpose, especially a machine used to perform one or more relatively simple tasks.&amp;quot; (The American Heritage  Stedman&amp;apos;s Medical Dictionary)        </li></ul></li>
+<ul><li>A test or instrument, often a questionaire, used to evaluate or assess the patient's health, within the context of the anesthesia event.</li></ul></li>
 <li>Contains zero or more [0..*] <tt><b>anesthesiaComment</b></tt>, where its type is <xref href="../CommentEvent.dita">Comment Event</xref>
 <ul><li>Contains anesthesia comments regarding the Surigcal event.</li></ul></li>
+<li>Contains at least one [1..*] <tt><b>anesthesiaDevice</b></tt>, where its type is <xref href="../SurgeryDevice.dita">Surgery Device</xref>
+<ul><li>A contrivance or an invention serving a particular purpose, especially a machine used to perform one or more relatively simple tasks." (The American Heritage  Stedman's Medical Dictionary)        </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>anesthesiaVentilator </b></tt>, where its type is <xref href="../SurgeryDevice.dita">Surgery Device</xref>
+<ul><li>A device that circulates fresh air and expels stale or foul air. Medicine. A respirator. </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>asaClass</b></tt>, where its type is <xref href="../AsaClassObservation.dita">Asa Class Observation</xref>
+<ul><li>Contains the patient's physiologic status. Conforming to  American Society of Anesthesiologists classification  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dispositionLocation</b></tt>, where its type is <xref href="../ServiceDeliveryLocation.dita">Service Delivery Location</xref>
+<ul><li>Transferring the Care from Anesthesist</li></ul><ul><li>Transferring the Care from Anesthesist</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>anesthesiaSubEventListEntry</b></tt>, where its type is <xref href="../AnesthesiaSubEventListEntry.dita">Anesthesia Sub Event List Entry</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>skinPrepEvent</b></tt>, where its type is <xref href="../SkinPrepEvent.dita">Skin Prep Event</xref>
+<ul><li>The act of preparing the patient's anesthesia administration site by washing the site with a disinfectant agent.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>levelOfSupervision</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the highest level of supervision of the anesthesiology staff supervisor.  Suggested include Staff Assisting Resident.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>supervisorAnesthetist</b></tt>, where its type is <xref href="../Supervisor.dita">Supervisor</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>assistantAnesthetist</b></tt>, where its type is <xref href="../Assistant.dita">Assistant</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>principalAnesthesiologist</b></tt>, where its type is <xref href="../PrimaryPerformer.dita">Primary Performer</xref>
+</li>
 </ol>
 <ol id="aggregate">
-<li>Contains exactly one [1..1] <tt><b>inductionComplete</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
-<ul><li>Date and Time the induction was completed.</li></ul></li>
-<li>Contains exactly one [1..1] <tt><b>duration</b></tt> with data type <xref href="../TimeInterval.dita">Time Interval</xref>
-<ul><li>Contains the duration of the anesthesia event.</li></ul></li>
-<li>Contains exactly one [1..1] <tt><b>catheterRemovedDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
-<ul><li>Date and Time the catheter  was removed. from the patient.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>anesthetistCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
 <ul><li>A Code set that identifies the category to which the Anesthesist belongs.</li></ul></li>
-<li>Contains exactly one [1..1] <tt><b>inductionCompleteDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<li>Contains exactly one [1..1] <tt><b>catheterRemovedDateTime</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>Date and Time the catheter  was removed. from the patient.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>duration</b></tt> with data type <xref href="../TimeInterval.dita">Time Interval</xref>
+<ul><li>Contains the duration of the anesthesia event.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>inductionCompleteDateTime</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
 <ul><li>Date and Time the induction was completed.</li></ul></li>
-<li>Contains exactly one [1..1] <tt><b>supervisionLevel</b></tt>, where its type is <xref href="../SurgerySupervisionAct.dita">Surgery Supervision Act</xref>
-<ul><li>Level of supervisory for the anesthesia event.</li></ul><ul><li>Level of supervisory for the anesthesia event.</li></ul></li>
-<li>Contains exactly one [1..1] <tt><b>dispositionLocation</b></tt>, where its type is <xref href="../ServiceDeliveryLocation.dita">Service Delivery Location</xref>
-<ul><li>Transferring the Care from Anesthesist</li></ul><ul><li>Transferring the Care from Anesthesist</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>levelOfSupervision</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the highest level of supervision of the anesthesiology staff supervisor.  Suggested include Staff Assisting Resident.</li></ul></li>
 <li>Contains at least one [1..*] <tt><b>admin</b></tt>, where its type is <xref href="../AnesthesiaAdministrativeEvent.dita">Anesthesia Administrative Event</xref>
 <ul><li>To manage the Anesthesia administered.</li></ul></li>
-<li>Contains exactly one [1..1] <tt><b>anesthesiaVentilator </b></tt>, where its type is <xref href="../SurgeryDevice.dita">Surgery Device</xref>
-<ul><li>A device that circulates fresh air and expels stale or foul air. Medicine. A respirator. </li></ul></li>
-<li>Contains zero or one [0..1] <tt><b>asaClass</b></tt>, where its type is <xref href="../AsaClassEvent.dita">Asa Class Event</xref>
-<ul><li>Contains the patient&amp;apos;s physiologic status. Conforming to  American Society of Anesthesiologists classification  </li></ul></li>
-<li>Contains at least one [1..*] <tt><b>anesthesiaAgent</b></tt>, where its type is <xref href="../SkinPrepEvent.dita">Skin Prep Event</xref>
-<ul><li>Identifies the type of agent used to wash and prepare the anesthesia site  </li></ul></li>
 <li>Contains at least one [1..*] <tt><b>anesthesiaAssessment</b></tt>, where its type is <xref href="../SurgeryAssessment.dita">Surgery Assessment</xref>
-<ul><li>A test or instrument, often a questionaire, used to evaluate or assess the patient&amp;apos;s health, within the context of the anesthesia event.</li></ul></li>
-<li>Contains exactly one [1..1] <tt><b>precedent</b></tt>, where its type is <xref href="../AnesthesiaSubEvent.dita">Anesthesia Sub Event</xref>
-<ul><li>An order, arrangement, or significance in which the anestheis is done </li></ul></li>
-<li>Contains at least one [1..*] <tt><b>anesthesiaDevice</b></tt>, where its type is <xref href="../Device.dita">Device</xref>
-<ul><li>A contrivance or an invention serving a particular purpose, especially a machine used to perform one or more relatively simple tasks.&amp;quot; (The American Heritage  Stedman&amp;apos;s Medical Dictionary)        </li></ul></li>
+<ul><li>A test or instrument, often a questionaire, used to evaluate or assess the patient's health, within the context of the anesthesia event.</li></ul></li>
 <li>Contains zero or more [0..*] <tt><b>anesthesiaComment</b></tt>, where its type is <xref href="../CommentEvent.dita">Comment Event</xref>
 <ul><li>Contains anesthesia comments regarding the Surigcal event.</li></ul></li>
+<li>Contains at least one [1..*] <tt><b>anesthesiaDevice</b></tt>, where its type is <xref href="../SurgeryDevice.dita">Surgery Device</xref>
+<ul><li>A contrivance or an invention serving a particular purpose, especially a machine used to perform one or more relatively simple tasks." (The American Heritage  Stedman's Medical Dictionary)        </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>anesthesiaVentilator </b></tt>, where its type is <xref href="../SurgeryDevice.dita">Surgery Device</xref>
+<ul><li>A device that circulates fresh air and expels stale or foul air. Medicine. A respirator. </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>asaClass</b></tt>, where its type is <xref href="../AsaClassObservation.dita">Asa Class Observation</xref>
+<ul><li>Contains the patient's physiologic status. Conforming to  American Society of Anesthesiologists classification  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dispositionLocation</b></tt>, where its type is <xref href="../ServiceDeliveryLocation.dita">Service Delivery Location</xref>
+<ul><li>Transferring the Care from Anesthesist</li></ul><ul><li>Transferring the Care from Anesthesist</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>anesthesiaSubEventListEntry</b></tt>, where its type is <xref href="../AnesthesiaSubEventListEntry.dita">Anesthesia Sub Event List Entry</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>skinPrepEvent</b></tt>, where its type is <xref href="../SkinPrepEvent.dita">Skin Prep Event</xref>
+<ul><li>The act of preparing the patient's anesthesia administration site by washing the site with a disinfectant agent.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>supervisorAnesthetist</b></tt>, where its type is <xref href="../Supervisor.dita">Supervisor</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>assistantAnesthetist</b></tt>, where its type is <xref href="../Assistant.dita">Assistant</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>principalAnesthesiologist</b></tt>, where its type is <xref href="../PrimaryPerformer.dita">Primary Performer</xref>
+</li>
 </ol>
 <codeblock id="example"><![CDATA[]]></codeblock>
 <section id="changes">

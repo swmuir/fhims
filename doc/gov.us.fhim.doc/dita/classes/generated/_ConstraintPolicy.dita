@@ -7,7 +7,7 @@
 </prolog>
 <body>
 <section id="description">
-<p>A constraint policy is intended to constrain an existing policy. For example a ConstraintPolicy instance may be used to represent a consent directive that sets specific &amp;apos;constraints&amp;apos; on a default organizational policy regarding substance abuse data (e.g., 42CFR Part2). A policy (BasicPolicy or CompositePolicy) can be constrained in the sense of profiles for tailoring a policy instance. Complex constraints (e.g., an OCL expression) may be applied and managed separately. For this definition and management purpose it is possible to separate externally-defined constraints and specify a &amp;apos;ConstraintPolicy&amp;apos; with clearly defined associations to the constrained policy according to component model principles.  Effectively, the result of applying constraints is just another CompositePolicy.</p>
+<p>A constraint policy is intended to constrain an existing policy. For example a ConstraintPolicy instance may be used to represent a consent directive that sets specific 'constraints' on a default organizational policy regarding substance abuse data (e.g., 42CFR Part2). A policy (BasicPolicy or CompositePolicy) can be constrained in the sense of profiles for tailoring a policy instance. Complex constraints (e.g., an OCL expression) may be applied and managed separately. For this definition and management purpose it is possible to separate externally-defined constraints and specify a 'ConstraintPolicy' with clearly defined associations to the constrained policy according to component model principles.  Effectively, the result of applying constraints is just another CompositePolicy.</p>
 </section>
 <ol id="conformance">
 <li>Extends <xref href="../BasicPolicy.dita">Basic Policy</xref></li>
@@ -40,7 +40,7 @@
 <li>Contains zero or more [0..*] <tt><b>authority</b></tt>, where its type is <xref href="../Authority.dita">Authority</xref>
 <ul><li>This is an association to the Authority that issued the policy.</li></ul></li>
 <li>Contains zero or more [0..*] <tt><b>securityRole</b></tt>, where its type is <xref href="../SecurityRole.dita">Security Role</xref>
-<ul><li>ISO-22600 specifies a role as &amp;apos;set of competences and/or performances which is associated with a task&amp;apos;. A role is a specialization of CompositePolicy that define a group of policies (authorization, obligation, delegation and refrain policies).</li></ul></li>
+<ul><li>ISO-22600 specifies a role as 'set of competences and/or performances which is associated with a task'. A role is a specialization of CompositePolicy that define a group of policies (authorization, obligation, delegation and refrain policies).</li></ul></li>
 <li>Contains zero or more [0..*] <tt><b>operationType</b></tt>, where its type is <xref href="../Operation.dita">Operation</xref>
 <ul><li>This association refers to the operation associated with the policy.</li></ul></li>
 <li>Contains zero or more [0..*] <tt><b>informationReference</b></tt>, where its type is <xref href="../InformationReference.dita">Information Reference</xref>

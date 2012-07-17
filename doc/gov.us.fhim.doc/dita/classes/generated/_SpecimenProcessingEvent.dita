@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Specimen Processing Event - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>groupedSpecimenCount</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>"This field refers to the number of individual specimens of a particular type represented by this instance of a specimen. The use of this field is restricted to specimens upon which all specimen related attributes are identical. This field would only be valued if the specimen role attribute has the value "G"." - HL7 Version 2.8, SPM.13</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>processCategory</b></tt> with data type <xref href="../CodedQuestion.dita">Coded Question</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>additive</b></tt>, where its type is <xref href="../Ingredient.dita">Ingredient</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>specimen</b></tt>, where its type is <xref href="../Specimen.dita">Specimen</xref>
+</li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>groupedSpecimenCount</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>"This field refers to the number of individual specimens of a particular type represented by this instance of a specimen. The use of this field is restricted to specimens upon which all specimen related attributes are identical. This field would only be valued if the specimen role attribute has the value "G"." - HL7 Version 2.8, SPM.13</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>processCategory</b></tt> with data type <xref href="../CodedQuestion.dita">Coded Question</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>additive</b></tt>, where its type is <xref href="../Ingredient.dita">Ingredient</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>specimen</b></tt>, where its type is <xref href="../Specimen.dita">Specimen</xref>
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Specimen Processing Event</ph></p>
+</body>
+</topic>

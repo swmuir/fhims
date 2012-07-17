@@ -7,7 +7,7 @@
 </prolog>
 <body>
 <section id="description">
-<p>Clinical documents commonly have &amp;apos;Subjective&amp;apos; and &amp;apos;Objective&amp;apos; findings, both of which are kinds of Observations. In addition, clinical documents commonly contain &amp;apos;Assessments&amp;apos;, which are also kinds of Observations. Thus, the establishment of a diagnosis is an Observation.</p>
+<p>Clinical documents commonly have 'Subjective' and 'Objective' findings, both of which are kinds of Observations. In addition, clinical documents commonly contain 'Assessments', which are also kinds of Observations. Thus, the establishment of a diagnosis is an Observation.</p>
 </section>
 <ol id="conformance">
 <li>Contains exactly one [1..1] <tt><b>ageAtDeath</b></tt> with data type <xref href="../PhysicalQuantity.dita">Physical Quantity</xref>
@@ -22,8 +22,8 @@
 <ul><li>Contains information in textual format about the autopsy.    </li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>dateOfDeath</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
 <ul><li>This is the date and time of the death of the patient.    </li></ul></li>
-<li>Contains exactly one [1..1] <tt><b>dxClarificationCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>Contains the Code value to indicate whether the  clinical dx insufficient (ex. Intracranial hemorrhage) did autopsy clarify the dx (ex. ruptured aneurysm) ?  &amp;apos;1&amp;apos; FOR YES; &amp;apos;0&amp;apos; FOR NO; &amp;apos;2&amp;apos; FOR CONFIRMED;      </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>diagnosisClarificationCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Contains the Code value to indicate whether the  clinical dx insufficient (ex. Intracranial hemorrhage) did autopsy clarify the dx (ex. ruptured aneurysm) ?  '1' FOR YES; '0' FOR NO; '2' FOR CONFIRMED;      </li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>finalDiagnosisDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
 <ul><li>This is the date and time the final diagnosis was given.    </li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>isMajorDxDisagreement</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
@@ -39,7 +39,7 @@
 <li>Contains zero or more [0..*] <tt><b>diagnosis</b></tt>, where its type is <xref href="../Diagnosis.dita">Diagnosis</xref>
 <ul><li>Contains the Diagnosis of the patient health Issue for the episode of care.  </li></ul><ul><li>An association from AutopsyEvent2 to Diagnosis identifying a dignosis associated to the autopsy event.</li></ul></li>
 <li>Contains zero or more [0..*] <tt><b>document</b></tt>, where its type is <xref href="../_AutopsyDocumentReference.dita">_ Autopsy Document Reference</xref>
-<ul><li>The text of the report in it&amp;apos;s entirety, as signed by the practitioner.  Can also mean the text that comprises the report section.  </li></ul><ul><li>An association from AutopayEvent2 to AutopsyDocumnetReference identifying the document referencing the autopsy.</li></ul></li>
+<ul><li>The text of the report in it's entirety, as signed by the practitioner.  Can also mean the text that comprises the report section.  </li></ul><ul><li>An association from AutopayEvent2 to AutopsyDocumnetReference identifying the document referencing the autopsy.</li></ul></li>
 <li>Contains zero or more [0..*] <tt><b>grossImage</b></tt>, where its type is <xref href="../Image.dita">Image</xref>
 <ul><li>Images associated with Autopsy Organ/Tissue reports are stored in this multiple within the Autopsy Organ/Tissue field of the Lab Data (#63) file.   </li></ul><ul><li>Images associated with Autopsy Organ/Tissue reports are stored in this multiple within the Autopsy Organ/Tissue field of the Lab Data (#63) file.</li></ul></li>
 <li>Contains at least one [1..*] <tt><b>measurement</b></tt>, where its type is <xref href="../_AnatomicMeasurement.dita">_ Anatomic Measurement</xref>
@@ -51,7 +51,7 @@
 <li>Contains exactly one [1..1] <tt><b>seniorPathologist</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
 <ul><li>Senior Pathologist who verified and approved autopsy assessment.</li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>treatingSpecialtyAtDeath</b></tt>, where its type is <xref href="../FacilityTreatingSpecialty.dita">Facility Treating Specialty</xref>
-<ul><li>Contains the name of treating specialty at time of patient&amp;apos;s death.  </li></ul><ul><li>An association from AutopsyEvent2 to FacilityTreatingSpeciality identifying the Treating specialist at death.</li></ul></li>
+<ul><li>Contains the name of treating specialty at time of patient's death.  </li></ul><ul><li>An association from AutopsyEvent2 to FacilityTreatingSpeciality identifying the Treating specialist at death.</li></ul></li>
 </ol>
 <ol id="aggregate">
 <li>Contains exactly one [1..1] <tt><b>ageAtDeath</b></tt> with data type <xref href="../PhysicalQuantity.dita">Physical Quantity</xref>
@@ -66,8 +66,8 @@
 <ul><li>Contains information in textual format about the autopsy.    </li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>dateOfDeath</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
 <ul><li>This is the date and time of the death of the patient.    </li></ul></li>
-<li>Contains exactly one [1..1] <tt><b>dxClarificationCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>Contains the Code value to indicate whether the  clinical dx insufficient (ex. Intracranial hemorrhage) did autopsy clarify the dx (ex. ruptured aneurysm) ?  &amp;apos;1&amp;apos; FOR YES; &amp;apos;0&amp;apos; FOR NO; &amp;apos;2&amp;apos; FOR CONFIRMED;      </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>diagnosisClarificationCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Contains the Code value to indicate whether the  clinical dx insufficient (ex. Intracranial hemorrhage) did autopsy clarify the dx (ex. ruptured aneurysm) ?  '1' FOR YES; '0' FOR NO; '2' FOR CONFIRMED;      </li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>finalDiagnosisDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
 <ul><li>This is the date and time the final diagnosis was given.    </li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>isMajorDxDisagreement</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
@@ -83,7 +83,7 @@
 <li>Contains zero or more [0..*] <tt><b>diagnosis</b></tt>, where its type is <xref href="../Diagnosis.dita">Diagnosis</xref>
 <ul><li>Contains the Diagnosis of the patient health Issue for the episode of care.  </li></ul><ul><li>An association from AutopsyEvent2 to Diagnosis identifying a dignosis associated to the autopsy event.</li></ul></li>
 <li>Contains zero or more [0..*] <tt><b>document</b></tt>, where its type is <xref href="../_AutopsyDocumentReference.dita">_ Autopsy Document Reference</xref>
-<ul><li>The text of the report in it&amp;apos;s entirety, as signed by the practitioner.  Can also mean the text that comprises the report section.  </li></ul><ul><li>An association from AutopayEvent2 to AutopsyDocumnetReference identifying the document referencing the autopsy.</li></ul></li>
+<ul><li>The text of the report in it's entirety, as signed by the practitioner.  Can also mean the text that comprises the report section.  </li></ul><ul><li>An association from AutopayEvent2 to AutopsyDocumnetReference identifying the document referencing the autopsy.</li></ul></li>
 <li>Contains zero or more [0..*] <tt><b>grossImage</b></tt>, where its type is <xref href="../Image.dita">Image</xref>
 <ul><li>Images associated with Autopsy Organ/Tissue reports are stored in this multiple within the Autopsy Organ/Tissue field of the Lab Data (#63) file.   </li></ul><ul><li>Images associated with Autopsy Organ/Tissue reports are stored in this multiple within the Autopsy Organ/Tissue field of the Lab Data (#63) file.</li></ul></li>
 <li>Contains at least one [1..*] <tt><b>measurement</b></tt>, where its type is <xref href="../_AnatomicMeasurement.dita">_ Anatomic Measurement</xref>
@@ -95,7 +95,7 @@
 <li>Contains exactly one [1..1] <tt><b>seniorPathologist</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
 <ul><li>Senior Pathologist who verified and approved autopsy assessment.</li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>treatingSpecialtyAtDeath</b></tt>, where its type is <xref href="../FacilityTreatingSpecialty.dita">Facility Treating Specialty</xref>
-<ul><li>Contains the name of treating specialty at time of patient&amp;apos;s death.  </li></ul><ul><li>An association from AutopsyEvent2 to FacilityTreatingSpeciality identifying the Treating specialist at death.</li></ul></li>
+<ul><li>Contains the name of treating specialty at time of patient's death.  </li></ul><ul><li>An association from AutopsyEvent2 to FacilityTreatingSpeciality identifying the Treating specialist at death.</li></ul></li>
 </ol>
 <codeblock id="example"><![CDATA[]]></codeblock>
 <section id="changes">

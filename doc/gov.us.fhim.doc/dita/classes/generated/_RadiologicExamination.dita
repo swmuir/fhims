@@ -13,23 +13,23 @@
 <li>Contains exactly one [1..1] <tt><b>cancellationReason</b></tt> with data type <xref href="../Code.dita">Code</xref>
 <ul><li>Indicates the reason why the exam was canceled.  Possible values are HOLD; CANCELLED: DUPLICATE EXAM; etc. File 75.2.   </li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>caseId</b></tt> with data type <xref href="../Id.dita">Id</xref>
-<ul><li>Uniquely identifies the order from within the filler&amp;apos;s system.  Traditionally also called an &amp;quot;accession number&amp;quot;.  </li></ul></li>
-<li>Contains exactly one [1..1] <tt><b>_clinicalHistory</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Uniquely identifies the order from within the filler's system.  Traditionally also called an "accession number".  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>clinicalHistory</b></tt> with data type <xref href="../String.dita">String</xref>
 <ul><li>Clinical history of the patient that might be relevant to this case as well as instructions to the interpreting physician</li></ul></li>
-<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>Indicates the status of this exam.  This should be a code from File 72.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>complicationText</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>A brief explanation of the exam complication.    </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>complicationType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li> Iindicate if this patient experienced any complication during the exam procedure.  Codes from file 78.1.  Possible values are.... No Complication; etc.   </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>isCombinedReport</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li>Is it a Radiology and Nuclear Medicine comined Report? Possible values are Yes; No; etc.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>examCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
 <ul><li>This field contains the exam category associated with this case number. Possible values are  INPATIENT, OUTPATIENT, CONTRACT,  SHARING, EMPLOYEE, RESEARCH; etc.  </li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>researchSource</b></tt> with data type <xref href="../String.dita">String</xref>
-<ul><li>The name of the research source that referred the patient to Radiology/Nuclear Medicine for the exam.  This field is used for exams with a &amp;apos;category of exam&amp;apos; of &amp;apos;research&amp;apos;.</li></ul></li>
+<ul><li>The name of the research source that referred the patient to Radiology/Nuclear Medicine for the exam.  This field is used for exams with a 'category of exam' of 'research'.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the status of this exam.  This should be a code from File 72.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>wasContrastMediaUsed</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
 <ul><li>Indicate if an intravascular contrast was used during this Rad/Nuc Med exam.  Possible values are Yes, No; etc.  </li></ul></li>
-<li>Contains exactly one [1..1] <tt><b>complicationType</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li> Iindicate if this patient experienced any complication during the exam procedure.  Codes from file 78.1.  Possible values are.... No Complication; etc.   </li></ul></li>
-<li>Contains exactly one [1..1] <tt><b>complicationText</b></tt> with data type <xref href="../String.dita">String</xref>
-<ul><li>A brief explanation of the exam complication.    </li></ul></li>
-<li>Contains exactly one [1..1] <tt><b>isCombinedReport</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
-<ul><li>Is it a Radiology and Nuclear Medicine comined Report? Possible values are Yes; No; etc.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>ward</b></tt>, where its type is <xref href="../Ward.dita">Ward</xref>
 <ul><li>Represents the hospital ward as known by the originating VistA system.  Equivalent to a pointer to File 42.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>report</b></tt>, where its type is <xref href="../RadNucReport.dita">Rad Nuc Report</xref>
@@ -61,23 +61,23 @@
 <li>Contains exactly one [1..1] <tt><b>cancellationReason</b></tt> with data type <xref href="../Code.dita">Code</xref>
 <ul><li>Indicates the reason why the exam was canceled.  Possible values are HOLD; CANCELLED: DUPLICATE EXAM; etc. File 75.2.   </li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>caseId</b></tt> with data type <xref href="../Id.dita">Id</xref>
-<ul><li>Uniquely identifies the order from within the filler&amp;apos;s system.  Traditionally also called an &amp;quot;accession number&amp;quot;.  </li></ul></li>
-<li>Contains exactly one [1..1] <tt><b>_clinicalHistory</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Uniquely identifies the order from within the filler's system.  Traditionally also called an "accession number".  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>clinicalHistory</b></tt> with data type <xref href="../String.dita">String</xref>
 <ul><li>Clinical history of the patient that might be relevant to this case as well as instructions to the interpreting physician</li></ul></li>
-<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>Indicates the status of this exam.  This should be a code from File 72.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>complicationText</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>A brief explanation of the exam complication.    </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>complicationType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li> Iindicate if this patient experienced any complication during the exam procedure.  Codes from file 78.1.  Possible values are.... No Complication; etc.   </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>isCombinedReport</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li>Is it a Radiology and Nuclear Medicine comined Report? Possible values are Yes; No; etc.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>examCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
 <ul><li>This field contains the exam category associated with this case number. Possible values are  INPATIENT, OUTPATIENT, CONTRACT,  SHARING, EMPLOYEE, RESEARCH; etc.  </li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>researchSource</b></tt> with data type <xref href="../String.dita">String</xref>
-<ul><li>The name of the research source that referred the patient to Radiology/Nuclear Medicine for the exam.  This field is used for exams with a &amp;apos;category of exam&amp;apos; of &amp;apos;research&amp;apos;.</li></ul></li>
+<ul><li>The name of the research source that referred the patient to Radiology/Nuclear Medicine for the exam.  This field is used for exams with a 'category of exam' of 'research'.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the status of this exam.  This should be a code from File 72.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>wasContrastMediaUsed</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
 <ul><li>Indicate if an intravascular contrast was used during this Rad/Nuc Med exam.  Possible values are Yes, No; etc.  </li></ul></li>
-<li>Contains exactly one [1..1] <tt><b>complicationType</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li> Iindicate if this patient experienced any complication during the exam procedure.  Codes from file 78.1.  Possible values are.... No Complication; etc.   </li></ul></li>
-<li>Contains exactly one [1..1] <tt><b>complicationText</b></tt> with data type <xref href="../String.dita">String</xref>
-<ul><li>A brief explanation of the exam complication.    </li></ul></li>
-<li>Contains exactly one [1..1] <tt><b>isCombinedReport</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
-<ul><li>Is it a Radiology and Nuclear Medicine comined Report? Possible values are Yes; No; etc.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>ward</b></tt>, where its type is <xref href="../Ward.dita">Ward</xref>
 <ul><li>Represents the hospital ward as known by the originating VistA system.  Equivalent to a pointer to File 42.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>report</b></tt>, where its type is <xref href="../RadNucReport.dita">Rad Nuc Report</xref>

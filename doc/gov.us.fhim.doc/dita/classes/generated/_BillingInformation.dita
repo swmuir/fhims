@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Billing Information - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>"Used to provide billing information, on the ordered service, to the filling application." - HL7 Version 2.8, BLG Segment.</p>
+</section>
+<ol id="conformance">
+<li>Contains zero or one [0..1] <tt><b>accountId</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>"Identifies the account to be billed." - HL7 Version 2.8, BLG-3.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>chargeCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"Identifies someone or something other than the patient to be billed for this service." - HL7 Version 2.8, BLG-2.  Possible values include (from HL7 Table 122): Charge; Contract; Credit; Department; Grant; No Charge; Professional; Research.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>chargeCategoryReason</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"Explains the choice of and provides the clinical rationale for the selected charge type in [chargeCategory]" - HL7 Version 2.8, BLG-4.  Possible values include (from HL7 Table 475): Allergy; Intolerance; Treatment Failure; Patient Request; No Exception.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>whenToCharge</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"Specifies when to charge for the ordered service." - HL7 Version 2.8, BLG-1.  Possible values include (from HL7 Table 100): On discharge; On receipt of order; At time service is completed; At time service is started; At a designated date/time.</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains zero or one [0..1] <tt><b>accountId</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>"Identifies the account to be billed." - HL7 Version 2.8, BLG-3.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>chargeCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"Identifies someone or something other than the patient to be billed for this service." - HL7 Version 2.8, BLG-2.  Possible values include (from HL7 Table 122): Charge; Contract; Credit; Department; Grant; No Charge; Professional; Research.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>chargeCategoryReason</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"Explains the choice of and provides the clinical rationale for the selected charge type in [chargeCategory]" - HL7 Version 2.8, BLG-4.  Possible values include (from HL7 Table 475): Allergy; Intolerance; Treatment Failure; Patient Request; No Exception.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>whenToCharge</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"Specifies when to charge for the ordered service." - HL7 Version 2.8, BLG-1.  Possible values include (from HL7 Table 100): On discharge; On receipt of order; At time service is completed; At time service is started; At a designated date/time.</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Billing Information</ph></p>
+</body>
+</topic>

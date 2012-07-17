@@ -7,22 +7,39 @@
 </prolog>
 <body>
 <section id="description">
-<p>Describes an observation of an &amp;quot;Intolerance Condition&amp;quot; of the Patient.  Intolerance Conditions are typically allergies, but the concept of an intolerance condition is broader than just allergies.  For example, an adverse reaction such as the patient becomes nausious after taking a particular antibiotic is not an allergy, but may serve as a contra-indicator to the use of that antibiotic.  In general, Intolerance Conditions as caused by Food, Drugs, or some environmental factor such as mold or pet dander.</p>
+<p>Describes an observation of an "Intolerance Condition" of the Patient.  Intolerance Conditions are typically allergies, but the concept of an intolerance condition is broader than just allergies.  For example, an adverse reaction such as the patient becomes nausious after taking a particular antibiotic is not an allergy, but may serve as a contra-indicator to the use of that antibiotic.  In general, Intolerance Conditions as caused by Food, Drugs, or some environmental factor such as mold or pet dander.</p>
 </section>
 <ol id="conformance">
 <li>Extends <xref href="../IntoleranceConditionEntry.dita">Intolerance Condition Entry</xref></li>
+<li>Contains zero or one [0..1] <tt><b>alertDevice</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"Describes any type of allergy alert device the patient may be carrying or wearing." - HL7 Version 2.8, IAM-16.  HL7 Version 2 has the following suggested values (table 437): Bracelet; Necklace; Wallet Card.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>clinicianIdentifiedAllergen</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"Identifies the clinician entered description associated to a particular allergen." - HL7 Version 2.8, IAM-27.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>dateOfOnset</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
-<ul><li>Date when this particular Intolerance Condition or Allergy first manifested itself or was confirmed via testing if it had not yet manifested itself.</li></ul></li>
+<ul><li>Date when this particular Intolerance Condition or Allergy first manifested itself or was confirmed via testing if it had not yet manifested itself.
+
+"Contains the actual date of the first reaction." - HL7 Version 2.8, IAM-11</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dateOfOnsetText</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>"Contains a text description of the time period of the first reaction when an exact date is not known (e.g., adolescence, childhood, spring 1990)." - HL7 Version 2.8, IAM-12</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>intoleranceCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>Categorizes the intolerance along two axes: whether the reactant is a Drug, Food, or other substance, and whether the intolerence is a true allergy, an intolerance, or propensity to adverse reaction.  Possible values are members of the SNOMED Allergy Event value set.  This property is required for Meaningful Use.</li></ul></li>
+<ul><li>Categorizes the intolerance along two axes: whether the reactant is a Drug, Food, or other substance, and whether the intolerence is a true allergy, an intolerance, or propensity to adverse reaction.  Possible values are members of the SNOMED Allergy Event value set.  This property is required for Meaningful Use.
+
+"Indicates a general allergy category (drug, food, pollen, etc.)." - HL7 Version 2.8, AL1-2 and IAM-2.  HL7 Version 2 has the following suggested values (table 127): Drug allergy; Food allergy; Miscellaneous allergy; Miscellaneous contraindication; Environmental Allergy; Animal Allergy; Plant Allergy; Pollen Allergy.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>isAbsolutelyContraIndicated</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
 </li>
 <li>Contains exactly one [1..1] <tt><b>mechanism</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>Categorizes whether the underlying process (mechanism) of the Intolerance Condition is an Immunoglobulin-E (IgE)-mediated response, an exepected response to a pharmacologic substance, or unknown.    Allergy:  An allergy reaction must have symptoms (reaction) consistent with an actual allergy - rash, hives, severe swelling, redness, itchiness, difficulty breathing (due to swelling around breathing areas), etc.    Pharmacologic:  A pharmacologic reaction is an adverse event rather then an allergy.  It is a reaction based on the pharmacologic properties of the drug and has to do with a reaction that can be expected due to the pharmacologic activity of the drug. It can occur when the patient takes the right amount or an amount greater or less than the recommended doses.  Some examples are: an antidiarrheal agent (like Immodium) causing constipation, a laxative causing diarrhea, a beta blocker causing bradycardia (slow heart rate), furosemide (a diuretic) causing excessive urination, or a blood pressure medication causing low blood pressure (will be fully modeled in a subsequent phase).    Unknown:  An unknown reaction is a reaction experienced by the patient that cannot be explained by either of the other two mechanisms, for example, eating a pear and developing a cough or taking a blood pressure medication and developing right elbow pain. This type of reaction is consistent, disappears upon withdrawing the agent, and reappears when the agent or food item is restarted/eaten again.</li></ul></li>
+<ul><li>Categorizes whether the underlying process (mechanism) of the Intolerance Condition is an Immunoglobulin-E (IgE)-mediated response, an exepected response to a pharmacologic substance, or unknown.    Allergy:  An allergy reaction must have symptoms (reaction) consistent with an actual allergy - rash, hives, severe swelling, redness, itchiness, difficulty breathing (due to swelling around breathing areas), etc.    Pharmacologic:  A pharmacologic reaction is an adverse event rather then an allergy.  It is a reaction based on the pharmacologic properties of the drug and has to do with a reaction that can be expected due to the pharmacologic activity of the drug. It can occur when the patient takes the right amount or an amount greater or less than the recommended doses.  Some examples are: an antidiarrheal agent (like Immodium) causing constipation, a laxative causing diarrhea, a beta blocker causing bradycardia (slow heart rate), furosemide (a diuretic) causing excessive urination, or a blood pressure medication causing low blood pressure (will be fully modeled in a subsequent phase).    Unknown:  An unknown reaction is a reaction experienced by the patient that cannot be explained by either of the other two mechanisms, for example, eating a pear and developing a cough or taking a blood pressure medication and developing right elbow pain. This type of reaction is consistent, disappears upon withdrawing the agent, and reappears when the agent or food item is restarted/eaten again.
+
+"Contains the reason why the patient should not be exposed to a substance." - HL7 Version 2.8, IAM-9 and IAR-3.  HL7 Version 2 has the following suggested values (table 436): Adverse Reaction (Not otherwise classified); Allergy; Contraindication; Intolerance; Side Effect.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>reactant</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>Identifies the substance to which the patient has an intolerance or allergy.  The reactant will point to a value set, which will be a superset of valuesets for Drug Product, Drug Class, Ingredient, Food Product, and Environmental reactants.</li></ul></li>
+<ul><li>Identifies the substance to which the patient has an intolerance or allergy.  The reactant will point to a value set, which will be a superset of valuesets for Drug Product, Drug Class, Ingredient, Food Product, and Environmental reactants.
+
+"Uniquely identifies a particular allergen." - HL7 Version 2.8, AL1-3 and IAM-3
+"Identifies the specific allergic reaction that was documented." - HL7 Version 2.8, IAR-1.</li></ul></li>
 <li>Contains at least one [1..*] <tt><b>reactantCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
 <ul><li>Categorizes the reactant to which the patient has demonstrated an intolerance or an allergy.  Possible values include Drug Product, Drug Class, Ingredient, Food Product, and Environmental.  Note that this property may contain more than one value.</li></ul></li>
+<li>Contains at least one [1..*] <tt><b>reactantGroup</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"Uniquely identifies an allergen group when both a detailed allergy and group level need to be communicated.  In cases where systems want to communicate both a specific drug allergy and the group of drugs to which the specific drug belongs (i.e., Bactrim and Sulfa drugs; Ceclor and Penicillins/Cephalosporins) then the specific drug allergy is [in reactant] and the group level is [in reactantGroup].  However, if only a group level is being communicated, then it can be sent in [reactant] as the primary identifier of the allergy." - HL7 Version 2.8, IAM-10</li></ul></li>
 <li>Contains zero or more [0..*] <tt><b>reaction</b></tt>, where its type is <xref href="../Reaction.dita">Reaction</xref>
 </li>
 </ol>
@@ -30,34 +47,57 @@
 <li>Extends <xref href="../IntoleranceConditionEntry.dita">Intolerance Condition Entry</xref></li>
 <li>Contains exactly one [1..1] <tt><b>dateRecorded</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
 <ul><li>Date/time this allergy/adverse reaction was entered into the system.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dateReported</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>"Contains the date/time the allergy was reported to a caregiver." - HL7 Version 2.8, IAM-13</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
-<ul><li>Uniquely identifies the Intolerance Condition record.</li></ul></li>
+<ul><li>Uniquely identifies the Intolerance Condition record.
+
+"Contains a value that uniquely identifies a single allergy for a person" - HL7 Version 2.8, IAM-7</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>informationSourceCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
 <ul><li>Indicates whether the Intolerance Condition was observed by a clinician (or was medically verified) or was merely reported by the patient.  Provides a measure of trustworthiness of the information.    Note that in VistA, this is called Observed if observed by a clinician, or Historical if patient-reported.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>A code specifying the state of the Intolerance Condition Observation record.  See HL7 V3 Act.statusCode.  When the StatusCode is set to &amp;apos;Nullified&amp;apos; iindicates the allergy was entered in error.</li></ul></li>
+<ul><li>A code specifying the state of the Intolerance Condition Observation record.  See HL7 V3 Act.statusCode.  Nothe that when the StatusCode is set to 'Nullified,' this indicates that the allergy record was entered in error.
+
+"Indicates the verification status for the allergy." - HL7 Version 2.8, IAM-17.  HL7 Version 2 has the following suggested values (table 438): Unconfirmed; Pending; Suspect; Confirmed or verified; Confirmed but inactive; Erroneous; Doubt raised.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>alertDevice</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"Describes any type of allergy alert device the patient may be carrying or wearing." - HL7 Version 2.8, IAM-16.  HL7 Version 2 has the following suggested values (table 437): Bracelet; Necklace; Wallet Card.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>clinicianIdentifiedAllergen</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"Identifies the clinician entered description associated to a particular allergen." - HL7 Version 2.8, IAM-27.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>dateOfOnset</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
-<ul><li>Date when this particular Intolerance Condition or Allergy first manifested itself or was confirmed via testing if it had not yet manifested itself.</li></ul></li>
+<ul><li>Date when this particular Intolerance Condition or Allergy first manifested itself or was confirmed via testing if it had not yet manifested itself.
+
+"Contains the actual date of the first reaction." - HL7 Version 2.8, IAM-11</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dateOfOnsetText</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>"Contains a text description of the time period of the first reaction when an exact date is not known (e.g., adolescence, childhood, spring 1990)." - HL7 Version 2.8, IAM-12</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>intoleranceCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>Categorizes the intolerance along two axes: whether the reactant is a Drug, Food, or other substance, and whether the intolerence is a true allergy, an intolerance, or propensity to adverse reaction.  Possible values are members of the SNOMED Allergy Event value set.  This property is required for Meaningful Use.</li></ul></li>
+<ul><li>Categorizes the intolerance along two axes: whether the reactant is a Drug, Food, or other substance, and whether the intolerence is a true allergy, an intolerance, or propensity to adverse reaction.  Possible values are members of the SNOMED Allergy Event value set.  This property is required for Meaningful Use.
+
+"Indicates a general allergy category (drug, food, pollen, etc.)." - HL7 Version 2.8, AL1-2 and IAM-2.  HL7 Version 2 has the following suggested values (table 127): Drug allergy; Food allergy; Miscellaneous allergy; Miscellaneous contraindication; Environmental Allergy; Animal Allergy; Plant Allergy; Pollen Allergy.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>isAbsolutelyContraIndicated</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
 </li>
 <li>Contains exactly one [1..1] <tt><b>mechanism</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>Categorizes whether the underlying process (mechanism) of the Intolerance Condition is an Immunoglobulin-E (IgE)-mediated response, an exepected response to a pharmacologic substance, or unknown.    Allergy:  An allergy reaction must have symptoms (reaction) consistent with an actual allergy - rash, hives, severe swelling, redness, itchiness, difficulty breathing (due to swelling around breathing areas), etc.    Pharmacologic:  A pharmacologic reaction is an adverse event rather then an allergy.  It is a reaction based on the pharmacologic properties of the drug and has to do with a reaction that can be expected due to the pharmacologic activity of the drug. It can occur when the patient takes the right amount or an amount greater or less than the recommended doses.  Some examples are: an antidiarrheal agent (like Immodium) causing constipation, a laxative causing diarrhea, a beta blocker causing bradycardia (slow heart rate), furosemide (a diuretic) causing excessive urination, or a blood pressure medication causing low blood pressure (will be fully modeled in a subsequent phase).    Unknown:  An unknown reaction is a reaction experienced by the patient that cannot be explained by either of the other two mechanisms, for example, eating a pear and developing a cough or taking a blood pressure medication and developing right elbow pain. This type of reaction is consistent, disappears upon withdrawing the agent, and reappears when the agent or food item is restarted/eaten again.</li></ul></li>
+<ul><li>Categorizes whether the underlying process (mechanism) of the Intolerance Condition is an Immunoglobulin-E (IgE)-mediated response, an exepected response to a pharmacologic substance, or unknown.    Allergy:  An allergy reaction must have symptoms (reaction) consistent with an actual allergy - rash, hives, severe swelling, redness, itchiness, difficulty breathing (due to swelling around breathing areas), etc.    Pharmacologic:  A pharmacologic reaction is an adverse event rather then an allergy.  It is a reaction based on the pharmacologic properties of the drug and has to do with a reaction that can be expected due to the pharmacologic activity of the drug. It can occur when the patient takes the right amount or an amount greater or less than the recommended doses.  Some examples are: an antidiarrheal agent (like Immodium) causing constipation, a laxative causing diarrhea, a beta blocker causing bradycardia (slow heart rate), furosemide (a diuretic) causing excessive urination, or a blood pressure medication causing low blood pressure (will be fully modeled in a subsequent phase).    Unknown:  An unknown reaction is a reaction experienced by the patient that cannot be explained by either of the other two mechanisms, for example, eating a pear and developing a cough or taking a blood pressure medication and developing right elbow pain. This type of reaction is consistent, disappears upon withdrawing the agent, and reappears when the agent or food item is restarted/eaten again.
+
+"Contains the reason why the patient should not be exposed to a substance." - HL7 Version 2.8, IAM-9 and IAR-3.  HL7 Version 2 has the following suggested values (table 436): Adverse Reaction (Not otherwise classified); Allergy; Contraindication; Intolerance; Side Effect.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>reactant</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>Identifies the substance to which the patient has an intolerance or allergy.  The reactant will point to a value set, which will be a superset of valuesets for Drug Product, Drug Class, Ingredient, Food Product, and Environmental reactants.</li></ul></li>
+<ul><li>Identifies the substance to which the patient has an intolerance or allergy.  The reactant will point to a value set, which will be a superset of valuesets for Drug Product, Drug Class, Ingredient, Food Product, and Environmental reactants.
+
+"Uniquely identifies a particular allergen." - HL7 Version 2.8, AL1-3 and IAM-3
+"Identifies the specific allergic reaction that was documented." - HL7 Version 2.8, IAR-1.</li></ul></li>
 <li>Contains at least one [1..*] <tt><b>reactantCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
 <ul><li>Categorizes the reactant to which the patient has demonstrated an intolerance or an allergy.  Possible values include Drug Product, Drug Class, Ingredient, Food Product, and Environmental.  Note that this property may contain more than one value.</li></ul></li>
+<li>Contains at least one [1..*] <tt><b>reactantGroup</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"Uniquely identifies an allergen group when both a detailed allergy and group level need to be communicated.  In cases where systems want to communicate both a specific drug allergy and the group of drugs to which the specific drug belongs (i.e., Bactrim and Sulfa drugs; Ceclor and Penicillins/Cephalosporins) then the specific drug allergy is [in reactant] and the group level is [in reactantGroup].  However, if only a group level is being communicated, then it can be sent in [reactant] as the primary identifier of the allergy." - HL7 Version 2.8, IAM-10</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>author</b></tt>, where its type is <xref href="../Author.dita">Author</xref>
-<ul><li>&amp;quot;A party that originates the Act and therefore has responsibility for the information given in the Act and ownership of this Act.&amp;quot; - HL7 V3</li></ul></li>
+<ul><li>"A party that originates the Act and therefore has responsibility for the information given in the Act and ownership of this Act." - HL7 V3</li></ul></li>
 <li>Contains zero or more [0..*] <tt><b>comment</b></tt>, where its type is <xref href="../CommentEvent.dita">Comment Event</xref>
 <ul><li>Contains all l comments reqarding the allergy event that were not captured in the Clinical Document process.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>dataEnterer</b></tt>, where its type is <xref href="../DataEnterer.dita">Data Enterer</xref>
-<ul><li>&amp;quot;A person entering the data into the originating system. The data entry person is collected optionally for internal quality  control purposes. This includes the transcriptionist for dictated text.&amp;quot; - HL7 V3</li></ul></li>
+<ul><li>"A person entering the data into the originating system. The data entry person is collected optionally for internal quality  control purposes. This includes the transcriptionist for dictated text." - HL7 V3</li></ul></li>
 <li>Contains zero or more [0..*] <tt><b>inactivateAct</b></tt>, where its type is <xref href="../InactivateAct.dita">Inactivate Act</xref>
 </li>
 <li>Contains zero or one [0..1] <tt><b>nullify</b></tt>, where its type is <xref href="../NullifyAct.dita">Nullify Act</xref>
-<ul><li>Records the nullification of an Act.  Typically used when an erroneous record is &amp;quot;deleted&amp;quot;.   Because medical records should never be deleted, the record is instead &amp;quot;nullified&amp;quot;, and is rendered not visible to typical users, but still exists in the system for the purpose of audit trails, etc.</li></ul></li>
+<ul><li>Records the nullification of an Act.  Typically used when an erroneous record is "deleted".   Because medical records should never be deleted, the record is instead "nullified", and is rendered not visible to typical users, but still exists in the system for the purpose of audit trails, etc.</li></ul></li>
 <li>Contains zero or more [0..*] <tt><b>obsoleteAct</b></tt>, where its type is <xref href="../ObsoleteAct.dita">Obsolete Act</xref>
 </li>
 <li>Contains zero or more [0..*] <tt><b>reactivateAct</b></tt>, where its type is <xref href="../ReactivateAct.dita">Reactivate Act</xref>
@@ -66,10 +106,12 @@
 </li>
 <li>Contains exactly one [1..1] <tt><b>serviceDeliveryLocation</b></tt>, where its type is <xref href="../ServiceDeliveryLocation.dita">Service Delivery Location</xref>
 <ul><li>The location at which the Intolerance condition was noted.</li></ul></li>
-<li>Contains exactly one [1..1] <tt><b>verifier</b></tt>, where its type is <xref href="../Verifier.dita">Verifier</xref>
-<ul><li>&amp;quot;A person who verifies the correctness and appropriateness of the service (plan, order, event, etc.) and hence takes on accountability.&amp;quot;- HL7 V3</li></ul></li>
-<li>Contains zero or one [0..1] <tt><b>visit</b></tt>, where its type is <xref href="../EncounterEvent.dita">Encounter Event</xref>
-</li>
+<li>Contains zero or one [0..1] <tt><b>verifier</b></tt>, where its type is <xref href="../Verifier.dita">Verifier</xref>
+<ul><li>"A person who verifies the correctness and appropriateness of the service (plan, order, event, etc.) and hence takes on accountability."- HL7 V3</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>informationReporter</b></tt>, where its type is <xref href="../InformationReporter.dita">Information Reporter</xref>
+<ul><li>The person who reported information on the patient's behalf.  This may be the patient him/herself.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>intoleranceConditionLogEntry</b></tt>, where its type is <xref href="../IntoleranceConditionLogEntry.dita">Intolerance Condition Log Entry</xref>
+<ul><li>A history of updates to the Intolerance Condition record, and relates the Intolerance Condition record to various encounters over time.  </li></ul></li>
 <li>Contains zero or more [0..*] <tt><b>reaction</b></tt>, where its type is <xref href="../Reaction.dita">Reaction</xref>
 </li>
 </ol>

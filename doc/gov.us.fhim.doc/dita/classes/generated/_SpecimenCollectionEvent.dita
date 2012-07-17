@@ -11,42 +11,44 @@
 </section>
 <ol id="conformance">
 <li>Contains exactly one [1..1] <tt><b>collectionAmount</b></tt> with data type <xref href="../PhysicalQuantity.dita">Physical Quantity</xref>
-<ul><li>&amp;quot;This field specifies the volume or mass of the collected specimen. For laboratory tests, the collection volume is the volume of a specimen....  This is a results-only field except when the placer or a party has already drawn the specimen.&amp;quot; - HL7 Version 2.8, SPM.12</li></ul></li>
+<ul><li>"This field specifies the volume or mass of the collected specimen. For laboratory tests, the collection volume is the volume of a specimen....  This is a results-only field except when the placer or a party has already drawn the specimen." - HL7 Version 2.8, OBR-9 and SPM-12.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>collectionDate</b></tt> with data type <xref href="../TimeInterval.dita">Time Interval</xref>
-<ul><li>&amp;quot;The date and time when the specimen was acquired from the source.  The use of the Date Range data type allows for description of specimens collected over a period of time, for example, 24-hour urine collection.  For specimens collected at a point in time, only the first component (start date/time) will be populated.&amp;quot; - HL7 Version 2.8, SPM.17    &amp;quot;The clinically relevant date/time of the observation.  In the case of observations taken directly from a subject, it is the actual date and time the observation was obtained.  In the case of a specimen associated study, this field shall represent the date and time the specimen was collected or obtained.  (This is a results-only field except when the placer or a third party has already drawn the specimen.)  This field is conditionally required.  When the OBR is transmitted as part of a report message, the field must be filled in.  If it is transmitted as part of a request and a sample has been sent along as part of the request, this field must be filled in because this specimen time is the physiologically relevant date/time of the observation.&amp;quot; - HL7 Version 2.8, OBR.7    &amp;quot;This field contains the end date and time of a study or timed specimen collection.  If an observation takes place over a substantial period of time, it will indicate when the observation period ended.  For observations made at a point in time, it will be null.  This is a results field except when the placer or a party other than the filler has already drawn the specimen.&amp;quot; - HL7 Version 2.8, OBR.8    Note that this property is a Time Interval.</li></ul></li>
+<ul><li>"The date and time when the specimen was acquired from the source.  The use of the Date Range data type allows for description of specimens collected over a period of time, for example, 24-hour urine collection.  For specimens collected at a point in time, only the first component (start date/time) will be populated." - HL7 Version 2.8, SPM-17.
+"The clinically relevant date/time of the observation.  In the case of observations taken directly from a subject, it is the actual date and time the observation was obtained.  In the case of a specimen associated study, this field shall represent the date and time the specimen was collected or obtained." - HL7 Version 2.8, OBR-7.
+"Contains the end date and time of a study or timed specimen collection." - HL7 Version 2.8, OBR-8.
+Note that this property is a Time Interval.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>collectionMethod</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>&amp;quot;Describes the procedure or process by which the specimen was collected.&amp;quot; - HL7 Version 2.8, SPM.7</li></ul></li>
+<ul><li>"Describes the procedure or process by which the specimen was collected." - HL7 Version 2.8, SPM.7</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>comment</b></tt> with data type <xref href="../String.dita">String</xref>
-<ul><li>&amp;quot;This field is for reporting additional comments related to the sample.&amp;quot; - HL7 Version 2.8, OBR-39</li></ul></li>
-<li>Contains zero or one [0..1] <tt><b>collectingLocation</b></tt>, where its type is <xref href="../Institution.dita">Institution</xref>
+<ul><li>"This field is for reporting additional comments related to the sample." - HL7 Version 2.8, OBR-39.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>collectingLocation</b></tt>, where its type is <xref href="../ServiceDeliveryLocation.dita">Service Delivery Location</xref>
 <ul><li>Contains the Instituion name for the site where the specimen was collected.  </li></ul><ul><li>The anatomic location from which the specimen was obtained. The collection site would be the point of entry of the needle.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>performer</b></tt>, where its type is <xref href="../PrimaryPerformer.dita">Primary Performer</xref>
-<ul><li>&amp;quot;Identifies the person, department, or facility that collected the specimen.&amp;quot; - HL7 Version 2.8, OBR-10</li></ul></li>
-<li>Contains at least one [1..*] <tt><b>specimen</b></tt>, where its type is <xref href="../CollectedSpecimen.dita">Collected Specimen</xref>
+<ul><li>"Identifies the person, department, or facility that collected the specimen." - HL7 Version 2.8, OBR-10</li></ul></li>
+<li>Contains at least one [1..*] <tt><b>specimen</b></tt>, where its type is <xref href="../Specimen.dita">Specimen</xref>
 <ul><li>A collection of samples or speciments collected and potentially processed for eventual testing.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>specimenCollectionPromise</b></tt>, where its type is <xref href="../SpecimenCollectionPromise.dita">Specimen Collection Promise</xref>
-</li>
-<li>Contains zero or one [0..1] <tt><b>accession</b></tt>, where its type is <xref href="../Accession.dita">Accession</xref>
 </li>
 </ol>
 <ol id="aggregate">
 <li>Contains exactly one [1..1] <tt><b>collectionAmount</b></tt> with data type <xref href="../PhysicalQuantity.dita">Physical Quantity</xref>
-<ul><li>&amp;quot;This field specifies the volume or mass of the collected specimen. For laboratory tests, the collection volume is the volume of a specimen....  This is a results-only field except when the placer or a party has already drawn the specimen.&amp;quot; - HL7 Version 2.8, SPM.12</li></ul></li>
+<ul><li>"This field specifies the volume or mass of the collected specimen. For laboratory tests, the collection volume is the volume of a specimen....  This is a results-only field except when the placer or a party has already drawn the specimen." - HL7 Version 2.8, OBR-9 and SPM-12.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>collectionDate</b></tt> with data type <xref href="../TimeInterval.dita">Time Interval</xref>
-<ul><li>&amp;quot;The date and time when the specimen was acquired from the source.  The use of the Date Range data type allows for description of specimens collected over a period of time, for example, 24-hour urine collection.  For specimens collected at a point in time, only the first component (start date/time) will be populated.&amp;quot; - HL7 Version 2.8, SPM.17    &amp;quot;The clinically relevant date/time of the observation.  In the case of observations taken directly from a subject, it is the actual date and time the observation was obtained.  In the case of a specimen associated study, this field shall represent the date and time the specimen was collected or obtained.  (This is a results-only field except when the placer or a third party has already drawn the specimen.)  This field is conditionally required.  When the OBR is transmitted as part of a report message, the field must be filled in.  If it is transmitted as part of a request and a sample has been sent along as part of the request, this field must be filled in because this specimen time is the physiologically relevant date/time of the observation.&amp;quot; - HL7 Version 2.8, OBR.7    &amp;quot;This field contains the end date and time of a study or timed specimen collection.  If an observation takes place over a substantial period of time, it will indicate when the observation period ended.  For observations made at a point in time, it will be null.  This is a results field except when the placer or a party other than the filler has already drawn the specimen.&amp;quot; - HL7 Version 2.8, OBR.8    Note that this property is a Time Interval.</li></ul></li>
+<ul><li>"The date and time when the specimen was acquired from the source.  The use of the Date Range data type allows for description of specimens collected over a period of time, for example, 24-hour urine collection.  For specimens collected at a point in time, only the first component (start date/time) will be populated." - HL7 Version 2.8, SPM-17.
+"The clinically relevant date/time of the observation.  In the case of observations taken directly from a subject, it is the actual date and time the observation was obtained.  In the case of a specimen associated study, this field shall represent the date and time the specimen was collected or obtained." - HL7 Version 2.8, OBR-7.
+"Contains the end date and time of a study or timed specimen collection." - HL7 Version 2.8, OBR-8.
+Note that this property is a Time Interval.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>collectionMethod</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>&amp;quot;Describes the procedure or process by which the specimen was collected.&amp;quot; - HL7 Version 2.8, SPM.7</li></ul></li>
+<ul><li>"Describes the procedure or process by which the specimen was collected." - HL7 Version 2.8, SPM.7</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>comment</b></tt> with data type <xref href="../String.dita">String</xref>
-<ul><li>&amp;quot;This field is for reporting additional comments related to the sample.&amp;quot; - HL7 Version 2.8, OBR-39</li></ul></li>
-<li>Contains zero or one [0..1] <tt><b>collectingLocation</b></tt>, where its type is <xref href="../Institution.dita">Institution</xref>
+<ul><li>"This field is for reporting additional comments related to the sample." - HL7 Version 2.8, OBR-39.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>collectingLocation</b></tt>, where its type is <xref href="../ServiceDeliveryLocation.dita">Service Delivery Location</xref>
 <ul><li>Contains the Instituion name for the site where the specimen was collected.  </li></ul><ul><li>The anatomic location from which the specimen was obtained. The collection site would be the point of entry of the needle.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>performer</b></tt>, where its type is <xref href="../PrimaryPerformer.dita">Primary Performer</xref>
-<ul><li>&amp;quot;Identifies the person, department, or facility that collected the specimen.&amp;quot; - HL7 Version 2.8, OBR-10</li></ul></li>
-<li>Contains at least one [1..*] <tt><b>specimen</b></tt>, where its type is <xref href="../CollectedSpecimen.dita">Collected Specimen</xref>
+<ul><li>"Identifies the person, department, or facility that collected the specimen." - HL7 Version 2.8, OBR-10</li></ul></li>
+<li>Contains at least one [1..*] <tt><b>specimen</b></tt>, where its type is <xref href="../Specimen.dita">Specimen</xref>
 <ul><li>A collection of samples or speciments collected and potentially processed for eventual testing.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>specimenCollectionPromise</b></tt>, where its type is <xref href="../SpecimenCollectionPromise.dita">Specimen Collection Promise</xref>
-</li>
-<li>Contains zero or one [0..1] <tt><b>accession</b></tt>, where its type is <xref href="../Accession.dita">Accession</xref>
 </li>
 </ol>
 <codeblock id="example"><![CDATA[]]></codeblock>

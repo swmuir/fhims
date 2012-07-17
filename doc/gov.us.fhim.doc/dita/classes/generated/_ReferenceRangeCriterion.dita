@@ -10,19 +10,19 @@
 </section>
 <ol id="conformance">
 <li>Contains exactly one [1..1] <tt><b>criterion</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>&amp;quot;This field contains the nature of the abnormal test.  Refer to HL7 Table 0080 - Nature of abnormal testing for valid values.  As many of the codes as apply may be included, separated by repeat delimiters. For example, normal values based on age, sex, and race would be codes as A~S~R.    The constraints on the use of the codes in this table must be consistent with those defined in the PID segment, specifically PID-35-Species Code, PID-36-Breed Code and PID-37-Strain.&amp;quot; - HL7 V2    This is the criteron by which the reference range is valid.  Different reference ranges may be defined based on the subject&amp;apos;s age, race, sex, etc.</li></ul></li>
+<ul><li>Indicates the criteron by which the reference range is valid.  Different reference ranges may be defined based on the subject's age, race, sex, etc.
+
+"Contains the nature of the abnormal test....  As many of the codes as apply may be included" - HL7 Version 2.8, OBX-10.  Possible values (from HL7 Table 80) include: An age-based population; None - generic normal range; A race-based population; A sex-based population; Species; Breed; Strain.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>effectiveDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
-<ul><li>&amp;quot;When this field is present, it facilitates comparison between identical results with different reference ranges.  Reference range values may vary because of changes in laboratory practice over time.  Such variances could reflect updated practice in laboratory medicine, or the use of updated instrumentation.&amp;quot; - HL7 V2    Note that we may wish change this to a date range in the future.</li></ul></li>
-<li>Contains exactly one [1..1] <tt><b>value</b></tt> with data type <xref href="../Any.dita">Any</xref>
-</li>
+<ul><li>"Contains the date (and, optionally, the time) on which the values in OBX-7-reference range went into effect...." - HL7 Version 2.8, OBX-12.  Note that we may wish change this to a date range in the future.</li></ul></li>
 </ol>
 <ol id="aggregate">
 <li>Contains exactly one [1..1] <tt><b>criterion</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>&amp;quot;This field contains the nature of the abnormal test.  Refer to HL7 Table 0080 - Nature of abnormal testing for valid values.  As many of the codes as apply may be included, separated by repeat delimiters. For example, normal values based on age, sex, and race would be codes as A~S~R.    The constraints on the use of the codes in this table must be consistent with those defined in the PID segment, specifically PID-35-Species Code, PID-36-Breed Code and PID-37-Strain.&amp;quot; - HL7 V2    This is the criteron by which the reference range is valid.  Different reference ranges may be defined based on the subject&amp;apos;s age, race, sex, etc.</li></ul></li>
+<ul><li>Indicates the criteron by which the reference range is valid.  Different reference ranges may be defined based on the subject's age, race, sex, etc.
+
+"Contains the nature of the abnormal test....  As many of the codes as apply may be included" - HL7 Version 2.8, OBX-10.  Possible values (from HL7 Table 80) include: An age-based population; None - generic normal range; A race-based population; A sex-based population; Species; Breed; Strain.</li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>effectiveDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
-<ul><li>&amp;quot;When this field is present, it facilitates comparison between identical results with different reference ranges.  Reference range values may vary because of changes in laboratory practice over time.  Such variances could reflect updated practice in laboratory medicine, or the use of updated instrumentation.&amp;quot; - HL7 V2    Note that we may wish change this to a date range in the future.</li></ul></li>
-<li>Contains exactly one [1..1] <tt><b>value</b></tt> with data type <xref href="../Any.dita">Any</xref>
-</li>
+<ul><li>"Contains the date (and, optionally, the time) on which the values in OBX-7-reference range went into effect...." - HL7 Version 2.8, OBX-12.  Note that we may wish change this to a date range in the future.</li></ul></li>
 </ol>
 <codeblock id="example"><![CDATA[]]></codeblock>
 <section id="changes">

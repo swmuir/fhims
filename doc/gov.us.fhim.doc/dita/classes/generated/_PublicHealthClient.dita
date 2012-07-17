@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Public Health Client - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+</section>
+<ol id="conformance">
+<li>Contains zero or more [0..*] <tt><b>financialClass</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the eligibility of the patient to receive a vaccine under a publicly funded vaccine program. See MIROW "IIS collaboration with VFC Program and Grantee Immunization Programs" guidelines.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>financialClassAssessmentDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>recordId</b></tt> with data type <xref href="../Id.dita">Id</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the active/inactive status of the patient in the IIS. This is a jurisdictional status. See MIROW "Management of Moved or Gone Elsewhere (MOGE) and Other Patient Status Designations in IIS guidelines.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>patient</b></tt>, where its type is <xref href="../Patient.dita">Patient</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>publicHealthJurisdiction</b></tt>, where its type is <xref href="../PublicHealthJurisdiction.dita">Public Health Jurisdiction</xref>
+</li>
+</ol>
+<ol id="aggregate">
+<li>Contains zero or more [0..*] <tt><b>financialClass</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the eligibility of the patient to receive a vaccine under a publicly funded vaccine program. See MIROW "IIS collaboration with VFC Program and Grantee Immunization Programs" guidelines.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>financialClassAssessmentDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>recordId</b></tt> with data type <xref href="../Id.dita">Id</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the active/inactive status of the patient in the IIS. This is a jurisdictional status. See MIROW "Management of Moved or Gone Elsewhere (MOGE) and Other Patient Status Designations in IIS guidelines.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>patient</b></tt>, where its type is <xref href="../Patient.dita">Patient</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>publicHealthJurisdiction</b></tt>, where its type is <xref href="../PublicHealthJurisdiction.dita">Public Health Jurisdiction</xref>
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Public Health Client</ph></p>
+</body>
+</topic>
