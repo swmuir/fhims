@@ -483,10 +483,17 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_eIuzQMBVEeGOjJTiA9qJ1w" name="ImmunizationAndSkinTest">
       <ownedComment xmi:id="_W28yQMBWEeGOjJTiA9qJ1w">
-        <body>This package contains the vocabulary bindings required by the Immunization Reporting sub-domain. It is based primarily on CDC requirements and reuses HITSP C80, NIP, and HL7 Immunization Domain Analysis Guidance.</body>
+        <body>This package contains the vocabulary bindings required by the Immunization Reporting sub-domain. It is based primarily on CDC requirements and reuses HITSP C80, NIP, and HL7 Immunization Domain Analysis Guidance. This package contains only value sets and each value set is intended to be bound to one or more coded attributes in the ImmunizationAndSkinTest domain in FHIM.</body>
       </ownedComment>
-      <packagedElement xmi:type="uml:Enumeration" xmi:id="_X8vYUKRMEeGZ6ueex_Me0w" name="Vaccine"/>
-      <packagedElement xmi:type="uml:Enumeration" xmi:id="_XWa_MKRMEeGZ6ueex_Me0w" name="ImmunizationInformationSource">
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_X8vYUKRMEeGZ6ueex_Me0w" name="PHVS_VaccinesAdministeredCVX_CDC_NIP">
+        <ownedComment xmi:id="_SRwcINDmEeG0ze9kYp0s5g">
+          <body>This value set is used as-is.</body>
+        </ownedComment>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_XWa_MKRMEeGZ6ueex_Me0w" name="PHVS_ImmunizationInformationSource_HITSP">
+        <ownedComment xmi:id="_zU7awNDpEeG0ze9kYp0s5g">
+          <body>This value set is used as-is.</body>
+        </ownedComment>
         <ownedLiteral xmi:id="_XWfQoaRMEeGZ6ueex_Me0w" name="06"/>
         <ownedLiteral xmi:id="_XWf3sKRMEeGZ6ueex_Me0w" name="02"/>
         <ownedLiteral xmi:id="_XWf3sqRMEeGZ6ueex_Me0w" name="05"/>
@@ -497,47 +504,27 @@
         <ownedLiteral xmi:id="_XWhF06RMEeGZ6ueex_Me0w" name="01"/>
         <ownedLiteral xmi:id="_XWhs4KRMEeGZ6ueex_Me0w" name="00"/>
       </packagedElement>
-      <packagedElement xmi:type="uml:Enumeration" xmi:id="_Xdq2sKRMEeGZ6ueex_Me0w" name="ManufacturerOfVaccines"/>
-      <packagedElement xmi:type="uml:Enumeration" xmi:id="_XWmlYKRMEeGZ6ueex_Me0w" name="ImmunizationServiceFundingEligibility">
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_Xdq2sKRMEeGZ6ueex_Me0w" name="PHVS_ManufacturersOfVaccinesMVX_CDC_NIP">
+        <ownedComment xmi:id="_RMlZQNDlEeG0ze9kYp0s5g">
+          <body>This value set version is used as-is.</body>
+        </ownedComment>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_XWmlYKRMEeGZ6ueex_Me0w" name="FHIM_ImmunizationFundingSource">
         <ownedComment xmi:id="_3F1igMCAEeGOjJTiA9qJ1w">
-          <body>There is a second &quot;Financial Class&quot; value set that appears to be equivalent:&#xD;
-https://phinvads.cdc.gov/vads/ViewValueSet.action?id=1553768E-88BA-DF11-9BDD-0015173D1785</body>
+          <body>It is the same the PHVS value set except it does not include null flavors &quot;other&quot; (OTH) and &quot;unknown&quot; (UNK) to specify other funding or uknown funding sources.</body>
         </ownedComment>
-        <ownedLiteral xmi:id="_XWrd4qRMEeGZ6ueex_Me0w" name="H02"/>
-        <ownedLiteral xmi:id="_XWsE8aRMEeGZ6ueex_Me0w" name="V01"/>
-        <ownedLiteral xmi:id="_XWsE86RMEeGZ6ueex_Me0w" name="CH02"/>
-        <ownedLiteral xmi:id="_XWssAKRMEeGZ6ueex_Me0w" name="CH00"/>
-        <ownedLiteral xmi:id="_XWssAqRMEeGZ6ueex_Me0w" name="CH01"/>
-        <ownedLiteral xmi:id="_XWtTEKRMEeGZ6ueex_Me0w" name="H01"/>
-        <ownedLiteral xmi:id="_XWtTEqRMEeGZ6ueex_Me0w" name="IS00"/>
-        <ownedLiteral xmi:id="_XWtTFKRMEeGZ6ueex_Me0w" name="H03"/>
-        <ownedLiteral xmi:id="_XWt6IaRMEeGZ6ueex_Me0w" name="IS01"/>
-        <ownedLiteral xmi:id="_XWt6I6RMEeGZ6ueex_Me0w" name="V00"/>
-        <ownedLiteral xmi:id="_XWuhMaRMEeGZ6ueex_Me0w" name="V04"/>
-        <ownedLiteral xmi:id="_XWuhM6RMEeGZ6ueex_Me0w" name="V05"/>
-        <ownedLiteral xmi:id="_XWvIQaRMEeGZ6ueex_Me0w" name="V07"/>
-        <ownedLiteral xmi:id="_XWvIQ6RMEeGZ6ueex_Me0w" name="V02"/>
-        <ownedLiteral xmi:id="_XWvvUKRMEeGZ6ueex_Me0w" name="V06"/>
-        <ownedLiteral xmi:id="_XWvvUqRMEeGZ6ueex_Me0w" name="V03"/>
+        <ownedLiteral xmi:id="_XWssAKRMEeGZ6ueex_Me0w" name="VXC1"/>
+        <ownedLiteral xmi:id="_0qslwNDnEeG0ze9kYp0s5g" name="PHC68"/>
+        <ownedLiteral xmi:id="_3HKBINDnEeG0ze9kYp0s5g" name="PHC70"/>
+        <ownedLiteral xmi:id="_5xoDUNDnEeG0ze9kYp0s5g" name="VXC2"/>
+        <ownedLiteral xmi:id="_9M-I0NDnEeG0ze9kYp0s5g" name="VXC3"/>
       </packagedElement>
-      <packagedElement xmi:type="uml:Enumeration" xmi:id="_TzcWcMCBEeGOjJTiA9qJ1w" name="AdministrationSite">
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_TzcWcMCBEeGOjJTiA9qJ1w" name="PHVS_AdministrativeSite_IIS">
         <ownedComment xmi:id="_Vb5iAMCBEeGOjJTiA9qJ1w">
-          <body>Value Set Code	PHVS_AdministrativeSite_IIS	&#xD;
- Download Value Set&#xD;
-Value Set Name	Administrative Site (IIS)&#xD;
-Value Set OID	2.16.840.1.114222.4.11.3370</body>
+          <body>This value set is used as-is.</body>
         </ownedComment>
       </packagedElement>
-      <packagedElement xmi:type="uml:Enumeration" xmi:id="_J6kl0MbBEeG_18RE1tAUNw" name="ImmunizationFinancialClass">
-        <ownedComment xmi:id="_PAUXoMbBEeG_18RE1tAUNw">
-          <body>Financial class in this context is used to specify the program used to cover the immunization. User-defined Table 0064 ‐ Financial class [NIP suggested values] (use in PV1‐20) Financial class references a client's eligibility status at a point in time. The values in this&#xD;
-table relate to eligibility for the Vaccine for Children (VFC) program. Local implementations may define and document local codes.&#xD;
-Note that funding source for a specific immunization is different from Financial Class.&#xD;
-These are documented in CDC local codes table, CDCPHINVS (Value set OID 2.16.840.1.114222.4.11.3287).</body>
-        </ownedComment>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Enumeration" xmi:id="_XdvvMKRMEeGZ6ueex_Me0w" name="ManufacturerOfVaccinesCodeSystem"/>
-      <packagedElement xmi:type="uml:Enumeration" xmi:id="_XnQQgKRMEeGZ6ueex_Me0w" name="NoImmunizationReasonValueSet">
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_XnQQgKRMEeGZ6ueex_Me0w" name="PHVS_ActNoImmunizationReason_HL7_V3">
         <ownedLiteral xmi:id="_XnWXIKRMEeGZ6ueex_Me0w" name="IMMUNE"/>
         <ownedLiteral xmi:id="_XnWXIqRMEeGZ6ueex_Me0w" name="MEDPREC"/>
         <ownedLiteral xmi:id="_XnW-MKRMEeGZ6ueex_Me0w" name="OSTOCK"/>
@@ -547,8 +534,105 @@ These are documented in CDC local codes table, CDCPHINVS (Value set OID 2.16.840
         <ownedLiteral xmi:id="_XnXlQ6RMEeGZ6ueex_Me0w" name="VACEFF"/>
         <ownedLiteral xmi:id="_XnYMUKRMEeGZ6ueex_Me0w" name="VACSAF"/>
       </packagedElement>
-      <packagedElement xmi:type="uml:Enumeration" xmi:id="_X837MKRMEeGZ6ueex_Me0w" name="VaccineCodingSystem"/>
-      <packagedElement xmi:type="uml:Enumeration" xmi:id="_XWepkKRMEeGZ6ueex_Me0w" name="ImmunizationInformationSourceCodeSystem"/>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_ZL0OAMtxEeGAAuWTs_7XwQ" name="PHVS_RouteOfAdministration_IIS">
+        <ownedComment xmi:id="_si6bwNDmEeG0ze9kYp0s5g">
+          <body>This value set is used as-is.</body>
+        </ownedComment>
+        <ownedLiteral xmi:id="_ZL0OActxEeGAAuWTs_7XwQ" name="AP"/>
+        <ownedLiteral xmi:id="_ZL0OAstxEeGAAuWTs_7XwQ" name="B"/>
+        <ownedLiteral xmi:id="_ZL0OA8txEeGAAuWTs_7XwQ" name="DT"/>
+        <ownedLiteral xmi:id="_ZL0OBMtxEeGAAuWTs_7XwQ" name="ET"/>
+        <ownedLiteral xmi:id="_ZL0OBctxEeGAAuWTs_7XwQ" name="EP"/>
+        <ownedLiteral xmi:id="_ZL0OBstxEeGAAuWTs_7XwQ" name="GTT"/>
+        <ownedLiteral xmi:id="_ZL0OB8txEeGAAuWTs_7XwQ" name="GU"/>
+        <ownedLiteral xmi:id="_ZL0OCMtxEeGAAuWTs_7XwQ" name="IMR"/>
+        <ownedLiteral xmi:id="_ZL0OCctxEeGAAuWTs_7XwQ" name="IH"/>
+        <ownedLiteral xmi:id="_ZL0OCstxEeGAAuWTs_7XwQ" name="IA"/>
+        <ownedLiteral xmi:id="_ZL0OC8txEeGAAuWTs_7XwQ" name="IB"/>
+        <ownedLiteral xmi:id="_ZL0ODMtxEeGAAuWTs_7XwQ" name="IC"/>
+        <ownedLiteral xmi:id="_ZL0ODctxEeGAAuWTs_7XwQ" name="ICV"/>
+        <ownedLiteral xmi:id="_ZL0ODstxEeGAAuWTs_7XwQ" name="ID"/>
+        <ownedLiteral xmi:id="_ZL0OD8txEeGAAuWTs_7XwQ" name="IHA"/>
+        <ownedLiteral xmi:id="_ZL0OEMtxEeGAAuWTs_7XwQ" name="IM"/>
+        <ownedLiteral xmi:id="_ZL0OEctxEeGAAuWTs_7XwQ" name="IN"/>
+        <ownedLiteral xmi:id="_ZL0OEstxEeGAAuWTs_7XwQ" name="IO"/>
+        <ownedLiteral xmi:id="_ZL0OE8txEeGAAuWTs_7XwQ" name="IP"/>
+        <ownedLiteral xmi:id="_ZL0OFMtxEeGAAuWTs_7XwQ" name="IS"/>
+        <ownedLiteral xmi:id="_ZL0OFctxEeGAAuWTs_7XwQ" name="IT"/>
+        <ownedLiteral xmi:id="_ZL0OFstxEeGAAuWTs_7XwQ" name="IU"/>
+        <ownedLiteral xmi:id="_ZL0OF8txEeGAAuWTs_7XwQ" name="IV"/>
+        <ownedLiteral xmi:id="_ZL0OGMtxEeGAAuWTs_7XwQ" name="MTH"/>
+        <ownedLiteral xmi:id="_ZL0OGctxEeGAAuWTs_7XwQ" name="MM"/>
+        <ownedLiteral xmi:id="_ZL0OGstxEeGAAuWTs_7XwQ" name="NS"/>
+        <ownedLiteral xmi:id="_ZL0OG8txEeGAAuWTs_7XwQ" name="NP"/>
+        <ownedLiteral xmi:id="_ZL0OHMtxEeGAAuWTs_7XwQ" name="NG"/>
+        <ownedLiteral xmi:id="_ZL0OHctxEeGAAuWTs_7XwQ" name="NT"/>
+        <ownedLiteral xmi:id="_ZL0OHstxEeGAAuWTs_7XwQ" name="OP"/>
+        <ownedLiteral xmi:id="_ZL0OH8txEeGAAuWTs_7XwQ" name="PO"/>
+        <ownedLiteral xmi:id="_ZL0OIMtxEeGAAuWTs_7XwQ" name="OTH"/>
+        <ownedLiteral xmi:id="_ZL0OIctxEeGAAuWTs_7XwQ" name="OT"/>
+        <ownedLiteral xmi:id="_ZL0OIstxEeGAAuWTs_7XwQ" name="PF"/>
+        <ownedLiteral xmi:id="_ZL0OI8txEeGAAuWTs_7XwQ" name="RM"/>
+        <ownedLiteral xmi:id="_ZL0OJMtxEeGAAuWTs_7XwQ" name="PR"/>
+        <ownedLiteral xmi:id="_ZL0OJctxEeGAAuWTs_7XwQ" name="SD"/>
+        <ownedLiteral xmi:id="_ZL0OJstxEeGAAuWTs_7XwQ" name="SC"/>
+        <ownedLiteral xmi:id="_ZL0OJ8txEeGAAuWTs_7XwQ" name="SL"/>
+        <ownedLiteral xmi:id="_ZL0OKMtxEeGAAuWTs_7XwQ" name="TP"/>
+        <ownedLiteral xmi:id="_ZL0OKctxEeGAAuWTs_7XwQ" name="TRA"/>
+        <ownedLiteral xmi:id="_ZL0OKstxEeGAAuWTs_7XwQ" name="TD"/>
+        <ownedLiteral xmi:id="_ZL0OK8txEeGAAuWTs_7XwQ" name="TL"/>
+        <ownedLiteral xmi:id="_ZL0OLMtxEeGAAuWTs_7XwQ" name="UR"/>
+        <ownedLiteral xmi:id="_ZL0OLctxEeGAAuWTs_7XwQ" name="VG"/>
+        <ownedLiteral xmi:id="_ZL0OLstxEeGAAuWTs_7XwQ" name="VM"/>
+        <ownedLiteral xmi:id="_ZL0OL8txEeGAAuWTs_7XwQ" name="WND"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_xFRWcMtxEeGAAuWTs_7XwQ" name="PHVS_FinancialClass_IIS">
+        <ownedComment xmi:id="_8ZUdkMtxEeGAAuWTs_7XwQ">
+          <body>Note that funding source for a specific immunization is different from Financial Class.&#xD;
+These are documented in CDC local codes table, CDCPHINVS (Value set OID 2.16.840.1.114222.4.11.3287).</body>
+        </ownedComment>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_SxvOoNDkEeG0ze9kYp0s5g" name="PHVS_EvidenceOfImmunity_IIS">
+        <ownedComment xmi:id="_08LesNDkEeG0ze9kYp0s5g">
+          <body>This value set version is used as-is.</body>
+        </ownedComment>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_8LLQcNDuEeG0ze9kYp0s5g" name="FHIM_SubstanceRefusalReason">
+        <ownedLiteral xmi:id="_NPSRsNDvEeG0ze9kYp0s5g" name="00"/>
+        <ownedLiteral xmi:id="_RbDukNDvEeG0ze9kYp0s5g" name="01"/>
+        <ownedLiteral xmi:id="_UPEHQNDvEeG0ze9kYp0s5g" name="03"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_TiPoENDwEeG0ze9kYp0s5g" name="FHIM_RaceCategory">
+        <ownedLiteral xmi:id="_lIxZ4NDwEeG0ze9kYp0s5g" name="1002-5"/>
+        <ownedLiteral xmi:id="_qvl4cNDwEeG0ze9kYp0s5g" name="2028-9"/>
+        <ownedLiteral xmi:id="_uYDM4NDwEeG0ze9kYp0s5g" name="2054-5"/>
+        <ownedLiteral xmi:id="_xJXd8NDwEeG0ze9kYp0s5g" name="2076-8"/>
+        <ownedLiteral xmi:id="_0QAewNDwEeG0ze9kYp0s5g" name="2106-3"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_CBZyENDxEeG0ze9kYp0s5g" name="FHIM_ImmunizationRegistryStatus">
+        <ownedLiteral xmi:id="_g8bf0NDxEeG0ze9kYp0s5g" name="A"/>
+        <ownedLiteral xmi:id="_ppbsMNDxEeG0ze9kYp0s5g" name="I"/>
+        <ownedLiteral xmi:id="_rqx44NDxEeG0ze9kYp0s5g" name="L"/>
+        <ownedLiteral xmi:id="_w-X5cNDxEeG0ze9kYp0s5g" name="M"/>
+        <ownedLiteral xmi:id="_0Kq2UNDxEeG0ze9kYp0s5g" name="P"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_rBThQND1EeG0ze9kYp0s5g" name="PHVS_VaccinationContraindication_IIS">
+        <ownedComment xmi:id="_4p6sAND1EeG0ze9kYp0s5g">
+          <body>This value set is a mix of two coding systems.</body>
+        </ownedComment>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_rlhBkND1EeG0ze9kYp0s5g" name="PHVS_VaccinationReaction_IIS">
+        <ownedComment xmi:id="_PxcoQND2EeG0ze9kYp0s5g">
+          <body>This value set is a mix of two coding systems.</body>
+        </ownedComment>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_8YNtQND2EeG0ze9kYp0s5g" name="PHVS_VaccinationSpecialIndication_IIS">
+        <ownedComment xmi:id="_YsCvQND3EeG0ze9kYp0s5g">
+          <body>This value set is reused as-is.</body>
+        </ownedComment>
+        <ownedLiteral xmi:id="_LYJQQND3EeG0ze9kYp0s5g" name="VXC8"/>
+        <ownedLiteral xmi:id="_P884MND3EeG0ze9kYp0s5g" name="VXC7"/>
+      </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_Xx5aQKRMEeGZ6ueex_Me0w" name="ActCode"/>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_Xd0nsKRMEeGZ6ueex_Me0w" name="Marital Status Value Set">
@@ -573,6 +657,7 @@ These are documented in CDC local codes table, CDCPHINVS (Value set OID 2.16.840
       <ownedLiteral xmi:id="_WwavIqRMEeGZ6ueex_Me0w" name="5"/>
       <ownedLiteral xmi:id="_WwbWMKRMEeGZ6ueex_Me0w" name="6"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_CzD9sNDfEeG0ze9kYp0s5g" name="NewValueSetVersion"/>
     <profileApplication xmi:id="_2B97WxSVEeGGzu7fmW9pXw">
       <eAnnotations xmi:id="_2B97XBSVEeGGzu7fmW9pXw" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="http://www.openhealthtools.org/mdht/schemas/term/1#/"/>
@@ -1034,8 +1119,8 @@ These are documented in CDC local codes table, CDCPHINVS (Value set OID 2.16.840
   <term:ValueSetCode xmi:id="_X9KPEKRMEeGZ6ueex_Me0w" conceptName="Breaths:NRat:Pt:Respiratory system:Qn:" usageNote="LOINC" base_EnumerationLiteral="_X9JoBKRMEeGZ6ueex_Me0w"/>
   <term:ValueSetCode xmi:id="_X9KPEqRMEeGZ6ueex_Me0w" conceptName="Body weight:Mass:Pt:^Patient:Qn:Measured" usageNote="LOINC" base_EnumerationLiteral="_X9KPEaRMEeGZ6ueex_Me0w"/>
   <term:CodeSystemVersion xmi:id="_Xx5aQaRMEeGZ6ueex_Me0w" identifier="2.16.840.1.113883.5.4" version="20090501" source="ACTCODE" base_Enumeration="_Xx5aQKRMEeGZ6ueex_Me0w"/>
-  <term:ValueSetVersion xmi:id="_X8v_YKRMEeGZ6ueex_Me0w" identifier="2.16.840.1.114222.4.11.934" version="4" fullName="Vaccines administered (CVX)" definition="Vaccine Name Keyword: Clinical Vaccines, Vaccine Names" revisionDate="10/22/2008" codeSystem="_X837MaRMEeGZ6ueex_Me0w" base_Enumeration="_X8vYUKRMEeGZ6ueex_Me0w"/>
-  <term:ValueSetVersion xmi:id="_XWa_MaRMEeGZ6ueex_Me0w" identifier="2.16.840.1.113883.3.88.12.80.39" version="2" fullName="Immunization Information Source" url="https://phinvads.cdc.gov/vads/ViewValueSet.action?id=A6A4C222-EAB8-DF11-9BDD-0015173D1785" definition="This identifies the source of information for this immunization record or, more generically, whether the immunization being reported has just been administered (new) or came from other records (historical)" revisionDate="07/23/2009" codeSystem="_XWfQoKRMEeGZ6ueex_Me0w" base_Enumeration="_XWa_MKRMEeGZ6ueex_Me0w"/>
+  <term:ValueSetVersion xmi:id="_X8v_YKRMEeGZ6ueex_Me0w" identifier="2.16.840.1.114222.4.11.934" version="6" fullName="Vaccines administered (CVX)" source="CVX" url="http://phinvads.cdc.gov/vads/ViewValueSet.action?id=CEB1D613-657B-E011-A0EA-00188B39829B" definition="Vaccine Name Keyword: Clinical Vaccines, Vaccine Names" revisionDate="10/22/2008" base_Enumeration="_X8vYUKRMEeGZ6ueex_Me0w"/>
+  <term:ValueSetVersion xmi:id="_XWa_MaRMEeGZ6ueex_Me0w" identifier="2.16.840.1.113883.3.88.12.80.39" version="2" fullName="Immunization Information Source" source="NIP" url="https://phinvads.cdc.gov/vads/ViewValueSet.action?id=A6A4C222-EAB8-DF11-9BDD-0015173D1785" definition="This identifies the source of information for this immunization record or, more generically, whether the immunization being reported has just been administered (new) or came from other records (historical)." revisionDate="07/23/2009" base_Enumeration="_XWa_MKRMEeGZ6ueex_Me0w"/>
   <term:ValueSetCode xmi:id="_XWfQoqRMEeGZ6ueex_Me0w" conceptName="Historical information - from birth certificate" usageNote="Immunization Information Source" base_EnumerationLiteral="_XWfQoaRMEeGZ6ueex_Me0w"/>
   <term:ValueSetCode xmi:id="_XWf3saRMEeGZ6ueex_Me0w" conceptName="Historical information - from other provider" usageNote="Immunization Information Source" base_EnumerationLiteral="_XWf3sKRMEeGZ6ueex_Me0w"/>
   <term:ValueSetCode xmi:id="_XWf3s6RMEeGZ6ueex_Me0w" conceptName="Historical information - from other registry" usageNote="Immunization Information Source" base_EnumerationLiteral="_XWf3sqRMEeGZ6ueex_Me0w"/>
@@ -1045,7 +1130,7 @@ These are documented in CDC local codes table, CDCPHINVS (Value set OID 2.16.840
   <term:ValueSetCode xmi:id="_XWhF0qRMEeGZ6ueex_Me0w" conceptName="Historical information - from school record" usageNote="Immunization Information Source" base_EnumerationLiteral="_XWhF0aRMEeGZ6ueex_Me0w"/>
   <term:ValueSetCode xmi:id="_XWhF1KRMEeGZ6ueex_Me0w" conceptName="Historical information - source unspecified" usageNote="Immunization Information Source" base_EnumerationLiteral="_XWhF06RMEeGZ6ueex_Me0w"/>
   <term:ValueSetCode xmi:id="_XWhs4aRMEeGZ6ueex_Me0w" conceptName="New immunization record" usageNote="Immunization Information Source" base_EnumerationLiteral="_XWhs4KRMEeGZ6ueex_Me0w"/>
-  <term:ValueSetVersion xmi:id="_Xdq2saRMEeGZ6ueex_Me0w" identifier="2.16.840.1.114222.4.11.826" version="2" fullName="Manufacturers of vaccines (MVX)" definition="The CDC's National Immunization Program (NIP) maintains the HL7 external code set MVX. HL7 version 2.x Manufacturers of vaccines (code=MVX) used in chapter(s) 4" revisionDate="10/22/2008" codeSystem="_XdvvMaRMEeGZ6ueex_Me0w" base_Enumeration="_Xdq2sKRMEeGZ6ueex_Me0w"/>
+  <term:ValueSetVersion xmi:id="_Xdq2saRMEeGZ6ueex_Me0w" identifier="2.16.840.1.114222.4.11.826" version="4" fullName="Manufacturers of vaccines (MVX)" source="MVX" url="http://phinvads.cdc.gov/vads/ViewValueSet.action?id=6D9AB708-9206-E111-96FC-0050568D00F8" definition="The CDC's National Immunization Program (NIP) maintains the HL7 external code set MVX. HL7 version 2.x Manufacturers of vaccines (code=MVX) used in chapter(s) 4" revisionDate="10/22/2008" base_Enumeration="_Xdq2sKRMEeGZ6ueex_Me0w"/>
   <term:ValueSetVersion xmi:id="_Xd1OwKRMEeGZ6ueex_Me0w" identifier="2.16.840.1.113883.1.11.12212" version="1" fullName="Marital Status Value Set" definition="Marital Status is the domestic partnership status of a person." revisionDate="07/23/2009" codeSystem="_Xd5gMKRMEeGZ6ueex_Me0w" base_Enumeration="_Xd0nsKRMEeGZ6ueex_Me0w"/>
   <term:ValueSetCode xmi:id="_Xd5gMqRMEeGZ6ueex_Me0w" conceptName="Annulled" usageNote="MaritalStatus" base_EnumerationLiteral="_Xd5gMaRMEeGZ6ueex_Me0w"/>
   <term:ValueSetCode xmi:id="_Xd6HQKRMEeGZ6ueex_Me0w" conceptName="Divorced" usageNote="MaritalStatus" base_EnumerationLiteral="_Xd5gM6RMEeGZ6ueex_Me0w"/>
@@ -1056,24 +1141,9 @@ These are documented in CDC local codes table, CDCPHINVS (Value set OID 2.16.840
   <term:ValueSetCode xmi:id="_Xd7VYKRMEeGZ6ueex_Me0w" conceptName="Never Married" usageNote="MaritalStatus" base_EnumerationLiteral="_Xd6uVKRMEeGZ6ueex_Me0w"/>
   <term:ValueSetCode xmi:id="_Xd7VYqRMEeGZ6ueex_Me0w" conceptName="Polygamous" usageNote="MaritalStatus" base_EnumerationLiteral="_Xd7VYaRMEeGZ6ueex_Me0w"/>
   <term:ValueSetCode xmi:id="_Xd7VZKRMEeGZ6ueex_Me0w" conceptName="Widowed" usageNote="MaritalStatus" base_EnumerationLiteral="_Xd7VY6RMEeGZ6ueex_Me0w"/>
-  <term:ValueSetVersion xmi:id="_XWnMcKRMEeGZ6ueex_Me0w" identifier="2.16.840.1.114222.4.5.301" version="1" fullName="Immunization Service Funding Eligibility Value Set" definition="Identifies the Immunization Service Funding Eligibility assigned to the patient for the purpose of identifying sources of reimbursement. See User Defined Table 0064 Financial Class in Appendix 1 in CDC Implementation Guide for Immunization Data Transactions." revisionDate="07/23/2009" codeSystem="_XWrd4aRMEeGZ6ueex_Me0w" base_Enumeration="_XWmlYKRMEeGZ6ueex_Me0w"/>
-  <term:ValueSetCode xmi:id="_XWsE8KRMEeGZ6ueex_Me0w" conceptName="Medicaid (may be called by state-specific name, e.g., Medi-Cal)" usageNote="Financial Class (HL7)" base_EnumerationLiteral="_XWrd4qRMEeGZ6ueex_Me0w"/>
-  <term:ValueSetCode xmi:id="_XWsE8qRMEeGZ6ueex_Me0w" conceptName="Not VFC eligible" usageNote="Financial Class (HL7)" base_EnumerationLiteral="_XWsE8aRMEeGZ6ueex_Me0w"/>
-  <term:ValueSetCode xmi:id="_XWsE9KRMEeGZ6ueex_Me0w" conceptName="S-CHIP coverage-combination of Medicaid and separate-not VFC eligible" usageNote="Financial Class (HL7)" base_EnumerationLiteral="_XWsE86RMEeGZ6ueex_Me0w"/>
-  <term:ValueSetCode xmi:id="_XWssAaRMEeGZ6ueex_Me0w" conceptName="S-CHIP coverage-not VFC eligible" usageNote="Financial Class (HL7)" base_EnumerationLiteral="_XWssAKRMEeGZ6ueex_Me0w"/>
-  <term:ValueSetCode xmi:id="_XWssA6RMEeGZ6ueex_Me0w" conceptName="S-CHIP coverage-separate from Medicaid-not VFC eligible" usageNote="Financial Class (HL7)" base_EnumerationLiteral="_XWssAqRMEeGZ6ueex_Me0w"/>
-  <term:ValueSetCode xmi:id="_XWtTEaRMEeGZ6ueex_Me0w" conceptName="Self pay" usageNote="Financial Class (HL7)" base_EnumerationLiteral="_XWtTEKRMEeGZ6ueex_Me0w"/>
-  <term:ValueSetCode xmi:id="_XWtTE6RMEeGZ6ueex_Me0w" conceptName="Some or all vaccine costs covered" usageNote="Financial Class (HL7)" base_EnumerationLiteral="_XWtTEqRMEeGZ6ueex_Me0w"/>
-  <term:ValueSetCode xmi:id="_XWt6IKRMEeGZ6ueex_Me0w" conceptName="Third party or private insurance" usageNote="Financial Class (HL7)" base_EnumerationLiteral="_XWtTFKRMEeGZ6ueex_Me0w"/>
-  <term:ValueSetCode xmi:id="_XWt6IqRMEeGZ6ueex_Me0w" conceptName="Underinsured (no vaccine costs covered and not FQC/RHC)" usageNote="Financial Class (HL7)" base_EnumerationLiteral="_XWt6IaRMEeGZ6ueex_Me0w"/>
-  <term:ValueSetCode xmi:id="_XWuhMKRMEeGZ6ueex_Me0w" conceptName="VFC eligibility not determined/unknown" usageNote="Financial Class (HL7)" base_EnumerationLiteral="_XWt6I6RMEeGZ6ueex_Me0w"/>
-  <term:ValueSetCode xmi:id="_XWuhMqRMEeGZ6ueex_Me0w" conceptName="VFC eligible   American Indian/Alaskan Native" usageNote="Financial Class (HL7)" base_EnumerationLiteral="_XWuhMaRMEeGZ6ueex_Me0w"/>
-  <term:ValueSetCode xmi:id="_XWvIQKRMEeGZ6ueex_Me0w" conceptName="VFC eligible   Federally Qualified Health Center Patient (under-insured)" usageNote="Financial Class (HL7)" base_EnumerationLiteral="_XWuhM6RMEeGZ6ueex_Me0w"/>
-  <term:ValueSetCode xmi:id="_XWvIQqRMEeGZ6ueex_Me0w" conceptName="VFC eligible - Local-specific eligibility" usageNote="Financial Class (HL7)" base_EnumerationLiteral="_XWvIQaRMEeGZ6ueex_Me0w"/>
-  <term:ValueSetCode xmi:id="_XWvIRKRMEeGZ6ueex_Me0w" conceptName="VFC eligible - Medicaid/Medicaid Managed Care" usageNote="Financial Class (HL7)" base_EnumerationLiteral="_XWvIQ6RMEeGZ6ueex_Me0w"/>
-  <term:ValueSetCode xmi:id="_XWvvUaRMEeGZ6ueex_Me0w" conceptName="VFC eligible - State-specific eligibility (e.g., S-CHIP plan)" usageNote="Financial Class (HL7)" base_EnumerationLiteral="_XWvvUKRMEeGZ6ueex_Me0w"/>
-  <term:ValueSetCode xmi:id="_XWvvU6RMEeGZ6ueex_Me0w" conceptName="VFC eligible   Uninsured" usageNote="Financial Class (HL7)" base_EnumerationLiteral="_XWvvUqRMEeGZ6ueex_Me0w"/>
-  <term:ValueSetVersion xmi:id="_Tz5CYMCBEeGOjJTiA9qJ1w" identifier="2.16.840.1.114222.4.11.3370" version="1" fullName="PHVS_AdministrativeSite_IIS" source="HL7" url="https://phinvads.cdc.gov/vads/ViewValueSet.action?id=98257779-17B8-DF11-9BDD-0015173D1785" definition="HL7-defined Table 0163 - Administrative site [only selected values listed] (use in RXR-2)" base_Enumeration="_TzcWcMCBEeGOjJTiA9qJ1w"/>
+  <term:ValueSetVersion xmi:id="_XWnMcKRMEeGZ6ueex_Me0w" identifier="TBD" version="1" fullName="Immunization Funding Source" source="PHVS_ImmunizationFundingSource_IIS 2.16.840.1.114222.4.11.3287" url="TBD" definition="Immunization Funding Source (Used in OBX- 5) - Indicates funding source for an immunization." revisionDate="07/23/2009" base_Enumeration="_XWmlYKRMEeGZ6ueex_Me0w"/>
+  <term:ValueSetCode xmi:id="_XWssAaRMEeGZ6ueex_Me0w" conceptName="Federal funds" usageNote="Qualifier to an immunization event. It describes the actual funding source." base_EnumerationLiteral="_XWssAKRMEeGZ6ueex_Me0w"/>
+  <term:ValueSetVersion xmi:id="_Tz5CYMCBEeGOjJTiA9qJ1w" identifier="2.16.840.1.114222.4.11.3370" version="1" fullName="Administrative Site (IIS)" source="HL7" url="https://phinvads.cdc.gov/vads/ViewValueSet.action?id=98257779-17B8-DF11-9BDD-0015173D1785" definition="HL7-defined Table 0163 - Administrative site [only selected values listed] (use in RXR-2)" releaseDate="11/03/2011" base_Enumeration="_TzcWcMCBEeGOjJTiA9qJ1w"/>
   <term:ValueSetVersion xmi:id="_WwV2oaRMEeGZ6ueex_Me0w" identifier="2.16.840.1.114222.4.11.918" version="1" fullName="Admission Source (HL7)" definition="HL7 version 2.5 User-Defined Table 0023 Admit Source codes used in ADT messages" revisionDate="10/22/2008" codeSystem="_WwXr0aRMEeGZ6ueex_Me0w" base_Enumeration="_WwV2oKRMEeGZ6ueex_Me0w"/>
   <term:ValueSetCode xmi:id="_WwYS4aRMEeGZ6ueex_Me0w" conceptName="Clinic referral" usageNote="Admit source (HL7)" base_EnumerationLiteral="_WwYS4KRMEeGZ6ueex_Me0w"/>
   <term:ValueSetCode xmi:id="_WwY58aRMEeGZ6ueex_Me0w" conceptName="Court/law enforcement" usageNote="Admit source (HL7)" base_EnumerationLiteral="_WwY58KRMEeGZ6ueex_Me0w"/>
@@ -1084,11 +1154,8 @@ These are documented in CDC local codes table, CDCPHINVS (Value set OID 2.16.840
   <term:ValueSetCode xmi:id="_WwavIaRMEeGZ6ueex_Me0w" conceptName="Transfer from a hospital" usageNote="Admit source (HL7)" base_EnumerationLiteral="_WwavIKRMEeGZ6ueex_Me0w"/>
   <term:ValueSetCode xmi:id="_WwavI6RMEeGZ6ueex_Me0w" conceptName="Transfer from a skilled nursing facility" usageNote="Admit source (HL7)" base_EnumerationLiteral="_WwavIqRMEeGZ6ueex_Me0w"/>
   <term:ValueSetCode xmi:id="_WwbWMaRMEeGZ6ueex_Me0w" conceptName="Transfer from another health care facility" usageNote="Admit source (HL7)" base_EnumerationLiteral="_WwbWMKRMEeGZ6ueex_Me0w"/>
-  <term:CodeSystemVersion xmi:id="_J8NkkMbBEeG_18RE1tAUNw" identifier="2.16.840.1.114222.4.11.3287" version="2.5.1" source="HL70064" base_Enumeration="_J6kl0MbBEeG_18RE1tAUNw"/>
-  <term:CodeSystemVersion xmi:id="_XdvvMaRMEeGZ6ueex_Me0w" identifier="2.16.840.1.113883.12.227" version="05/28/2010" source="MVX" base_Enumeration="_XdvvMKRMEeGZ6ueex_Me0w"/>
-  <term:CodeSystemVersion xmi:id="_XWfQoKRMEeGZ6ueex_Me0w" identifier="2.16.840.1.114222.4.5.293" version="20100815" source="NIP001" base_Enumeration="_XWepkKRMEeGZ6ueex_Me0w"/>
   <term:ValueSetVersion xmi:id="_Xne6AaRMEeGZ6ueex_Me0w" identifier="2.16.840.1.114222.4.11.3204" version="2" fullName="Non-Laboratory Intervention and Procedure" definition="This value set includes medical and surgical procedures performed on human body. This is based upon the concepts descending from the SNOMED CT Procedures (71388002) hierarchy. This value set does not include administrative billing procedure or laboratory procedure." revisionDate="07/07/2009" codeSystem="_WwluQaRMEeGZ6ueex_Me0w" base_Enumeration="_Xne6AKRMEeGZ6ueex_Me0w"/>
-  <term:ValueSetVersion xmi:id="_XnQQgaRMEeGZ6ueex_Me0w" identifier="2.16.840.1.113883.1.11.19717" version="1" fullName="No Immunization Reason Value Set" definition="This identifies the reason why the immunization did not occur" revisionDate="07/23/2009" codeSystem="_XnVwEaRMEeGZ6ueex_Me0w" base_Enumeration="_XnQQgKRMEeGZ6ueex_Me0w"/>
+  <term:ValueSetVersion xmi:id="_XnQQgaRMEeGZ6ueex_Me0w" identifier="2.16.840.1.113883.1.11.19717" version="1" fullName="No Immunization Reason Value Set" source="HL7" url="http://phinvads.cdc.gov/vads/ViewValueSet.action?id=7BFDBFB5-A277-DE11-9B52-0015173D1785" definition="This identifies the reason why the immunization did not occur" revisionDate="07/23/2009" codeSystem="_XnVwEaRMEeGZ6ueex_Me0w" base_Enumeration="_XnQQgKRMEeGZ6ueex_Me0w"/>
   <term:ValueSetCode xmi:id="_XnWXIaRMEeGZ6ueex_Me0w" conceptName="Immunity" usageNote="ActReason" base_EnumerationLiteral="_XnWXIKRMEeGZ6ueex_Me0w"/>
   <term:ValueSetCode xmi:id="_XnWXI6RMEeGZ6ueex_Me0w" conceptName="medical precaution" usageNote="ActReason" base_EnumerationLiteral="_XnWXIqRMEeGZ6ueex_Me0w"/>
   <term:ValueSetCode xmi:id="_XnW-MaRMEeGZ6ueex_Me0w" conceptName="Out of stock" usageNote="ActReason" base_EnumerationLiteral="_XnW-MKRMEeGZ6ueex_Me0w"/>
@@ -1097,5 +1164,80 @@ These are documented in CDC local codes table, CDCPHINVS (Value set OID 2.16.840
   <term:ValueSetCode xmi:id="_XnXlQqRMEeGZ6ueex_Me0w" conceptName="religious objection" usageNote="ActReason" base_EnumerationLiteral="_XnXlQaRMEeGZ6ueex_Me0w"/>
   <term:ValueSetCode xmi:id="_XnXlRKRMEeGZ6ueex_Me0w" conceptName="vaccine efficacy concerns" usageNote="ActReason" base_EnumerationLiteral="_XnXlQ6RMEeGZ6ueex_Me0w"/>
   <term:ValueSetCode xmi:id="_XnYMUaRMEeGZ6ueex_Me0w" conceptName="vaccine safety concerns" usageNote="ActReason" base_EnumerationLiteral="_XnYMUKRMEeGZ6ueex_Me0w"/>
-  <term:CodeSystemVersion xmi:id="_X837MaRMEeGZ6ueex_Me0w" identifier="2.16.840.1.113883.12.292" version="20110915" source="CVX" base_Enumeration="_X837MKRMEeGZ6ueex_Me0w"/>
+  <term:ValueSetVersion xmi:id="_ZMaq8MtxEeGAAuWTs_7XwQ" identifier="2.16.840.1.114222.4.11.816" version="1" fullName="Route of Administration (HL7)" source="NCI Thesaurus" url="http://phinvads.cdc.gov/vads/ViewValueSet.action?id=1E042B59-15B8-DF11-9BDD-0015173D1785" definition="User-defined table 0162 contains a list of the routes of administration of a drug or treatment." revisionDate="10/22/2008" codeSystem="_X2PHsaRMEeGZ6ueex_Me0w" base_Enumeration="_ZL0OAMtxEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMaq8ctxEeGAAuWTs_7XwQ" conceptName="Apply Externally" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0OActxEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMaq8stxEeGAAuWTs_7XwQ" conceptName="Buccal" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0OAstxEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMaq88txEeGAAuWTs_7XwQ" conceptName="Dental" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0OA8txEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMaq9MtxEeGAAuWTs_7XwQ" conceptName="Endotrachial Tube" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0OBMtxEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMaq9ctxEeGAAuWTs_7XwQ" conceptName="Epidural" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0OBctxEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMaq9stxEeGAAuWTs_7XwQ" conceptName="Gastrostomy Tube" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0OBstxEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMaq98txEeGAAuWTs_7XwQ" conceptName="GU Irrigant" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0OB8txEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMaq-MtxEeGAAuWTs_7XwQ" conceptName="Immerse (Soak) Body Part" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0OCMtxEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMaq-ctxEeGAAuWTs_7XwQ" conceptName="Inhalation" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0OCctxEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMaq-stxEeGAAuWTs_7XwQ" conceptName="Intra-arterial" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0OCstxEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMaq-8txEeGAAuWTs_7XwQ" conceptName="Intrabursal" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0OC8txEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMaq_MtxEeGAAuWTs_7XwQ" conceptName="Intracardiac" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0ODMtxEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMaq_ctxEeGAAuWTs_7XwQ" conceptName="Intracervical (uterus)" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0ODctxEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMaq_stxEeGAAuWTs_7XwQ" conceptName="Intradermal" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0ODstxEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMaq_8txEeGAAuWTs_7XwQ" conceptName="Intrahepatic Artery" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0OD8txEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMarAMtxEeGAAuWTs_7XwQ" conceptName="Intramuscular" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0OEMtxEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMarActxEeGAAuWTs_7XwQ" conceptName="Intranasal" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0OEctxEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMarAstxEeGAAuWTs_7XwQ" conceptName="Intraocular" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0OEstxEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMarA8txEeGAAuWTs_7XwQ" conceptName="Intraperitoneal" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0OE8txEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMarBMtxEeGAAuWTs_7XwQ" conceptName="Intrasynovial" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0OFMtxEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMarBctxEeGAAuWTs_7XwQ" conceptName="Intrathecal" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0OFctxEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMarBstxEeGAAuWTs_7XwQ" conceptName="Intrauterine" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0OFstxEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMarB8txEeGAAuWTs_7XwQ" conceptName="Intravenous" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0OF8txEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMarCMtxEeGAAuWTs_7XwQ" conceptName="Mouth/Throat" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0OGMtxEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMarCctxEeGAAuWTs_7XwQ" conceptName="Mucous Membrane" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0OGctxEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMarCstxEeGAAuWTs_7XwQ" conceptName="Nasal" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0OGstxEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMarC8txEeGAAuWTs_7XwQ" conceptName="Nasal Prongs" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0OG8txEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMarDMtxEeGAAuWTs_7XwQ" conceptName="Nasogastric" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0OHMtxEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMarDctxEeGAAuWTs_7XwQ" conceptName="Nasotrachial Tube" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0OHctxEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMarDstxEeGAAuWTs_7XwQ" conceptName="Ophthalmic" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0OHstxEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMarD8txEeGAAuWTs_7XwQ" conceptName="Oral" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0OH8txEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMarEMtxEeGAAuWTs_7XwQ" conceptName="Other/Miscellaneous" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0OIMtxEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMarEctxEeGAAuWTs_7XwQ" conceptName="Otic" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0OIctxEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMarEstxEeGAAuWTs_7XwQ" conceptName="Perfusion" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0OIstxEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMarE8txEeGAAuWTs_7XwQ" conceptName="Rebreather Mask" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0OI8txEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMarFMtxEeGAAuWTs_7XwQ" conceptName="Rectal" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0OJMtxEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMarFctxEeGAAuWTs_7XwQ" conceptName="Soaked Dressing" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0OJctxEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMarFstxEeGAAuWTs_7XwQ" conceptName="Subcutaneous" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0OJstxEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMarF8txEeGAAuWTs_7XwQ" conceptName="Sublingual" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0OJ8txEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMarGMtxEeGAAuWTs_7XwQ" conceptName="Topical" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0OKMtxEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMarGctxEeGAAuWTs_7XwQ" conceptName="Tracheostomy" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0OKctxEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMarGstxEeGAAuWTs_7XwQ" conceptName="Transdermal" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0OKstxEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMarG8txEeGAAuWTs_7XwQ" conceptName="Translingual" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0OK8txEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMarHMtxEeGAAuWTs_7XwQ" conceptName="Urethral" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0OLMtxEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMarHctxEeGAAuWTs_7XwQ" conceptName="Vaginal" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0OLctxEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMarHstxEeGAAuWTs_7XwQ" conceptName="Ventimask" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0OLstxEeGAAuWTs_7XwQ"/>
+  <term:ValueSetCode xmi:id="_ZMarH8txEeGAAuWTs_7XwQ" conceptName="Wound" usageNote="Route of administration (HL7)" base_EnumerationLiteral="_ZL0OL8txEeGAAuWTs_7XwQ"/>
+  <term:ValueSetVersion xmi:id="_xQvmoMtxEeGAAuWTs_7XwQ" identifier="2.16.840.1.114222.4.11.3366" version="2" fullName="Financial Class (IIS) - Eligibility Status" source="NIP" url="http://phinvads.cdc.gov/vads/ViewValueSet.action?id=1553768E-88BA-DF11-9BDD-0015173D1785" definition="User-defined Table 0064 - Financial class [NIP suggested values] (use in PV1-20) Financial class references a client's eligibility status at a point in time. The values in this table relate to eligibility for the Vaccine for Children (VFC) program. Local implementations may define and document local codes." releaseDate="11/03/2011" base_Enumeration="_xFRWcMtxEeGAAuWTs_7XwQ"/>
+  <term:ValueSetVersion xmi:id="_CzD9sdDfEeG0ze9kYp0s5g" base_Enumeration="_CzD9sNDfEeG0ze9kYp0s5g"/>
+  <term:ValueSetVersion xmi:id="_SxvOodDkEeG0ze9kYp0s5g" identifier="2.16.840.1.114222.4.11.3293" version="1" fullName="Evidence Of Immunity (IIS)" source="SNOMED-CT" url="http://phinvads.cdc.gov/vads/ViewValueSet.action?id=FEE9E077-ADB9-DF11-9BDD-0015173D1785" definition="Evidence of immunity indicates that a person has plausible evidence that &#xD;&#xA;they have already developed immunity to a particular disease.  The &#xD;&#xA;definition of plausible evidence is a local decision, but best practice &#xD;&#xA;would suggest that serological evidence of immunity is the strongest &#xD;&#xA;indicator of immunity." base_Enumeration="_SxvOoNDkEeG0ze9kYp0s5g"/>
+  <term:ValueSetCode xmi:id="_0qslwdDnEeG0ze9kYp0s5g" conceptName="Military funds" usageNote="Qualifier to an immunization event. It describes the actual funding source." base_EnumerationLiteral="_0qslwNDnEeG0ze9kYp0s5g"/>
+  <term:ValueSetCode xmi:id="_3HKBIdDnEeG0ze9kYp0s5g" conceptName="Private funds" usageNote="Qualifier to an immunization event. It describes the actual funding source." base_EnumerationLiteral="_3HKBINDnEeG0ze9kYp0s5g"/>
+  <term:ValueSetCode xmi:id="_5xoDUdDnEeG0ze9kYp0s5g" conceptName="State funds" usageNote="Qualifier to an immunization event. It describes the actual funding source." base_EnumerationLiteral="_5xoDUNDnEeG0ze9kYp0s5g"/>
+  <term:ValueSetCode xmi:id="_9M-I0dDnEeG0ze9kYp0s5g" conceptName="Tribal funds" usageNote="Qualifier to an immunization event. It describes the actual funding source." base_EnumerationLiteral="_9M-I0NDnEeG0ze9kYp0s5g"/>
+  <term:ValueSetVersion xmi:id="_8LLQcdDuEeG0ze9kYp0s5g" identifier="TBD" version="1" fullName="Substance Refusal Reason (FHIM)" source="PHVS_SubstanceRefusalReason_IIS 2.16.840.1.114222.4.11.3380" url="tbd" definition="Includes all the codes except &quot;Other&quot;." releaseDate="TBD" base_Enumeration="_8LLQcNDuEeG0ze9kYp0s5g"/>
+  <term:ValueSetCode xmi:id="_NPSRsdDvEeG0ze9kYp0s5g" conceptName="Parental decision" base_EnumerationLiteral="_NPSRsNDvEeG0ze9kYp0s5g"/>
+  <term:ValueSetCode xmi:id="_RbDukdDvEeG0ze9kYp0s5g" conceptName="Religious exemption" base_EnumerationLiteral="_RbDukNDvEeG0ze9kYp0s5g"/>
+  <term:ValueSetCode xmi:id="_UPEHQdDvEeG0ze9kYp0s5g" conceptName="Patient decision" base_EnumerationLiteral="_UPEHQNDvEeG0ze9kYp0s5g"/>
+  <term:ValueSetVersion xmi:id="_TiPoEdDwEeG0ze9kYp0s5g" identifier="TBD" version="1" fullName="Race Category" source="PHVS_RaceCategory_CDC 2.16.840.1.114222.4.11.3380" url="TBD" definition="Excludes the null flavor code &quot;Other Race&quot;." statusDate="" base_Enumeration="_TiPoENDwEeG0ze9kYp0s5g"/>
+  <term:ValueSetCode xmi:id="_lIxZ4dDwEeG0ze9kYp0s5g" conceptName="American Indian or Alaskan Native" base_EnumerationLiteral="_lIxZ4NDwEeG0ze9kYp0s5g"/>
+  <term:ValueSetCode xmi:id="_qvl4cdDwEeG0ze9kYp0s5g" conceptName="Asian" base_EnumerationLiteral="_qvl4cNDwEeG0ze9kYp0s5g"/>
+  <term:ValueSetCode xmi:id="_uYDM4dDwEeG0ze9kYp0s5g" conceptName="Black or African American" base_EnumerationLiteral="_uYDM4NDwEeG0ze9kYp0s5g"/>
+  <term:ValueSetCode xmi:id="_xJXd8dDwEeG0ze9kYp0s5g" conceptName="Native Hawaiian or Other Pacific Islander" base_EnumerationLiteral="_xJXd8NDwEeG0ze9kYp0s5g"/>
+  <term:ValueSetCode xmi:id="_0QAewdDwEeG0ze9kYp0s5g" conceptName="White" base_EnumerationLiteral="_0QAewNDwEeG0ze9kYp0s5g"/>
+  <term:ValueSetVersion xmi:id="_CBZyEdDxEeG0ze9kYp0s5g" identifier="TBD" fullName="Immunization Registry Status" source="PH_ImmunizationRegistryStatus_IIS 2.16.840.1.114222.4.11.3378" url="TBD" definition="Contains the same codes except for the null qualifier &quot;U&quot; for &quot;Unknown&quot;." base_Enumeration="_CBZyENDxEeG0ze9kYp0s5g"/>
+  <term:ValueSetCode xmi:id="_g8bf0dDxEeG0ze9kYp0s5g" conceptName="Active" base_EnumerationLiteral="_g8bf0NDxEeG0ze9kYp0s5g"/>
+  <term:ValueSetCode xmi:id="_ppbsMdDxEeG0ze9kYp0s5g" conceptName="Inactive" base_EnumerationLiteral="_ppbsMNDxEeG0ze9kYp0s5g"/>
+  <term:ValueSetCode xmi:id="_rqx44dDxEeG0ze9kYp0s5g" conceptName="Inactive - Lost to follow-up (cancel contract)" base_EnumerationLiteral="_rqx44NDxEeG0ze9kYp0s5g"/>
+  <term:ValueSetCode xmi:id="_w-X5cdDxEeG0ze9kYp0s5g" conceptName="Inactive - Moved or gone elsewhere (cancel contract)" base_EnumerationLiteral="_w-X5cNDxEeG0ze9kYp0s5g"/>
+  <term:ValueSetCode xmi:id="_0Kq2UdDxEeG0ze9kYp0s5g" conceptName="Inactive - Permanently inactive (Do not reactivate or add new entries to the record" base_EnumerationLiteral="_0Kq2UNDxEeG0ze9kYp0s5g"/>
+  <term:ValueSetVersion xmi:id="_rBThQdD1EeG0ze9kYp0s5g" identifier="2.16.840.1.114222.4.11.3288" version="1" fullName="Vaccination Contraindication (IIS)" source="PHIN VS and SNOMED-CT" url="http://phinvads.cdc.gov/vads/ViewValueSet.action?id=DAEDFBD4-9BB9-DF11-9BDD-0015173D1785#" base_Enumeration="_rBThQND1EeG0ze9kYp0s5g"/>
+  <term:ValueSetVersion xmi:id="_rlhBkdD1EeG0ze9kYp0s5g" identifier="2.16.840.1.114222.4.11.3289" version="1" fullName="Vaccination Reaction (IIS)" source="PHIN VS and SNOMED-CT" url="http://phinvads.cdc.gov/vads/ViewValueSet.action?id=CD050AE1-A9B9-DF11-9BDD-0015173D1785" base_Enumeration="_rlhBkND1EeG0ze9kYp0s5g"/>
+  <term:ValueSetVersion xmi:id="_8YNtQdD2EeG0ze9kYp0s5g" identifier="2.16.840.1.114222.4.11.3290" version="1" fullName="Vaccination Special Indication (IIS)" source="PHIN VS" url="http://phinvads.cdc.gov/vads/ViewValueSet.action?id=348CE13C-ABB9-DF11-9BDD-0015173D1785" definition="Describes a factor about the client which may impact forecasting of next dose of vaccine needed." base_Enumeration="_8YNtQND2EeG0ze9kYp0s5g"/>
+  <term:ValueSetCode xmi:id="_LYJQQdD3EeG0ze9kYp0s5g" conceptName="Member of a special risk group" base_EnumerationLiteral="_LYJQQND3EeG0ze9kYp0s5g"/>
+  <term:ValueSetCode xmi:id="_P884MdD3EeG0ze9kYp0s5g" conceptName="Rabies exposrure in previous 10 days" base_EnumerationLiteral="_P884MND3EeG0ze9kYp0s5g"/>
 </xmi:XMI>
