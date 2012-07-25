@@ -407,7 +407,7 @@
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_dgFK6vaOEeCbn6MPgQ_rxg" visible="false" type="OperationCompartment"/>
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_dgFK7PaOEeCbn6MPgQ_rxg" visible="false" type="SignalCompartment"/>
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_dgFK7vaOEeCbn6MPgQ_rxg" visible="false" type="StructureCompartment"/>
-          <element xmi:type="uml:Class" href="Pharmacy.efx#_420A62FD03B641928F4302E4?FHIM/Pharmacy/MedicationDispense?"/>
+          <element xmi:type="uml:Class" href="Pharmacy.efx#_420A62FD03B641928F4302E4?FHIM/Pharmacy/PharmacyDispense?"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dgFK4vaOEeCbn6MPgQ_rxg" x="17752" y="16401"/>
         </children>
         <children xmi:type="umlnotation:UMLShape" xmi:id="_pc7XYPaOEeCbn6MPgQ_rxg" fontName="Arial" fontHeight="10" showListVisibility="None" fillColor="8487423" lineColor="3342489" showParent="Name" showStereotype="Image">
@@ -4108,7 +4108,7 @@
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_kcs4AF7eEeCcBvMgXNMeOQ" name="medicationDispense" visibility="public" association="_kcp0sF7eEeCcBvMgXNMeOQ">
-        <type xmi:type="uml:Class" href="Pharmacy.efx#_420A62FD03B641928F4302E4?FHIM/Pharmacy/MedicationDispense?"/>
+        <type xmi:type="uml:Class" href="Pharmacy.efx#_420A62FD03B641928F4302E4?FHIM/Pharmacy/PharmacyDispense?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kcs4Al7eEeCcBvMgXNMeOQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_kcs4AV7eEeCcBvMgXNMeOQ"/>
       </ownedAttribute>
@@ -4584,6 +4584,10 @@
         <type xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_o1cqkHphEeCYy4DzyFpAzQ" name="effectiveDateRange" visibility="public">
+        <ownedComment xmi:id="_wH3KcNUeEeGzd-o9XtejuA" annotatedElement="_o1cqkHphEeCYy4DzyFpAzQ">
+          <body>&quot;Beginning date for a prior authorization request.&quot; - NCPDP Telecommunication (Field 498-PB, Data Dictionary 201104).&#xD;
+&quot;Ending date for a prior authorization request.&quot; - NCPDP Telecommunication (Field 498-PC, Data Dictionary 201104).</body>
+        </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B642387187004E?FHIM/Datatypes/TimeInterval?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_ci4lYHpkEeCYy4DzyFpAzQ" name="priorAuthorizationIdAssigned" visibility="public">
@@ -4918,4 +4922,5 @@
   <RIM:Supply xmi:id="_7vz9EPj4EeCL4956HPvowQ" base_Class="___1ngEyrEd-ir98gTBezYA"/>
   <RIM:Act xmi:id="_-1WxsPj4EeCL4956HPvowQ" base_Class="_Kk8-kBs0Ed--ZY2-pbJ-Pw"/>
   <RIM:Supply xmi:id="_Bu3VcPj5EeCL4956HPvowQ" base_Class="_k0e7YEypEd-ir98gTBezYA"/>
+  <Default:Documentation xmi:id="_wIA7cNUeEeGzd-o9XtejuA" base_Comment="_wH3KcNUeEeGzd-o9XtejuA"/>
 </xmi:XMI>
