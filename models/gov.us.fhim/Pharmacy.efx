@@ -3150,6 +3150,12 @@ Indicates the form of the material making up a single dose (as opposed to how th
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B642387187004E?FHIM/Datatypes/TimeInterval?"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_DkRUQNUpEeGzd-o9XtejuA" name="neededNoLaterThan" visibility="public">
+        <ownedComment xmi:id="_jOBwQNUpEeGzd-o9XtejuA" annotatedElement="_DkRUQNUpEeGzd-o9XtejuA">
+          <body>&quot;Conditional composite for the facility to relay to the long term care pharmacy the timeframe when medication is needed for delivery.  When a facility transmits either a new medication order (NEWRX) or request for the re-supply of a medication (RESUPP) to a pharmacy, it would optionally indicate the time by which the medication is needed. The facility could also provide a textual reason why the medication is needed by the time specified. The long term care pharmacy would then use this information to determine whether a special delivery is required, or whether the order could go out with the next scheduled delivery.&quot; - NCPDP Script (Field I006)</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
+      </ownedAttribute>
       <ownedAttribute xmi:id="_31ccMMuREeGZENvAz6pEGw" name="needsHumanReview" visibility="public">
         <ownedComment xmi:id="_-KaaMMuREeGZENvAz6pEGw" annotatedElement="_31ccMMuREeGZENvAz6pEGw">
           <body>Indicates whether &quot;the pharmacist or non-pharmacist treatment supplier filling the order needs to pay special attention to the text in the [Dispensing Instructions].  A warning is present.&quot; - HL7 Version 2.8, RXO-16.</body>
@@ -3356,7 +3362,7 @@ This property carries both the low (aka minimum), and high (aka maximum) amounts
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_ItpdgAMJEeC6TLUcQZx_GQ" name="DrugUseEvaluation">
       <ownedComment xmi:id="_VBt3MAMJEeC6TLUcQZx_GQ" annotatedElement="_ItpdgAMJEeC6TLUcQZx_GQ">
-        <body>DUE: If a prescriber or pharmacy has determined that the patient is on another medication that can interact, the DUE can communicate what the problem is, what the co-agent(s) are,     DUR tends to be after the fact, while DUE tends to be before the fact, but basically they are similar.</body>
+        <body>This class represents the results of a Drug Use Evaluation (DUE) or a Drug Utilization Review (DUR).  If a prescriber or pharmacy has determined that the patient is on another medication that can interact with the drug associated with the current order, this class can communicate what the problem is, and what the co-agent(s) are.  A DUR tends to be after the fact, while DUE tends to be before the fact, but basically the processes and the information captured are similar.</body>
       </ownedComment>
       <ownedAttribute xmi:id="_X2rnYBd8EeC9Abp3tFVARg" name="adverseEffectMitigation" visibility="public">
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
@@ -3366,19 +3372,24 @@ This property carries both the low (aka minimum), and high (aka maximum) amounts
       </ownedAttribute>
       <ownedAttribute xmi:id="__MPY0Bd5EeC9Abp3tFVARg" name="professionalServiceCode" visibility="public">
         <ownedComment xmi:id="_PilYcCT1EeGLU77N-kQBww" annotatedElement="__MPY0Bd5EeC9Abp3tFVARg">
-          <body>&amp;amp;lt;p&amp;amp;gt;&quot;Action taken in response to a conflict.&quot; - NCPDP Script (Field 7882, Data Dictionary 201009)&amp;amp;lt;/p&amp;amp;gt;&amp;amp;lt;p&amp;amp;gt;&quot;Action taken by a pharmacist or prescriber in response to a conflict or the result of a pharmacist s professional service.&quot; - NCPDP Telecommunication (Field 441-E6, Data Dictionary 201009)&amp;amp;lt;/p&amp;amp;gt;&amp;amp;lt;p&amp;amp;gt;Categorizes the action taken by a pharmacist or prescriber in response to a conflict or the result of a pharmacist s professional service.&amp;amp;lt;/p&amp;amp;gt;</body>
+          <body>Categorizes the action taken by a pharmacist or prescriber in response to a conflict or the result of a pharmacist's professional service.&#xD;
+&quot;Action taken by a pharmacist or prescriber in response to a conflict or the result of a pharmacist's professional service.&quot; - NCPDP Telecommunication (Field 441-E6, Data Dictionary 201104)&#xD;
+&quot;Action taken in response to a conflict.&quot; - NCPDP Script (Field 7882, Data Dictionary 201104)</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_o-n8kBd4EeC9Abp3tFVARg" name="reasonForService" visibility="public">
         <ownedComment xmi:id="_jXrwECT0EeGLU77N-kQBww" annotatedElement="_o-n8kBd4EeC9Abp3tFVARg">
-          <body>&amp;amp;lt;p&amp;amp;gt;&quot;For further explanation, conflict, or clarification of services related to drug use evaluation.... Code identifying the type of conflict detected. When this composite is used, DUE Reason For Service Code is mandatory.&quot; - NCPDP Script (Field 7880, Data Dictionary 201009)&amp;amp;lt;/p&amp;amp;gt;&amp;amp;lt;p&amp;amp;gt;&quot;Code identifying the type of utilization conflict detected by the prescriber or the pharmacist or the reason for the pharmacist s professional service.&quot; - NCPDP Telecommunication (Field 439-E4, Data Dictionary 201009)&amp;amp;lt;/p&amp;amp;gt;&amp;amp;lt;p&amp;amp;gt;Categorizes the type of drug utilization conflict detected by the prescriber or the pharmacist or the reason for the pharmacist s professional service.  Examples include: Drug-Drug Interaction, Dose Range Conflict, Ingredient Duplication, etc.&amp;amp;lt;/p&amp;amp;gt;</body>
+          <body>Categorizes the type of drug utilization conflict detected by the prescriber or the pharmacist or the reason for the pharmacist's professional service.  Examples include: Drug-Drug Interaction, Dose Range Conflict, Ingredient Duplication, etc.&#xD;
+&quot;Code identifying the type of utilization conflict detected by the prescriber or the pharmacist or the reason for the pharmacist s professional service.&quot; - NCPDP Telecommunication (Field 439-E4, Data Dictionary 201104).&#xD;
+&quot;For further explanation, conflict, or clarification of services related to drug use evaluation.... Code identifying the type of conflict detected.  When this composite is used, DUE Reason For Service Code is mandatory.&quot; - NCPDP Script (Field 7880, Data Dictionary 201104).</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_LZFJIBd6EeC9Abp3tFVARg" name="serviceResultCode" visibility="public">
         <ownedComment xmi:id="_NK8LoCT1EeGLU77N-kQBww" annotatedElement="_LZFJIBd6EeC9Abp3tFVARg">
-          <body>&amp;amp;lt;p&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;</body>
+          <body>&quot;Action taken by a pharmacist or prescriber in response to a conflict or the result of a pharmacist’s professional service.&quot; - NCPDP Telecommunication (Field 441-E6, Data Dictionary 201104).&#xD;
+&quot;Action taken in response to a conflict.&quot; - NCPDP Script (Field 7992, Data Dictionary 201104)</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
@@ -3389,7 +3400,8 @@ This property carries both the low (aka minimum), and high (aka maximum) amounts
       </ownedAttribute>
       <ownedAttribute xmi:id="_EvfJgBd7EeC9Abp3tFVARg" name="coAgent" visibility="public" type="_qZnzkBd7EeC9Abp3tFVARg" association="_Evd7YBd7EeC9Abp3tFVARg">
         <ownedComment xmi:id="_Kg9nQC19EeGWR8bvqgjcQA" annotatedElement="_EvfJgBd7EeC9Abp3tFVARg">
-          <body>&amp;amp;lt;p&amp;amp;gt;&quot;Identifies the co-existing agent contributing to the DUR event (drug or disease) conflicting with the prescribed drug.&quot; - NCPDP Script (Field 7883, Data Dictionary 201009)&amp;amp;lt;/p&amp;amp;gt;</body>
+          <body>&quot;Identifies the co-existing agent contributing to the DUR event (drug or disease conflicting with the prescribed drug or prompting pharmacist professional service).&quot; - NCPDP Telecommunication (Field 476-H6, Data Dictionary 201104).&#xD;
+&quot;Identifies the co-existing agent contributing to the DUR event (drug or disease) conflicting with the prescribed drug.&quot; - NCPDP Script (Field 7883, Data Dictionary 201104)</body>
         </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EvfwkRd7EeC9Abp3tFVARg" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_EvfwkBd7EeC9Abp3tFVARg"/>
@@ -3425,6 +3437,9 @@ This property carries both the low (aka minimum), and high (aka maximum) amounts
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_s1rYkBd2EeC9Abp3tFVARg"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_D_qoYBd2EeC9Abp3tFVARg" name="status" visibility="public">
+        <ownedComment xmi:id="_lJyPINUlEeGzd-o9XtejuA" annotatedElement="_D_qoYBd2EeC9Abp3tFVARg">
+          <body>&quot;The status of the prescription’s prior authorization as known by the sender.&quot; - NCPDP Script (Field 7891, Data Dictionary 201104)</body>
+        </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_VEDnoCf3EeC-JKXSDMHR6A" name="orderablePharmacyItem" visibility="public" association="_VECZgCf3EeC-JKXSDMHR6A">
@@ -3447,11 +3462,13 @@ This property carries both the low (aka minimum), and high (aka maximum) amounts
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_qZnzkBd7EeC9Abp3tFVARg" name="CoAgent">
       <ownedComment xmi:id="_JJ_NQC19EeGWR8bvqgjcQA" annotatedElement="_qZnzkBd7EeC9Abp3tFVARg">
-        <body>&amp;amp;lt;p&amp;amp;gt;&quot;Identifies the co-existing agent contributing to the DUR event (drug or disease) conflicting with the prescribed drug.&quot; - NCPDP Script (Field 7883, Data Dictionary 201009)&amp;amp;lt;/p&amp;amp;gt;</body>
+        <body>&quot;Identifies the co-existing agent contributing to the DUR event (drug or disease conflicting with the prescribed drug or prompting pharmacist professional service).&quot; - NCPDP Telecommunication (Field 476-H6, Data Dictionary 201104).&#xD;
+&quot;Identifies the co-existing agent contributing to the DUR event (drug or disease) conflicting with the prescribed drug.&quot; - NCPDP Script (Field 7883, Data Dictionary 201104)</body>
       </ownedComment>
       <ownedAttribute xmi:id="_uzKVACf1EeC-JKXSDMHR6A" name="code" visibility="public">
         <ownedComment xmi:id="_J7T8gC19EeGWR8bvqgjcQA" annotatedElement="_uzKVACf1EeC-JKXSDMHR6A">
-          <body>&amp;amp;lt;p&amp;amp;gt;&quot;Identifies the co-existing agent contributing to the DUR event (drug or disease) conflicting with the prescribed drug.&quot; - NCPDP Script (Field 7883, Data Dictionary 201009)&amp;amp;lt;/p&amp;amp;gt;</body>
+          <body>&quot;Identifies the co-existing agent contributing to the DUR event (drug or disease conflicting with the prescribed drug or prompting pharmacist professional service).&quot; - NCPDP Telecommunication (Field 476-H6, Data Dictionary 201104).&#xD;
+&quot;Identifies the co-existing agent contributing to the DUR event (drug or disease) conflicting with the prescribed drug.&quot; - NCPDP Script (Field 7883, Data Dictionary 201104)</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
@@ -3582,17 +3599,32 @@ This property carries both the low (aka minimum), and high (aka maximum) amounts
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_qw_REJtZEeClAtaO_zSM7g" name="ScriptDue">
+      <ownedComment xmi:id="_s2Il4NUcEeGzd-o9XtejuA" annotatedElement="_qw_REJtZEeClAtaO_zSM7g">
+        <body>This class represents two properties that the DUE composite in the NCPDP SCRIPT standard has that the NCPDP Telecommunication standard does not.  In practice, this class' two properties, along with the one property that the Telecommunication standard uniquely contains would likely be moved to the DUE superclass, and we could have modeled it that way, but we've chosen to separate the subclasses in order to visually depict the differences between the two standards.</body>
+      </ownedComment>
       <generalization xmi:id="_vLY_0JtZEeClAtaO_zSM7g" general="_ItpdgAMJEeC6TLUcQZx_GQ"/>
       <ownedAttribute xmi:id="_VM0CIBd8EeC9Abp3tFVARg" name="acknowledgementReason" visibility="public">
+        <ownedComment xmi:id="_EqbB0NUaEeGzd-o9XtejuA" annotatedElement="_VM0CIBd8EeC9Abp3tFVARg">
+          <body>&quot;Additional textual information regarding intervention and/or acknowledgment associated with a DUE conflict.&quot; - NCPDP Script (Field 7998, Data Dictionary 201104)</body>
+        </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_MFfRQBd8EeC9Abp3tFVARg" name="clinicalSignifanceCode" visibility="public">
+        <ownedComment xmi:id="_3y-OQNUZEeGzd-o9XtejuA" annotatedElement="_MFfRQBd8EeC9Abp3tFVARg">
+          <body>&quot;Code identifying the significance or severity level of a clinical event as contained in the originating database.Code identifying the significance or severity level of a clinical event as contained in the originating database.&quot; - NCPDP Script (Field 7997, Data Dictionary 201104)</body>
+        </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_t0ZXsJtZEeClAtaO_zSM7g" name="TelecomDue">
+      <ownedComment xmi:id="_BBhhINUdEeGzd-o9XtejuA" annotatedElement="_t0ZXsJtZEeClAtaO_zSM7g">
+        <body>This class represents the one property that the NCPDP Telecommunications DUE segment defines that the NCPDP SCRIPT standard does not.  In practice, this class' one property, along with the two properties that the SCRIPT standard uniquely contains would likely be moved to the DUE superclass, and we could have modeled it that way, but we've chosen to separate the subclasses in order to visually depict the differences between the two standards.</body>
+      </ownedComment>
       <generalization xmi:id="_v64jEJtZEeClAtaO_zSM7g" general="_ItpdgAMJEeC6TLUcQZx_GQ"/>
       <ownedAttribute xmi:id="__VSbkJtZEeClAtaO_zSM7g" name="levelOfEffort" visibility="public">
+        <ownedComment xmi:id="_jLvhANUYEeGzd-o9XtejuA" annotatedElement="__VSbkJtZEeClAtaO_zSM7g">
+          <body>&quot;Code indicating the level of effort as determined by the complexity of decision-making or resources utilized by a pharmacist to perform a professional service.&quot; - NCPDP Telecommunication (Field 474-8E, Data Dictionary 201104).</body>
+        </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
     </packagedElement>
@@ -3620,6 +3652,9 @@ This property carries both the low (aka minimum), and high (aka maximum) amounts
       <ownedAttribute xmi:id="_ssDgoPagEeCbn6MPgQ_rxg" name="substitutionCode" visibility="public">
         <ownedComment xmi:id="_RDeGcNOLEeGputPQx0HXoA" annotatedElement="_ssDgoPagEeCbn6MPgQ_rxg">
           <body>&quot;Refer to HL7 Table 0167 - Substitution Status in Chapter 2C for suggested values.&quot; - HL7 Version 2.8, RXD-11.&#xD;
+&quot;Product/Service Substitution, coded&quot; - NCPDP Script (Field 4457, Data Dictionary 201104)&#xD;
+&quot;Code indicating whether or not the prescriber’s instructions regarding generic substitution were followed.&quot; - NCPDP Telecommunication (Field 408-D8, Data Dictionary 201104).&#xD;
+-----&#xD;
 Possible values include (from HL7 Table 167): &#xD;
 No substitute was dispensed.  This is equivalent to the default (null) value; &#xD;
 A generic substitution was dispensed; &#xD;
@@ -3631,7 +3666,19 @@ Substitution allowed - pharmacist selected product dispensed; &#xD;
 Substitution allowed - generic drug not in stock; &#xD;
 Substitution allowed - brand drug dispensed as a generic; &#xD;
 Substitution not allowed - brand drug mandated by law; &#xD;
-Substitution allowed - generic drug not available in marketplace.</body>
+Substitution allowed - generic drug not available in marketplace.&#xD;
+-----&#xD;
+Possible values include (From NCPDP ECL):&#xD;
+No Product Selection Indicated&#xD;
+Substitution Not Allowed by Prescriber&#xD;
+Substitution Allowed - Patient Requested Product Dispensed&#xD;
+Substitution Allowed - Pharmacist Selected Product Dispensed&#xD;
+Substitution Allowed - Generic Drug Not in Stock&#xD;
+Substitution Allowed - Brand Drug Dispensed as a Generic&#xD;
+Override&#xD;
+Substitution Not Allowed - Brand Drug Mandated by Law&#xD;
+Substitution Allowed - Generic Drug Not Available in Marketplace&#xD;
+Substitution Allowed By Prescriber but Plan Requests Brand - Patient's Plan Requested Brand Product To Be Dispensed</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
@@ -3814,4 +3861,11 @@ Substitution allowed - generic drug not available in marketplace.</body>
   <Default:Documentation xmi:id="_7YTEYNOTEeGputPQx0HXoA" base_Comment="_7YHeMNOTEeGputPQx0HXoA"/>
   <Default:Documentation xmi:id="_EjnDUNQWEeG6j-OawvA6JA" base_Comment="_EjJwUNQWEeG6j-OawvA6JA"/>
   <Default:Documentation xmi:id="_PHPIMNQYEeG6j-OawvA6JA" base_Comment="_PHBs0NQYEeG6j-OawvA6JA"/>
+  <Default:Documentation xmi:id="_jL7uQNUYEeGzd-o9XtejuA" base_Comment="_jLvhANUYEeGzd-o9XtejuA"/>
+  <Default:Documentation xmi:id="_3zGxINUZEeGzd-o9XtejuA" base_Comment="_3y-OQNUZEeGzd-o9XtejuA"/>
+  <Default:Documentation xmi:id="_EqkLwNUaEeGzd-o9XtejuA" base_Comment="_EqbB0NUaEeGzd-o9XtejuA"/>
+  <Default:Documentation xmi:id="_s2Rv0NUcEeGzd-o9XtejuA" base_Comment="_s2Il4NUcEeGzd-o9XtejuA"/>
+  <Default:Documentation xmi:id="_BBpc8NUdEeGzd-o9XtejuA" base_Comment="_BBhhINUdEeGzd-o9XtejuA"/>
+  <Default:Documentation xmi:id="_lJ6yANUlEeGzd-o9XtejuA" base_Comment="_lJyPINUlEeGzd-o9XtejuA"/>
+  <Default:Documentation xmi:id="_jOK6MNUpEeGzd-o9XtejuA" base_Comment="_jOBwQNUpEeGzd-o9XtejuA"/>
 </xmi:XMI>
