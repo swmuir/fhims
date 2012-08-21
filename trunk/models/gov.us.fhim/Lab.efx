@@ -10,7 +10,7 @@
     </eAnnotations>
     <eAnnotations xmi:id="_NEeEM-LiEduGJrQyRGTO1A" source="uml2.diagrams" references="_Ga92kH7uEd-6KMbY3gBFOQ">
       <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_Ga92kH7uEd-6KMbY3gBFOQ" type="Class" name="_Lab" description="This domain models data elements associated with general laboratory results.&#xD;&#xA;&#xD;&#xA;Note that this domain currently does not address the needs of blood banking, transfusion services, autopsy, genomics, or food safety.  While some elements required by these disciplines may exist in the model for other reasons, we have not addressed their needs.&#xD;&#xA;In addition, it is noted that forensics, e.g., chain of custody concerns are not fully modeled.">
-        <children xmi:type="notation:Shape" xmi:id="_M_odcH7uEd-6KMbY3gBFOQ" type="Note" fontName="Arial" fontHeight="10" description="FHIM Laboratory Domain&#xD;&#xA;  Version 0.14&#xD;&#xA;  6/30/2012" fillColor="16777088" lineColor="3342489">
+        <children xmi:type="notation:Shape" xmi:id="_M_odcH7uEd-6KMbY3gBFOQ" type="Note" fontName="Arial" fontHeight="10" description="FHIM Laboratory Domain&#xD;&#xA;  Version 0.14&#xD;&#xA;  8/21/2012" fillColor="16777088" lineColor="3342489">
           <children xmi:type="notation:BasicDecorationNode" xmi:id="_M_odcX7uEd-6KMbY3gBFOQ" type="DiagramName">
             <element xsi:nil="true"/>
           </children>
@@ -3737,7 +3737,7 @@ Note that this property is a Time Interval.</body>
       </ownedAttribute>
       <ownedAttribute xmi:id="_KYTcwn8YEd-6KMbY3gBFOQ" name="collectionMethod" visibility="public">
         <ownedComment xmi:id="_KYTcw38YEd-6KMbY3gBFOQ" annotatedElement="_KYTcwn8YEd-6KMbY3gBFOQ">
-          <body>&quot;Describes the procedure or process by which the specimen was collected.&quot; - HL7 Version 2.8, SPM.7</body>
+          <body>&quot;Describes the procedure or process by which the specimen was collected.&quot; - HL7 Version 2.8, SPM-7.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
@@ -3787,15 +3787,27 @@ Note that this property is a Time Interval.</body>
       <generalization xmi:id="_xzfqMH8XEd-6KMbY3gBFOQ">
         <general xmi:type="uml:Class" href="Orders.efx#_420A62FD03B64589572B02E8?FHIM/Orders/HealthcareOrder?"/>
       </generalization>
-      <ownedAttribute xmi:id="_420A62FD03B64589A70201DC" name="bodySite" visibility="public">
-        <ownedComment xmi:id="_NAcf2uLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64589A70201DC">
-          <body>The location on the patient's body from which the specimen was obtained.    </body>
+      <ownedAttribute xmi:id="_420A62FD03B64589A70201DD" name="collectionMethod" visibility="public">
+        <ownedComment xmi:id="_NAcf3eLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64589A70201DD">
+          <body>&quot;Describes the procedure or process by which the specimen was collected.&quot; - HL7 Version 2.8, SPM-7.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_420A62FD03B64589A70201DD" name="collectionMethod" visibility="public">
-        <ownedComment xmi:id="_NAcf3eLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64589A70201DD">
-          <body>This attribute captures the method by which the specimen was obtained from the patient's body; e.g., needle stick, thin needle aspirate.    </body>
+      <ownedAttribute xmi:id="_dcRWgOcQEeGjtvsfy1ZDDQ" name="collectionSite" visibility="public">
+        <ownedComment xmi:id="_dcRWgecQEeGjtvsfy1ZDDQ" annotatedElement="_dcRWgOcQEeGjtvsfy1ZDDQ">
+          <body>&quot;This field differs from SPM-8-Specimen Source Site in those cases where the source site must be approached via a particular site (e.g., anatomic location).  For example, in the case where a liver biopsy is obtained via a percutaneous needle, the collection site would be the point of entry of the needle.  For venous blood collected from the left radial vein, the collection site could be &quot;antecubital fossa&quot;.&quot; - HL7 Version 2.8, SPM.10</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_dcR9kOcQEeGjtvsfy1ZDDQ" name="sourceSite" visibility="public">
+        <ownedComment xmi:id="_dcR9kecQEeGjtvsfy1ZDDQ" annotatedElement="_dcR9kOcQEeGjtvsfy1ZDDQ">
+          <body>&quot;Specifies the source from which the specimen was obtained.  For example, in the case where a liver biopsy is obtained via a percutaneous needle, the source would be  liver. &quot; - HL7 Version 2.8, SPM-8.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_dcSkoOcQEeGjtvsfy1ZDDQ" name="sourceSiteModifier" visibility="public">
+        <ownedComment xmi:id="_dcSkoecQEeGjtvsfy1ZDDQ" annotatedElement="_dcSkoOcQEeGjtvsfy1ZDDQ">
+          <body>&quot;This field contains modifying or qualifying description(s) about the specimen source site.  The use of this attribute is to modify, qualify or further specify, the entity described by [sourceSite].  This is particularly useful when the code set used in [sourceSite] does not provide the precision required to fully describe the site from which the specimen originated.  For example, if the specimen source site was precisely described as  left radial vein but the code set employed only provided  radial vein, this attribute could be employed to add the modifier  left. &quot; - HL7 Version 2.8, SPM-9.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
@@ -4149,9 +4161,6 @@ A code specifying the status of the Order.  Valid status codes should reflect th
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_GyyUoP8qEd-Koe9flR96lw" name="BiologicalEntitySpecimenCollection">
       <generalization xmi:id="_rMv60P8rEd-Koe9flR96lw" general="_420A62FD03B64263CF150098"/>
-      <ownedAttribute xmi:id="_ERwLMAlbEeGe4v7RnpTDUQ" name="bodySite" visibility="public">
-        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
-      </ownedAttribute>
       <ownedAttribute xmi:id="_KYTcwH8YEd-6KMbY3gBFOQ" name="collectionSite" visibility="public">
         <ownedComment xmi:id="_KYTcwX8YEd-6KMbY3gBFOQ" annotatedElement="_KYTcwH8YEd-6KMbY3gBFOQ">
           <body>&quot;This field differs from SPM-8-Specimen Source Site in those cases where the source site must be approached via a particular site (e.g., anatomic location).  For example, in the case where a liver biopsy is obtained via a percutaneous needle, the collection site would be the point of entry of the needle.  For venous blood collected from the left radial vein, the collection site could be &quot;antecubital fossa&quot;.&quot; - HL7 Version 2.8, SPM.10</body>
@@ -4160,13 +4169,13 @@ A code specifying the status of the Order.  Valid status codes should reflect th
       </ownedAttribute>
       <ownedAttribute xmi:id="_DHxwkP8sEd-Koe9flR96lw" name="sourceSite" visibility="public">
         <ownedComment xmi:id="_TLXI8P8sEd-Koe9flR96lw" annotatedElement="_DHxwkP8sEd-Koe9flR96lw">
-          <body>&quot;Specifies the source from which the specimen was obtained.  For example, in the case where a liver biopsy is obtained via a percutaneous needle, the source would be  liver. &quot; - HL7 Version 2.8, SPM.8</body>
+          <body>&quot;Specifies the source from which the specimen was obtained.  For example, in the case where a liver biopsy is obtained via a percutaneous needle, the source would be  liver. &quot; - HL7 Version 2.8, SPM-8.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_TlsUgP8sEd-Koe9flR96lw" name="sourceSiteModifier" visibility="public">
         <ownedComment xmi:id="_TlsUgf8sEd-Koe9flR96lw" annotatedElement="_TlsUgP8sEd-Koe9flR96lw">
-          <body>&quot;This field contains modifying or qualifying description(s) about the specimen source site.  The use of this attribute is to modify, qualify or further specify, the entity described by SPM-8   Specimen Source Site.  This is particularly useful when the code set used in SPM-8 does not provide the precision required to fully describe the site from which the specimen originated.  For example, if the specimen source site was precisely described as  left radial vein  but the code set employed only provided  radial vein,  this attribute could be employed to add the modifier  left. &quot; - HL7 Version 2.8, SPM.9</body>
+          <body>&quot;This field contains modifying or qualifying description(s) about the specimen source site.  The use of this attribute is to modify, qualify or further specify, the entity described by [sourceSite].  This is particularly useful when the code set used in [sourceSite] does not provide the precision required to fully describe the site from which the specimen originated.  For example, if the specimen source site was precisely described as  left radial vein but the code set employed only provided  radial vein, this attribute could be employed to add the modifier  left. &quot; - HL7 Version 2.8, SPM-9.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
@@ -5849,7 +5858,7 @@ A code specifying the status of the Order.  Valid status codes should reflect th
       </ownedComment>
       <ownedAttribute xmi:id="_9g-MQMHPEeCdLPayeDTWtA" name="eventType" visibility="public">
         <ownedComment xmi:id="_pPBpgM5mEeCM-vbOXYpzjw" annotatedElement="_9g-MQMHPEeCdLPayeDTWtA">
-          <body>Categorizes the patient event that triggered the speciment collection, or the patient state at the time of the specimen collection.  Examples might include drug administration (peak and trough), beginning of fasting (lipids, FBS), glucose challenge (tolerances) or meal (postprandial), admission (pre- or post-admission studies), scheduled surgery/transfusion (compatibility testing), onset of symptoms (acute and convalescent), LMP (pregnancy test, Pap smear), lumbar puncture (CSF tubes 1, 2, and 3), treatment completion (test of cure, post-transfusion H&amp;amp;amp;H), use/ingestion (BAT, toxicology), start of 24-hour urine pooling (creatinine clearance), etc. </body>
+          <body>Categorizes the patient event that triggered the speciment collection, or the patient state at the time of the specimen collection.  Examples might include drug administration (peak and trough), beginning of fasting (lipids, FBS), glucose challenge (tolerances) or meal (postprandial), admission (pre- or post-admission studies), scheduled surgery/transfusion (compatibility testing), onset of symptoms (acute and convalescent), LMP (pregnancy test, Pap smear), lumbar puncture (CSF tubes 1, 2, and 3), treatment completion (test of cure, post-transfusion H&amp;H), use/ingestion (BAT, toxicology), start of 24-hour urine pooling (creatinine clearance), etc.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
@@ -6044,7 +6053,7 @@ For antibiotic sensitivity tests, provides an indication of the susceptibility o
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_yGwwsKqYEeGeRqsN3l6jrA" name="processCategory" visibility="private">
-        <type xmi:type="uml:Class" href="BehavioralHealth.efx#_UmWi0o8GEd-XNpj2tjovxA?FHIM/BehavioralHealth/Behavioral%20Health%20Domain/2%20-%20Model/2.%20Behavioral%20Health%3A%20Information%20Model/2.2%20Behavioral%20Health%20Assessment%20Exchange%20Classes/CodedQuestion?"/>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_-S5L0KqXEeGeRqsN3l6jrA" name="additive" visibility="public">
         <type xmi:type="uml:Class" href="Common.efx#_420A62FD03B645919F1600B4?FHIM/Common/CommonProduct/Ingredient?"/>
@@ -6179,7 +6188,6 @@ It is recommended that LOINC be used.  Note that VA's VistA system uses the VA N
   <Default:Documentation xmi:id="_M__z4OLiEduGJrQyRGTO1A" base_Comment="_M_2p_eLiEduGJrQyRGTO1A"/>
   <Default:Documentation xmi:id="_M__z6OLiEduGJrQyRGTO1A" base_Comment="_M__z5-LiEduGJrQyRGTO1A"/>
   <Default:Documentation xmi:id="_NAcf2OLiEduGJrQyRGTO1A" base_Comment="_NAcf1-LiEduGJrQyRGTO1A"/>
-  <Default:Documentation xmi:id="_NAcf2-LiEduGJrQyRGTO1A" base_Comment="_NAcf2uLiEduGJrQyRGTO1A"/>
   <Default:Documentation xmi:id="_NAmQ0OLiEduGJrQyRGTO1A" base_Comment="_NAcf3eLiEduGJrQyRGTO1A"/>
   <Default:Documentation xmi:id="_NAwB0OLiEduGJrQyRGTO1A" base_Comment="_NAmQ3-LiEduGJrQyRGTO1A"/>
   <Default:Documentation xmi:id="_NA5Lx-LiEduGJrQyRGTO1A" base_Comment="_NA5LxuLiEduGJrQyRGTO1A"/>
@@ -6349,4 +6357,7 @@ It is recommended that LOINC be used.  Note that VA's VistA system uses the VA N
   <Default:Documentation xmi:id="_WakJEMqaEeG4_uv2Hb_AVQ" base_Comment="_Waa_IMqaEeG4_uv2Hb_AVQ"/>
   <Default:Documentation xmi:id="_XEeowMqaEeG4_uv2Hb_AVQ" base_Comment="_XEZJMMqaEeG4_uv2Hb_AVQ"/>
   <Default:Documentation xmi:id="_YcrKwMqaEeG4_uv2Hb_AVQ" base_Comment="_YcgysMqaEeG4_uv2Hb_AVQ"/>
+  <Default:Documentation xmi:id="_dcTLsOcQEeGjtvsfy1ZDDQ" base_Comment="_dcRWgecQEeGjtvsfy1ZDDQ"/>
+  <Default:Documentation xmi:id="_dcTLsecQEeGjtvsfy1ZDDQ" base_Comment="_dcR9kecQEeGjtvsfy1ZDDQ"/>
+  <Default:Documentation xmi:id="_dcTLsucQEeGjtvsfy1ZDDQ" base_Comment="_dcSkoecQEeGjtvsfy1ZDDQ"/>
 </xmi:XMI>

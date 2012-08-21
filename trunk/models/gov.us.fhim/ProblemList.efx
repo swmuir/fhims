@@ -97,7 +97,7 @@
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_cScGB3iUEd-xd69YcOIcPA" visible="false" type="SignalCompartment"/>
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_cScGCXiUEd-xd69YcOIcPA" visible="false" type="StructureCompartment"/>
           <element xmi:type="uml:Class" href="PersonDemographics.efx#_420A62FD03B6418A4E500034?FHIM/PersonDemographics/Patient?"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cSSVAniUEd-xd69YcOIcPA" x="-1268" y="2536"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cSSVAniUEd-xd69YcOIcPA" x="-1799" y="2219"/>
         </children>
         <children xmi:type="umlnotation:UMLShape" xmi:id="_55PaIPc4Ed-hU-zq4VwY5Q" element="_55AJkPc4Ed-hU-zq4VwY5Q" fontName="Arial" fontHeight="10" fillColor="8487423" lineColor="3342489" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_55SdcPc4Ed-hU-zq4VwY5Q" type="ImageCompartment">
@@ -1055,6 +1055,9 @@ The date and time that the Problem being described was last modified.  It is ass
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_JaGxQHiYEd-xd69YcOIcPA" name="dateOfOnset" visibility="public">
+        <eAnnotations xmi:id="_AtAlkOV3EeGA8s9JtidNVQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:id="_DYnxAOZYEeGuIoEQ4Mvu0w" key="018* -->"/>
+        </eAnnotations>
         <ownedComment xmi:id="_HzdS4AMZEeC6TLUcQZx_GQ" annotatedElement="_JaGxQHiYEd-xd69YcOIcPA">
           <body>&quot;Contains the date/time when the problem began.&quot; - HL7 Version 2.8, PRB-16.  Note that this date may be inprecise (e.g., &quot;sometime in 2006&quot;).</body>
         </ownedComment>
@@ -1083,6 +1086,9 @@ The date and time that the Problem being described was last modified.  It is ass
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Lpea0MRUEeGhI5Xb1K4S5w"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_Zr0aUHiaEd-xd69YcOIcPA" name="healthConcern" visibility="public">
+        <eAnnotations xmi:id="_vB-A8OZXEeGuIoEQ4Mvu0w" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:id="_vB-A8eZXEeGuIoEQ4Mvu0w" key="019* -->"/>
+        </eAnnotations>
         <ownedComment xmi:id="_hvLOAAMZEeC6TLUcQZx_GQ" annotatedElement="_Zr0aUHiaEd-xd69YcOIcPA">
           <body>Identifies the Problem or Health Concern being described.  This property is code, which should come from an approved subset of SNOMED-CT, e.g., the &quot;VA-KP Problem List Subset.&quot;  Note that the Health Concern class does not have a separate property to indicate &quot;Family History Of&quot;, therefore as currently designed, the health concern value set must include pre-coordinated terms such as &quot;Diabetes&quot;, &quot;Family History Of Diabetes&quot;, etc.  We may wish to add some sort of qualifying properties so as to not need to overload the terminology.&#xD;
 &#xD;
@@ -1151,6 +1157,9 @@ The date and time that the Problem being described was last modified.  It is ass
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B6421F9D9000A2" name="status" visibility="public">
+        <eAnnotations xmi:id="_w4_M8OZXEeGuIoEQ4Mvu0w" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:id="_w4_0AOZXEeGuIoEQ4Mvu0w" key="020 -->"/>
+        </eAnnotations>
         <ownedComment xmi:id="_nFYoQAMaEeC6TLUcQZx_GQ" annotatedElement="_420A62FD03B6421F9D9000A2">
           <body>&quot;Contains the current status of the problem at this particular date/time (e.g., active, active-improving, active-stable, active-worsening, inactive, resolved, etc.).&quot; - HL7 Version 2.8, PRB-14&#xD;
 &#xD;
@@ -1158,7 +1167,7 @@ This property summarizes the current state of the Health Concern (or &quot;Probl
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_Qc0UIXiaEd-xd69YcOIcPA" name="diagnosis" visibility="public" association="_Qc0UIHiaEd-xd69YcOIcPA">
+      <ownedAttribute xmi:id="_Qc0UIXiaEd-xd69YcOIcPA" name="diagnosisList" visibility="public" association="_Qc0UIHiaEd-xd69YcOIcPA">
         <ownedComment xmi:id="_giVw8LZ7EeGWl-7OlqBMDw" annotatedElement="_Qc0UIXiaEd-xd69YcOIcPA">
           <body>Provides a list of diagnoses that are related to the Health Concern</body>
         </ownedComment>
@@ -1219,6 +1228,12 @@ This property summarizes the current state of the Health Concern (or &quot;Probl
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OxVCU3wnEdybWNIzS8Vktw" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OxVCUnwnEdybWNIzS8Vktw"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_-RwsQOZUEeGuIoEQ4Mvu0w" name="concernCategory" visibility="public">
+        <ownedComment xmi:id="_-RwsQeZUEeGuIoEQ4Mvu0w" annotatedElement="_-RwsQOZUEeGuIoEQ4Mvu0w">
+          <body>The HealthConcern might by a symptom, a behavior (i.e., smoking), a diagnosed disease, a suspected disease, a disease to be ruled out, etc.  This property categorizes the health concern into these and potentially other groupings.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_420A62FD03B6421FAD7A024E" name="healthConcern_note" memberEnd="_420A62FD03B6421FAD7B01BA _420A62FD03B6421FAD7B01C4">
       <eAnnotations xmi:id="_PrsfMHwvEdy0iblkc0Q98A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
@@ -1240,20 +1255,21 @@ This property summarizes the current state of the Health Concern (or &quot;Probl
     <packagedElement xmi:type="uml:Association" xmi:id="_YV4J0HiUEd-xd69YcOIcPA" name="healthConcern_responsibleProvider" memberEnd="_YV4J0XiUEd-xd69YcOIcPA _YWB60HiUEd-xd69YcOIcPA">
       <ownedEnd xmi:id="_YWB60HiUEd-xd69YcOIcPA" name="" visibility="private" type="_420A62FD03B6421F8AD00244" association="_YV4J0HiUEd-xd69YcOIcPA"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_Qc0UIHiaEd-xd69YcOIcPA" name="healthConcern_diagnosis" memberEnd="_Qc0UIXiaEd-xd69YcOIcPA _Qc0UJHiaEd-xd69YcOIcPA">
+    <packagedElement xmi:type="uml:Association" xmi:id="_Qc0UIHiaEd-xd69YcOIcPA" name="healthConcern_diagnosisList" memberEnd="_Qc0UIXiaEd-xd69YcOIcPA _Qc0UJHiaEd-xd69YcOIcPA">
       <ownedEnd xmi:id="_Qc0UJHiaEd-xd69YcOIcPA" name="" visibility="private" type="_420A62FD03B6421F8AD00244" association="_Qc0UIHiaEd-xd69YcOIcPA"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_55AJkPc4Ed-hU-zq4VwY5Q" name="HealthConcernList">
       <ownedComment xmi:id="_jLuYkLZ8EeGWl-7OlqBMDw" annotatedElement="_55AJkPc4Ed-hU-zq4VwY5Q">
         <body>This class provides a list of a patient's &quot;health concerns&quot;, otherwise known as &quot;problems&quot;.  Such a list is traditionally called a &quot;problem list&quot;.  This list is made up of entries, some of which may have been collected from other provider organizations.</body>
       </ownedComment>
-      <ownedAttribute xmi:id="_420A62FD03B6426EB284004E" name="patient" visibility="public" isUnique="false" association="_420A62FD03B6426EB2830219">
-        <ownedComment xmi:id="_NkzxIuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6426EB284004E">
-          <body>The patient whose problems are being  observed and documented.</body>
+      <ownedAttribute xmi:id="_33BmsOfDEeGiuaXUT38zgA" name="narrativeBlock" visibility="public">
+        <ownedComment xmi:id="_Vg_8QOfEEeGiuaXUT38zgA" annotatedElement="_33BmsOfDEeGiuaXUT38zgA">
+          <body>A &#xD;
+free-text </body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="PersonDemographics.efx#_420A62FD03B6418A4E500034?FHIM/PersonDemographics/Patient?"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NkzxJeLiEduGJrQyRGTO1A" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NkzxJOLiEduGJrQyRGTO1A" value="1"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_O4sLgOfEEeGiuaXUT38zgA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_O4rkcOfEEeGiuaXUT38zgA"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_Ru8KkAe5EeCPOdVNW49Akw" name="healthConcernEntry" visibility="public" type="_GvZT0Ae5EeCPOdVNW49Akw" association="_Ru5HQAe5EeCPOdVNW49Akw">
         <ownedComment xmi:id="_zLjSULZ8EeGWl-7OlqBMDw" annotatedElement="_Ru8KkAe5EeCPOdVNW49Akw">
@@ -1261,6 +1277,14 @@ This property summarizes the current state of the Health Concern (or &quot;Probl
         </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Ru8Kkge5EeCPOdVNW49Akw" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Ru8KkQe5EeCPOdVNW49Akw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_420A62FD03B6426EB284004E" name="patient" visibility="public" isUnique="false" association="_420A62FD03B6426EB2830219">
+        <ownedComment xmi:id="_NkzxIuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6426EB284004E">
+          <body>The patient whose problems are being  observed and documented.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="PersonDemographics.efx#_420A62FD03B6418A4E500034?FHIM/PersonDemographics/Patient?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NkzxJeLiEduGJrQyRGTO1A" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NkzxJOLiEduGJrQyRGTO1A" value="1"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_J6UGQPy5Ed-ACpYDrl8Uqw" name="RelatedConcern">
@@ -1481,4 +1505,6 @@ This property summarizes the current state of the Health Concern (or &quot;Probl
   <Default:Documentation xmi:id="_jL27cLZ8EeGWl-7OlqBMDw" base_Comment="_jLuYkLZ8EeGWl-7OlqBMDw"/>
   <Default:Documentation xmi:id="_x2TWoLZ8EeGWl-7OlqBMDw" base_Comment="_x2KzwLZ8EeGWl-7OlqBMDw"/>
   <Default:Documentation xmi:id="_zLr1MLZ8EeGWl-7OlqBMDw" base_Comment="_zLjSULZ8EeGWl-7OlqBMDw"/>
+  <Default:Documentation xmi:id="_-RxTUOZUEeGuIoEQ4Mvu0w" base_Comment="_-RwsQeZUEeGuIoEQ4Mvu0w"/>
+  <Default:Documentation xmi:id="_VhLicOfEEeGiuaXUT38zgA" base_Comment="_Vg_8QOfEEeGiuaXUT38zgA"/>
 </xmi:XMI>
