@@ -1310,6 +1310,12 @@
       <ownedComment xmi:id="_M_Z-CuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B642DBE3F101E7">
         <body>&quot;A physical entity that is an individual, a group, an item, or a part representative of a larger group, class or whole that is the target of an observation or analysis for the purpose of drawing conclusions about the group, class, or whole. This can be used to code a component of the specimen that the observation diagnosis relates to. Note that any physical entity in the universe has the potential to become a specimen.&quot; - HL7 V3    This model attempts to distinguish between that which is collected from the patient (or other entity), and that portion of such material that may have been further divided or modified in some way before testing. For example, (whole) blood is taken from the patient, but the object of the test may be only the plasma or redblood cells taken (spun down) from the blood.  The specimen that undergoes testing may be the unaltered speciment that was collected, or may have undergone some sort of processing.</body>
       </ownedComment>
+      <ownedAttribute xmi:id="_0mIPkP8sEd-Koe9flR96lw" name="dangerCode" visibility="public">
+        <ownedComment xmi:id="_QNljkBHgEeCBuOUrBnIXmQ" annotatedElement="_0mIPkP8sEd-Koe9flR96lw">
+          <body>Describes &quot;any known or suspected specimen hazards, e.g., exceptionally infectious agent or blood from a hepatitis patient.&quot; - HL7 Version 2.8, SPM-16.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+      </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B6456B46A2001C" name="description" visibility="public">
         <eAnnotations xmi:id="_M_s48eLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <ownedComment xmi:id="_M_jvCuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6456B46A2001C">
@@ -1321,54 +1327,41 @@
       </ownedAttribute>
       <ownedAttribute xmi:id="_0jvp8P8sEd-Koe9flR96lw" name="handlingCode" visibility="public">
         <ownedComment xmi:id="_Awh_sBHgEeCBuOUrBnIXmQ" annotatedElement="_0jvp8P8sEd-Koe9flR96lw">
-          <body>&quot;Describes how the specimen and/or container need to be handled from the time of collection through the initiation of testing.&quot; - HL7 Version 2.8, SPM.15.  Examples include &quot;keep frozen&quot;.</body>
+          <body>&quot;Describes how the specimen and/or container need to be handled from the time of collection through the initiation of testing.&quot; - HL7 Version 2.8, SPM-15.  Examples include &quot;keep frozen&quot;.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B64586B8830199" name="id" visibility="public">
         <eAnnotations xmi:id="_M_jvAeLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <ownedComment xmi:id="_M_Z-DeLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64586B8830199">
-          <body>&quot;This field contains a unique identifier for the specimen as referenced by the Placer application, the Filler application, or both.&quot; - HL7 Version 2.8, SPM.2</body>
+          <body>&quot;This field contains a unique identifier for the specimen as referenced by the Placer application, the Filler application, or both.&quot; - HL7 Version 2.8, SPM-2</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WOoG0QljEeGe4v7RnpTDUQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WOoG0AljEeGe4v7RnpTDUQ"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_0mIPkP8sEd-Koe9flR96lw" name="dangerCode" visibility="public">
-        <ownedComment xmi:id="_QNljkBHgEeCBuOUrBnIXmQ" annotatedElement="_0mIPkP8sEd-Koe9flR96lw">
-          <body>Describes &quot;any known or suspected specimen hazards, e.g., exceptionally infectious agent or blood from a hepatitis patient.&quot; - HL7 Version 2.8, SPM.16</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
-      </ownedAttribute>
       <ownedAttribute xmi:id="_QvNKsLxJEeCjnsq0FtkmeA" name="specimenExpirationDateTime" visibility="public">
         <ownedComment xmi:id="_QvNKsbxJEeCjnsq0FtkmeA" annotatedElement="_QvNKsLxJEeCjnsq0FtkmeA">
-          <body>&quot;The date and time the specimen can no longer be used for the purpose implied by the order.&quot; - HL7 Version 2.8, SPM.19</body>
+          <body>&quot;The date and time the specimen can no longer be used for the purpose implied by the order.&quot; - HL7 Version 2.8, SPM-19.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_MqHUQPvQEd-3ndaGus2qMA" name="specimenRole" visibility="public">
         <ownedComment xmi:id="_hM_ZEBHiEeCBuOUrBnIXmQ" annotatedElement="_MqHUQPvQEd-3ndaGus2qMA">
-          <body>&quot;This field indicates the role of the sample. Refer to User-defined Table 0369   Specimen role for suggested values....&quot; - HL7 Version 2.8, SPM.11  Provides an indication of how this sample relates to other aspects of the overall workflow and/or to other specimens gathered or processed during the workflow.  This property is populated from HL7 V2 user-defined Table 0369, which contains a mish-mash of concepts including &quot;group&quot; and &quot;pool&quot; which relate to aliquotting, &quot;calibarator&quot;, &quot;verifying calibrator&quot;, &quot;operator testing&quot;, etc. which relate to laboratory quality assurance, etc.</body>
+          <body>Provides an indication of how this sample relates to other aspects of the overall workflow and/or to other specimens gathered or processed during the workflow.  This property is populated from HL7 V2 user-defined Table 0369, which contains a mish-mash of concepts including &quot;group&quot; and &quot;pool&quot; which relate to aliquotting, &quot;calibarator&quot;, &quot;verifying calibrator&quot;, &quot;operator testing&quot;, etc. which relate to laboratory quality assurance, etc.&#xD;
+&quot;This field indicates the role of the sample. Refer to User-defined Table 0369   Specimen role for suggested values....&quot; - HL7 Version 2.8, SPM-11.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_KjLWULToEd2sMvQnSCqOzA" name="specimenSource" visibility="public">
-        <ownedComment xmi:id="_l9K0UL-_Ed2cYoIY7XWEQw" annotatedElement="_KjLWULToEd2sMvQnSCqOzA">
-          <body>&quot;Source from which the specimen was obtained. For environmental samples, this may describe the location of the source of the specimen. For biological samples it may represent the anatomical site from which the specimen was collected.&quot; - HL7 V2.</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fn8o8dOaEd2aQZomWdBJLg" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fn8o8NOaEd2aQZomWdBJLg" value="1"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B642DBE407001C" name="specimenType" visibility="public">
         <ownedComment xmi:id="_M_jvBOLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B642DBE407001C">
-          <body>&quot;This field describes the precise nature of the entity that will be the source material for the observation.  Any physical entity that may have observations made about it may qualify as a specimen.  The entry in this attribute describes the specific entity as precisely as possible, whether that is a complex organism (e.g., an ostrich) or a specific cellular mass (e.g., a specific muscle biopsy).&quot; - HL7 Version 2.8, SPM.4</body>
+          <body>&quot;This field describes the precise nature of the entity that will be the source material for the observation.  Any physical entity that may have observations made about it may qualify as a specimen.  The entry in this attribute describes the specific entity as precisely as possible, whether that is a complex organism (e.g., an ostrich) or a specific cellular mass (e.g., a specific muscle biopsy).&quot; - HL7 Version 2.8, SPM-4.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_v2X84P8hEd-Koe9flR96lw" name="specimenTypeModifier" visibility="public">
         <ownedComment xmi:id="_v2X84f8hEd-Koe9flR96lw" annotatedElement="_v2X84P8hEd-Koe9flR96lw">
-          <body>&quot;This field contains modifying or qualifying description(s) about the specimen type.  The use of this attribute is to modify, qualify or further specify, the entity described by SPM-4 -Specimen Type.  This is particularly useful when the code set used in SPM-4-Specimen Type does not provide the precision required to fully describe the specimen.  For example, if the specimen was precisely described as  capillary venous blood  but the code set employed only provided  venous blood,  this attribute could be employed to add the modifier  capillary. &quot; - HL7 Version 2.8, SPM.5</body>
+          <body>&quot;This field contains modifying or qualifying description(s) about the specimen type.  The use of this attribute is to modify, qualify or further specify, the entity described by SPM-4 -Specimen Type.  This is particularly useful when the code set used in SPM-4-Specimen Type does not provide the precision required to fully describe the specimen.  For example, if the specimen was precisely described as  capillary venous blood  but the code set employed only provided  venous blood,  this attribute could be employed to add the modifier  capillary. &quot; - HL7 Version 2.8, SPM-5.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dQOPMP8jEd-Koe9flR96lw" value="1"/>
@@ -1454,6 +1447,9 @@
         <body>This class provides a mechanism to associate a record with multiple diagnoses.  Rather than have the traditional &quot;primary diagnosis&quot;, &quot;secondary diagnosis&quot;, etc. in a record, the record will contain a zero-to-many pointer to this class, which then has a one-to-one pointer to a diagnosis, with a precedence property to indicate primary, secondary, tertiary, etc.</body>
       </ownedComment>
       <ownedAttribute xmi:id="_kdpFsAgVEd6eWYJXJewDdQ" name="precedence" visibility="public">
+        <eAnnotations xmi:id="_eqFB8OZWEeGuIoEQ4Mvu0w" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:id="_eqFpAOZWEeGuIoEQ4Mvu0w" key="017 -->"/>
+        </eAnnotations>
         <ownedComment xmi:id="_h9SsgPGUEd-ZlYn0p4HjQw" annotatedElement="_kdpFsAgVEd6eWYJXJewDdQ">
           <body>Provides an indication of whether the diagnosis is primary, secondary, tertiary, etc.</body>
         </ownedComment>
@@ -1711,10 +1707,13 @@
         <body>&quot;a.The act or process of identifying or determining the nature and cause of a disease or injury through evaluation of patient history, examination, and/or review of laboratory data. b.The opinion derived from such an evaluation&quot;  American Heritage Dictionary</body>
       </ownedComment>
       <ownedAttribute xmi:id="_420A62FD03B64240710C0054" name="diagnosisCode" visibility="public">
+        <eAnnotations xmi:id="_UBFU4OZUEeGuIoEQ4Mvu0w" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:id="_UBF78OZUEeGuIoEQ4Mvu0w" key="009* -->"/>
+        </eAnnotations>
         <ownedComment xmi:id="_M_w_IPGTEd-ZlYn0p4HjQw" annotatedElement="_420A62FD03B64240710C0054">
           <body>Contains a code that most closely identifies the condition or the diagnosis. This code will come from one of several  commonly used coding systems, depending on the branch of medicine involved (e.g., clinical medicine, dentistry, mental  health), and on the purpose (e.g., clinical, billing). The code will likely come from one of the following:  Structured Nomenclature for Medicine (SNOMED), International Classifications of Diseases (ICD), Diagnostic and Statistical  Manual of Mental Disorders (DSM).</body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_i5jP4OZSEeGuIoEQ4Mvu0w?FHIM/Datatypes/CodeWithOriginalText?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xTlWgRWAEd6k0oda9Q09hg" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xTlWgBWAEd6k0oda9Q09hg" value="1"/>
       </ownedAttribute>
@@ -4111,7 +4110,9 @@
           <body>&quot;The product, e.g., a medicine or device or food item, that is the primary unit which is manufactured and the object of an  intended administration. It represents an entity, either in its real or actual form as something made, or described  specifically, or more conceptually, generically, or &quot;virtually&quot;. &amp;amp;lt;br /&amp;amp;gt;  A product must be distinguished from one that is just packaging. Examples for products are tablet, capsule, solution for  injection, powder, and device. Conversely, vial, bottle, pouch, and carton are containers, which though sometimes necessary  for handling of the product, are not themselves administered, but emptied into some other container, or used with an  injection or inhalation device. Even though a capsule can be considered a container holding granules, a capsule is still  considered primary Product not PackagedProduct, because the capsule is the unit normally intended for administration, and  so the capsule is the Product. In this way, a solution packaged in an administration unit, such as a dragee or a prefilled  syringe may be considered primary Product rather than PackagedProduct, if it is intended to be applied completely as one  unit, and not subdivided. This requires that the ingredients of such products are specified as a total amount per complete  application rather than as a concentration. &amp;amp;lt;br /&amp;amp;gt;  Examples for devices are chest tube, wound dressing, dental chair, and ventilator machine. Devices are any kind of product  used for medical purposes or in conjunction with medical services, including, but not limited to, direct use for  therapeutic purposes (e.g., orthopedic screw), diagnostic purposes (e.g. EKG machine), usage as applicator devices for the  administration of medicines (e.g., syringes), or as tools (e.g., dental chair). (Note, while it may seem unusual to  classify a wound dressing as a device, this is the practice in the regulatory context, in other contexts, these items are  sometimes called &quot;supplies&quot;.) &amp;amp;lt;br /&amp;amp;gt;  A kit is a product that contains multiple parts administered together or used together in some intricate way. Some of the  parts of a kit may be medicinal substances (medicines), and others may be devices, e.g., applicator devices. Kits are  described as a primary product of form code meaning &quot;kit&quot; with parts.&quot; - HL7 V3</body>
         </ownedComment>
         <ownedAttribute xmi:id="_BsxwEM_2Ed-YeMSrwW6svA" name="code" visibility="public">
-          <eAnnotations xmi:id="_BsxwEc_2Ed-YeMSrwW6svA" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+          <eAnnotations xmi:id="_BsxwEc_2Ed-YeMSrwW6svA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_5cjbMOihEeGL3Lq_FbcbqA" key="061 -->"/>
+          </eAnnotations>
           <ownedComment xmi:id="_8Z008O6PEd-crcWiXVDZrQ" annotatedElement="_BsxwEM_2Ed-YeMSrwW6svA">
             <body>&quot;The code given to this kind of product, i.e., NDC code to medicines in the U.S., EAN or UPC codes to food items or  devices. A code given to a device may also be known as &quot;unique device identifier&quot;. Unlike a device instance identifier,  however, this is a code for the specific kind of device analogously to the NDC code or UPC code that is a code of a  manufactured kind of product respectively. The words &quot;product code&quot; &quot;unique device identifiers&quot; may have certain specific  connotations in different regulatory contexts, to side-step such unwanted connotations, one may call this code the &quot;Item  Code&quot;, for it is the code for the item (product, medicine, thing, or class thereof) that is so described.&quot; - HL7 V3</body>
           </ownedComment>
@@ -4652,7 +4653,9 @@
           <body>This class identifies the compound or component of the drug that is associated with this allergy event.</body>
         </ownedComment>
         <ownedAttribute xmi:id="_TkY4kM_7Ed-YeMSrwW6svA" name="uniqueIngredientIdentifier" visibility="public">
-          <eAnnotations xmi:id="_TkY4kc_7Ed-YeMSrwW6svA" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+          <eAnnotations xmi:id="_TkY4kc_7Ed-YeMSrwW6svA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_7j5RQOiYEeGL3Lq_FbcbqA" key="053 -->"/>
+          </eAnnotations>
           <ownedComment xmi:id="_Rgq-AAF3EeC0SO5AWIN0Qg" annotatedElement="_TkY4kM_7Ed-YeMSrwW6svA">
             <body>Uniquely identifies the Ingredient.  For drugs in the United States, this code should be a UNII code (Unique Ingredient Identifier), which is issued by FDA.</body>
           </ownedComment>
@@ -4682,6 +4685,9 @@
           <type xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_420A62FD03B641DEA2E70318" name="name" visibility="public">
+          <eAnnotations xmi:id="_3NzawOiYEeGL3Lq_FbcbqA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_3NzaweiYEeGL3Lq_FbcbqA" key="060 -->"/>
+          </eAnnotations>
           <ownedComment xmi:id="_MEZHSOLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B641DEA2E70318">
             <body>&quot;Contains the manufacturer of the medical substance administered.  Note: for vaccines, the code system MVX may be used.... This field may be used if the manufacturer of the substance is not identified by (the drug code)&quot; - HL7 Version 2.8, RXA-17</body>
           </ownedComment>
@@ -4704,7 +4710,9 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_evp3KeLjEdutr_MT9HkPyQ" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_420A62FD03B6419902EB03B6" name="lotId" visibility="public">
-          <eAnnotations xmi:id="_NejYKeLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+          <eAnnotations xmi:id="_NejYKeLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_1id6UOiYEeGL3Lq_FbcbqA" key="059 -->"/>
+          </eAnnotations>
           <ownedComment xmi:id="_NejYJ-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6419902EB03B6">
             <body>&quot;Contains the lot number of the medical substance administered.  Note:  The lot number is the number printed on the label attached to the container holding the substance and on the packaging which houses the container.  If the substance is a vaccine, for example, and a diluent is required, a lot number may appear on the vial containing the diluent; however, any such identifier associated with a diluent is not the identifier of interest. The substance lot number should be reported, not that of the diluent.&quot; - HL7 Version 2.8, RXA-15&#xD;
 &quot;Contains the lot number of the medical substance administered.&quot; - HL7 Version 2.8, RXD-18.&#xD;
@@ -4903,7 +4911,6 @@
   <RIM:Participation xmi:id="_ciPSEHpAEd-44ra0dfiJCw" base_Class="_ciFhEHpAEd-44ra0dfiJCw"/>
   <RIM:Participation xmi:id="_7NSfgn_lEd-Ure_vzgD_TA" base_Class="_7NSfgH_lEd-Ure_vzgD_TA"/>
   <RIM:Role xmi:id="_s6JbAVLfEd6-4-oWZUjasQ" base_Class="_420A62FD03B642DBE3F101E7"/>
-  <Default:Documentation xmi:id="_l9T-QL-_Ed2cYoIY7XWEQw" base_Comment="_l9K0UL-_Ed2cYoIY7XWEQw"/>
   <Default:Documentation xmi:id="_M_s48OLiEduGJrQyRGTO1A" base_Comment="_M_jvCuLiEduGJrQyRGTO1A"/>
   <Default:Documentation xmi:id="_M_jvBeLiEduGJrQyRGTO1A" base_Comment="_M_jvBOLiEduGJrQyRGTO1A"/>
   <Default:Documentation xmi:id="_M_jvAOLiEduGJrQyRGTO1A" base_Comment="_M_Z-DeLiEduGJrQyRGTO1A"/>

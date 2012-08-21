@@ -2719,6 +2719,9 @@ Uniquely identifies this patient visit using an identification scheme other than
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9gF-0PTqEdy4NNd432ztnw"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_PTxR0DioEeGL0aXuYVIKuA" name="chiefComplaint" visibility="public">
+        <eAnnotations xmi:id="_50qNoOY6EeGuIoEQ4Mvu0w" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:id="_50qNoeY6EeGuIoEQ4Mvu0w" key="046 -->"/>
+        </eAnnotations>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B6426D4E5101EF" name="dateCreated" visibility="public">
@@ -2726,12 +2729,6 @@ Uniquely identifies this patient visit using an identification scheme other than
           <body>Date the visit was entered / modified.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_BuH5cGflEeGK0elVFnH6lw" name="dietType" visibility="public">
-        <ownedComment xmi:id="_OYc3AGflEeGK0elVFnH6lw" annotatedElement="_BuH5cGflEeGK0elVFnH6lw">
-          <body>&quot;Indicates a special diet type for a patient.&quot; - HL7 Version 2.8, PV1-38.  Note that HL7 does not suggest any values for this code (in User-defined Table 114).</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="__vs0AGfbEeGK0elVFnH6lw" name="financialClass" visibility="public">
         <ownedComment xmi:id="_Eek98GfcEeGK0elVFnH6lw" annotatedElement="__vs0AGfbEeGK0elVFnH6lw">
@@ -2775,6 +2772,9 @@ Uniquely identifies this patient visit using an identification scheme other than
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Qj7boGfbEeGK0elVFnH6lw"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B642D2D0CC0158" name="reason" visibility="public">
+        <eAnnotations xmi:id="_Sup7IOY9EeGuIoEQ4Mvu0w" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:id="_SuqiMOY9EeGuIoEQ4Mvu0w" key="047 -->"/>
+        </eAnnotations>
         <ownedComment xmi:id="_MXUqUuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B642D2D0CC0158">
           <body>&quot;A set of values specifying the non-medical reasons for this encounter. Examples are &quot;Medical Necessity&quot;, &quot;Patient's Request&quot; and &quot;Dependency&quot;. Note: medical reason(s) for the encounter are specified as associated diagnoses.&quot; (HL7) </body>
         </ownedComment>
@@ -2811,6 +2811,17 @@ Uniquely identifies this patient visit using an identification scheme other than
           <body>&quot;A set of values specifying the non-medical reasons for this encounter. Examples are &quot;Medical Necessity&quot;, &quot;Patient's Request&quot; and &quot;Dependency&quot;.  Note: medical reason(s) for the encounter are specified as associated diagnoses.&quot; (HL7)  </body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_H_aycOZXEeGuIoEQ4Mvu0w" name="triageNotes" visibility="public">
+        <eAnnotations xmi:id="_TLvg8OZXEeGuIoEQ4Mvu0w" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:id="_TLwIAOZXEeGuIoEQ4Mvu0w" key="016 -->"/>
+        </eAnnotations>
+        <ownedComment xmi:id="_RInLkOZXEeGuIoEQ4Mvu0w" annotatedElement="_H_aycOZXEeGuIoEQ4Mvu0w">
+          <body>Triage notes for the patient visit.  Added for Public Health Reporting Initiative.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_L_LMkOZXEeGuIoEQ4Mvu0w" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_L_KlgOZXEeGuIoEQ4Mvu0w"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_fcoukGfWEeGK0elVFnH6lw" name="admitter" visibility="public" association="_fckdIGfWEeGK0elVFnH6lw">
         <ownedComment xmi:id="_wEB-oGfWEeGK0elVFnH6lw" annotatedElement="_fcoukGfWEeGK0elVFnH6lw">
@@ -2888,7 +2899,7 @@ Uniquely identifies this patient visit using an identification scheme other than
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_K1d-wI_BEeGMX5b1YJ6DNQ" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_K1dXsI_BEeGMX5b1YJ6DNQ"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_420A62FD03B64318C0C200EF" name="serviceLocation" visibility="public" isUnique="false" association="_420A62FD03B64318C0C1001B">
+      <ownedAttribute xmi:id="_420A62FD03B64318C0C200EF" name="serviceDeliveryLocation" visibility="public" isUnique="false" association="_420A62FD03B64318C0C1001B">
         <ownedComment xmi:id="_MlLgJuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64318C0C200EF">
           <body>&quot;The location to which the patient is assigned. It is a role played by a place at which services may be provided. Note that a single physical place can play multiple service delivery location roles each with its own attributes. For example, a Podiatry clinic and Research clinic may meet on alternate days in the same physical location; each clinic uses its own mailing address and telephone number.&quot; (HL7) </body>
         </ownedComment>
@@ -3006,6 +3017,9 @@ Uniquely identifies this patient visit using an identification scheme other than
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_MZuFUJQpEd-GUpkbaCODYA" name="duration" visibility="public">
+        <eAnnotations xmi:id="_xjfBoOY6EeGuIoEQ4Mvu0w" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:id="_xjfBoeY6EeGuIoEQ4Mvu0w" key="045 -->"/>
+        </eAnnotations>
         <ownedComment xmi:id="_MZuFUZQpEd-GUpkbaCODYA" annotatedElement="_MZuFUJQpEd-GUpkbaCODYA">
           <body>&quot;The time interval starting with the administrative onset of the encounter (e.g. admission, registration, patient arrival) and ending with the patient's departure (e.g. discharge).&quot; - HL7 V3  This is the start and end date/times of the Service Episode.</body>
         </ownedComment>
@@ -3301,6 +3315,9 @@ Uniquely identifies this patient visit using an identification scheme other than
         <body>The release of a patient from a course of care.</body>
       </ownedComment>
       <ownedAttribute xmi:id="_9Uhg8NivEdyb35bKix456w" name="date" visibility="public">
+        <eAnnotations xmi:id="_gRwtEOY4EeGuIoEQ4Mvu0w" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:id="_gRxUIOY4EeGuIoEQ4Mvu0w" key="042 -->"/>
+        </eAnnotations>
         <ownedComment xmi:id="_zdw9sCqKEd6tfJk2wVTfYw" annotatedElement="_9Uhg8NivEdyb35bKix456w">
           <body>&quot;This field contains the discharge date/time.  It is to be used if the event date/time is different than the discharge date and time, that is, a retroactive update.  This field is also used to reflect the date/time of an outpatient/emergency patient discharge.&quot; - HL7 Version 2.8, PV1-45</body>
         </ownedComment>
@@ -3309,6 +3326,9 @@ Uniquely identifies this patient visit using an identification scheme other than
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Leg6cNiwEdyb35bKix456w"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B642397A330322" name="disposition" visibility="public">
+        <eAnnotations xmi:id="_m5lVoOY4EeGuIoEQ4Mvu0w" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:id="_m5lVoeY4EeGuIoEQ4Mvu0w" key="042 -->"/>
+        </eAnnotations>
         <ownedComment xmi:id="_McihiuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B642397A330322">
           <body>&quot;Contains the disposition of the patient at time of discharge (i.e., discharged to home, expired, etc.).  ...use the Official Uniform Billing (UB) 04 2008 numeric codes found on form locator 17.&quot; - HL7 Version 2.8, PV1-36    Note that while the encounter is still &quot;active&quot; (i.e., the encounter does not have an end date yet) this attribute should be interpreted as the expected discharge disposition. When the encounter is &quot;completed&quot; this attribute contains the actual discharge disposition.</body>
         </ownedComment>
@@ -3584,6 +3604,9 @@ Uniquely identifies this patient visit using an identification scheme other than
     <packagedElement xmi:type="uml:Class" xmi:id="_nbMJYGiuEeG3pKm-C5y0hA" name="AbstractDurableEncounter" isAbstract="true">
       <generalization xmi:id="_atrqEGiwEeG3pKm-C5y0hA" general="_420A62FD03B64213F5B40316"/>
       <ownedAttribute xmi:id="_kvGW8ExgEdyVYrcEhQ5TbQ" name="admissionDate" visibility="public">
+        <eAnnotations xmi:id="_WoAkkOY4EeGuIoEQ4Mvu0w" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:id="_WoBLoOY4EeGuIoEQ4Mvu0w" key="039 -->"/>
+        </eAnnotations>
         <ownedComment xmi:id="_TAidYCqKEd6tfJk2wVTfYw" annotatedElement="_kvGW8ExgEdyVYrcEhQ5TbQ">
           <body>&quot;This field contains the admit date/time.  It is to be used if the event date/time is different than the admit date and time, i.e., a retroactive update.  This field is also used to reflect the date/time of an outpatient/emergency patient registration.&quot; - HL7 Version 2.8, PV1-44</body>
         </ownedComment>
@@ -3598,6 +3621,9 @@ Uniquely identifies this patient visit using an identification scheme other than
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_rDZUYMPuEeGriO8gBy203A" name="admissionSource" visibility="public">
+        <eAnnotations xmi:id="_VF-mkOY3EeGuIoEQ4Mvu0w" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:id="_VF_NoOY3EeGuIoEQ4Mvu0w" key="040 -->"/>
+        </eAnnotations>
         <ownedComment xmi:id="_rDZUYcPuEeGriO8gBy203A" annotatedElement="_rDZUYMPuEeGriO8gBy203A">
           <body>&quot;Indicates where the patient was admitted....  In the US, this field should use the Official Uniform Billing (UB) 04 2008 numeric codes found on form locator 15 [which is] the Point of Origin for Admission or Visit.&quot; - HL7 Version 2.8, PV1-14.</body>
         </ownedComment>
@@ -3606,6 +3632,9 @@ Uniquely identifies this patient visit using an identification scheme other than
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rDZUY8PuEeGriO8gBy203A"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_xQr-AGfhEeGK0elVFnH6lw" name="admissionType" visibility="public">
+        <eAnnotations xmi:id="_aQ3hoOY4EeGuIoEQ4Mvu0w" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:id="_aQ3hoeY4EeGuIoEQ4Mvu0w" key="041 -->"/>
+        </eAnnotations>
         <ownedComment xmi:id="_3mGA4GfhEeGK0elVFnH6lw" annotatedElement="_xQr-AGfhEeGK0elVFnH6lw">
           <body>&quot;Indicates the circumstances under which the patient was or will be admitted. ...use the official Universal Billing (UB) 04 2008 numeric codes found on form locator 14.&quot; - HL7 Version 2.8, PV1-4.  HL7 Version 2 has the following suggested values (table 7): Accident; Emergency; &#xD;
 Labor and Delivery; Routine; Newborn (Birth in healthcare facility); Urgent; Elective.</body>
@@ -3613,6 +3642,12 @@ Labor and Delivery; Routine; Newborn (Birth in healthcare facility); Urgent; Ele
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1qnysGfhEeGK0elVFnH6lw" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1qnLoGfhEeGK0elVFnH6lw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_BuH5cGflEeGK0elVFnH6lw" name="dietType" visibility="public">
+        <ownedComment xmi:id="_OYc3AGflEeGK0elVFnH6lw" annotatedElement="_BuH5cGflEeGK0elVFnH6lw">
+          <body>&quot;Indicates a special diet type for a patient.&quot; - HL7 Version 2.8, PV1-38.  Note that HL7 does not suggest any values for this code (in User-defined Table 114).</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_NwXhIGfWEeGK0elVFnH6lw" name="needsPreAdmitTest" visibility="public">
         <ownedComment xmi:id="_Tfb8wGfWEeGK0elVFnH6lw" annotatedElement="_NwXhIGfWEeGK0elVFnH6lw">
@@ -3829,7 +3864,6 @@ Labor and Delivery; Routine; Newborn (Birth in healthcare facility); Urgent; Ele
   <Default:Documentation xmi:id="_Eev9EGfcEeGK0elVFnH6lw" base_Comment="_Eek98GfcEeGK0elVFnH6lw"/>
   <Default:Documentation xmi:id="_ECzLcGfdEeGK0elVFnH6lw" base_Comment="__xlfwCqKEd6tfJk2wVTfYw"/>
   <Default:Documentation xmi:id="_n9aRQGfgEeGK0elVFnH6lw" base_Comment="_n9OrEGfgEeGK0elVFnH6lw"/>
-  <Default:Documentation xmi:id="_OYmoAGflEeGK0elVFnH6lw" base_Comment="_OYc3AGflEeGK0elVFnH6lw"/>
   <Default:Documentation xmi:id="_GibggGfmEeGK0elVFnH6lw" base_Comment="_GiP6UGfmEeGK0elVFnH6lw"/>
   <Default:Documentation xmi:id="_nxyoYGfmEeGK0elVFnH6lw" base_Comment="_nxlNAGfmEeGK0elVFnH6lw"/>
   <Default:Documentation xmi:id="_Ct1YEGfnEeGK0elVFnH6lw" base_Comment="_CtrAAGfnEeGK0elVFnH6lw"/>
@@ -3899,4 +3933,6 @@ Labor and Delivery; Routine; Newborn (Birth in healthcare facility); Urgent; Ele
   <RIM:SubstanceAdministration xmi:id="_DdzlIIsVEeGv9r5ZNThaOw" base_Class="_ikNCoIAjEeGE1-mzJa42fw"/>
   <Default:Documentation xmi:id="_bMYd0KEPEeGnfe88WF3uxw" base_Comment="_NYcJFeLiEduGJrQyRGTO1A"/>
   <RIM:Observation xmi:id="_kafxUNymEeGh5_jMwegn_g" base_Class="_c8AmgNymEeGh5_jMwegn_g"/>
+  <Default:Documentation xmi:id="_RKASsOZXEeGuIoEQ4Mvu0w" base_Comment="_RInLkOZXEeGuIoEQ4Mvu0w"/>
+  <Default:Documentation xmi:id="_aanxIOcVEeGjtvsfy1ZDDQ" base_Comment="_OYc3AGflEeGK0elVFnH6lw"/>
 </xmi:XMI>
