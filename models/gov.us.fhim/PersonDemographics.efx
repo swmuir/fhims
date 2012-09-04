@@ -2,7 +2,7 @@
 <!--xtools2_universal_type_manager-->
 <?com.ibm.xtools.emf.core.signature <signature id="com.ibm.xtools.uml.msl.fragment" version="7.0.0"><feature description="" name="com.ibm.xtools.ruml.feature" url="" version="7.0.0"/></signature>?>
 <?com.ibm.xtools.emf.core.signature <signature id="com.ibm.xtools.mmi.ui.signatures.diagram" version="7.0.0"><feature description="" name="Rational Modeling Platform (com.ibm.xtools.rmp)" url="" version="7.0.0"/></signature>?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Default="http:///schemas/Default/_fNm3AAqoEd6-N_NOT9vsCA/2" xmlns:RIM="http:///schemas/RIM/_fvnwgAH4Ed6VH-9W1IVKXA/4" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.3/Umlnotation" xsi:schemaLocation="http:///schemas/Default/_fNm3AAqoEd6-N_NOT9vsCA/2 pathmap://UML2_MSL_PROFILES/Default.epx#_fNwoAAqoEd6-N_NOT9vsCA?Default/Default? http:///schemas/RIM/_fvnwgAH4Ed6VH-9W1IVKXA/4 pathmap://HL7_PROFILES/RIM.profile.uml#_fvsB8AH4Ed6VH-9W1IVKXA">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Default="http:///schemas/Default/_fNm3AAqoEd6-N_NOT9vsCA/2" xmlns:RIM="http:///schemas/RIM/_fvnwgAH4Ed6VH-9W1IVKXA/4" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:term="http://www.openhealthtools.org/mdht/schemas/term/1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.3/Umlnotation" xsi:schemaLocation="http:///schemas/Default/_fNm3AAqoEd6-N_NOT9vsCA/2 pathmap://UML2_MSL_PROFILES/Default.epx#_fNwoAAqoEd6-N_NOT9vsCA?Default/Default? http:///schemas/RIM/_fvnwgAH4Ed6VH-9W1IVKXA/4 pathmap://HL7_PROFILES/RIM.profile.uml#_fvsB8AH4Ed6VH-9W1IVKXA">
   <uml:Package xmi:id="_420A62FD03B6418A3CB7008F" name="PersonDemographics" clientDependency="_420A62FD03B643F57CB10172">
     <eAnnotations xmi:id="_nl9sQOLqEdu45_8D8ShJ7w" source="com.ibm.xtools.uml.msl.fragments"/>
     <eAnnotations xmi:id="_nlz7QOLqEdu45_8D8ShJ7w" source="com.ibm.xtools.uml.msl.fragmentContainer">
@@ -433,7 +433,7 @@
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_IBQPYljGEeG6Pp3Py7p1bw" type="PackageContents" collapsed="true" canonical="false"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IBPBQVjGEeG6Pp3Py7p1bw" x="38674" y="22190"/>
         </children>
-        <children xmi:type="notation:Shape" xmi:id="_baZG8FjJEeG6Pp3Py7p1bw" type="Note" fontName="Arial" fontHeight="10" description="FHIM Person Demographics Domain&#xD;&#xA;   Version 1.17&#xD;&#xA;   6/30/2012" fillColor="16777088" transparency="0" lineColor="0" lineWidth="1">
+        <children xmi:type="notation:Shape" xmi:id="_baZG8FjJEeG6Pp3Py7p1bw" type="Note" fontName="Arial" fontHeight="10" description="FHIM Person Demographics Domain&#xD;&#xA;   Version 1.18&#xD;&#xA;   8/31/2012" fillColor="16777088" transparency="0" lineColor="0" lineWidth="1">
           <children xmi:type="notation:BasicDecorationNode" xmi:id="_babjMFjJEeG6Pp3Py7p1bw" type="DiagramName">
             <element xsi:nil="true"/>
           </children>
@@ -1920,7 +1920,7 @@ Classes that are used in multiple domains are modeled in the Common package.</bo
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B6422B959E03BD" name="patientId" visibility="public">
         <eAnnotations xmi:id="_NPMti-LiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML">
-          <details xmi:id="_n70nEOV6EeGA8s9JtidNVQ" key="089 -->"/>
+          <details xmi:id="_vhVO4PN7EeGMQvy2b7FvNg" key="cc"/>
         </eAnnotations>
         <ownedComment xmi:id="_XPxocBqREd-j8JC21F3W2A" annotatedElement="_420A62FD03B6422B959E03BD">
           <body>An identification of the Person or Animal while in the role of Patient.  This Identifier is basically an &quot;account number&quot;.  A single person will have multiple Patient Ids at various healthcare providers.  It is not uncommon for a person to have multiple Patient Ids or &quot;account numbers&quot; at a single institution - often a new account number is created for each episode of care.  This is also the case in long-term care situations, where a new account number may be created each month in order to facilitate monthly billing.&#xD;
@@ -1937,7 +1937,7 @@ Classes that are used in multiple domains are modeled in the Common package.</bo
         <ownedComment xmi:id="_NPMthOLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6424898A200CA">
           <body>Indicates the state of the Patient's record, as defined in the state-transition model in the HL7 RIM.  Examples include Active, Pending, Terminated, etc.  Additional states might be defined such as 'Temporary' or 'Permanent'.&#xD;
 &#xD;
-Note, for public health reporting purposes, this statusiIndicates the active/inactive status of the patient at the provider site level. See MIROW “Management of Moved or Gone Elsewhere (MOGE) and Other Patient Status Designations in IIS guidelines.</body>
+Note, for public health reporting purposes, this status indicates the active/inactive status of the patient at the provider site level. See MIROW “Management of Moved or Gone Elsewhere (MOGE) and Other Patient Status Designations in IIS guidelines.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_evDaLeLjEdutr_MT9HkPyQ" value="1"/>
@@ -1976,7 +1976,7 @@ Note, for public health reporting purposes, this statusiIndicates the active/ina
       </ownedComment>
       <ownedAttribute xmi:id="_420A62FD03B642131AEA03BA" name="employmentDuration" visibility="public">
         <eAnnotations xmi:id="_NPWeiuLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML">
-          <details xmi:id="_XfvWgOV3EeGA8s9JtidNVQ" key="038 -->"/>
+          <details xmi:id="_lvCOYPN7EeGMQvy2b7FvNg" key="cc"/>
         </eAnnotations>
         <ownedComment xmi:id="_frXRgBqNEd-j8JC21F3W2A" annotatedElement="_420A62FD03B642131AEA03BA">
           <body>The date range during which a person is an employee in a given employment relationship.</body>
@@ -1987,7 +1987,7 @@ Note, for public health reporting purposes, this statusiIndicates the active/ina
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B6431D9F120316" name="employmentStatus" visibility="public">
         <eAnnotations xmi:id="_NPfoceLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML">
-          <details xmi:id="_IoJQIOV3EeGA8s9JtidNVQ" key="029 -->"/>
+          <details xmi:id="_k-lo4PN7EeGMQvy2b7FvNg" key="cc"/>
         </eAnnotations>
         <ownedComment xmi:id="_jkgtUBqNEd-j8JC21F3W2A" annotatedElement="_420A62FD03B6431D9F120316">
           <body>The status of the employment relationship; e.g., Temporary, Permanent, Etc.</body>
@@ -2007,7 +2007,7 @@ Note, for public health reporting purposes, this statusiIndicates the active/ina
       </ownedAttribute>
       <ownedAttribute xmi:id="_oFBQruwVEd6PwKowkorMOw" name="occupation" visibility="public">
         <eAnnotations xmi:id="_oFBQr-wVEd6PwKowkorMOw" source="http://www.eclipse.org/uml2/2.0.0/UML">
-          <details xmi:id="_QbHdMOV3EeGA8s9JtidNVQ" key="032 -->"/>
+          <details xmi:id="_kPlN0PN7EeGMQvy2b7FvNg" key="cc"/>
         </eAnnotations>
         <ownedComment xmi:id="_soBVMBqNEd-j8JC21F3W2A" annotatedElement="_oFBQruwVEd6PwKowkorMOw">
           <body>&quot;A value that qualifies the classification of 'kind-of-work' based upon a recognized industry or jurisdictional standard.&quot; - HL7 Version 3 RIM.</body>
@@ -2044,7 +2044,7 @@ Note, for public health reporting purposes, this statusiIndicates the active/ina
       <generalization xmi:id="_Z5rJgBA2Ed-2E9qx-lgHBg" general="_KBfhMOEVEd6EKMSYA1gKjA"/>
       <ownedAttribute xmi:id="_LM4rUHwDEeCp-57mUxyZlg" name="administrativeGender" visibility="public">
         <eAnnotations xmi:id="_LU2moOV6EeGA8s9JtidNVQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
-          <details xmi:id="_LU2moeV6EeGA8s9JtidNVQ" key="088 -->"/>
+          <details xmi:id="_zGcUYPN7EeGMQvy2b7FvNg" key="cc"/>
         </eAnnotations>
         <ownedComment xmi:id="_LM4rUXwDEeCp-57mUxyZlg" annotatedElement="_LM4rUHwDEeCp-57mUxyZlg">
           <body>&quot;Gender is used to refer to administrative sex rather than biological sex and therefore should easily be classified into female and male. It is included in the exchange for purposes of linking to insurance information and other patient identification linkages and the value chosen by the patient should reflect the information under which any insurance or financial information will be filed, as well as the same information given to other healthcare providers, institutions or health data exchange networks&quot; - HITSP C154&#xD;
@@ -2088,7 +2088,7 @@ Note that the this concept is restricted to those societal roles as perceived in
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B645538E8A0281" name="ethnicity" visibility="public">
         <eAnnotations xmi:id="_NQP2aeLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML">
-          <details xmi:id="_GHl3kOV6EeGA8s9JtidNVQ" key="087 -->"/>
+          <details xmi:id="_zyIVsPN7EeGMQvy2b7FvNg" key="cc"/>
         </eAnnotations>
         <ownedComment xmi:id="_8UIkkBqUEd-j8JC21F3W2A" annotatedElement="_420A62FD03B645538E8A0281">
           <body> An ethnic group (or ethnicity) is a group of people whose members identify with each other, through a common heritage, often consisting of a common language, a common culture (often including a shared religion) and an ideology that stresses common ancestry or endogamy .  In addition, an ethnic group often shares an interest in a homeland connected with a specific geographical area and common traditions, including food preferences  (Wikipedia).  Note that unlike race, which concentrates on a person s physical heritage, ethnicity is concerned with the cultural heritage with which a person identifies themselves.  Examples of Ethnicity include: German, Scandinavian, Italian, Irish, etc.  These ethnic groups are of the same race (Caucasian, or  white ).   Note also that the set of Ethnicity values used may vary based on the purpose for collecting this information.  The U.S. Office of Management and Budget (OMB) issues a set to be used for census purposes.  See OMB publication 15.  This property may contain more than one ethnicity for a given person, identified in no particular order.&#xD;
@@ -2117,7 +2117,7 @@ Note that the this concept is restricted to those societal roles as perceived in
       </ownedAttribute>
       <ownedAttribute xmi:id="_oFBQoOwVEd6PwKowkorMOw" name="legalName" visibility="public">
         <eAnnotations xmi:id="_oFBQoewVEd6PwKowkorMOw" source="http://www.eclipse.org/uml2/2.0.0/UML">
-          <details xmi:id="__MGPoOV6EeGA8s9JtidNVQ" key="090 -->"/>
+          <details xmi:id="_0jrHYPN7EeGMQvy2b7FvNg" key="cc"/>
         </eAnnotations>
         <ownedComment xmi:id="_FeCvYBqVEd-j8JC21F3W2A" annotatedElement="_oFBQoOwVEd6PwKowkorMOw">
           <body>The name by which a person is known or legally identified such as the name on a driver's license or passport.  Note that the datatype for this property is a PersonName, which includes the various parts that make up a person's name such as family name, prefixes, suffixes, etc.  Note that in HL7, the PersonName datatype contains a type code to indicate what kind of name is being referenced.  The FHIM explicitly models the name type, so in this case the attribute name is &quot;Legal Name&quot;, and the type code would be set to &quot;Legal Name&quot; when targeting an HL7 implementation.&#xD;
@@ -2139,7 +2139,7 @@ Note that the this concept is restricted to those societal roles as perceived in
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B645538E8A0291" name="maritalStatus" visibility="public">
         <eAnnotations xmi:id="_NQZAVuLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML">
-          <details xmi:id="_iXZxsOV5EeGA8s9JtidNVQ" key="080 -->"/>
+          <details xmi:id="_1Wx_UPN7EeGMQvy2b7FvNg" key="cc"/>
         </eAnnotations>
         <ownedComment xmi:id="_QOezIBqVEd-j8JC21F3W2A" annotatedElement="_420A62FD03B645538E8A0291">
           <body>&quot;The domestic partnership status of a person.&quot; - HL7 Version 3 RIM.&#xD;
@@ -2171,7 +2171,7 @@ This property is typically used for identity management purposes, especially to 
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B645538E8A02B0" name="race" visibility="public">
         <eAnnotations xmi:id="_NQZAYOLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML">
-          <details xmi:id="_IEelkOV7EeGA8s9JtidNVQ" key="092 -->"/>
+          <details xmi:id="_1_MqMPN7EeGMQvy2b7FvNg" key="cc"/>
         </eAnnotations>
         <ownedComment xmi:id="_jumj0BqVEd-j8JC21F3W2A" annotatedElement="_420A62FD03B645538E8A02B0">
           <body> Race is classification of humans into large and distinct populations or groups by factors such as heritable phenotypic characteristics or geographic ancestry, but also often influenced by and correlated with traits such as appearance, culture, ethnicity, and socio-economic status.  (Wikipedia).  This property may contain more than one race for a given person, identified in no particular order.&#xD;
@@ -2205,7 +2205,7 @@ This property is typically used for identity management purposes, especially to 
       </ownedAttribute>
       <ownedAttribute xmi:id="__IYcAOV0EeGA8s9JtidNVQ" name="usualOccupation" visibility="public">
         <eAnnotations xmi:id="__IYcAeV0EeGA8s9JtidNVQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
-          <details xmi:id="_OG1tcOV3EeGA8s9JtidNVQ" key="033 -->"/>
+          <details xmi:id="_2tc3UPN7EeGMQvy2b7FvNg" key="cc"/>
         </eAnnotations>
         <ownedComment xmi:id="__IYcAuV0EeGA8s9JtidNVQ" annotatedElement="__IYcAOV0EeGA8s9JtidNVQ">
           <body>Indicates the kind of work that the Person normally performs; generally this will be the occupation in which the Person has longest held.&#xD;
@@ -2217,7 +2217,7 @@ This property is typically used for identity management purposes, especially to 
       </ownedAttribute>
       <ownedAttribute xmi:id="_OvALkOV1EeGA8s9JtidNVQ" name="usualIndustry" visibility="public">
         <eAnnotations xmi:id="_OvALkeV1EeGA8s9JtidNVQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
-          <details xmi:id="_MnzjoOV3EeGA8s9JtidNVQ" key="031 -->"/>
+          <details xmi:id="_3Xzb4PN7EeGMQvy2b7FvNg" key="cc"/>
         </eAnnotations>
         <ownedComment xmi:id="_OvALk-V1EeGA8s9JtidNVQ" annotatedElement="_OvALkOV1EeGA8s9JtidNVQ">
           <body>Indicates the kind of industry in which the Person normally works; generally this will be the industry in which the Person has longest worked.</body>
@@ -2253,7 +2253,7 @@ This property is typically used for identity management purposes, especially to 
       </ownedAttribute>
       <ownedAttribute xmi:id="_BfKyMBAlEd-2E9qx-lgHBg" name="primaryHomeAddress" visibility="public">
         <eAnnotations xmi:id="_g0lUEOV5EeGA8s9JtidNVQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
-          <details xmi:id="_g0lUEeV5EeGA8s9JtidNVQ" key="081 -->"/>
+          <details xmi:id="_4O9tYPN7EeGMQvy2b7FvNg" key="cc"/>
         </eAnnotations>
         <ownedComment xmi:id="_Z8iewBqTEd-j8JC21F3W2A" annotatedElement="_BfKyMBAlEd-2E9qx-lgHBg">
           <body>A communications address for the person's primary place of residence.  Note that in HL7, the Address datatype contains a type code to indicate what kind of address is being referenced.  The FHIM explicitly models the address type, so in this case the attribute name is &quot;Primary Home Address&quot;, and the type code would be set to &quot;Primary Home&quot; when targeting an HL7 implementation.&#xD;
@@ -2266,7 +2266,7 @@ This property is typically used for identity management purposes, especially to 
       </ownedAttribute>
       <ownedAttribute xmi:id="_Fd--4BAqEd-2E9qx-lgHBg" name="primaryHomeEmail" visibility="public">
         <eAnnotations xmi:id="_DmiQEOV6EeGA8s9JtidNVQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
-          <details xmi:id="_DmiQEeV6EeGA8s9JtidNVQ" key="086 -->"/>
+          <details xmi:id="_40pNUPN7EeGMQvy2b7FvNg" key="cc"/>
         </eAnnotations>
         <ownedComment xmi:id="_jsL-cBqUEd-j8JC21F3W2A" annotatedElement="_Fd--4BAqEd-2E9qx-lgHBg">
           <body>The email address that a person uses while at their primary home, to reach a person after business hours.    &quot;Contains the patient's personal telecommunication contact information.&quot; - HL7 Version 2.8, PID-40.  Note that in HL7, the Telecommunications datatype contains a type code to indicate what kind of telecommunications address that is being referenced.  The FHIM explicitly models the telecommuncations type, so in this case the attribute name is &quot;Primary Home Email&quot;, and the type code would be set to &quot;primary home&quot; when targeting an HL7 implementation.</body>
@@ -2277,7 +2277,7 @@ This property is typically used for identity management purposes, especially to 
       </ownedAttribute>
       <ownedAttribute xmi:id="_Nlp7gBAoEd-2E9qx-lgHBg" name="primaryHomePhone" visibility="public">
         <eAnnotations xmi:id="_FxAHEOV7EeGA8s9JtidNVQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
-          <details xmi:id="_FxAuIOV7EeGA8s9JtidNVQ" key="091 -->"/>
+          <details xmi:id="_5dYoUPN7EeGMQvy2b7FvNg" key="cc"/>
         </eAnnotations>
         <ownedComment xmi:id="_xqCrUBqSEd-j8JC21F3W2A" annotatedElement="_Nlp7gBAoEd-2E9qx-lgHBg">
           <body>The phone number of a person at their primary home, to reach a person after business hours.  Note that in HL7, the Telecommunications datatype contains a type code to indicate what kind of telecommunications address that is being referenced.  The FHIM explicitly models the telecommuncations type, so in this case the attribute name is &quot;Primary Home Phone&quot;, and the type code would be set to &quot;Primary Home&quot; when targeting an HL7 implementation.&#xD;
@@ -2432,7 +2432,7 @@ This property is typically used for identity management purposes, especially to 
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B6418A96D500A5" name="language" visibility="public">
         <eAnnotations xmi:id="_NQ_dSeLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML">
-          <details xmi:id="_apsfIOV5EeGA8s9JtidNVQ" key="079 -->"/>
+          <details xmi:id="_7LkBYPN7EeGMQvy2b7FvNg" key="cc"/>
         </eAnnotations>
         <ownedComment xmi:id="_KjvsoBqPEd-j8JC21F3W2A" annotatedElement="_420A62FD03B6418A96D500A5">
           <body>A value representing a language for which the Person has some level of proficiency for written or spoken communication.&#xD;
@@ -2515,7 +2515,7 @@ This property is typically used for identity management purposes, especially to 
       </ownedAttribute>
       <ownedAttribute xmi:id="_i87VcOwVEd6PwKowkorMOw" name="legalName" visibility="public">
         <eAnnotations xmi:id="_i87VcewVEd6PwKowkorMOw" source="http://www.eclipse.org/uml2/2.0.0/UML">
-          <details xmi:id="_27yhAOcUEeGjtvsfy1ZDDQ" key="075 -->"/>
+          <details xmi:id="_sagA0PN7EeGMQvy2b7FvNg" key="cc"/>
         </eAnnotations>
         <ownedComment xmi:id="_PfS5QBqSEd-j8JC21F3W2A" annotatedElement="_i87VcOwVEd6PwKowkorMOw">
           <body>The name by which a person is known or legally identified such as the name on a driver's license or passport.  Note that the datatype for this property is a PersonName, which includes the various parts that make up a person's name such as family name, prefixes, suffixes, etc.</body>
@@ -2532,7 +2532,7 @@ This property is typically used for identity management purposes, especially to 
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B6420FBC93037D" name="relationshipCategory" visibility="public">
         <eAnnotations xmi:id="_NP8Ua-LiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML">
-          <details xmi:id="__3PZEOcUEeGjtvsfy1ZDDQ" key="077 -->"/>
+          <details xmi:id="_tFFO4PN7EeGMQvy2b7FvNg" key="cc"/>
         </eAnnotations>
         <ownedComment xmi:id="_Tp1GYBqaEd-j8JC21F3W2A" annotatedElement="_420A62FD03B6420FBC93037D">
           <body>Indicates how the person is related to the person identified in the owning Person class.  Examples include Spouse, Child, Parent, Legal Guardian, etc.</body>
@@ -2558,7 +2558,7 @@ This property is typically used for identity management purposes, especially to 
       </ownedAttribute>
       <ownedAttribute xmi:id="_kz_jARArEd-2E9qx-lgHBg" name="primaryHomeAddress" visibility="public">
         <eAnnotations xmi:id="_IVZpkOWTEeGA8s9JtidNVQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
-          <details xmi:id="_IVaQoOWTEeGA8s9JtidNVQ" key="074 -->"/>
+          <details xmi:id="_ts-8YPN7EeGMQvy2b7FvNg" key="cc"/>
         </eAnnotations>
         <ownedComment xmi:id="_ZLqbcBqTEd-j8JC21F3W2A" annotatedElement="_kz_jARArEd-2E9qx-lgHBg">
           <body>A communications address for the person's primary place of residence.</body>
@@ -2567,7 +2567,7 @@ This property is typically used for identity management purposes, especially to 
       </ownedAttribute>
       <ownedAttribute xmi:id="_kz_jAhArEd-2E9qx-lgHBg" name="primaryHomePhone" visibility="public">
         <eAnnotations xmi:id="_7uQxgOcUEeGjtvsfy1ZDDQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
-          <details xmi:id="_7uQxgecUEeGjtvsfy1ZDDQ" key="076 -->"/>
+          <details xmi:id="_uW74UPN7EeGMQvy2b7FvNg" key="cc"/>
         </eAnnotations>
         <ownedComment xmi:id="_w02IsBqSEd-j8JC21F3W2A" annotatedElement="_kz_jAhArEd-2E9qx-lgHBg">
           <body>The phone number of a person at their primary home, to reach a person after business hours.</body>
@@ -2651,7 +2651,7 @@ This property is typically used for identity management purposes, especially to 
       <generalization xmi:id="_covX0BA2Ed-2E9qx-lgHBg" general="_MF0JYOEVEd6EKMSYA1gKjA"/>
       <ownedAttribute xmi:id="_Ey3dgIq5Ed-W_sKBWcwIbA" name="age" visibility="public" isDerived="true">
         <eAnnotations xmi:id="_wUafIOV5EeGA8s9JtidNVQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
-          <details xmi:id="_wUafIeV5EeGA8s9JtidNVQ" key="082 -->"/>
+          <details xmi:id="_wmTS4PN7EeGMQvy2b7FvNg" key="cc"/>
         </eAnnotations>
         <ownedComment xmi:id="_diPhUIq5Ed-W_sKBWcwIbA" annotatedElement="_Ey3dgIq5Ed-W_sKBWcwIbA">
           <body>The length of time that an organism has lived.  Note that this property will typically be derived or calculated as needed, and as such may not always be present as a separate concept.  Added 7/8/10 for vMR.</body>
@@ -2686,7 +2686,7 @@ This property is typically used for identity management purposes, especially to 
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B6426E8690032C" name="dateOfBirth" visibility="public">
         <eAnnotations xmi:id="_66u9kOV5EeGA8s9JtidNVQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
-          <details xmi:id="_66u9keV5EeGA8s9JtidNVQ" key="085 -->"/>
+          <details xmi:id="_xf0U0PN7EeGMQvy2b7FvNg" key="cc"/>
         </eAnnotations>
         <ownedComment xmi:id="_yKfUsBqMEd-j8JC21F3W2A" annotatedElement="_420A62FD03B6426E8690032C">
           <body>The date and time of the birth or hatching of the living subject.&#xD;
@@ -4570,7 +4570,7 @@ Specifically for the FHIM, Tribe represents a first-nation group recognized by t
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_c510U6BCEeGlSr96AT8gww" visible="false" type="OperationCompartment"/>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_c52bYKBCEeGlSr96AT8gww" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_c52bYaBCEeGlSr96AT8gww" visible="false" type="StructureCompartment"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_c50mMaBCEeGlSr96AT8gww" y="32968"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_c50mMaBCEeGlSr96AT8gww" x="634" y="32968"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="__SLK0LvrEeGQGoDxtoz2mA" element="__SIHgLvrEeGQGoDxtoz2mA" fontName="Segoe UI" showListStereotype="Text" showListVisibility="None" fillColor="16763850" transparency="0" lineColor="16744576" lineWidth="1" showStereotype="Text">
             <eAnnotations xmi:id="__SNAALvrEeGQGoDxtoz2mA" source="com.ibm.xtools.uml.ui.diagram.internal.styles">
@@ -5204,7 +5204,7 @@ Specifically for the FHIM, Tribe represents a first-nation group recognized by t
         </contents>
       </eAnnotations>
       <ownedComment xmi:id="__SIHgLvrEeGQGoDxtoz2mA" annotatedElement="_bnjtEKBCEeGlSr96AT8gww _c5yJ8KBCEeGlSr96AT8gww">
-        <body>Note: The information modeled in the Mother and Father classes can be derived from the Person class or could be stored in the BirthCertificate class.  The Mother and Father classes would probably not be instantiated in actual implementations.</body>
+        <body>Note: The information modeled in the Mother and Father classes can be derived from the Person class or could be stored in the BirthCertificate class.  The Mother and Father classes would probably *not* be instantiated in actual implementations.</body>
       </ownedComment>
       <packagedElement xmi:type="uml:Class" xmi:id="_BvzTEH2fEeGy1_tR17zNdw" name="BirthCertificate">
         <ownedAttribute xmi:id="_nip4oH29EeGy1_tR17zNdw" name="apgarScore5Minutes" visibility="public">
@@ -5957,7 +5957,7 @@ Specifically for the FHIM, Tribe represents a first-nation group recognized by t
       </ownedComment>
       <ownedAttribute xmi:id="_5e-gYLZJEeGWl-7OlqBMDw" name="industryClassification" visibility="public">
         <eAnnotations xmi:id="_mhEvEOV0EeGA8s9JtidNVQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
-          <details xmi:id="_KNwjEOV3EeGA8s9JtidNVQ" key="030 -->"/>
+          <details xmi:id="_jQMNYPN7EeGMQvy2b7FvNg" key="cc"/>
         </eAnnotations>
         <ownedComment xmi:id="_5uJ58LZLEeGWl-7OlqBMDw" annotatedElement="_5e-gYLZJEeGWl-7OlqBMDw">
           <body>A categorization of the type of activity in which an organization is engaged.  It is anticipated that the North American Industry Classification System (NAICS) would be used here.</body>
@@ -6399,4 +6399,31 @@ Specifically for the FHIM, Tribe represents a first-nation group recognized by t
   <Default:Documentation xmi:id="_h_61sMChEeGTTrvHOo3_pw" base_Comment="_h_4ZccChEeGTTrvHOo3_pw"/>
   <Default:Documentation xmi:id="_iAFasOV1EeGA8s9JtidNVQ" base_Comment="__IYcAuV0EeGA8s9JtidNVQ"/>
   <Default:Documentation xmi:id="_iAFaseV1EeGA8s9JtidNVQ" base_Comment="_OvALk-V1EeGA8s9JtidNVQ"/>
+  <term:ValueSetConstraint xmi:id="_pjcR4PahEeGgPNPSC_BPyg" base_Property="_LM4rUHwDEeCp-57mUxyZlg">
+    <reference href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_WwQXEKRMEeGZ6ueex_Me0w"/>
+  </term:ValueSetConstraint>
+  <term:ValueSetConstraint xmi:id="_2yxSkPakEeGoRqAZLJ6Mwg" base_Property="_420A62FD03B645538E8A02B0">
+    <reference href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_X1W98KRMEeGZ6ueex_Me0w"/>
+  </term:ValueSetConstraint>
+  <term:ValueSetConstraint xmi:id="__YDtYPakEeGoRqAZLJ6Mwg" base_Property="_420A62FD03B645538E8A0281">
+    <reference href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_W1s3waRMEeGZ6ueex_Me0w"/>
+  </term:ValueSetConstraint>
+  <term:ValueSetConstraint xmi:id="_xPwU8PavEeGoRqAZLJ6Mwg" base_Property="_420A62FD03B6418A983702B7">
+    <reference href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_XdfQgaRMEeGZ6ueex_Me0w"/>
+  </term:ValueSetConstraint>
+  <term:ValueSetConstraint xmi:id="_EZ51oPawEeGoRqAZLJ6Mwg" base_Property="_420A62FD03B645538E8A0291">
+    <reference href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_Xd1OwKRMEeGZ6ueex_Me0w"/>
+  </term:ValueSetConstraint>
+  <term:ValueSetConstraint xmi:id="_fmh_APawEeGoRqAZLJ6Mwg" base_Property="_420A62FD03B645538EAA0000">
+    <reference href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_X1pR0aRMEeGZ6ueex_Me0w"/>
+  </term:ValueSetConstraint>
+  <term:ValueSetConstraint xmi:id="_1A_8gPawEeGoRqAZLJ6Mwg" base_Property="_N5_kkBswEd--ZY2-pbJ-Pw">
+    <reference href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_W1eOQKRMEeGZ6ueex_Me0w"/>
+  </term:ValueSetConstraint>
+  <term:ValueSetConstraint xmi:id="_EWrtEPaxEeGoRqAZLJ6Mwg" base_Property="_420A62FD03B6420FBC93037D">
+    <reference href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_XVnt8aRMEeGZ6ueex_Me0w"/>
+  </term:ValueSetConstraint>
+  <term:ValueSetConstraint xmi:id="_NS9rkPaxEeGoRqAZLJ6Mwg" base_Property="_420A62FD03B6455390F101F8">
+    <reference href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_W1WScaRMEeGZ6ueex_Me0w"/>
+  </term:ValueSetConstraint>
 </xmi:XMI>
