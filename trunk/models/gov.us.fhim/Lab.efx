@@ -4046,13 +4046,18 @@ For antibiotic sensitivity tests, provides an indication of the susceptibility o
       <ownedEnd xmi:id="_kWOsdH8aEd-6KMbY3gBFOQ" name="" visibility="private" type="_NglJMH8AEd-6KMbY3gBFOQ" association="_kWOscH8aEd-6KMbY3gBFOQ"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_WUomEOOYEd-8X4J7aT-aiQ" name="RelatedLabPromise">
+      <ownedComment xmi:id="_j4BWkPemEeGDQviDyE5NDQ" annotatedElement="_WUomEOOYEd-8X4J7aT-aiQ">
+        <body>This class identifies Laboratory Promises that are related to each other in some way.  The relatedPromiseCategory indicates how the referenced Promise is related to the &quot;owning&quot; Promise.&#xD;
+&#xD;
+Note that a &quot;Reflex Test&quot; will be handled through this RelatedLabPromise mechanism.  A Reflex Test is a test that is performed and is made necessary based on results from another test, such as results that need confirmation or tests that are indicated by standards of care, so that it is necessary to perform even though the clinician hasn't ordered it.  Examples include when a CBC indicates a high white blood cell count, a differential is automatically performed.  These tests are usually defined within the laboratory's established procedures.  In this case, the original order will point to an instance of RelatedLabPromise, wherein the relatedPromiseCategory will contain a code that means &quot;reflex test&quot;, and a pointer (i.e., the labTestPromise property) that points to the reflex test promise.  Similarly, the reflex test promise can point to another instance of RelatedLabPromise, wherein the relatedPromiseCategory will contain a code that means &quot;original promise&quot;, and a pointer (i.e., the labTestPromise property) that points to the original lab test promise.</body>
+      </ownedComment>
       <ownedAttribute xmi:id="_ZgmLwOOYEd-8X4J7aT-aiQ" name="labTestPromise" visibility="public" type="_420A62FD03B64230F39A02CC" association="_ZgjvgOOYEd-8X4J7aT-aiQ">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZgnZ4eOYEd-8X4J7aT-aiQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ZgnZ4OOYEd-8X4J7aT-aiQ" value="1"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_jMUzIOtMEd-UtpmJtcZCZg" name="relatedPromiseCategory" visibility="public">
         <ownedComment xmi:id="_71tUkAPLEeGyxsUXi9XkTg" annotatedElement="_jMUzIOtMEd-UtpmJtcZCZg">
-          <body>Note that this includes &quot;Reflex Test&quot;, which is a test that is performed and is made necessary based on results from another test, such as results that need confirmation or tests that are indicated by standards of care, so that it is necessary to perform even though the clinician hasn't ordered.  Examples include when a CBC indicates a high white blood cell count, a differential is automatically performed.  These tests are usually defined within the laboratory's established procedures.</body>
+          <body>Indicates how the &quot;target LabTestPromise&quot; is related to the &quot;source LabTestPromise&quot;.  Examples include Parent, Child, Replaces, Replaced By, Reflex Test, Original Promise, etc.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
@@ -6364,4 +6369,5 @@ It is recommended that LOINC be used.  Note that VA's VistA system uses the VA N
   <Default:Documentation xmi:id="_dcTLsOcQEeGjtvsfy1ZDDQ" base_Comment="_dcRWgecQEeGjtvsfy1ZDDQ"/>
   <Default:Documentation xmi:id="_dcTLsecQEeGjtvsfy1ZDDQ" base_Comment="_dcR9kecQEeGjtvsfy1ZDDQ"/>
   <Default:Documentation xmi:id="_dcTLsucQEeGjtvsfy1ZDDQ" base_Comment="_dcSkoecQEeGjtvsfy1ZDDQ"/>
+  <Default:Documentation xmi:id="_j4c0YPemEeGDQviDyE5NDQ" base_Comment="_j4BWkPemEeGDQviDyE5NDQ"/>
 </xmi:XMI>
