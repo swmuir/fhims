@@ -502,7 +502,7 @@
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_4NgFs7_yEeG9Y6ZcZJMJaA" visible="false" type="OperationCompartment"/>
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_4NgFtL_yEeG9Y6ZcZJMJaA" visible="false" type="SignalCompartment"/>
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_4NgswL_yEeG9Y6ZcZJMJaA" visible="false" type="StructureCompartment"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4Nfeob_yEeG9Y6ZcZJMJaA" x="-634" y="27262"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4Nfeob_yEeG9Y6ZcZJMJaA" x="-2536" y="27579"/>
         </children>
         <children xmi:type="umlnotation:UMLShape" xmi:id="_q670UMIfEeGx0M-CyAbegA" element="_q3qd4MIfEeGx0M-CyAbegA" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8487423" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_q7w6wMIfEeGx0M-CyAbegA" type="ImageCompartment">
@@ -3000,10 +3000,19 @@ maybe it's a specialization of patient condition?  maybe it's a subclas of the i
       <ownedEnd xmi:id="_96Om0KEYEeGnfe88WF3uxw" name="" visibility="private" type="_uLxJ4KEYEeGnfe88WF3uxw" association="_96GD8KEYEeGnfe88WF3uxw"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_F4bMcKEZEeGnfe88WF3uxw" name="TargetDoseNumber">
+      <ownedComment xmi:id="_5z-k0AGcEeK-JchLsriwUw" annotatedElement="_F4bMcKEZEeGnfe88WF3uxw">
+        <body>Each target dose is one step in a patient series  The target dose links the vaccine dose administered to the series dose that it meets the goals of. A vaccine dose may not meet the goals of a given series dose and therefore be not valid.</body>
+      </ownedComment>
       <ownedAttribute xmi:id="_NJdKEKEZEeGnfe88WF3uxw" name="doseNumber" visibility="public">
+        <ownedComment xmi:id="_X1p90AGfEeK-JchLsriwUw" annotatedElement="_NJdKEKEZEeGnfe88WF3uxw">
+          <body>Indicates the position in which the dose represented by this class is in the sequence of doses that make up a series of doses prescribed by a vaccination protocol.</body>
+        </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_KMYU8KEZEeGnfe88WF3uxw" name="status" visibility="public">
+        <ownedComment xmi:id="_1S5e8AGfEeK-JchLsriwUw" annotatedElement="_KMYU8KEZEeGnfe88WF3uxw">
+          <body>Indicates the state of the assignment of the patient dose to the vaccine series.  Note that this assignment will likely be accomplished by a Rules Engine evaluating various rules against the actual vaccine administration data to determine whether the vaccination satisfies the requirements of the vaccination series.  Possible values include: Satisfied.</body>
+        </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_xWrSQNgkEeG3E4mt6RKX5Q" name="nextDoseForecast" visibility="public" type="_TmW8EKEZEeGnfe88WF3uxw" association="_xWnA0NgkEeG3E4mt6RKX5Q">
@@ -3023,11 +3032,14 @@ maybe it's a specialization of patient condition?  maybe it's a subclas of the i
       </ownedComment>
       <ownedAttribute xmi:id="_sy5dAKEZEeGnfe88WF3uxw" name="evaluationOutcome" visibility="public">
         <ownedComment xmi:id="_0KY6kNglEeG3E4mt6RKX5Q" annotatedElement="_sy5dAKEZEeGnfe88WF3uxw">
-          <body>Possible values: Valid, Invalid, NeverEvaluated.  Note that NeverEvaluated would be appropriate for vaccines that do not occur in series, or for which there are no rules for the series.</body>
+          <body>Indicates the outcome of the evaluation of this vaccine dose administered.  Possible values include: Valid, Invalid, NeverEvaluated.  Note that NeverEvaluated would be appropriate for vaccines that do not occur in series, or for which there are no rules for the series.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_1CiX8KEZEeGnfe88WF3uxw" name="evaluationReason" visibility="public">
+        <ownedComment xmi:id="_jKr7UP_9EeGbvqRkTkah6w" annotatedElement="_1CiX8KEZEeGnfe88WF3uxw">
+          <body>Indicates any circumstances which impacted the validation of this vaccine dose administered.</body>
+        </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_-2ofwLGiEeGkU9GcFSzOCA" name="targetDose" visibility="public" type="_F4bMcKEZEeGnfe88WF3uxw" association="_-2k1YLGiEeGkU9GcFSzOCA">
@@ -3089,13 +3101,25 @@ maybe it's a specialization of patient condition?  maybe it's a subclas of the i
       <ownedEnd xmi:id="_U9KrkKwdEeG4dfTp_XT2yg" name="" visibility="private" type="_TCf9YKwXEeG4dfTp_XT2yg" association="_U9CIsKwdEeG4dfTp_XT2yg"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_tfPg8KwiEeG4dfTp_XT2yg" name="ContraIndication">
+      <ownedComment xmi:id="_l-lRMP_7EeGbvqRkTkah6w" annotatedElement="_tfPg8KwiEeG4dfTp_XT2yg">
+        <body>&quot;A factor that renders the administration of a drug or the carrying out of a medical procedure inadvisable.&quot; -  Stedman's Medical Dictionary.</body>
+      </ownedComment>
       <ownedAttribute xmi:id="_OvEfcLGgEeGkU9GcFSzOCA" name="contraIndicationCode" visibility="public">
+        <ownedComment xmi:id="_oxgEwP_7EeGbvqRkTkah6w" annotatedElement="_OvEfcLGgEeGkU9GcFSzOCA">
+          <body>&quot;A factor that renders the administration of a drug or the carrying out of a medical procedure inadvisable.&quot; -  Stedman's Medical Dictionary.</body>
+        </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_0vPL4L_uEeG9Y6ZcZJMJaA" name="dateObserved" visibility="public">
+        <ownedComment xmi:id="_vEY_IP_7EeGbvqRkTkah6w" annotatedElement="_0vPL4L_uEeG9Y6ZcZJMJaA">
+          <body>The date/time that the factor or condition was observed by the clinician.</body>
+        </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_mamgoLGgEeGkU9GcFSzOCA" name="effectiveTime" visibility="public">
+        <ownedComment xmi:id="_G-SMcP_8EeGbvqRkTkah6w" annotatedElement="_mamgoLGgEeGkU9GcFSzOCA">
+          <body>The time period during which the factor or condition was present.  Note that this property is a TimeInterval, which consists of a start date, end date, and duration, all of which are optional.</body>
+        </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B642387187004E?FHIM/Datatypes/TimeInterval?"/>
       </ownedAttribute>
     </packagedElement>
@@ -4102,4 +4126,24 @@ maybe it's a specialization of patient condition?  maybe it's a subclas of the i
     <reference href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_X8v_YKRMEeGZ6ueex_Me0w"/>
   </term:ValueSetConstraint>
   <RIM:Observation xmi:id="_WgQacPOkEeGMQvy2b7FvNg" base_Class="_nCBqkKEZEeGnfe88WF3uxw"/>
+  <Default:Documentation xmi:id="_l_URAP_7EeGbvqRkTkah6w" base_Comment="_l-lRMP_7EeGbvqRkTkah6w"/>
+  <Default:Documentation xmi:id="_oxqc0P_7EeGbvqRkTkah6w" base_Comment="_oxgEwP_7EeGbvqRkTkah6w"/>
+  <Default:Documentation xmi:id="_vEg68P_7EeGbvqRkTkah6w" base_Comment="_vEY_IP_7EeGbvqRkTkah6w"/>
+  <Default:Documentation xmi:id="_G-avUP_8EeGbvqRkTkah6w" base_Comment="_G-SMcP_8EeGbvqRkTkah6w"/>
+  <Default:Documentation xmi:id="_jKz3IP_9EeGbvqRkTkah6w" base_Comment="_jKr7UP_9EeGbvqRkTkah6w"/>
+  <term:ValueSetConstraint xmi:id="_8GoUIAAAEeKbvqRkTkah6w" base_Property="_pI8xMNKlEeGtfrdPU3R3yA">
+    <reference href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_SxvOodDkEeG0ze9kYp0s5g"/>
+  </term:ValueSetConstraint>
+  <term:ValueSetConstraint xmi:id="_ZVIOoAABEeKbvqRkTkah6w" base_Property="_P4mwcL_wEeG9Y6ZcZJMJaA">
+    <reference href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_xQvmoMtxEeGAAuWTs_7XwQ"/>
+  </term:ValueSetConstraint>
+  <term:ValueSetConstraint xmi:id="__nxFUAAQEeKbvqRkTkah6w" base_Property="_80NR0LGeEeGkU9GcFSzOCA">
+    <reference href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_CBZyEdDxEeG0ze9kYp0s5g"/>
+  </term:ValueSetConstraint>
+  <Default:Documentation xmi:id="_50tkoAGcEeK-JchLsriwUw" base_Comment="_5z-k0AGcEeK-JchLsriwUw"/>
+  <Default:Documentation xmi:id="_X1zu0AGfEeK-JchLsriwUw" base_Comment="_X1p90AGfEeK-JchLsriwUw"/>
+  <Default:Documentation xmi:id="_1TD3AAGfEeK-JchLsriwUw" base_Comment="_1S5e8AGfEeK-JchLsriwUw"/>
+  <term:ValueSetConstraint xmi:id="__rI7wAG4EeK-JchLsriwUw" base_Property="_ZE9VMLGgEeGkU9GcFSzOCA">
+    <reference href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_8LLQcdDuEeG0ze9kYp0s5g"/>
+  </term:ValueSetConstraint>
 </xmi:XMI>
