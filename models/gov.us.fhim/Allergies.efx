@@ -78,7 +78,7 @@
           <element xmi:type="uml:Class" href="PersonDemographics.efx#_420A62FD03B6418A4E500034?FHIM/PersonDemographics/Patient?"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nTe5ctYxEd62cosTNS-_lw" x="14899" y="-3804"/>
         </children>
-        <children xmi:type="notation:Shape" xmi:id="_bukjoOd7Ed6qdqXtvR-ZHQ" type="Note" fontName="Arial" fontHeight="10" description="FHIM Allergy Domain&#xD;&#xA;  Version 0.71&#xD;&#xA;  6/9/2011" fillColor="16777088" lineColor="0" lineWidth="1">
+        <children xmi:type="notation:Shape" xmi:id="_bukjoOd7Ed6qdqXtvR-ZHQ" type="Note" fontName="Arial" fontHeight="10" description="FHIM Allergy Domain&#xD;&#xA;  Version 0.72&#xD;&#xA;  10/05/2012" fillColor="16777088" lineColor="0" lineWidth="1">
           <children xmi:type="notation:BasicDecorationNode" xmi:id="_bukjped7Ed6qdqXtvR-ZHQ" type="DiagramName">
             <element xsi:nil="true"/>
           </children>
@@ -1556,6 +1556,9 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="__0thk8IJEeGx0M-CyAbegA" value="1"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_qMUt0GuCEeCZQ_Ui4wPHHw" name="intoleranceCategory" visibility="public">
+        <eAnnotations xmi:id="_26xYABF_EeKu1LfuaJwFHw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:id="_26xYARF_EeKu1LfuaJwFHw" key="cc"/>
+        </eAnnotations>
         <ownedComment xmi:id="_qMUt0WuCEeCZQ_Ui4wPHHw" annotatedElement="_qMUt0GuCEeCZQ_Ui4wPHHw">
           <body>Categorizes the intolerance along two axes: whether the reactant is a Drug, Food, or other substance, and whether the intolerence is a true allergy, an intolerance, or propensity to adverse reaction.  Possible values are members of the SNOMED Allergy Event value set.  This property is required for Meaningful Use.&#xD;
 &#xD;
@@ -1579,6 +1582,9 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hJo6EPT_EdyH-osfS7enWw" value="1"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_t_VCcGX9EeCWgYu_gBZhWw" name="reactant" visibility="public">
+        <eAnnotations xmi:id="_u7sBkBF_EeKu1LfuaJwFHw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:id="_u7sBkRF_EeKu1LfuaJwFHw" key="cc"/>
+        </eAnnotations>
         <ownedComment xmi:id="_1Q-EEGX9EeCWgYu_gBZhWw" annotatedElement="_t_VCcGX9EeCWgYu_gBZhWw">
           <body>Identifies the substance to which the patient has an intolerance or allergy.  The reactant will point to a value set, which will be a superset of valuesets for Drug Product, Drug Class, Ingredient, Food Product, and Environmental reactants.&#xD;
 &#xD;
