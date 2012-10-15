@@ -3,7 +3,7 @@
 <?com.ibm.xtools.emf.core.signature <signature id="com.ibm.xtools.uml.msl.fragment" version="7.0.0"><feature description="" name="com.ibm.xtools.ruml.feature" url="" version="7.0.0"/></signature>?>
 <?com.ibm.xtools.emf.core.signature <signature id="com.ibm.xtools.mmi.ui.signatures.diagram" version="7.0.0"><feature description="" name="Rational Modeling Platform (com.ibm.xtools.rmp)" url="" version="7.0.0"/></signature>?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Default="http:///schemas/Default/_fNm3AAqoEd6-N_NOT9vsCA/2" xmlns:RIM="http:///schemas/RIM/_fvnwgAH4Ed6VH-9W1IVKXA/4" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:term="http://www.openhealthtools.org/mdht/schemas/term/1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.3/Umlnotation" xsi:schemaLocation="http:///schemas/Default/_fNm3AAqoEd6-N_NOT9vsCA/2 pathmap://UML2_MSL_PROFILES/Default.epx#_fNwoAAqoEd6-N_NOT9vsCA?Default/Default? http:///schemas/RIM/_fvnwgAH4Ed6VH-9W1IVKXA/4 pathmap://HL7_PROFILES/RIM.profile.uml#_fvsB8AH4Ed6VH-9W1IVKXA">
-  <uml:Package xmi:id="_420A62FD03B6418A3CB7008F" name="PersonDemographics" clientDependency="_420A62FD03B643F57CB10172">
+  <uml:Package xmi:id="_420A62FD03B6418A3CB7008F" name="PersonDemographics">
     <eAnnotations xmi:id="_nl9sQOLqEdu45_8D8ShJ7w" source="com.ibm.xtools.uml.msl.fragments"/>
     <eAnnotations xmi:id="_nlz7QOLqEdu45_8D8ShJ7w" source="com.ibm.xtools.uml.msl.fragmentContainer">
       <references xmi:type="uml:Model" href="FHIM.emx#420A62FD03B6?FHIM?"/>
@@ -2108,9 +2108,6 @@ Classes that are used in multiple domains are modeled in the Common package.</bo
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vDN9WV-OEd-WjrW-OJ9BNQ"/>
       </ownedAttribute>
     </packagedElement>
-    <packagedElement xmi:type="uml:Dependency" xmi:id="_420A62FD03B643F57CB10172" client="_420A62FD03B6418A3CB7008F">
-      <supplier xmi:type="uml:Package" href="Common.efx#_420A62FD03B6422C7466026C?FHIM/Common?"/>
-    </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B6418A4E500034" name="Patient">
       <eAnnotations xmi:id="_NPWeguLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
       <ownedComment xmi:id="_RFfQcBqREd-j8JC21F3W2A" annotatedElement="_420A62FD03B6418A4E500034">
@@ -2485,6 +2482,15 @@ HL7 Version 2 table 6 lists 85 suggested values for this field.</body>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nrvoYMkBEeCBe897ufRC6g" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nrvBUMkBEeCBe897ufRC6g"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_420A62FD03B6426E869603AC" name="ssn" visibility="public">
+        <eAnnotations xmi:id="_NQixWeLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+        <ownedComment xmi:id="_4fCs4BqVEd-j8JC21F3W2A" annotatedElement="_420A62FD03B6426E869603AC">
+          <body>A nine digit identification number assigned to a person by the US Social Security Administration.  Used primarily for identification purposes.  Note that HIPAA forbids the use of SSN as a primary identifier.  Maps to HL7 Version 2.8, PID-18.  Note that while Social Security Number is a type of Id, and could be modeled as simply one of the possible instances of the &quot;id&quot; property, it is explicitly modeled because it is a particular kind of identifier that is needed for various business processes.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_evNLQeLjEdutr_MT9HkPyQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_evNLQOLjEdutr_MT9HkPyQ"/>
+      </ownedAttribute>
       <ownedAttribute xmi:id="_0ih2IAQJEeKZsvne-rOhhA" name="studentCategory" visibility="public">
         <ownedComment xmi:id="_-G-F8AS7EeKZRNRj-xVwIw" annotatedElement="_0ih2IAQJEeKZsvne-rOhhA">
           <body>&quot;Identifies whether the next of kin/associated party is currently a student or not, and whether the next of kin/associated party is a full- or a part-time student.  This field does not indicate the degree (high school, college) of the student or the field of study.&quot; - HL7 Version 2.8, NK1-24.</body>
@@ -2516,14 +2522,13 @@ HL7 Version 2 table 6 lists 85 suggested values for this field.</body>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OvALlOV1EeGA8s9JtidNVQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OvALleV1EeGA8s9JtidNVQ"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_420A62FD03B6426E869603AC" name="ssn" visibility="public">
-        <eAnnotations xmi:id="_NQixWeLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
-        <ownedComment xmi:id="_4fCs4BqVEd-j8JC21F3W2A" annotatedElement="_420A62FD03B6426E869603AC">
-          <body>A nine digit identification number assigned to a person by the US Social Security Administration.  Used primarily for identification purposes.  Note that HIPAA forbids the use of SSN as a primary identifier.  Maps to HL7 Version 2.8, PID-18.  Note that while Social Security Number is a type of Id, and could be modeled as simply one of the possible instances of the &quot;id&quot; property, it is explicitly modeled because it is a particular kind of identifier that is needed for various business processes.</body>
+      <ownedAttribute xmi:id="_UQyyYBSXEeKpJeaG5gXc6Q" name="yearsInUsualIndustry" visibility="public">
+        <ownedComment xmi:id="_xlc_QBSXEeKpJeaG5gXc6Q" annotatedElement="_UQyyYBSXEeKpJeaG5gXc6Q">
+          <body>Amount of employment – in years associated with usual industry/occupation (e.g., &quot;how long have you worked in your usual industry - such as coal mining&quot;).  Added for Public Health Reporting Initiative, 10/12/2012.</body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_evNLQeLjEdutr_MT9HkPyQ" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_evNLQOLjEdutr_MT9HkPyQ"/>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_N-BAoNYeEd62cosTNS-_lw?FHIM/Datatypes/Real?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZSg_0BSXEeKpJeaG5gXc6Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ZSgYwBSXEeKpJeaG5gXc6Q"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_7MEDIBApEd-2E9qx-lgHBg" name="mobilePhone" visibility="public">
         <ownedComment xmi:id="_723EoBqSEd-j8JC21F3W2A" annotatedElement="_7MEDIBApEd-2E9qx-lgHBg">
@@ -6861,4 +6866,5 @@ Specifically for the FHIM, Tribe represents a first-nation group recognized by t
   <Default:Documentation xmi:id="_Rvp_8ATAEeKZRNRj-xVwIw" base_Comment="_RviEIATAEeKZRNRj-xVwIw"/>
   <Default:Documentation xmi:id="_1W65MBI7EeKEjrc2hUE4_Q" base_Comment="_1W5rExI7EeKEjrc2hUE4_Q"/>
   <Default:Documentation xmi:id="_flg6MBJuEeKyCcEaGXRWOg" base_Comment="_Fz0XwH3DEeGy1_tR17zNdw"/>
+  <Default:Documentation xmi:id="_xlliIBSXEeKpJeaG5gXc6Q" base_Comment="_xlc_QBSXEeKpJeaG5gXc6Q"/>
 </xmi:XMI>
