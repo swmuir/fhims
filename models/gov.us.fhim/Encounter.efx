@@ -2607,7 +2607,7 @@ Infusion: &quot;Introduction of a solution into the body through a vein for ther
     <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B641A349EF0070" name="MedicationAdministrationEvent">
       <eAnnotations xmi:id="_NYl6GuLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
       <ownedComment xmi:id="_NYSYGuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B641A349EF0070">
-        <body>&quot;Information about the actual consumption of medication by a patient. While is generally only relevant for hospital/institutional systems which track individual administrations, it could also be used in ambulatory care e.g. home-health environments which capture administrations such as insulin injections and which use messaging to communicate the information back to a central source; recording immunizations.&quot; (HL7 Version 3)  </body>
+        <body>&quot;Information about the actual consumption of medication by a patient.  While this is generally only relevant for hospital/institutional systems which track individual administrations, it could also be used in ambulatory care e.g. home-health environments which capture administrations such as insulin injections and which use messaging to communicate the information back to a central source; recording immunizations.&quot; (HL7 Version 3).</body>
       </ownedComment>
       <ownedAttribute xmi:id="_aLWPoLyPEeGK2djLWlLFew" name="administeredStrength" visibility="public">
         <ownedComment xmi:id="_GzXR0LyQEeGK2djLWlLFew" annotatedElement="_aLWPoLyPEeGK2djLWlLFew">
@@ -2779,11 +2779,17 @@ Location (room, bed and ward) of the patient at the time of the medication admin
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_iMELoL_uEeG9Y6ZcZJMJaA"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_Fj-UYL_vEeG9Y6ZcZJMJaA" name="exemption" visibility="public" association="_Fjz8UL_vEeG9Y6ZcZJMJaA">
+        <ownedComment xmi:id="_de8nACzgEeKLfdgQhBZO1Q" annotatedElement="_Fj-UYL_vEeG9Y6ZcZJMJaA">
+          <body>A record of an assertion by the patient, the patient guardian, or someone else in authority that the medication should not be administered.</body>
+        </ownedComment>
         <type xmi:type="uml:Class" href="ImmunizationandSkinTest.efx#_3V9HYKwiEeG4dfTp_XT2yg?FHIM/Immunization/Exemption?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Fj-7cb_vEeG9Y6ZcZJMJaA" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Fj-7cL_vEeG9Y6ZcZJMJaA"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_PiHeEAllEeKmMfGXbG9elQ" name="patientCondition" visibility="public" association="_PiAJUAllEeKmMfGXbG9elQ">
+        <ownedComment xmi:id="_Gq5c4CzfEeKLfdgQhBZO1Q" annotatedElement="_PiHeEAllEeKmMfGXbG9elQ">
+          <body>Patient conditions are observations about the patient which impact forecasting next doses. These include allergies, previous adverse reactions and special risk factors.</body>
+        </ownedComment>
         <type xmi:type="uml:Class" href="ProblemList.efx#_420A62FD03B6421F8AD00244?FHIM/HealthConcern/HealthConcern?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PiJTQQllEeKmMfGXbG9elQ" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PiJTQAllEeKmMfGXbG9elQ"/>
@@ -4292,4 +4298,6 @@ Labor and Delivery; Routine; Newborn (Birth in healthcare facility); Urgent; Ele
   <term:ValueSetConstraint xmi:id="_j9nKMBIeEeK0rPN86AJEog" base_Property="_420A62FD03B642397A330322">
     <reference href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_W2N1IaRMEeGZ6ueex_Me0w"/>
   </term:ValueSetConstraint>
+  <Default:Documentation xmi:id="_Gq8gMCzfEeKLfdgQhBZO1Q" base_Comment="_Gq5c4CzfEeKLfdgQhBZO1Q"/>
+  <Default:Documentation xmi:id="_de_qUCzgEeKLfdgQhBZO1Q" base_Comment="_de8nACzgEeKLfdgQhBZO1Q"/>
 </xmi:XMI>
