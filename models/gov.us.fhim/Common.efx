@@ -1388,11 +1388,6 @@ Verifying Calibrator, used for periodic calibration checks.</body>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Y6N-wfZQEd-e1vPpWfL-Bw" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Y6N-wPZQEd-e1vPpWfL-Bw"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_fcah0bxQEeCjnsq0FtkmeA" name="specimenHandling" visibility="public" association="_fcah0LxQEeCjnsq0FtkmeA">
-        <type xmi:type="uml:Class" href="Lab.efx#_3fUokLxNEeCjnsq0FtkmeA?FHIM/Lab/SpecimenHandling?"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fcah07xQEeCjnsq0FtkmeA" value="*"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fcah0rxQEeCjnsq0FtkmeA"/>
-      </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B642DBE47D00A0" name="specimenCollectionEvent" visibility="public" isUnique="false">
         <ownedComment xmi:id="_NEBYROLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B642DBE47D00A0">
           <body>Association from Specimen to SpecimenCollectionEvent procedure to get collection date.</body>
@@ -1404,7 +1399,7 @@ Verifying Calibrator, used for periodic calibration checks.</body>
       </ownedAttribute>
       <ownedAttribute xmi:id="_J28rIcp7EeC9Pb3leltpqQ" name="definedPatientEvent" visibility="public">
         <ownedComment xmi:id="_0RecwM6GEeCM-vbOXYpzjw" annotatedElement="_J28rIcp7EeC9Pb3leltpqQ">
-          <body>The specific patient-related event to which a specimen collection or collections (and subsequently, any tests performed on that specimen) are related or affected by time, sequence, directive, intent, etc.  Examples might include drug administration (peak and trough), beginning of fasting (lipids, FBS), glucose challenge (tolerances) or meal (postprandial), admission (pre- or post-admission studies), scheduled surgery/transfusion (compatibility testing), onset of symptoms (acute and convalescent), LMP (pregnancy test, Pap smear), lumbar puncture (CSF tubes 1, 2, and 3), treatment completion (test of cure, post-transfusion H&amp;H), use/ingestion (BAT, toxicology), start of 24-hour urine pooling (creatinine clearance), etc. </body>
+          <body>The specific patient-related event to which a specimen collection or collections (and subsequently, any tests performed on that specimen) are related or affected by time, sequence, directive, intent, etc.  Examples might include drug administration (peak and trough), beginning of fasting (lipids, FBS), glucose challenge (tolerances) or meal (postprandial), admission (pre- or post-admission studies), scheduled surgery/transfusion (compatibility testing), onset of symptoms (acute and convalescent), Last Menstrual Period (pregnancy test, Pap smear), lumbar puncture (CSF tubes 1, 2, and 3), treatment completion (test of cure, post-transfusion H&amp;H), use/ingestion (BAT, toxicology), start of 24-hour urine pooling (creatinine clearance), etc.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Lab.efx#_rWnUoMHPEeCdLPayeDTWtA?FHIM/Lab/DefinedPatientEvent?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_J28rI8p7EeC9Pb3leltpqQ" value="1"/>
@@ -2169,12 +2164,6 @@ Verifying Calibrator, used for periodic calibration checks.</body>
     <packagedElement xmi:type="uml:Class" xmi:id="_9cvNoKy0EeCBdbmGd0l2eA" name="Releaser">
       <generalization xmi:id="_IhT28NXiEeGG7JUIKyvuAg" general="_420A62FD03B6418CF92600E1"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_fcah0LxQEeCjnsq0FtkmeA" name="specimen_specimenHandling" memberEnd="_fcah0bxQEeCjnsq0FtkmeA _fcdlILxQEeCjnsq0FtkmeA">
-      <ownedEnd xmi:id="_fcdlILxQEeCjnsq0FtkmeA" name="" visibility="private" type="_420A62FD03B642DBE3F101E7" association="_fcah0LxQEeCjnsq0FtkmeA">
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fcdlIrxQEeCjnsq0FtkmeA" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fcdlIbxQEeCjnsq0FtkmeA" value="1"/>
-      </ownedEnd>
-    </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_YV5E0I8nEeG2ar1Lc1hB1g" name="Transcriber">
       <ownedComment xmi:id="_yJBEoI8nEeG2ar1Lc1hB1g" annotatedElement="_YV5E0I8nEeG2ar1Lc1hB1g">
         <body>&quot;An entity entering the data into the originating system. The data entry entity is collected optionally for internal quality control purposes. This includes the transcriptionist for dictated text transcribed into electronic form.&quot; - HL7 V3.</body>
@@ -2208,7 +2197,7 @@ Verifying Calibrator, used for periodic calibration checks.</body>
             </children>
             <children xmi:type="notation:BasicDecorationNode" xmi:id="_PZIL1FAdEeCNoo8JCSlflA" type="Stereotype"/>
             <children xmi:type="notation:BasicDecorationNode" xmi:id="_PZIL1VAdEeCNoo8JCSlflA" type="CommentBody"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PY-a01AdEeCNoo8JCSlflA" x="22507" y="951" width="7275" height="3783"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PY-a01AdEeCNoo8JCSlflA" x="22507" width="7275" height="3783"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_ljs8QOrLEeCgerddwRbJUw" element="_ddsuwM_1Ed-YeMSrwW6svA" fontName="Arial" fontHeight="10" showListVisibility="None" fillColor="8519553" lineColor="3342489" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_lj2tQOrLEeCgerddwRbJUw" type="ImageCompartment">
@@ -2246,7 +2235,7 @@ Verifying Calibrator, used for periodic calibration checks.</body>
             <styles xmi:type="notation:TextStyle" xmi:id="_4VT1An9TEeG8JPxVazzwbQ"/>
             <styles xmi:type="notation:LineTypeStyle" xmi:id="_4VT1A39TEeG8JPxVazzwbQ"/>
             <element xsi:nil="true"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4VT1BH9TEeG8JPxVazzwbQ" x="-3170"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4VT1BH9TEeG8JPxVazzwbQ" x="-4121"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_5oplINNmEeGRnPi2MLPE0g" element="_ql3uEPQUEd-ZkqyOlLYO5g" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8519553" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_5oqMMNNmEeGRnPi2MLPE0g" type="ImageCompartment">
@@ -2272,7 +2261,7 @@ Verifying Calibrator, used for periodic calibration checks.</body>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="__90-gdNmEeGRnPi2MLPE0g" visible="false" type="OperationCompartment"/>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="__90-gtNmEeGRnPi2MLPE0g" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="__90-g9NmEeGRnPi2MLPE0g" visible="false" type="StructureCompartment"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="__9zwYdNmEeGRnPi2MLPE0g" x="23458" y="6657"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="__9zwYdNmEeGRnPi2MLPE0g" x="23458" y="6023"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_B1rQ8NNnEeGRnPi2MLPE0g" element="_420A62FD03B645919EF10138" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8519553" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_B1r4ANNnEeGRnPi2MLPE0g" type="ImageCompartment">
@@ -2298,7 +2287,7 @@ Verifying Calibrator, used for periodic calibration checks.</body>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_DQfCEtNnEeGRnPi2MLPE0g" visible="false" type="OperationCompartment"/>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_DQfpINNnEeGRnPi2MLPE0g" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_DQfpIdNnEeGRnPi2MLPE0g" visible="false" type="StructureCompartment"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DQdM4dNnEeGRnPi2MLPE0g" x="19654" y="12363"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DQdM4dNnEeGRnPi2MLPE0g" x="21239" y="12363"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_EPBt8NNnEeGRnPi2MLPE0g" element="_oDnb8AF2EeC0SO5AWIN0Qg" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8519553" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_EPC8ENNnEeGRnPi2MLPE0g" type="ImageCompartment">
@@ -2350,7 +2339,7 @@ Verifying Calibrator, used for periodic calibration checks.</body>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_NTRVoNNnEeGRnPi2MLPE0g" visible="false" type="OperationCompartment"/>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_NTRVodNnEeGRnPi2MLPE0g" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_NTRVotNnEeGRnPi2MLPE0g" visible="false" type="StructureCompartment"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NTPgcdNnEeGRnPi2MLPE0g" x="16484" y="21556"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NTPgcdNnEeGRnPi2MLPE0g" x="17752" y="21556"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_Pro7MNNnEeGRnPi2MLPE0g" element="_420A62FD03B64592E9E3037C" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8519553" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_PrqJUNNnEeGRnPi2MLPE0g" type="ImageCompartment">
@@ -2415,7 +2404,7 @@ Verifying Calibrator, used for periodic calibration checks.</body>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_l1j_sdNnEeGRnPi2MLPE0g" visible="false" type="OperationCompartment"/>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_l1kmwNNnEeGRnPi2MLPE0g" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_l1kmwdNnEeGRnPi2MLPE0g" visible="false" type="StructureCompartment"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l1iKgdNnEeGRnPi2MLPE0g" x="23775" y="32651"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l1iKgdNnEeGRnPi2MLPE0g" x="23775" y="34870"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_n38HINNnEeGRnPi2MLPE0g" element="_0j3qsF7wEeCcBvMgXNMeOQ" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8519679" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_n38uMNNnEeGRnPi2MLPE0g" type="ImageCompartment">
@@ -2428,7 +2417,7 @@ Verifying Calibrator, used for periodic calibration checks.</body>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_n398UNNnEeGRnPi2MLPE0g" visible="false" type="OperationCompartment"/>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_n398UdNnEeGRnPi2MLPE0g" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_n3-jYNNnEeGRnPi2MLPE0g" visible="false" type="StructureCompartment"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_n38HIdNnEeGRnPi2MLPE0g" x="28213" y="38040"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_n38HIdNnEeGRnPi2MLPE0g" x="31066" y="40893"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_qHUIwNNnEeGRnPi2MLPE0g" element="_Af_ecF7xEeCcBvMgXNMeOQ" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8519679" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_qHUv0NNnEeGRnPi2MLPE0g" type="ImageCompartment">
@@ -2441,7 +2430,7 @@ Verifying Calibrator, used for periodic calibration checks.</body>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_qHWlANNnEeGRnPi2MLPE0g" visible="false" type="OperationCompartment"/>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_qHXzINNnEeGRnPi2MLPE0g" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_qHXzIdNnEeGRnPi2MLPE0g" visible="false" type="StructureCompartment"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qHUIwdNnEeGRnPi2MLPE0g" x="19654" y="40259"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qHUIwdNnEeGRnPi2MLPE0g" x="19654" y="42478"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_rT7F0NNnEeGRnPi2MLPE0g" element="_-zRd8F7wEeCcBvMgXNMeOQ" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8519679" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_rT7s4NNnEeGRnPi2MLPE0g" type="ImageCompartment">
@@ -2454,7 +2443,7 @@ Verifying Calibrator, used for periodic calibration checks.</body>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_rT87ANNnEeGRnPi2MLPE0g" visible="false" type="OperationCompartment"/>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_rT87AdNnEeGRnPi2MLPE0g" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_rT9iENNnEeGRnPi2MLPE0g" visible="false" type="StructureCompartment"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rT7F0dNnEeGRnPi2MLPE0g" x="19654" y="37089"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rT7F0dNnEeGRnPi2MLPE0g" x="19654" y="39308"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_vMmAgNNnEeGRnPi2MLPE0g" element="_420A62FD03B6425C11CB017B" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8519553" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_vMmnkNNnEeGRnPi2MLPE0g" type="ImageCompartment">
@@ -2506,7 +2495,7 @@ Verifying Calibrator, used for periodic calibration checks.</body>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_3-6xwdNnEeGRnPi2MLPE0g" visible="false" type="OperationCompartment"/>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_3-7Y0NNnEeGRnPi2MLPE0g" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_3-7Y0dNnEeGRnPi2MLPE0g" visible="false" type="StructureCompartment"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3-48kdNnEeGRnPi2MLPE0g" x="31383" y="31066"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3-48kdNnEeGRnPi2MLPE0g" x="31383" y="33285"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_7ZuEsNNnEeGRnPi2MLPE0g" element="_2iS00FPwEeC3dvg3Ss2k0Q" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8519553" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_7ZurwNNnEeGRnPi2MLPE0g" type="ImageCompartment">
@@ -2519,7 +2508,7 @@ Verifying Calibrator, used for periodic calibration checks.</body>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_7Zv54NNnEeGRnPi2MLPE0g" visible="false" type="OperationCompartment"/>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_7Zv54dNnEeGRnPi2MLPE0g" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_7Zv54tNnEeGRnPi2MLPE0g" visible="false" type="StructureCompartment"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7ZuEsdNnEeGRnPi2MLPE0g" x="14265" y="25360"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7ZuEsdNnEeGRnPi2MLPE0g" x="14899" y="24409"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_ForMANNoEeGRnPi2MLPE0g" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8487423" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_ForzENNoEeGRnPi2MLPE0g" type="ImageCompartment">
@@ -2588,7 +2577,7 @@ Verifying Calibrator, used for periodic calibration checks.</body>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_RpAxYdNoEeGRnPi2MLPE0g" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_RpBYcNNoEeGRnPi2MLPE0g" visible="false" type="StructureCompartment"/>
             <element xmi:type="uml:Class" href="Encounter.efx#_ikNCoIAjEeGE1-mzJa42fw?FHIM/Encounter/IVAdminstration?"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ro-8MdNoEeGRnPi2MLPE0g" x="35821" y="21556"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ro-8MdNoEeGRnPi2MLPE0g" x="36138" y="21873"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_Wj-2kNNoEeGRnPi2MLPE0g" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8519679" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_Wj_doNNoEeGRnPi2MLPE0g" type="ImageCompartment">
@@ -2624,7 +2613,7 @@ Verifying Calibrator, used for periodic calibration checks.</body>
             </children>
             <children xmi:type="notation:BasicDecorationNode" xmi:id="_Y_cW8NNpEeGRnPi2MLPE0g" type="Stereotype"/>
             <children xmi:type="notation:BasicDecorationNode" xmi:id="_Y_cW8dNpEeGRnPi2MLPE0g" type="CommentBody"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Y_bI0dNpEeGRnPi2MLPE0g" x="29164" y="32651" width="1189" height="1137"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Y_bI0dNpEeGRnPi2MLPE0g" x="29481" y="36772" width="1189" height="1137"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_eQZTMNNpEeGRnPi2MLPE0g" element="_eQYFENNpEeGRnPi2MLPE0g" fontName="Segoe UI" showListStereotype="Text" showListVisibility="None" fillColor="16763850" transparency="0" lineColor="16744576" lineWidth="1" showStereotype="Text">
             <eAnnotations xmi:id="_eQZ6QNNpEeGRnPi2MLPE0g" source="com.ibm.xtools.uml.ui.diagram.internal.styles">
@@ -2635,7 +2624,7 @@ Verifying Calibrator, used for periodic calibration checks.</body>
             </children>
             <children xmi:type="notation:BasicDecorationNode" xmi:id="_eQahU9NpEeGRnPi2MLPE0g" type="Stereotype"/>
             <children xmi:type="notation:BasicDecorationNode" xmi:id="_eQbIYNNpEeGRnPi2MLPE0g" type="CommentBody"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eQZTMdNpEeGRnPi2MLPE0g" x="20922" y="33602" width="1426" height="1452"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eQZTMdNpEeGRnPi2MLPE0g" x="20288" y="36455" width="1426" height="1452"/>
           </children>
           <element xsi:nil="true"/>
           <edges xmi:type="umlnotation:UMLConnector" xmi:id="_5otPgNNmEeGRnPi2MLPE0g" element="_tTU5MPQcEd-ZkqyOlLYO5g" source="_ljs8QOrLEeCgerddwRbJUw" target="_5oplINNmEeGRnPi2MLPE0g" fontName="Arial" fontHeight="10" routing="Rectilinear" lineColor="3342489" lineWidth="1" showStereotype="Text">
@@ -2940,7 +2929,7 @@ Verifying Calibrator, used for periodic calibration checks.</body>
               <children xmi:type="notation:BasicDecorationNode" xmi:id="_MqzAYdNnEeGRnPi2MLPE0g" type="Name"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MqyZUdNnEeGRnPi2MLPE0g" y="-186"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_MqzAYtNnEeGRnPi2MLPE0g" type="ToMultiplicityLabel" element="_QQ5xlHpnEd-44ra0dfiJCw">
+            <children xmi:type="notation:DecorationNode" xmi:id="_MqzAYtNnEeGRnPi2MLPE0g" visible="false" type="ToMultiplicityLabel" element="_QQ5xlHpnEd-44ra0dfiJCw">
               <children xmi:type="notation:BasicDecorationNode" xmi:id="_MqzncNNnEeGRnPi2MLPE0g" type="ToMultiplicity"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_MqzAY9NnEeGRnPi2MLPE0g" y="396"/>
             </children>
@@ -2980,7 +2969,7 @@ Verifying Calibrator, used for periodic calibration checks.</body>
               <children xmi:type="notation:BasicDecorationNode" xmi:id="_NTTx4dNnEeGRnPi2MLPE0g" type="Name"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NTTK0dNnEeGRnPi2MLPE0g" y="-186"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_NTTx4tNnEeGRnPi2MLPE0g" type="ToMultiplicityLabel" element="_dDGHUIAfEeGE1-mzJa42fw">
+            <children xmi:type="notation:DecorationNode" xmi:id="_NTTx4tNnEeGRnPi2MLPE0g" visible="false" type="ToMultiplicityLabel" element="_dDGHUIAfEeGE1-mzJa42fw">
               <children xmi:type="notation:BasicDecorationNode" xmi:id="_NTUY8NNnEeGRnPi2MLPE0g" type="ToMultiplicity"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_NTTx49NnEeGRnPi2MLPE0g" y="396"/>
             </children>
@@ -2994,7 +2983,7 @@ Verifying Calibrator, used for periodic calibration checks.</body>
             </children>
             <children xmi:type="notation:DecorationNode" xmi:id="_NTVnENNnEeGRnPi2MLPE0g" type="FromRoleLabel" element="_dDAAsIAfEeGE1-mzJa42fw">
               <children xmi:type="notation:BasicDecorationNode" xmi:id="_NTWOINNnEeGRnPi2MLPE0g" type="FromRole"/>
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_NTVnEdNnEeGRnPi2MLPE0g" y="-397"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_NTVnEdNnEeGRnPi2MLPE0g" x="-433" y="-541"/>
             </children>
             <children xmi:type="notation:DecorationNode" xmi:id="_NTWOIdNnEeGRnPi2MLPE0g" visible="false" type="ToQualifierLabel" element="_dDGHUIAfEeGE1-mzJa42fw">
               <children xmi:type="notation:SemanticListCompartment" xmi:id="_NTWOI9NnEeGRnPi2MLPE0g" type="QualifierCompartment"/>
@@ -3074,7 +3063,7 @@ Verifying Calibrator, used for periodic calibration checks.</body>
             </children>
             <children xmi:type="notation:DecorationNode" xmi:id="_RCVBU9NnEeGRnPi2MLPE0g" type="FromRoleLabel" element="_uT7PwFPxEeC3dvg3Ss2k0Q">
               <children xmi:type="notation:BasicDecorationNode" xmi:id="_RCVoYNNnEeGRnPi2MLPE0g" type="FromRole"/>
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_RCVBVNNnEeGRnPi2MLPE0g" y="-397"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_RCVBVNNnEeGRnPi2MLPE0g" x="430" y="-369"/>
             </children>
             <children xmi:type="notation:DecorationNode" xmi:id="_RCVoYdNnEeGRnPi2MLPE0g" visible="false" type="ToQualifierLabel" element="_uT8d4FPxEeC3dvg3Ss2k0Q">
               <children xmi:type="notation:SemanticListCompartment" xmi:id="_RCWPcNNnEeGRnPi2MLPE0g" type="QualifierCompartment"/>
@@ -3212,7 +3201,7 @@ Verifying Calibrator, used for periodic calibration checks.</body>
               <children xmi:type="notation:ListCompartment" xmi:id="_l1qtYNNnEeGRnPi2MLPE0g" type="FromConstraintCompartment"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_l1qGVNNnEeGRnPi2MLPE0g" y="1058"/>
             </children>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l1l04dNnEeGRnPi2MLPE0g" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l1l04dNnEeGRnPi2MLPE0g" points="[-2102, -806, 13074, 5006]$[-12716, -4871, 2460, 941]"/>
           </edges>
           <edges xmi:type="umlnotation:UMLConnector" xmi:id="_n4AYkNNnEeGRnPi2MLPE0g" element="_oOUB0GRXEeCsvJrE4KlOMA" source="_l1iKgNNnEeGRnPi2MLPE0g" target="_n38HINNnEeGRnPi2MLPE0g" fontName="Arial" fontHeight="10" lineColor="3342489" lineWidth="1" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_n4A_oNNnEeGRnPi2MLPE0g" visible="false" type="NameLabel">
@@ -3602,7 +3591,7 @@ Verifying Calibrator, used for periodic calibration checks.</body>
             </children>
             <children xmi:type="notation:DecorationNode" xmi:id="_7Z0yYNNnEeGRnPi2MLPE0g" type="FromRoleLabel" element="_0UVNAac1EeCkJ6Eur_P0ag">
               <children xmi:type="notation:BasicDecorationNode" xmi:id="_7Z0yYtNnEeGRnPi2MLPE0g" type="FromRole"/>
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_7Z0yYdNnEeGRnPi2MLPE0g" y="-397"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_7Z0yYdNnEeGRnPi2MLPE0g" x="-886" y="268"/>
             </children>
             <children xmi:type="notation:DecorationNode" xmi:id="_7Z0yY9NnEeGRnPi2MLPE0g" visible="false" type="ToQualifierLabel" element="_0UYQUqc1EeCkJ6Eur_P0ag">
               <children xmi:type="notation:SemanticListCompartment" xmi:id="_7Z1ZcNNnEeGRnPi2MLPE0g" type="QualifierCompartment"/>
@@ -3638,11 +3627,11 @@ Verifying Calibrator, used for periodic calibration checks.</body>
             </children>
             <children xmi:type="notation:DecorationNode" xmi:id="_7Z5D0dNnEeGRnPi2MLPE0g" type="FromMultiplicityLabel" element="_wK9C0FPxEeC3dvg3Ss2k0Q">
               <children xmi:type="notation:BasicDecorationNode" xmi:id="_7Z5D09NnEeGRnPi2MLPE0g" type="FromMultiplicity"/>
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_7Z5D0tNnEeGRnPi2MLPE0g" y="396"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_7Z5D0tNnEeGRnPi2MLPE0g" x="-501" y="299"/>
             </children>
             <children xmi:type="notation:DecorationNode" xmi:id="_7Z5q4NNnEeGRnPi2MLPE0g" type="FromRoleLabel" element="_wK9C0FPxEeC3dvg3Ss2k0Q">
               <children xmi:type="notation:BasicDecorationNode" xmi:id="_7Z5q4tNnEeGRnPi2MLPE0g" type="FromRole"/>
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_7Z5q4dNnEeGRnPi2MLPE0g" y="-397"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_7Z5q4dNnEeGRnPi2MLPE0g" x="-821" y="-256"/>
             </children>
             <children xmi:type="notation:DecorationNode" xmi:id="_7Z5q49NnEeGRnPi2MLPE0g" visible="false" type="ToQualifierLabel" element="_wK_fEFPxEeC3dvg3Ss2k0Q">
               <children xmi:type="notation:SemanticListCompartment" xmi:id="_7Z5q5dNnEeGRnPi2MLPE0g" type="QualifierCompartment"/>
@@ -4318,6 +4307,9 @@ A kit is a product that contains multiple parts administered together or used to
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MrYJ4WRaEeCsvJrE4KlOMA"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_0UVNAac1EeCkJ6Eur_P0ag" name="manufacturingLot" visibility="public" type="_2iS00FPwEeC3dvg3Ss2k0Q" association="_0UVNAKc1EeCkJ6Eur_P0ag">
+          <ownedComment xmi:id="_XNc4ADNoEeKkw_YjK6aRcw" annotatedElement="_0UVNAac1EeCkJ6Eur_P0ag">
+            <body>Identifies a batch of material or products that were manufactured over a defined time period.  Identifies the batch or lot in which the medicinal product was manufactured.</body>
+          </ownedComment>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0UYQUac1EeCkJ6Eur_P0ag" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0UYQUKc1EeCkJ6Eur_P0ag"/>
         </ownedAttribute>
@@ -4334,7 +4326,7 @@ A kit is a product that contains multiple parts administered together or used to
         <generalization xmi:id="_YvlMsDO0EeCBme_1raFDzg" general="_420A62FD03B64592E9E3037C"/>
         <ownedAttribute xmi:id="_420A62FD03B6425C125E02EF" name="activity" visibility="public">
           <ownedComment xmi:id="_Naq9s-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6425C125E02EF">
-            <body>The measured quantity of the activity of the radiopharmaceutical used.</body>
+            <body>The measured quantity of the radioactivity of the radiopharmaceutical used.</body>
           </ownedComment>
           <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B641886F630221?FHIM/Datatypes/PhysicalQuantity?"/>
         </ownedAttribute>
@@ -4439,6 +4431,9 @@ A kit is a product that contains multiple parts administered together or used to
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8_X7YVAeEeCNoo8JCSlflA"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_dDAAsIAfEeGE1-mzJa42fw" name="labeler" visibility="public" type="_XteGcIAfEeGE1-mzJa42fw" association="_dC7IMIAfEeGE1-mzJa42fw">
+          <ownedComment xmi:id="_w6z8IDNqEeKkw_YjK6aRcw" annotatedElement="_dDAAsIAfEeGE1-mzJa42fw">
+            <body>A labeler is an organization that repackages medicinal products for sale.  In some cases a manufacturer is also the labeler.</body>
+          </ownedComment>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dDB14IAfEeGE1-mzJa42fw" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dDBO0IAfEeGE1-mzJa42fw"/>
         </ownedAttribute>
@@ -4528,14 +4523,6 @@ A kit is a product that contains multiple parts administered together or used to
           <body>&quot;A contrivance or an invention serving a particular purpose, especially a machine used to perform one or more relatively simple tasks.&quot; (The American Heritage Stedman's Medical Dictionary).   &quot;A ManufacturedMaterial used in an activity without being substantially changed through that activity.&quot; - HL7 V3</body>
         </ownedComment>
         <generalization xmi:id="_qYoq4OrLEeCgerddwRbJUw" general="_ddsuwM_1Ed-YeMSrwW6svA"/>
-        <ownedAttribute xmi:id="_xQ-ZUPGREd-ZlYn0p4HjQw" name="alertLevel" visibility="public">
-          <ownedComment xmi:id="_3DwQQPGREd-ZlYn0p4HjQw" annotatedElement="_xQ-ZUPGREd-ZlYn0p4HjQw">
-            <body>&quot;The current functional status of an automated device.&quot; - HL7 V3. Possible values include: Normal, Warning, Critical, etc.</body>
-          </ownedComment>
-          <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1R-JkPGREd-ZlYn0p4HjQw" value="1"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1R9igPGREd-ZlYn0p4HjQw"/>
-        </ownedAttribute>
         <ownedAttribute xmi:id="_Z9aEEBFvEeKu1LfuaJwFHw" name="cataloglId" visibility="public">
           <eAnnotations xmi:id="_Z9aEERFvEeKu1LfuaJwFHw" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
           <ownedComment xmi:id="_Z9aEEhFvEeKu1LfuaJwFHw" annotatedElement="_Z9aEEBFvEeKu1LfuaJwFHw">
@@ -4544,22 +4531,6 @@ A kit is a product that contains multiple parts administered together or used to
           <type xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Z9aEExFvEeKu1LfuaJwFHw" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Z9aEFBFvEeKu1LfuaJwFHw"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:id="_5Sy6sPGREd-ZlYn0p4HjQw" name="dateLastCalibrated" visibility="public">
-          <ownedComment xmi:id="_BovR8PGSEd-ZlYn0p4HjQw" annotatedElement="_5Sy6sPGREd-ZlYn0p4HjQw">
-            <body>&quot;The date and time the device was last calibrated.&quot; - HL7 V3</body>
-          </ownedComment>
-          <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EMlHsPGSEd-ZlYn0p4HjQw" value="1"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_EMkgoPGSEd-ZlYn0p4HjQw"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:id="_420A62FD03B6425C00B1009E" name="localRemoteControlState" visibility="public">
-          <ownedComment xmi:id="_L-vLOuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6425C00B1009E">
-            <body>&quot;The state of control of the device. A device can either work autonomously or it can be controlled by another system. The  control status of a device must be communicated between devices prior to remote commands being transmitted. If the device  is not in &quot;Remote&quot; status, external commands will be ignored.&quot; - HL7 V3</body>
-          </ownedComment>
-          <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_e1wYcfTqEdy4NNd432ztnw" value="1"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_e1wYcPTqEdy4NNd432ztnw"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_420A62FD03B6425C00A30062" name="modelId" visibility="public">
           <eAnnotations xmi:id="_L-vLNOLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
@@ -4597,6 +4568,9 @@ A kit is a product that contains multiple parts administered together or used to
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_etkMdeLjEdutr_MT9HkPyQ"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_uT7PwFPxEeC3dvg3Ss2k0Q" name="deviceInstance" visibility="public" type="_MsausFCxEeCsN-3dTKIrUA" association="_uT6BoFPxEeC3dvg3Ss2k0Q">
+          <ownedComment xmi:id="_ICc4ADNpEeKkw_YjK6aRcw" annotatedElement="_uT7PwFPxEeC3dvg3Ss2k0Q">
+            <body>Identifies an individual device belonging to the class of devices represented by the Device class on the other end of the association.  For example, the Device class might describe a Color LaserJet Model CMJ1312 made by Hewlett Packard.  The DeviceInstance class might describe the machine that has serial number 1234.  Other information about the device instance, such as the cost, date placed into service, date last serviced, etc. may be added to the DeviceInstance class in the future.  For now, we are just interested in the serial number (the Id property).</body>
+          </ownedComment>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uT7PwlPxEeC3dvg3Ss2k0Q" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_uT7PwVPxEeC3dvg3Ss2k0Q" value="1"/>
         </ownedAttribute>
@@ -4610,15 +4584,25 @@ A kit is a product that contains multiple parts administered together or used to
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_MsausFCxEeCsN-3dTKIrUA" name="DeviceInstance">
         <ownedComment xmi:id="_wrmqcLskEeGZTLDYkoM_Sw" annotatedElement="_MsausFCxEeCsN-3dTKIrUA">
-          <body>&quot;Identifies the Equipment Instance (e.g., Analyzer, Analyzer module, group of Analyzers, etc.) responsible for the production of the observation....&quot; - HL7 Version 2.8, OBX-18.</body>
+          <body>This class identifies an individual device.  The Id property is commonly known as a serial number.&#xD;
+&#xD;
+&quot;Identifies the Equipment Instance (e.g., Analyzer, Analyzer module, group of Analyzers, etc.) responsible for the production of the observation....&quot; - HL7 Version 2.8, OBX-18.</body>
         </ownedComment>
-        <ownedAttribute xmi:id="_uT8d4FPxEeC3dvg3Ss2k0Q" name="durableMedicalEquipment" visibility="public" type="_420A62FD03B6425C004E004C" association="_uT6BoFPxEeC3dvg3Ss2k0Q">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uT8d4lPxEeC3dvg3Ss2k0Q" value="1"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_uT8d4VPxEeC3dvg3Ss2k0Q" value="1"/>
+        <ownedAttribute xmi:id="_xQ-ZUPGREd-ZlYn0p4HjQw" name="alertLevel" visibility="public">
+          <ownedComment xmi:id="_3DwQQPGREd-ZlYn0p4HjQw" annotatedElement="_xQ-ZUPGREd-ZlYn0p4HjQw">
+            <body>&quot;The current functional status of an automated device.&quot; - HL7 V3. Possible values include: Normal, Warning, Critical, etc.</body>
+          </ownedComment>
+          <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1R-JkPGREd-ZlYn0p4HjQw" value="1"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1R9igPGREd-ZlYn0p4HjQw"/>
         </ownedAttribute>
-        <ownedAttribute xmi:id="_wK9C0FPxEeC3dvg3Ss2k0Q" name="manufacturingLot" visibility="public" type="_2iS00FPwEeC3dvg3Ss2k0Q" association="_wK5_gFPxEeC3dvg3Ss2k0Q">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wK-Q8FPxEeC3dvg3Ss2k0Q" value="1"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wK9p4FPxEeC3dvg3Ss2k0Q"/>
+        <ownedAttribute xmi:id="_5Sy6sPGREd-ZlYn0p4HjQw" name="dateLastCalibrated" visibility="public">
+          <ownedComment xmi:id="_BovR8PGSEd-ZlYn0p4HjQw" annotatedElement="_5Sy6sPGREd-ZlYn0p4HjQw">
+            <body>&quot;The date and time the device was last calibrated.&quot; - HL7 V3</body>
+          </ownedComment>
+          <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EMlHsPGSEd-ZlYn0p4HjQw" value="1"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_EMkgoPGSEd-ZlYn0p4HjQw"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_oJDGcKc2EeCkJ6Eur_P0ag" name="id" visibility="public">
           <ownedComment xmi:id="_oJDGcac2EeCkJ6Eur_P0ag" annotatedElement="_oJDGcKc2EeCkJ6Eur_P0ag">
@@ -4627,6 +4611,28 @@ A kit is a product that contains multiple parts administered together or used to
           <type xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oJDGcqc2EeCkJ6Eur_P0ag" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oJDGc6c2EeCkJ6Eur_P0ag"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_420A62FD03B6425C00B1009E" name="localRemoteControlState" visibility="public">
+          <ownedComment xmi:id="_L-vLOuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6425C00B1009E">
+            <body>&quot;The state of control of the device. A device can either work autonomously or it can be controlled by another system. The  control status of a device must be communicated between devices prior to remote commands being transmitted. If the device  is not in &quot;Remote&quot; status, external commands will be ignored.&quot; - HL7 V3</body>
+          </ownedComment>
+          <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_e1wYcfTqEdy4NNd432ztnw" value="1"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_e1wYcPTqEdy4NNd432ztnw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_uT8d4FPxEeC3dvg3Ss2k0Q" name="device" visibility="public" type="_420A62FD03B6425C004E004C" association="_uT6BoFPxEeC3dvg3Ss2k0Q">
+          <ownedComment xmi:id="_EAwuwDNqEeKkw_YjK6aRcw" annotatedElement="_uT8d4FPxEeC3dvg3Ss2k0Q">
+            <body>Identifies a class of devices characterized by their manufacturer, model name/number, software version, etc.  This class differs from the Device Instance class on the other end of the association in that this class represents all instances of a kind of device whereas the Device Instance class represents one individual.  For example, the Device class might describe a Color LaserJet Model CMJ1312 made by Hewlett Packard.  The DeviceInstance class might describe the machine that has serial number 1234.</body>
+          </ownedComment>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uT8d4lPxEeC3dvg3Ss2k0Q" value="1"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_uT8d4VPxEeC3dvg3Ss2k0Q" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_wK9C0FPxEeC3dvg3Ss2k0Q" name="manufacturingLot" visibility="public" type="_2iS00FPwEeC3dvg3Ss2k0Q" association="_wK5_gFPxEeC3dvg3Ss2k0Q">
+          <ownedComment xmi:id="_U4fy0DNoEeKkw_YjK6aRcw" annotatedElement="_wK9C0FPxEeC3dvg3Ss2k0Q">
+            <body>Identifies a batch of material or products that were manufactured over a defined time period.  Identifies the batch or lot in which the device was manufactured.</body>
+          </ownedComment>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wK-Q8FPxEeC3dvg3Ss2k0Q" value="1"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wK9p4FPxEeC3dvg3Ss2k0Q"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_aN6pMGRXEeCsvJrE4KlOMA" name="DispensedDrug">
@@ -4791,7 +4797,7 @@ This property indicates whether the ingredient represented by this class is acti
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_XteGcIAfEeGE1-mzJa42fw" name="Labeler">
         <ownedComment xmi:id="_Ug4SECzbEeKLfdgQhBZO1Q" annotatedElement="_XteGcIAfEeGE1-mzJa42fw">
-          <body>A labeler repackages medicinal products for sale.  In some cases a manufacturer is also the labeler.</body>
+          <body>A labeler is an organization that repackages medicinal products for sale.  In some cases a manufacturer is also the labeler.</body>
         </ownedComment>
         <ownedAttribute xmi:id="_k9QhgIAfEeGE1-mzJa42fw" name="id" visibility="public">
           <ownedComment xmi:id="_k9QhgYAfEeGE1-mzJa42fw" annotatedElement="_k9QhgIAfEeGE1-mzJa42fw">
@@ -4829,6 +4835,9 @@ This property indicates whether the ingredient represented by this class is acti
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_2iS00FPwEeC3dvg3Ss2k0Q" name="ManufacturingLot">
+        <ownedComment xmi:id="_M9CYIDNoEeKkw_YjK6aRcw" annotatedElement="_2iS00FPwEeC3dvg3Ss2k0Q">
+          <body>This class identifies a batch of material or products that were manufactured over a defined time period.  The definition of a batch or lot is determined by the manufacturer, based in part on the nature of the manufacturing process, and on the historical information that can be accessed (such as the shipment of raw materials used, the equipment used, quality assurance tests, etc.) by the use of the lot number.  The purpose of this class in the FHIM is to contain lot identifier and expiration date information about a product to facilitate inventory control processes, manufacturer recall processes, and adverse event reporting.</body>
+        </ownedComment>
         <ownedAttribute xmi:id="_420A62FD03B6419906560120" name="expirationDate" visibility="public">
           <eAnnotations xmi:id="_NejYJOLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
           <ownedComment xmi:id="_NejYIuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6419906560120">
@@ -4854,7 +4863,12 @@ This property indicates whether the ingredient represented by this class is acti
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_evp3K-LjEdutr_MT9HkPyQ" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_S0JO8FPzEeC3dvg3Ss2k0Q" name="lotSize" visibility="public">
+          <ownedComment xmi:id="_GJ5a8DNpEeKkw_YjK6aRcw" annotatedElement="_S0JO8FPzEeC3dvg3Ss2k0Q">
+            <body>Identifies the number of products manufactured as part of the manufacturing lot.  This property may be useful in regulatory filings, but is unlikely to be needed for electronic health records.</body>
+          </ownedComment>
           <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B641886F630221?FHIM/Datatypes/PhysicalQuantity?"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_n_rfETNoEeKkw_YjK6aRcw" value="1"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_n_rfEDNoEeKkw_YjK6aRcw"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_ql3uEPQUEd-ZkqyOlLYO5g" name="MaterialCategory">
@@ -4994,7 +5008,6 @@ This property indicates whether the ingredient represented by this class is acti
   <Default:Documentation xmi:id="_L88bcOLiEduGJrQyRGTO1A" base_Comment="_L8zRjuLiEduGJrQyRGTO1A"/>
   <Default:Documentation xmi:id="_L-bpOeLiEduGJrQyRGTO1A" base_Comment="_L-bpOOLiEduGJrQyRGTO1A"/>
   <Default:Documentation xmi:id="_L-laMeLiEduGJrQyRGTO1A" base_Comment="_L-laMOLiEduGJrQyRGTO1A"/>
-  <Default:Documentation xmi:id="_L-vLO-LiEduGJrQyRGTO1A" base_Comment="_L-vLOuLiEduGJrQyRGTO1A"/>
   <Default:Documentation xmi:id="_L-4VIuLiEduGJrQyRGTO1A" base_Comment="_L-4VIeLiEduGJrQyRGTO1A"/>
   <Default:Documentation xmi:id="_MArE5-LiEduGJrQyRGTO1A" base_Comment="_MArE5uLiEduGJrQyRGTO1A"/>
   <Default:Documentation xmi:id="_MB3Xv-LiEduGJrQyRGTO1A" base_Comment="_MB3XvuLiEduGJrQyRGTO1A"/>
@@ -5057,8 +5070,6 @@ This property indicates whether the ingredient represented by this class is acti
   <Default:Documentation xmi:id="_txV0sOw2Ed-kfrmay8LxLw" base_Comment="_txSxYOw2Ed-kfrmay8LxLw"/>
   <Default:Documentation xmi:id="_IFVpUPGPEd-ZlYn0p4HjQw" base_Comment="_IFLRQPGPEd-ZlYn0p4HjQw"/>
   <Default:Documentation xmi:id="_3jk1QPGQEd-ZlYn0p4HjQw" base_Comment="_3jf8wPGQEd-ZlYn0p4HjQw"/>
-  <Default:Documentation xmi:id="_3D5aMPGREd-ZlYn0p4HjQw" base_Comment="_3DwQQPGREd-ZlYn0p4HjQw"/>
-  <Default:Documentation xmi:id="_Bo5C8PGSEd-ZlYn0p4HjQw" base_Comment="_BovR8PGSEd-ZlYn0p4HjQw"/>
   <Default:Documentation xmi:id="_M_6wIPGTEd-ZlYn0p4HjQw" base_Comment="_M_w_IPGTEd-ZlYn0p4HjQw"/>
   <Default:Documentation xmi:id="_mR_4YPGTEd-ZlYn0p4HjQw" base_Comment="_mR1gUPGTEd-ZlYn0p4HjQw"/>
   <Default:Documentation xmi:id="_PlEYAPGUEd-ZlYn0p4HjQw" base_Comment="_Pk6nAPGUEd-ZlYn0p4HjQw"/>
@@ -5263,4 +5274,14 @@ This property indicates whether the ingredient represented by this class is acti
   <Default:Documentation xmi:id="_Mq1bwCw_EeKmqZ4YenSzAg" base_Comment="_MquHACw_EeKmqZ4YenSzAg"/>
   <Default:Documentation xmi:id="_TR-rcCzaEeKLfdgQhBZO1Q" base_Comment="_TR7oICzaEeKLfdgQhBZO1Q"/>
   <Default:Documentation xmi:id="_UhA08CzbEeKLfdgQhBZO1Q" base_Comment="_Ug4SECzbEeKLfdgQhBZO1Q"/>
+  <Default:Documentation xmi:id="_M9JF0DNoEeKkw_YjK6aRcw" base_Comment="_M9CYIDNoEeKkw_YjK6aRcw"/>
+  <Default:Documentation xmi:id="_U4nHkDNoEeKkw_YjK6aRcw" base_Comment="_U4fy0DNoEeKkw_YjK6aRcw"/>
+  <Default:Documentation xmi:id="_XNkMwDNoEeKkw_YjK6aRcw" base_Comment="_XNc4ADNoEeKkw_YjK6aRcw"/>
+  <Default:Documentation xmi:id="_GKAvsDNpEeKkw_YjK6aRcw" base_Comment="_GJ5a8DNpEeKkw_YjK6aRcw"/>
+  <Default:Documentation xmi:id="_ICkz0DNpEeKkw_YjK6aRcw" base_Comment="_ICc4ADNpEeKkw_YjK6aRcw"/>
+  <Default:Documentation xmi:id="_EA9jEDNqEeKkw_YjK6aRcw" base_Comment="_EAwuwDNqEeKkw_YjK6aRcw"/>
+  <Default:Documentation xmi:id="_Zg3aMDNqEeKkw_YjK6aRcw" base_Comment="_3DwQQPGREd-ZlYn0p4HjQw"/>
+  <Default:Documentation xmi:id="_Zg3aMTNqEeKkw_YjK6aRcw" base_Comment="_BovR8PGSEd-ZlYn0p4HjQw"/>
+  <Default:Documentation xmi:id="_Zg3aMjNqEeKkw_YjK6aRcw" base_Comment="_L-vLOuLiEduGJrQyRGTO1A"/>
+  <Default:Documentation xmi:id="_w67Q4DNqEeKkw_YjK6aRcw" base_Comment="_w6z8IDNqEeKkw_YjK6aRcw"/>
 </xmi:XMI>
