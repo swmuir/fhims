@@ -3467,7 +3467,7 @@ For example, say that OrderAction1 and OrderAction2 are instances of OrderAction
         <details xmi:id="_EaGNwawQEeG4dfTp_XT2yg" key="EntryPoint"/>
       </eAnnotations>
       <ownedComment xmi:id="_MV7rsAoZEeGTP7iPaRFP_g" annotatedElement="_3r94oOO5EeCbbuWBGGTBrA">
-        <body>This abstract class contains those properties which are common to all Promise classes (e.g., LabPromise, PharmacyPromise, etc.).</body>
+        <body>This abstract class contains those properties which are common to all Promise classes (e.g., LabPromise, PharmacyPromise, etc.).  A Promise is an intent to perform a service that has the strength of a commitment, i.e., other parties may rely on the originator of such promise that said originator will see to it that the promised act will be fulfilled. A promise can be either solicited or unsolicited.  The entity that makes such a promise is also called a &quot;filler&quot;, while the entity that requests the service is also called a &quot;placer&quot;.  The Promise can be looked at as the Order from the filler's point of view.</body>
       </ownedComment>
       <ownedAttribute xmi:id="_JJcFgAcvEeGfLeiV6Brugg" name="chargeToPracticeCode" visibility="public">
         <ownedComment xmi:id="_lSVp4AcvEeGfLeiV6Brugg" annotatedElement="_JJcFgAcvEeGfLeiV6Brugg">
@@ -3484,6 +3484,12 @@ For example, say that OrderAction1 and OrderAction2 are instances of OrderAction
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B641886F630160?FHIM/Datatypes/MonetaryAmount?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oYzrkQcvEeGfLeiV6Brugg" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oYzrkAcvEeGfLeiV6Brugg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_qaO2EEVoEeKmiJoj9rWMSg" name="dateAccepted" visibility="public">
+        <ownedComment xmi:id="__odHUEVoEeKmiJoj9rWMSg" annotatedElement="_qaO2EEVoEeKmiJoj9rWMSg">
+          <body>The date/time on which the ordered service was accepted by the filler.  In other words, the creation date of the Promise record.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_8Pvl0OO5EeCbbuWBGGTBrA" name="expectedAvailabilityDate" visibility="public">
         <ownedComment xmi:id="_FL4AkAcrEeGfLeiV6Brugg" annotatedElement="_8Pvl0OO5EeCbbuWBGGTBrA">
@@ -3505,11 +3511,21 @@ For example, say that OrderAction1 and OrderAction2 are instances of OrderAction
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_YhpTsAcxEeGfLeiV6Brugg" name="scheduledDateTime" visibility="public">
-        <ownedComment xmi:id="_wWuScAcxEeGfLeiV6Brugg" annotatedElement="_YhpTsAcxEeGfLeiV6Brugg">
-          <body>&quot;The date/time the filler scheduled an observation, when applicable....  This is a result of a request to schedule a particular test and provides a way to inform the placer of the date/time a study is scheduled (result only).&quot; - HL7 Version 2.8, OBR-36</body>
+      <ownedAttribute xmi:id="_VHctsLTlEd2sMvQnSCqOzA" name="priority" visibility="public">
+        <ownedComment xmi:id="_Xn1yMMDrEd2cYoIY7XWEQw" annotatedElement="_VHctsLTlEd2sMvQnSCqOzA">
+          <body>&quot;Describes the urgency of the request. If this field is blank, the default is [Routine]&quot; - HL7 Version 2.8, TQ1-9.  Possible values include (from HL7 Table 122): Stat; ASAP; Routine; Preop; Callback; Timing critical*; As needed.  *Note that the Timing Critical has a syntax that allows more information, e.g., Timing Critical within 15 minutes.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_u9EVodOWEd2aQZomWdBJLg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_u9EVoNOWEd2aQZomWdBJLg" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eCP24PjKEeCmc6EQPl3F9g" name="scheduledDateTime" visibility="public">
+        <ownedComment xmi:id="_UECE0PjLEeCmc6EQPl3F9g" annotatedElement="_eCP24PjKEeCmc6EQPl3F9g">
+          <body>&quot;The date/time the filler scheduled an observation, when applicable (e.g., action code in OBR-11-specimen action code = &quot;S&quot;).  This is a result of a request to schedule a particular test and provides a way to inform the placer of the date/time a study is scheduled (result only).&quot; - HL7 Version 2.8, OBR.36</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kq8pMfjKEeCmc6EQPl3F9g" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_kq8pMPjKEeCmc6EQPl3F9g"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_F_ljMAcwEeGfLeiV6Brugg" name="status" visibility="public">
         <ownedComment xmi:id="_F_ljMQcwEeGfLeiV6Brugg" annotatedElement="_F_ljMAcwEeGfLeiV6Brugg">
@@ -3519,11 +3535,35 @@ For example, say that OrderAction1 and OrderAction2 are instances of OrderAction
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_F_ljMgcwEeGfLeiV6Brugg" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_F_ljMwcwEeGfLeiV6Brugg" value="1"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_8wxfsAcuEeGfLeiV6Brugg" name="statusChangeDate" visibility="public">
-        <ownedComment xmi:id="_A5S0QAcvEeGfLeiV6Brugg" annotatedElement="_8wxfsAcuEeGfLeiV6Brugg">
-          <body>&quot;This field specifies the date/time results reported or status changed.  This field is used to indicate the date and time that the results are composed into a report and released, or that a status, as defined in ORC-5-order status, is entered or changed.  (This is a results field only)....&quot; - HL7 Version 2.8, OBR-22</body>
+      <ownedAttribute xmi:id="_O7_KQJNwEeCyufOLCDZkFA" name="statusChangeDateTime" visibility="public">
+        <ownedComment xmi:id="_FBMKoAmIEeGe4v7RnpTDUQ" annotatedElement="_O7_KQJNwEeCyufOLCDZkFA">
+          <body>&quot;Specifies the date/time when the results were reported or status changed.  This conditional field is required whenever [Report Status] is valued.  This field is used to indicate the date and time that the results are composed into a report and released, or that [Healthcare Order status] is entered or changed.&quot; - HL7 Version 2.8, OBR-22.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_s5PJgOOaEd-8X4J7aT-aiQ" name="statusModifier" visibility="public">
+        <ownedComment xmi:id="_6fLA0LslEeGZTLDYkoM_Sw" annotatedElement="_s5PJgOOaEd-8X4J7aT-aiQ">
+          <body>&quot;This field is a modifier or refiner of the ORC-5-Order status field. This field may be used to provide additional levels of specificity or additional information for the defined order status codes.&quot; - HL7 Version 2.8, ORC-25</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_s5PJgeOaEd-8X4J7aT-aiQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_s5PJguOaEd-8X4J7aT-aiQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_KizycNNiEeGRnPi2MLPE0g" name="author" visibility="public" association="_Kix9QNNiEeGRnPi2MLPE0g">
+        <ownedComment xmi:id="_eYdHMNNiEeGRnPi2MLPE0g" annotatedElement="_KizycNNiEeGRnPi2MLPE0g">
+          <body>Identifies the person who accepted the Order.  In other words, the person responsible for creating the Promise.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Common.efx#_hXa7cAq6Ed-426xscrxYmQ?FHIM/Common/Author?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Ki0ZgdNiEeGRnPi2MLPE0g" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Ki0ZgNNiEeGRnPi2MLPE0g"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_rwrIgNNBEeGRnPi2MLPE0g" name="dataEnterer" visibility="public" association="_rwlB4NNBEeGRnPi2MLPE0g">
+        <ownedComment xmi:id="_wMOGwNNBEeGRnPi2MLPE0g" annotatedElement="_rwrIgNNBEeGRnPi2MLPE0g">
+          <body>Contains the identity of the person who actually keyed the order into the filling application.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Common.efx#_HxX44Aq7Ed-426xscrxYmQ?FHIM/Common/DataEnterer?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rwvZ8NNBEeGRnPi2MLPE0g" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rwuy4NNBEeGRnPi2MLPE0g"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_fFVFwMoWEeGas4Yp_oUthg" name="performingOrganization" visibility="public" association="_fFRbYMoWEeGas4Yp_oUthg">
         <ownedComment xmi:id="_pBEWIMoWEeGas4Yp_oUthg" annotatedElement="_fFVFwMoWEeGas4Yp_oUthg">
@@ -3535,28 +3575,12 @@ For example, say that OrderAction1 and OrderAction2 are instances of OrderAction
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fFW68MoWEeGas4Yp_oUthg" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fFWT4MoWEeGas4Yp_oUthg"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_rwrIgNNBEeGRnPi2MLPE0g" name="dataEnterer" visibility="public" association="_rwlB4NNBEeGRnPi2MLPE0g">
-        <ownedComment xmi:id="_wMOGwNNBEeGRnPi2MLPE0g" annotatedElement="_rwrIgNNBEeGRnPi2MLPE0g">
-          <body>Contains the identity of the person who actually keyed the order into the filling application.</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Common.efx#_HxX44Aq7Ed-426xscrxYmQ?FHIM/Common/DataEnterer?"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rwvZ8NNBEeGRnPi2MLPE0g" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rwuy4NNBEeGRnPi2MLPE0g"/>
-      </ownedAttribute>
       <ownedAttribute xmi:id="_UexjwNNLEeGRnPi2MLPE0g" name="relatedPromise" visibility="public" type="_7omUYNNKEeGRnPi2MLPE0g" association="_UevukNNLEeGRnPi2MLPE0g">
         <ownedComment xmi:id="_gi7SINNLEeGRnPi2MLPE0g" annotatedElement="_UexjwNNLEeGRnPi2MLPE0g">
           <body>Identifies other Promises to which this Promise is somehow related.</body>
         </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UeyK0dNLEeGRnPi2MLPE0g" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UeyK0NNLEeGRnPi2MLPE0g"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_KizycNNiEeGRnPi2MLPE0g" name="author" visibility="public" association="_Kix9QNNiEeGRnPi2MLPE0g">
-        <ownedComment xmi:id="_eYdHMNNiEeGRnPi2MLPE0g" annotatedElement="_KizycNNiEeGRnPi2MLPE0g">
-          <body>Identifies the person who accepted the Order.  In other words, the person responsible for creating the Promise.</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Common.efx#_hXa7cAq6Ed-426xscrxYmQ?FHIM/Common/Author?"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Ki0ZgdNiEeGRnPi2MLPE0g" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Ki0ZgNNiEeGRnPi2MLPE0g"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_Ap-YYP84EeCDQancQavJ_w" name="orderAction_detectedIssueEvent" memberEnd="_Ap_mgP84EeCDQancQavJ_w _AqA0oP84EeCDQancQavJ_w">
@@ -3826,11 +3850,9 @@ For example, say that Promise1 and Promise2 are instances of Promise, and that P
   <Default:Documentation xmi:id="_fdbeQAcqEeGfLeiV6Brugg" base_Comment="_fdRtQAcqEeGfLeiV6Brugg"/>
   <Default:Documentation xmi:id="_FMK7gAcrEeGfLeiV6Brugg" base_Comment="_FL4AkAcrEeGfLeiV6Brugg"/>
   <RIM:ControlAct xmi:id="_PLTWwAcuEeGfLeiV6Brugg" base_Class="_OmE_gP87EeCDQancQavJ_w"/>
-  <Default:Documentation xmi:id="_A5b-MAcvEeGfLeiV6Brugg" base_Comment="_A5S0QAcvEeGfLeiV6Brugg"/>
   <Default:Documentation xmi:id="_lSfa4AcvEeGfLeiV6Brugg" base_Comment="_lSVp4AcvEeGfLeiV6Brugg"/>
   <Default:Documentation xmi:id="_n2SNUQcvEeGfLeiV6Brugg" base_Comment="_n2SNUAcvEeGfLeiV6Brugg"/>
   <Default:Documentation xmi:id="_F_ljNAcwEeGfLeiV6Brugg" base_Comment="_F_ljMQcwEeGfLeiV6Brugg"/>
-  <Default:Documentation xmi:id="_wW3cYAcxEeGfLeiV6Brugg" base_Comment="_wWuScAcxEeGfLeiV6Brugg"/>
   <Default:Documentation xmi:id="_u5ZokAmREeGe4v7RnpTDUQ" base_Comment="_u5QeoAmREeGe4v7RnpTDUQ"/>
   <Default:Documentation xmi:id="_MWOmoAoZEeGTP7iPaRFP_g" base_Comment="_MV7rsAoZEeGTP7iPaRFP_g"/>
   <Default:Documentation xmi:id="_ZHNeoApBEeGJyqUYQ0j7Rw" base_Comment="_ZHE7wApBEeGJyqUYQ0j7Rw"/>
@@ -3933,4 +3955,9 @@ For example, say that Promise1 and Promise2 are instances of Promise, and that P
   <Default:Documentation xmi:id="_eYkb8NNiEeGRnPi2MLPE0g" base_Comment="_eYdHMNNiEeGRnPi2MLPE0g"/>
   <RIM:Act xmi:id="_pD9gwPHkEeGWjrqT5CRABg" base_Class="_lnGYUPHkEeGWjrqT5CRABg"/>
   <Default:Documentation xmi:id="_9iezYPHkEeGWjrqT5CRABg" base_Comment="_9iW3kPHkEeGWjrqT5CRABg"/>
+  <Default:Documentation xmi:id="_Z-AUMkVoEeKmiJoj9rWMSg" base_Comment="_UECE0PjLEeCmc6EQPl3F9g"/>
+  <Default:Documentation xmi:id="_Z-AUM0VoEeKmiJoj9rWMSg" base_Comment="_FBMKoAmIEeGe4v7RnpTDUQ"/>
+  <Default:Documentation xmi:id="__ojN8EVoEeKmiJoj9rWMSg" base_Comment="__odHUEVoEeKmiJoj9rWMSg"/>
+  <Default:Documentation xmi:id="_JvDR8EVrEeKmiJoj9rWMSg" base_Comment="_Xn1yMMDrEd2cYoIY7XWEQw"/>
+  <Default:Documentation xmi:id="_NVemEEVrEeKmiJoj9rWMSg" base_Comment="_6fLA0LslEeGZTLDYkoM_Sw"/>
 </xmi:XMI>

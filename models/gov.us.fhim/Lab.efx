@@ -10,7 +10,7 @@
     </eAnnotations>
     <eAnnotations xmi:id="_NEeEM-LiEduGJrQyRGTO1A" source="uml2.diagrams" references="_Ga92kH7uEd-6KMbY3gBFOQ">
       <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_Ga92kH7uEd-6KMbY3gBFOQ" type="Class" name="_Lab" description="This is the main diagram for the Laboratory domain.  As noted in the package documentation, this domain is concerned primarily with laboratory orders and result reporting.&#xD;&#xA;&#xD;&#xA;There are four potential &quot;focal classes&quot; or &quot;entry points&quot; to this model, which are the Specimen Collection Request, the Laboratory Request, the Specimen Collection Promise, and the Laboratory Promise.  This allows use cases to begin with either the Request (aka the order), or the Promise (which is the order from the perspective of the filling service).  It is important to note that the two Request classes are subtypes of a more general Healthcare Order class, and the two Promise classes are subtypes of the more general Healthcare Promise class.  These classes therefore inherit all the properties of the respective super types, which are described in the Orders package.  See the Orders domain for more details.&#xD;&#xA;&#xD;&#xA;Laboratory processes begin when a clinician orders a test.  Logically, there exist simultaneously two orders: one to the laboratory to perform the test, but also one to obtain specimen(s) from the patient.  In practice, the order to the collect the specimen is not written or even articulated, but rather occurs automatically according to some pre-determined set of policies and procedures.  For example, an outpatient doctor orders a lipid panel.  The office personnel direct the patient to the phlebotomist down the hall who draws the appropriate amount of blood (into the appropriate tubes), all based on standing procedures.  In this case, there is no separate specimen collection order.  But in other cases, the patient may be sent to the laboratory, and an order is communicated to the laboratory to direct them to collect the specimen.  Furthermore, the “promise” to conduct the specimen collection is rarely articulated, it simply occurs based on standard procedures.  Nevertheless, these concepts logically exist, and the FHIM contains both the specimen collection request and promise, even though the properties often might be blank or might repeat data found in the laboratory test request and promise.&#xD;&#xA;&#xD;&#xA;The specimen collection request / promise process will usually result in one or more Specimen Collection Events during which one or more Specimens are collected.  The Specimen Collection Event class describes the event, the specimen(s) collected, who performed the collection, and where the collection occurred.  The Specimen class describes each specimen, the container(s) in which the specimen is contained, and any processing that was performed on the specimen.  The class also links to information regarding transport or storage of the specimen to include temperature information.  The specimen transport classes will be expanded in the future to accommodate chain of custody information.  The Specimen class is also associated with a Defined Patient Event class that links the specimen to a particular event or condition, for example blood drawn before or after a glucose challenge.  Once the specimen is collected, Assessments may be made over time to determine the appropriateness of the specimen for various laboratory procedures.&#xD;&#xA;&#xD;&#xA;The Lab Test Promise class is the record of the order from the laboratory’s perspective.  The Promise might be related to other promise(s) or might be referred to another laboratory, the results from which are collated and reported by the originating laboratory to the ordering clinician.  The laboratory will typically assign one or more Accession numbers to the promise; these accession numbers are typically closely associated with the specimen received.  The laboratory will perform various procedures and tests.  A link to the common Procedure class is provided to accommodate billing procedures (typically CPT codes), which are often at a different level of granularity from the lab test codes (typically LOINC or SNOMED codes) used to identify the test.  It is noted that a single class (LabTest) is used for the test ordered, the test promised, and the test performed.  The values for the instances of LabTest may come from different coding systems and may be of different levels of granularity.  For example, a clinician might order one Chem 7 using a local order code, the lab might promise a Chem 7 using LOINC, and the results will be reported as seven individual tests (blood urea nitrogen, serum sodium, etc.) using LOINC.&#xD;&#xA;The results of the test and any information concerning procedures performed are accommodated by the Reportable Results class.  Subtypes of this class accommodate differing data structures that are associated with broad categories of results.  For example, the Measurement With Reference Range is intended for tests that result in a numeric or ordinal value, such as the concentration of potassium in a blood sample (e.g. 4.5 mmol/L), the ratio of blood urea nitrogen to creatinine (e.g., 17), or the turbidity of a urine sample (e.g., cloudy).  Another common characteristic is that many of these tests have an associated reference range, which describes the range of values (low and high) considered to be normal in healthy individuals.  For a given test, there may be multiple normal ranges depending on such factors (Reference Range Criterion) as the patient’s age, gender, or race.&#xD;&#xA;&#xD;&#xA;Another category of tests and results is the identification of microbes in a sample, such as bacteria, parasites, or viruses.  Upon receipt, a portion of the sample is placed in a culture medium and allowed to grow.  Often a stain test is performed to identify the category(ies) of microbes present.  Later any organisms found are identified, along with an indication of the number of organisms (i.e., bacteria are often measured in colony-forming units).  If the microbes are bacteria, an antibiotic sensitivity test may be performed as well.  If the microbes are parasites, an additional observation is noted with respect to whether adults, larvae, eggs, or some combination, are present.  A key characteristic of these tests is that the overall process requires considerable time, so intermediary reports are created and sent to the ordering clinician as information becomes available.  Therefore, multiple results will be sent for a single ordered test, typically with some kind of status indicating that the report is a preliminary or intermediate finding.  Each subsequent revision generally will include all the text of the previous report(s), until the last report, the status of which will be marked as Final.  It is noted that even Final reports can be amended, although not routinely so – final reports will generally be amended to correct or augment previously reported information.  The Related Result class is used to link the versions of the report, usually by using replaces/replaced by relationships.&#xD;&#xA;&#xD;&#xA;Note also that multiple personnel may be involved in the performance of tests, especially microbiology cultures, which require more than a day to complete.  The potential for multiple Reportable Results to exist for one Lab Test Promise also allows for the identification of the multiple persons involved.&#xD;&#xA;&#xD;&#xA;All Reportable Results can have an interpretation associated with it.  The Interpretation Event class contains the interpretation as either a code or a free-form text or both, and indicates who provided the interpretation.  Reportable Results can be transcribed, especially for pathology reports.  The Transcription Event provided the date/time of the transcription and identifies the transcriptionist.  The Comment Event allows for any individual in the process to add remarks; the author of the comment event identifies the person making the comment.  Reportable Results may identify the device(s) used to produce the results – the association to Device Instance provides access to Common Product model hierarchy which contains the manufacturer model number, etc. as needed.&#xD;&#xA;&#xD;&#xA;A separate Reportable Result sub-type exists to report Test Exceptions.  This sub-type would be used to communicate reasons why a test was unable to be performed.  It may indicate that the quantity of specimen was insufficient, that the specimen was contaminated, that the specimen is inappropriate for the kind of test ordered, etc.&#xD;&#xA;&#xD;&#xA;Finally, there is a subtype of Reportable Result for Pathology Results.  Pathology results generally take the form of documents, which in turn are composed of sections containing free-form text.  The College of American Pathologists lists a number of sections that a well-formed pathology report should or may contain.  The Pathology Result class therefore is comprised of Lab Report Sections, the Section Title of which should come from some pre-defined vocabulary.  The report may also contain images and diagnoses.  It is noted that this entire structure could easily be replaced by a Clinical Document; in the future we may point to Clinical Document rather than maintain a separate Pathology Result structure.  On the other hand, we may wish to be more specific in this model, defining the specific kinds of sections directly in the model.">
-        <children xmi:type="notation:Shape" xmi:id="_M_odcH7uEd-6KMbY3gBFOQ" type="Note" fontName="Arial" fontHeight="10" description="FHIM Laboratory Domain&#xD;&#xA;  Version 0.16&#xD;&#xA;  11/9/2012" fillColor="16777088" lineColor="3342489">
+        <children xmi:type="notation:Shape" xmi:id="_M_odcH7uEd-6KMbY3gBFOQ" type="Note" fontName="Arial" fontHeight="10" description="FHIM Laboratory Domain&#xD;&#xA;  Version 0.17&#xD;&#xA;  12/13/2012" fillColor="16777088" lineColor="3342489">
           <children xmi:type="notation:BasicDecorationNode" xmi:id="_M_odcX7uEd-6KMbY3gBFOQ" type="DiagramName">
             <element xsi:nil="true"/>
           </children>
@@ -85,7 +85,7 @@
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_Kp7JSsIBEeCdLPayeDTWtA" visible="false" type="OperationCompartment"/>
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_Kp7JTMIBEeCdLPayeDTWtA" visible="false" type="SignalCompartment"/>
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_Kp7JTsIBEeCdLPayeDTWtA" visible="false" type="StructureCompartment"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Kp7JQsIBEeCdLPayeDTWtA" x="-634" y="11095"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Kp7JQsIBEeCdLPayeDTWtA" x="-634" y="11729"/>
         </children>
         <children xmi:type="umlnotation:UMLShape" xmi:id="_OAv7IMIBEeCdLPayeDTWtA" element="_420A62FD03B64263CF150098" fontName="Arial" fontHeight="10" showListVisibility="None" fillColor="8487423" lineColor="3342489" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_OA5sIMIBEeCdLPayeDTWtA" type="ImageCompartment">
@@ -111,7 +111,7 @@
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_Rpu0CsIBEeCdLPayeDTWtA" visible="false" type="OperationCompartment"/>
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_Rpu0DMIBEeCdLPayeDTWtA" visible="false" type="SignalCompartment"/>
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_Rpu0DsIBEeCdLPayeDTWtA" visible="false" type="StructureCompartment"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Rpu0AsIBEeCdLPayeDTWtA" x="12046" y="20605"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Rpu0AsIBEeCdLPayeDTWtA" x="-3170" y="28847"/>
         </children>
         <children xmi:type="umlnotation:UMLShape" xmi:id="_pAUf8MIBEeCdLPayeDTWtA" element="_420A62FD03B64230F39A02CC" fontName="Arial" fontHeight="10" showListVisibility="None" fillColor="8487423" lineColor="3342489" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_pAUf88IBEeCdLPayeDTWtA" type="ImageCompartment">
@@ -124,7 +124,7 @@
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_pAUf-sIBEeCdLPayeDTWtA" visible="false" type="OperationCompartment"/>
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_pAUf_MIBEeCdLPayeDTWtA" visible="false" type="SignalCompartment"/>
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_pAUf_sIBEeCdLPayeDTWtA" visible="false" type="StructureCompartment"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pAUf8sIBEeCdLPayeDTWtA" x="19654" y="11095"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pAUf8sIBEeCdLPayeDTWtA" x="19654" y="11729"/>
         </children>
         <children xmi:type="umlnotation:UMLShape" xmi:id="_2iCYgMIBEeCdLPayeDTWtA" element="_WUomEOOYEd-8X4J7aT-aiQ" fontName="Arial" fontHeight="10" showListVisibility="None" fillColor="12303359" lineColor="3342489" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_2iCYg8IBEeCdLPayeDTWtA" type="ImageCompartment">
@@ -150,7 +150,7 @@
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_swISOsIEEeCdLPayeDTWtA" visible="false" type="OperationCompartment"/>
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_swISPMIEEeCdLPayeDTWtA" visible="false" type="SignalCompartment"/>
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_swSDMMIEEeCdLPayeDTWtA" visible="false" type="StructureCompartment"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_swISMsIEEeCdLPayeDTWtA" x="23141" y="28530"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_swISMsIEEeCdLPayeDTWtA" x="22824" y="25994"/>
         </children>
         <children xmi:type="umlnotation:UMLShape" xmi:id="_4RAUYMIEEeCdLPayeDTWtA" fontName="Arial" fontHeight="10" showListVisibility="None" fillColor="8519679" lineColor="3342489" showParent="Name" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_4RAUY8IEEeCdLPayeDTWtA" type="ImageCompartment">
@@ -191,7 +191,7 @@
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_bj5VisdDEeCIprBOg4W6Sw" visible="false" type="OperationCompartment"/>
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_bj5VjMdDEeCIprBOg4W6Sw" visible="false" type="SignalCompartment"/>
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_bj5VjsdDEeCIprBOg4W6Sw" visible="false" type="StructureCompartment"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bj5VgsdDEeCIprBOg4W6Sw" x="-3170" y="30432"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bj5VgsdDEeCIprBOg4W6Sw" x="-3487" y="38674"/>
         </children>
         <children xmi:type="umlnotation:UMLShape" xmi:id="_bj5VkMdDEeCIprBOg4W6Sw" element="_andP8LxOEeCjnsq0FtkmeA" fontName="Arial" fontHeight="10" showListVisibility="None" fillColor="8487423" lineColor="3342489" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_bj5Vk8dDEeCIprBOg4W6Sw" type="ImageCompartment">
@@ -204,7 +204,7 @@
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_bj5VmsdDEeCIprBOg4W6Sw" visible="false" type="OperationCompartment"/>
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_bj5VnMdDEeCIprBOg4W6Sw" visible="false" type="SignalCompartment"/>
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_bj5VnsdDEeCIprBOg4W6Sw" visible="false" type="StructureCompartment"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bj5VksdDEeCIprBOg4W6Sw" x="-4755" y="34553"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bj5VksdDEeCIprBOg4W6Sw" x="-5072" y="42795"/>
         </children>
         <children xmi:type="umlnotation:UMLShape" xmi:id="_bj5VoMdDEeCIprBOg4W6Sw" element="_x4U9ILxIEeCjnsq0FtkmeA" fontName="Arial" fontHeight="10" showListVisibility="None" fillColor="8487423" lineColor="3342489" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_bj5Vo8dDEeCIprBOg4W6Sw" type="ImageCompartment">
@@ -217,7 +217,7 @@
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_bj5VqsdDEeCIprBOg4W6Sw" visible="false" type="OperationCompartment"/>
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_bj5VrMdDEeCIprBOg4W6Sw" visible="false" type="SignalCompartment"/>
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_bj5VrsdDEeCIprBOg4W6Sw" visible="false" type="StructureCompartment"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bj5VosdDEeCIprBOg4W6Sw" x="634" y="34553"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bj5VosdDEeCIprBOg4W6Sw" x="317" y="42795"/>
         </children>
         <children xmi:type="umlnotation:UMLShape" xmi:id="_6FCHAMp5EeC9Pb3leltpqQ" element="_420A62FD03B64230FF5D004A" fontName="Arial" fontHeight="10" showListVisibility="None" fillColor="8487423" lineColor="3342489" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_6FCHA8p5EeC9Pb3leltpqQ" type="ImageCompartment">
@@ -388,7 +388,7 @@
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_M_eJCsqAEeC9Pb3leltpqQ" visible="false" type="OperationCompartment"/>
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_M_eJDMqAEeC9Pb3leltpqQ" visible="false" type="SignalCompartment"/>
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_M_eJDsqAEeC9Pb3leltpqQ" visible="false" type="StructureCompartment"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_M_eJAsqAEeC9Pb3leltpqQ" x="28530" y="25043"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_M_eJAsqAEeC9Pb3leltpqQ" x="29798" y="24092"/>
         </children>
         <children xmi:type="umlnotation:UMLShape" xmi:id="_vVBAYMqBEeC9Pb3leltpqQ" fontName="Arial" fontHeight="10" showListVisibility="None" fillColor="8487423" lineColor="3342489" showParent="Name" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_vVBAY8qBEeC9Pb3leltpqQ" type="ImageCompartment">
@@ -427,7 +427,7 @@
           </children>
           <children xmi:type="notation:BasicDecorationNode" xmi:id="_h1cAZsqCEeC9Pb3leltpqQ" type="Stereotype"/>
           <children xmi:type="notation:BasicDecorationNode" xmi:id="_h1cAZ8qCEeC9Pb3leltpqQ" type="CommentBody"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_h1cAacqCEeC9Pb3leltpqQ" x="-5390" y="37723" width="5662" height="4101"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_h1cAacqCEeC9Pb3leltpqQ" x="14582" y="41210" width="5662" height="4101"/>
         </children>
         <children xmi:type="umlnotation:UMLShape" xmi:id="_HgU4YMqDEeC9Pb3leltpqQ" element="_FloQMGRPEeCsvJrE4KlOMA" fontName="Arial" fontHeight="10" showListVisibility="None" fillColor="8487423" lineColor="3342489" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_HgU4Y8qDEeC9Pb3leltpqQ" type="ImageCompartment">
@@ -506,7 +506,7 @@
           <styles xmi:type="notation:TextStyle" xmi:id="_SfV0YvjKEeCmc6EQPl3F9g"/>
           <styles xmi:type="notation:LineTypeStyle" xmi:id="_SfV0Y_jKEeCmc6EQPl3F9g"/>
           <element xsi:nil="true"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SfV0ZPjKEeCmc6EQPl3F9g" x="20288" y="18386" width="5686" height="1877"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SfV0ZPjKEeCmc6EQPl3F9g" x="19971" y="18703" width="5686" height="1877"/>
         </children>
         <children xmi:type="umlnotation:UMLShape" xmi:id="_pqKfwPjLEeCmc6EQPl3F9g" fontName="Arial" fontHeight="10" showListVisibility="None" fillColor="8487423" lineColor="3342489" showParent="Name" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_pqKfw_jLEeCmc6EQPl3F9g" type="ImageCompartment">
@@ -520,7 +520,7 @@
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_pqNjFPjLEeCmc6EQPl3F9g" visible="false" type="SignalCompartment"/>
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_pqNjFvjLEeCmc6EQPl3F9g" visible="false" type="StructureCompartment"/>
           <element xmi:type="uml:Class" href="Common.efx#_rr-pACaOEdyiJKb4ZqIfnw?FHIM/Common/Procedure?"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pqKfwvjLEeCmc6EQPl3F9g" x="36138" y="23775"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pqKfwvjLEeCmc6EQPl3F9g" x="35504" y="22824"/>
         </children>
         <children xmi:type="umlnotation:UMLShape" xmi:id="_cJ-_IAPKEeGyxsUXi9XkTg" element="_b_84MOOaEd-8X4J7aT-aiQ" fontName="Arial" fontHeight="10" showListVisibility="None" fillColor="12303359" lineColor="3342489" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_cKANQAPKEeGyxsUXi9XkTg" type="ImageCompartment">
@@ -587,7 +587,7 @@
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_4SSCEMYTEeGsb4KXw2Babg" visible="false" type="SignalCompartment"/>
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_4SSCEcYTEeGsb4KXw2Babg" visible="false" type="StructureCompartment"/>
           <element xmi:type="uml:Class" href="Common.efx#_dP9loN3-Ed6yatlejfcw_g?FHIM/Common/ProcedureListEntry?"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4SO-wcYTEeGsb4KXw2Babg" x="28213" y="20605"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4SO-wcYTEeGsb4KXw2Babg" x="29798" y="18703"/>
         </children>
         <children xmi:type="umlnotation:UMLShape" xmi:id="_JWf-wMYZEeGsb4KXw2Babg" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8519553" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_JWgl0MYZEeGsb4KXw2Babg" type="ImageCompartment">
@@ -601,7 +601,7 @@
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_JWibAcYZEeGsb4KXw2Babg" visible="false" type="SignalCompartment"/>
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_JWjCEMYZEeGsb4KXw2Babg" visible="false" type="StructureCompartment"/>
           <element xmi:type="uml:Class" href="Common.efx#_MsausFCxEeCsN-3dTKIrUA?FHIM/Common/CommonProduct/DeviceInstance?"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JWf-wcYZEeGsb4KXw2Babg" x="60547" y="26628"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JWf-wcYZEeGsb4KXw2Babg" x="60864" y="25360"/>
         </children>
         <children xmi:type="umlnotation:UMLShape" xmi:id="_ZBdREMoREeGas4Yp_oUthg" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8519679" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_ZBefMMoREeGas4Yp_oUthg" type="ImageCompartment">
@@ -629,7 +629,7 @@
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_oNJGMcoTEeGas4Yp_oUthg" visible="false" type="SignalCompartment"/>
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_oNJtQMoTEeGas4Yp_oUthg" visible="false" type="StructureCompartment"/>
           <element xmi:type="uml:Class" href="Orders.efx#_3r94oOO5EeCbbuWBGGTBrA?FHIM/Orders/HealthcarePromise?"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oNGp8coTEeGas4Yp_oUthg" x="8242" y="4438"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oNGp8coTEeGas4Yp_oUthg" x="8242" y="3170"/>
         </children>
         <children xmi:type="umlnotation:UMLShape" xmi:id="_KNFPEMoXEeGas4Yp_oUthg" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8519679" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_KNGdMMoXEeGas4Yp_oUthg" type="ImageCompartment">
@@ -643,7 +643,7 @@
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_KNISYMoXEeGas4Yp_oUthg" visible="false" type="SignalCompartment"/>
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_KNISYcoXEeGas4Yp_oUthg" visible="false" type="StructureCompartment"/>
           <element xmi:type="uml:Class" href="Provider.efx#_420A62FD03B64242CAB30303?FHIM/Provider/ServiceDeliveryLocation?"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KNF2IMoXEeGas4Yp_oUthg" x="19654" y="5072"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KNF2IMoXEeGas4Yp_oUthg" x="19654" y="4438"/>
         </children>
         <children xmi:type="umlnotation:UMLShape" xmi:id="_hkz7UMqXEeG4_uv2Hb_AVQ" element="_hkGwsMqXEeG4_uv2Hb_AVQ" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="12303359" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_hk4z0MqXEeG4_uv2Hb_AVQ" type="ImageCompartment">
@@ -669,7 +669,7 @@
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_QWakkA8SEeK0aKhL_Nyezg" visible="false" type="OperationCompartment"/>
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_QWbysA8SEeK0aKhL_Nyezg" visible="false" type="SignalCompartment"/>
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_QWbysQ8SEeK0aKhL_Nyezg" visible="false" type="StructureCompartment"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QWTP0Q8SEeK0aKhL_Nyezg" x="33919" y="-3170"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QWTP0Q8SEeK0aKhL_Nyezg" x="12363" y="22190"/>
         </children>
         <children xmi:type="umlnotation:UMLShape" xmi:id="_6srocCjuEeKdfLgBSxgNnA" element="_6r9PsCjuEeKdfLgBSxgNnA" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8519553" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_6s0yYCjuEeKdfLgBSxgNnA" type="ImageCompartment">
@@ -943,7 +943,7 @@
             <children xmi:type="notation:BasicDecorationNode" xmi:id="_bj5VtsdDEeCIprBOg4W6Sw" type="Name"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bj5VtMdDEeCIprBOg4W6Sw" y="-186"/>
           </children>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_bj5VssdDEeCIprBOg4W6Sw" points="[0, -739, -2644, 3171]$[0, -1425, -2644, 2485]$[2495, -1425, -149, 2485]$[2495, -2959, -149, 951]"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_bj5VssdDEeCIprBOg4W6Sw" points="[317, -752, -2366, 2736]$[317, -1426, -2366, 2062]$[2534, -1426, -149, 2062]$[2534, -2103, -149, 1385]"/>
         </edges>
         <edges xmi:type="umlnotation:UMLConnector" xmi:id="_bj5V2sdDEeCIprBOg4W6Sw" element="_LKXIcLxREeCjnsq0FtkmeA" source="_Rpu0AMIBEeCdLPayeDTWtA" target="_bj5VgMdDEeCIprBOg4W6Sw" fontName="Arial" fontHeight="10" lineColor="3342489" lineWidth="1" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_bj5V3cdDEeCIprBOg4W6Sw" visible="false" type="NameLabel">
@@ -992,7 +992,7 @@
             <children xmi:type="notation:BasicDecorationNode" xmi:id="_bkDGlcdDEeCIprBOg4W6Sw" type="Name"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bkDGk8dDEeCIprBOg4W6Sw" y="-186"/>
           </children>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_bkDGkcdDEeCIprBOg4W6Sw" points="[-317, -1372, 3196, 3171]$[-317, -2058, 3196, 2485]$[-3662, -2058, -149, 2485]$[-3662, -3592, -149, 951]"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_bkDGkcdDEeCIprBOg4W6Sw" points="[-317, -963, 2997, 2736]$[-317, -1637, 2997, 2062]$[-3463, -1637, -149, 2062]$[-3463, -2314, -149, 1385]"/>
         </edges>
         <edges xmi:type="umlnotation:UMLConnector" xmi:id="_B1mVwMp5EeC9Pb3leltpqQ" element="_B0jz8Mp5EeC9Pb3leltpqQ" source="_pAUf8MIBEeCdLPayeDTWtA" target="_Rpu0AMIBEeCdLPayeDTWtA" fontName="Arial" fontHeight="10" lineColor="3342489" lineWidth="1" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_B1mVw8p5EeC9Pb3leltpqQ" visible="false" type="NameLabel">
@@ -2154,6 +2154,7 @@
           <element xsi:nil="true"/>
           <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_-xR45PjKEeCmc6EQPl3F9g" points="[-2, -8, 30, 158]$[-83, -75, -51, 91]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_-xWKUPjKEeCmc6EQPl3F9g" id="(0.3828702,0.11401172)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HSBrIEVFEeKmiJoj9rWMSg" id="(0.4648271163345256,0.14952987564452533)"/>
         </edges>
         <edges xmi:type="umlnotation:UMLConnector" xmi:id="_Swz6IKqbEeGeRqsN3l6jrA" source="_4RAUYMIEEeCdLPayeDTWtA" target="_SwtMcKqbEeGeRqsN3l6jrA" fontName="Arial" fontHeight="10" lineColor="3342489" lineWidth="1" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_Sw0hMKqbEeGeRqsN3l6jrA" visible="false" type="NameLabel">
@@ -2766,7 +2767,7 @@
             <children xmi:type="notation:BasicDecorationNode" xmi:id="_oNS3NcoTEeGas4Yp_oUthg" type="Name"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oNS3M8oTEeGas4Yp_oUthg" y="-186"/>
           </children>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_oNS3McoTEeGas4Yp_oUthg" points="[0, -2229, 10989, 4230]$[0, -3191, 10989, 3268]$[-9578, -3191, 1411, 3268]$[-9578, -4032, 1411, 2427]"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_oNS3McoTEeGas4Yp_oUthg" points="[0, -963, 10989, 5499]$[0, -1924, 10989, 4538]$[-9578, -1924, 1411, 4538]$[-9578, -3402, 1411, 3060]"/>
         </edges>
         <edges xmi:type="umlnotation:UMLConnector" xmi:id="_oNTeQMoTEeGas4Yp_oUthg" source="_vNDkcMIAEeCdLPayeDTWtA" target="_oNGp8MoTEeGas4Yp_oUthg" fontName="Arial" fontHeight="10" routing="Rectilinear" lineColor="3342489" lineWidth="1" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_oNTeQsoTEeGas4Yp_oUthg" visible="false" type="NameLabel">
@@ -2823,7 +2824,7 @@
             <children xmi:type="notation:BasicDecorationNode" xmi:id="_vWjY4MoTEeGas4Yp_oUthg" type="Name"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vWix0coTEeGas4Yp_oUthg" y="-186"/>
           </children>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_vWhjscoTEeGas4Yp_oUthg" points="[0, -963, -9524, 4230]$[0, -1925, -9524, 3268]$[10935, -1925, 1411, 3268]$[10935, -2766, 1411, 2427]"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_vWhjscoTEeGas4Yp_oUthg" points="[0, -685, -9524, 5499]$[0, -1646, -9524, 4538]$[10935, -1646, 1411, 4538]$[10935, -3124, 1411, 3060]"/>
         </edges>
         <edges xmi:type="umlnotation:UMLConnector" xmi:id="_top3MMoUEeGas4Yp_oUthg" element="_tn30EMoUEeGas4Yp_oUthg" source="_OAv7IMIBEeCdLPayeDTWtA" target="_Kp7JQMIBEeCdLPayeDTWtA" fontName="Arial" fontHeight="10" lineColor="3342489" lineWidth="1" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_toqeQMoUEeGas4Yp_oUthg" visible="false" type="NameLabel">
@@ -3018,7 +3019,7 @@
           <children xmi:type="notation:DecorationNode" xmi:id="_KNgs4coXEeGas4Yp_oUthg" type="FromRoleLabel">
             <children xmi:type="notation:BasicDecorationNode" xmi:id="_KNgs48oXEeGas4Yp_oUthg" type="FromRole"/>
             <element xmi:type="uml:Property" href="Orders.efx#_fFVFwMoWEeGas4Yp_oUthg?FHIM/Orders/HealthcarePromise/performingOrganization?"/>
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_KNgs4soXEeGas4Yp_oUthg" y="-397"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_KNgs4soXEeGas4Yp_oUthg" x="-1474" y="-209"/>
           </children>
           <children xmi:type="notation:DecorationNode" xmi:id="_KNgs5MoXEeGas4Yp_oUthg" visible="false" type="ToQualifierLabel">
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_KNgs5soXEeGas4Yp_oUthg" type="QualifierCompartment"/>
@@ -3103,7 +3104,7 @@
           </children>
           <children xmi:type="notation:DecorationNode" xmi:id="_uS-3EcqXEeG4_uv2Hb_AVQ" type="FromRoleLabel" element="_uS0fAMqXEeG4_uv2Hb_AVQ">
             <children xmi:type="notation:BasicDecorationNode" xmi:id="_uS_eIMqXEeG4_uv2Hb_AVQ" type="FromRole"/>
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_uS-3EsqXEeG4_uv2Hb_AVQ" y="-397"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_uS-3EsqXEeG4_uv2Hb_AVQ" y="-97"/>
           </children>
           <children xmi:type="notation:DecorationNode" xmi:id="_uS_eIcqXEeG4_uv2Hb_AVQ" visible="false" type="ToQualifierLabel" element="_uS27QMqXEeG4_uv2Hb_AVQ">
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_uS_eI8qXEeG4_uv2Hb_AVQ" type="QualifierCompartment"/>
@@ -3122,86 +3123,6 @@
             <layoutConstraint xmi:type="notation:Location" xmi:id="_uTAFNcqXEeG4_uv2Hb_AVQ" y="1058"/>
           </children>
           <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_uS9B4cqXEeG4_uv2Hb_AVQ" points="[0, 752, 15255, -1252]$[0, 2004, 15255, 0]$[-12226, 2004, 3029, 0]"/>
-        </edges>
-        <edges xmi:type="umlnotation:UMLConnector" xmi:id="_eKPg0A8SEeK0aKhL_Nyezg" element="_eJn1wA8SEeK0aKhL_Nyezg" source="_QWTP0A8SEeK0aKhL_Nyezg" target="_KNFPEMoXEeGas4Yp_oUthg" fontName="Arial" fontHeight="10" lineColor="3342489" lineWidth="1" showStereotype="Text">
-          <children xmi:type="notation:DecorationNode" xmi:id="_eKRWAA8SEeK0aKhL_Nyezg" visible="false" type="NameLabel">
-            <children xmi:type="notation:BasicDecorationNode" xmi:id="_eKR9EA8SEeK0aKhL_Nyezg" type="Stereotype"/>
-            <children xmi:type="notation:BasicDecorationNode" xmi:id="_eKR9EQ8SEeK0aKhL_Nyezg" type="Name"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eKRWAQ8SEeK0aKhL_Nyezg" y="-186"/>
-          </children>
-          <children xmi:type="notation:DecorationNode" xmi:id="_eKSkIA8SEeK0aKhL_Nyezg" visible="false" type="ToMultiplicityLabel" element="_eJwYoA8SEeK0aKhL_Nyezg">
-            <children xmi:type="notation:BasicDecorationNode" xmi:id="_eKTLMA8SEeK0aKhL_Nyezg" type="ToMultiplicity"/>
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_eKSkIQ8SEeK0aKhL_Nyezg" y="396"/>
-          </children>
-          <children xmi:type="notation:DecorationNode" xmi:id="_eKTLMQ8SEeK0aKhL_Nyezg" type="ToRoleLabel" element="_eJwYoA8SEeK0aKhL_Nyezg">
-            <children xmi:type="notation:BasicDecorationNode" xmi:id="_eKTLMw8SEeK0aKhL_Nyezg" type="ToRole"/>
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_eKTLMg8SEeK0aKhL_Nyezg" y="-397"/>
-          </children>
-          <children xmi:type="notation:DecorationNode" xmi:id="_eKTyQA8SEeK0aKhL_Nyezg" type="FromMultiplicityLabel" element="_eJrgIA8SEeK0aKhL_Nyezg">
-            <children xmi:type="notation:BasicDecorationNode" xmi:id="_eKTyQg8SEeK0aKhL_Nyezg" type="FromMultiplicity"/>
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_eKTyQQ8SEeK0aKhL_Nyezg" y="396"/>
-          </children>
-          <children xmi:type="notation:DecorationNode" xmi:id="_eKTyQw8SEeK0aKhL_Nyezg" type="FromRoleLabel" element="_eJrgIA8SEeK0aKhL_Nyezg">
-            <children xmi:type="notation:BasicDecorationNode" xmi:id="_eKUZUA8SEeK0aKhL_Nyezg" type="FromRole"/>
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_eKTyRA8SEeK0aKhL_Nyezg" y="-397"/>
-          </children>
-          <children xmi:type="notation:DecorationNode" xmi:id="_eKUZUQ8SEeK0aKhL_Nyezg" visible="false" type="ToQualifierLabel" element="_eJwYoA8SEeK0aKhL_Nyezg">
-            <children xmi:type="notation:SemanticListCompartment" xmi:id="_eKVAYA8SEeK0aKhL_Nyezg" type="QualifierCompartment"/>
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_eKUZUg8SEeK0aKhL_Nyezg" y="-186"/>
-          </children>
-          <children xmi:type="notation:DecorationNode" xmi:id="_eKVAYQ8SEeK0aKhL_Nyezg" visible="false" type="FromQualifierLabel" element="_eJrgIA8SEeK0aKhL_Nyezg">
-            <children xmi:type="notation:SemanticListCompartment" xmi:id="_eKVAYw8SEeK0aKhL_Nyezg" type="QualifierCompartment"/>
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_eKVAYg8SEeK0aKhL_Nyezg" y="-186"/>
-          </children>
-          <children xmi:type="notation:DecorationNode" xmi:id="_eKVncA8SEeK0aKhL_Nyezg" visible="false" type="ToConstraintLabel" element="_eJwYoA8SEeK0aKhL_Nyezg">
-            <children xmi:type="notation:ListCompartment" xmi:id="_eKWOgA8SEeK0aKhL_Nyezg" type="ToConstraintCompartment"/>
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_eKVncQ8SEeK0aKhL_Nyezg" y="1058"/>
-          </children>
-          <children xmi:type="notation:DecorationNode" xmi:id="_eKWOgQ8SEeK0aKhL_Nyezg" visible="false" type="FromConstraintLabel" element="_eJrgIA8SEeK0aKhL_Nyezg">
-            <children xmi:type="notation:ListCompartment" xmi:id="_eKWOgw8SEeK0aKhL_Nyezg" type="FromConstraintCompartment"/>
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_eKWOgg8SEeK0aKhL_Nyezg" y="1058"/>
-          </children>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_eKPg0Q8SEeK0aKhL_Nyezg" points="[90, -27, -483, 151]$[678, -204, 105, -26]"/>
-        </edges>
-        <edges xmi:type="umlnotation:UMLConnector" xmi:id="_sYa2wA8SEeK0aKhL_Nyezg" element="_sYOpgA8SEeK0aKhL_Nyezg" source="_QWTP0A8SEeK0aKhL_Nyezg" target="_E5QyMMIBEeCdLPayeDTWtA" fontName="Arial" fontHeight="10" lineColor="3342489" lineWidth="1" showStereotype="Text">
-          <children xmi:type="notation:DecorationNode" xmi:id="_sYbd0A8SEeK0aKhL_Nyezg" visible="false" type="NameLabel">
-            <children xmi:type="notation:BasicDecorationNode" xmi:id="_sYbd0g8SEeK0aKhL_Nyezg" type="Stereotype"/>
-            <children xmi:type="notation:BasicDecorationNode" xmi:id="_sYbd0w8SEeK0aKhL_Nyezg" type="Name"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sYbd0Q8SEeK0aKhL_Nyezg" y="-186"/>
-          </children>
-          <children xmi:type="notation:DecorationNode" xmi:id="_sYcE4A8SEeK0aKhL_Nyezg" visible="false" type="ToMultiplicityLabel" element="_sYUwIA8SEeK0aKhL_Nyezg">
-            <children xmi:type="notation:BasicDecorationNode" xmi:id="_sYcE4g8SEeK0aKhL_Nyezg" type="ToMultiplicity"/>
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_sYcE4Q8SEeK0aKhL_Nyezg" y="396"/>
-          </children>
-          <children xmi:type="notation:DecorationNode" xmi:id="_sYcE4w8SEeK0aKhL_Nyezg" type="ToRoleLabel" element="_sYUwIA8SEeK0aKhL_Nyezg">
-            <children xmi:type="notation:BasicDecorationNode" xmi:id="_sYcE5Q8SEeK0aKhL_Nyezg" type="ToRole"/>
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_sYcE5A8SEeK0aKhL_Nyezg" y="-397"/>
-          </children>
-          <children xmi:type="notation:DecorationNode" xmi:id="_sYcE5g8SEeK0aKhL_Nyezg" type="FromMultiplicityLabel" element="_sYRs0A8SEeK0aKhL_Nyezg">
-            <children xmi:type="notation:BasicDecorationNode" xmi:id="_sYcr8A8SEeK0aKhL_Nyezg" type="FromMultiplicity"/>
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_sYcE5w8SEeK0aKhL_Nyezg" y="396"/>
-          </children>
-          <children xmi:type="notation:DecorationNode" xmi:id="_sYcr8Q8SEeK0aKhL_Nyezg" type="FromRoleLabel" element="_sYRs0A8SEeK0aKhL_Nyezg">
-            <children xmi:type="notation:BasicDecorationNode" xmi:id="_sYdTAA8SEeK0aKhL_Nyezg" type="FromRole"/>
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_sYcr8g8SEeK0aKhL_Nyezg" y="-397"/>
-          </children>
-          <children xmi:type="notation:DecorationNode" xmi:id="_sYdTAQ8SEeK0aKhL_Nyezg" visible="false" type="ToQualifierLabel" element="_sYUwIA8SEeK0aKhL_Nyezg">
-            <children xmi:type="notation:SemanticListCompartment" xmi:id="_sYdTAw8SEeK0aKhL_Nyezg" type="QualifierCompartment"/>
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_sYdTAg8SEeK0aKhL_Nyezg" y="-186"/>
-          </children>
-          <children xmi:type="notation:DecorationNode" xmi:id="_sYdTBA8SEeK0aKhL_Nyezg" visible="false" type="FromQualifierLabel" element="_sYRs0A8SEeK0aKhL_Nyezg">
-            <children xmi:type="notation:SemanticListCompartment" xmi:id="_sYd6EA8SEeK0aKhL_Nyezg" type="QualifierCompartment"/>
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_sYdTBQ8SEeK0aKhL_Nyezg" y="-186"/>
-          </children>
-          <children xmi:type="notation:DecorationNode" xmi:id="_sYd6EQ8SEeK0aKhL_Nyezg" visible="false" type="ToConstraintLabel" element="_sYUwIA8SEeK0aKhL_Nyezg">
-            <children xmi:type="notation:ListCompartment" xmi:id="_sYd6Ew8SEeK0aKhL_Nyezg" type="ToConstraintCompartment"/>
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_sYd6Eg8SEeK0aKhL_Nyezg" y="1058"/>
-          </children>
-          <children xmi:type="notation:DecorationNode" xmi:id="_sYd6FA8SEeK0aKhL_Nyezg" visible="false" type="FromConstraintLabel" element="_sYRs0A8SEeK0aKhL_Nyezg">
-            <children xmi:type="notation:ListCompartment" xmi:id="_sYd6Fg8SEeK0aKhL_Nyezg" type="FromConstraintCompartment"/>
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_sYd6FQ8SEeK0aKhL_Nyezg" y="1058"/>
-          </children>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_sYa2wQ8SEeK0aKhL_Nyezg" points="[-62, 29, 303, -159]$[-291, 128, 74, -60]"/>
         </edges>
         <edges xmi:type="umlnotation:UMLConnector" xmi:id="_8XXooCjuEeKdfLgBSxgNnA" element="_8W5HgCjuEeKdfLgBSxgNnA" source="_SwtMcKqbEeGeRqsN3l6jrA" target="_6srocCjuEeKdfLgBSxgNnA" fontName="Arial" fontHeight="10" lineColor="3342489" lineWidth="1" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_8XaE4CjuEeKdfLgBSxgNnA" visible="false" type="NameLabel">
@@ -3331,6 +3252,86 @@
           </children>
           <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_I2oooTNWEeKkw_YjK6aRcw" points="[10, 33, 3, -154]$[10, 119, 3, -68]"/>
         </edges>
+        <edges xmi:type="umlnotation:UMLConnector" xmi:id="_KgBDYEVAEeKmiJoj9rWMSg" element="_Ke5pEEVAEeKmiJoj9rWMSg" source="_QWTP0A8SEeK0aKhL_Nyezg" target="_4RAUYMIEEeCdLPayeDTWtA" fontName="Arial" fontHeight="10" lineColor="3342489" lineWidth="1" showStereotype="Text">
+          <children xmi:type="notation:DecorationNode" xmi:id="_KgGi8EVAEeKmiJoj9rWMSg" type="NameLabel">
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_KgHKAEVAEeKmiJoj9rWMSg" type="Stereotype"/>
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_KgHKAUVAEeKmiJoj9rWMSg" type="Name"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KgGi8UVAEeKmiJoj9rWMSg" y="-186"/>
+          </children>
+          <children xmi:type="notation:DecorationNode" xmi:id="_KgHxEEVAEeKmiJoj9rWMSg" visible="false" type="ToMultiplicityLabel" element="_KfZYUEVAEeKmiJoj9rWMSg">
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_KgIYIEVAEeKmiJoj9rWMSg" type="ToMultiplicity"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_KgHxEUVAEeKmiJoj9rWMSg" y="396"/>
+          </children>
+          <children xmi:type="notation:DecorationNode" xmi:id="_KgIYIUVAEeKmiJoj9rWMSg" type="ToRoleLabel" element="_KfZYUEVAEeKmiJoj9rWMSg">
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_KgIYI0VAEeKmiJoj9rWMSg" type="ToRole"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_KgIYIkVAEeKmiJoj9rWMSg" y="-397"/>
+          </children>
+          <children xmi:type="notation:DecorationNode" xmi:id="_KgIYJEVAEeKmiJoj9rWMSg" type="FromMultiplicityLabel" element="_KfTRsEVAEeKmiJoj9rWMSg">
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_KgI_MUVAEeKmiJoj9rWMSg" type="FromMultiplicity"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_KgI_MEVAEeKmiJoj9rWMSg" y="396"/>
+          </children>
+          <children xmi:type="notation:DecorationNode" xmi:id="_KgI_MkVAEeKmiJoj9rWMSg" type="FromRoleLabel" element="_KfTRsEVAEeKmiJoj9rWMSg">
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_KgJmQEVAEeKmiJoj9rWMSg" type="FromRole"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_KgI_M0VAEeKmiJoj9rWMSg" y="-397"/>
+          </children>
+          <children xmi:type="notation:DecorationNode" xmi:id="_KgJmQUVAEeKmiJoj9rWMSg" type="ToQualifierLabel" element="_KfZYUEVAEeKmiJoj9rWMSg">
+            <children xmi:type="notation:SemanticListCompartment" xmi:id="_KgJmQ0VAEeKmiJoj9rWMSg" type="QualifierCompartment"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_KgJmQkVAEeKmiJoj9rWMSg" y="-186"/>
+          </children>
+          <children xmi:type="notation:DecorationNode" xmi:id="_KgJmREVAEeKmiJoj9rWMSg" type="FromQualifierLabel" element="_KfTRsEVAEeKmiJoj9rWMSg">
+            <children xmi:type="notation:SemanticListCompartment" xmi:id="_KgKNUEVAEeKmiJoj9rWMSg" type="QualifierCompartment"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_KgJmRUVAEeKmiJoj9rWMSg" y="-186"/>
+          </children>
+          <children xmi:type="notation:DecorationNode" xmi:id="_KgKNUUVAEeKmiJoj9rWMSg" type="ToConstraintLabel" element="_KfZYUEVAEeKmiJoj9rWMSg">
+            <children xmi:type="notation:ListCompartment" xmi:id="_KgKNU0VAEeKmiJoj9rWMSg" type="ToConstraintCompartment"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_KgKNUkVAEeKmiJoj9rWMSg" y="1058"/>
+          </children>
+          <children xmi:type="notation:DecorationNode" xmi:id="_KgKNVEVAEeKmiJoj9rWMSg" type="FromConstraintLabel" element="_KfTRsEVAEeKmiJoj9rWMSg">
+            <children xmi:type="notation:ListCompartment" xmi:id="_KgK0YEVAEeKmiJoj9rWMSg" type="FromConstraintCompartment"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_KgKNVUVAEeKmiJoj9rWMSg" y="1058"/>
+          </children>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_KgBDYUVAEeKmiJoj9rWMSg" points="[-19, 36, 212, -267]$[-126, 243, 105, -60]"/>
+        </edges>
+        <edges xmi:type="umlnotation:UMLConnector" xmi:id="_q2ATQEVAEeKmiJoj9rWMSg" element="_q117MEVAEeKmiJoj9rWMSg" source="_Kp7JQMIBEeCdLPayeDTWtA" target="_QWTP0A8SEeK0aKhL_Nyezg" fontName="Arial" fontHeight="10" lineColor="3342489" lineWidth="1" showStereotype="Text">
+          <children xmi:type="notation:DecorationNode" xmi:id="_q2A6UEVAEeKmiJoj9rWMSg" type="NameLabel">
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_q2A6UkVAEeKmiJoj9rWMSg" type="Stereotype"/>
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_q2A6U0VAEeKmiJoj9rWMSg" type="Name"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_q2A6UUVAEeKmiJoj9rWMSg" y="-186"/>
+          </children>
+          <children xmi:type="notation:DecorationNode" xmi:id="_q2BhYEVAEeKmiJoj9rWMSg" visible="false" type="ToMultiplicityLabel" element="_q15lkEVAEeKmiJoj9rWMSg">
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_q2BhYkVAEeKmiJoj9rWMSg" type="ToMultiplicity"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_q2BhYUVAEeKmiJoj9rWMSg" y="396"/>
+          </children>
+          <children xmi:type="notation:DecorationNode" xmi:id="_q2CIcEVAEeKmiJoj9rWMSg" type="ToRoleLabel" element="_q15lkEVAEeKmiJoj9rWMSg">
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_q2CIckVAEeKmiJoj9rWMSg" type="ToRole"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_q2CIcUVAEeKmiJoj9rWMSg" y="-397"/>
+          </children>
+          <children xmi:type="notation:DecorationNode" xmi:id="_q2CIc0VAEeKmiJoj9rWMSg" type="FromMultiplicityLabel" element="_q13wYEVAEeKmiJoj9rWMSg">
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_q2CIdUVAEeKmiJoj9rWMSg" type="FromMultiplicity"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_q2CIdEVAEeKmiJoj9rWMSg" y="396"/>
+          </children>
+          <children xmi:type="notation:DecorationNode" xmi:id="_q2CIdkVAEeKmiJoj9rWMSg" type="FromRoleLabel" element="_q13wYEVAEeKmiJoj9rWMSg">
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_q2CIeEVAEeKmiJoj9rWMSg" type="FromRole"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_q2CId0VAEeKmiJoj9rWMSg" y="-397"/>
+          </children>
+          <children xmi:type="notation:DecorationNode" xmi:id="_q2CvgEVAEeKmiJoj9rWMSg" type="ToQualifierLabel" element="_q15lkEVAEeKmiJoj9rWMSg">
+            <children xmi:type="notation:SemanticListCompartment" xmi:id="_q2CvgkVAEeKmiJoj9rWMSg" type="QualifierCompartment"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_q2CvgUVAEeKmiJoj9rWMSg" y="-186"/>
+          </children>
+          <children xmi:type="notation:DecorationNode" xmi:id="_q2Cvg0VAEeKmiJoj9rWMSg" type="FromQualifierLabel" element="_q13wYEVAEeKmiJoj9rWMSg">
+            <children xmi:type="notation:SemanticListCompartment" xmi:id="_q2CvhUVAEeKmiJoj9rWMSg" type="QualifierCompartment"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_q2CvhEVAEeKmiJoj9rWMSg" y="-186"/>
+          </children>
+          <children xmi:type="notation:DecorationNode" xmi:id="_q2CvhkVAEeKmiJoj9rWMSg" type="ToConstraintLabel" element="_q15lkEVAEeKmiJoj9rWMSg">
+            <children xmi:type="notation:ListCompartment" xmi:id="_q2DWkEVAEeKmiJoj9rWMSg" type="ToConstraintCompartment"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_q2Cvh0VAEeKmiJoj9rWMSg" y="1058"/>
+          </children>
+          <children xmi:type="notation:DecorationNode" xmi:id="_q2DWkUVAEeKmiJoj9rWMSg" type="FromConstraintLabel" element="_q13wYEVAEeKmiJoj9rWMSg">
+            <children xmi:type="notation:ListCompartment" xmi:id="_q2DWk0VAEeKmiJoj9rWMSg" type="FromConstraintCompartment"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_q2DWkkVAEeKmiJoj9rWMSg" y="1058"/>
+          </children>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_q2ATQUVAEeKmiJoj9rWMSg" points="[32, 29, -357, -303]$[303, 300, -86, -32]"/>
+        </edges>
       </contents>
     </eAnnotations>
     <eAnnotations xmi:id="_NE6wIOLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
@@ -3351,14 +3352,11 @@ See the Diagram Documentation for a walkthrough of the major concepts.</body>
         <details xmi:id="_lwWp4MYREeGsb4KXw2Babg" key="EntryPoint"/>
       </eAnnotations>
       <ownedComment xmi:id="_M4s5GeLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64230F39A02CC">
-        <body>The act of accepting the role of filler.  HL7 uses the terms promise and filler interchangeably with promise being the preferred term.  This promise act initiates the accessioning for lab actions.  Accession: &quot;An increase by means of something added to record as acquired&quot;  (Websters).  The act of accepting  a laboratory test, and entering the test into the laboratory's workload.  </body>
+        <body>This class represents an intent to perform one or more Laboratory Tests in response to a Request (an Order) from an authorized entity (usually a doctor).  A Promise is an intent to perform a service that has the strength of a commitment, i.e., other parties may rely on the originator of such promise that said originator will see to it that the promised act will be fulfilled. A promise can be either solicited or unsolicited.  The entity that makes such a promise is also called a &quot;filler&quot;, while the entity that requests the service is also called a &quot;placer&quot;.  The Laboratory Test Promise can be looked at as the Laboratory Test Order from the laboratory's point of view.</body>
       </ownedComment>
       <generalization xmi:id="_KGLzIMnmEeG_ScqIlDrcqg">
         <general xmi:type="uml:Class" href="Orders.efx#_3r94oOO5EeCbbuWBGGTBrA?FHIM/Orders/HealthcarePromise?"/>
       </generalization>
-      <ownedAttribute xmi:id="_Q--ZYO6jEd-crcWiXVDZrQ" name="dateExpected" visibility="public">
-        <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
-      </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B645783AF70191" name="dateReportCompleted" visibility="public">
         <eAnnotations xmi:id="_M42DCeLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <ownedComment xmi:id="_M42DB-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B645783AF70191">
@@ -3368,28 +3366,6 @@ See the Diagram Documentation for a walkthrough of the major concepts.</body>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_euwfM-LjEdutr_MT9HkPyQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_euwfMuLjEdutr_MT9HkPyQ"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_eCP24PjKEeCmc6EQPl3F9g" name="dateScheduled" visibility="public">
-        <ownedComment xmi:id="_UECE0PjLEeCmc6EQPl3F9g" annotatedElement="_eCP24PjKEeCmc6EQPl3F9g">
-          <body>&quot;The date/time the filler scheduled an observation, when applicable (e.g., action code in OBR-11-specimen action code = &quot;S&quot;).  This is a result of a request to schedule a particular test and provides a way to inform the placer of the date/time a study is scheduled (result only).&quot; - HL7 Version 2.8, OBR.36</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kq8pMfjKEeCmc6EQPl3F9g" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_kq8pMPjKEeCmc6EQPl3F9g"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_O7_KQJNwEeCyufOLCDZkFA" name="dateStatusChanged" visibility="public">
-        <ownedComment xmi:id="_FBMKoAmIEeGe4v7RnpTDUQ" annotatedElement="_O7_KQJNwEeCyufOLCDZkFA">
-          <body>&quot;Specifies the date/time when the results were reported or status changed.  This conditional field is required whenever [Report Status] is valued.  This field is used to indicate the date and time that the results are composed into a report and released, or that [Healthcare Order status] is entered or changed.&quot; - HL7 Version 2.8, OBR-22.</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_VHctsLTlEd2sMvQnSCqOzA" name="priority" visibility="public">
-        <ownedComment xmi:id="_Xn1yMMDrEd2cYoIY7XWEQw" annotatedElement="_VHctsLTlEd2sMvQnSCqOzA">
-          <body>&quot;This field has been retained for backward compatibility only.  It is not used.  Previously priority (e.g., STAT, ASAP), but that information is carried as the sixth component of OBR-27-quantity/timing.&quot; - HL7 Version 2.5.1, OBR.5</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_u9EVodOWEd2aQZomWdBJLg" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_u9EVoNOWEd2aQZomWdBJLg" value="1"/>
-      </ownedAttribute>
       <ownedAttribute xmi:id="_TyzRQPjTEeCmc6EQPl3F9g" name="producersReference" visibility="public">
         <ownedComment xmi:id="_EcvhYLsfEeGZTLDYkoM_Sw" annotatedElement="_TyzRQPjTEeCmc6EQPl3F9g">
           <body>&quot;Contains a unique identifier of the responsible producing service.  It should be reported explicitly when the test results are produced at outside laboratories, for example.  When this field is null, the receiving system assumes that the observations were produced by the sending organization.  This information supports CLIA regulations in the US....&quot; - HL7 Version 2.8, OBX-15.</body>
@@ -3397,6 +3373,9 @@ See the Diagram Documentation for a walkthrough of the major concepts.</body>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_S0eEsX8AEd-6KMbY3gBFOQ" name="reportableResult" visibility="public" type="_NglJMH8AEd-6KMbY3gBFOQ" association="_S0eEsH8AEd-6KMbY3gBFOQ">
+        <ownedComment xmi:id="_x5zFIEVLEeKmiJoj9rWMSg" annotatedElement="_S0eEsX8AEd-6KMbY3gBFOQ">
+          <body>This property points to the set (zero to many) of test results or observations that were generated as a result of the laboratory tests performed.  Note that the word Reportable is used to indicate that these Results are limited to those which have reached the point where they are deemed to be reportable or releasable.  The result may or may not have been part of an actual report, as it might be on hold waiting for other results to be combined with it.  A result that has not yet been approved by the appropriate personnel does not meet the criteria of being reportable, and therefore will not be available through this stucture.</body>
+        </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_S0eEs38AEd-6KMbY3gBFOQ" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_S0eEsn8AEd-6KMbY3gBFOQ"/>
       </ownedAttribute>
@@ -3424,14 +3403,23 @@ See the Diagram Documentation for a walkthrough of the major concepts.</body>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WTf6UMYREeGsb4KXw2Babg"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_Y1GXsOOYEd-8X4J7aT-aiQ" name="relatedLabPromise" visibility="public" type="_WUomEOOYEd-8X4J7aT-aiQ" association="_Y1D7cOOYEd-8X4J7aT-aiQ">
+        <ownedComment xmi:id="_cM8MkEVKEeKmiJoj9rWMSg" annotatedElement="_Y1GXsOOYEd-8X4J7aT-aiQ">
+          <body>Identifies other Lab Test Promise(s) to which this Lab Test Promise is somehow related.</body>
+        </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Y1Hl0eOYEd-8X4J7aT-aiQ" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Y1Hl0OOYEd-8X4J7aT-aiQ"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_B0jz8cp5EeC9Pb3leltpqQ" name="specimenAssessment" visibility="public" type="_A57aMMHSEeCdLPayeDTWtA" association="_B0jz8Mp5EeC9Pb3leltpqQ">
+        <ownedComment xmi:id="_F_f10EVREeKmiJoj9rWMSg" annotatedElement="_B0jz8cp5EeC9Pb3leltpqQ">
+          <body>Contains observations regarding the Specimen.  Such observations, or assessments, of the Specimen are performed by the laboratory upon initial receipt, although periodic assessments may be performed later, especially when the Specimen is in long-term storage, or when some change in custody has occurred.  The assessment also contains information concerning the handling of the Specimen, such as storage or transportation information.</body>
+        </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_B0tk8cp5EeC9Pb3leltpqQ" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_B0tk8Mp5EeC9Pb3leltpqQ"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_W1_tkczCEeCMF_3VBil7Gw" name="specimenCollectionEvent" visibility="public" type="_420A62FD03B64263CF150098" association="_W1_tkMzCEeCMF_3VBil7Gw">
+        <ownedComment xmi:id="_MvF6UEVREeKmiJoj9rWMSg" annotatedElement="_W1_tkczCEeCMF_3VBil7Gw">
+          <body>The actual gathering of portions or quantities of material for use in testing, examination, or study based upon the request (order).</body>
+        </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_W1_tk8zCEeCMF_3VBil7Gw" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_W1_tkszCEeCMF_3VBil7Gw"/>
       </ownedAttribute>
@@ -3452,6 +3440,9 @@ See the Diagram Documentation for a walkthrough of the major concepts.</body>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Or6HQLsjEeGZTLDYkoM_Sw"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_LgnYYC0QEeKEnd784Zlo8Q" name="accessionEvent" visibility="public" type="_QVZQ4A8SEeK0aKhL_Nyezg" association="_LghRwC0QEeKEnd784Zlo8Q">
+        <ownedComment xmi:id="_5P10sEVCEeKmiJoj9rWMSg" annotatedElement="_LgnYYC0QEeKEnd784Zlo8Q">
+          <body>This property points to the record of the laboratory's accepting a laboratory test and entering the test into the laboratory's workload.</body>
+        </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_LgpNkS0QEeKEnd784Zlo8Q" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LgpNkC0QEeKEnd784Zlo8Q"/>
       </ownedAttribute>
@@ -3635,6 +3626,11 @@ Pathology results generally take the form of documents, which in turn are compos
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_QlWZUGBuEeC4aoyj3Fs9Uw" name="quantityObserved" visibility="private">
+        <ownedComment xmi:id="_hppJYEWYEeKmiJoj9rWMSg" annotatedElement="_QlWZUGBuEeC4aoyj3Fs9Uw">
+          <body>&quot;Contains the value observed by the observation producer....  It is not a required field because some systems will report only the Interpretation Codes.... This field may repeat for multipart, single answer results.&quot; - HL7 Version 2.8, OBX-5.&#xD;
+&#xD;
+**This property is in question and may be removed after review**</body>
+        </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B641886F630221?FHIM/Datatypes/PhysicalQuantity?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B64586FAD0012F" name="stainType" visibility="public">
@@ -3733,25 +3729,19 @@ Possible values include (from HL7 Table 909): Share To Be Determined: Category t
     <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B64266BCE800E0" name="SpecimenCollectionPromise">
       <eAnnotations xmi:id="_M_2p9-LiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
       <ownedComment xmi:id="_M_s49uLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64266BCE800E0">
-        <body>Acceptance to perform test requested on the specimen submitted , such as of tissue, blood, or urine, used for analysis and diagnosis.  </body>
+        <body>This class represents an intent to collect one or more Specimens in response to a Request (an Order) from an authorized entity (usually a doctor).  A Promise is an intent to perform a service that has the strength of a commitment, i.e., other parties may rely on the originator of such promise that said originator will see to it that the promised act will be fulfilled.  A promise can be either solicited or unsolicited.  The entity that makes such a promise is also called a &quot;filler&quot;, while the entity that requests the service is also called a &quot;placer&quot;.  The Specimen Collection Promise can be looked at as the Specimen Collection Order from the point of view of the entity collecting the Specimen.&#xD;
+&#xD;
+It should be noted that while a Specimen Collection Promise logically occurs in response to an order, the notion of a Specimen Collection Promise is rarely implemented as separate concept, because specimen collections typically occur automatically based on policy, procedure, or contract.  Rarely would two computers be exchanging messages requesting and acknowledging specimen collections; most likely this would occur when a patient is sent to the laboratory for specimen collection.  Nevertheless, the class exists in order to support the few cases where an explicit promise is needed.</body>
       </ownedComment>
       <generalization xmi:id="_vWSTIMoTEeGas4Yp_oUthg">
         <general xmi:type="uml:Class" href="Orders.efx#_3r94oOO5EeCbbuWBGGTBrA?FHIM/Orders/HealthcarePromise?"/>
       </generalization>
-      <ownedAttribute xmi:id="_9xUIMMnlEeG_ScqIlDrcqg" name="accessionDate" visibility="public">
-        <eAnnotations xmi:id="_9xUIMcnlEeG_ScqIlDrcqg" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
-        <ownedComment xmi:id="_9xUIMsnlEeG_ScqIlDrcqg" annotatedElement="_9xUIMMnlEeG_ScqIlDrcqg">
-          <body>The timestamp for the time the lab accessioned the lab order.</body>
+      <ownedAttribute xmi:id="_q13wYEVAEeKmiJoj9rWMSg" name="accessionEvent" visibility="public" type="_QVZQ4A8SEeK0aKhL_Nyezg" association="_q117MEVAEeKmiJoj9rWMSg">
+        <ownedComment xmi:id="_AxdMAEVDEeKmiJoj9rWMSg" annotatedElement="_q13wYEVAEeKmiJoj9rWMSg">
+          <body>This property points to the record of the laboratory's accepting a laboratory test and entering the test into the laboratory's workload.</body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9xUIM8nlEeG_ScqIlDrcqg" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9xUINMnlEeG_ScqIlDrcqg" value="1"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_9xVWUMnlEeG_ScqIlDrcqg" name="accessionId" visibility="public">
-        <ownedComment xmi:id="_9xVWUcnlEeG_ScqIlDrcqg" annotatedElement="_9xVWUMnlEeG_ScqIlDrcqg">
-          <body>Identification of test(s) ordered.  Used for identity of filler in the act of accepting  a laboratory test, and entering the test into the laboratory's workload.  An identifier assigned to the accepted laboratory test(s) identifying the samples, specimens, and results.  &quot;This field contains accession identifier(s) associated with the specimen....&quot; - HL7 Version 2.8, SPM.30</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_q14XcUVAEeKmiJoj9rWMSg" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_q14XcEVAEeKmiJoj9rWMSg"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B64263CF150098" name="SpecimenCollectionEvent">
@@ -3827,13 +3817,16 @@ Note that this property is a Time Interval.</body>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B642DBE47D009E" name="specimen" visibility="public" isUnique="false" association="_420A62FD03B642DBE479028D">
         <ownedComment xmi:id="_ND4OZeLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B642DBE47D009E">
-          <body>A collection of samples or speciments collected and potentially processed for eventual testing.</body>
+          <body>A collection of samples or specimens collected and potentially processed for eventual testing.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Common.efx#_420A62FD03B642DBE3F101E7?FHIM/Common/Specimen?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NEBYQuLiEduGJrQyRGTO1A" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NEBYQeLiEduGJrQyRGTO1A" value="1"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_tn8FgMoUEeGas4Yp_oUthg" name="specimenCollectionPromise" visibility="public" type="_420A62FD03B64266BCE800E0" association="_tn30EMoUEeGas4Yp_oUthg">
+        <ownedComment xmi:id="_ISdwoEWWEeKmiJoj9rWMSg" annotatedElement="_tn8FgMoUEeGas4Yp_oUthg">
+          <body>Points to the &quot;promise&quot; made in response to a Request (an Order) from an authorized entity (usually a doctor), which resulted in this Specimen Collection Event.  A Promise is an intent to perform a service that has the strength of a commitment, i.e., other parties may rely on the originator of such promise that said originator will see to it that the promised act will be fulfilled.  The Specimen Collection Promise can be looked at as the Specimen Collection Order from the point of view of the entity collecting the Specimen.</body>
+        </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tn9TocoUEeGas4Yp_oUthg" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tn9ToMoUEeGas4Yp_oUthg" value="1"/>
       </ownedAttribute>
@@ -3939,9 +3932,9 @@ Note that this property is a Time Interval.</body>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_NglJMH8AEd-6KMbY3gBFOQ" name="ReportableResult">
       <ownedComment xmi:id="_KzpqALsoEeGZTLDYkoM_Sw" annotatedElement="_NglJMH8AEd-6KMbY3gBFOQ">
-        <body>&quot;The OBX segment is used to transmit a single observation or observation fragment.  It represents the smallest indivisible unit of a report.&quot; - HL7 Version 2.8, OBX&#xD;
+        <body>This class represents a test result or observation that may be reported.  Some tests, such as an microbiology identification may have multiple results reported over time, for example a preliminary gram stain result might be initially reported, followed by the identification and relative number of organisms, followed by an antibiotic senstivity test results.  Each one of these results would manifest as a separate instance of this class, each with their own date/times, performers, etc.&#xD;
 &#xD;
-This class represents a test result or observation that may be reported.  Some tests, such as an microbiology identification may have multiple results reported over time, for example a preliminary gram stain result might be initially reported, followed by the identification and relative number of organisms, followed by an antibiotic senstivity test results.  Each one of these results would manifest as a separate instance of this class, each with their own date/times, performers, etc.</body>
+&quot;The OBX segment is used to transmit a single observation or observation fragment.  It represents the smallest indivisible unit of a report.&quot; - HL7 Version 2.8, OBX</body>
       </ownedComment>
       <ownedAttribute xmi:id="_4dtFwGRQEeCsvJrE4KlOMA" name="dateDeemedReportable" visibility="public">
         <ownedComment xmi:id="_qH7K8MneEeG_ScqIlDrcqg" annotatedElement="_4dtFwGRQEeCsvJrE4KlOMA">
@@ -4078,12 +4071,16 @@ For antibiotic sensitivity tests, provides an indication of the susceptibility o
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_D4nd8MYSEeGsb4KXw2Babg" value="1"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_3BNrUPjJEeCmc6EQPl3F9g" name="transcription" visibility="public" type="_1mTzkPjJEeCmc6EQPl3F9g" association="_3BKoAPjJEeCmc6EQPl3F9g">
+        <ownedComment xmi:id="_DtDxkEUvEeKmiJoj9rWMSg" annotatedElement="_3BNrUPjJEeCmc6EQPl3F9g">
+          <body>Transcribe: &quot;to make a written copy, especially a typewritten copy, of (dictated material, notes taken during a lecture, or other spoken material).&quot; - Dictionary.com.  This association points to information about who transcribed the provider's dictated notes, and when that transcription occurred.</body>
+        </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3BNrUvjJEeCmc6EQPl3F9g" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3BNrUfjJEeCmc6EQPl3F9g"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_j5AykMqXEeG4_uv2Hb_AVQ" name="relatedResult" visibility="public" type="_hkGwsMqXEeG4_uv2Hb_AVQ" association="_j46E4MqXEeG4_uv2Hb_AVQ">
         <ownedComment xmi:id="_XEZJMMqaEeG4_uv2Hb_AVQ" annotatedElement="_j5AykMqXEeG4_uv2Hb_AVQ">
-          <body>&quot;This field is defined to make it available for other types of linkages (e.g., toxicology).  This important information, together with the information in OBR-29 or OBR-57, uniquely identifies the parent result's OBX segment related to this order.&quot; - HL7 Version 2, OBX-26.</body>
+          <body>Identifies other Reportable Result(s) to which this Reportable Result is somehow related.&#xD;
+&quot;This field is defined to make it available for other types of linkages (e.g., toxicology).  This important information, together with the information in OBR-29 or OBR-57, uniquely identifies the parent result's OBX segment related to this order.&quot; - HL7 Version 2, OBX-26.</body>
         </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_j5DO0MqXEeG4_uv2Hb_AVQ" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_j5CnwMqXEeG4_uv2Hb_AVQ"/>
@@ -4111,6 +4108,9 @@ For antibiotic sensitivity tests, provides an indication of the susceptibility o
 Note that a &quot;Reflex Test&quot; will be handled through this RelatedLabPromise mechanism.  A Reflex Test is a test that is performed and is made necessary based on results from another test, such as results that need confirmation or tests that are indicated by standards of care, so that it is necessary to perform even though the clinician hasn't ordered it.  Examples include when a CBC indicates a high white blood cell count, a differential is automatically performed.  These tests are usually defined within the laboratory's established procedures.  In this case, the original order will point to an instance of RelatedLabPromise, wherein the relatedPromiseCategory will contain a code that means &quot;reflex test&quot;, and a pointer (i.e., the labTestPromise property) that points to the reflex test promise.  Similarly, the reflex test promise can point to another instance of RelatedLabPromise, wherein the relatedPromiseCategory will contain a code that means &quot;original promise&quot;, and a pointer (i.e., the labTestPromise property) that points to the original lab test promise.</body>
       </ownedComment>
       <ownedAttribute xmi:id="_ZgmLwOOYEd-8X4J7aT-aiQ" name="labTestPromise" visibility="public" type="_420A62FD03B64230F39A02CC" association="_ZgjvgOOYEd-8X4J7aT-aiQ">
+        <ownedComment xmi:id="_k4ckIEVKEeKmiJoj9rWMSg" annotatedElement="_ZgmLwOOYEd-8X4J7aT-aiQ">
+          <body>Points to the Lab Test Promise (i.e., the &quot;target Lab Test Promise&quot;) to which the &quot;source Lab Test Promise&quot; (i.e., the Lab Test Promise that points to this class) is somehow related.</body>
+        </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZgnZ4eOYEd-8X4J7aT-aiQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ZgnZ4OOYEd-8X4J7aT-aiQ" value="1"/>
       </ownedAttribute>
@@ -4163,7 +4163,7 @@ Note that a &quot;Reflex Test&quot; will be handled through this RelatedLabPromi
       <ownedAttribute xmi:id="_s5NUVOOaEd-8X4J7aT-aiQ" name="priority" visibility="public">
         <eAnnotations xmi:id="_s5N7YOOaEd-8X4J7aT-aiQ" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <ownedComment xmi:id="_s5N7YeOaEd-8X4J7aT-aiQ" annotatedElement="_s5NUVOOaEd-8X4J7aT-aiQ">
-          <body>&quot;This field describes the urgency of the request.  If this field is blank, the default is R&quot; (Routine) - HL7 Version 2.8, TQ1-9</body>
+          <body>&quot;Describes the urgency of the request. If this field is blank, the default is [Routine]&quot; - HL7 Version 2.8, TQ1-9.  Possible values include (from HL7 Table 122): Stat; ASAP; Routine; Preop; Callback; Timing critical*; As needed.  *Note that the Timing Critical has a syntax that allows more information, e.g., Timing Critical within 15 minutes.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_s5N7YuOaEd-8X4J7aT-aiQ" value="1"/>
@@ -4185,14 +4185,6 @@ A code specifying the status of the Order.  Valid status codes should reflect th
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_s5OicuOaEd-8X4J7aT-aiQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_s5Oic-OaEd-8X4J7aT-aiQ" value="1"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_s5PJgOOaEd-8X4J7aT-aiQ" name="statusModifier" visibility="public">
-        <ownedComment xmi:id="_6fLA0LslEeGZTLDYkoM_Sw" annotatedElement="_s5PJgOOaEd-8X4J7aT-aiQ">
-          <body>&quot;This field is a modifier or refiner of the ORC-5-Order status field. This field may be used to provide additional levels of specificity or additional information for the defined order status codes.&quot; - HL7 Version 2.8, ORC-25</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_s5PJgeOaEd-8X4J7aT-aiQ" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_s5PJguOaEd-8X4J7aT-aiQ"/>
-      </ownedAttribute>
       <ownedAttribute xmi:id="_H6OGILslEeGZTLDYkoM_Sw" name="performingLabsPromise" visibility="public" type="_420A62FD03B64230F39A02CC" association="_H6KbwLslEeGZTLDYkoM_Sw">
         <ownedComment xmi:id="_nLSf4LsmEeGZTLDYkoM_Sw" annotatedElement="_H6OGILslEeGZTLDYkoM_Sw">
           <body>Points to the performing laboratory's promise to perform the requested test(s).  This allows navigation to the results, etc.</body>
@@ -4202,14 +4194,86 @@ A code specifying the status of the Order.  Valid status codes should reflect th
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_iI8NkPZPEd-e1vPpWfL-Bw" name="SpecimenContainer">
-      <ownedAttribute xmi:id="_ycJ9YPZPEd-e1vPpWfL-Bw" name="containerSize" visibility="public">
+      <ownedComment xmi:id="_k4YzwEWMEeKmiJoj9rWMSg" annotatedElement="_iI8NkPZPEd-e1vPpWfL-Bw">
+        <body>Container: &quot;an object used for or capable of holding, esp for transport or storage, such as a carton, box, etc.&quot; - Dictionary.com.  This class describes the object in which the specimen is contained, such as the capacity, etc.  Some containers are manufactured such that they contain a pre-defined substance that may act to preserve, maintain or enhance the particular nature or component of the specimen. For example, a &quot;blue top tube&quot; typically contains an anticoagulant such as citrate. It is therefore important to know what kind of container the sample is in, as the condition of the sample may be affected.&#xD;
+&#xD;
+&quot;An Entity that holds other Entities.&quot; - HL7 Version 3.</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="_VyJbIEWREeKmiJoj9rWMSg" name="barrierDeltaQuantity" visibility="public">
+        <ownedComment xmi:id="_VyJbIUWREeKmiJoj9rWMSg" annotatedElement="_VyJbIEWREeKmiJoj9rWMSg">
+          <body>&quot;Identifies the distance from the Point of Reference to the separator material (barrier) within the container in units specified below. This distance may be provided by the LAS to the instrument and/or specimen processing/handling device to facilitate the insertion of a sampling probe into the specimen without touching the separator.&quot; - HL7 Version 2.8, SAC-18.&#xD;
+&quot;The distance from the point of reference to the separator material (barrier) within a container.&quot; - HL7 Version 3 (Container.barrierDeltaQuantity).</body>
+        </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B641886F630221?FHIM/Datatypes/PhysicalQuantity?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VyJbIkWREeKmiJoj9rWMSg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VyJbI0WREeKmiJoj9rWMSg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_3ZdI8EWREeKmiJoj9rWMSg" name="bottomDeltaQuantity" visibility="public">
+        <ownedComment xmi:id="_3ZdI8UWREeKmiJoj9rWMSg" annotatedElement="_3ZdI8EWREeKmiJoj9rWMSg">
+          <body>&quot;Identifies the distance from the Point of Reference to the separator material (barrier) within the container in units specified below. This distance may be provided by the LAS to the instrument and/or specimen processing/handling device to facilitate the insertion of a sampling probe into the specimen without touching the separator.&quot; - HL7 Version 2.8, SAC-18.&#xD;
+&quot;The distance from the point of reference to the separator material (barrier) within a container.&quot; - HL7 Version 3 (Container.barrierDeltaQuantity).</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B641886F630221?FHIM/Datatypes/PhysicalQuantity?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3ZdI8kWREeKmiJoj9rWMSg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3ZdI80WREeKmiJoj9rWMSg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ZwbggEWPEeKmiJoj9rWMSg" name="capType" visibility="public">
+        <ownedComment xmi:id="_ZwbggUWPEeKmiJoj9rWMSg" annotatedElement="_ZwbggEWPEeKmiJoj9rWMSg">
+          <body>&quot;Indicates the type of cap that is to be used with this container for decapping, piercing or other mechanisms.&quot; - HL7 Version 2.8, SAC-26.  Note that HL7 identifies a Code Table (Table 381) for this property, but does not provide any suggested values.&#xD;
+&quot;The type of cap (closure) associated with the container that is the entity being described.&quot; - HL7 Version 3 (Container.capTypeCode).</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZwbggkWPEeKmiJoj9rWMSg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Zwbgg0WPEeKmiJoj9rWMSg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ycJ9YPZPEd-e1vPpWfL-Bw" name="containerCapacity" visibility="public">
+        <ownedComment xmi:id="_k1KcQEVuEeKmiJoj9rWMSg" annotatedElement="_ycJ9YPZPEd-e1vPpWfL-Bw">
+          <body>&quot;Indicates the capacity of the container in the units specified [in SAC-24].&quot; - HL7 Version 2.8, SAC-21.&#xD;
+&quot;The unit identifier that is being used to describe the volume of the container....&quot; - HL7 Version 2.8, SAC-24.&#xD;
+&quot;The functional capacity of the container.&quot; - HL7 Version 3 (Container.capacityQuantity).</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B641886F630221?FHIM/Datatypes/PhysicalQuantity?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vKAioEWOEeKmiJoj9rWMSg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vJ_7kEWOEeKmiJoj9rWMSg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_SoseQEWOEeKmiJoj9rWMSg" name="containerDiameter" visibility="public">
+        <ownedComment xmi:id="_SoseQUWOEeKmiJoj9rWMSg" annotatedElement="_SoseQEWOEeKmiJoj9rWMSg">
+          <body>&quot;Identifies the outside diameter of the container in units specified [in SAC-24].&quot; - HL7 Version 2.8, SAC-17.&#xD;
+&quot;The unit identifier that is being used to describe the volume of the container....&quot; - HL7 Version 2.8, SAC-24.&#xD;
+&quot;The outside diameter of the container.&quot; - HL7 Version 3 (Container.diameterQuantity).</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B641886F630221?FHIM/Datatypes/PhysicalQuantity?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_SF89kEWOEeKmiJoj9rWMSg" name="containerHeight" visibility="public">
+        <ownedComment xmi:id="_SF89kUWOEeKmiJoj9rWMSg" annotatedElement="_SF89kEWOEeKmiJoj9rWMSg">
+          <body>&quot;Identifies the height of the container in units specified [in SAC-24].&quot; - HL7 Version 2.8, SAC-16.&#xD;
+&quot;The unit identifier that is being used to describe the volume of the container....&quot; - HL7 Version 2.8, SAC-24.&#xD;
+&quot;The height of the container.&quot; - HL7 Version 3 (Container.heightQuantity).</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B641886F630221?FHIM/Datatypes/PhysicalQuantity?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ubM74EWOEeKmiJoj9rWMSg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ubMU0EWOEeKmiJoj9rWMSg"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_rgeksPZPEd-e1vPpWfL-Bw" name="containerType" visibility="public">
         <ownedComment xmi:id="_8-uGoAlTEeGe4v7RnpTDUQ" annotatedElement="_rgeksPZPEd-e1vPpWfL-Bw">
           <body>&quot;The container in or on which a specimen is transported.&quot; - HL7 Version 2.8, SPM-27.  Note that although this property is a flavor of Code in HL7 Version 2, HL7 does not link this property to a Code Table nor do they provide any suggested values.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_7OE0cEVtEeKmiJoj9rWMSg" name="id" visibility="public">
+        <ownedComment xmi:id="_-ObnEEVtEeKmiJoj9rWMSg" annotatedElement="_7OE0cEVtEeKmiJoj9rWMSg">
+          <body>&quot;The container's unique identifier assigned by the corresponding equipment....&quot; - HL7 Version 2.8, SAC-3.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_gJZYQEWQEeKmiJoj9rWMSg" name="separatorType" visibility="public">
+        <ownedComment xmi:id="_gJZYQUWQEeKmiJoj9rWMSg" annotatedElement="_gJZYQEWQEeKmiJoj9rWMSg">
+          <body>&quot;Identifies the type of the separator that is being used (e.g., gel separator in the container…)&quot; - HL7 Version 2.8, SAC-25.  Note that HL7 identifies a Code Table (Table 380) for this property, but does not provide any suggested values.&#xD;
+&quot;A material added to a container to facilitate and create a physical separation of specimen components of differing density.  The composition or nature of the separator material may have an effect on the analysis. Knowledge of the material aids interpretation of results.&quot; - HL7 Version 3 (Container.separatorTypeCode).</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gJZYQkWQEeKmiJoj9rWMSg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gJZYQ0WQEeKmiJoj9rWMSg"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_9WIW8CjuEeKdfLgBSxgNnA" name="additive" visibility="public" type="_6r9PsCjuEeKdfLgBSxgNnA" association="_9WEFgCjuEeKdfLgBSxgNnA">
         <ownedComment xmi:id="_06WQsCtPEeKKgp1v3A6sOA" annotatedElement="_9WIW8CjuEeKdfLgBSxgNnA">
@@ -5057,6 +5121,9 @@ Note that the classes in this package are not full-fledged FHIM classes, and do 
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_3XW7MGH_EeCHAoM78Lf2xA" name="ReferenceRangeCriterion">
+      <ownedComment xmi:id="_7CEKMEWYEeKmiJoj9rWMSg" annotatedElement="_3XW7MGH_EeCHAoM78Lf2xA">
+        <body>Indicates the criteron by which the reference range is valid.  Different reference ranges may be defined based on the subject's age, race, sex, etc.</body>
+      </ownedComment>
       <ownedAttribute xmi:id="__FOZQGIUEeCHAoM78Lf2xA" name="criterionCategory" visibility="public">
         <ownedComment xmi:id="_hNPkgPjQEeCmc6EQPl3F9g" annotatedElement="__FOZQGIUEeCHAoM78Lf2xA">
           <body>Indicates the criteron by which the reference range is valid.  Different reference ranges may be defined based on the subject's age, race, sex, etc.&#xD;
@@ -5868,16 +5935,10 @@ Note that the classes in this package are not full-fledged FHIM classes, and may
       </ownedEnd>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_x4U9ILxIEeCjnsq0FtkmeA" name="SpecimenTransportation">
+      <ownedComment xmi:id="_kUcVoEU-EeKmiJoj9rWMSg" annotatedElement="_x4U9ILxIEeCjnsq0FtkmeA">
+        <body>This class contains information regarding the transportation of a specimen.  This class currently contains the shipment identifier and the method of transportation, but will be augmented in future iterations as we intend to model more details regarding chain of custody.</body>
+      </ownedComment>
       <generalization xmi:id="_dFxFcLxOEeCjnsq0FtkmeA" general="_3fUokLxNEeCjnsq0FtkmeA"/>
-      <ownedAttribute xmi:id="_1-BAILxIEeCjnsq0FtkmeA" name="dateTimeSent" visibility="public">
-        <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_8G_wkLxIEeCjnsq0FtkmeA" name="dateTimeReceived" visibility="public">
-        <ownedComment xmi:id="_LKrLILxJEeCjnsq0FtkmeA" annotatedElement="_8G_wkLxIEeCjnsq0FtkmeA">
-          <body>&quot;The time that the specimen is received at the diagnostic service.  The actual time that is recorded is based on how specimen receipt is managed and may correspond to the time the sample is logged in.&quot; - HL7 Version 2.8, SPM-18.</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
-      </ownedAttribute>
       <ownedAttribute xmi:id="_Tt_bcAl2EeGe4v7RnpTDUQ" name="shipmentId" visibility="public">
         <ownedComment xmi:id="_W4nkYAl2EeGe4v7RnpTDUQ" annotatedElement="_Tt_bcAl2EeGe4v7RnpTDUQ">
           <body>&quot;The identifier assigned by the shipment transportation provider that uniquely identifies this shipment from all other shipments by the same provider.  The addressee for the shipment should be able to use this identifier to match a physical shipment with the electronic manifest for the shipment.&quot; - HL7 Version 2.8, SPM-32.</body>
@@ -5892,16 +5953,51 @@ Note that the classes in this package are not full-fledged FHIM classes, and may
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_3fUokLxNEeCjnsq0FtkmeA" name="SpecimenHandling">
-      <ownedAttribute xmi:id="_9W_xILxOEeCjnsq0FtkmeA" name="lowTemperature" visibility="public">
-        <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B641886F630221?FHIM/Datatypes/PhysicalQuantity?"/>
+      <ownedComment xmi:id="_NNsucEU8EeKmiJoj9rWMSg" annotatedElement="_3fUokLxNEeCjnsq0FtkmeA">
+        <body>This class contains information regarding the transportation or storage of a specimen.  Information may be recorded for both storage and transportation about the minimum and maximum temperatures to which the specimen was exposed.  Subtypes of this class deal with specific requirements for storage and transportation.&#xD;
+&#xD;
+Note that we need to model more details regarding chain of custody in general and the storage and handling of specimens in specific in future modeling iterations.  We may also need a shipping-container assessment, not just specimen assessment.</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="_1-BAILxIEeCjnsq0FtkmeA" name="dateTimeBegin" visibility="public">
+        <ownedComment xmi:id="_OpW-sEU9EeKmiJoj9rWMSg" annotatedElement="_1-BAILxIEeCjnsq0FtkmeA">
+          <body>The date time upon which the specimen handling commenced.  For Specimen Transportation, this would be the date/time that the specimen was sent.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_8G_wkLxIEeCjnsq0FtkmeA" name="dateTimeEnd" visibility="public">
+        <ownedComment xmi:id="_LKrLILxJEeCjnsq0FtkmeA" annotatedElement="_8G_wkLxIEeCjnsq0FtkmeA">
+          <body>The date time upon which the specimen handling ended.  For Specimen Transportation, this would be the date/time that the specimen was received.&#xD;
+&#xD;
+&quot;The time that the specimen is received at the diagnostic service.  The actual time that is recorded is based on how specimen receipt is managed and may correspond to the time the sample is logged in.&quot; - HL7 Version 2.8, SPM-18.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_IzS1ULxPEeCjnsq0FtkmeA" name="highTemperature" visibility="public">
+        <ownedComment xmi:id="_dX3P8EU8EeKmiJoj9rWMSg" annotatedElement="_IzS1ULxPEeCjnsq0FtkmeA">
+          <body>The maximum temperature to which the specimen was exposed during the Specimen Handling episode described by this class.</body>
+        </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B641886F630221?FHIM/Datatypes/PhysicalQuantity?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_I8xEwEU8EeKmiJoj9rWMSg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_I8wdsEU8EeKmiJoj9rWMSg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_9W_xILxOEeCjnsq0FtkmeA" name="lowTemperature" visibility="public">
+        <ownedComment xmi:id="_aD9PMEU8EeKmiJoj9rWMSg" annotatedElement="_9W_xILxOEeCjnsq0FtkmeA">
+          <body>The minimum temperature to which the specimen was exposed during the Specimen Handling episode described by this class.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B641886F630221?FHIM/Datatypes/PhysicalQuantity?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IJf0wUU8EeKmiJoj9rWMSg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IJf0wEU8EeKmiJoj9rWMSg"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_andP8LxOEeCjnsq0FtkmeA" name="SpecimenStorage">
+      <ownedComment xmi:id="_Fj4LcEU-EeKmiJoj9rWMSg" annotatedElement="_andP8LxOEeCjnsq0FtkmeA">
+        <body>This class contains information regarding the storage of a specimen.  This class currently contains a storage location identifier, but will be augmented in future iterations as we intend to model more details regarding chain of custody as well as long-term storage (for example tissue banks).</body>
+      </ownedComment>
       <generalization xmi:id="_duTFELxOEeCjnsq0FtkmeA" general="_3fUokLxNEeCjnsq0FtkmeA"/>
       <ownedAttribute xmi:id="_q7xo4Mp5EeC9Pb3leltpqQ" name="location" visibility="public">
+        <ownedComment xmi:id="_TtgYkEU-EeKmiJoj9rWMSg" annotatedElement="_q7xo4Mp5EeC9Pb3leltpqQ">
+          <body>Identifies the location in which the specimen is/was stored.</body>
+        </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
       </ownedAttribute>
     </packagedElement>
@@ -5929,6 +6025,9 @@ Note that the classes in this package are not full-fledged FHIM classes, and may
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_A57aMMHSEeCdLPayeDTWtA" name="SpecimenAssessment">
+      <ownedComment xmi:id="_w-dsAEVQEeKmiJoj9rWMSg" annotatedElement="_A57aMMHSEeCdLPayeDTWtA">
+        <body>This class contains observations regarding the Specimen.  Such observations, or assessments, of the Specimen are performed by the laboratory upon initial receipt, although periodic assessments may be performed later, especially when the Specimen is in long-term storage, or when some change in custody has occurred.  The assessment also contains information concerning the handling of the Specimen, such as storage or transportation information.</body>
+      </ownedComment>
       <ownedAttribute xmi:id="_dJUBEMHSEeCdLPayeDTWtA" name="appropriateness" visibility="public">
         <ownedComment xmi:id="_dJUBEcHSEeCdLPayeDTWtA" annotatedElement="_dJUBEMHSEeCdLPayeDTWtA">
           <body>&quot;The suitability of the specimen for the particular planned use as determined by the filler.&quot; - HL7 Version 2.8, SPM-23.  Possible values include (from HL7 Table 492): Preferred; Appropriate; Inappropriate; Inappropriate due to....</body>
@@ -5985,12 +6084,26 @@ Note that the classes in this package are not full-fledged FHIM classes, and may
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_1LQI0EWNEeKmiJoj9rWMSg" name="temperature" visibility="public">
+        <ownedComment xmi:id="_Daa9QEWOEeKmiJoj9rWMSg" annotatedElement="_1LQI0EWNEeKmiJoj9rWMSg">
+          <body>&quot;Identifies the specimen temperature in degrees Celsius&quot; - HL7 Version 2.8, SAC-31.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B641886F630221?FHIM/Datatypes/PhysicalQuantity?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4ZlGAEWNEeKmiJoj9rWMSg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4Zke8EWNEeKmiJoj9rWMSg"/>
+      </ownedAttribute>
       <ownedAttribute xmi:id="_TIVB0Mp5EeC9Pb3leltpqQ" name="specimen" visibility="public" association="_TILQ0Mp5EeC9Pb3leltpqQ">
+        <ownedComment xmi:id="_akinMEVREeKmiJoj9rWMSg" annotatedElement="_TIVB0Mp5EeC9Pb3leltpqQ">
+          <body>Identifies the specimen associated with the assessment, and therefore to which the assessment data pertains.</body>
+        </ownedComment>
         <type xmi:type="uml:Class" href="Common.efx#_420A62FD03B642DBE3F101E7?FHIM/Common/Specimen?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_TIVB0sp5EeC9Pb3leltpqQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_TIVB0cp5EeC9Pb3leltpqQ"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_LKaLwLxREeCjnsq0FtkmeA" name="specimenHandling" visibility="public" type="_3fUokLxNEeCjnsq0FtkmeA" association="_LKXIcLxREeCjnsq0FtkmeA">
+        <ownedComment xmi:id="_RQSaIEU8EeKmiJoj9rWMSg" annotatedElement="_LKaLwLxREeCjnsq0FtkmeA">
+          <body>Points to information regarding the transportation or storage of a specimen.</body>
+        </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_LKaLwrxREeCjnsq0FtkmeA" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LKaLwbxREeCjnsq0FtkmeA"/>
       </ownedAttribute>
@@ -6038,21 +6151,20 @@ Note that the classes in this package are not full-fledged FHIM classes, and may
       <ownedComment xmi:id="_jT1YELskEeGZTLDYkoM_Sw" annotatedElement="_eWYXgO3MEeCFZuasLkncZQ">
         <body>&quot;One or more codes specifying a categorical assessment of the observation value, such as &quot;Normal&quot;, &quot;Abnormal&quot;, &quot;Positive&quot;, &quot;Negative&quot;, &quot;Resistant&quot;, &quot;Susceptible&quot;, etc....&quot; - HL7 Version 2.8, OBX-8.&#xD;
 &#xD;
-For chemistry tests, provides an automated indication of the result, based upon &quot;normal&quot; values as indicated by the reference range.  Examples include High, Low, Critically High, Critically Low, etc.&#xD;
-&#xD;
-For antibiotic sensitivity tests, provides an indication of the susceptibility of the identified organism to the test antibiotic.  Possible values include: Intermediate, Moderately Susceptible, Resistant, Susceptible.  In addition, Not Tested may occasionally used when an antibiotic that would commonly be tested was not for some reason.</body>
+For chemistry tests, provides an automated indication of the result, based upon &quot;normal&quot; values as indicated by the reference range.  Examples include High, Low, Critically High, Critically Low, etc.  For antibiotic sensitivity tests, provides an indication of the susceptibility of the identified organism to the test antibiotic.  Possible values include: Intermediate, Moderately Susceptible, Resistant, Susceptible.  In addition, Not Tested may occasionally used when an antibiotic that would commonly be tested was not for some reason.</body>
       </ownedComment>
       <ownedAttribute xmi:id="_420A62FD03B64263C9AE023E" name="interpretation" visibility="public">
         <ownedComment xmi:id="_M6oyw-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64263C9AE023E">
           <body>&quot;One or more codes specifying a categorical assessment of the observation value, such as &quot;Normal&quot;, &quot;Abnormal&quot;, &quot;Positive&quot;, &quot;Negative&quot;, &quot;Resistant&quot;, &quot;Susceptible&quot;, etc....&quot; - HL7 Version 2.8, OBX-8&#xD;
 &#xD;
-For chemistry tests, provides an automated indication of the result, based upon &quot;normal&quot; values as indicated by the reference range.  Examples include High, Low, Critically High, Critically Low, etc.&#xD;
-&#xD;
-For antibiotic sensitivity tests, provides an indication of the susceptibility of the identified organism to the test antibiotic.  Possible values include: Intermediate, Moderately Susceptible, Resistant, Susceptible.  In addition, Not Tested may occasionally used when an antibiotic that would commonly be tested was not for some reason.</body>
+For chemistry tests, provides an automated indication of the result, based upon &quot;normal&quot; values as indicated by the reference range.  Examples include High, Low, Critically High, Critically Low, etc.  For antibiotic sensitivity tests, provides an indication of the susceptibility of the identified organism to the test antibiotic.  Possible values include: Intermediate, Moderately Susceptible, Resistant, Susceptible.  In addition, Not Tested may occasionally used when an antibiotic that would commonly be tested was not for some reason.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_DsDIsBJdEeKEjrc2hUE4_Q" name="interpretatationText" visibility="public">
+        <ownedComment xmi:id="_RzejkEU4EeKmiJoj9rWMSg" annotatedElement="_DsDIsBJdEeKEjrc2hUE4_Q">
+          <body>Contains the clinician's assessment based on the observation.  This property is used for textual assessments as opposed to a coded interpretation.  This property is used more often for pathology observations where pathologist's interpretation may be several sentences long, as opposed to &quot;chemistry&quot; tests, which are often automated and which produce a coded interpretation.</body>
+        </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SmZoIBJdEeKEjrc2hUE4_Q" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SmZBEBJdEeKEjrc2hUE4_Q"/>
@@ -6090,7 +6202,13 @@ For antibiotic sensitivity tests, provides an indication of the susceptibility o
       <ownedEnd xmi:id="_wTQFYO3PEeCFZuasLkncZQ" name="" visibility="private" type="_420A62FD03B642DD3EE4017D" association="_wTLM4O3PEeCFZuasLkncZQ"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_1mTzkPjJEeCmc6EQPl3F9g" name="TranscriptionEvent">
+      <ownedComment xmi:id="_2PhOYEUuEeKmiJoj9rWMSg" annotatedElement="_1mTzkPjJEeCmc6EQPl3F9g">
+        <body>Transcribe: &quot;to make a written copy, especially a typewritten copy, of (dictated material, notes taken during a lecture, or other spoken material).&quot; - Dictionary.com.  This class captures information about who transcribed the provider's dictated notes, and when that transcription occurred.</body>
+      </ownedComment>
       <ownedAttribute xmi:id="_85iwoPjJEeCmc6EQPl3F9g" name="dateTime" visibility="public">
+        <ownedComment xmi:id="_N0psoEUvEeKmiJoj9rWMSg" annotatedElement="_85iwoPjJEeCmc6EQPl3F9g">
+          <body>The date and time upon which the person identified as the transcriptionist converted the provider's dictated notes into written form.</body>
+        </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_331KQfjJEeCmc6EQPl3F9g" name="transcriptionist" visibility="public" association="_331KQPjJEeCmc6EQPl3F9g">
@@ -6110,6 +6228,9 @@ For antibiotic sensitivity tests, provides an indication of the susceptibility o
       <ownedEnd xmi:id="_rJ7CU_jLEeCmc6EQPl3F9g" name="" visibility="private" type="_420A62FD03B64230F39A02CC" association="_rJ3_APjLEeCmc6EQPl3F9g"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_wb_GYKqXEeGeRqsN3l6jrA" name="SpecimenProcessingEvent">
+      <ownedComment xmi:id="_MDrYcEWWEeKmiJoj9rWMSg" annotatedElement="_wb_GYKqXEeGeRqsN3l6jrA">
+        <body>This class represents actions performed on a specimen in order to prepare it for future testing.  Such actions may include adding an additive or placing the specimen in a container containing a pre-defined additive in order to preserve, maintain or enhance the particular nature or component of the specimen.  Other actions include aliquoting a single specimens into multiple subsets, grouping or pooling multiple specimens into one specimen, etc.  As a result of this processing event, a new specimen(s) may be created, thus this class contains a pointer (zero-to-many) back to the Specimen class to identify the newly-created Specimen(s).</body>
+      </ownedComment>
       <ownedAttribute xmi:id="_4RieAMzHEeCMF_3VBil7Gw" name="groupedSpecimenCount" visibility="public">
         <ownedComment xmi:id="_JnvM4AllEeGe4v7RnpTDUQ" annotatedElement="_4RieAMzHEeCMF_3VBil7Gw">
           <body>&quot;The number of individual specimens of a particular type represented by this instance of a specimen. The use of this field is restricted to specimens upon which all specimen related attributes are identical. This field would only be valued if the [Specimen Role] attribute has the value [Group].&quot; - HL7 Version 2.8, SPM-13.</body>
@@ -6117,16 +6238,22 @@ For antibiotic sensitivity tests, provides an indication of the susceptibility o
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_yGwwsKqYEeGeRqsN3l6jrA" name="processCategory" visibility="private">
+        <ownedComment xmi:id="_j9_nEEWXEeKmiJoj9rWMSg" annotatedElement="_yGwwsKqYEeGeRqsN3l6jrA">
+          <body>Identifies the process that was performed.  Possible values include: Aliquot, Pool, Spun, etc.</body>
+        </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_oQG0oKqYEeGeRqsN3l6jrA" name="specimen" visibility="public" association="_oQB8IKqYEeGeRqsN3l6jrA">
+        <ownedComment xmi:id="_aUadsEWXEeKmiJoj9rWMSg" annotatedElement="_oQG0oKqYEeGeRqsN3l6jrA">
+          <body>Identifies Specimen instance(s) created as a result of a Specimen Processing Event.  Note the Id of the newly-created specimens are often derived from the Id of the original specimen.  For example, if a samply of whole blood with Id=1234 was spun into two new samples containing plasma (Id=1234-01) and platelets (Id=1234-02), two new Sample instances are created.</body>
+        </ownedComment>
         <type xmi:type="uml:Class" href="Common.efx#_420A62FD03B642DBE3F101E7?FHIM/Common/Specimen?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oQIp0KqYEeGeRqsN3l6jrA" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oQICwKqYEeGeRqsN3l6jrA"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_8W-nECjuEeKdfLgBSxgNnA" name="additive" visibility="public" type="_6r9PsCjuEeKdfLgBSxgNnA" association="_8W5HgCjuEeKdfLgBSxgNnA">
         <ownedComment xmi:id="_30EP0CtPEeKKgp1v3A6sOA" annotatedElement="_8W-nECjuEeKdfLgBSxgNnA">
-          <body>&quot;Identifies any additives introduced to the specimen before or at the time of collection.  These additives may be introduced in order to preserve, maintain or enhance the particular nature or component of the specimen.&quot; - HL7 Version 2.8, SPM-6.  Note that HL7 identifies a Code Table (Table 371) for this property, which currently contains 57 suggested values.</body>
+          <body>Identifies any materials introduced to the specimen before or at the time of collection.  These additives may be introduced in order to preserve, maintain enhance, or change the particular nature or component of the specimen.</body>
         </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8XBDUCjuEeKdfLgBSxgNnA" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8XAcQCjuEeKdfLgBSxgNnA"/>
@@ -6187,7 +6314,8 @@ It is recommended that LOINC be used.  Note that VA's VistA system uses the VA N
       </ownedComment>
       <ownedAttribute xmi:id="_uS0fAMqXEeG4_uv2Hb_AVQ" name="reportableResult" visibility="public" type="_NglJMH8AEd-6KMbY3gBFOQ" association="_uSxbsMqXEeG4_uv2Hb_AVQ">
         <ownedComment xmi:id="_YcgysMqaEeG4_uv2Hb_AVQ" annotatedElement="_uS0fAMqXEeG4_uv2Hb_AVQ">
-          <body>&quot;This field is defined to make it available for other types of linkages (e.g., toxicology).  This important information, together with the information in OBR-29 or OBR-57, uniquely identifies the parent result's OBX segment related to this order.&quot; - HL7 Version 2, OBX-26.</body>
+          <body>Points to the Reportable Result (i.e., the &quot;target Reportable Result&quot;) to which the &quot;source Reportable Result&quot; (i.e., the Reportable Result that points to this class) is somehow related.&#xD;
+&quot;This field is defined to make it available for other types of linkages (e.g., toxicology).  This important information, together with the information in OBR-29 or OBR-57, uniquely identifies the parent result's OBX segment related to this order.&quot; - HL7 Version 2, OBX-26.</body>
         </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uS1GEcqXEeG4_uv2Hb_AVQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_uS1GEMqXEeG4_uv2Hb_AVQ" value="1"/>
@@ -6206,10 +6334,13 @@ It is recommended that LOINC be used.  Note that VA's VistA system uses the VA N
       <ownedEnd xmi:id="_uS27QMqXEeG4_uv2Hb_AVQ" name="" visibility="private" type="_hkGwsMqXEeG4_uv2Hb_AVQ" association="_uSxbsMqXEeG4_uv2Hb_AVQ"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_QVZQ4A8SEeK0aKhL_Nyezg" name="AccessionEvent">
+      <ownedComment xmi:id="_3ksB0EU_EeKmiJoj9rWMSg" annotatedElement="_QVZQ4A8SEeK0aKhL_Nyezg">
+        <body>Accession: &quot;An increase by means of something added to record as acquired&quot; - Websters.  The act of accepting a laboratory test and entering the test into the laboratory's workload.  While the definition would imply a close alignment with the Lab Test Promise, in practice, the Accession (and the &quot;Accession Number&quot;) are more closely associated with the Specimen, as the Specimen represents a unit of work.  Accession numbers and specimen numbers are often related, and when a specimen is subsetted for some other purpose, a new accession number may be created.  This class represents the act of creating a new accession, and is associated with both the Promise and the Specimen.</body>
+      </ownedComment>
       <ownedAttribute xmi:id="_78ZN8MnlEeG_ScqIlDrcqg" name="accessionDate" visibility="public">
         <eAnnotations xmi:id="_78ZN8cnlEeG_ScqIlDrcqg" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <ownedComment xmi:id="_78ZN8snlEeG_ScqIlDrcqg" annotatedElement="_78ZN8MnlEeG_ScqIlDrcqg">
-          <body>The timestamp for the time the lab accessioned the lab order.</body>
+          <body>The date/time upon which the laboratory accepted the unit of work into its workload.  This date/time might be the same as the Laboratory Promise date, or the date/time that the laboratory received the Specimen(s), depending on local laboratory practice.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_78ZN88nlEeG_ScqIlDrcqg" value="1"/>
@@ -6217,36 +6348,24 @@ It is recommended that LOINC be used.  Note that VA's VistA system uses the VA N
       </ownedAttribute>
       <ownedAttribute xmi:id="_78Z1AMnlEeG_ScqIlDrcqg" name="accessionId" visibility="public">
         <ownedComment xmi:id="_78Z1AcnlEeG_ScqIlDrcqg" annotatedElement="_78Z1AMnlEeG_ScqIlDrcqg">
-          <body>Identification of test(s) ordered.  Used for identity of filler in the act of accepting  a laboratory test, and entering the test into the laboratory's workload.  An identifier assigned to the accepted laboratory test(s) identifying the samples, specimens, and results.&#xD;
+          <body>Uniquely identifies the accession.  The accession is closely associated with both the Promise to perform a laboratory test, and the Specimen(s) upon which the tests are performed.  The accession id therefore may be based upon the LabTestPromise.fillerOrderId or the Specimen.id, or conversely, those ids might be based upon this accessionId, depending on local laboratory practice. For example, if the accession id is ABCD, and two samples were received, one sample id might be ABCD-01 and the other ABCD-02.  The accession id therefore may be used to identify the laboratory promise, samples, and results.&#xD;
+&#xD;
 &quot;This field contains accession identifier(s) associated with the specimen....&quot; - HL7 Version 2.8, SPM-30.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_Dky2wA8TEeK0aKhL_Nyezg" name="dateTimeOrderLinked" visibility="public">
-        <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_eJrgIA8SEeK0aKhL_Nyezg" name="accessionLocation" visibility="public" association="_eJn1wA8SEeK0aKhL_Nyezg">
-        <type xmi:type="uml:Class" href="Provider.efx#_420A62FD03B64242CAB30303?FHIM/Provider/ServiceDeliveryLocation?"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eJtVUQ8SEeK0aKhL_Nyezg" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eJtVUA8SEeK0aKhL_Nyezg" value="1"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_sYRs0A8SEeK0aKhL_Nyezg" name="order" visibility="public" type="_420A62FD03B6458956DC035E" association="_sYOpgA8SEeK0aKhL_Nyezg">
-        <ownedComment xmi:id="__dbYwA8SEeK0aKhL_Nyezg" annotatedElement="_sYRs0A8SEeK0aKhL_Nyezg">
-          <body>Links the Accession to the Order.  Note that in some cases the sample could be received before the lab order, therefore the accession might be created before a lab order is known and then linked later.</body>
+      <ownedAttribute xmi:id="_KfTRsEVAEeKmiJoj9rWMSg" name="specimen" visibility="public" association="_Ke5pEEVAEeKmiJoj9rWMSg">
+        <ownedComment xmi:id="_TkS_8EVDEeKmiJoj9rWMSg" annotatedElement="_KfTRsEVAEeKmiJoj9rWMSg">
+          <body>Identifies the specimen(s) associated with the accession.</body>
         </ownedComment>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sYS68A8SEeK0aKhL_Nyezg" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sYST4A8SEeK0aKhL_Nyezg"/>
+        <type xmi:type="uml:Class" href="Common.efx#_420A62FD03B642DBE3F101E7?FHIM/Common/Specimen?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KfXjIEVAEeKmiJoj9rWMSg" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KfW8EEVAEeKmiJoj9rWMSg"/>
       </ownedAttribute>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_eJn1wA8SEeK0aKhL_Nyezg" name="accessionEvent_accessionLocation" memberEnd="_eJrgIA8SEeK0aKhL_Nyezg _eJwYoA8SEeK0aKhL_Nyezg">
-      <ownedEnd xmi:id="_eJwYoA8SEeK0aKhL_Nyezg" name="" visibility="private" type="_QVZQ4A8SEeK0aKhL_Nyezg" association="_eJn1wA8SEeK0aKhL_Nyezg"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_sYOpgA8SEeK0aKhL_Nyezg" name="accessionEvent_order" memberEnd="_sYRs0A8SEeK0aKhL_Nyezg _sYUwIA8SEeK0aKhL_Nyezg">
-      <ownedEnd xmi:id="_sYUwIA8SEeK0aKhL_Nyezg" name="" visibility="private" type="_QVZQ4A8SEeK0aKhL_Nyezg" association="_sYOpgA8SEeK0aKhL_Nyezg"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_6r9PsCjuEeKdfLgBSxgNnA" name="Additive">
       <ownedComment xmi:id="_O28VkCtQEeKKgp1v3A6sOA" annotatedElement="_6r9PsCjuEeKdfLgBSxgNnA">
-        <body>&quot;Identifies any additives introduced to the specimen before or at the time of collection.  These additives may be introduced in order to preserve, maintain or enhance the particular nature or component of the specimen.&quot; - HL7 Version 2.8, SPM-6.  Note that HL7 identifies a Code Table (Table 371) for this property, which currently contains 57 suggested values.</body>
+        <body>This class identifies any substances that were added or introduced to the specimen in order to preserve, maintain or enhance the particular nature or component of the specimen.  While the HL7 definition implies that this additive is only used before or during specimen collection, this Additive class may be used after specimen collection as part of specimen processing as well.</body>
       </ownedComment>
       <ownedAttribute xmi:id="_JZc8IPvNEd-3ndaGus2qMA" name="additiveType" visibility="public">
         <ownedComment xmi:id="_2Uv3EAlVEeGe4v7RnpTDUQ" annotatedElement="_JZc8IPvNEd-3ndaGus2qMA">
@@ -6257,6 +6376,9 @@ It is recommended that LOINC be used.  Note that VA's VistA system uses the VA N
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NpWEAPvNEd-3ndaGus2qMA"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_-fxS0CtPEeKKgp1v3A6sOA" name="quantity" visibility="public">
+        <ownedComment xmi:id="_CEPbMEWTEeKmiJoj9rWMSg" annotatedElement="_-fxS0CtPEeKKgp1v3A6sOA">
+          <body>Indicates the amount of the substance that is identified in the additiveType property exists in this instance.</body>
+        </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B641886F630221?FHIM/Datatypes/PhysicalQuantity?"/>
       </ownedAttribute>
     </packagedElement>
@@ -6307,6 +6429,12 @@ It is recommended that LOINC be used.  Note that VA's VistA system uses the VA N
       </ownedLiteral>
     </packagedElement>
     <packagedElement xmi:type="uml:Dependency" xmi:id="_I2FPADNWEeKkw_YjK6aRcw" supplier="_gv2V8DNVEeKkw_YjK6aRcw" client="_420A62FD03B64586C4B903A9"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_Ke5pEEVAEeKmiJoj9rWMSg" memberEnd="_KfTRsEVAEeKmiJoj9rWMSg _KfZYUEVAEeKmiJoj9rWMSg">
+      <ownedEnd xmi:id="_KfZYUEVAEeKmiJoj9rWMSg" name="" visibility="private" type="_QVZQ4A8SEeK0aKhL_Nyezg" association="_Ke5pEEVAEeKmiJoj9rWMSg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_q117MEVAEeKmiJoj9rWMSg" memberEnd="_q13wYEVAEeKmiJoj9rWMSg _q15lkEVAEeKmiJoj9rWMSg">
+      <ownedEnd xmi:id="_q15lkEVAEeKmiJoj9rWMSg" name="" visibility="private" type="_420A62FD03B64266BCE800E0" association="_q117MEVAEeKmiJoj9rWMSg"/>
+    </packagedElement>
   </uml:Package>
   <Default:Documentation xmi:id="_M4s5GuLiEduGJrQyRGTO1A" base_Comment="_M4s5GeLiEduGJrQyRGTO1A"/>
   <Default:Documentation xmi:id="_M42DCOLiEduGJrQyRGTO1A" base_Comment="_M42DB-LiEduGJrQyRGTO1A"/>
@@ -6379,7 +6507,6 @@ It is recommended that LOINC be used.  Note that VA's VistA system uses the VA N
   <Default:Documentation xmi:id="_cgiCIL-8Ed2cYoIY7XWEQw" base_Comment="_cgY4ML-8Ed2cYoIY7XWEQw"/>
   <Default:Documentation xmi:id="_-Wg9wb-_Ed2cYoIY7XWEQw" base_Comment="_-Wg9wL-_Ed2cYoIY7XWEQw"/>
   <Default:Documentation xmi:id="_D0TKML_CEd2cYoIY7XWEQw" base_Comment="_D0KAQL_CEd2cYoIY7XWEQw"/>
-  <Default:Documentation xmi:id="_Xn_jMMDrEd2cYoIY7XWEQw" base_Comment="_Xn1yMMDrEd2cYoIY7XWEQw"/>
   <Default:Documentation xmi:id="_gw7LsMDtEd2cYoIY7XWEQw" base_Comment="_gwxasMDtEd2cYoIY7XWEQw"/>
   <Default:Documentation xmi:id="_lJz3gMDtEd2cYoIY7XWEQw" base_Comment="_lJqGgMDtEd2cYoIY7XWEQw"/>
   <Default:Documentation xmi:id="_zhNa4MDtEd2cYoIY7XWEQw" base_Comment="_zhEQ8MDtEd2cYoIY7XWEQw"/>
@@ -6414,11 +6541,9 @@ It is recommended that LOINC be used.  Note that VA's VistA system uses the VA N
   <Default:Documentation xmi:id="_we9AollGEeCyw5g2lQh-Ug" base_Comment="_M83nZ-LiEduGJrQyRGTO1A"/>
   <Default:Documentation xmi:id="_IiYnXGIBEeCHAoM78Lf2xA" base_Comment="_M6MG2eLiEduGJrQyRGTO1A"/>
   <RIM:Act xmi:id="_IT5vUGIVEeCHAoM78Lf2xA" base_Class="_3XW7MGH_EeCHAoM78Lf2xA"/>
-  <RIM:Entity xmi:id="_em3loGIWEeCHAoM78Lf2xA" base_Class="_iI8NkPZPEd-e1vPpWfL-Bw"/>
   <RIM:Observation xmi:id="_V5L-QGRPEeCsvJrE4KlOMA" base_Class="_FloQMGRPEeCsvJrE4KlOMA" classCode="" moodCode=""/>
   <RIM:Observation xmi:id="_enbBwLFTEeCiPcKjPTIyBg" base_Class="_NglJMH8AEd-6KMbY3gBFOQ"/>
   <Default:Documentation xmi:id="_vrowsrFTEeCiPcKjPTIyBg" base_Comment="_M6fBxuLiEduGJrQyRGTO1A"/>
-  <Default:Documentation xmi:id="_LK0VELxJEeCjnsq0FtkmeA" base_Comment="_LKrLILxJEeCjnsq0FtkmeA"/>
   <Default:Documentation xmi:id="_YdiOcMHSEeCdLPayeDTWtA" base_Comment="_YdZEgMHSEeCdLPayeDTWtA"/>
   <Default:Documentation xmi:id="_dFc0wsHSEeCdLPayeDTWtA" base_Comment="_dFc0wcHSEeCdLPayeDTWtA"/>
   <Default:Documentation xmi:id="_dJXEYMHSEeCdLPayeDTWtA" base_Comment="_dJUBEcHSEeCdLPayeDTWtA"/>
@@ -6446,7 +6571,6 @@ It is recommended that LOINC be used.  Note that VA's VistA system uses the VA N
   <RIM:Act xmi:id="_T_QWMO3NEeCFZuasLkncZQ" base_Class="_eWYXgO3MEeCFZuasLkncZQ"/>
   <Default:Documentation xmi:id="_IA8pwO3QEeCFZuasLkncZQ" base_Comment="_IAzf0O3QEeCFZuasLkncZQ"/>
   <RIM:Act xmi:id="_8HwuYPjJEeCmc6EQPl3F9g" base_Class="_1mTzkPjJEeCmc6EQPl3F9g"/>
-  <Default:Documentation xmi:id="_UELOwPjLEeCmc6EQPl3F9g" base_Comment="_UECE0PjLEeCmc6EQPl3F9g"/>
   <Default:Documentation xmi:id="_29yVIPjPEeCmc6EQPl3F9g" base_Comment="_29mH4PjPEeCmc6EQPl3F9g"/>
   <Default:Documentation xmi:id="_hNYucPjQEeCmc6EQPl3F9g" base_Comment="_hNPkgPjQEeCmc6EQPl3F9g"/>
   <Default:Documentation xmi:id="_p70BsPjREeCmc6EQPl3F9g" base_Comment="_p7q3wPjREeCmc6EQPl3F9g"/>
@@ -6461,7 +6585,6 @@ It is recommended that LOINC be used.  Note that VA's VistA system uses the VA N
   <Default:Documentation xmi:id="_Sig_cgl5EeGe4v7RnpTDUQ" base_Comment="_PpGgIAlqEeGe4v7RnpTDUQ"/>
   <Default:Documentation xmi:id="_cxtXUAl5EeGe4v7RnpTDUQ" base_Comment="_cxkNYAl5EeGe4v7RnpTDUQ"/>
   <Default:Documentation xmi:id="_XSwMkAl_EeGe4v7RnpTDUQ" base_Comment="_XSdRoAl_EeGe4v7RnpTDUQ"/>
-  <Default:Documentation xmi:id="_FBV7oAmIEeGe4v7RnpTDUQ" base_Comment="_FBMKoAmIEeGe4v7RnpTDUQ"/>
   <Default:Documentation xmi:id="_KXyNIAmOEeGe4v7RnpTDUQ" base_Comment="_KXocIAmOEeGe4v7RnpTDUQ"/>
   <Default:Documentation xmi:id="_rxbAcAmQEeGe4v7RnpTDUQ" base_Comment="_rxRPcAmQEeGe4v7RnpTDUQ"/>
   <Default:Documentation xmi:id="_-jUFoA7UEeGO7rMs1qg5kg" base_Comment="_-jLiwA7UEeGO7rMs1qg5kg"/>
@@ -6480,7 +6603,6 @@ It is recommended that LOINC be used.  Note that VA's VistA system uses the VA N
   <RIM:ActRelationship xmi:id="_8_NKELskEeGZTLDYkoM_Sw" base_Class="_b_84MOOaEd-8X4J7aT-aiQ"/>
   <Default:Documentation xmi:id="_kzpvkLslEeGZTLDYkoM_Sw" base_Comment="_kzhMsLslEeGZTLDYkoM_Sw"/>
   <Default:Documentation xmi:id="_16swELslEeGZTLDYkoM_Sw" base_Comment="_16n3kLslEeGZTLDYkoM_Sw"/>
-  <Default:Documentation xmi:id="_6fS8oLslEeGZTLDYkoM_Sw" base_Comment="_6fLA0LslEeGZTLDYkoM_Sw"/>
   <Default:Documentation xmi:id="_RgBtULsmEeGZTLDYkoM_Sw" base_Comment="_Rf5xgLsmEeGZTLDYkoM_Sw"/>
   <Default:Documentation xmi:id="_dM1SsLsmEeGZTLDYkoM_Sw" base_Comment="_dMsv0LsmEeGZTLDYkoM_Sw"/>
   <Default:Documentation xmi:id="_dvxAoLsmEeGZTLDYkoM_Sw" base_Comment="_dvpE0LsmEeGZTLDYkoM_Sw"/>
@@ -6499,8 +6621,6 @@ It is recommended that LOINC be used.  Note that VA's VistA system uses the VA N
   <Default:Documentation xmi:id="_x6BpEMYfEeGsb4KXw2Babg" base_Comment="_x54fIMYfEeGsb4KXw2Babg"/>
   <Default:Documentation xmi:id="_qIHYMMneEeG_ScqIlDrcqg" base_Comment="_qH7K8MneEeG_ScqIlDrcqg"/>
   <Default:Documentation xmi:id="_rgqfgMneEeG_ScqIlDrcqg" base_Comment="_rgh8oMneEeG_ScqIlDrcqg"/>
-  <Default:Documentation xmi:id="_9xV9YMnlEeG_ScqIlDrcqg" base_Comment="_9xUIMsnlEeG_ScqIlDrcqg"/>
-  <Default:Documentation xmi:id="_9xV9YcnlEeG_ScqIlDrcqg" base_Comment="_9xVWUcnlEeG_ScqIlDrcqg"/>
   <RIM:ActRelationship xmi:id="_roiDAMqXEeG4_uv2Hb_AVQ" base_Class="_hkGwsMqXEeG4_uv2Hb_AVQ"/>
   <Default:Documentation xmi:id="_f6y0EMqYEeG4_uv2Hb_AVQ" base_Comment="_f6wX0cqYEeG4_uv2Hb_AVQ"/>
   <Default:Documentation xmi:id="_WakJEMqaEeG4_uv2Hb_AVQ" base_Comment="_Waa_IMqaEeG4_uv2Hb_AVQ"/>
@@ -6512,7 +6632,6 @@ It is recommended that LOINC be used.  Note that VA's VistA system uses the VA N
   <Default:Documentation xmi:id="_j4c0YPemEeGDQviDyE5NDQ" base_Comment="_j4BWkPemEeGDQviDyE5NDQ"/>
   <Default:Documentation xmi:id="_ZeHI4A8SEeK0aKhL_Nyezg" base_Comment="_78ZN8snlEeG_ScqIlDrcqg"/>
   <Default:Documentation xmi:id="_ZeHI4Q8SEeK0aKhL_Nyezg" base_Comment="_78Z1AcnlEeG_ScqIlDrcqg"/>
-  <Default:Documentation xmi:id="__d89MA8SEeK0aKhL_Nyezg" base_Comment="__dbYwA8SEeK0aKhL_Nyezg"/>
   <term:ValueSetConstraint xmi:id="_Krc44BJfEeKBDeGP59RrVA" base_Property="_420A62FD03B64263C9AE023E">
     <reference href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_V5etABJeEeKEjrc2hUE4_Q"/>
   </term:ValueSetConstraint>
@@ -6534,4 +6653,46 @@ It is recommended that LOINC be used.  Note that VA's VistA system uses the VA N
   <Default:Documentation xmi:id="_FrLuYDNYEeKkw_YjK6aRcw" base_Comment="_FrDykDNYEeKkw_YjK6aRcw"/>
   <Default:Documentation xmi:id="_Lh6UYDNcEeKkw_YjK6aRcw" base_Comment="_Lhy_oDNcEeKkw_YjK6aRcw"/>
   <Default:Documentation xmi:id="_tXaPMDNcEeKkw_YjK6aRcw" base_Comment="_tXS6cDNcEeKkw_YjK6aRcw"/>
+  <Default:Documentation xmi:id="_2QHEQEUuEeKmiJoj9rWMSg" base_Comment="_2PhOYEUuEeKmiJoj9rWMSg"/>
+  <Default:Documentation xmi:id="_DtNikEUvEeKmiJoj9rWMSg" base_Comment="_DtDxkEUvEeKmiJoj9rWMSg"/>
+  <Default:Documentation xmi:id="_N0y2kEUvEeKmiJoj9rWMSg" base_Comment="_N0psoEUvEeKmiJoj9rWMSg"/>
+  <Default:Documentation xmi:id="_Rzl4UEU4EeKmiJoj9rWMSg" base_Comment="_RzejkEU4EeKmiJoj9rWMSg"/>
+  <Default:Documentation xmi:id="_NN0DMEU8EeKmiJoj9rWMSg" base_Comment="_NNsucEU8EeKmiJoj9rWMSg"/>
+  <Default:Documentation xmi:id="_RQZu4EU8EeKmiJoj9rWMSg" base_Comment="_RQSaIEU8EeKmiJoj9rWMSg"/>
+  <Default:Documentation xmi:id="_aEA5kEU8EeKmiJoj9rWMSg" base_Comment="_aD9PMEU8EeKmiJoj9rWMSg"/>
+  <Default:Documentation xmi:id="_dX_y0EU8EeKmiJoj9rWMSg" base_Comment="_dX3P8EU8EeKmiJoj9rWMSg"/>
+  <Default:Documentation xmi:id="_pBFV0EU8EeKmiJoj9rWMSg" base_Comment="_LKrLILxJEeCjnsq0FtkmeA"/>
+  <Default:Documentation xmi:id="_OpeTcEU9EeKmiJoj9rWMSg" base_Comment="_OpW-sEU9EeKmiJoj9rWMSg"/>
+  <Default:Documentation xmi:id="_FkAuUEU-EeKmiJoj9rWMSg" base_Comment="_Fj4LcEU-EeKmiJoj9rWMSg"/>
+  <Default:Documentation xmi:id="_TtlREEU-EeKmiJoj9rWMSg" base_Comment="_TtgYkEU-EeKmiJoj9rWMSg"/>
+  <Default:Documentation xmi:id="_kUjDUEU-EeKmiJoj9rWMSg" base_Comment="_kUcVoEU-EeKmiJoj9rWMSg"/>
+  <Default:Documentation xmi:id="_3kzWkEU_EeKmiJoj9rWMSg" base_Comment="_3ksB0EU_EeKmiJoj9rWMSg"/>
+  <Default:Documentation xmi:id="_5P9JcEVCEeKmiJoj9rWMSg" base_Comment="_5P10sEVCEeKmiJoj9rWMSg"/>
+  <Default:Documentation xmi:id="_Axj5sEVDEeKmiJoj9rWMSg" base_Comment="_AxdMAEVDEeKmiJoj9rWMSg"/>
+  <Default:Documentation xmi:id="_TkZtoEVDEeKmiJoj9rWMSg" base_Comment="_TkS_8EVDEeKmiJoj9rWMSg"/>
+  <Default:Documentation xmi:id="_cNCTMEVKEeKmiJoj9rWMSg" base_Comment="_cM8MkEVKEeKmiJoj9rWMSg"/>
+  <Default:Documentation xmi:id="_k4j44EVKEeKmiJoj9rWMSg" base_Comment="_k4ckIEVKEeKmiJoj9rWMSg"/>
+  <Default:Documentation xmi:id="_x56Z4EVLEeKmiJoj9rWMSg" base_Comment="_x5zFIEVLEeKmiJoj9rWMSg"/>
+  <Default:Documentation xmi:id="_w-lAwEVQEeKmiJoj9rWMSg" base_Comment="_w-dsAEVQEeKmiJoj9rWMSg"/>
+  <Default:Documentation xmi:id="_F_kHQEVREeKmiJoj9rWMSg" base_Comment="_F_f10EVREeKmiJoj9rWMSg"/>
+  <Default:Documentation xmi:id="_MvN2IEVREeKmiJoj9rWMSg" base_Comment="_MvF6UEVREeKmiJoj9rWMSg"/>
+  <Default:Documentation xmi:id="_akpU4EVREeKmiJoj9rWMSg" base_Comment="_akinMEVREeKmiJoj9rWMSg"/>
+  <Default:Documentation xmi:id="_-OkJ8EVtEeKmiJoj9rWMSg" base_Comment="_-ObnEEVtEeKmiJoj9rWMSg"/>
+  <Default:Documentation xmi:id="_k1RxAEVuEeKmiJoj9rWMSg" base_Comment="_k1KcQEVuEeKmiJoj9rWMSg"/>
+  <Default:Documentation xmi:id="_k4gIgEWMEeKmiJoj9rWMSg" base_Comment="_k4YzwEWMEeKmiJoj9rWMSg"/>
+  <Default:Documentation xmi:id="_DaiSAEWOEeKmiJoj9rWMSg" base_Comment="_Daa9QEWOEeKmiJoj9rWMSg"/>
+  <Default:Documentation xmi:id="_SF89kkWOEeKmiJoj9rWMSg" base_Comment="_SF89kUWOEeKmiJoj9rWMSg"/>
+  <Default:Documentation xmi:id="_SoseQkWOEeKmiJoj9rWMSg" base_Comment="_SoseQUWOEeKmiJoj9rWMSg"/>
+  <RIM:Container xmi:id="_UhbhgEWOEeKmiJoj9rWMSg" base_Class="_iI8NkPZPEd-e1vPpWfL-Bw"/>
+  <Default:Documentation xmi:id="_ZwbghEWPEeKmiJoj9rWMSg" base_Comment="_ZwbggUWPEeKmiJoj9rWMSg"/>
+  <Default:Documentation xmi:id="_gJZ_UEWQEeKmiJoj9rWMSg" base_Comment="_gJZYQUWQEeKmiJoj9rWMSg"/>
+  <Default:Documentation xmi:id="_VyJbJEWREeKmiJoj9rWMSg" base_Comment="_VyJbIUWREeKmiJoj9rWMSg"/>
+  <Default:Documentation xmi:id="_3ZdI9EWREeKmiJoj9rWMSg" base_Comment="_3ZdI8UWREeKmiJoj9rWMSg"/>
+  <Default:Documentation xmi:id="_CEWI4EWTEeKmiJoj9rWMSg" base_Comment="_CEPbMEWTEeKmiJoj9rWMSg"/>
+  <Default:Documentation xmi:id="_ISgM4EWWEeKmiJoj9rWMSg" base_Comment="_ISdwoEWWEeKmiJoj9rWMSg"/>
+  <Default:Documentation xmi:id="_MDvp4EWWEeKmiJoj9rWMSg" base_Comment="_MDrYcEWWEeKmiJoj9rWMSg"/>
+  <Default:Documentation xmi:id="_aUhLYEWXEeKmiJoj9rWMSg" base_Comment="_aUadsEWXEeKmiJoj9rWMSg"/>
+  <Default:Documentation xmi:id="_j-FtsEWXEeKmiJoj9rWMSg" base_Comment="_j9_nEEWXEeKmiJoj9rWMSg"/>
+  <Default:Documentation xmi:id="_hpweIEWYEeKmiJoj9rWMSg" base_Comment="_hppJYEWYEeKmiJoj9rWMSg"/>
+  <Default:Documentation xmi:id="_7CK34EWYEeKmiJoj9rWMSg" base_Comment="_7CEKMEWYEeKmiJoj9rWMSg"/>
 </xmi:XMI>
