@@ -2517,7 +2517,15 @@ HL7 Version 2 table 6 lists 85 suggested values for this field.</body>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OvALlOV1EeGA8s9JtidNVQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OvALleV1EeGA8s9JtidNVQ"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_UQyyYBSXEeKpJeaG5gXc6Q" name="yearsInUsualIndustry" visibility="public">
+      <ownedAttribute xmi:id="_7wk0sEcGEeKYw8d4t3T9cw" name="yearsInCurrentOccupation" visibility="public">
+        <ownedComment xmi:id="_7wk0sUcGEeKYw8d4t3T9cw" annotatedElement="_7wk0sEcGEeKYw8d4t3T9cw">
+          <body>Amount of employment – in years associated with usual industry/occupation (e.g., &quot;how long have you worked in your usual industry - such as coal mining&quot;).  Added for Public Health Reporting Initiative, 10/12/2012.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_N-BAoNYeEd62cosTNS-_lw?FHIM/Datatypes/Real?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7wk0skcGEeKYw8d4t3T9cw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7wk0s0cGEeKYw8d4t3T9cw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_UQyyYBSXEeKpJeaG5gXc6Q" name="yearsInUsualOccupation" visibility="public">
         <ownedComment xmi:id="_xlc_QBSXEeKpJeaG5gXc6Q" annotatedElement="_UQyyYBSXEeKpJeaG5gXc6Q">
           <body>Amount of employment – in years associated with usual industry/occupation (e.g., &quot;how long have you worked in your usual industry - such as coal mining&quot;).  Added for Public Health Reporting Initiative, 10/12/2012.</body>
         </ownedComment>
@@ -6370,7 +6378,7 @@ Specifically for the FHIM, Tribe represents a first-nation group recognized by t
     <packagedElement xmi:type="uml:Association" xmi:id="_j3128NgWEeG3E4mt6RKX5Q" memberEnd="_j33sINgWEeG3E4mt6RKX5Q _j36IYNgWEeG3E4mt6RKX5Q">
       <ownedEnd xmi:id="_j36IYNgWEeG3E4mt6RKX5Q" name="" visibility="private" type="_aA2jsNgWEeG3E4mt6RKX5Q" association="_j3128NgWEeG3E4mt6RKX5Q"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_8AmGANgeEeG3E4mt6RKX5Q">
+    <packagedElement xmi:type="uml:Association" xmi:id="_8AmGANgeEeG3E4mt6RKX5Q" name="healthcareProvider_patient">
       <memberEnd href="#_8AqXcNgeEeG3E4mt6RKX5Q?FHIM/PersonDemographics/Patient/healthcareProvider?"/>
       <memberEnd href="Provider.efx#_8Av3ANgeEeG3E4mt6RKX5Q?FHIM/Provider/HealthcareProvider/patient?"/>
     </packagedElement>
@@ -6868,4 +6876,5 @@ Specifically for the FHIM, Tribe represents a first-nation group recognized by t
   <term:ValueSetConstraint xmi:id="_4VAPEBiKEeKBu9GeV_Qxiw" base_Property="_snvmUAQIEeKZsvne-rOhhA">
     <reference href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_tBhC8AZSEeKiNIUlvx3s8g"/>
   </term:ValueSetConstraint>
+  <Default:Documentation xmi:id="_7wxB8EcGEeKYw8d4t3T9cw" base_Comment="_7wk0sUcGEeKYw8d4t3T9cw"/>
 </xmi:XMI>
