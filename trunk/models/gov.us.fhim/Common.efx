@@ -72,7 +72,7 @@
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_bLQOowoXEeC_TY76TuIe4Q" visible="false" type="OperationCompartment"/>
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_bLQOpQoXEeC_TY76TuIe4Q" visible="false" type="SignalCompartment"/>
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_bLQOpwoXEeC_TY76TuIe4Q" visible="false" type="StructureCompartment"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bLPnkgoXEeC_TY76TuIe4Q" x="31700" y="7291"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bLPnkgoXEeC_TY76TuIe4Q" x="31700" y="7608"/>
         </children>
         <children xmi:type="umlnotation:UMLShape" xmi:id="_bLQ1sAoXEeC_TY76TuIe4Q" element="_HxX44Aq7Ed-426xscrxYmQ" fontName="Arial" fontHeight="10" showListVisibility="None" fillColor="16777088" lineColor="3342489" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_bLQ1swoXEeC_TY76TuIe4Q" type="ImageCompartment">
@@ -1747,7 +1747,9 @@ Verifying Calibrator, used for periodic calibration checks.</body>
     <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B642C044DB02ED" name="CommentEvent">
       <eAnnotations xmi:id="_MEGMUeLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
       <ownedComment xmi:id="_EP6hYBHEEeCBuOUrBnIXmQ" annotatedElement="_420A62FD03B642C044DB02ED">
-        <body>This class is used to capture comments about an Activity which might be made by various practitioners during the course of that Activity.</body>
+        <body>This class is used to capture remarks about an Activity which might be made by various practitioners during the course of that Activity.&#xD;
+&#xD;
+Note that this class used to contain an optional property called commentCategory, which was intended to provide an categorization of the comment for grouping purposes or to identify the situation in which the comment occured.  The FHIM terminology team decided to remove this property in January 2013 as no values could be identified for the comment category.  This property may be reinstated in the future should a desired set of categories be identified.</body>
       </ownedComment>
       <ownedAttribute xmi:id="_PruckA0SEeCQj9C1UPZeDw" name="id" visibility="public">
         <ownedComment xmi:id="_slIRoBHEEeCBuOUrBnIXmQ" annotatedElement="_PruckA0SEeCQj9C1UPZeDw">
@@ -1762,14 +1764,6 @@ Verifying Calibrator, used for periodic calibration checks.</body>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a7ka0fTqEdy4NNd432ztnw" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a7ka0PTqEdy4NNd432ztnw" value="1"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_420A62FD03B642C044EE00EB" name="commentCategory" visibility="public">
-        <ownedComment xmi:id="_MMkO4BHEEeCBuOUrBnIXmQ" annotatedElement="_420A62FD03B642C044EE00EB">
-          <body>A categorization of the comment, which might be used to locate specific comments or for display purposes.</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_aNE9IfTqEdy4NNd432ztnw" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_aNE9IPTqEdy4NNd432ztnw" value="1"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B642FBA95D02D0" name="dateTime" visibility="public">
         <ownedComment xmi:id="_Osyv8BHEEeCBuOUrBnIXmQ" annotatedElement="_420A62FD03B642FBA95D02D0">
@@ -5107,7 +5101,6 @@ This property indicates whether the ingredient represented by this class is acti
   <Default:Documentation xmi:id="_5pzeUBHDEeCBuOUrBnIXmQ" base_Comment="_5pptUBHDEeCBuOUrBnIXmQ"/>
   <Default:Documentation xmi:id="_EQDrUBHEEeCBuOUrBnIXmQ" base_Comment="_EP6hYBHEEeCBuOUrBnIXmQ"/>
   <Default:Documentation xmi:id="_HYdmsBHEEeCBuOUrBnIXmQ" base_Comment="_HYT1sBHEEeCBuOUrBnIXmQ"/>
-  <Default:Documentation xmi:id="_MMt_4BHEEeCBuOUrBnIXmQ" base_Comment="_MMkO4BHEEeCBuOUrBnIXmQ"/>
   <Default:Documentation xmi:id="_Os8g8BHEEeCBuOUrBnIXmQ" base_Comment="_Osyv8BHEEeCBuOUrBnIXmQ"/>
   <Default:Documentation xmi:id="_slSCoBHEEeCBuOUrBnIXmQ" base_Comment="_slIRoBHEEeCBuOUrBnIXmQ"/>
   <Default:Documentation xmi:id="_yYeJQBHEEeCBuOUrBnIXmQ" base_Comment="_yYUYQBHEEeCBuOUrBnIXmQ"/>
