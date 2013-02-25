@@ -9,7 +9,7 @@
       <references xmi:type="uml:Model" href="FHIM.emx#420A62FD03B6?FHIM?"/>
     </eAnnotations>
     <eAnnotations xmi:id="_NVKLteLiEduGJrQyRGTO1A" source="uml2.diagrams" references="_420A62FD03B6418A401B00BC">
-      <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_420A62FD03B6418A401B00BC" type="Class" name="_PersonDemographics">
+      <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_420A62FD03B6418A401B00BC" type="Class" name="_Person">
         <children xmi:type="umlnotation:UMLShape" xmi:id="_OCRlEBAzEd-2E9qx-lgHBg" element="_oYIbwO_4Ed6OG-vjYTopTQ" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8519679" lineColor="3342489" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_OCRlExAzEd-2E9qx-lgHBg" type="ImageCompartment">
             <layoutConstraint xmi:type="notation:Size" xmi:id="_OCRlFBAzEd-2E9qx-lgHBg" width="1320" height="1320"/>
@@ -933,7 +933,7 @@
           </children>
           <children xmi:type="notation:DecorationNode" xmi:id="_GoVkIGrWEeCJbfIpPWFXRg" type="FromRoleLabel" element="_GoMaIGrWEeCJbfIpPWFXRg">
             <children xmi:type="notation:BasicDecorationNode" xmi:id="_GoVkImrWEeCJbfIpPWFXRg" type="FromRole"/>
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_GoVkIWrWEeCJbfIpPWFXRg" y="-397"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_GoVkIWrWEeCJbfIpPWFXRg" x="-287" y="-397"/>
           </children>
           <children xmi:type="notation:DecorationNode" xmi:id="_GoVkI2rWEeCJbfIpPWFXRg" type="ToQualifierLabel" element="_GoMaI2rWEeCJbfIpPWFXRg">
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_GoVkJWrWEeCJbfIpPWFXRg" type="QualifierCompartment"/>
@@ -2110,13 +2110,13 @@
     </eAnnotations>
     <eAnnotations xmi:id="_NVdGgOLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
     <ownedComment xmi:id="_FDxmULa2Ed-Y0_knsxZjWg" annotatedElement="_420A62FD03B6418A3CB7008F">
-      <body>The &quot;Person Demographics&quot; domain contains information about Persons and other living entities. While the term &quot;demographics&quot; refers to the study of human populations (such as the geographical distribution of people, birth and death rates, socioeconomic status, and age and sex distributions), the term is often used colloquially to refer to those properties regarding persons that are commonly tracked, such as their name and addresses. Despite the package name, this package also includes animals, because they might be the recipient of care, or might be the subject of tests for either research or public health purposes. &#xD;
+      <body>The Person domain contains information about Persons and other living entities.  Despite the package name, this package also includes animals, because they might be the recipient of care, or might be the subject of tests for either research or public health purposes.&#xD;
 &#xD;
-The properties that humans and animals (may) have in common are modeled in an abstract class called &quot;Biological Entity.&quot; This class would never be instantiated on its own, but rather Person or NonPersonLivingSubject would be instantiated, and they would each have the common properties of birthdate, age, etc.  Therefore, when mapping to the FHIM, one could create an entry for Person.dateOfBirth, not BiologicalEntity.dateOfBirth. In object-oriented software, subtypes (also known as subclasses), automatically access the properties of their supertypes (aka superclasses) directly. So in Java, a person's date of birth would be represented as Person.dateOfBirth. Conversely, a superclass can be &quot;downcasted&quot; to a subclass if the writer of software doesn't know in advance which subtype will be acted upon at runtime. This is evident in the Patient hierarchy, where a lab test refers to a Patient, and the patient might be either a person or an animal. Notice that both the Person and the NonPersonLivingSubject are accessed from HumanPatient and AnimalPatient by an association with the end-name of &quot;subject&quot;. Thus, the person or animal can be accessed by Patient.subject. However, information specific to one or the other can only be retrieved if the proper one is instantiated. For example, patient.isOrganDonor will fail if the subject is an animal; similarly patient.subject.species will fail if the subject is a person.&#xD;
+The properties that humans and animals (may) have in common are modeled in an abstract class called &quot;Biological Entity.&quot; This class would never be instantiated on its own, but rather Person or NonPersonLivingSubject would be instantiated, and they would each have the common properties of birthdate, age, etc.  Therefore, when mapping to the FHIM, one could create an entry for Person.dateOfBirth, not BiologicalEntity.dateOfBirth. In object-oriented software, subtypes (also known as subclasses), automatically access the properties of their supertypes (aka superclasses) directly. So in Java, a person's date of birth would be represented as Person.dateOfBirth. Conversely, a superclass can be &quot;downcasted&quot; to a subclass if the writer of software doesn't know in advance which subtype will be acted upon at runtime. This is evident in the Patient hierarchy, where a lab test refers to a Patient, and the patient might be either a person or an animal. Notice that both the Person and the NonPersonLivingSubject are accessed from HumanPatient and AnimalPatient by an association with the end-name of &quot;subject&quot;. Thus, the person or animal can be accessed by Patient.subject. However, information specific to one or the other can only be retrieved if the proper one is instantiated. For example, patient.subject.isOrganDonor will fail if the subject is an animal; similarly patient.subject.species will fail if the subject is a person.&#xD;
 &#xD;
 Other items of note:&#xD;
 &#xD;
-This model include some subtypes of Person, namely FDAPerson, NCIPerson, and VAPerson, which illustrate how different agency requirements might be handled. The VAPerson class declares what data elements are unique to the Department of Veterans Affairs, similarly any properties unique to the Food And Drug Administration or to the National Cancer Institute could be modeled here. The diagram visually makes it clear what data elements these agencies have in common (in the Person class) and what are unique to a given agency. Other agencies can safely ignore those data elements modeled for another agency, yet are made aware of data elements that may be required when communicating to a given agency. This technique is used sparingly, as it is expected that each agency will extend the FHIM within their own enterprise architecture, and will not expose agency-specific needs to the federal community. That having been said, this technique is also occasionally used to explicitly identify differences in target standards, so for example in Pharmacy there are two subclasses of Patient called &quot;ScriptPatient&quot; and &quot;TelcomPatient&quot; which correspond to the patient structure in the NCPDP Script and NCPDP Telecommunication standards.&#xD;
+This model include some subtypes of Person, namely FDAPerson, DODPerson, and VAPerson, which illustrate how different agency requirements might be handled. The VAPerson class declares what data elements are unique to the Department of Veterans Affairs, similarly any properties unique to the Food And Drug Administration or to the Department of Defense could be modeled here. The diagram visually makes it clear what data elements these agencies have in common (in the Person class) and what are unique to a given agency. Other agencies can safely ignore those data elements modeled for another agency, yet are made aware of data elements that may be required when communicating to a given agency. This technique is used sparingly, as it is expected that each agency will extend the FHIM within their own enterprise architecture, and will not expose agency-specific needs to the federal community. That having been said, this technique is also occasionally used to explicitly identify differences in target standards, so for example in Pharmacy there are two subclasses of Patient called &quot;ScriptPatient&quot; and &quot;TelcomPatient&quot; which correspond to the patient structure in the NCPDP Script and NCPDP Telecommunication standards.&#xD;
 &#xD;
 The ContactParty class is used for both persons to contact under given situations and for relatives. The circumstances under which a person is acting as a point of contact for the patient is identified in the contactCategory property. The relationship between the contact person and the patient (if any) is identified in the relationshipCategory property. This class was previously modeled as two separate classes, but the overlaps between the two were so great that they were combined. Note that this class is even used to identify a person who holds power of attorney for a person.&#xD;
 &#xD;
@@ -3307,7 +3307,7 @@ Note: This field has been deprecated as of HL7 Version 2.8, because the Breed is
       <ownedAttribute xmi:id="_420A62FD03B6424897BB00B6" name="confidentialAddressReasonCategory" visibility="public">
         <eAnnotations xmi:id="_NPDjk-LiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <ownedComment xmi:id="_eW5bIBqcEd-j8JC21F3W2A" annotatedElement="_420A62FD03B6424897BB00B6">
-          <body>Indicates the circumstances under which correspondence should be addressed to the Patient's confidential address.  Examples include: Eligibility/enrollment, Appointment scheduling, Copayments/billing, or Medical records.</body>
+          <body>Indicates the circumstances under which correspondence should be addressed to the Patient's confidential address.  Examples include: Eligibility/enrollment, Appointment scheduling, Copayments/billing, Medical records, or All Others.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_evDaJeLjEdutr_MT9HkPyQ" value="*"/>
@@ -3321,7 +3321,7 @@ Note: This field has been deprecated as of HL7 Version 2.8, because the Breed is
       </ownedAttribute>
       <ownedAttribute xmi:id="_H_JZ8FjvEeG6Pp3Py7p1bw" name="relationshipToVa" visibility="public">
         <ownedComment xmi:id="_WOw6UFjvEeG6Pp3Py7p1bw" annotatedElement="_H_JZ8FjvEeG6Pp3Py7p1bw">
-          <body>Indicates how this person is related to the Department of Veterans Affairs.  Possible values include: VA Patient, Veteran, Healthcare Provider, Veteran Advocate, Family Member, Family Friend, VA Employee, Other  (Note: Can be multiple)</body>
+          <body>Indicates how this person is related to the Department of Veterans Affairs.  Possible values include: VA Patient, Veteran, Healthcare Provider, Veteran Advocate, Family Member, Family Friend, VA Employee, Other  (Note: can be multiple).</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gMDC0FjvEeG6Pp3Py7p1bw" value="*"/>
@@ -3359,11 +3359,17 @@ Note: This field has been deprecated as of HL7 Version 2.8, because the Breed is
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_evNLNuLjEdutr_MT9HkPyQ"/>
       </ownedAttribute>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_laB78OwTEd6PwKowkorMOw" name="NCIPerson">
+    <packagedElement xmi:type="uml:Class" xmi:id="_laB78OwTEd6PwKowkorMOw" name="DODPerson">
       <ownedComment xmi:id="_Fg5y8BqREd-j8JC21F3W2A" annotatedElement="_laB78OwTEd6PwKowkorMOw">
-        <body>A specialization of Person that adds properties specifically needed by NCI</body>
+        <body>A specialization of Person that adds properties specifically needed by the U.S. Department of Defense.</body>
       </ownedComment>
       <generalization xmi:id="_UFMpcBA2Ed-2E9qx-lgHBg" general="_420A62FD03B6425125E800E0"/>
+      <ownedAttribute xmi:id="_QUDccHeyEeK5yYf9rwRjMg" name="edipn" visibility="private">
+        <ownedComment xmi:id="_izLNsHezEeK5yYf9rwRjMg" annotatedElement="_QUDccHeyEeK5yYf9rwRjMg">
+          <body>The EDIPN (Electronic Data Interchange Person Number) is an identifier assigned to patients in the Defense Enrollment Eligibility Reporting System (DEERS).  All clinical and reporting data must be exchanged using this identifier. TRICARE contractors must store this identifier associated with each enrollee on their database.  (Adapted from the TRICARE Systems Manual 7950.1-M, August 2002).</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_l0XegO_4Ed6OG-vjYTopTQ" name="HumanPatient">
       <ownedComment xmi:id="_uyCgQBqOEd-j8JC21F3W2A" annotatedElement="_l0XegO_4Ed6OG-vjYTopTQ">
@@ -3521,12 +3527,6 @@ Note: This field has been deprecated as of HL7 Version 2.8, because the Breed is
       <ownedComment xmi:id="_wOjVEIVLEd-6PJo369YzhQ" annotatedElement="_9qFd8HS0Ed-Bj4191_mrEA">
         <body>'2.a) a body of persons or individuals having a quality or characteristic in common.  3) a group of individual persons, objects, or items from which samples are taken for statistical measurement'  - Merriam-Webster's Medical Dictionary</body>
       </ownedComment>
-      <ownedAttribute xmi:id="_qVEpsHS3Ed-Bj4191_mrEA" name="category" visibility="public">
-        <ownedComment xmi:id="_UVCwMIVOEd-6PJo369YzhQ" annotatedElement="_qVEpsHS3Ed-Bj4191_mrEA">
-          <body>A categorization of the population</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
-      </ownedAttribute>
       <ownedAttribute xmi:id="_mKNy0HS3Ed-Bj4191_mrEA" name="description" visibility="public">
         <ownedComment xmi:id="_bNhq8IVOEd-6PJo369YzhQ" annotatedElement="_mKNy0HS3Ed-Bj4191_mrEA">
           <body>A textual description of the population</body>
@@ -3594,7 +3594,7 @@ Note: This field has been deprecated as of HL7 Version 2.8, because the Breed is
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_8zGngGrZEeCJbfIpPWFXRg" name="participantId" visibility="public">
-        <type xmi:type="uml:Class" href="pathmap://XMLmodeling_LIBRARIES/XSDDataTypes.library.uml#_3RzKXUtXEdqhPYJq3sEkGA"/>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B645538E6E0040" name="pseudonym" visibility="public">
         <eAnnotations xmi:id="_NPMtgeLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
@@ -3678,7 +3678,7 @@ Note: This field has been deprecated as of HL7 Version 2.8, because the Breed is
         <ownedComment xmi:id="_R_NE0JX7EeCD7vwmJe8BlA" annotatedElement="_qv_Q0GtcEeCaten32mlCMw">
           <body>Categorizes the Power of Attorney</body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_mCWScGtbEeCaten32mlCMw" name="attorney" visibility="public" type="_420A62FD03B64248829E032E" association="_mCNIgGtbEeCaten32mlCMw">
         <ownedComment xmi:id="_mzfzIJX7EeCD7vwmJe8BlA" annotatedElement="_mCWScGtbEeCaten32mlCMw">
@@ -6627,7 +6627,6 @@ Specifically for the FHIM, Tribe represents a first-nation group recognized by t
   <RIM:Entity xmi:id="_we5HoHS3Ed-Bj4191_mrEA" base_Class="_9qFd8HS0Ed-Bj4191_mrEA"/>
   <Default:Documentation xmi:id="_l4NMUIVLEd-6PJo369YzhQ" base_Comment="_l4DbUIVLEd-6PJo369YzhQ"/>
   <Default:Documentation xmi:id="_wO2QAIVLEd-6PJo369YzhQ" base_Comment="_wOjVEIVLEd-6PJo369YzhQ"/>
-  <Default:Documentation xmi:id="_UVWSMIVOEd-6PJo369YzhQ" base_Comment="_UVCwMIVOEd-6PJo369YzhQ"/>
   <Default:Documentation xmi:id="_XD1RsIVOEd-6PJo369YzhQ" base_Comment="_XDsHwIVOEd-6PJo369YzhQ"/>
   <Default:Documentation xmi:id="_bNq04IVOEd-6PJo369YzhQ" base_Comment="_bNhq8IVOEd-6PJo369YzhQ"/>
   <Default:Documentation xmi:id="_ifmWsYq6Ed-W_sKBWcwIbA" base_Comment="_diPhUIq5Ed-W_sKBWcwIbA"/>
@@ -6951,4 +6950,5 @@ Specifically for the FHIM, Tribe represents a first-nation group recognized by t
   <Default:Documentation xmi:id="_k2tfIGykEeKS_YH7dVt7vw" base_Comment="_NQixVOLiEduGJrQyRGTO1A"/>
   <RIM:Observation xmi:id="_v8YMAGykEeKS_YH7dVt7vw" base_Class="_PT-9gGykEeKS_YH7dVt7vw"/>
   <Default:Documentation xmi:id="_BoTbMGylEeKS_YH7dVt7vw" base_Comment="_BoLfYGylEeKS_YH7dVt7vw"/>
+  <Default:Documentation xmi:id="_izUXoHezEeK5yYf9rwRjMg" base_Comment="_izLNsHezEeK5yYf9rwRjMg"/>
 </xmi:XMI>
