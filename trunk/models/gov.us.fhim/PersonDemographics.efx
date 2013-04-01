@@ -3054,7 +3054,7 @@ Possible values include (from HL7 V2 Table 9): No functional limitations; Ambula
       </ownedComment>
       <ownedEnd xmi:id="_420A62FD03B645649B7E0358" name="" visibility="public" type="_420A62FD03B645649B26010B" isUnique="false" association="_420A62FD03B645649B7E0183"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_KBfhMOEVEd6EKMSYA1gKjA" name="BiologicalEntity" isAbstract="true">
+    <packagedElement xmi:type="uml:Class" xmi:id="_KBfhMOEVEd6EKMSYA1gKjA" name="BiologicalEntity">
       <ownedComment xmi:id="_PUrMYBqMEd-j8JC21F3W2A" annotatedElement="_KBfhMOEVEd6EKMSYA1gKjA">
         <body>This class represents an organism, whether it is currently alive or not.  This class is equivalent to the HL7 V3 Living Subject class.</body>
       </ownedComment>
@@ -3167,7 +3167,7 @@ Possible values include (from HL7 V2 Table 9): No functional limitations; Ambula
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_G4b38On-EeCkWsmL2aWuUQ"/>
       </ownedAttribute>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_MF0JYOEVEd6EKMSYA1gKjA" name="Entity" isAbstract="true">
+    <packagedElement xmi:type="uml:Class" xmi:id="_MF0JYOEVEd6EKMSYA1gKjA" name="Entity">
       <ownedComment xmi:id="__7Ux4BqNEd-j8JC21F3W2A" annotatedElement="_MF0JYOEVEd6EKMSYA1gKjA">
         <body>'A physical thing, group of physical things or an organization capable of participating in Acts while in a role.  An entity is a physical object that has, had or will have existence. The only exception to this is Organization, which while not having a physical presence, fulfills the other characteristics of an Entity.  Entity stipulates the thing itself, not the Roles it may play: the Role of Patient, e.g., is played by the Person Entity.'  HL7 RIM.</body>
       </ownedComment>
@@ -3532,6 +3532,9 @@ Note: This field has been deprecated as of HL7 Version 2.8, because the Breed is
           <body>A textual description of the population</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_dA_t8JcTEeKrZbQHxGBj5A" name="existenceDateRange" visibility="public">
+        <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B642387187004E?FHIM/Datatypes/TimeInterval?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_i554oHS3Ed-Bj4191_mrEA" name="id" visibility="public">
         <ownedComment xmi:id="_XDsHwIVOEd-6PJo369YzhQ" annotatedElement="_i554oHS3Ed-Bj4191_mrEA">
