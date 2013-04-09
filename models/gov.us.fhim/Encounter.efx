@@ -452,7 +452,7 @@
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_SaXPYGi4EeG3pKm-C5y0hA" visible="false" type="SignalCompartment"/>
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_SaXPYWi4EeG3pKm-C5y0hA" visible="false" type="StructureCompartment"/>
           <element xmi:type="uml:Class" href="Common.efx#_rr-pACaOEdyiJKb4ZqIfnw?FHIM/Common/Procedure?"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SaUzIWi4EeG3pKm-C5y0hA" x="37986" y="34870"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SaUzIWi4EeG3pKm-C5y0hA" x="36772" y="35187"/>
         </children>
         <children xmi:type="umlnotation:UMLShape" xmi:id="_pH-20Gi4EeG3pKm-C5y0hA" fontName="Arial" fontHeight="10" showListVisibility="None" fillColor="8519679" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_pH_d4Gi4EeG3pKm-C5y0hA" type="ImageCompartment">
@@ -3008,6 +3008,14 @@ Possible values include (from HL7 V2 Table 9): No functional limitations; Ambula
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Qj8CsGfbEeGK0elVFnH6lw" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Qj7boGfbEeGK0elVFnH6lw"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_F8AjQKByEeKEjOzXDxf6EA" name="publicityCode" visibility="public">
+        <ownedComment xmi:id="_F8AjQaByEeKEjOzXDxf6EA" annotatedElement="_F8AjQKByEeKEjOzXDxf6EA">
+          <body>&quot;Contains a user-defined code indicating what level of publicity is allowed for a specific visit.&quot; - HL7 Version 2.8, PV2-21.  Possible values include (from HL7 V2 Table 215): Family only; No Publicity; Other; Unknown.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_F8AjQqByEeKEjOzXDxf6EA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_F8AjQ6ByEeKEjOzXDxf6EA"/>
+      </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B642D2D0CC0158" name="reason" visibility="public">
         <eAnnotations xmi:id="_Sup7IOY9EeGuIoEQ4Mvu0w" source="http://www.eclipse.org/uml2/2.0.0/UML">
           <details xmi:id="_WCs4YPN7EeGMQvy2b7FvNg" key="cc"/>
@@ -3781,7 +3789,7 @@ Possible values include (from HL7 V2 Table 9): No functional limitations; Ambula
     <packagedElement xmi:type="uml:Association" xmi:id="_9UnlsGisEeG3pKm-C5y0hA" memberEnd="_9UrQEGisEeG3pKm-C5y0hA _9Uu6cGisEeG3pKm-C5y0hA">
       <ownedEnd xmi:id="_9Uu6cGisEeG3pKm-C5y0hA" name="" visibility="private" type="_420A62FD03B64213F5B40316" association="_9UnlsGisEeG3pKm-C5y0hA"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_qS7A8GitEeG3pKm-C5y0hA" name="AbstractEncounter" isAbstract="true">
+    <packagedElement xmi:type="uml:Class" xmi:id="_qS7A8GitEeG3pKm-C5y0hA" name="AbstractEncounter">
       <ownedAttribute xmi:id="_420A62FD03B6431C494F03C4" name="confidentiallyCode" visibility="public">
         <ownedComment xmi:id="_MZGzDeLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6431C494F03C4">
           <body>Contains a set of values that control the disclosure of information about this patient </body>
@@ -3854,7 +3862,7 @@ Possible values include (from HL7 V2 Table 9): No functional limitations; Ambula
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RfSSwGiuEeG3pKm-C5y0hA" value="1"/>
       </ownedEnd>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_nbMJYGiuEeG3pKm-C5y0hA" name="AbstractDurableEncounter" isAbstract="true">
+    <packagedElement xmi:type="uml:Class" xmi:id="_nbMJYGiuEeG3pKm-C5y0hA" name="AbstractDurableEncounter">
       <generalization xmi:id="_atrqEGiwEeG3pKm-C5y0hA" general="_420A62FD03B64213F5B40316"/>
       <ownedAttribute xmi:id="_kvGW8ExgEdyVYrcEhQ5TbQ" name="admissionDate" visibility="public">
         <eAnnotations xmi:id="_WoAkkOY4EeGuIoEQ4Mvu0w" source="http://www.eclipse.org/uml2/2.0.0/UML">
@@ -4334,4 +4342,5 @@ Labor and Delivery; Routine; Newborn (Birth in healthcare facility); Urgent; Ele
   <Default:Documentation xmi:id="_de_qUCzgEeKLfdgQhBZO1Q" base_Comment="_de8nACzgEeKLfdgQhBZO1Q"/>
   <Default:Documentation xmi:id="_lOh3cDfZEeKnE98EkGeXFQ" base_Comment="_lOGZoTfZEeKnE98EkGeXFQ"/>
   <Default:Documentation xmi:id="_hyvHwEcIEeKYw8d4t3T9cw" base_Comment="_hyi6gEcIEeKYw8d4t3T9cw"/>
+  <Default:Documentation xmi:id="_F8BxYKByEeKEjOzXDxf6EA" base_Comment="_F8AjQaByEeKEjOzXDxf6EA"/>
 </xmi:XMI>
