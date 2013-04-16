@@ -6,32 +6,35 @@
 <prolog id="prolog">
 </prolog>
 <body>
+<section id="knownSubclasses">
+<p>Known Subclasses: <xref href="../BehavioralHealthAssessment.dita">Behavioral Health Assessment</xref></p>
+</section>
 <section id="description">
-<p>This class describes any type of assessment (e.g. behavioral health issues)                   that is administered to a patient. Standardized assessment tools create scores and                   subscores used to determine the optimal placement and treatment plans for a                   patient. Standardized assessment tools facilitate the collection of accurate                   information in a reliable and consistent manner provide clinicians and treatment                   agencies with increased accountability and to identify patient progress over time                   and help adjust treatment plans.</p>
+<p><lines><i>This class describes any type of assessment (e.g. behavioral health issues)                   that is administered to a patient. Standardized assessment tools create scores and                   subscores used to determine the optimal placement and treatment plans for a                   patient. Standardized assessment tools facilitate the collection of accurate                   information in a reliable and consistent manner provide clinicians and treatment                   agencies with increased accountability and to identify patient progress over time                   and help adjust treatment plans.</i></lines></p>
 </section>
 <ol id="conformance">
 <li>Contains exactly one [1..1] <tt><b>code</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>This attribute specifies the code identifying the main concept associated                     with the assessment. The code includes a text description of the concept along                     with the standard-based code. </li></ul></li>
+<ul><li><p><lines><i>This attribute specifies the code identifying the main concept associated                     with the assessment. The code includes a text description of the concept along                     with the standard-based code. </i></lines></p></li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>overallScore</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
-<ul><li>This attribute represents the overall score computed by the assessment tool                     based on the patient&amp;apos;s answers to assessment questions. The value of the score                     is used to create a care/treatment plan to meet the needs of the                   client/patient.</li></ul></li>
+<ul><li><p><lines><i>This attribute represents the overall score computed by the assessment tool                     based on the patient&amp;apos;s answers to assessment questions. The value of the score                     is used to create a care/treatment plan to meet the needs of the                   client/patient.</i></lines></p></li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>applicability</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>This attribute is intended to specify the whether the assessment is used for                     clinical, research, or program evaluation.</li></ul></li>
+<ul><li><p><lines><i>This attribute is intended to specify the whether the assessment is used for                     clinical, research, or program evaluation.</i></lines></p></li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>assessmentPlacementTools</b></tt>, where its type is <xref href="../BehavioralHealthAssessmentPlacementTool.dita">Behavioral Health Assessment/ Placement Tool</xref>
-<ul><li>Assessments are created using specific tools. While the assessment may                     identify the type of tools used, the tool used and its characteristics are out                     of scope.</li></ul></li>
+<ul><li><p><lines><i>Assessments are created using specific tools. While the assessment may                     identify the type of tools used, the tool used and its characteristics are out                     of scope.</i></lines></p></li></ul></li>
 <li>Contains zero or more [0..*] <tt><b>subscore</b></tt>, where its type is <xref href="../Subscore.dita">Subscore</xref>
-<ul><li>This attribute represents the subscore score computed by the assessment tool                     based on the patient&amp;apos;s answers to assessment questions. A subscore may be                     associated with a specific domain or concept that is evaluated through the                     assessment (e.g. depression may receive a subscore in an overall mental health                     assessment).</li></ul></li>
+<ul><li><p><lines><i>This attribute represents the subscore score computed by the assessment tool                     based on the patient&amp;apos;s answers to assessment questions. A subscore may be                     associated with a specific domain or concept that is evaluated through the                     assessment (e.g. depression may receive a subscore in an overall mental health                     assessment).</i></lines></p></li></ul></li>
 </ol>
 <ol id="aggregate">
 <li>Contains exactly one [1..1] <tt><b>code</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>This attribute specifies the code identifying the main concept associated                     with the assessment. The code includes a text description of the concept along                     with the standard-based code. </li></ul></li>
+<ul><li><p><lines><i>This attribute specifies the code identifying the main concept associated                     with the assessment. The code includes a text description of the concept along                     with the standard-based code. </i></lines></p></li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>overallScore</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
-<ul><li>This attribute represents the overall score computed by the assessment tool                     based on the patient&amp;apos;s answers to assessment questions. The value of the score                     is used to create a care/treatment plan to meet the needs of the                   client/patient.</li></ul></li>
+<ul><li><p><lines><i>This attribute represents the overall score computed by the assessment tool                     based on the patient&amp;apos;s answers to assessment questions. The value of the score                     is used to create a care/treatment plan to meet the needs of the                   client/patient.</i></lines></p></li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>applicability</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>This attribute is intended to specify the whether the assessment is used for                     clinical, research, or program evaluation.</li></ul></li>
+<ul><li><p><lines><i>This attribute is intended to specify the whether the assessment is used for                     clinical, research, or program evaluation.</i></lines></p></li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>assessmentPlacementTools</b></tt>, where its type is <xref href="../BehavioralHealthAssessmentPlacementTool.dita">Behavioral Health Assessment/ Placement Tool</xref>
-<ul><li>Assessments are created using specific tools. While the assessment may                     identify the type of tools used, the tool used and its characteristics are out                     of scope.</li></ul></li>
+<ul><li><p><lines><i>Assessments are created using specific tools. While the assessment may                     identify the type of tools used, the tool used and its characteristics are out                     of scope.</i></lines></p></li></ul></li>
 <li>Contains zero or more [0..*] <tt><b>subscore</b></tt>, where its type is <xref href="../Subscore.dita">Subscore</xref>
-<ul><li>This attribute represents the subscore score computed by the assessment tool                     based on the patient&amp;apos;s answers to assessment questions. A subscore may be                     associated with a specific domain or concept that is evaluated through the                     assessment (e.g. depression may receive a subscore in an overall mental health                     assessment).</li></ul></li>
+<ul><li><p><lines><i>This attribute represents the subscore score computed by the assessment tool                     based on the patient&amp;apos;s answers to assessment questions. A subscore may be                     associated with a specific domain or concept that is evaluated through the                     assessment (e.g. depression may receive a subscore in an overall mental health                     assessment).</i></lines></p></li></ul></li>
 </ol>
 <codeblock id="example"><![CDATA[]]></codeblock>
 <section id="changes">

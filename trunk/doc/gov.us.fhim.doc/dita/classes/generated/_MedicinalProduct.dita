@@ -6,24 +6,26 @@
 <prolog id="prolog">
 </prolog>
 <body>
+<section id="knownSubclasses">
+</section>
 <section id="description">
 </section>
 <ol id="conformance">
 <li>Extends <xref href="../Product.dita">Product</xref></li>
 <li>Contains zero or more [0..*] <tt><b>auxilliaryLabel</b></tt> with data type <xref href="../String.dita">String</xref>
-<ul><li>Contains remarks to personnel handling the medication.  Examples include: Do not freeze, Keep refrigerated, Do not use after &amp;lt;such and such&amp;gt; date, Do not take if pregnant.</li></ul></li>
+<ul><li><p><lines><i>Contains remarks to personnel handling the medication.  Examples include: Do not freeze, Keep refrigerated, Do not use after &amp;lt;such and such&amp;gt; date, Do not take if pregnant.</i></lines></p></li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>controlledSubstanceSchedule</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>A code that represents the special regulations of a drug based upon its degree of potential abuse and level of federal control as specified by the Drug Enforcement Administration (DEA) in accordance with the Controlled Substance Act. This attribute should contain a number between 1 and 5, with 1 representing the most controlled drugs (illegal drugs) and 5 representing the least controlled drugs.  In addition a value of 0 is valid for drugs having no schedule.</li></ul></li>
+<ul><li><p><lines><i>A code that represents the special regulations of a drug based upon its degree of potential abuse and level of federal control as specified by the Drug Enforcement Administration (DEA) in accordance with the Controlled Substance Act. This attribute should contain a number between 1 and 5, with 1 representing the most controlled drugs (illegal drugs) and 5 representing the least controlled drugs.  In addition a value of 0 is valid for drugs having no schedule.</i></lines></p></li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>investigationalNewDrugId</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>The unique identifier for the manufacturer's investigational new drug.</li></ul></li>
+<ul><li><p><lines><i>The unique identifier for the manufacturer's investigational new drug.</i></lines></p></li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>isOverTheCounter</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
-<ul><li>Indicates whether this medication is sold over the counter.</li></ul></li>
+<ul><li><p><lines><i>Indicates whether this medication is sold over the counter.</i></lines></p></li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>newDrugApplicationId</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>The unique identifier for the manufacturer's new drug application for this medicine.</li></ul></li>
+<ul><li><p><lines><i>The unique identifier for the manufacturer's new drug application for this medicine.</i></lines></p></li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>genericMedicine</b></tt>, where its type is <xref href="../GenericMedicine.dita">Generic Medicine</xref>
-<ul><li>"The non-proprietary, generic substance as which the same medicines is known in the literature independent of a specific  manufacturer." - HL7 V3</li></ul></li>
+<ul><li><p><lines><i>"The non-proprietary, generic substance as which the same medicines is known in the literature independent of a specific  manufacturer." - HL7 V3</i></lines></p></li></ul></li>
 <li>Contains at least one [1..*] <tt><b>ingredient</b></tt>, where its type is <xref href="../DrugIngredient.dita">Drug Ingredient</xref>
-<ul><li>"Relates a product (typically medicine) to a substance which it contains as an ingredient." - HL7 V3</li></ul></li>
+<ul><li><p><lines><i>"Relates a product (typically medicine) to a substance which it contains as an ingredient." - HL7 V3</i></lines></p></li></ul></li>
 <li>Contains zero or more [0..*] <tt><b>drugClass</b></tt>, where its type is <xref href="../DrugClass.dita">Drug Class</xref>
 </li>
 <li>Contains exactly one [1..1] <tt><b>packagedMedicinalProduct</b></tt>, where its type is <xref href="../PackagedMedicinalProduct.dita">Packaged Medicinal Product</xref>
@@ -32,39 +34,39 @@
 <ol id="aggregate">
 <li>Extends <xref href="../Product.dita">Product</xref></li>
 <li>Contains zero or one [0..1] <tt><b>code</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>"The code given to this kind of product, i.e., NDC code to medicines in the U.S., EAN or UPC codes to food items or  devices. A code given to a device may also be known as "unique device identifier". Unlike a device instance identifier,  however, this is a code for the specific kind of device analogously to the NDC code or UPC code that is a code of a  manufactured kind of product respectively. The words "product code" "unique device identifiers" may have certain specific  connotations in different regulatory contexts, to side-step such unwanted connotations, one may call this code the "Item  Code", for it is the code for the item (product, medicine, thing, or class thereof) that is so described." - HL7 V3</li></ul></li>
+<ul><li><p><lines><i>"The code given to this kind of product, i.e., NDC code to medicines in the U.S., EAN or UPC codes to food items or  devices. A code given to a device may also be known as "unique device identifier". Unlike a device instance identifier,  however, this is a code for the specific kind of device analogously to the NDC code or UPC code that is a code of a  manufactured kind of product respectively. The words "product code" "unique device identifiers" may have certain specific  connotations in different regulatory contexts, to side-step such unwanted connotations, one may call this code the "Item  Code", for it is the code for the item (product, medicine, thing, or class thereof) that is so described." - HL7 V3</i></lines></p></li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>description</b></tt> with data type <xref href="../String.dita">String</xref>
-<ul><li>"A text description of the product. While the data type ED would allow for a full product monograph to be carried in this  attribute, this practice is to be avoided, because product monograph document structures (Structured Product Labeling)  should be used instead for such documents. The description attribute is mainly to be used for brief descriptions which  users of product catalogs can use to quickly distinguish this product from other similar products in a list of products." -  HL7 V3</li></ul></li>
+<ul><li><p><lines><i>"A text description of the product. While the data type ED would allow for a full product monograph to be carried in this  attribute, this practice is to be avoided, because product monograph document structures (Structured Product Labeling)  should be used instead for such documents. The description attribute is mainly to be used for brief descriptions which  users of product catalogs can use to quickly distinguish this product from other similar products in a list of products." -  HL7 V3</i></lines></p></li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>formCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>&amp;lt;p&amp;gt;      "The principle form of a product, such as dosage form of a medicine. Values may be drawn from the MaterialForm HL7      vocabulary table or from other external code value sources. Notice the difference between an (Administered) Medicine      and a PackagedMedicine. Both have formCodes. A box or vial is usually not a medicine Product.formCode but a      PackageProduct.formCode, unless the entire box or the entire vial is meant for direct administration as a single unit.      In principle, the formCode is a very coarsely-grained (high level) product class that focuses on physical appearance.      At the top, it usually distinguishes between physical state of matter (solid, liquid, gaseous), and, because solids may      be amorphous (e.g., powders), would allow distinguishing solid shaped from amorphous masses. The former can be      individually handled and counted, whereas the latter (amorphous masses) can only be measured and require primary      containers for handling. Thus the formCode has implications for how the product is quantified (counted vs. measured)      and whether a primary container (e.g., vial) may be expected." - HL7 V3  &amp;lt;/p&amp;gt;</li></ul></li>
+<ul><li><p><lines><i>&amp;lt;p&amp;gt;      "The principle form of a product, such as dosage form of a medicine. Values may be drawn from the MaterialForm HL7      vocabulary table or from other external code value sources. Notice the difference between an (Administered) Medicine      and a PackagedMedicine. Both have formCodes. A box or vial is usually not a medicine Product.formCode but a      PackageProduct.formCode, unless the entire box or the entire vial is meant for direct administration as a single unit.      In principle, the formCode is a very coarsely-grained (high level) product class that focuses on physical appearance.      At the top, it usually distinguishes between physical state of matter (solid, liquid, gaseous), and, because solids may      be amorphous (e.g., powders), would allow distinguishing solid shaped from amorphous masses. The former can be      individually handled and counted, whereas the latter (amorphous masses) can only be measured and require primary      containers for handling. Thus the formCode has implications for how the product is quantified (counted vs. measured)      and whether a primary container (e.g., vial) may be expected." - HL7 V3  &amp;lt;/p&amp;gt;</i></lines></p></li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>handlingCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>&amp;lt;p&amp;gt;      "An indicator of special handling requirements for the product. E.g., keep at room temperature, store upright." - HL7      V3  &amp;lt;/p&amp;gt;</li></ul></li>
+<ul><li><p><lines><i>&amp;lt;p&amp;gt;      "An indicator of special handling requirements for the product. E.g., keep at room temperature, store upright." - HL7      V3  &amp;lt;/p&amp;gt;</i></lines></p></li></ul></li>
 <li>Contains zero or more [0..*] <tt><b>name</b></tt> with data type <xref href="../String.dita">String</xref>
-<ul><li>&amp;lt;p&amp;gt;      "The name of the product kind described. If this is a specific manufactured (brand) product, this would be the      proprietary name. For general product class descriptions this would be a non-proprietary name. This attribute may      sometimes be used instead of a code and descriptive data elements when no suitable coding system is available.&amp;lt;br /&amp;gt;      The data type for the name has been allow for suffixes and also other name parts, which might hold proprietary dose      form (e.g., "capsil", "discus", "injection system") or other name parts which may be required for recognition of the      product among health professionals. Note that these name parts are never to be used instead of proper descriptive data      elements (formCode, ingredients and their quantities, etc.)" - HL7 V3  &amp;lt;/p&amp;gt;</li></ul></li>
+<ul><li><p><lines><i>&amp;lt;p&amp;gt;      "The name of the product kind described. If this is a specific manufactured (brand) product, this would be the      proprietary name. For general product class descriptions this would be a non-proprietary name. This attribute may      sometimes be used instead of a code and descriptive data elements when no suitable coding system is available.&amp;lt;br /&amp;gt;      The data type for the name has been allow for suffixes and also other name parts, which might hold proprietary dose      form (e.g., "capsil", "discus", "injection system") or other name parts which may be required for recognition of the      product among health professionals. Note that these name parts are never to be used instead of proper descriptive data      elements (formCode, ingredients and their quantities, etc.)" - HL7 V3  &amp;lt;/p&amp;gt;</i></lines></p></li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>riskCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>&amp;lt;p&amp;gt;      "Indicates a type of hazard or threat associated with the product." - HL7 V3  &amp;lt;/p&amp;gt;</li></ul></li>
+<ul><li><p><lines><i>&amp;lt;p&amp;gt;      "Indicates a type of hazard or threat associated with the product." - HL7 V3  &amp;lt;/p&amp;gt;</i></lines></p></li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>shelfLife</b></tt> with data type <xref href="../TimeQuantity.dita">Time Quantity</xref>
-<ul><li>"The amount of time after date of manufacture that the manufacturer no longer ensures the safety, quality, and/or proper  functioning of the material. Only the interval width is valued." - HL7 V3</li></ul></li>
+<ul><li><p><lines><i>"The amount of time after date of manufacture that the manufacturer no longer ensures the safety, quality, and/or proper  functioning of the material. Only the interval width is valued." - HL7 V3</i></lines></p></li></ul></li>
 <li>Contains zero or more [0..*] <tt><b>storageCondition</b></tt> with data type <xref href="../String.dita">String</xref>
 </li>
 <li>Contains zero or more [0..*] <tt><b>auxilliaryLabel</b></tt> with data type <xref href="../String.dita">String</xref>
-<ul><li>Contains remarks to personnel handling the medication.  Examples include: Do not freeze, Keep refrigerated, Do not use after &amp;lt;such and such&amp;gt; date, Do not take if pregnant.</li></ul></li>
+<ul><li><p><lines><i>Contains remarks to personnel handling the medication.  Examples include: Do not freeze, Keep refrigerated, Do not use after &amp;lt;such and such&amp;gt; date, Do not take if pregnant.</i></lines></p></li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>controlledSubstanceSchedule</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>A code that represents the special regulations of a drug based upon its degree of potential abuse and level of federal control as specified by the Drug Enforcement Administration (DEA) in accordance with the Controlled Substance Act. This attribute should contain a number between 1 and 5, with 1 representing the most controlled drugs (illegal drugs) and 5 representing the least controlled drugs.  In addition a value of 0 is valid for drugs having no schedule.</li></ul></li>
+<ul><li><p><lines><i>A code that represents the special regulations of a drug based upon its degree of potential abuse and level of federal control as specified by the Drug Enforcement Administration (DEA) in accordance with the Controlled Substance Act. This attribute should contain a number between 1 and 5, with 1 representing the most controlled drugs (illegal drugs) and 5 representing the least controlled drugs.  In addition a value of 0 is valid for drugs having no schedule.</i></lines></p></li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>investigationalNewDrugId</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>The unique identifier for the manufacturer's investigational new drug.</li></ul></li>
+<ul><li><p><lines><i>The unique identifier for the manufacturer's investigational new drug.</i></lines></p></li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>isOverTheCounter</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
-<ul><li>Indicates whether this medication is sold over the counter.</li></ul></li>
+<ul><li><p><lines><i>Indicates whether this medication is sold over the counter.</i></lines></p></li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>newDrugApplicationId</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>The unique identifier for the manufacturer's new drug application for this medicine.</li></ul></li>
+<ul><li><p><lines><i>The unique identifier for the manufacturer's new drug application for this medicine.</i></lines></p></li></ul></li>
 <li>Contains zero or more [0..*] <tt><b>equivalentTo</b></tt>, where its type is <xref href="../MaterialCategory.dita">Material Category</xref>
 </li>
 <li>Contains zero or more [0..*] <tt><b>specializationOf</b></tt>, where its type is <xref href="../MaterialCategory.dita">Material Category</xref>
 </li>
 <li>Contains zero or one [0..1] <tt><b>genericMedicine</b></tt>, where its type is <xref href="../GenericMedicine.dita">Generic Medicine</xref>
-<ul><li>"The non-proprietary, generic substance as which the same medicines is known in the literature independent of a specific  manufacturer." - HL7 V3</li></ul></li>
+<ul><li><p><lines><i>"The non-proprietary, generic substance as which the same medicines is known in the literature independent of a specific  manufacturer." - HL7 V3</i></lines></p></li></ul></li>
 <li>Contains at least one [1..*] <tt><b>ingredient</b></tt>, where its type is <xref href="../DrugIngredient.dita">Drug Ingredient</xref>
-<ul><li>"Relates a product (typically medicine) to a substance which it contains as an ingredient." - HL7 V3</li></ul></li>
+<ul><li><p><lines><i>"Relates a product (typically medicine) to a substance which it contains as an ingredient." - HL7 V3</i></lines></p></li></ul></li>
 <li>Contains zero or more [0..*] <tt><b>drugClass</b></tt>, where its type is <xref href="../DrugClass.dita">Drug Class</xref>
 </li>
 <li>Contains exactly one [1..1] <tt><b>packagedMedicinalProduct</b></tt>, where its type is <xref href="../PackagedMedicinalProduct.dita">Packaged Medicinal Product</xref>

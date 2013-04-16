@@ -6,24 +6,26 @@
 <prolog id="prolog">
 </prolog>
 <body>
+<section id="knownSubclasses">
+</section>
 <section id="description">
-<p>This class contains attributes related to track the content and interactions with an alert.  e.g.  When the alert was generated, package id, Status, each user that the alert was sent to. Note that this class may not be supported by HDR but rather from other repository.</p>
+<p><lines><i>This class contains attributes related to track the content and interactions with an alert.  e.g.  When the alert was generated, package id, Status, each user that the alert was sent to. Note that this class may not be supported by HDR but rather from other repository.</i></lines></p>
 </section>
 <ol id="conformance">
 <li>Contains zero or one [0..1] <tt><b>associatedPackage</b></tt> with data type <xref href="../String.dita">String</xref>
-<ul><li>Identifies the Package Associated to the alert.  1-30 characters in length.  </li></ul></li>
+<ul><li><p><lines><i>Identifies the Package Associated to the alert.  1-30 characters in length.  </i></lines></p></li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>dataForProcessing</b></tt> with data type <xref href="../String.dita">String</xref>
-<ul><li>This is a String of data elements returned to the application when the alert is selected for processing.  </li></ul></li>
+<ul><li><p><lines><i>This is a String of data elements returned to the application when the alert is selected for processing.  </i></lines></p></li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>dateCreated</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
-<ul><li>Date and time that the alert was created.   </li></ul></li>
+<ul><li><p><lines><i>Date and time that the alert was created.   </i></lines></p></li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>dateAlertProcessed</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
-<ul><li>Indicates the date when the processing of the alert was completed.  </li></ul></li>
+<ul><li><p><lines><i>Indicates the date when the processing of the alert was completed.  </i></lines></p></li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>displayText</b></tt> with data type <xref href="../String.dita">String</xref>
-<ul><li>Text diplayed for alert.  </li></ul></li>
+<ul><li><p><lines><i>Text diplayed for alert.  </i></lines></p></li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>name</b></tt> with data type <xref href="../String.dita">String</xref>
-<ul><li>Name of Alert  </li></ul></li>
+<ul><li><p><lines><i>Name of Alert  </i></lines></p></li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>Indicates the the status of the alert. Possible values are UNREAD-REMOVED BY DATE; COMPLETELY READ; PARTIALLY READ - REMOVED; etc.   </li></ul></li>
+<ul><li><p><lines><i>Indicates the the status of the alert. Possible values are UNREAD-REMOVED BY DATE; COMPLETELY READ; PARTIALLY READ - REMOVED; etc.   </i></lines></p></li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>author</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
 </li>
 <li>Contains zero or more [0..*] <tt><b>recipientLog</b></tt>, where its type is <xref href="../AlertRecipientLog.dita">Alert Recipient Log</xref>
@@ -31,19 +33,19 @@
 </ol>
 <ol id="aggregate">
 <li>Contains zero or one [0..1] <tt><b>associatedPackage</b></tt> with data type <xref href="../String.dita">String</xref>
-<ul><li>Identifies the Package Associated to the alert.  1-30 characters in length.  </li></ul></li>
+<ul><li><p><lines><i>Identifies the Package Associated to the alert.  1-30 characters in length.  </i></lines></p></li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>dataForProcessing</b></tt> with data type <xref href="../String.dita">String</xref>
-<ul><li>This is a String of data elements returned to the application when the alert is selected for processing.  </li></ul></li>
+<ul><li><p><lines><i>This is a String of data elements returned to the application when the alert is selected for processing.  </i></lines></p></li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>dateCreated</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
-<ul><li>Date and time that the alert was created.   </li></ul></li>
+<ul><li><p><lines><i>Date and time that the alert was created.   </i></lines></p></li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>dateAlertProcessed</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
-<ul><li>Indicates the date when the processing of the alert was completed.  </li></ul></li>
+<ul><li><p><lines><i>Indicates the date when the processing of the alert was completed.  </i></lines></p></li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>displayText</b></tt> with data type <xref href="../String.dita">String</xref>
-<ul><li>Text diplayed for alert.  </li></ul></li>
+<ul><li><p><lines><i>Text diplayed for alert.  </i></lines></p></li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>name</b></tt> with data type <xref href="../String.dita">String</xref>
-<ul><li>Name of Alert  </li></ul></li>
+<ul><li><p><lines><i>Name of Alert  </i></lines></p></li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>Indicates the the status of the alert. Possible values are UNREAD-REMOVED BY DATE; COMPLETELY READ; PARTIALLY READ - REMOVED; etc.   </li></ul></li>
+<ul><li><p><lines><i>Indicates the the status of the alert. Possible values are UNREAD-REMOVED BY DATE; COMPLETELY READ; PARTIALLY READ - REMOVED; etc.   </i></lines></p></li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>author</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
 </li>
 <li>Contains zero or more [0..*] <tt><b>recipientLog</b></tt>, where its type is <xref href="../AlertRecipientLog.dita">Alert Recipient Log</xref>

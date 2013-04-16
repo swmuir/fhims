@@ -6,25 +6,28 @@
 <prolog id="prolog">
 </prolog>
 <body>
+<section id="knownSubclasses">
+<p>Known Subclasses: <xref href="../Vaccine.dita">Vaccine</xref></p>
+</section>
 <section id="description">
-<p>"Contains the identifier of the medical substance/treatment administered....  If the substance administered is a vaccine, CVX codes may be used to code this field...." - HL7 Version 2.8, RXA-5</p>
+<p><lines><i>"Contains the identifier of the medical substance/treatment administered....  If the substance administered is a vaccine, CVX codes may be used to code this field...." - HL7 Version 2.8, RXA-5</i></lines></p>
 </section>
 <ol id="conformance">
 <li>Contains zero or one [0..1] <tt><b>administeredBarcodeId</b></tt> with data type <xref href="../Id.dita">Id</xref>
-<ul><li>"This field contains the pharmacy system's assigned barcode number for the give occurrence.  For IV orders, many pharmacy systems generate a barcode number to identify a specific bag/bottle of the order. This number can be an instance identifier; unique for the patient, drug combination, and schedule instance or it may be just a drug identifier." - HL7 Version 2.8, RXA-25</li></ul></li>
+<ul><li><p><lines><i>"This field contains the pharmacy system's assigned barcode number for the give occurrence.  For IV orders, many pharmacy systems generate a barcode number to identify a specific bag/bottle of the order. This number can be an instance identifier; unique for the patient, drug combination, and schedule instance or it may be just a drug identifier." - HL7 Version 2.8, RXA-25</i></lines></p></li></ul></li>
 <li>Contains zero or more [0..*] <tt><b>administrationTagId</b></tt> with data type <xref href="../Id.dita">Id</xref>
-<ul><li>"Contains an identifier for the individual product instance for the dispense occurrence.  This may represent a barcode, RFID or other means of automatically-readable product instance.  Repetitions represent the same instance where more than one barcode, RFID or other identification is present." - HL7 Version 2.8, RXA-29</li></ul></li>
-<li>Contains zero or one [0..1] <tt><b>medicinalProductInstance</b></tt>, where its type is <xref href="../MedicinalProductInstance.dita">Medicinal Product Instance</xref>
+<ul><li><p><lines><i>"Contains an identifier for the individual product instance for the dispense occurrence.  This may represent a barcode, RFID or other means of automatically-readable product instance.  Repetitions represent the same instance where more than one barcode, RFID or other identification is present." - HL7 Version 2.8, RXA-29</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>productInstance</b></tt>, where its type is <xref href="../MedicinalProductInstance.dita">Medicinal Product Instance</xref>
 </li>
 <li>Contains zero or one [0..1] <tt><b>pharmacyManufacturedProduct</b></tt>, where its type is <xref href="../PharmacyManufacturedProduct.dita">Pharmacy Manufactured Product</xref>
 </li>
 </ol>
 <ol id="aggregate">
 <li>Contains zero or one [0..1] <tt><b>administeredBarcodeId</b></tt> with data type <xref href="../Id.dita">Id</xref>
-<ul><li>"This field contains the pharmacy system's assigned barcode number for the give occurrence.  For IV orders, many pharmacy systems generate a barcode number to identify a specific bag/bottle of the order. This number can be an instance identifier; unique for the patient, drug combination, and schedule instance or it may be just a drug identifier." - HL7 Version 2.8, RXA-25</li></ul></li>
+<ul><li><p><lines><i>"This field contains the pharmacy system's assigned barcode number for the give occurrence.  For IV orders, many pharmacy systems generate a barcode number to identify a specific bag/bottle of the order. This number can be an instance identifier; unique for the patient, drug combination, and schedule instance or it may be just a drug identifier." - HL7 Version 2.8, RXA-25</i></lines></p></li></ul></li>
 <li>Contains zero or more [0..*] <tt><b>administrationTagId</b></tt> with data type <xref href="../Id.dita">Id</xref>
-<ul><li>"Contains an identifier for the individual product instance for the dispense occurrence.  This may represent a barcode, RFID or other means of automatically-readable product instance.  Repetitions represent the same instance where more than one barcode, RFID or other identification is present." - HL7 Version 2.8, RXA-29</li></ul></li>
-<li>Contains zero or one [0..1] <tt><b>medicinalProductInstance</b></tt>, where its type is <xref href="../MedicinalProductInstance.dita">Medicinal Product Instance</xref>
+<ul><li><p><lines><i>"Contains an identifier for the individual product instance for the dispense occurrence.  This may represent a barcode, RFID or other means of automatically-readable product instance.  Repetitions represent the same instance where more than one barcode, RFID or other identification is present." - HL7 Version 2.8, RXA-29</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>productInstance</b></tt>, where its type is <xref href="../MedicinalProductInstance.dita">Medicinal Product Instance</xref>
 </li>
 <li>Contains zero or one [0..1] <tt><b>pharmacyManufacturedProduct</b></tt>, where its type is <xref href="../PharmacyManufacturedProduct.dita">Pharmacy Manufactured Product</xref>
 </li>

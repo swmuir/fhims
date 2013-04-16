@@ -6,20 +6,22 @@
 <prolog id="prolog">
 </prolog>
 <body>
+<section id="knownSubclasses">
+</section>
 <section id="description">
-<p>This class provides a mechanism to associate a record with multiple procedures. Rather than have the traditional  "primary procedure", "secondary procedure", etc. in a record, the record will contain a zero-to-many pointer to this class,  which then has a one-to-one pointer to a procedure, with a precedence property to indicate primary, secondary, tertiary,  etc.</p>
+<p><lines><i>This class provides a mechanism to associate a record with multiple procedures. Rather than have the traditional  "primary procedure", "secondary procedure", etc. in a record, the record will contain a zero-to-many pointer to this class,  which then has a one-to-one pointer to a procedure, with a precedence property to indicate primary, secondary, tertiary,  etc.</i></lines></p>
 </section>
 <ol id="conformance">
 <li>Contains exactly one [1..1] <tt><b>precedence</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
-<ul><li>Provides an indication of whether the procedure is primary, secondary, tertiary, etc.</li></ul></li>
+<ul><li><p><lines><i>Provides an indication of whether the procedure is primary, secondary, tertiary, etc.</i></lines></p></li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>procedure</b></tt>, where its type is <xref href="../Procedure.dita">Procedure</xref>
-<ul><li>Indicates the procedure associated with this entry in the list.</li></ul></li>
+<ul><li><p><lines><i>Indicates the procedure associated with this entry in the list.</i></lines></p></li></ul></li>
 </ol>
 <ol id="aggregate">
 <li>Contains exactly one [1..1] <tt><b>precedence</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
-<ul><li>Provides an indication of whether the procedure is primary, secondary, tertiary, etc.</li></ul></li>
+<ul><li><p><lines><i>Provides an indication of whether the procedure is primary, secondary, tertiary, etc.</i></lines></p></li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>procedure</b></tt>, where its type is <xref href="../Procedure.dita">Procedure</xref>
-<ul><li>Indicates the procedure associated with this entry in the list.</li></ul></li>
+<ul><li><p><lines><i>Indicates the procedure associated with this entry in the list.</i></lines></p></li></ul></li>
 </ol>
 <codeblock id="example"><![CDATA[]]></codeblock>
 <section id="changes">
