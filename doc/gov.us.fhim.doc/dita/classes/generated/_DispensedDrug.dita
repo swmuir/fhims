@@ -6,6 +6,8 @@
 <prolog id="prolog">
 </prolog>
 <body>
+<section id="knownSubclasses">
+</section>
 <section id="description">
 </section>
 <ol id="conformance">
@@ -15,10 +17,14 @@
 </li>
 <li>Contains zero or one [0..1] <tt><b>productInstance</b></tt>, where its type is <xref href="../MedicinalProductInstance.dita">Medicinal Product Instance</xref>
 </li>
+<li>Contains zero or more [0..*] <tt><b>dispenseTagId</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li><p><lines><i>"Contains an identifier for the individual product instance for the dispense occurrence.  This may represent a barcode, RFID or other means of automatically-readable product instance.  Repetitions represent the same instance where more than one barcode, RFID or other identification is present." - HL7 Version 2.8, RXD-35.</i></lines></p></li></ul></li>
 </ol>
 <ol id="aggregate">
 <li>Contains exactly one [1..1] <tt><b>isCompounded</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
 </li>
+<li>Contains zero or more [0..*] <tt><b>dispenseTagId</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li><p><lines><i>"Contains an identifier for the individual product instance for the dispense occurrence.  This may represent a barcode, RFID or other means of automatically-readable product instance.  Repetitions represent the same instance where more than one barcode, RFID or other identification is present." - HL7 Version 2.8, RXD-35.</i></lines></p></li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>pharmacyManufacturedProduct</b></tt>, where its type is <xref href="../PharmacyManufacturedProduct.dita">Pharmacy Manufactured Product</xref>
 </li>
 <li>Contains zero or one [0..1] <tt><b>productInstance</b></tt>, where its type is <xref href="../MedicinalProductInstance.dita">Medicinal Product Instance</xref>

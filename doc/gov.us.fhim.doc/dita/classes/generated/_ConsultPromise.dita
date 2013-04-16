@@ -6,58 +6,68 @@
 <prolog id="prolog">
 </prolog>
 <body>
+<section id="knownSubclasses">
+</section>
 <section id="description">
-<p>The act of accepting the role of fulfiller. It is the act of accepting  a consult or procedure request. The receiving service will perform update tracking activities.</p>
+<p><lines><i>The act of accepting the role of fulfiller. It is the act of accepting  a consult or procedure request. The receiving service will perform update tracking activities.</i></lines></p>
 </section>
 <ol id="conformance">
 <li>Extends <xref href="../HealthcarePromise.dita">Healthcare Promise</xref></li>
 <li>Contains exactly one [1..1] <tt><b>category</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>value which indicates whether the request is a consult or procedure request.(C:Consult P:Procedure) (VISTA)  </li></ul></li>
+<ul><li><p><lines><i>value which indicates whether the request is a consult or procedure request.(C:Consult P:Procedure) (VISTA)  </i></lines></p></li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>date</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
-<ul><li>Date/time of actual entry of consultation or procedure request into data repository</li></ul></li>
+<ul><li><p><lines><i>Date/time of actual entry of consultation or procedure request into data repository</i></lines></p></li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>serviceSetting</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>value which allows the ordering person to indicate if the service is to be rendered on an outpatient or inpatient basis.  This is to alleviate the confusion if patient is currently an inpatient/outpatient but is just about to be discharged/admitted and become a outpatient/inpatient. (Data Type = Set of Codes I:inpatient,O:outpatient)  </li></ul></li>
+<ul><li><p><lines><i>value which allows the ordering person to indicate if the service is to be rendered on an outpatient or inpatient basis.  This is to alleviate the confusion if patient is currently an inpatient/outpatient but is just about to be discharged/admitted and become a outpatient/inpatient. (Data Type = Set of Codes I:inpatient,O:outpatient)  </i></lines></p></li></ul></li>
 <li>Contains zero or more [0..*] <tt><b>activity</b></tt>, where its type is <xref href="../ProcessActivities.dita">Process Activities</xref>
-<ul><li>action activities for consultProcedurePromise,  it is used for tracking/auditing</li></ul></li>
+<ul><li><p><lines><i>action activities for consultProcedurePromise,  it is used for tracking/auditing</i></lines></p></li></ul></li>
 <li>Contains zero or more [0..*] <tt><b>associatedResult</b></tt>, where its type is <xref href="../ConsultResult.dita">Consult Result</xref>
-<ul><li>One or more results (from Medicine package) to be associated  with a instance of ConsultProcedurePromise.  </li></ul></li>
+<ul><li><p><lines><i>One or more results (from Medicine package) to be associated  with a instance of ConsultProcedurePromise.  </i></lines></p></li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>responsibleService</b></tt>, where its type is <xref href="../ServiceDepartment.dita">Service Department</xref>
-<ul><li>An organizational unit defined by the type of service that it provides to patients.  Examples include Surgery, Dentistry, Mental Health.</li></ul></li>
+<ul><li><p><lines><i>An organizational unit defined by the type of service that it provides to patients.  Examples include Surgery, Dentistry, Mental Health.</i></lines></p></li></ul></li>
 </ol>
 <ol id="aggregate">
 <li>Extends <xref href="../HealthcarePromise.dita">Healthcare Promise</xref></li>
 <li>Contains zero or one [0..1] <tt><b>chargeToPracticeCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>"This field is the charge to the ordering entity for the studies performed when applicable. The first component is a dollar amount when known by the filler.  The second is a charge code when known by the filler (results only)" - HL7 Version 2.8, OBR-23.  This property contains the charge code, if available.</li></ul></li>
+<ul><li><p><lines><i>"This field is the charge to the ordering entity for the studies performed when applicable. The first component is a dollar amount when known by the filler.  The second is a charge code when known by the filler (results only)" - HL7 Version 2.8, OBR-23.  This property contains the charge code, if available.</i></lines></p></li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>chargeToPracticeCost</b></tt> with data type <xref href="../MonetaryAmount.dita">Monetary Amount</xref>
-<ul><li>"This field is the charge to the ordering entity for the studies performed when applicable. The first component is a dollar amount when known by the filler.  The second is a charge code when known by the filler (results only)." - HL7 Version 2.8, OBR-23.  This property contains the dollar amount, if available.</li></ul></li>
+<ul><li><p><lines><i>"This field is the charge to the ordering entity for the studies performed when applicable. The first component is a dollar amount when known by the filler.  The second is a charge code when known by the filler (results only)." - HL7 Version 2.8, OBR-23.  This property contains the dollar amount, if available.</i></lines></p></li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>expectedAvailabilityDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
-<ul><li>"Specifies the date/time the filler expects the services to be available.  For example when a prescription is ready for pickup or when a supply will be sent or picked up, or for when a laboratory result is expected to be available." - HL7 Version 2.8, ORC-27</li></ul></li>
+<ul><li><p><lines><i>"Specifies the date/time the filler expects the services to be available.  For example when a prescription is ready for pickup or when a supply will be sent or picked up, or for when a laboratory result is expected to be available." - HL7 Version 2.8, ORC-27</i></lines></p></li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>fillerOrderId</b></tt> with data type <xref href="../Id.dita">Id</xref>
-<ul><li>"This field is the order number associated with the filling application...." - HL7 Version 2.8, ORC-3 and OBR-3.  Note that different terms have been historically been used for the filler order id in different domains.  For example, in Pharmacy, the "filler order id" is typically called a "prescription number".  Similarly in Lab, it is typically called an "accession number".</li></ul></li>
+<ul><li><p><lines><i>A unique identifier of the order from the filling organization's point of view.  Note that different terms have been historically been used for the filler order id in different domains.  For example, in Pharmacy, the "filler order id" is typically called a "prescription number".  Similarly in Lab, it is typically called an "accession number".
+"This field is the order number associated with the filling application...." - HL7 Version 2.8, ORC-3 and OBR-3.
+"This field is equivalent in uniqueness to the pharmacy/treatment supplier filler order number.  At some sites, this may be the pharmacy/treatment supplier (internal) sequential form.  At other sites, this may be an external number." - HL7 Version 2.8, RXD-7.</i></lines></p></li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>fillerSupplementalInfo</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>"Contains supplemental service information sent from the filler system to the placer system for the procedure code reported in OBR-4 Universal Service ID.  This field will be used to report ordering information detail that is not available in other specific fields in the OBR segment.  Typically it will reflect the same information as was sent to the filler system in OBR-46-Placer supplemental service information unless the order was modified, in which case the filler system will report what was actually performed using this field...." - HL7 Version 2.8, OBR-47.</li></ul></li>
+<ul><li><p><lines><i>"Contains supplemental service information sent from the filler system to the placer system for the procedure code reported in OBR-4 Universal Service ID.  This field will be used to report ordering information detail that is not available in other specific fields in the OBR segment.  Typically it will reflect the same information as was sent to the filler system in OBR-46-Placer supplemental service information unless the order was modified, in which case the filler system will report what was actually performed using this field...." - HL7 Version 2.8, OBR-47.</i></lines></p></li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>scheduledDateTime</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
-<ul><li>"The date/time the filler scheduled an observation, when applicable....  This is a result of a request to schedule a particular test and provides a way to inform the placer of the date/time a study is scheduled (result only)." - HL7 Version 2.8, OBR-36</li></ul></li>
+<ul><li><p><lines><i>"The date/time the filler scheduled an observation, when applicable....  This is a result of a request to schedule a particular test and provides a way to inform the placer of the date/time a study is scheduled (result only)." - HL7 Version 2.8, OBR-36</i></lines></p></li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>"Contains the status of results for this order." - HL7 Version 2.8, OBR-25</li></ul></li>
+<ul><li><p><lines><i>"Contains the status of results for this order." - HL7 Version 2.8, OBR-25</i></lines></p></li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>statusChangeDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
-<ul><li>"This field specifies the date/time results reported or status changed.  This field is used to indicate the date and time that the results are composed into a report and released, or that a status, as defined in ORC-5-order status, is entered or changed.  (This is a results field only)...." - HL7 Version 2.8, OBR-22</li></ul></li>
+<ul><li><p><lines><i>"This field specifies the date/time results reported or status changed.  This field is used to indicate the date and time that the results are composed into a report and released, or that a status, as defined in ORC-5-order status, is entered or changed.  (This is a results field only)...." - HL7 Version 2.8, OBR-22</i></lines></p></li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>category</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>value which indicates whether the request is a consult or procedure request.(C:Consult P:Procedure) (VISTA)  </li></ul></li>
+<ul><li><p><lines><i>value which indicates whether the request is a consult or procedure request.(C:Consult P:Procedure) (VISTA)  </i></lines></p></li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>date</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
-<ul><li>Date/time of actual entry of consultation or procedure request into data repository</li></ul></li>
+<ul><li><p><lines><i>Date/time of actual entry of consultation or procedure request into data repository</i></lines></p></li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>serviceSetting</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>value which allows the ordering person to indicate if the service is to be rendered on an outpatient or inpatient basis.  This is to alleviate the confusion if patient is currently an inpatient/outpatient but is just about to be discharged/admitted and become a outpatient/inpatient. (Data Type = Set of Codes I:inpatient,O:outpatient)  </li></ul></li>
+<ul><li><p><lines><i>value which allows the ordering person to indicate if the service is to be rendered on an outpatient or inpatient basis.  This is to alleviate the confusion if patient is currently an inpatient/outpatient but is just about to be discharged/admitted and become a outpatient/inpatient. (Data Type = Set of Codes I:inpatient,O:outpatient)  </i></lines></p></li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>performingOrganization</b></tt>, where its type is <xref href="../ServiceDeliveryLocation.dita">Service Delivery Location</xref>
-<ul><li>Represents "the section of the diagnostic service where the observation was performed.  If the study was performed by an outside service, the identification of that service should be recorded here" - HL7 Version 2.8, OBR-24.
+<ul><li><p><lines><i>Represents "the section of the diagnostic service where the observation was performed.  If the study was performed by an outside service, the identification of that service should be recorded here" - HL7 Version 2.8, OBR-24.
 "Contains the name of the organization/service responsible for performing the service." - HL7 Version 2.8, OBX-23.
-"Contains the address of the organization/service responsible for performing the service." - HL7 Version 2.8, OBX-24.</li></ul></li>
+"Contains the address of the organization/service responsible for performing the service." - HL7 Version 2.8, OBX-24.</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>dataEnterer</b></tt>, where its type is <xref href="../DataEnterer.dita">Data Enterer</xref>
+<ul><li><p><lines><i>Contains the identity of the person who actually keyed the order into the filling application.</i></lines></p></li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>relatedPromise</b></tt>, where its type is <xref href="../RelatedPromise.dita">Related Promise</xref>
+<ul><li><p><lines><i>Identifies other Promises to which this Promise is somehow related.</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>author</b></tt>, where its type is <xref href="../Author.dita">Author</xref>
+<ul><li><p><lines><i>Identifies the person who accepted the Order.  In other words, the person responsible for creating the Promise.</i></lines></p></li></ul></li>
 <li>Contains zero or more [0..*] <tt><b>activity</b></tt>, where its type is <xref href="../ProcessActivities.dita">Process Activities</xref>
-<ul><li>action activities for consultProcedurePromise,  it is used for tracking/auditing</li></ul></li>
+<ul><li><p><lines><i>action activities for consultProcedurePromise,  it is used for tracking/auditing</i></lines></p></li></ul></li>
 <li>Contains zero or more [0..*] <tt><b>associatedResult</b></tt>, where its type is <xref href="../ConsultResult.dita">Consult Result</xref>
-<ul><li>One or more results (from Medicine package) to be associated  with a instance of ConsultProcedurePromise.  </li></ul></li>
+<ul><li><p><lines><i>One or more results (from Medicine package) to be associated  with a instance of ConsultProcedurePromise.  </i></lines></p></li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>responsibleService</b></tt>, where its type is <xref href="../ServiceDepartment.dita">Service Department</xref>
-<ul><li>An organizational unit defined by the type of service that it provides to patients.  Examples include Surgery, Dentistry, Mental Health.</li></ul></li>
+<ul><li><p><lines><i>An organizational unit defined by the type of service that it provides to patients.  Examples include Surgery, Dentistry, Mental Health.</i></lines></p></li></ul></li>
 </ol>
 <codeblock id="example"><![CDATA[]]></codeblock>
 <section id="changes">

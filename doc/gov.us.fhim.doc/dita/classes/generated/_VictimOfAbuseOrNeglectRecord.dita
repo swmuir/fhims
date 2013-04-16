@@ -6,42 +6,45 @@
 <prolog id="prolog">
 </prolog>
 <body>
+<section id="knownSubclasses">
+<p>Known Subclasses: <xref href="../VictimOfIntimatePartnerOrDomesticViolence.dita">Victim Of Intimate Partner Or Domestic Violence</xref></p>
+</section>
 <section id="description">
-<p>This class is used to record the details of a history of abuse perpetrated by                   others. The client/patient, as victim of abuse or neglect, may have additional                   forensic tests (e.g. imaging, lab) and medications. Therefore this specialization                   class has associations to medication, diagnostic imaging, and laboratory results.</p>
+<p><lines><i>This class is used to record the details of a history of abuse perpetrated by                   others. The client/patient, as victim of abuse or neglect, may have additional                   forensic tests (e.g. imaging, lab) and medications. Therefore this specialization                   class has associations to medication, diagnostic imaging, and laboratory results.</i></lines></p>
 </section>
 <ol id="conformance">
 <li>Extends <xref href="../HistoryOfAbuseOrNeglectRecord.dita">History Of Abuse Or Neglect Record</xref></li>
 <li>Contains exactly one [1..1] <tt><b>code</b></tt>
-<ul><li>This attribute specifies the type of victim or abuse or neglect using a                     standard coding system.</li></ul></li>
+<ul><li><p><lines><i>This attribute specifies the type of victim or abuse or neglect using a                     standard coding system.</i></lines></p></li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>medication</b></tt>, where its type is <xref href="../PharmacyPromise.dita">Pharmacy Promise</xref>
-<ul><li>If the record contains references to specific medication associated with the                     abuse, this association will provide the supporting information.</li></ul></li>
+<ul><li><p><lines><i>If the record contains references to specific medication associated with the                     abuse, this association will provide the supporting information.</i></lines></p></li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>diagnosticImages</b></tt>, where its type is <xref href="../DiagnosticImagingEvent.dita">Diagnostic Imaging Event</xref>
-<ul><li>If the record contains references to specific diagnostic images that                     document the abuse, this association will provide supporting information.</li></ul></li>
+<ul><li><p><lines><i>If the record contains references to specific diagnostic images that                     document the abuse, this association will provide supporting information.</i></lines></p></li></ul></li>
 </ol>
 <ol id="aggregate">
 <li>Extends <xref href="../HistoryOfAbuseOrNeglectRecord.dita">History Of Abuse Or Neglect Record</xref></li>
 <li>Contains exactly one [1..1] <tt><b>code</b></tt>
-<ul><li>This attribute specifies the type of victim or abuse or neglect using a                     standard coding system.</li></ul></li>
+<ul><li><p><lines><i>This attribute specifies the type of victim or abuse or neglect using a                     standard coding system.</i></lines></p></li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>mostRecentIncidentDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
-<ul><li>This attribute is the date of the most recent incident of neglect or abuse                     that has been identified by the assessment.</li></ul></li>
+<ul><li><p><lines><i>This attribute is the date of the most recent incident of neglect or abuse                     that has been identified by the assessment.</i></lines></p></li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>statusCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>This attributes whether the abuse or neglect is still in progress (&amp;apos;active&amp;apos;)                     or was in the past (&amp;apos;completed&amp;apos;).</li></ul></li>
+<ul><li><p><lines><i>This attributes whether the abuse or neglect is still in progress (&amp;apos;active&amp;apos;)                     or was in the past (&amp;apos;completed&amp;apos;).</i></lines></p></li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>dateOfOnset</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
-<ul><li>This attribute is the date when the neglect or abuse started (e.g. first                     incident). (An imprecise date would be appropriate).</li></ul></li>
+<ul><li><p><lines><i>This attribute is the date when the neglect or abuse started (e.g. first                     incident). (An imprecise date would be appropriate).</i></lines></p></li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>typeCode</b></tt> with data type <xref href="../../terminology/AbuseType.dita">Abuse Type</xref>
-<ul><li> This attribute specifies whether the history of abuse refers to neglect,                     physical, or sexual abuse. </li></ul></li>
+<ul><li><p><lines><i> This attribute specifies whether the history of abuse refers to neglect,                     physical, or sexual abuse. </i></lines></p></li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>clinicalNoteText</b></tt> with data type <xref href="../String.dita">String</xref>
 </li>
 <li>Contains zero or one [0..1] <tt><b>historyOfAbuse/Neglect</b></tt>, where its type is <xref href="../HistoryOfAbuseOrNeglectRecord.dita">History Of Abuse Or Neglect Record</xref>
-<ul><li>This is an association between a client/patient and their History of Abuse                     and Neglect records.</li></ul></li>
+<ul><li><p><lines><i>This is an association between a client/patient and their History of Abuse                     and Neglect records.</i></lines></p></li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>patientbehavioralhealth</b></tt>, where its type is <xref href="../PatientBehavioralHealth.dita">Patient Behavioral Health</xref>
-<ul><li>This is an association between a client/patient and their History of Abuse                     and Neglect records.</li></ul></li>
+<ul><li><p><lines><i>This is an association between a client/patient and their History of Abuse                     and Neglect records.</i></lines></p></li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>riskOfViolence</b></tt>, where its type is <xref href="../ViolentBehaviorRisk.dita">Violent Behavior Risk</xref>
 </li>
 <li>Contains zero or one [0..1] <tt><b>medication</b></tt>, where its type is <xref href="../PharmacyPromise.dita">Pharmacy Promise</xref>
-<ul><li>If the record contains references to specific medication associated with the                     abuse, this association will provide the supporting information.</li></ul></li>
+<ul><li><p><lines><i>If the record contains references to specific medication associated with the                     abuse, this association will provide the supporting information.</i></lines></p></li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>diagnosticImages</b></tt>, where its type is <xref href="../DiagnosticImagingEvent.dita">Diagnostic Imaging Event</xref>
-<ul><li>If the record contains references to specific diagnostic images that                     document the abuse, this association will provide supporting information.</li></ul></li>
+<ul><li><p><lines><i>If the record contains references to specific diagnostic images that                     document the abuse, this association will provide supporting information.</i></lines></p></li></ul></li>
 </ol>
 <codeblock id="example"><![CDATA[]]></codeblock>
 <section id="changes">

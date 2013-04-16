@@ -6,70 +6,72 @@
 <prolog id="prolog">
 </prolog>
 <body>
+<section id="knownSubclasses">
+</section>
 <section id="description">
-<p>This class contains a history of updates to the Intolerance Condition record, and relates the Intolerance Condition record to various encounters over time.  For example, if a patient's allergy becomes known for the first time, either through patient reporting it or the clinician directly observing it, an Intolerance Condition Entry record would be created with a status of "Active" along with an Intolerance Condition Log Entry record with a status of "New".  The Intolerance Condition Log Entry links to the Encounter during which this action took place.  If subsequently the allergy is revised, say to a narrower ingredient than previously supposed, or even to dismiss the notion that the allergy existed, a new Intolerance Condition Log Entry record would be created with a status of "Modified" or "Inactivated" and the Intolerance Condition Entry status would be set to "Active" or "Inactivated", respectively.</p>
+<p><lines><i>This class contains a history of updates to the Intolerance Condition record, and relates the Intolerance Condition record to various encounters over time.  For example, if a patient's allergy becomes known for the first time, either through patient reporting it or the clinician directly observing it, an Intolerance Condition Entry record would be created with a status of "Active" along with an Intolerance Condition Log Entry record with a status of "New".  The Intolerance Condition Log Entry links to the Encounter during which this action took place.  If subsequently the allergy is revised, say to a narrower ingredient than previously supposed, or even to dismiss the notion that the allergy existed, a new Intolerance Condition Log Entry record would be created with a status of "Modified" or "Inactivated" and the Intolerance Condition Entry status would be set to "Active" or "Inactivated", respectively.</i></lines></p>
 </section>
 <ol id="conformance">
 <li>Contains zero or one [0..1] <tt><b>comment</b></tt> with data type <xref href="../String.dita">String</xref>
 </li>
 <li>Contains exactly one [1..1] <tt><b>entryDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
-<ul><li>The date and time that the Intolerance Condition Log Entry record was created.
+<ul><li><p><lines><i>The date and time that the Intolerance Condition Log Entry record was created.
 
 "The date and time that this allergy was last statused by the [Intolerance Condition Log Entry Author] in the [Intolerance Condition Log Entry Service Delivery Location]" - HL7 Version 2.8, IAM-20.
 "The date and time that this allergy was inactivated by the [Intolerance Condition Log Entry Author]." - HL7 Version 2.8, IAM-22.
 "The date and time that this allergy entry was created by the [Intolerance Condition Log Entry Author]." - HL7 Version 2.8, IAM-24.
-"The date and time that this allergy was modified by the [Intolerance Condition Log Entry Author]" - HL7 Version 2.8, IAM-26.</li></ul></li>
+"The date and time that this allergy was modified by the [Intolerance Condition Log Entry Author]" - HL7 Version 2.8, IAM-26.</i></lines></p></li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>"Contains the current status of the problem at this particular date/time (e.g., active, active-improving, active-stable, active-worsening, inactive, resolved, etc.)." - HL7 Version 2.8, PRB-14
+<ul><li><p><lines><i>"Contains the current status of the problem at this particular date/time (e.g., active, active-improving, active-stable, active-worsening, inactive, resolved, etc.)." - HL7 Version 2.8, PRB-14
 
-Contains the status of the Health Concern as of the Health Concern Log Entry record creation date.  This provides a history of status changes over time.</li></ul></li>
+Contains the status of the Health Concern as of the Health Concern Log Entry record creation date.  This provides a history of status changes over time.</i></lines></p></li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>author</b></tt>, where its type is <xref href="../Author.dita">Author</xref>
-<ul><li>"Identifies the provider who assigned the clinical status to the allergy" - HL7 Version 2.8, IAM-18.
+<ul><li><p><lines><i>"Identifies the provider who assigned the clinical status to the allergy" - HL7 Version 2.8, IAM-18.
 "Identifies the user that inactivated the record entry about the patient's allergy" - HL7 Version 2.8, IAM-21.
 "Identifies the user that created the entry in the record stating the allergy" - HL7 Version 2.8, IAM-23.
-"Identifies the user that modified the allergy" - HL7 Version 2.8, IAM-25.</li></ul></li>
+"Identifies the user that modified the allergy" - HL7 Version 2.8, IAM-25.</i></lines></p></li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>dataEnterer</b></tt>, where its type is <xref href="../DataEnterer.dita">Data Enterer</xref>
-<ul><li>Identifies the data enterer of the Health Concern Entry Log.  Data Enterer = "A person entering the data into the originating system. The data entry person is collected optionally for internal quality control purposes. This includes the transcriptionist for dictated text." - HL7 V3</li></ul></li>
+<ul><li><p><lines><i>Identifies the data enterer of the Health Concern Entry Log.  Data Enterer = "A person entering the data into the originating system. The data entry person is collected optionally for internal quality control purposes. This includes the transcriptionist for dictated text." - HL7 V3</i></lines></p></li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>visit</b></tt>, where its type is <xref href="../EncounterEvent.dita">Encounter Event</xref>
-<ul><li>"Uniquely identifies the episode of care to which this problem applies." - HL7 Version 2.8, PRB-5</li></ul></li>
+<ul><li><p><lines><i>"Uniquely identifies the episode of care to which this problem applies." - HL7 Version 2.8, PRB-5</i></lines></p></li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>reason</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>Indicates the reason why the status of the associated Intolerance Condition record was changed.</li></ul></li>
+<ul><li><p><lines><i>Indicates the reason why the status of the associated Intolerance Condition record was changed.</i></lines></p></li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>serviceDeliveryLocation</b></tt>, where its type is <xref href="../ServiceDeliveryLocation.dita">Service Delivery Location</xref>
-<ul><li>"Contains the name of the organization providing the update to the allergy" - HL7 Version 2.8, IAM-19.
+<ul><li><p><lines><i>"Contains the name of the organization providing the update to the allergy" - HL7 Version 2.8, IAM-19.
 "Contains the name of the organization that initially recorded the allergy" - HL7 Version 2.8, IAM-28.
 "Contains the name of the organization that modified the allergy" - HL7 Version 2.8, IAM-29.
-"Contains the name of the organization that inactivated the allergy" - HL7 Version 2.8, IAM-30.</li></ul></li>
+"Contains the name of the organization that inactivated the allergy" - HL7 Version 2.8, IAM-30.</i></lines></p></li></ul></li>
 </ol>
 <ol id="aggregate">
 <li>Contains zero or one [0..1] <tt><b>comment</b></tt> with data type <xref href="../String.dita">String</xref>
 </li>
 <li>Contains exactly one [1..1] <tt><b>entryDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
-<ul><li>The date and time that the Intolerance Condition Log Entry record was created.
+<ul><li><p><lines><i>The date and time that the Intolerance Condition Log Entry record was created.
 
 "The date and time that this allergy was last statused by the [Intolerance Condition Log Entry Author] in the [Intolerance Condition Log Entry Service Delivery Location]" - HL7 Version 2.8, IAM-20.
 "The date and time that this allergy was inactivated by the [Intolerance Condition Log Entry Author]." - HL7 Version 2.8, IAM-22.
 "The date and time that this allergy entry was created by the [Intolerance Condition Log Entry Author]." - HL7 Version 2.8, IAM-24.
-"The date and time that this allergy was modified by the [Intolerance Condition Log Entry Author]" - HL7 Version 2.8, IAM-26.</li></ul></li>
+"The date and time that this allergy was modified by the [Intolerance Condition Log Entry Author]" - HL7 Version 2.8, IAM-26.</i></lines></p></li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>"Contains the current status of the problem at this particular date/time (e.g., active, active-improving, active-stable, active-worsening, inactive, resolved, etc.)." - HL7 Version 2.8, PRB-14
+<ul><li><p><lines><i>"Contains the current status of the problem at this particular date/time (e.g., active, active-improving, active-stable, active-worsening, inactive, resolved, etc.)." - HL7 Version 2.8, PRB-14
 
-Contains the status of the Health Concern as of the Health Concern Log Entry record creation date.  This provides a history of status changes over time.</li></ul></li>
+Contains the status of the Health Concern as of the Health Concern Log Entry record creation date.  This provides a history of status changes over time.</i></lines></p></li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>reason</b></tt> with data type <xref href="../Code.dita">Code</xref>
-<ul><li>Indicates the reason why the status of the associated Intolerance Condition record was changed.</li></ul></li>
+<ul><li><p><lines><i>Indicates the reason why the status of the associated Intolerance Condition record was changed.</i></lines></p></li></ul></li>
 <li>Contains exactly one [1..1] <tt><b>author</b></tt>, where its type is <xref href="../Author.dita">Author</xref>
-<ul><li>"Identifies the provider who assigned the clinical status to the allergy" - HL7 Version 2.8, IAM-18.
+<ul><li><p><lines><i>"Identifies the provider who assigned the clinical status to the allergy" - HL7 Version 2.8, IAM-18.
 "Identifies the user that inactivated the record entry about the patient's allergy" - HL7 Version 2.8, IAM-21.
 "Identifies the user that created the entry in the record stating the allergy" - HL7 Version 2.8, IAM-23.
-"Identifies the user that modified the allergy" - HL7 Version 2.8, IAM-25.</li></ul></li>
+"Identifies the user that modified the allergy" - HL7 Version 2.8, IAM-25.</i></lines></p></li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>dataEnterer</b></tt>, where its type is <xref href="../DataEnterer.dita">Data Enterer</xref>
-<ul><li>Identifies the data enterer of the Health Concern Entry Log.  Data Enterer = "A person entering the data into the originating system. The data entry person is collected optionally for internal quality control purposes. This includes the transcriptionist for dictated text." - HL7 V3</li></ul></li>
+<ul><li><p><lines><i>Identifies the data enterer of the Health Concern Entry Log.  Data Enterer = "A person entering the data into the originating system. The data entry person is collected optionally for internal quality control purposes. This includes the transcriptionist for dictated text." - HL7 V3</i></lines></p></li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>visit</b></tt>, where its type is <xref href="../EncounterEvent.dita">Encounter Event</xref>
-<ul><li>"Uniquely identifies the episode of care to which this problem applies." - HL7 Version 2.8, PRB-5</li></ul></li>
+<ul><li><p><lines><i>"Uniquely identifies the episode of care to which this problem applies." - HL7 Version 2.8, PRB-5</i></lines></p></li></ul></li>
 <li>Contains zero or one [0..1] <tt><b>serviceDeliveryLocation</b></tt>, where its type is <xref href="../ServiceDeliveryLocation.dita">Service Delivery Location</xref>
-<ul><li>"Contains the name of the organization providing the update to the allergy" - HL7 Version 2.8, IAM-19.
+<ul><li><p><lines><i>"Contains the name of the organization providing the update to the allergy" - HL7 Version 2.8, IAM-19.
 "Contains the name of the organization that initially recorded the allergy" - HL7 Version 2.8, IAM-28.
 "Contains the name of the organization that modified the allergy" - HL7 Version 2.8, IAM-29.
-"Contains the name of the organization that inactivated the allergy" - HL7 Version 2.8, IAM-30.</li></ul></li>
+"Contains the name of the organization that inactivated the allergy" - HL7 Version 2.8, IAM-30.</i></lines></p></li></ul></li>
 </ol>
 <codeblock id="example"><![CDATA[]]></codeblock>
 <section id="changes">
