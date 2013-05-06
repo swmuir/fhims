@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Tumor Status - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>Contains the status of the patient's tumor.</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>cancerStatus</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the presence or absence of clincial evidence of cancer as of the DATE OF LAST CONTACT OR DEATH.  Possible values are No evidence of this tumor; Evidence of this tumor; Unknown/not stated if this tumor present etc.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>lastTumorStatus</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the code that summarizes the cancer status.Possible values are No evidence of this tumor;  Evidence of this tumor; Unknown/not stated if this tumor present; etc.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>multipleTumors</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the existence and (if known) number of multiple tumors at an anatomic site.  If there are NOT multiple tumors at this site, this field  is BLANK.  If there ARE multiple tumors at this site, the exact number of tumors is entered; if known, or a 1 if the exact number if not known.  Possible values are blank; 1 etc.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>surgicalApproach</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the method used to approach the organ of origin and/or primary tumor.  The approach for surgery of the primary site only. Possible values are No surgery performed; Open approach, endoscopy not used; Open approach, assisted by laparoscope; Laparoscopic approach only; Laparoscopy NOS (unknown if with or without open approach; Video assisted Thoracoscopy (VAT); Thoracoscopy NOS; Endoscopy NOS; Unknown approach, not applicable; etc.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>tumorStatusDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date on which the tumor status was evaluated.  </li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>cancerStatus</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the presence or absence of clincial evidence of cancer as of the DATE OF LAST CONTACT OR DEATH.  Possible values are No evidence of this tumor; Evidence of this tumor; Unknown/not stated if this tumor present etc.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>lastTumorStatus</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the code that summarizes the cancer status.Possible values are No evidence of this tumor;  Evidence of this tumor; Unknown/not stated if this tumor present; etc.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>multipleTumors</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the existence and (if known) number of multiple tumors at an anatomic site.  If there are NOT multiple tumors at this site, this field  is BLANK.  If there ARE multiple tumors at this site, the exact number of tumors is entered; if known, or a 1 if the exact number if not known.  Possible values are blank; 1 etc.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>surgicalApproach</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the method used to approach the organ of origin and/or primary tumor.  The approach for surgery of the primary site only. Possible values are No surgery performed; Open approach, endoscopy not used; Open approach, assisted by laparoscope; Laparoscopic approach only; Laparoscopy NOS (unknown if with or without open approach; Video assisted Thoracoscopy (VAT); Thoracoscopy NOS; Endoscopy NOS; Unknown approach, not applicable; etc.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>tumorStatusDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date on which the tumor status was evaluated.  </li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Tumor Status</ph></p>
+</body>
+</topic>

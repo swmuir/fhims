@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Measurement With Reference Range Result - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>An observation of the quantity of the analyte found within the sample.    Note that loinc and procedure codes are identifying more specifically the type of test being performed.  Because there may be multiple methodologies available to measure the same substance, these codes are more specific than the analyte and testCode referenced in the ChemistryTest class.  Note that this class has 5 subtypes to handle the different kinds of result values.  Most chemistry tests are physical quanties (e.g., mg/dL).  Some are coded, and even those that normally are physical quantities might be replaced by a coded observation of Quantity Not Sufficient.</p>
+</section>
+<ol id="conformance">
+<li>Extends <xref href="../ReportableResult.dita">Reportable Result</xref></li>
+<li>Contains zero or one [0..1] <tt><b>referenceRange</b></tt> with data type <xref href="../PhysicalQuantityInterval.dita">Physical Quantity Interval</xref>
+<ul><li>"When the observation quantifies the amount of a toxic substance, then the upper limit of the range identifies the toxic limit.  If the observation quantifies a drug, the lower limits identify the lower therapeutic bounds and the upper limits represent the upper therapeutic bounds above which toxic side effects are common." - HL7 Version 2.8, OBX-7.
+
+The range of normal values (low and high) determined for a test.  For toxicology, this range is the theraputic range.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>value</b></tt> with data type <xref href="../Any.dita">Any</xref>
+<ul><li>"Contains the value observed by the observation producer....  It is not a required field because some systems will report only the Interpretation Codes.... This field may repeat for multipart, single answer results." - HL7 Version 2.8, OBX-5.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>referenceRangeCriterion</b></tt>, where its type is <xref href="../ReferenceRangeCriterion.dita">Reference Range Criterion</xref>
+<ul><li>"Contains the nature of the abnormal test.  Refer to HL7 Table 0080 - Nature of abnormal testing for valid values.  As many of the codes as apply may be included, separated by repeat delimiters. For example, normal values based on age, sex, and race would be codes as "A~S~R"." - HL7 Version 2.8, OBX.10
+
+This is the criteron by which the reference range is valid.  Different reference ranges may be defined based on the subject's age, race, sex, etc.</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Extends <xref href="../ReportableResult.dita">Reportable Result</xref></li>
+<li>Contains exactly one [1..1] <tt><b>dateDeemedReportable</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>"Specifies the date/time when the results were reported or status changed.  This conditional field is required whenever [Report Status] is valued.  This field is used to indicate the date and time that the results are composed into a report and released, or that [Healthcare Order status] is entered or changed." - HL7 Version 2.8, OBR-22.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dateTimeObserved</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>"This field is required in two circumstances.  The first is when the observations reported beneath one report header have different dates/times.  This could occur in the case of queries, timed test sequences, or clearance studies where one measurement within a battery may have a different time than another measurement....  The observation date-time is the physiologically relevant date-time or the closest approximation to that date-time.  In the case of tests performed on specimens, the relevant date-time is the specimen's collection date-time.  In the case of observations taken directly on the patient (e.g., X-ray images, history and physical), the observation date-time is the date-time that the observation was performed." - HL7 Version 2.8, OBX.14</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dateTimeOfAnalysis</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>"The time stamp associated with generation of the analytical result by the instrument specified in [the deviceInstance]" - HL7 Version 2.8, OBX.19</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>"Contains a unique identifier for this observation." - HL7 Version 2.8, OBX-21.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>observationMethod</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"The method or procedure by which an observation was obtained when the sending system wishes to distinguish among one measurement obtained by different methods and the distinction is not implicit in the test ID.  Chemistry laboratories do not usually distinguish between two different methods used to measure a given serum constituent (e.g., serum potassium) as part of the test name...." - HL7 Version 2.8, OBX-17.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>observationSite</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"Contains the body site(s) where the measurement being reported was obtained.   This field should not be used for a specimen source or specimen collection site.  This information is of particular importance if the clinical meaning of a value is modified either directly by the site (for example, is the temperature central or peripheral?) or if the site of one measurement impacts the value of another measurement (for example, is the finger SpO2 probe on the same arm as the NIBP cuff?).  In most cases these observations are performed directly upon the patient and do not involve a specimen." - HL7 Version 2.8, OBX-20.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>probability</b></tt> with data type <xref href="../Real.dita">Real</xref>
+<ul><li>"Contains the probability of a result being true for results with categorical values.  It mainly applies to discrete coded results.  It is a decimal number ... between 0 and 1, inclusive." - HL7 Version 2.8, OBX-9.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>reReleaseReason</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"Indicates the root cause for the reissue of a previously released lab report.  This element is used in conjunction with OBX-11 Observation Result Status to define the root cause for a reissued laboratory report in the case of a corrected, amended, appended, or revised report." - HL7 Version 2.8, OBX-27.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>reportDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>"Specifies the date/time when the results were reported or status changed.  This conditional field is required whenever [Report Status] is valued.  This field is used to indicate the date and time that the results are composed into a report and released, or that [Healthcare Order status] is entered or changed." - HL7 Version 2.8, OBR-22.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>reportStatus</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"Contains the observation result status.... This field reflects the current completion status of the results for one Observation Identifier...." - HL7 Version 2.8, OBX-11.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>userDefinedAccessCheck</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>"This field permits the producer to record results-dependent codes for classifying the observation at the receiving system.  This field should be needed only rarely..." - HL7 Version 2.8, OBX-13.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>referenceRange</b></tt> with data type <xref href="../PhysicalQuantityInterval.dita">Physical Quantity Interval</xref>
+<ul><li>"When the observation quantifies the amount of a toxic substance, then the upper limit of the range identifies the toxic limit.  If the observation quantifies a drug, the lower limits identify the lower therapeutic bounds and the upper limits represent the upper therapeutic bounds above which toxic side effects are common." - HL7 Version 2.8, OBX-7.
+
+The range of normal values (low and high) determined for a test.  For toxicology, this range is the theraputic range.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>value</b></tt> with data type <xref href="../Any.dita">Any</xref>
+<ul><li>"Contains the value observed by the observation producer....  It is not a required field because some systems will report only the Interpretation Codes.... This field may repeat for multipart, single answer results." - HL7 Version 2.8, OBX-5.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>commentEvent</b></tt>, where its type is <xref href="../CommentEvent.dita">Comment Event</xref>
+<ul><li>Contains any comments pertinent to the result of the lab test.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>deviceInstance</b></tt>, where its type is <xref href="../DeviceInstance.dita">Device Instance</xref>
+<ul><li>"Identifies the Equipment Instance (e.g., Analyzer, Analyzer module, group of Analyzers, etc.) responsible for the production of the observation...." - HL7 Version 2.8, OBX-18.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>interpretation</b></tt>, where its type is <xref href="../InterpretationEvent.dita">Interpretation Event</xref>
+<ul><li>"One or more codes specifying a categorical assessment of the observation value, such as "Normal", "Abnormal", "Positive", "Negative", "Resistant", "Susceptible", etc...." - HL7 Version 2.8, OBX-8.
+
+For chemistry tests, provides an automated indication of the result, based upon "normal" values as indicated by the reference range.  Examples include High, Low, Critically High, Critically Low, etc.
+
+For antibiotic sensitivity tests, provides an indication of the susceptibility of the identified organism to the test antibiotic.  Possible values include: Intermediate, Moderately Susceptible, Resistant, Susceptible.  In addition, Not Tested may occasionally used when an antibiotic that would commonly be tested was not for some reason.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>laboratoryDirector</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
+<ul><li>This is the director of the laboratory that is reporting the result to the Orderer.  This person may or may not be the director of the organization that actually performed the analysis, rather of the reporting organization.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>performer</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
+<ul><li>"This field identifies the performing technician." - HL7 Version 2.8, OBR-34
+
+"This field contains the identifier of the individual directly responsible for the observation (i.e., the person who either performed or verified it).  In a nursing service, the observer is usually the professional who performed the observation (e.g., took the blood pressure).  In a laboratory, the observer is the technician who performed or verified the analysis...." - HL7 Version 2.8, OBX.16</li></ul></li>
+<li>Contains at least one [1..*] <tt><b>reportableLabTest</b></tt>, where its type is <xref href="../LabTest.dita">Lab Test</xref>
+<ul><li>"Contains a unique identifier for the observation....  In most systems the identifier will point to a master observation table that will provide other attributes of the observation that may be used by the receiving system to process the observations it receives". - HL7 Version 2.8, OBX-3.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>transcription</b></tt>, where its type is <xref href="../TranscriptionEvent.dita">Transcription Event</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>relatedResult</b></tt>, where its type is <xref href="../RelatedResult.dita">Related Result</xref>
+<ul><li>"This field is defined to make it available for other types of linkages (e.g., toxicology).  This important information, together with the information in OBR-29 or OBR-57, uniquely identifies the parent result's OBX segment related to this order." - HL7 Version 2, OBX-26.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>referenceRangeCriterion</b></tt>, where its type is <xref href="../ReferenceRangeCriterion.dita">Reference Range Criterion</xref>
+<ul><li>"Contains the nature of the abnormal test.  Refer to HL7 Table 0080 - Nature of abnormal testing for valid values.  As many of the codes as apply may be included, separated by repeat delimiters. For example, normal values based on age, sex, and race would be codes as "A~S~R"." - HL7 Version 2.8, OBX.10
+
+This is the criteron by which the reference range is valid.  Different reference ranges may be defined based on the subject's age, race, sex, etc.</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Measurement With Reference Range Result</ph></p>
+</body>
+</topic>

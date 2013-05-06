@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Integer Ratio - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>A ratio (numerator : denominator) specifying the relative quantities of the Entity playing the Role in the Entity scoping the Role, used for Roles that represent composition relationships between the scoping and playing Entities.</p>
+<p>This data type represents an Ratio, where the Numerator and Denominator are Integers.  A Ratio is "a quantity constructed as the quotient of a numerator quantity divided by a denominator quantity. Common factors in the numerator and denominator are not automatically cancelled out. The RTO data type supports titers (e.g., "1:128") and other quantities produced by laboratories that truly represent ratios." - HL7 V3  "Integer numbers are precise numbers that are results of counting and enumerating. Integer numbers are discrete, the set of integers is infinite but countable. No arbitrary limit is imposed on the range of integer numbers." - HL7 V3</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>numerator</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>The quantity that is being divided in the ratio. The default is the integer number 1</li><li>"The quantity that is being divided in the ratio. The default is the integer number 1 (one)." - HL7 V3</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>denominator</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>The quantity that divides the numerator in the ratio. The default is the integer number 1 (one.) The denominator must not be zero.</li><li>"The quantity that devides the numerator in the ratio. The default is the integer number 1 (one). The denominator SHALL not  be zero." - HL7 V3</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>numerator</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>The quantity that is being divided in the ratio. The default is the integer number 1</li><li>"The quantity that is being divided in the ratio. The default is the integer number 1 (one)." - HL7 V3</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>denominator</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>The quantity that divides the numerator in the ratio. The default is the integer number 1 (one.) The denominator must not be zero.</li><li>"The quantity that devides the numerator in the ratio. The default is the integer number 1 (one). The denominator SHALL not  be zero." - HL7 V3</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Integer Ratio</ph></p>
+</body>
+</topic>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Specimen Assessment - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>appropriateness</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"The suitability of the specimen for the particular planned use as determined by the filler." - HL7 Version 2.8, SPM.23</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>containerCondition</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"In chain of custody cases where specimens are moved from lab to lab, the status of the container that the specimen is shipped in must be recorded at each receipt.  If the container is compromised in any way (seal broken, container cracked or leaking, etc) then this needs to be recorded for legal reasons." - HL7 Version 2.8, SPM.28</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>currentQuantity</b></tt> with data type <xref href="../PhysicalQuantity.dita">Physical Quantity</xref>
+<ul><li>"Contains the amount of specimen that currently exists or is available for use in further testing." - HL7 Version 2.8, SPM.25</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dateTime</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date/time that the Specimen Assessment was performed</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>isSpecimenAvailable</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li>"This describes whether the specimen, as it exists, is currently available to use in an analysis." - HL7 Version 2.8, SPM.20</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>numberOfContainers</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>"Identifies the number of containers for a given sample.  For sample receipt verification purposes; may be different from the total number of samples that accompany the order." - HL7 Version 2.8, OBR-37 and SPM-26.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>rejectReason</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"Describes one or more reasons the specimen is rejected for the specified observation/result/analysis." - HL7 Version 2.8, SPM.21</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>specimenCondition</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"A mode or state of being that describes the nature of the specimen." - HL7 Version 2.8, SPM.24</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>specimenQuality</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"The degree or grade of excellence of the specimen at receipt.  The filler populates this attribute." - HL7 Version 2.8, SPM.22</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>specimen</b></tt>, where its type is <xref href="../Specimen.dita">Specimen</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>specimenHandling</b></tt>, where its type is <xref href="../SpecimenHandling.dita">Specimen Handling</xref>
+</li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>appropriateness</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"The suitability of the specimen for the particular planned use as determined by the filler." - HL7 Version 2.8, SPM.23</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>containerCondition</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"In chain of custody cases where specimens are moved from lab to lab, the status of the container that the specimen is shipped in must be recorded at each receipt.  If the container is compromised in any way (seal broken, container cracked or leaking, etc) then this needs to be recorded for legal reasons." - HL7 Version 2.8, SPM.28</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>currentQuantity</b></tt> with data type <xref href="../PhysicalQuantity.dita">Physical Quantity</xref>
+<ul><li>"Contains the amount of specimen that currently exists or is available for use in further testing." - HL7 Version 2.8, SPM.25</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dateTime</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date/time that the Specimen Assessment was performed</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>isSpecimenAvailable</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li>"This describes whether the specimen, as it exists, is currently available to use in an analysis." - HL7 Version 2.8, SPM.20</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>numberOfContainers</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>"Identifies the number of containers for a given sample.  For sample receipt verification purposes; may be different from the total number of samples that accompany the order." - HL7 Version 2.8, OBR-37 and SPM-26.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>rejectReason</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"Describes one or more reasons the specimen is rejected for the specified observation/result/analysis." - HL7 Version 2.8, SPM.21</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>specimenCondition</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"A mode or state of being that describes the nature of the specimen." - HL7 Version 2.8, SPM.24</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>specimenQuality</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"The degree or grade of excellence of the specimen at receipt.  The filler populates this attribute." - HL7 Version 2.8, SPM.22</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>specimen</b></tt>, where its type is <xref href="../Specimen.dita">Specimen</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>specimenHandling</b></tt>, where its type is <xref href="../SpecimenHandling.dita">Specimen Handling</xref>
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Specimen Assessment</ph></p>
+</body>
+</topic>

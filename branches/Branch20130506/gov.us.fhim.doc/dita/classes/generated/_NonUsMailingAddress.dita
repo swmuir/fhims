@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Non Us Mailing Address - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>A specialization of Address for non-US postal addresses. Note that the Address class does not have a State or  Province attribute - the US Mailing Address includes a code for the State, whereas the Non-US Mailing address merely has a  string for the "jurisdiction", which would have the state or province as needed by that country's postal designation  conventions.</p>
+</section>
+<ol id="conformance">
+<li>Extends <xref href="../Address.dita">Address</xref></li>
+<li>Contains exactly one [1..1] <tt><b>jurisdiction</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>This property is a string for the "jurisdiction", which would have the state or province as needed by the country's postal  designation conventions. In some cases, this property will be blank, and the jurisdiction would be part of one of the  street address lines.</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Extends <xref href="../Address.dita">Address</xref></li>
+<li>Contains exactly one [1..1] <tt><b>addressType</b></tt> with data type <xref href="../../terminology/AddressType.dita">Address Type</xref>
+<ul><li>Indicates the kind of address that is contained within this class. Examples include primaryHome, Work, etc. Note that in HL7 V3, this concept is part of the Address datatype (the 'use code'). This concept is made explicit in this Address class, because this is a platform-independent model - non V3 implementations will need other mechanisms to deal with the type.</li></ul></li>
+<li>
+</li>
+<li>Contains exactly one [1..1] <tt><b>line1</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>The first line of a mailing address.  Unlike HL7, we have chosen not to break up the parts of each line.</li><li>The first line of the street address.  While this street address could be broken into several constituent parts, for the purpose of this logical model, the whole line is treated as a single concept.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>line2</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>The second line of a mailing address.  Unlike HL7, we have chosen not to break up the parts of each line.</li><li>The second line of the street address.  While this street address could be broken into several constituent parts, for the purpose of this logical model, the whole line is treated as a single concept.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>line3</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>The third line of a mailing address.  Unlike HL7, we have chosen not to break up the parts of each line.</li><li>The first line of the street address.  While this street address could be broken into several constituent parts, for the purpose of this logical model, the whole line is treated as a single concept.  Note that the third line is rarely used.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>city</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>An Address Part (ADXP) that contains the name of the city, town, village, or other community or delivery center.</li><li>"The name of the city, town, village, or other community or delivery center." - HL7 V3</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>county</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>A region created by territorial division for the purpose of local government.  In the United States, a county (or parish in Louisiana) is the largest administrative district within a state.  This property is used primarily for statistical and pricing information (i.e., the same service may be more expensive in an affluent section of the country than in a less-affluent portion).</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>postalCode</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>An Address Part (ADXP) that contains a postal code designating a region defined by the postal service.</li><li>A code designating a region defined by the postal service</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>country</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>An Address Part (ADXP) that contains the Country of the address.</li><li>A state or nation</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>jurisdiction</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>This property is a string for the "jurisdiction", which would have the state or province as needed by the country's postal  designation conventions. In some cases, this property will be blank, and the jurisdiction would be part of one of the  street address lines.</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Non Us Mailing Address</ph></p>
+</body>
+</topic>

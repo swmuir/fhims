@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Specimen Container - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+</section>
+<ol id="conformance">
+<li>Contains zero or more [0..*] <tt><b>additiveType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"This field identifies any additives introduced to the specimen before or at the time of collection.  These additives may be introduced in order to preserve, maintain or enhance the particular nature or component of the specimen.  Refer to HL7 Table 0371   Additive/Preservative for valid values.  When multiple additives are introduced and valid individual additive codes exist but a valid value for the combination does not exist, repeating the field with individual values is most appropriate." - HL7 Version 2.8, SPM.6</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>containerSize</b></tt> with data type <xref href="../PhysicalQuantity.dita">Physical Quantity</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>containerType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"The container in or on which a specimen is transported." - HL7 Version 2.8, SPM.27</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>additive</b></tt>, where its type is <xref href="../Ingredient.dita">Ingredient</xref>
+</li>
+</ol>
+<ol id="aggregate">
+<li>Contains zero or more [0..*] <tt><b>additiveType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"This field identifies any additives introduced to the specimen before or at the time of collection.  These additives may be introduced in order to preserve, maintain or enhance the particular nature or component of the specimen.  Refer to HL7 Table 0371   Additive/Preservative for valid values.  When multiple additives are introduced and valid individual additive codes exist but a valid value for the combination does not exist, repeating the field with individual values is most appropriate." - HL7 Version 2.8, SPM.6</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>containerSize</b></tt> with data type <xref href="../PhysicalQuantity.dita">Physical Quantity</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>containerType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"The container in or on which a specimen is transported." - HL7 Version 2.8, SPM.27</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>additive</b></tt>, where its type is <xref href="../Ingredient.dita">Ingredient</xref>
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Specimen Container</ph></p>
+</body>
+</topic>

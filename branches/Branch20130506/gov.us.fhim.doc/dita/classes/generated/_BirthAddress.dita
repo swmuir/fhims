@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Birth Address - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>A simplified version of a Postal Address which contains only a city, state, and country, all of which are optional. This is used to record a person's place of birth, used for identificaton and statistical purposes.</p>
+</section>
+<ol id="conformance">
+<li>Contains zero or one [0..1] <tt><b>city</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>An Address Part (ADXP) that contains the name of the city, town, village, or other community or delivery center.</li><li>"The name of the city, town, village, or other community or delivery center." - HL7 V3</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>state</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>An Address Part (ADXP) that contains a sub-unit of a state or province. A sub-unit of a country with limited sovereignty in a federally organized country.</li><li>An Address Part (ADXP) that contains the state or province. A state or provinces is a sub-unit of a country with limited sovereignty in a federally organized country.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>country</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>An Address Part (ADXP) that contains the Country of the address.</li><li>A state or nation</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains zero or one [0..1] <tt><b>city</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>An Address Part (ADXP) that contains the name of the city, town, village, or other community or delivery center.</li><li>"The name of the city, town, village, or other community or delivery center." - HL7 V3</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>state</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>An Address Part (ADXP) that contains a sub-unit of a state or province. A sub-unit of a country with limited sovereignty in a federally organized country.</li><li>An Address Part (ADXP) that contains the state or province. A state or provinces is a sub-unit of a country with limited sovereignty in a federally organized country.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>country</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>An Address Part (ADXP) that contains the Country of the address.</li><li>A state or nation</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Birth Address</ph></p>
+</body>
+</topic>

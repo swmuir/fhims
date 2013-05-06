@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Hospital Organization - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+</section>
+<ol id="conformance">
+<li>Extends <xref href="../Organization.dita">Organization</xref></li>
+</ol>
+<ol id="aggregate">
+<li>Extends <xref href="../Organization.dita">Organization</xref></li>
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>A unique string or token used to identify the organization</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>name</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>The name of the organization.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>address</b></tt> with data type <xref href="../Address.dita">Address</xref>
+<ul><li>The person's office address.  First choice for business related contacts during business hours.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>email</b></tt> with data type <xref href="../Telecommunications.dita">Telecommunications</xref>
+<ul><li>The email address that a person uses while at their place of business.  First choice for business related contacts during business hours.    "Contains the patient's personal telecommunication contact information." - HL7 Version 2.8, PID-40.  Note that in HL7, the Telecommunications datatype contains a type code to indicate what kind of telecommunications address that is being referenced.  The FHIM explicitly models the telecommuncations type, so in this case the attribute name is "Work Email", and the type code would be set to "workplace" when targeting an HL7 implementation.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>phone</b></tt> with data type <xref href="../Telecommunications.dita">Telecommunications</xref>
+<ul><li>The business phone number of the Organization-Location.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>asOrganizationalProvider</b></tt>, where its type is <xref href="../OrganizationalProvider.dita">Organizational Provider</xref>
+<ul><li>Represents information about an organization which is authorized to provide health care services.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>pointOfContact</b></tt>, where its type is <xref href="../PointOfContact.dita">Point Of Contact</xref>
+<ul><li>Identifies persons who work for or represent an organization and who may be contacted under specified circumstances.</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Hospital Organization</ph></p>
+</body>
+</topic>

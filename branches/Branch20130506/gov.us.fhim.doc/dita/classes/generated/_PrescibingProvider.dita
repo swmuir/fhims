@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Prescibing Provider - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>Contains information specific to practitioners who are licensed to prescribe medications, especially controlled substances.</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>controlledSubstanceLicenseId</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>Identifies the license under which the practitioner is authorized to prescribe controlled medications.
+"Identifies the provider's controlled substance number, if required, by site." - HL7 Version 2.8, RXO-14.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>effectiveDateRange</b></tt> with data type <xref href="../TimeInterval.dita">Time Interval</xref>
+<ul><li>An interval of time specifying the period during which the practitioner is authorized to prescribe medications under the associated DEA Id, if such time limit is applicable and known.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>licenseCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>A classification of the provider's license.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the current state of the providers license to prescribe medications.  The possible values are defined in the HL7 Role state-transition model.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>licensingJurisdiction</b></tt>, where its type is <xref href="../Jurisdiction.dita">Jurisdiction</xref>
+<ul><li>Identifies the state or jurisdiction which authorized the Healthcare Provider to prescribe medications  Note that a state or jurisdiction is an Organization.</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>controlledSubstanceLicenseId</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>Identifies the license under which the practitioner is authorized to prescribe controlled medications.
+"Identifies the provider's controlled substance number, if required, by site." - HL7 Version 2.8, RXO-14.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>effectiveDateRange</b></tt> with data type <xref href="../TimeInterval.dita">Time Interval</xref>
+<ul><li>An interval of time specifying the period during which the practitioner is authorized to prescribe medications under the associated DEA Id, if such time limit is applicable and known.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>licenseCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>A classification of the provider's license.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the current state of the providers license to prescribe medications.  The possible values are defined in the HL7 Role state-transition model.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>licensingJurisdiction</b></tt>, where its type is <xref href="../Jurisdiction.dita">Jurisdiction</xref>
+<ul><li>Identifies the state or jurisdiction which authorized the Healthcare Provider to prescribe medications  Note that a state or jurisdiction is an Organization.</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Prescibing Provider</ph></p>
+</body>
+</topic>

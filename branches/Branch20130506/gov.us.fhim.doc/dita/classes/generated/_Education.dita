@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Education - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="knownSubclasses">
+</section>
+<section id="description">
+<p><lines><i>This class is used to record the answers related to the education situation of                   the patient (e.g. education level as well as enrollment status for those who                   should be enrolled in school).</i></lines></p>
+</section>
+<ol id="conformance">
+<li>Extends <xref href="../BehavioralHealthAssessmentDomain.dita">Behavioral Health Assessment Domain</xref></li>
+<li>Contains exactly one [1..1] <tt><b>statusCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>This coded attribute is used to specify whether patients are enrolled, not                     enrolled, or has completed their education. </i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>level</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>This attribute is used to specify the highest education level achieved by                     the patient.</i></lines></p></li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Extends <xref href="../BehavioralHealthAssessmentDomain.dita">Behavioral Health Assessment Domain</xref></li>
+<li>Contains zero or more [0..*] <tt><b>codedQuestion</b></tt> with data type <xref href="../CodedQuestion.dita">Coded Question</xref>
+<ul><li><p><lines><i>This attribute corresponds to the set of questions that require a coded                     response.</i></lines></p></li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>trueFalseQuestion</b></tt> with data type <xref href="../BooleanQuestion.dita">Boolean Question</xref>
+<ul><li><p><lines><i>This attribute corresponds to the set of questions that require a true or                     false (boolean) response.</i></lines></p></li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>numericQuestion</b></tt> with data type <xref href="../IntegerQuestion.dita">Integer Question</xref>
+<ul><li><p><lines><i>This attribute corresponds to the set of questions that require a numeric                     (integer) response.</i></lines></p></li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>frequencyQuestion</b></tt> with data type <xref href="../FrequencyQuestion.dita">Frequency Question</xref>
+<ul><li><p><lines><i>This attribute corresponds to the set of questions that require a frequency                     response.</i></lines></p></li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>quantityQuestion</b></tt> with data type <xref href="../QuantityQuestion.dita">Quantity Question</xref>
+<ul><li><p><lines><i>This attribute corresponds to the set of questions that require a quantity                     response.</i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>statusCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>This coded attribute is used to specify whether patients are enrolled, not                     enrolled, or has completed their education. </i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>level</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>This attribute is used to specify the highest education level achieved by                     the patient.</i></lines></p></li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>outcome</b></tt>, where its type is <xref href="../Outcome.dita">Outcome</xref>
+<ul><li><p><lines><i>This is a directed association describing the relationship between an                     assessment and the outcome measurements related to that assessment.</i></lines></p></li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Education</ph></p>
+</body>
+</topic>

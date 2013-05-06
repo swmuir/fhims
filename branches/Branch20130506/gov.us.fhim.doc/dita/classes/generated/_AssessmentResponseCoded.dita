@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Assessment Response Coded - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>Contains the response to an assessment question that can be expressed as a code; e.g., for turbidity, "cloudy" is a valid result.  Similarly, for color, "Brown" is a valid result.</p>
+</section>
+<ol id="conformance">
+<li>Extends <xref href="../AssessmentInstrumentResponse.dita">Assessment Instrument Response</xref></li>
+<li>Contains exactly one [1..1] <tt><b>value</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>The value of a response to an assessment question that can be expressed as a code; e.g., for turbidity, "cloudy" is a valid result.  Similarly, for color, "Brown" is a valid result. </li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Extends <xref href="../AssessmentInstrumentResponse.dita">Assessment Instrument Response</xref></li>
+<li>Contains exactly one [1..1] <tt><b>assessmentQuestion</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Code indicating the question asked as part of the assessment tool performed.  </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>responseScore</b></tt> with data type <xref href="../Real.dita">Real</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>value</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>The value of a response to an assessment question that can be expressed as a code; e.g., for turbidity, "cloudy" is a valid result.  Similarly, for color, "Brown" is a valid result. </li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Assessment Response Coded</ph></p>
+</body>
+</topic>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Medication Administration Event - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>"Information about the actual consumption of medication by a patient. While is generally only relevant for hospital/institutional systems which track individual administrations, it could also be used in ambulatory care e.g. home-health environments which capture administrations such as insulin injections and which use messaging to communicate the information back to a central source; recording immunizations." (HL7 Version 3)</p>
+</section>
+<ol id="conformance">
+<li>Extends <xref href="../ImmunizationListEntry.dita">Immunization List Entry</xref></li>
+<li>Contains exactly one [1..1] <tt><b>administeredStrength</b></tt> with data type <xref href="../PhysicalQuantity.dita">Physical Quantity</xref>
+<ul><li>"Use when (the administeredDrug) does not specify the strength.  This is the numeric part of the strength" - HL7 Version 2.8, RXA-13
+"Use when (the administeredDrug) does not specify the strength.  This is the unit of the strength." - HL7 Version 2.8, RXA-14</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>administeredStrengthVolume</b></tt> with data type <xref href="../PhysicalQuantity.dita">Physical Quantity</xref>
+<ul><li>"Defines the volume measurement in which the drug strength concentration is contained. For example, Acetaminophen 120 MG/5ML Elixir means that 120 MG of the drug is in a solution with a volume of 5 ML, (this field contains 5)" - HL7 Version 2.8, RXA-23
+"Indicates the volumetric unit associated" (with the volume measurement in which the drug strength concentration is contained. For example, Acetaminophen 120 MG/5ML Elixir means that 120 MG of the drug is in a solution with a volume of 5 ML, this field contains ML) - HL7 Version 2.8, RXA-24</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>bodySite</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>doseForm</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"Indicates the manner in which the medication/treatment is aggregated for dispensing, e.g., tablets, capsules, suppositories." - HL7 Version 2.8, RXA-8</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>doseQuantityGiven</b></tt> with data type <xref href="../PhysicalQuantity.dita">Physical Quantity</xref>
+<ul><li>"Contains the amount administered." - HL7 Version 2.8, RXA-6
+"This field is conditional because it is required if the administered amount code does not imply units.  This field must be in simple units that reflect the actual quantity of the substance administered.  It does not include compound units." - HL7 Version 2.8, RXA-7
+"The amount of the therapeutic agent or other substance given at one administration event." - HL7 Version 3</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>doseQuantityOrdered</b></tt> with data type <xref href="../Real.dita">Real</xref>
+<ul><li>"The amount of the therapeutic agent or other substance given at one administration event." (HL7 3.0)  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>endDateTime</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>"If null, the date/time of RXA-3-Date/Time Start of Administration is assumed." - HL7 Version 2.8, RXA-4
+
+The date and time that the medication administration was completed or will be completed.  Used only for administrations that span a length of time, such as an IV.  For single dose administrations, such as giving a tablet or an injection, this property is not used.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>isPrnActivity</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li>I'm guessing that this is a boolean.  Vista definition is: The PRN REASON FLAG field is to indicate whether the BCMA Med Log file entry is PRN activity and has an associated PRN REASON which has been set to require BCMA user attention or action.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>negatationIndicator</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>route</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"This field is the route of administration." - HL7 Version 2.8, RXR-1</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>startDateTime</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>"If the order is for a continuous administration (such as an IV), and the rate is changed at a certain time after the start, an RAS message can be issued to record the change.  For such an RAS message, this field records the time the rate was changed to the new value recorded in the RXA-12-Administered Per (time unit) of the same message." - HL7 Version 2.8, RXA-3
+
+The date and time that the medication administration was started or will be started.  For single dose administrations, such as giving a tablet or an injection, this is the date and time that the administration did or will occur.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"Status of treatment administration event.  Refer to HL7 Table 0322 - Completion Status in Chapter 2C for valid values." - HL7 Version 2.8, RXA-20
+
+The current state of the Substance Administration.  Possible values include: Infusing, Given, Held, Completed, etc.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>systemEntryDateTime</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>"Date/time the administration information was entered into the source system.  This field is used to detect instances where treatment administration information is inadvertently entered multiple times by providing a unique identification field.  Under usual circumstances, this field would be provided automatically by the computer system rather than being entered by a person." - HL7 Version 2.8, RXA-22</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>treatmentRefusalReason</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"Contains the reason the patient refused the medical substance/treatment.  Any entry in the field indicates that the patient did not take the substance." - HL7 Version 2.8, RXA-18</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>administeredDrug</b></tt>, where its type is <xref href="../AdministeredDrug.dita">Administered Drug</xref>
+<ul><li>"Contains the identifier of the medical substance/treatment administered....  If the substance administered is a vaccine, CVX codes may be used to code this field...." - HL7 Version 2.8, RXA-5</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>administeringProvider</b></tt>, where its type is <xref href="../PrimaryPerformer.dita">Primary Performer</xref>
+<ul><li>"Contains the provider ID of the person administering the pharmaceutical/treatment." - HL7 Version 2.8, RXA-10</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>comments</b></tt>, where its type is <xref href="../CommentEvent.dita">Comment Event</xref>
+<ul><li>Comments regarding the Medication order.</li></ul><ul><li>"Contains notes from the provider administering the medication/treatment." - HL7 Version 2.8, RXA-9</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>indication</b></tt>, where its type is <xref href="../Indication.dita">Indication</xref>
+<ul><li>"Contains the identifier of the condition or problem for which the drug/treatment was prescribed.  May repeat if multiple indications are relevant." - HL7 Version 2.8, RXA-19</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>observedReaction</b></tt>, where its type is <xref href="../ObservedReaction.dita">Observed Reaction</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>orderedItem</b></tt>, where its type is <xref href="../OrderablePharmacyItem.dita">Orderable Pharmacy Item</xref>
+<ul><li>The item that was ordered to be administered to the patient.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>patientLocation</b></tt>, where its type is <xref href="../ServiceDeliveryLocation.dita">Service Delivery Location</xref>
+<ul><li>"Contains the inpatient or outpatient location at which the drug or treatment was administered (if applicable)." - HL7 Version 2.8, RXA-11
+
+Location (room, bed and ward) of the patient at the time of the medication administration.  Generally only used for inpatient situations.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>serviceDeliveryLocation</b></tt>, where its type is <xref href="../ServiceDeliveryLocation.dita">Service Delivery Location</xref>
+<ul><li>"Specifies the location where the drug or treatment was administered." - HL7 Version 2.8, RXA-27</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>medicationAdministrationPromise</b></tt>, where its type is <xref href="../MedicationAdministrationPromise.dita">Medication Administration Promise</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>contraIndication</b></tt>, where its type is <xref href="../ContraIndication.dita">Contra Indication</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>exemption</b></tt>, where its type is <xref href="../Exemption.dita">Exemption</xref>
+</li>
+</ol>
+<ol id="aggregate">
+<li>Extends <xref href="../ImmunizationListEntry.dita">Immunization List Entry</xref></li>
+<li>Contains exactly one [1..1] <tt><b>informationSource</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Identifies the source of the information about the vaccination.  Possible values include: Source unspecified; From other provider; From parent's written record; From parent's recall; From other registry; From birth certificate; From school record; From public agency.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>administeredStrength</b></tt> with data type <xref href="../PhysicalQuantity.dita">Physical Quantity</xref>
+<ul><li>"Use when (the administeredDrug) does not specify the strength.  This is the numeric part of the strength" - HL7 Version 2.8, RXA-13
+"Use when (the administeredDrug) does not specify the strength.  This is the unit of the strength." - HL7 Version 2.8, RXA-14</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>administeredStrengthVolume</b></tt> with data type <xref href="../PhysicalQuantity.dita">Physical Quantity</xref>
+<ul><li>"Defines the volume measurement in which the drug strength concentration is contained. For example, Acetaminophen 120 MG/5ML Elixir means that 120 MG of the drug is in a solution with a volume of 5 ML, (this field contains 5)" - HL7 Version 2.8, RXA-23
+"Indicates the volumetric unit associated" (with the volume measurement in which the drug strength concentration is contained. For example, Acetaminophen 120 MG/5ML Elixir means that 120 MG of the drug is in a solution with a volume of 5 ML, this field contains ML) - HL7 Version 2.8, RXA-24</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>bodySite</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>doseForm</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"Indicates the manner in which the medication/treatment is aggregated for dispensing, e.g., tablets, capsules, suppositories." - HL7 Version 2.8, RXA-8</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>doseQuantityGiven</b></tt> with data type <xref href="../PhysicalQuantity.dita">Physical Quantity</xref>
+<ul><li>"Contains the amount administered." - HL7 Version 2.8, RXA-6
+"This field is conditional because it is required if the administered amount code does not imply units.  This field must be in simple units that reflect the actual quantity of the substance administered.  It does not include compound units." - HL7 Version 2.8, RXA-7
+"The amount of the therapeutic agent or other substance given at one administration event." - HL7 Version 3</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>doseQuantityOrdered</b></tt> with data type <xref href="../Real.dita">Real</xref>
+<ul><li>"The amount of the therapeutic agent or other substance given at one administration event." (HL7 3.0)  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>endDateTime</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>"If null, the date/time of RXA-3-Date/Time Start of Administration is assumed." - HL7 Version 2.8, RXA-4
+
+The date and time that the medication administration was completed or will be completed.  Used only for administrations that span a length of time, such as an IV.  For single dose administrations, such as giving a tablet or an injection, this property is not used.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>isPrnActivity</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li>I'm guessing that this is a boolean.  Vista definition is: The PRN REASON FLAG field is to indicate whether the BCMA Med Log file entry is PRN activity and has an associated PRN REASON which has been set to require BCMA user attention or action.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>negatationIndicator</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>route</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"This field is the route of administration." - HL7 Version 2.8, RXR-1</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>startDateTime</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>"If the order is for a continuous administration (such as an IV), and the rate is changed at a certain time after the start, an RAS message can be issued to record the change.  For such an RAS message, this field records the time the rate was changed to the new value recorded in the RXA-12-Administered Per (time unit) of the same message." - HL7 Version 2.8, RXA-3
+
+The date and time that the medication administration was started or will be started.  For single dose administrations, such as giving a tablet or an injection, this is the date and time that the administration did or will occur.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"Status of treatment administration event.  Refer to HL7 Table 0322 - Completion Status in Chapter 2C for valid values." - HL7 Version 2.8, RXA-20
+
+The current state of the Substance Administration.  Possible values include: Infusing, Given, Held, Completed, etc.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>systemEntryDateTime</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>"Date/time the administration information was entered into the source system.  This field is used to detect instances where treatment administration information is inadvertently entered multiple times by providing a unique identification field.  Under usual circumstances, this field would be provided automatically by the computer system rather than being entered by a person." - HL7 Version 2.8, RXA-22</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>treatmentRefusalReason</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"Contains the reason the patient refused the medical substance/treatment.  Any entry in the field indicates that the patient did not take the substance." - HL7 Version 2.8, RXA-18</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>administeredDrug</b></tt>, where its type is <xref href="../AdministeredDrug.dita">Administered Drug</xref>
+<ul><li>"Contains the identifier of the medical substance/treatment administered....  If the substance administered is a vaccine, CVX codes may be used to code this field...." - HL7 Version 2.8, RXA-5</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>administeringProvider</b></tt>, where its type is <xref href="../PrimaryPerformer.dita">Primary Performer</xref>
+<ul><li>"Contains the provider ID of the person administering the pharmaceutical/treatment." - HL7 Version 2.8, RXA-10</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>comments</b></tt>, where its type is <xref href="../CommentEvent.dita">Comment Event</xref>
+<ul><li>Comments regarding the Medication order.</li></ul><ul><li>"Contains notes from the provider administering the medication/treatment." - HL7 Version 2.8, RXA-9</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>indication</b></tt>, where its type is <xref href="../Indication.dita">Indication</xref>
+<ul><li>"Contains the identifier of the condition or problem for which the drug/treatment was prescribed.  May repeat if multiple indications are relevant." - HL7 Version 2.8, RXA-19</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>observedReaction</b></tt>, where its type is <xref href="../ObservedReaction.dita">Observed Reaction</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>orderedItem</b></tt>, where its type is <xref href="../OrderablePharmacyItem.dita">Orderable Pharmacy Item</xref>
+<ul><li>The item that was ordered to be administered to the patient.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>patientLocation</b></tt>, where its type is <xref href="../ServiceDeliveryLocation.dita">Service Delivery Location</xref>
+<ul><li>"Contains the inpatient or outpatient location at which the drug or treatment was administered (if applicable)." - HL7 Version 2.8, RXA-11
+
+Location (room, bed and ward) of the patient at the time of the medication administration.  Generally only used for inpatient situations.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>serviceDeliveryLocation</b></tt>, where its type is <xref href="../ServiceDeliveryLocation.dita">Service Delivery Location</xref>
+<ul><li>"Specifies the location where the drug or treatment was administered." - HL7 Version 2.8, RXA-27</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>medicationAdministrationPromise</b></tt>, where its type is <xref href="../MedicationAdministrationPromise.dita">Medication Administration Promise</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>contraIndication</b></tt>, where its type is <xref href="../ContraIndication.dita">Contra Indication</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>exemption</b></tt>, where its type is <xref href="../Exemption.dita">Exemption</xref>
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Medication Administration Event</ph></p>
+</body>
+</topic>

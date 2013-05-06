@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Hema Trans Endocrine Proc - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>The treatment of Endocrine gland disease by the use of blood or blood derivatives, as in transfusion. [Source &amp;lt;http://dictionary.reference.com/search?q=00-database-info&amp;amp;db=ahsmd&amp;gt;: The American Heritage  Stedman's Medical Dictionary ]</p>
+</section>
+<ol id="conformance">
+<li>Extends <xref href="../CancerTreatment.dita">Cancer Treatment</xref></li>
+<li>Contains exactly one [1..1] <tt><b>hemaTransEndocrineProc</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Identifies systemic therapeutic procedures administered as part of subsequent course of treatment at this and all other facilities.  If none of these procedures were administered, then this item records the reason they were not performed.  These include bone marrow transplants, stem cell harvests, surgical and/or radiation endocrine therapy.  Possible values are  Bone marrow transplant, NOS; Bone marrow transplant - autologous; Bone marrow transplant - allogeneic;  Stem cell harvest; Endocrine surgery and/or radiation; Refused by pt; ETC.  </li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Extends <xref href="../CancerTreatment.dita">Cancer Treatment</xref></li>
+<li>Contains exactly one [1..1] <tt><b>treatmentDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>Indicates the date on which this treatment was initiated.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>hemaTransEndocrineProc</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Identifies systemic therapeutic procedures administered as part of subsequent course of treatment at this and all other facilities.  If none of these procedures were administered, then this item records the reason they were not performed.  These include bone marrow transplants, stem cell harvests, surgical and/or radiation endocrine therapy.  Possible values are  Bone marrow transplant, NOS; Bone marrow transplant - autologous; Bone marrow transplant - allogeneic;  Stem cell harvest; Endocrine surgery and/or radiation; Refused by pt; ETC.  </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>treatmentHospital</b></tt>, where its type is <xref href="../ServiceDeliveryLocation.dita">Service Delivery Location</xref>
+<ul><li>Indicates the name of the institution providing treatment.  </li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Hema Trans Endocrine Proc</ph></p>
+</body>
+</topic>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Cancer Case - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>This class contains the information for the patient that has cancer such as  patient history, examination, and results of laboratory data.</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>A unique identifier for the Act. (HL7 3.0)  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>accessionNumber</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>A unique identifier for the patient consisting of the year in which the patient was first seen at the reporting facility and the consecutive order in which the patient was abstracted.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>accessionYear</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>ACCESSION YEAR is the year the patient was first seen at the reporting institution for diagnosis and/or treatment of this primary; NOT the year the registrar accession the case.  ACCESSION YEAR relates only to one primary tumor.  A patient with multiple primaries can have a different ACCESSION YEAR on each bstract.                                                        This is used to produce an accession register.  The accession register identifies all primaries first treated or seen at the reporting institution for a given year.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>afipSubmission</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates whether the pathology was sent to the Armed Forces Institute of Pathology (AFIP) for a second opinion.  Possible values are No; Yes; Unknown;  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>associationWithHiv</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the presence/absence of HIV.  Possible values are Yes; No; Unknown; etc.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>classCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Identifies the category of case, either Analytic or Nonanalytic.  Possible values are NONANALYTIC; 'ANALYTIC; etc.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>classOfcase</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Classifies cases recorded in the database.  Possible values are  Dx here, 1st tx ew; Dx here, 1st tx here; Dx ew, 1st tx here; Dx ew, 1st tx ew;  Dx/1st tx before ref date; Dx at autopsy; Dx/1st tx in MD office; Pathology report only; Death cert; Unknown;  etc.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dateCaseCompleted</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date that: (1) the abstractor decided that the case report was complete, and (2) the case passed all edits that were applied.   </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dateOfCancerConference</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>Indicates the date on which the case was first presented at a cancer conference.  The number of cancer conferences, sites presented, types of presentations, and dates can be analyzed and reported for administration, quality control, and Commission on Cancer survey preparation. Update this item if a patient is presented at a subsequent cancer conference.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>presetationAtCancerConference</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Documents case presentation at a cancer conference and the type or format of presentation.  The number of cancer conferences, sites presented, and types of presentation can be analyzed and reported for administrative use, quality control, and survey preperation.  Possible values are Not presented; Prospective (diagnostic); Prospective (treatment); Prospective (follow-up); Prospective (combinations); Prospective, NOS; Retrospective; Follow-up; Presentation, NOS; Unknown;  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>reportingSourceType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>This a code used by central registries that identifies the source of documents used to abstract the cancer being reported.   Possible values are Hospital inpatient, hospital outpatient clinic; Laboratory only (hospital or private); Physician office/private practitioner; Nursing/convalescent home, hospice; Autopsy only; Death certificate only; etc.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>sequenceNumber</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Indicates the sequence of all reportable neoplasms over the lifetime of the patient.   - Codes 00-35 and 99 indicate reportable neoplasms of malignant or in situ behavior, which the CoC requires to be reported.       - Codes 60-88 indicate other neoplasms that the state registry or the hospital cancer committee has defined as reportable (cases reportable-by-agreement).                                                  - Code 00 only if the patient has a single reportable primary.  If the patient develops a subsequent reportable primary tumor, change the code for the first tumor from 00 to 01, and number subsequent tumors sequentially.                                - Code 60 only if the patient has a single primary reportable by agreement only.  If the patient develops a subsequent primary tumor reportable-by-agreement, change the code for the first tumor from 60 to 61, and assign codes to subsequent tumors reportable-by-agreement sequentially.   </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>summaryStageSeer</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates a site-specific description of the extent of disease at diagnosis.  Possible values are In situ; Localized; Regional by direct extension; Regional to lymph nodes; Regional by extension &amp;amp; to nodes; Regional, NOS; Distant metastasis/systemic disease; Unknown; etc.   </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>textHistologyTitle</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Description of histologic type, behavior, and grade in natural language.(Text)  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>textPrimarySiteTitle</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Description of primary site in natural language.(Text)  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>cancerCase</b></tt>, where its type is <xref href="../CancerPatientSummary.dita">Cancer Patient Summary</xref>
+<ul><li>Cancer related Case</li></ul></li>
+<li>Contains at least one [1..*] <tt><b>cancerDiagnosis</b></tt>, where its type is <xref href="../CancerDiagnosisEvent.dita">Cancer Diagnosis Event</xref>
+<ul><li>The  act or process of identifying or determining the nature and cause of a disease or injury.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>cancerStaging</b></tt>, where its type is <xref href="../CancerStaging.dita">Cancer Staging</xref>
+<ul><li>Cancer Staging</li></ul></li>
+<li>Contains at least one [1..*] <tt><b>cancerTumor</b></tt>, where its type is <xref href="../TumorEvaluation.dita">Tumor Evaluation</xref>
+<ul><li>Evaluation of an abnormal growth, of tissue.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>lymphNode</b></tt>, where its type is <xref href="../LymphNodeEvaluation.dita">Lymph Node Evaluation</xref>
+<ul><li>Masses of lymphoid tissue </li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>metastasis</b></tt>, where its type is <xref href="../MetastasisEvaluation.dita">Metastasis Evaluation</xref>
+<ul><li>Transmission of pathogenic microorganisms or cancerous cells.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>palliativeProcedure</b></tt>, where its type is <xref href="../PalliativeProcedure.dita">Palliative Procedure</xref>
+<ul><li>The relieving or soothing the symptoms of the patient's disease or disorder.</li></ul></li>
+<li>Contains at least one [1..*] <tt><b>radiationtreatmentFollowup</b></tt>, where its type is <xref href="../RadiationTreatmentEvaluation.dita">Radiation Treatment Evaluation</xref>
+<ul><li>Radiation Treatment ralated followup</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>reportingHospital</b></tt>, where its type is <xref href="../ServiceDeliveryLocation.dita">Service Delivery Location</xref>
+<ul><li>Identifies the hospital which is reporting this cancer case.  This field contains the value of the INSTITUTION ID NUMBER field from the ONCOLOGY SITE PARAMETERS file.  Possible values are 6020009     ROYAL VICTORIA HOSPITAL; 6020012     ST MARY'S HOSPITAL;   6020015     MONTREAL GENERAL HOSPITAL ;  6030010     KWAJALEIN; 6040005     AGUADILLA GENERAL HOSPITAL; etc.  </li></ul></li>
+<li>Contains at least one [1..*] <tt><b>tumorStatus</b></tt>, where its type is <xref href="../TumorStatus.dita">Tumor Status</xref>
+<ul><li>Cancer Tumor Status.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>subsequentTherapyComment</b></tt>, where its type is <xref href="../SubsequentTherapyComment.dita">Subsequent Therapy Comment</xref>
+<ul><li>Subsequent Therapy related comments</li></ul></li>
+<li>Contains at least one [1..*] <tt><b>dxWorkup</b></tt>, where its type is <xref href="../DiagnosticWorkup.dita">Diagnostic Workup</xref>
+<ul><li>Follow-up after diagnosis of cancer.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>abstract</b></tt>, where its type is <xref href="../Abstract.dita">Abstract</xref>
+<ul><li>Summary of pertinent information about the patient</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>previousCancerHistory</b></tt>, where its type is <xref href="../CancerHistory.dita">Cancer History</xref>
+<ul><li>prior history of any reportable malignancy.</li></ul></li>
+<li>Contains at least one [1..*] <tt><b>nonRadiationTreatmentFollowup</b></tt>, where its type is <xref href="../CancerTreatmentEvaluation.dita">Cancer Treatment Evaluation</xref>
+<ul><li>Non Radiation Treatment ralated followup</li></ul></li>
+<li>Contains at least one [1..*] <tt><b>treatmentAssessment</b></tt>, where its type is <xref href="../PatientTreatmentAssessment.dita">Patient Treatment Assessment</xref>
+<ul><li>Patient's pre treatment assessment.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>protocol</b></tt>, where its type is <xref href="../CancerProtocol.dita">Cancer Protocol</xref>
+<ul><li>Cancer Treatment Protocol.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dataEnterer</b></tt>, where its type is <xref href="../DataEnterer.dita">Data Enterer</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>followingPhysician</b></tt>, where its type is <xref href="../Attender.dita">Attender</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>primarySurgeon</b></tt>, where its type is <xref href="../PrimaryPerformer.dita">Primary Performer</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>cancerTreatmentList</b></tt>, where its type is <xref href="../CancerTreatmentListEntry.dita">Cancer Treatment List Entry</xref>
+<ul><li>The act or process of identifying a single course of treatment regimen, for the patient's cancer.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>recurrenceList</b></tt>, where its type is <xref href="../RecurrenceListEntry.dita">Recurrence List Entry</xref>
+</li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>A unique identifier for the Act. (HL7 3.0)  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>accessionNumber</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>A unique identifier for the patient consisting of the year in which the patient was first seen at the reporting facility and the consecutive order in which the patient was abstracted.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>accessionYear</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>ACCESSION YEAR is the year the patient was first seen at the reporting institution for diagnosis and/or treatment of this primary; NOT the year the registrar accession the case.  ACCESSION YEAR relates only to one primary tumor.  A patient with multiple primaries can have a different ACCESSION YEAR on each bstract.                                                        This is used to produce an accession register.  The accession register identifies all primaries first treated or seen at the reporting institution for a given year.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>afipSubmission</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates whether the pathology was sent to the Armed Forces Institute of Pathology (AFIP) for a second opinion.  Possible values are No; Yes; Unknown;  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>associationWithHiv</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the presence/absence of HIV.  Possible values are Yes; No; Unknown; etc.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>classCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Identifies the category of case, either Analytic or Nonanalytic.  Possible values are NONANALYTIC; 'ANALYTIC; etc.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>classOfcase</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Classifies cases recorded in the database.  Possible values are  Dx here, 1st tx ew; Dx here, 1st tx here; Dx ew, 1st tx here; Dx ew, 1st tx ew;  Dx/1st tx before ref date; Dx at autopsy; Dx/1st tx in MD office; Pathology report only; Death cert; Unknown;  etc.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dateCaseCompleted</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date that: (1) the abstractor decided that the case report was complete, and (2) the case passed all edits that were applied.   </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dateOfCancerConference</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>Indicates the date on which the case was first presented at a cancer conference.  The number of cancer conferences, sites presented, types of presentations, and dates can be analyzed and reported for administration, quality control, and Commission on Cancer survey preparation. Update this item if a patient is presented at a subsequent cancer conference.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>presetationAtCancerConference</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Documents case presentation at a cancer conference and the type or format of presentation.  The number of cancer conferences, sites presented, and types of presentation can be analyzed and reported for administrative use, quality control, and survey preperation.  Possible values are Not presented; Prospective (diagnostic); Prospective (treatment); Prospective (follow-up); Prospective (combinations); Prospective, NOS; Retrospective; Follow-up; Presentation, NOS; Unknown;  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>reportingSourceType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>This a code used by central registries that identifies the source of documents used to abstract the cancer being reported.   Possible values are Hospital inpatient, hospital outpatient clinic; Laboratory only (hospital or private); Physician office/private practitioner; Nursing/convalescent home, hospice; Autopsy only; Death certificate only; etc.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>sequenceNumber</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Indicates the sequence of all reportable neoplasms over the lifetime of the patient.   - Codes 00-35 and 99 indicate reportable neoplasms of malignant or in situ behavior, which the CoC requires to be reported.       - Codes 60-88 indicate other neoplasms that the state registry or the hospital cancer committee has defined as reportable (cases reportable-by-agreement).                                                  - Code 00 only if the patient has a single reportable primary.  If the patient develops a subsequent reportable primary tumor, change the code for the first tumor from 00 to 01, and number subsequent tumors sequentially.                                - Code 60 only if the patient has a single primary reportable by agreement only.  If the patient develops a subsequent primary tumor reportable-by-agreement, change the code for the first tumor from 60 to 61, and assign codes to subsequent tumors reportable-by-agreement sequentially.   </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>summaryStageSeer</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates a site-specific description of the extent of disease at diagnosis.  Possible values are In situ; Localized; Regional by direct extension; Regional to lymph nodes; Regional by extension &amp;amp; to nodes; Regional, NOS; Distant metastasis/systemic disease; Unknown; etc.   </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>textHistologyTitle</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Description of histologic type, behavior, and grade in natural language.(Text)  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>textPrimarySiteTitle</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Description of primary site in natural language.(Text)  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>cancerCase</b></tt>, where its type is <xref href="../CancerPatientSummary.dita">Cancer Patient Summary</xref>
+<ul><li>Cancer related Case</li></ul></li>
+<li>Contains at least one [1..*] <tt><b>cancerDiagnosis</b></tt>, where its type is <xref href="../CancerDiagnosisEvent.dita">Cancer Diagnosis Event</xref>
+<ul><li>The  act or process of identifying or determining the nature and cause of a disease or injury.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>cancerStaging</b></tt>, where its type is <xref href="../CancerStaging.dita">Cancer Staging</xref>
+<ul><li>Cancer Staging</li></ul></li>
+<li>Contains at least one [1..*] <tt><b>cancerTumor</b></tt>, where its type is <xref href="../TumorEvaluation.dita">Tumor Evaluation</xref>
+<ul><li>Evaluation of an abnormal growth, of tissue.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>lymphNode</b></tt>, where its type is <xref href="../LymphNodeEvaluation.dita">Lymph Node Evaluation</xref>
+<ul><li>Masses of lymphoid tissue </li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>metastasis</b></tt>, where its type is <xref href="../MetastasisEvaluation.dita">Metastasis Evaluation</xref>
+<ul><li>Transmission of pathogenic microorganisms or cancerous cells.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>palliativeProcedure</b></tt>, where its type is <xref href="../PalliativeProcedure.dita">Palliative Procedure</xref>
+<ul><li>The relieving or soothing the symptoms of the patient's disease or disorder.</li></ul></li>
+<li>Contains at least one [1..*] <tt><b>radiationtreatmentFollowup</b></tt>, where its type is <xref href="../RadiationTreatmentEvaluation.dita">Radiation Treatment Evaluation</xref>
+<ul><li>Radiation Treatment ralated followup</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>reportingHospital</b></tt>, where its type is <xref href="../ServiceDeliveryLocation.dita">Service Delivery Location</xref>
+<ul><li>Identifies the hospital which is reporting this cancer case.  This field contains the value of the INSTITUTION ID NUMBER field from the ONCOLOGY SITE PARAMETERS file.  Possible values are 6020009     ROYAL VICTORIA HOSPITAL; 6020012     ST MARY'S HOSPITAL;   6020015     MONTREAL GENERAL HOSPITAL ;  6030010     KWAJALEIN; 6040005     AGUADILLA GENERAL HOSPITAL; etc.  </li></ul></li>
+<li>Contains at least one [1..*] <tt><b>tumorStatus</b></tt>, where its type is <xref href="../TumorStatus.dita">Tumor Status</xref>
+<ul><li>Cancer Tumor Status.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>subsequentTherapyComment</b></tt>, where its type is <xref href="../SubsequentTherapyComment.dita">Subsequent Therapy Comment</xref>
+<ul><li>Subsequent Therapy related comments</li></ul></li>
+<li>Contains at least one [1..*] <tt><b>dxWorkup</b></tt>, where its type is <xref href="../DiagnosticWorkup.dita">Diagnostic Workup</xref>
+<ul><li>Follow-up after diagnosis of cancer.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>abstract</b></tt>, where its type is <xref href="../Abstract.dita">Abstract</xref>
+<ul><li>Summary of pertinent information about the patient</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>previousCancerHistory</b></tt>, where its type is <xref href="../CancerHistory.dita">Cancer History</xref>
+<ul><li>prior history of any reportable malignancy.</li></ul></li>
+<li>Contains at least one [1..*] <tt><b>nonRadiationTreatmentFollowup</b></tt>, where its type is <xref href="../CancerTreatmentEvaluation.dita">Cancer Treatment Evaluation</xref>
+<ul><li>Non Radiation Treatment ralated followup</li></ul></li>
+<li>Contains at least one [1..*] <tt><b>treatmentAssessment</b></tt>, where its type is <xref href="../PatientTreatmentAssessment.dita">Patient Treatment Assessment</xref>
+<ul><li>Patient's pre treatment assessment.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>protocol</b></tt>, where its type is <xref href="../CancerProtocol.dita">Cancer Protocol</xref>
+<ul><li>Cancer Treatment Protocol.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dataEnterer</b></tt>, where its type is <xref href="../DataEnterer.dita">Data Enterer</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>followingPhysician</b></tt>, where its type is <xref href="../Attender.dita">Attender</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>primarySurgeon</b></tt>, where its type is <xref href="../PrimaryPerformer.dita">Primary Performer</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>cancerTreatmentList</b></tt>, where its type is <xref href="../CancerTreatmentListEntry.dita">Cancer Treatment List Entry</xref>
+<ul><li>The act or process of identifying a single course of treatment regimen, for the patient's cancer.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>recurrenceList</b></tt>, where its type is <xref href="../RecurrenceListEntry.dita">Recurrence List Entry</xref>
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Cancer Case</ph></p>
+</body>
+</topic>

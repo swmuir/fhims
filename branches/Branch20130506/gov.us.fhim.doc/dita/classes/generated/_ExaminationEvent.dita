@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Examination Event - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>"An investigation or inspection for the purpose of diagnosis" (The American Heritage Stedman's Medical Dictionary)</p>
+</section>
+<ol id="conformance">
+<li>Extends <xref href="../ClinicalService.dita">Clinical Service</xref></li>
+<li>Contains exactly one [1..1] <tt><b>date</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date and time of the examination for the patient.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>examType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Contains the code that identifies the type of examination performed for the patient.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>Unique identifier for the is Examination occurrence.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>isNormal</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li>Identifies  the results of the exam suggested values: A=Abnormal, N=Normal, etc  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>results</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>The consequence of a particular action, operation, or course; an outcome. </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>The status of the examination for the patient.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>relatedExamination</b></tt>, where its type is <xref href="../RelatedExamination.dita">Related Examination</xref>
+</li>
+</ol>
+<ol id="aggregate">
+<li>Extends <xref href="../ClinicalService.dita">Clinical Service</xref></li>
+<li>Contains exactly one [1..1] <tt><b>clinicalServceId</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>Unique Identifier for this Clinical service .</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>typeOfService</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Clinical Speciality ID</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>date</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date and time of the examination for the patient.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>examType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Contains the code that identifies the type of examination performed for the patient.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>Unique identifier for the is Examination occurrence.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>isNormal</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li>Identifies  the results of the exam suggested values: A=Abnormal, N=Normal, etc  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>results</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>The consequence of a particular action, operation, or course; an outcome. </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>The status of the examination for the patient.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>clinicalProcedureRecord</b></tt>, where its type is <xref href="../ClinicalProcedureRecord.dita">Clinical Procedure Record</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>relatedExamination</b></tt>, where its type is <xref href="../RelatedExamination.dita">Related Examination</xref>
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Examination Event</ph></p>
+</body>
+</topic>

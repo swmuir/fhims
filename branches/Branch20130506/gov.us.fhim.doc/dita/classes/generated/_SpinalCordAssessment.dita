@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Spinal Cord Assessment - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>Contains the Code Set that identifies the tyepe of score for the Assessment tool.</p>
+<p>Contains the Code Set that identifies the type of score for the Assessment tool. ASIA, FIM, FAM CHARTSF etc.</p>
+</section>
+<ol id="conformance">
+<li>Extends <xref href="../SpinalCordEvent.dita">Spinal Cord Event</xref></li>
+<li>Contains exactly one [1..1] <tt><b>affectivePainRatingIndex</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>Contains the rating value for the patient s subjective measurement of affective pain.</li><li>Contains the calculated value for the Affected Pain Rating Index for the patient.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>assessmentFormType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Contains the code set that identifies the Assessment Instrument ( form) ie. SWLS, FIM, ASIA, CHART-SF, FAM, DUSOI-A etc.</li><li>Contains the codes that identify the type Assessment Form the Patient informations is being gathered for. ie. ASIA, FIN FAM CHARTSFetc</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>bodyMassIndex</b></tt> with data type <xref href="../PhysicalQuantity.dita">Physical Quantity</xref>
+<ul><li>Contains the calculated value for the BMI or Body Mass Index </li><li>Contains the BMI dcore for the veteran.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>cognitiveSubTotal</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>Contains Cognitive Assessment value for veteran  </li><li>Contains Cognitive Assessment value for veteran    </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>diagnosticHealthProblemScore</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>Contains the diagnostic health problem assessment value for the veteran</li><li>Contains the diagnostic health problem assessment value for the veteran      </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>height</b></tt> with data type <xref href="../PhysicalQuantity.dita">Physical Quantity</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>highestNeurologicalLevel</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>Contains the highest Nreuorlogical Level score for the veteran.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>id</b></tt>
+<ul><li>Contains the unique identifier for the  Assessment Tool</li><li>Unique identifier for the SpinalCordAssessment   </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>impairmentScale</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>Contains the Impairment Scale value for the veteran.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>mentalComponentScore</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>Contains the mental component assessment value for the veteran</li><li>Contains the mental component assessment value for the veteran  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>motorSubTotal</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>Contains Motor Assessment value for veteran  </li><li>Contains Motor Assessment value for veteran</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>overallCYHDepression</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>Contains the subscore for the veteran overall Depression  </li><li>Contains the subscore for the veteran overall Depression</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>overallCYHHealth</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>Contains the subscore for the veteran overall Health.</li><li>Contains the subscore for the veteran overall Health</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>overallCYHIndependance</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>Contains the subscore for the veteran overall Independance  </li><li>Contains the subscore for the veteran overall Independance</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>painScale</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>Contains the scale value for the patient s overall pain. </li><li>Contains the calculated value for the pain scale.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>physicalComponentScore</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>Contains the physical component assessment value for the veteran</li><li>Contains the physical component assessment value for the veteran  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>score</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>Contains the total score for the Assessment tool</li><li>Contains the total score for the Assessment tool  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>sensoryPainRatingIndex</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>Contains the rating value for the patient s subjective measurement of sensory pain.</li><li>Contains the calculated value for the Sensory Pain Rating Index for the patient.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>totalPainRatingIndex</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>Contains the patient s total rating value for subjective measurement of pain.</li><li>Contains the calculated value for the Total Pain Rating Index for the patient.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>weight</b></tt> with data type <xref href="../PhysicalQuantity.dita">Physical Quantity</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>visualAnalogScale</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>Contains the scale value for the patient s visual analogue.</li><li>Contains the calculated value for the Visual Anaolog Scale for the patient.</li></ul></li>
+<li>Contains at least one [1..*] <tt><b>assessmentSection</b></tt>, where its type is <xref href="../AssessmentSection.dita">Assessment Section</xref>
+<ul><li>Contains information that is pertinent to Assessment grouping or Section on the Assessment tool</li></ul><ul><li> Association to the class that identifies the Assessment section or grouping on the assessment tool.</li><li>Contains information that is pertinent to Assessment grouping or Section on the Assessment to</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>assessmentPatient</b></tt>, where its type is <xref href="../PatientLite.dita">Patient Lite</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>transcriber</b></tt>, where its type is <xref href="../Transcriber.dita">Transcriber</xref>
+<ul><li>"An entity entering the data into the originating system. The data entry entity is collected optionally for internal quality control purposes. This includes the transcriptionist for dictated text transcribed into electronic form." - HL7 V3.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>diagnosisList</b></tt>, where its type is <xref href="../DiagnosisListEntry.dita">Diagnosis List Entry</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>attendantCare</b></tt>, where its type is <xref href="../AttendantCare.dita">Attendant Care</xref>
+<ul><li>Contains information regarding attendant care for the spinal cord injury patient</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>attender</b></tt>, where its type is <xref href="../Attender.dita">Attender</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>comments</b></tt>, where its type is <xref href="../CommentEvent.dita">Comment Event</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>spinalCordAssessmentGoal </b></tt>, where its type is <xref href="../SpinalCordAssessmentGoal.dita">SpinalCordAssessmentGoal </xref>
+<ul><li>Association to the class that identifies the value which indicates numeric goal for spinal Cord injury patient's rehabilitation.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>author</b></tt>, where its type is <xref href="../Author.dita">Author</xref>
+</li>
+</ol>
+<ol id="aggregate">
+<li>Extends <xref href="../SpinalCordEvent.dita">Spinal Cord Event</xref></li>
+<li>Contains exactly one [1..1] <tt><b>careType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Contains the codes to identify the tyeps of Epsiode of Care for the veteran  i,e inpatient, rehab etc.   </li><li>Contains the codes to identify the tyeps of Epsiode of Care for the veteran i,e inpatient, rehab etc. </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>id</b></tt>
+<ul><li>Contains the unique identifier for the  Assessment Tool</li><li>Unique identifier for the SpinalCordAssessment   </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>recordDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>Contains the date the veteran received Patient Education  </li><li>Contains the date the veteran received Patient Education    </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>scoreType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Contains the Code Set that identifies the tyepe of score for the Assessment tool.</li><li>Contains the Code Set that identifies the tyepe of score for the Assessment tool.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>affectivePainRatingIndex</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>Contains the rating value for the patient s subjective measurement of affective pain.</li><li>Contains the calculated value for the Affected Pain Rating Index for the patient.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>assessmentFormType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Contains the code set that identifies the Assessment Instrument ( form) ie. SWLS, FIM, ASIA, CHART-SF, FAM, DUSOI-A etc.</li><li>Contains the codes that identify the type Assessment Form the Patient informations is being gathered for. ie. ASIA, FIN FAM CHARTSFetc</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>bodyMassIndex</b></tt> with data type <xref href="../PhysicalQuantity.dita">Physical Quantity</xref>
+<ul><li>Contains the calculated value for the BMI or Body Mass Index </li><li>Contains the BMI dcore for the veteran.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>cognitiveSubTotal</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>Contains Cognitive Assessment value for veteran  </li><li>Contains Cognitive Assessment value for veteran    </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>diagnosticHealthProblemScore</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>Contains the diagnostic health problem assessment value for the veteran</li><li>Contains the diagnostic health problem assessment value for the veteran      </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>height</b></tt> with data type <xref href="../PhysicalQuantity.dita">Physical Quantity</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>highestNeurologicalLevel</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>Contains the highest Nreuorlogical Level score for the veteran.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>impairmentScale</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>Contains the Impairment Scale value for the veteran.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>mentalComponentScore</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>Contains the mental component assessment value for the veteran</li><li>Contains the mental component assessment value for the veteran  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>motorSubTotal</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>Contains Motor Assessment value for veteran  </li><li>Contains Motor Assessment value for veteran</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>overallCYHDepression</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>Contains the subscore for the veteran overall Depression  </li><li>Contains the subscore for the veteran overall Depression</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>overallCYHHealth</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>Contains the subscore for the veteran overall Health.</li><li>Contains the subscore for the veteran overall Health</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>overallCYHIndependance</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>Contains the subscore for the veteran overall Independance  </li><li>Contains the subscore for the veteran overall Independance</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>painScale</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>Contains the scale value for the patient s overall pain. </li><li>Contains the calculated value for the pain scale.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>physicalComponentScore</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>Contains the physical component assessment value for the veteran</li><li>Contains the physical component assessment value for the veteran  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>score</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>Contains the total score for the Assessment tool</li><li>Contains the total score for the Assessment tool  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>sensoryPainRatingIndex</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>Contains the rating value for the patient s subjective measurement of sensory pain.</li><li>Contains the calculated value for the Sensory Pain Rating Index for the patient.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>totalPainRatingIndex</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>Contains the patient s total rating value for subjective measurement of pain.</li><li>Contains the calculated value for the Total Pain Rating Index for the patient.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>weight</b></tt> with data type <xref href="../PhysicalQuantity.dita">Physical Quantity</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>visualAnalogScale</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>Contains the scale value for the patient s visual analogue.</li><li>Contains the calculated value for the Visual Anaolog Scale for the patient.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>division</b></tt>, where its type is <xref href="../Division.dita">Division</xref>
+<ul><li>Contains the Division with in the VA which provided the patient Education.  </li><li>Division the patient is currently assigned.</li></ul></li>
+<li>Contains at least one [1..*] <tt><b>medicalComplication</b></tt>, where its type is <xref href="../MedicalComplication.dita">Medical Complication</xref>
+<ul><li> Association to the class that identifies the information regarding the spinal cord injury medical complications for the patient.</li><li>Association to the class that contains information regarding the spinal cord injury medical complications for the patient.</li></ul></li>
+<li>Contains at least one [1..*] <tt><b>serviceDeliveryLocation</b></tt>, where its type is <xref href="../ServiceDeliveryLocation.dita">Service Delivery Location</xref>
+<ul><li> Association to the class that identifies the physical location of the services being provided for the spinal cord injury patient.</li><li>Association to the location to which the patient is assigned.</li></ul></li>
+<li>Contains at least one [1..*] <tt><b>assessmentSection</b></tt>, where its type is <xref href="../AssessmentSection.dita">Assessment Section</xref>
+<ul><li>Contains information that is pertinent to Assessment grouping or Section on the Assessment tool</li></ul><ul><li> Association to the class that identifies the Assessment section or grouping on the assessment tool.</li><li>Contains information that is pertinent to Assessment grouping or Section on the Assessment to</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>assessmentPatient</b></tt>, where its type is <xref href="../PatientLite.dita">Patient Lite</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>transcriber</b></tt>, where its type is <xref href="../Transcriber.dita">Transcriber</xref>
+<ul><li>"An entity entering the data into the originating system. The data entry entity is collected optionally for internal quality control purposes. This includes the transcriptionist for dictated text transcribed into electronic form." - HL7 V3.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>diagnosisList</b></tt>, where its type is <xref href="../DiagnosisListEntry.dita">Diagnosis List Entry</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>attendantCare</b></tt>, where its type is <xref href="../AttendantCare.dita">Attendant Care</xref>
+<ul><li>Contains information regarding attendant care for the spinal cord injury patient</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>attender</b></tt>, where its type is <xref href="../Attender.dita">Attender</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>comments</b></tt>, where its type is <xref href="../CommentEvent.dita">Comment Event</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>spinalCordAssessmentGoal </b></tt>, where its type is <xref href="../SpinalCordAssessmentGoal.dita">SpinalCordAssessmentGoal </xref>
+<ul><li>Association to the class that identifies the value which indicates numeric goal for spinal Cord injury patient's rehabilitation.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>author</b></tt>, where its type is <xref href="../Author.dita">Author</xref>
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Spinal Cord Assessment</ph></p>
+</body>
+</topic>

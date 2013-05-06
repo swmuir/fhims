@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Point Of Contact - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>This class identifies a person who works for or represents an organization and who may be contacted under specified circumstances.  This class is very similar to the ContactParty in Person Demographics, the diffence being that this class is used to identify a contact person for an oganization, while the ContactParty class is used to indentify a contact person (who may be a relative) for a patient.
+
+Note that because all we need is the person's name and contact information (address, phone numbers), this class does not have an association to the Person class (although logically it should).  This is because the other properties of Person, such as sex and date of birth, are irrelevant to the usage.  The HL7 Role class allows for names and addresses on the Role, which technically should be only those names or addresses as the relate to the role (i.e., as they differ from those in Person class), but since these are available for use, we are utilizing them in this manner, even though it is somewhat irregular.</p>
+</section>
+<ol id="conformance">
+<li>Contains zero or one [0..1] <tt><b>contactCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the circumstances under which this person is the contact party for the owning Organization class.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>effectiveDateRange</b></tt> with data type <xref href="../TimeInterval.dita">Time Interval</xref>
+<ul><li>The date range during which this person is a contact party for the organization.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>legalName</b></tt> with data type <xref href="../PersonName.dita">Person Name</xref>
+<ul><li>The name by which a person is known or legally identified such as the name on a driver's license or passport.  Note that the datatype for this property is a PersonName, which includes the various parts that make up a person's name such as family name, prefixes, suffixes, etc.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>The status of the record of the relationship with the organization.  Example values include Active, Deprecated, etc.  Paired with the effectiveDateRange which indicates the valid range of dates for which this person should be contacted.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>mobilePhone</b></tt> with data type <xref href="../Telecommunications.dita">Telecommunications</xref>
+<ul><li>A telecommunication device that moves and stays with its owner. Suitable for urgent matters, the mobile phone is not the first choice for routine business.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>workAddress</b></tt> with data type <xref href="../Address.dita">Address</xref>
+<ul><li>The contact party's office address.  First choice for business related contacts during business hours.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>workEmail</b></tt> with data type <xref href="../Telecommunications.dita">Telecommunications</xref>
+<ul><li>The email address that a person uses while at their place of business.  First choice for business related contacts during business hours.    "Contains the patient's personal telecommunication contact information." - HL7 Version 2.8, PID-40.  Note that in HL7, the Telecommunications datatype contains a type code to indicate what kind of telecommunications address that is being referenced.  The FHIM explicitly models the telecommuncations type, so in this case the attribute name is "Work Email", and the type code would be set to "workplace" when targeting an HL7 implementation.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>workPhone</b></tt> with data type <xref href="../Telecommunications.dita">Telecommunications</xref>
+<ul><li>The phone number for a person at their office location. First choice for business related contacts during business hours.</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains zero or one [0..1] <tt><b>contactCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the circumstances under which this person is the contact party for the owning Organization class.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>effectiveDateRange</b></tt> with data type <xref href="../TimeInterval.dita">Time Interval</xref>
+<ul><li>The date range during which this person is a contact party for the organization.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>legalName</b></tt> with data type <xref href="../PersonName.dita">Person Name</xref>
+<ul><li>The name by which a person is known or legally identified such as the name on a driver's license or passport.  Note that the datatype for this property is a PersonName, which includes the various parts that make up a person's name such as family name, prefixes, suffixes, etc.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>The status of the record of the relationship with the organization.  Example values include Active, Deprecated, etc.  Paired with the effectiveDateRange which indicates the valid range of dates for which this person should be contacted.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>mobilePhone</b></tt> with data type <xref href="../Telecommunications.dita">Telecommunications</xref>
+<ul><li>A telecommunication device that moves and stays with its owner. Suitable for urgent matters, the mobile phone is not the first choice for routine business.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>workAddress</b></tt> with data type <xref href="../Address.dita">Address</xref>
+<ul><li>The contact party's office address.  First choice for business related contacts during business hours.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>workEmail</b></tt> with data type <xref href="../Telecommunications.dita">Telecommunications</xref>
+<ul><li>The email address that a person uses while at their place of business.  First choice for business related contacts during business hours.    "Contains the patient's personal telecommunication contact information." - HL7 Version 2.8, PID-40.  Note that in HL7, the Telecommunications datatype contains a type code to indicate what kind of telecommunications address that is being referenced.  The FHIM explicitly models the telecommuncations type, so in this case the attribute name is "Work Email", and the type code would be set to "workplace" when targeting an HL7 implementation.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>workPhone</b></tt> with data type <xref href="../Telecommunications.dita">Telecommunications</xref>
+<ul><li>The phone number for a person at their office location. First choice for business related contacts during business hours.</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Point Of Contact</ph></p>
+</body>
+</topic>

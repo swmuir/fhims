@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Injury - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>Information related to cases where the decedents death was due to injury or poisoning.</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>dateTime</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date and time that the injury or poisoning occured that eventually lead to the decedent's death.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>howInjuryOccurred</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>A textual description of how the injury occured.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>injuryPlace</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>The general place (such as restaurant, vacant lot, or home) where the injury occurred.  Company or organization names are not to be used. (For example,  factory , not  Standard Manufacturing, Inc. )</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>injuryPlaceAddress</b></tt> with data type <xref href="../Address.dita">Address</xref>
+<ul><li>The street address of the location at which the injury or poisoning occured.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>transportationInjuryCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>If the injury was tranportation related, this property categories whether the injury occured while the decedent was a: Driver/Operator, Passenger, Pedestrian, or Other.  Driver/operator and passenger should be designated for modes other than motor vehicles such as bicycles. Other applies to watercraft, aircraft, animal, or people attached to outside of vehicles (e.g. surfers).</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>wasWorkplaceInjury</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li>Indicates whether the injury or poisoning occurred at work. An injury may occur at work regardless of whether the injury occurred in the course of the decedent s  usual  occupation.</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>dateTime</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date and time that the injury or poisoning occured that eventually lead to the decedent's death.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>howInjuryOccurred</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>A textual description of how the injury occured.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>injuryPlace</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>The general place (such as restaurant, vacant lot, or home) where the injury occurred.  Company or organization names are not to be used. (For example,  factory , not  Standard Manufacturing, Inc. )</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>injuryPlaceAddress</b></tt> with data type <xref href="../Address.dita">Address</xref>
+<ul><li>The street address of the location at which the injury or poisoning occured.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>transportationInjuryCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>If the injury was tranportation related, this property categories whether the injury occured while the decedent was a: Driver/Operator, Passenger, Pedestrian, or Other.  Driver/operator and passenger should be designated for modes other than motor vehicles such as bicycles. Other applies to watercraft, aircraft, animal, or people attached to outside of vehicles (e.g. surfers).</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>wasWorkplaceInjury</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li>Indicates whether the injury or poisoning occurred at work. An injury may occur at work regardless of whether the injury occurred in the course of the decedent s  usual  occupation.</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Injury</ph></p>
+</body>
+</topic>

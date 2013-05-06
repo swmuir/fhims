@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Related Order - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>"Relates a child to its parent when a parent child relationship exists." - HL7 Version 2, ORC-8.
+
+This class relates an Order to another Order to which it is related in some way.  The relatedOrderCategory code indicates how the orders are related.</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>relatedOrderCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates how the "target Order" is related to the "source Order".  Examples include Parent, Child, Replaces, Replaced By, etc.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>order</b></tt>, where its type is <xref href="../HealthcareOrder.dita">Healthcare Order</xref>
+<ul><li>"Relates a child to its parent when a parent child relationship exists." - HL7 Version 2, ORC-8.
+
+Points to the Order (i.e., the "target Order") to which the "source Order" (i.e., the Order that points to this class) is somehow related.  </li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>relatedOrderCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates how the "target Order" is related to the "source Order".  Examples include Parent, Child, Replaces, Replaced By, etc.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>order</b></tt>, where its type is <xref href="../HealthcareOrder.dita">Healthcare Order</xref>
+<ul><li>"Relates a child to its parent when a parent child relationship exists." - HL7 Version 2, ORC-8.
+
+Points to the Order (i.e., the "target Order") to which the "source Order" (i.e., the Order that points to this class) is somehow related.  </li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Related Order</ph></p>
+</body>
+</topic>

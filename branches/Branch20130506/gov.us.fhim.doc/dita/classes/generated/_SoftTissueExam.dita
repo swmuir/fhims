@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Soft Tissue Exam - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>This class identifies observations outcome related to Soft Tissue (Head &amp;amp; Neck) Exam.</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>This is the unique identifier of the dental encounter record.    </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>comments</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Remarks by the Provider on HeadNeck findings.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>headNeckDescription</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Remarks by the Provider on HeadNeck findings.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>isResolved</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li>Indicates whether or not this head &amp;amp; neck transaction has been resolved.  Possible values are TRUE; FALSE  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>markerColor</b></tt> with data type <xref href="../Real.dita">Real</xref>
+<ul><li>The color of the marker used to indicate the lesion used in treatment planning  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>markerShape</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>The shape of the marker used to indicate the lesion used in treatment planning.   Possible values are rectangle; square; oval; circle; rounded rectangle; rounded square.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>markerSize</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>The size of the marker used to indicate the lesion used in treatment planning  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>xCoordinate</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>This is the X coordinate for the lesion.  DRM Plus Program Specific.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>yCoordinate</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>This is the Y coordinate for the lesion.   DRM Plus Program Specific.  </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>dentalProcedure</b></tt>, where its type is <xref href="../DentalProcedure.dita">Dental Procedure</xref>
+<ul><li>Dental Procedure provided.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>masterLesionRecord</b></tt>, where its type is <xref href="../SoftTissueExam.dita">Soft Tissue Exam</xref>
+</li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>This is the unique identifier of the dental encounter record.    </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>comments</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Remarks by the Provider on HeadNeck findings.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>headNeckDescription</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Remarks by the Provider on HeadNeck findings.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>isResolved</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li>Indicates whether or not this head &amp;amp; neck transaction has been resolved.  Possible values are TRUE; FALSE  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>markerColor</b></tt> with data type <xref href="../Real.dita">Real</xref>
+<ul><li>The color of the marker used to indicate the lesion used in treatment planning  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>markerShape</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>The shape of the marker used to indicate the lesion used in treatment planning.   Possible values are rectangle; square; oval; circle; rounded rectangle; rounded square.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>markerSize</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>The size of the marker used to indicate the lesion used in treatment planning  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>xCoordinate</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>This is the X coordinate for the lesion.  DRM Plus Program Specific.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>yCoordinate</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>This is the Y coordinate for the lesion.   DRM Plus Program Specific.  </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>dentalProcedure</b></tt>, where its type is <xref href="../DentalProcedure.dita">Dental Procedure</xref>
+<ul><li>Dental Procedure provided.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>masterLesionRecord</b></tt>, where its type is <xref href="../SoftTissueExam.dita">Soft Tissue Exam</xref>
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Soft Tissue Exam</ph></p>
+</body>
+</topic>

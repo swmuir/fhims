@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Physical Quantity Ratio - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>A ratio (numerator : denominator) specifying the relative quantities of the Entity playing the Role in the Entity scoping the Role, used for Roles that represent composition relationships between the scoping and playing Entities.</p>
+<p>This data type represents a Ratio, where the Low and High Limits are Physical Quantities.  A Ratio is " A quantity constructed as the quotient of a numerator quantity divided by a denominator quantity." - HL7 V3  A Physical Quantity is "a dimensioned quantity expressing the result of measuring" - HL7 V3</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>numerator</b></tt> with data type <xref href="../PhysicalQuantity.dita">Physical Quantity</xref>
+<ul><li>The quantity that is being divided in the ratio. The default is the integer number 1</li><li>"The quantity that is being divided in the ratio. The default is the integer number 1 (one)." - HL7 V3</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>denominator</b></tt> with data type <xref href="../PhysicalQuantity.dita">Physical Quantity</xref>
+<ul><li>The quantity that divides the numerator in the ratio. The default is the integer number 1 (one.) The denominator must not be zero.</li><li>"The quantity that devides the numerator in the ratio. The default is the integer number 1 (one). The denominator SHALL not be zero." - HL7 V3</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>numerator</b></tt> with data type <xref href="../PhysicalQuantity.dita">Physical Quantity</xref>
+<ul><li>The quantity that is being divided in the ratio. The default is the integer number 1</li><li>"The quantity that is being divided in the ratio. The default is the integer number 1 (one)." - HL7 V3</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>denominator</b></tt> with data type <xref href="../PhysicalQuantity.dita">Physical Quantity</xref>
+<ul><li>The quantity that divides the numerator in the ratio. The default is the integer number 1 (one.) The denominator must not be zero.</li><li>"The quantity that devides the numerator in the ratio. The default is the integer number 1 (one). The denominator SHALL not be zero." - HL7 V3</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Physical Quantity Ratio</ph></p>
+</body>
+</topic>

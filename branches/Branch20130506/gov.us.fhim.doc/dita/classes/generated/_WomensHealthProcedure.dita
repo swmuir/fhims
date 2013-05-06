@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Womens Health Procedure - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>This class captures information about the procedures a patient has undergone and will undergo in future.</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>accessionId</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Accession number of the procedure associated with this patient's notification. (composed of the procedure's abbreviated code, a four digit year and a sequential number).     </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>datePerformed</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date on which the procedure was performed. Dates in the future may not be entered.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dateRequired</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date used to determine that this procedure record is delinquent when a closed status has not been entered in the record.     </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Contains the status of the procedure record.   </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>performer</b></tt>, where its type is <xref href="../PrimaryPerformer.dita">Primary Performer</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>procedure</b></tt>, where its type is <xref href="../Procedure.dita">Procedure</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>procedureResult</b></tt>, where its type is <xref href="../WomensHealthProcedureResult.dita">Womens Health Procedure Result</xref>
+<ul><li>Indicates the procedure result after the procedure is done to a patient.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>relatedProcedure</b></tt>, where its type is <xref href="../RelatedProcedure.dita">Related Procedure</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>treatmentFacility</b></tt>, where its type is <xref href="../ServiceDeliveryLocation.dita">Service Delivery Location</xref>
+<ul><li>The name of the health care facility where this procedure was performed.  </li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>accessionId</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Accession number of the procedure associated with this patient's notification. (composed of the procedure's abbreviated code, a four digit year and a sequential number).     </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>datePerformed</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date on which the procedure was performed. Dates in the future may not be entered.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dateRequired</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date used to determine that this procedure record is delinquent when a closed status has not been entered in the record.     </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Contains the status of the procedure record.   </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>performer</b></tt>, where its type is <xref href="../PrimaryPerformer.dita">Primary Performer</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>procedure</b></tt>, where its type is <xref href="../Procedure.dita">Procedure</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>procedureResult</b></tt>, where its type is <xref href="../WomensHealthProcedureResult.dita">Womens Health Procedure Result</xref>
+<ul><li>Indicates the procedure result after the procedure is done to a patient.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>relatedProcedure</b></tt>, where its type is <xref href="../RelatedProcedure.dita">Related Procedure</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>treatmentFacility</b></tt>, where its type is <xref href="../ServiceDeliveryLocation.dita">Service Delivery Location</xref>
+<ul><li>The name of the health care facility where this procedure was performed.  </li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Womens Health Procedure</ph></p>
+</body>
+</topic>

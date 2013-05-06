@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Womens Health Case Summary - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>This class captures pertinent information of women's health case summarization of a patient for an assigned caseManager.</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>breastCancerFamilyHistory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates whether the patient or the one of the patient's relatives have had breast cancer.  Possible values include: No family history,  2nd degree relative, 1st degree relative, 3: More than one 1st degree relatives, Personal history, or Unknown.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>breastTreatment</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Identifies the current or next breast procedure or treatment recommended for this patient.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>breastTreatmentDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date when the current or next breast procedure or treatment should be completed.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>cervicalTreatment</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Identifies the current or next cervical procedure or treatment recommended for this patient.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>cervicalTreatmentDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date when the current or next cervical procedure or treatment should be completed.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>estimatedDateOfConfinement</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>An archaic term for the estimated date a baby might be born. It is determined based on the first day of a woman's last menstruation. See Naegele's rule.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>desDaughter</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>An indication of whether the patient was exposed to diethylstilbestrol (DES) in utero.  Possible values include: Yes, No, or Unknown.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>historyOfSexualTrauma</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates whether the patient has experienced any sexual trauma (rape, sexual assault, etc.) as a civilian.  Possible values include: Yes, No, Declined to answer, Unknown.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>Uniquely identifies the summary of the patient's Women's Health record.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>isPregnant</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li>Indicates whether the patient is currently pregnant.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>papRegimen</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Identifies the current Pap regimen for the patient.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>papRegimenStartDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date on which the patient began or will begin her current PAP regimen.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>remarks</b></tt> with data type <xref href="../String.dita">String</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>caseManager</b></tt>, where its type is <xref href="../ResponsibleParty.dita">Responsible Party</xref>
+</li>
+<li>Contains at least one [1..*] <tt><b>women'sHealthNotification</b></tt>, where its type is <xref href="../WomensHealthPatientNotification.dita">Womens Health Patient Notification</xref>
+<ul><li>Indicates the notification to the patient from the case manager.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>patient</b></tt>, where its type is <xref href="../Patient.dita">Patient</xref>
+<ul><li>Identifies the patient associated with the procedure, notification and/or refusal.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>dataEnterer</b></tt>, where its type is <xref href="../DataEnterer.dita">Data Enterer</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>refusal</b></tt>, where its type is <xref href="../WomensHealthPatientRefusal.dita">Womens Health Patient Refusal</xref>
+<ul><li>Indicates the procedure refused by the patient.  </li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>womensHealthProcedure</b></tt>, where its type is <xref href="../WomensHealthProcedure.dita">Womens Health Procedure</xref>
+</li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>breastCancerFamilyHistory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates whether the patient or the one of the patient's relatives have had breast cancer.  Possible values include: No family history,  2nd degree relative, 1st degree relative, 3: More than one 1st degree relatives, Personal history, or Unknown.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>breastTreatment</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Identifies the current or next breast procedure or treatment recommended for this patient.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>breastTreatmentDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date when the current or next breast procedure or treatment should be completed.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>cervicalTreatment</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Identifies the current or next cervical procedure or treatment recommended for this patient.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>cervicalTreatmentDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date when the current or next cervical procedure or treatment should be completed.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>estimatedDateOfConfinement</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>An archaic term for the estimated date a baby might be born. It is determined based on the first day of a woman's last menstruation. See Naegele's rule.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>desDaughter</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>An indication of whether the patient was exposed to diethylstilbestrol (DES) in utero.  Possible values include: Yes, No, or Unknown.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>historyOfSexualTrauma</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates whether the patient has experienced any sexual trauma (rape, sexual assault, etc.) as a civilian.  Possible values include: Yes, No, Declined to answer, Unknown.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>Uniquely identifies the summary of the patient's Women's Health record.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>isPregnant</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li>Indicates whether the patient is currently pregnant.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>papRegimen</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Identifies the current Pap regimen for the patient.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>papRegimenStartDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>The date on which the patient began or will begin her current PAP regimen.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>remarks</b></tt> with data type <xref href="../String.dita">String</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>caseManager</b></tt>, where its type is <xref href="../ResponsibleParty.dita">Responsible Party</xref>
+</li>
+<li>Contains at least one [1..*] <tt><b>women'sHealthNotification</b></tt>, where its type is <xref href="../WomensHealthPatientNotification.dita">Womens Health Patient Notification</xref>
+<ul><li>Indicates the notification to the patient from the case manager.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>patient</b></tt>, where its type is <xref href="../Patient.dita">Patient</xref>
+<ul><li>Identifies the patient associated with the procedure, notification and/or refusal.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>dataEnterer</b></tt>, where its type is <xref href="../DataEnterer.dita">Data Enterer</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>refusal</b></tt>, where its type is <xref href="../WomensHealthPatientRefusal.dita">Womens Health Patient Refusal</xref>
+<ul><li>Indicates the procedure refused by the patient.  </li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>womensHealthProcedure</b></tt>, where its type is <xref href="../WomensHealthProcedure.dita">Womens Health Procedure</xref>
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Womens Health Case Summary</ph></p>
+</body>
+</topic>

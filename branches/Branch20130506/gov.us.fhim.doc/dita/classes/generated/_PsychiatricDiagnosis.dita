@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Psychiatric Diagnosis - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="knownSubclasses">
+</section>
+<section id="description">
+<p><lines><i>This class is intended to specialize a generic diagnosis class by adding                   support for Diagnostic and Statistical Manual of Mental Disorders (DSM) codes and                   supports any extensions required to communicate information about Behavioral                   Health diagnoses between organizations and providers.</i></lines></p>
+</section>
+<ol id="conformance">
+<li>Extends <xref href="../Diagnosis.dita">Diagnosis</xref></li>
+<li>Contains exactly one [1..1] <tt><b>diagnosisCode</b></tt>
+<ul><li><p><lines><i>This attribute is intended to store the code for the diagnosis in SNOMED-CT.                     Since both the DSM IV and the ICD codes corresponding to the psychiatric                     diagnosis are mapped to SNOMED-CT should be sufficient to represent psychiatric                     diagnoses.</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>confidentialityCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i> This code may be used to specify whether the diagnosis is sensitive (e.g.                     carries a social stigma). This attribute relies on the sensitivity value set                     specified by HL7 Confidentiality coding system.</i></lines></p></li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Extends <xref href="../Diagnosis.dita">Diagnosis</xref></li>
+<li>Contains exactly one [1..1] <tt><b>diagnosisCode</b></tt>
+<ul><li><p><lines><i>This attribute is intended to store the code for the diagnosis in SNOMED-CT.                     Since both the DSM IV and the ICD codes corresponding to the psychiatric                     diagnosis are mapped to SNOMED-CT should be sufficient to represent psychiatric                     diagnoses.</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>diagnosisModifier</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>Contains a "modifier" that more precisely identifies the condition or the diagnosis. Some coding schemes, such as the  International Classifications of Diseases version 9, support the notion of a "modifier", while others do not. This  property is only to be used when the code property is using a coding scheme that supports a modifier.</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>confidentialityCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i> This code may be used to specify whether the diagnosis is sensitive (e.g.                     carries a social stigma). This attribute relies on the sensitivity value set                     specified by HL7 Confidentiality coding system.</i></lines></p></li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Psychiatric Diagnosis</ph></p>
+</body>
+</topic>

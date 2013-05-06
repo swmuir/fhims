@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Patient Behavioral Health - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="knownSubclasses">
+</section>
+<section id="description">
+<p><lines><i>This class represents a specialization of the Patient role declared in the                   FHIM Patient Demographics domain.</i></lines></p>
+</section>
+<ol id="conformance">
+<li>Extends <xref href="../HumanPatient.dita">Human Patient</xref></li>
+<li>Contains exactly one [1..1] <tt><b>biologicalGender</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>This attribute is currently in this domain but it will be moved to &amp;apos;Person&amp;apos;.                     It specifies the biological gender of a client/patient. This attribute is                     optional (i.e. cardinality [0..1]). HL7 Version 3 does not currently have a                     Concept Domain corresponding to Biological Gender. There is a concept domain for                     AdministrativeGender which has the definition &amp;apos; the gender of a person used for                     administrative purposes (as opposed to clinical gender)&amp;apos; . </i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>immigrationStatus</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>The primary purpose for this attribute is for reporting purposes, although                     in some instances, immigration status could be used to determine eligibility for                     Behavioral Health services. Example enumerations have been provided for this                     attribute in the Terminology section of this publication. This attribute is                     optional (i.e. cardinality [0..1]).</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>custodialStatus</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>The primary purpose for this attribute is for reporting purposes. Custodial                     status refers to the legal guardianship according to example enumerations that                     were provided to this analysis and which appear in the Terminology section of                     this publication. There are no values currently defined to indicate prison                     incarceration however. This attribute is optional (i.e. cardinality                   [0..1]).</i></lines></p></li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>psychiatricDiagnosis</b></tt>, where its type is <xref href="../PsychiatricDiagnosis.dita">Psychiatric Diagnosis</xref>
+<ul><li><p><lines><i>This is a directed association between a behavioral patient/client and their                   psychiatric diagnoses.</i></lines></p></li></ul><ul><li><p><lines><i>This is an association between the patient and their psychiatric diagnoses.                     The cardinality of this association is * to allow zero or more psychiatric                     diagnoses to be specified.</i></lines></p></li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>problem</b></tt>, where its type is <xref href="../HealthConcern.dita">Health Concern</xref>
+<ul><li><p><lines><i>This is a directed association between a behavioral patient/client and all of                   their behavioral health problems or concerns.</i></lines></p></li></ul><ul><li><p><lines><i>This is an association between the patient and their problems. The                     cardinality of this association is * to allow zero or more problems to be                     specified.</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>historyOfAbuseOrNeglect</b></tt>, where its type is <xref href="../HistoryOfAbuseOrNeglectRecord.dita">History Of Abuse Or Neglect Record</xref>
+<ul><li><p><lines><i> This is an association between the patient and their history of abuse or                     neglect history records. </i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>suicidalIdeation</b></tt>, where its type is <xref href="../SuicidalIdeationObservation.dita">Suicidal Ideation Observation</xref>
+<ul><li><p><lines><i>This is a directed association between a patient/client and the details of a                   health concern related to suicidal ideation.</i></lines></p></li></ul><ul><li><p><lines><i> This is an association between the patient and their records of suicidal                     ideation, suicide attempts, and alerts. </i></lines></p></li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Extends <xref href="../Patient.dita">Patient</xref></li>
+<li>Extends <xref href="../HumanPatient.dita">Human Patient</xref></li>
+<li>Contains at least one [1..*] <tt><b>patientId</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li><p><lines><i>An identification of the Person or Animal while in the role of Patient.  This Identifier is basically an "account number".  A single person will have multiple Patient Ids at various healthcare providers.  It is not uncommon for a person to have multiple Patient Ids or "account numbers" at a single institution - often a new account number is created for each episode of care.  This is also the case in long-term care situations, where a new account number may be created each month in order to facilitate monthly billing.
+
+"Contains the list of identifiers (one or more) used by the healthcare facility to uniquely identify a patient (e.g., medical record number, billing number, birth registry, national unique individual identifier, etc.)." - HL7 Version 2.8, PID-3.
+"Contains the patient account number assigned by accounting to which all charges, payments, etc., are recorded.  It is used to identify the patient's account." - HL7 Version 2.8, PID-18.</i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>Indicates the state of the Patient's record, as defined in the state-transition model in the HL7 RIM.  Examples include Active, Pending, Terminated, etc.  Additional states might be defined such as 'Temporary' or 'Permanent'.
+
+Note, for public health reporting purposes, this statusiIndicates the active/inactive status of the patient at the provider site level. See MIROW "Management of Moved or Gone Elsewhere (MOGE) and Other Patient Status Designations in IIS guidelines.</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>confidentialityCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>'Codes that identify how sensitive a piece of information is and/or that indicate how the information may be made available or disclosed.'  HL7 RIM.</i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>bloodType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>Identifies the patient's blood type, if known.  Possible values include: 0+, O-, A+, A-, B+, B-, AB+, AB-</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>identityReliabilityCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>"Contains a coded value used to communicate information regarding the reliability of patient/person identifying data transmitted via a transaction.  Values could indicate that certain fields on a PID segment for a given patient/person are known to be false (e.g., use of default or system-generated values for Date of Birth or Social Security Number)." - HL7 Version 2.8, PID-32.  HL7 Version 2 has the following suggested values (table 445): Unknown/Default Social Security Number; Unknown/Default Date of Birth; Unknown/Default Address; Patient/Person Name is an Alias.</i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>isIdentityUnknown</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li><p><lines><i>"Indicates whether or not the patient's/person's identity is known." - HL7 Version 2.8, PID-31.</i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>isOrganDonor</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li><p><lines><i>Indicates whether the patient has consented to be an organ donor upon their demise.</i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>lastUpdateDateTime</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li><p><lines><i>"Contains the last update date and time for the patient's/person's identifying and demographic data, as defined in the PID segment...." - HL7 Version 2.8, PID-33.</i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>lastUpdateFacility</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>"Identifies the facility of the last update to a patient's/person's identifying and demographic data, as defined in the PID segment...." - HL7 Version 2.8, PID-34.</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>veryImportantPerson</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>"Identifies the type of VIP." - HL7 Version 2.8, PV1-16    A code specifying the patient's special status granted by the organization at which they are a patient, often resulting in preferred treatment and special considerations. For example, board member, diplomat, etc.      9/28/2011: Make this a boolean?  What other values are possible here?  The HL7 V2 table (99) does not have any suggested values.  HL7 V3 has a code, but not sure whether they're applicable to US Govt uses.  Check with DoD and IHS.</i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>biologicalGender</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>This attribute is currently in this domain but it will be moved to &amp;apos;Person&amp;apos;.                     It specifies the biological gender of a client/patient. This attribute is                     optional (i.e. cardinality [0..1]). HL7 Version 3 does not currently have a                     Concept Domain corresponding to Biological Gender. There is a concept domain for                     AdministrativeGender which has the definition &amp;apos; the gender of a person used for                     administrative purposes (as opposed to clinical gender)&amp;apos; . </i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>immigrationStatus</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>The primary purpose for this attribute is for reporting purposes, although                     in some instances, immigration status could be used to determine eligibility for                     Behavioral Health services. Example enumerations have been provided for this                     attribute in the Terminology section of this publication. This attribute is                     optional (i.e. cardinality [0..1]).</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>custodialStatus</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>The primary purpose for this attribute is for reporting purposes. Custodial                     status refers to the legal guardianship according to example enumerations that                     were provided to this analysis and which appear in the Terminology section of                     this publication. There are no values currently defined to indicate prison                     incarceration however. This attribute is optional (i.e. cardinality                   [0..1]).</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>healthRecord</b></tt>, where its type is <xref href="../HealthRecord.dita">Health Record</xref>
+<ul><li><p><lines><i>Records regarding the Patient's healthcare that are subject to the consent rules in Consent Directives.</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>primaryCareProvider</b></tt>, where its type is <xref href="../PrimaryCareProvider.dita">Primary Care Provider</xref>
+<ul><li><p><lines><i>A doctor selected by the patient to be the first physician contacted for any medical problem. The doctor acts as the patient's regular physician and coordinates any other care the patient needs, such as a visit to a specialist or hospitalization.</i></lines></p></li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>patientRisk</b></tt>, where its type is <xref href="../PatientRisk.dita">Patient Risk</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>contactParty</b></tt>, where its type is <xref href="../ContactParty.dita">Contact Party</xref>
+<ul><li><p><lines><i>The person who should be contacted on the patients behalf under specified situations.</i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>subject</b></tt>, where its type is <xref href="../Person.dita">Person</xref>
+<ul><li><p><lines><i>Identifies the person who is playing the role of patient (HumanPatient).</i></lines></p></li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>psychiatricDiagnosis</b></tt>, where its type is <xref href="../PsychiatricDiagnosis.dita">Psychiatric Diagnosis</xref>
+<ul><li><p><lines><i>This is a directed association between a behavioral patient/client and their                   psychiatric diagnoses.</i></lines></p></li></ul><ul><li><p><lines><i>This is an association between the patient and their psychiatric diagnoses.                     The cardinality of this association is * to allow zero or more psychiatric                     diagnoses to be specified.</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>historyOfAbuseOrNeglect</b></tt>, where its type is <xref href="../HistoryOfAbuseOrNeglectRecord.dita">History Of Abuse Or Neglect Record</xref>
+<ul><li><p><lines><i> This is an association between the patient and their history of abuse or                     neglect history records. </i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>suicidalIdeation</b></tt>, where its type is <xref href="../SuicidalIdeationObservation.dita">Suicidal Ideation Observation</xref>
+<ul><li><p><lines><i>This is a directed association between a patient/client and the details of a                   health concern related to suicidal ideation.</i></lines></p></li></ul><ul><li><p><lines><i> This is an association between the patient and their records of suicidal                     ideation, suicide attempts, and alerts. </i></lines></p></li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Patient Behavioral Health</ph></p>
+</body>
+</topic>

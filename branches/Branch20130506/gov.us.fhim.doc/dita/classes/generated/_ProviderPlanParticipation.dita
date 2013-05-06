@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Provider Plan Participation - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>Represents the participation of a Healthcare Provider (either an Individual or an Organizational Provider) with a Health  Plan for the purpose of providing healthcare services to members (i.e., patients) of that plan.</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>effectiveDateRange</b></tt> with data type <xref href="../TimeInterval.dita">Time Interval</xref>
+<ul><li>The date range during which the license is valid.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>healthPlan</b></tt>, where its type is <xref href="../HealthPlan.dita">Health Plan</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>healthcareProvider</b></tt>, where its type is <xref href="../HealthcareProvider.dita">Healthcare Provider</xref>
+</li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>effectiveDateRange</b></tt> with data type <xref href="../TimeInterval.dita">Time Interval</xref>
+<ul><li>The date range during which the license is valid.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>healthPlan</b></tt>, where its type is <xref href="../HealthPlan.dita">Health Plan</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>healthcareProvider</b></tt>, where its type is <xref href="../HealthcareProvider.dita">Healthcare Provider</xref>
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Provider Plan Participation</ph></p>
+</body>
+</topic>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Surgical Event - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>Surgical operation or procedure, especially one involving the removal or replacement of a diseased organ or tissue.</p>
+</section>
+<ol id="conformance">
+<li>Extends <xref href="../ClinicalService.dita">Clinical Service</xref></li>
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>Unique Identifier for this  surgical event.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>isNonORSurgicalProcedure</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li>Indicates whether  the case is a non surgical event.  Like values are yes, no </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>preOpInrDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>This is the date that the preoperative INR was performed.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>severityLevel</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Codes that identify the  degree of severity of the surgical procedure.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>The value specifying the state of this patient surgical encounter (based on the RIM Act class state machine), for example, active, aborted, completed  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>supervisionLevel</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the highest level of supervision of the anesthesiology staff supervisor.  Suggested include Staff Assisting Resident.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>surgeryDuration</b></tt> with data type <xref href="../TimeInterval.dita">Time Interval</xref>
+<ul><li>Contains the duration (date/time) of the Surgical Event.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>surgeryType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Contains Code Set that identifies the type of Surgery. like Heart, Onocology. </li></ul></li>
+<li>Contains at least one [1..*] <tt><b>anesthesia</b></tt>, where its type is <xref href="../AnesthesiaEvent.dita">Anesthesia Event</xref>
+<ul><li>The loss of sensation and usually of consciousness without loss of vital functions artificially produced by the administration of one or more agents that block the passage of pain impulses along nerve pathways to the brain   Source: Merriam-Webster's Medical Dictionary,   2002 Merriam-Webster, Inc.  </li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>assessment</b></tt>, where its type is <xref href="../SurgeryAssessment.dita">Surgery Assessment</xref>
+<ul><li>A test or instrument, often a questionaire, used to evaluate or assess the patient's health, within the context of the surgical event.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>attender</b></tt>, where its type is <xref href="../Attender.dita">Attender</xref>
+</li>
+<li>Contains at least one [1..*] <tt><b>bodyFluid</b></tt>, where its type is <xref href="../BodilyFluidAdministration.dita">Bodily Fluid Administration</xref>
+<ul><li>The liquid parts of the body </li></ul></li>
+<li>Contains at least one [1..*] <tt><b>cellSaver</b></tt>, where its type is <xref href="../CellSaverEvent.dita">Cell Saver Event</xref>
+<ul><li>Cell Saver for the surgical event</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>comments</b></tt>, where its type is <xref href="../CommentEvent.dita">Comment Event</xref>
+<ul><li>Contains general comments regarding the Surigcal event.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>concurrentCase</b></tt>, where its type is <xref href="../SurgicalEvent.dita">Surgical Event</xref>
+<ul><li>The current surgical event for the Patient.</li></ul></li>
+<li>Contains at least one [1..*] <tt><b>device</b></tt>, where its type is <xref href="../SurgeryDevice.dita">Surgery Device</xref>
+<ul><li>A piece of equipment and or a mechanism designed to serve a special purpose or perform a special function.  This class represents devices used to perform a surgery, such as lasers, as well as devices that might be implanted in the patient as a result of the surgery, such as a prosthesis or a stent.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>electrodePosition</b></tt>, where its type is <xref href="../ElectrodePositionProcedure.dita">Electrode Position Procedure</xref>
+<ul><li>Identifies a position corresponding to the area of placement of the dispersive electrode pad.  </li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>equipmentMeasurement</b></tt>, where its type is <xref href="../EquipmentMeasurementEvent.dita">Equipment Measurement Event</xref>
+<ul><li>The dimension, quantity, or capacity determined by measuring a peice of equipment.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>equipmentSterilization</b></tt>, where its type is <xref href="../EquipmentSterilizationEvent.dita">Equipment Sterilization Event</xref>
+<ul><li>Sterliizes the equipment and provides the sterilization number of the implanted device</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>equipmentUtilization</b></tt>, where its type is <xref href="../EquipmentUtilizationObservation.dita">Equipment Utilization Observation</xref>
+<ul><li>Contains the Date and time  and  durationthe piece of Equipment was in use.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>fluidAudit</b></tt>, where its type is <xref href="../FluidAudit.dita">Fluid Audit</xref>
+<ul><li>A methodical examination or review of the fluid utilized in the surgical event.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>function</b></tt>, where its type is <xref href="../SurgeonFunction.dita">Surgeon Function</xref>
+<ul><li> Assigned duty or activity performed by the medical specialist who performs surgery :  </li></ul></li>
+<li>Contains at least one [1..*] <tt><b>image</b></tt>, where its type is <xref href="../RadiologyPromise.dita">Radiology Promise</xref>
+<ul><li>Identifies the image.</li></ul></li>
+<li>Contains at least one [1..*] <tt><b>irrigation</b></tt>, where its type is <xref href="../IrrigationEvent.dita">Irrigation Event</xref>
+<ul><li>cleaning a wound or body organ by flushing or washing out with water or a medicated solution   </li></ul></li>
+<li>Contains at least one [1..*] <tt><b>labRequest</b></tt>, where its type is <xref href="../LabTestRequest.dita">Lab Test Request</xref>
+<ul><li>Request for lab tests to be performed</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>location</b></tt>, where its type is <xref href="../ServiceDeliveryLocation.dita">Service Delivery Location</xref>
+<ul><li>Defines the location ward room, and service organization for the surgical event.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>medicalSpecialty</b></tt>, where its type is <xref href="../MedicalSpecialty.dita">Medical Specialty</xref>
+<ul><li>Identifies the medical specialty credited for doing this non-OR procedure.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>occurrence</b></tt>, where its type is <xref href="../OccurrenceAssessment.dita">Occurrence Assessment</xref>
+<ul><li>Identifies the non surgical procedure/s that were performed during the Surgical process.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>physiologicMonitoring</b></tt>, where its type is <xref href="../PhysiologicMonitoringEvent.dita">Physiologic Monitoring Event</xref>
+<ul><li>Monitor the differing in, involving, or affecting physiological factors.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>preOpInrLabRequest</b></tt>, where its type is <xref href="../LabTestRequest.dita">Lab Test Request</xref>
+<ul><li>PreOpInr request for lab test to be performed</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>relatedCase</b></tt>, where its type is <xref href="../SurgicalEvent.dita">Surgical Event</xref>
+<ul><li>The related surgical event for the  current surgical event for the Patient.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>restraintPosition</b></tt>, where its type is <xref href="../RestraintPositionEvent.dita">Restraint Position Event</xref>
+<ul><li>An instrument or a means of restraint to prevent the infliction of harm to self or others, such as a straightjacket.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>skinPrep</b></tt>, where its type is <xref href="../SkinPrepEvent.dita">Skin Prep Event</xref>
+<ul><li>The act of preparing the patient's operative site by washing the site with a disinfectant agent.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>surgeon</b></tt>, where its type is <xref href="../PrimaryPerformer.dita">Primary Performer</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>surgeryCategory</b></tt>, where its type is <xref href="../SurgeonCategory.dita">Surgeon Category</xref>
+<ul><li>Identifies the category of the surgeon.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>surgeryPatientMovement</b></tt>, where its type is <xref href="../SurgeryPatientMovement.dita">Surgery Patient Movement</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>surgicalSpecialty</b></tt>, where its type is <xref href="../SurgicalSpecialty.dita">Surgical Specialty</xref>
+<ul><li>This is the surgical specialty credited for doing this operative procedure. Many reports, including the Annual Report of Surgical Procedures, are sorted by the surgical specialty</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>tourniquet</b></tt>, where its type is <xref href="../TourniquetEvent.dita">Tourniquet Event</xref>
+<ul><li>A device, typically a tightly encircling bandage, used to check bleeding by temporarily stopping the flow of blood through a large artery in a limb.  </li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>treatment</b></tt>, where its type is <xref href="../Treatment.dita">Treatment</xref>
+<ul><li>Administration or application of remedies to a patient or for a disease or an injury; medicinal or surgical management; therapy.  </li></ul></li>
+<li>Contains at least one [1..*] <tt><b>verification</b></tt>, where its type is <xref href="../Verification.dita">Verification</xref>
+<ul><li>Contains dates that verifications were completed.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>verifier</b></tt>, where its type is <xref href="../Verifier.dita">Verifier</xref>
+</li>
+</ol>
+<ol id="aggregate">
+<li>Extends <xref href="../ClinicalService.dita">Clinical Service</xref></li>
+<li>Contains exactly one [1..1] <tt><b>clinicalServceId</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>Unique Identifier for this Clinical service .</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>typeOfService</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Clinical Speciality ID</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>Unique Identifier for this  surgical event.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>isNonORSurgicalProcedure</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li>Indicates whether  the case is a non surgical event.  Like values are yes, no </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>preOpInrDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>This is the date that the preoperative INR was performed.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>severityLevel</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Codes that identify the  degree of severity of the surgical procedure.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>The value specifying the state of this patient surgical encounter (based on the RIM Act class state machine), for example, active, aborted, completed  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>supervisionLevel</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the highest level of supervision of the anesthesiology staff supervisor.  Suggested include Staff Assisting Resident.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>surgeryDuration</b></tt> with data type <xref href="../TimeInterval.dita">Time Interval</xref>
+<ul><li>Contains the duration (date/time) of the Surgical Event.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>surgeryType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Contains Code Set that identifies the type of Surgery. like Heart, Onocology. </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>clinicalProcedureRecord</b></tt>, where its type is <xref href="../ClinicalProcedureRecord.dita">Clinical Procedure Record</xref>
+</li>
+<li>Contains at least one [1..*] <tt><b>anesthesia</b></tt>, where its type is <xref href="../AnesthesiaEvent.dita">Anesthesia Event</xref>
+<ul><li>The loss of sensation and usually of consciousness without loss of vital functions artificially produced by the administration of one or more agents that block the passage of pain impulses along nerve pathways to the brain   Source: Merriam-Webster's Medical Dictionary,   2002 Merriam-Webster, Inc.  </li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>assessment</b></tt>, where its type is <xref href="../SurgeryAssessment.dita">Surgery Assessment</xref>
+<ul><li>A test or instrument, often a questionaire, used to evaluate or assess the patient's health, within the context of the surgical event.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>attender</b></tt>, where its type is <xref href="../Attender.dita">Attender</xref>
+</li>
+<li>Contains at least one [1..*] <tt><b>bodyFluid</b></tt>, where its type is <xref href="../BodilyFluidAdministration.dita">Bodily Fluid Administration</xref>
+<ul><li>The liquid parts of the body </li></ul></li>
+<li>Contains at least one [1..*] <tt><b>cellSaver</b></tt>, where its type is <xref href="../CellSaverEvent.dita">Cell Saver Event</xref>
+<ul><li>Cell Saver for the surgical event</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>comments</b></tt>, where its type is <xref href="../CommentEvent.dita">Comment Event</xref>
+<ul><li>Contains general comments regarding the Surigcal event.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>concurrentCase</b></tt>, where its type is <xref href="../SurgicalEvent.dita">Surgical Event</xref>
+<ul><li>The current surgical event for the Patient.</li></ul></li>
+<li>Contains at least one [1..*] <tt><b>device</b></tt>, where its type is <xref href="../SurgeryDevice.dita">Surgery Device</xref>
+<ul><li>A piece of equipment and or a mechanism designed to serve a special purpose or perform a special function.  This class represents devices used to perform a surgery, such as lasers, as well as devices that might be implanted in the patient as a result of the surgery, such as a prosthesis or a stent.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>electrodePosition</b></tt>, where its type is <xref href="../ElectrodePositionProcedure.dita">Electrode Position Procedure</xref>
+<ul><li>Identifies a position corresponding to the area of placement of the dispersive electrode pad.  </li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>equipmentMeasurement</b></tt>, where its type is <xref href="../EquipmentMeasurementEvent.dita">Equipment Measurement Event</xref>
+<ul><li>The dimension, quantity, or capacity determined by measuring a peice of equipment.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>equipmentSterilization</b></tt>, where its type is <xref href="../EquipmentSterilizationEvent.dita">Equipment Sterilization Event</xref>
+<ul><li>Sterliizes the equipment and provides the sterilization number of the implanted device</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>equipmentUtilization</b></tt>, where its type is <xref href="../EquipmentUtilizationObservation.dita">Equipment Utilization Observation</xref>
+<ul><li>Contains the Date and time  and  durationthe piece of Equipment was in use.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>fluidAudit</b></tt>, where its type is <xref href="../FluidAudit.dita">Fluid Audit</xref>
+<ul><li>A methodical examination or review of the fluid utilized in the surgical event.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>function</b></tt>, where its type is <xref href="../SurgeonFunction.dita">Surgeon Function</xref>
+<ul><li> Assigned duty or activity performed by the medical specialist who performs surgery :  </li></ul></li>
+<li>Contains at least one [1..*] <tt><b>image</b></tt>, where its type is <xref href="../RadiologyPromise.dita">Radiology Promise</xref>
+<ul><li>Identifies the image.</li></ul></li>
+<li>Contains at least one [1..*] <tt><b>irrigation</b></tt>, where its type is <xref href="../IrrigationEvent.dita">Irrigation Event</xref>
+<ul><li>cleaning a wound or body organ by flushing or washing out with water or a medicated solution   </li></ul></li>
+<li>Contains at least one [1..*] <tt><b>labRequest</b></tt>, where its type is <xref href="../LabTestRequest.dita">Lab Test Request</xref>
+<ul><li>Request for lab tests to be performed</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>location</b></tt>, where its type is <xref href="../ServiceDeliveryLocation.dita">Service Delivery Location</xref>
+<ul><li>Defines the location ward room, and service organization for the surgical event.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>medicalSpecialty</b></tt>, where its type is <xref href="../MedicalSpecialty.dita">Medical Specialty</xref>
+<ul><li>Identifies the medical specialty credited for doing this non-OR procedure.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>occurrence</b></tt>, where its type is <xref href="../OccurrenceAssessment.dita">Occurrence Assessment</xref>
+<ul><li>Identifies the non surgical procedure/s that were performed during the Surgical process.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>physiologicMonitoring</b></tt>, where its type is <xref href="../PhysiologicMonitoringEvent.dita">Physiologic Monitoring Event</xref>
+<ul><li>Monitor the differing in, involving, or affecting physiological factors.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>preOpInrLabRequest</b></tt>, where its type is <xref href="../LabTestRequest.dita">Lab Test Request</xref>
+<ul><li>PreOpInr request for lab test to be performed</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>relatedCase</b></tt>, where its type is <xref href="../SurgicalEvent.dita">Surgical Event</xref>
+<ul><li>The related surgical event for the  current surgical event for the Patient.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>restraintPosition</b></tt>, where its type is <xref href="../RestraintPositionEvent.dita">Restraint Position Event</xref>
+<ul><li>An instrument or a means of restraint to prevent the infliction of harm to self or others, such as a straightjacket.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>skinPrep</b></tt>, where its type is <xref href="../SkinPrepEvent.dita">Skin Prep Event</xref>
+<ul><li>The act of preparing the patient's operative site by washing the site with a disinfectant agent.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>surgeon</b></tt>, where its type is <xref href="../PrimaryPerformer.dita">Primary Performer</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>surgeryCategory</b></tt>, where its type is <xref href="../SurgeonCategory.dita">Surgeon Category</xref>
+<ul><li>Identifies the category of the surgeon.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>surgeryPatientMovement</b></tt>, where its type is <xref href="../SurgeryPatientMovement.dita">Surgery Patient Movement</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>surgicalSpecialty</b></tt>, where its type is <xref href="../SurgicalSpecialty.dita">Surgical Specialty</xref>
+<ul><li>This is the surgical specialty credited for doing this operative procedure. Many reports, including the Annual Report of Surgical Procedures, are sorted by the surgical specialty</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>tourniquet</b></tt>, where its type is <xref href="../TourniquetEvent.dita">Tourniquet Event</xref>
+<ul><li>A device, typically a tightly encircling bandage, used to check bleeding by temporarily stopping the flow of blood through a large artery in a limb.  </li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>treatment</b></tt>, where its type is <xref href="../Treatment.dita">Treatment</xref>
+<ul><li>Administration or application of remedies to a patient or for a disease or an injury; medicinal or surgical management; therapy.  </li></ul></li>
+<li>Contains at least one [1..*] <tt><b>verification</b></tt>, where its type is <xref href="../Verification.dita">Verification</xref>
+<ul><li>Contains dates that verifications were completed.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>verifier</b></tt>, where its type is <xref href="../Verifier.dita">Verifier</xref>
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Surgical Event</ph></p>
+</body>
+</topic>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Specimen - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="knownSubclasses">
+</section>
+<section id="description">
+<p><lines><i>"A physical entity that is an individual, a group, an item, or a part representative of a larger group, class or whole that is the target of an observation or analysis for the purpose of drawing conclusions about the group, class, or whole. This can be used to code a component of the specimen that the observation diagnosis relates to. Note that any physical entity in the universe has the potential to become a specimen." - HL7 V3    This model attempts to distinguish between that which is collected from the patient (or other entity), and that portion of such material that may have been further divided or modified in some way before testing. For example, (whole) blood is taken from the patient, but the object of the test may be only the plasma or redblood cells taken (spun down) from the blood.  The specimen that undergoes testing may be the unaltered speciment that was collected, or may have undergone some sort of processing.</i></lines></p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>description</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li><p><lines><i>Contains a general description of the specimen</i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>handlingCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>"Describes how the specimen and/or container need to be handled from the time of collection through the initiation of testing." - HL7 Version 2.8, SPM.15.  Examples include "keep frozen".</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li><p><lines><i>"This field contains a unique identifier for the specimen as referenced by the Placer application, the Filler application, or both." - HL7 Version 2.8, SPM.2</i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dangerCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>Describes "any known or suspected specimen hazards, e.g., exceptionally infectious agent or blood from a hepatitis patient." - HL7 Version 2.8, SPM.16</i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>specimenExpirationDateTime</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li><p><lines><i>"The date and time the specimen can no longer be used for the purpose implied by the order." - HL7 Version 2.8, SPM.19</i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>specimenRole</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>"This field indicates the role of the sample. Refer to User-defined Table 0369   Specimen role for suggested values...." - HL7 Version 2.8, SPM.11  Provides an indication of how this sample relates to other aspects of the overall workflow and/or to other specimens gathered or processed during the workflow.  This property is populated from HL7 V2 user-defined Table 0369, which contains a mish-mash of concepts including "group" and "pool" which relate to aliquotting, "calibarator", "verifying calibrator", "operator testing", etc. which relate to laboratory quality assurance, etc.</i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>specimenSource</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>"Source from which the specimen was obtained. For environmental samples, this may describe the location of the source of the specimen. For biological samples it may represent the anatomical site from which the specimen was collected." - HL7 V2.</i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>specimenType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>"This field describes the precise nature of the entity that will be the source material for the observation.  Any physical entity that may have observations made about it may qualify as a specimen.  The entry in this attribute describes the specific entity as precisely as possible, whether that is a complex organism (e.g., an ostrich) or a specific cellular mass (e.g., a specific muscle biopsy)." - HL7 Version 2.8, SPM.4</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>specimenTypeModifier</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>"This field contains modifying or qualifying description(s) about the specimen type.  The use of this attribute is to modify, qualify or further specify, the entity described by SPM-4 -Specimen Type.  This is particularly useful when the code set used in SPM-4-Specimen Type does not provide the precision required to fully describe the specimen.  For example, if the specimen was precisely described as  capillary venous blood  but the code set employed only provided  venous blood,  this attribute could be employed to add the modifier  capillary. " - HL7 Version 2.8, SPM.5</i></lines></p></li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>specimenContainer</b></tt>, where its type is <xref href="../SpecimenContainer.dita">Specimen Container</xref>
+<ul><li><p><lines><i>Identifes the container in which the specimen was placed.</i></lines></p></li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>specimenHandling</b></tt>, where its type is <xref href="../SpecimenHandling.dita">Specimen Handling</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>specimenCollectionEvent</b></tt>, where its type is <xref href="../SpecimenCollectionEvent.dita">Specimen Collection Event</xref>
+<ul><li><p><lines><i>Association from Specimen to SpecimenCollectionEvent procedure to get collection date.</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>definedPatientEvent</b></tt>, where its type is <xref href="../DefinedPatientEvent.dita">Defined Patient Event</xref>
+<ul><li><p><lines><i>The specific patient-related event to which a specimen collection or collections (and subsequently, any tests performed on that specimen) are related or affected by time, sequence, directive, intent, etc.  Examples might include drug administration (peak and trough), beginning of fasting (lipids, FBS), glucose challenge (tolerances) or meal (postprandial), admission (pre- or post-admission studies), scheduled surgery/transfusion (compatibility testing), onset of symptoms (acute and convalescent), LMP (pregnancy test, Pap smear), lumbar puncture (CSF tubes 1, 2, and 3), treatment completion (test of cure, post-transfusion H&amp;amp;H), use/ingestion (BAT, toxicology), start of 24-hour urine pooling (creatinine clearance), etc. </i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>specimenProcessingEvent</b></tt>, where its type is <xref href="../SpecimenProcessingEvent.dita">Specimen Processing Event</xref>
+</li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>description</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li><p><lines><i>Contains a general description of the specimen</i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>handlingCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>"Describes how the specimen and/or container need to be handled from the time of collection through the initiation of testing." - HL7 Version 2.8, SPM.15.  Examples include "keep frozen".</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li><p><lines><i>"This field contains a unique identifier for the specimen as referenced by the Placer application, the Filler application, or both." - HL7 Version 2.8, SPM.2</i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dangerCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>Describes "any known or suspected specimen hazards, e.g., exceptionally infectious agent or blood from a hepatitis patient." - HL7 Version 2.8, SPM.16</i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>specimenExpirationDateTime</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li><p><lines><i>"The date and time the specimen can no longer be used for the purpose implied by the order." - HL7 Version 2.8, SPM.19</i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>specimenRole</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>"This field indicates the role of the sample. Refer to User-defined Table 0369   Specimen role for suggested values...." - HL7 Version 2.8, SPM.11  Provides an indication of how this sample relates to other aspects of the overall workflow and/or to other specimens gathered or processed during the workflow.  This property is populated from HL7 V2 user-defined Table 0369, which contains a mish-mash of concepts including "group" and "pool" which relate to aliquotting, "calibarator", "verifying calibrator", "operator testing", etc. which relate to laboratory quality assurance, etc.</i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>specimenSource</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>"Source from which the specimen was obtained. For environmental samples, this may describe the location of the source of the specimen. For biological samples it may represent the anatomical site from which the specimen was collected." - HL7 V2.</i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>specimenType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>"This field describes the precise nature of the entity that will be the source material for the observation.  Any physical entity that may have observations made about it may qualify as a specimen.  The entry in this attribute describes the specific entity as precisely as possible, whether that is a complex organism (e.g., an ostrich) or a specific cellular mass (e.g., a specific muscle biopsy)." - HL7 Version 2.8, SPM.4</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>specimenTypeModifier</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>"This field contains modifying or qualifying description(s) about the specimen type.  The use of this attribute is to modify, qualify or further specify, the entity described by SPM-4 -Specimen Type.  This is particularly useful when the code set used in SPM-4-Specimen Type does not provide the precision required to fully describe the specimen.  For example, if the specimen was precisely described as  capillary venous blood  but the code set employed only provided  venous blood,  this attribute could be employed to add the modifier  capillary. " - HL7 Version 2.8, SPM.5</i></lines></p></li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>specimenContainer</b></tt>, where its type is <xref href="../SpecimenContainer.dita">Specimen Container</xref>
+<ul><li><p><lines><i>Identifes the container in which the specimen was placed.</i></lines></p></li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>specimenHandling</b></tt>, where its type is <xref href="../SpecimenHandling.dita">Specimen Handling</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>specimenCollectionEvent</b></tt>, where its type is <xref href="../SpecimenCollectionEvent.dita">Specimen Collection Event</xref>
+<ul><li><p><lines><i>Association from Specimen to SpecimenCollectionEvent procedure to get collection date.</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>definedPatientEvent</b></tt>, where its type is <xref href="../DefinedPatientEvent.dita">Defined Patient Event</xref>
+<ul><li><p><lines><i>The specific patient-related event to which a specimen collection or collections (and subsequently, any tests performed on that specimen) are related or affected by time, sequence, directive, intent, etc.  Examples might include drug administration (peak and trough), beginning of fasting (lipids, FBS), glucose challenge (tolerances) or meal (postprandial), admission (pre- or post-admission studies), scheduled surgery/transfusion (compatibility testing), onset of symptoms (acute and convalescent), LMP (pregnancy test, Pap smear), lumbar puncture (CSF tubes 1, 2, and 3), treatment completion (test of cure, post-transfusion H&amp;amp;H), use/ingestion (BAT, toxicology), start of 24-hour urine pooling (creatinine clearance), etc. </i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>specimenProcessingEvent</b></tt>, where its type is <xref href="../SpecimenProcessingEvent.dita">Specimen Processing Event</xref>
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Specimen</ph></p>
+</body>
+</topic>

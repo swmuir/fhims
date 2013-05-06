@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Anesthesia Sub Event - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>A drug used to produce anesthesia. causing a loss of normal sensation or feeling.</p>
+</section>
+<ol id="conformance">
+<li>Contains zero or one [0..1] <tt><b>approach</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"The detailed anatomical site where the medication enters or is applied to the subject." (HL7 3.0) </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dateTimeExtubated</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>This is the exact date and time that the endotracheal tube is pulled for the final time after the surgery. Enter NS if the date and time is unknown, and RI if the patient remains intubated &amp;gt;30 days after surgery.  </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>route</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Contains a code identifying the route of the  endotracheal tube to the trachea.  Lieke values: O:ORAL, N:NASAL, T:TRACHEOSTOMY., etc.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>technique</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Contains the anesthesia technique used during this encounter corresponding to the American Board of Anesthesiologists universal list of anesthesia techniques.  Such values as a G:GENERAL, M:MONITORED ANESTHESIA CARE,  S:SPINAL,  E:EPIDURAL,  O:OTHER,  L:LOCAL, N:NO ANESTHESIA, etc.  </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>baricity</b></tt>, where its type is <xref href="../BaricityObservation.dita">Baricity Observation</xref>
+<ul><li>Baracity is the weight of one substance compared to the weight of an equal volume of another substance at the same temperature.  This class records the baricity of the anesthesia drug fluid vehicle in relationship to the spinal fluid.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>intubation</b></tt>, where its type is <xref href="../IntubationEvent.dita">Intubation Event</xref>
+<ul><li>The introduction of a tube into a hollow organ (as the trachea or intestine) to keep it open or restore its patency if obstructed </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>epiduralEvent</b></tt>, where its type is <xref href="../EpiduralEvent.dita">Epidural Event</xref>
+<ul><li>Contains information concerning the injection of anesthesia into the epidural space of the spine.</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains zero or one [0..1] <tt><b>approach</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>"The detailed anatomical site where the medication enters or is applied to the subject." (HL7 3.0) </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dateTimeExtubated</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>This is the exact date and time that the endotracheal tube is pulled for the final time after the surgery. Enter NS if the date and time is unknown, and RI if the patient remains intubated &amp;gt;30 days after surgery.  </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>route</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Contains a code identifying the route of the  endotracheal tube to the trachea.  Lieke values: O:ORAL, N:NASAL, T:TRACHEOSTOMY., etc.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>technique</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Contains the anesthesia technique used during this encounter corresponding to the American Board of Anesthesiologists universal list of anesthesia techniques.  Such values as a G:GENERAL, M:MONITORED ANESTHESIA CARE,  S:SPINAL,  E:EPIDURAL,  O:OTHER,  L:LOCAL, N:NO ANESTHESIA, etc.  </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>baricity</b></tt>, where its type is <xref href="../BaricityObservation.dita">Baricity Observation</xref>
+<ul><li>Baracity is the weight of one substance compared to the weight of an equal volume of another substance at the same temperature.  This class records the baricity of the anesthesia drug fluid vehicle in relationship to the spinal fluid.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>intubation</b></tt>, where its type is <xref href="../IntubationEvent.dita">Intubation Event</xref>
+<ul><li>The introduction of a tube into a hollow organ (as the trachea or intestine) to keep it open or restore its patency if obstructed </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>epiduralEvent</b></tt>, where its type is <xref href="../EpiduralEvent.dita">Epidural Event</xref>
+<ul><li>Contains information concerning the injection of anesthesia into the epidural space of the spine.</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Anesthesia Sub Event</ph></p>
+</body>
+</topic>

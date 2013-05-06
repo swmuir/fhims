@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Patient - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>A role of a person or animal as a recipient of health care services from a healthcare provider.</p>
+</section>
+<ol id="conformance">
+<li>Contains at least one [1..*] <tt><b>patientId</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>An identification of the Person or Animal while in the role of Patient.  This Identifier is basically an "account number".  A single person will have multiple Patient Ids at various healthcare providers.  It is not uncommon for a person to have multiple Patient Ids or "account numbers" at a single institution - often a new account number is created for each episode of care.  This is also the case in long-term care situations, where a new account number may be created each month in order to facilitate monthly billing.
+
+"Contains the list of identifiers (one or more) used by the healthcare facility to uniquely identify a patient (e.g., medical record number, billing number, birth registry, national unique individual identifier, etc.)." - HL7 Version 2.8, PID-3.
+"Contains the patient account number assigned by accounting to which all charges, payments, etc., are recorded.  It is used to identify the patient's account." - HL7 Version 2.8, PID-18.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the state of the Patient's record, as defined in the state-transition model in the HL7 RIM.  Examples include Active, Pending, Terminated, etc.  Additional states might be defined such as 'Temporary' or 'Permanent'.
+
+Note, for public health reporting purposes, this statusiIndicates the active/inactive status of the patient at the provider site level. See MIROW "Management of Moved or Gone Elsewhere (MOGE) and Other Patient Status Designations in IIS guidelines.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>healthRecord</b></tt>, where its type is <xref href="../HealthRecord.dita">Health Record</xref>
+<ul><li>Records regarding the Patient's healthcare that are subject to the consent rules in Consent Directives.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>primaryCareProvider</b></tt>, where its type is <xref href="../PrimaryCareProvider.dita">Primary Care Provider</xref>
+<ul><li>A doctor selected by the patient to be the first physician contacted for any medical problem. The doctor acts as the patient's regular physician and coordinates any other care the patient needs, such as a visit to a specialist or hospitalization.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>patientRisk</b></tt>, where its type is <xref href="../PatientRisk.dita">Patient Risk</xref>
+</li>
+</ol>
+<ol id="aggregate">
+<li>Contains at least one [1..*] <tt><b>patientId</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>An identification of the Person or Animal while in the role of Patient.  This Identifier is basically an "account number".  A single person will have multiple Patient Ids at various healthcare providers.  It is not uncommon for a person to have multiple Patient Ids or "account numbers" at a single institution - often a new account number is created for each episode of care.  This is also the case in long-term care situations, where a new account number may be created each month in order to facilitate monthly billing.
+
+"Contains the list of identifiers (one or more) used by the healthcare facility to uniquely identify a patient (e.g., medical record number, billing number, birth registry, national unique individual identifier, etc.)." - HL7 Version 2.8, PID-3.
+"Contains the patient account number assigned by accounting to which all charges, payments, etc., are recorded.  It is used to identify the patient's account." - HL7 Version 2.8, PID-18.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the state of the Patient's record, as defined in the state-transition model in the HL7 RIM.  Examples include Active, Pending, Terminated, etc.  Additional states might be defined such as 'Temporary' or 'Permanent'.
+
+Note, for public health reporting purposes, this statusiIndicates the active/inactive status of the patient at the provider site level. See MIROW "Management of Moved or Gone Elsewhere (MOGE) and Other Patient Status Designations in IIS guidelines.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>healthRecord</b></tt>, where its type is <xref href="../HealthRecord.dita">Health Record</xref>
+<ul><li>Records regarding the Patient's healthcare that are subject to the consent rules in Consent Directives.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>primaryCareProvider</b></tt>, where its type is <xref href="../PrimaryCareProvider.dita">Primary Care Provider</xref>
+<ul><li>A doctor selected by the patient to be the first physician contacted for any medical problem. The doctor acts as the patient's regular physician and coordinates any other care the patient needs, such as a visit to a specialist or hospitalization.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>patientRisk</b></tt>, where its type is <xref href="../PatientRisk.dita">Patient Risk</xref>
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Patient</ph></p>
+</body>
+</topic>

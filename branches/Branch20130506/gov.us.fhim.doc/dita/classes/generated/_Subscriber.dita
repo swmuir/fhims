@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Subscriber - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>A person who is named as a beneficiary of a plan, such as an insurance plan.    Enrollee: 'An eligible individual who is enrolled in a health plan - does not include an eligible dependent.' -eHealthInsurance.org  Subscriber: 'This term has two meanings _ first, it refers to a person or organization who pays the premiums, and second, the person whose employment makes him or her eligible for membership in the plan.' -eHealthInsurance.org    DOD: if the person is active duty, he is automatically enrolled into the 'direct care' program as a subscriber.  If he is a retiree, he is eligible to enroll in several programs such as Tricare for life.  If he does, he's still considered a subscriber.    'sponsor' and 'subscriber' are sometimes used interchangeably.</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>asPerson</b></tt>, where its type is <xref href="../Person.dita">Person</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>A unique identifier that the payer or information source can use to identify the person as a Policy Holder.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>group</b></tt>, where its type is <xref href="../GroupCoverage.dita">Group Coverage</xref>
+</li>
+<li>Contains at least one [1..*] <tt><b>healthcarePolicy</b></tt>, where its type is <xref href="../HealthcarePolicy.dita">Healthcare Policy</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>otherPolicyInfo</b></tt>, where its type is <xref href="../OtherPolicyInfo.dita">Other Policy Info</xref>
+</li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>A unique identifier that the payer or information source can use to identify the person as a Policy Holder.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>asPerson</b></tt>, where its type is <xref href="../Person.dita">Person</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>group</b></tt>, where its type is <xref href="../GroupCoverage.dita">Group Coverage</xref>
+</li>
+<li>Contains at least one [1..*] <tt><b>healthcarePolicy</b></tt>, where its type is <xref href="../HealthcarePolicy.dita">Healthcare Policy</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>otherPolicyInfo</b></tt>, where its type is <xref href="../OtherPolicyInfo.dita">Other Policy Info</xref>
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Subscriber</ph></p>
+</body>
+</topic>

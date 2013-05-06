@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Clinic Stop - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>Identifies various nodes within a workflow process that is typically performed by a Medical Service.  Used to facilitate collection of workload and financial information.  This is equivalent to File 40.7 in Vista.</p>
+</section>
+<ol id="conformance">
+<li>Extends <xref href="../ServiceDeliveryLocation.dita">Service Delivery Location</xref></li>
+<li>Contains exactly one [1..1] <tt><b>stopCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Identifies various nodes within a workflow process that is typically performed by the Service.  Used to facilitate collection of workload and financial information.</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Extends <xref href="../ServiceDeliveryLocation.dita">Service Delivery Location</xref></li>
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>A unique string or token used to identify the Organization - Location combination.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>name</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>The name of the Organization-Location.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>address</b></tt> with data type <xref href="../Address.dita">Address</xref>
+<ul><li>"Specifies the address of the location where the drug or treatment was administered." - HL7 Version 2.8, RXA-28
+
+The business address of the Organization-Location.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>email</b></tt> with data type <xref href="../Telecommunications.dita">Telecommunications</xref>
+<ul><li>The email address that a person uses while at their place of business.  First choice for business related contacts during business hours.    "Contains the patient's personal telecommunication contact information." - HL7 Version 2.8, PID-40.  Note that in HL7, the Telecommunications datatype contains a type code to indicate what kind of telecommunications address that is being referenced.  The FHIM explicitly models the telecommuncations type, so in this case the attribute name is "Work Email", and the type code would be set to "workplace" when targeting an HL7 implementation.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>phone</b></tt> with data type <xref href="../Telecommunications.dita">Telecommunications</xref>
+<ul><li>The business phone number of the Organization-Location.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>stopCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Identifies various nodes within a workflow process that is typically performed by the Service.  Used to facilitate collection of workload and financial information.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>organization</b></tt>, where its type is <xref href="../Organization.dita">Organization</xref>
+<ul><li>Points to the Organization operating at the Location.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>location</b></tt>, where its type is <xref href="../Location.dita">Location</xref>
+<ul><li>Points to the Location at which the Organization is operating.</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Clinic Stop</ph></p>
+</body>
+</topic>

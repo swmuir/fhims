@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Healthcare Provider - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>A person or organization which is authorized to perform healthcare-related services.</p>
+</section>
+<ol id="conformance">
+<li>Contains at least one [1..*] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>Uniquely identifies the practitioner.  This property should not contain the Tax Id or the National Provider Id, as these types of Ids are called out separately.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>providerCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Contains a categorization for the practitioner.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>taxId</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>This contains the tax ID for the practitioner, used for billing purposes.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>asLlicensedProvider</b></tt>, where its type is <xref href="../LicensedProvider.dita">Licensed Provider</xref>
+<ul><li>A practitioner who has been authorized to perform certain activities that fall under the jurisdiction of the issuer of the license.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>providerPlanParticipation</b></tt>, where its type is <xref href="../ProviderPlanParticipation.dita">Provider Plan Participation</xref>
+<ul><li>Represents the participation of a Healthcare Provider (either an Individual or an Organizational Provider) with a Health  Plan for the purpose of providing healthcare services to members (i.e., patients) of that plan.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>specialty</b></tt>, where its type is <xref href="../Specialty.dita">Specialty</xref>
+<ul><li>This contains the code set that identifies the specialty of the Practicing Practitioner.</li></ul><ul><li>A specialty in medicine is a branch of medical science. After completing medical school, physicians or surgeons usually further their medical education in a specific specialty of medicine by completing a multiple year residency. Medical practitioners who engage in a medical specialty are known as medical specialists.    Specialists may be Board Eligible or Board Certified.  Board certified in medicine means a physician has taken and passed a medical specialty examination.  Board eligible, by contrast, means that a physician has completed the requirements for admission to a medical specialty board examination but has not taken and passed the examination.  For example, a physician must perform 3 years of training in an approved pediatric residency to be board eligible and then successfully complete a comprehensive written examination to be certified by the American Board of Pediatrics.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>asMedicareProvider</b></tt>, where its type is <xref href="../MedicareProvider.dita">Medicare Provider</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>asMedicaidProvider</b></tt>, where its type is <xref href="../MedicaidProvider.dita">Medicaid Provider</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>asNationallyIdentifiedProvider</b></tt>, where its type is <xref href="../NationallyIdentifiedProvider.dita">Nationally Identified Provider</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>workAddress</b></tt> with data type <xref href="../Address.dita">Address</xref>
+<ul><li>The person's office address.  First choice for business related contacts during business hours.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>workEmail</b></tt> with data type <xref href="../Telecommunications.dita">Telecommunications</xref>
+<ul><li>The email address that a person uses while at their place of business.  First choice for business related contacts during business hours.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>workPhone</b></tt> with data type <xref href="../Telecommunications.dita">Telecommunications</xref>
+<ul><li>The phone number for a person at their office location. First choice for business related contacts during business hours.</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains at least one [1..*] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>Uniquely identifies the practitioner.  This property should not contain the Tax Id or the National Provider Id, as these types of Ids are called out separately.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>providerCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Contains a categorization for the practitioner.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>taxId</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>This contains the tax ID for the practitioner, used for billing purposes.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>workAddress</b></tt> with data type <xref href="../Address.dita">Address</xref>
+<ul><li>The person's office address.  First choice for business related contacts during business hours.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>workEmail</b></tt> with data type <xref href="../Telecommunications.dita">Telecommunications</xref>
+<ul><li>The email address that a person uses while at their place of business.  First choice for business related contacts during business hours.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>workPhone</b></tt> with data type <xref href="../Telecommunications.dita">Telecommunications</xref>
+<ul><li>The phone number for a person at their office location. First choice for business related contacts during business hours.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>asLlicensedProvider</b></tt>, where its type is <xref href="../LicensedProvider.dita">Licensed Provider</xref>
+<ul><li>A practitioner who has been authorized to perform certain activities that fall under the jurisdiction of the issuer of the license.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>providerPlanParticipation</b></tt>, where its type is <xref href="../ProviderPlanParticipation.dita">Provider Plan Participation</xref>
+<ul><li>Represents the participation of a Healthcare Provider (either an Individual or an Organizational Provider) with a Health  Plan for the purpose of providing healthcare services to members (i.e., patients) of that plan.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>specialty</b></tt>, where its type is <xref href="../Specialty.dita">Specialty</xref>
+<ul><li>This contains the code set that identifies the specialty of the Practicing Practitioner.</li></ul><ul><li>A specialty in medicine is a branch of medical science. After completing medical school, physicians or surgeons usually further their medical education in a specific specialty of medicine by completing a multiple year residency. Medical practitioners who engage in a medical specialty are known as medical specialists.    Specialists may be Board Eligible or Board Certified.  Board certified in medicine means a physician has taken and passed a medical specialty examination.  Board eligible, by contrast, means that a physician has completed the requirements for admission to a medical specialty board examination but has not taken and passed the examination.  For example, a physician must perform 3 years of training in an approved pediatric residency to be board eligible and then successfully complete a comprehensive written examination to be certified by the American Board of Pediatrics.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>asMedicareProvider</b></tt>, where its type is <xref href="../MedicareProvider.dita">Medicare Provider</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>asMedicaidProvider</b></tt>, where its type is <xref href="../MedicaidProvider.dita">Medicaid Provider</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>asNationallyIdentifiedProvider</b></tt>, where its type is <xref href="../NationallyIdentifiedProvider.dita">Nationally Identified Provider</xref>
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Healthcare Provider</ph></p>
+</body>
+</topic>

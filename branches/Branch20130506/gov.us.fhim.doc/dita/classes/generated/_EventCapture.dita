@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Event Capture - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>Captures Procedures performed for the patient.  Could be an encounter or  actual service not clinically related i.e. CWT, compensatory thearapy  work that the patient was being paid for.</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>Unique Identifier for the EventCapture for the Patient</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>checkoutTime</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>eventCaptureCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Identfies the procedure code type that determines whether this is a uses the CPT or the NAtional Procedure codeSet</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>isInpatient</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>nbrOfProcedures</b></tt> with data type <xref href="../IntegerInterval.dita">Integer Interval</xref>
+<ul><li>Contains the number of times the designated procedure was performed on the patient.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>procedureDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>Date/Time of procedure/service performed.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>procedureModifierText</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Captures Procedures performed for the patient.  Could be an encounter or  actual service not clinically related i.e. CWT, compensatory thearapy  work that the patient was being paid for. </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>procedureReason</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Contains the codeset for the Reason for the procedure.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>clinic</b></tt>, where its type is <xref href="../HospitalLocation.dita">Hospital Location</xref>
+<ul><li>"A facility, often associated with a hospital or medical school, that is devoted to the diagnosis and care of outpatients."  The American Heritage Stedman's Medical Dictionary </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>dssId</b></tt>, where its type is <xref href="../ClinicStop.dita">Clinic Stop</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>dssUnit</b></tt>, where its type is <xref href="../DssUnit.dita">Dss Unit</xref>
+<ul><li>Establishes the Unit id  information for the Faciility entering information into the Event Capture  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>location</b></tt>, where its type is <xref href="../Institution.dita">Institution</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>orderingSection</b></tt>, where its type is <xref href="../MedicalSpecialty.dita">Medical Specialty</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>primaryDiagnosis</b></tt>, where its type is <xref href="../Diagnosis.dita">Diagnosis</xref>
+<ul><li>The act or process of identifying or determining the nature and cause of a disease or injury through evaluation of patient history, examination, and review of laboratory data.</li></ul><ul><li>The act or process of identifying or determining the nature and cause of a disease or injury through evaluation of patient history, examination, and review of laboratory data.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>procedure1</b></tt>, where its type is <xref href="../Procedure.dita">Procedure</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>procedure2</b></tt>, where its type is <xref href="../NationalProcedure.dita">National Procedure</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>secondaryDiagnosis</b></tt>, where its type is <xref href="../Diagnosis.dita">Diagnosis</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>section</b></tt>, where its type is <xref href="../MedicalSpecialty.dita">Medical Specialty</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>service</b></tt>, where its type is <xref href="../ServiceDepartment.dita">Service Department</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>visit</b></tt>, where its type is <xref href="../OutpatientVisit.dita">Outpatient Visit</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>patient</b></tt>, where its type is <xref href="../Patient.dita">Patient</xref>
+</li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>Unique Identifier for the EventCapture for the Patient</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>checkoutTime</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>eventCaptureCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Identfies the procedure code type that determines whether this is a uses the CPT or the NAtional Procedure codeSet</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>isInpatient</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>nbrOfProcedures</b></tt> with data type <xref href="../IntegerInterval.dita">Integer Interval</xref>
+<ul><li>Contains the number of times the designated procedure was performed on the patient.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>procedureDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>Date/Time of procedure/service performed.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>procedureModifierText</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Captures Procedures performed for the patient.  Could be an encounter or  actual service not clinically related i.e. CWT, compensatory thearapy  work that the patient was being paid for. </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>procedureReason</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Contains the codeset for the Reason for the procedure.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>clinic</b></tt>, where its type is <xref href="../HospitalLocation.dita">Hospital Location</xref>
+<ul><li>"A facility, often associated with a hospital or medical school, that is devoted to the diagnosis and care of outpatients."  The American Heritage Stedman's Medical Dictionary </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>dssId</b></tt>, where its type is <xref href="../ClinicStop.dita">Clinic Stop</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>dssUnit</b></tt>, where its type is <xref href="../DssUnit.dita">Dss Unit</xref>
+<ul><li>Establishes the Unit id  information for the Faciility entering information into the Event Capture  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>location</b></tt>, where its type is <xref href="../Institution.dita">Institution</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>orderingSection</b></tt>, where its type is <xref href="../MedicalSpecialty.dita">Medical Specialty</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>primaryDiagnosis</b></tt>, where its type is <xref href="../Diagnosis.dita">Diagnosis</xref>
+<ul><li>The act or process of identifying or determining the nature and cause of a disease or injury through evaluation of patient history, examination, and review of laboratory data.</li></ul><ul><li>The act or process of identifying or determining the nature and cause of a disease or injury through evaluation of patient history, examination, and review of laboratory data.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>procedure1</b></tt>, where its type is <xref href="../Procedure.dita">Procedure</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>procedure2</b></tt>, where its type is <xref href="../NationalProcedure.dita">National Procedure</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>secondaryDiagnosis</b></tt>, where its type is <xref href="../Diagnosis.dita">Diagnosis</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>section</b></tt>, where its type is <xref href="../MedicalSpecialty.dita">Medical Specialty</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>service</b></tt>, where its type is <xref href="../ServiceDepartment.dita">Service Department</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>visit</b></tt>, where its type is <xref href="../OutpatientVisit.dita">Outpatient Visit</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>patient</b></tt>, where its type is <xref href="../Patient.dita">Patient</xref>
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Event Capture</ph></p>
+</body>
+</topic>

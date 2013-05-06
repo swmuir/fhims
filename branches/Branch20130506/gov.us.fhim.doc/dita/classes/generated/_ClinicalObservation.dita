@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Clinical Observation - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="knownSubclasses">
+<p>Known Subclasses: <xref href="../ClincalAssessmentRatioObservation.dita">Clincal Assessment Ratio Observation</xref>, <xref href="../ClinicalAssessmentBooleanValue.dita">Clinical Assessment Boolean Value</xref>, <xref href="../ClinicalAssessmentCodedValueSet.dita">Clinical Assessment Coded Value Set</xref>, <xref href="../ClinicalAssessmentNumericValue.dita">Clinical Assessment Numeric Value</xref>, <xref href="../ClinicalAssessmentNumUnitsValue.dita">Clinical Assessment Num Units Value</xref>, <xref href="../ClinicalAssessmentStringValue.dita">Clinical Assessment String Value</xref></p>
+</section>
+<section id="description">
+<p><lines><i>An event in which a Clinical Observation is recorded.</i></lines></p>
+</section>
+<ol id="conformance">
+<li>Contains zero or one [0..1] <tt><b>bodySite</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>clinicalObservationDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>clinicalObservationType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>isPresent</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>observationMethod</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>severity</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>device</b></tt>, where its type is <xref href="../Device.dita">Device</xref>
+<ul><li><p><lines><i>A contrivance or an invention serving a particular purpose, especially a machine used to perform one or more relatively simple tasks." (The American Heritage  Stedman's Medical Dictionary)</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>patientState</b></tt>, where its type is <xref href="../PatientStateObservation.dita">Patient State Observation</xref>
+<ul><li><p><lines><i>The state of the patient being observed.</i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>practitioner</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
+<ul><li><p><lines><i>The practioner who is observing the care for the patient .</i></lines></p></li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains zero or one [0..1] <tt><b>bodySite</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>clinicalObservationDate</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>clinicalObservationType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>isPresent</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>observationMethod</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>severity</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains zero or one [0..1] <tt><b>device</b></tt>, where its type is <xref href="../Device.dita">Device</xref>
+<ul><li><p><lines><i>A contrivance or an invention serving a particular purpose, especially a machine used to perform one or more relatively simple tasks." (The American Heritage  Stedman's Medical Dictionary)</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>patientState</b></tt>, where its type is <xref href="../PatientStateObservation.dita">Patient State Observation</xref>
+<ul><li><p><lines><i>The state of the patient being observed.</i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>practitioner</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
+<ul><li><p><lines><i>The practioner who is observing the care for the patient .</i></lines></p></li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Clinical Observation</ph></p>
+</body>
+</topic>

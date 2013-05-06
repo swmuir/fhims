@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Image Group - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>This calss contains attributes  related to the cross-reference that keeps track of which images belong to which group.</p>
+</section>
+<ol id="conformance">
+<li>Extends <xref href="../RelatedImage.dita">Related Image</xref></li>
+<li>Contains exactly one [1..1] <tt><b>dicomSeriesNumber</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>This is a cross-reference that keeps track of which images belong to which group, and indicates in which sequence the images are intended to appear.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dicomImageNumber</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>This is a cross-reference that keeps track of which images belong to which group, and indicates in which sequence the images are intended to appear.  </li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Extends <xref href="../RelatedImage.dita">Related Image</xref></li>
+<li>Contains exactly one [1..1] <tt><b>relatedImageCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>dicomSeriesNumber</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>This is a cross-reference that keeps track of which images belong to which group, and indicates in which sequence the images are intended to appear.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dicomImageNumber</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>This is a cross-reference that keeps track of which images belong to which group, and indicates in which sequence the images are intended to appear.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>imagingEvent</b></tt>, where its type is <xref href="../ImagingEvent.dita">Imaging Event</xref>
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Image Group</ph></p>
+</body>
+</topic>

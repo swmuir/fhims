@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Order Patient Event - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>A patient-related event that automatically triggers an Order Action.  For example, if the patient is scheduled for surgery, an particular Order Action might be placed on hold (i.e., "held") four hours before surgery.</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>patientRelatedEventCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Identifies the patient-related event that automatically triggers an order action.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>author</b></tt>, where its type is <xref href="../Author.dita">Author</xref>
+<ul><li>Identifies the clinician who recorded that the Patient Event occurred.</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>patientRelatedEventCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Identifies the patient-related event that automatically triggers an order action.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>author</b></tt>, where its type is <xref href="../Author.dita">Author</xref>
+<ul><li>Identifies the clinician who recorded that the Patient Event occurred.</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Order Patient Event</ph></p>
+</body>
+</topic>

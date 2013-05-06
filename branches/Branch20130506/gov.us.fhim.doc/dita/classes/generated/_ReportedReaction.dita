@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Reported Reaction - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="knownSubclasses">
+</section>
+<section id="description">
+</section>
+<ol id="conformance">
+<li>Extends <xref href="../Reaction.dita">Reaction</xref></li>
+</ol>
+<ol id="aggregate">
+<li>Extends <xref href="../Reaction.dita">Reaction</xref></li>
+<li>Contains exactly one [1..1] <tt><b>dateRecorded</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li><p><lines><i>Date/time this allergy/adverse reaction was entered into the system.</i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>description</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li><p><lines><i>Provides a textual narrative of the Reaction observed for the intolerance event of the patient.</i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>reaction</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>Indicates the symptom observed that is suspected to have been caused by adverse reaction.
+
+"Identifies the specific allergic reaction that was documented." - HL7 Version 2.8, AL1-5 and IAM-5</i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>severity</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>"Indicates the general severity of the allergy" - HL7 Version 2.8, AL1-4, IAM-4, and IAR-2.  HL7 Version 2 has the following suggested values (table 128): Severe; Moderate; Mild; Unknown.</i></lines></p></li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Reported Reaction</ph></p>
+</body>
+</topic>

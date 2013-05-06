@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Behavioral Health Assessment Domain - conformance rules</title>
+<shortdesc id="shortdesc"><i>Abstract</i> </shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="knownSubclasses">
+<p>Known Subclasses: <xref href="../Education.dita">Education</xref>, <xref href="../EmploymentStatus.dita">Employment Status</xref>, <xref href="../ServiceHistory.dita">Service History</xref>, <xref href="../DiagnosticSummary.dita">Diagnostic Summary</xref>, <xref href="../LegalProblem.dita">Legal Problem</xref>, <xref href="../PhysicalHealth.dita">Physical Health</xref>, <xref href="../Medication.dita">Medication</xref>, <xref href="../PsychiatricProblem.dita">Psychiatric Problem</xref>, <xref href="../DrugUseHistory.dita">Drug Use History</xref>, <xref href="../FamilySocialHistory.dita">Family Social History</xref></p>
+</section>
+<section id="description">
+<p><lines><i>This class is container for a set of questions and answers needed to evaluate                   behavioral health issues. This class description is consistent with the &amp;apos;HL7                   Implementation Guide for CDA Release 2: CDA Framework for Questionnaire                   Assessments, Release 1 &amp;apos;.</i></lines></p>
+</section>
+<ol id="conformance">
+<li>Contains zero or more [0..*] <tt><b>codedQuestion</b></tt> with data type <xref href="../CodedQuestion.dita">Coded Question</xref>
+<ul><li><p><lines><i>This attribute corresponds to the set of questions that require a coded                     response.</i></lines></p></li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>trueFalseQuestion</b></tt> with data type <xref href="../BooleanQuestion.dita">Boolean Question</xref>
+<ul><li><p><lines><i>This attribute corresponds to the set of questions that require a true or                     false (boolean) response.</i></lines></p></li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>numericQuestion</b></tt> with data type <xref href="../IntegerQuestion.dita">Integer Question</xref>
+<ul><li><p><lines><i>This attribute corresponds to the set of questions that require a numeric                     (integer) response.</i></lines></p></li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>frequencyQuestion</b></tt> with data type <xref href="../FrequencyQuestion.dita">Frequency Question</xref>
+<ul><li><p><lines><i>This attribute corresponds to the set of questions that require a frequency                     response.</i></lines></p></li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>quantityQuestion</b></tt> with data type <xref href="../QuantityQuestion.dita">Quantity Question</xref>
+<ul><li><p><lines><i>This attribute corresponds to the set of questions that require a quantity                     response.</i></lines></p></li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>outcome</b></tt>, where its type is <xref href="../Outcome.dita">Outcome</xref>
+<ul><li><p><lines><i>This is a directed association describing the relationship between an                     assessment and the outcome measurements related to that assessment.</i></lines></p></li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains zero or more [0..*] <tt><b>codedQuestion</b></tt> with data type <xref href="../CodedQuestion.dita">Coded Question</xref>
+<ul><li><p><lines><i>This attribute corresponds to the set of questions that require a coded                     response.</i></lines></p></li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>trueFalseQuestion</b></tt> with data type <xref href="../BooleanQuestion.dita">Boolean Question</xref>
+<ul><li><p><lines><i>This attribute corresponds to the set of questions that require a true or                     false (boolean) response.</i></lines></p></li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>numericQuestion</b></tt> with data type <xref href="../IntegerQuestion.dita">Integer Question</xref>
+<ul><li><p><lines><i>This attribute corresponds to the set of questions that require a numeric                     (integer) response.</i></lines></p></li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>frequencyQuestion</b></tt> with data type <xref href="../FrequencyQuestion.dita">Frequency Question</xref>
+<ul><li><p><lines><i>This attribute corresponds to the set of questions that require a frequency                     response.</i></lines></p></li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>quantityQuestion</b></tt> with data type <xref href="../QuantityQuestion.dita">Quantity Question</xref>
+<ul><li><p><lines><i>This attribute corresponds to the set of questions that require a quantity                     response.</i></lines></p></li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>outcome</b></tt>, where its type is <xref href="../Outcome.dita">Outcome</xref>
+<ul><li><p><lines><i>This is a directed association describing the relationship between an                     assessment and the outcome measurements related to that assessment.</i></lines></p></li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Behavioral Health Assessment Domain</ph></p>
+</body>
+</topic>

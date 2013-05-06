@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Practitioner Participation - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="knownSubclasses">
+<p>Known Subclasses: <xref href="../ManagedParticipation.dita">Managed Participation</xref></p>
+</section>
+<section id="description">
+<p><lines><i>"An association between an Act and a Role with an Entity playing that Role. Each Entity (in a Role) involved in an Act in a certain way is linked to the act by one Participation-instance." - HL7 V3.  This class speficially points to IndividualProvider to handle participations in which the participation is by a clinician and contains those HL7 attributes most commonly used.</i></lines></p>
+</section>
+<ol id="conformance">
+<li>Contains zero or one [0..1] <tt><b>comment</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li><p><lines><i>"Contains any comments or notes made by the practitioner in reference to the action in which they participated." - HL7 V3.  </i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>modeCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>"The modality by which the Entity playing the Role is participating in the Act.  UsageNotes: For author (originator) participants, this is used to specify whether the information represented by the act was initially provided verbally, (hand-)written, or electronically. Examples: Physically present, over the telephone, written communication." - HL7 V3</i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>practitioner</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
+<ul><li><p><lines><i>Represents information about a person who is authorized to provide health care services in the role of practitioner for a health care provider organization.  The role of practitioner includes all functions performed for a health care provider organization in order to provide patient care and treatment.</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>signatureCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>"Whether the participant has attested participation through a signature, or whether such a signature is needed." - HL7 V3</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>signatureText</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li><p><lines><i>"A textual or multimedia depiction of the signature by which the participant endorses and accepts responsibility for his or her participation in the Act as specified in the Participation.typeCode." - HL7 V3</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>time</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li><p><lines><i>"An interval of time specifying the time during which the participant is involved in the act through this Participation." - HL7 V3.  </i></lines></p></li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains zero or one [0..1] <tt><b>comment</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li><p><lines><i>"Contains any comments or notes made by the practitioner in reference to the action in which they participated." - HL7 V3.  </i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>modeCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>"The modality by which the Entity playing the Role is participating in the Act.  UsageNotes: For author (originator) participants, this is used to specify whether the information represented by the act was initially provided verbally, (hand-)written, or electronically. Examples: Physically present, over the telephone, written communication." - HL7 V3</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>signatureCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>"Whether the participant has attested participation through a signature, or whether such a signature is needed." - HL7 V3</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>signatureText</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li><p><lines><i>"A textual or multimedia depiction of the signature by which the participant endorses and accepts responsibility for his or her participation in the Act as specified in the Participation.typeCode." - HL7 V3</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>time</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li><p><lines><i>"An interval of time specifying the time during which the participant is involved in the act through this Participation." - HL7 V3.  </i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>practitioner</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
+<ul><li><p><lines><i>Represents information about a person who is authorized to provide health care services in the role of practitioner for a health care provider organization.  The role of practitioner includes all functions performed for a health care provider organization in order to provide patient care and treatment.</i></lines></p></li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Practitioner Participation</ph></p>
+</body>
+</topic>

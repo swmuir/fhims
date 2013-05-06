@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Published Consent - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>This specialization of the ConsentDirective class is used to describe a consent directive published to a registry. If a client s consent directive is published, a URL/URI is made available for reference. The client may use this URI to allow providers access to the consent directive created by the consenter.</p>
+</section>
+<ol id="conformance">
+<li>Extends <xref href="../ConsentDirective.dita">Consent Directive</xref></li>
+<li>Contains exactly one [1..1] <tt><b>uri</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>If a specific consent directive (for a client) is published, this attribute provides the means to locate and download the consent directive from a registry.</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Extends <xref href="../ConsentDirective.dita">Consent Directive</xref></li>
+<li>Contains zero or one [0..1] <tt><b>documentImage</b></tt> with data type <xref href="../Base64Binary.dita">base64 Binary</xref>
+<ul><li>This optional attribute references a signed paper document containing the client's consent directive.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>effectiveTime</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>This attribute specifies the date when the policy/consent is in effect.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>expirationTime</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li> This attribute specifies when the consent directive automatically expires.  A consent directive may be revoked prior to its expiration date.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>id</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li> Unique identifier that refers to a specific Consent Directive instance.  This id or the published URI may be used to lookup the client's consent directives in order to apply them to the collection, access, use, or disclosure of health records.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>reason</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>This attribute is used to specify the reason for revoking a Consent Directive, e.g., requested vs. correction/error.  An error would be a discrepancy between the intent of Consent Directive (as communicated by the Consenter) and that which was entered into the Consent Directive Management System (CDMS).</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>This attribute indicates whether the consent directive is active or not.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>uri</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>If a specific consent directive (for a client) is published, this attribute provides the means to locate and download the consent directive from a registry.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>replacesDirective</b></tt>, where its type is <xref href="../ConsentDirective.dita">Consent Directive</xref>
+<ul><li>Points to a previous Consent Directive superseded by the current instance.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>consentAuthor</b></tt>, where its type is <xref href="../ConsentAuthor.dita">Consent Author</xref>
+<ul><li>Identifies the person who created or 'authored' the consent directive</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>publishedPolicy</b></tt>, where its type is <xref href="../PrivacyPolicy.dita">Privacy Policy</xref>
+<ul><li>A set of rules that are intended to be enforced by security systems and are used as the basis for client consent directives.</li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>privacyRuleList</b></tt>, where its type is <xref href="../PrivacyRuleList.dita">Privacy Rule List</xref>
+<ul><li>A list of zero or more consent rules applicable to this consent directive.  A consent rule specifies the permission allowed to a user type by the consenter for a specific type of information. The person consenting may be either the subject of the record or a designated Substitute Decision Maker. One or more consent rules comprise a consent directive or privacy policy.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>subjectOfConsent</b></tt>, where its type is <xref href="../Patient.dita">Patient</xref>
+<ul><li>Identifies the person to whom the consent directive applies.  This person may or may not be the same person as the consent author, as in the case where the patient is a minor child or an incapacitated person.</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Published Consent</ph></p>
+</body>
+</topic>

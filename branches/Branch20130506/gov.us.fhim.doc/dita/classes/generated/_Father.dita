@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Father - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>Contains demographic information about the newborn's father.  Note that the properties of this class can be derived from Person and therefore are all marked as Derived, yet we wanted to clearly show where the specific fields on the birth certificate can be found, so they are in this class for logical model purposes.   This class would probably not be instantiated in actual implentations.</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>asPerson</b></tt>, where its type is <xref href="../Person.dita">Person</xref>
+<ul><li>A pointer to the Person record of the newborn's father.  This shows the logical relationship between the Mother role and the Person class, yet this property might not be actually instantiated.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>fatherHispanicOriginCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>US Standard Certificate Of Birth Field 24    Indicates whether the infant's father is of Hispanic origin, and if so, further categorizes her ethnicity.  Possible values include: No, not Spanish/Hispanic/Latino; Yes, Mexican, Mexican American, Chicano; Yes, Puerto Rican; Yes, Cuban; and Yes, other Spanish/Hispanic/Latino.  If "Yes, other Spanish/Hispanic/Latino" is chosen, then the fatherHispanicOriginOther is used to further specify.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>fatherHispanicOriginOther</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>US Standard Certificate Of Birth Field 24    If fatherHispanicOriginCategory is "Yes, other Spanish/Hispanic/Latino", then this free text property is used to further specify the infant's father's ethnicity.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>fathersBirthAddress</b></tt> with data type <xref href="../BirthAddress.dita">Birth Address</xref>
+<ul><li>US Standard Certificate Of Birth Field 10c    The birthplace (limited to State, Territory, or Foreign Country) of the infant's mother.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>fathersCurrentLegalName</b></tt> with data type <xref href="../PersonName.dita">Person Name</xref>
+<ul><li>US Standard Certificate Of Birth Field 10a    The legal name of the infant's father at the time of the infant's birth.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>fathersDateOfBirth</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>US Standard Certificate Of Birth Field 10b    The infant's father's date of birth.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>fathersEducationLevel</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>US Standard Certificate Of Birth Field 23    Categorizes the degree or level of school completed by the infant's father at the time of delivery.  Possible values include: 8th grade or less; 9th-12th grade, no diploma; High school graduate or GED completed; Some college credit, but no degree; Associate degree (e.g., AA, AS); Bachelor's degree (e.g., BA, AB, BS); Master's degree (e.g., MA, MS, MEng, MSW, MBA); Doctorate (e.g., PhD, EdD), or Professional degree (e.g., MD, DDS, DVM, LLB, JD).</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>fathersRaceCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>US Standard Certificate Of Birth Field 25    Indicates the race(s) that the infant's father considers himself to be.  Possible values include: White; Black, or African American; American Indian or Alaska Native**; Asian Indian; Chinese; Filipino; Japanese; Korean; Vietnamese; Other Asian**; Native Hawaiian; Guamanian or Chamorro; Samoan; Other Pacific Islander**; Other**.  **If Alaska Native is chosen, the fathersRaceOther free text field is used to specify the name of his enrolled or principal tribe; if Other Asian, Other Pacific Islander, or Other is chosen, the fathersRaceOther free text field is used to provide further specificity.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>fathersRaceOther</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>US Standard Certificate Of Birth Field 25    Provides further specificity for the infant's father's race.  Used only if fathersRaceCategory is Alaska Native, Other Asian, Other Pacific Islander, or Other.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>fathersSsn</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>US Standard Certificate Of Birth Field 19    The Social Security Number of the infant's father.</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>fatherHispanicOriginCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>US Standard Certificate Of Birth Field 24    Indicates whether the infant's father is of Hispanic origin, and if so, further categorizes her ethnicity.  Possible values include: No, not Spanish/Hispanic/Latino; Yes, Mexican, Mexican American, Chicano; Yes, Puerto Rican; Yes, Cuban; and Yes, other Spanish/Hispanic/Latino.  If "Yes, other Spanish/Hispanic/Latino" is chosen, then the fatherHispanicOriginOther is used to further specify.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>fatherHispanicOriginOther</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>US Standard Certificate Of Birth Field 24    If fatherHispanicOriginCategory is "Yes, other Spanish/Hispanic/Latino", then this free text property is used to further specify the infant's father's ethnicity.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>fathersBirthAddress</b></tt> with data type <xref href="../BirthAddress.dita">Birth Address</xref>
+<ul><li>US Standard Certificate Of Birth Field 10c    The birthplace (limited to State, Territory, or Foreign Country) of the infant's mother.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>fathersCurrentLegalName</b></tt> with data type <xref href="../PersonName.dita">Person Name</xref>
+<ul><li>US Standard Certificate Of Birth Field 10a    The legal name of the infant's father at the time of the infant's birth.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>fathersDateOfBirth</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li>US Standard Certificate Of Birth Field 10b    The infant's father's date of birth.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>fathersEducationLevel</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>US Standard Certificate Of Birth Field 23    Categorizes the degree or level of school completed by the infant's father at the time of delivery.  Possible values include: 8th grade or less; 9th-12th grade, no diploma; High school graduate or GED completed; Some college credit, but no degree; Associate degree (e.g., AA, AS); Bachelor's degree (e.g., BA, AB, BS); Master's degree (e.g., MA, MS, MEng, MSW, MBA); Doctorate (e.g., PhD, EdD), or Professional degree (e.g., MD, DDS, DVM, LLB, JD).</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>fathersRaceCategory</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>US Standard Certificate Of Birth Field 25    Indicates the race(s) that the infant's father considers himself to be.  Possible values include: White; Black, or African American; American Indian or Alaska Native**; Asian Indian; Chinese; Filipino; Japanese; Korean; Vietnamese; Other Asian**; Native Hawaiian; Guamanian or Chamorro; Samoan; Other Pacific Islander**; Other**.  **If Alaska Native is chosen, the fathersRaceOther free text field is used to specify the name of his enrolled or principal tribe; if Other Asian, Other Pacific Islander, or Other is chosen, the fathersRaceOther free text field is used to provide further specificity.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>fathersRaceOther</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>US Standard Certificate Of Birth Field 25    Provides further specificity for the infant's father's race.  Used only if fathersRaceCategory is Alaska Native, Other Asian, Other Pacific Islander, or Other.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>fathersSsn</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>US Standard Certificate Of Birth Field 19    The Social Security Number of the infant's father.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>asPerson</b></tt>, where its type is <xref href="../Person.dita">Person</xref>
+<ul><li>A pointer to the Person record of the newborn's father.  This shows the logical relationship between the Mother role and the Person class, yet this property might not be actually instantiated.</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Father</ph></p>
+</body>
+</topic>

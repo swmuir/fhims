@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Fee For Service Arrangement - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>Fee Schedule: 'A list of maximum fees for providers who are on a fee-for-service basis.' -eHealthInsurance.org  Fee-for-Service: 'A payment system for health care where the provider is paid for each service rendered rather than a pre-negotiated amount for each patient.' -eHealthInsurance.org</p>
+</section>
+<ol id="conformance">
+<li>Extends <xref href="../FinancialArrangement.dita">Financial Arrangement</xref></li>
+<li>Contains exactly one [1..1] <tt><b>feeSchedule</b></tt>, where its type is <xref href="../FeeSchedule.dita">Fee Schedule</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>diagnosisRelatedGroup</b></tt>, where its type is <xref href="../DiagnosisWeightedPayment.dita">Diagnosis Weighted Payment</xref>
+</li>
+</ol>
+<ol id="aggregate">
+<li>Extends <xref href="../FinancialArrangement.dita">Financial Arrangement</xref></li>
+<li>Contains exactly one [1..1] <tt><b>contractId</b></tt> with data type <xref href="../Id.dita">Id</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>healthPlan</b></tt>, where its type is <xref href="../HealthPlan.dita">Health Plan</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>billableAct</b></tt>, where its type is <xref href="../BillableService.dita">Billable Service</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>feeSchedule</b></tt>, where its type is <xref href="../FeeSchedule.dita">Fee Schedule</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>diagnosisRelatedGroup</b></tt>, where its type is <xref href="../DiagnosisWeightedPayment.dita">Diagnosis Weighted Payment</xref>
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Fee For Service Arrangement</ph></p>
+</body>
+</topic>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Dental Treatment Plan - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>Includes information related to the dental plan or chart for the patient.</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>treatmentPlanId</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>This is the unique identifier of the dental encounter record.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dentalAlert</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Lists the dental alerts for the patient - e.g. Antibiotic Premed, Sedation Premed, etc.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>treatmentFlag</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Flags for treatment plan  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>treatmentPlanType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Whether the treatment is planned or completed.  Possible values are Planned, Completed etc.  DRM Plus Program Specific.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>treatmentsInGroup</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>Number of treatments included in this group.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>treatingSpecialty</b></tt>, where its type is <xref href="../FacilityTreatingSpecialty.dita">Facility Treating Specialty</xref>
+<ul><li>Provides an indication of the medical specialty of the organization-location.  Examples include Medicine, Surgery, Psychiatry, etc.  Related to the "CDR #" in VHA.  (TreatingSpeciality is a role):</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dentalPatientEncounter</b></tt>, where its type is <xref href="../EncounterEvent.dita">Encounter Event</xref>
+<ul><li>Dental Patient Encounter - The patient who is the subject of this dental treatment.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>lastClassification</b></tt>, where its type is <xref href="../DentalClassification.dita">Dental Classification</xref>
+<ul><li>Last dental classification of the patient.</li></ul></li>
+<li>Contains at least one [1..*] <tt><b>diagnosis</b></tt>, where its type is <xref href="../Diagnosis.dita">Diagnosis</xref>
+<ul><li>Diagnosis of of a disease or injury.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>bedSection</b></tt>, where its type is <xref href="../Ward.dita">Ward</xref>
+<ul><li>"A division in a hospital for the care of a particular group of patients"  The American Heritage Stedman's Medical Dictionary. </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>division</b></tt>, where its type is <xref href="../Institution.dita">Institution</xref>
+<ul><li>An identification of an organization at a location.    </li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>dataEnterer</b></tt>, where its type is <xref href="../DataEnterer.dita">Data Enterer</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>practitioner</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>primaryProvider</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>treatmentPlanService</b></tt>, where its type is <xref href="../TreatmentPlanService.dita">Treatment Plan Service</xref>
+</li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>treatmentPlanId</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li>This is the unique identifier of the dental encounter record.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dentalAlert</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Lists the dental alerts for the patient - e.g. Antibiotic Premed, Sedation Premed, etc.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>treatmentFlag</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Flags for treatment plan  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>treatmentPlanType</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Whether the treatment is planned or completed.  Possible values are Planned, Completed etc.  DRM Plus Program Specific.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>treatmentsInGroup</b></tt> with data type <xref href="../Integer.dita">Integer</xref>
+<ul><li>Number of treatments included in this group.  </li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>treatingSpecialty</b></tt>, where its type is <xref href="../FacilityTreatingSpecialty.dita">Facility Treating Specialty</xref>
+<ul><li>Provides an indication of the medical specialty of the organization-location.  Examples include Medicine, Surgery, Psychiatry, etc.  Related to the "CDR #" in VHA.  (TreatingSpeciality is a role):</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dentalPatientEncounter</b></tt>, where its type is <xref href="../EncounterEvent.dita">Encounter Event</xref>
+<ul><li>Dental Patient Encounter - The patient who is the subject of this dental treatment.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>lastClassification</b></tt>, where its type is <xref href="../DentalClassification.dita">Dental Classification</xref>
+<ul><li>Last dental classification of the patient.</li></ul></li>
+<li>Contains at least one [1..*] <tt><b>diagnosis</b></tt>, where its type is <xref href="../Diagnosis.dita">Diagnosis</xref>
+<ul><li>Diagnosis of of a disease or injury.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>bedSection</b></tt>, where its type is <xref href="../Ward.dita">Ward</xref>
+<ul><li>"A division in a hospital for the care of a particular group of patients"  The American Heritage Stedman's Medical Dictionary. </li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>division</b></tt>, where its type is <xref href="../Institution.dita">Institution</xref>
+<ul><li>An identification of an organization at a location.    </li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>dataEnterer</b></tt>, where its type is <xref href="../DataEnterer.dita">Data Enterer</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>practitioner</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>primaryProvider</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
+</li>
+<li>Contains zero or more [0..*] <tt><b>treatmentPlanService</b></tt>, where its type is <xref href="../TreatmentPlanService.dita">Treatment Plan Service</xref>
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Dental Treatment Plan</ph></p>
+</body>
+</topic>

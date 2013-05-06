@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Physical Quantity Interval - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>The amount of the therapeutic agent or other substance given at one administration event.</p>
+<p>This data type represents an Interval, where the Low and High Limits are Physical Quantities.  An Interval is a "set of consecutive values of an ordered base data type." - HL7 V3  A Physical Quantity is "a dimensioned quantity expressing the result of measuring" - HL7 V3</p>
+</section>
+<ol id="conformance">
+<li>Contains zero or one [0..1] <tt><b>lowValue</b></tt> with data type <xref href="../Real.dita">Real</xref>
+<ul><li>The magnitude of the quantity measured in terms of the unit.</li><li>"The low limit of the interval.  The low limit SHALL NOT be positive infinity." - HL7 V3  This property contains the numeric portion (i.e., not including any units of measure) of the low limit.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>lowUnit</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>The unit of measure specified in the Unified Code for Units of Measure (UCUM) [].</li><li>"The low limit of the interval.  The low limit SHALL NOT be positive infinity." - HL7 V3.  This property containsthe Unit of Measure of the low limit.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>highValue</b></tt> with data type <xref href="../Real.dita">Real</xref>
+<ul><li>The magnitude of the quantity measured in terms of the unit.</li><li>"The high limit of the interval.  The high limit SHALL NOT be negative infinity, and SHALL be higher than the low limit if one exists." - HL7 V3.  This property contains the numeric portion (i.e., not including any units of measure) of the high limit.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>highUnit</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>The unit of measure specified in the Unified Code for Units of Measure (UCUM) [].</li><li>"The high limit of the interval.  The high limit SHALL NOT be negative infinity, and SHALL be higher than the low limit if one exists." - HL7 V3.  This property contains the Unit of Measure of the high limit.</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains zero or one [0..1] <tt><b>lowValue</b></tt> with data type <xref href="../Real.dita">Real</xref>
+<ul><li>The magnitude of the quantity measured in terms of the unit.</li><li>"The low limit of the interval.  The low limit SHALL NOT be positive infinity." - HL7 V3  This property contains the numeric portion (i.e., not including any units of measure) of the low limit.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>lowUnit</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>The unit of measure specified in the Unified Code for Units of Measure (UCUM) [].</li><li>"The low limit of the interval.  The low limit SHALL NOT be positive infinity." - HL7 V3.  This property containsthe Unit of Measure of the low limit.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>highValue</b></tt> with data type <xref href="../Real.dita">Real</xref>
+<ul><li>The magnitude of the quantity measured in terms of the unit.</li><li>"The high limit of the interval.  The high limit SHALL NOT be negative infinity, and SHALL be higher than the low limit if one exists." - HL7 V3.  This property contains the numeric portion (i.e., not including any units of measure) of the high limit.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>highUnit</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>The unit of measure specified in the Unified Code for Units of Measure (UCUM) [].</li><li>"The high limit of the interval.  The high limit SHALL NOT be negative infinity, and SHALL be higher than the low limit if one exists." - HL7 V3.  This property contains the Unit of Measure of the high limit.</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Physical Quantity Interval</ph></p>
+</body>
+</topic>

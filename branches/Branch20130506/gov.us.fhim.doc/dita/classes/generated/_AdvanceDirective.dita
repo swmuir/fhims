@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Advance Directive - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="description">
+<p>"An advance health care directive, also known as living will, personal directive, advance directive, or advance decision, are instructions given by individuals specifying what actions should be taken for their health in the event that they are no longer able to make decisions due to illness or incapacity, and appoints a person to make such decisions on their behalf." - wikipedia</p>
+</section>
+<ol id="conformance">
+<li>Contains exactly one [1..1] <tt><b>category</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Categorizes the Advance Directive.  Possible categorizations include Do Not Resuscitate, etc.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>comments</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Contains any remarks about the Advance Directive.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>effectiveDateRange</b></tt> with data type <xref href="../TimeInterval.dita">Time Interval</xref>
+<ul><li>The time period over which the Advance Directive is effective.  Note that the end date is typically blank for active Advance Directives.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>image</b></tt> with data type <xref href="../Image.dita">Image</xref>
+<ul><li>If the Advance Directive was originally a signed paper form and was scanned, this property will contain the scanned image.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>paperLocator</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Provides information to locate the original paper form, if applicable.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the state of the Advance Directive record, as defined in the state-transition model in the HL7 RIM.  Examples include Active, Pending, Terminated, etc.</li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Contains exactly one [1..1] <tt><b>category</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Categorizes the Advance Directive.  Possible categorizations include Do Not Resuscitate, etc.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>comments</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Contains any remarks about the Advance Directive.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>effectiveDateRange</b></tt> with data type <xref href="../TimeInterval.dita">Time Interval</xref>
+<ul><li>The time period over which the Advance Directive is effective.  Note that the end date is typically blank for active Advance Directives.</li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>image</b></tt> with data type <xref href="../Image.dita">Image</xref>
+<ul><li>If the Advance Directive was originally a signed paper form and was scanned, this property will contain the scanned image.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>paperLocator</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li>Provides information to locate the original paper form, if applicable.</li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li>Indicates the state of the Advance Directive record, as defined in the state-transition model in the HL7 RIM.  Examples include Active, Pending, Terminated, etc.</li></ul></li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Advance Directive</ph></p>
+</body>
+</topic>

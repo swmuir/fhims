@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classId" xml:lang="en-us">
+<title>Consult Request - conformance rules</title>
+<shortdesc id="shortdesc"></shortdesc>
+<prolog id="prolog">
+</prolog>
+<body>
+<section id="knownSubclasses">
+</section>
+<section id="description">
+<p><lines><i>A record of a consultation or procedure request.  A ConsultRequest is a type of Act.  The definition of Act is:  "A record of something that is being done, has been done, can be done, or is intended or requested to be done." (HL7 3.0)</i></lines></p>
+</section>
+<ol id="conformance">
+<li>Extends <xref href="../HealthcareOrder.dita">Healthcare Order</xref></li>
+<li>Contains exactly one [1..1] <tt><b>requestReason</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li><p><lines><i>reasons for consultprocedure request</i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>serviceRenderedSetting</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>value to indicate if the service is to be rendered on an outpatient or inpatient basis.  This is to alleviate the confusion if patient is currently an inpatient/outpatient but is just about to be discharged/admitted and become a outpatient/inpatient. (Data Type = Set of Codes I:inpatient,O:outpatient)  </i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>provisionalDiagnosis</b></tt>, where its type is <xref href="../Diagnosis.dita">Diagnosis</xref>
+</li>
+<li>Contains exactly one [1..1] <tt><b>orderedProcedure</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>Identifies a kind of procedure that can be, is, or has been requested as part of an order.</i></lines></p></li></ul></li>
+</ol>
+<ol id="aggregate">
+<li>Extends <xref href="../HealthcareOrder.dita">Healthcare Order</xref></li>
+<li>Contains zero or one [0..1] <tt><b>alternatePlacerOrderId</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li><p><lines><i>"This field enables a shorter number to be communicated that is unique within other identifiers." - HL7 Version 2.8, ORC-53.</i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>callbackPhone</b></tt> with data type <xref href="../Telecommunications.dita">Telecommunications</xref>
+<ul><li><p><lines><i>"Contains the telephone number to call for clarification of a request or other information regarding the order." - HL7 Version 2.8, ORC-14.
+"Contains the telephone number for reporting a status or a result" - HL7 Version 2.8, OBR-17.</i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>confidentialityCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>"This field contains information about the level of security and/or sensitivity surrounding the order (e.g., highly sensitive, not sensitive, sensitive, etc.)." - HL7 Version 2.8, ORC-28</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>dangerCode</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>"Contains the code and/or text indicating any known or suspected patient or specimen hazards, e.g., patient with active tuberculosis or blood from a hepatitis patient." - HL7 Version 2.8, OBR-12.</i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dateTimeBegin</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li><p><lines><i>"This field may be specified by the requester, in which case it indicates the earliest date/time at which the services should be started.  In many cases, however, the start date/time will be implied or will be defined by other fields in the service request record (e.g., urgency   STAT).  In such a case, this field will be empty. The filling service will often record a value in this field after receipt of the service request, however, and compute an end time on the basis of the start date/time for the filling service's internal use." - HL7 Version 2.8, TQ1-7</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>dateTimeCompleted</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li><p><lines><i>The date/time this order is considered complete.</i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dateTimeEnd</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li><p><lines><i>"When filled in by the requester of the service, this field should contain the latest date/time that the service should be performed.  If it has not been performed by the specified time, it should not be performed at all.  The requester may not always fill in this value, yet the filling service may fill it in on the basis of the instruction it receives and the actual start time. Regardless of the value of the end date/time, the service should be stopped at the earliest of the date/times specified by either the duration or the end date/time." - HL7 Version 2.8, TQ1-8</i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>dateTimeOrdered</b></tt> with data type <xref href="../PointInTime.dita">Point In Time</xref>
+<ul><li><p><lines><i>The date/time that the order was created by the ordering provider.</i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>duplicateProcedureReason</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li><p><lines><i>"This field is used to document why the procedure found in OBR-44 - Procedure Code is a duplicate of one ordered/charged previously for the same patient within the same date of service and has been determined to be medically necessary." - HL7 Version 2.8, OBR-48.</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>isEscortRequired</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li><p><lines><i>Indicates whether "the patient needs to be escorted to the diagnostic service department." - HL7 Version 2.8, OBR-42</i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>isInpatientOrder</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li><p><lines><i>"This field indicates whether the order is to be executed in an inpatient setting or an outpatient setting." - HL7 Version 2.8, ORC-29</i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>placerOrderId</b></tt> with data type <xref href="../Id.dita">Id</xref>
+<ul><li><p><lines><i>"This field is the placer application's order number." - HL7 Version 2.8, ORC-2
+"This field is identical to ORC-2-Placer Order Number....  It identifies an order uniquely among all orders from a particular ordering application." - HL7 Version 2.8, OBR-2.</i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>priority</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>"This field describes the urgency of the request.  If this field is blank, the default is R" (Routine) - HL7 Version 2.8, TQ1-9</i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>placerSupplementalInfo</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>"Contains supplemental service information sent from the placer system to the filler system for the universal procedure code reported in OBR-4 Universal Service ID.  This field will be used to provide ordering information detail that is not available in other specific fields in the OBR segment." - HL7 Version 2.8, OBR-46.</i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>plannedPatientTransportComment</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li><p><lines><i>Contains "comments on special requirements for the transport of the patient to the diagnostic service department." - HL7 Version 2.8, OBR-43</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>reasonForStudy</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>"This is required for some studies to obtain proper reimbursement." - HL7 Version 2.8, OBR-31.  Used to link various tests or procedures together in order to provide a more complete picture of a patient's condition.  Also used for billing purposes.</i></lines></p></li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>relevantClinicalInformation</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>"Contains the additional clinical information about the patient or specimen.  This field is used to report the suspected diagnosis and clinical findings on requests for interpreted diagnostic studies.  Examples include reporting the amount of inspired carbon dioxide for blood gasses, the point in the menstrual cycle for cervical pap tests, and other conditions that influence test interpretations." - HL7 Version 2.8, OBR-13.  Possible values include (from HL7 Table 916): Patient was fasting prior to the procedure; The patient indicated they did not fast prior to the procedure; Not Given – Patient was not asked at the time of the procedure; Fasting not asked of the patient at time of procedure.</i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>remarks</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li><p><lines><i>General textual comments about this Order.</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>resultHandling</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>"Information regarding the handling of the result.  For example, an order may specify that the result (e.g., an x-ray film) should be given to the patient for return to the requestor....  If this field is not populated then routine handling is implied." - HL7 Version 2.8, OBR-49    Note that the HL7 V2 value set only contains values pertinent to Radiology (e.g., give film to patient).  However, it is envisioned that other scenarios might be handled by this property.  This property is optional.</i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>status</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>"Specifies the status of an order....  The purpose of this field is to report the status of an order either upon request (solicited), or when the status changes (unsolicited).  It does not initiate action.  It is assumed that the order status always reflects the status as it is known to the sending application at the time that the message is sent.  Only the filler can originate the value of this field." - HL7 Version 2.8, ORC-5
+
+A code specifying the status of the Order.  Valid status codes should reflect the HL7 state machine, e.g., Active, Held, Canceled, Aborted, New, Nullified, Obsolete.</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>statusModifier</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>"This field is a modifier or refiner of the ORC-5-Order status field. This field may be used to provide additional levels of specificity or additional information for the defined order status codes." - HL7 Version 2.8, ORC-25</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>transportationArrangementResponsibility</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li><p><lines><i>Indicates "who is responsible for arranging transport to the planned diagnostic service.  Examples: Requester, Provider, Patient." - HL7 Version 2.8, OBR-40.</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>transportationMode</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>"Identifies how (or whether) to transport a patient, when applicable." - HL7 Version 2.8, OBR-30.  Possible values include (from HL7 Table 124): Cart - patient travels on cart or gurney; The examining device goes to patient's location; Patient walks to diagnostic service; Wheelchair.</i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>wasTransportArranged</b></tt> with data type <xref href="../Boolean.dita">Boolean</xref>
+<ul><li><p><lines><i>Indicates "whether transport arrangements are known to have been made." - HL7 Version 2.8, OBR-41</i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>requestReason</b></tt> with data type <xref href="../String.dita">String</xref>
+<ul><li><p><lines><i>reasons for consultprocedure request</i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>serviceRenderedSetting</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>value to indicate if the service is to be rendered on an outpatient or inpatient basis.  This is to alleviate the confusion if patient is currently an inpatient/outpatient but is just about to be discharged/admitted and become a outpatient/inpatient. (Data Type = Set of Codes I:inpatient,O:outpatient)  </i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>orderedProcedure</b></tt> with data type <xref href="../Code.dita">Code</xref>
+<ul><li><p><lines><i>Identifies a kind of procedure that can be, is, or has been requested as part of an order.</i></lines></p></li></ul></li>
+<li>Contains exactly one [1..1] <tt><b>author</b></tt>, where its type is <xref href="../Author.dita">Author</xref>
+<ul><li><p><lines><i>"Contains the identity of the person who is responsible for creating the request (i.e., ordering physician)." - HL7 Version 2.8, ORC-12.
+"Contains the address of the care provider requesting the order" - HL7 Version 2.8, ORC-24.
+"Identifies the provider who ordered the test." - HL7 Version 2.8, OBR-16.</i></lines></p></li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>diagnosisList</b></tt>, where its type is <xref href="../DiagnosisListEntry.dita">Diagnosis List Entry</xref>
+<ul><li><p><lines><i>Contains a list of diagnoses associated with the Healthcare Order.</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>encounter</b></tt>, where its type is <xref href="../EncounterEvent.dita">Encounter Event</xref>
+<ul><li><p><lines><i>The PatientEncounter during which the Order was created.</i></lines></p></li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>orderAction</b></tt>, where its type is <xref href="../OrderAction.dita">Order Action</xref>
+<ul><li><p><lines><i>A record of action has been taken on an order, including the signature and verification required to release to the service.</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>patient</b></tt>, where its type is <xref href="../Patient.dita">Patient</xref>
+<ul><li><p><lines><i>Identifies the patient which is the subject of the Order.</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>patientLocation</b></tt>, where its type is <xref href="../ServiceDeliveryLocation.dita">Service Delivery Location</xref>
+<ul><li><p><lines><i>The physical location of the patient.  This information is used to communicate to the performing Service where the Patient might be found, which is particularly important for services that involve the patient (e.g., a Lab Test ordered requires a blood draw).
+"Specifies the location of the patient to whom the pharmaceutical substance is to be delivered." - HL7 Version 2.8, RXO-34.
+"Specifies the address, either mailing or physical, to which the prescription should be mailed or delivered." - HL7 Version 2.8, RXO-35.</i></lines></p></li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>relatedOrder</b></tt>, where its type is <xref href="../RelatedOrder.dita">Related Order</xref>
+<ul><li><p><lines><i>Identifies other Orders to which this Order is somehow related.
+"Relates a child to its parent when a parent child relationship exists." - HL7 Version 2, ORC-8.</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>resultCopiesTo</b></tt>, where its type is <xref href="../IndividualProvider.dita">Individual Provider</xref>
+<ul><li><p><lines><i>"Identifies the people who are to receive copies of the results." - HL7 Version 2.8, OBR-28.</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>setOfOrders</b></tt>, where its type is <xref href="../SetOfOrders.dita">Set Of Orders</xref>
+<ul><li><p><lines><i>An aggregation of Orders that are assembled so that they might be managed as a group.  The member Orders will generally be for a single Patient, and commonly issued by a single Provider, but otherwise these orders will have no other inherent relationships between themselves.  This concept is different from an Order Set, Panel, or Battery, in that the SetOfOrders is composed after the orders have been created; wheras the latter concepts are defined before the order is created.</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>standingOrder</b></tt>, where its type is <xref href="../StandingOrder.dita">Standing Order</xref>
+<ul><li><p><lines><i>An order that is created by policy, and which is not tied to a single patient, but which is generated for a patient when certain conditions are met.  For example, a policy might exist that persons deploying to a particular region must have a particular vaccination administered beforehand.</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>cosigner</b></tt>, where its type is <xref href="../LegalAuthenticator.dita">Legal Authenticator</xref>
+<ul><li><p><lines><i>Captures participation information (who, when, comments) of the person who co-signed the order.</i></lines></p></li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>billingInformation</b></tt>, where its type is <xref href="../BillingInformation.dita">Billing Information</xref>
+<ul><li><p><lines><i>"Used to provide billing information, on the ordered service, to the filling application." - HL7 Version 2.8, BLG Segment.</i></lines></p></li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>subject</b></tt>, where its type is <xref href="../Subject.dita">Subject</xref>
+<ul><li><p><lines><i>Represents the person or thing, other than a patient, that is the subject of a healthcare activity.  For example, the subject might be a research animal, an environmental sample, or a foodstuff sample for food safety testing.</i></lines></p></li></ul></li>
+<li>Contains zero or more [0..*] <tt><b>healthcarePromise</b></tt>, where its type is <xref href="../HealthcarePromise.dita">Healthcare Promise</xref>
+<ul><li><p><lines><i>Points to the Healthcare Promises (if any) created in response to the Healthcare Order.  Note that since both the HealthcareOrder and HealthcarePromise are abstract classes, this association is available to all subclasses, such that LabPromise would point to LabOrder, etc.</i></lines></p></li></ul></li>
+<li>Contains zero or one [0..1] <tt><b>provisionalDiagnosis</b></tt>, where its type is <xref href="../Diagnosis.dita">Diagnosis</xref>
+</li>
+</ol>
+<codeblock id="example"><![CDATA[]]></codeblock>
+<section id="changes">
+</section>
+<p><ph id="classformalname">Consult Request</ph></p>
+</body>
+</topic>
