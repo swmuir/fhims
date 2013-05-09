@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="SpecimenContainer" xml:lang="en-us">
+<title id="title">SpecimenContainer</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>Container: &quot;an object used for or capable of holding, esp for transport or storage, such as a carton, box, etc.&quot; - Dictionary.com.  This class describes the object in which the specimen is contained, such as the capacity, etc.  Some containers are manufactured such that they contain a pre-defined substance that may act to preserve, maintain or enhance the particular nature or component of the specimen. For example, a &quot;blue top tube&quot; typically contains an anticoagulant such as citrate. It is therefore important to know what kind of container the sample is in, as the condition of the sample may be affected.</p><p></p><p>&quot;An Entity that holds other Entities.&quot; - HL7 Version 3.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>barrierDeltaQuantity : <xref href="../t_PhysicalQuantity.dita" >PhysicalQuantity</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Identifies the distance from the Point of Reference to the separator material (barrier) within the container in units specified below. This distance may be provided by the LAS to the instrument and/or specimen processing/handling device to facilitate the insertion of a sampling probe into the specimen without touching the separator.&quot; - HL7 Version 2.8, SAC-18.</p><p>&quot;The distance from the point of reference to the separator material (barrier) within a container.&quot; - HL7 Version 3 (Container.barrierDeltaQuantity).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>bottomDeltaQuantity : <xref href="../t_PhysicalQuantity.dita" >PhysicalQuantity</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Identifies the distance from the Point of Reference to the separator material (barrier) within the container in units specified below. This distance may be provided by the LAS to the instrument and/or specimen processing/handling device to facilitate the insertion of a sampling probe into the specimen without touching the separator.&quot; - HL7 Version 2.8, SAC-18.</p><p>&quot;The distance from the point of reference to the separator material (barrier) within a container.&quot; - HL7 Version 3 (Container.barrierDeltaQuantity).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>capType : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Indicates the type of cap that is to be used with this container for decapping, piercing or other mechanisms.&quot; - HL7 Version 2.8, SAC-26.  Note that HL7 identifies a Code Table (Table 381) for this property, but does not provide any suggested values.</p><p>&quot;The type of cap (closure) associated with the container that is the entity being described.&quot; - HL7 Version 3 (Container.capTypeCode).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>containerCapacity : <xref href="../t_PhysicalQuantity.dita" >PhysicalQuantity</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Indicates the capacity of the container in the units specified [in SAC-24].&quot; - HL7 Version 2.8, SAC-21.</p><p>&quot;The unit identifier that is being used to describe the volume of the container....&quot; - HL7 Version 2.8, SAC-24.</p><p>&quot;The functional capacity of the container.&quot; - HL7 Version 3 (Container.capacityQuantity).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>containerDiameter : <xref href="../t_PhysicalQuantity.dita" >PhysicalQuantity</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Identifies the outside diameter of the container in units specified [in SAC-24].&quot; - HL7 Version 2.8, SAC-17.</p><p>&quot;The unit identifier that is being used to describe the volume of the container....&quot; - HL7 Version 2.8, SAC-24.</p><p>&quot;The outside diameter of the container.&quot; - HL7 Version 3 (Container.diameterQuantity).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>containerHeight : <xref href="../t_PhysicalQuantity.dita" >PhysicalQuantity</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Identifies the height of the container in units specified [in SAC-24].&quot; - HL7 Version 2.8, SAC-16.</p><p>&quot;The unit identifier that is being used to describe the volume of the container....&quot; - HL7 Version 2.8, SAC-24.</p><p>&quot;The height of the container.&quot; - HL7 Version 3 (Container.heightQuantity).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>containerType : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;The container in or on which a specimen is transported.&quot; - HL7 Version 2.8, SPM-27.  Note that although this property is a flavor of Code in HL7 Version 2, HL7 does not link this property to a Code Table nor do they provide any suggested values.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>id : <xref href="../t_Id.dita" >Id</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;The container&apos;s unique identifier assigned by the corresponding equipment....&quot; - HL7 Version 2.8, SAC-3.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>separatorType : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Identifies the type of the separator that is being used (e.g., gel separator in the container&#8230;)&quot; - HL7 Version 2.8, SAC-25.  Note that HL7 identifies a Code Table (Table 380) for this property, but does not provide any suggested values.</p><p>&quot;A material added to a container to facilitate and create a physical separation of specimen components of differing density.  The composition or nature of the separator material may have an effect on the analysis. Knowledge of the material aids interpretation of results.&quot; - HL7 Version 3 (Container.separatorTypeCode).
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>additive : <xref href="../t_Additive.dita" >Additive</xref> (0..-1)</p></stentry>
+  <stentry><p>				&quot;Identifies any additives introduced to the specimen before or at the time of collection.  These additives may be introduced in order to preserve, maintain or enhance the particular nature or component of the specimen.&quot; - HL7 Version 2.8, SPM-6.  Note that HL7 identifies a Code Table (Table 371) for this property, which currently contains 57 suggested values.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="Student" xml:lang="en-us">
+<title id="title">Student</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>A student is someone who is formally engaged in learning, especially on enrolled in an educational institution.  This class represents information about a Person actively playing the Role of a Student, but is not intended to be used to determine one&apos;s cumulative or highest level of educational achievement.  While one could theoretically arrive at these data by examining a longitudinal collection of every instance of Person&apos;s scholastic activity, we do not require nor anticipate that such information be available.  This Student and associated School information exists primarily for Immunization tracking of school-age children.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>departDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				Indicates the last date upon which the Person was a Student at the associated School.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>enrollDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				Indicates the first date upon which the Person was a Student at the associated School.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>grade : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;A single division of a school classified according to the age or progress of the pupils. In the U.S., public schools are commonly divided into twelve grades below college.&quot; - Dictionary.com
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>id : <xref href="../t_Id.dita" >Id</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				An identifier assigned by the associated School to the Student.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>studentCategory : <xref href="../t_String.dita" >String</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Identifies whether the next of kin/associated party is currently a student or not, and whether the next of kin/associated party is a full- or a part-time student.  This field does not indicate the degree (high school, college) of the student or the field of study.&quot; - HL7 Version 2.8, NK1-24.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>school : <xref href="../t_EducationalInstitution.dita" >EducationalInstitution</xref> (0..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

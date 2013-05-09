@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="HealthPlan" xml:lang="en-us">
+<title id="title">HealthPlan</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>&apos;This refers to any kind of plan that covers health care services such as HMOs, insured plans, preferred provider organizations, etc.&apos; eHealthInsurance.org  This class represents a product offering that may be very closely associated with the organization that offers it, nonetheless, the organization is a separate concept (herein called Payer).    The term Health Plan includes not only Private Insurance Plans, but also Public Health Plans, Military Health Programs, and State Health Insurance Programs.  These capitalized terms were modeled as subclasses, but were removed on 5/25.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>effectivePeriod : <xref href="../t_TimeInterval.dita" >TimeInterval</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Contains the date that the insurance goes into effect.&quot; - HL7 Version 2.8, IN1-12.</p><p>&quot;Indicates the last date of service that the insurance will cover or be responsible for.&quot; - HL7 Version 2.8, IN1-13.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>homePlan : <xref href="../t_Id.dita" >Id</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>id : <xref href="../t_Id.dita" >Id</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				A unique identifier that the payer or information source uses to identify the Plan.</p><p></p><p>&quot;Contains a unique identifier for the insurance plan.&quot; - HL7 Version 2.8, IN1-2.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>insuranceType : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+<p>See <xref href="../t_SourceofPaymentTypologyPHDSC.dita">Source of Payment Typology (PHDSC)</xref> definition for values.</p>
+</stentry>
+  <stentry><p>				Such as HMO, PPO, Medicare, etc.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>planName : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				The name of the Plan as assigned by the Payer.  Should this be &apos;description&apos; instead of &apos;name&apos;? 
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>financialArrangement : <xref href="../t_FinancialArrangement.dita" >FinancialArrangement</xref> (1..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>group : <xref href="../t_GroupCoverage.dita" >GroupCoverage</xref> (1..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>payer : <xref href="../t_Payer.dita" >Payer</xref> (1..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>planBenefitPackage : <xref href="../t_HealthcarePolicy.dita" >HealthcarePolicy</xref> (1..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>planNetworkAffliliation : <xref href="../t_PlanNetworkAffliliation.dita" >PlanNetworkAffliliation</xref> (1..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>providerPlanParticipation : <xref href="../t_ProviderPlanParticipation.dita" >ProviderPlanParticipation</xref> (0..-1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="NullifyAct" xml:lang="en-us">
+<title id="title">NullifyAct</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>Records the nullification of an Act. Typically used when an erroneous record is &quot;deleted&quot;. Because medical  records should never be deleted, the record is instead &quot;nullified&quot;, and is rendered not visible to typical users, but still  exists in the system for the purpose of audit trails, etc.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>comment : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Any comments or remarks regarding the nullification of the Activity record or Order.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>dateTime : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				The date/time the Activity record or Order was nullified.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>reason : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				The reason why the Order or Activity record was nullified.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>author : <xref href="../t_IndividualProvider.dita" >IndividualProvider</xref> (1..1)</p></stentry>
+  <stentry><p>				Indicates the practitioner who created the nullification record. In other words, the practitioner who nullified the action.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

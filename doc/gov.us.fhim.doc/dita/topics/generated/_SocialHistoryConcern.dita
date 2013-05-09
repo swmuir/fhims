@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="SocialHistoryConcern" xml:lang="en-us">
+<title id="title">SocialHistoryConcern</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	SocialHistoryConcern is a kind of <xref href="../t_HealthConcern.dita">HealthConcern</xref>	
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>Subjective patient supplied information that addresses occupational and recreational aspects of the patient&apos;s personal life that have the potential to be clinically significant such as sexual history, smoking history and alcohol consumption.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>details : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>healthConcern : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Identifies the Problem or Health Concern being described.  Note that this healthConcern property in this SocialHistory class is re-defining the healthConcern in the HealthConcern supertype to use a subset of possible values specific to Social History concerns, such as smoking, etc.</p><p></p><p>&quot;Identifies the problem. This is the identifier from an institution&apos;s master list of problems.&quot; - HL7 Version 2.8, PRB-3
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>timeSpan : <xref href="../t_TimeInterval.dita" >TimeInterval</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>value : <xref href="../t_Any.dita" >Any</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

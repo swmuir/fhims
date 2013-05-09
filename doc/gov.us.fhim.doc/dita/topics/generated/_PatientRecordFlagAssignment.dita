@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="PatientRecordFlagAssignment" xml:lang="en-us">
+<title id="title">PatientRecordFlagAssignment</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class contains attributes related to the original assignment of the flag only.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>assignmentNarrative : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				This is a text description of the incident or reason that generated the need for this patient record flag assignment, followed by the recommended actions that should be performed by a person working with this specific patient.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>assignmentReviewDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				The date that the flag assignment is due for review to determine continuing appropriateness  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>assignmentStatus : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Indicates if the patient record flag assignment is Active or Inactive for this Patient.  Possible values are Inactive; Active etc.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>flagName : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Indicates the Patient Record Flag Name that is assigned to a patient.   Possible values are behavioral; etc.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>id : <xref href="../t_Id.dita" >Id</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				Internal entry number (IEN) which is assigned to each record of this file.  [A unique identifier for the Act. (HL7 3.0)]  
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>assignmentHistory : <xref href="../t_PatientRecordFlagAssignmentHistory.dita" >PatientRecordFlagAssignmentHistory</xref> (1..-1)</p></stentry>
+  <stentry><p>				Patient Record Flag Assignment History.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>assignmentOriginatedBy : <xref href="../t_ServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (1..1)</p></stentry>
+  <stentry><p>				Indicates the site that initially assigned the patient record flag to this patient.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>assignmentOwnedBy : <xref href="../t_ServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (1..1)</p></stentry>
+  <stentry><p>				Indicates the current site that owns this patient flag assignment.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>patient : <xref href="../t_Patient.dita" >Patient</xref> (1..1)</p></stentry>
+  <stentry><p>				Patient who is the subject of this Patient Record Flag.   
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

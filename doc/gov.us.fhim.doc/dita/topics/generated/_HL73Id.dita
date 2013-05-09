@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="HL73Id" xml:lang="en-us">
+<title id="title">HL73Id</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	HL73Id is a kind of <xref href="../t_Id.dita">Id</xref>	
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class corresponds to the HL7 V3 II datatype, which is defined as: &quot;An identifier that uniquely identifies a thing or  object. Examples are object identifier for HL7 RIM objects, medical record number, order id, service catalog item id,  Vehicle Identification Number (VIN), etc. Note that a II does not identify the type of the object being identified,  or the type of the association between the object and the identifier - it is only the identifier itself.&quot;</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>extension : <xref href="../t_String.dita" >String</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;A character string as a unique identifier within the scope of the identifier root.&quot; - HL7 V3
+				A character string as a unique identifier within the scope of the identifier root.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>identifierName : <xref href="../t_String.dita" >String</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;This is a human-readable name for the namespace represented in the root. It is a descriptive name for the actual  namespace. e.g. &quot;California, U.S. Driver&apos;s License Number, 1970-&quot;.&quot; - HL7 V3
+				A human readable name or mnemonic for the assigning authority. The Assigning Authority Name has no computational value. The purpose of a Assigning Authority Name is to assist an unaided human interpreter of an II value to interpret the authority. Note: no automated processing must depend on the assigning authority name to be present in any form.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>root : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				A unique identifier that guarantees the global uniqueness of the instance identifier. The root alone may be the entire instance identifier. This string should be one of the following RUID, OID or UUID
+				&quot;A unique identifier that guarantees the global uniqueness of the instance identifier. The root alone may be the entire  instance identifier&quot; - HL7 V3
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="SurgeryPatientMovement" xml:lang="en-us">
+<title id="title">SurgeryPatientMovement</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class records arrival and departure times relevant to the surgery, such as holding area arrival, operating room arrival, operating room departure, etc.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>category : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Catgorizes the patient movement relevant to the surgery, such as holding area arrival, operating room arrival, operating room departure, etc.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>time : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Contains the dates and times that the patient was transported in and out of the OR.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>vehicle : <xref href="../t_SurgeryDevice.dita" >SurgeryDevice</xref> (1..1)</p></stentry>
+  <stentry><p>				Identifies the type of vehicle used to transport the patient to and from the operating room, recovery room, intensive care Unit etc.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

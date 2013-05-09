@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN"
+ "topic.dtd">
+<topic id="topicId" xml:lang="en-us">
+	<title>SecurityAndPrivacy Definitions</title>
+	<body>	
+			<p>The FHIM Security and Privacy domain models information related to access-control policies and their enforcement.  While historically security and patient-defined consent have been viewed as separate subjects, in effect they are enforced the same way, especially in a distributed environment.  For example, there is no functional difference between the enforcement of a corporate policy that declares that only mental health specialists can see mental health data and the enforcement of a patient&#8217;s directive to grant visibility of their mental-health related medications to their primary physician, but not to their dentist.</p><p>The FHIM Security and Privacy domain is closely based on the HL7 Security and Privacy Domain Analysis Model (DAM) of May 2010.  There are however, several important differences between this FHIM model and the DAM:  a) The DAM has SecurityRole as a subtype of CompositePolicy.  We made it an association instead.  Then, because both BasicPolicy and CompositePolicy have associations to SecurityRole, we moved the association to Policy, which is the common supertype of both BasicPolicy and CompositePolicy.  b) The DAM models JurisdictionalOrganization and ProviderOrganization as subtypes of Authority.  Indeed, ProviderOrganization is also a subtype of Grantee (multiple-inheritance).  In the FHIM, ProviderOrganization and JurisidictionalOrganization are existing stand-alone concepts.  So we changed the inheritance relationship to association relationships.  c) The DAM models Patient and Population as subtypes of SubjectOfRecord.  In the FHIM, Patient and Population are existing stand-alone concepts.  So we changed the inheritance relationship to association relationships.</p><p>There are some outstanding issues as well.  We need to better understand the PrivateInsurance and PublicServices classes.  These appear to mimic E/E/COB classes, but the purpose for these is unclear.  HL7 already has an exhaustive list of coverage types.  Should OrganizationalProvider be an Entity rather than a Role?</p>
+			<p>The HL7 DAM has several subtypes, including Access, Collection, Disclosure, and Use.  These subclasses may be handled in the taxonomy referenced by the Code.</p>
+			<p>The HL7 DAM contains two subclasses to illustrate the type of security/privacy policies that are inherent from the healthcare payment source.  Those two subclasses are examples of many potential kinds of policies, and would be &apos;fleshed out&apos; in the terminology referenced by the code.</p>
+			<p>This class may need to be replaced by existing EHR concepts such as &apos;Problem&apos; or &apos;Diagnosis&apos;</p>
+
+
+
+	</body>
+</topic>

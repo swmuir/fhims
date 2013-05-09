@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="AspClinicVisitEvent" xml:lang="en-us">
+<title id="title">AspClinicVisitEvent</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>Contains all data specific to each patient encounter.  This includes the patient, the providers and students involved the diagnostic and procedure codes, the date and time of the visit, and the CDR cost account.  (file 509850.6)</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>date : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				The date of ASP patient&apos;s clinic visit.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>nbrOfMinutes : <xref href="../t_Integer.dita" >Integer</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				The TOTAL number of minutes that were used during this ASP clinic visit.  
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>aspDiagnosisList : <xref href="../t_DiagnosisListEntry.dita" >DiagnosisListEntry</xref> (1..1)</p></stentry>
+  <stentry><p>				Identification of an A&amp;amp;amp;SP condition through a method of consistent analysis.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>aspExamination : <xref href="../t_AspExamination.dita" >AspExamination</xref> (0..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>aspPatient : <xref href="../t_AspPatient.dita" >AspPatient</xref> (1..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>aspProcedureList : <xref href="../t_ProcedureListEntry.dita" >ProcedureListEntry</xref> (1..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>audiologyTest : <xref href="../t_AudiometricTest.dita" >AudiometricTest</xref> (0..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>clinic : <xref href="../t_ServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (0..1)</p></stentry>
+  <stentry><p>				The name of the Clinic for Audiology and Speech Pathology, or Telephone/Rehab and Support.  Equivalent to File 44.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>clinicStop : <xref href="../t_ClinicStop.dita" >ClinicStop</xref> (1..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>primaryPerformer : <xref href="../t_IndividualProvider.dita" >IndividualProvider</xref> (1..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>secondaryPerformer : <xref href="../t_IndividualProvider.dita" >IndividualProvider</xref> (0..-1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>verifier : <xref href="../t_IndividualProvider.dita" >IndividualProvider</xref> (0..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

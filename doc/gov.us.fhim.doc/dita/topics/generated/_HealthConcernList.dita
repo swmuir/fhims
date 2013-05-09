@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="HealthConcernList" xml:lang="en-us">
+<title id="title">HealthConcernList</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class provides a list of a patient&apos;s &quot;health concerns&quot;, otherwise known as &quot;problems&quot;.  Such a list is traditionally called a &quot;problem list&quot;.  This list is made up of entries, some of which may have been collected from other provider organizations.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>narrativeBlock : <xref href="../t_String.dita" >String</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				A </p><p>free-text 
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>healthConcernEntry : <xref href="../t_HealthConcernEntry.dita" >HealthConcernEntry</xref> (0..-1)</p></stentry>
+  <stentry><p>				An entry in a patient&apos;s &quot;problem list&quot;.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>patient : <xref href="../t_Patient.dita" >Patient</xref> (1..1)</p></stentry>
+  <stentry><p>				The patient whose problems are being  observed and documented.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="Evaluation" xml:lang="en-us">
+<title id="title">Evaluation</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class represents an evaluation of a given vaccination in which an attempt is made to match the vaccination with a target dose number.  If the vaccination event passes the rules for a target dose in a series, the evaluation outcome will &quot;valid&quot; and will point to the appropriate target dose number.  Other wise, there will not be a link to the target dose number.  </p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>evaluationOutcome : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Indicates the outcome of the evaluation of this vaccine dose administered.  Possible values include: Valid, Invalid, NeverEvaluated.  Note that NeverEvaluated would be appropriate for vaccines that do not occur in series, or for which there are no rules for the series.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>evaluationReason : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Indicates any circumstances which impacted the validation of this vaccine dose administered.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>targetDose : <xref href="../t_TargetDoseNumber.dita" >TargetDoseNumber</xref> (0..1)</p></stentry>
+  <stentry><p>				Each target dose is one step in a patient series.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

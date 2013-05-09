@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="VictimOfAbuseOrNeglectRecord" xml:lang="en-us">
+<title id="title">VictimOfAbuseOrNeglectRecord</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	VictimOfAbuseOrNeglectRecord is a kind of <xref href="../t_HistoryOfAbuseOrNeglectRecord.dita">HistoryOfAbuseOrNeglectRecord</xref>	
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class is used to record the details of a history of abuse perpetrated by others.  The client/patient, as victim of abuse or neglect, may have additional forensic tests (e.g. imaging, lab) and medications.  Therefore this specialization class has associations to medication, diagnostic imaging, and laboratory results.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>code : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				This attribute specifies the type of victim or abuse or neglect using a standard coding system.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>diagnosticImage : <xref href="../t_DiagnosticImagingEvent.dita" >DiagnosticImagingEvent</xref> (0..1)</p></stentry>
+  <stentry><p>				If the record contains references to specific diagnostic images that                     document the abuse, this association will provide supporting information.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>medication : <xref href="../t_PharmacyPromise.dita" >PharmacyPromise</xref> (0..1)</p></stentry>
+  <stentry><p>				If the record contains references to specific medication associated with the                     abuse, this association will provide the supporting information.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

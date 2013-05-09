@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="HumanPatient" xml:lang="en-us">
+<title id="title">HumanPatient</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	HumanPatient is a kind of <xref href="../t_Patient.dita">Patient</xref>	
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>A specialization of the Patient role containing information specific to only human patients (such as confidentiality code).</p><p></p><p>Notes:</p><p>We removed veryImportantPerson code (4/4/2013) because we do not have a use-case for it.  It was perhaps more useful pre-HIPAA for privacy reasons, or intra-organizational for special treatment purposes, but we do not foresee any inter-organizational requirements at this time.  Note that this property mapped to PV1-16.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>identityReliabilityCode : <xref href="../t_String.dita" >String</xref> (0..-1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Contains a coded value used to communicate information regarding the reliability of patient/person identifying data transmitted via a transaction.  Values could indicate that certain fields on a PID segment for a given patient/person are known to be false (e.g., use of default or system-generated values for Date of Birth or Social Security Number).&quot; - HL7 Version 2.8, PID-32.  HL7 Version 2 has the following suggested values (table 445): Unknown/Default Social Security Number; Unknown/Default Date of Birth; Unknown/Default Address; Patient/Person Name is an Alias.  Suggest that the FHIM use something like: Unreliable Social Security Number, Unreliable Date of Birth, Unreliable Address; Unreliable Name.</p><p></p><p>Note that this property is included in the FHIM for compatibility to HL7 V2, but we have not identified a particular need for it.  In addition, the potential values for this field are currently unknown, as the HL7 table is a user-defined-table, and we have not identified potential values for federal use cases, we therefore have modeled it as a string rather than a code until such values have been identified.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>isIdentityUnknown : <xref href="../t_Boolean.dita" >Boolean</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Indicates whether or not the patient&apos;s/person&apos;s identity is known.&quot; - HL7 Version 2.8, PID-31.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>isOrganDonor : <xref href="../t_Boolean.dita" >Boolean</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Indicates whether the patient has consented to be an organ donor upon their demise.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>lastUpdateDateTime : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Contains the last update date and time for the patient&apos;s/person&apos;s identifying and demographic data, as defined in the PID segment....&quot; - HL7 Version 2.8, PID-33.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>lastUpdateFacility : <xref href="../t_Id.dita" >Id</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Identifies the facility of the last update to a patient&apos;s/person&apos;s identifying and demographic data, as defined in the PID segment....&quot; - HL7 Version 2.8, PID-34.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>contactParty : <xref href="../t_ContactParty.dita" >ContactParty</xref> (0..-1)</p></stentry>
+  <stentry><p>				The person who should be contacted on the patients behalf under specified situations.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>occupationalHistory : <xref href="../t_OccupationalHistory.dita" >OccupationalHistory</xref> (0..-1)</p></stentry>
+  <stentry><p>				Records an observation regarding the usual occupation of a person, and what industries the person has worked in.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>subject : <xref href="../t_Person.dita" >Person</xref> (1..1)</p></stentry>
+  <stentry><p>				Identifies the person who is playing the role of patient (HumanPatient).
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

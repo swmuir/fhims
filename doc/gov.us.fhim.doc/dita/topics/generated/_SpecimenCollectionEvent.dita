@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="SpecimenCollectionEvent" xml:lang="en-us">
+<title id="title">SpecimenCollectionEvent</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>The actual gathering of portions or quantities of material for use in testing, examination, or study based upon the request (order).</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>collectionAmount : <xref href="../t_PhysicalQuantity.dita" >PhysicalQuantity</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Specifies the volume or mass of the collected specimen.&quot; - HL7 Version 2.8, SPM-12.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>collectionMethod : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Describes the procedure or process by which the specimen was collected.&quot; - HL7 Version 2.8, SPM-7.  Note that HL7 identifies a Code Table (Table 488) for this property, which currently contains 42 suggested values.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>collectionSite : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;This field differs from [Specimen Source Site] in those cases where the source site must be approached via a particular site (e.g., anatomic location).  For example, in the case where a liver biopsy is obtained via a percutaneous needle, the collection site would be the point of entry of the needle.  For venous blood collected from the left radial vein, the collection site could be Antecubital Fossa.&quot; - HL7 Version 2.8, SPM-10.  Note that HL7 identifies a Code Table (Table 543) for this property, but does not provide any suggested values.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>comment : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;This field is for reporting additional comments related to the sample.&quot; - HL7 Version 2.8, OBR-39.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>dateTime : <xref href="../t_TimeInterval.dita" >TimeInterval</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;The date and time when the specimen was acquired from the source.  The use of the Date Range data type allows for description of specimens collected over a period of time, for example, 24-hour urine collection.  For specimens collected at a point in time, only the first component (start date/time) will be populated.&quot; - HL7 Version 2.8, SPM-17.</p><p>&quot;The clinically relevant date/time of the observation.  In the case of observations taken directly from a subject, it is the actual date and time the observation was obtained.  In the case of a specimen associated study, this field shall represent the date and time the specimen was collected or obtained.&quot; - HL7 Version 2.8, OBR-7.</p><p>&quot;Contains the end date and time of a study or timed specimen collection.&quot; - HL7 Version 2.8, OBR-8.</p><p>Note that this property is a Time Interval.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>sourceSite : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Specifies the source from which the specimen was obtained.  For example, in the case where a liver biopsy is obtained via a percutaneous needle, the source would be Liver.  Any nationally recognized coding system might be used for this field including SNOMED; alternatively HL7 Table 0163 may be used.&quot; - HL7 Version 2.8, SPM-8.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>sourceSiteModifier : <xref href="../t_Code.dita" >Code</xref> (0..-1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Contains modifying or qualifying description(s) about the specimen source site.  The use of this attribute is to modify, qualify or further specify, the entity described by [Specimen Source Site].  This is particularly useful when the code set used in [Specimen Source Site] does not provide the precision required to fully describe the site from which the specimen originated.  For example, if the specimen source site was precisely described as Left Radial Vein but the code set employed only provided Radial Vein, this attribute could be employed to add the modifier Left.&quot; - HL7 Version 2.8, SPM-9.  Note that HL7 identifies a Code Table (Table 542) for this property, but does not provide any suggested values.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>collectingLocation : <xref href="../t_ServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (0..1)</p></stentry>
+  <stentry><p>				The anatomic location from which the specimen was obtained. The collection site would be the point of entry of the needle.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>performer : <xref href="../t_PrimaryPerformer.dita" >PrimaryPerformer</xref> (1..1)</p></stentry>
+  <stentry><p>				&quot;Identifies the person, department, or facility that collected the specimen.&quot; - HL7 Version 2.8, OBR-10
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>specimen : <xref href="../t_Specimen.dita" >Specimen</xref> (1..-1)</p></stentry>
+  <stentry><p>				A collection of samples or specimens collected and potentially processed for eventual testing.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>specimenCollectionPromise : <xref href="../t_SpecimenCollectionPromise.dita" >SpecimenCollectionPromise</xref> (1..1)</p></stentry>
+  <stentry><p>				Points to the &quot;promise&quot; made in response to a Request (an Order) from an authorized entity (usually a doctor), which resulted in this Specimen Collection Event.  A Promise is an intent to perform a service that has the strength of a commitment, i.e., other parties may rely on the originator of such promise that said originator will see to it that the promised act will be fulfilled.  The Specimen Collection Promise can be looked at as the Specimen Collection Order from the point of view of the entity collecting the Specimen.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

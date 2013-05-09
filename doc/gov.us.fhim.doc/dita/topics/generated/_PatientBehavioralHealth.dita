@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="PatientBehavioralHealth" xml:lang="en-us">
+<title id="title">PatientBehavioralHealth</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	PatientBehavioralHealth is a kind of <xref href="../t_HumanPatient.dita">HumanPatient</xref>	
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class represents a specialization of the Patient role declared in the FHIM Person Demographics domain in which Behavioral Health specific properties are added.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>biologicalGender : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				This attribute is currently in this domain but it will be moved to Person.  It specifies the biological gender of a client/patient.  This attribute is optional (i.e. cardinality [0..1]).  HL7 Version 3 does not currently have a Concept Domain corresponding to Biological Gender.  There is a concept domain for AdministrativeGender which has the definition &#8220;the gender of a person used for administrative purposes (as opposed to clinical gender&#8221;.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>custodialStatus : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				The primary purpose for this attribute is for reporting purposes. Custodial status refers to the legal guardianship according to example enumerations that were provided to this analysis and which appear in the Terminology section of this publication.  There are no values currently defined to indicate prison incarceration however.  This attribute is optional (i.e. cardinality [0..1]).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>immigrationStatus : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				The primary purpose for this attribute is for reporting purposes, although in some instances, immigration status could be used to determine eligibility for Behavioral Health services.  Example enumerations have been provided for this attribute in the Terminology section of this publication.  This attribute is optional (i.e. cardinality [0..1]).
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>historyOfAbuseOrNeglect : <xref href="../t_HistoryOfAbuseOrNeglectRecord.dita" >HistoryOfAbuseOrNeglectRecord</xref> (0..1)</p></stentry>
+  <stentry><p>				This is an association between the patient and their history of abuse or neglect history records.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>problem : <xref href="../t_HealthConcern.dita" >HealthConcern</xref> (0..-1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>psychiatricDiagnosis : <xref href="../t_PsychiatricDiagnosis.dita" >PsychiatricDiagnosis</xref> (0..-1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>suicidalIdeation : <xref href="../t_SuicidalIdeationObservation.dita" >SuicidalIdeationObservation</xref> (0..1)</p></stentry>
+  <stentry><p>				This is an association between the patient and their records of suicidal ideation, suicide attempts, and alerts.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

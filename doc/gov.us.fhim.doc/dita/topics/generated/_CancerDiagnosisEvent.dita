@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="CancerDiagnosisEvent" xml:lang="en-us">
+<title id="title">CancerDiagnosisEvent</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p> This class contains the information from the  act or process of identifying or determining the nature and cause of a disease or injury through evaluation of patient history, examination, and review of laboratory data, of various malignant neoplasms characterized by the proliferation of anaplastic cells that tend to invade surrounding tissue and metastasize to new body sites.  </p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>dateOfDiagnosis : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Indicates the date of initial diagnosis by a physician for the tumor being reported.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>dateOfFirstContact : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Date of first contact with the reporting facility for diagnosis and/or treatment of this cancer.  If this is an autopsy-only or death certificate-only case, then the date of death.    
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>diagnosticConfirmation : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Diagnostic Confirmation specifies the best method of diagnostic confirmation of the cancer being reported at any time in the patient history.  Possible values are Positive Histology; Positive Cytology; Positive Microscopic, method NOS;  Positive lab test;  Direct visualization; Radiography/other imaging techniques; Clinical diagnosis only (other than 5, 6, or 7); Unknown if microscopically confirmed; etc.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>primarySite : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Identifies the Primary Site                       [The ICD-O topography code for the site of origin.]                                          Possible values are ICDO-3 TOPGRAPHY CODES   
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>siteGroup : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				IThis is theSite/Group that best defines the neoplasm.  Possible values are Va generated list of anatomic sites  in VHIM definition.  
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>dxFacility : <xref href="../t_ServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (1..1)</p></stentry>
+  <stentry><p>				Identifies the name of the facility where diagnosis was first made.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>facilityReferredFrom : <xref href="../t_ServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (0..1)</p></stentry>
+  <stentry><p>				Identifies the facility that referred the patient to the reporting facility.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>facilityReferredTo : <xref href="../t_ServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (0..1)</p></stentry>
+  <stentry><p>				Identifies the facility to which the patient was referred for further care after discharge from the reporting facility.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>histology : <xref href="../t_Histology.dita" >Histology</xref> (0..1)</p></stentry>
+  <stentry><p>				The microscopic study of the patient s cells and tissues.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

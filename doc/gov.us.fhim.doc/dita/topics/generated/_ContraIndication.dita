@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ContraIndication" xml:lang="en-us">
+<title id="title">ContraIndication</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>&quot;A factor that renders the administration of a drug or the carrying out of a medical procedure inadvisable.&quot; -  Stedman&apos;s Medical Dictionary.</p><p></p><p>Note that because almost all Contra-Indications are Health Concerns, for example, &quot;Allergy to Eggs&quot;, &quot;Allergy to Aluminum&quot;, &quot;Current fever with moderate-to-severe illness&quot;, the Contra-Indication is modeled as relationship to Health Concern, and the Contra-Indication code may be derived from the Health Concern code.  This having been said, there are some members of the Contra-Indication Value Set that are too general to point to a single Health Concern, even though they might still be derivable from the Health Concern list.  Examples include &quot;Chronic disease (disorder)&quot;, and &quot;Immunodeficiency due to any cause, including HIV (hematologic and solid tumors, congenital immunodeficiency, long-term immunosuppressive therapy, including steroids)&quot;.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>code : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+<p>See <xref href="../t_VaccinationContraindicationPHVS_IIS.dita">Vaccination Contraindication (PHVS_IIS)</xref> definition for values.</p>
+</stentry>
+  <stentry><p>				&quot;A factor that renders the administration of a drug or the carrying out of a medical procedure inadvisable.&quot; -  Stedman&apos;s Medical Dictionary.</p><p></p><p>Note that because almost all Contra-Indications are Health Concerns, for example, &quot;Allergy to Eggs&quot;, &quot;Allergy to Aluminum&quot;, &quot;Current fever with moderate-to-severe illness&quot;, the Contra-Indication is modeled as relationship to Health Concern, and the Contra-Indication code may be derived from the Health Concern code.  This having been said, there are some members of the Contra-Indication Value Set that are too general to point to a single Health Concern, even though they might still be derivable from the Health Concern list.  Examples include &quot;Chronic disease (disorder)&quot;, and &quot;Immunodeficiency due to any cause, including HIV (hematologic and solid tumors, congenital immunodeficiency, long-term immunosuppressive therapy, including steroids)&quot;.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>healthConcern : <xref href="../t_HealthConcern.dita" >HealthConcern</xref> (0..1)</p></stentry>
+  <stentry><p>				Indicates the Health Concern that contra-indicates the administration of a drug.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

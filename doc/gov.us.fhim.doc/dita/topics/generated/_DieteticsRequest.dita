@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="DieteticsRequest" xml:lang="en-us">
+<title id="title">DieteticsRequest</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	DieteticsRequest is a kind of <xref href="../t_HealthcareOrder.dita">HealthcareOrder</xref>	
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>A record of a dietetics request for a patient.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>foodServiceType : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				The type of service requested for this diet order: tray, cafeteria, or dining room. It does not apply to NPO (nothing by mouth) orders.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>isNPO : <xref href="../t_Boolean.dita" >Boolean</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				A flag indicating whether or not an order was given for the patient to receive nothing by mouth. NPO: nil per os (Latin, meaning nothing by mouth).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>startDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				The start date/time for this request.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>stopDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				The date/time this request is considered complete.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>foodItem : <xref href="../t_FoodItem.dita" >FoodItem</xref> (0..-1)</p></stentry>
+  <stentry><p>				A food item that is part of the requested food preference.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>isolationPrecaution : <xref href="../t_IsolationPrecautions.dita" >IsolationPrecautions</xref> (0..1)</p></stentry>
+  <stentry><p>				Indicates the type of isolation or special precautions the patient is under.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>performanceMonitors : <xref href="../t_PerformanceMonitors.dita" >PerformanceMonitors</xref> (0..-1)</p></stentry>
+  <stentry><p>				Maintains performance measure items to be monitored during the patient&apos;s care.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

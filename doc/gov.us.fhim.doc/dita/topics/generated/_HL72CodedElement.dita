@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="HL72CodedElement" xml:lang="en-us">
+<title id="title">HL72CodedElement</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	HL72CodedElement is a kind of <xref href="../t_NullableCode.dita">NullableCode</xref>	
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>Represents the HL7 V2 Coded Element (CE) datatype.  The CE datatype is made up of 6 pieces: Identifier, Text, Name of Coding System, Alternate Identifier, Alternate Text, and Alternate Name of Coding System.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>alternateCodingSystem : <xref href="../t_String.dita" >String</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Identifies the coding scheme being used in the alternate identifier component.&quot; - HL7 V2
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>alternateIdentifier : <xref href="../t_String.dita" >String</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;An alternate sequence of characters (the code) that uniquely identifies the item being referenced. See usage note in section introduction.&quot; - HL7 V2
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>alternateText : <xref href="../t_String.dita" >String</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;The descriptive or textual name of the alternate identifier. See usage note in section introduction&quot; - HL7 V2
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>codingSystem : <xref href="../t_String.dita" >String</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Identifies the coding scheme being used in the identifier component. The combination of the identifier and name of coding  system components will be a unique code for a data item. Each system has a unique identifier.&quot; - HL7 V2
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>identifier : <xref href="../t_String.dita" >String</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Sequence of characters (the code) that uniquely identifies the item being referenced. Different coding schemes will have  different elements here.&quot; - HL7 V2
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>text : <xref href="../t_String.dita" >String</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;The descriptive or textual name of the identifier, e.g., myocardial infarction or X-ray impression.&quot; - HL7 V2
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

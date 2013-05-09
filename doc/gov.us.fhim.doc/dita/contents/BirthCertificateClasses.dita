@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN"
+ "topic.dtd">
+<topic id="topicId" xml:lang="en-us">
+	<title>BirthCertificate Definitions</title>
+	<body>	
+			<p>Note: The information modeled in the Mother and Father classes can be derived from the Person class or could be stored in the BirthCertificate class.  The Mother and Father classes would probably *not* be instantiated in actual implementations.</p>
+			<p>This package contains information necessary to populate a Person&apos;s Birth Certificate, particularly the U.S. Standard Certificate of Live Birth, Revision 11/2003.  Note that some of the information in this package may be derived from a Person&apos;s demographic record; it is left to implementations to determine whether to store such information only once in the Person record or separately in both Person and Birth Certificate records.  Such information is modeled using derived properties, which appear on the diagram with a slash in front of the property name.  When deciding when to model a data element as a property of a Person or a property of their Birth Certificate, we tended to placing it in the Birth Certificate unless that property is commonly used elsewhere.  For example, although multipleBirthOrder is rarely needed about a Person throuhout their life, it is modeled in Person because it is used for identification and billing purposes for newborns.  On the other hand, the full postal address of a person&apos;s birthplace is only needed for the birthcertificate, so it is modeled in the Birth Certificate class.  Note that the Person class has a more abbreviated birth address, consisting of city and state, that is used for identifcation purposes.</p>
+
+
+
+	</body>
+</topic>

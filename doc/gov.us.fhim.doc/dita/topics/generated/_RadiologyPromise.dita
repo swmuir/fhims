@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="RadiologyPromise" xml:lang="en-us">
+<title id="title">RadiologyPromise</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class contain attributes associated with Radiology Promise Event. File 70.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>accessionDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				The date and time of this Imaging exam.    
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>accessionId : <xref href="../t_Id.dita" >Id</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				A unique identifier for the Radiology Event (File 70).  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>imagingType : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Indicates the type of imaging used for this exam.  (Coded value from File 79.2.) Possible values are General Radiology; Nuclear Medicine; Nuclear Magnetic Resonance; Ultrasound; etc.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>isPartOfSet : <xref href="../t_Boolean.dita" >Boolean</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Whether this exams under this date/time are part of the same set of exams. Possible values are Yes; etc  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>patientDescription : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Contains a brief note about this Radiology/Nuclear Medicine patient.  It may describe the personality or any unusual characteristic to identify this Radiology/Nuclear Medicine patient.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>division : <xref href="../t_Division.dita" >Division</xref> (1..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>imagingLocation : <xref href="../t_ImagingLocation.dita" >ImagingLocation</xref> (1..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>radiologicExamination : <xref href="../t_RadiologicExamination.dita" >RadiologicExamination</xref> (0..-1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>radiologyNuclearMedicineOrder : <xref href="../t_RadiologyNuclearMedicineRequest.dita" >RadiologyNuclearMedicineRequest</xref> (1..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

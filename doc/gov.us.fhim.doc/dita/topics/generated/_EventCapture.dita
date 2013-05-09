@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="EventCapture" xml:lang="en-us">
+<title id="title">EventCapture</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>Captures Procedures performed for the patient.  Could be an encounter or  actual service not clinically related i.e. CWT, compensatory thearapy  work that the patient was being paid for.        </p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>checkoutTime : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>eventCaptureCategory : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Identfies the procedure code type that determines whether this is a uses the CPT or the NAtional Procedure codeSet
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>id : <xref href="../t_Id.dita" >Id</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Unique Identifier for the EventCapture for the Patient
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>isInpatient : <xref href="../t_Boolean.dita" >Boolean</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>nbrOfProcedures : <xref href="../t_IntegerInterval.dita" >IntegerInterval</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Contains the number of times the designated procedure was performed on the patient.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>procedureDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Date/Time of procedure/service performed.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>procedureModifierText : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Captures Procedures performed for the patient.  Could be an encounter or  actual service not clinically related i.e. CWT, compensatory thearapy  work that the patient was being paid for. 
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>procedureReason : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Contains the codeset for the Reason for the procedure.  
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>clinic : <xref href="../t_HospitalLocation.dita" >HospitalLocation</xref> (1..1)</p></stentry>
+  <stentry><p>				&quot;A facility, often associated with a hospital or medical school, that is devoted to the diagnosis and care of outpatients.&quot;  The American Heritage Stedman&apos;s Medical Dictionary 
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>dataEnterer : <xref href="../t_DataEnterer.dita" >DataEnterer</xref> (0..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>dssId : <xref href="../t_ClinicStop.dita" >ClinicStop</xref> (0..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>location : <xref href="../t_Institution.dita" >Institution</xref> (1..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>orderingSection : <xref href="../t_MedicalSpecialty.dita" >MedicalSpecialty</xref> (1..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>primaryPerformer : <xref href="../t_PrimaryPerformer.dita" >PrimaryPerformer</xref> (0..-1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>procedure1 : <xref href="../t_Procedure.dita" >Procedure</xref> (0..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>section : <xref href="../t_MedicalSpecialty.dita" >MedicalSpecialty</xref> (1..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>service : <xref href="../t_ServiceDepartment.dita" >ServiceDepartment</xref> (1..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

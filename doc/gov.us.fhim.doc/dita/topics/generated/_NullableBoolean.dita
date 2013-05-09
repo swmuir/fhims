@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="NullableBoolean" xml:lang="en-us">
+<title id="title">NullableBoolean</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This datatype represents a boolean value which may be unknown.  In other words, this datatype can represent Yes, No, and Unknown; unlike a traditional boolean which can only represent True and False.  For this logical model, this class has been modeled in the HL7 V3 style, which has the advantage of being able to account for different kinds of &quot;unknowns&quot;, but has the disadvantage of having two fields, one of which must always be populated while the other must always be empty.  Implementers may choose to implement this class using a single field instead.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>nullFlavor : <xref href="../t_NullFlavor.dita" >NullFlavor</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				This property indicates why the value property is empty.  It uses the NullFlavor enumeration.  This property must be valued when the value property is empty, and must be empty when the value property is valued.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>value : <xref href="../t_Boolean.dita" >Boolean</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				This property contains either a True or a False (or Yes or No).  If &quot;unknown&quot; is needed, this property will be empty, and the nullFlavor property will be valued.
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

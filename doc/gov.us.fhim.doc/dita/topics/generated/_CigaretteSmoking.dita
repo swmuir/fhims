@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="CigaretteSmoking" xml:lang="en-us">
+<title id="title">CigaretteSmoking</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>[US Standard Certificate Of Birth Field 37].  Describes whether and how much the infant&apos;s mother smoked before and/or during pregnancy.  The US Standard Certificate Of Birth Field 37 lists four time periods: Three months before pregnancy; first three months of pregnancy; second three months of pregnancy; and third trimester of pregnancy.  It then asks for the average number of cigarettes OR packs of cigarettes smoked per day for each of these time periods.  This class is modeled such that there is one instance per time period, and therefore will have up to (exactly?) four instances.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>numberOfCigarettes : <xref href="../t_Integer.dita" >Integer</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				[US Standard Certificate Of Birth Field 37].  Describes the average number of cigarettes smoked per day for the time period identified by the timePeriodCategory property.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>numberOfPacks : <xref href="../t_Integer.dita" >Integer</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				[US Standard Certificate Of Birth Field 37].  Describes the average number of packs of cigarettes smoked per day for the time period identified by the timePeriodCategory property.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>timePeriodCategory : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				[US Standard Certificate Of Birth Field 37].  Describes whether and how much the infant&apos;s mother smoked before and/or during pregnancy.  The US Standard Certificate Of Birth Field 37 lists four time periods: Three months before pregnancy; first three months of pregnancy; second three months of pregnancy; and third trimester of pregnancy.  It then asks for the average number of cigarettes OR packs of cigarettes smoked per day for each of these time periods.  This class is modeled such that there is one instance per time period, and therefore will have up to (exactly?) four instances.  This property indicates which of the four time periods is being documented by the number of cigarettes or number of packs of cigarettes properties.
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

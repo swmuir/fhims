@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="CompositePolicy" xml:lang="en-us">
+<title id="title">CompositePolicy</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	CompositePolicy is a kind of <xref href="../t_Policy.dita">Policy</xref>	
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class is the main/focal class for electronic privacy policies. It contains a set of basic policies that work together to enforce a privacy policy, organizational standard operating procedure, or a consent directive. Its basic characteristic is that it contains other policies. An instance of a CompositePolicy may include several Authorization, Delegation, Refrain, or Obligation policies. A CompositePolicy is specialization of Policy and inherits all its attributes and associations. In addition to the attributes it inherits from its base class (&apos;Policy&apos;) this type of class contains the following association and attribute:</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>combiningAlgorythm : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				This attribute is used to specify the policy combining algorithm that is used to process the contained policies.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>containedPolicy : <xref href="../t_BasicPolicy.dita" >BasicPolicy</xref> (1..-1)</p></stentry>
+  <stentry><p>				This association specifies the policies contained in a CompositionPolicy.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

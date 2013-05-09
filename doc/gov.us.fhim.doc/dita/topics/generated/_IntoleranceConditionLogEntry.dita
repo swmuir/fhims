@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="IntoleranceConditionLogEntry" xml:lang="en-us">
+<title id="title">IntoleranceConditionLogEntry</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class contains a history of updates to the Intolerance Condition record, and relates the Intolerance Condition record to various encounters over time.  For example, if a patient&apos;s allergy becomes known for the first time, either through patient reporting it or the clinician directly observing it, an Intolerance Condition Entry record would be created with a status of &quot;Active&quot; along with an Intolerance Condition Log Entry record with a status of &quot;New&quot;.  The Intolerance Condition Log Entry links to the Encounter during which this action took place.  If subsequently the allergy is revised, say to a narrower ingredient than previously supposed, or even to dismiss the notion that the allergy existed, a new Intolerance Condition Log Entry record would be created with a status of &quot;Modified&quot; or &quot;Inactivated&quot; and the Intolerance Condition Entry status would be set to &quot;Active&quot; or &quot;Inactivated&quot;, respectively.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>comment : <xref href="../t_String.dita" >String</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>entryDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				The date and time that the Intolerance Condition Log Entry record was created.</p><p></p><p>&quot;The date and time that this allergy was last statused by the [Intolerance Condition Log Entry Author] in the [Intolerance Condition Log Entry Service Delivery Location]&quot; - HL7 Version 2.8, IAM-20.</p><p>&quot;The date and time that this allergy was inactivated by the [Intolerance Condition Log Entry Author].&quot; - HL7 Version 2.8, IAM-22.</p><p>&quot;The date and time that this allergy entry was created by the [Intolerance Condition Log Entry Author].&quot; - HL7 Version 2.8, IAM-24.</p><p>&quot;The date and time that this allergy was modified by the [Intolerance Condition Log Entry Author]&quot; - HL7 Version 2.8, IAM-26.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>reason : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				Indicates the reason why the status of the associated Intolerance Condition record was changed.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>status : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Contains the current status of the problem at this particular date/time (e.g., active, active-improving, active-stable, active-worsening, inactive, resolved, etc.).&quot; - HL7 Version 2.8, PRB-14</p><p></p><p>Contains the status of the Health Concern as of the Health Concern Log Entry record creation date.  This provides a history of status changes over time.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>author : <xref href="../t_Author.dita" >Author</xref> (1..1)</p></stentry>
+  <stentry><p>				&quot;Identifies the provider who assigned the clinical status to the allergy&quot; - HL7 Version 2.8, IAM-18.</p><p>&quot;Identifies the user that inactivated the record entry about the patient&#8217;s allergy&quot; - HL7 Version 2.8, IAM-21.</p><p>&quot;Identifies the user that created the entry in the record stating the allergy&quot; - HL7 Version 2.8, IAM-23.</p><p>&quot;Identifies the user that modified the allergy&quot; - HL7 Version 2.8, IAM-25.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>dataEnterer : <xref href="../t_DataEnterer.dita" >DataEnterer</xref> (0..1)</p></stentry>
+  <stentry><p>				Identifies the data enterer of the Health Concern Entry Log.  Data Enterer = &quot;A person entering the data into the originating system. The data entry person is collected optionally for internal quality control purposes. This includes the transcriptionist for dictated text.&quot; - HL7 V3
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>serviceDeliveryLocation : <xref href="../t_ServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (0..1)</p></stentry>
+  <stentry><p>				&quot;Contains the name of the organization providing the update to the allergy&quot; - HL7 Version 2.8, IAM-19.</p><p>&quot;Contains the name of the organization that initially recorded the allergy&quot; - HL7 Version 2.8, IAM-28.</p><p>&quot;Contains the name of the organization that modified the allergy&quot; - HL7 Version 2.8, IAM-29.</p><p>&quot;Contains the name of the organization that inactivated the allergy&quot; - HL7 Version 2.8, IAM-30.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>visit : <xref href="../t_EncounterEvent.dita" >EncounterEvent</xref> (0..1)</p></stentry>
+  <stentry><p>				&quot;Uniquely identifies the episode of care to which this problem applies.&quot; - HL7 Version 2.8, PRB-5
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

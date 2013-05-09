@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="TargetDoseNumber" xml:lang="en-us">
+<title id="title">TargetDoseNumber</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>Each target dose is one step in a patient series.  The target dose links the vaccine dose administered to the series dose that it meets the goals of. A vaccine dose may not meet the goals of a given series dose and therefore be not valid.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>doseNumber : <xref href="../t_Integer.dita" >Integer</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Indicates the position in which the dose represented by this class is in the sequence of doses that make up a series of doses prescribed by a vaccination protocol.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>status : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Indicates the state of the assignment of the patient dose to the vaccine series.  Note that this assignment will likely be accomplished by a Rules Engine evaluating various rules against the actual vaccine administration data to determine whether the vaccination satisfies the requirements of the vaccination series.  Possible values include: Satisfied.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>nextDoseForecast : <xref href="../t_NextDoseForecast.dita" >NextDoseForecast</xref> (0..1)</p></stentry>
+  <stentry><p>				The recommended next dose of a particular vaccine for a given patient.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

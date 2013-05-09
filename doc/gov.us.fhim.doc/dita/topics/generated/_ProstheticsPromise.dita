@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ProstheticsPromise" xml:lang="en-us">
+<title id="title">ProstheticsPromise</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>The act of accepting the role of fulfiller. This is the act of accepting  a prosthetic request. The ProthetictPromise act identifies a fulfiller promise for a prosteitic transaction.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>accessionDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				The date that a transaction was entered to a system. It may be the date the transaction was initiated.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>deliveryDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				The date that the order was closed. 
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>description : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				A textual representation of the nature and characteristics of the item.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>id : <xref href="../t_Id.dita" >Id</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				A unique identifier for the Act (HL7 3.0)
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>transactionForm : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Identifies the paper form on which the transaction is tracked.   Possible values include: PSC, 2237, 2421, 2431, 2474, 2520, 2529-3, 2529-7, 2914, Inventory Issue, Lab Issue-3, Stock Issue, Visa, Other.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>hcpcsProcedureList : <xref href="../t_ProcedureListEntry.dita" >ProcedureListEntry</xref> (0..-1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>issuedItem : <xref href="../t_IssuedItem.dita" >IssuedItem</xref> (1..-1)</p></stentry>
+  <stentry><p>				Information pertinent to the issued for the  patient.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>issuingLocation : <xref href="../t_ServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (1..1)</p></stentry>
+  <stentry><p>				The station to which the prosthetic transaction is assigned. The station is responsible for the issue and payment for the prosthetic device.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>relatedProstheticsPromise : <xref href="../t_RelatedProstheticsPromise.dita" >RelatedProstheticsPromise</xref> (0..-1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>request : <xref href="../t_ProstheticsRequest.dita" >ProstheticsRequest</xref> (0..1)</p></stentry>
+  <stentry><p>				requested information about the prosthetic.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>visit : <xref href="../t_EncounterEvent.dita" >EncounterEvent</xref> (0..1)</p></stentry>
+  <stentry><p>				An interaction between a patient and a practitioner under the auspices of a given organization for the purpose of providing healthcare-related service(s).
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

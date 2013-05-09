@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="IntubationEvent" xml:lang="en-us">
+<title id="title">IntubationEvent</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>The introduction of a tube into a hollow organ (as the trachea or intestine) to keep it open or restore its patency if obstructed </p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>id : <xref href="../t_Id.dita" >Id</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Unique identifier for the type of larynoscope used.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>laryngoscopeType : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Contains a code Set that identifies the type of scope or  laryngoscope blade used to facilitate endotracheal  intubation.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>route : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Indicates the route of the endotracheal tube to the trachea.  Suggested values include: Oral, Nasal, Tracheostomy, etc.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>traumaObserved : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				An injury (as a wound) to living tissue caused by an extrinsic agent &amp;amp;lt;surgical trauma&amp;amp;gt;
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>tubeLength : <xref href="../t_PhysicalQuantity.dita" >PhysicalQuantity</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Contains the length of the endotracheal tube at the external reference  point.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>tubeSize : <xref href="../t_PhysicalQuantity.dita" >PhysicalQuantity</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Contains the size of the endotracheal tube.  
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>biteBlock : <xref href="../t_SurgeryDevice.dita" >SurgeryDevice</xref> (0..1)</p></stentry>
+  <stentry><p>				Identifies the bite block is used to protect the endotracheal tube
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>endotrachealTube : <xref href="../t_SurgeryDevice.dita" >SurgeryDevice</xref> (0..1)</p></stentry>
+  <stentry><p>				Identifies the endotracheal tube used during the major portion of the procedure.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>laryngoscope : <xref href="../t_SurgeryDevice.dita" >SurgeryDevice</xref> (0..-1)</p></stentry>
+  <stentry><p>				Identifies the type of scope or laryngoscope blade used to facilitate endotracheal intubation.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>stylet : <xref href="../t_SurgeryDevice.dita" >SurgeryDevice</xref> (0..1)</p></stentry>
+  <stentry><p>				Identifies the stylet that was used to shape the endotracheal tube during intubation.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

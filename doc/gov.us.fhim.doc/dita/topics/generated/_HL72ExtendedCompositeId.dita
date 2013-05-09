@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="HL72ExtendedCompositeId" xml:lang="en-us">
+<title id="title">HL72ExtendedCompositeId</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	HL72ExtendedCompositeId is a kind of <xref href="../t_Id.dita">Id</xref>	
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class corresponds to the HL7 V2 Extended Composite ID With Check Digit (CX) data type, which is &quot;used for specifying an identifier with its associated administrative detail&quot;.  This datatype has been simplified in that some optional components, such as the check digits, which are not used in current HL7 v2 messaging within VA, have been omitted.  In addition, the subcomponents which are themselves complex types have been exploded in order to have all subcomponents in the type.  For example, the Assigning Authority component in the HL7 v2 datatype is an HD datatype, which has three components.  This has been replaced by three properties in this class: AssigningAuthNamespaceId, AssigningAuthUniveralId, and AssigningAuthUniveralIdType.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>assigningAuthNameUniversalId : <xref href="../t_String.dita" >String</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				The Assigning Authority is &quot;a unique name of the system (or organization or agency or department) that creates the data&quot; - HL7 v2.  Note that Assigning Authority in HL7 v2 is a complex type (an HD datatype).  This property contains the Universal Id sub-component, which is defined thusly: &quot;The Universal ID (UID), is a string formatted according to the scheme defined by the Universal ID Type (UID Type) component.  The UID is intended to be unique over time within the UID type.  It is rigorously defined.  Each UID must belong to one of the specifically enumerated schemes for constructing UIDs (defined by the UID Type).  The UID must follow the syntactic rules of the particular universal identifier scheme (defined by the third component).  Note that these syntactic rules are not defined within HL7 but are defined by the rules of the particular universal identifier scheme.&quot; - HL7 V2
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>assigningAuthNameUniversalIdType : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				The Assigning Authority is &quot;a unique name of the system (or organization or agency or department) that creates the data&quot; - HL7 v2.  Note that Assigning Authority in HL7 v2 is a complex type (an HD datatype).  This property contains the Universal Id Type sub-component, which is defined thusly: &quot;The Universal ID Type (UID Type) component governs the interpretation of the Universal ID (UID) component.  If the UID Type is a known UID refers to HL7 Table 0301 - Universal ID type for valid values, then the UID is a universal ID of that type.&quot; - HL7 v2
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>assigningAuthNamespaceId : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				The Assigning Authority is &quot;a unique name of the system (or organization or agency or department) that creates the data&quot; - HL7 v2.  Note that Assigning Authority in HL7 v2 is a complex type (an HD datatype).  This property contains the Namespace Id sub-component, which is &quot;used as the HL7 identifier for the user-defined table of values for this component.&quot;
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>assigningFacNamespaceId : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				The Assigning Facility is &quot;the place or location identifier where the identifier was first assigned to the patient. This component is not an inherent part of the identifier but rather part of the history of the identifier: as part of this data type, its existence is a convenience for certain intercommunicating systems.&quot; - HL7 v2.  Note that the Assigning Facility in HL7 v2 is a complex type (an HD datatype).  This property contains the Namespace Id sub-component, which is &quot;used as the HL7 identifier for the user-defined table of values for this component.&quot;
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>assigningFacUniversalId : <xref href="../t_String.dita" >String</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				The Assigning Facility is &quot;the place or location identifier where the identifier was first assigned to the patient. This component is not an inherent part of the identifier but rather part of the history of the identifier: as part of this data type, its existence is a convenience for certain intercommunicating systems.&quot; - HL7 v2.  Note that Assigning Authority in HL7 v2 is a complex type (an HD datatype).  This property contains the Universal Id sub-component, which is defined thusly: &quot;The Universal ID (UID), is a string formatted according to the scheme defined by the Universal ID Type (UID Type) component.  The UID is intended to be unique over time within the UID type.  It is rigorously defined.  Each UID must belong to one of the specifically enumerated schemes for constructing UIDs (defined by the UID Type).  The UID must follow the syntactic rules of the particular universal identifier scheme (defined by the third component).  Note that these syntactic rules are not defined within HL7 but are defined by the rules of the particular universal identifier scheme.&quot; - HL7 V2
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>assigningFacUniversalIdType : <xref href="../t_String.dita" >String</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				The Assigning Facility is &quot;the place or location identifier where the identifier was first assigned to the patient. This component is not an inherent part of the identifier but rather part of the history of the identifier: as part of this data type, its existence is a convenience for certain intercommunicating systems.&quot; - HL7 v2.  Note that Assigning Authority in HL7 v2 is a complex type (an HD datatype).  This property contains the Universal Id Type sub-component, which is defined thusly: &quot;The Universal ID Type (UID Type) component governs the interpretation of the Universal ID (UID) component.  If the UID Type is a known UID refers to HL7 Table 0301 - Universal ID type for valid values, then the UID is a universal ID of that type.&quot; - HL7 v2
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>entityIdentifier : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;The value of the identifier itself&quot; - HL7 v2
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>expirationDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;The last date, if known, on which the identifier is valid and active&quot; - HL7 v2
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>identifierTypeCode : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;A code corresponding to the type of identifier.  In some cases, this code may be used as a qualifier to the   Assigning authority  component. Refer to HL7 Table 0203 - Identifier type for suggested values&quot; - HL7 v2
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

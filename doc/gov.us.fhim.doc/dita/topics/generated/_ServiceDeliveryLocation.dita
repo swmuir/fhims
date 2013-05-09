@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ServiceDeliveryLocation" xml:lang="en-us">
+<title id="title">ServiceDeliveryLocation</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>&quot;The location to which the patient is assigned. It is a role played by a place at which services may be provided. Note that a single physical place can play multiple service delivery location roles each with its own attributes. For example, a Podiatry clinic and Research clinic may meet on alternate days in the same physical location; each clinic uses its own mailing address and telephone number.&quot; - HL7 V3.  </p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>address : <xref href="../t_Address.dita" >Address</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Specifies the address of the location where the drug or treatment was administered.&quot; - HL7 Version 2.8, RXA-28</p><p></p><p>The business address of the Organization-Location.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>email : <xref href="../t_Telecommunications.dita" >Telecommunications</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				The email address that a person uses while at their place of business.  First choice for business related contacts during business hours.    &quot;Contains the patient&apos;s personal telecommunication contact information.&quot; - HL7 Version 2.8, PID-40.  Note that in HL7, the Telecommunications datatype contains a type code to indicate what kind of telecommunications address that is being referenced.  The FHIM explicitly models the telecommuncations type, so in this case the attribute name is &quot;Work Email&quot;, and the type code would be set to &quot;workplace&quot; when targeting an HL7 implementation.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>id : <xref href="../t_Id.dita" >Id</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				A unique string or token used to identify the Organization - Location combination.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>locationCategory : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>name : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				The name of the Organization-Location.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>phone : <xref href="../t_Telecommunications.dita" >Telecommunications</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				The business phone number of the Organization-Location.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>location : <xref href="../t_Location.dita" >Location</xref> (1..1)</p></stentry>
+  <stentry><p>				Points to the Location at which the Organization is operating.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>organization : <xref href="../t_Organization.dita" >Organization</xref> (1..1)</p></stentry>
+  <stentry><p>				Points to the Organization operating at the Location.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="AspPatient" xml:lang="en-us">
+<title id="title">AspPatient</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>Contains identifying, demographic, and other clinical information for all patients seen in the Audiology and Speech Pathology clinics.  The entries in this file are pointers to the Patient file #2.  (file 509850.2)</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>aspFileNbr : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				An existing LOCAL file number associated with this Audiology and Speech Pathology patient.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>initialVisitDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				The date of this patient&apos;s first visit to the Audiology and/or Speech Pathology clinic at this site. 
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>diagnosticCondition : <xref href="../t_AspDiagnosticCondition.dita" >AspDiagnosticCondition</xref> (0..1)</p></stentry>
+  <stentry><p>				Identifies ICD-9CM diagnostic condition code for the A&amp;amp;amp;SP patient.  Equivalent to a pointer to File 509850.2.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>patient : <xref href="../t_Patient.dita" >Patient</xref> (1..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

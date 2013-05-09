@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="OrderAction" xml:lang="en-us">
+<title id="title">OrderAction</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>A record of action has been taken on an order, including the signature and verification required to release to the service.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>actionCategory : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Indicates the action that was ordered (e.g., New, Hold, Discontinue, etc)
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>advanceBeneficiaryNoticeCode : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;This field indicates the status of the patient&apos;s or the patient&apos;s representative&apos;s consent for responsibility to pay for potentially uninsured services. This element is introduced to satisfy CMS Medical Necessity requirements for outpatient services. This element indicates (a) whether the associated diagnosis codes for the service are subject to medical necessity procedures, (b) whether, for this type of service, the patient has been informed that they may be responsible for payment for the service, and (c) whether the patient agrees to be billed for this service&quot; - HL7 Version 2.8, ORC-20
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>advanceBeneficiaryNoticeDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Contains the date the patient gave consent to pay for potentially uninsured services or the date that the Advanced Beneficiary Notice Code was collected.&quot; - HL7 Version 2.8, ORC-32.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>advanceBeneficiaryNoticeOverrideReason : <xref href="../t_String.dita" >String</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;This field contains the reason why the patient did not sign an Advanced Beneficiary Notice.&quot; - HL7 Version 2.8, ORC-26
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>comment : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Contains any remarks about the Order Action
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>effectiveDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Contains the date/time that the changes to the request took effect or are supposed to take effect....&quot; - HL7 Version 2.8, ORC-15
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>orderActionDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Contains the date and time of the event that initiated the current transaction as reflected in ORC-1 Order Control Code.&quot; - HL7 Version 2.8, ORC-9
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>reasonForAction : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;This field contains a coded explanation of the reason for the order event described by the order control code &quot; - HL7 Version 2.8, ORC-16
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>reasonForActionNarrative : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;This field contains the explanation (in text form) of the reason for the order event described by the order control code&quot; - HL7 Version 2.8, ORC-16
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>releaseStatus : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				This field tracks the status of the order action. This is different from the order status. Valid values are Unreleased, Pre-release, Rejected, or Discontinued due to Edit.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>author : <xref href="../t_Author.dita" >Author</xref> (1..1)</p></stentry>
+  <stentry><p>				&quot;This field contains the identity of the person who initiated the event represented by the corresponding order control code.  For example, if the order control code is CA (cancel order request), this field represents the person who requested the order cancellation.  This person is typically a care provider but may not always be the same as ORC-12 ordering provider&quot; - HL7 Version 2.8, ORC-19
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>chartReview : <xref href="../t_ChartReview.dita" >ChartReview</xref> (0..1)</p></stentry>
+  <stentry><p>				Identifies a chart review that was performed on this Order Action.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>dataEnterer : <xref href="../t_DataEnterer.dita" >DataEnterer</xref> (0..1)</p></stentry>
+  <stentry><p>				&quot;Contains the identity of the person who actually keyed the request into the application.&quot; - HL7 Version 2.8, ORC-10
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>detectedIssueEvent : <xref href="../t_DetectedIssueEvent.dita" >DetectedIssueEvent</xref> (0..-1)</p></stentry>
+  <stentry><p>				Identifies any issues that were detected (aka Order Checks) during the creation of the Order Action.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>enteringDevice : <xref href="../t_DeviceInstance.dita" >DeviceInstance</xref> (0..1)</p></stentry>
+  <stentry><p>				&quot;This field identifies the physical device (terminal, PC) used to enter the order.&quot; - HL7 Version 2.8, ORC-18
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>enteringLocation : <xref href="../t_ServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (0..1)</p></stentry>
+  <stentry><p>				&quot;Specifies the location (e.g., nurse station, ancillary service location, clinic, floor) where the person who entered the request was physically located when the order was entered. &quot; - HL7 Version 2.8, ORC-13
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>orderingFacility : <xref href="../t_ServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (0..-1)</p></stentry>
+  <stentry><p>				&quot;This field contains the name of the facility placing the order.&quot; - HL7 Version 2.8, ORC-21</p><p>&quot;This field contains the address of the facility placing the order.&quot; - HL7 Version 2.8, ORC-22</p><p>&quot;This field contains the telephone number of the facility placing the order.&quot; - HL7 Version 2.8, ORC-23
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>orderingLocation : <xref href="../t_ServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (0..1)</p></stentry>
+  <stentry><p>				&quot;This field identifies the organization that the enterer belonged to at the time he/she enters/maintains the order, such as medical group or department.&quot; - HL7 V2 ORC 17
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>relatedOrderAction : <xref href="../t_RelatedOrderAction.dita" >RelatedOrderAction</xref> (0..-1)</p></stentry>
+  <stentry><p>				Contains other OrderActions to which this OrderAction is related.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>releaseAct : <xref href="../t_ReleaseAct.dita" >ReleaseAct</xref> (0..1)</p></stentry>
+  <stentry><p>				&quot;To allow to be known, issued, done, or exhibited: to release an article for publication.&quot; - Dictionary.com.  Represents the release of an Order Action such that it is now visible to and actionable by other persons.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>trigger : <xref href="../t_OrderPatientEvent.dita" >OrderPatientEvent</xref> (1..1)</p></stentry>
+  <stentry><p>				A patient-related event that automatically triggers an order action.  For example, if the patient is scheduled for surgery, an particular Order Action might be placed on hold (i.e., &quot;held&quot;) four hours before surgery.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>verifier : <xref href="../t_Verifier.dita" >Verifier</xref> (0..-1)</p></stentry>
+  <stentry><p>				&quot;Contains the identity of the person who verified the accuracy of the entered request.&quot; - HL7 Version 2.8, ORC-11  &quot;A person who verifies the correctness and appropriateness of the service (plan, order, event, etc.) and hence takes on accountability.&quot;- HL7 V3
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

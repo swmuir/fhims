@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="Subscriber" xml:lang="en-us">
+<title id="title">Subscriber</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>A person who is named as a beneficiary of a plan, such as an insurance plan.    Enrollee: &apos;An eligible individual who is enrolled in a health plan - does not include an eligible dependent.&apos; -eHealthInsurance.org  Subscriber: &apos;This term has two meanings _ first, it refers to a person or organization who pays the premiums, and second, the person whose employment makes him or her eligible for membership in the plan.&apos; -eHealthInsurance.org    DOD: if the person is active duty, he is automatically enrolled into the &apos;direct care&apos; program as a subscriber.  If he is a retiree, he is eligible to enroll in several programs such as Tricare for life.  If he does, he&apos;s still considered a subscriber.    &apos;sponsor&apos; and &apos;subscriber&apos; are sometimes used interchangeably.  </p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>id : <xref href="../t_Id.dita" >Id</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				A unique identifier that the payer or information source can use to identify the person as a Policy Holder.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>asPerson : <xref href="../t_Person.dita" >Person</xref> (1..1)</p></stentry>
+  <stentry><p>				&quot;Contains the name of the insured person.  The insured is the person who has an agreement with the insurance company to provide healthcare services to persons covered by the insurance policy.&quot; - HL7 Version 2.8, IN1-16.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>group : <xref href="../t_GroupCoverage.dita" >GroupCoverage</xref> (0..-1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>healthcarePolicy : <xref href="../t_HealthcarePolicy.dita" >HealthcarePolicy</xref> (1..-1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>otherPolicyInfo : <xref href="../t_OtherPolicyInfo.dita" >OtherPolicyInfo</xref> (0..-1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

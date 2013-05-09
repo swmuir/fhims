@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="Permission" xml:lang="en-us">
+<title id="title">Permission</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class corresponds to a Role-Based Access Control (RBAC) permission. It specifies an information object and action/operation allowed on that object. A permission contains one operation and precisely one information reference. </p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>id : <xref href="../t_Id.dita" >Id</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				This attribute is used to specify the unique identifier of the permission.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>informationObject : <xref href="../t_InformationObject.dita" >InformationObject</xref> (1..1)</p></stentry>
+  <stentry><p>				This association identifies the information resources specified by a permission.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>operationType : <xref href="../t_Operation.dita" >Operation</xref> (1..1)</p></stentry>
+  <stentry><p>				This association identifies the action or operation that is specified by a permission.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

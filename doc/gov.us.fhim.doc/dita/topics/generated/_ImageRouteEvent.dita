@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ImageRouteEvent" xml:lang="en-us">
+<title id="title">ImageRouteEvent</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class contains the data elements and associations related to an DICOM (Digital Imaging and Communications in Medicine)-compliant image copy event.  Maintains an audit trail of the copy.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>destinationId : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Identifies the destination organization of the transmission.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>destinationName : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Identifies the destination organization of the transmission.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>imageType : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Indicates what type of image file was transmitted).  Possible values are NON-DICOM; IMAGE; CURVE; OVERLAY; LUT; PRES_STATE; AVEFORM; SR; etc.  [non-dicom images might need more classification]
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>logId : <xref href="../t_Id.dita" >Id</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				It is an integer number that indicates the entry in the &quot;permanent&quot; log of all routed copies of the current image (as required by HIPAA).  This value is used to record when images are purged from their routed destination.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>purgeTime : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				The date and time when the copy of the current image was purged from the location that is described in the current record.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>transmitTime : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				The date and time when the current image was transmitted to the location described in the current record.  
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>copyToLocation : <xref href="../t_ImageStorage.dita" >ImageStorage</xref> (0..1)</p></stentry>
+  <stentry><p>				A pointer to the Network Location when an image is transmitted using the &quot;copy&quot; method.  
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

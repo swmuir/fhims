@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="RateQuantity" xml:lang="en-us">
+<title id="title">RateQuantity</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>Identifies the speed with which the substance is introduced into the subject. Expressed as a physical (extensive) quantity over elapsed time (e.g., examples are 100 mL/h, 1 g/d, 40 mmol/h, etc.)</p>
+
+	<p>Rate: &quot;A certain quantity or amount of one thing considered in relation to a unit of another thing and used as a standard  or measure: at the rate of 60 miles an hour.&quot; - Dictionary.com  This class represents a ratio of some Physical Quantity over a period of time.  This class is structurally similar to  other Ratio classes (e.g., IntegerRatio), except the denominator is by definition a TimeQuantity.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>denominator : <xref href="../t_TimeQuantity.dita" >TimeQuantity</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;The quantity that divides the numerator in the ratio. The denominator SHALL not be zero.&quot; - HL7 V3  This property is by definition a period of time, with the unit almost always one.  For example, one hour, one minute, etc.
+				The quantity that divides the numerator in the ratio. The default is the integer number 1 (one.) The denominator must not be zero.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>numerator : <xref href="../t_PhysicalQuantity.dita" >PhysicalQuantity</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;The quantity that is being divided in the ratio. The default is the integer number 1 (one).&quot; - HL7 V3
+				The quantity that is being divided in the ratio. The default is the integer number 1
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

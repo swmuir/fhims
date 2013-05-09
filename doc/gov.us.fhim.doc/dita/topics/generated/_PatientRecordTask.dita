@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="PatientRecordTask" xml:lang="en-us">
+<title id="title">PatientRecordTask</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class contains all attributes - supporting as well as tracking of each one&apos;s cancellation or fulfillment - related to patient tasks (Care Management).  Note that this class may not be supported by HDR but rather from other repository.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>dateTaskCreated : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				This is the date and time the task was created.   
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>taskDueDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				The date [and time] by which this task should be completed.    
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>taskPriority : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Priority for accomplishing this task.  Possible values are LOW; MEDIUM; HIGH  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>taskSubjectDescription : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				This is the subject of the task.   
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>author : <xref href="../t_IndividualProvider.dita" >IndividualProvider</xref> (1..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>item : <xref href="../t_LinkedItem.dita" >LinkedItem</xref> (0..-1)</p></stentry>
+  <stentry><p>				Item linked to this task.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>patient : <xref href="../t_Patient.dita" >Patient</xref> (1..1)</p></stentry>
+  <stentry><p>				The patient that this task applies to.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="BillingInformation" xml:lang="en-us">
+<title id="title">BillingInformation</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>&quot;Used to provide billing information, on the ordered service, to the filling application.&quot; - HL7 Version 2.8, BLG Segment.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>accountId : <xref href="../t_Id.dita" >Id</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Identifies the account to be billed.&quot; - HL7 Version 2.8, BLG-3.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>chargeCategory : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Identifies someone or something other than the patient to be billed for this service.&quot; - HL7 Version 2.8, BLG-2.  Possible values include (from HL7 Table 122): Charge; Contract; Credit; Department; Grant; No Charge; Professional; Research.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>chargeCategoryReason : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Explains the choice of and provides the clinical rationale for the selected charge type in [chargeCategory]&quot; - HL7 Version 2.8, BLG-4.  Possible values include (from HL7 Table 475): Allergy; Intolerance; Treatment Failure; Patient Request; No Exception.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>whenToCharge : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Specifies when to charge for the ordered service.&quot; - HL7 Version 2.8, BLG-1.  Possible values include (from HL7 Table 100): On discharge; On receipt of order; At time service is completed; At time service is started; At a designated date/time.
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

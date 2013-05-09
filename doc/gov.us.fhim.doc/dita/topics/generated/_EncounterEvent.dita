@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="EncounterEvent" xml:lang="en-us">
+<title id="title">EncounterEvent</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	EncounterEvent is a kind of <xref href="../t_AbstractEncounter.dita">AbstractEncounter</xref>	
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>An interaction between a patient and a practitioner under the auspices of a given organization for the purpose of providing healthcare-related service(s).    It is important to understand that if the there is a change in provider or organization, by definition a new encounter will be generated.    For example, if a patient is moved from Surgery to Post-Op, a new encounter is generated.  Similarly, if a patient receives care from 2 nurses while in Post-Op, there will be 2 encounters.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>accountId : <xref href="../t_Id.dita" >Id</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Contains the patient account number assigned by accounting to which all charges, payments, etc., are recorded.  It is used to identify the patient&apos;s account.&quot; - HL7 Version 2.8, PID-18.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>accountStatus : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Contains the account status.&quot; - HL7 Version 2.8, PV1-41.  Note that HL7 does not suggest any values for this code (in User-defined Table 117).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>alternateVisitId : <xref href="../t_Id.dita" >Id</xref> (0..-1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Contains the alternative, temporary, or pending optional visit ID number to be used if needed.  Multiple alternate identifiers may be sent.&quot; - HL7 Version 2.8, PV1-50</p><p>Uniquely identifies this patient visit using an identification scheme other than the one used for the &quot;id&quot; property. This allows for different systems or organizations to assign different identifiers to the same visit.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>ambulatoryStatus : <xref href="../t_String.dita" >String</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Indicates any permanent or transient handicapped conditions.&quot; - HL7 Version 2.8, PV1-15.</p><p>Possible values include (from HL7 V2 Table 9): No functional limitations; Ambulates with assistive device; Wheelchair/stretcher bound; Comatose - non-responsive; Disoriented; Vision impaired; Hearing impaired; Speech impaired; Non-English speaking; Functional level unknown; Oxygen therapy; Special equipment (tubes, IVs, catheters); Amputee; Mastectomy; Paraplegic; Pregnant.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>chargePriceIndicator : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Contains the code used to determine which price schedule is to be used for room and bed charges.&quot; - HL7 Version 2.8, PV1-21.  Note that HL7 does not suggest any values for this code (in User-defined Table 32).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>chiefComplaint : <xref href="../t_String.dita" >String</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				Describes the primary reason, in the patient&apos;s words, for the encounter/visit.  This field contrasts with the reasonForVisit, which is the clinician&apos;s assessment of the reason for the encounter/visit.  Notice that this field is a string, while the reasonForVisit is a code.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>dateCreated : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Date the visit was entered / modified.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>encounterBillingType : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Describes the encounter in terms of evaluation and management (e.g., diagnosis or procedure associated with the encounter).  For example, Maintenance visit, 5 minutes or less.  Uses CPT-4 codes 99200 - 99299.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>financialClass : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Contains the financial class(es) assigned to the patient for the purpose of identifying sources of reimbursement.&quot; - HL7 Version 2.8, PV1-20    Note that HL7 does not suggest any values for this code (in User-defined Table 64).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>hospitalService : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Contains the treatment or type of surgery that the patient is scheduled to receive.&quot; - HL7 Version 2.8, PV1-10.  Possible Values (from HL7 Table 69) include: Cardiac Service, Medical Service, Pulmonary Service, Surgical Service, Urology Service.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>isEmploymentRelated : <xref href="../t_Boolean.dita" >Boolean</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Specifies whether a patient&apos;s illness was job-related.&quot; - HL7 Version 2.8, PV2-15
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>patientClass : <xref href="../t_String.dita" >String</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;This field is used by systems to categorize patients by site.  It does not have a consistent industry-wide definition.  It is subject to site specific variations.&quot; - HL7 Version 2.8, PV1-2.  HL7 Version 2 has the following suggested values (table 4): Emergency; Inpatient; Outpatient; Preadmit; Recurring patient; Obstetrics; Commercial Account; Not Applicable; Unknown.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>patientType : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Contains site-specific values that identify the patient type.&quot; - HL7 Version 2.8, PV1-18    Note that HL7 does not suggest any values for this code (in User-defined Table 18).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>publicityCode : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Contains a user-defined code indicating what level of publicity is allowed for a specific visit.&quot; - HL7 Version 2.8, PV2-21.  Possible values include (from HL7 V2 Table 215): Family only; No Publicity; Other; Unknown.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>reason : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;A set of values specifying the non-medical reasons for this encounter. Examples are &quot;Medical Necessity&quot;, &quot;Patient&apos;s Request&quot; and &quot;Dependency&quot;. Note: medical reason(s) for the encounter are specified as associated diagnoses.&quot; (HL7) 
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>reasonForVisit : <xref href="../t_Code.dita" >Code</xref> (0..-1)</p> 
+
+</stentry>
+  <stentry><p>				The reason for the encounter/visit from the clinician&apos;s point of view.  This field contrasts with the chiefComplaint, which is the patient&apos;s description of the reason for the encounter/visit.  Notice that this field is a code, while the chiefComplaint is a string.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>referralSource : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Identifies the source of the admission or encounter.  In other words, identified where the patient was before being sent for this encounter.  Possible values include: Community, Other facility, etc.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>servicingFacility : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;This field is used in a multiple facility environment, e.g., multiple campuses or buildings, to indicate the healthcare facility with which this visit is associated.&quot; - HL7 Version 2.8, PV1-39.  Note that HL7 does not suggest any values for this code (in User-defined Table 115).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>specialArrangement : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				A set of values representing the types of special arrangements provided or to be provided for this patient encounter (e.g., wheelchair, stretcher, interpreter, attendant, seeing eye dog)
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>specialCourtesy : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Indicates whether the patient will be extended certain special courtesies.&quot; - HL7 Version 2.8, PV1-22.  Note that HL7 does not suggest any values for this code (in User-defined Table 45).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>triageNotes : <xref href="../t_String.dita" >String</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				Triage notes for the patient visit.  Added for Public Health Reporting Initiative.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>admitter : <xref href="../t_IndividualProvider.dita" >IndividualProvider</xref> (0..-1)</p></stentry>
+  <stentry><p>				&quot;Contains the admitting physician information&quot; - HL7 Version 2.8, PV1-17
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>appointment : <xref href="../t_Appointment.dita" >Appointment</xref> (0..1)</p></stentry>
+  <stentry><p>				&quot;An arrangement to meet a person or be at a place at a certain time&quot; - Dictionary.com  The scheduled time of the Encounter.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>assignedPatientLocation : <xref href="../t_ServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (0..1)</p></stentry>
+  <stentry><p>				&quot;This field contains the patient&apos;s initial assigned location or the location to which the patient is being moved.  The first component may be the nursing station for inpatient locations, or clinic or department, for locations other than inpatient.  For canceling a transaction or discharging a patient, the current location (after the cancellation event or before the discharge event) should be in this field.&quot; - HL7 Version 2.8, PV1-3
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>attender : <xref href="../t_IndividualProvider.dita" >IndividualProvider</xref> (0..-1)</p></stentry>
+  <stentry><p>				&quot;Contains the attending physician information.&quot; - HL7 Version 2.8, PV1-7
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>clinicalService : <xref href="../t_ClinicalService.dita" >ClinicalService</xref> (0..-1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>patientImplantObservation : <xref href="../t_PatientImplantObservation.dita" >PatientImplantObservation</xref> (0..-1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>patientTransfer : <xref href="../t_PatientTransfer.dita" >PatientTransfer</xref> (0..-1)</p></stentry>
+  <stentry><p>				The act of transferring a patient from one location or responsible organization to another.  Note that a transfer from organization to another will, by definition, trigger a new encounter.  Note that a transfer from one location to another may trigger a new encounter depending on whether the responsible organization has changed.  A movement from one bed within the same ward to another probably will not, but a movement from one ward to another probably would. 
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>pendingLocation : <xref href="../t_ServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (0..1)</p></stentry>
+  <stentry><p>				&quot;Indicates the point of care, room, bed, healthcare facility ID, and bed status to which the patient may be moved.  The first component may be the nursing station for inpatient locations, or the clinic, department, or home for locations other than inpatient.&quot; - HL7 Version 2.8, PV1-42
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>pregnancyMenstrualStatus : <xref href="../t_PregnancyMenstrualStatus.dita" >PregnancyMenstrualStatus</xref> (0..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>primaryCarePhysician : <xref href="../t_IndividualProvider.dita" >IndividualProvider</xref> (1..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>priorTemporaryLocation : <xref href="../t_ServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (0..1)</p></stentry>
+  <stentry><p>				&quot;This field is used to reflect the patient&apos;s temporary location (such as the operating room/theatre or x-ray) prior to a transfer from a temporary location to an actual location, or from a temporary location to another temporary location. The first component may be the nursing station for inpatient locations, or the clinic, department, or home for locations other than inpatient.&quot; - HL7 Version 2.8, PV1-43
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>referer : <xref href="../t_IndividualProvider.dita" >IndividualProvider</xref> (0..1)</p></stentry>
+  <stentry><p>				&quot;Contains the referring physician information.&quot; - HL7 Version 2.8, PV1-8
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>reportableCondition : <xref href="../t_ReportableCondition.dita" >ReportableCondition</xref> (0..-1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>serviceDeliveryLocation : <xref href="../t_ServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (1..1)</p></stentry>
+  <stentry><p>				&quot;The location to which the patient is assigned. It is a role played by a place at which services may be provided. Note that a single physical place can play multiple service delivery location roles each with its own attributes. For example, a Podiatry clinic and Research clinic may meet on alternate days in the same physical location; each clinic uses its own mailing address and telephone number.&quot; (HL7) 
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>temporaryLocation : <xref href="../t_ServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (0..1)</p></stentry>
+  <stentry><p>				&quot;Contains a location other than the assigned location required for a temporary period of time (e.g., OR, operating theatre, etc.).&quot; - HL7 Version 2.8, PV1-11
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="HL72EntityIdentifier" xml:lang="en-us">
+<title id="title">HL72EntityIdentifier</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	HL72EntityIdentifier is a kind of <xref href="../t_Id.dita">Id</xref>	
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class corresponds to the HL7 V2 Entity Identifier (EI) data type.  &quot;The entity identifier defines a given entity within a specified series of identifiers.  The EI is appropriate for, but not limited to, machine or software generated identifiers. The generated identifier goes in the first component. The remaining components, 2 through 4, are known as the assigning authority; they identify the machine/system responsible for generating the identifier in component 1.&quot; - HL7 V2</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>identifier : <xref href="../t_String.dita" >String</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;The first component, Entity Identifier, is usually defined to be unique within the series of identifiers created by the Assigning Authority, defined by a hierarchic designator, represented by components 2 through 4.&quot; - HL7 V2
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>namespaceId : <xref href="../t_String.dita" >String</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;The assigning authority is a unique identifier of the system (or organization or agency or department) that creates the  data.&quot; - HL7 V2
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>universalId : <xref href="../t_String.dita" >String</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;The Universal ID (UID), is a string formatted according to the scheme defined by the Universal ID Type (UID Type) component.  The UID is intended to be unique over time within the UID type.  It is rigorously defined.  Each UID must belong to one of the specifically enumerated schemes for constructing UIDs (defined by the UID Type).  The UID must follow the syntactic rules of the particular universal identifier scheme (defined by the third component).  Note that these syntactic rules are not defined within HL7 but are defined by the rules of the particular universal identifier scheme.&quot; - HL7 V2
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>universalIdType : <xref href="../t_String.dita" >String</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;The Universal ID Type (UID Type) component governs the interpretation of the Universal ID (UID) component.  If the UID Type is a known UID refers to HL7 Table 0301 - Universal ID type for valid values, then the UID is a universal ID of that type.&quot; - HL7 v2	
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

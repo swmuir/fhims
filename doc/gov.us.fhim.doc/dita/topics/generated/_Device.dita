@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="Device" xml:lang="en-us">
+<title id="title">Device</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	Device is a kind of <xref href="../t_Product.dita">Product</xref>	
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>&quot;A contrivance or an invention serving a particular purpose, especially a machine used to perform one or more relatively simple tasks.&quot; (The American Heritage Stedman&apos;s Medical Dictionary).   &quot;A ManufacturedMaterial used in an activity without being substantially changed through that activity.&quot; - HL7 V3</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>cataloglId : <xref href="../t_Id.dita" >Id</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				Identifies the kind of the product, as assigned by a distributor or other organization responsible for ordering and supplying of equipment.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>modelId : <xref href="../t_Id.dita" >Id</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				Identifies the kind of the product, as assigned by the manufacturer.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>modelName : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;The human designated moniker for a device, assigned by the manufacturer&quot; - HL7 V3
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>name : <xref href="../t_String.dita" >String</xref> (0..-1)</p> 
+
+</stentry>
+  <stentry><p>				&#8220;The name of the product kind described.  If this is a specific manufactured (brand) product, this would be the proprietary name.  For general product class descriptions this would be a non-proprietary name.  This attribute may sometimes be used instead of a code and descriptive data elements when no suitable coding system is available.  The data type for the name allows for suffixes and also other name parts, which might hold proprietary dose form (e.g., &quot;capsil&quot;, &quot;discus&quot;, &quot;injection system&quot;) or other name parts which may be required for recognition of the product among health professionals.  Note that these name parts are never to be used instead of proper descriptive data elements (formCode, ingredients and their quantities, etc.).&#8221; - HL7 Version 3 (ManufacturedMaterial.name).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>softwareName : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;The moniker, version and release of the software that operates the device as assigned by the software manufacturer or  developer.&quot; - HL7 V3
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>deviceInstance : <xref href="../t_DeviceInstance.dita" >DeviceInstance</xref> (1..1)</p></stentry>
+  <stentry><p>				Identifies an individual device belonging to the class of devices represented by the Device class on the other end of the association.  For example, the Device class might describe a Color LaserJet Model CMJ1312 made by Hewlett Packard.  The DeviceInstance class might describe the machine that has serial number 1234.  Other information about the device instance, such as the cost, date placed into service, date last serviced, etc. may be added to the DeviceInstance class in the future.  For now, we are just interested in the serial number (the Id property).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>manufacturer : <xref href="../t_Manufacturer.dita" >Manufacturer</xref> (1..1)</p></stentry>
+  <stentry><p>				&quot;Contains the manufacturer of the medical substance administered when it is a manufactured substance.&quot; - HL7 Version 2.8, RXD-20.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>
