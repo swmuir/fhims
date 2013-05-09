@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="RadiologicExamination" xml:lang="en-us">
+<title id="title">RadiologicExamination</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class contains attributes related to Radiology \ Nuclear Medicine imaging examinations.  </p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>cancellationReason : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Indicates the reason why the exam was canceled.  Possible values are HOLD; CANCELLED: DUPLICATE EXAM; etc. File 75.2.   
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>caseId : <xref href="../t_Id.dita" >Id</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Uniquely identifies the order from within the filler&apos;s system.  Traditionally also called an &quot;accession number&quot;.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>clinicalHistory : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Clinical history of the patient that might be relevant to this case as well as instructions to the interpreting physician
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>complicationText : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				A brief explanation of the exam complication.    
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>complicationType : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				 Iindicate if this patient experienced any complication during the exam procedure.  Codes from file 78.1.  Possible values are.... No Complication; etc.   
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>examCategory : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				This field contains the exam category associated with this case number. Possible values are  INPATIENT, OUTPATIENT, CONTRACT,  SHARING, EMPLOYEE, RESEARCH; etc.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>isCombinedReport : <xref href="../t_Boolean.dita" >Boolean</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Is it a Radiology and Nuclear Medicine comined Report? Possible values are Yes; No; etc.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>researchSource : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				The name of the research source that referred the patient to Radiology/Nuclear Medicine for the exam.  This field is used for exams with a &apos;category of exam&apos; of &apos;research&apos;.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>status : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Indicates the status of this exam.  This should be a code from File 72.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>wasContrastMediaUsed : <xref href="../t_Boolean.dita" >Boolean</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Indicate if an intravascular contrast was used during this Rad/Nuc Med exam.  Possible values are Yes, No; etc.  
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>activityLog : <xref href="../t_ActivityLog.dita" >ActivityLog</xref> (0..-1)</p></stentry>
+  <stentry><p>				A log of actions that have been taken on this outside film record.  Equivalent to File 70.07.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>bedSection : <xref href="../t__Specialty.dita" >_Specialty</xref> (1..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>cameraEquipmentRoom : <xref href="../t_CameraEquipmentRoom.dita" >CameraEquipmentRoom</xref> (1..1)</p></stentry>
+  <stentry><p>				The primary camera/equipment/room where the imaging exam was performed. Equivalent to a pointer to File 78.6
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>contrastMediaAdministration : <xref href="../t_ContrastMediaAdministration.dita" >ContrastMediaAdministration</xref> (0..1)</p></stentry>
+  <stentry><p>				Identifies Constrat Media associated with the Examination
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>diagnosis : <xref href="../t_DiagnosisListEntry.dita" >DiagnosisListEntry</xref> (0..-1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>encounter : <xref href="../t_EncounterEvent.dita" >EncounterEvent</xref> (1..1)</p></stentry>
+  <stentry><p>				The encounter during which the Radiologic Examination took place.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>principalClinic : <xref href="../t_HospitalLocation.dita" >HospitalLocation</xref> (1..1)</p></stentry>
+  <stentry><p>				Th name of the principal clinic that referred the patient to Radiology/Nuclear Medicine for the exam.  Equivalent to File 44.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>procedure : <xref href="../t_ProcedureListEntry.dita" >ProcedureListEntry</xref> (0..-1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>radioPharmaceuticalAdministration : <xref href="../t_RadioPharmaceuticalAdministration.dita" >RadioPharmaceuticalAdministration</xref> (0..1)</p></stentry>
+  <stentry><p>				A radiopharmaceutical associated with this examination should be entered here. Equivalent to a pointer to File 71.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>report : <xref href="../t_RadNucReport.dita" >RadNucReport</xref> (1..1)</p></stentry>
+  <stentry><p>				Represents the radiology/nuclear medicine report as known by the originating VistA system.  Equivalent to a pointer to File 74.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>requestingLocation : <xref href="../t_HospitalLocation.dita" >HospitalLocation</xref> (1..1)</p></stentry>
+  <stentry><p>				Th name of the requesting hospital / clinic that that is requesting the exam..  Equivalent to File 44.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>service : <xref href="../t_ServiceDepartment.dita" >ServiceDepartment</xref> (1..1)</p></stentry>
+  <stentry><p>				Represents the service as known by the originating VistA system.  Equivalent to a pointer to File 49.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>ward : <xref href="../t_Ward.dita" >Ward</xref> (1..1)</p></stentry>
+  <stentry><p>				Represents the hospital ward as known by the originating VistA system.  Equivalent to a pointer to File 42.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

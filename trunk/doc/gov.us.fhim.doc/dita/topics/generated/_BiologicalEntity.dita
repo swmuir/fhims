@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="BiologicalEntity" xml:lang="en-us">
+<title id="title">BiologicalEntity</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	BiologicalEntity is a kind of <xref href="../t_Entity.dita">Entity</xref>	
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class represents an organism, whether it is currently alive or not.  This class is equivalent to the HL7 V3 Living Subject class.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>age : <xref href="../t_TimeQuantity.dita" >TimeQuantity</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				The length of time that an organism has lived.  Note that this property will typically be derived or calculated as needed, and as such may not always be present as a separate concept.  Added 7/8/10 for vMR.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>ageAtDeath : <xref href="../t_TimeQuantity.dita" >TimeQuantity</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				The length of time that a now-deceased organism had lived. Note that this property will typically be derived or calculated as needed, and as such may not always be present as a separate concept. Added 11/23/2010 for Problem List.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>ageGroup : <xref href="../t_String.dita" >String</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				This is a user-defined property that categorizes a person or animal entity based on their age.  The strata used to classify the entity vary according to the purpose of use, therefore this property is derived and ought never be considered outside the context of the stratification.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>dateOfBirth : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				The date and time of the birth or hatching of the living subject.</p><p></p><p>&quot;The patient&apos;s date and time of birth.&quot; - HL7 Version 2.8, PID-7.</p><p>&quot;The next of kin/associated party&apos;s birth date and time.&quot; - HL7 Version 2.8, NK1-16.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>dateOfDeath : <xref href="../t_PointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Contains the date and time at which the patient death occurred.&quot; - HL7 Version 2.8, PID-29.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>id : <xref href="../t_Id.dita" >Id</xref> (0..-1)</p> 
+
+</stentry>
+  <stentry><p>				An identifier that uniquely identifies the individual.    &quot;This field contains the list of identifiers (one or more) used by the healthcare facility to uniquely identify a patient (e.g., medical record number, billing number, birth registry, national unique individual identifier, etc.).&quot; - HL7 Version 2.8, PID-3
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>isDeceased : <xref href="../t_Boolean.dita" >Boolean</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Indicates whether the patient is deceased.&quot; - HL7 Version 2.8, PID-30.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>multipleBirthOrder : <xref href="../t_Integer.dita" >Integer</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				If the biological entity was born along with other siblings, this property indicates the order the entity was born.  For example, for a set of twins, this property indicates which twin was born first and which was born second.</p><p></p><p>&quot;When a patient was part of a multiple birth, a value (number) indicating the patient&apos;s birth order is entered in this field.&quot; - HL7 Version 2.8, PID-25.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>wasMultipleBirth : <xref href="../t_Boolean.dita" >Boolean</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				If the biological entity was born along with other siblings, this property indicates the order the entity was born.  For example, for a set of twins, this property indicates which twin was born first and which was born second.  This property serves as an indication as to whether the person was born along with other siblings as part of a single pregnancy.  This property is primarily used to distinguish records for newborn infants who have not yet have been given names.  This property may also be used in research situations to distinguish individuals who were part of a multi-child pregnancy.</p><p></p><p>&quot;Indicates whether the patient was part of a multiple birth.&quot; - HL7 Version 2.8, PID-24.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>asPatient : <xref href="../t_Patient.dita" >Patient</xref> (0..-1)</p></stentry>
+  <stentry><p>				A role of a person or animal as a recipient of health care services from a healthcare provider.  Note that if the person or animal is a research subject, a different association (asResearchSubject) is used.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>asResearchSubject : <xref href="../t_ResearchSubject.dita" >ResearchSubject</xref> (0..-1)</p></stentry>
+  <stentry><p>				A physical entity which is the primary unit of operational and/or administrative interest in a study.     For example, a person who is registered in a study as a recipient of an investigational product or as a control.  May also include individuals who are being screened for studies, or individuals participating in observational or other studies.  Other examples may include a pacemaker, a fuse that can be used in medical devices, a cow, a farm, a pen of pigs, a tissue sample from a tissue bank, etc.    NOTE: StudySubjects within a study are all of the same type.  An entity registered in a study is not part of another entity registered in the same study.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>causeOfDeathListEntry : <xref href="../t_CauseOfDeathListEntry.dita" >CauseOfDeathListEntry</xref> (0..-1)</p></stentry>
+  <stentry><p>				[US Standard Certificate Of Death Field 32].  An ordered list of the condition(s) that caused or contributed to the death of the organism.  When more than one value exists, the ordered list shall begin with the Immediate Cause of death followed by the Cause Leading to the Immediate cause, followed by the Next Antecedent cause of death, ending with the Underlying cause of death.  For Humans:  The U.S. Standard Certificate of Death (Rev 11/2003) requires the entry of &quot;the chain of events-diseases, injuries, or complications-that directly caused the death&quot;, beginning with the &quot;immediate cause (final disease or condition resulting in death)&quot; and ending with the &quot;underlying cause (disease or injury that initiated the events resulting in death).&quot;  Note the CDC Center for Vital Statistics is required to report this information to the World Health Organization (WHO).  The WHO requires that this data be reported using ICD-10 codes.  For Non-humans: The coding system to be used for non-humans has not been determined at this time.  Added 11/23/2010 for Problem List.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

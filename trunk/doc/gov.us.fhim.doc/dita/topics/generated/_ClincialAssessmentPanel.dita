@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ClincialAssessmentPanel" xml:lang="en-us">
+<title id="title">ClincialAssessmentPanel</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class captures information about the type of assessment </p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>assessmentDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>assessmentTitle : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>assessmentType : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>clinicalObservation : <xref href="../t_ClinicalObservation.dita" >ClinicalObservation</xref> (0..-1)</p></stentry>
+  <stentry><p>				A clinical observation being done by a practioner for a patient
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>patient : <xref href="../t_Patient.dita" >Patient</xref> (1..1)</p></stentry>
+  <stentry><p>				The patient whose problems are being  observed and documented.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>practitioner : <xref href="../t_IndividualProvider.dita" >IndividualProvider</xref> (1..1)</p></stentry>
+  <stentry><p>				The practioner who is observing the care for the patient .
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>vitalsignObservation : <xref href="../t_VitalSignObservationEvent.dita" >VitalSignObservationEvent</xref> (0..-1)</p></stentry>
+  <stentry><p>				An event in which an objective measurement is taken of an aspect of a patient.  
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

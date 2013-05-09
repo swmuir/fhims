@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="Procedure" xml:lang="en-us">
+<title id="title">Procedure</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>&quot;An Act whose immediate and primary outcome (post-condition) is the alteration of the physical condition of the subject.&quot; - HL7 V3.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>dateTime : <xref href="../t_PointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>procedureCode : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Contains a code indicating a procedure or a non-procedural event involving the patient. This code could come from various coding systems; typically the Common Procedure Terminology (CPT) is used, but other coding systems might be employed, especially to capture workload-related data.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>procedureModifier : <xref href="../t_Code.dita" >Code</xref> (0..-1)</p> 
+
+</stentry>
+  <stentry><p>				Contains an optional modifier to further describe the procedure.  Some coding systems employ combinations of procedure codes and modifiers, while others do not.  This property accomodates those systems which do permit the use of a modifier.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>reasonNotPerformed : <xref href="../t_CodeWithOriginalText.dita" >CodeWithOriginalText</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>reasonPerformed : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>timesPerformed : <xref href="../t_Integer.dita" >Integer</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Indicates the number of times this procedure was performed for the patient at one setting.  Most procedures are only performed (and recorded) once; this property allows for the recording of multiple procedures in order to remove the necessity to record the same procedure multiple times.
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

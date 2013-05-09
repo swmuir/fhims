@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="_AnatomicMeasurement" xml:lang="en-us">
+<title id="title">_AnatomicMeasurement</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class contains measurements of various organs and structures to include the entire body.  The bodySite property indicates the organ or structure to be measured, e.g., Brain.  The measurementType indicates whether we&apos;re measuring the length, volume, or weight.  The measurementValue property holds the actual measurement e.g., 1500 grams.    In VA&apos;s VistA system, the following fields are specificaly called out, which would be contained in this class, along with potentially others: Body Height, Body Weight, Length Of Aortic Valve, Length Of Mitral Valve, Length Of Pulmonic Valve, Length Of Tricuspid Valve, Length Of Ventricle (Left), Length Of Ventricle (Right), Volume Of Pericardial Cavity, Volume Of Peritoneal Cavity, Volume Of Pleural Cavity (Left), Volume Of Pleural Cavity (Right), Weight Of Adrenal Gland (Left), Weight Of Adrenal Gland(Right), Weight Of Brain , Weight Of Heart , Weight Of Kidney (Left), Weight Of Kidney (Right), Weight Of Liver, Weight Of Lung (Left), Weight Of Lung (Right), Weight Of Ovary (Left), Weight Of Ovary (Right), Weight Of Pancreas, Weight Of Parathyroid (Left Lower), Weight Of Parathyroid (Left Upper), Weight Of Parathyroid (Right Lower), Weight Of Parathyroid (Right Upper), Weight Of Pituitary Gland, Weight Of Spleen, Weight Of Testis (Left), Weight Of Testis (Right), Weight Of Thyroid Gland</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>bodySite : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				This property indicates the organ or structure that is being measured, e.g., the Brain.  Note that this property will require an extensive effort by the terminology team to define fully.        
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>measurementType : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Identifies the kind of measurement that is contained in the measurement value such as weight, length, or volume.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>measurementValue : <xref href="../t_PhysicalQuantity.dita" >PhysicalQuantity</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Contains the actual measurement of the organ or bodily structure measured.  Note that this is a physical quantity, so the datatype contains both the measurement value and the unit of measure (e.g., 1500 grams).
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

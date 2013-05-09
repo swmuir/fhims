@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="Organization" xml:lang="en-us">
+<title id="title">Organization</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>&quot;An Entity representing a formalized group of entities with a common purpose (e.g. administrative, legal, political) and the infrastructure to carry out that purpose.&quot; (HL7)  </p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>address : <xref href="../t_Address.dita" >Address</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				The person&apos;s office address.  First choice for business related contacts during business hours.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>email : <xref href="../t_Telecommunications.dita" >Telecommunications</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				The email address that a person uses while at their place of business.  First choice for business related contacts during business hours.    &quot;Contains the patient&apos;s personal telecommunication contact information.&quot; - HL7 Version 2.8, PID-40.  Note that in HL7, the Telecommunications datatype contains a type code to indicate what kind of telecommunications address that is being referenced.  The FHIM explicitly models the telecommuncations type, so in this case the attribute name is &quot;Work Email&quot;, and the type code would be set to &quot;workplace&quot; when targeting an HL7 implementation.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>id : <xref href="../t_Id.dita" >Id</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				A unique string or token used to identify the organization
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>name : <xref href="../t_String.dita" >String</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				The name of the organization.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>phone : <xref href="../t_Telecommunications.dita" >Telecommunications</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				The business phone number of the Organization-Location.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>asOrganizationalProvider : <xref href="../t_OrganizationalProvider.dita" >OrganizationalProvider</xref> (1..1)</p></stentry>
+  <stentry><p>				Represents information about an organization which is authorized to provide health care services.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>pointOfContact : <xref href="../t_PointOfContact.dita" >PointOfContact</xref> (0..-1)</p></stentry>
+  <stentry><p>				Identifies persons who work for or represent an organization and who may be contacted under specified circumstances.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

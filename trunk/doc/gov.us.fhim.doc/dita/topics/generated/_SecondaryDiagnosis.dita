@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="SecondaryDiagnosis" xml:lang="en-us">
+<title id="title">SecondaryDiagnosis</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	SecondaryDiagnosis is a kind of <xref href="../t_MorseFallScaleQuestion.dita">MorseFallScaleQuestion</xref>	
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>&quot;Secondary diagnosis: This is scored as 15 if more than one medical diagnosis is listed on the patient&#8217;s chart; if not, score 0.&quot; - LOINC</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>assessmentQuestion : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				This property uniquely identifies the question being asked within the Assessment Instrument.  This is treated as a code because the Name and Version of the Assessment Instrument plus the Question Number serves as an identifier, while the text of the question can be represented as the associated text.  For example, the Addiction Severity Index, 5th Edition question G.4 is the &quot;Date of Admission&quot;.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>possibleResponse : <xref href="../t_SecondaryDiagnosisType.dita" >SecondaryDiagnosisType</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				This property represents the possible responses to a question on an Assessment Instrument.  For the Morse Fall Scale Secondary Diagnosis question, the response must be a member of the SecondaryDiagnosisType enumeration.
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="CardiacSurgeryEvent" xml:lang="en-us">
+<title id="title">CardiacSurgeryEvent</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	CardiacSurgeryEvent is a kind of <xref href="../t_SurgicalEvent.dita">SurgicalEvent</xref>	
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>Surgery for treating a patient with a heart disorder.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>cardiacSurgeryId : <xref href="../t_Id.dita" >Id</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Unique identifier that is assigned to this surgery event.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>collectionDate : <xref href="../t_TimeInterval.dita" >TimeInterval</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Contains the date and time that the cardiac surgical priority information was collected.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>estimateOfMortalityDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Contains the date and time that the estimate of mortality information was collected.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>status : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Contains a code that identifies the status of the surgery event.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>surgicalPriority : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Contains the surgical priority that most accurately reflects  the acuity of patient&apos;s cardiovascular condition at the  time of transport to the operating room.  Suggested like values: 1:ELECTIVE,  2:URGENT,  3:EMERGENT (ONGOING ISCHEMIA),  4:EMERGENT (HEMODYNAMIC COMPROMISE),  5:EMERGENT (ARREST WITH CPR).  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>totaISchemicTime : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Record in minutes the duration of time the ascending aorta is totally cross-clamped.  Do not include the duration of partial aorta cross-clamp used for sewing the proximal anastomoses.  
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>cardiacProsthesis : <xref href="../t_SurgeryDevice.dita" >SurgeryDevice</xref> (0..-1)</p></stentry>
+  <stentry><p>				An artificial device used to replace a missing body part, such as a limb, tooth, eye, or heart valve.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>evaluation : <xref href="../t_CardiacSurgeryEvaluation.dita" >CardiacSurgeryEvaluation</xref> (1..-1)</p></stentry>
+  <stentry><p>				Examine and appraise the cardiac surgery.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>perfusionDevice : <xref href="../t_SurgeryDevice.dita" >SurgeryDevice</xref> (1..1)</p></stentry>
+  <stentry><p>				The piece of equipment or a mechanism designed to support  perfusion for the  surgical function 
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

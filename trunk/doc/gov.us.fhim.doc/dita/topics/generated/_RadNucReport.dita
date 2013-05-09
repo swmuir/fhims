@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="RadNucReport" xml:lang="en-us">
+<title id="title">RadNucReport</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>Represents the radiology/nuclear medicine report as known by the originating VistA system.  Equivalent to File 74.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>additionalClinicalHistory : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Contain a patient&apos;s clinical history as well as instructions to the interpreting physician.  For example, the  instructions might be for the physician to interpret the exam images to rule out the possibility of the patient having a certain disease. The &apos;additional clinical history&apos; is written by the interpreting physician and is entered into the system by the transcriptionist.  Voice Recognition systems allow the interpreting physician to directly enter this information into the &apos;additional clinical history&apos; field.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>dateEntered : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				The date and time that the report was entered into the system by the transcriptionist. 
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>dateReported : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				The date that the interpreting physician dictated this report. The transcriptionist enters this date from the dictation tape. If the physician is using a voice recognition system for dictation, this date is entered at the time the report is transmitted to DHCP.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>id : <xref href="../t_Id.dita" >Id</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				A unique identifier for the Radiology Reportt (File 74).  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>impressionText : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				&apos;Impression text&apos; of the rad/nuc med exam associated with this report. The &apos;impression text&apos; gives a quick summary of the &apos;report text&apos;. 
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>reportText : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Contains the report text for the  imaging exam. The report text is written by the interpreting physician and may be entered into the system by a transcriptionist.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>status : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Iindicate the  status of this report. Possible values are Verified; Released/Not Verified; Problem Draft; Draft.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>activityLog : <xref href="../t_ActivityLog.dita" >ActivityLog</xref> (0..-1)</p></stentry>
+  <stentry><p>				A log of actions that have been taken on this report.  Equivalent to File 70.07.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>image : <xref href="../t_Image.dita" >Image</xref> (0..1)</p></stentry>
+  <stentry><p>				Image assocated with this Report
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>relatedCase : <xref href="../t_RadiologicExamination.dita" >RadiologicExamination</xref> (1..1)</p></stentry>
+  <stentry><p>				Related case to this report
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>relatedReport : <xref href="../t_RelatedReport.dita" >RelatedReport</xref> (0..-1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ImagingEvent" xml:lang="en-us">
+<title id="title">ImagingEvent</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class contains attributes and associations that are helpful in  interpretation of the radiology/nuclear medicine image as known by the originating VistA system.  File 2005.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>dateLastAccessed : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				The date and time the image was last viewed or accessed.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>dateTimeImageCreated : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Contains the date and time on which the image was captured.  It is not the same as the date and time of the procedure or exam.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>externalImageId : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				When an image is created from an external PACS system, this property will contain the unique identifier for the image within that system.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>fileType : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				This is a code for the type of data that is stored in the file that is described in the current record.  Possible values are Text; Large X-Ray; Targa(TM); Thumbnail; DICOM; etc.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>id : <xref href="../t_Id.dita" >Id</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				The Internal Entry Number of the Image File Entry  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>imageCategory : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				A categorization of the image, which can be used for searching and sorting.  See VistA table 2005.82 for example values.  Possible values (from VA) include: Administrative, Clinical, Admin/Clinical.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>imageName : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				This is the natural language name of the object; usually consists of the patient name, social security number, and object description.     
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>imageType : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				A categorization of the image, which can be used for searching and sorting.  See VistA table 2005.83 for example values.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>isDuplicate : <xref href="../t_Boolean.dita" >Boolean</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Identifies and enables screening of images that have duplicate instances in the archive file and the image file.   Possible values are YES; etc.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>isIntegrityQuestionable : <xref href="../t_Boolean.dita" >Boolean</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Indicates that this image entry has questionable integrity.  Possible values are YES etc.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>longDescription : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				This is the description of the image at length. 
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>microscopicObjective : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Description of the Microscopic Objective selected by the pathologist.  It identifies the power of the microscope objective used when capturing the image of the slide.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>originCategory : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				A categorization of the image based on the organization which originated the image.  For the VA, possible values include VA, Non-VA, DOD, Fee-Basis, etc.  Similar concepts can be generalized for other agencies.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>pathologyAccessionId : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Contains the Anatomic Pathology accession number - the identifying number for the slide.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>procedureCategory : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Categorizes the procedure that generated the image.  Possible values include: Colonoscopy, Surgery, Surgical pathology, Radiology.  This property can be used to help locate individual images or even classes of images for research.    
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>procedureDateTime : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				The date and time the image was last viewed or accessed.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>procedureSubCategory : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				A more finely grained categorizaton (than the procedureCategory) of the procedure that generated the image.  Used for sorting and searching of the images.  See VistA table 2005.85 for example values.      
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>shortDescription : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				A brief, one-line description of the image or object.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>softwareCategory : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Categorizes the software system or package that generated and/or accesses the image.  Used to locate appropriate images when accessed by the software package.  Possible values include (from the VA): Radiology, Laboratory, Medicine, Clinical Document, Surgery, Photo ID, etc.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>specialtyCategory : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				A categorization of the image by specialty/subspecialty, which can be used for searching and sorting.  See VistA table 2005.84 for example values.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>stainDescription : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Description of the Histological Stain used in the preparation of the specimen.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>acquisitionDevice : <xref href="../t_Device.dita" >Device</xref> (0..1)</p></stentry>
+  <stentry><p>				Device that performed the image Acquisition.  Pointer to file #2006.04.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>acquisitionSite : <xref href="../t_Institution.dita" >Institution</xref> (0..1)</p></stentry>
+  <stentry><p>				The location at which the image was taken  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>author : <xref href="../t_Author.dita" >Author</xref> (1..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>clinic : <xref href="../t_HospitalLocation.dita" >HospitalLocation</xref> (0..1)</p></stentry>
+  <stentry><p>				The location where the professional service was performed.  Pointer to file #44.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>fileStorage : <xref href="../t_ImageStorage.dita" >ImageStorage</xref> (0..1)</p></stentry>
+  <stentry><p>				A pointer to the Network Location file giving the jukebox platter where the image is stored (provided there is a jukebox in the Imaging System). 
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>imageRouteEvent : <xref href="../t_ImageRouteEvent.dita" >ImageRouteEvent</xref> (0..-1)</p></stentry>
+  <stentry><p>				Contains the data elements and associations related to an DICOM (Digital Imaging and Communications in Medicine)-compliant image copy event.  Maintains an audit trail of the copy.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>nullifiedBy : <xref href="../t_NullifyAct.dita" >NullifyAct</xref> (0..1)</p></stentry>
+  <stentry><p>				Person who deletes/Nullifies this treatment record.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>patient : <xref href="../t_Patient.dita" >Patient</xref> (1..1)</p></stentry>
+  <stentry><p>				The patient that the image or object belongs to.  Pinter to File #2.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>radiologyReport : <xref href="../t_RadNucReport.dita" >RadNucReport</xref> (0..1)</p></stentry>
+  <stentry><p>				Represents the radiology/nuclear medicine report as known by the originating VistA system.  Equivalent to File 74.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>relatedImage : <xref href="../t_RelatedImage.dita" >RelatedImage</xref> (0..-1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>specimen : <xref href="../t_Specimen.dita" >Specimen</xref> (0..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>treatingSpeciality : <xref href="../t_FacilityTreatingSpecialty.dita" >FacilityTreatingSpecialty</xref> (0..1)</p></stentry>
+  <stentry><p>				Medical specialty that performed the Non OR procedure.  Equivalent to a pointer to File #2005.84
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

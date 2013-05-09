@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="InformationReference" xml:lang="en-us">
+<title id="title">InformationReference</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class and it associations specify the attributes of the protected information referenced by a policy (e.g., IIHI).</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>category : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				Information category (e.g. medication, allergies, laboratory).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>confidentialityIndicator : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				The confidentiality indicator is a coded attribute that assigns access controls on client health records based on the information or type of access.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>dataIntegrity : <xref href="../t_Code.dita" >Code</xref> (0..-1)</p> 
+
+</stentry>
+  <stentry><p>				This attribute was renamed from the DAM, wherein it was named &apos;integrityCode&apos;.  That attribute had no definition.  Data integrity is an implied privacy concept but it is explicit in security policy specifications.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>sensitivity : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				Coded attribute that describes the sensitivity of a user or information artifact. Sensitivity is a characteristic of a resource which implies its value or importance, and may include its vulnerability [ISO 7498-2:1989]. Sensitivity may be associated with a user or information artifact.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>InformationReference : <xref href="../t_OrganizationalProvider.dita" >OrganizationalProvider</xref> (0..-1)</p></stentry>
+  <stentry><p>				Identifies the organizational provider that is the custodian of the record in question.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>coverageType : <xref href="../t_PolicyProgramSource.dita" >PolicyProgramSource</xref> (0..-1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>informationObject : <xref href="../t_InformationObject.dita" >InformationObject</xref> (0..-1)</p></stentry>
+  <stentry><p>				A reference to specific type of information object that may be referenced by a policy or consent directive (e.g., document, order, etc.).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>informationRecipient : <xref href="../t_OrganizationalProvider.dita" >OrganizationalProvider</xref> (0..-1)</p></stentry>
+  <stentry><p>				Identifies the organizational provider that is the intended recipient of the record in question.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>relatedCondition : <xref href="../t_ClinicalCondition.dita" >ClinicalCondition</xref> (0..-1)</p></stentry>
+  <stentry><p>				The health condition(s) associated with the policy. Conditions when specified, are coded concepts expressed in a standard vocabulary (e.g., LOINC, SNOMED CT, etc.). These may include indications of &apos;substance abuse&apos; or &apos;HIV-related&apos; illnesses, etc. An obligationCode may be implemented as a &apos;condition&apos;.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>subjectOfRecord : <xref href="../t_SubjectOfRecord.dita" >SubjectOfRecord</xref> (0..1)</p></stentry>
+  <stentry><p>				This class represents the patient or population that is the subject of the record in question.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="Code" xml:lang="en-us">
+<title id="title">Code</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	Code is a kind of <xref href="../t_CD.dita">CD</xref>	
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>&quot;A word, letter, number, or other symbol used in a code system to mark, represent, or identify something: The code on the label shows the date of manufacture.&quot; - Dictionary.com  This *abstract* datatype represents a &quot;coded element&quot; - some series of letters or numbers which can be &quot;looked up&quot; in a code system or value set.  In practice, this datatype will be substituted with specific &quot;flavors&quot; of the code datatype for use in particular standards-based payloads.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>code : <xref href="../t_String.dita" >String</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				This is a placeholder for the &quot;code&quot;, which is a unique identifier of an entry in a coding system. Note that this property will be replaced by some other concept or group of concepts when this abstract class is replaced by a specific class for a given target platform.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>codeSystem : <xref href="../t_String.dita" >String</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				This is a placeholder for the &quot;coding system&quot;, which is a identifies the coding scheme or coding system of which the code is a member. Note that this property will be replaced by some other concept or group of concepts when this abstract class is replaced by a specific class for a given target platform.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>codeSystemVersion : <xref href="../t_String.dita" >String</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				This is a placeholder for the &quot;coding system version&quot;, which is identifies the version coding scheme or coding system of which the code is a member. Note that this property will be replaced by some other concept or group of concepts when this abstract class is replaced by a specific class for a given target platform.  This version number identifies the possible members of a coding system as of a particular time.  If a coding system isn&apos;t formally versioned, such as NDC, the date on which the coding system was published could be used here.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>text : <xref href="../t_String.dita" >String</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				This is a placeholder for the &quot;display text&quot; or &quot;designation&quot;, which is the human-readable string representing the concept. Note that this property will be replaced by some other concept or group of concepts when this abstract class is replaced by a specific class for a given target platform.
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

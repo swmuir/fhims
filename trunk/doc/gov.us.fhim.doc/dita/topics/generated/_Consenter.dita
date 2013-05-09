@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="Consenter" xml:lang="en-us">
+<title id="title">Consenter</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p> This class is intended to capture the properties of a Consenter/Substitute Decision Maker - see &apos;Actors&apos;.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>digitalSignature : <xref href="../t_String.dita" >String</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				This attribute is used to store the consenter&apos;s signature.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>name : <xref href="../t_PersonName.dita" >PersonName</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				Contains the name of the person who granted consent.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>relationship : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				This coded attribute is intended to specify the relationship between the consenter and the client.  This may be a Substitute Decisions Maker, a legal guardian, etc.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>signatureRecorded : <xref href="../t_Boolean.dita" >Boolean</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				If a digital signature is not allowed by policy, this attribute indicates whether a signature was captured.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>client : <xref href="../t_Patient.dita" >Patient</xref> (0..1)</p></stentry>
+  <stentry><p>				Identifies the person to whom the consent directive applies.  This person may or may not be the same person as the consent author, as in the case where the patient is a minor child or an incapacitated person.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>grantee : <xref href="../t_Grantee.dita" >Grantee</xref> (0..1)</p></stentry>
+  <stentry><p>				Designates who/what has been delegated a specific right.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

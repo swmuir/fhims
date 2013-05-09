@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="BehavioralHealthAssessment" xml:lang="en-us">
+<title id="title">BehavioralHealthAssessment</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	BehavioralHealthAssessment is a kind of <xref href="../t_AssessmentEvent.dita">AssessmentEvent</xref>	
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This is class describes a Behavioral Health Assessment containing both mental health and substance abuse related questions.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+
+ <strow>
+  <stentry><p>patient : <xref href="../t_PatientBehavioralHealth.dita" >PatientBehavioralHealth</xref> (1..1)</p></stentry>
+  <stentry><p>				 This directed association describes the relationship between a                     client/patient and their behavioral health assessments. 
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>problemArea : <xref href="../t_BehavioralHealthAssessmentDomain.dita" >BehavioralHealthAssessmentDomain</xref> (0..-1)</p></stentry>
+  <stentry><p>				This association is used to identify the logical problem areas (e.g., FamilySocialHistoryArea, DrugUseHistoryArea, MedicationsArea, etc.) contained in the assessment.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

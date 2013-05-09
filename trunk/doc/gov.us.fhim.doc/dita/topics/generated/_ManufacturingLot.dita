@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ManufacturingLot" xml:lang="en-us">
+<title id="title">ManufacturingLot</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class identifies a batch of material or products that were manufactured over a defined time period.  The definition of a batch or lot is determined by the manufacturer, based in part on the nature of the manufacturing process, and on the historical information that can be accessed (such as the shipment of raw materials used, the equipment used, quality assurance tests, etc.) by the use of the lot number.  The purpose of this class in the FHIM is to contain lot identifier and expiration date information about a product to facilitate inventory control processes, manufacturer recall processes, and adverse event reporting.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>expirationDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Contains the expiration date of the medical substance administered.  Note: vaccine expiration dates do not always have a &quot;day&quot; component; therefore, such a date may be transmitted as YYYYMM.&quot; - HL7 Version 2.8, RXA-16</p><p>&quot;Contains the expiration date of the medical substance administered.&quot; - HL7 Version 2.8, RXD-19.</p><p>&quot;The date and time the manufacturer no longer ensures the safety, quality, and/or proper functioning of the material.&quot; - HL7 Version 3
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>lotId : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Contains the lot number of the medical substance administered.  Note:  The lot number is the number printed on the label attached to the container holding the substance and on the packaging which houses the container.  If the substance is a vaccine, for example, and a diluent is required, a lot number may appear on the vial containing the diluent; however, any such identifier associated with a diluent is not the identifier of interest. The substance lot number should be reported, not that of the diluent.&quot; - HL7 Version 2.8, RXA-15</p><p>&quot;Contains the lot number of the medical substance administered.&quot; - HL7 Version 2.8, RXD-18.</p><p>&quot;An alphanumeric string used to identify a particular batch of manufactured material.&quot; - HL7 Version 3
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>lotSize : <xref href="../t_PhysicalQuantity.dita" >PhysicalQuantity</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				Identifies the number of products manufactured as part of the manufacturing lot.  This property may be useful in regulatory filings, but is unlikely to be needed for electronic health records.
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

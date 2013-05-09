@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="AdvanceDirective" xml:lang="en-us">
+<title id="title">AdvanceDirective</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>&quot;An advance health care directive, also known as living will, personal directive, advance directive, or advance decision, are instructions given by individuals specifying what actions should be taken for their health in the event that they are no longer able to make decisions due to illness or incapacity, and appoints a person to make such decisions on their behalf.&quot; - wikipedia</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>category : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Categorizes the Advance Directive.  Possible categorizations include Do Not Resuscitate, etc.</p><p>Note that this property is currently modeled as a string because we have not identified an authoritative list of possible values for this concept.  It is anticipated that the datatype of this property will be changed to a code in the future.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>comments : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Contains any remarks about the Advance Directive.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>effectiveDateRange : <xref href="../t_TimeInterval.dita" >TimeInterval</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				The time period over which the Advance Directive is effective.  Note that the end date is typically blank for active Advance Directives.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>image : <xref href="../t_Image.dita" >Image</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				If the Advance Directive was originally a signed paper form and was scanned, this property will contain the scanned image.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>paperLocator : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Provides information to locate the original paper form, if applicable.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>status : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Indicates the state of the Advance Directive record, as defined in the state-transition model in the HL7 RIM.  Examples include Active, Pending, Terminated, etc.
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

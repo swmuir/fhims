@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="SpinalCordRegistration" xml:lang="en-us">
+<title id="title">SpinalCordRegistration</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This Class contains  the process by which the Veterans Affairs documents  information to enroll the veteran in the spinal cord domain for the episode of care.  </p>
+
+	<p>This Class contains the process by which the Veterans Affairs documents information to enroll the veteran in the spinal cord domain for the episode of care.     </p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>dateFirstSeen : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Contains the first date the veteran was seen for SCI care  
+				Contains the first date the veteran was seen for SCI care    
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>dateLastReviewed : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Contains the  last date the veterans  registration record was reviewed .  
+				Contains the last date the veterans registration record was reviewed .    
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>dateOfDeath : <xref href="../t_PointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				Contains the veterans date of death.    
+				Contains the veterans date of death.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>dateRevised : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..-1)</p> 
+
+</stentry>
+  <stentry><p>				Contains the current and historical change dates for the veteran    
+				Contains the current and historical change dates for the veteran  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>id : <xref href="../t_Id.dita" >Id</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Unique identifier that identifies this Episode of care for the veteran.
+				Unique identifier that identifies this Episode of care for the veteran.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>percentProvidedByVa : <xref href="../t_Integer.dita" >Integer</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Contains the portion of care provided by VA.  
+				Contains the portion of care provided by VA.    
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>registrationStatus : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Contains the code set that identifies the Registration status of the veteran
+				Contains the code set that identifies the Registration status of the veteran    
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>ancillaryRegistrationEvent : <xref href="../t_AncillaryRegistrationEvent.dita" >AncillaryRegistrationEvent</xref> (0..-1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>etiology : <xref href="../t_EtiologyObservation.dita" >EtiologyObservation</xref> (0..-1)</p></stentry>
+  <stentry><p>				 Association to the class that identifies the cause or origin of a spinal cord injury as determined by medical diagnosis.   
+				Association to the class that identifies the cause or origin of a spinal cord injury as determined by medical diagnosis.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>evaluation  : <xref href="../t_EvaluationEvent.dita" >EvaluationEvent</xref> (1..-1)</p></stentry>
+  <stentry><p>				 Association to the class that identifies the information for the Veterans evaluation session.
+				Association to the class that identifies the information for the Veterans evaluation session.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>medicalCentersVisted : <xref href="../t_SpinalCordMedicalCentersVisted.dita" >SpinalCordMedicalCentersVisted</xref> (1..-1)</p></stentry>
+  <stentry><p>				Association to the class that identifies the current and historic medical centers that provided services for the veteran  
+				 Association to the class that identifies the current and historic medical centers that provided services for the veteran
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>patient : <xref href="../t_Patient.dita" >Patient</xref> (1..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>referral : <xref href="../t_ReferralEvent.dita" >ReferralEvent</xref> (1..-1)</p></stentry>
+  <stentry><p>				 Association to the class that identifies the information for the Veterans referrals.
+				Association to the class that identifies the information for the Veterans referrals.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>sciCoordinator : <xref href="../t_SciAdministration.dita" >SciAdministration</xref> (1..-1)</p></stentry>
+  <stentry><p>				Identifies the SCI Coordinators who are providing or have provided Spinal Cord Injury - related services to the Veteran
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>spinalCordEpisodeOfCare : <xref href="../t_SpinalCordEpisodeOfCare.dita" >SpinalCordEpisodeOfCare</xref> (0..-1)</p></stentry>
+  <stentry><p>				Association to the process by which the Veterans Affairs documents information to enroll the veteran in the spinal cord domain for the episode of care.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="PackagedMedicinalProduct" xml:lang="en-us">
+<title id="title">PackagedMedicinalProduct</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>&quot;A product in a container, or package. Represents the entirety of a product that has been packaged in a container for sale  or supply; this representation of the Packaged Medicine may be in its real or actual form as something made, or described  more conceptually, generically, or virtually, but it must represent a product contained in a package.&quot; - HL7 V3</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>capType : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&#8220;The type of container cap.  In some cases, it is important for this to be consistent with decapping, piercing or other automated manipulation.  Notions such as &quot;child-proof cap&quot; or &quot;resealable bag&quot; may also be indicated here.&#8221; - HL7 Version 3 (PackagedProduct.capTypeCode).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>code : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				This property is used to identify the packaged product (or &#8220;sale-able item&#8221;), using any coding system except the National Drug Code (NDC), as we have created a separate property for NDC.  HL7 and NCPDP both have a single property (which could be multi-valued) to hold any and all such codes in one place, but in the FHIM, we identify the NDC separately due to its importance in federal implementations.</p><p></p><p>&#8220;The item code for a packaged product (e.g., complete National Drug Code [NDC] in the U.S.)&#8221; - HL7 Version 3 (PackagedProduct.code).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>codeModifier : <xref href="../t_Code.dita" >Code</xref> (0..-1)</p> 
+
+</stentry>
+  <stentry><p>				This property is used to further identify the packaged product (or &#8220;sale-able item&#8221;), when the coding system used in the &#8220;code&#8221; property uses separate code modifiers.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>description : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				&#8220;A text description of the packaged product.  This may include a discussion of the container.&#8221; - HL7 Version 3 (PackagedProduct.desc).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>name : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				&#8220;A name for the packaged product, usually the same as the name of the product (except where the name contains some reference to the packaging (e.g., &quot;tempo super-pack&quot;, &quot;tic-tac easy-box&quot;)).&#8221; - HL7 Version 3 (PackagedProduct.name).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>nationalDrugCode : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+<p>See <xref href="../t_DrugProductNDC.dita">Drug Product (NDC)</xref> definition for values.</p>
+</stentry>
+  <stentry><p>				&quot;Each drug product listed under Section 510 of the Federal Food, Drug, and Cosmetic Act is assigned a unique 10-digit, 3-segment number. This number, known as the National Drug Code (NDC), identifies the labeler/vendor, product, and trade package size.&quot; - FDA.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>packageCapacity : <xref href="../t_PhysicalQuantity.dita" >PhysicalQuantity</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Contains the size of package to be dispensed.&quot; - HL7 Version 2.8, RXD-22.</p><p>&quot;Contains the units in which [packageCapacity] is denominated.  The advertised number of units in the manufacturer&apos;s package, i.e., the package as it comes from the supplier.&quot; - HL7 Version 2.8, RXD-23.</p><p>&#8220;Captures the number of product units the package would contain if fully loaded.&#8221; - HL7 Version 3 (PackagedProduct.capacityQuantity).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>packageType : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&#8220;The package type, such as &quot;box&quot; or &quot;bottle&quot;.&#8221; - HL7 Version 3 (PackagedProduct.formCode).
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>labeler : <xref href="../t_Labeler.dita" >Labeler</xref> (0..-1)</p></stentry>
+  <stentry><p>				A labeler is an organization that repackages medicinal products for sale.  In some cases a manufacturer is also the labeler.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>manufacturer : <xref href="../t_Manufacturer.dita" >Manufacturer</xref> (1..1)</p></stentry>
+  <stentry><p>				&quot;Contains the manufacturer of the medical substance administered when it is a manufactured substance.&quot; - HL7 Version 2.8, RXD-20.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>medicinalProduct : <xref href="../t_MedicinalProduct.dita" >MedicinalProduct</xref> (1..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>productInstance : <xref href="../t_MedicinalProductInstance.dita" >MedicinalProductInstance</xref> (0..-1)</p></stentry>
+  <stentry><p>				Represents instances of a Packaged Medicinal Product, which will be identified by a serial number or a lot number.</p><p></p><p>&quot;A product instance is (a) an individual product instance, i.e., an individually identified thing with a serial number; (b) a product lot, i.e., a set of things of the same kind (e.g., 1000 for expressing a number of tablets) or an  amorphous mass (e.g., 100 L of a liquid raw material), or  (c) any subset, member, or portion of a product lot. The  distinction between an individual thing and a lot is made in the quantity attribute, which is set to 1 (one) for  individual items, or any number e.g., 1000 or amount 100 L for sets of things or amorphous masses respectively.&quot; - HL7 Version 3.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

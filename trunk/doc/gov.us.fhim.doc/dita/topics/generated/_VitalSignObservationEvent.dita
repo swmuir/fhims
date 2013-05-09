@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="VitalSignObservationEvent" xml:lang="en-us">
+<title id="title">VitalSignObservationEvent</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>An event in which an objective measurement is taken of an aspect of a patient.  While the class of measurements traditionally called &quot;Vital Signs&quot; originally included only a few measurements such as Height, Weight, Pulse, Blood Pressure, Temperature and Respiration Rate, &quot;Vital Signs&quot; has grown to include other measurements such as Blood oxygenation.  </p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>bodySite : <xref href="../t_Code.dita" >Code</xref> (0..-1)</p> 
+
+</stentry>
+  <stentry><p>				A code specifying detail about the anatomical site or system that is the focus of the observation.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>collectionSessionTime : <xref href="../t_PointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&amp;amp;lt;HTML&amp;amp;gt;&amp;amp;lt;HEAD&amp;amp;gt;  &amp;amp;lt;META content=&quot;MSHTML 6.00.2900.3429&quot; name=GENERATOR&amp;amp;gt;&amp;amp;lt;/HEAD&amp;amp;gt;  &amp;amp;lt;BODY&amp;amp;gt;  &amp;amp;lt;TABLE style=&quot;WIDTH: 443pt; BORDER-COLLAPSE: collapse&quot; cellSpacing=0 cellPadding=0 width=590 border=0 x:str&amp;amp;gt;  &amp;amp;lt;COLGROUP&amp;amp;gt;  &amp;amp;lt;COL style=&quot;WIDTH: 443pt; mso-width-source: userset; mso-width-alt: 21577&quot; width=590&amp;amp;gt;  &amp;amp;lt;TBODY&amp;amp;gt;  &amp;amp;lt;TR style=&quot;HEIGHT: 12.75pt&quot; height=17&amp;amp;gt;  &amp;amp;lt;TD style=&quot;BORDER-RIGHT: #ece9d8; BORDER-TOP: #ece9d8; BORDER-LEFT: #ece9d8; WIDTH: 443pt; BORDER-BOTTOM: #ece9d8; HEIGHT: 12.75pt; BACKGROUND-COLOR: transparent&quot; width=590 height=17&amp;amp;gt;&amp;amp;lt;FONT face=Arial size=2&amp;amp;gt;This field contains the time duration for the Vital Signs observation of the patient&amp;amp;lt;/FONT&amp;amp;gt;&amp;amp;lt;/TD&amp;amp;gt;&amp;amp;lt;/TR&amp;amp;gt;&amp;amp;lt;/TBODY&amp;amp;gt;&amp;amp;lt;/TABLE&amp;amp;gt;&amp;amp;lt;/BODY&amp;amp;gt;&amp;amp;lt;/HTML&amp;amp;gt;
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>id : <xref href="../t_Id.dita" >Id</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Uniquely identifies the Vital Signs measurement.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>interpretation : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				An abbreviated interpretation of the vital sign observation, e.g., normal, abnormal, high, etc.  Added for Public Health Reporting Initiative, 10/5/2012.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>observationMethod : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				A code that provides additional detail about the means or technique used to ascertain the observation.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>observationTime : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				The date/time on which the measurement was taken.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>observedCharacteristic : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Indicates which Vital Sign was measured.  From a code set of allowable Vital Sign codes.  Possible values include:    Characteristic Name    Datatype     Units  ==============   =============  =======  Audiometry      PhysicalQuantity   dB  Blood Pressure     PhysicalQuantity   mmHg  Central Venous Pressure   PhysicalQuantity   mmHg  Circumference/Girth    PhysicalQuantity   cm  Fetal Heart Tones     PhysicalQuantityRatio Beats/Min  Fundal Height     PhysicalQuantity   cm  Hearing       PhysicalQuantity   dB  Height        PhysicalQuantity   cm  Pain        Integer     (Coded Ordinal)  Pulse        PhysicalQuantityRatio Beats/Min  Pulse Oximetry/O2 Saturation PhysicalQuantity   %  Respiration      PhysicalQuantityRatio Breaths/Min  Temperature      PhysicalQuantity   Degrees Celsius  Tonometry      PhysicalQuantity   mmHg  Vision Corrected     IntegerRatio?    (n/a)  Vision Uncorrected    IntegerRatio?    (n/a)  Weight       PhysicalQuantity   Kg
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>remarks : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Comments regarding the vital sign measurement.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>status : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Indicates the status of the Vital Signs measurement record.  Currently in VistA, this is a boolean flag indicating whether or not the record was Entered in Error.  To be consistent with HL7, the ActStatusCode vocabulary will be used here instead of the boolean flag. The code would be set to &quot;Nullified&quot; if the record was set in error.  Otherwise this value is &quot;Active&quot;  The reason why the  record was nullified, or any other comments by the person nullifying the record, can be stored in PractitionerParticipation.comments. 
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>value : <xref href="../t_Any.dita" >Any</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				The value of the Vital Sign Observation.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>author : <xref href="../t_Author.dita" >Author</xref> (1..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>clinicStop : <xref href="../t_ClinicStop.dita" >ClinicStop</xref> (0..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>division : <xref href="../t_Division.dita" >Division</xref> (0..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>homeTelehealthMonitor : <xref href="../t_HomeTelehealthMonitor.dita" >HomeTelehealthMonitor</xref> (0..1)</p></stentry>
+  <stentry><p>				the Home TeleHealth Monitor Equipment used by the patient.
+				&amp;amp;lt;HTML&amp;amp;gt;&amp;amp;lt;HEAD&amp;amp;gt;  &amp;amp;lt;META content=&quot;MSHTML 6.00.2900.3429&quot; name=GENERATOR&amp;amp;gt;&amp;amp;lt;/HEAD&amp;amp;gt;  &amp;amp;lt;BODY&amp;amp;gt;Cotains the identity of &amp;amp;amp;nbsp;the device used to transmit the vital sign(s).&amp;amp;amp;nbsp; Note that this device may be associated with multiple measurement devices.&amp;amp;lt;/BODY&amp;amp;gt;&amp;amp;lt;/HTML&amp;amp;gt;
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>measurementDevice : <xref href="../t_Device.dita" >Device</xref> (0..-1)</p></stentry>
+  <stentry><p>				Identifies the device used to measure the vital sign.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>nullify : <xref href="../t_NullifyAct.dita" >NullifyAct</xref> (0..1)</p></stentry>
+  <stentry><p>				Records the nullification of an Act.  Typically used when an erroneous record is &quot;deleted&quot;.  Because medical records should never be deleted, the record is instead &quot;nullified&quot;, and is rendered not visible to typical users, but still exists in the system for the purpose of audit trails, etc. 
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>patient : <xref href="../t_Patient.dita" >Patient</xref> (1..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>patientState : <xref href="../t_PatientStateObservation.dita" >PatientStateObservation</xref> (0..-1)</p></stentry>
+  <stentry><p>				Provides an indication of the state of the patient at the time of the observation.  For example, a blood pressure may be taken while the patient is exercising or at rest.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>serviceDepartment : <xref href="../t_ServiceDepartment.dita" >ServiceDepartment</xref> (0..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>supplementalOxygen : <xref href="../t_OxygenAdministration.dita" >OxygenAdministration</xref> (0..1)</p></stentry>
+  <stentry><p>				Information about any Supplemental Oxygen administered to the patient;  used only if the vital sign observed is a pulse oximetry observation.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="AuthorizationPolicy" xml:lang="en-us">
+<title id="title">AuthorizationPolicy</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	AuthorizationPolicy is a kind of <xref href="../t_BasicPolicy.dita">BasicPolicy</xref>	
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class is used to describe an authorization policy that may be exchanged across domains. An AuthorizationPolicy instance specifies &apos;permitted actions&apos; according to ISO 22600-2. A positive/negative authorization policy defines the actions ( &apos;OperationType &apos;) that a subject is permitted/forbidden to perform on a target. Actions encoded using the &apos;OperationType &apos; class represent the operations defined in the interface of a target object contrary to obligations/refrain policies, which are interpreted by the subject while the object might be open in this perspective.  The following are the attributes of an AuthorizationPolicy: </p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>enablesAuthorization : <xref href="../t_Boolean.dita" >Boolean</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				This attribute is used to specify if the policy enables or declines an authorization. If this attribute is set to &apos;true&apos; the policy authorizes the actions and conditions pertaining to the resources referenced by the policy. Otherwise the authorization is declined.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>levelOfAssurance : <xref href="../t_Integer.dita" >Integer</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				 Level of Assurance (LoA) refers to the degree of certainty that (1) a resource owner has that a person&apos;s physical self has been adequately verified before credentials are issued by a registration authority, and (2) a user indeed owns the credentials they are subsequently presenting to access the resource.  The requirements for the level of certainty at both ends of that set of transactions should be driven by a risk assessment based on the value of the resources being protected. LoA is relevant to authentication, authorization, and access control in an SOA environment. Relevant references: &apos;InCommon Credential Assessment Profile r0.3&apos;, &apos;NIST 800-63: Electronic Authentication Guideline&apos;, and &apos;NIST 800-53: Recommended Security Controls for Federal Information Systems&apos;. Access may only be granted when authentication mechanisms of at least a given strength are used. That is indicated using the Level of Assurance. 
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

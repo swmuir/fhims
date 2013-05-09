@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="LabReportSection" xml:lang="en-us">
+<title id="title">LabReportSection</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class represents a section of a Pathology Report.  Pathology results generally take the form of documents, which in turn are composed of sections containing free-form text.  The College of American Pathologists lists a number of sections that a well-formed pathology report should or may contain.  The Pathology Result class therefore is comprised of Lab Report Sections, the Section Title of which should come from some pre-defined vocabulary.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>sectionTitle : <xref href="../t_PathologyReportSection.dita" >PathologyReportSection</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Categorizes the section of the report.  Possible values include: Brief Clinical History, Frozen Section, Gross Description, MicroscopicExamination, Operative Findings, Post-operative Diagnosis, Pre-operative Diagnosis, etc.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>text : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Contains the lab report results in textual format.</p><p></p><p>&quot;Contains the value observed by the observation producer....  It is not a required field because some systems will report only the Interpretation Codes.... This field may repeat for multipart, single answer results.&quot; - HL7 Version 2.8, OBX-5.
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="DefinedPatientEvent" xml:lang="en-us">
+<title id="title">DefinedPatientEvent</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>The specific patient-related event to which a specimen collection or collections (and subsequently, any tests performed on that specimen) are related or affected by time, sequence, directive, intent, etc.  Examples might include drug administration (peak and trough), beginning of fasting (lipids, FBS), glucose challenge (tolerances) or meal (postprandial), admission (pre- or post-admission studies), scheduled surgery/transfusion (compatibility testing), onset of symptoms (acute and convalescent), Last Menstrual Period (pregnancy test, Pap smear), lumbar puncture (CSF tubes 1, 2, and 3), treatment completion (test of cure, post-transfusion H&amp;H), use/ingestion (BAT, toxicology), start of 24-hour urine pooling (creatinine clearance), etc.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>eventType : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Categorizes the patient event that triggered the speciment collection, or the patient state at the time of the specimen collection.  Examples might include drug administration (peak and trough), beginning of fasting (lipids, FBS), glucose challenge (tolerances) or meal (postprandial), admission (pre- or post-admission studies), scheduled surgery/transfusion (compatibility testing), onset of symptoms (acute and convalescent), LMP (pregnancy test, Pap smear), lumbar puncture (CSF tubes 1, 2, and 3), treatment completion (test of cure, post-transfusion H&amp;H), use/ingestion (BAT, toxicology), start of 24-hour urine pooling (creatinine clearance), etc.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>timeBeforeOrSinceEvent : <xref href="../t_TimeQuantity.dita" >TimeQuantity</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Specifies the amount of time that had elapsed between the event and the collection of the specimen.  Note that the event usually occurs before the specimen collection (e.g., in a glucose tolerance test, the amount of time after the glucose load had been administered), but sometimes the event in question occurs after the specimen collection (e.g., pre-admission).
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

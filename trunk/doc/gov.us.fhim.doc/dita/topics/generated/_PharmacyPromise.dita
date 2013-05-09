@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="PharmacyPromise" xml:lang="en-us">
+<title id="title">PharmacyPromise</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	PharmacyPromise is a kind of <xref href="../t_HealthcarePromise.dita">HealthcarePromise</xref>	
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class represents the clinician&apos;s medication order as recorded by the Pharmacy.  The term &quot;Promise&quot; is used to indicate that this is the order as accepted (or possibly, rejected) by the Pharmacy and as the Pharmacy is now under an obligation to fulfill (unless the order was rejeted).</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>appointmentTime : <xref href="../t_PointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				Date and time of the appointment for this clinic location.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>discontinueDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				This is the date the order was discontinued.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>expirationDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				The date after which the order may no longer be filled.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>isHospitalSuppliedSelfAdministered : <xref href="../t_Boolean.dita" >Boolean</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				A flag indicating that the medication given to the patient is to be self administered and is to be supplied by the hospitals pharmacy while they are an inpatient. 
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>isSelfAdministered : <xref href="../t_Boolean.dita" >Boolean</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				A flag indicating that the medication given to the patient is to be self administered.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>lastDispenseDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				The most recent date the order was filled.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>medicationType : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				This identifies the type of medication ordered: A=Admixture, C=Chemotherapy, P=Piggy Back, T=TPN, U=Unit Dose.    Note: this might correspond to Administration Unit Code?  Verify.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>numberOfRefillsRemaining : <xref href="../t_Integer.dita" >Integer</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				Indicates the number of times the order may be filled without additional authorization.</p><p>&quot;This field is conditional because it is required when a prescription is dispensed to an outpatient. It is not relevant to inpatient treatment orders.&quot; - HL7 Version 2.8, RXD-8.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>orderModality : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				This is the method the provider used to communicate to the user to enter (or take any other action) on the order.  Examples include: Written, Telephoned, Verbal, Electronically Entered, Policy, Service Correction, Duplicate, etc.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>pharmacyPatientCategory : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				Categorizes the status of the patient at the time the medication was filled.  Examples include Inpatient, Outpatient, etc.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>requestedAdministrationTime : <xref href="../t_TimeInterval.dita" >TimeInterval</xref> (0..-1)</p> 
+
+</stentry>
+  <stentry><p>				Specifies when the service is to be performed and how frequently.  Note that this is a complex data type that may indicate specific times or intervals (e.g., 10:00 AM, MWF, etc).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>requestedDuration : <xref href="../t_TimeQuantity.dita" >TimeQuantity</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				The duration of an order as requested by the ordering clinician.  The duration would be expressed as a number of days, weeks, hours, etc.  Note that this length of time might be determined by a business rule of the facilty.  For example, most facilties will have a limit of 7 days for antibiotics, and 3 days for schedule 1 drugs.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>scheduleType : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;This describes the type of schedule for the dispensing of the medication(s) that make up the order.  PRE-OP orders are usually considered to be ON-CALL orders, and orders dispensed as MULTI-DOSE CONTAINERS are usually considered to be FILL ON REQUEST orders. C=Continuous, O=One Time, P=PRN, R=Fill On Request, OC=On Call.&quot; (VistA)  
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>dataEnterer : <xref href="../t_DataEnterer.dita" >DataEnterer</xref> (1..1)</p></stentry>
+  <stentry><p>				Captures participation information (who, when, comments) of the person performing data entry.    &quot;A person entering the data into the originating system. The data entry person is collected optionally for internal quality control purposes. This includes the transcriptionist for dictated text&quot; (HL7)
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>dispense : <xref href="../t_PharmacyDispense.dita" >PharmacyDispense</xref> (0..-1)</p></stentry>
+  <stentry><p>				Captures information about the REFILL dispense of a medication to an outpatient in fulfillment of this request.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>finisher : <xref href="../t_IndividualProvider.dita" >IndividualProvider</xref> (0..1)</p></stentry>
+  <stentry><p>				The party who completed the Outpatient Pharmacy order.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>patientReportedMedication : <xref href="../t_PatientReportedMedication.dita" >PatientReportedMedication</xref> (0..-1)</p></stentry>
+  <stentry><p>				Contains information about a medication which the patient has received or is receiving, as reported by the patient.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>pharmacy : <xref href="../t_Pharmacy.dita" >Pharmacy</xref> (1..1)</p></stentry>
+  <stentry><p>				&quot;Specifies the pharmacy that will dispense or has dispensed the prescription.&quot; - HL7 Version 2.8, RXO-32.</p><p>&quot;Specifies the address of the dispensing facility.&quot; - HL7 Version 2.8, RXO-33.</p><p>&quot;Contains the telecommunication contact information for the pharmacy.&quot; - HL7 Version 2.8, RXO-36.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>pharmacyGeneratedOrderModification : <xref href="../t_PharmacyGeneratedOrderModification.dita" >PharmacyGeneratedOrderModification</xref> (0..-1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>pharmacyInferredDiagnosis : <xref href="../t_DiagnosisListEntry.dita" >DiagnosisListEntry</xref> (0..-1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>return : <xref href="../t_Return.dita" >Return</xref> (0..-1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

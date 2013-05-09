@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ConsultPromise" xml:lang="en-us">
+<title id="title">ConsultPromise</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	ConsultPromise is a kind of <xref href="../t_HealthcarePromise.dita">HealthcarePromise</xref>	
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>The act of accepting the role of fulfiller. It is the act of accepting  a consult or procedure request. The receiving service will perform update tracking activities.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>category : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				value which indicates whether the request is a consult or procedure request.(C:Consult P:Procedure) (VISTA)  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>date : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Date/time of actual entry of consultation or procedure request into data repository
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>serviceSetting : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				value which allows the ordering person to indicate if the service is to be rendered on an outpatient or inpatient basis.  This is to alleviate the confusion if patient is currently an inpatient/outpatient but is just about to be discharged/admitted and become a outpatient/inpatient. (Data Type = Set of Codes I:inpatient,O:outpatient)  
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>activity : <xref href="../t_ProcessActivities.dita" >ProcessActivities</xref> (0..-1)</p></stentry>
+  <stentry><p>				action activities for consultProcedurePromise,  it is used for tracking/auditing
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>associatedResult : <xref href="../t_ConsultResult.dita" >ConsultResult</xref> (0..-1)</p></stentry>
+  <stentry><p>				One or more results (from Medicine package) to be associated  with a instance of ConsultProcedurePromise.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>responsibleService : <xref href="../t_ServiceDepartment.dita" >ServiceDepartment</xref> (1..1)</p></stentry>
+  <stentry><p>				An organizational unit defined by the type of service that it provides to patients.  Examples include Surgery, Dentistry, Mental Health.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>resultingEncounter : <xref href="../t_AbstractEncounter.dita" >AbstractEncounter</xref> (0..-1)</p></stentry>
+  <stentry><p>				Points to those encounters that occured as a result of the consultation request/promise.  For example, if Doctor A request a consultation from Doctor B, this property contains the encounter(s) of Doctor B with the patient.  Note that this property points to AbstractEncounter, rather than Encounter, as the patient may not actually be present, as in the case where a radiologist is asked to interpret a radiograph.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

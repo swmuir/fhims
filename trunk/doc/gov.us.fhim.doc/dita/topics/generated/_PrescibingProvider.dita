@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="PrescibingProvider" xml:lang="en-us">
+<title id="title">PrescibingProvider</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>Contains information specific to practitioners who are licensed to prescribe medications, especially controlled substances.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>controlledSubstanceLicenseId : <xref href="../t_Id.dita" >Id</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Identifies the license under which the practitioner is authorized to prescribe controlled medications.</p><p>&quot;Identifies the provider&apos;s controlled substance number, if required, by site.&quot; - HL7 Version 2.8, RXO-14.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>effectiveDateRange : <xref href="../t_TimeInterval.dita" >TimeInterval</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				An interval of time specifying the period during which the practitioner is authorized to prescribe medications under the associated DEA Id, if such time limit is applicable and known.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>licenseCategory : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				A classification of the provider&apos;s license.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>status : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+</stentry>
+  <stentry><p>				Indicates the current state of the providers license to prescribe medications.  The possible values are defined in the HL7 Role state-transition model.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>licensingJurisdiction : <xref href="../t_Jurisdiction.dita" >Jurisdiction</xref> (1..1)</p></stentry>
+  <stentry><p>				Identifies the state or jurisdiction which authorized the Healthcare Provider to prescribe medications  Note that a state or jurisdiction is an Organization.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

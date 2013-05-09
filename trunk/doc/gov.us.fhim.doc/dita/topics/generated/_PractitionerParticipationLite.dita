@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="PractitionerParticipationLite" xml:lang="en-us">
+<title id="title">PractitionerParticipationLite</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>&quot;An association between an Act and a Role with an Entity playing that Role. Each Entity (in a Role) involved in an Act in a certain way is linked to the act by one Participation-instance.&quot; - HL7 V3.  This class contains the minimal data (date/time, comments, and a pointer to IndividualProvider) that is most commonly needed for participations that involve and entity playing the role of Practitioner.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+  <stentry><p>comment : <xref href="../t_String.dita" >String</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;Contains any comments or notes made by the practitioner in reference to the action in which they participated.&quot; - HL7 V3.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>time : <xref href="../t_PointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+</stentry>
+  <stentry><p>				&quot;An interval of time specifying the time during which the participant is involved in the act through this Participation.&quot; - HL7 V3.  
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>practitioner : <xref href="../t_IndividualProvider.dita" >IndividualProvider</xref> (1..1)</p></stentry>
+  <stentry><p>				Represents information about a person who is authorized to provide health care services in the role of practitioner for a health care provider organization.  The role of practitioner includes all functions performed for a health care provider organization in order to provide patient care and treatment.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

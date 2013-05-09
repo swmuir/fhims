@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN"
+ "topic.dtd">
+<topic id="topicId" xml:lang="en-us">
+	<title>Datatypes Definitions</title>
+	<body>	
+			<p>This package contains classes that serve as &#8220;data types&#8221; for FHIM attributes.  The FHIM data types are common, reusable structures that are often needed in healthcare applications.  For example, healthcare observations often need both a numerical value and a unit of measure, such as a weight of 150 pounds.  Rather than modeling the value and units of measure separately in the main model (i.e., weightValue=150, weightUnits=pounds), we have chosen to create a Physical Quantity data type which can hold both the value and the units so the main model would only have weight:PhysicalQuantity.</p><p>The FHIM data types are based on the HL7 Version 3 data types, but are simplified so that they might be more easily resolved into implementable specifications.  Where possible, we have removed recursion from the data types, and where there are generalization relationships, the subtypes only add to the super types.</p><p>Besides the data types in this package, the FHIM only uses the basic data types defined in UML, and the properties of the data types in this package eventually all resolve to the basic UML data types.  The FHIM modeling style requires that the type all FHIM attributes must be either a UML data type or a class contained in this Datatypes package.  If a property requires any other kind of type, it is modeled as an association, not as an attribute.  For example, a lab test references a Patient and a lab test code.  In UML the both the patient and lab test code properties could be modeled as either an attribute or an association of the lab test.  Since Patient is not a FHIM Datatype, it is modeled as an association, but since the lab test is a code, which is a data type, it is modeled as an attribute.  This style results in models similar in structure to HL7 models.</p><p>Note that every package in the FHIM is dependent on the FHIM Datatypes package.  The FHIM Datatype package must not be dependent on any other package.  Indeed, the FHIM data types must all resolve to UML Primitives.</p>
+
+
+
+	</body>
+</topic>
