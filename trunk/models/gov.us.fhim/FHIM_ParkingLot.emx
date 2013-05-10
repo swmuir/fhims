@@ -126,6 +126,579 @@
     <packageImport xmi:id="_ZLwkpZ1cEeKGRqm0H7Eu1A">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
     </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_dtt5gEncEdyXcM5TklTDNg" name="HL72CodedElement">
+      <eAnnotations xmi:id="_COmEgFSpEdykW9HHKt7M3Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details xmi:id="_COmEgVSpEdykW9HHKt7M3Q" key="CE"/>
+      </eAnnotations>
+      <ownedComment xmi:id="_oQlmkPwIEd-3ndaGus2qMA" annotatedElement="_dtt5gEncEdyXcM5TklTDNg">
+        <body>Represents the HL7 V2 Coded Element (CE) datatype.  The CE datatype is made up of 6 pieces: Identifier, Text, Name of Coding System, Alternate Identifier, Alternate Text, and Alternate Name of Coding System.</body>
+      </ownedComment>
+      <generalization xmi:id="_Rdo9MOZTEeGuIoEQ4Mvu0w">
+        <eAnnotations xmi:id="_aMdugOZTEeGuIoEQ4Mvu0w" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:id="_aMdugeZTEeGuIoEQ4Mvu0w" key="ReplacedBy"/>
+        </eAnnotations>
+        <general xmi:type="uml:Class" href="Datatypes.efx#_mARwQOZSEeGuIoEQ4Mvu0w?FHIM/Datatypes/NullableCode?"/>
+      </generalization>
+      <ownedAttribute xmi:id="_DkMWcEndEdyXcM5TklTDNg" name="identifier" visibility="public">
+        <ownedComment xmi:id="_8EmEkO0KEd-KQpEfY1umCw" annotatedElement="_DkMWcEndEdyXcM5TklTDNg">
+          <body>&quot;Sequence of characters (the code) that uniquely identifies the item being referenced. Different coding schemes will have  different elements here.&quot; - HL7 V2</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DkMWcUndEdyXcM5TklTDNg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DkMWckndEdyXcM5TklTDNg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_DkWHc0ndEdyXcM5TklTDNg" name="text">
+        <ownedComment xmi:id="_JrlesO0LEd-KQpEfY1umCw" annotatedElement="_DkWHc0ndEdyXcM5TklTDNg">
+          <body>&quot;The descriptive or textual name of the identifier, e.g., myocardial infarction or X-ray impression.&quot; - HL7 V2</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DkWHdEndEdyXcM5TklTDNg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DkWHdUndEdyXcM5TklTDNg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_DkMWc0ndEdyXcM5TklTDNg" name="codingSystem">
+        <ownedComment xmi:id="_I7I5MO0LEd-KQpEfY1umCw" annotatedElement="_DkMWc0ndEdyXcM5TklTDNg">
+          <body>&quot;Identifies the coding scheme being used in the identifier component. The combination of the identifier and name of coding  system components will be a unique code for a data item. Each system has a unique identifier.&quot; - HL7 V2</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DkMWdEndEdyXcM5TklTDNg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DkMWdUndEdyXcM5TklTDNg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_zAlEAAexEeCPOdVNW49Akw" name="alternateIdentifier" visibility="public">
+        <ownedComment xmi:id="_zAlEAQexEeCPOdVNW49Akw" annotatedElement="_zAlEAAexEeCPOdVNW49Akw">
+          <body>&quot;An alternate sequence of characters (the code) that uniquely identifies the item being referenced. See usage note in section introduction.&quot; - HL7 V2</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zAlEAgexEeCPOdVNW49Akw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zAlEAwexEeCPOdVNW49Akw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_zAmSIAexEeCPOdVNW49Akw" name="alternateText">
+        <ownedComment xmi:id="_zAmSIQexEeCPOdVNW49Akw" annotatedElement="_zAmSIAexEeCPOdVNW49Akw">
+          <body>&quot;The descriptive or textual name of the alternate identifier. See usage note in section introduction&quot; - HL7 V2</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zAmSIgexEeCPOdVNW49Akw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zAmSIwexEeCPOdVNW49Akw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_zAm5MAexEeCPOdVNW49Akw" name="alternateCodingSystem">
+        <ownedComment xmi:id="_zAm5MQexEeCPOdVNW49Akw" annotatedElement="_zAm5MAexEeCPOdVNW49Akw">
+          <body>&quot;Identifies the coding scheme being used in the alternate identifier component.&quot; - HL7 V2</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zAm5MgexEeCPOdVNW49Akw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zAm5MwexEeCPOdVNW49Akw"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_eE_dREeDEdyIZay-9vWL7Q" name="HL72EntityIdentifier">
+      <eAnnotations xmi:id="_MaOLAFSpEdykW9HHKt7M3Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details xmi:id="_MaOLAVSpEdykW9HHKt7M3Q" key="EI"/>
+      </eAnnotations>
+      <ownedComment xmi:id="_06z2cPwIEd-3ndaGus2qMA" annotatedElement="_eE_dREeDEdyIZay-9vWL7Q">
+        <body>This class corresponds to the HL7 V2 Entity Identifier (EI) data type.  &quot;The entity identifier defines a given entity within a specified series of identifiers.  The EI is appropriate for, but not limited to, machine or software generated identifiers. The generated identifier goes in the first component. The remaining components, 2 through 4, are known as the assigning authority; they identify the machine/system responsible for generating the identifier in component 1.&quot; - HL7 V2</body>
+      </ownedComment>
+      <generalization xmi:id="_OL52MNYfEd62cosTNS-_lw">
+        <eAnnotations xmi:id="_1SsigAevEeCPOdVNW49Akw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:id="_1SsigQevEeCPOdVNW49Akw" key="ReplacedBy"/>
+        </eAnnotations>
+        <general xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
+      </generalization>
+      <ownedAttribute xmi:id="_eE_dRUeDEdyIZay-9vWL7Q" name="identifier">
+        <ownedComment xmi:id="_vtJeYO0YEd-KQpEfY1umCw" annotatedElement="_eE_dRUeDEdyIZay-9vWL7Q">
+          <body>&quot;The first component, Entity Identifier, is usually defined to be unique within the series of identifiers created by the Assigning Authority, defined by a hierarchic designator, represented by components 2 through 4.&quot; - HL7 V2</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eE_dR0eDEdyIZay-9vWL7Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eE_dRkeDEdyIZay-9vWL7Q"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eE_dSEeDEdyIZay-9vWL7Q" name="namespaceId">
+        <ownedComment xmi:id="_BHhqkO0ZEd-KQpEfY1umCw" annotatedElement="_eE_dSEeDEdyIZay-9vWL7Q">
+          <body>&quot;The assigning authority is a unique identifier of the system (or organization or agency or department) that creates the  data.&quot; - HL7 V2</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eE_dSkeDEdyIZay-9vWL7Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eE_dSUeDEdyIZay-9vWL7Q"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eE_dS0eDEdyIZay-9vWL7Q" name="universalId">
+        <ownedComment xmi:id="_gtWo0O0ZEd-KQpEfY1umCw" annotatedElement="_eE_dS0eDEdyIZay-9vWL7Q">
+          <body>&quot;The Universal ID (UID), is a string formatted according to the scheme defined by the Universal ID Type (UID Type) component.  The UID is intended to be unique over time within the UID type.  It is rigorously defined.  Each UID must belong to one of the specifically enumerated schemes for constructing UIDs (defined by the UID Type).  The UID must follow the syntactic rules of the particular universal identifier scheme (defined by the third component).  Note that these syntactic rules are not defined within HL7 but are defined by the rules of the particular universal identifier scheme.&quot; - HL7 V2</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eE_dTUeDEdyIZay-9vWL7Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eE_dTEeDEdyIZay-9vWL7Q"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eE_dTkeDEdyIZay-9vWL7Q" name="universalIdType">
+        <ownedComment xmi:id="_pVXA0PwJEd-3ndaGus2qMA" annotatedElement="_eE_dTkeDEdyIZay-9vWL7Q">
+          <body>&quot;The Universal ID Type (UID Type) component governs the interpretation of the Universal ID (UID) component.  If the UID Type is a known UID refers to HL7 Table 0301 - Universal ID type for valid values, then the UID is a universal ID of that type.&quot; - HL7 v2	</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eE_dUEeDEdyIZay-9vWL7Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eE_dT0eDEdyIZay-9vWL7Q"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_eFSYMUeDEdyIZay-9vWL7Q" name="HL72ExtendedCompositeId">
+      <eAnnotations xmi:id="_yh1bQFSpEdykW9HHKt7M3Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details xmi:id="_yh1bQVSpEdykW9HHKt7M3Q" key="CX"/>
+      </eAnnotations>
+      <ownedComment xmi:id="_vW00APwJEd-3ndaGus2qMA" annotatedElement="_eFSYMUeDEdyIZay-9vWL7Q">
+        <body>This class corresponds to the HL7 V2 Extended Composite ID With Check Digit (CX) data type, which is &quot;used for specifying an identifier with its associated administrative detail&quot;.  This datatype has been simplified in that some optional components, such as the check digits, which are not used in current HL7 v2 messaging within VA, have been omitted.  In addition, the subcomponents which are themselves complex types have been exploded in order to have all subcomponents in the type.  For example, the Assigning Authority component in the HL7 v2 datatype is an HD datatype, which has three components.  This has been replaced by three properties in this class: AssigningAuthNamespaceId, AssigningAuthUniveralId, and AssigningAuthUniveralIdType.</body>
+      </ownedComment>
+      <generalization xmi:id="_OpQgkNYfEd62cosTNS-_lw">
+        <eAnnotations xmi:id="_1SqtUAevEeCPOdVNW49Akw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:id="_1SqtUQevEeCPOdVNW49Akw" key="ReplacedBy"/>
+        </eAnnotations>
+        <general xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
+      </generalization>
+      <ownedAttribute xmi:id="_eFcJEEeDEdyIZay-9vWL7Q" name="entityIdentifier">
+        <ownedComment xmi:id="_UOafEO0dEd-KQpEfY1umCw" annotatedElement="_eFcJEEeDEdyIZay-9vWL7Q">
+          <body>&quot;The value of the identifier itself&quot; - HL7 v2</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eFcJEkeDEdyIZay-9vWL7Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eFcJEUeDEdyIZay-9vWL7Q" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eFcJE0eDEdyIZay-9vWL7Q" name="assigningAuthNamespaceId">
+        <ownedComment xmi:id="_2LVNsPwJEd-3ndaGus2qMA" annotatedElement="_eFcJE0eDEdyIZay-9vWL7Q">
+          <body>The Assigning Authority is &quot;a unique name of the system (or organization or agency or department) that creates the data&quot; - HL7 v2.  Note that Assigning Authority in HL7 v2 is a complex type (an HD datatype).  This property contains the Namespace Id sub-component, which is &quot;used as the HL7 identifier for the user-defined table of values for this component.&quot;</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eFcJFUeDEdyIZay-9vWL7Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eFcJFEeDEdyIZay-9vWL7Q" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eFcJFkeDEdyIZay-9vWL7Q" name="assigningAuthNameUniversalId">
+        <ownedComment xmi:id="_CmOoIPwKEd-3ndaGus2qMA" annotatedElement="_eFcJFkeDEdyIZay-9vWL7Q">
+          <body>The Assigning Authority is &quot;a unique name of the system (or organization or agency or department) that creates the data&quot; - HL7 v2.  Note that Assigning Authority in HL7 v2 is a complex type (an HD datatype).  This property contains the Universal Id sub-component, which is defined thusly: &quot;The Universal ID (UID), is a string formatted according to the scheme defined by the Universal ID Type (UID Type) component.  The UID is intended to be unique over time within the UID type.  It is rigorously defined.  Each UID must belong to one of the specifically enumerated schemes for constructing UIDs (defined by the UID Type).  The UID must follow the syntactic rules of the particular universal identifier scheme (defined by the third component).  Note that these syntactic rules are not defined within HL7 but are defined by the rules of the particular universal identifier scheme.&quot; - HL7 V2</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eFcJGEeDEdyIZay-9vWL7Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eFcJF0eDEdyIZay-9vWL7Q"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eFcJGUeDEdyIZay-9vWL7Q" name="assigningAuthNameUniversalIdType">
+        <ownedComment xmi:id="_M5JCYPwKEd-3ndaGus2qMA" annotatedElement="_eFcJGUeDEdyIZay-9vWL7Q">
+          <body>The Assigning Authority is &quot;a unique name of the system (or organization or agency or department) that creates the data&quot; - HL7 v2.  Note that Assigning Authority in HL7 v2 is a complex type (an HD datatype).  This property contains the Universal Id Type sub-component, which is defined thusly: &quot;The Universal ID Type (UID Type) component governs the interpretation of the Universal ID (UID) component.  If the UID Type is a known UID refers to HL7 Table 0301 - Universal ID type for valid values, then the UID is a universal ID of that type.&quot; - HL7 v2</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eFcJG0eDEdyIZay-9vWL7Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eFcJGkeDEdyIZay-9vWL7Q" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eFcJHEeDEdyIZay-9vWL7Q" name="identifierTypeCode">
+        <ownedComment xmi:id="_jE7nYO0dEd-KQpEfY1umCw" annotatedElement="_eFcJHEeDEdyIZay-9vWL7Q">
+          <body>&quot;A code corresponding to the type of identifier.  In some cases, this code may be used as a qualifier to the   Assigning authority  component. Refer to HL7 Table 0203 - Identifier type for suggested values&quot; - HL7 v2</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eFcJHkeDEdyIZay-9vWL7Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eFcJHUeDEdyIZay-9vWL7Q" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eFcJH0eDEdyIZay-9vWL7Q" name="assigningFacNamespaceId">
+        <ownedComment xmi:id="_Wsqx8PwKEd-3ndaGus2qMA" annotatedElement="_eFcJH0eDEdyIZay-9vWL7Q">
+          <body>The Assigning Facility is &quot;the place or location identifier where the identifier was first assigned to the patient. This component is not an inherent part of the identifier but rather part of the history of the identifier: as part of this data type, its existence is a convenience for certain intercommunicating systems.&quot; - HL7 v2.  Note that the Assigning Facility in HL7 v2 is a complex type (an HD datatype).  This property contains the Namespace Id sub-component, which is &quot;used as the HL7 identifier for the user-defined table of values for this component.&quot;</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eFcJIUeDEdyIZay-9vWL7Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eFcJIEeDEdyIZay-9vWL7Q" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eFcJIkeDEdyIZay-9vWL7Q" name="assigningFacUniversalId">
+        <ownedComment xmi:id="_jNz-UPwKEd-3ndaGus2qMA" annotatedElement="_eFcJIkeDEdyIZay-9vWL7Q">
+          <body>The Assigning Facility is &quot;the place or location identifier where the identifier was first assigned to the patient. This component is not an inherent part of the identifier but rather part of the history of the identifier: as part of this data type, its existence is a convenience for certain intercommunicating systems.&quot; - HL7 v2.  Note that Assigning Authority in HL7 v2 is a complex type (an HD datatype).  This property contains the Universal Id sub-component, which is defined thusly: &quot;The Universal ID (UID), is a string formatted according to the scheme defined by the Universal ID Type (UID Type) component.  The UID is intended to be unique over time within the UID type.  It is rigorously defined.  Each UID must belong to one of the specifically enumerated schemes for constructing UIDs (defined by the UID Type).  The UID must follow the syntactic rules of the particular universal identifier scheme (defined by the third component).  Note that these syntactic rules are not defined within HL7 but are defined by the rules of the particular universal identifier scheme.&quot; - HL7 V2</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eFcJJEeDEdyIZay-9vWL7Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eFcJI0eDEdyIZay-9vWL7Q"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eFcJJUeDEdyIZay-9vWL7Q" name="assigningFacUniversalIdType">
+        <ownedComment xmi:id="_q_ULwPwKEd-3ndaGus2qMA" annotatedElement="_eFcJJUeDEdyIZay-9vWL7Q">
+          <body>The Assigning Facility is &quot;the place or location identifier where the identifier was first assigned to the patient. This component is not an inherent part of the identifier but rather part of the history of the identifier: as part of this data type, its existence is a convenience for certain intercommunicating systems.&quot; - HL7 v2.  Note that Assigning Authority in HL7 v2 is a complex type (an HD datatype).  This property contains the Universal Id Type sub-component, which is defined thusly: &quot;The Universal ID Type (UID Type) component governs the interpretation of the Universal ID (UID) component.  If the UID Type is a known UID refers to HL7 Table 0301 - Universal ID type for valid values, then the UID is a universal ID of that type.&quot; - HL7 v2</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eFcJJ0eDEdyIZay-9vWL7Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eFcJJkeDEdyIZay-9vWL7Q"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eFcJKEeDEdyIZay-9vWL7Q" name="expirationDate">
+        <ownedComment xmi:id="_ZFzEwO0dEd-KQpEfY1umCw" annotatedElement="_eFcJKEeDEdyIZay-9vWL7Q">
+          <body>&quot;The last date, if known, on which the identifier is valid and active&quot; - HL7 v2</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eFcJKkeDEdyIZay-9vWL7Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eFcJKUeDEdyIZay-9vWL7Q"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_-_j_MFtZEd6vCqZbpOmSRg" name="HL72HierarchicDesignator">
+      <eAnnotations xmi:id="_-_j_MVtZEd6vCqZbpOmSRg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details xmi:id="_-_j_MltZEd6vCqZbpOmSRg" key="HD"/>
+      </eAnnotations>
+      <ownedComment xmi:id="_GiUGAO0eEd-KQpEfY1umCw" annotatedElement="_-_j_MFtZEd6vCqZbpOmSRg">
+        <body>This class corresponds to the HL7 V2 Hierarchic Designator (HD) data type.  An HD &quot;identifies an (administrative or system or application or other) entity that has responsibility for managing or assigning a defined set of instance identifiers (such as placer or filler number, patient identifiers, provider identifiers, etc.).  This entity could be a particular healthcare application such as a registration system that assigns patient identifiers, a governmental entity such as a licensing authority that assigns professional identifiers or driver’s license numbers, or a facility where such identifiers are assigned.&quot; - HL7 v2</body>
+      </ownedComment>
+      <generalization xmi:id="_lR-VMAqpEd-426xscrxYmQ">
+        <eAnnotations xmi:id="_1SrUYAevEeCPOdVNW49Akw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:id="_1SrUYQevEeCPOdVNW49Akw" key="ReplacedBy"/>
+        </eAnnotations>
+        <general xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
+      </generalization>
+      <ownedAttribute xmi:id="_-_j_M1tZEd6vCqZbpOmSRg" name="namespaceId">
+        <ownedComment xmi:id="_RyrnAO0eEd-KQpEfY1umCw" annotatedElement="_-_j_M1tZEd6vCqZbpOmSRg">
+          <body>This property is &quot;used as the HL7 identifier for the user-defined table of values for this component.&quot; - HL7 v2.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-_j_NFtZEd6vCqZbpOmSRg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-_j_NVtZEd6vCqZbpOmSRg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_-_j_NltZEd6vCqZbpOmSRg" name="universalId">
+        <ownedComment xmi:id="_z78IgPwKEd-3ndaGus2qMA" annotatedElement="_-_j_NltZEd6vCqZbpOmSRg">
+          <body>&quot;The Universal ID (UID) is a string formatted according to the scheme defined by the Universal ID Type (UID Type) component.  The UID is intended to be unique over time within the UID type.  It is rigorously defined.  Each UID must belong to one of the specifically enumerated schemes for constructing UIDs (defined by the UID type).  The UID must follow the syntactic rules of the particular universal identifier scheme (defined by the third component).  Note that these syntactic rules are not defined within HL7 but are defined by the rules of the particular universal identifier scheme.&quot; - HL7 v2.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-_j_N1tZEd6vCqZbpOmSRg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-_j_OFtZEd6vCqZbpOmSRg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_-_j_OVtZEd6vCqZbpOmSRg" name="universalIdType">
+        <ownedComment xmi:id="_7W-WsPwKEd-3ndaGus2qMA" annotatedElement="_-_j_OVtZEd6vCqZbpOmSRg">
+          <body>&quot;The Universal ID Type (UID Type) component governs the interpretation of the Universal ID (UID) component.  If the UID Type is a known UID refers to HL7 Table 0301 - Universal ID type for valid values, then the UID is a universal ID of that type.&quot; - HL7 v2</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-_j_OltZEd6vCqZbpOmSRg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-_j_O1tZEd6vCqZbpOmSRg"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_-aoTANOaEd2aQZomWdBJLg" name="HL72OrganizationIdentifierExtended">
+      <eAnnotations xmi:id="_fu5HIAqpEd-426xscrxYmQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details xmi:id="_fu5HIQqpEd-426xscrxYmQ" key="XON"/>
+      </eAnnotations>
+      <ownedComment xmi:id="_-mg00PwKEd-3ndaGus2qMA" annotatedElement="_-aoTANOaEd2aQZomWdBJLg">
+        <body>This class corresponds to the HL7 V2 Extended Composite Name and Identification Number for Organizations (XON) data type.  An XON is used &quot;to specify the name and ID number of an organization.&quot; - HL7 v2</body>
+      </ownedComment>
+      <generalization xmi:id="_u7U1EAqpEd-426xscrxYmQ">
+        <eAnnotations xmi:id="_468dwAe-EeCPOdVNW49Akw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:id="_468dwQe-EeCPOdVNW49Akw" key="ReplacedBy"/>
+        </eAnnotations>
+        <general xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
+      </generalization>
+      <ownedAttribute xmi:id="_DGI_4NObEd2aQZomWdBJLg" name="identifier" visibility="public">
+        <ownedComment xmi:id="_DeMVcPwLEd-3ndaGus2qMA" annotatedElement="_DGI_4NObEd2aQZomWdBJLg">
+          <body>&quot;Contains the sequence of characters (the code) that uniquely identifies the item being referenced by XON.1 Organization Name.&quot; - HL7 v2</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DGI_4dObEd2aQZomWdBJLg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DGI_4tObEd2aQZomWdBJLg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_DGI_49ObEd2aQZomWdBJLg" name="name" visibility="public">
+        <ownedComment xmi:id="_Gr8q4PwLEd-3ndaGus2qMA" annotatedElement="_DGI_49ObEd2aQZomWdBJLg">
+          <body>&quot;The name of the specified organization&quot; - HL7 v2</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DGI_5NObEd2aQZomWdBJLg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DGI_5dObEd2aQZomWdBJLg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_KlNZgNObEd2aQZomWdBJLg" name="nameTypeCode" visibility="public">
+        <ownedComment xmi:id="_yisZEO0hEd-KQpEfY1umCw" annotatedElement="_KlNZgNObEd2aQZomWdBJLg">
+          <body>&quot;A code that represents the type of name i.e., legal name, display name. Refer to User-defined Table 0204 - Organizational  Name Type for suggested values.&quot; - HL7 v2</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PcWHkdObEd2aQZomWdBJLg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PcWHkNObEd2aQZomWdBJLg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_DGI_5tObEd2aQZomWdBJLg" name="assigningAuthority" visibility="public">
+        <ownedComment xmi:id="_D7fGUO0hEd-KQpEfY1umCw" annotatedElement="_DGI_5tObEd2aQZomWdBJLg">
+          <body>&quot;The assigning authority is a unique identifier of the system (or organization or agency or department) that creates the  data&quot; - HL7 v2</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DGI_59ObEd2aQZomWdBJLg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DGI_6NObEd2aQZomWdBJLg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_PrZQMNObEd2aQZomWdBJLg" name="identityTypeCode" visibility="public">
+        <ownedComment xmi:id="_MC22EO0hEd-KQpEfY1umCw" annotatedElement="_PrZQMNObEd2aQZomWdBJLg">
+          <body>&quot;A code corresponding to the type of identifier. In some cases, this code may be used as a qualifier to the &quot;Assigning  authority&quot; component.&quot; - HL7 v2</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SFW7wdOcEd2aQZomWdBJLg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SFW7wNOcEd2aQZomWdBJLg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_bPY30NObEd2aQZomWdBJLg" name="assigningFacility" visibility="public">
+        <ownedComment xmi:id="_Waj0QO0iEd-KQpEfY1umCw" annotatedElement="_bPY30NObEd2aQZomWdBJLg">
+          <body>&quot;The place or location identifier where the identifier was first assigned to the person. This component is not an inherent  part of the identifier but rather part of the history of the identifier: as part of this data type, its existence is a  convenience for certain intercommunicating systems.&quot; - HL7 v2</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hsv80dObEd2aQZomWdBJLg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hsv80NObEd2aQZomWdBJLg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_VCR1UNObEd2aQZomWdBJLg" name="nameRepresentation" visibility="public">
+        <ownedComment xmi:id="_Lr9oIPwLEd-3ndaGus2qMA" annotatedElement="_VCR1UNObEd2aQZomWdBJLg">
+          <body>&quot;Different Name/Address Types and representations of the same Name/Address should be described by repeating of this field&quot; - HL7 v2</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_YW6O0dObEd2aQZomWdBJLg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YW6O0NObEd2aQZomWdBJLg"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_eFInIEeDEdyIZay-9vWL7Q" name="HL72PersonLocation">
+      <eAnnotations xmi:id="_MyzqIFSpEdykW9HHKt7M3Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details xmi:id="_koMb8PRMEdyLkN7_Anv_Ag" key="PL"/>
+      </eAnnotations>
+      <ownedComment xmi:id="_2lK3YO0eEd-KQpEfY1umCw" annotatedElement="_eFInIEeDEdyIZay-9vWL7Q">
+        <body>This class corresponds to the HL7 V2 Person Location (PL) data type. A PL &quot;is used to specify a patient location  within a healthcare institution. Which components are valued depends on the needs of the site. For example for a patient  treated at home, only the person location type is valued. It is most commonly used for specifying patient locations, but  may refer to other types of persons within a healthcare setting.&quot; - HL7 v2</body>
+      </ownedComment>
+      <generalization xmi:id="_SUjGkNYfEd62cosTNS-_lw">
+        <eAnnotations xmi:id="_1So4IAevEeCPOdVNW49Akw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:id="_1So4IQevEeCPOdVNW49Akw" key="ReplacedBy"/>
+        </eAnnotations>
+        <general xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
+      </generalization>
+      <ownedAttribute xmi:id="_eFInIUeDEdyIZay-9vWL7Q" name="pointOfCare">
+        <ownedComment xmi:id="_ToF0AO0fEd-KQpEfY1umCw" annotatedElement="_eFInIUeDEdyIZay-9vWL7Q">
+          <body>&quot;Specifies the code for the point where patient care is administered. It is conditional on Person Location Type (e.g.,  nursing unit or department or clinic). After floor, it is the most general patient location designation.&quot; - HL7 v2</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eFInI0eDEdyIZay-9vWL7Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eFInIkeDEdyIZay-9vWL7Q"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eFInJEeDEdyIZay-9vWL7Q" name="room">
+        <ownedComment xmi:id="_CxMIUO0fEd-KQpEfY1umCw" annotatedElement="_eFInJEeDEdyIZay-9vWL7Q">
+          <body>&quot;Specifies the code for the patient's room. After point of care, it is the most general person location designation.&quot; - HL7  v2</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eFInJkeDEdyIZay-9vWL7Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eFInJUeDEdyIZay-9vWL7Q"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eFInJ0eDEdyIZay-9vWL7Q" name="bed">
+        <ownedComment xmi:id="_958skO0eEd-KQpEfY1umCw" annotatedElement="_eFInJ0eDEdyIZay-9vWL7Q">
+          <body>&quot;Specifies the code for the patient's bed. After room, it is the most general person location designation.&quot; - HL7 v2</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eFSYEUeDEdyIZay-9vWL7Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eFSYEEeDEdyIZay-9vWL7Q"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eFSYEkeDEdyIZay-9vWL7Q" name="facilityNamespaceId">
+        <ownedComment xmi:id="_WE05YPwLEd-3ndaGus2qMA" annotatedElement="_eFSYEkeDEdyIZay-9vWL7Q">
+          <body>The Facility is &quot;is subject to site interpretation but generally describes the highest level physical designation of an institution, medical center or enterprise. It is the most general person location designation.&quot; - HL7 v2.  Note that the Facility in HL7 v2 is a complex type (an HD datatype).  This property contains the Namespace Id sub-component, which is &quot;used as the HL7 identifier for the user-defined table of values for this component.&quot;</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eFSYFEeDEdyIZay-9vWL7Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eFSYE0eDEdyIZay-9vWL7Q"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eFSYFUeDEdyIZay-9vWL7Q" name="facilityUniversalId">
+        <ownedComment xmi:id="_pGnLEO0fEd-KQpEfY1umCw" annotatedElement="_eFSYFUeDEdyIZay-9vWL7Q">
+          <body>The Facility is &quot;is subject to site interpretation but generally describes the highest level physical designation of an  institution, medical center or enterprise. It is the most general person location designation.&quot; - HL7 v2.  Note that the Facility in HL7 v2 is a complex type (an HD datatype).  This property contains the Universal Id sub-component, which is defined thusly: &quot;The Universal ID (UID), is a string formatted according to the scheme defined by the Universal ID Type (UID Type) component.  The UID is intended to be unique over time within the UID type.  It is rigorously defined.  Each UID must belong to one of the specifically enumerated schemes for constructing UIDs (defined by the UID Type).  The UID must follow the syntactic rules of the particular universal identifier scheme (defined by the third component).  Note that these syntactic rules are not defined within HL7 but are defined by the rules of the particular universal identifier scheme.&quot; - HL7 V2</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eFSYF0eDEdyIZay-9vWL7Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eFSYFkeDEdyIZay-9vWL7Q"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eFSYGEeDEdyIZay-9vWL7Q" name="facilityUniversalIdType">
+        <ownedComment xmi:id="_scPqIO0fEd-KQpEfY1umCw" annotatedElement="_eFSYGEeDEdyIZay-9vWL7Q">
+          <body>The Facility is &quot;is subject to site interpretation but generally describes the highest level physical designation of an  institution, medical center or enterprise. It is the most general person location designation.&quot; - HL7 v2.  Note that the Facility in HL7 v2 is a complex type (an HD datatype).  This property contains the Universal Id Type sub-component, which is defined thusly: &quot;The Universal ID Type (UID Type) component governs the interpretation of the Universal ID (UID) component.  If the UID Type is a known UID refers to HL7 Table 0301 - Universal ID type for valid values, then the UID is a universal ID of that type.&quot; - HL7 v2</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eFSYGkeDEdyIZay-9vWL7Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eFSYGUeDEdyIZay-9vWL7Q"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eFSYG0eDEdyIZay-9vWL7Q" name="personLocationType">
+        <ownedComment xmi:id="_9PI_kO0fEd-KQpEfY1umCw" annotatedElement="_eFSYG0eDEdyIZay-9vWL7Q">
+          <body>&quot;Person location type is the categorization of the person s location defined by facility, building, floor, point of care,  room or bed. Although not a required field, when used, it may be the only populated field. It usually includes values such  as nursing unit, department, clinic, SNF, physician s office.&quot; - HL7 v2</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eFSYHUeDEdyIZay-9vWL7Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eFSYHEeDEdyIZay-9vWL7Q"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eFSYHkeDEdyIZay-9vWL7Q" name="locationDescription">
+        <ownedComment xmi:id="_y0oIgO0fEd-KQpEfY1umCw" annotatedElement="_eFSYHkeDEdyIZay-9vWL7Q">
+          <body>&quot;Describes the location in free text&quot; - HL7 v2</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eFSYIEeDEdyIZay-9vWL7Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eFSYH0eDEdyIZay-9vWL7Q"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_JGDkAJCDEeCMBO4kb261_A" name="HL73CodedSimpleValue">
+      <eAnnotations xmi:id="_JGDkAZCDEeCMBO4kb261_A" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details xmi:id="_TQAPgJCDEeCMBO4kb261_A" key="CS"/>
+      </eAnnotations>
+      <ownedComment xmi:id="_WMfOwJCDEeCMBO4kb261_A" annotatedElement="_JGDkAJCDEeCMBO4kb261_A">
+        <body>&quot;Coded data in its simplest form, where only the code is not predetermined. The code system and code system version are fixed by the context in which CS value occurs. CS is used for coded attributes that have a single HL7-defined value set.&quot; - HL7 V3</body>
+      </ownedComment>
+      <generalization xmi:id="_QzhpMOZTEeGuIoEQ4Mvu0w">
+        <eAnnotations xmi:id="_aMb5UOZTEeGuIoEQ4Mvu0w" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:id="_aMb5UeZTEeGuIoEQ4Mvu0w" key="ReplacedBy"/>
+        </eAnnotations>
+        <general xmi:type="uml:Class" href="Datatypes.efx#_mARwQOZSEeGuIoEQ4Mvu0w?FHIM/Datatypes/NullableCode?"/>
+      </generalization>
+      <ownedAttribute xmi:id="_JGDkA5CDEeCMBO4kb261_A" name="code" visibility="public">
+        <ownedComment xmi:id="_JGDkBJCDEeCMBO4kb261_A" annotatedElement="_JGDkA5CDEeCMBO4kb261_A">
+          <body>&quot;The plain code symbol defined by the code system, or an expression in a syntax defined by the code system which describes the concept.&quot; - HL7 V3</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JGDkBZCDEeCMBO4kb261_A" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JGDkBpCDEeCMBO4kb261_A" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_JGDkB5CDEeCMBO4kb261_A" name="codeSystem" visibility="public">
+        <ownedComment xmi:id="_JGDkCJCDEeCMBO4kb261_A" annotatedElement="_JGDkB5CDEeCMBO4kb261_A">
+          <body>&quot;The code system that defines the code.&quot; - HL7 V3</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JGDkCZCDEeCMBO4kb261_A" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JGDkCpCDEeCMBO4kb261_A" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_JGDkC5CDEeCMBO4kb261_A" name="codeSystemName" visibility="public">
+        <ownedComment xmi:id="_JGDkDJCDEeCMBO4kb261_A" annotatedElement="_JGDkC5CDEeCMBO4kb261_A">
+          <body>&quot;The common name of the coding system.&quot; - HL7 V3</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JGDkDZCDEeCMBO4kb261_A" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JGDkDpCDEeCMBO4kb261_A" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_JGDkD5CDEeCMBO4kb261_A" name="codeSystemVersion" visibility="public">
+        <ownedComment xmi:id="_JGDkEJCDEeCMBO4kb261_A" annotatedElement="_JGDkD5CDEeCMBO4kb261_A">
+          <body>&quot;If applicable, a version descriptor defined specifically for the given code system.&quot; - HL7 V3</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JGDkEZCDEeCMBO4kb261_A" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JGDkEpCDEeCMBO4kb261_A"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_aRSsUJBUEeCMBO4kb261_A" name="HL73ConceptDescriptor">
+      <eAnnotations xmi:id="_erEI8JBUEeCMBO4kb261_A" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details xmi:id="_fHx6IJBUEeCMBO4kb261_A" key="CD"/>
+      </eAnnotations>
+      <ownedComment xmi:id="_JBQ4sJCFEeCMBO4kb261_A" annotatedElement="_aRSsUJBUEeCMBO4kb261_A">
+        <body>&quot;A reference to a concept defined in a code system&quot; - HL7 V3</body>
+      </ownedComment>
+      <generalization xmi:id="_SXU-QOZTEeGuIoEQ4Mvu0w">
+        <eAnnotations xmi:id="_aMarMOZTEeGuIoEQ4Mvu0w" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:id="_aMarMeZTEeGuIoEQ4Mvu0w" key="ReplacedBy"/>
+        </eAnnotations>
+        <general xmi:type="uml:Class" href="Datatypes.efx#_mARwQOZSEeGuIoEQ4Mvu0w?FHIM/Datatypes/NullableCode?"/>
+      </generalization>
+      <ownedAttribute xmi:id="_bXNykJBUEeCMBO4kb261_A" name="code" visibility="public">
+        <ownedComment xmi:id="_bXNykZBUEeCMBO4kb261_A" annotatedElement="_bXNykJBUEeCMBO4kb261_A">
+          <body>&quot;The plain code symbol defined by the code system, or an expression in a syntax defined by the code system which describes the concept.&quot; - HL7 V3</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bXNykpBUEeCMBO4kb261_A" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bXNyk5BUEeCMBO4kb261_A" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_bXNylJBUEeCMBO4kb261_A" name="codeSystem" visibility="public">
+        <ownedComment xmi:id="_bXNylZBUEeCMBO4kb261_A" annotatedElement="_bXNylJBUEeCMBO4kb261_A">
+          <body>&quot;The code system that defines the code.&quot; - HL7 V3</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bXNylpBUEeCMBO4kb261_A" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bXNyl5BUEeCMBO4kb261_A" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_n-A7AJBUEeCMBO4kb261_A" name="codeSystemName" visibility="public">
+        <ownedComment xmi:id="_n-A7AZBUEeCMBO4kb261_A" annotatedElement="_n-A7AJBUEeCMBO4kb261_A">
+          <body>&quot;The common name of the coding system.&quot; - HL7 V3</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_n-A7ApBUEeCMBO4kb261_A" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_n-A7A5BUEeCMBO4kb261_A" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_bXNymJBUEeCMBO4kb261_A" name="codeSystemVersion" visibility="public">
+        <ownedComment xmi:id="_bXNymZBUEeCMBO4kb261_A" annotatedElement="_bXNymJBUEeCMBO4kb261_A">
+          <body>&quot;If applicable, a version descriptor defined specifically for the given code system.&quot; - HL7 V3</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bXNympBUEeCMBO4kb261_A" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bXNym5BUEeCMBO4kb261_A"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_rmzxMJBVEeCMBO4kb261_A" name="valueSet" visibility="public">
+        <ownedComment xmi:id="_rmzxMZBVEeCMBO4kb261_A" annotatedElement="_rmzxMJBVEeCMBO4kb261_A">
+          <body>&quot;The value set that applied when this CD was created.&quot; - HL7 V3</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rmzxMpBVEeCMBO4kb261_A" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rmzxM5BVEeCMBO4kb261_A" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_tVSsQJBVEeCMBO4kb261_A" name="valueSetVersion" visibility="public">
+        <ownedComment xmi:id="_tVSsQZBVEeCMBO4kb261_A" annotatedElement="_tVSsQJBVEeCMBO4kb261_A">
+          <body>&quot;The version of the value set that applied when this CD was created&quot; - HL7 V3</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tVSsQpBVEeCMBO4kb261_A" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tVSsQ5BVEeCMBO4kb261_A"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_bXNynJBUEeCMBO4kb261_A" name="displayName" visibility="public">
+        <ownedComment xmi:id="_bXNynZBUEeCMBO4kb261_A" annotatedElement="_bXNynJBUEeCMBO4kb261_A">
+          <body>&quot;A name, title, or representation for the code or expression as it exists in the code system identified by the value of codeSystem.&quot; - HL7 V3</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bXNynpBUEeCMBO4kb261_A" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bXNyn5BUEeCMBO4kb261_A" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_QGlSYJCBEeCMBO4kb261_A" name="originalText" visibility="public">
+        <ownedComment xmi:id="_QGlSYZCBEeCMBO4kb261_A" annotatedElement="_QGlSYJCBEeCMBO4kb261_A">
+          <body>&quot;The text as seen and/or selected by the user who entered the data which represents the intended meaning of the user.&quot; - HL7 V3</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QGlSYpCBEeCMBO4kb261_A" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_QGlSY5CBEeCMBO4kb261_A" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_cmpgsJCBEeCMBO4kb261_A" name="codingRationale" visibility="public">
+        <ownedComment xmi:id="_4HJoUJCBEeCMBO4kb261_A" annotatedElement="_cmpgsJCBEeCMBO4kb261_A">
+          <body>&quot;The reason a particular CD has been provided. &quot; - HL7 V3</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_f7_E0ZCBEeCMBO4kb261_A" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f7_E0JCBEeCMBO4kb261_A"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_lW1j8JCBEeCMBO4kb261_A" name="translation" visibility="public" type="_aRSsUJBUEeCMBO4kb261_A">
+        <ownedComment xmi:id="__JlwUJCBEeCMBO4kb261_A" annotatedElement="_lW1j8JCBEeCMBO4kb261_A">
+          <body>&quot;A set of other CDs that each represent a translation of this CD into equivalent codes within the same code system or into corresponding concepts from other code systems.&quot; - HL7 V3</body>
+        </ownedComment>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_p1IUMZCBEeCMBO4kb261_A" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_p1IUMJCBEeCMBO4kb261_A"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_Djfv0JCCEeCMBO4kb261_A" name="source" visibility="public" type="_aRSsUJBUEeCMBO4kb261_A">
+        <ownedComment xmi:id="_Jkr2MJCCEeCMBO4kb261_A" annotatedElement="_Djfv0JCCEeCMBO4kb261_A">
+          <body>&quot;The CD from which this CD was translated, if it was translated from another CD.&quot; - HL7 V3</body>
+        </ownedComment>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_G5mI8ZCCEeCMBO4kb261_A" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_G5mI8JCCEeCMBO4kb261_A"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_avMNENYeEd62cosTNS-_lw" name="HL73Id">
+      <eAnnotations xmi:id="_fe4PUNYeEd62cosTNS-_lw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details xmi:id="_fe4PUdYeEd62cosTNS-_lw" key="II"/>
+      </eAnnotations>
+      <ownedComment xmi:id="_3oE3IO0kEd-KQpEfY1umCw" annotatedElement="_avMNENYeEd62cosTNS-_lw">
+        <body>This class corresponds to the HL7 V3 II datatype, which is defined as: &quot;An identifier that uniquely identifies a thing or  object. Examples are object identifier for HL7 RIM objects, medical record number, order id, service catalog item id,  Vehicle Identification Number (VIN), etc. Note that a II does not identify the type of the object being identified,  or the type of the association between the object and the identifier - it is only the identifier itself.&quot;</body>
+      </ownedComment>
+      <generalization xmi:id="_qQpv0NYeEd62cosTNS-_lw">
+        <eAnnotations xmi:id="_jrtBcASgEeCTBOHqmJ3gaQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:id="_z7DaIAevEeCPOdVNW49Akw" key="ReplacedBy"/>
+        </eAnnotations>
+        <general xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
+      </generalization>
+      <ownedAttribute xmi:id="_qOp2VURREdyvWauSJSvkeQ" name="root" visibility="public">
+        <ownedComment xmi:id="_qOp2VkRREdyvWauSJSvkeQ" annotatedElement="_qOp2VURREdyvWauSJSvkeQ">
+          <body>A unique identifier that guarantees the global uniqueness of the instance identifier. The root alone may be the entire instance identifier. This string should be one of the following RUID, OID or UUID</body>
+        </ownedComment>
+        <ownedComment xmi:id="_Gq7yUO0lEd-KQpEfY1umCw" annotatedElement="_qOp2VURREdyvWauSJSvkeQ">
+          <body>&quot;A unique identifier that guarantees the global uniqueness of the instance identifier. The root alone may be the entire  instance identifier&quot; - HL7 V3</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_qOp2UERREdyvWauSJSvkeQ" name="extension" visibility="public">
+        <eAnnotations xmi:id="_qOp2UURREdyvWauSJSvkeQ" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+        <ownedComment xmi:id="_qOp2UkRREdyvWauSJSvkeQ" annotatedElement="_qOp2UERREdyvWauSJSvkeQ">
+          <body>A character string as a unique identifier within the scope of the identifier root.</body>
+        </ownedComment>
+        <ownedComment xmi:id="__7yZwO0kEd-KQpEfY1umCw" annotatedElement="_qOp2UERREdyvWauSJSvkeQ">
+          <body>&quot;A character string as a unique identifier within the scope of the identifier root.&quot; - HL7 V3</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qOp2U0RREdyvWauSJSvkeQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qOp2VERREdyvWauSJSvkeQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_qOgFUERREdyvWauSJSvkeQ" name="identifierName" visibility="public">
+        <eAnnotations xmi:id="_qOgFUURREdyvWauSJSvkeQ" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+        <ownedComment xmi:id="_qOgFUkRREdyvWauSJSvkeQ" annotatedElement="_qOgFUERREdyvWauSJSvkeQ">
+          <body>A human readable name or mnemonic for the assigning authority. The Assigning Authority Name has no computational value. The purpose of a Assigning Authority Name is to assist an unaided human interpreter of an II value to interpret the authority. Note: no automated processing must depend on the assigning authority name to be present in any form.</body>
+        </ownedComment>
+        <ownedComment xmi:id="_N5BwsO0lEd-KQpEfY1umCw" annotatedElement="_qOgFUERREdyvWauSJSvkeQ">
+          <body>&quot;This is a human-readable name for the namespace represented in the root. It is a descriptive name for the actual  namespace. e.g. &quot;California, U.S. Driver's License Number, 1970-&quot;.&quot; - HL7 V3</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qOgFU0RREdyvWauSJSvkeQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qOgFVERREdyvWauSJSvkeQ"/>
+      </ownedAttribute>
+    </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_OwVa0D-BEdy0ooNeIA2VyA" name="VACode">
       <ownedComment xmi:id="_1y5bYPwQEd-3ndaGus2qMA" annotatedElement="_OwVa0D-BEdy0ooNeIA2VyA">
         <body>This class represents a codified concept as used within the VA Enterprise Terminology Systems (VETS).  This class is anticipated to only be used by VA clients.  It contains VA Unique concept Identifiers (VUIDs) for the concept, the surface form (or designation), and the Value Set of which the concept is a proper member.  It also contains a display text, which is the surface form of the Desination VUID, which while technically not necessary, is useful to store in the class in order to avoid a call to a terminology service.  In addition, this class contains four properties to contain alternate code information, primarily for use when an application requires a code from a particular coding system (e.g., a billing system needs a CPT code).  Finally, this class contains an alternate Reason property to indicate why the alternate fields are populated (e.g., perhaps because of a mediation failure).</body>
@@ -724,4 +1297,68 @@ Possible values include (from HL7 V2 Table 9): No functional limitations; Ambula
   <Default:Documentation xmi:id="_YAu3oO5xEd-crcWiXVDZrQ" base_Comment="_YAltsO5xEd-crcWiXVDZrQ"/>
   <Default:Documentation xmi:id="_oIe-UO5xEd-crcWiXVDZrQ" base_Comment="_oILcUO5xEd-crcWiXVDZrQ"/>
   <Default:Documentation xmi:id="_1zDMYPwQEd-3ndaGus2qMA" base_Comment="_1y5bYPwQEd-3ndaGus2qMA"/>
+  <Default:Documentation xmi:id="_8EyR0O0KEd-KQpEfY1umCw" base_Comment="_8EmEkO0KEd-KQpEfY1umCw"/>
+  <Default:Documentation xmi:id="_I7O_0O0LEd-KQpEfY1umCw" base_Comment="_I7I5MO0LEd-KQpEfY1umCw"/>
+  <Default:Documentation xmi:id="_Jrxr8O0LEd-KQpEfY1umCw" base_Comment="_JrlesO0LEd-KQpEfY1umCw"/>
+  <Default:Documentation xmi:id="_vtTPYO0YEd-KQpEfY1umCw" base_Comment="_vtJeYO0YEd-KQpEfY1umCw"/>
+  <Default:Documentation xmi:id="_BHq0gO0ZEd-KQpEfY1umCw" base_Comment="_BHhqkO0ZEd-KQpEfY1umCw"/>
+  <Default:Documentation xmi:id="_gtgZ0O0ZEd-KQpEfY1umCw" base_Comment="_gtWo0O0ZEd-KQpEfY1umCw"/>
+  <Default:Documentation xmi:id="_UOkQEO0dEd-KQpEfY1umCw" base_Comment="_UOafEO0dEd-KQpEfY1umCw"/>
+  <Default:Documentation xmi:id="_ZF8OsO0dEd-KQpEfY1umCw" base_Comment="_ZFzEwO0dEd-KQpEfY1umCw"/>
+  <Default:Documentation xmi:id="_jFExUO0dEd-KQpEfY1umCw" base_Comment="_jE7nYO0dEd-KQpEfY1umCw"/>
+  <Default:Documentation xmi:id="_Gid3AO0eEd-KQpEfY1umCw" base_Comment="_GiUGAO0eEd-KQpEfY1umCw"/>
+  <Default:Documentation xmi:id="_Ry-h8O0eEd-KQpEfY1umCw" base_Comment="_RyrnAO0eEd-KQpEfY1umCw"/>
+  <Default:Documentation xmi:id="_2lUBUO0eEd-KQpEfY1umCw" base_Comment="_2lK3YO0eEd-KQpEfY1umCw"/>
+  <Default:Documentation xmi:id="_96GdkO0eEd-KQpEfY1umCw" base_Comment="_958skO0eEd-KQpEfY1umCw"/>
+  <Default:Documentation xmi:id="_CxVSQO0fEd-KQpEfY1umCw" base_Comment="_CxMIUO0fEd-KQpEfY1umCw"/>
+  <Default:Documentation xmi:id="_ToPlAO0fEd-KQpEfY1umCw" base_Comment="_ToF0AO0fEd-KQpEfY1umCw"/>
+  <Default:Documentation xmi:id="_pGwVAO0fEd-KQpEfY1umCw" base_Comment="_pGnLEO0fEd-KQpEfY1umCw"/>
+  <Default:Documentation xmi:id="_scZbIO0fEd-KQpEfY1umCw" base_Comment="_scPqIO0fEd-KQpEfY1umCw"/>
+  <Default:Documentation xmi:id="_y0x5gO0fEd-KQpEfY1umCw" base_Comment="_y0oIgO0fEd-KQpEfY1umCw"/>
+  <Default:Documentation xmi:id="_9PSJgO0fEd-KQpEfY1umCw" base_Comment="_9PI_kO0fEd-KQpEfY1umCw"/>
+  <Default:Documentation xmi:id="_D7o3UO0hEd-KQpEfY1umCw" base_Comment="_D7fGUO0hEd-KQpEfY1umCw"/>
+  <Default:Documentation xmi:id="_MDJxAO0hEd-KQpEfY1umCw" base_Comment="_MC22EO0hEd-KQpEfY1umCw"/>
+  <Default:Documentation xmi:id="_yi1jAO0hEd-KQpEfY1umCw" base_Comment="_yisZEO0hEd-KQpEfY1umCw"/>
+  <Default:Documentation xmi:id="_WatlQO0iEd-KQpEfY1umCw" base_Comment="_Waj0QO0iEd-KQpEfY1umCw"/>
+  <Default:Documentation xmi:id="_3oXyEO0kEd-KQpEfY1umCw" base_Comment="_3oE3IO0kEd-KQpEfY1umCw"/>
+  <Default:Documentation xmi:id="__78KwO0kEd-KQpEfY1umCw" base_Comment="__7yZwO0kEd-KQpEfY1umCw"/>
+  <Default:Documentation xmi:id="_GrFjUO0lEd-KQpEfY1umCw" base_Comment="_Gq7yUO0lEd-KQpEfY1umCw"/>
+  <Default:Documentation xmi:id="_N5K6oO0lEd-KQpEfY1umCw" base_Comment="_N5BwsO0lEd-KQpEfY1umCw"/>
+  <Default:Documentation xmi:id="_oQvXkPwIEd-3ndaGus2qMA" base_Comment="_oQlmkPwIEd-3ndaGus2qMA"/>
+  <Default:Documentation xmi:id="_069ncPwIEd-3ndaGus2qMA" base_Comment="_06z2cPwIEd-3ndaGus2qMA"/>
+  <Default:Documentation xmi:id="_pVgKwPwJEd-3ndaGus2qMA" base_Comment="_pVXA0PwJEd-3ndaGus2qMA"/>
+  <Default:Documentation xmi:id="_vXHu8PwJEd-3ndaGus2qMA" base_Comment="_vW00APwJEd-3ndaGus2qMA"/>
+  <Default:Documentation xmi:id="_2LeXoPwJEd-3ndaGus2qMA" base_Comment="_2LVNsPwJEd-3ndaGus2qMA"/>
+  <Default:Documentation xmi:id="_CmXyEPwKEd-3ndaGus2qMA" base_Comment="_CmOoIPwKEd-3ndaGus2qMA"/>
+  <Default:Documentation xmi:id="_M5SzYPwKEd-3ndaGus2qMA" base_Comment="_M5JCYPwKEd-3ndaGus2qMA"/>
+  <Default:Documentation xmi:id="_Ws0i8PwKEd-3ndaGus2qMA" base_Comment="_Wsqx8PwKEd-3ndaGus2qMA"/>
+  <Default:Documentation xmi:id="_jN9vUPwKEd-3ndaGus2qMA" base_Comment="_jNz-UPwKEd-3ndaGus2qMA"/>
+  <Default:Documentation xmi:id="_q_dVsPwKEd-3ndaGus2qMA" base_Comment="_q_ULwPwKEd-3ndaGus2qMA"/>
+  <Default:Documentation xmi:id="_z8F5gPwKEd-3ndaGus2qMA" base_Comment="_z78IgPwKEd-3ndaGus2qMA"/>
+  <Default:Documentation xmi:id="_7XIHsPwKEd-3ndaGus2qMA" base_Comment="_7W-WsPwKEd-3ndaGus2qMA"/>
+  <Default:Documentation xmi:id="_-mql0PwKEd-3ndaGus2qMA" base_Comment="_-mg00PwKEd-3ndaGus2qMA"/>
+  <Default:Documentation xmi:id="_DeWGcPwLEd-3ndaGus2qMA" base_Comment="_DeMVcPwLEd-3ndaGus2qMA"/>
+  <Default:Documentation xmi:id="_GsGb4PwLEd-3ndaGus2qMA" base_Comment="_Gr8q4PwLEd-3ndaGus2qMA"/>
+  <Default:Documentation xmi:id="_LsQjEPwLEd-3ndaGus2qMA" base_Comment="_Lr9oIPwLEd-3ndaGus2qMA"/>
+  <Default:Documentation xmi:id="_WE05YfwLEd-3ndaGus2qMA" base_Comment="_WE05YPwLEd-3ndaGus2qMA"/>
+  <Default:Documentation xmi:id="_zAm5NAexEeCPOdVNW49Akw" base_Comment="_zAlEAQexEeCPOdVNW49Akw"/>
+  <Default:Documentation xmi:id="_zAngQAexEeCPOdVNW49Akw" base_Comment="_zAmSIQexEeCPOdVNW49Akw"/>
+  <Default:Documentation xmi:id="_zAngQQexEeCPOdVNW49Akw" base_Comment="_zAm5MQexEeCPOdVNW49Akw"/>
+  <Default:Documentation xmi:id="_bXW8gJBUEeCMBO4kb261_A" base_Comment="_bXNykZBUEeCMBO4kb261_A"/>
+  <Default:Documentation xmi:id="_bXW8gZBUEeCMBO4kb261_A" base_Comment="_bXNylZBUEeCMBO4kb261_A"/>
+  <Default:Documentation xmi:id="_bXW8gpBUEeCMBO4kb261_A" base_Comment="_bXNymZBUEeCMBO4kb261_A"/>
+  <Default:Documentation xmi:id="_bXW8g5BUEeCMBO4kb261_A" base_Comment="_bXNynZBUEeCMBO4kb261_A"/>
+  <Default:Documentation xmi:id="_n-A7BJBUEeCMBO4kb261_A" base_Comment="_n-A7AZBUEeCMBO4kb261_A"/>
+  <Default:Documentation xmi:id="_rm20gJBVEeCMBO4kb261_A" base_Comment="_rmzxMZBVEeCMBO4kb261_A"/>
+  <Default:Documentation xmi:id="_tVSsRJBVEeCMBO4kb261_A" base_Comment="_tVSsQZBVEeCMBO4kb261_A"/>
+  <Default:Documentation xmi:id="_QGrZAJCBEeCMBO4kb261_A" base_Comment="_QGlSYZCBEeCMBO4kb261_A"/>
+  <Default:Documentation xmi:id="_4HV1kJCBEeCMBO4kb261_A" base_Comment="_4HJoUJCBEeCMBO4kb261_A"/>
+  <Default:Documentation xmi:id="__Jx9kJCBEeCMBO4kb261_A" base_Comment="__JlwUJCBEeCMBO4kb261_A"/>
+  <Default:Documentation xmi:id="_Jkx80JCCEeCMBO4kb261_A" base_Comment="_Jkr2MJCCEeCMBO4kb261_A"/>
+  <Default:Documentation xmi:id="_JGDkL5CDEeCMBO4kb261_A" base_Comment="_JGDkBJCDEeCMBO4kb261_A"/>
+  <Default:Documentation xmi:id="_JGDkMJCDEeCMBO4kb261_A" base_Comment="_JGDkCJCDEeCMBO4kb261_A"/>
+  <Default:Documentation xmi:id="_JGDkMZCDEeCMBO4kb261_A" base_Comment="_JGDkDJCDEeCMBO4kb261_A"/>
+  <Default:Documentation xmi:id="_JGDkMpCDEeCMBO4kb261_A" base_Comment="_JGDkEJCDEeCMBO4kb261_A"/>
+  <Default:Documentation xmi:id="_WMrcAJCDEeCMBO4kb261_A" base_Comment="_WMfOwJCDEeCMBO4kb261_A"/>
+  <Default:Documentation xmi:id="_JBW_UJCFEeCMBO4kb261_A" base_Comment="_JBQ4sJCFEeCMBO4kb261_A"/>
 </xmi:XMI>
