@@ -9,7 +9,7 @@
       <references xmi:type="uml:Model" href="FHIM.emx#420A62FD03B6?FHIM?"/>
     </eAnnotations>
     <eAnnotations xmi:id="_KqYgwc3ZEdyMrbJiuKueSQ" source="uml2.diagrams" references="_420A62FD03B6426674B203CC">
-      <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_420A62FD03B6426674B203CC" type="Class" name="_Datatypes" description="This diagram displays all the classes in the FHIM Datatypes package.  The FHIM data types are based on the HL7 Version 3 data types, but are simplified so that they might be more easily resolved into implementable specifications.  Where a FHIM data type maps to an HL7 data type, we have placed the HL7 data type mnemonic as a keyword, so for example, Person Name has a &lt;&lt;PN>> keyword.&#xD;&#xA;It is important to keep in mind that these data types will not necessarily be implemented directly, but rather they serve as logical placeholders that will be used to inform a transformation process to generate structures appropriate to the target platform.  For example, note the Id data type.  When targeting an HL7 V2 platform, FHIM properties referencing the Id data type will be modified to reference an HL72EntityIdentifier, HL72ExtendedCompositeId, HL72HierarchicDesignator, HL72OrganizationIdentifierExtended, or HL72PersonLocation, as needed.  The knowledge of which HL7 V2 “flavor” of Id to substitute will be contained in a separate mapping model.  Similarly, when targeting HL7 V3, multiple “flavors” of V3 Id data types are possible (although only one is currently shown).&#xD;&#xA;Note that both the Id and Code hierarchies are illustrating how the FHIM Id and Code data types may be replaced by other structures when targeting a particular standard (e.g., HL7 V2, HL7 V3 / CDA, NCPDP, NIEM, etc).  None of the V2 or V3 sub types of Id or Code are actually used in the FHIM!  Their existence in the package is purely to show how the data types might be substituted in a transformation process.&#xD;&#xA;A note about Person Name is in order:  We found the HL7 V3 notion that a person’s given name is an ordered list of names rather than a first name and middle name as traditionally modeled to be a useful construct.  But we found that HL7’s modeling each part of the name separately to be overly complex, so we have modeled a single structure made up of several attributes each of which is a string.  Also, we chose not to build in a use code into the Person Name data type, rather, the use code is defined explicitly in the domain models.  For example, the Person class contains a property called legalName, which by definition should contain the person’s legal name, thus no use code is required.&#xD;&#xA;Similarly for addresses, we found HL7’s modeling each part of the address separately to be overly complex, so we have modeled a single structure made up of several attributes each of which is a string.  Notably, the street portion of the address is simply line1, line2, and line3 rather than modeling each part of the street line separately.&#xD;&#xA;However, unlike our approach for Peron Name, for both addresses and telecommunications addresses, we chose a hybrid approach for the use code.  We include an address type (the values of which come from the V3 vocabulary), and we explicitly model the use of the data element in the domain model.  For example, Person has both a primaryHomeAddress and a workAddress.  The Address.addressTypeCode property would be set to the appropriate value accordingly.  This approach was taken in order to explicitly account for the concepts in the logical model (for example, it makes no sense for a hospital to have a home phone number), while acknowledging that phone numbers, addresses, email addresses, etc. will likely be implemented using a mixed bag of addresses, each of which would have some sort of type code.">
+      <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_420A62FD03B6426674B203CC" type="Class" name="_Datatypes" description="This diagram displays all the classes in the FHIM Datatypes package.  The FHIM data types are based on the HL7 Version 3 data types, but are simplified so that they might be more easily resolved into implementable specifications.  Where a FHIM data type maps to an HL7 data type, we have placed the HL7 data type mnemonic as a keyword, so for example, Person Name has a &lt;&lt;PN>> keyword.&#xD;&#xA;&#xD;&#xA;It is important to keep in mind that these data types will not necessarily be implemented directly, but rather they serve as logical placeholders that will be used to inform a transformation process to generate structures appropriate to the target platform.  For example, note the Id data type.  When targeting an HL7 V2 platform, FHIM properties referencing the Id data type will be modified to reference an HL72EntityIdentifier, HL72ExtendedCompositeId, HL72HierarchicDesignator, HL72OrganizationIdentifierExtended, or HL72PersonLocation, as needed.  The knowledge of which HL7 V2 “flavor” of Id to substitute will be contained in a separate mapping model.  Similarly, when targeting HL7 V3, multiple “flavors” of V3 Id data types are possible (although only one is currently shown).&#xD;&#xA;&#xD;&#xA;Note that both the Id and Code hierarchies are illustrating how the FHIM Id and Code data types may be replaced by other structures when targeting a particular standard (e.g., HL7 V2, HL7 V3 / CDA, NCPDP, NIEM, etc).  None of the V2 or V3 sub types of Id or Code are actually used in the FHIM!  Their existence in the package is purely to show how the data types might be substituted in a transformation process.&#xD;&#xA;&#xD;&#xA;A note about Person Name is in order:  We found the HL7 V3 notion that a person’s given name is an ordered list of names rather than a first name and middle name as traditionally modeled to be a useful construct.  But we found that HL7’s modeling each part of the name separately to be overly complex, so we have modeled a single structure made up of several attributes each of which is a string.  Also, we chose not to build a use code into the Person Name data type, rather, the use code is defined explicitly in the domain models.  For example, the Person class contains a property called legalName, which by definition should contain the person’s legal name, thus no use code is required.&#xD;&#xA;&#xD;&#xA;Similarly for addresses, we found HL7’s modeling each part of the address separately to be overly complex, so we have modeled a single structure made up of several attributes each of which is a string.  Notably, the street portion of the address is simply line1, line2, and line3 rather than modeling each part of the street line separately.&#xD;&#xA;&#xD;&#xA;However, unlike our approach for Person Name, for both addresses and telecommunications addresses, we chose a hybrid approach for the use code.  We include an address type (the values of which come from the HL7 V3 vocabulary), and we explicitly model the use of the data element in the domain model.  For example, Person has both a primaryHomeAddress and a workAddress.  The Address.addressTypeCode property would be set to the appropriate value accordingly.  This approach was taken in order to explicitly account for the concepts in the logical model (for example, it makes no sense for a hospital to have a home phone number), while acknowledging that phone numbers, addresses, email addresses, etc. will likely be implemented using a mixed bag of addresses, each of which would have some sort of type code.">
         <children xmi:type="notation:Shape" xmi:id="_GIOQ0Od8Ed6qdqXtvR-ZHQ" type="Note" fontName="Arial" fontHeight="10" description="FHIM Datatypes&#xD;&#xA;  Version 0.66&#xD;&#xA;  1/19/2013" fillColor="16777088" lineColor="0" lineWidth="1">
           <children xmi:type="notation:BasicDecorationNode" xmi:id="_GIOQ0ed8Ed6qdqXtvR-ZHQ" type="DiagramName">
             <element xsi:nil="true"/>
@@ -321,7 +321,7 @@
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_XTrvZgqhEd-426xscrxYmQ" visible="false" type="StructureCompartment"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XTrvWgqhEd-426xscrxYmQ" x="6974" y="15216"/>
         </children>
-        <children xmi:type="umlnotation:UMLShape" xmi:id="_XTrvaAqhEd-426xscrxYmQ" element="_OwVa0D-BEdy0ooNeIA2VyA" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="13434879" lineColor="3342489" showStereotype="Text">
+        <children xmi:type="umlnotation:UMLShape" xmi:id="_XTrvaAqhEd-426xscrxYmQ" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="13434879" lineColor="3342489" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_XTrvawqhEd-426xscrxYmQ" type="ImageCompartment">
             <layoutConstraint xmi:type="notation:Size" xmi:id="_XTrvbAqhEd-426xscrxYmQ" width="1320" height="1320"/>
           </children>
@@ -332,6 +332,7 @@
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_XT048wqhEd-426xscrxYmQ" visible="false" type="OperationCompartment"/>
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_XT049QqhEd-426xscrxYmQ" visible="false" type="SignalCompartment"/>
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_XT049wqhEd-426xscrxYmQ" visible="false" type="StructureCompartment"/>
+          <element xmi:type="uml:Class" href="FHIM_ParkingLot.emx#_OwVa0D-BEdy0ooNeIA2VyA?FHIM_ParkingLot/VACode?"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XTrvagqhEd-426xscrxYmQ" x="35821" y="25994"/>
         </children>
         <children xmi:type="umlnotation:UMLShape" xmi:id="_XT04-QqhEd-426xscrxYmQ" element="_cJEi4AqcEd-426xscrxYmQ" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="13434879" lineColor="3342489" showStereotype="Text">
@@ -621,12 +622,13 @@
           </children>
           <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_SXYooeZTEeGuIoEQ4Mvu0w" points="[0, -2862, -1702, 2418]$[0, -3483, -1702, 1797]$[1794, -3483, 92, 1797]$[1794, -4528, 92, 752]"/>
         </edges>
-        <edges xmi:type="umlnotation:UMLConnector" xmi:id="_S4o7kOZTEeGuIoEQ4Mvu0w" element="_S4l4QOZTEeGuIoEQ4Mvu0w" source="_XTrvaAqhEd-426xscrxYmQ" target="_mAX24OZSEeGuIoEQ4Mvu0w" fontName="Arial" fontHeight="10" routing="Tree" lineColor="3342489" lineWidth="1" showStereotype="Text">
+        <edges xmi:type="umlnotation:UMLConnector" xmi:id="_S4o7kOZTEeGuIoEQ4Mvu0w" source="_XTrvaAqhEd-426xscrxYmQ" target="_mAX24OZSEeGuIoEQ4Mvu0w" fontName="Arial" fontHeight="10" routing="Tree" lineColor="3342489" lineWidth="1" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_S4pioOZTEeGuIoEQ4Mvu0w" type="NameLabel">
             <children xmi:type="notation:BasicDecorationNode" xmi:id="_S4piouZTEeGuIoEQ4Mvu0w" type="Stereotype"/>
             <children xmi:type="notation:BasicDecorationNode" xmi:id="_S4pio-ZTEeGuIoEQ4Mvu0w" type="Name"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_S4pioeZTEeGuIoEQ4Mvu0w" x="-3423" y="356"/>
           </children>
+          <element xmi:type="uml:Generalization" href="FHIM_ParkingLot.emx#_S4l4QOZTEeGuIoEQ4Mvu0w?FHIM_ParkingLot/VACode/%3CGeneralization%3E?"/>
           <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_S4o7keZTEeGuIoEQ4Mvu0w" points="[-634, -2229, 6923, 2735]$[-634, -3167, 6923, 1797]$[-7465, -3167, 92, 1797]$[-7465, -4212, 92, 752]"/>
         </edges>
         <edges xmi:type="umlnotation:UMLConnector" xmi:id="_661V8HB7EeKknILXOCcS7w" element="_nM3d5HB4EeKknILXOCcS7w" source="_BjtucHB8EeKknILXOCcS7w" target="_mAX24OZSEeGuIoEQ4Mvu0w" fontName="Arial" fontHeight="10" routing="Tree" lineColor="3342489" lineWidth="1" showStereotype="Text">
@@ -641,10 +643,13 @@
       </contents>
     </eAnnotations>
     <ownedComment xmi:id="_4tkeoLa1Ed-Y0_knsxZjWg" annotatedElement="_KqYgwM3ZEdyMrbJiuKueSQ">
-      <body>This package contains classes that serve as “data types” for FHIM attributes.  The FHIM data types are common, reusable structures that are often needed in healthcare applications.  For example, healthcare observations often need both a numerical value and a unit of measure, such as a weight of 150 pounds.  Rather than modeling the value and units of measure separately in the main model (i.e., weightValue=150, weightUnits=pounds), we have chosen to create a Physical Quantity data type which can hold both the value and the units so the main model would only have weight:PhysicalQuantity.&#xD;
+      <body>This package contains classes that serve as “data types” for FHIM attributes.  The FHIM data types are common, reusable structures that are often needed in healthcare applications.  For example, healthcare observations often need both a numerical value and a unit of measure, such as a weight of 150 pounds.  Rather than modeling the value and units of measure separately in the main model (i.e., weightValue=150, weightUnits=pounds), we have chosen to create a Physical Quantity data type which can hold both the value and the units so the main model would only have weight:PhysicalQuantity=150 pounds.&#xD;
+&#xD;
 The FHIM data types are based on the HL7 Version 3 data types, but are simplified so that they might be more easily resolved into implementable specifications.  Where possible, we have removed recursion from the data types, and where there are generalization relationships, the subtypes only add to the super types.&#xD;
-Besides the data types in this package, the FHIM only uses the basic data types defined in UML, and the properties of the data types in this package eventually all resolve to the basic UML data types.  The FHIM modeling style requires that the type all FHIM attributes must be either a UML data type or a class contained in this Datatypes package.  If a property requires any other kind of type, it is modeled as an association, not as an attribute.  For example, a lab test references a Patient and a lab test code.  In UML the both the patient and lab test code properties could be modeled as either an attribute or an association of the lab test.  Since Patient is not a FHIM Datatype, it is modeled as an association, but since the lab test is a code, which is a data type, it is modeled as an attribute.  This style results in models similar in structure to HL7 models.&#xD;
-Note that every package in the FHIM is dependent on the FHIM Datatypes package.  The FHIM Datatype package must not be dependent on any other package.  Indeed, the FHIM data types must all resolve to UML Primitives.</body>
+&#xD;
+Besides the data types in this package, the FHIM only uses the basic data types defined in UML, and the properties of the data types in this package eventually all resolve to the basic UML data types.  The FHIM modeling style requires that all FHIM attributes must be either a UML data type or a class contained in this Datatypes package.  If a property requires any other kind of type, it is modeled as an association, not as an attribute.  For example, a lab test references a Patient and a lab test code.  In UML both the patient and lab test code properties could be modeled as either an attribute or an association of the lab test.  Since Patient is not a FHIM Datatype, it is modeled as an association, but since the lab test is a code, which is a data type, it is modeled as an attribute.  This style results in models similar in structure to HL7 models.&#xD;
+&#xD;
+Note that every package in the FHIM is dependent on the FHIM Datatypes package.  The FHIM Datatypes package must not be dependent on any other package.  Indeed, the FHIM data types must all resolve to UML Primitives.</body>
     </ownedComment>
     <packagedElement xmi:type="uml:Class" xmi:id="_fImbAAEYEd-ZUM5xZsXWyw" name="Telecommunications">
       <eAnnotations xmi:id="_aHrcYO55Ed-crcWiXVDZrQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
@@ -746,88 +751,6 @@ Note that every package in the FHIM is dependent on the FHIM Datatypes package. 
         </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eyoSruLjEdutr_MT9HkPyQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eyoSreLjEdutr_MT9HkPyQ"/>
-      </ownedAttribute>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_OwVa0D-BEdy0ooNeIA2VyA" name="VACode">
-      <ownedComment xmi:id="_1y5bYPwQEd-3ndaGus2qMA" annotatedElement="_OwVa0D-BEdy0ooNeIA2VyA">
-        <body>This class represents a codified concept as used within the VA Enterprise Terminology Systems (VETS).  This class is anticipated to only be used by VA clients.  It contains VA Unique concept Identifiers (VUIDs) for the concept, the surface form (or designation), and the Value Set of which the concept is a proper member.  It also contains a display text, which is the surface form of the Desination VUID, which while technically not necessary, is useful to store in the class in order to avoid a call to a terminology service.  In addition, this class contains four properties to contain alternate code information, primarily for use when an application requires a code from a particular coding system (e.g., a billing system needs a CPT code).  Finally, this class contains an alternate Reason property to indicate why the alternate fields are populated (e.g., perhaps because of a mediation failure).</body>
-      </ownedComment>
-      <generalization xmi:id="_S4l4QOZTEeGuIoEQ4Mvu0w" general="_mARwQOZSEeGuIoEQ4Mvu0w">
-        <eAnnotations xmi:id="_aMYO8OZTEeGuIoEQ4Mvu0w" source="http://www.eclipse.org/uml2/2.0.0/UML">
-          <details xmi:id="_aMY2AOZTEeGuIoEQ4Mvu0w" key="ReplacedBy"/>
-        </eAnnotations>
-      </generalization>
-      <ownedAttribute xmi:id="_Rhzc7D-BEdy0ooNeIA2VyA" name="conceptVuid">
-        <ownedComment xmi:id="_I8K-MO5vEd-crcWiXVDZrQ" annotatedElement="_Rhzc7D-BEdy0ooNeIA2VyA">
-          <body>Identifies the concept being conveyed in this class, regardless of the surface form or designation used to describe the  concept.</body>
-        </ownedComment>
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Rhzc7T-BEdy0ooNeIA2VyA" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Rhzc7j-BEdy0ooNeIA2VyA"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_Rhzc7z-BEdy0ooNeIA2VyA" name="designationVuid">
-        <ownedComment xmi:id="_NhHJAO5vEd-crcWiXVDZrQ" annotatedElement="_Rhzc7z-BEdy0ooNeIA2VyA">
-          <body>Identifies the surface form or designation used to describe the concept.</body>
-        </ownedComment>
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Rhzc8D-BEdy0ooNeIA2VyA" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Rhzc8T-BEdy0ooNeIA2VyA"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_Rhzc9T-BEdy0ooNeIA2VyA" name="valueSetVuid">
-        <ownedComment xmi:id="_z_nPQO5vEd-crcWiXVDZrQ" annotatedElement="_Rhzc9T-BEdy0ooNeIA2VyA">
-          <body>Identifies a set of concepts to which this concept belongs. The Value Set may be &quot;States of the United States&quot;, of  which the concepts of &quot;Virginia&quot; and &quot;Utah&quot; are members, but &quot;Ottawa&quot; is not. The value set vuid is used to define a  priori a set of possible concepts that may be used &quot;at run time&quot;.</body>
-        </ownedComment>
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Rhzc9j-BEdy0ooNeIA2VyA" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Rhzc9z-BEdy0ooNeIA2VyA"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_Rhzc8j-BEdy0ooNeIA2VyA" name="displayText">
-        <ownedComment xmi:id="_kkpWEO5vEd-crcWiXVDZrQ" annotatedElement="_Rhzc8j-BEdy0ooNeIA2VyA">
-          <body>Contains the text that corresponds to the designation vuid.  Technically this is not necessary, but may be used in order to avoid a call to a terminology service.</body>
-        </ownedComment>
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Rhzc8z-BEdy0ooNeIA2VyA" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Rhzc9D-BEdy0ooNeIA2VyA"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_Rhzc4D-BEdy0ooNeIA2VyA" name="alternateCode">
-        <ownedComment xmi:id="_0mU0gO5wEd-crcWiXVDZrQ" annotatedElement="_Rhzc4D-BEdy0ooNeIA2VyA">
-          <body>At times, it may be useful or necessary to include an alternate representation of the concept being conveyed using another  code system.  These &quot;alternate&quot; properties contain the data necessary to identify the coding system, code, etc. that  correspond to the concept.  The alternate code contains the code in the alternate coding system that corresponds to the concept vuid.</body>
-        </ownedComment>
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Rhzc4T-BEdy0ooNeIA2VyA" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Rhzc4j-BEdy0ooNeIA2VyA"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_Rhzc4z-BEdy0ooNeIA2VyA" name="alternateCodeSystem">
-        <ownedComment xmi:id="__S-kcO5wEd-crcWiXVDZrQ" annotatedElement="_Rhzc4z-BEdy0ooNeIA2VyA">
-          <body>At times, it may be useful or necessary to include an alternate representation of the concept being conveyed using another  code system.  These &quot;alternate&quot; properties contain the data necessary to identify the coding system, code, etc. that  correspond to the concept.  The alternate coding system identifies the alternate coding system, the code from which corresponds to the concept vuid.</body>
-        </ownedComment>
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Rhzc5D-BEdy0ooNeIA2VyA" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Rhzc5T-BEdy0ooNeIA2VyA"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_Rhzc-D-BEdy0ooNeIA2VyA" name="alternateCodeSystemVersion" visibility="public">
-        <ownedComment xmi:id="_KYeSMO5xEd-crcWiXVDZrQ" annotatedElement="_Rhzc-D-BEdy0ooNeIA2VyA">
-          <body>At times, it may be useful or necessary to include an alternate representation of the concept being conveyed using another  code system.  These &quot;alternate&quot; properties contain the data necessary to identify the coding system, code, etc. that  correspond to the concept.  The alternate coding system version identifies version of alternate coding system, if the alternate coding system is  versioned.  Otherwise, this property is empty.</body>
-        </ownedComment>
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Rhzc-T-BEdy0ooNeIA2VyA" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Rhzc-j-BEdy0ooNeIA2VyA"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_Rhzc5j-BEdy0ooNeIA2VyA" name="alternateDisplayText">
-        <ownedComment xmi:id="_YAltsO5xEd-crcWiXVDZrQ" annotatedElement="_Rhzc5j-BEdy0ooNeIA2VyA">
-          <body>At times, it may be useful or necessary to include an alternate representation of the concept being conveyed using another  code system.  These &quot;alternate&quot; properties contain the data necessary to identify the coding system, code, etc. that  correspond to the concept.  The alternate designation text contains the textual value of the code in the alternate coding system that corresponds to  the concept vuid.  This text should ideally correspond with the designation vuid, and with the designation text.</body>
-        </ownedComment>
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Rhzc5z-BEdy0ooNeIA2VyA" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Rhzc6D-BEdy0ooNeIA2VyA"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_Rhzc6T-BEdy0ooNeIA2VyA" name="alternateReason">
-        <ownedComment xmi:id="_oILcUO5xEd-crcWiXVDZrQ" annotatedElement="_Rhzc6T-BEdy0ooNeIA2VyA">
-          <body>At times, it may be useful or necessary to include an alternate representation of the concept being conveyed using another code system.  These &quot;alternate&quot; properties contain the data necessary to identify the coding system, code, etc. that correspond to the concept.  This property provides an explanation of why the alternate properties are populated.  Possible values include: Backwards compatibility with systems requiring a particular coding scheme (e.g., billing systems require CPT and ICD codes), Mediation failure on incoming data from other systems, etc.</body>
-        </ownedComment>
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Rhzc6j-BEdy0ooNeIA2VyA" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Rhzc6z-BEdy0ooNeIA2VyA"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_dtt5gEncEdyXcM5TklTDNg" name="HL72CodedElement">
@@ -2345,15 +2268,6 @@ Note that every package in the FHIM is dependent on the FHIM Datatypes package. 
   <Default:Documentation xmi:id="_y8mP4O5rEd-crcWiXVDZrQ" base_Comment="_y8ce4O5rEd-crcWiXVDZrQ"/>
   <Default:Documentation xmi:id="_Hm1qUO5sEd-crcWiXVDZrQ" base_Comment="_Hmr5UO5sEd-crcWiXVDZrQ"/>
   <Default:Documentation xmi:id="_jaE10O5uEd-crcWiXVDZrQ" base_Comment="_jZ7r4O5uEd-crcWiXVDZrQ"/>
-  <Default:Documentation xmi:id="_I8UvMO5vEd-crcWiXVDZrQ" base_Comment="_I8K-MO5vEd-crcWiXVDZrQ"/>
-  <Default:Documentation xmi:id="_NhQS8O5vEd-crcWiXVDZrQ" base_Comment="_NhHJAO5vEd-crcWiXVDZrQ"/>
-  <Default:Documentation xmi:id="_kkzHEO5vEd-crcWiXVDZrQ" base_Comment="_kkpWEO5vEd-crcWiXVDZrQ"/>
-  <Default:Documentation xmi:id="_z_wZMO5vEd-crcWiXVDZrQ" base_Comment="_z_nPQO5vEd-crcWiXVDZrQ"/>
-  <Default:Documentation xmi:id="_0md-cO5wEd-crcWiXVDZrQ" base_Comment="_0mU0gO5wEd-crcWiXVDZrQ"/>
-  <Default:Documentation xmi:id="__THuYO5wEd-crcWiXVDZrQ" base_Comment="__S-kcO5wEd-crcWiXVDZrQ"/>
-  <Default:Documentation xmi:id="_KYoDMO5xEd-crcWiXVDZrQ" base_Comment="_KYeSMO5xEd-crcWiXVDZrQ"/>
-  <Default:Documentation xmi:id="_YAu3oO5xEd-crcWiXVDZrQ" base_Comment="_YAltsO5xEd-crcWiXVDZrQ"/>
-  <Default:Documentation xmi:id="_oIe-UO5xEd-crcWiXVDZrQ" base_Comment="_oILcUO5xEd-crcWiXVDZrQ"/>
   <Default:Documentation xmi:id="_wFoSs-5_Ed-crcWiXVDZrQ" base_Comment="_wFoSsu5_Ed-crcWiXVDZrQ"/>
   <Default:Documentation xmi:id="_7HalIO5_Ed-crcWiXVDZrQ" base_Comment="_7HQ0IO5_Ed-crcWiXVDZrQ"/>
   <Default:Documentation xmi:id="_XrkuYPwDEd-3ndaGus2qMA" base_Comment="_XrbkcPwDEd-3ndaGus2qMA"/>
@@ -2400,7 +2314,6 @@ Note that every package in the FHIM is dependent on the FHIM Datatypes package. 
   <Default:Documentation xmi:id="_j-ZfAPwQEd-3ndaGus2qMA" base_Comment="_j-QVEPwQEd-3ndaGus2qMA"/>
   <Default:Documentation xmi:id="_na4M8PwQEd-3ndaGus2qMA" base_Comment="_navDAPwQEd-3ndaGus2qMA"/>
   <Default:Documentation xmi:id="_pbuDUPwQEd-3ndaGus2qMA" base_Comment="_pbkSUPwQEd-3ndaGus2qMA"/>
-  <Default:Documentation xmi:id="_1zDMYPwQEd-3ndaGus2qMA" base_Comment="_1y5bYPwQEd-3ndaGus2qMA"/>
   <Default:Documentation xmi:id="_N7w40PwREd-3ndaGus2qMA" base_Comment="_N7nH0PwREd-3ndaGus2qMA"/>
   <Default:Documentation xmi:id="_T0AekPwREd-3ndaGus2qMA" base_Comment="_Tz3UoPwREd-3ndaGus2qMA"/>
   <Default:Documentation xmi:id="_AmkqgAewEeCPOdVNW49Akw" base_Comment="_AmhAIQewEeCPOdVNW49Akw"/>
