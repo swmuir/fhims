@@ -336,8 +336,7 @@
  </sthead>
 [for (property : Property | aClass.ownedAttribute->select(association = null)->sortedBy(name))]
  <strow>
-  <stentry><p>[property.name/] : <xref href="../t_[property.type.name/].dita" >[property.type.name/]</xref> ([property.lower/]..[property.upper/])</p> 
-
+  <stentry><p>[property.name/] : <xref href="../t_[property.type.name/].dita" >[property.type.name/]</xref> ([property.lower/]..[if (property.upper >= 0)][property.upper/][else]*[/if])</p> 
 		[for (vsc: ValueSetConstraint| property.getStereotypeApplications()->select(oclIsTypeOf(ValueSetConstraint)).oclAsType(ValueSetConstraint))]
 				[let vsv  : ValueSetVersion = vsc.reference]
 					[let ee : Enumeration = vsv.base_Enumeration.oclAsType(Enumeration)]
@@ -356,7 +355,7 @@
 
 [for (property : Property | aClass.ownedAttribute->select(association <> null)->sortedBy(name))]
  <strow>
-  <stentry><p>[property.name/] : <xref href="../t_[property.type.name/].dita" >[property.type.name/]</xref> ([property.lower/]..[property.upper/])</p></stentry>
+  <stentry><p>[property.name/] : <xref href="../t_[property.type.name/].dita" >[property.type.name/]</xref> ([property.lower/]..[if (property.upper >= 0)][property.upper/][else]*[/if])</p></stentry>
   <stentry><p>[for (aComment : Comment | property.ownedComment)]
 				[ escapeXml(aComment._body).replaceAll('\\n', '</p><p>') /]
 			[/for]
@@ -398,7 +397,7 @@
   <title>Attributes</title>
 <ol>
 [for (property : Property | aClass.ownedAttribute->select(association = null))]
-	<li>[property.name/] : [property.type.name/] ([property.lower/]..[property.upper/])</li>
+	<li>[property.name/] : [property.type.name/] ([property.lower/]..[if (property.upper >= 0)][property.upper/][else]*[/if])</li>
 [/for]
 </ol>
 </section>
@@ -413,7 +412,7 @@
   <title>Associations</title>
 <ol>
 [for (property : Property | aClass.ownedAttribute->select(association <> null))]
-	<li>[property.name/] : [property.type.name/] ([property.lower/]..[property.upper/])</li>
+	<li>[property.name/] : [property.type.name/] ([property.lower/]..[if (property.upper >= 0)][property.upper/][else]*[/if])</li>
 [/for]
 </ol>
 </section>
