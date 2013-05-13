@@ -21,7 +21,6 @@
  </sthead>
  <strow>
   <stentry><p>id : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Uniquely identifies the Immunization Schedule.
 			</p>
@@ -29,7 +28,6 @@
   </strow>
  <strow>
   <stentry><p>name : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				A designation of the Immunization Schedule, which may include a version number or release date to distinguish it from other instances.
 			</p>
@@ -37,7 +35,6 @@
   </strow>
  <strow>
   <stentry><p>releaseDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				The date upon which the Immunization Schedule was published.  Used to distinguish between different versions of the schedule for the same vaccine.
 			</p>
@@ -45,13 +42,13 @@
   </strow>
 
  <strow>
-  <stentry><p>scheduleRule : <xref href="../t_Rule.dita" >Rule</xref> (0..-1)</p></stentry>
+  <stentry><p>scheduleRule : <xref href="../t_Rule.dita" >Rule</xref> (0..*)</p></stentry>
   <stentry><p>				This is a collection of the rules that apply to the entire schedule. These are uncommon.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>vaccineSeries : <xref href="../t_VaccineSeries.dita" >VaccineSeries</xref> (0..-1)</p></stentry>
+  <stentry><p>vaccineSeries : <xref href="../t_VaccineSeries.dita" >VaccineSeries</xref> (0..*)</p></stentry>
   <stentry><p>				A series is one path to meet the goals for assuming protection against a target disease. 
 			</p>
   </stentry>

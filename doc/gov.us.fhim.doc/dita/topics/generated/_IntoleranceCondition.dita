@@ -25,7 +25,6 @@
  </sthead>
  <strow>
   <stentry><p>alertDevice : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
-
 </stentry>
   <stentry><p>				&quot;Describes any type of allergy alert device the patient may be carrying or wearing.&quot; - HL7 Version 2.8, IAM-16.  HL7 Version 2 has the following suggested values (table 437): Bracelet; Necklace; Wallet Card.
 			</p>
@@ -33,7 +32,6 @@
   </strow>
  <strow>
   <stentry><p>clinicianIdentifiedAllergen : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
-
 </stentry>
   <stentry><p>				&quot;Identifies the clinician entered description associated to a particular allergen.&quot; - HL7 Version 2.8, IAM-27.
 			</p>
@@ -41,7 +39,6 @@
   </strow>
  <strow>
   <stentry><p>dateOfOnset : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Date when this particular Intolerance Condition or Allergy first manifested itself or was confirmed via testing if it had not yet manifested itself.</p><p></p><p>&quot;Contains the actual date of the first reaction.&quot; - HL7 Version 2.8, IAM-11
 			</p>
@@ -49,7 +46,6 @@
   </strow>
  <strow>
   <stentry><p>dateOfOnsetText : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				&quot;Contains a text description of the time period of the first reaction when an exact date is not known (e.g., adolescence, childhood, spring 1990).&quot; - HL7 Version 2.8, IAM-12
 			</p>
@@ -57,7 +53,6 @@
   </strow>
  <strow>
   <stentry><p>intoleranceCategory : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Categorizes the intolerance along two axes: whether the reactant is a Drug, Food, or other substance, and whether the intolerence is a true allergy, an intolerance, or propensity to adverse reaction.  Possible values are members of the SNOMED Allergy Event value set.  This property is required for Meaningful Use.</p><p></p><p>&quot;Indicates a general allergy category (drug, food, pollen, etc.).&quot; - HL7 Version 2.8, AL1-2 and IAM-2.  HL7 Version 2 has the following suggested values (table 127): Drug allergy; Food allergy; Miscellaneous allergy; Miscellaneous contraindication; Environmental Allergy; Animal Allergy; Plant Allergy; Pollen Allergy.
 			</p>
@@ -65,14 +60,12 @@
   </strow>
  <strow>
   <stentry><p>isAbsolutelyContraIndicated : <xref href="../t_Boolean.dita" >Boolean</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>			</p>
   </stentry>
   </strow>
  <strow>
   <stentry><p>mechanism : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Categorizes whether the underlying process (mechanism) of the Intolerance Condition is an Immunoglobulin-E (IgE)-mediated response, an exepected response to a pharmacologic substance, or unknown.    Allergy:  An allergy reaction must have symptoms (reaction) consistent with an actual allergy - rash, hives, severe swelling, redness, itchiness, difficulty breathing (due to swelling around breathing areas), etc.    Pharmacologic:  A pharmacologic reaction is an adverse event rather then an allergy.  It is a reaction based on the pharmacologic properties of the drug and has to do with a reaction that can be expected due to the pharmacologic activity of the drug. It can occur when the patient takes the right amount or an amount greater or less than the recommended doses.  Some examples are: an antidiarrheal agent (like Immodium) causing constipation, a laxative causing diarrhea, a beta blocker causing bradycardia (slow heart rate), furosemide (a diuretic) causing excessive urination, or a blood pressure medication causing low blood pressure (will be fully modeled in a subsequent phase).    Unknown:  An unknown reaction is a reaction experienced by the patient that cannot be explained by either of the other two mechanisms, for example, eating a pear and developing a cough or taking a blood pressure medication and developing right elbow pain. This type of reaction is consistent, disappears upon withdrawing the agent, and reappears when the agent or food item is restarted/eaten again.</p><p></p><p>&quot;Contains the reason why the patient should not be exposed to a substance.&quot; - HL7 Version 2.8, IAM-9 and IAR-3.  HL7 Version 2 has the following suggested values (table 436): Adverse Reaction (Not otherwise classified); Allergy; Contraindication; Intolerance; Side Effect.
 			</p>
@@ -80,23 +73,20 @@
   </strow>
  <strow>
   <stentry><p>reactant : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Identifies the substance to which the patient has an intolerance or allergy.  The reactant will point to a value set, which will be a superset of valuesets for Drug Product, Drug Class, Ingredient, Food Product, and Environmental reactants.</p><p></p><p>&quot;Uniquely identifies a particular allergen.&quot; - HL7 Version 2.8, AL1-3 and IAM-3</p><p>&quot;Identifies the specific allergic reaction that was documented.&quot; - HL7 Version 2.8, IAR-1.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>reactantCategory : <xref href="../t_Code.dita" >Code</xref> (1..-1)</p> 
-
+  <stentry><p>reactantCategory : <xref href="../t_Code.dita" >Code</xref> (1..*)</p> 
 </stentry>
   <stentry><p>				Categorizes the reactant to which the patient has demonstrated an intolerance or an allergy.  Possible values include Drug Product, Drug Class, Ingredient, Food Product, and Environmental.  Note that this property may contain more than one value.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>reactantGroup : <xref href="../t_Code.dita" >Code</xref> (1..-1)</p> 
-
+  <stentry><p>reactantGroup : <xref href="../t_Code.dita" >Code</xref> (1..*)</p> 
 </stentry>
   <stentry><p>				&quot;Uniquely identifies an allergen group when both a detailed allergy and group level need to be communicated.  In cases where systems want to communicate both a specific drug allergy and the group of drugs to which the specific drug belongs (i.e., Bactrim and Sulfa drugs; Ceclor and Penicillins/Cephalosporins) then the specific drug allergy is [in reactant] and the group level is [in reactantGroup].  However, if only a group level is being communicated, then it can be sent in [reactant] as the primary identifier of the allergy.&quot; - HL7 Version 2.8, IAM-10
 			</p>
@@ -104,7 +94,7 @@
   </strow>
 
  <strow>
-  <stentry><p>reaction : <xref href="../t_Reaction.dita" >Reaction</xref> (0..-1)</p></stentry>
+  <stentry><p>reaction : <xref href="../t_Reaction.dita" >Reaction</xref> (0..*)</p></stentry>
   <stentry><p>			</p>
   </stentry>
   </strow>

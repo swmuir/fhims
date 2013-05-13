@@ -21,7 +21,6 @@
  </sthead>
  <strow>
   <stentry><p>cost : <xref href="../t_MonetaryAmount.dita" >MonetaryAmount</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Indicates the amount charged by the performing lab to perform the referred test.
 			</p>
@@ -29,7 +28,6 @@
   </strow>
  <strow>
   <stentry><p>orderDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				The date/time that the order was created by the ordering provider.
 			</p>
@@ -37,7 +35,6 @@
   </strow>
  <strow>
   <stentry><p>placerOrderId : <xref href="../t_Id.dita" >Id</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				&quot;This field is the placer application&apos;s order number.&quot; - HL7 Version 2.8, ORC-2
 			</p>
@@ -45,7 +42,6 @@
   </strow>
  <strow>
   <stentry><p>priority : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				&quot;Describes the urgency of the request. If this field is blank, the default is [Routine]&quot; - HL7 Version 2.8, TQ1-9.  Possible values include (from HL7 Table 122): Stat; ASAP; Routine; Preop; Callback; Timing critical*; As needed.  *Note that the Timing Critical has a syntax that allows more information, e.g., Timing Critical within 15 minutes.
 			</p>
@@ -53,7 +49,6 @@
   </strow>
  <strow>
   <stentry><p>remarks : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Any comments regarding the referral.
 			</p>
@@ -61,7 +56,6 @@
   </strow>
  <strow>
   <stentry><p>status : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				&quot;Specifies the status of an order....  The purpose of this field is to report the status of an order either upon request (solicited), or when the status changes (unsolicited).  It does not initiate action.  It is assumed that the order status always reflects the status as it is known to the sending application at the time that the message is sent.  Only the filler can originate the value of this field.&quot; - HL7 Version 2.8, ORC-5</p><p></p><p>A code specifying the status of the Order.  Valid status codes should reflect the HL7 state machine, e.g., Active, Held, Canceled, Aborted, New, Nullified, Obsolete.
 			</p>

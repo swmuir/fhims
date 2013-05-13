@@ -25,7 +25,6 @@
  </sthead>
  <strow>
   <stentry><p>category : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				value which indicates whether the request is a consult or procedure request.(C:Consult P:Procedure) (VISTA)  
 			</p>
@@ -33,7 +32,6 @@
   </strow>
  <strow>
   <stentry><p>date : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Date/time of actual entry of consultation or procedure request into data repository
 			</p>
@@ -41,7 +39,6 @@
   </strow>
  <strow>
   <stentry><p>serviceSetting : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				value which allows the ordering person to indicate if the service is to be rendered on an outpatient or inpatient basis.  This is to alleviate the confusion if patient is currently an inpatient/outpatient but is just about to be discharged/admitted and become a outpatient/inpatient. (Data Type = Set of Codes I:inpatient,O:outpatient)  
 			</p>
@@ -49,13 +46,13 @@
   </strow>
 
  <strow>
-  <stentry><p>activity : <xref href="../t_ProcessActivities.dita" >ProcessActivities</xref> (0..-1)</p></stentry>
+  <stentry><p>activity : <xref href="../t_ProcessActivities.dita" >ProcessActivities</xref> (0..*)</p></stentry>
   <stentry><p>				action activities for consultProcedurePromise,  it is used for tracking/auditing
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>associatedResult : <xref href="../t_ConsultResult.dita" >ConsultResult</xref> (0..-1)</p></stentry>
+  <stentry><p>associatedResult : <xref href="../t_ConsultResult.dita" >ConsultResult</xref> (0..*)</p></stentry>
   <stentry><p>				One or more results (from Medicine package) to be associated  with a instance of ConsultProcedurePromise.  
 			</p>
   </stentry>
@@ -67,7 +64,7 @@
   </stentry>
   </strow>
  <strow>
-  <stentry><p>resultingEncounter : <xref href="../t_AbstractEncounter.dita" >AbstractEncounter</xref> (0..-1)</p></stentry>
+  <stentry><p>resultingEncounter : <xref href="../t_AbstractEncounter.dita" >AbstractEncounter</xref> (0..*)</p></stentry>
   <stentry><p>				Points to those encounters that occured as a result of the consultation request/promise.  For example, if Doctor A request a consultation from Doctor B, this property contains the encounter(s) of Doctor B with the patient.  Note that this property points to AbstractEncounter, rather than Encounter, as the patient may not actually be present, as in the case where a radiologist is asked to interpret a radiograph.
 			</p>
   </stentry>

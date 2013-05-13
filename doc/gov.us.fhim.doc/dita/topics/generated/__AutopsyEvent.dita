@@ -21,7 +21,6 @@
  </sthead>
  <strow>
   <stentry><p>ageAtDeath : <xref href="../t_PhysicalQuantity.dita" >PhysicalQuantity</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Contains the age of the patient at the time of death.
 			</p>
@@ -29,7 +28,6 @@
   </strow>
  <strow>
   <stentry><p>autopsyDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				The date and time when the autopsy assessment is completed.  Also the date of the final diagnosis of cause of death.
 			</p>
@@ -37,7 +35,6 @@
   </strow>
  <strow>
   <stentry><p>autopsyType : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Anatomical areas of the body the autopsy is performed on.  This can be as broad as a full autopsy or grouping of the body region such as chest, trunk, head. lower body.    
 			</p>
@@ -45,7 +42,6 @@
   </strow>
  <strow>
   <stentry><p>clinicalDiagnoses : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Contains information in textual format about the autopsy.    
 			</p>
@@ -53,7 +49,6 @@
   </strow>
  <strow>
   <stentry><p>comments : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Contains information in textual format about the autopsy.    
 			</p>
@@ -61,7 +56,6 @@
   </strow>
  <strow>
   <stentry><p>dateOfDeath : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				This is the date and time of the death of the patient.    
 			</p>
@@ -69,7 +63,6 @@
   </strow>
  <strow>
   <stentry><p>diagnosisClarificationCode : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Contains the Code value to indicate whether the  clinical dx insufficient (ex. Intracranial hemorrhage) did autopsy clarify the dx (ex. ruptured aneurysm) ?  &apos;1&apos; FOR YES; &apos;0&apos; FOR NO; &apos;2&apos; FOR CONFIRMED;      
 			</p>
@@ -77,7 +70,6 @@
   </strow>
  <strow>
   <stentry><p>finalDiagnosisDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				This is the date and time the final diagnosis was given.    
 			</p>
@@ -85,7 +77,6 @@
   </strow>
  <strow>
   <stentry><p>isMajorDxDisagreement : <xref href="../t_Boolean.dita" >Boolean</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Contains the Code value to indicate whether there is major disagreement with the clinical Diagnoses. 0 = No  1 = Yes.     
 			</p>
@@ -93,7 +84,6 @@
   </strow>
  <strow>
   <stentry><p>pathologicalDiagnoses : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				These are the pathological diagnoses in textual format.    
 			</p>
@@ -101,7 +91,6 @@
   </strow>
  <strow>
   <stentry><p>provisionalDiagnosisDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Contains the date provisional anatomic diagnoses reported.     
 			</p>
@@ -109,7 +98,6 @@
   </strow>
  <strow>
   <stentry><p>serviceCode : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Contains the code set that identifies the reason for autopsy service performed.
 			</p>
@@ -123,25 +111,25 @@
   </stentry>
   </strow>
  <strow>
-  <stentry><p>diagnosis : <xref href="../t_Diagnosis.dita" >Diagnosis</xref> (0..-1)</p></stentry>
+  <stentry><p>diagnosis : <xref href="../t_Diagnosis.dita" >Diagnosis</xref> (0..*)</p></stentry>
   <stentry><p>				An association from AutopsyEvent2 to Diagnosis identifying a dignosis associated to the autopsy event.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>document : <xref href="../t__AutopsyDocumentReference.dita" >_AutopsyDocumentReference</xref> (0..-1)</p></stentry>
+  <stentry><p>document : <xref href="../t__AutopsyDocumentReference.dita" >_AutopsyDocumentReference</xref> (0..*)</p></stentry>
   <stentry><p>				An association from AutopayEvent2 to AutopsyDocumnetReference identifying the document referencing the autopsy.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>grossImage : <xref href="../t_Image.dita" >Image</xref> (0..-1)</p></stentry>
+  <stentry><p>grossImage : <xref href="../t_Image.dita" >Image</xref> (0..*)</p></stentry>
   <stentry><p>				Images associated with Autopsy Organ/Tissue reports are stored in this multiple within the Autopsy Organ/Tissue field of the Lab Data (#63) file.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>measurement : <xref href="../t__AnatomicMeasurement.dita" >_AnatomicMeasurement</xref> (1..-1)</p></stentry>
+  <stentry><p>measurement : <xref href="../t__AnatomicMeasurement.dita" >_AnatomicMeasurement</xref> (1..*)</p></stentry>
   <stentry><p>				Measurement value is the actual value of the result and its unit of measure.
 			</p>
   </stentry>

@@ -25,7 +25,6 @@
  </sthead>
  <strow>
   <stentry><p>id : <xref href="../t_Id.dita" >Id</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Unique Identifier for this  surgical event.
 			</p>
@@ -33,7 +32,6 @@
   </strow>
  <strow>
   <stentry><p>isNonORSurgicalProcedure : <xref href="../t_Boolean.dita" >Boolean</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Indicates whether  the case is a non surgical event.  Like values are yes, no 
 			</p>
@@ -41,7 +39,6 @@
   </strow>
  <strow>
   <stentry><p>preOpInrDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				This is the date that the preoperative INR was performed.  
 			</p>
@@ -49,7 +46,6 @@
   </strow>
  <strow>
   <stentry><p>severityLevel : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Codes that identify the  degree of severity of the surgical procedure.
 			</p>
@@ -57,7 +53,6 @@
   </strow>
  <strow>
   <stentry><p>status : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				The value specifying the state of this patient surgical encounter (based on the RIM Act class state machine), for example, active, aborted, completed  
 			</p>
@@ -65,7 +60,6 @@
   </strow>
  <strow>
   <stentry><p>supervisionLevel : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Indicates the highest level of supervision of the anesthesiology staff supervisor.  Suggested include Staff Assisting Resident.
 			</p>
@@ -73,7 +67,6 @@
   </strow>
  <strow>
   <stentry><p>surgeryDuration : <xref href="../t_TimeInterval.dita" >TimeInterval</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Contains the duration (date/time) of the Surgical Event.
 			</p>
@@ -81,7 +74,6 @@
   </strow>
  <strow>
   <stentry><p>surgeryType : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Contains Code Set that identifies the type of Surgery. like Heart, Onocology. 
 			</p>
@@ -89,13 +81,13 @@
   </strow>
 
  <strow>
-  <stentry><p>anesthesia : <xref href="../t_AnesthesiaEvent.dita" >AnesthesiaEvent</xref> (1..-1)</p></stentry>
+  <stentry><p>anesthesia : <xref href="../t_AnesthesiaEvent.dita" >AnesthesiaEvent</xref> (1..*)</p></stentry>
   <stentry><p>				The loss of sensation and usually of consciousness without loss of vital functions artificially produced by the administration of one or more agents that block the passage of pain impulses along nerve pathways to the brain   Source: Merriam-Webster&apos;s Medical Dictionary,   2002 Merriam-Webster, Inc.  
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>assessment : <xref href="../t_SurgeryAssessment.dita" >SurgeryAssessment</xref> (0..-1)</p></stentry>
+  <stentry><p>assessment : <xref href="../t_SurgeryAssessment.dita" >SurgeryAssessment</xref> (0..*)</p></stentry>
   <stentry><p>				A test or instrument, often a questionaire, used to evaluate or assess the patient&apos;s health, within the context of the surgical event.
 			</p>
   </stentry>
@@ -106,55 +98,55 @@
   </stentry>
   </strow>
  <strow>
-  <stentry><p>bodyFluid : <xref href="../t_BodilyFluidAdministration.dita" >BodilyFluidAdministration</xref> (1..-1)</p></stentry>
+  <stentry><p>bodyFluid : <xref href="../t_BodilyFluidAdministration.dita" >BodilyFluidAdministration</xref> (1..*)</p></stentry>
   <stentry><p>				The liquid parts of the body 
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>cellSaver : <xref href="../t_CellSaverEvent.dita" >CellSaverEvent</xref> (1..-1)</p></stentry>
+  <stentry><p>cellSaver : <xref href="../t_CellSaverEvent.dita" >CellSaverEvent</xref> (1..*)</p></stentry>
   <stentry><p>				Cell Saver for the surgical event
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>comments : <xref href="../t_CommentEvent.dita" >CommentEvent</xref> (0..-1)</p></stentry>
+  <stentry><p>comments : <xref href="../t_CommentEvent.dita" >CommentEvent</xref> (0..*)</p></stentry>
   <stentry><p>				Contains general comments regarding the Surigcal event.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>concurrentCase : <xref href="../t_SurgicalEvent.dita" >SurgicalEvent</xref> (0..-1)</p></stentry>
+  <stentry><p>concurrentCase : <xref href="../t_SurgicalEvent.dita" >SurgicalEvent</xref> (0..*)</p></stentry>
   <stentry><p>				The current surgical event for the Patient.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>device : <xref href="../t_SurgeryDevice.dita" >SurgeryDevice</xref> (1..-1)</p></stentry>
+  <stentry><p>device : <xref href="../t_SurgeryDevice.dita" >SurgeryDevice</xref> (1..*)</p></stentry>
   <stentry><p>				A piece of equipment and or a mechanism designed to serve a special purpose or perform a special function.  This class represents devices used to perform a surgery, such as lasers, as well as devices that might be implanted in the patient as a result of the surgery, such as a prosthesis or a stent.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>electrodePosition : <xref href="../t_ElectrodePositionProcedure.dita" >ElectrodePositionProcedure</xref> (0..-1)</p></stentry>
+  <stentry><p>electrodePosition : <xref href="../t_ElectrodePositionProcedure.dita" >ElectrodePositionProcedure</xref> (0..*)</p></stentry>
   <stentry><p>				Identifies a position corresponding to the area of placement of the dispersive electrode pad.  
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>equipmentMeasurement : <xref href="../t_EquipmentMeasurementEvent.dita" >EquipmentMeasurementEvent</xref> (0..-1)</p></stentry>
+  <stentry><p>equipmentMeasurement : <xref href="../t_EquipmentMeasurementEvent.dita" >EquipmentMeasurementEvent</xref> (0..*)</p></stentry>
   <stentry><p>				The dimension, quantity, or capacity determined by measuring a peice of equipment.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>equipmentSterilization : <xref href="../t_EquipmentSterilizationEvent.dita" >EquipmentSterilizationEvent</xref> (0..-1)</p></stentry>
+  <stentry><p>equipmentSterilization : <xref href="../t_EquipmentSterilizationEvent.dita" >EquipmentSterilizationEvent</xref> (0..*)</p></stentry>
   <stentry><p>				Sterliizes the equipment and provides the sterilization number of the implanted device
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>equipmentUtilization : <xref href="../t_EquipmentUtilizationObservation.dita" >EquipmentUtilizationObservation</xref> (0..-1)</p></stentry>
+  <stentry><p>equipmentUtilization : <xref href="../t_EquipmentUtilizationObservation.dita" >EquipmentUtilizationObservation</xref> (0..*)</p></stentry>
   <stentry><p>				Contains the Date and time  and  durationthe piece of Equipment was in use.
 			</p>
   </stentry>
@@ -172,19 +164,19 @@
   </stentry>
   </strow>
  <strow>
-  <stentry><p>image : <xref href="../t_RadiologyPromise.dita" >RadiologyPromise</xref> (1..-1)</p></stentry>
+  <stentry><p>image : <xref href="../t_RadiologyPromise.dita" >RadiologyPromise</xref> (1..*)</p></stentry>
   <stentry><p>				Identifies the image.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>irrigation : <xref href="../t_IrrigationEvent.dita" >IrrigationEvent</xref> (1..-1)</p></stentry>
+  <stentry><p>irrigation : <xref href="../t_IrrigationEvent.dita" >IrrigationEvent</xref> (1..*)</p></stentry>
   <stentry><p>				cleaning a wound or body organ by flushing or washing out with water or a medicated solution   
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>labRequest : <xref href="../t_LabTestRequest.dita" >LabTestRequest</xref> (1..-1)</p></stentry>
+  <stentry><p>labRequest : <xref href="../t_LabTestRequest.dita" >LabTestRequest</xref> (1..*)</p></stentry>
   <stentry><p>				Request for lab tests to be performed
 			</p>
   </stentry>
@@ -202,13 +194,13 @@
   </stentry>
   </strow>
  <strow>
-  <stentry><p>occurrence : <xref href="../t_OccurrenceAssessment.dita" >OccurrenceAssessment</xref> (0..-1)</p></stentry>
+  <stentry><p>occurrence : <xref href="../t_OccurrenceAssessment.dita" >OccurrenceAssessment</xref> (0..*)</p></stentry>
   <stentry><p>				Identifies the non surgical procedure/s that were performed during the Surgical process.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>physiologicMonitoring : <xref href="../t_PhysiologicMonitoringEvent.dita" >PhysiologicMonitoringEvent</xref> (0..-1)</p></stentry>
+  <stentry><p>physiologicMonitoring : <xref href="../t_PhysiologicMonitoringEvent.dita" >PhysiologicMonitoringEvent</xref> (0..*)</p></stentry>
   <stentry><p>				Monitor the differing in, involving, or affecting physiological factors.
 			</p>
   </stentry>
@@ -226,13 +218,13 @@
   </stentry>
   </strow>
  <strow>
-  <stentry><p>restraintPosition : <xref href="../t_RestraintPositionEvent.dita" >RestraintPositionEvent</xref> (0..-1)</p></stentry>
+  <stentry><p>restraintPosition : <xref href="../t_RestraintPositionEvent.dita" >RestraintPositionEvent</xref> (0..*)</p></stentry>
   <stentry><p>				An instrument or a means of restraint to prevent the infliction of harm to self or others, such as a straightjacket.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>skinPrep : <xref href="../t_SkinPrepEvent.dita" >SkinPrepEvent</xref> (0..-1)</p></stentry>
+  <stentry><p>skinPrep : <xref href="../t_SkinPrepEvent.dita" >SkinPrepEvent</xref> (0..*)</p></stentry>
   <stentry><p>				The act of preparing the patient&apos;s operative site by washing the site with a disinfectant agent.
 			</p>
   </stentry>
@@ -249,7 +241,7 @@
   </stentry>
   </strow>
  <strow>
-  <stentry><p>surgeryPatientMovement : <xref href="../t_SurgeryPatientMovement.dita" >SurgeryPatientMovement</xref> (0..-1)</p></stentry>
+  <stentry><p>surgeryPatientMovement : <xref href="../t_SurgeryPatientMovement.dita" >SurgeryPatientMovement</xref> (0..*)</p></stentry>
   <stentry><p>			</p>
   </stentry>
   </strow>
@@ -260,19 +252,19 @@
   </stentry>
   </strow>
  <strow>
-  <stentry><p>tourniquet : <xref href="../t_TourniquetEvent.dita" >TourniquetEvent</xref> (0..-1)</p></stentry>
+  <stentry><p>tourniquet : <xref href="../t_TourniquetEvent.dita" >TourniquetEvent</xref> (0..*)</p></stentry>
   <stentry><p>				A device, typically a tightly encircling bandage, used to check bleeding by temporarily stopping the flow of blood through a large artery in a limb.  
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>treatment : <xref href="../t_Treatment.dita" >Treatment</xref> (0..-1)</p></stentry>
+  <stentry><p>treatment : <xref href="../t_Treatment.dita" >Treatment</xref> (0..*)</p></stentry>
   <stentry><p>				Administration or application of remedies to a patient or for a disease or an injury; medicinal or surgical management; therapy.  
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>verification : <xref href="../t_Verification.dita" >Verification</xref> (1..-1)</p></stentry>
+  <stentry><p>verification : <xref href="../t_Verification.dita" >Verification</xref> (1..*)</p></stentry>
   <stentry><p>				Contains dates that verifications were completed.
 			</p>
   </stentry>
