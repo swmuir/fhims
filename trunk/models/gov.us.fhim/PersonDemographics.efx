@@ -2,12 +2,10 @@
 <!--xtools2_universal_type_manager-->
 <?com.ibm.xtools.emf.core.signature <signature id="com.ibm.xtools.uml.msl.fragment" version="7.0.0"><feature description="" name="com.ibm.xtools.ruml.feature" url="" version="7.0.0"/></signature>?>
 <?com.ibm.xtools.emf.core.signature <signature id="com.ibm.xtools.mmi.ui.signatures.diagram" version="7.0.0"><feature description="" name="Rational Modeling Platform (com.ibm.xtools.rmp)" url="" version="7.0.0"/></signature>?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Default="http:///schemas/Default/_fNm3AAqoEd6-N_NOT9vsCA/2" xmlns:RIM="http:///schemas/RIM/_fvnwgAH4Ed6VH-9W1IVKXA/4" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:term="http://www.openhealthtools.org/mdht/schemas/term/1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.3/Umlnotation" xsi:schemaLocation="http:///schemas/Default/_fNm3AAqoEd6-N_NOT9vsCA/2 pathmap://UML2_MSL_PROFILES/Default.epx#_fNwoAAqoEd6-N_NOT9vsCA?Default/Default? http:///schemas/RIM/_fvnwgAH4Ed6VH-9W1IVKXA/4 pathmap://HL7_PROFILES/RIM.profile.uml#_fvsB8AH4Ed6VH-9W1IVKXA">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:term="http://www.openhealthtools.org/mdht/schemas/term/1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.3/Umlnotation">
   <uml:Package xmi:id="_420A62FD03B6418A3CB7008F" name="Person">
     <eAnnotations xmi:id="_nl9sQOLqEdu45_8D8ShJ7w" source="com.ibm.xtools.uml.msl.fragments"/>
-    <eAnnotations xmi:id="_nlz7QOLqEdu45_8D8ShJ7w" source="com.ibm.xtools.uml.msl.fragmentContainer">
-      <references xmi:type="uml:Model" href="FHIM.emx#420A62FD03B6?FHIM?"/>
-    </eAnnotations>
+    <eAnnotations xmi:id="_nlz7QOLqEdu45_8D8ShJ7w" source="com.ibm.xtools.uml.msl.fragmentContainer"/>
     <eAnnotations xmi:id="_NVKLteLiEduGJrQyRGTO1A" source="uml2.diagrams" references="_420A62FD03B6418A401B00BC">
       <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_420A62FD03B6418A401B00BC" type="Class" name="_Person" description="The properties that humans and animals (may) have in common are modeled in an abstract class called &quot;Biological Entity.&quot; This class would never be instantiated on its own, but rather Person or NonPersonLivingSubject would be instantiated, and they would each have the common properties of birthdate, age, etc.  Therefore, when mapping to the FHIM, one would create an entry for Person.dateOfBirth, not BiologicalEntity.dateOfBirth. In object-oriented software, subtypes (also known as subclasses), automatically access the properties of their supertypes (aka superclasses) directly. So in Java, a person's date of birth would be represented as Person.dateOfBirth. Conversely, a superclass can be &quot;downcasted&quot; to a subclass if the writer of software doesn't know in advance which subtype will be acted upon at runtime. This is evident in the Patient hierarchy, where a lab test refers to a Patient, and the patient might be either a person or an animal. Notice that both the Person and the NonPersonLivingSubject are accessed from HumanPatient and AnimalPatient by an association with the end-name of &quot;subject&quot;. Thus, the person or animal can be accessed by Patient.subject. However, information specific to one or the other can only be retrieved if the proper one is instantiated. For example, patient.subject.maritalStatus will fail if the subject is an animal; similarly patient.subject.species will fail if the subject is a person.&#xD;&#xA;&#xD;&#xA;Some properties, such as BiologicalEntity.age may be calculated based on other fields. These properties technically do not need to be in the model, as they can be calculated on the fly, however, the logical concept of age is often needed. Therefore, these properties are modeled, but marked as &quot;derived&quot;, which is indicated in UML by a slash character in front of the property name. This is particularly evident in the birth certificate package, where much of the information about the newborn's parents could be calculated from their Person records. This technique is not used often in other parts of the FHIM.&#xD;&#xA;&#xD;&#xA;The ContactParty class is used for both persons to contact under given situations and for relatives. The circumstances under which a person is acting as a point of contact for the patient is identified in the contactCategory property. The relationship between the contact person and the patient (if any) is identified in the relationshipCategory property. This class was previously modeled as two separate classes, but the overlaps between the two were so great that they were combined. Note that this class is even used to identify a person who holds power of attorney for a person.&#xD;&#xA;&#xD;&#xA;Information about a Person’s role as a Student is often needed, especially for children, as schools often maintain immunization records for their students, and may provide vaccinations.  The purpose of the Student class is to identify Student information about a Person at particular points in time; it is not intended that a Person’s entire academic experience be constructed by aggregation of individual Student records.  Other constructs to do this are modeled in the Provider package, where academic history is needed for credentialing purposes.&#xD;&#xA;&#xD;&#xA;Similarly, information concerning a Person’s employment is modeled in this package for occupational health purposes, and should not be relied upon to provide a complete picture of a person’s employment history.  The package also contains concepts related to an observation of the Person’s occupational history, which is associated with HumanPatient, as such an observation is only important when dealing with persons who are patients.&#xD;&#xA;&#xD;&#xA;It is important to note that the Patient Role class defines concepts related to an entity (a Person or an Animal) as they are acting in the role of a Patient.  One subtlety easily overlooked is that a Person will have multiple Patient role instances, as determined by the Healthcare Provider.  One way to think of it is that the Patient role represents a medical record as assigned by the healthcare provider.  One Person may be patient A at Dr. Smith’s office, and patient B and Dr. Jones’ office.  Hospitals often assign separate patient IDs for each admission, so the same person at the same hospital may have multiple Patient “records”.  This is why the Patient class has an association with the HealthcareProvider class, which, in HL7-speak, “scopes” the Patient instance.&#xD;&#xA;  &#xD;&#xA;After having said all this, there is a subtle difference between a Patient Role and the associated HealthRecord for the Patient, as the HealthRecord is a controlled set of records about the Patient.  The HealthRecord represents that information which may be the subject of Privacy-related or Consent-related Directives initiated or authorized by the Patient.">
         <children xmi:type="umlnotation:UMLShape" xmi:id="_OCRlEBAzEd-2E9qx-lgHBg" element="_oYIbwO_4Ed6OG-vjYTopTQ" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8519679" lineColor="3342489" showStereotype="Text">
@@ -1694,9 +1692,9 @@ The FHIM uses simple or “primitive” datatypes wherever possible, but does de
       <body>Need to model Blood Quantum</body>
     </ownedComment>
     <ownedComment xmi:id="_lB790LYwEeGWl-7OlqBMDw">
-      <annotatedElement xmi:type="uml:Class" href="FHIM_ParkingLot.emx#_laB78OwTEd6PwKowkorMOw?FHIM_ParkingLot/DODPerson?"/>
-      <annotatedElement xmi:type="uml:Class" href="FHIM_ParkingLot.emx#_RgBEkOwTEd6PwKowkorMOw?FHIM_ParkingLot/FDAPerson?"/>
-      <annotatedElement xmi:type="uml:Class" href="FHIM_ParkingLot.emx#_O1G9gOwTEd6PwKowkorMOw?FHIM_ParkingLot/VAPerson?"/>
+      <annotatedElement xmi:type="uml:Class" href="FHIM_ParkingLot.emx#_laB78OwTEd6PwKowkorMOw"/>
+      <annotatedElement xmi:type="uml:Class" href="FHIM_ParkingLot.emx#_RgBEkOwTEd6PwKowkorMOw"/>
+      <annotatedElement xmi:type="uml:Class" href="FHIM_ParkingLot.emx#_O1G9gOwTEd6PwKowkorMOw"/>
       <body>Examples of how agency-specific extensions can be made to the FHIM.  That which is common to all partner agencies is in the Person class; agency exensions are in subclasses.  This visually shows what is common and what is different among partner agencies.</body>
     </ownedComment>
     <packagedElement xmi:type="uml:Class" xmi:id="_vDN9UF-OEd-WjrW-OJ9BNQ" name="HealthRecord">
@@ -1789,7 +1787,7 @@ Note, for public health reporting purposes, this status indicates the active/ina
         <ownedComment xmi:id="_QfERgKCiEeKNT6obAX9SKQ" annotatedElement="_UNTu4PkfEeGFnccz7SeroA">
           <body>A record of changes to a Patient record's status with a given Healthcare Provider.  This class provides a history of status changes, the dates on which those changes occurred, and provides a reason for the change.</body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="FHIM_ParkingLot.emx#_REe8wPkfEeGFnccz7SeroA?FHIM_ParkingLot/PatientStatusChange?"/>
+        <type xmi:type="uml:Class" href="FHIM_ParkingLot.emx#_REe8wPkfEeGFnccz7SeroA"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UNXZQPkfEeGFnccz7SeroA" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UNWyMPkfEeGFnccz7SeroA"/>
       </ownedAttribute>
@@ -2600,7 +2598,7 @@ HL7 Version 2 table 6 lists 85 suggested values for this field.</body>
         <ownedComment xmi:id="_XXZQMBqNEd-j8JC21F3W2A" annotatedElement="_ksUIUOaXEd6YGfoXAoNmMA">
           <body>A physical entity which is the primary unit of operational and/or administrative interest in a study.     For example, a person who is registered in a study as a recipient of an investigational product or as a control.  May also include individuals who are being screened for studies, or individuals participating in observational or other studies.  Other examples may include a pacemaker, a fuse that can be used in medical devices, a cow, a farm, a pen of pigs, a tissue sample from a tissue bank, etc.    NOTE: StudySubjects within a study are all of the same type.  An entity registered in a study is not part of another entity registered in the same study.</body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="FHIM_ParkingLot.emx#_3QfqoOaWEd6YGfoXAoNmMA?FHIM_ParkingLot/ResearchSubject?"/>
+        <type xmi:type="uml:Class" href="FHIM_ParkingLot.emx#_3QfqoOaWEd6YGfoXAoNmMA"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ksUIUuaXEd6YGfoXAoNmMA" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ksUIUeaXEd6YGfoXAoNmMA"/>
       </ownedAttribute>
@@ -5547,310 +5545,6 @@ Note that this property is currently modeled as a string because we have not ide
       <ownedEnd xmi:id="_cGWCQJ1jEeKGRqm0H7Eu1A" name="" visibility="private" type="_l0XegO_4Ed6OG-vjYTopTQ" association="_cGP7oJ1jEeKGRqm0H7Eu1A"/>
     </packagedElement>
   </uml:Package>
-  <Default:Documentation xmi:id="_NPMtheLiEduGJrQyRGTO1A" base_Comment="_NPMthOLiEduGJrQyRGTO1A"/>
-  <Default:Documentation xmi:id="_Tzp-cC6SEd6RGqZb7W4v4w" base_Comment="_TzgNcC6SEd6RGqZb7W4v4w"/>
-  <RIM:Patient xmi:id="_7gx3wFLgEd6-4-oWZUjasQ" base_Class="_420A62FD03B6418A4E500034"/>
-  <RIM:Role xmi:id="_IjZZilLhEd6-4-oWZUjasQ" base_Class="_420A62FD03B64248829E032E"/>
-  <RIM:Employee xmi:id="_OrcV0FLhEd6-4-oWZUjasQ" base_Class="_420A62FD03B6418A501902C7"/>
-  <RIM:Employee xmi:id="_OrcV01LhEd6-4-oWZUjasQ" base_Class="_420A62FD03B6456362E4028D"/>
-  <RIM:Person xmi:id="_tcAzkFxDEd6vR_-L2vrKpg" base_Class="_420A62FD03B6425125E800E0"/>
-  <RIM:LanguageCommunication xmi:id="_VbPf0NYhEd62cosTNS-_lw" base_Class="_420A62FD03B6418A95BD037E"/>
-  <RIM:LivingSubject xmi:id="_WNsEkO_4Ed6OG-vjYTopTQ" base_Class="_KBfhMOEVEd6EKMSYA1gKjA"/>
-  <RIM:Patient xmi:id="_ddO9YPyOEd6COP7rUDIHOg" base_Class="_l0XegO_4Ed6OG-vjYTopTQ"/>
-  <RIM:Patient xmi:id="_ddYHUPyOEd6COP7rUDIHOg" base_Class="_oYIbwO_4Ed6OG-vjYTopTQ"/>
-  <RIM:Entity xmi:id="_oQr44PyOEd6COP7rUDIHOg" base_Class="_MF0JYOEVEd6EKMSYA1gKjA"/>
-  <RIM:NonPersonLivingSubject xmi:id="_wNkP4PyOEd6COP7rUDIHOg" base_Class="_N8vOgOaWEd6YGfoXAoNmMA"/>
-  <Default:Documentation xmi:id="_q5_PYALOEd-4q5si9Q3m-w" base_Comment="_q51eYALOEd-4q5si9Q3m-w"/>
-  <Default:Documentation xmi:id="_WUXzkBAyEd-2E9qx-lgHBg" base_Comment="_WUERkBAyEd-2E9qx-lgHBg"/>
-  <Default:Documentation xmi:id="_PU-uYBqMEd-j8JC21F3W2A" base_Comment="_PUrMYBqMEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_yKpFsBqMEd-j8JC21F3W2A" base_Comment="_yKfUsBqMEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_241TIBqMEd-j8JC21F3W2A" base_Comment="_24iYMBqMEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_7SUb4BqMEd-j8JC21F3W2A" base_Comment="_7SKq4BqMEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_ANCCYBqNEd-j8JC21F3W2A" base_Comment="_AM4RYBqNEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_I9nHMBqNEd-j8JC21F3W2A" base_Comment="_I9UMQBqNEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_XXsLIBqNEd-j8JC21F3W2A" base_Comment="_XXZQMBqNEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_cGCwoBqNEd-j8JC21F3W2A" base_Comment="_cFvOoBqNEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_frhCgBqNEd-j8JC21F3W2A" base_Comment="_frXRgBqNEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_jk0PUBqNEd-j8JC21F3W2A" base_Comment="_jkgtUBqNEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_pHdYgBqNEd-j8JC21F3W2A" base_Comment="_pHUOkBqNEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_soLGMBqNEd-j8JC21F3W2A" base_Comment="_soBVMBqNEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_w7sJ0BqNEd-j8JC21F3W2A" base_Comment="_w7ZO4BqNEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_1Zpi4BqNEd-j8JC21F3W2A" base_Comment="_1ZWA4BqNEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="__7ei4BqNEd-j8JC21F3W2A" base_Comment="__7Ux4BqNEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_uyVbMBqOEd-j8JC21F3W2A" base_Comment="_uyCgQBqOEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_2UPGYBqOEd-j8JC21F3W2A" base_Comment="_2T8LcBqOEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_7YfDYBqOEd-j8JC21F3W2A" base_Comment="_7YV5cBqOEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_FL1MwBqPEd-j8JC21F3W2A" base_Comment="_FLhqwBqPEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_I4dPgBqPEd-j8JC21F3W2A" base_Comment="_I4KUkBqPEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_KkCnkBqPEd-j8JC21F3W2A" base_Comment="_KjvsoBqPEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_MGGQMBqPEd-j8JC21F3W2A" base_Comment="_MFyuMBqPEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_OKRHYBqPEd-j8JC21F3W2A" base_Comment="_OJ-McBqPEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_A9Sd0BqREd-j8JC21F3W2A" base_Comment="_A9Is0BqREd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_CRB9oBqREd-j8JC21F3W2A" base_Comment="_CQvCsBqREd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_DsX6QBqREd-j8JC21F3W2A" base_Comment="_DsE_UBqREd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_L_wFsBqREd-j8JC21F3W2A" base_Comment="_L_cjsBqREd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_RFyLYBqREd-j8JC21F3W2A" base_Comment="_RFfQcBqREd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_XQEjYBqREd-j8JC21F3W2A" base_Comment="_XPxocBqREd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_JP8bEBqSEd-j8JC21F3W2A" base_Comment="_JPzRIBqSEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_LSx1gBqSEd-j8JC21F3W2A" base_Comment="_LSoEgBqSEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_Pfl0MBqSEd-j8JC21F3W2A" base_Comment="_PfS5QBqSEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_w1JDoBqSEd-j8JC21F3W2A" base_Comment="_w02IsBqSEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_xqCrURqSEd-j8JC21F3W2A" base_Comment="_xqCrUBqSEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_7I0S4RqSEd-j8JC21F3W2A" base_Comment="_7I0S4BqSEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_723EoRqSEd-j8JC21F3W2A" base_Comment="_723EoBqSEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_ELlT4BqTEd-j8JC21F3W2A" base_Comment="_ELRx4BqTEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_ZL0McBqTEd-j8JC21F3W2A" base_Comment="_ZLqbcBqTEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_Z8sPwBqTEd-j8JC21F3W2A" base_Comment="_Z8iewBqTEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_i9qhABqTEd-j8JC21F3W2A" base_Comment="_i9W_ABqTEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_l6mzQBqTEd-j8JC21F3W2A" base_Comment="_l6T4UBqTEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_qRQqcBqTEd-j8JC21F3W2A" base_Comment="_qRG5cBqTEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_wwQuMRqTEd-j8JC21F3W2A" base_Comment="_wwQuMBqTEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_0eFDwBqTEd-j8JC21F3W2A" base_Comment="_0d7SwBqTEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_jsVIYBqUEd-j8JC21F3W2A" base_Comment="_jsL-cBqUEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_lvUT0BqUEd-j8JC21F3W2A" base_Comment="_lvKi0RqUEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_xwXD0BqUEd-j8JC21F3W2A" base_Comment="_xwN54BqUEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_APXEABqVEd-j8JC21F3W2A" base_Comment="_APEJEBqVEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_FeMgYBqVEd-j8JC21F3W2A" base_Comment="_FeCvYBqVEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_KUSFkBqVEd-j8JC21F3W2A" base_Comment="_KT_KoBqVEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_QOxuEBqVEd-j8JC21F3W2A" base_Comment="_QOezIBqVEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_Vf_JABqVEd-j8JC21F3W2A" base_Comment="_VfsOEBqVEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_ZTeowBqVEd-j8JC21F3W2A" base_Comment="_ZTLGwBqVEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_y5tcEBqVEd-j8JC21F3W2A" base_Comment="_y5ahIBqVEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_4fL20BqVEd-j8JC21F3W2A" base_Comment="_4fCs4BqVEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_99NlwBqVEd-j8JC21F3W2A" base_Comment="_986q0BqVEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_eLFbcBqWEd-j8JC21F3W2A" base_Comment="_eKyggBqWEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_KB90QBqaEd-j8JC21F3W2A" base_Comment="_KBq5UBqaEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_RcXzEBsYEd--ZY2-pbJ-Pw" base_Comment="_RcE4IBsYEd--ZY2-pbJ-Pw"/>
-  <RIM:Organization xmi:id="_wC9qcBsvEd--ZY2-pbJ-Pw" base_Class="_mHCz4BsvEd--ZY2-pbJ-Pw"/>
-  <RIM:Role xmi:id="_yoDdYBsvEd--ZY2-pbJ-Pw" base_Class="_rcGNABsvEd--ZY2-pbJ-Pw"/>
-  <Default:Documentation xmi:id="_Wu4wQDA6Ed-1aYBV65Lrnw" base_Comment="_Wul1UDA6Ed-1aYBV65Lrnw"/>
-  <Default:Documentation xmi:id="_eWJckDA6Ed-1aYBV65Lrnw" base_Comment="_eV2hoDA6Ed-1aYBV65Lrnw"/>
-  <Default:Documentation xmi:id="_H78D4DA7Ed-1aYBV65Lrnw" base_Comment="_H7pI8DA7Ed-1aYBV65Lrnw"/>
-  <Default:Documentation xmi:id="_J0KJwDA7Ed-1aYBV65Lrnw" base_Comment="_J0AYwDA7Ed-1aYBV65Lrnw"/>
-  <Default:Documentation xmi:id="_T0JA8DA7Ed-1aYBV65Lrnw" base_Comment="_Tz_3ADA7Ed-1aYBV65Lrnw"/>
-  <Default:Documentation xmi:id="_l4NMUIVLEd-6PJo369YzhQ" base_Comment="_l4DbUIVLEd-6PJo369YzhQ"/>
-  <Default:Documentation xmi:id="_ifmWsYq6Ed-W_sKBWcwIbA" base_Comment="_diPhUIq5Ed-W_sKBWcwIbA"/>
-  <Default:Documentation xmi:id="_FD7XULa2Ed-Y0_knsxZjWg" base_Comment="_FDxmULa2Ed-Y0_knsxZjWg"/>
-  <Default:Documentation xmi:id="_UutWUe6qEd-crcWiXVDZrQ" base_Comment="_UutWUO6qEd-crcWiXVDZrQ"/>
-  <Default:Documentation xmi:id="_bSEY0e6uEd-crcWiXVDZrQ" base_Comment="_bSEY0O6uEd-crcWiXVDZrQ"/>
-  <Default:Documentation xmi:id="_uq_VUe6uEd-crcWiXVDZrQ" base_Comment="_uq_VUO6uEd-crcWiXVDZrQ"/>
-  <Default:Documentation xmi:id="_0JMqce6uEd-crcWiXVDZrQ" base_Comment="_0JMqcO6uEd-crcWiXVDZrQ"/>
-  <Default:Documentation xmi:id="_3shnQe6uEd-crcWiXVDZrQ" base_Comment="_3shnQO6uEd-crcWiXVDZrQ"/>
-  <Default:Documentation xmi:id="_B_P0Qe6vEd-crcWiXVDZrQ" base_Comment="_B_P0QO6vEd-crcWiXVDZrQ"/>
-  <Default:Documentation xmi:id="_sjImEe6wEd-crcWiXVDZrQ" base_Comment="_sjImEO6wEd-crcWiXVDZrQ"/>
-  <Default:Documentation xmi:id="_EDEzEPdIEd-hU-zq4VwY5Q" base_Comment="_EC7pIPdIEd-hU-zq4VwY5Q"/>
-  <RIM:Act xmi:id="_53D6YF-OEd-WjrW-OJ9BNQ" base_Class="_vDN9UF-OEd-WjrW-OJ9BNQ"/>
-  <Default:Documentation xmi:id="_vDN9XF-OEd-WjrW-OJ9BNQ" base_Comment="_vDN9V1-OEd-WjrW-OJ9BNQ"/>
-  <Default:Documentation xmi:id="_vDN9W1-OEd-WjrW-OJ9BNQ" base_Comment="_vDN9U1-OEd-WjrW-OJ9BNQ"/>
-  <Default:Documentation xmi:id="_vDN9Wl-OEd-WjrW-OJ9BNQ" base_Comment="_vDN9UV-OEd-WjrW-OJ9BNQ"/>
-  <Default:Documentation xmi:id="_9TUx9WrUEeCJbfIpPWFXRg" base_Comment="_9TUx8mrUEeCJbfIpPWFXRg"/>
-  <RIM:Act xmi:id="_djeosGtbEeCaten32mlCMw" base_Class="_am_CYGtbEeCaten32mlCMw"/>
-  <Default:Documentation xmi:id="_LM55cHwDEeCp-57mUxyZlg" base_Comment="_LM4rUXwDEeCp-57mUxyZlg"/>
-  <Default:Documentation xmi:id="_hAwY0IyBEeCBU92aoqPk5w" base_Comment="_hAn18IyBEeCBU92aoqPk5w"/>
-  <Default:Documentation xmi:id="_3ELygI0rEeCD3bb30FJGhQ" base_Comment="_Tp1GYBqaEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_6AVakI0rEeCD3bb30FJGhQ" base_Comment="_RRcL8O6vEd-crcWiXVDZrQ"/>
-  <Default:Documentation xmi:id="_-eH0gI0rEeCD3bb30FJGhQ" base_Comment="_X31-8BqaEd-j8JC21F3W2A"/>
-  <RIM:Act xmi:id="_vuPNwI0tEeCD3bb30FJGhQ" base_Class="_sdrb8I0tEeCD3bb30FJGhQ"/>
-  <Default:Documentation xmi:id="_85tC0JNqEeCyufOLCDZkFA" base_Comment="_85j44JNqEeCyufOLCDZkFA"/>
-  <Default:Documentation xmi:id="_OQJhgJXtEeCD7vwmJe8BlA" base_Comment="_OP9UQJXtEeCD7vwmJe8BlA"/>
-  <Default:Documentation xmi:id="_df_IwJXtEeCD7vwmJe8BlA" base_Comment="_df5CIJXtEeCD7vwmJe8BlA"/>
-  <Default:Documentation xmi:id="_eXxsZZXtEeCD7vwmJe8BlA" base_Comment="_eXxsYpXtEeCD7vwmJe8BlA"/>
-  <Default:Documentation xmi:id="_nN9-EZX6EeCD7vwmJe8BlA" base_Comment="_nN9-EJX6EeCD7vwmJe8BlA"/>
-  <Default:Documentation xmi:id="_tRQWMJX6EeCD7vwmJe8BlA" base_Comment="_tRKPkJX6EeCD7vwmJe8BlA"/>
-  <Default:Documentation xmi:id="_6ShNEJX6EeCD7vwmJe8BlA" base_Comment="_6SU_0JX6EeCD7vwmJe8BlA"/>
-  <Default:Documentation xmi:id="_7zbmMJX6EeCD7vwmJe8BlA" base_Comment="_7zVfkJX6EeCD7vwmJe8BlA"/>
-  <Default:Documentation xmi:id="_R_TLcJX7EeCD7vwmJe8BlA" base_Comment="_R_NE0JX7EeCD7vwmJe8BlA"/>
-  <Default:Documentation xmi:id="_mzl5wJX7EeCD7vwmJe8BlA" base_Comment="_mzfzIJX7EeCD7vwmJe8BlA"/>
-  <Default:Documentation xmi:id="_agsIQJX8EeCD7vwmJe8BlA" base_Comment="_agf7AJX8EeCD7vwmJe8BlA"/>
-  <Default:Documentation xmi:id="_Xk1rcJ2tEeCX5OUDTSXncA" base_Comment="_Xku9wJ2tEeCX5OUDTSXncA"/>
-  <Default:Documentation xmi:id="_U93zwJ2uEeCX5OUDTSXncA" base_Comment="_U9vQ4J2uEeCX5OUDTSXncA"/>
-  <Default:Documentation xmi:id="_jGbp4J2uEeCX5OUDTSXncA" base_Comment="_jGSf8J2uEeCX5OUDTSXncA"/>
-  <Default:Documentation xmi:id="_ZD_eotmFEeChWYqvVB0Hpw" base_Comment="_WNi9UNmCEeChWYqvVB0Hpw"/>
-  <RIM:Act xmi:id="_nkbpQNmFEeChWYqvVB0Hpw" base_Class="_SNJ_INmEEeChWYqvVB0Hpw"/>
-  <Default:Documentation xmi:id="_0kEvgtmFEeChWYqvVB0Hpw" base_Comment="_0kEvgdmFEeChWYqvVB0Hpw"/>
-  <Default:Documentation xmi:id="_Gg-kgtmHEeChWYqvVB0Hpw" base_Comment="_AUQwQJX_EeCD7vwmJe8BlA"/>
-  <RIM:Role xmi:id="_aM0dANmHEeChWYqvVB0Hpw" base_Class="_XDFE4NmHEeChWYqvVB0Hpw"/>
-  <RIM:Act xmi:id="_ES-xANmJEeChWYqvVB0Hpw" base_Class="__qoF0NmIEeChWYqvVB0Hpw"/>
-  <RIM:Act xmi:id="_Cafv8NmKEeChWYqvVB0Hpw" base_Class="_AYmwsNmKEeChWYqvVB0Hpw"/>
-  <RIM:Observation xmi:id="_-arf4NmTEeChWYqvVB0Hpw" base_Class="_7TcCINmTEeChWYqvVB0Hpw"/>
-  <Default:Documentation xmi:id="_nPn5ENmUEeChWYqvVB0Hpw" base_Comment="_nPnSAdmUEeChWYqvVB0Hpw"/>
-  <Default:Documentation xmi:id="_NMTpwOn-EeCkWsmL2aWuUQ" base_Comment="_NMLG4On-EeCkWsmL2aWuUQ"/>
-  <RIM:ActRelationship xmi:id="_pxFhQAYrEeGz0dkadElrkQ" base_Association="_ncBXUNmJEeChWYqvVB0Hpw" typeCode=""/>
-  <Default:Documentation xmi:id="_SuRvkDGyEeGoIvbvHHPRDA" base_Comment="_StrSoDGyEeGoIvbvHHPRDA"/>
-  <Default:Documentation xmi:id="_TnQmATGyEeGoIvbvHHPRDA" base_Comment="_TnQmADGyEeGoIvbvHHPRDA"/>
-  <Default:Documentation xmi:id="_xrfOoDGyEeGoIvbvHHPRDA" base_Comment="_xrWEsDGyEeGoIvbvHHPRDA"/>
-  <Default:Documentation xmi:id="_9DS0YTGyEeGoIvbvHHPRDA" base_Comment="_9DS0YDGyEeGoIvbvHHPRDA"/>
-  <Default:Documentation xmi:id="_MFavwDGzEeGoIvbvHHPRDA" base_Comment="_MFQ-wDGzEeGoIvbvHHPRDA"/>
-  <Default:Documentation xmi:id="_akbXATGzEeGoIvbvHHPRDA" base_Comment="_akbXADGzEeGoIvbvHHPRDA"/>
-  <Default:Documentation xmi:id="_e6PEMDG0EeGoIvbvHHPRDA" base_Comment="_e6FTMDG0EeGoIvbvHHPRDA"/>
-  <Default:Documentation xmi:id="_BJ_SETG1EeGoIvbvHHPRDA" base_Comment="_BJ_SEDG1EeGoIvbvHHPRDA"/>
-  <Default:Documentation xmi:id="_UR9BcTG1EeGoIvbvHHPRDA" base_Comment="_UR9BcDG1EeGoIvbvHHPRDA"/>
-  <Default:Documentation xmi:id="_kNgfMDG1EeGoIvbvHHPRDA" base_Comment="_kNWuMDG1EeGoIvbvHHPRDA"/>
-  <Default:Documentation xmi:id="_k3dbIDG1EeGoIvbvHHPRDA" base_Comment="_k3URMDG1EeGoIvbvHHPRDA"/>
-  <Default:Documentation xmi:id="_C8vMoDG2EeGoIvbvHHPRDA" base_Comment="_C8mCsDG2EeGoIvbvHHPRDA"/>
-  <Default:Documentation xmi:id="_J2ddgDG2EeGoIvbvHHPRDA" base_Comment="_J2TsgDG2EeGoIvbvHHPRDA"/>
-  <Default:Documentation xmi:id="_nbwucTG2EeGoIvbvHHPRDA" base_Comment="_nbwucDG2EeGoIvbvHHPRDA"/>
-  <Default:Documentation xmi:id="_rT6EsDG2EeGoIvbvHHPRDA" base_Comment="_rTw6wDG2EeGoIvbvHHPRDA"/>
-  <Default:Documentation xmi:id="_6y33oDG3EeGoIvbvHHPRDA" base_Comment="_6yutsDG3EeGoIvbvHHPRDA"/>
-  <Default:Documentation xmi:id="_ICmBQDG4EeGoIvbvHHPRDA" base_Comment="_ICc3UDG4EeGoIvbvHHPRDA"/>
-  <Default:Documentation xmi:id="_NSE94DG4EeGoIvbvHHPRDA" base_Comment="_NR7z8DG4EeGoIvbvHHPRDA"/>
-  <Default:Documentation xmi:id="_XZPbIDG4EeGoIvbvHHPRDA" base_Comment="_XZGRMDG4EeGoIvbvHHPRDA"/>
-  <Default:Documentation xmi:id="_YB26UDG4EeGoIvbvHHPRDA" base_Comment="_YBtwYDG4EeGoIvbvHHPRDA"/>
-  <Default:Documentation xmi:id="_jr0AADG4EeGoIvbvHHPRDA" base_Comment="_jrqPADG4EeGoIvbvHHPRDA"/>
-  <Default:Documentation xmi:id="_22vj0DG4EeGoIvbvHHPRDA" base_Comment="_22ly0DG4EeGoIvbvHHPRDA"/>
-  <Default:Documentation xmi:id="_3T6A8DG4EeGoIvbvHHPRDA" base_Comment="_3TwP8DG4EeGoIvbvHHPRDA"/>
-  <Default:Documentation xmi:id="_DbmykDG5EeGoIvbvHHPRDA" base_Comment="_DbdooDG5EeGoIvbvHHPRDA"/>
-  <Default:Documentation xmi:id="_Z3H9YDG5EeGoIvbvHHPRDA" base_Comment="_Z2-MYDG5EeGoIvbvHHPRDA"/>
-  <Default:Documentation xmi:id="_lFZzsDG5EeGoIvbvHHPRDA" base_Comment="_lFQCsDG5EeGoIvbvHHPRDA"/>
-  <Default:Documentation xmi:id="_oc-McDG5EeGoIvbvHHPRDA" base_Comment="_oc1CgDG5EeGoIvbvHHPRDA"/>
-  <Default:Documentation xmi:id="_-iBYADG5EeGoIvbvHHPRDA" base_Comment="_-h4OEDG5EeGoIvbvHHPRDA"/>
-  <Default:Documentation xmi:id="_FMQbYDG6EeGoIvbvHHPRDA" base_Comment="_FMHRcDG6EeGoIvbvHHPRDA"/>
-  <Default:Documentation xmi:id="_spsPEDG6EeGoIvbvHHPRDA" base_Comment="_spieEDG6EeGoIvbvHHPRDA"/>
-  <Default:Documentation xmi:id="_xXHAcTG6EeGoIvbvHHPRDA" base_Comment="_xXHAcDG6EeGoIvbvHHPRDA"/>
-  <Default:Documentation xmi:id="_2Zy3MDG6EeGoIvbvHHPRDA" base_Comment="_2ZpGMDG6EeGoIvbvHHPRDA"/>
-  <Default:Documentation xmi:id="__n_PoDG7EeGoIvbvHHPRDA" base_Comment="__n2FsDG7EeGoIvbvHHPRDA"/>
-  <Default:Documentation xmi:id="_AfCMYTG8EeGoIvbvHHPRDA" base_Comment="_AfCMYDG8EeGoIvbvHHPRDA"/>
-  <Default:Documentation xmi:id="_z3AfcDG8EeGoIvbvHHPRDA" base_Comment="_z22ucDG8EeGoIvbvHHPRDA"/>
-  <Default:Documentation xmi:id="_ET_2UTG9EeGoIvbvHHPRDA" base_Comment="_ET_2UDG9EeGoIvbvHHPRDA"/>
-  <Default:Documentation xmi:id="_OU6hoDG9EeGoIvbvHHPRDA" base_Comment="_OUwwoDG9EeGoIvbvHHPRDA"/>
-  <Default:Documentation xmi:id="_isdpkDG9EeGoIvbvHHPRDA" base_Comment="_isUfoDG9EeGoIvbvHHPRDA"/>
-  <Default:Documentation xmi:id="_pxCfkDG9EeGoIvbvHHPRDA" base_Comment="_pw4ukDG9EeGoIvbvHHPRDA"/>
-  <Default:Documentation xmi:id="_roM1gDG9EeGoIvbvHHPRDA" base_Comment="_roDrkDG9EeGoIvbvHHPRDA"/>
-  <Default:Documentation xmi:id="_B4jroFjuEeG6Pp3Py7p1bw" base_Comment="_B4Z6oFjuEeG6Pp3Py7p1bw"/>
-  <Default:Documentation xmi:id="_LBXqQFjuEeG6Pp3Py7p1bw" base_Comment="_LBPucFjuEeG6Pp3Py7p1bw"/>
-  <Default:Documentation xmi:id="_GYAAgFjwEeG6Pp3Py7p1bw" base_Comment="_GX22kFjwEeG6Pp3Py7p1bw"/>
-  <Default:Documentation xmi:id="_rvIAcGfBEeGK0elVFnH6lw" base_Comment="_rutwwWfBEeGK0elVFnH6lw"/>
-  <RIM:Act xmi:id="_JG74sH2fEeGy1_tR17zNdw" base_Class="_BvzTEH2fEeGy1_tR17zNdw"/>
-  <RIM:Observation xmi:id="_m4FvIH2xEeGy1_tR17zNdw" base_Class="_LZIKgH2vEeGy1_tR17zNdw"/>
-  <RIM:Observation xmi:id="_m4GWMH2xEeGy1_tR17zNdw" base_Class="_eqcYQH2xEeGy1_tR17zNdw"/>
-  <RIM:Observation xmi:id="_m4GWMX2xEeGy1_tR17zNdw" base_Class="_imFucH2xEeGy1_tR17zNdw"/>
-  <RIM:Observation xmi:id="_U9v0AH2yEeGy1_tR17zNdw" base_Class="_U9vM8H2yEeGy1_tR17zNdw"/>
-  <RIM:Procedure xmi:id="_fY1dYH2zEeGy1_tR17zNdw" base_Class="_MfZ2EH2vEeGy1_tR17zNdw"/>
-  <RIM:Observation xmi:id="_hdBisH2zEeGy1_tR17zNdw" base_Class="_hdA7oH2zEeGy1_tR17zNdw"/>
-  <RIM:Observation xmi:id="_wB8ksH2zEeGy1_tR17zNdw" base_Class="_wB79oH2zEeGy1_tR17zNdw"/>
-  <RIM:Observation xmi:id="_BYBfsH20EeGy1_tR17zNdw" base_Class="_BYA4oH20EeGy1_tR17zNdw"/>
-  <RIM:Observation xmi:id="_G4VRIH21EeGy1_tR17zNdw" base_Class="_G4UDAH21EeGy1_tR17zNdw"/>
-  <RIM:Observation xmi:id="_G61LgH21EeGy1_tR17zNdw" base_Class="_G60kcH21EeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_-rqbkH29EeGy1_tR17zNdw" base_Comment="_-rpNcX29EeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_-rqbkX29EeGy1_tR17zNdw" base_Comment="_-rp0gn29EeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_8Y6D4H2_EeGy1_tR17zNdw" base_Comment="_8Yt2oH2_EeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_M5GfwH3AEeGy1_tR17zNdw" base_Comment="_M5BnQH3AEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_wH-y4H3BEeGy1_tR17zNdw" base_Comment="_wHzzwH3BEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_-ocysH3BEeGy1_tR17zNdw" base_Comment="_-oRMgH3BEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="__cyZsH3BEeGy1_tR17zNdw" base_Comment="__cmzgH3BEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_PaRKEH3CEeGy1_tR17zNdw" base_Comment="_PaFj4H3CEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_SneF4H3CEeGy1_tR17zNdw" base_Comment="_SnQqgH3CEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_JLKuEH3DEeGy1_tR17zNdw" base_Comment="_JK_H4H3DEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_fA0ywH3DEeGy1_tR17zNdw" base_Comment="_fApMkH3DEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_oXHzwH3DEeGy1_tR17zNdw" base_Comment="_oW7mgH3DEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_-K7aIH3KEeGy1_tR17zNdw" base_Comment="_-Kvz8H3KEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_RGnoEH3LEeGy1_tR17zNdw" base_Comment="_RGcB4H3LEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_cqhwIH3LEeGy1_tR17zNdw" base_Comment="_cqWxAH3LEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_0mOe0H3MEeGy1_tR17zNdw" base_Comment="_0mC4oH3MEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_2hiU8H3MEeGy1_tR17zNdw" base_Comment="_2hWuwH3MEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_II_64H3NEeGy1_tR17zNdw" base_Comment="_II07wH3NEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_5SingH3NEeGy1_tR17zNdw" base_Comment="_5SXoYH3NEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_RNQ7QH3OEeGy1_tR17zNdw" base_Comment="_RNFVEH3OEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_uhax0H3OEeGy1_tR17zNdw" base_Comment="_uhPysH3OEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_4hcFQH3OEeGy1_tR17zNdw" base_Comment="_4hSUQH3OEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_AkIJUH3PEeGy1_tR17zNdw" base_Comment="_Aj8jIH3PEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_LaxiwH3PEeGy1_tR17zNdw" base_Comment="_LamjoH3PEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_V0Ya4H3PEeGy1_tR17zNdw" base_Comment="_V0M0sH3PEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_aYjwsH3PEeGy1_tR17zNdw" base_Comment="_aYXjcH3PEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_nQeeUH3PEeGy1_tR17zNdw" base_Comment="_nQS4IH3PEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_s7dEIH3PEeGy1_tR17zNdw" base_Comment="_s7Rd8H3PEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_OI5gcH3QEeGy1_tR17zNdw" base_Comment="_OIt6QH3QEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_sWkeUH3jEeGy1_tR17zNdw" base_Comment="_sWY4IH3jEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_Eb1OIH3kEeGy1_tR17zNdw" base_Comment="_Ebpn8H3kEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_UeZIAH6CEeGaaPUCLjdvag" base_Comment="_UeB7oH6CEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_baqWkH6CEeGaaPUCLjdvag" base_Comment="_baZQ0H6CEeGaaPUCLjdvag"/>
-  <RIM:Observation xmi:id="_cjxTsH6CEeGaaPUCLjdvag" base_Class="_veY1kH28EeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_lWRrIH6CEeGaaPUCLjdvag" base_Comment="_lWFd4H6CEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_9W9c8H6CEeGaaPUCLjdvag" base_Comment="_9WwooH6CEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_MRKLYH6DEeGaaPUCLjdvag" base_Comment="_MQ8I8H6DEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_Vz8JMH6DEeGaaPUCLjdvag" base_Comment="_Vzv78H6DEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_ta-E4H6DEeGaaPUCLjdvag" base_Comment="_tawpgH6DEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_1CdasH6DEeGaaPUCLjdvag" base_Comment="_1CPYQH6DEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_HM9cQH6EEeGaaPUCLjdvag" base_Comment="_HMx2EH6EEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_VgOGgH6EEeGaaPUCLjdvag" base_Comment="_VgBSMH6EEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_e6JN0H6FEeGaaPUCLjdvag" base_Comment="_e5-1wH6FEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_BXqK4H6GEeGaaPUCLjdvag" base_Comment="_BXkEQH6GEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_zdUhgH6GEeGaaPUCLjdvag" base_Comment="_zdI7UH6GEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_1NeQgH6GEeGaaPUCLjdvag" base_Comment="_1NSqUH6GEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_8ejRcH6GEeGaaPUCLjdvag" base_Comment="_8eXEMH6GEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_BD66EH6HEeGaaPUCLjdvag" base_Comment="_BDuFwH6HEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_EhraYH6HEeGaaPUCLjdvag" base_Comment="_EhkFoH6HEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_YMtTMH6KEeGaaPUCLjdvag" base_Comment="_YMhF8H6KEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_axsYcH6KEeGaaPUCLjdvag" base_Comment="_axiAYH6KEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_nD0N8H8lEeGaaPUCLjdvag" base_Comment="_nDUesH8lEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_ru3AwH8lEeGaaPUCLjdvag" base_Comment="_ruqMcH8lEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_ssH6QH8lEeGaaPUCLjdvag" base_Comment="_sr7tAH8lEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_DjxgEH8pEeGaaPUCLjdvag" base_Comment="_Djl54H8pEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_EXbxoH8pEeGaaPUCLjdvag" base_Comment="_EXPkYH8pEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_M1I9wH8pEeGaaPUCLjdvag" base_Comment="_M08wgH8pEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_ipTNoH8pEeGaaPUCLjdvag" base_Comment="_ipNuEH8pEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_sRgokH8qEeGaaPUCLjdvag" base_Comment="_sRUbUH8qEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_vua0UH8qEeGaaPUCLjdvag" base_Comment="_vuPOIH8qEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_mj-BgH8rEeGaaPUCLjdvag" base_Comment="_mjvYAH8rEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_onUZUH8rEeGaaPUCLjdvag" base_Comment="_onIMEH8rEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_u9t6sH8rEeGaaPUCLjdvag" base_Comment="_u9iUgH8rEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_xRlawH8rEeGaaPUCLjdvag" base_Comment="_xRZ0kH8rEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_SSP_UH8sEeGaaPUCLjdvag" base_Comment="_SSFnQH8sEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_il0UcH8sEeGaaPUCLjdvag" base_Comment="_iloHMH8sEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_sf-QcH8sEeGaaPUCLjdvag" base_Comment="_sfyDMH8sEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_vZpzUH8sEeGaaPUCLjdvag" base_Comment="_vZfbQH8sEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_2sF0QH8uEeGaaPUCLjdvag" base_Comment="_2r61IH8uEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_gb-LsH8vEeGaaPUCLjdvag" base_Comment="_gbylgH8vEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_wSqXkH8vEeGaaPUCLjdvag" base_Comment="_wSfYcH8vEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_ISMS0H8wEeGaaPUCLjdvag" base_Comment="_ISCh0H8wEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_Um4XkH8wEeGaaPUCLjdvag" base_Comment="_UmsxYH8wEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_ZkFRYH8wEeGaaPUCLjdvag" base_Comment="_Zj5rMH8wEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_46LKgH8wEeGaaPUCLjdvag" base_Comment="_46DOsH8wEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_KsnRYH8xEeGaaPUCLjdvag" base_Comment="_KsbrMH8xEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_ODMysH8xEeGaaPUCLjdvag" base_Comment="_ODAlcH8xEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_lX3eIH9UEeG8JPxVazzwbQ" base_Comment="_lXviUH9UEeG8JPxVazzwbQ"/>
-  <Default:Documentation xmi:id="_RNc90H9VEeG8JPxVazzwbQ" base_Comment="_RNRXoH9VEeG8JPxVazzwbQ"/>
-  <Default:Documentation xmi:id="_TPE3UH9VEeG8JPxVazzwbQ" base_Comment="_TO4qEH9VEeG8JPxVazzwbQ"/>
-  <Default:Documentation xmi:id="_nSObkJB3EeGFF50UGueAcQ" base_Comment="_nRjtMJB3EeGFF50UGueAcQ"/>
-  <Default:Documentation xmi:id="_bS00MLYwEeGWl-7OlqBMDw" base_Comment="_bSrqQLYwEeGWl-7OlqBMDw"/>
-  <RIM:Role xmi:id="_y7LcMLZJEeGWl-7OlqBMDw" base_Class="_rbFH0LZJEeGWl-7OlqBMDw"/>
-  <Default:Documentation xmi:id="_mI1gMLZLEeGWl-7OlqBMDw" base_Comment="_mIs9ULZLEeGWl-7OlqBMDw"/>
-  <Default:Documentation xmi:id="_nQbaYLZLEeGWl-7OlqBMDw" base_Comment="_nQSQcLZLEeGWl-7OlqBMDw"/>
-  <Default:Documentation xmi:id="_qgCxALZLEeGWl-7OlqBMDw" base_Comment="_qf_GoLZLEeGWl-7OlqBMDw"/>
-  <Default:Documentation xmi:id="_5uSc0LZLEeGWl-7OlqBMDw" base_Comment="_5uJ58LZLEeGWl-7OlqBMDw"/>
-  <RIM:Role xmi:id="_7yl7ALvqEeGQGoDxtoz2mA" base_Class="_c5yJ8KBCEeGlSr96AT8gww"/>
-  <RIM:Role xmi:id="_7y_joLvqEeGQGoDxtoz2mA" base_Class="_bnjtEKBCEeGlSr96AT8gww"/>
-  <Default:Documentation xmi:id="_Nx9qoLvrEeGQGoDxtoz2mA" base_Comment="_8Q-doH3EEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_Nx-RsLvrEeGQGoDxtoz2mA" base_Comment="_lyBAcH3IEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_Nx-RsbvrEeGQGoDxtoz2mA" base_Comment="_O22JYH3BEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_Nx-RsrvrEeGQGoDxtoz2mA" base_Comment="_bOsFQH3AEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_Nx-Rs7vrEeGQGoDxtoz2mA" base_Comment="_m48F4H3AEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_Nx-RtLvrEeGQGoDxtoz2mA" base_Comment="_XvpOsH3EEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_Nx-RtbvrEeGQGoDxtoz2mA" base_Comment="_9gQ4EH3AEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_Nx-RtrvrEeGQGoDxtoz2mA" base_Comment="_q4px0H3CEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_Nx-Rt7vrEeGQGoDxtoz2mA" base_Comment="_atws8H6FEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_Nx-4wLvrEeGQGoDxtoz2mA" base_Comment="_Hwf4IH3JEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_Nx-4wbvrEeGQGoDxtoz2mA" base_Comment="_Yz_Y4H3KEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_Nx-4wrvrEeGQGoDxtoz2mA" base_Comment="_i0arEH3BEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_Nx-4w7vrEeGQGoDxtoz2mA" base_Comment="_u4P-cH3DEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_Wfe0YrvrEeGQGoDxtoz2mA" base_Comment="_9-_-UH3HEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_WffbcLvrEeGQGoDxtoz2mA" base_Comment="_9KEsAH3IEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_WffbcbvrEeGQGoDxtoz2mA" base_Comment="_S_lgYH3BEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_WffbcrvrEeGQGoDxtoz2mA" base_Comment="_fvCD8H3AEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_Wffbc7vrEeGQGoDxtoz2mA" base_Comment="_qB4z0H3AEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_WffbdLvrEeGQGoDxtoz2mA" base_Comment="_ZjnGsH3EEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_WffbdbvrEeGQGoDxtoz2mA" base_Comment="_QXnCcH3KEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_WffbdrvrEeGQGoDxtoz2mA" base_Comment="_qFLM0H3KEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_Wffbd7vrEeGQGoDxtoz2mA" base_Comment="_wPDZUH3DEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_enpOUrvrEeGQGoDxtoz2mA" base_Comment="__ngmgH3CEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_enpOU7vrEeGQGoDxtoz2mA" base_Comment="_pOOs0H3BEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_Gh0y8LvtEeGQGoDxtoz2mA" base_Comment="_GhWR0LvtEeGQGoDxtoz2mA"/>
-  <Default:Documentation xmi:id="_HudlMLvtEeGQGoDxtoz2mA" base_Comment="_HuVCULvtEeGQGoDxtoz2mA"/>
-  <Default:Documentation xmi:id="_Kc5hYLvtEeGQGoDxtoz2mA" base_Comment="_Kcw-gLvtEeGQGoDxtoz2mA"/>
-  <Default:Documentation xmi:id="_LjjncLvtEeGQGoDxtoz2mA" base_Comment="_LjbEkLvtEeGQGoDxtoz2mA"/>
-  <Default:Documentation xmi:id="_Xvs0MLvtEeGQGoDxtoz2mA" base_Comment="_XvjqQLvtEeGQGoDxtoz2mA"/>
-  <Default:Documentation xmi:id="_Y0SdsLvtEeGQGoDxtoz2mA" base_Comment="_Y0J60LvtEeGQGoDxtoz2mA"/>
-  <Default:Documentation xmi:id="_h_61sMChEeGTTrvHOo3_pw" base_Comment="_h_4ZccChEeGTTrvHOo3_pw"/>
   <term:ValueSetConstraint xmi:id="_pjcR4PahEeGgPNPSC_BPyg" base_Property="_LM4rUHwDEeCp-57mUxyZlg">
     <reference href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_WwQXEKRMEeGZ6ueex_Me0w"/>
   </term:ValueSetConstraint>
@@ -5872,54 +5566,10 @@ Note that this property is currently modeled as a string because we have not ide
   <term:ValueSetConstraint xmi:id="_NS9rkPaxEeGoRqAZLJ6Mwg" base_Property="_420A62FD03B6455390F101F8">
     <reference href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_W1WScaRMEeGZ6ueex_Me0w"/>
   </term:ValueSetConstraint>
-  <Default:Documentation xmi:id="_Y-Pm8PkiEeGFnccz7SeroA" base_Comment="_Y-OY0_kiEeGFnccz7SeroA"/>
-  <Default:Documentation xmi:id="_grZf4PkiEeGFnccz7SeroA" base_Comment="_grY40_kiEeGFnccz7SeroA"/>
-  <Default:Documentation xmi:id="_LSljEANFEeKTM4I4vlc5xg" base_Comment="_LSjt4wNFEeKTM4I4vlc5xg"/>
-  <Default:Documentation xmi:id="_0-7ycANSEeKTM4I4vlc5xg" base_Comment="_0-z2oANSEeKTM4I4vlc5xg"/>
-  <Default:Documentation xmi:id="_BFvOIAQBEeKZsvne-rOhhA" base_Comment="_BFqVoAQBEeKZsvne-rOhhA"/>
-  <Default:Documentation xmi:id="_CEDQgAQBEeKZsvne-rOhhA" base_Comment="_CD6toAQBEeKZsvne-rOhhA"/>
-  <Default:Documentation xmi:id="_G76XUAQBEeKZsvne-rOhhA" base_Comment="_G7xNYAQBEeKZsvne-rOhhA"/>
-  <RIM:Role xmi:id="_H64hAAQBEeKZsvne-rOhhA" base_Class="_9_9I8AQAEeKZsvne-rOhhA"/>
-  <Default:Documentation xmi:id="_B1n2IAQFEeKZsvne-rOhhA" base_Comment="_B1moAgQFEeKZsvne-rOhhA"/>
-  <Default:Documentation xmi:id="_PFaZgAS7EeKZRNRj-xVwIw" base_Comment="_PFMXEAS7EeKZRNRj-xVwIw"/>
-  <Default:Documentation xmi:id="_SElOcAS9EeKZRNRj-xVwIw" base_Comment="_SEiyMwS9EeKZRNRj-xVwIw"/>
-  <Default:Documentation xmi:id="_SElOcQS9EeKZRNRj-xVwIw" base_Comment="_SEkAUQS9EeKZRNRj-xVwIw"/>
-  <Default:Documentation xmi:id="_SElOcgS9EeKZRNRj-xVwIw" base_Comment="_SEkAVQS9EeKZRNRj-xVwIw"/>
-  <Default:Documentation xmi:id="_Rvp_8ATAEeKZRNRj-xVwIw" base_Comment="_RviEIATAEeKZRNRj-xVwIw"/>
-  <Default:Documentation xmi:id="_1W65MBI7EeKEjrc2hUE4_Q" base_Comment="_1W5rExI7EeKEjrc2hUE4_Q"/>
-  <Default:Documentation xmi:id="_flg6MBJuEeKyCcEaGXRWOg" base_Comment="_Fz0XwH3DEeGy1_tR17zNdw"/>
   <term:ValueSetConstraint xmi:id="_FNlksBiDEeKBu9GeV_Qxiw" base_Property="_Y-OY0PkiEeGFnccz7SeroA">
     <reference href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_W1s3waRMEeGZ6ueex_Me0w"/>
   </term:ValueSetConstraint>
   <term:ValueSetConstraint xmi:id="_ath4EBiDEeKBu9GeV_Qxiw" base_Property="_grY40PkiEeGFnccz7SeroA">
     <reference href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_X1W98KRMEeGZ6ueex_Me0w"/>
   </term:ValueSetConstraint>
-  <Default:Documentation xmi:id="_k2tfIGykEeKS_YH7dVt7vw" base_Comment="_NQixVOLiEduGJrQyRGTO1A"/>
-  <Default:Documentation xmi:id="_ZWxJgJ1WEeKGRqm0H7Eu1A" base_Comment="__IYcAuV0EeGA8s9JtidNVQ"/>
-  <Default:Documentation xmi:id="_ZWxwkJ1WEeKGRqm0H7Eu1A" base_Comment="_OvALk-V1EeGA8s9JtidNVQ"/>
-  <Default:Documentation xmi:id="_ZWxwkZ1WEeKGRqm0H7Eu1A" base_Comment="_7wk0sUcGEeKYw8d4t3T9cw"/>
-  <Default:Documentation xmi:id="_ZWxwkp1WEeKGRqm0H7Eu1A" base_Comment="_xlc_QBSXEeKpJeaG5gXc6Q"/>
-  <Default:Documentation xmi:id="_rk7GkJ1XEeKGRqm0H7Eu1A" base_Comment="_-G-F8AS7EeKZRNRj-xVwIw"/>
-  <RIM:Observation xmi:id="_OA0SAJ1jEeKGRqm0H7Eu1A" base_Class="_Np3dgJ1WEeKGRqm0H7Eu1A"/>
-  <Default:Documentation xmi:id="_Fk-RoJ1kEeKGRqm0H7Eu1A" base_Comment="_Fk6AMJ1kEeKGRqm0H7Eu1A"/>
-  <Default:Documentation xmi:id="_HGzQwJ1kEeKGRqm0H7Eu1A" base_Comment="_HGqt4J1kEeKGRqm0H7Eu1A"/>
-  <Default:Documentation xmi:id="_QAXJ0KCCEeKNT6obAX9SKQ" base_Comment="_QADn0KCCEeKNT6obAX9SKQ"/>
-  <Default:Documentation xmi:id="_QOj2gKCFEeKNT6obAX9SKQ" base_Comment="_QOaFgKCFEeKNT6obAX9SKQ"/>
-  <Default:Documentation xmi:id="_u4ZRIKCGEeKNT6obAX9SKQ" base_Comment="_u4O5EKCGEeKNT6obAX9SKQ"/>
-  <Default:Documentation xmi:id="_OHUZAKCMEeKNT6obAX9SKQ" base_Comment="_OHKoAKCMEeKNT6obAX9SKQ"/>
-  <Default:Documentation xmi:id="_e_eB4KCMEeKNT6obAX9SKQ" base_Comment="_e_cMsaCMEeKNT6obAX9SKQ"/>
-  <Default:Documentation xmi:id="_e_eB4aCMEeKNT6obAX9SKQ" base_Comment="_e_da0aCMEeKNT6obAX9SKQ"/>
-  <Default:Documentation xmi:id="_GdxJgKCTEeKNT6obAX9SKQ" base_Comment="_GdnYgKCTEeKNT6obAX9SKQ"/>
-  <Default:Documentation xmi:id="_YcZ5UKCTEeKNT6obAX9SKQ" base_Comment="_YcQvYKCTEeKNT6obAX9SKQ"/>
-  <Default:Documentation xmi:id="_22-kYKCeEeKNT6obAX9SKQ" base_Comment="_221acKCeEeKNT6obAX9SKQ"/>
-  <Default:Documentation xmi:id="_3Zk7IKCeEeKNT6obAX9SKQ" base_Comment="_3ZbxMKCeEeKNT6obAX9SKQ"/>
-  <Default:Documentation xmi:id="_CsW28KCfEeKNT6obAX9SKQ" base_Comment="_CsNtAKCfEeKNT6obAX9SKQ"/>
-  <Default:Documentation xmi:id="_D-1LcKCfEeKNT6obAX9SKQ" base_Comment="_D-sBgKCfEeKNT6obAX9SKQ"/>
-  <Default:Documentation xmi:id="_KGIg4KCfEeKNT6obAX9SKQ" base_Comment="_KF9hwKCfEeKNT6obAX9SKQ"/>
-  <Default:Documentation xmi:id="_S1KREKCgEeKNT6obAX9SKQ" base_Comment="_S1FYkKCgEeKNT6obAX9SKQ"/>
-  <Default:Documentation xmi:id="_GbtysKChEeKNT6obAX9SKQ" base_Comment="_Gbo6MKChEeKNT6obAX9SKQ"/>
-  <Default:Documentation xmi:id="_YwlRMKChEeKNT6obAX9SKQ" base_Comment="_Ywg_wKChEeKNT6obAX9SKQ"/>
-  <Default:Documentation xmi:id="_kgnwwKChEeKNT6obAX9SKQ" base_Comment="_kgiRMKChEeKNT6obAX9SKQ"/>
-  <Default:Documentation xmi:id="_QfOpkKCiEeKNT6obAX9SKQ" base_Comment="_QfERgKCiEeKNT6obAX9SKQ"/>
-  <Default:Documentation xmi:id="_61EsYLKLEeK_s63jeeMxMg" base_Comment="_602C4LKLEeK_s63jeeMxMg"/>
 </xmi:XMI>
