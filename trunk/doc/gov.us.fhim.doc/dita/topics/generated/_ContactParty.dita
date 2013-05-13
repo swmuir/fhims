@@ -20,14 +20,16 @@
   <stentry>Description</stentry>
  </sthead>
  <strow>
-  <stentry><p>ageAtDeath : <xref href="../t_PhysicalQuantity.dita" >PhysicalQuantity</xref> (0..1)</p> 
+
+  <stentry><p>ageAtDeath :  <xref href="../t_PhysicalQuantity.dita" >PhysicalQuantity</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				If the person related to the patient is deceased, this property contains that person&apos;s age upon their death. This is used  in conjunction with other properties to determine any familial propensities for fatal conditions.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>contactCategory : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+  <stentry><p>contactCategory :  <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
 <p>See <xref href="../t_ContactTypeValueSet.dita">Contact Type Value Set</xref> definition for values.</p>
 </stentry>
   <stentry><p>				Indicates the circumstances under which this person is the contact party for the person identified in the owning Person class.</p><p>&quot;Indicates the specific relationship role....  This field specifies the role that the next of kin/associated parties plays with regard to the patient.&quot; - HL7 Version 2.8, NK1-7.  See HL7 Table 131 for suggested values.
@@ -35,77 +37,88 @@
   </stentry>
   </strow>
  <strow>
-  <stentry><p>contactReason : <xref href="../t_String.dita" >String</xref> (0..*)</p> 
+
+  <stentry><p>contactReason :  String (0..*)</p> 
 </stentry>
   <stentry><p>				&quot;Identifies how the contact should be used (e.g., contact employer if patient is unable to work).&quot; - HL7 Version 2.8, NK1-29.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>effectiveDateRange : <xref href="../t_TimeInterval.dita" >TimeInterval</xref> (1..1)</p> 
+
+  <stentry><p>effectiveDateRange :  <xref href="../t_TimeInterval.dita" >TimeInterval</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				The date range during which this person is a contact party for the patient.</p><p>&quot;The start date of the contact role.&quot; - HL7 Version 2.8, NK1-8.</p><p>&quot;The end date of the contact role.&quot; - HL7 Version 2.8, NK1-9.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>id : <xref href="../t_Id.dita" >Id</xref> (0..*)</p> 
+
+  <stentry><p>id :  <xref href="../t_Id.dita" >Id</xref> (0..*)</p> 
 </stentry>
   <stentry><p>				&quot;The identifiers for the next of kin/associated party, for example, Social Security Number, driver&apos;s license, etc.&quot; - HL7 Version 2.8, NK1-33.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>isPrimaryContact : <xref href="../t_Boolean.dita" >Boolean</xref> (1..1)</p> 
+
+  <stentry><p>isPrimaryContact :  Boolean (1..1)</p> 
 </stentry>
   <stentry><p>				Indicates whether this person is the primary one to contact.  Added for MyHealtheVet.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>legalName : <xref href="../t_PersonName.dita" >PersonName</xref> (1..1)</p> 
+
+  <stentry><p>legalName :  <xref href="../t_PersonName.dita" >PersonName</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				The name by which a person is known or legally identified such as the name on a driver&apos;s license or passport.  Note that the datatype for this property is a PersonName, which includes the various parts that make up a person&apos;s name such as family name, prefixes, suffixes, etc.</p><p>&quot;One or more of the names of the next of kin or associated party.&quot; - HL7 Version 2.8, NK1-2.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>mobilePhone : <xref href="../t_Telecommunications.dita" >Telecommunications</xref> (1..1)</p> 
+
+  <stentry><p>mobilePhone :  <xref href="../t_Telecommunications.dita" >Telecommunications</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				A telecommunication device that moves and stays with its owner. Suitable for urgent matters, the mobile phone is not the first choice for routine business.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>preferredContactMethod : <xref href="../t_String.dita" >String</xref> (0..1)</p> 
+
+  <stentry><p>preferredContactMethod :  String (0..1)</p> 
 </stentry>
   <stentry><p>				Identifies the preffered method by which this person should be contacted.  Possible values include: primaryHomePhone, temporaryEmail, etc.  Added for MyHealtheVet.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>primaryHomeAddress : <xref href="../t_Address.dita" >Address</xref> (1..1)</p> 
+
+  <stentry><p>primaryHomeAddress :  <xref href="../t_Address.dita" >Address</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				A communications address for the person&apos;s primary place of residence.</p><p>&quot;The address of the next of kin/associated party.&quot; - HL7 Version 2.8, NK1-4.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>primaryHomeEmail : <xref href="../t_Telecommunications.dita" >Telecommunications</xref> (0..1)</p> 
+
+  <stentry><p>primaryHomeEmail :  <xref href="../t_Telecommunications.dita" >Telecommunications</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				The email address that a person uses while at their primary home, to reach a person after business hours.    &quot;Contains the patient&apos;s personal telecommunication contact information.&quot; - HL7 Version 2.8, PID-40.  Note that in HL7, the Telecommunications datatype contains a type code to indicate what kind of telecommunications address that is being referenced.  The FHIM explicitly models the telecommuncations type, so in this case the attribute name is &quot;Primary Home Email&quot;, and the type code would be set to &quot;primary home&quot; when targeting an HL7 implementation.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>primaryHomePhone : <xref href="../t_Telecommunications.dita" >Telecommunications</xref> (1..1)</p> 
+
+  <stentry><p>primaryHomePhone :  <xref href="../t_Telecommunications.dita" >Telecommunications</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				The phone number of a person at their primary home, to reach a person after business hours.</p><p>&quot;The telephone number of the next of kin/associated party.&quot; - HL7 Version 2.8, NK1-5.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>relationshipCategory : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+  <stentry><p>relationshipCategory :  <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
 <p>See <xref href="../t_FamilyMemberValueSet.dita">Family Member Value Set</xref> definition for values.</p>
 </stentry>
   <stentry><p>				Indicates how the person is related to the person identified in the owning Person class.  Examples include Spouse, Child, Parent, Legal Guardian, etc.</p><p>&quot;The actual personal relationship that the next of kin/associated party has to the patient.&quot; - HL7 Version 2.8, NK1-3.  See HL7 Table 63 for suggested values.
@@ -113,21 +126,24 @@
   </stentry>
   </strow>
  <strow>
-  <stentry><p>status : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+  <stentry><p>status :  <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				The status of the record of the relationship with the person identified in the Person class.  Example values include Active, Deprecated, etc.  Paired with the effectiveDateRange which indicates the valid range of dates for which this person is a relation.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>workAddress : <xref href="../t_Address.dita" >Address</xref> (0..1)</p> 
+
+  <stentry><p>workAddress :  <xref href="../t_Address.dita" >Address</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				The contact party&apos;s office address.  First choice for business related contacts during business hours.</p><p>&quot;The address of the next of kin/associated party.&quot; - HL7 Version 2.8, NK1-4.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>workPhone : <xref href="../t_Telecommunications.dita" >Telecommunications</xref> (1..1)</p> 
+
+  <stentry><p>workPhone :  <xref href="../t_Telecommunications.dita" >Telecommunications</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				The phone number for a person at their office location. First choice for business related contacts during business hours.</p><p>&quot;The business telephone number of the next of kin/associated party.&quot; - HL7 Version 2.8, NK1-6.
 			</p>

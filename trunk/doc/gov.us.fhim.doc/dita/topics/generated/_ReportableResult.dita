@@ -20,83 +20,95 @@
   <stentry>Description</stentry>
  </sthead>
  <strow>
-  <stentry><p>dateDeemedReportable : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+  <stentry><p>dateDeemedReportable :  <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;Specifies the date/time when the results were reported or status changed.  This conditional field is required whenever [Report Status] is valued.  This field is used to indicate the date and time that the results are composed into a report and released, or that [Healthcare Order status] is entered or changed.&quot; - HL7 Version 2.8, OBR-22.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>dateTimeObserved : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+  <stentry><p>dateTimeObserved :  <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;This field is required in two circumstances.  The first is when the observations reported beneath one report header have different dates/times.  This could occur in the case of queries, timed test sequences, or clearance studies where one measurement within a battery may have a different time than another measurement....  The observation date-time is the physiologically relevant date-time or the closest approximation to that date-time.  In the case of tests performed on specimens, the relevant date-time is the specimen&#8217;s collection date-time.  In the case of observations taken directly on the patient (e.g., X-ray images, history and physical), the observation date-time is the date-time that the observation was performed.&quot; - HL7 Version 2.8, OBX.14
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>dateTimeOfAnalysis : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+  <stentry><p>dateTimeOfAnalysis :  <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;The time stamp associated with generation of the analytical result by the instrument specified in [the deviceInstance]&quot; - HL7 Version 2.8, OBX.19
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>id : <xref href="../t_Id.dita" >Id</xref> (1..1)</p> 
+
+  <stentry><p>id :  <xref href="../t_Id.dita" >Id</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;Contains a unique identifier for this observation.&quot; - HL7 Version 2.8, OBX-21.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>negationIndicator : <xref href="../t_Boolean.dita" >Boolean</xref> (1..1)</p> 
+
+  <stentry><p>negationIndicator :  Boolean (1..1)</p> 
 </stentry>
   <stentry><p>			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>observationMethod : <xref href="../t_Code.dita" >Code</xref> (0..*)</p> 
+
+  <stentry><p>observationMethod :  <xref href="../t_Code.dita" >Code</xref> (0..*)</p> 
 </stentry>
   <stentry><p>				&quot;The method or procedure by which an observation was obtained when the sending system wishes to distinguish among one measurement obtained by different methods and the distinction is not implicit in the test ID.  Chemistry laboratories do not usually distinguish between two different methods used to measure a given serum constituent (e.g., serum potassium) as part of the test name....&quot; - HL7 Version 2.8, OBX-17.</p><p></p><p>Note that the aerobic condition of the culture is included in this concept.  Note also that this property can repeat.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>observationSite : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+  <stentry><p>observationSite :  <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				&quot;Contains the body site(s) where the measurement being reported was obtained.   This field should not be used for a specimen source or specimen collection site.  This information is of particular importance if the clinical meaning of a value is modified either directly by the site (for example, is the temperature central or peripheral?) or if the site of one measurement impacts the value of another measurement (for example, is the finger SpO2 probe on the same arm as the NIBP cuff?).  In most cases these observations are performed directly upon the patient and do not involve a specimen.&quot; - HL7 Version 2.8, OBX-20.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>probability : <xref href="../t_Real.dita" >Real</xref> (0..1)</p> 
+
+  <stentry><p>probability :  <xref href="../t_Real.dita" >Real</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				&quot;Contains the probability of a result being true for results with categorical values.  It mainly applies to discrete coded results.  It is a decimal number ... between 0 and 1, inclusive.&quot; - HL7 Version 2.8, OBX-9.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>reReleaseReason : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+  <stentry><p>reReleaseReason :  <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				&quot;Indicates the root cause for the reissue of a previously released lab report.  This element is used in conjunction with OBX-11 Observation Result Status to define the root cause for a reissued laboratory report in the case of a corrected, amended, appended, or revised report.&quot; - HL7 Version 2.8, OBX-27.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>reportDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+  <stentry><p>reportDate :  <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;Specifies the date/time when the results were reported or status changed.  This conditional field is required whenever [Report Status] is valued.  This field is used to indicate the date and time that the results are composed into a report and released, or that [Healthcare Order status] is entered or changed.&quot; - HL7 Version 2.8, OBR-22.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>reportStatus : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+  <stentry><p>reportStatus :  <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;Contains the observation result status.... This field reflects the current completion status of the results for one Observation Identifier....&quot; - HL7 Version 2.8, OBX-11.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>userDefinedAccessCheck : <xref href="../t_String.dita" >String</xref> (0..1)</p> 
+
+  <stentry><p>userDefinedAccessCheck :  String (0..1)</p> 
 </stentry>
   <stentry><p>				&quot;This field permits the producer to record results-dependent codes for classifying the observation at the receiving system.  This field should be needed only rarely...&quot; - HL7 Version 2.8, OBX-13.
 			</p>

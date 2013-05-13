@@ -24,7 +24,8 @@
   <stentry>Description</stentry>
  </sthead>
  <strow>
-  <stentry><p>administrativeGender : <xref href="../t_NullableCode.dita" >NullableCode</xref> (1..1)</p> 
+
+  <stentry><p>administrativeGender :  <xref href="../t_NullableCode.dita" >NullableCode</xref> (1..1)</p> 
 <p>See <xref href="../t_AdministrativeGenderHL7V3.dita">Administrative Gender (HL7 V3)</xref> definition for values.</p>
 </stentry>
   <stentry><p>				&quot;Gender is used to refer to administrative sex rather than biological sex and therefore should easily be classified into female and male. It is included in the exchange for purposes of linking to insurance information and other patient identification linkages and the value chosen by the patient should reflect the information under which any insurance or financial information will be filed, as well as the same information given to other healthcare providers, institutions or health data exchange networks&quot; - HITSP C154</p><p></p><p>&quot;The gender (i.e., the behavioral, cultural, or psychological traits typically associated with one sex) of a living subject as defined for administrative purposes.  This attribute does not include terms related to clinical gender.  Gender is a complex physiological, genetic, and sociological concept that requires multiple observations in order to be comprehensively described.  The purpose of this attribute is to provide a high-level classification that can also be used for the appropriate allocation of inpatient bed assignment. - HL7 Version 3 RIM.</p><p></p><p>Note that the this concept is restricted to those societal roles as perceived in the United States and other Western cultures.</p><p></p><p>&quot;The patient&apos;s sex.&quot; - HL7 Version 2.8, PID-8.</p><p>&quot;The next of kin/associated party&apos;s sex.&quot; - HL7 Version 2.8, NK1-15.</p><p>HL7 Version 2 has the following suggested values (table 1): Female; Male; Other; Unknown; Ambiguous; Not applicable.
@@ -32,21 +33,24 @@
   </stentry>
   </strow>
  <strow>
-  <stentry><p>birthAddress : <xref href="../t_BirthAddress.dita" >BirthAddress</xref> (0..1)</p> 
+
+  <stentry><p>birthAddress :  <xref href="../t_BirthAddress.dita" >BirthAddress</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				The city, state (or other designation such as province or region) and country where a person was born.  Used for both identification and statistical purposes.</p><p></p><p>&quot;Indicates the location of the patient&apos;s birth&quot; - HL7 Version 2.8, PID-23.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>birthName : <xref href="../t_PersonName.dita" >PersonName</xref> (0..1)</p> 
+
+  <stentry><p>birthName :  <xref href="../t_PersonName.dita" >PersonName</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				A name that a person had shortly after being born. Usually for family names but may be used to mark given names at birth that may have changed later.  In western cultures, this name can be used for &quot;maiden name.&quot;  Note that the datatype for this property is a PersonName, which includes the various parts that make up a person&apos;s name such as family name, prefixes, suffixes, etc.    &quot;This field contains one or more of the names of the patient.&quot; - HL7 Version 2.8, PID-5  Note that in HL7, the PersonName datatype contains a type code to indicate what kind of name is being referenced.  The FHIM explicitly models the name type, so in this case the attribute name is &quot;Birth Name&quot;, and the type code would be set to &quot;birth name&quot; when targeting an HL7 implementation.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>ethnicity : <xref href="../t_Code.dita" >Code</xref> (0..*)</p> 
+
+  <stentry><p>ethnicity :  <xref href="../t_Code.dita" >Code</xref> (0..*)</p> 
 <p>See <xref href="../t_DetailedEthnicity.dita">Detailed Ethnicity</xref> definition for values.</p>
 </stentry>
   <stentry><p>				 An ethnic group (or ethnicity) is a group of people whose members identify with each other, through a common heritage, often consisting of a common language, a common culture (often including a shared religion) and an ideology that stresses common ancestry or endogamy .  In addition, an ethnic group often shares an interest in a homeland connected with a specific geographical area and common traditions, including food preferences  (Wikipedia).  Note that unlike race, which concentrates on a person s physical heritage, ethnicity is concerned with the cultural heritage with which a person identifies themselves.  Examples of Ethnicity include: German, Scandinavian, Italian, Irish, etc.  These ethnic groups are of the same race (Caucasian, or  white ).   Note also that the set of Ethnicity values used may vary based on the purpose for collecting this information.  The U.S. Office of Management and Budget (OMB) issues a set to be used for census purposes.  See OMB publication 15.  This property may contain more than one ethnicity for a given person, identified in no particular order.</p><p></p><p>&quot;This field further defines the patient&apos;s ancestry.&quot; - HL7 Version 2.8, PID-22.</p><p>&quot;The next of kin/associated party&apos;s ethnic group.&quot; - HL7 Version 2.8, NK1-28.</p><p>HL7 Version 2 has the following suggested values (table 189): Hispanic or Latino; Not Hispanic or Latino; Unknown.
@@ -54,42 +58,48 @@
   </stentry>
   </strow>
  <strow>
-  <stentry><p>fathersName : <xref href="../t_String.dita" >String</xref> (0..1)</p> 
+
+  <stentry><p>fathersName :  String (0..1)</p> 
 </stentry>
   <stentry><p>				The name of the father of the veteran.  Used primarily for identification purposes - ?
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>isTranslatorNeeded : <xref href="../t_Boolean.dita" >Boolean</xref> (0..1)</p> 
+
+  <stentry><p>isTranslatorNeeded :  Boolean (0..1)</p> 
 </stentry>
   <stentry><p>				Indicates whether this person needs translation services due to an inability to speak English.  Added for Public Health Reporting 6/14/2012.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>legalName : <xref href="../t_PersonName.dita" >PersonName</xref> (0..1)</p> 
+
+  <stentry><p>legalName :  <xref href="../t_PersonName.dita" >PersonName</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				The name by which a person is known or legally identified such as the name on a driver&apos;s license or passport.  Note that the datatype for this property is a PersonName, which includes the various parts that make up a person&apos;s name such as family name, prefixes, suffixes, etc.  Note that in HL7, the PersonName datatype contains a type code to indicate what kind of name is being referenced.  The FHIM explicitly models the name type, so in this case the attribute name is &quot;Legal Name&quot;, and the type code would be set to &quot;Legal Name&quot; when targeting an HL7 implementation.</p><p></p><p>&quot;Contains one or more of the names of the patient....&quot; - HL7 Version 2.8, PID-5.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>livingArrangement : <xref href="../t_String.dita" >String</xref> (0..1)</p> 
+
+  <stentry><p>livingArrangement :  String (0..1)</p> 
 </stentry>
   <stentry><p>				&quot;The housing situation of a person.  This attribute is used for discharge planning, social service assessment, and psychosocial evaluation.&quot; - HL7 Version 3 RIM.</p><p>&quot;The situation that the associated party lives in at his/her residential address.&quot; - HL7 Version 2.8, NK1-21.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>livingDependency : <xref href="../t_String.dita" >String</xref> (0..*)</p> 
+
+  <stentry><p>livingDependency :  String (0..*)</p> 
 </stentry>
   <stentry><p>				&quot;Identifies specific living conditions (e.g., spouse dependent on patient, walk-up) that are relevant to an evaluation of the patient&apos;s healthcare needs.  This information can be used for discharge planning.  Examples might include Spouse Dependent, Medical Supervision Required, Small Children Dependent.&quot; - HL7 Version 2.8, NK1-17.  Possible values include (from HL7 V2 Table 223): Spouse Dependent; Medical Supervision Required; Small Children Dependent; Other; Unknown.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>maritalStatus : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+  <stentry><p>maritalStatus :  <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
 <p>See <xref href="../t_MaritalStatusValueSet.dita">Marital Status Value Set</xref> definition for values.</p>
 </stentry>
   <stentry><p>				&quot;The domestic partnership status of a person.&quot; - HL7 Version 3 RIM.</p><p>&quot;Contains the patient&apos;s marital (civil) status.&quot; - HL7 Version 2.8, PID-16.</p><p>&quot;Contains the next of kin/associated party&apos;s marital status.&quot; - HL7 Version 2.8, NK1-14.</p><p>HL7 Version 2 has the following suggested values (table 2): Separated; Divorced; Married; Single; Widowed; Common law; Living together; Domestic partner; Registered domestic partner; Legally Separated; Annulled; Interlocutory; Unmarried; Unknown; Other; Unreported.
@@ -97,56 +107,64 @@
   </stentry>
   </strow>
  <strow>
-  <stentry><p>mobilePhone : <xref href="../t_Telecommunications.dita" >Telecommunications</xref> (0..1)</p> 
+
+  <stentry><p>mobilePhone :  <xref href="../t_Telecommunications.dita" >Telecommunications</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				A telecommunication device that moves and stays with its owner. Suitable for urgent matters, the mobile phone is not the first choice for routine business.    &quot;Contains the patient&apos;s personal telecommunication contact information.&quot; - HL7 Version 2.8, PID-40.  Note that in HL7, the Telecommunications datatype contains a type code to indicate what kind of telecommunications address that is being referenced.  The FHIM explicitly models the telecommuncations type, so in this case the attribute name is &quot;Mobile Phone&quot;, and the type code would be set to &quot;mobile contact&quot; when targeting an HL7 implementation.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>mothersIdentifier : <xref href="../t_Id.dita" >Id</xref> (0..*)</p> 
+
+  <stentry><p>mothersIdentifier :  <xref href="../t_Id.dita" >Id</xref> (0..*)</p> 
 </stentry>
   <stentry><p>				&quot;This field is used, for example, as a link field for newborns.  Typically a patient ID or account number may be used.  This field can contain multiple identifiers for the same mother.&quot; - HL7 Version 2.8, PID-21.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>mothersMaidenName : <xref href="../t_String.dita" >String</xref> (0..1)</p> 
+
+  <stentry><p>mothersMaidenName :  String (0..1)</p> 
 </stentry>
   <stentry><p>				&quot;The family name under which the mother was born (i.e., before marriage). It is used to distinguish between patients with the same last name.&quot; - HL7 Version 2.8, PID-6.</p><p>&quot;The maiden name of the next of kin/associated party&apos;s mother.&quot; - HL7 Version 2.8, NK1-26.</p><p></p><p>This property is typically used for identity management purposes, especially to distinguish between persons who may have similar or identical names.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>pager : <xref href="../t_Telecommunications.dita" >Telecommunications</xref> (0..1)</p> 
+
+  <stentry><p>pager :  <xref href="../t_Telecommunications.dita" >Telecommunications</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				A paging device suitable to solicit a callback or to leave a very short message.    &quot;Contains the patient&apos;s personal telecommunication contact information.&quot; - HL7 Version 2.8, PID-40.  Note that in HL7, the Telecommunications datatype contains a type code to indicate what kind of telecommunications address that is being referenced.  The FHIM explicitly models the telecommuncations type, so in this case the attribute name is &quot;Pager&quot;, and the type code would be set to &quot;pager&quot; when targeting an HL7 implementation.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>primaryHomeAddress : <xref href="../t_Address.dita" >Address</xref> (0..1)</p> 
+
+  <stentry><p>primaryHomeAddress :  <xref href="../t_Address.dita" >Address</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				A communications address for the person&apos;s primary place of residence.  Note that in HL7, the Address datatype contains a type code to indicate what kind of address is being referenced.  The FHIM explicitly models the address type, so in this case the attribute name is &quot;Primary Home Address&quot;, and the type code would be set to &quot;Primary Home&quot; when targeting an HL7 implementation.</p><p></p><p>&quot;Contains the address of the patient.  Multiple addresses for the same person may be sent.&quot; - HL7 Version 2.8, PID-11.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>primaryHomeEmail : <xref href="../t_Telecommunications.dita" >Telecommunications</xref> (0..1)</p> 
+
+  <stentry><p>primaryHomeEmail :  <xref href="../t_Telecommunications.dita" >Telecommunications</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				The email address that a person uses while at their primary home, to reach a person after business hours.    &quot;Contains the patient&apos;s personal telecommunication contact information.&quot; - HL7 Version 2.8, PID-40.  Note that in HL7, the Telecommunications datatype contains a type code to indicate what kind of telecommunications address that is being referenced.  The FHIM explicitly models the telecommuncations type, so in this case the attribute name is &quot;Primary Home Email&quot;, and the type code would be set to &quot;primary home&quot; when targeting an HL7 implementation.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>primaryHomePhone : <xref href="../t_Telecommunications.dita" >Telecommunications</xref> (0..1)</p> 
+
+  <stentry><p>primaryHomePhone :  <xref href="../t_Telecommunications.dita" >Telecommunications</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				The phone number of a person at their primary home, to reach a person after business hours.  Note that in HL7, the Telecommunications datatype contains a type code to indicate what kind of telecommunications address that is being referenced.  The FHIM explicitly models the telecommuncations type, so in this case the attribute name is &quot;Primary Home Phone&quot;, and the type code would be set to &quot;Primary Home&quot; when targeting an HL7 implementation.</p><p></p><p>&quot;Contains the patient&apos;s personal phone numbers.&quot; - HL7 Version 2.8, PID-13.</p><p>&quot;Contains the patient&apos;s personal telecommunication contact information.&quot; - HL7 Version 2.8, PID-40.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>race : <xref href="../t_Code.dita" >Code</xref> (0..*)</p> 
+
+  <stentry><p>race :  <xref href="../t_Code.dita" >Code</xref> (0..*)</p> 
 <p>See <xref href="../t_RaceValueSet.dita">Race Value Set</xref> definition for values.</p>
 </stentry>
   <stentry><p>				 Race is classification of humans into large and distinct populations or groups by factors such as heritable phenotypic characteristics or geographic ancestry, but also often influenced by and correlated with traits such as appearance, culture, ethnicity, and socio-economic status.  (Wikipedia).  This property may contain more than one race for a given person, identified in no particular order.</p><p></p><p>&quot;This field refers to the patient&apos;s race.&quot; - HL7 Version 2.8, PID-10.</p><p>&quot;The race of the next of kin/associated party.&quot; - HL7 Version 2.8, NK1-35.</p><p>HL7 Version 2 has the following suggested values (table 5): American Indian or Alaska Native; Asian; Black or African American; Native Hawaiian or Other Pacific Islander; White; Other Race.
@@ -154,7 +172,8 @@
   </stentry>
   </strow>
  <strow>
-  <stentry><p>religiousAffiliation : <xref href="../t_String.dita" >String</xref> (0..1)</p> 
+
+  <stentry><p>religiousAffiliation :  String (0..1)</p> 
 <p>See <xref href="../t_ReligiousAffiliationValueSet.dita">Religious Affiliation Value Set</xref> definition for values.</p>
 </stentry>
   <stentry><p>				This property is used primarily to accommodate the person&apos;s religious preferences in clinical settings.</p><p></p><p>&quot;The primary religious preference of a person (e.g. Hinduism, Islam, Roman Catholic). - HL7 Version 3 RIM.</p><p></p><p>&quot;Contains the patient&apos;s religion.&quot; - HL7 Version 2.8, PID-17.</p><p>&quot;The type of religion practiced by the next of kin/associated party.&quot; - HL7 Version 2.8, NK1-25.</p><p>HL7 Version 2 table 6 lists 85 suggested values for this field.
@@ -162,42 +181,48 @@
   </stentry>
   </strow>
  <strow>
-  <stentry><p>ssn : <xref href="../t_Id.dita" >Id</xref> (0..1)</p> 
+
+  <stentry><p>ssn :  <xref href="../t_Id.dita" >Id</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				A nine digit identification number assigned to a person by the US Social Security Administration.  Used primarily for identification purposes.  Note that HIPAA forbids the use of SSN as a primary identifier.  Maps to HL7 Version 2.8, PID-18.  Note that while Social Security Number is a type of Id, and could be modeled as simply one of the possible instances of the &quot;id&quot; property, it is explicitly modeled because it is a particular kind of identifier that is needed for various business processes.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>temporaryAddress : <xref href="../t_Address.dita" >Address</xref> (0..1)</p> 
+
+  <stentry><p>temporaryAddress :  <xref href="../t_Address.dita" >Address</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				An address at which a person may be contacted while away from their primary home residence.  For example, the person may be staying at a hotel to be nearer to a treatment facility, or while on vacation.  Note that in HL7, the Address datatype contains a type code to indicate what kind of address is being referenced.  The FHIM explicitly models the address type, so in this case the attribute name is &quot;Temporary Address&quot;, and the type code would be set to &quot;Temporary Address&quot; when targeting an HL7 implementation.</p><p></p><p>&quot;Contains the address of the patient.  Multiple addresses for the same person may be sent.&quot; - HL7 Version 2.8, PID-11.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>temporaryPhone : <xref href="../t_Telecommunications.dita" >Telecommunications</xref> (0..1)</p> 
+
+  <stentry><p>temporaryPhone :  <xref href="../t_Telecommunications.dita" >Telecommunications</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				An address at which a person may be contacted while away from their primary home residence.  For example, the person may be staying at a hotel to be nearer to a treatment facility, or while on vacation.  Note that in HL7, the Telecommunications datatype contains a type code to indicate what kind of telecommunications address that is being referenced.  The FHIM explicitly models the telecommuncations type, so in this case the attribute name is &quot;Temporary Phone&quot;, and the type code would be set to &quot;temporary address&quot; when targeting an HL7 implementation.</p><p></p><p>&quot;Contains the patient&apos;s personal telecommunication contact information.&quot; - HL7 Version 2.8, PID-40.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>workAddress : <xref href="../t_Address.dita" >Address</xref> (0..1)</p> 
+
+  <stentry><p>workAddress :  <xref href="../t_Address.dita" >Address</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				The person&apos;s office address.  First choice for business related contacts during business hours.  Note that in HL7, the Address datatype contains a type code to indicate what kind of address is being referenced.  The FHIM explicitly models the address type, so in this case the attribute name is &quot;Work Address&quot;, and the type code would be set to &quot;Workplace&quot; when targeting an HL7 implementation.</p><p></p><p>&quot;Contains the address of the patient.  Multiple addresses for the same person may be sent.&quot; - HL7 Version 2.8, PID-11.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>workEmail : <xref href="../t_Telecommunications.dita" >Telecommunications</xref> (0..1)</p> 
+
+  <stentry><p>workEmail :  <xref href="../t_Telecommunications.dita" >Telecommunications</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				The email address that a person uses while at their place of business.  First choice for business related contacts during business hours.    &quot;Contains the patient&apos;s personal telecommunication contact information.&quot; - HL7 Version 2.8, PID-40.  Note that in HL7, the Telecommunications datatype contains a type code to indicate what kind of telecommunications address that is being referenced.  The FHIM explicitly models the telecommuncations type, so in this case the attribute name is &quot;Work Email&quot;, and the type code would be set to &quot;workplace&quot; when targeting an HL7 implementation.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>workPhone : <xref href="../t_Telecommunications.dita" >Telecommunications</xref> (0..1)</p> 
+
+  <stentry><p>workPhone :  <xref href="../t_Telecommunications.dita" >Telecommunications</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				The phone number for a person at their office location. First choice for business related contacts during business hours.  Note that in HL7, the Telecommunications datatype contains a type code to indicate what kind of telecommunications address that is being referenced.  The FHIM explicitly models the telecommuncations type, so in this case the attribute name is &quot;Work Email&quot;, and the type code would be set to &quot;workplace&quot; when targeting an HL7 implementation.</p><p></p><p>&quot;Contains the patient&apos;s business telephone numbers.&quot; - HL7 Version 2.8, PID-14.</p><p>&quot;Contains the patient&apos;s personal telecommunication contact information.&quot; - HL7 Version 2.8, PID-40.
 			</p>

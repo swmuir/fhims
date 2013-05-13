@@ -20,168 +20,192 @@
   <stentry>Description</stentry>
  </sthead>
  <strow>
-  <stentry><p>alternatePlacerOrderId : <xref href="../t_Id.dita" >Id</xref> (0..1)</p> 
+
+  <stentry><p>alternatePlacerOrderId :  <xref href="../t_Id.dita" >Id</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				&quot;This field enables a shorter number to be communicated that is unique within other identifiers.&quot; - HL7 Version 2.8, ORC-53.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>callbackPhone : <xref href="../t_Telecommunications.dita" >Telecommunications</xref> (1..1)</p> 
+
+  <stentry><p>callbackPhone :  <xref href="../t_Telecommunications.dita" >Telecommunications</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;Contains the telephone number to call for clarification of a request or other information regarding the order.&quot; - HL7 Version 2.8, ORC-14.</p><p>&quot;Contains the telephone number for reporting a status or a result&quot; - HL7 Version 2.8, OBR-17.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>confidentialityCode : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+  <stentry><p>confidentialityCode :  <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;This field contains information about the level of security and/or sensitivity surrounding the order (e.g., highly sensitive, not sensitive, sensitive, etc.).&quot; - HL7 Version 2.8, ORC-28
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>dangerCode : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+  <stentry><p>dangerCode :  <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				&quot;Contains the code and/or text indicating any known or suspected patient or specimen hazards, e.g., patient with active tuberculosis or blood from a hepatitis patient.&quot; - HL7 Version 2.8, OBR-12.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>dateTimeBegin : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+  <stentry><p>dateTimeBegin :  <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;This field may be specified by the requester, in which case it indicates the earliest date/time at which the services should be started.  In many cases, however, the start date/time will be implied or will be defined by other fields in the service request record (e.g., urgency   STAT).  In such a case, this field will be empty. The filling service will often record a value in this field after receipt of the service request, however, and compute an end time on the basis of the start date/time for the filling service&apos;s internal use.&quot; - HL7 Version 2.8, TQ1-7
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>dateTimeCompleted : <xref href="../t_PointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+  <stentry><p>dateTimeCompleted :  <xref href="../t_PointInTime.dita" >PointInTime</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				The date/time this order is considered complete.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>dateTimeEnd : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+  <stentry><p>dateTimeEnd :  <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;When filled in by the requester of the service, this field should contain the latest date/time that the service should be performed.  If it has not been performed by the specified time, it should not be performed at all.  The requester may not always fill in this value, yet the filling service may fill it in on the basis of the instruction it receives and the actual start time. Regardless of the value of the end date/time, the service should be stopped at the earliest of the date/times specified by either the duration or the end date/time.&quot; - HL7 Version 2.8, TQ1-8
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>dateTimeOrdered : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+  <stentry><p>dateTimeOrdered :  <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				The date/time that the order was created by the ordering provider.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>duplicateProcedureReason : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+  <stentry><p>duplicateProcedureReason :  String (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;This field is used to document why the procedure found in OBR-44 - Procedure Code is a duplicate of one ordered/charged previously for the same patient within the same date of service and has been determined to be medically necessary.&quot; - HL7 Version 2.8, OBR-48.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>isEscortRequired : <xref href="../t_Boolean.dita" >Boolean</xref> (0..1)</p> 
+
+  <stentry><p>isEscortRequired :  Boolean (0..1)</p> 
 </stentry>
   <stentry><p>				Indicates whether &quot;the patient needs to be escorted to the diagnostic service department.&quot; - HL7 Version 2.8, OBR-42
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>isInpatientOrder : <xref href="../t_Boolean.dita" >Boolean</xref> (1..1)</p> 
+
+  <stentry><p>isInpatientOrder :  Boolean (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;This field indicates whether the order is to be executed in an inpatient setting or an outpatient setting.&quot; - HL7 Version 2.8, ORC-29
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>placerOrderId : <xref href="../t_Id.dita" >Id</xref> (1..1)</p> 
+
+  <stentry><p>placerOrderId :  <xref href="../t_Id.dita" >Id</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;This field is the placer application&apos;s order number.&quot; - HL7 Version 2.8, ORC-2</p><p>&quot;This field is identical to ORC-2-Placer Order Number....  It identifies an order uniquely among all orders from a particular ordering application.&quot; - HL7 Version 2.8, OBR-2.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>placerSupplementalInfo : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+  <stentry><p>placerSupplementalInfo :  <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;Contains supplemental service information sent from the placer system to the filler system for the universal procedure code reported in OBR-4 Universal Service ID.  This field will be used to provide ordering information detail that is not available in other specific fields in the OBR segment.&quot; - HL7 Version 2.8, OBR-46.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>plannedPatientTransportComment : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+  <stentry><p>plannedPatientTransportComment :  String (1..1)</p> 
 </stentry>
   <stentry><p>				Contains &quot;comments on special requirements for the transport of the patient to the diagnostic service department.&quot; - HL7 Version 2.8, OBR-43
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>priority : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+  <stentry><p>priority :  <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;This field describes the urgency of the request.  If this field is blank, the default is R&quot; (Routine) - HL7 Version 2.8, TQ1-9
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>reasonForStudy : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+  <stentry><p>reasonForStudy :  <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				&quot;This is required for some studies to obtain proper reimbursement.&quot; - HL7 Version 2.8, OBR-31.  Used to link various tests or procedures together in order to provide a more complete picture of a patient&apos;s condition.  Also used for billing purposes.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>relevantClinicalInformation : <xref href="../t_Code.dita" >Code</xref> (0..*)</p> 
+
+  <stentry><p>relevantClinicalInformation :  <xref href="../t_Code.dita" >Code</xref> (0..*)</p> 
 </stentry>
   <stentry><p>				&quot;Contains the additional clinical information about the patient or specimen.  This field is used to report the suspected diagnosis and clinical findings on requests for interpreted diagnostic studies.  Examples include reporting the amount of inspired carbon dioxide for blood gasses, the point in the menstrual cycle for cervical pap tests, and other conditions that influence test interpretations.&quot; - HL7 Version 2.8, OBR-13.  Possible values include (from HL7 Table 916): Patient was fasting prior to the procedure; The patient indicated they did not fast prior to the procedure; Not Given &#8211; Patient was not asked at the time of the procedure; Fasting not asked of the patient at time of procedure.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>remarks : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+  <stentry><p>remarks :  String (1..1)</p> 
 </stentry>
   <stentry><p>				General textual comments about this Order.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>resultHandling : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+  <stentry><p>resultHandling :  <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				&quot;Information regarding the handling of the result.  For example, an order may specify that the result (e.g., an x-ray film) should be given to the patient for return to the requestor....  If this field is not populated then routine handling is implied.&quot; - HL7 Version 2.8, OBR-49    Note that the HL7 V2 value set only contains values pertinent to Radiology (e.g., give film to patient).  However, it is envisioned that other scenarios might be handled by this property.  This property is optional.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>status : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+  <stentry><p>status :  <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;Specifies the status of an order....  The purpose of this field is to report the status of an order either upon request (solicited), or when the status changes (unsolicited).  It does not initiate action.  It is assumed that the order status always reflects the status as it is known to the sending application at the time that the message is sent.  Only the filler can originate the value of this field.&quot; - HL7 Version 2.8, ORC-5</p><p></p><p>A code specifying the status of the Order.  Valid status codes should reflect the HL7 state machine, e.g., Active, Held, Canceled, Aborted, New, Nullified, Obsolete.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>statusModifier : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+  <stentry><p>statusModifier :  <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				&quot;This field is a modifier or refiner of the ORC-5-Order status field. This field may be used to provide additional levels of specificity or additional information for the defined order status codes.&quot; - HL7 Version 2.8, ORC-25
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>transportationArrangementResponsibility : <xref href="../t_String.dita" >String</xref> (0..1)</p> 
+
+  <stentry><p>transportationArrangementResponsibility :  String (0..1)</p> 
 </stentry>
   <stentry><p>				Indicates &quot;who is responsible for arranging transport to the planned diagnostic service.  Examples: Requester, Provider, Patient.&quot; - HL7 Version 2.8, OBR-40.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>transportationMode : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+  <stentry><p>transportationMode :  <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				&quot;Identifies how (or whether) to transport a patient, when applicable.&quot; - HL7 Version 2.8, OBR-30.  Possible values include (from HL7 Table 124): Cart - patient travels on cart or gurney; The examining device goes to patient&apos;s location; Patient walks to diagnostic service; Wheelchair.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>wasTransportArranged : <xref href="../t_Boolean.dita" >Boolean</xref> (1..1)</p> 
+
+  <stentry><p>wasTransportArranged :  Boolean (1..1)</p> 
 </stentry>
   <stentry><p>				Indicates &quot;whether transport arrangements are known to have been made.&quot; - HL7 Version 2.8, OBR-41
 			</p>

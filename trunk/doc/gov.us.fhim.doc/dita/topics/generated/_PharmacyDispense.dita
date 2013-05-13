@@ -20,97 +20,111 @@
   <stentry>Description</stentry>
  </sthead>
  <strow>
-  <stentry><p>actualStrength : <xref href="../t_PhysicalQuantity.dita" >PhysicalQuantity</xref> (1..1)</p> 
+
+  <stentry><p>actualStrength :  <xref href="../t_PhysicalQuantity.dita" >PhysicalQuantity</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;Use when [DispensedDrug] does not specify the strength.  This is the numeric part of the strength, of a single dosage unit of the dispensed product&quot; - HL7 Version 2.8, RXD-16.</p><p>&quot;Use when [DispensedDrug] does not specify the strength.  This is the unit of the strength, of a single dosage unit of the dispensed product&quot; - HL7 Version 2.8, RXD-17.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>dateTimeDispensed : <xref href="../t_PointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+  <stentry><p>dateTimeDispensed :  <xref href="../t_PointInTime.dita" >PointInTime</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				Indicates when the pharmaceutical/treatment left the control of the pharmacy.  This may be when the medication was picked up or mailed (outpatient), or delivered to a ward (inpatient).  Note that this differs from the &quot;fill date/time&quot; in that the fill date is when the pharmaceutical/treatment was removed from inventory (e.g., when the pharmacist filled a bottle with tablets from inventory); once filled, the medication may remain in the pharmacy awaiting pick-up.  Once delivered to the patient or another caregiver, the medication is then considered &quot;dispensed.&quot;</p><p>Dispense = &quot;to make up and distribute (medicine), esp. on prescription.&quot; - Random House Unabridged Dictionary.</p><p>&quot;Indicates when the pharmaceutical/treatment is dispensed from the pharmacy or treatment supplier.&quot; - HL7 Version 2.8, RXD-3.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>dateTimeFilled : <xref href="../t_PointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+  <stentry><p>dateTimeFilled :  <xref href="../t_PointInTime.dita" >PointInTime</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				Indicates when the pharmaceutical/treatment was removed from inventory and prepared for delivery to the patient.  Note that this differs from the &quot;dispense date/time&quot; in that the fill date is when the pharmaceutical/treatment was removed from inventory (e.g., when the pharmacist filled a bottle with tablets from inventory); once filled, the medication may remain in the pharmacy awaiting pick-up, where as the dispense date/time is when the mediation leaves the control of the pharmacy.  Once delivered to the patient or another caregiver, the medication is then considered &quot;dispensed.&quot;
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>daysSupply : <xref href="../t_Integer.dita" >Integer</xref> (0..1)</p> 
+
+  <stentry><p>daysSupply :  Integer (0..1)</p> 
 </stentry>
   <stentry><p>				The length of time in days that the quantity dispensed will last if consumed at the rate prescribed.  For example if the patient is instructed to take 2 pills a day, 60 pills will last 30 days.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>dispenseCategory : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+  <stentry><p>dispenseCategory :  <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;This is the type of dispensing event that occurred.&quot; - HL7 Version 2.8, RXA-26 and RXO-27.  Valid values (from HL7 Table 0484) include: Trial Quantity Balance; Compassionate Fill; New/Renew - Full Fill; New/Renew - Part Fill; Refill - Part Fill; Refill - Full Fill; Manufacturer Sample; Trial Quantity; Non-Prescription Fill.</p><p>Note that this overlaps somewhat with the NCPDP usage of the fillSequenceNumber.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>dispenseMethod : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+  <stentry><p>dispenseMethod :  <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;Contains the method by which treatment is dispensed.&quot; - HL7 Version 2.8, RXD-24.  Possible values (from HL7 Table 321) include: Traditional; Unit Dose; Floor Stock; Automatic Dispensing.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>dispenseNotes : <xref href="../t_String.dita" >String</xref> (0..*)</p> 
+
+  <stentry><p>dispenseNotes :  String (0..*)</p> 
 </stentry>
   <stentry><p>				&quot;Contains free text notes to the person dispensing the medication/treatment (may include the ordering provider&apos;s original notes, as well as any notes from the formulary or the pharmacy or treatment supplier).  This may contain free text describing a custom IV, mixture, or salve for example.&quot; - HL7 Version 2.8, RXD-9.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>dispensingInstructions : <xref href="../t_String.dita" >String</xref> (0..*)</p> 
+
+  <stentry><p>dispensingInstructions :  String (0..*)</p> 
 </stentry>
   <stentry><p>				&quot;Contains pharmacy or treatment supplier-generated special instructions to the provider dispensing/administering the order.&quot; - HL7 Version 2.8, RXD-15.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>fillSequenceNumber : <xref href="../t_Integer.dita" >Integer</xref> (1..1)</p> 
+
+  <stentry><p>fillSequenceNumber :  Integer (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;The code indicating whether the prescription is an original or a refill.&quot; Valid values are 0=original; 1-99=refills. - NCPDP Data Element 403-D3    |Telecom^Claim^4 3-D3^Fill Number|  |Script^SRC^030^7897^Fill Number|
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>id : <xref href="../t_Id.dita" >Id</xref> (1..1)</p> 
+
+  <stentry><p>id :  <xref href="../t_Id.dita" >Id</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				The unique identifier for this dispense, also known as a &quot;Fill Id&quot;.</p><p>&quot;This field starts with 1 the first time that medication/treatment is delivered/dispensed for this order.  Increments by one with each additional issuance.&quot; - HL7 Version 2.8, RXD-1.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>needsHumanReview : <xref href="../t_Boolean.dita" >Boolean</xref> (0..1)</p> 
+
+  <stentry><p>needsHumanReview :  Boolean (0..1)</p> 
 </stentry>
   <stentry><p>				Indicates whether &quot;the application receiving the dispense order needs to warn the person dispensing/administering the drug or treatment to pay attention to the text in [Dispensing Instructions].&quot; - HL7 Version 2.8, RXD-14.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>quantityDispensed : <xref href="../t_PhysicalQuantity.dita" >PhysicalQuantity</xref> (0..1)</p> 
+
+  <stentry><p>quantityDispensed :  <xref href="../t_PhysicalQuantity.dita" >PhysicalQuantity</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				The quanitity of the medication dispensed to this patient in fulfillment of a request.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>specialPackaging : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+  <stentry><p>specialPackaging :  <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
 </stentry>
   <stentry><p>			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>totalDailyDose : <xref href="../t_PhysicalQuantity.dita" >PhysicalQuantity</xref> (1..1)</p> 
+
+  <stentry><p>totalDailyDose :  <xref href="../t_PhysicalQuantity.dita" >PhysicalQuantity</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;Contains the total daily dose being dispensed as expressed in terms of the actual dispense units.&quot; - HL7 Version 2.8, RXD-12.
 			</p>

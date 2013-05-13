@@ -20,77 +20,88 @@
   <stentry>Description</stentry>
  </sthead>
  <strow>
-  <stentry><p>chargeToPracticeCode : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+  <stentry><p>chargeToPracticeCode :  <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				&quot;This field is the charge to the ordering entity for the studies performed when applicable. The first component is a dollar amount when known by the filler.  The second is a charge code when known by the filler (results only)&quot; - HL7 Version 2.8, OBR-23.  This property contains the charge code, if available.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>chargeToPracticeCost : <xref href="../t_MonetaryAmount.dita" >MonetaryAmount</xref> (0..1)</p> 
+
+  <stentry><p>chargeToPracticeCost :  <xref href="../t_MonetaryAmount.dita" >MonetaryAmount</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				&quot;This field is the charge to the ordering entity for the studies performed when applicable. The first component is a dollar amount when known by the filler.  The second is a charge code when known by the filler (results only).&quot; - HL7 Version 2.8, OBR-23.  This property contains the dollar amount, if available.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>dateAccepted : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+  <stentry><p>dateAccepted :  <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				The date/time on which the ordered service was accepted by the filler.  In other words, the creation date of the Promise record.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>expectedAvailabilityDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+  <stentry><p>expectedAvailabilityDate :  <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;Specifies the date/time the filler expects the services to be available.  For example when a prescription is ready for pickup or when a supply will be sent or picked up, or for when a laboratory result is expected to be available.&quot; - HL7 Version 2.8, ORC-27
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>fillerOrderId : <xref href="../t_Id.dita" >Id</xref> (1..1)</p> 
+
+  <stentry><p>fillerOrderId :  <xref href="../t_Id.dita" >Id</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				A unique identifier of the order from the filling organization&apos;s point of view.  Note that different terms have been historically been used for the filler order id in different domains.  For example, in Pharmacy, the &quot;filler order id&quot; is typically called a &quot;prescription number&quot;.  Similarly in Lab, it is typically called an &quot;accession number&quot;.</p><p>&quot;This field is the order number associated with the filling application....&quot; - HL7 Version 2.8, ORC-3 and OBR-3.</p><p>&quot;This field is equivalent in uniqueness to the pharmacy/treatment supplier filler order number.  At some sites, this may be the pharmacy/treatment supplier (internal) sequential form.  At other sites, this may be an external number.&quot; - HL7 Version 2.8, RXD-7.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>fillerSupplementalInfo : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+  <stentry><p>fillerSupplementalInfo :  <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;Contains supplemental service information sent from the filler system to the placer system for the procedure code reported in OBR-4 Universal Service ID.  This field will be used to report ordering information detail that is not available in other specific fields in the OBR segment.  Typically it will reflect the same information as was sent to the filler system in OBR-46-Placer supplemental service information unless the order was modified, in which case the filler system will report what was actually performed using this field....&quot; - HL7 Version 2.8, OBR-47.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>priority : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+  <stentry><p>priority :  <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;Describes the urgency of the request. If this field is blank, the default is [Routine]&quot; - HL7 Version 2.8, TQ1-9.  Possible values include (from HL7 Table 122): Stat; ASAP; Routine; Preop; Callback; Timing critical*; As needed.  *Note that the Timing Critical has a syntax that allows more information, e.g., Timing Critical within 15 minutes.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>scheduledDateTime : <xref href="../t_PointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+  <stentry><p>scheduledDateTime :  <xref href="../t_PointInTime.dita" >PointInTime</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				&quot;The date/time the filler scheduled an observation, when applicable (e.g., action code in OBR-11-specimen action code = &quot;S&quot;).  This is a result of a request to schedule a particular test and provides a way to inform the placer of the date/time a study is scheduled (result only).&quot; - HL7 Version 2.8, OBR.36
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>status : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+  <stentry><p>status :  <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;Contains the status of results for this order.&quot; - HL7 Version 2.8, OBR-25
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>statusChangeDateTime : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+  <stentry><p>statusChangeDateTime :  <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;Specifies the date/time when the results were reported or status changed.  This conditional field is required whenever [Report Status] is valued.  This field is used to indicate the date and time that the results are composed into a report and released, or that [Healthcare Order status] is entered or changed.&quot; - HL7 Version 2.8, OBR-22.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>statusModifier : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+  <stentry><p>statusModifier :  <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				&quot;This field is a modifier or refiner of the ORC-5-Order status field. This field may be used to provide additional levels of specificity or additional information for the defined order status codes.&quot; - HL7 Version 2.8, ORC-25
 			</p>
