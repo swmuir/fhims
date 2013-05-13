@@ -7,7 +7,7 @@
     <eAnnotations xmi:id="_nl9sQOLqEdu45_8D8ShJ7w" source="com.ibm.xtools.uml.msl.fragments"/>
     <eAnnotations xmi:id="_nlz7QOLqEdu45_8D8ShJ7w" source="com.ibm.xtools.uml.msl.fragmentContainer"/>
     <eAnnotations xmi:id="_NVKLteLiEduGJrQyRGTO1A" source="uml2.diagrams" references="_420A62FD03B6418A401B00BC">
-      <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_420A62FD03B6418A401B00BC" type="Class" name="_Person" description="The properties that humans and animals (may) have in common are modeled in an abstract class called &quot;Biological Entity.&quot; This class would never be instantiated on its own, but rather Person or NonPersonLivingSubject would be instantiated, and they would each have the common properties of birthdate, age, etc.  Therefore, when mapping to the FHIM, one would create an entry for Person.dateOfBirth, not BiologicalEntity.dateOfBirth. In object-oriented software, subtypes (also known as subclasses), automatically access the properties of their supertypes (aka superclasses) directly. So in Java, a person's date of birth would be represented as Person.dateOfBirth. Conversely, a superclass can be &quot;downcasted&quot; to a subclass if the writer of software doesn't know in advance which subtype will be acted upon at runtime. This is evident in the Patient hierarchy, where a lab test refers to a Patient, and the patient might be either a person or an animal. Notice that both the Person and the NonPersonLivingSubject are accessed from HumanPatient and AnimalPatient by an association with the end-name of &quot;subject&quot;. Thus, the person or animal can be accessed by Patient.subject. However, information specific to one or the other can only be retrieved if the proper one is instantiated. For example, patient.subject.maritalStatus will fail if the subject is an animal; similarly patient.subject.species will fail if the subject is a person.&#xD;&#xA;&#xD;&#xA;Some properties, such as BiologicalEntity.age may be calculated based on other fields. These properties technically do not need to be in the model, as they can be calculated on the fly, however, the logical concept of age is often needed. Therefore, these properties are modeled, but marked as &quot;derived&quot;, which is indicated in UML by a slash character in front of the property name. This is particularly evident in the birth certificate package, where much of the information about the newborn's parents could be calculated from their Person records. This technique is not used often in other parts of the FHIM.&#xD;&#xA;&#xD;&#xA;The ContactParty class is used for both persons to contact under given situations and for relatives. The circumstances under which a person is acting as a point of contact for the patient is identified in the contactCategory property. The relationship between the contact person and the patient (if any) is identified in the relationshipCategory property. This class was previously modeled as two separate classes, but the overlaps between the two were so great that they were combined. Note that this class is even used to identify a person who holds power of attorney for a person.&#xD;&#xA;&#xD;&#xA;Information about a Person’s role as a Student is often needed, especially for children, as schools often maintain immunization records for their students, and may provide vaccinations.  The purpose of the Student class is to identify Student information about a Person at particular points in time; it is not intended that a Person’s entire academic experience be constructed by aggregation of individual Student records.  Other constructs to do this are modeled in the Provider package, where academic history is needed for credentialing purposes.&#xD;&#xA;&#xD;&#xA;Similarly, information concerning a Person’s employment is modeled in this package for occupational health purposes, and should not be relied upon to provide a complete picture of a person’s employment history.  The package also contains concepts related to an observation of the Person’s occupational history, which is associated with HumanPatient, as such an observation is only important when dealing with persons who are patients.&#xD;&#xA;&#xD;&#xA;It is important to note that the Patient Role class defines concepts related to an entity (a Person or an Animal) as they are acting in the role of a Patient.  One subtlety easily overlooked is that a Person will have multiple Patient role instances, as determined by the Healthcare Provider.  One way to think of it is that the Patient role represents a medical record as assigned by the healthcare provider.  One Person may be patient A at Dr. Smith’s office, and patient B and Dr. Jones’ office.  Hospitals often assign separate patient IDs for each admission, so the same person at the same hospital may have multiple Patient “records”.  This is why the Patient class has an association with the HealthcareProvider class, which, in HL7-speak, “scopes” the Patient instance.&#xD;&#xA;  &#xD;&#xA;After having said all this, there is a subtle difference between a Patient Role and the associated HealthRecord for the Patient, as the HealthRecord is a controlled set of records about the Patient.  The HealthRecord represents that information which may be the subject of Privacy-related or Consent-related Directives initiated or authorized by the Patient.">
+      <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_420A62FD03B6418A401B00BC" type="Class" name="Person Demographics Overview" description="The properties that humans and animals (may) have in common are modeled in an abstract class called &quot;Biological Entity.&quot; This class would never be instantiated on its own, but rather Person or NonPersonLivingSubject would be instantiated, and they would each have the common properties of birthdate, age, etc.  Therefore, when mapping to the FHIM, one would create an entry for Person.dateOfBirth, not BiologicalEntity.dateOfBirth. In object-oriented software, subtypes (also known as subclasses), automatically access the properties of their supertypes (aka superclasses) directly. So in Java, a person's date of birth would be represented as Person.dateOfBirth. Conversely, a superclass can be &quot;downcasted&quot; to a subclass if the writer of software doesn't know in advance which subtype will be acted upon at runtime. This is evident in the Patient hierarchy, where a lab test refers to a Patient, and the patient might be either a person or an animal. Notice that both the Person and the NonPersonLivingSubject are accessed from HumanPatient and AnimalPatient by an association with the end-name of &quot;subject&quot;. Thus, the person or animal can be accessed by Patient.subject. However, information specific to one or the other can only be retrieved if the proper one is instantiated. For example, patient.subject.maritalStatus will fail if the subject is an animal; similarly patient.subject.species will fail if the subject is a person.&#xD;&#xA;&#xD;&#xA;Some properties, such as BiologicalEntity.age may be calculated based on other fields. These properties technically do not need to be in the model, as they can be calculated on the fly, however, the logical concept of age is often needed. Therefore, these properties are modeled, but marked as &quot;derived&quot;, which is indicated in UML by a slash character in front of the property name. This is particularly evident in the birth certificate package, where much of the information about the newborn's parents could be calculated from their Person records. This technique is not used often in other parts of the FHIM.&#xD;&#xA;&#xD;&#xA;The ContactParty class is used for both persons to contact under given situations and for relatives. The circumstances under which a person is acting as a point of contact for the patient is identified in the contactCategory property. The relationship between the contact person and the patient (if any) is identified in the relationshipCategory property. This class was previously modeled as two separate classes, but the overlaps between the two were so great that they were combined. Note that this class is even used to identify a person who holds power of attorney for a person.&#xD;&#xA;&#xD;&#xA;Information about a Person’s role as a Student is often needed, especially for children, as schools often maintain immunization records for their students, and may provide vaccinations.  The purpose of the Student class is to identify Student information about a Person at particular points in time; it is not intended that a Person’s entire academic experience be constructed by aggregation of individual Student records.  Other constructs to do this are modeled in the Provider package, where academic history is needed for credentialing purposes.&#xD;&#xA;&#xD;&#xA;Similarly, information concerning a Person’s employment is modeled in this package for occupational health purposes, and should not be relied upon to provide a complete picture of a person’s employment history.  The package also contains concepts related to an observation of the Person’s occupational history, which is associated with HumanPatient, as such an observation is only important when dealing with persons who are patients.&#xD;&#xA;&#xD;&#xA;It is important to note that the Patient Role class defines concepts related to an entity (a Person or an Animal) as they are acting in the role of a Patient.  One subtlety easily overlooked is that a Person will have multiple Patient role instances, as determined by the Healthcare Provider.  One way to think of it is that the Patient role represents a medical record as assigned by the healthcare provider.  One Person may be patient A at Dr. Smith’s office, and patient B and Dr. Jones’ office.  Hospitals often assign separate patient IDs for each admission, so the same person at the same hospital may have multiple Patient “records”.  This is why the Patient class has an association with the HealthcareProvider class, which, in HL7-speak, “scopes” the Patient instance.&#xD;&#xA;  &#xD;&#xA;After having said all this, there is a subtle difference between a Patient Role and the associated HealthRecord for the Patient, as the HealthRecord is a controlled set of records about the Patient.  The HealthRecord represents that information which may be the subject of Privacy-related or Consent-related Directives initiated or authorized by the Patient.">
         <children xmi:type="umlnotation:UMLShape" xmi:id="_OCRlEBAzEd-2E9qx-lgHBg" element="_oYIbwO_4Ed6OG-vjYTopTQ" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8519679" lineColor="3342489" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_OCRlExAzEd-2E9qx-lgHBg" type="ImageCompartment">
             <layoutConstraint xmi:type="notation:Size" xmi:id="_OCRlFBAzEd-2E9qx-lgHBg" width="1320" height="1320"/>
@@ -251,7 +251,7 @@
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_IBQPYljGEeG6Pp3Py7p1bw" type="PackageContents" collapsed="true" canonical="false"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IBPBQVjGEeG6Pp3Py7p1bw" x="38674" y="22190"/>
         </children>
-        <children xmi:type="notation:Shape" xmi:id="_baZG8FjJEeG6Pp3Py7p1bw" type="Note" fontName="Arial" fontHeight="10" description="FHIM Person Domain" fillColor="16777088" transparency="0" lineColor="0" lineWidth="1">
+        <children xmi:type="notation:Shape" xmi:id="_baZG8FjJEeG6Pp3Py7p1bw" type="Note" fontName="Arial" fontHeight="10" description="&lt;p>FHIIM Person Demographics Overview&lt;/p>" fillColor="16777088" transparency="0" lineColor="0" lineWidth="1">
           <children xmi:type="notation:BasicDecorationNode" xmi:id="_babjMFjJEeG6Pp3Py7p1bw" type="DiagramName">
             <element xsi:nil="true"/>
           </children>
@@ -1402,271 +1402,6 @@
           <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_rPGd4bmuEeKNk65TvHDTLQ" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
         </edges>
       </contents>
-      <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_VM0qoKBhEeKEjOzXDxf6EA" type="Class" name="_PersonEnumerations" description="This diagram depicts the classes in the FHIM Vocabulary model that are related to the FHIM Person domain.  As the classes exist in another model, this diagram was created as a mechanism to provide a visualization of those classes.  Each codified property in the FHIM will eventually have a corresponding entry in CDC’s PHIN VADS terminology server.  Each value set entry in PHIN VADS is represented by a UML class in the FHIM Vocabulary model, with the members of the value set represented as a UML enumeration.  This approach is consistent with the Model Driven Health Tools (MDHT) architecture, which enables the use of MDHT to perform model-to-model transformations.">
-        <children xmi:type="notation:Shape" xmi:id="_gFk84KBhEeKEjOzXDxf6EA" type="Note" fontName="Arial" fontHeight="10" description="FHIM Person Demographics Enumertions" fillColor="16777088" transparency="0" lineColor="0" lineWidth="1">
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_gFk84aBhEeKEjOzXDxf6EA" type="DiagramName">
-            <element xsi:nil="true"/>
-          </children>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_gFk84qBhEeKEjOzXDxf6EA" type="Description">
-            <element xsi:nil="true"/>
-          </children>
-          <styles xmi:type="notation:TextStyle" xmi:id="_gFk846BhEeKEjOzXDxf6EA"/>
-          <styles xmi:type="notation:LineTypeStyle" xmi:id="_gFk85KBhEeKEjOzXDxf6EA"/>
-          <element xsi:nil="true"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gFk85aBhEeKEjOzXDxf6EA" x="-48818" y="317"/>
-        </children>
-        <children xmi:type="notation:Shape" xmi:id="_qnWSgKBhEeKEjOzXDxf6EA" type="Note" fontName="Arial" fontHeight="10" description="Note:&#xD;&#xA;In the Generated HTML version, these classes are not click-able." fillColor="12632256" transparency="0" lineColor="0" lineWidth="1">
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_qnWSgaBhEeKEjOzXDxf6EA" type="DiagramName">
-            <element xsi:nil="true"/>
-          </children>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_qnWSgqBhEeKEjOzXDxf6EA" type="Description">
-            <element xsi:nil="true"/>
-          </children>
-          <styles xmi:type="notation:TextStyle" xmi:id="_qnWSg6BhEeKEjOzXDxf6EA"/>
-          <styles xmi:type="notation:LineTypeStyle" xmi:id="_qnWShKBhEeKEjOzXDxf6EA"/>
-          <element xsi:nil="true"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qnWShaBhEeKEjOzXDxf6EA" x="-38040" y="317"/>
-        </children>
-        <children xmi:type="umlnotation:UMLShape" xmi:id="_azZtEKBrEeKEjOzXDxf6EA" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="13434879" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
-          <children xmi:type="notation:DecorationNode" xmi:id="_azbiQKBrEeKEjOzXDxf6EA" type="ImageCompartment">
-            <layoutConstraint xmi:type="notation:Size" xmi:id="_azbiQaBrEeKEjOzXDxf6EA" width="1320" height="1320"/>
-          </children>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_azbiQqBrEeKEjOzXDxf6EA" type="Stereotype"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_azcJUKBrEeKEjOzXDxf6EA" type="Kind"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_azcJUaBrEeKEjOzXDxf6EA" type="Name"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_azcwYKBrEeKEjOzXDxf6EA" type="Parent"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_azcwYaBrEeKEjOzXDxf6EA" type="EnumerationCompartment"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_azcwYqBrEeKEjOzXDxf6EA" visible="false" type="AttributeCompartment"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_azcwY6BrEeKEjOzXDxf6EA" visible="false" type="OperationCompartment"/>
-          <element xmi:type="uml:Enumeration" href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_WwSMQKRMEeGZ6ueex_Me0w"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_azZtEaBrEeKEjOzXDxf6EA" x="-48818" y="3487"/>
-        </children>
-        <children xmi:type="umlnotation:UMLShape" xmi:id="_azdXcKBrEeKEjOzXDxf6EA" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="13434879" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
-          <children xmi:type="notation:DecorationNode" xmi:id="_azd-gKBrEeKEjOzXDxf6EA" type="ImageCompartment">
-            <layoutConstraint xmi:type="notation:Size" xmi:id="_azd-gaBrEeKEjOzXDxf6EA" width="1320" height="1320"/>
-          </children>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_azfMoKBrEeKEjOzXDxf6EA" type="Stereotype"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_azfMoaBrEeKEjOzXDxf6EA" type="Kind"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_azfMoqBrEeKEjOzXDxf6EA" type="Name"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_azfMo6BrEeKEjOzXDxf6EA" type="Parent"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_azfMpKBrEeKEjOzXDxf6EA" type="EnumerationCompartment"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_azfMpaBrEeKEjOzXDxf6EA" visible="false" type="AttributeCompartment"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_azfzsKBrEeKEjOzXDxf6EA" visible="false" type="OperationCompartment"/>
-          <element xmi:type="uml:Enumeration" href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_WsWHcKRMEeGZ6ueex_Me0w"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_azdXcaBrEeKEjOzXDxf6EA" x="-48818" y="5389"/>
-        </children>
-        <children xmi:type="umlnotation:UMLShape" xmi:id="_azgawKBrEeKEjOzXDxf6EA" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="13434879" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
-          <children xmi:type="notation:DecorationNode" xmi:id="_azhB0KBrEeKEjOzXDxf6EA" type="ImageCompartment">
-            <layoutConstraint xmi:type="notation:Size" xmi:id="_azhB0aBrEeKEjOzXDxf6EA" width="1320" height="1320"/>
-          </children>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_aziP8KBrEeKEjOzXDxf6EA" type="Stereotype"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_aziP8aBrEeKEjOzXDxf6EA" type="Kind"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_azi3AKBrEeKEjOzXDxf6EA" type="Name"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_azi3AaBrEeKEjOzXDxf6EA" type="Parent"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_azjeEKBrEeKEjOzXDxf6EA" type="EnumerationCompartment"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_azksMKBrEeKEjOzXDxf6EA" visible="false" type="AttributeCompartment"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_azksMaBrEeKEjOzXDxf6EA" visible="false" type="OperationCompartment"/>
-          <element xmi:type="uml:Enumeration" href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_W1WScKRMEeGZ6ueex_Me0w"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_azgawaBrEeKEjOzXDxf6EA" x="-42478" y="5389"/>
-        </children>
-        <children xmi:type="umlnotation:UMLShape" xmi:id="_azlTQKBrEeKEjOzXDxf6EA" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="13434879" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
-          <children xmi:type="notation:DecorationNode" xmi:id="_azl6UKBrEeKEjOzXDxf6EA" type="ImageCompartment">
-            <layoutConstraint xmi:type="notation:Size" xmi:id="_azl6UaBrEeKEjOzXDxf6EA" width="1320" height="1320"/>
-          </children>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_azmhYKBrEeKEjOzXDxf6EA" type="Stereotype"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_azmhYaBrEeKEjOzXDxf6EA" type="Kind"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_aznIcKBrEeKEjOzXDxf6EA" type="Name"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_aznIcaBrEeKEjOzXDxf6EA" type="Parent"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_aznIcqBrEeKEjOzXDxf6EA" type="EnumerationCompartment"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_aznIc6BrEeKEjOzXDxf6EA" visible="false" type="AttributeCompartment"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_aznvgKBrEeKEjOzXDxf6EA" visible="false" type="OperationCompartment"/>
-          <element xmi:type="uml:Enumeration" href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_W1s3wKRMEeGZ6ueex_Me0w"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_azlTQaBrEeKEjOzXDxf6EA" x="-36772" y="5389"/>
-        </children>
-        <children xmi:type="umlnotation:UMLShape" xmi:id="_azoWkKBrEeKEjOzXDxf6EA" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="13434879" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
-          <children xmi:type="notation:DecorationNode" xmi:id="_azo9oKBrEeKEjOzXDxf6EA" type="ImageCompartment">
-            <layoutConstraint xmi:type="notation:Size" xmi:id="_azo9oaBrEeKEjOzXDxf6EA" width="1320" height="1320"/>
-          </children>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_azo9oqBrEeKEjOzXDxf6EA" type="Stereotype"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_azo9o6BrEeKEjOzXDxf6EA" type="Kind"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_azo9pKBrEeKEjOzXDxf6EA" type="Name"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_azo9paBrEeKEjOzXDxf6EA" type="Parent"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_azpksKBrEeKEjOzXDxf6EA" type="EnumerationCompartment"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_azpksaBrEeKEjOzXDxf6EA" visible="false" type="AttributeCompartment"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_azpksqBrEeKEjOzXDxf6EA" visible="false" type="OperationCompartment"/>
-          <element xmi:type="uml:Enumeration" href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_XVnt8KRMEeGZ6ueex_Me0w"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_azoWkaBrEeKEjOzXDxf6EA" x="-32017" y="5389"/>
-        </children>
-        <children xmi:type="umlnotation:UMLShape" xmi:id="_azqLwKBrEeKEjOzXDxf6EA" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="13434879" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
-          <children xmi:type="notation:DecorationNode" xmi:id="_azqy0KBrEeKEjOzXDxf6EA" type="ImageCompartment">
-            <layoutConstraint xmi:type="notation:Size" xmi:id="_azqy0aBrEeKEjOzXDxf6EA" width="1320" height="1320"/>
-          </children>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_azqy0qBrEeKEjOzXDxf6EA" type="Stereotype"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0AxEKBrEeKEjOzXDxf6EA" type="Kind"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0AxEaBrEeKEjOzXDxf6EA" type="Name"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0BYIKBrEeKEjOzXDxf6EA" type="Parent"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_a0BYIaBrEeKEjOzXDxf6EA" type="EnumerationCompartment"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_a0BYIqBrEeKEjOzXDxf6EA" visible="false" type="AttributeCompartment"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_a0BYI6BrEeKEjOzXDxf6EA" visible="false" type="OperationCompartment"/>
-          <element xmi:type="uml:Enumeration" href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_TiPoENDwEeG0ze9kYp0s5g"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_azqLwaBrEeKEjOzXDxf6EA" x="-951" y="7608"/>
-        </children>
-        <children xmi:type="umlnotation:UMLShape" xmi:id="_a0CmQKBrEeKEjOzXDxf6EA" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="13434879" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
-          <children xmi:type="notation:DecorationNode" xmi:id="_a0CmQqBrEeKEjOzXDxf6EA" type="ImageCompartment">
-            <layoutConstraint xmi:type="notation:Size" xmi:id="_a0CmQ6BrEeKEjOzXDxf6EA" width="1320" height="1320"/>
-          </children>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0DNUKBrEeKEjOzXDxf6EA" type="Stereotype"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0DNUaBrEeKEjOzXDxf6EA" type="Kind"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0DNUqBrEeKEjOzXDxf6EA" type="Name"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0DNU6BrEeKEjOzXDxf6EA" type="Parent"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_a0DNVKBrEeKEjOzXDxf6EA" type="EnumerationCompartment"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_a0DNVaBrEeKEjOzXDxf6EA" visible="false" type="AttributeCompartment"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_a0D0YKBrEeKEjOzXDxf6EA" visible="false" type="OperationCompartment"/>
-          <element xmi:type="uml:Enumeration" href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_Xdjh8KRMEeGZ6ueex_Me0w"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_a0CmQaBrEeKEjOzXDxf6EA" x="-26311" y="3487"/>
-        </children>
-        <children xmi:type="umlnotation:UMLShape" xmi:id="_a0EbcKBrEeKEjOzXDxf6EA" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="13434879" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
-          <children xmi:type="notation:DecorationNode" xmi:id="_a0EbcqBrEeKEjOzXDxf6EA" type="ImageCompartment">
-            <layoutConstraint xmi:type="notation:Size" xmi:id="_a0Ebc6BrEeKEjOzXDxf6EA" width="1320" height="1320"/>
-          </children>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0FCgKBrEeKEjOzXDxf6EA" type="Stereotype"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0FCgaBrEeKEjOzXDxf6EA" type="Kind"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0FCgqBrEeKEjOzXDxf6EA" type="Name"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0FCg6BrEeKEjOzXDxf6EA" type="Parent"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_a0FChKBrEeKEjOzXDxf6EA" type="EnumerationCompartment"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_a0FChaBrEeKEjOzXDxf6EA" visible="false" type="AttributeCompartment"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_a0FpkKBrEeKEjOzXDxf6EA" visible="false" type="OperationCompartment"/>
-          <element xmi:type="uml:Enumeration" href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_XdfQgKRMEeGZ6ueex_Me0w"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_a0EbcaBrEeKEjOzXDxf6EA" x="-26311" y="5389"/>
-        </children>
-        <children xmi:type="umlnotation:UMLShape" xmi:id="_a0FpkaBrEeKEjOzXDxf6EA" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="13434879" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
-          <children xmi:type="notation:DecorationNode" xmi:id="_a0GQoKBrEeKEjOzXDxf6EA" type="ImageCompartment">
-            <layoutConstraint xmi:type="notation:Size" xmi:id="_a0GQoaBrEeKEjOzXDxf6EA" width="1320" height="1320"/>
-          </children>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0G3sKBrEeKEjOzXDxf6EA" type="Stereotype"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0G3saBrEeKEjOzXDxf6EA" type="Kind"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0G3sqBrEeKEjOzXDxf6EA" type="Name"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0G3s6BrEeKEjOzXDxf6EA" type="Parent"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_a0G3tKBrEeKEjOzXDxf6EA" type="EnumerationCompartment"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_a0G3taBrEeKEjOzXDxf6EA" visible="false" type="AttributeCompartment"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_a0HewKBrEeKEjOzXDxf6EA" visible="false" type="OperationCompartment"/>
-          <element xmi:type="uml:Enumeration" href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_Xd45IKRMEeGZ6ueex_Me0w"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_a0FpkqBrEeKEjOzXDxf6EA" x="-19654" y="3487"/>
-        </children>
-        <children xmi:type="umlnotation:UMLShape" xmi:id="_a0IF0KBrEeKEjOzXDxf6EA" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="13434879" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
-          <children xmi:type="notation:DecorationNode" xmi:id="_a0IF0qBrEeKEjOzXDxf6EA" type="ImageCompartment">
-            <layoutConstraint xmi:type="notation:Size" xmi:id="_a0IF06BrEeKEjOzXDxf6EA" width="1320" height="1320"/>
-          </children>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0Is4KBrEeKEjOzXDxf6EA" type="Stereotype"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0Is4aBrEeKEjOzXDxf6EA" type="Kind"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0Is4qBrEeKEjOzXDxf6EA" type="Name"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0Is46BrEeKEjOzXDxf6EA" type="Parent"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_a0Is5KBrEeKEjOzXDxf6EA" type="EnumerationCompartment"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_a0JT8KBrEeKEjOzXDxf6EA" visible="false" type="AttributeCompartment"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_a0JT8aBrEeKEjOzXDxf6EA" visible="false" type="OperationCompartment"/>
-          <element xmi:type="uml:Enumeration" href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_Xd0nsKRMEeGZ6ueex_Me0w"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_a0IF0aBrEeKEjOzXDxf6EA" x="-19654" y="5389"/>
-        </children>
-        <children xmi:type="umlnotation:UMLShape" xmi:id="_a0J7AKBrEeKEjOzXDxf6EA" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="13434879" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
-          <children xmi:type="notation:DecorationNode" xmi:id="_a0KiEKBrEeKEjOzXDxf6EA" type="ImageCompartment">
-            <layoutConstraint xmi:type="notation:Size" xmi:id="_a0KiEaBrEeKEjOzXDxf6EA" width="1320" height="1320"/>
-          </children>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0KiEqBrEeKEjOzXDxf6EA" type="Stereotype"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0KiE6BrEeKEjOzXDxf6EA" type="Kind"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0KiFKBrEeKEjOzXDxf6EA" type="Name"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0KiFaBrEeKEjOzXDxf6EA" type="Parent"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_a0KiFqBrEeKEjOzXDxf6EA" type="EnumerationCompartment"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_a0LJIKBrEeKEjOzXDxf6EA" visible="false" type="AttributeCompartment"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_a0LJIaBrEeKEjOzXDxf6EA" visible="false" type="OperationCompartment"/>
-          <element xmi:type="uml:Enumeration" href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_XyDLQKRMEeGZ6ueex_Me0w"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_a0J7AaBrEeKEjOzXDxf6EA" x="-14265" y="5389"/>
-        </children>
-        <children xmi:type="umlnotation:UMLShape" xmi:id="_a0LwMKBrEeKEjOzXDxf6EA" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="13434879" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
-          <children xmi:type="notation:DecorationNode" xmi:id="_a0MXQKBrEeKEjOzXDxf6EA" type="ImageCompartment">
-            <layoutConstraint xmi:type="notation:Size" xmi:id="_a0MXQaBrEeKEjOzXDxf6EA" width="1320" height="1320"/>
-          </children>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0MXQqBrEeKEjOzXDxf6EA" type="Stereotype"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0MXQ6BrEeKEjOzXDxf6EA" type="Kind"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0MXRKBrEeKEjOzXDxf6EA" type="Name"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0MXRaBrEeKEjOzXDxf6EA" type="Parent"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_a0MXRqBrEeKEjOzXDxf6EA" type="EnumerationCompartment"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_a0M-UKBrEeKEjOzXDxf6EA" visible="false" type="AttributeCompartment"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_a0M-UaBrEeKEjOzXDxf6EA" visible="false" type="OperationCompartment"/>
-          <element xmi:type="uml:Enumeration" href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_tBqM4AZSEeKiNIUlvx3s8g"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_a0LwMaBrEeKEjOzXDxf6EA" x="-5706" y="3487"/>
-        </children>
-        <children xmi:type="umlnotation:UMLShape" xmi:id="_a0NlYKBrEeKEjOzXDxf6EA" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="13434879" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
-          <children xmi:type="notation:DecorationNode" xmi:id="_a0NlYqBrEeKEjOzXDxf6EA" type="ImageCompartment">
-            <layoutConstraint xmi:type="notation:Size" xmi:id="_a0NlY6BrEeKEjOzXDxf6EA" width="1320" height="1320"/>
-          </children>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0OMcKBrEeKEjOzXDxf6EA" type="Stereotype"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0OMcaBrEeKEjOzXDxf6EA" type="Kind"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0OMcqBrEeKEjOzXDxf6EA" type="Name"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0OMc6BrEeKEjOzXDxf6EA" type="Parent"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_a0OMdKBrEeKEjOzXDxf6EA" type="EnumerationCompartment"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_a0OMdaBrEeKEjOzXDxf6EA" visible="false" type="AttributeCompartment"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_a0OzgKBrEeKEjOzXDxf6EA" visible="false" type="OperationCompartment"/>
-          <element xmi:type="uml:Enumeration" href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_s7VicAZSEeKiNIUlvx3s8g"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_a0NlYaBrEeKEjOzXDxf6EA" x="-5706" y="5389"/>
-        </children>
-        <children xmi:type="umlnotation:UMLShape" xmi:id="_a0QBoKBrEeKEjOzXDxf6EA" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="13434879" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
-          <children xmi:type="notation:DecorationNode" xmi:id="_a0QBoqBrEeKEjOzXDxf6EA" type="ImageCompartment">
-            <layoutConstraint xmi:type="notation:Size" xmi:id="_a0QosKBrEeKEjOzXDxf6EA" width="1320" height="1320"/>
-          </children>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0QosaBrEeKEjOzXDxf6EA" type="Stereotype"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0QosqBrEeKEjOzXDxf6EA" type="Kind"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0Qos6BrEeKEjOzXDxf6EA" type="Name"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0QotKBrEeKEjOzXDxf6EA" type="Parent"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_a0QotaBrEeKEjOzXDxf6EA" type="EnumerationCompartment"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_a0RPwKBrEeKEjOzXDxf6EA" visible="false" type="AttributeCompartment"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_a0RPwaBrEeKEjOzXDxf6EA" visible="false" type="OperationCompartment"/>
-          <element xmi:type="uml:Enumeration" href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_W1vUAKRMEeGZ6ueex_Me0w"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_a0QBoaBrEeKEjOzXDxf6EA" x="-951" y="3487"/>
-        </children>
-        <children xmi:type="umlnotation:UMLShape" xmi:id="_a0R20KBrEeKEjOzXDxf6EA" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="13434879" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
-          <children xmi:type="notation:DecorationNode" xmi:id="_a0Sd4KBrEeKEjOzXDxf6EA" type="ImageCompartment">
-            <layoutConstraint xmi:type="notation:Size" xmi:id="_a0Sd4aBrEeKEjOzXDxf6EA" width="1320" height="1320"/>
-          </children>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0TE8KBrEeKEjOzXDxf6EA" type="Stereotype"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0TE8aBrEeKEjOzXDxf6EA" type="Kind"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0TE8qBrEeKEjOzXDxf6EA" type="Name"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0TE86BrEeKEjOzXDxf6EA" type="Parent"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_a0TE9KBrEeKEjOzXDxf6EA" type="EnumerationCompartment"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_a0TsAKBrEeKEjOzXDxf6EA" visible="false" type="AttributeCompartment"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_a0TsAaBrEeKEjOzXDxf6EA" visible="false" type="OperationCompartment"/>
-          <element xmi:type="uml:Enumeration" href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_X1WW4KRMEeGZ6ueex_Me0w"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_a0R20aBrEeKEjOzXDxf6EA" x="-951" y="5389"/>
-        </children>
-        <children xmi:type="umlnotation:UMLShape" xmi:id="_a0UTEKBrEeKEjOzXDxf6EA" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="13434879" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
-          <children xmi:type="notation:DecorationNode" xmi:id="_a0U6IKBrEeKEjOzXDxf6EA" type="ImageCompartment">
-            <layoutConstraint xmi:type="notation:Size" xmi:id="_a0U6IaBrEeKEjOzXDxf6EA" width="1320" height="1320"/>
-          </children>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0U6IqBrEeKEjOzXDxf6EA" type="Stereotype"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0VhMKBrEeKEjOzXDxf6EA" type="Kind"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0VhMaBrEeKEjOzXDxf6EA" type="Name"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0VhMqBrEeKEjOzXDxf6EA" type="Parent"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_a0VhM6BrEeKEjOzXDxf6EA" type="EnumerationCompartment"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_a0VhNKBrEeKEjOzXDxf6EA" visible="false" type="AttributeCompartment"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_a0VhNaBrEeKEjOzXDxf6EA" visible="false" type="OperationCompartment"/>
-          <element xmi:type="uml:Enumeration" href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_X1v_gKRMEeGZ6ueex_Me0w"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_a0UTEaBrEeKEjOzXDxf6EA" x="3804" y="3487"/>
-        </children>
-        <children xmi:type="umlnotation:UMLShape" xmi:id="_a0WIQKBrEeKEjOzXDxf6EA" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="13434879" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
-          <children xmi:type="notation:DecorationNode" xmi:id="_a0WvUKBrEeKEjOzXDxf6EA" type="ImageCompartment">
-            <layoutConstraint xmi:type="notation:Size" xmi:id="_a0WvUaBrEeKEjOzXDxf6EA" width="1320" height="1320"/>
-          </children>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0WvUqBrEeKEjOzXDxf6EA" type="Stereotype"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0WvU6BrEeKEjOzXDxf6EA" type="Kind"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0WvVKBrEeKEjOzXDxf6EA" type="Name"/>
-          <children xmi:type="notation:BasicDecorationNode" xmi:id="_a0XWYKBrEeKEjOzXDxf6EA" type="Parent"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_a0XWYaBrEeKEjOzXDxf6EA" type="EnumerationCompartment"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_a0XWYqBrEeKEjOzXDxf6EA" visible="false" type="AttributeCompartment"/>
-          <children xmi:type="notation:SemanticListCompartment" xmi:id="_a0XWY6BrEeKEjOzXDxf6EA" visible="false" type="OperationCompartment"/>
-          <element xmi:type="uml:Enumeration" href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_X1pR0KRMEeGZ6ueex_Me0w"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_a0WIQaBrEeKEjOzXDxf6EA" x="3804" y="5389"/>
-        </children>
-        <element xsi:nil="true"/>
-      </contents>
     </eAnnotations>
     <eAnnotations xmi:id="_NVdGgOLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
     <ownedComment xmi:id="_FDxmULa2Ed-Y0_knsxZjWg" annotatedElement="_420A62FD03B6418A3CB7008F">
@@ -1692,9 +1427,9 @@ The FHIM uses simple or “primitive” datatypes wherever possible, but does de
       <body>Need to model Blood Quantum</body>
     </ownedComment>
     <ownedComment xmi:id="_lB790LYwEeGWl-7OlqBMDw">
-      <annotatedElement xmi:type="uml:Class" href="FHIM_ParkingLot.emx#_laB78OwTEd6PwKowkorMOw"/>
-      <annotatedElement xmi:type="uml:Class" href="FHIM_ParkingLot.emx#_RgBEkOwTEd6PwKowkorMOw"/>
-      <annotatedElement xmi:type="uml:Class" href="FHIM_ParkingLot.emx#_O1G9gOwTEd6PwKowkorMOw"/>
+      <annotatedElement xmi:type="uml:Class" href="FHIM_ParkingLot.emx#_laB78OwTEd6PwKowkorMOw?FHIM_ParkingLot/DODPerson?"/>
+      <annotatedElement xmi:type="uml:Class" href="FHIM_ParkingLot.emx#_RgBEkOwTEd6PwKowkorMOw?FHIM_ParkingLot/FDAPerson?"/>
+      <annotatedElement xmi:type="uml:Class" href="FHIM_ParkingLot.emx#_O1G9gOwTEd6PwKowkorMOw?FHIM_ParkingLot/VAPerson?"/>
       <body>Examples of how agency-specific extensions can be made to the FHIM.  That which is common to all partner agencies is in the Person class; agency exensions are in subclasses.  This visually shows what is common and what is different among partner agencies.</body>
     </ownedComment>
     <packagedElement xmi:type="uml:Class" xmi:id="_vDN9UF-OEd-WjrW-OJ9BNQ" name="HealthRecord">
@@ -1787,7 +1522,7 @@ Note, for public health reporting purposes, this status indicates the active/ina
         <ownedComment xmi:id="_QfERgKCiEeKNT6obAX9SKQ" annotatedElement="_UNTu4PkfEeGFnccz7SeroA">
           <body>A record of changes to a Patient record's status with a given Healthcare Provider.  This class provides a history of status changes, the dates on which those changes occurred, and provides a reason for the change.</body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="FHIM_ParkingLot.emx#_REe8wPkfEeGFnccz7SeroA"/>
+        <type xmi:type="uml:Class" href="FHIM_ParkingLot.emx#_REe8wPkfEeGFnccz7SeroA?FHIM_ParkingLot/PatientStatusChange?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UNXZQPkfEeGFnccz7SeroA" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UNWyMPkfEeGFnccz7SeroA"/>
       </ownedAttribute>
@@ -2598,7 +2333,7 @@ HL7 Version 2 table 6 lists 85 suggested values for this field.</body>
         <ownedComment xmi:id="_XXZQMBqNEd-j8JC21F3W2A" annotatedElement="_ksUIUOaXEd6YGfoXAoNmMA">
           <body>A physical entity which is the primary unit of operational and/or administrative interest in a study.     For example, a person who is registered in a study as a recipient of an investigational product or as a control.  May also include individuals who are being screened for studies, or individuals participating in observational or other studies.  Other examples may include a pacemaker, a fuse that can be used in medical devices, a cow, a farm, a pen of pigs, a tissue sample from a tissue bank, etc.    NOTE: StudySubjects within a study are all of the same type.  An entity registered in a study is not part of another entity registered in the same study.</body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="FHIM_ParkingLot.emx#_3QfqoOaWEd6YGfoXAoNmMA"/>
+        <type xmi:type="uml:Class" href="FHIM_ParkingLot.emx#_3QfqoOaWEd6YGfoXAoNmMA?FHIM_ParkingLot/ResearchSubject?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ksUIUuaXEd6YGfoXAoNmMA" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ksUIUeaXEd6YGfoXAoNmMA"/>
       </ownedAttribute>
