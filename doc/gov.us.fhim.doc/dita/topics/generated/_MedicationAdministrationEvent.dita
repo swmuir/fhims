@@ -20,83 +20,95 @@
   <stentry>Description</stentry>
  </sthead>
  <strow>
-  <stentry><p>administeredStrength : <xref href="../t_PhysicalQuantity.dita" >PhysicalQuantity</xref> (1..1)</p> 
+
+  <stentry><p>administeredStrength :  <xref href="../t_PhysicalQuantity.dita" >PhysicalQuantity</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;Use when (the administeredDrug) does not specify the strength.  This is the numeric part of the strength&quot; - HL7 Version 2.8, RXA-13</p><p>&quot;Use when (the administeredDrug) does not specify the strength.  This is the unit of the strength.&quot; - HL7 Version 2.8, RXA-14
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>administeredStrengthVolume : <xref href="../t_PhysicalQuantity.dita" >PhysicalQuantity</xref> (1..1)</p> 
+
+  <stentry><p>administeredStrengthVolume :  <xref href="../t_PhysicalQuantity.dita" >PhysicalQuantity</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;Defines the volume measurement in which the drug strength concentration is contained. For example, Acetaminophen 120 MG/5ML Elixir means that 120 MG of the drug is in a solution with a volume of 5 ML, (this field contains 5)&quot; - HL7 Version 2.8, RXA-23</p><p>&quot;Indicates the volumetric unit associated&quot; (with the volume measurement in which the drug strength concentration is contained. For example, Acetaminophen 120 MG/5ML Elixir means that 120 MG of the drug is in a solution with a volume of 5 ML, this field contains ML) - HL7 Version 2.8, RXA-24
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>administrationMethod : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+  <stentry><p>administrationMethod :  <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				&quot;Identifies the specific method requested for the administration of the drug or treatment to the patient.&quot; - HL7 Version 2.8, RXR-4
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>bodySite : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+  <stentry><p>bodySite :  <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
 <p>See <xref href="../t_AdministrativeSitePVHS_IIS.dita">Administrative Site (PVHS_IIS)</xref> definition for values.</p>
 </stentry>
   <stentry><p>			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>doseForm : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+  <stentry><p>doseForm :  <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;Indicates the manner in which the medication/treatment is aggregated for dispensing, e.g., tablets, capsules, suppositories.&quot; - HL7 Version 2.8, RXA-8
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>doseQuantityGiven : <xref href="../t_PhysicalQuantity.dita" >PhysicalQuantity</xref> (1..1)</p> 
+
+  <stentry><p>doseQuantityGiven :  <xref href="../t_PhysicalQuantity.dita" >PhysicalQuantity</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;Contains the amount administered.&quot; - HL7 Version 2.8, RXA-6</p><p>&quot;This field is conditional because it is required if the administered amount code does not imply units.  This field must be in simple units that reflect the actual quantity of the substance administered.  It does not include compound units.&quot; - HL7 Version 2.8, RXA-7</p><p>&quot;The amount of the therapeutic agent or other substance given at one administration event.&quot; - HL7 Version 3
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>doseQuantityOrdered : <xref href="../t_Real.dita" >Real</xref> (1..1)</p> 
+
+  <stentry><p>doseQuantityOrdered :  <xref href="../t_Real.dita" >Real</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;The amount of the therapeutic agent or other substance given at one administration event.&quot; (HL7 3.0)  
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>endDateTime : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+  <stentry><p>endDateTime :  <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;If null, the date/time of RXA-3-Date/Time Start of Administration is assumed.&quot; - HL7 Version 2.8, RXA-4</p><p></p><p>The date and time that the medication administration was completed or will be completed.  Used only for administrations that span a length of time, such as an IV.  For single dose administrations, such as giving a tablet or an injection, this property is not used.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>id : <xref href="../t_Id.dita" >Id</xref> (1..1)</p> 
+
+  <stentry><p>id :  <xref href="../t_Id.dita" >Id</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				Uniquely identifies the Medication Administration Event.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>isPrnActivity : <xref href="../t_Boolean.dita" >Boolean</xref> (1..1)</p> 
+
+  <stentry><p>isPrnActivity :  Boolean (1..1)</p> 
 </stentry>
   <stentry><p>				I&apos;m guessing that this is a boolean.  Vista definition is: The PRN REASON FLAG field is to indicate whether the BCMA Med Log file entry is PRN activity and has an associated PRN REASON which has been set to require BCMA user attention or action.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>negatationIndicator : <xref href="../t_Boolean.dita" >Boolean</xref> (1..1)</p> 
+
+  <stentry><p>negatationIndicator :  Boolean (1..1)</p> 
 </stentry>
   <stentry><p>			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>route : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+  <stentry><p>route :  <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
 <p>See <xref href="../t_RouteOfAdministrationPHVS_IIS.dita">Route Of Administration (PHVS_IIS)</xref> definition for values.</p>
 </stentry>
   <stentry><p>				&quot;This field is the route of administration.&quot; - HL7 Version 2.8, RXR-1
@@ -104,28 +116,32 @@
   </stentry>
   </strow>
  <strow>
-  <stentry><p>startDateTime : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+  <stentry><p>startDateTime :  <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;If the order is for a continuous administration (such as an IV), and the rate is changed at a certain time after the start, an RAS message can be issued to record the change.  For such an RAS message, this field records the time the rate was changed to the new value recorded in the RXA-12-Administered Per (time unit) of the same message.&quot; - HL7 Version 2.8, RXA-3</p><p></p><p>The date and time that the medication administration was started or will be started.  For single dose administrations, such as giving a tablet or an injection, this is the date and time that the administration did or will occur.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>status : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+  <stentry><p>status :  <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;Status of treatment administration event.  Refer to HL7 Table 0322 - Completion Status in Chapter 2C for valid values.&quot; - HL7 Version 2.8, RXA-20</p><p></p><p>The current state of the Substance Administration.  Possible values include: Infusing, Given, Held, Completed, etc.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>systemEntryDateTime : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+  <stentry><p>systemEntryDateTime :  <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;Date/time the administration information was entered into the source system.  This field is used to detect instances where treatment administration information is inadvertently entered multiple times by providing a unique identification field.  Under usual circumstances, this field would be provided automatically by the computer system rather than being entered by a person.&quot; - HL7 Version 2.8, RXA-22
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>treatmentRefusalReason : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+  <stentry><p>treatmentRefusalReason :  <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
 <p>See <xref href="../t_ActNoImmunizationReasonHL7_V3.dita">ActNoImmunizationReason (HL7_V3)</xref> definition for values.</p>
 </stentry>
   <stentry><p>				&quot;Contains the reason the patient refused the medical substance/treatment.  Any entry in the field indicates that the patient did not take the substance.&quot; - HL7 Version 2.8, RXA-18

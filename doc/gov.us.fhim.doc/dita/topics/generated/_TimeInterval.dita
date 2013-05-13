@@ -10,9 +10,9 @@
 
 <section id="description" audience="developer, modeler, sme">
   <title>Description</title>
-	<p>This data type represents an Interval, where the Low and High Limits are Points In Time.  An Interval is a &quot;set of consecutive values of an ordered base data type.&quot; - HL7 V3  A PointInTime is &quot;a quantity specifying a point on the axis of natural time. A point in time is most often represented as a  calendar expression.&quot; - HL7 V3</p>
-
 	<p>An interval of time specified as an interval of points in time - TS.</p>
+
+	<p>This data type represents an Interval, where the Low and High Limits are Points In Time.  An Interval is a &quot;set of consecutive values of an ordered base data type.&quot; - HL7 V3  A PointInTime is &quot;a quantity specifying a point on the axis of natural time. A point in time is most often represented as a  calendar expression.&quot; - HL7 V3</p>
 
 
 	
@@ -22,7 +22,8 @@
   <stentry>Description</stentry>
  </sthead>
  <strow>
-  <stentry><p>high : <xref href="../t_PointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+  <stentry><p>high :  <xref href="../t_PointInTime.dita" >PointInTime</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				This is the high limit of the interval.
 				&quot;The high limit of the interval.  The high limit SHALL NOT be negative infinity, and SHALL be higher than the low limit if one exists.&quot; - HL7 V3
@@ -30,15 +31,17 @@
   </stentry>
   </strow>
  <strow>
-  <stentry><p>low : <xref href="../t_PointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+  <stentry><p>low :  <xref href="../t_PointInTime.dita" >PointInTime</xref> (0..1)</p> 
 </stentry>
-  <stentry><p>				&quot;The low limit of the interval.  The low limit SHALL NOT be positive infinity.&quot; - HL7 V3
-				This is the low limit of the interval.
+  <stentry><p>				This is the low limit of the interval.
+				&quot;The low limit of the interval.  The low limit SHALL NOT be positive infinity.&quot; - HL7 V3
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>width : <xref href="../t_TimeQuantity.dita" >TimeQuantity</xref> (0..1)</p> 
+
+  <stentry><p>width :  <xref href="../t_TimeQuantity.dita" >TimeQuantity</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				The difference between high and low boundary. The purpose of distinguishing a width property is to handle all cases of incomplete information symmetrically. In any interval representation only two of the three properties high, low, and width need to be stated and the third can be derived.
 				&quot;The difference between HIGH and LOW boundary. The purpose of distinguishing width is to handle all cases of incomplete information symmetrically. In any IVL representation only two of the three properties HIGH, LOW, and width need to be stated: the third can be derived.  When both boundaries are known, width can be derived as HIGH minus LOW. When one boundary and width is known, the other boundary is also known. When no boundary is known, width may still be known. For example, one knows that an activity takes about 30 minutes, but one may not yet know when that activity is started.&quot; - HL7 V3

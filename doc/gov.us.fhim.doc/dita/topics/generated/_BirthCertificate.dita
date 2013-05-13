@@ -20,329 +20,376 @@
   <stentry>Description</stentry>
  </sthead>
  <strow>
-  <stentry><p>apgarScore10Minutes : <xref href="../t_CodedOrdinal.dita" >CodedOrdinal</xref> (0..1)</p> 
+
+  <stentry><p>apgarScore10Minutes :  <xref href="../t_CodedOrdinal.dita" >CodedOrdinal</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 51].  Contains the Apgar score (which is a simple and repeatable method to quickly and summarily assess the health of newborn children immediately after birth) 10 minutes after the birth of the infant.  This property is required if the 5 minute Apgar score is less than 6.    &quot;The test is generally done at one and five minutes after birth, and may be repeated later if the score is and remains low. Scores 3 and below are generally regarded as critically low, 4 to 6 fairly low, and 7 to 10 generally normal.&quot; - Wikipedia.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>apgarScore5Minutes : <xref href="../t_CodedOrdinal.dita" >CodedOrdinal</xref> (1..1)</p> 
+
+  <stentry><p>apgarScore5Minutes :  <xref href="../t_CodedOrdinal.dita" >CodedOrdinal</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 51].  Contains the Apgar score (which is a simple and repeatable method to quickly and summarily assess the health of newborn children immediately after birth) 5 minutes after the birth of the infant.    &quot;The test is generally done at one and five minutes after birth, and may be repeated later if the score is and remains low. Scores 3 and below are generally regarded as critically low, 4 to 6 fairly low, and 7 to 10 generally normal.&quot; - Wikipedia.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>attendantId : <xref href="../t_Id.dita" >Id</xref> (1..1)</p> 
+
+  <stentry><p>attendantId :  <xref href="../t_Id.dita" >Id</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 27].  Indicates the National Provider Identifier (NPI) of the attending clinician.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>attendantName : <xref href="../t_PersonName.dita" >PersonName</xref> (1..1)</p> 
+
+  <stentry><p>attendantName :  <xref href="../t_PersonName.dita" >PersonName</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 27].  Indicates the name of the attending clinician.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>attendantTitleCategory : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+  <stentry><p>attendantTitleCategory :  <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 27].  Indicates the title of the attending clinician.  Choices include: MD, DO, CNM/CM, Other Midwife, or Other (if Other is chosen, attendantTitleOther is used to specify).
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>attendantTitleOther : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+  <stentry><p>attendantTitleOther :  String (1..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 27].  Indicates the title of the attending clinician.  If attendantTitleCategory is &quot;Other&quot;, then this property is used to specify.  Otherwise this property is not used.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>birthPlaceAddress : <xref href="../t_Address.dita" >Address</xref> (1..1)</p> 
+
+  <stentry><p>birthPlaceAddress :  <xref href="../t_Address.dita" >Address</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Fields 06 and 07].  The address of the location (i.e., institution, home, in the car on the way to the hospital) at which the infant was born.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>birthPlaceCategory : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+  <stentry><p>birthPlaceCategory :  <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 26].  Categorizes the place at which the birth occured.  Possible values include: Hospital; Freestanding birthing center; Home birth*; Clinic/Doctor&apos;s office; or Other**.  * = if Home birth is chosen, wasHomeDeliveryPlanned is used to indicate whether a home delivery was planned.  ** = if other is chosen, birthPlaceOther provides a free text in which to describe the location.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>birthPlaceFacility : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+  <stentry><p>birthPlaceFacility :  String (1..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 05].  The name of the facility at which the infant was born.  If not a facility (e.g., at home), the street address goes in field 5 on the report, but would be retreived from the BirthPlaceAddress property; this property would be unused.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>birthPlaceFacilityId : <xref href="../t_Id.dita" >Id</xref> (1..1)</p> 
+
+  <stentry><p>birthPlaceFacilityId :  <xref href="../t_Id.dita" >Id</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 17].  Identifies the faclity at which the child was born.  Should be the National Provider Identifier for the facility.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>birthPlaceOther : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+  <stentry><p>birthPlaceOther :  String (1..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 26].  Provides further details in free text regarding the place at which the birth occured.  Used only when birthPlaceCategory is &quot;Other&quot;.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>birthWeight : <xref href="../t_PhysicalQuantity.dita" >PhysicalQuantity</xref> (1..1)</p> 
+
+  <stentry><p>birthWeight :  <xref href="../t_PhysicalQuantity.dita" >PhysicalQuantity</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 49].  The weight of the infant at birth.  Can be expressed in either pounds/ounces or grams.  The use of grams is preferred.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>certifierName : <xref href="../t_PersonName.dita" >PersonName</xref> (1..1)</p> 
+
+  <stentry><p>certifierName :  <xref href="../t_PersonName.dita" >PersonName</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 11].  Indicates the name of the person who certified the birth of the infant.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>certifierTitleCategory : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+  <stentry><p>certifierTitleCategory :  <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 11].  Indicates the title of the person who certified the birth of the infant.  Choices include: MD, DO, Hospital Administrator, CNM/CM, Other Midwife, or Other (if Other is chosen, certifierTitleOther is used to specify.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>certifierTitleOther : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+  <stentry><p>certifierTitleOther :  String (1..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 11].  Indicates the title of the person who certified the birth of the infant.  If certifierTitleCategory is &quot;Other&quot;, then this property is used to specify.  Otherwise this property is not used.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>dateCertified : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+  <stentry><p>dateCertified :  <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 12].  Indicates the date that the infant&apos;s birth was certified.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>dateFiledByRegistrar : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+  <stentry><p>dateFiledByRegistrar :  <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 13].  Indicates the date that the birth certificate was filed by the registrar.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>dateLastNormalMensesBegan : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+  <stentry><p>dateLastNormalMensesBegan :  <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 39].  Indicates the date on which the infant&apos;s mother last experienced the beginning of a normal menstrual cycle.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>dateOfFirstPrenatalVisit : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+  <stentry><p>dateOfFirstPrenatalVisit :  <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 29a].  Provides the date of the first pre-natal care visit for the pregnancy resulting in this birth.  Note that Box 29a also has a &quot;No Prenatal care&quot; checkbox, which is not modeled; it is assumed that this box can be calculated based on whether or not numberOfPrenatalVisits = 0.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>dateOfLastLiveBirth : <xref href="../t_PointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+  <stentry><p>dateOfLastLiveBirth :  <xref href="../t_PointInTime.dita" >PointInTime</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 35c].  Indicates the date on which the last child was born alive (e.g., not stillborn) to this infant&apos;s mother before this infant was born (i.e., not including this child).
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>dateOfLastOtherPregnancyOutcome : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+  <stentry><p>dateOfLastOtherPregnancyOutcome :  <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 36b].  Indicates the date on which the last &quot;other pregnancy outcome (spontaneous or induced losses or ectopic pregnancies)&quot; occurred.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>dateOfLastPrenatalVisit : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+  <stentry><p>dateOfLastPrenatalVisit :  <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 29b].  Provides the date of the last pre-natal care visit for the pregnancy resulting in this birth.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>didMotherReceiveWicFood : <xref href="../t_Boolean.dita" >Boolean</xref> (1..1)</p> 
+
+  <stentry><p>didMotherReceiveWicFood :  Boolean (1..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 34].  Indicates whether the mother received Women and Infant Children (WIC) food assistance for herself during this pregnancy.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>hasPaternityAcknowledgementBeenSigned : <xref href="../t_Boolean.dita" >Boolean</xref> (1..1)</p> 
+
+  <stentry><p>hasPaternityAcknowledgementBeenSigned :  Boolean (1..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 15].  If the isMotherMarried property is false, i.e., the infant&apos;s mother was not married at birth, conception, or any time in between, this property indicates whether the father has signed a paternity acknowlegement.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>infantTransferredToFacility : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+  <stentry><p>infantTransferredToFacility :  String (1..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 56].  If the infant was transferred to another facility within 24 hours of delivery (i.e., wasInfantTransferred = true), this property is used to identify the receiving facility.  Not used when wasInfantTransferred = false.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>isInfantBreastFed : <xref href="../t_Boolean.dita" >Boolean</xref> (1..1)</p> 
+
+  <stentry><p>isInfantBreastFed :  Boolean (1..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 58].  Indicates whether the infant was being breastfed at the time of discharge.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>isInfantLiving : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+  <stentry><p>isInfantLiving :  <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 57].  Indicates whether the infant is living at the time the report (i.e., the US Standard Certificate Of Birth) was completed.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>motherTransferedFromFacility : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+  <stentry><p>motherTransferedFromFacility :  String (1..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 28].  If the mother was transferred from another facility for maternal medical or fetal indications for delivery (i.e., wasMotherTransferred = true), this property is used to identify the transferring facility.  Not used when wasMotherTransferred = false.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>mothersHeight : <xref href="../t_PhysicalQuantity.dita" >PhysicalQuantity</xref> (1..1)</p> 
+
+  <stentry><p>mothersHeight :  <xref href="../t_PhysicalQuantity.dita" >PhysicalQuantity</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 31].  Indicates the infant&apos;s mother height (displayed in feet/inches).
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>mothersPrePregnancyWeight : <xref href="../t_PhysicalQuantity.dita" >PhysicalQuantity</xref> (1..1)</p> 
+
+  <stentry><p>mothersPrePregnancyWeight :  <xref href="../t_PhysicalQuantity.dita" >PhysicalQuantity</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 32].  Indicates the weight, in pounds, that the infant&apos;s mother normally weighed before this pregnancy.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>mothersWeightAtDelivery : <xref href="../t_PhysicalQuantity.dita" >PhysicalQuantity</xref> (1..1)</p> 
+
+  <stentry><p>mothersWeightAtDelivery :  <xref href="../t_PhysicalQuantity.dita" >PhysicalQuantity</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 33].  Indicates the weight, in pounds, that the infant&apos;s mother weighed just before delivery.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>multipleBirthOrder : <xref href="../t_Integer.dita" >Integer</xref> (0..1)</p> 
+
+  <stentry><p>multipleBirthOrder :  Integer (0..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 53].  Note that this property can probably be derived, as it is stored as part of the infant&apos;s Person record.  &quot;When a patient was part of a multiple birth, a value (number) indicating the patient&apos;s birth order is entered in this field.&quot; - HL7 Version 2.8, PID-25.  If the biological entity was born along with other siblings, this property indicates the order the entity was born.  For example, for a set of twins, this property indicates which twin was born first, and which was born second.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>newbornsMedicalRecordId : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+  <stentry><p>newbornsMedicalRecordId :  String (1..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 48].  Uniquely identifies the newborn&apos;s medical record within the institution&apos;s set of records.  Note that this is modeled as a string, as this is all that is called for by the form, but it might be more properly modeled as an Id.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>numberOfChildrenNowDead : <xref href="../t_Integer.dita" >Integer</xref> (0..1)</p> 
+
+  <stentry><p>numberOfChildrenNowDead :  Integer (0..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 35b].  Indicates the number, of the children born alive to this infant&apos;s mother before this infant was born, that have since died.  Note that Box 35b has a checkbox titled &quot;None&quot;, which is not modeled - it is assumed that this checkbox can be calculated based on whether or not numberOfPreviousLiveBirths = 0).
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>numberOfChildrenNowLiving : <xref href="../t_Integer.dita" >Integer</xref> (0..1)</p> 
+
+  <stentry><p>numberOfChildrenNowLiving :  Integer (0..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 35a].  Indicates the number, of the children born alive to this infant&apos;s mother before this infant was born, that are still alive.  Note that Box 35a has a checkbox titled &quot;None&quot;, which is not modeled - it is assumed that this checkbox can be calculated based on whether or not numberOfPreviousLiveBirths = 0).
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>numberOfOtherPregnancyOutcomes : <xref href="../t_Integer.dita" >Integer</xref> (0..1)</p> 
+
+  <stentry><p>numberOfOtherPregnancyOutcomes :  Integer (0..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 36a].  Indicates the number of &quot;other pregnancy outcomes (spontaneous or induced losses or ectopic pregnancies)&quot;  Note that Box 36a has a checkbox titled &quot;None&quot;, which is not modeled - it is assumed that this checkbox can be calculated based on whether or this property is equal to 0.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>numberOfPrenatalVisits : <xref href="../t_Integer.dita" >Integer</xref> (1..1)</p> 
+
+  <stentry><p>numberOfPrenatalVisits :  Integer (1..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 30].  Provides the number of pre-natal care visits for the pregnancy resulting in this birth.  Note that Box 29a also has a &quot;No Prenatal care&quot; checkbox, which is not modeled; it is assumed that this box can be calculated based on whether or not numberOfPrenatalVisits = 0.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>numberOfPreviousLiveBirths : <xref href="../t_Integer.dita" >Integer</xref> (1..1)</p> 
+
+  <stentry><p>numberOfPreviousLiveBirths :  Integer (1..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 35].  Indicates the number of children born alive (e.g., not stillborn) to this infant&apos;s mother before this infant was born (i.e., not including this child).
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>obstetricEstimateOfGestation : <xref href="../t_TimeQuantity.dita" >TimeQuantity</xref> (1..1)</p> 
+
+  <stentry><p>obstetricEstimateOfGestation :  <xref href="../t_TimeQuantity.dita" >TimeQuantity</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 50].  Contains an estimate of gestational age of the infant, in weeks.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>plurality : <xref href="../t_Integer.dita" >Integer</xref> (1..1)</p> 
+
+  <stentry><p>plurality :  Integer (1..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 53].  The number of fetuses delivered live or dead at any time in the pregnancy regardless of gestational age or if the fetuses were delivered at different dates in the pregnancy.  ( Reabsorbed  fetuses, those which are not  delivered   (expulsed or extracted from the mother) should not be counted.)
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>principalPaymentSourceCategory : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+  <stentry><p>principalPaymentSourceCategory :  <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 38].  Identifies the principal source of payment for this delivery.  Possible values include: Private Insurance; Medicaid; Self-pay; or Other.  If Other is chosen, the principalPaymentSourceOther property provides a free text in which the payment source could be specified.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>principalPaymentSourceOther : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+  <stentry><p>principalPaymentSourceOther :  String (1..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 38].  If the principalPaymentSourceCategory property contains &quot;Other&quot;, this property provides a free text in which the payment source could be specified.  Not used if the principalPaymentSourceCategory property is anything other than &quot;Other&quot;.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>wasHomeDeliveryPlanned : <xref href="../t_Boolean.dita" >Boolean</xref> (1..1)</p> 
+
+  <stentry><p>wasHomeDeliveryPlanned :  Boolean (1..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 26].  If the birth took place at home (i.e., birthPlaceCategory=&quot;Home Birth&quot;), this property indicates whether such a home delivery was planned.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>wasInfantTransferred : <xref href="../t_Boolean.dita" >Boolean</xref> (1..1)</p> 
+
+  <stentry><p>wasInfantTransferred :  Boolean (1..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 56].  Indicates whether the infant was transferred to another facility within 24 hours of delivery.  If the answer is yes, the infantTransferredToFacility property is used to identify the receiving facility.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>wasMotherTransferred : <xref href="../t_Boolean.dita" >Boolean</xref> (1..1)</p> 
+
+  <stentry><p>wasMotherTransferred :  Boolean (1..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 28].  Indicates whether the mother was transferred from another facility for maternal medical or fetal indications for delivery.  If the answer is yes, the motherTransferedFromFacility property is used to identify the transferring facility.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>wasMultipleBirth : <xref href="../t_Boolean.dita" >Boolean</xref> (0..1)</p> 
+
+  <stentry><p>wasMultipleBirth :  Boolean (0..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 52].  Note that this property can probably be derived, as it is stored as part of the infant&apos;s Person record.    &quot;This field indicates whether the patient was part of a multiple birth.&quot; - HL7 Version 2.8, PID-24    If the biological entity was born along with other siblings, this property indicates the order the entity was born.  For example, for a set of twins, this property indicates which twin was born first, and which was born second.  An indication as to whether the person was born along with other siblings as part of a single pregnancy.  This property is primarily used to distinguish records for newborn infants who have not yet have been given names.  This property may also be used in research situations to distinguish individuals who were part of a multi-child pregnancy.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>wasSsnRequested : <xref href="../t_Boolean.dita" >Boolean</xref> (1..1)</p> 
+
+  <stentry><p>wasSsnRequested :  Boolean (1..1)</p> 
 </stentry>
   <stentry><p>				[US Standard Certificate Of Birth Field 16].  Indicates whether a Social Security Number has been requested for the child.
 			</p>

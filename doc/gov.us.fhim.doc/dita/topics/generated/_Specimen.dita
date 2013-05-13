@@ -20,63 +20,72 @@
   <stentry>Description</stentry>
  </sthead>
  <strow>
-  <stentry><p>dangerCode : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+  <stentry><p>dangerCode :  <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;Contains any known or suspected specimen hazards, e.g., exceptionally infectious agent or blood from a hepatitis patient.&quot; - HL7 Version 2.8, SPM-16.  Possible values include (from HL7 Table 489): Biological; Corrosive; Escape Risk; Aggressive; MaterialDangerInflammable; Explosive; MaterialDangerInfectious; Biohazard; Injury Hazard; Poison; Radioactive.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>description : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+  <stentry><p>description :  String (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;A text field that allows additional information specifically about the specimen&quot; - HL7 Version 2.8, SPM-14.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>handlingCode : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+  <stentry><p>handlingCode :  <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;Describes how the specimen and/or container need to be handled from the time of collection through the initiation of testing.&quot; - HL7 Version 2.8, SPM-15.  Possible values include (from HL7 Table 376): Body temperature; Ambient temperature; Critical ambient temperature; Refrigerated temperature; Critical refrigerated temperature; Frozen temperature; Critical frozen temperature; Deep frozen; Ultra frozen; Liquid nitrogen; Protect from light; Protect from air; Dry; No shock; Do not shake; Upright; Metal Free.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>id : <xref href="../t_Id.dita" >Id</xref> (0..*)</p> 
+
+  <stentry><p>id :  <xref href="../t_Id.dita" >Id</xref> (0..*)</p> 
 </stentry>
   <stentry><p>				&quot;Unique identifier for the specimen as referenced by the Placer application, the Filler application, or both.&quot; - HL7 Version 2.8, SPM-2</p><p>&quot;Contains other identifier(s) for the specimen ... in addition to those identified in [SPM-2, Specimen ID].  In may cases other applications involved in the collection, transportation or testing of the specimen will assign additional specimen identifiers.&quot; - HL7 Version 2.8, SPM-31.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>specimenExpirationDateTime : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+  <stentry><p>specimenExpirationDateTime :  <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;The date and time the specimen can no longer be used for the purpose implied by the order....&quot; - HL7 Version 2.8, SPM-19.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>specimenOrigin : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+  <stentry><p>specimenOrigin :  <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				Domain from which the specimen comes (e.g., human, animal, environmental).  Added for Public Health Reporting Initiative 10/12/12.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>specimenRole : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+  <stentry><p>specimenRole :  <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				Provides an indication of how this sample relates to other aspects of the overall workflow and/or to other specimens gathered or processed during the workflow.  This property is populated from HL7 V2 user-defined Table 0369, which contains a mish-mash of concepts including &quot;group&quot; and &quot;pool&quot; which relate to aliquotting, &quot;calibarator&quot;, &quot;verifying calibrator&quot;, &quot;operator testing&quot;, etc. which relate to laboratory quality assurance, etc.</p><p></p><p>&quot;Indicates the role of the sample.&quot; - HL7 Version 2.8, SPM-11.  Possible values include (from HL7 Table 369):</p><p>Blind Sample;</p><p>Calibrator, used for initial setting of calibration;</p><p>Electronic QC, used with manufactured reference providing signals that simulate QC results;</p><p>Specimen used for testing proficiency of the organization performing the testing (Filler);</p><p>Group (where a specimen consists of multiple individual elements that are not individually identified);</p><p>Pool (aliquots of individual specimens combined to form a single specimen representing all of the components.);</p><p>Specimen used for testing Operator Proficiency;</p><p>Patient (default if blank component value);</p><p>Control specimen;</p><p>Replicate (of patient sample as a control);</p><p>Verifying Calibrator, used for periodic calibration checks.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>specimenType : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+  <stentry><p>specimenType :  <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;Describes the precise nature of the entity that will be the source material for the observation.  Any physical entity that may have observations made about it may qualify as a specimen.  The entry in this attribute describes the specific entity as precisely as possible, whether that is a complex organism (e.g., an ostrich) or a specific cellular mass (e.g., a specific muscle biopsy).&quot; - HL7 Version 2.8, SPM-4.  Note that HL7 identifies a Code Table (Table 487) for this property, which currently contains 271 suggested values.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>specimenTypeModifier : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+  <stentry><p>specimenTypeModifier :  <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				&quot;Contains modifying or qualifying description(s) about the specimen type.  The use of this attribute is to modify, qualify or further specify, the entity described by [SpecimenType].  This is particularly useful when the code set used in [SpecimenType] does not provide the precision required to fully describe the specimen.  For example, if the specimen was precisely described as capillary venous blood but the code set employed only provided venous blood, this attribute could be employed to add the modifier capillary.&quot; - HL7 Version 2.8, SPM-5.  Note that HL7 identifies a Code Table (Table 541) for this property, but does not provide any suggested values.
 			</p>

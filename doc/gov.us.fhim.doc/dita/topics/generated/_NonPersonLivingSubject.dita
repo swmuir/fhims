@@ -24,42 +24,48 @@
   <stentry>Description</stentry>
  </sthead>
  <strow>
-  <stentry><p>biologicalSex : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+  <stentry><p>biologicalSex :  <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				The genetic sex of a living subject.  Note that the biological sex is different from administrative gender which is defined for administrative purposes.  Also note that &quot;gender&quot; is dependent on the behavioral, cultural, or psychological traits typically associated with one sex, rather than on the underlying genetic sex of the entity.  This attribute reflects the actual genetic sex of the patient, regardless of whether that sex may have been altered.  For example, a neutered dog or a person who has undergone a sex change operation will still have the same underlying chromosomes.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>isNeutered : <xref href="../t_NullableBoolean.dita" >NullableBoolean</xref> (0..1)</p> 
+
+  <stentry><p>isNeutered :  <xref href="../t_NullableBoolean.dita" >NullableBoolean</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				Indicates whether the animal has been altered such that they cannot procreate.</p><p></p><p>Note that information that the animal has been neutered can also be modeled as a procedure or observation, however it is 
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>name : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+  <stentry><p>name :  String (1..1)</p> 
 </stentry>
   <stentry><p>				A name used to identify the non-human individual.  Typically used only when the individual is a pet or a beast of burden.  Examples include &quot;Spot&quot;, &quot;Fido&quot;, &quot;Seattle Slew&quot;. Note that this property is typically not used when the subject is a lower order organism.</p><p>&quot;Contains one or more of the names of the patient....  For animals, if a Name Type of &quot;R&quot; is used, use &quot;Name Context&quot; to identify the authority with which the animal&apos;s name is registered.&quot; - HL7 Version 2.8, PID-5.</p><p>*** Note: This property serves as a placeholder for information needed to support future use cases. ***
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>organismTaxon : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+  <stentry><p>organismTaxon :  <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				A categorization of non-human biological entities. Possible values include canine, feline, staphylococcus aureus, etc.</p><p>&quot;The species of living organism.  This may include the common or scientific name, based on the coding system(s) used.  SNOMED is the recommended coding system.&quot; - HL7 Version 2.8, PID-35.</p><p>&quot;The specific breed of animal.  This field, unlike Species and Strain is specific to animals and cannot be generally used for all living organisms.  SNOMED is the recommended coding system.&quot; - HL7 Version 2.8, PID-36.</p><p>Note that breed is no longer a stand-alone concept, as this information is included in the SNOMED species hierarchy.  Thus, the species property handles both species and breed, and the separate breed property was removed.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>primaryIntent : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+  <stentry><p>primaryIntent :  String (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;Contains the code and/or text indicating the primary use for which the living subject was bred or grown.&quot; - HL7 Version 2.8, PID-38.</p><p>*** Note: This property serves as a placeholder for information needed to support future use cases. ***
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>strain : <xref href="../t_String.dita" >String</xref> (0..1)</p> 
+
+  <stentry><p>strain :  String (0..1)</p> 
 </stentry>
   <stentry><p>				&quot;Contains the specific strain of animal.  It can also be expanded to include strain of any living organism and is not restricted to animals.&quot; - HL7 Version 2.8, PID-37.</p><p>&quot;The body of descendants of a common ancestor, as a family or stock. 5. a variety, especially of microorganisms.&quot; - Dictionary.com</p><p>*** Note: This property serves as a placeholder for information needed to support future use cases.  The possible value set for this property will be determined at a future date. ***
 			</p>

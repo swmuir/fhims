@@ -20,42 +20,48 @@
   <stentry>Description</stentry>
  </sthead>
  <strow>
-  <stentry><p>code : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+  <stentry><p>code :  <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				&#8220;The code given to this kind of product, i.e., NDC code to medicines in the U.S., EAN or UPC codes to food items or devices.  A code given to a device may also be known as &quot;unique device identifier&quot;.  Unlike a device instance identifier, however, this is a code for the specific kind of device analogously to the NDC code or UPC code that is a code of a manufactured kind of product respectively.  The words &quot;product code&quot; &quot;unique device identifiers&quot; may have certain specific connotations in different regulatory contexts, to side-step such unwanted connotations, one may call this code the &quot;Item Code&quot;, for it is the code for the item (product, medicine, thing, or class thereof) that is so described.&#8221; - HL7 Version 3 (ManufacturedMaterial.code).
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>description : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+  <stentry><p>description :  String (1..1)</p> 
 </stentry>
   <stentry><p>				&#8220;A text description of the product&#8230;.  The description attribute is mainly to be used for brief descriptions which users of product catalogs can use to quickly distinguish this product from other similar products in a list of products.&#8221; - HL7 Version 3 (ManufacturedMaterial.desc).
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>formCode : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+  <stentry><p>formCode :  <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				&#8220;The principle form of a product, such as dosage form of a medicine.  Values may be drawn from the MaterialForm HL7 vocabulary table or from other external code value sources.  Notice the difference between an (Administered) Medicine and a PackagedMedicine.  Both have formCodes.  A box or vial is usually not a medicine Product.formCode but a PackageProduct.formCode, unless the entire box or the entire vial is meant for direct administration as a single unit.  In principle, the formCode is a very coarsely-grained (high level) product class that focuses on physical appearance.  At the top, it usually distinguishes between physical state of matter (solid, liquid, gaseous), and, because solids may be amorphous (e.g., powders), would allow distinguishing solid shaped from amorphous masses.  The former can be individually handled and counted, whereas the latter (amorphous masses) can only be measured and require primary containers for handling.  Thus the formCode has implications for how the product is quantified (counted vs. measured) and whether a primary container (e.g., vial) may be expected.&#8221; - HL7 Version 3 (ManufacturedMaterial.formCode).
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>handlingCode : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+  <stentry><p>handlingCode :  <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				&#8220;An indicator of special handling requirements for the product, e.g., keep at room temperature, store upright.&#8221; - HL7 Version 3 (ManufacturedMaterial.handlingCode).
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>riskCode : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
+
+  <stentry><p>riskCode :  <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				&#8220;Indicates a type of hazard or threat associated with the product.&#8221; - HL7 Version 3 (ManufacturedMaterial.riskCode).
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>shelfLife : <xref href="../t_TimeQuantity.dita" >TimeQuantity</xref> (1..1)</p> 
+
+  <stentry><p>shelfLife :  <xref href="../t_TimeQuantity.dita" >TimeQuantity</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				&#8220;The amount of time after date of manufacture that the manufacturer no longer ensures the safety, quality, and/or proper functioning of the material.  Only the interval width is valued.&#8221; - HL7 Version 3 (ManufacturedMaterial.expirationTime).
 			</p>

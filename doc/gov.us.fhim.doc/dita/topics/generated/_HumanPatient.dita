@@ -24,35 +24,40 @@
   <stentry>Description</stentry>
  </sthead>
  <strow>
-  <stentry><p>identityReliabilityCode : <xref href="../t_String.dita" >String</xref> (0..*)</p> 
+
+  <stentry><p>identityReliabilityCode :  String (0..*)</p> 
 </stentry>
   <stentry><p>				&quot;Contains a coded value used to communicate information regarding the reliability of patient/person identifying data transmitted via a transaction.  Values could indicate that certain fields on a PID segment for a given patient/person are known to be false (e.g., use of default or system-generated values for Date of Birth or Social Security Number).&quot; - HL7 Version 2.8, PID-32.  HL7 Version 2 has the following suggested values (table 445): Unknown/Default Social Security Number; Unknown/Default Date of Birth; Unknown/Default Address; Patient/Person Name is an Alias.  Suggest that the FHIM use something like: Unreliable Social Security Number, Unreliable Date of Birth, Unreliable Address; Unreliable Name.</p><p></p><p>Note that this property is included in the FHIM for compatibility to HL7 V2, but we have not identified a particular need for it.  In addition, the potential values for this field are currently unknown, as the HL7 table is a user-defined-table, and we have not identified potential values for federal use cases, we therefore have modeled it as a string rather than a code until such values have been identified.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>isIdentityUnknown : <xref href="../t_Boolean.dita" >Boolean</xref> (1..1)</p> 
+
+  <stentry><p>isIdentityUnknown :  Boolean (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;Indicates whether or not the patient&apos;s/person&apos;s identity is known.&quot; - HL7 Version 2.8, PID-31.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>isOrganDonor : <xref href="../t_Boolean.dita" >Boolean</xref> (1..1)</p> 
+
+  <stentry><p>isOrganDonor :  Boolean (1..1)</p> 
 </stentry>
   <stentry><p>				Indicates whether the patient has consented to be an organ donor upon their demise.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>lastUpdateDateTime : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+  <stentry><p>lastUpdateDateTime :  <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;Contains the last update date and time for the patient&apos;s/person&apos;s identifying and demographic data, as defined in the PID segment....&quot; - HL7 Version 2.8, PID-33.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>lastUpdateFacility : <xref href="../t_Id.dita" >Id</xref> (0..1)</p> 
+
+  <stentry><p>lastUpdateFacility :  <xref href="../t_Id.dita" >Id</xref> (0..1)</p> 
 </stentry>
   <stentry><p>				&quot;Identifies the facility of the last update to a patient&apos;s/person&apos;s identifying and demographic data, as defined in the PID segment....&quot; - HL7 Version 2.8, PID-34.
 			</p>

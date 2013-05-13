@@ -20,98 +20,112 @@
   <stentry>Description</stentry>
  </sthead>
  <strow>
-  <stentry><p>archiveDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+  <stentry><p>archiveDate :  <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				&amp;amp;lt;p&amp;amp;gt;      This contains the date this document was archived.  &amp;amp;lt;/p&amp;amp;gt;
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>confidentiality : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+  <stentry><p>confidentiality :  <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;Confidentiality is a required contextual component of CDA, where the value expressed in the header holds true for the entire document, unless overridden by a nested value (as further described in CDA Context (  4.4 )).&quot;  (HL7 V3)  
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>dispensation : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+  <stentry><p>dispensation :  <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				A code depicting the storage status of a Clinical Document. Possible Values Include: Active, Archived, Purged etc.    
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>documentTitle : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
+
+  <stentry><p>documentTitle :  String (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;Represents the title of the document. It is commonly the case that clinical documents do not have a title, and are collectively referred to by the display name of ClinicalDocument.code (e.g. a &quot;consultation&quot; or &quot;progress note&quot;). Where these display names are rendered to the clinician, or where the document has a unique title, the ClinicalDocument.title component should be used.&quot; (HL7 3.0)  
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>documentType : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+  <stentry><p>documentType :  <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				Classifies the document.  In VistA this is a pointer to file 8925.1.   In HL7 CDA, this is: &quot;The code specifying the particular kind of document (e.g. History and Physical, Discharge Summary, Progress Note). The value set is drawn from LOINC, and has a CWE coding strength.&quot; (HL7 3.0)      
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>id : <xref href="../t_Id.dita" >Id</xref> (1..1)</p> 
+
+  <stentry><p>id :  <xref href="../t_Id.dita" >Id</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;Represents the unique instance identifier of a clinical document&quot;  (HL7 3.0)
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>isCosignatureNeeded : <xref href="../t_Boolean.dita" >Boolean</xref> (1..1)</p> 
+
+  <stentry><p>isCosignatureNeeded :  Boolean (1..1)</p> 
 </stentry>
   <stentry><p>				Indicates whether or not a cosignature is needed.    
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>language : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+  <stentry><p>language :  <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;Specifies the human language of character data (whether they be in contents or attribute values). The values of the attribute are language identifiers as defined by the IETF (Internet Engineering Task Force) RFC 3066 for the Identification of Languages, ed. H. Alvestrand. 1995, which obsoletes RFC 1766. Language is a contextual component of CDA., where the value expressed in the header holds true for the entire document, unless overridden by a nested value (as further described in CDA Context (  4.4 )).&quot;   (HL7 3.0 CDA 2.0)  
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>referenceDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+  <stentry><p>referenceDate :  <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				In VistA, &quot;this is the Date (and time) by which the clinician will reference the document.  For Progress Notes, this will likely be the date of the provider&apos;s encounter with the patient.  For documents which have been dictated, and transcribed (e.g., discharge summaries), it will correspond to the dictation date of the record.  In all cases, this is the date by which the document will be referenced and sorted.&quot;    In CDA, this is the creation date: &quot;Signifies the document creation time, when the document first came into being. &quot; (HL7 3.0, CDA 2.0)
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>status : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
+
+  <stentry><p>status :  <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				The current status of a given clinical document.  Possible values include: undictated, untranscribed, unreleased, unverified, unsigned, uncosigned, completed, etc.     Displayed in CPRS. And is an automatic system change when updated (never through a prompt to the user).   
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>treatmentBeginDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+  <stentry><p>treatmentBeginDate :  <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				The date/time at which the treatment episode associated with this document was initiated (e.g., Admission date/time for a discharge summary, Visit date/time for a clinic note, Transfer date/time for an interim summary)
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>treatmentEndDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+  <stentry><p>treatmentEndDate :  <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				The ending date/time for the treatment episode associated with this document (e.g.Time is optional)
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>updateDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+  <stentry><p>updateDate :  <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
 </stentry>
   <stentry><p>				&amp;amp;lt;HTML&amp;amp;gt;&amp;amp;lt;HEAD&amp;amp;gt;  &amp;amp;lt;META content=&quot;MSHTML 6.00.2900.3492&quot; name=GENERATOR&amp;amp;gt;&amp;amp;lt;/HEAD&amp;amp;gt;  &amp;amp;lt;BODY&amp;amp;gt;This contains the date and time this document was updated.&amp;amp;lt;/BODY&amp;amp;gt;&amp;amp;lt;/HTML&amp;amp;gt;
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>version : <xref href="../t_Integer.dita" >Integer</xref> (1..1)</p> 
+
+  <stentry><p>version :  Integer (1..1)</p> 
 </stentry>
   <stentry><p>				&quot;An integer value used to version successive replacement documents.&quot;  (HL7 V3)    
 			</p>
