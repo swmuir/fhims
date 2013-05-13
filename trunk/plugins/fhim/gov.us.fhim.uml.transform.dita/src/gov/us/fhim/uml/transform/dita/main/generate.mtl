@@ -58,7 +58,7 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN"
  "topic.dtd">
 <topic id="topicId" xml:lang="en-us">
-	<title>[aPackage.name/] Definitions</title>
+	<title>[aPackage.name/] Domain</title>
 	<body>	
 	[if (not aPackage.ownedComment->isEmpty())]
 		[for (aComment : Comment | aPackage.ownedComment)]
@@ -144,7 +144,7 @@
 [/if]
 
 [if (not aPackage.eContents(Class).ownedAttribute->select(association = null).getStereotypeApplications()->select(oclIsTypeOf(ValueSetConstraint))->isEmpty())]
-<topichead navtitle="Value Sets">	
+<topichead navtitle="Terminology">	
 	[for (eee : Enumeration |  aPackage.eContents(Class).ownedAttribute->select(association = null).getStereotypeApplications()->select(oclIsTypeOf(ValueSetConstraint)).oclAsType(ValueSetConstraint).reference.base_Enumeration.oclAsType(Enumeration)->sortedBy(name))]
 		[let ee : Enumeration = eee.oclAsType(Enumeration)]
 <topicref href="../topics/t_[ee.name.replaceAll('\\W+','')/].dita" type="topic" />
@@ -336,7 +336,8 @@
  </sthead>
 [for (property : Property | aClass.ownedAttribute->select(association = null)->sortedBy(name))]
  <strow>
-  <stentry><p>[property.name/] : <xref href="../t_[property.type.name/].dita" >[property.type.name/]</xref> ([property.lower/]..[if (property.upper >= 0)][property.upper/][else]*[/if])</p> 
+
+  <stentry><p>[property.name/] :  [if (property.type.owner.oclIsKindOf(NamedElement) and not property.type.owner.oclAsType(NamedElement).name.equalsIgnoreCase('UMLPrimitiveTypes') )]<xref href="../t_[property.type.name/].dita" >[property.type.name/]</xref>[else][property.type.name/][/if] ([property.lower/]..[if (property.upper >= 0)][property.upper/][else]*[/if])</p> 
 		[for (vsc: ValueSetConstraint| property.getStereotypeApplications()->select(oclIsTypeOf(ValueSetConstraint)).oclAsType(ValueSetConstraint))]
 				[let vsv  : ValueSetVersion = vsc.reference]
 					[let ee : Enumeration = vsv.base_Enumeration.oclAsType(Enumeration)]
