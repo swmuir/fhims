@@ -21,7 +21,6 @@
  </sthead>
  <strow>
   <stentry><p>addressType : <xref href="../t_AddressType.dita" >AddressType</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Indicates the kind of address that is contained within this class. Examples include primaryHome, Work, etc. Note that in HL7 V3, this concept is part of the Address datatype (the &apos;use code&apos;). This concept is made explicit in this Address class, because this is a platform-independent model - non V3 implementations will need other mechanisms to deal with the type.
 			</p>
@@ -29,7 +28,6 @@
   </strow>
  <strow>
   <stentry><p>city : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				&quot;The name of the city, town, village, or other community or delivery center.&quot; - HL7 V3
 				An Address Part (ADXP) that contains the name of the city, town, village, or other community or delivery center.
@@ -38,7 +36,6 @@
   </strow>
  <strow>
   <stentry><p>country : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
-
 </stentry>
   <stentry><p>				An Address Part (ADXP) that contains the Country of the address.
 				A state or nation
@@ -47,7 +44,6 @@
   </strow>
  <strow>
   <stentry><p>county : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
-
 </stentry>
   <stentry><p>				A region created by territorial division for the purpose of local government.  In the United States, a county (or parish in Louisiana) is the largest administrative district within a state.  This property is used primarily for statistical and pricing information (i.e., the same service may be more expensive in an affluent section of the country than in a less-affluent portion).
 			</p>
@@ -55,7 +51,6 @@
   </strow>
  <strow>
   <stentry><p>effectiveDateRange : <xref href="../t_TimeInterval.dita" >TimeInterval</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				The time period for which the address is a valid location for the person or organization.  The datatype is a TimeInterval, which includes both a start date and end date, either of which may be empty.
 			</p>
@@ -63,7 +58,6 @@
   </strow>
  <strow>
   <stentry><p>line1 : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				The first line of the street address.  While this street address could be broken into several constituent parts, for the purpose of this logical model, the whole line is treated as a single concept.
 				The first line of a mailing address.  Unlike HL7, we have chosen not to break up the parts of each line.
@@ -72,7 +66,6 @@
   </strow>
  <strow>
   <stentry><p>line2 : <xref href="../t_String.dita" >String</xref> (0..1)</p> 
-
 </stentry>
   <stentry><p>				The second line of the street address.  While this street address could be broken into several constituent parts, for the purpose of this logical model, the whole line is treated as a single concept.
 				The second line of a mailing address.  Unlike HL7, we have chosen not to break up the parts of each line.
@@ -81,19 +74,17 @@
   </strow>
  <strow>
   <stentry><p>line3 : <xref href="../t_String.dita" >String</xref> (0..1)</p> 
-
 </stentry>
-  <stentry><p>				The third line of a mailing address.  Unlike HL7, we have chosen not to break up the parts of each line.
-				The first line of the street address.  While this street address could be broken into several constituent parts, for the purpose of this logical model, the whole line is treated as a single concept.  Note that the third line is rarely used.
+  <stentry><p>				The first line of the street address.  While this street address could be broken into several constituent parts, for the purpose of this logical model, the whole line is treated as a single concept.  Note that the third line is rarely used.
+				The third line of a mailing address.  Unlike HL7, we have chosen not to break up the parts of each line.
 			</p>
   </stentry>
   </strow>
  <strow>
   <stentry><p>postalCode : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
-
 </stentry>
-  <stentry><p>				An Address Part (ADXP) that contains a postal code designating a region defined by the postal service.
-				A code designating a region defined by the postal service
+  <stentry><p>				A code designating a region defined by the postal service
+				An Address Part (ADXP) that contains a postal code designating a region defined by the postal service.
 			</p>
   </stentry>
   </strow>

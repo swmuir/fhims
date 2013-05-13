@@ -21,7 +21,6 @@
  </sthead>
  <strow>
   <stentry><p>aspect : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Identifies graphical representation of the tooth this treatment applies to.  DRM Plus Program Specific.  
 			</p>
@@ -29,7 +28,6 @@
   </strow>
  <strow>
   <stentry><p>canalNbr : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Indicates the number of root canals that were involved.
 			</p>
@@ -37,7 +35,6 @@
   </strow>
  <strow>
   <stentry><p>createDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Date treatment was recorded.  
 			</p>
@@ -45,14 +42,12 @@
   </strow>
  <strow>
   <stentry><p>isJuvenile : <xref href="../t_Boolean.dita" >Boolean</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>			</p>
   </stentry>
   </strow>
  <strow>
   <stentry><p>isPlan : <xref href="../t_Boolean.dita" >Boolean</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Whether the planned treatment will be performed during the patient&apos;s next appointment.  Possible values are Yes, No etc.  
 			</p>
@@ -60,14 +55,12 @@
   </strow>
  <strow>
   <stentry><p>isVisible : <xref href="../t_Boolean.dita" >Boolean</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>			</p>
   </stentry>
   </strow>
  <strow>
   <stentry><p>oralRegion : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Identifies the area of the dental  treatment.  Possible Values are areNone;  areOneSurf; areTwoSurfs;  areThreeSurfs; areFourormoreSurfs;            areWholeTooth; areQuadrant; areSextant ; areArch; areHeader etc.  DRM Plus Program Specific.  
 			</p>
@@ -75,7 +68,6 @@
   </strow>
  <strow>
   <stentry><p>rvu : <xref href="../t_Integer.dita" >Integer</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Indicates whether or not a user can delete this record from treatment plan.  Possible values are Yes, No, etc.  
 			</p>
@@ -83,7 +75,6 @@
   </strow>
  <strow>
   <stentry><p>surfaceRoots : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Text string that identifies the surfaces that were involved in the treatment.  DRM Plus Program Specific.  
 			</p>
@@ -91,7 +82,6 @@
   </strow>
  <strow>
   <stentry><p>toothNumber : <xref href="../t_Integer.dita" >Integer</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Tooth number which require a tooth related treatment.  
 			</p>
@@ -99,7 +89,6 @@
   </strow>
  <strow>
   <stentry><p>treatmentCategory : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Optional category that this item falls under in treatment planning and sequencing.  
 			</p>
@@ -107,7 +96,6 @@
   </strow>
  <strow>
   <stentry><p>treatmentId : <xref href="../t_Id.dita" >Id</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				A unique identifier of a specific treatment.  
 			</p>
@@ -115,7 +103,6 @@
   </strow>
  <strow>
   <stentry><p>treatmentPhase : <xref href="../t_Integer.dita" >Integer</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Identifies the phase of this treatment.  
 			</p>
@@ -123,7 +110,6 @@
   </strow>
  <strow>
   <stentry><p>treatmentStatus : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Identifies the status of the treatment.  DRM Plus Program Specific.  
 			</p>
@@ -131,7 +117,6 @@
   </strow>
  <strow>
   <stentry><p>treatmentType : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Identifies type of treatment.  Possible values are Transaction; PerioExam; PSR; Head&amp;amp;amp;Neck etc.  
 			</p>
@@ -139,7 +124,7 @@
   </strow>
 
  <strow>
-  <stentry><p>dataEnterer : <xref href="../t_DataEnterer.dita" >DataEnterer</xref> (0..-1)</p></stentry>
+  <stentry><p>dataEnterer : <xref href="../t_DataEnterer.dita" >DataEnterer</xref> (0..*)</p></stentry>
   <stentry><p>			</p>
   </stentry>
   </strow>
@@ -156,7 +141,7 @@
   </stentry>
   </strow>
  <strow>
-  <stentry><p>headAndNeck : <xref href="../t_SoftTissueExam.dita" >SoftTissueExam</xref> (0..-1)</p></stentry>
+  <stentry><p>headAndNeck : <xref href="../t_SoftTissueExam.dita" >SoftTissueExam</xref> (0..*)</p></stentry>
   <stentry><p>				Head and Neck realted observation.
 			</p>
   </stentry>
@@ -168,7 +153,7 @@
   </stentry>
   </strow>
  <strow>
-  <stentry><p>periodontalExamination : <xref href="../t_PeriodontalObservation.dita" >PeriodontalObservation</xref> (0..-1)</p></stentry>
+  <stentry><p>periodontalExamination : <xref href="../t_PeriodontalObservation.dita" >PeriodontalObservation</xref> (0..*)</p></stentry>
   <stentry><p>			</p>
   </stentry>
   </strow>
@@ -178,7 +163,7 @@
   </stentry>
   </strow>
  <strow>
-  <stentry><p>practitioner : <xref href="../t_IndividualProvider.dita" >IndividualProvider</xref> (0..-1)</p></stentry>
+  <stentry><p>practitioner : <xref href="../t_IndividualProvider.dita" >IndividualProvider</xref> (0..*)</p></stentry>
   <stentry><p>			</p>
   </stentry>
   </strow>

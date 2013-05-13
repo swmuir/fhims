@@ -10,9 +10,9 @@
 
 <section id="description" audience="developer, modeler, sme">
   <title>Description</title>
-	<p>This Class contains the process by which the Veterans Affairs documents information to enroll the veteran in the spinal cord domain for the episode of care.</p>
-
 	<p>This Class contains  the process by which the Veterans Affairs documents  information to enroll the veteran in the spinal cord domain for the episode of care.  </p>
+
+	<p>This Class contains the process by which the Veterans Affairs documents information to enroll the veteran in the spinal cord domain for the episode of care.</p>
 
 
 	
@@ -23,16 +23,14 @@
  </sthead>
  <strow>
   <stentry><p>eocClosedDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
-
 </stentry>
-  <stentry><p>				Contains the Date the Episode of Care (EOC) closed for the veteran
-				Contains the Date the Episode of Care (EOC) closed for the veteran.  
+  <stentry><p>				Contains the Date the Episode of Care (EOC) closed for the veteran.  
+				Contains the Date the Episode of Care (EOC) closed for the veteran
 			</p>
   </stentry>
   </strow>
  <strow>
   <stentry><p>eocFollowUpDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Contains the Episode of Care (EOC) followup date for the veteran.    
 				Contains the Episode of Care (EOC) followup date for the veteran.  
@@ -41,7 +39,6 @@
   </strow>
  <strow>
   <stentry><p>eocStartDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Contains the Date the Episode of Care (EOC) began for the veteran.  
 				Contains the Date the Episode of Care (EOC) began for the veteran.  
@@ -50,7 +47,6 @@
   </strow>
  <strow>
   <stentry><p>id : <xref href="../t_Id.dita" >Id</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Unique identifier that associates the registration with associated Episode of care.    
 				Unique identifier that associates the registration with associated Episode of care.
@@ -59,7 +55,7 @@
   </strow>
 
  <strow>
-  <stentry><p>aeVamcLocation : <xref href="../t_ServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (1..-1)</p></stentry>
+  <stentry><p>aeVamcLocation : <xref href="../t_ServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (1..*)</p></stentry>
   <stentry><p>				Association to the class that identifies the VAMC location where Annual Evaluation (AE) took place.    
 				 Association to the class that identifies the VAMC location where Annual Evaluation (AE) took place.  
 			</p>
@@ -78,15 +74,15 @@
   </stentry>
   </strow>
  <strow>
-  <stentry><p>spinalCordEvent : <xref href="../t_SpinalCordEvent.dita" >SpinalCordEvent</xref> (0..-1)</p></stentry>
+  <stentry><p>spinalCordEvent : <xref href="../t_SpinalCordEvent.dita" >SpinalCordEvent</xref> (0..*)</p></stentry>
   <stentry><p>				Summary information about the Spinal Injury of the patient.
 			</p>
   </stentry>
   </strow>
  <strow>
   <stentry><p>spinalCordImpairment : <xref href="../t_SpinalCordImpairment.dita" >SpinalCordImpairment</xref> (1..1)</p></stentry>
-  <stentry><p>				 Association to the class that identifies the information regarding the spinal cord injury impairment for the patient.
-				Association to the class that identifies the information regarding the spinal cord injury impairment for the patient.  
+  <stentry><p>				Association to the class that identifies the information regarding the spinal cord injury impairment for the patient.  
+				 Association to the class that identifies the information regarding the spinal cord injury impairment for the patient.
 			</p>
   </stentry>
   </strow>

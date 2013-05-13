@@ -21,7 +21,6 @@
  </sthead>
  <strow>
   <stentry><p>description : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				&quot;A brief user-defined description of a Service Episode in or for which the visit occurs.  A Service Episode is the context in which the treatment or management of an arbitrary subset of a Patient s medical conditions occurs. The definition of the start time, stop time, and included events of a Service Episode is entirely arbitrary; it may include a single outpatient visit or a hospitalization, or extend over significant period of time, e.g., the duration of a pregnancy, or an oncology treatment regimen, or a cardiac episode from infarction through rehabilitation. A Service Episode may involve one or more Healthcare Organizations.&quot; - HL7 Version 2.8, PV1-53
 			</p>
@@ -29,7 +28,6 @@
   </strow>
  <strow>
   <stentry><p>duration : <xref href="../t_TimeInterval.dita" >TimeInterval</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				&quot;The time interval starting with the administrative onset of the encounter (e.g. admission, registration, patient arrival) and ending with the patient&apos;s departure (e.g. discharge).&quot; - HL7 V3  This is the start and end date/times of the Service Episode.
 			</p>
@@ -37,7 +35,6 @@
   </strow>
  <strow>
   <stentry><p>serviceEpisodeId : <xref href="../t_Id.dita" >Id</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				&quot;Contains the identifier of a Service Episode in or for which the visit occurs.&quot; - HL7 Version 2.8, PV1-54    This field contains the unique identification number for this episode of care. This field associates the current encounter with a parent encounter.
 			</p>
@@ -45,7 +42,7 @@
   </strow>
 
  <strow>
-  <stentry><p>abstractEncounter : <xref href="../t_AbstractEncounter.dita" >AbstractEncounter</xref> (0..-1)</p></stentry>
+  <stentry><p>abstractEncounter : <xref href="../t_AbstractEncounter.dita" >AbstractEncounter</xref> (0..*)</p></stentry>
   <stentry><p>			</p>
   </stentry>
   </strow>
@@ -56,7 +53,7 @@
   </stentry>
   </strow>
  <strow>
-  <stentry><p>diagnosisRelatedGroup : <xref href="../t_DiagnosisGroupingEvent.dita" >DiagnosisGroupingEvent</xref> (0..-1)</p></stentry>
+  <stentry><p>diagnosisRelatedGroup : <xref href="../t_DiagnosisGroupingEvent.dita" >DiagnosisGroupingEvent</xref> (0..*)</p></stentry>
   <stentry><p>				Provides the diagnosis grouping for the diagnosis/s provide for the patients visit
 			</p>
   </stentry>

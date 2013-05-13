@@ -25,7 +25,6 @@
  </sthead>
  <strow>
   <stentry><p>id : <xref href="../t_Id.dita" >Id</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				&quot;Contains a unique identifier for the Placer Group as referenced by the Placer application, the Filler application, or both.&quot; - HL7 Version 2.8, ORC-4
 			</p>
@@ -33,7 +32,6 @@
   </strow>
  <strow>
   <stentry><p>priority : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				A code (e.g., routine, emergency), specifying the urgency under which the SetOfOrders is requested to happen.
 			</p>
@@ -41,7 +39,6 @@
   </strow>
  <strow>
   <stentry><p>status : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				A code specifying the status of the SetOfOrders.  Valid status codes should reflect the HL7 state machine, e.g., Active, Held, Canceled, Aborted, New, Nullified, Obsolete).  Note that operationally, this status will likely represent the aggregate statuses of the member Orders.  For example, in a set of five Orders, if four orders are &quot;Completed&quot; and one is &quot;Active&quot;, this status would likely be &quot;Active&quot;.  When all five Orders are &quot;Completed&quot;, this status might change to &quot;Completed&quot;.  Note that the model does not dictate how this status should be computed.
 			</p>
@@ -49,7 +46,7 @@
   </strow>
 
  <strow>
-  <stentry><p>healthcareOrder : <xref href="../t_HealthcareOrder.dita" >HealthcareOrder</xref> (0..-1)</p></stentry>
+  <stentry><p>healthcareOrder : <xref href="../t_HealthcareOrder.dita" >HealthcareOrder</xref> (0..*)</p></stentry>
   <stentry><p>				An Order that is a member of a Set of Orders.
 			</p>
   </stentry>

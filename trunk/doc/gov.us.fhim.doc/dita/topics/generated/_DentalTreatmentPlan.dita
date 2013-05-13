@@ -21,7 +21,6 @@
  </sthead>
  <strow>
   <stentry><p>dentalAlert : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Lists the dental alerts for the patient - e.g. Antibiotic Premed, Sedation Premed, etc.  
 			</p>
@@ -29,7 +28,6 @@
   </strow>
  <strow>
   <stentry><p>treatmentFlag : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Flags for treatment plan  
 			</p>
@@ -37,7 +35,6 @@
   </strow>
  <strow>
   <stentry><p>treatmentPlanId : <xref href="../t_Id.dita" >Id</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				This is the unique identifier of the dental encounter record.  
 			</p>
@@ -45,7 +42,6 @@
   </strow>
  <strow>
   <stentry><p>treatmentPlanType : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Whether the treatment is planned or completed.  Possible values are Planned, Completed etc.  DRM Plus Program Specific.  
 			</p>
@@ -53,7 +49,6 @@
   </strow>
  <strow>
   <stentry><p>treatmentsInGroup : <xref href="../t_Integer.dita" >Integer</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Number of treatments included in this group.  
 			</p>
@@ -67,7 +62,7 @@
   </stentry>
   </strow>
  <strow>
-  <stentry><p>dataEnterer : <xref href="../t_DataEnterer.dita" >DataEnterer</xref> (0..-1)</p></stentry>
+  <stentry><p>dataEnterer : <xref href="../t_DataEnterer.dita" >DataEnterer</xref> (0..*)</p></stentry>
   <stentry><p>			</p>
   </stentry>
   </strow>
@@ -78,7 +73,7 @@
   </stentry>
   </strow>
  <strow>
-  <stentry><p>diagnosis : <xref href="../t_Diagnosis.dita" >Diagnosis</xref> (1..-1)</p></stentry>
+  <stentry><p>diagnosis : <xref href="../t_Diagnosis.dita" >Diagnosis</xref> (1..*)</p></stentry>
   <stentry><p>				Diagnosis of of a disease or injury.
 			</p>
   </stentry>
@@ -96,12 +91,12 @@
   </stentry>
   </strow>
  <strow>
-  <stentry><p>practitioner : <xref href="../t_IndividualProvider.dita" >IndividualProvider</xref> (0..-1)</p></stentry>
+  <stentry><p>practitioner : <xref href="../t_IndividualProvider.dita" >IndividualProvider</xref> (0..*)</p></stentry>
   <stentry><p>			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>primaryProvider : <xref href="../t_IndividualProvider.dita" >IndividualProvider</xref> (0..-1)</p></stentry>
+  <stentry><p>primaryProvider : <xref href="../t_IndividualProvider.dita" >IndividualProvider</xref> (0..*)</p></stentry>
   <stentry><p>			</p>
   </stentry>
   </strow>
@@ -112,7 +107,7 @@
   </stentry>
   </strow>
  <strow>
-  <stentry><p>treatmentPlanService : <xref href="../t_TreatmentPlanService.dita" >TreatmentPlanService</xref> (0..-1)</p></stentry>
+  <stentry><p>treatmentPlanService : <xref href="../t_TreatmentPlanService.dita" >TreatmentPlanService</xref> (0..*)</p></stentry>
   <stentry><p>			</p>
   </stentry>
   </strow>

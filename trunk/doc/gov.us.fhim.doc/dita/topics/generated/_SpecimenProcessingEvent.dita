@@ -21,7 +21,6 @@
  </sthead>
  <strow>
   <stentry><p>groupedSpecimenCount : <xref href="../t_Integer.dita" >Integer</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				&quot;The number of individual specimens of a particular type represented by this instance of a specimen. The use of this field is restricted to specimens upon which all specimen related attributes are identical. This field would only be valued if the [Specimen Role] attribute has the value [Group].&quot; - HL7 Version 2.8, SPM-13.
 			</p>
@@ -29,7 +28,6 @@
   </strow>
  <strow>
   <stentry><p>processCategory : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Identifies the process that was performed.  Possible values include: Aliquot, Pool, Spun, etc.
 			</p>
@@ -37,13 +35,13 @@
   </strow>
 
  <strow>
-  <stentry><p>additive : <xref href="../t_Additive.dita" >Additive</xref> (0..-1)</p></stentry>
+  <stentry><p>additive : <xref href="../t_Additive.dita" >Additive</xref> (0..*)</p></stentry>
   <stentry><p>				Identifies any materials introduced to the specimen before or at the time of collection.  These additives may be introduced in order to preserve, maintain enhance, or change the particular nature or component of the specimen.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>specimen : <xref href="../t_Specimen.dita" >Specimen</xref> (0..-1)</p></stentry>
+  <stentry><p>specimen : <xref href="../t_Specimen.dita" >Specimen</xref> (0..*)</p></stentry>
   <stentry><p>				Identifies Specimen instance(s) created as a result of a Specimen Processing Event.  Note the Id of the newly-created specimens are often derived from the Id of the original specimen.  For example, if a samply of whole blood with Id=1234 was spun into two new samples containing plasma (Id=1234-01) and platelets (Id=1234-02), two new Sample instances are created.
 			</p>
   </stentry>

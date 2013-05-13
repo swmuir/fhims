@@ -21,7 +21,6 @@
  </sthead>
  <strow>
   <stentry><p>dateRange : <xref href="../t_TimeInterval.dita" >TimeInterval</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				This is a date range of the date and time for which the 1st document in the group is created and the date and time for which the recent document in the group is created.        
 			</p>
@@ -29,7 +28,6 @@
   </strow>
  <strow>
   <stentry><p>groupId : <xref href="../t_Id.dita" >Id</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				A unique identifier for the Act.
 			</p>
@@ -37,7 +35,6 @@
   </strow>
  <strow>
   <stentry><p>groupName : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				A textual description of a  collection of documents in clinically meaningful ways.  
 			</p>
@@ -45,7 +42,7 @@
   </strow>
 
  <strow>
-  <stentry><p>document : <xref href="../t_ClinicalDocumentEvent.dita" >ClinicalDocumentEvent</xref> (0..-1)</p></stentry>
+  <stentry><p>document : <xref href="../t_ClinicalDocumentEvent.dita" >ClinicalDocumentEvent</xref> (0..*)</p></stentry>
   <stentry><p>				Documents can be aggregated into clinically meaningfully groups; each document in the group will usually reference the same patient.  A clinical document will typically belong to at most one Document Group.
 			</p>
   </stentry>

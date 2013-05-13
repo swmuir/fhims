@@ -25,7 +25,6 @@
  </sthead>
  <strow>
   <stentry><p>collectionMethod : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				&quot;Describes the procedure or process by which the specimen was collected.&quot; - HL7 Version 2.8, SPM-7.
 			</p>
@@ -33,7 +32,6 @@
   </strow>
  <strow>
   <stentry><p>collectionSite : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				&quot;This field differs from SPM-8-Specimen Source Site in those cases where the source site must be approached via a particular site (e.g., anatomic location).  For example, in the case where a liver biopsy is obtained via a percutaneous needle, the collection site would be the point of entry of the needle.  For venous blood collected from the left radial vein, the collection site could be &quot;antecubital fossa&quot;.&quot; - HL7 Version 2.8, SPM.10
 			</p>
@@ -41,15 +39,13 @@
   </strow>
  <strow>
   <stentry><p>sourceSite : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				&quot;Specifies the source from which the specimen was obtained.  For example, in the case where a liver biopsy is obtained via a percutaneous needle, the source would be  liver. &quot; - HL7 Version 2.8, SPM-8.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>sourceSiteModifier : <xref href="../t_Code.dita" >Code</xref> (0..-1)</p> 
-
+  <stentry><p>sourceSiteModifier : <xref href="../t_Code.dita" >Code</xref> (0..*)</p> 
 </stentry>
   <stentry><p>				&quot;This field contains modifying or qualifying description(s) about the specimen source site.  The use of this attribute is to modify, qualify or further specify, the entity described by [sourceSite].  This is particularly useful when the code set used in [sourceSite] does not provide the precision required to fully describe the site from which the specimen originated.  For example, if the specimen source site was precisely described as  left radial vein but the code set employed only provided  radial vein, this attribute could be employed to add the modifier  left. &quot; - HL7 Version 2.8, SPM-9.
 			</p>

@@ -25,7 +25,6 @@
  </sthead>
  <strow>
   <stentry><p>dateReportCompleted : <xref href="../t_PointInTime.dita" >PointInTime</xref> (0..1)</p> 
-
 </stentry>
   <stentry><p>				&quot;Specifies the date/time when the results were reported or status changed.  This conditional field is required whenever [Report Status] is valued.  This field is used to indicate the date and time that the results are composed into a report and released, or that [Healthcare Order status] is entered or changed.&quot; - HL7 Version 2.8, OBR-22.
 			</p>
@@ -33,7 +32,6 @@
   </strow>
  <strow>
   <stentry><p>producersReference : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				&quot;Contains a unique identifier of the responsible producing service.  It should be reported explicitly when the test results are produced at outside laboratories, for example.  When this field is null, the receiving system assumes that the observations were produced by the sending organization.  This information supports CLIA regulations in the US....&quot; - HL7 Version 2.8, OBX-15.
 			</p>
@@ -41,25 +39,25 @@
   </strow>
 
  <strow>
-  <stentry><p>accessionEvent : <xref href="../t_AccessionEvent.dita" >AccessionEvent</xref> (0..-1)</p></stentry>
+  <stentry><p>accessionEvent : <xref href="../t_AccessionEvent.dita" >AccessionEvent</xref> (0..*)</p></stentry>
   <stentry><p>				This property points to the record of the laboratory&apos;s accepting a laboratory test and entering the test into the laboratory&apos;s workload.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>billingProcedureList : <xref href="../t_ProcedureListEntry.dita" >ProcedureListEntry</xref> (0..-1)</p></stentry>
+  <stentry><p>billingProcedureList : <xref href="../t_ProcedureListEntry.dita" >ProcedureListEntry</xref> (0..*)</p></stentry>
   <stentry><p>				&quot;Contains a unique identifier assigned to the procedure, if any, associated with the charge.&quot; - HL7 Version 2.8, OBR-44.</p><p>&quot;Contains the procedure code modifier to the procedure code reported in OBR-44-procedure code, when applicable....  Multiple modifiers may be reported....&quot; - HL7 Version 2.8, OBR-45.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>labReferral : <xref href="../t_LabReferral.dita" >LabReferral</xref> (0..-1)</p></stentry>
+  <stentry><p>labReferral : <xref href="../t_LabReferral.dita" >LabReferral</xref> (0..*)</p></stentry>
   <stentry><p>				An order placed by a laboratory to another laboratory to perform a test that the originating laboratory had taken on.  This action typically occurs when the originating laboratory cannot perform the requested test in-house.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>labTestPromised : <xref href="../t_LabTest.dita" >LabTest</xref> (0..-1)</p></stentry>
+  <stentry><p>labTestPromised : <xref href="../t_LabTest.dita" >LabTest</xref> (0..*)</p></stentry>
   <stentry><p>				&quot;This field contains the identifier code for the requested observation/test/battery.&quot; - HL7 Version 2.8, OBR-4
 			</p>
   </stentry>
@@ -71,25 +69,25 @@
   </stentry>
   </strow>
  <strow>
-  <stentry><p>relatedLabPromise : <xref href="../t_RelatedLabPromise.dita" >RelatedLabPromise</xref> (0..-1)</p></stentry>
+  <stentry><p>relatedLabPromise : <xref href="../t_RelatedLabPromise.dita" >RelatedLabPromise</xref> (0..*)</p></stentry>
   <stentry><p>				Identifies other Lab Test Promise(s) to which this Lab Test Promise is somehow related.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>reportableResult : <xref href="../t_ReportableResult.dita" >ReportableResult</xref> (0..-1)</p></stentry>
+  <stentry><p>reportableResult : <xref href="../t_ReportableResult.dita" >ReportableResult</xref> (0..*)</p></stentry>
   <stentry><p>				This property points to the set (zero to many) of test results or observations that were generated as a result of the laboratory tests performed.  Note that the word Reportable is used to indicate that these Results are limited to those which have reached the point where they are deemed to be reportable or releasable.  The result may or may not have been part of an actual report, as it might be on hold waiting for other results to be combined with it.  A result that has not yet been approved by the appropriate personnel does not meet the criteria of being reportable, and therefore will not be available through this stucture.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>specimenAssessment : <xref href="../t_SpecimenAssessment.dita" >SpecimenAssessment</xref> (0..-1)</p></stentry>
+  <stentry><p>specimenAssessment : <xref href="../t_SpecimenAssessment.dita" >SpecimenAssessment</xref> (0..*)</p></stentry>
   <stentry><p>				Contains observations regarding the Specimen.  Such observations, or assessments, of the Specimen are performed by the laboratory upon initial receipt, although periodic assessments may be performed later, especially when the Specimen is in long-term storage, or when some change in custody has occurred.  The assessment also contains information concerning the handling of the Specimen, such as storage or transportation information.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>specimenCollectionEvent : <xref href="../t_SpecimenCollectionEvent.dita" >SpecimenCollectionEvent</xref> (0..-1)</p></stentry>
+  <stentry><p>specimenCollectionEvent : <xref href="../t_SpecimenCollectionEvent.dita" >SpecimenCollectionEvent</xref> (0..*)</p></stentry>
   <stentry><p>				The actual gathering of portions or quantities of material for use in testing, examination, or study based upon the request (order).
 			</p>
   </stentry>

@@ -21,7 +21,6 @@
  </sthead>
  <strow>
   <stentry><p>documentImage : <xref href="../t_String.dita" >String</xref> (0..1)</p> 
-
 </stentry>
   <stentry><p>				This optional attribute references a signed paper document containing the client&apos;s consent directive.
 			</p>
@@ -29,7 +28,6 @@
   </strow>
  <strow>
   <stentry><p>effectiveTime : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				This attribute specifies the date when the policy/consent is in effect.
 			</p>
@@ -37,7 +35,6 @@
   </strow>
  <strow>
   <stentry><p>expirationTime : <xref href="../t_PointInTime.dita" >PointInTime</xref> (0..1)</p> 
-
 </stentry>
   <stentry><p>				 This attribute specifies when the consent directive automatically expires.  A consent directive may be revoked prior to its expiration date.
 			</p>
@@ -45,7 +42,6 @@
   </strow>
  <strow>
   <stentry><p>id : <xref href="../t_Id.dita" >Id</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				 Unique identifier that refers to a specific Consent Directive instance.  This id or the published URI may be used to lookup the client&apos;s consent directives in order to apply them to the collection, access, use, or disclosure of health records.
 			</p>
@@ -53,7 +49,6 @@
   </strow>
  <strow>
   <stentry><p>reason : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				This attribute is used to specify the reason for revoking a Consent Directive, e.g., requested vs. correction/error.  An error would be a discrepancy between the intent of Consent Directive (as communicated by the Consenter) and that which was entered into the Consent Directive Management System (CDMS).
 			</p>
@@ -61,7 +56,6 @@
   </strow>
  <strow>
   <stentry><p>status : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				This attribute indicates whether the consent directive is active or not.
 			</p>
@@ -75,13 +69,13 @@
   </stentry>
   </strow>
  <strow>
-  <stentry><p>privacyRuleList : <xref href="../t_PrivacyRuleList.dita" >PrivacyRuleList</xref> (0..-1)</p></stentry>
+  <stentry><p>privacyRuleList : <xref href="../t_PrivacyRuleList.dita" >PrivacyRuleList</xref> (0..*)</p></stentry>
   <stentry><p>				A list of zero or more consent rules applicable to this consent directive.  A consent rule specifies the permission allowed to a user type by the consenter for a specific type of information. The person consenting may be either the subject of the record or a designated Substitute Decision Maker. One or more consent rules comprise a consent directive or privacy policy.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>publishedPolicy : <xref href="../t_PrivacyPolicy.dita" >PrivacyPolicy</xref> (0..-1)</p></stentry>
+  <stentry><p>publishedPolicy : <xref href="../t_PrivacyPolicy.dita" >PrivacyPolicy</xref> (0..*)</p></stentry>
   <stentry><p>				A set of rules that are intended to be enforced by security systems and are used as the basis for client consent directives.
 			</p>
   </stentry>

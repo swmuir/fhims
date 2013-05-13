@@ -21,7 +21,6 @@
  </sthead>
  <strow>
   <stentry><p>beginDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				The first date upon which the Person or Animal was a Patient of the associated Healthcare Provider.
 			</p>
@@ -29,15 +28,13 @@
   </strow>
  <strow>
   <stentry><p>endDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				The last date upon which the Person or Animal was a Patient of the associated Healthcare Provider.  For inactive patients, particularly in outpatient situations, this date is often not known.  Each organization will set its own rules regarding when a patient is no longer considered active, often if they have not seen nor heard from the patient in over a year.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>patientId : <xref href="../t_Id.dita" >Id</xref> (1..-1)</p> 
-
+  <stentry><p>patientId : <xref href="../t_Id.dita" >Id</xref> (1..*)</p> 
 </stentry>
   <stentry><p>				An identification of the Person or Animal while in the role of Patient.  This Identifier is basically an &quot;account number&quot;.  A single person will have multiple Patient Ids at various healthcare providers.  It is not uncommon for a person to have multiple Patient Ids or &quot;account numbers&quot; at a single institution - often a new account number is created for each episode of care.  This is also the case in long-term care situations, where a new account number may be created each month in order to facilitate monthly billing.</p><p></p><p>&quot;Contains the list of identifiers (one or more) used by the healthcare facility to uniquely identify a patient (e.g., medical record number, billing number, birth registry, national unique individual identifier, etc.).&quot; - HL7 Version 2.8, PID-3.</p><p>&quot;Contains the patient account number assigned by accounting to which all charges, payments, etc., are recorded.  It is used to identify the patient&apos;s account.&quot; - HL7 Version 2.8, PID-18.
 			</p>
@@ -45,7 +42,6 @@
   </strow>
  <strow>
   <stentry><p>status : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Indicates the state of the Patient&apos;s record, as defined in the state-transition model in the HL7 RIM.  Examples include Active, Pending, Terminated, etc.  Additional states might be defined such as &apos;Temporary&apos; or &apos;Permanent&apos;.</p><p></p><p>Note, for public health reporting purposes, this status indicates the active/inactive status of the patient at the provider site level. See MIROW &#8220;Management of Moved or Gone Elsewhere (MOGE) and Other Patient Status Designations in IIS guidelines.
 			</p>
@@ -59,13 +55,13 @@
   </stentry>
   </strow>
  <strow>
-  <stentry><p>healthcareProvider : <xref href="../t_HealthcareProvider.dita" >HealthcareProvider</xref> (1..-1)</p></stentry>
+  <stentry><p>healthcareProvider : <xref href="../t_HealthcareProvider.dita" >HealthcareProvider</xref> (1..*)</p></stentry>
   <stentry><p>				The Healthcare Provider which has established a Patient record for the Person or Animal being treated.  Note that the Patient class represents a Role that the Person or Animal is playing; the Healtcare Provider is &quot;scoping&quot; that role.  A single Person will have multiple Patient roles with different Healthcare Providers, and may have more than one with the same Provider, especially in in-patient settings.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>patientStatusChange : <xref href="../t_PatientStatusChange.dita" >PatientStatusChange</xref> (0..-1)</p></stentry>
+  <stentry><p>patientStatusChange : <xref href="../t_PatientStatusChange.dita" >PatientStatusChange</xref> (0..*)</p></stentry>
   <stentry><p>				A record of changes to a Patient record&apos;s status with a given Healthcare Provider.  This class provides a history of status changes, the dates on which those changes occurred, and provides a reason for the change.
 			</p>
   </stentry>

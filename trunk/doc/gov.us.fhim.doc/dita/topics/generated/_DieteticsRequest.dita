@@ -25,7 +25,6 @@
  </sthead>
  <strow>
   <stentry><p>foodServiceType : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				The type of service requested for this diet order: tray, cafeteria, or dining room. It does not apply to NPO (nothing by mouth) orders.
 			</p>
@@ -33,7 +32,6 @@
   </strow>
  <strow>
   <stentry><p>isNPO : <xref href="../t_Boolean.dita" >Boolean</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				A flag indicating whether or not an order was given for the patient to receive nothing by mouth. NPO: nil per os (Latin, meaning nothing by mouth).
 			</p>
@@ -41,7 +39,6 @@
   </strow>
  <strow>
   <stentry><p>startDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				The start date/time for this request.
 			</p>
@@ -49,7 +46,6 @@
   </strow>
  <strow>
   <stentry><p>stopDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				The date/time this request is considered complete.
 			</p>
@@ -57,7 +53,7 @@
   </strow>
 
  <strow>
-  <stentry><p>foodItem : <xref href="../t_FoodItem.dita" >FoodItem</xref> (0..-1)</p></stentry>
+  <stentry><p>foodItem : <xref href="../t_FoodItem.dita" >FoodItem</xref> (0..*)</p></stentry>
   <stentry><p>				A food item that is part of the requested food preference.
 			</p>
   </stentry>
@@ -69,7 +65,7 @@
   </stentry>
   </strow>
  <strow>
-  <stentry><p>performanceMonitors : <xref href="../t_PerformanceMonitors.dita" >PerformanceMonitors</xref> (0..-1)</p></stentry>
+  <stentry><p>performanceMonitors : <xref href="../t_PerformanceMonitors.dita" >PerformanceMonitors</xref> (0..*)</p></stentry>
   <stentry><p>				Maintains performance measure items to be monitored during the patient&apos;s care.
 			</p>
   </stentry>

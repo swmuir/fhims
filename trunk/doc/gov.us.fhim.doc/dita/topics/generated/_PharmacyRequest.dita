@@ -25,7 +25,6 @@
  </sthead>
  <strow>
   <stentry><p>appointmentTime : <xref href="../t_PointInTime.dita" >PointInTime</xref> (0..1)</p> 
-
 </stentry>
   <stentry><p>				This is the appointment date/time for an outpatient order. It is entered when an inpatient medication is ordered for an outpatient.
 			</p>
@@ -33,14 +32,12 @@
   </strow>
  <strow>
   <stentry><p>areRefillsAuthorizedAsNeeded : <xref href="../t_Boolean.dita" >Boolean</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>dispensingInstructions : <xref href="../t_String.dita" >String</xref> (0..-1)</p> 
-
+  <stentry><p>dispensingInstructions : <xref href="../t_String.dita" >String</xref> (0..*)</p> 
 </stentry>
   <stentry><p>				&quot;Identifies the ordering provider&apos;s instructions to the pharmacy or the non-pharmacy treatment provider (e.g., respiratory therapy).&quot; - HL7 Version 2.8, RXO-6.
 			</p>
@@ -48,7 +45,6 @@
   </strow>
  <strow>
   <stentry><p>dosage : <xref href="../t_PhysicalQuantityInterval.dita" >PhysicalQuantityInterval</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				&quot;This field is the ordered amount.  In a variable dose order, this is the minimum ordered amount.  In a non-varying dose order, this is the exact amount of the order.&quot; - HL7 Version 2.8, RXO-2.</p><p>&quot;In a variable dose order, this is the maximum ordered amount.  In a non-varying dose order, this field is not used.&quot; - HL7 Version 2.8, RXO-3.</p><p>&quot;Indicates the units for the give amount.&quot; - HL7 Version 2.8, RXO-4.</p><p>&quot;The measured quantity of a therapeutic agent to be taken at one time.&quot; (MedlinePlus/Merriam-Webster).</p><p>Note that this field is currently modeled as a Physical Quanity Interval, rather than calling out the low dosage and high dosage.  
 			</p>
@@ -56,7 +52,6 @@
   </strow>
  <strow>
   <stentry><p>doseForm : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
-
 </stentry>
   <stentry><p>				&quot;Indicates the manner in which the treatment is aggregated for dispensing, e.g., tablets, capsules, suppositories.&quot; - HL7 Version 2.8, RXO-5.</p><p>Form: &quot;The shape and structure of something as distinguished from its material&quot; (Webster&apos;s Medical Dictionary).</p><p>Indicates the form of the material making up a single dose (as opposed to how the dose is packaged).  Possible values include Tablet, Drop, Lozenge, Cream, etc.
 			</p>
@@ -64,7 +59,6 @@
   </strow>
  <strow>
   <stentry><p>doseQuantity : <xref href="../t_PhysicalQuantityInterval.dita" >PhysicalQuantityInterval</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				The amount of the described medication to be administered to the patient in a single point in time.
 			</p>
@@ -72,7 +66,6 @@
   </strow>
  <strow>
   <stentry><p>doseUnit : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				&quot;This field indicates the units for the give amount.&quot; - HL7 Version 2.8, RXO-4  &quot;An amount of a biologically active agent (as a drug or antigen) required to produce a specific result under strictly controlled conditions.&quot; (Merriam-Webster)
 			</p>
@@ -80,7 +73,6 @@
   </strow>
  <strow>
   <stentry><p>expirationDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				The date after which the order may no longer be filled.
 			</p>
@@ -88,7 +80,6 @@
   </strow>
  <strow>
   <stentry><p>frequency : <xref href="../t_TimeInterval.dita" >TimeInterval</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Specifies when the service is to be performed and how frequently.  Note that this is a complex data type that may indicate specific times or intervals (e.g., 10:00 AM, MWF, etc).
 			</p>
@@ -96,7 +87,6 @@
   </strow>
  <strow>
   <stentry><p>infusionRate : <xref href="../t_RateQuantity.dita" >RateQuantity</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				Infusion: &quot;Introduction of a solution into the body through a vein for therapeutic purposes.&quot;  (American Heritage Stedman&apos;s Medical Dictionary).  This is the rate at which the solution is introduced into the body.  Expressed as volume/time (e.g., 500 ml/hr) 
 			</p>
@@ -104,7 +94,6 @@
   </strow>
  <strow>
   <stentry><p>intendedDuration : <xref href="../t_TimeInterval.dita" >TimeInterval</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				The period of time over which a medication order should be given.
 			</p>
@@ -112,7 +101,6 @@
   </strow>
  <strow>
   <stentry><p>neededNoLaterThan : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				&quot;Conditional composite for the facility to relay to the long term care pharmacy the timeframe when medication is needed for delivery.  When a facility transmits either a new medication order (NEWRX) or request for the re-supply of a medication (RESUPP) to a pharmacy, it would optionally indicate the time by which the medication is needed. The facility could also provide a textual reason why the medication is needed by the time specified. The long term care pharmacy would then use this information to determine whether a special delivery is required, or whether the order could go out with the next scheduled delivery.&quot; - NCPDP Script (Field I006)
 			</p>
@@ -120,7 +108,6 @@
   </strow>
  <strow>
   <stentry><p>needsHumanReview : <xref href="../t_Boolean.dita" >Boolean</xref> (0..1)</p> 
-
 </stentry>
   <stentry><p>				Indicates whether &quot;the pharmacist or non-pharmacist treatment supplier filling the order needs to pay special attention to the text in the [Dispensing Instructions].  A warning is present.&quot; - HL7 Version 2.8, RXO-16.
 			</p>
@@ -128,15 +115,13 @@
   </strow>
  <strow>
   <stentry><p>numberOfRefillsAuthorized : <xref href="../t_Integer.dita" >Integer</xref> (0..1)</p> 
-
 </stentry>
   <stentry><p>				&quot;Defines the number of times the requested dispense amount can be given to the patient, subject to local regulation.  Refers to outpatient only.&quot; - HL7 Version 2.8, RXO-13.
 			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>patientInstructions : <xref href="../t_String.dita" >String</xref> (0..-1)</p> 
-
+  <stentry><p>patientInstructions : <xref href="../t_String.dita" >String</xref> (0..*)</p> 
 </stentry>
   <stentry><p>				The complete textual representation of the &quot;sig&quot; (from the Latin &quot;signare&quot; meaning &quot;to sign or mark&quot;), for the prescription.  Contains all relevant information about the dosage instructions for the medication prescribed. For example, the sig might say &quot;take twice daily with food&quot;.</p><p></p><p>&quot;Identifies the ordering provider&apos;s instructions to the patient or to the provider administering the drug or treatment.&quot; - HL7 Version 2.8, RXO-7.
 			</p>
@@ -144,7 +129,6 @@
   </strow>
  <strow>
   <stentry><p>pharmacyOrderCategory : <xref href="../t_Code.dita" >Code</xref> (0..1)</p> 
-
 </stentry>
   <stentry><p>				&quot;Defines the general category of pharmacy order which may be used to determine the processing path the order will take....  This field may also be used for grouping of related orders for processing and/or reports.  For example, Medication Administration Records often group large volume solutions, medications and small volume solutions differently based upon site-specific workflow.&quot; - HL7 Version 2.8, RXA-26, RXD-32, and RXO-27.  Valid values (from HL7 Table 0480) include: Medication; IV Large Volume Solutions; Other solution as medication orders.
 			</p>
@@ -152,7 +136,6 @@
   </strow>
  <strow>
   <stentry><p>quanityOrdered : <xref href="../t_PhysicalQuantityInterval.dita" >PhysicalQuantityInterval</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				&quot;This field is the ordered amount.  In a variable dose order, this is the minimum ordered amount.  In a non-varying dose order, this is the exact amount of the order.&quot; - HL7 Version 2.8, RXO-2.</p><p>&quot;In a variable dose order, this is the maximum ordered amount.  In a non-varying dose order, this field is not used.&quot; - HL7 Version 2.8, RXO-3.</p><p>This property carries both the low (aka minimum), and high (aka maximum) amounts.  For example, given the order &quot;Acetaminophen 300 mg / codeine 30 mg (Tylenol 3).  Take 2-3 tablets every 4-6 hours as needed for pain for 7 days&quot;, this property would contain 2 (low) and 3 (high).
 			</p>
@@ -160,7 +143,6 @@
   </strow>
  <strow>
   <stentry><p>route : <xref href="../t_Code.dita" >Code</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				&quot;This field is the route of administration.&quot; - HL7 Version 2.8, RXR-1</p><p>&quot;The method of introducing the therapeutic material into or onto the subject.&quot; - HL7 Version 3
 			</p>
@@ -168,7 +150,6 @@
   </strow>
  <strow>
   <stentry><p>schedule : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				This is the number of Units (tablets, capsules, etc.) to be dispensed as a dose for this order. String type used to handle VistA data with dose quantity and units in same field.
 			</p>
@@ -176,7 +157,6 @@
   </strow>
  <strow>
   <stentry><p>sig : <xref href="../t_String.dita" >String</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				&quot;Signa -- used to introduce the signature in writing a prescription.&quot; (MedlinePlus/Merriam-Webster) Note: this attribute is a placeholder for a concept which will be modeled in a future iteration. 
 			</p>
@@ -184,7 +164,6 @@
   </strow>
  <strow>
   <stentry><p>startDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				The date on which the patient is to begin (or began, if historical) consuming the ordered medication.
 			</p>
@@ -192,7 +171,6 @@
   </strow>
  <strow>
   <stentry><p>stopDate : <xref href="../t_PointInTime.dita" >PointInTime</xref> (1..1)</p> 
-
 </stentry>
   <stentry><p>				The date on which the patient is to discontinue (or discontinued, if historical) consuming the ordered medication.
 			</p>
@@ -206,17 +184,17 @@
   </stentry>
   </strow>
  <strow>
-  <stentry><p>drugCoverageStatus : <xref href="../t_DrugCoverageStatus.dita" >DrugCoverageStatus</xref> (0..-1)</p></stentry>
+  <stentry><p>drugCoverageStatus : <xref href="../t_DrugCoverageStatus.dita" >DrugCoverageStatus</xref> (0..*)</p></stentry>
   <stentry><p>			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>drugUseEvaluation : <xref href="../t_DrugUseEvaluation.dita" >DrugUseEvaluation</xref> (0..-1)</p></stentry>
+  <stentry><p>drugUseEvaluation : <xref href="../t_DrugUseEvaluation.dita" >DrugUseEvaluation</xref> (0..*)</p></stentry>
   <stentry><p>			</p>
   </stentry>
   </strow>
  <strow>
-  <stentry><p>indication : <xref href="../t_Indication.dita" >Indication</xref> (0..-1)</p></stentry>
+  <stentry><p>indication : <xref href="../t_Indication.dita" >Indication</xref> (0..*)</p></stentry>
   <stentry><p>				&quot;Identifies the condition or problem for which the drug/treatment was prescribed.&quot; - HL7 Version 2.8, RXO-20.</p><p>&quot;Contains the identifier of the condition or problem for which the drug/treatment was prescribed.  May repeat if multiple indications are relevant.&quot; - HL7 Version 2.8, RXD-21.
 			</p>
   </stentry>
