@@ -4,14 +4,10 @@
 <topic id="topicId" xml:lang="en-us">
 	<title>Organization of This Guide</title>
 	<body>
-		<p>
-The guide contains a chapter per each included domain.  Each of the domain chapters will start with the <b>Diagram Section</b> containing a UML Class Diagram and corresponding description. This can be followed by an optional <b>Definitions Section</b> where all class structures are defined and finally an optional <b>Value Sets Section</b> where any terminology leveraged by the domain will be documented.
-</p>
-		<p>
-The Definition Section will have a table per class and a row per property with two columns, <i>Content</i>  and <i>Description</i>.  The Content column contains the name, type, cardinality of the property and a possible reference to a value set while the Description column will contain a detailed description of the document.  The order of the attributes are first by UML feature type (Attribute then Association) then by the name.   Attribute types tend to be simple data types while associations types tend to be other classes definitions.  The upper bound cardinality of "*" should be interpreted as no restriction on the number of instances.
-</p>
-		<p>
-The Value Sets Section will have a table per value set.  The format contains the name of the value set, code system, version, definition and a URL for the value set.  Additionally if there are values available, each value will have a row with its code, code system, and print name.
-</p>
+<p>The guide contains a chapter for each included domain. Each of the domain chapters will start with the Diagram Section containing a UML Class Diagram and corresponding description. This can be followed by an optional Definitions Section where all class structures are defined, and finally an optional Value Sets Section where any terminology used by the domain will be documented.</p>
+
+<p>The Definition Section will have one table per class and one row per property, with two columns, Content and Description. The Content column contains the name, type, cardinality of the property, and, optionally, a reference to a value set. The Description column will contain a detailed description of the element named in the Content column. The attributes are ordered first by UML feature type (Attributes first, then Associations), then by name. Attribute types are data types, while an association specifies the class at the distal end. Note that associations are only listed for the source class of the association, not the target class. The upper bound cardinality of "*" should be interpreted as no restriction on the number of instances.</p>
+
+<p>The Value Sets Section displays each value set in a table, containing the name of the value set, source code system, version, definition, and a URL for inspecting the value set members. Shorter value sets will be listed explicitly, each value having its own row with its code, code system, and print name. Longer value sets may be inspected by following the provided URL.</p>
 	</body>
 </topic>
