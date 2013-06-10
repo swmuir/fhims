@@ -145,7 +145,7 @@
 
 [if (not aPackage.eContents(Class).ownedAttribute->select(association = null).getStereotypeApplications()->select(oclIsTypeOf(ValueSetConstraint))->isEmpty())]
 <topichead navtitle="Terminology">	
-	[for (eee : Enumeration |  aPackage.eContents(Class).ownedAttribute->select(association = null).getStereotypeApplications()->select(oclIsTypeOf(ValueSetConstraint)).oclAsType(ValueSetConstraint).reference.base_Enumeration.oclAsType(Enumeration)->sortedBy(name))]
+	[for (eee : Enumeration |  aPackage.eContents(Class).ownedAttribute->select(association = null).getStereotypeApplications()->select(oclIsTypeOf(ValueSetConstraint)).oclAsType(ValueSetConstraint).reference.base_Enumeration.oclAsType(Enumeration)->sortedBy(name)->asOrderedSet())]
 		[let ee : Enumeration = eee.oclAsType(Enumeration)]
 <topicref href="../topics/t_[ee.name.replaceAll('\\W+','')/].dita" type="topic" />
 		[/let]
