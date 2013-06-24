@@ -220,10 +220,9 @@ These are documented in CDC local codes table, CDCPHINVS (Value set OID 2.16.840
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_exubwPahEeGgPNPSC_BPyg" name="Person">
-      <packagedElement xmi:type="uml:Enumeration" xmi:id="_WsWHcKRMEeGZ6ueex_Me0w" name="Administrative Gender (HL7 V3)">
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_WsWHcKRMEeGZ6ueex_Me0w" name="FHIM_Administrative Gender">
         <ownedLiteral xmi:id="_WwSzUKRMEeGZ6ueex_Me0w" name="F"/>
         <ownedLiteral xmi:id="_WwTaYaRMEeGZ6ueex_Me0w" name="M"/>
-        <ownedLiteral xmi:id="_WwTaY6RMEeGZ6ueex_Me0w" name="UN"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Enumeration" xmi:id="_WwSMQKRMEeGZ6ueex_Me0w" name="AdministrativeGender"/>
       <packagedElement xmi:type="uml:Enumeration" xmi:id="_W1s3wKRMEeGZ6ueex_Me0w" name="Detailed Ethnicity">
@@ -691,21 +690,80 @@ These are documented in CDC local codes table, CDCPHINVS (Value set OID 2.16.840
         <ownedLiteral xmi:id="_aki0EM8CEeK9wcpwFaQlwA" name="6680"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Enumeration" xmi:id="_iPP18M8CEeK9wcpwFaQlwA" name="Cause of Death (ICD-10)"/>
-      <packagedElement xmi:type="uml:Enumeration" xmi:id="_PdRvQM8DEeK9wcpwFaQlwA" name="LanguageAbilityProficiency">
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_PdRvQM8DEeK9wcpwFaQlwA" name="HL7_LanguageAbilityProficiency">
         <ownedLiteral xmi:id="_E1oTwM8GEeK9wcpwFaQlwA" name="E"/>
         <ownedLiteral xmi:id="_FSOJIM8GEeK9wcpwFaQlwA" name="F"/>
         <ownedLiteral xmi:id="_FdgMEM8GEeK9wcpwFaQlwA" name="G"/>
         <ownedLiteral xmi:id="_FinVkM8GEeK9wcpwFaQlwA" name="P"/>
       </packagedElement>
-      <packagedElement xmi:type="uml:Enumeration" xmi:id="_hRn6oM8DEeK9wcpwFaQlwA" name="ActStatus"/>
-      <packagedElement xmi:type="uml:Enumeration" xmi:id="_mo8koM8DEeK9wcpwFaQlwA" name="RoleStatus"/>
-      <packagedElement xmi:type="uml:Enumeration" xmi:id="_tr97cM8DEeK9wcpwFaQlwA" name="Uniformed Service"/>
-      <packagedElement xmi:type="uml:Enumeration" xmi:id="_zcquwM8DEeK9wcpwFaQlwA" name="Uniformed Service Grade"/>
-      <packagedElement xmi:type="uml:Enumeration" xmi:id="_5yirsM8DEeK9wcpwFaQlwA" name="Uniformed Service Rank"/>
-      <packagedElement xmi:type="uml:Enumeration" xmi:id="_-lxKIM8DEeK9wcpwFaQlwA" name="Organism Taxon"/>
-      <packagedElement xmi:type="uml:Enumeration" xmi:id="_DJJOsM8EEeK9wcpwFaQlwA" name="Biological Sex"/>
-      <packagedElement xmi:type="uml:Enumeration" xmi:id="_IpJ6oM8EEeK9wcpwFaQlwA" name="Advanced Directive Kind"/>
-      <packagedElement xmi:type="uml:Enumeration" xmi:id="_OlKmEM8EEeK9wcpwFaQlwA" name="Living Arrangement">
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_hRn6oM8DEeK9wcpwFaQlwA" name="FHIM_ActStatus">
+        <ownedLiteral xmi:id="_c7ExMNzlEeKJNK8N5ws2Ew" name="active"/>
+        <ownedLiteral xmi:id="_eX9l8NzlEeKJNK8N5ws2Ew" name="cancelled"/>
+        <ownedLiteral xmi:id="_elN-0NzlEeKJNK8N5ws2Ew" name="completed"/>
+        <ownedLiteral xmi:id="_erg0ENzlEeKJNK8N5ws2Ew" name="held"/>
+        <ownedLiteral xmi:id="_ezbZ8NzlEeKJNK8N5ws2Ew" name="new"/>
+        <ownedLiteral xmi:id="_e5iB8NzlEeKJNK8N5ws2Ew" name="suspended"/>
+        <ownedLiteral xmi:id="_e_QPcNzlEeKJNK8N5ws2Ew" name="nullified"/>
+        <ownedLiteral xmi:id="_fGsUMNzlEeKJNK8N5ws2Ew" name="obsolete"/>
+        <ownedLiteral xmi:id="_fNXj8NzlEeKJNK8N5ws2Ew" name="aborted"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_mo8koM8DEeK9wcpwFaQlwA" name="FHIM_RoleStatus">
+        <ownedLiteral xmi:id="_rjx8cNzkEeKJNK8N5ws2Ew" name="cancelled"/>
+        <ownedLiteral xmi:id="_uI3IUNzkEeKJNK8N5ws2Ew" name="pending"/>
+        <ownedLiteral xmi:id="_uSrysNzkEeKJNK8N5ws2Ew" name="suspended"/>
+        <ownedLiteral xmi:id="_uYmNcNzkEeKJNK8N5ws2Ew" name="terminated"/>
+        <ownedLiteral xmi:id="_ueINsNzkEeKJNK8N5ws2Ew" name="nullified"/>
+        <ownedLiteral xmi:id="_u1HKUNzkEeKJNK8N5ws2Ew" name="active"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_tr97cM8DEeK9wcpwFaQlwA" name="FHIM_USUniformedService">
+        <ownedLiteral xmi:id="_5ZuGoNzmEeKJNK8N5ws2Ew" name="NATO"/>
+        <ownedLiteral xmi:id="_56n0QNzmEeKJNK8N5ws2Ew" name="USPHS"/>
+        <ownedLiteral xmi:id="_6B9yYNzmEeKJNK8N5ws2Ew" name="USN"/>
+        <ownedLiteral xmi:id="_6LHuYNzmEeKJNK8N5ws2Ew" name="NOAA"/>
+        <ownedLiteral xmi:id="_6RajoNzmEeKJNK8N5ws2Ew" name="MC"/>
+        <ownedLiteral xmi:id="_6cw4ANzmEeKJNK8N5ws2Ew" name="USCG"/>
+        <ownedLiteral xmi:id="_6kxkgNzmEeKJNK8N5ws2Ew" name="USA"/>
+        <ownedLiteral xmi:id="_665lgNzmEeKJNK8N5ws2Ew" name="USAF"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_zcquwM8DEeK9wcpwFaQlwA" name="FHIM_USUniformedServiceGrade">
+        <ownedLiteral xmi:id="_G4Q48NzzEeKJNK8N5ws2Ew" name="E1"/>
+        <ownedLiteral xmi:id="_HNJj0NzzEeKJNK8N5ws2Ew" name="E2"/>
+        <ownedLiteral xmi:id="_HSldcNzzEeKJNK8N5ws2Ew" name="E3"/>
+        <ownedLiteral xmi:id="_HYBXENzzEeKJNK8N5ws2Ew" name="E4"/>
+        <ownedLiteral xmi:id="_Hd1rMNzzEeKJNK8N5ws2Ew" name="E5"/>
+        <ownedLiteral xmi:id="_HjwF8NzzEeKJNK8N5ws2Ew" name="E6"/>
+        <ownedLiteral xmi:id="_HpwnUNzzEeKJNK8N5ws2Ew" name="E7"/>
+        <ownedLiteral xmi:id="_Hve00NzzEeKJNK8N5ws2Ew" name="E8"/>
+        <ownedLiteral xmi:id="_H1NCUNzzEeKJNK8N5ws2Ew" name="E9"/>
+        <ownedLiteral xmi:id="_H6vCkNzzEeKJNK8N5ws2Ew" name="W1"/>
+        <ownedLiteral xmi:id="_IAdQENzzEeKJNK8N5ws2Ew" name="W2"/>
+        <ownedLiteral xmi:id="_IJOxkNzzEeKJNK8N5ws2Ew" name="W3"/>
+        <ownedLiteral xmi:id="_IPbgMNzzEeKJNK8N5ws2Ew" name="W4"/>
+        <ownedLiteral xmi:id="_IVcBkNzzEeKJNK8N5ws2Ew" name="W5"/>
+        <ownedLiteral xmi:id="_Ib09cNzzEeKJNK8N5ws2Ew" name="O1"/>
+        <ownedLiteral xmi:id="_IhvYMNzzEeKJNK8N5ws2Ew" name="O1E"/>
+        <ownedLiteral xmi:id="_IoUhUNzzEeKJNK8N5ws2Ew" name="O2"/>
+        <ownedLiteral xmi:id="_IuVCsNzzEeKJNK8N5ws2Ew" name="O2E"/>
+        <ownedLiteral xmi:id="_I0hxUNzzEeKJNK8N5ws2Ew" name="O3"/>
+        <ownedLiteral xmi:id="_I7THsNzzEeKJNK8N5ws2Ew" name="O3E"/>
+        <ownedLiteral xmi:id="_JAKZkNzzEeKJNK8N5ws2Ew" name="O4"/>
+        <ownedLiteral xmi:id="_JGK68NzzEeKJNK8N5ws2Ew" name="O5"/>
+        <ownedLiteral xmi:id="_JLs7MNzzEeKJNK8N5ws2Ew" name="O6"/>
+        <ownedLiteral xmi:id="_JRbIsNzzEeKJNK8N5ws2Ew" name="O7"/>
+        <ownedLiteral xmi:id="_JX0EkNzzEeKJNK8N5ws2Ew" name="O8"/>
+        <ownedLiteral xmi:id="_JeNAcNzzEeKJNK8N5ws2Ew" name="O9"/>
+        <ownedLiteral xmi:id="_Jjo6ENzzEeKJNK8N5ws2Ew" name="010"/>
+        <ownedLiteral xmi:id="_Jo-tENzzEeKJNK8N5ws2Ew" name="011"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_5yirsM8DEeK9wcpwFaQlwA" name="FHIM_USUniformedServiceRank"/>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_-lxKIM8DEeK9wcpwFaQlwA" name="FHIM_OrganismTaxon"/>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_DJJOsM8EEeK9wcpwFaQlwA" name="FHIM_BiologicalSex"/>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_IpJ6oM8EEeK9wcpwFaQlwA" name="FHIM_AdvancedDirectiveKind">
+        <ownedLiteral xmi:id="_W-DjsNzmEeKJNK8N5ws2Ew" name="443564001"/>
+        <ownedLiteral xmi:id="_XglB8NzmEeKJNK8N5ws2Ew" name="425393008"/>
+        <ownedLiteral xmi:id="_Xl0uUNzmEeKJNK8N5ws2Ew" name="425395001"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_OlKmEM8EEeK9wcpwFaQlwA" name="FHIM_LivingArrangement">
         <ownedLiteral xmi:id="_eSkoMM8GEeK9wcpwFaQlwA" name="CS"/>
         <ownedLiteral xmi:id="_elj1oM8GEeK9wcpwFaQlwA" name="G"/>
         <ownedLiteral xmi:id="_euGGkM8GEeK9wcpwFaQlwA" name="N"/>
@@ -1449,10 +1507,9 @@ These are documented in CDC local codes table, CDCPHINVS (Value set OID 2.16.840
   <term:ValueSetVersion xmi:id="_8YNtQdD2EeG0ze9kYp0s5g" identifier="2.16.840.1.114222.4.11.3290" version="1" fullName="Vaccination Special Indication (IIS)" source="PHIN VS" url="http://phinvads.cdc.gov/vads/ViewValueSet.action?id=348CE13C-ABB9-DF11-9BDD-0015173D1785" definition="Describes a factor about the client which may impact forecasting of next dose of vaccine needed." base_Enumeration="_8YNtQND2EeG0ze9kYp0s5g"/>
   <term:ValueSetCode xmi:id="_LYJQQdD3EeG0ze9kYp0s5g" conceptName="Member of a special risk group" base_EnumerationLiteral="_LYJQQND3EeG0ze9kYp0s5g"/>
   <term:ValueSetCode xmi:id="_P884MdD3EeG0ze9kYp0s5g" conceptName="Rabies exposrure in previous 10 days" base_EnumerationLiteral="_P884MND3EeG0ze9kYp0s5g"/>
-  <term:ValueSetVersion xmi:id="_WwQXEKRMEeGZ6ueex_Me0w" identifier="2.16.840.1.113883.1.11.1" version="1" fullName="Administrative Gender (HL7 V3)" url="https://phinvads.cdc.gov/vads/ViewValueSet.action?id=8DE75E17-176B-DE11-9B52-0015173D1785" definition="Administrative Gender based upon HL7 V3 vocabulary. This value set contains only male, female and undifferentiated concepts." effectiveDate="" expirationDate="" revisionDate="07/07/2009" statusDate="" codeSystem="_WwSMQaRMEeGZ6ueex_Me0w" base_Enumeration="_WsWHcKRMEeGZ6ueex_Me0w"/>
+  <term:ValueSetVersion xmi:id="_WwQXEKRMEeGZ6ueex_Me0w" identifier="2.16.840.1.113883.3.2074.1.1.5" version="1" fullName="FHIM Administrative Gender" effectiveDate="" expirationDate="" revisionDate="07/07/2009" statusDate="" codeSystem="_WwSMQaRMEeGZ6ueex_Me0w" base_Enumeration="_WsWHcKRMEeGZ6ueex_Me0w"/>
   <term:ValueSetCode xmi:id="_WwTaYKRMEeGZ6ueex_Me0w" conceptName="Female" usageNote="AdministrativeGender" base_EnumerationLiteral="_WwSzUKRMEeGZ6ueex_Me0w"/>
   <term:ValueSetCode xmi:id="_WwTaYqRMEeGZ6ueex_Me0w" conceptName="Male" usageNote="AdministrativeGender" base_EnumerationLiteral="_WwTaYaRMEeGZ6ueex_Me0w"/>
-  <term:ValueSetCode xmi:id="_WwUBcKRMEeGZ6ueex_Me0w" conceptName="Undifferentiated" usageNote="AdministrativeGender" base_EnumerationLiteral="_WwTaY6RMEeGZ6ueex_Me0w"/>
   <term:CodeSystemVersion xmi:id="_WwSMQaRMEeGZ6ueex_Me0w" identifier="2.16.840.1.113883.5.1" version="20090501" source="HITSP-CS-1" statusDate="" base_Enumeration="_WwSMQKRMEeGZ6ueex_Me0w"/>
   <term:ValueSetVersion xmi:id="_W1s3waRMEeGZ6ueex_Me0w" identifier="2.16.840.1.114222.4.11.877" version="1" fullName="Detailed Ethnicity" url="https://phinvads.cdc.gov/vads/ViewValueSet.action?id=34D34BBC-617F-DD11-B38D-00188B398520" definition="List of detailed ethnicity codes reported on a limited basis" revisionDate="10/22/2008" codeSystem="_W1vUAaRMEeGZ6ueex_Me0w" base_Enumeration="_W1s3wKRMEeGZ6ueex_Me0w"/>
   <term:ValueSetVersion xmi:id="_XVnt8aRMEeGZ6ueex_Me0w" identifier="2.16.840.1.113883.1.11.19579" version="1" fullName="Family Member Value Set" url="https://phinvads.cdc.gov/vads/ViewValueSet.action?id=69FDBFB5-A277-DE11-9B52-0015173D1785" definition="Family Relationships record the familial relationship of a person to another person. This value set is to be used when it is necessary to record family relationships (e.g., next of kin, or blood relations). This is a subset of the value set used for personal relationships" revisionDate="07/23/2009" codeSystem="_W1nYMaRMEeGZ6ueex_Me0w" base_Enumeration="_XVnt8KRMEeGZ6ueex_Me0w"/>
@@ -2432,10 +2489,10 @@ These are documented in CDC local codes table, CDCPHINVS (Value set OID 2.16.840
   <term:ValueSetCode xmi:id="_akjbIM8CEeK9wcpwFaQlwA" conceptName="Wired telecommunications carriers (Information)" usageNote="U.S. Census Industry Code" codeSystem="_aBlQ8M8CEeK9wcpwFaQlwA" base_EnumerationLiteral="_aki0EM8CEeK9wcpwFaQlwA"/>
   <term:ValueSetVersion xmi:id="_iR2eAM8CEeK9wcpwFaQlwA" identifier="2.16.840.1.114222.4.11.3593" version="1" fullName="Cause of Death (ICD-10)" definition="The list provides ICD-10 codes and associated cause-of-death titles for the most detailed listing of causes of death. This list is maintained by CDC NCHS." revisionDate="" base_Enumeration="_iPP18M8CEeK9wcpwFaQlwA"/>
   <term:ValueSetVersion xmi:id="_Pf4-YM8DEeK9wcpwFaQlwA" identifier="2.16.840.1.113883.1.11.12199" codeSystem="_WwluQaRMEeGZ6ueex_Me0w" base_Enumeration="_PdRvQM8DEeK9wcpwFaQlwA"/>
-  <term:ValueSetVersion xmi:id="_hRohsM8DEeK9wcpwFaQlwA" identifier="2.16.840.1.113883.1.11.15933" codeSystem="_XmWRkKRMEeGZ6ueex_Me0w" base_Enumeration="_hRn6oM8DEeK9wcpwFaQlwA"/>
-  <term:ValueSetVersion xmi:id="_mo8koc8DEeK9wcpwFaQlwA" identifier="2.16.840.1.113883.1.11.15999" base_Enumeration="_mo8koM8DEeK9wcpwFaQlwA"/>
-  <term:ValueSetVersion xmi:id="_tr-igM8DEeK9wcpwFaQlwA" identifier="2.16.840.1.113883.3.2074.1.1.10" codeSystem="_hhaYMM8FEeK9wcpwFaQlwA" base_Enumeration="_tr97cM8DEeK9wcpwFaQlwA"/>
-  <term:ValueSetVersion xmi:id="_zcquwc8DEeK9wcpwFaQlwA" identifier="2.16.840.1.113883.3.2074.1.1.11" codeSystem="_hhaYMM8FEeK9wcpwFaQlwA" base_Enumeration="_zcquwM8DEeK9wcpwFaQlwA"/>
+  <term:ValueSetVersion xmi:id="_hRohsM8DEeK9wcpwFaQlwA" identifier="2.16.840.1.113883.3.2074.1.1.16" codeSystem="_XmWRkKRMEeGZ6ueex_Me0w" base_Enumeration="_hRn6oM8DEeK9wcpwFaQlwA"/>
+  <term:ValueSetVersion xmi:id="_mo8koc8DEeK9wcpwFaQlwA" identifier="2.16.840.1.113883.3.2074.1.1.15" base_Enumeration="_mo8koM8DEeK9wcpwFaQlwA"/>
+  <term:ValueSetVersion xmi:id="_tr-igM8DEeK9wcpwFaQlwA" identifier="2.16.840.1.113883.3.2074.1.1.10" fullName="US Uniformed Service" source="FHIM" definition="United States uniformed service" base_Enumeration="_tr97cM8DEeK9wcpwFaQlwA"/>
+  <term:ValueSetVersion xmi:id="_zcquwc8DEeK9wcpwFaQlwA" identifier="2.16.840.1.113883.3.2074.1.1.11" fullName="US Uniformed Service Grade" codeSystem="_hhaYMM8FEeK9wcpwFaQlwA" base_Enumeration="_zcquwM8DEeK9wcpwFaQlwA"/>
   <term:ValueSetVersion xmi:id="_5yirsc8DEeK9wcpwFaQlwA" identifier="2.16.840.1.113883.3.2074.1.1.12" codeSystem="_hhaYMM8FEeK9wcpwFaQlwA" base_Enumeration="_5yirsM8DEeK9wcpwFaQlwA"/>
   <term:ValueSetVersion xmi:id="_-lxxMM8DEeK9wcpwFaQlwA" identifier="2.16.840.1.113883.3.2074.1.1.13" codeSystem="_WwluQaRMEeGZ6ueex_Me0w" base_Enumeration="_-lxKIM8DEeK9wcpwFaQlwA"/>
   <term:ValueSetVersion xmi:id="_DJJOsc8EEeK9wcpwFaQlwA" identifier="2.16.840.1.113883.3.2074.1.1.14" codeSystem="_WwluQaRMEeGZ6ueex_Me0w" base_Enumeration="_DJJOsM8EEeK9wcpwFaQlwA"/>
@@ -2448,13 +2505,69 @@ These are documented in CDC local codes table, CDCPHINVS (Value set OID 2.16.840
   <term:ValueSetCode xmi:id="_FSOJIc8GEeK9wcpwFaQlwA" conceptName="Fair" base_EnumerationLiteral="_FSOJIM8GEeK9wcpwFaQlwA"/>
   <term:ValueSetCode xmi:id="_FdgzIM8GEeK9wcpwFaQlwA" conceptName="Good" base_EnumerationLiteral="_FdgMEM8GEeK9wcpwFaQlwA"/>
   <term:ValueSetCode xmi:id="_FinVkc8GEeK9wcpwFaQlwA" conceptName="Poor" base_EnumerationLiteral="_FinVkM8GEeK9wcpwFaQlwA"/>
-  <term:ValueSetCode xmi:id="_eSlPQM8GEeK9wcpwFaQlwA" conceptName="Community Shelter" base_EnumerationLiteral="_eSkoMM8GEeK9wcpwFaQlwA"/>
-  <term:ValueSetCode xmi:id="_elj1oc8GEeK9wcpwFaQlwA" conceptName="Group Home" base_EnumerationLiteral="_elj1oM8GEeK9wcpwFaQlwA"/>
-  <term:ValueSetCode xmi:id="_euGtoM8GEeK9wcpwFaQlwA" conceptName="Nursing Home" base_EnumerationLiteral="_euGGkM8GEeK9wcpwFaQlwA"/>
-  <term:ValueSetCode xmi:id="_ez07IM8GEeK9wcpwFaQlwA" conceptName="Extended Care Facility" base_EnumerationLiteral="_ez0UEM8GEeK9wcpwFaQlwA"/>
-  <term:ValueSetCode xmi:id="_e5UfIM8GEeK9wcpwFaQlwA" conceptName="Independent Household" base_EnumerationLiteral="_e5T4EM8GEeK9wcpwFaQlwA"/>
-  <term:ValueSetCode xmi:id="_e-WwIM8GEeK9wcpwFaQlwA" conceptName="Retirement Community" base_EnumerationLiteral="_e-WJEM8GEeK9wcpwFaQlwA"/>
-  <term:ValueSetCode xmi:id="_fDPQIM8GEeK9wcpwFaQlwA" conceptName="Supported Living" base_EnumerationLiteral="_fDOpEM8GEeK9wcpwFaQlwA"/>
-  <term:ValueSetCode xmi:id="_fHbzoM8GEeK9wcpwFaQlwA" conceptName="Homeless" base_EnumerationLiteral="_fHbMkM8GEeK9wcpwFaQlwA"/>
-  <term:ValueSetCode xmi:id="_fMxmoM8GEeK9wcpwFaQlwA" conceptName="Nomadic" base_EnumerationLiteral="_fMw_kM8GEeK9wcpwFaQlwA"/>
+  <term:ValueSetCode xmi:id="_eSlPQM8GEeK9wcpwFaQlwA" conceptName="Community Shelter" usageNote="A group living arrangement specifically for the care of those in need of temporary and crisis housing assistance" base_EnumerationLiteral="_eSkoMM8GEeK9wcpwFaQlwA"/>
+  <term:ValueSetCode xmi:id="_elj1oc8GEeK9wcpwFaQlwA" conceptName="Group Home" usageNote="A small supervised residential facility . . . in which residents typically participate in daily tasks and are often free to come and go on a voluntary basis" base_EnumerationLiteral="_elj1oM8GEeK9wcpwFaQlwA"/>
+  <term:ValueSetCode xmi:id="_euGtoM8GEeK9wcpwFaQlwA" conceptName="Nursing Home" usageNote="A private establishment that provides permanent living quarters and professional care for chronically ill, usually elderly patients" base_EnumerationLiteral="_euGGkM8GEeK9wcpwFaQlwA"/>
+  <term:ValueSetCode xmi:id="_ez07IM8GEeK9wcpwFaQlwA" conceptName="Extended Care Facility" usageNote="An institution devoted to providing medical, psychiatric, nursing, or custodial care for an individual over a prolonged but not permanent period" base_EnumerationLiteral="_ez0UEM8GEeK9wcpwFaQlwA"/>
+  <term:ValueSetCode xmi:id="_e5UfIM8GEeK9wcpwFaQlwA" conceptName="Independent Household" usageNote="A non-institutional residence, typically for a single family" base_EnumerationLiteral="_e5T4EM8GEeK9wcpwFaQlwA"/>
+  <term:ValueSetCode xmi:id="_e-WwIM8GEeK9wcpwFaQlwA" conceptName="Retirement Community" usageNote="A residential institution designed for older adults who are generally able to care for themselves" base_EnumerationLiteral="_e-WJEM8GEeK9wcpwFaQlwA"/>
+  <term:ValueSetCode xmi:id="_fDPQIM8GEeK9wcpwFaQlwA" conceptName="Supported Living" usageNote="An independent household supported with services for persons with physical, behavioral, or functional health, or socio-economic challenges" base_EnumerationLiteral="_fDOpEM8GEeK9wcpwFaQlwA"/>
+  <term:ValueSetCode xmi:id="_fHbzoM8GEeK9wcpwFaQlwA" conceptName="Homeless" usageNote="Lacking a residence and without means to establish one" base_EnumerationLiteral="_fHbMkM8GEeK9wcpwFaQlwA"/>
+  <term:ValueSetCode xmi:id="_fMxmoM8GEeK9wcpwFaQlwA" conceptName="Nomadic" usageNote="Living in a temporary independent household or in a vehicle that is intended to be lived in" base_EnumerationLiteral="_fMw_kM8GEeK9wcpwFaQlwA"/>
+  <term:ValueSetCode xmi:id="_rkEQUNzkEeKJNK8N5ws2Ew" conceptName="cancelled" usageNote="The terminal state resulting from cancellation of the role prior to activation." base_EnumerationLiteral="_rjx8cNzkEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_uI3IUdzkEeKJNK8N5ws2Ew" conceptName="pending" usageNote="The state representing that fact that the role has not yet become active." base_EnumerationLiteral="_uI3IUNzkEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_uSrysdzkEeKJNK8N5ws2Ew" conceptName="suspended" usageNote="The state that represents a suspension of the Entity playing the Role. This state is arrived at from the &quot;active&quot; state." base_EnumerationLiteral="_uSrysNzkEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_uYmNcdzkEeKJNK8N5ws2Ew" conceptName="terminated" usageNote="The state representing the successful termination of the Role." base_EnumerationLiteral="_uYmNcNzkEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_ueINsdzkEeKJNK8N5ws2Ew" conceptName="nullified" usageNote="The state representing the termination of a Role instance that was created in error." base_EnumerationLiteral="_ueINsNzkEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_u1HKUdzkEeKJNK8N5ws2Ew" conceptName="active" usageNote="The state representing the fact that the Entity is currently active in the Role." base_EnumerationLiteral="_u1HKUNzkEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_c7ExMdzlEeKJNK8N5ws2Ew" conceptName="active" usageNote="The Act can be performed or is being performed" base_EnumerationLiteral="_c7ExMNzlEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_eX9l8dzlEeKJNK8N5ws2Ew" conceptName="cancelled" usageNote="The Act has been abandoned before activation." base_EnumerationLiteral="_eX9l8NzlEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_elN-0dzlEeKJNK8N5ws2Ew" conceptName="completed" usageNote="An Act that has terminated normally after all of its constituents have been performed." base_EnumerationLiteral="_elN-0NzlEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_erg0EdzlEeKJNK8N5ws2Ew" conceptName="held" usageNote="An Act that is still in the preparatory stages has been put aside. No action can occur until the Act is released." base_EnumerationLiteral="_erg0ENzlEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_ezhgkNzlEeKJNK8N5ws2Ew" conceptName="new" usageNote="An Act that is in the preparatory stages and may not yet be acted upon" base_EnumerationLiteral="_ezbZ8NzlEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_e5oIkNzlEeKJNK8N5ws2Ew" conceptName="suspended" usageNote="An Act that has been activated (actions could or have been performed against it), but has been temporarily disabled. No further action should be taken against it until it is released" base_EnumerationLiteral="_e5iB8NzlEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_e_WWENzlEeKJNK8N5ws2Ew" conceptName="nullified" usageNote="This Act instance was created in error and has been 'removed' and is treated as though it never existed. A record is retained for audit purposes only." base_EnumerationLiteral="_e_QPcNzlEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_fGsUMdzlEeKJNK8N5ws2Ew" conceptName="obsolete" usageNote="This Act instance has been replaced by a new instance." base_EnumerationLiteral="_fGsUMNzlEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_fNdqkNzlEeKJNK8N5ws2Ew" conceptName="aborted" usageNote="The Act has been terminated prior to the originally intended completion." base_EnumerationLiteral="_fNXj8NzlEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_W-DjsdzmEeKJNK8N5ws2Ew" conceptName="willing to be donor of organ (finding)" base_EnumerationLiteral="_W-DjsNzmEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_XglB8dzmEeKJNK8N5ws2Ew" conceptName="active Durable Power of Attorney for Healthcare (finding)" base_EnumerationLiteral="_XglB8NzmEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_Xl0uUdzmEeKJNK8N5ws2Ew" conceptName="active living will (finding)" base_EnumerationLiteral="_Xl0uUNzmEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_5ZuGodzmEeKJNK8N5ws2Ew" conceptName="North Atlantic Treaty Organization" base_EnumerationLiteral="_5ZuGoNzmEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_56n0QdzmEeKJNK8N5ws2Ew" conceptName="Public Health Service Commissioned Corps" usageNote="United States Public Health Service Commissioned Corps" base_EnumerationLiteral="_56n0QNzmEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_6B9yYdzmEeKJNK8N5ws2Ew" conceptName="Navy" usageNote="United States Navy" base_EnumerationLiteral="_6B9yYNzmEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_6LHuYdzmEeKJNK8N5ws2Ew" conceptName="National Oceanic and Atmospheric Administration Commissioned Corps" usageNote="United States National Oceanic and Atmospheric Administration Commissioned Corps" base_EnumerationLiteral="_6LHuYNzmEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_6RajodzmEeKJNK8N5ws2Ew" conceptName="Marine Corps" usageNote="United States Marine Corps" base_EnumerationLiteral="_6RajoNzmEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_6cw4AdzmEeKJNK8N5ws2Ew" conceptName="Coast Guard" usageNote="United States Coast Guard" base_EnumerationLiteral="_6cw4ANzmEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_6kxkgdzmEeKJNK8N5ws2Ew" conceptName="Army" usageNote="United States Army" base_EnumerationLiteral="_6kxkgNzmEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_665lgdzmEeKJNK8N5ws2Ew" conceptName="Air Force" usageNote="United States Air Force" base_EnumerationLiteral="_665lgNzmEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_G5H0kNzzEeKJNK8N5ws2Ew" conceptName="E1" usageNote="Uniformed service grade E-1" base_EnumerationLiteral="_G4Q48NzzEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_HNJj0dzzEeKJNK8N5ws2Ew" conceptName="E2" usageNote="Uniformed service grade E-2" base_EnumerationLiteral="_HNJj0NzzEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_HSldcdzzEeKJNK8N5ws2Ew" conceptName="E3" usageNote="Uniformed service grade E-3" base_EnumerationLiteral="_HSldcNzzEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_HYHdsNzzEeKJNK8N5ws2Ew" conceptName="E4" usageNote="Uniformed service grade E-4" base_EnumerationLiteral="_HYBXENzzEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_Hd1rMdzzEeKJNK8N5ws2Ew" conceptName="E5" usageNote="Uniformed service grade E-5" base_EnumerationLiteral="_Hd1rMNzzEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_HjwF8dzzEeKJNK8N5ws2Ew" conceptName="E6" usageNote="Uniformed service grade E-6" base_EnumerationLiteral="_HjwF8NzzEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_HpwnUdzzEeKJNK8N5ws2Ew" conceptName="E7" usageNote="Uniformed service grade E-7" base_EnumerationLiteral="_HpwnUNzzEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_Hve00dzzEeKJNK8N5ws2Ew" conceptName="E8" usageNote="Uniformed service grade E-8" base_EnumerationLiteral="_Hve00NzzEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_H1NCUdzzEeKJNK8N5ws2Ew" conceptName="E9" usageNote="Uniformed service grade E-9" base_EnumerationLiteral="_H1NCUNzzEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_H61JMNzzEeKJNK8N5ws2Ew" conceptName="W1" usageNote="Uniformed service grade W-1" base_EnumerationLiteral="_H6vCkNzzEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_IAdQEdzzEeKJNK8N5ws2Ew" conceptName="W2" usageNote="Uniformed service grade W-2" base_EnumerationLiteral="_IAdQENzzEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_IJOxkdzzEeKJNK8N5ws2Ew" conceptName="W3" usageNote="Uniformed service grade W-3" base_EnumerationLiteral="_IJOxkNzzEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_IPbgMdzzEeKJNK8N5ws2Ew" conceptName="W4" usageNote="Uniformed service gradeW-4" base_EnumerationLiteral="_IPbgMNzzEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_IViIMNzzEeKJNK8N5ws2Ew" conceptName="W5" usageNote="Uniformed service grade W-5" base_EnumerationLiteral="_IVcBkNzzEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_Ib09cdzzEeKJNK8N5ws2Ew" conceptName="O1" usageNote="Uniformed service grade O-1" base_EnumerationLiteral="_Ib09cNzzEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_IhvYMdzzEeKJNK8N5ws2Ew" conceptName="O1E" usageNote="Uniformed service grade O1E" base_EnumerationLiteral="_IhvYMNzzEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_IoUhUdzzEeKJNK8N5ws2Ew" conceptName="O2" usageNote="Uniformed service grade O2" base_EnumerationLiteral="_IoUhUNzzEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_IuVCsdzzEeKJNK8N5ws2Ew" conceptName="O2E" usageNote="Uniformed service grade O2E" base_EnumerationLiteral="_IuVCsNzzEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_I0hxUdzzEeKJNK8N5ws2Ew" conceptName="O3" usageNote="Uniformed service grade O3" base_EnumerationLiteral="_I0hxUNzzEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_I7THsdzzEeKJNK8N5ws2Ew" conceptName="O3E" usageNote="Uniformed service grade O3E" base_EnumerationLiteral="_I7THsNzzEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_JAQgMNzzEeKJNK8N5ws2Ew" conceptName="O4" usageNote="Uniformed service grade O4" base_EnumerationLiteral="_JAKZkNzzEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_JGK68dzzEeKJNK8N5ws2Ew" conceptName="O5" usageNote="Uniformed service grade O5" base_EnumerationLiteral="_JGK68NzzEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_JLs7MdzzEeKJNK8N5ws2Ew" conceptName="O6" usageNote="Uniformed service grade O6" base_EnumerationLiteral="_JLs7MNzzEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_JRbIsdzzEeKJNK8N5ws2Ew" conceptName="O7" usageNote="Uniformed service grade O7" base_EnumerationLiteral="_JRbIsNzzEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_JX6LMNzzEeKJNK8N5ws2Ew" conceptName="O8" usageNote="Uniformed service grade O8" base_EnumerationLiteral="_JX0EkNzzEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_JeNAcdzzEeKJNK8N5ws2Ew" conceptName="O9" usageNote="Uniformed service grade O9" base_EnumerationLiteral="_JeNAcNzzEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_JjvAsNzzEeKJNK8N5ws2Ew" conceptName="O10" usageNote="Uniformed service grade O10" base_EnumerationLiteral="_Jjo6ENzzEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_JpEzsNzzEeKJNK8N5ws2Ew" conceptName="O11" usageNote="Uniformed service grade O11" base_EnumerationLiteral="_Jo-tENzzEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_JuIS0dzzEeKJNK8N5ws2Ew"/>
+  <term:ValueSetCode xmi:id="_J18yEdzzEeKJNK8N5ws2Ew"/>
 </xmi:XMI>
