@@ -11,12 +11,13 @@
 
 [generatePackageTopicTemplate(aPackage)/]
 [generatePackageTopicGenerated(aPackage)/]
-	[for (aClass : Class | aPackage.eContents(Class))]
+	[for (aClass : Class | aPackage.eContents(Class)->select(visibility = uml::VisibilityKind::public))]
 		[generateClassTopicTemplate(aClass)/]
 		[generateClassTopicGenerated(aClass)/]
 	[/for]
 
-	[for (aClass : Class | aPackage.eContents(Class)->sortedBy(name))]
+
+	[for (aClass : Class | aPackage.eContents(Class)->select(visibility = uml::VisibilityKind::public)->sortedBy(name))]
 		[for (property : Property | aClass.ownedAttribute->select(association = null))]
 			[for (vsc: ValueSetConstraint| property.getStereotypeApplications()->select(oclIsTypeOf(ValueSetConstraint)).oclAsType(ValueSetConstraint))]
 				[let vsv  : ValueSetVersion = vsc.reference]
@@ -125,7 +126,7 @@
 		[for (eo : EObject | ea.contents)]
 			[if (eo.oclIsTypeOf(UMLDiagram))]
 				[let diagram : UMLDiagram = eo.oclAsType(UMLDiagram)]
-<topicref href="../topics/t_[diagram.name.replaceAll('\\W+','')/]Diagram.dita" type="topic" />
+<topicref href="../topics/t_[diagram.name.replaceAll('\\W+','').replaceAll(':+','')/]Diagram.dita" type="topic" />
 				[/let]
 			[/if]		
 		[/for]		
@@ -137,8 +138,8 @@
 
 [if (not aPackage.eContents(Class)->isEmpty())]
 <topichead navtitle="Definitions">
-	[for (aClass : Class | aPackage.eContents(Class)->sortedBy(name))]
-<topicref href="../topics/t_[aClass.name.replaceAll('\\W+','')/].dita" type="topic" />
+	[for (aClass : Class | aPackage.eContents(Class)->select(visibility = uml::VisibilityKind::public)->sortedBy(name))]
+<topicref href="../topics/t_[aClass.qualifiedName.replaceAll('\\W+','').replaceAll(':+','')/].dita" type="topic" /> 
 	[/for]
 </topichead>
 [/if]
@@ -147,7 +148,7 @@
 <topichead navtitle="Terminology">	
 	[for (eee : Enumeration |  aPackage.eContents(Class).ownedAttribute->select(association = null).getStereotypeApplications()->select(oclIsTypeOf(ValueSetConstraint)).oclAsType(ValueSetConstraint).reference.base_Enumeration.oclAsType(Enumeration)->sortedBy(name)->asOrderedSet())]
 		[let ee : Enumeration = eee.oclAsType(Enumeration)]
-<topicref href="../topics/t_[ee.name.replaceAll('\\W+','')/].dita" type="topic" />
+<topicref href="../topics/t_[ee.qualifiedName.replaceAll('\\W+','').replaceAll(':+','')/].dita" type="topic" />
 		[/let]
 	[/for]
 </topichead>	
@@ -160,7 +161,7 @@
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
 <map title="Classes">
 	[for (enumeration : Enumeration | aPackage.eContents(Enumeration)->sortedBy(name))]
-<topicref href="../topics/t_[enumeration.name.replaceAll('\\W+','')/].dita" type="topic" />
+<topicref href="../topics/t_[enumeration.qualifiedName.replaceAll('\\W+','').replaceAll(':+','')/].dita" type="topic" />
 	[/for]
 </map>
 [/file]
@@ -171,22 +172,22 @@
 
 
 [template public generatePackageTopicTemplate(aPackage : Package)]
-[file ('topics/t_'+aPackage.name.replaceAll('\\W+','')+'Package.dita', false, 'UTF-8')]
+[file ('topics/t_'+aPackage.qualifiedName.replaceAll('\\W+','').replaceAll(':+','')+'Package.dita', false, 'UTF-8')]
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="t_[aPackage.name.replaceAll('\\W+','')/]" xml:lang="en-us">
-	<title conref="generated/_[aPackage.name.replaceAll('\\W+','')/]Package.dita#[aPackage.name.replaceAll('\\W+','')/]/title" />
-	<shortdesc conref="generated/_[aPackage.name.replaceAll('\\W+','')/]Package.dita#[aPackage.name.replaceAll('\\W+','')/]/shortdesc" />
-	<body conref="generated/_[aPackage.name.replaceAll('\\W+','')/]Package.dita#[aPackage.name.replaceAll('\\W+','')/]/body" />
+<topic id="t_[aPackage.qualifiedName.replaceAll('\\W+','').replaceAll(':+','')/]" xml:lang="en-us">
+	<title conref="generated/_[aPackage.qualifiedName.replaceAll('\\W+','').replaceAll(':+','')/]Package.dita#[aPackage.qualifiedName.replaceAll('\\W+','').replaceAll(':+','')/]/title" />
+	<shortdesc conref="generated/_[aPackage.qualifiedName.replaceAll('\\W+','').replaceAll(':+','')/]Package.dita#[aPackage.qualifiedName.replaceAll('\\W+','').replaceAll(':+','')/]/shortdesc" />
+	<body conref="generated/_[aPackage.qualifiedName.replaceAll('\\W+','').replaceAll(':+','')/]Package.dita#[aPackage.qualifiedName.replaceAll('\\W+','').replaceAll(':+','')/]/body" />
 </topic>
 [/file]
 [/template]
 
 [template public generatePackageTopicGenerated(aPackage : Package)]
-[file ('topics/generated/_'+aPackage.name.replaceAll('\\W+','')+'Package.dita', false, 'UTF-8')]
+[file ('topics/generated/_'+aPackage.qualifiedName.replaceAll('\\W+','').replaceAll(':+','')+'Package.dita', false, 'UTF-8')]
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="[aPackage.name.replaceAll('\\W+','')/]" xml:lang="en-us">
+<topic id="[aPackage.qualifiedName.replaceAll('\\W+','').replaceAll(':+','')/]" xml:lang="en-us">
 <title id="title">[generateClassTitle(aPackage)/]</title>
 <shortdesc id="shortdesc">[generateClassShortDescription(aPackage)/]</shortdesc>
 <body id="body" >[generatePackageBody(aPackage)/]</body>
@@ -195,27 +196,27 @@
 [/template]
 
 [template public generateDiagramTopicTemplate(aDiagram : UMLDiagram)]
-[file ('topics/t_'+aDiagram.name.replaceAll('\\W+','')+'Diagram.dita', false, 'UTF-8')]
+[file ('topics/t_'+aDiagram.name.replaceAll('\\W+','').replaceAll(':+','')+'Diagram.dita', false, 'UTF-8')]
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="t_[aDiagram.name.replaceAll('\\W+','')/]" xml:lang="en-us">
-	<title conref="generated/_[aDiagram.name.replaceAll('\\W+','')/]Diagram.dita#[aDiagram.name.replaceAll('\\W+','')/]/title" />
-	<shortdesc conref="generated/_[aDiagram.name.replaceAll('\\W+','')/]Diagram.dita#[aDiagram.name.replaceAll('\\W+','')/]/shortdesc" />
-	<body conref="generated/_[aDiagram.name.replaceAll('\\W+','')/]Diagram.dita#[aDiagram.name.replaceAll('\\W+','')/]/body" />
+<topic id="t_[aDiagram.name.replaceAll('\\W+','').replaceAll(':+','')/]" xml:lang="en-us">
+	<title conref="generated/_[aDiagram.name.replaceAll('\\W+','').replaceAll(':+','')/]Diagram.dita#[aDiagram.name.replaceAll('\\W+','').replaceAll(':+','')/]/title" />
+	<shortdesc conref="generated/_[aDiagram.name.replaceAll('\\W+','').replaceAll(':+','')/]Diagram.dita#[aDiagram.name.replaceAll('\\W+','').replaceAll(':+','')/]/shortdesc" />
+	<body conref="generated/_[aDiagram.name.replaceAll('\\W+','').replaceAll(':+','')/]Diagram.dita#[aDiagram.name.replaceAll('\\W+','').replaceAll(':+','')/]/body" />
 </topic>
 [/file]
 [/template]
 
 [template public generateDiagramTopicGenerated(aDiagram : UMLDiagram)]
-[file ('topics/generated/_'+aDiagram.name.replaceAll('\\W+','')+'Diagram.dita', false, 'UTF-8')]
+[file ('topics/generated/_'+aDiagram.name.replaceAll('\\W+','').replaceAll(':+','')+'Diagram.dita', false, 'UTF-8')]
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="[aDiagram.name.replaceAll('\\W+','')/]" xml:lang="en-us">
+<topic id="[aDiagram.name.replaceAll('\\W+','').replaceAll(':+','')/]" xml:lang="en-us">
 <title id="title">[aDiagram.name/]</title>
 <shortdesc id="shortdesc">[aDiagram.type/] Diagram</shortdesc>
 <body id="body" >
 <p>[   escapeXml(aDiagram.description).replaceAll('\\n', '</p><p>') /]</p>
-<p><image href="../../diagrams/[diagram.type/]/[diagram.name.replaceAll('\\W+','')/].jpg" height="10in" width="7in" /></p>
+<p><image href="../../diagrams/[diagram.type/]/[diagram.name.replaceAll('\\W+','').replaceAll(':+','')/].jpg" height="10in" width="7in" /></p>
 </body>
 </topic>
 [/file]
@@ -225,22 +226,22 @@
 
 
 [template public generateClassTopicTemplate(aClass : Classifier)]
-[file ('topics/t_'+aClass.name.replaceAll('\\W+','')+'.dita', false, 'UTF-8')]
+[file ('topics/t_'+aClass.qualifiedName.replaceAll('\\W+','').replaceAll(':+','')+'.dita', false, 'UTF-8')]
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="t_[aClass.name.replaceAll('\\W+','')/]" xml:lang="en-us">
-	<title conref="generated/_[aClass.name.replaceAll('\\W+','')/].dita#[aClass.name.replaceAll('\\W+','')/]/title" />
-	<shortdesc conref="generated/_[aClass.name.replaceAll('\\W+','')/].dita#[aClass.name.replaceAll('\\W+','')/]/shortdesc" />
-	<body conref="generated/_[aClass.name.replaceAll('\\W+','')/].dita#[aClass.name.replaceAll('\\W+','')/]/body" />
+<topic id="t_[aClass.qualifiedName.replaceAll('\\W+','').replaceAll(':+','')/]" xml:lang="en-us">
+	<title conref="generated/_[aClass.qualifiedName.replaceAll('\\W+','').replaceAll(':+','')/].dita#[aClass.qualifiedName.replaceAll('\\W+','').replaceAll(':+','')/]/title" />
+	<shortdesc conref="generated/_[aClass.qualifiedName.replaceAll('\\W+','').replaceAll(':+','')/].dita#[aClass.qualifiedName.replaceAll('\\W+','').replaceAll(':+','')/]/shortdesc" />
+	<body conref="generated/_[aClass.qualifiedName.replaceAll('\\W+','').replaceAll(':+','')/].dita#[aClass.qualifiedName.replaceAll('\\W+','').replaceAll(':+','')/]/body" />
 </topic>
 [/file]
 [/template]
 
 [template public generateClassTopicGenerated(aClass : Class)]
-[file ('topics/generated/_'+aClass.name.replaceAll('\\W+','')+'.dita', false, 'UTF-8')]
+[file ('topics/generated/_'+aClass.qualifiedName.replaceAll('\\W+','').replaceAll(':+','')+'.dita', false, 'UTF-8')]
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="[aClass.name.replaceAll('\\W+','')/]" xml:lang="en-us">
+<topic id="[aClass.qualifiedName.replaceAll('\\W+','').replaceAll(':+','')/]" xml:lang="en-us">
 <title id="title">[generateClassTitle(aClass)/]</title>
 <shortdesc id="shortdesc">[generateClassShortDescription(aClass)/]</shortdesc>
 <body id="body" >[generateClassBody(aClass)/]</body>
@@ -249,10 +250,10 @@
 [/template]
 
 [template public generateEnumerationTopicGenerated(enumeration : Enumeration)]
-[file ('topics/generated/_'+enumeration.name.replaceAll('\\W+','')+'.dita', false, 'UTF-8')]
+[file ('topics/generated/_'+enumeration.qualifiedName.replaceAll('\\W+','').replaceAll(':+','')+'.dita', false, 'UTF-8')]
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="[enumeration.name.replaceAll('\\W+','')/]" xml:lang="en-us">
+<topic id="[enumeration.qualifiedName.replaceAll('\\W+','').replaceAll(':+','')/]" xml:lang="en-us">
 <title id="title">[generateClassTitle(enumeration)/]</title>
 <shortdesc id="shortdesc">[generateClassShortDescription(enumeration)/]</shortdesc>
 <body id="body" >[generateEnumerationBody(enumeration)/]</body>
@@ -282,6 +283,8 @@
 
 [generateClassGeneralizations(aClass) /]
 
+[generateClassSpecializations(aClass)/]
+
 [generateClassFullDescription(aClass) /]
 
 
@@ -308,12 +311,26 @@
 [/template]
 
 [template public generateClassGeneralizations(aClass  : Class)]
-[if (not aClass.parents()->isEmpty())]
+[if (not aClass.parents()->select(visibility = uml::VisibilityKind::public)->isEmpty())]
 <section id="generalizations"  audience="developer, modeler">
   <title>Hierarchy</title>
-	[for (classifier : Classifier | aClass.parents())]
-	[aClass.name/] is a kind of <xref href="../t_[classifier.name/].dita">[classifier.name/]</xref>	
+	[for (classifier : Classifier | aClass.parents()->select(visibility = uml::VisibilityKind::public))]
+	[aClass.name/] is a kind of <xref href="../t_[classifier.qualifiedName.replaceAll('\\W+','').replaceAll(':+','')/].dita">[classifier.name/]</xref>	
 	[/for]
+</section>
+[/if]
+[/template]
+
+[template public generateClassSpecializations(aClass  : Class)]
+
+[if (not aClass.getTargetDirectedRelationships()->select(oclIsTypeOf(Generalization)).oclAsType(Generalization)->select(g : Generalization |  g.specific.visibility = uml::VisibilityKind::public and  g.specific.getNearestPackage().qualifiedName.equalsIgnoreCase(aClass.getNearestPackage().qualifiedName) )->isEmpty())]
+<section id="specializations"  audience="developer, modeler">
+	<title>Derivations</title>
+	<ul>
+[for (generalization : Generalization | aClass.getTargetDirectedRelationships()->select(oclIsTypeOf(Generalization)).oclAsType(Generalization)->select(g : Generalization |  g.specific.visibility = uml::VisibilityKind::public and  g.specific.getNearestPackage().qualifiedName.equalsIgnoreCase(aClass.getNearestPackage().qualifiedName) )  )]
+<li><xref href="../t_[generalization.specific.qualifiedName.replaceAll('\\W+','').replaceAll(':+','')/].dita">[generalization.specific.name/] </xref> is a kind of  [aClass.name/] </li>
+[/for]
+	</ul>
 </section>
 [/if]
 [/template]
@@ -337,11 +354,11 @@
 [for (property : Property | aClass.ownedAttribute->select(association = null)->sortedBy(name))]
  <strow>
 
-  <stentry><p>[property.name/] :  [if (property.type.owner.oclIsKindOf(NamedElement) and not property.type.owner.oclAsType(NamedElement).name.equalsIgnoreCase('UMLPrimitiveTypes') )]<xref href="../t_[property.type.name/].dita" >[property.type.name/]</xref>[else][property.type.name/][/if] ([property.lower/]..[if (property.upper >= 0)][property.upper/][else]*[/if])</p> 
+  <stentry><p>[property.name/] :  [if (property.type.owner.oclIsKindOf(NamedElement) and not property.type.owner.oclAsType(NamedElement).name.equalsIgnoreCase('UMLPrimitiveTypes') )]<xref href="../t_[property.type.qualifiedName.replaceAll('\\W+','').replaceAll(':+','')/].dita" >[property.type.name/]</xref>[else][property.type.name/][/if] ([property.lower/]..[if (property.upper >= 0)][property.upper/][else]*[/if])</p> 
 		[for (vsc: ValueSetConstraint| property.getStereotypeApplications()->select(oclIsTypeOf(ValueSetConstraint)).oclAsType(ValueSetConstraint))]
 				[let vsv  : ValueSetVersion = vsc.reference]
 					[let ee : Enumeration = vsv.base_Enumeration.oclAsType(Enumeration)]
-<p>See <xref href="../t_[ee.name.replaceAll('\\W+','')/].dita">[ee.name/]</xref> definition for values.</p>
+<p>See <xref href="../t_[ee.qualifiedName.replaceAll('\\W+','').replaceAll(':+','')/].dita">[ee.name/]</xref> definition for values.</p>
 					[/let]
 				[/let]
 			[/for]
@@ -356,7 +373,7 @@
 
 [for (property : Property | aClass.ownedAttribute->select(association <> null)->sortedBy(name))]
  <strow>
-  <stentry><p>[property.name/] : <xref href="../t_[property.type.name/].dita" >[property.type.name/]</xref> ([property.lower/]..[if (property.upper >= 0)][property.upper/][else]*[/if])</p></stentry>
+  <stentry><p>[property.name/] : <xref href="../t_[property.type.qualifiedName.replaceAll('\\W+','').replaceAll(':+','')/].dita" >[property.type.name/]</xref> ([property.lower/]..[if (property.upper >= 0)][property.upper/][else]*[/if])</p></stentry>
   <stentry><p>[for (aComment : Comment | property.ownedComment)]
 				[ escapeXml(aComment._body).replaceAll('\\n', '</p><p>') /]
 			[/for]
@@ -430,7 +447,7 @@
 [if (not aClass.ownedAttribute->select(association = null)->isEmpty() )]
 [for (property : Property | aClass.ownedAttribute->select(association = null))]
 [for (valueSetConstraint : ValueSetConstraint | property.getStereotypeApplications()->select(oclIsTypeOf(ValueSetConstraint)))]
-<li>[property.name /] <xref href="../t_[valueSetConstraint.reference.base_Enumeration.name.replaceAll('\\W+','')  /].dita">[valueSetConstraint.reference.base_Enumeration.name /] </xref> [valueSetConstraint.reference.identifier  /]</li>
+<li>[property.name /] <xref href="../t_[valueSetConstraint.reference.base_Enumeration.qualifiedName.replaceAll('\\W+','').replaceAll(':+','')  /].dita">[valueSetConstraint.reference.base_Enumeration.name /] </xref> [valueSetConstraint.reference.identifier  /]</li>
 [/for]
 [/for]
 [/if]
