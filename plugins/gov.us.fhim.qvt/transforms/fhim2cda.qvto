@@ -1,0 +1,304 @@
+import Strings;
+import FHIMLibrary;
+
+modeltype uml uses 'http://www.eclipse.org/uml2/2.1.0/UML';
+modeltype ecore "strict" uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+modeltype term uses 'http://www.openhealthtools.org/mdht/schemas/term/1';
+modeltype cda uses 'http://www.openhealthtools.org/mdht/schemas/cda/4';
+
+transformation fhim2cda(in fhimModel : uml,in cdaBaseModel : uml, in datatypesModel : uml, out cdaModel : uml, inout cdaTermModel : uml );
+
+main() {
+	log('Transforming Federal Health Information Model (PIM) to HL7 Clinical Document Architecture (PSM)');
+	
+	cdaTermModel.objectsOfType(uml::Package).ownedType[uml::Enumeration]->destroy();
+	fhimModel.rootObjects()[uml::Package].ownedElement[uml::UseCase]-> map toCDA();
+}
+
+
+mapping uml::UseCase::toCDA() : uml::Package
+{
+	log('Transforming Use Case : ' + self.name);
+	
+	result.name := self.name;
+	self.getNearestPackage().getAppliedProfiles()->map applyProfiles(result);
+	result.packageImport += cdaTermModel.rootObjects()[uml::Package]->map mapImports(); //self.getNearestPackage().packageImport;
+	var cdaDocumentType : String = '';
+	var cdaDocumentName : String = '';
+	var cdaDocumentTemplateID : String = '';
+	
+	cdaDocumentType :=  self.ownedComment->getMappings('cdadocumenttype=')->asSequence()->first();
+	cdaDocumentName :=  self.name;
+	cdaDocumentTemplateID  :=  self.ownedComment->getMappings('cdadocumenttemplate=')->asSequence()->first();
+	
+	var clinicalDocument : uml::Class :=  result.createOwnedClass(cdaDocumentName,false); 
+ 	
+ 	clinicalDocument.general  := getCDAClass(cdaDocumentType);
+	
+	clinicalDocument.applyStereotype(clinicalDocument.getApplicableStereotype('CDA::CDATemplate'));
+	
+	clinicalDocument.setValue(clinicalDocument.getAppliedStereotype("CDA::CDATemplate"),'templateId',cdaDocumentTemplateID);
+	
+	
+	result.applyStereotype(result.getApplicableStereotype("CDA::CodegenSupport"));	
+	result.setValue(result.getAppliedStereotype("CDA::CodegenSupport"),"basePackage","gov.us.fhim.cda");
+	result.setValue(result.getAppliedStereotype("CDA::CodegenSupport"),"nsPrefix","immunization");
+	result.setValue(result.getAppliedStereotype("CDA::CodegenSupport"),"nsURI","http://gov.us.fhim/cda/immunization");
+	result.setValue(result.getAppliedStereotype("CDA::CodegenSupport"),"packageName","immunization");
+	result.setValue(result.getAppliedStereotype("CDA::CodegenSupport"),"prefix","immunization");
+	result.ownedType +=	self.getRelationships()[uml::Usage]->map toCDA(result,clinicalDocument,self);
+}
+
+mapping uml::Package::mapImports() : uml::PackageImport
+{
+	result.importedPackage := self;
+}
+mapping uml::Usage::toCDA(inout package : uml::Package,inout clinicalDocument : uml::Class,in useCase : uml::UseCase)
+{
+	self.supplier[uml::Class]->map mapFromSupplier(package,clinicalDocument,useCase);
+
+}
+
+
+mapping uml::Class::mapFromSupplier(inout package : uml::Package,inout clinicalDocument : uml::Class,in useCase : uml::UseCase) {
+	var cdaSectionName : String = '';
+	var cdaSectionType : String = '';
+		
+	cdaSectionName := self.name;
+
+ 	cdaSectionType :=  self.ownedComment->getMappings('cdatype=')->asSequence()->first();
+ 
+ 	var section : uml::Class :=  package.createOwnedClass(cdaSectionName,false); 
+ 	section.general  := getCDAClass(cdaSectionType);
+ 
+ 	var sectionAssociation : uml::Type := clinicalDocument.createAssociation(true,uml::AggregationKind::none,'section',1,1,section,false,uml::AggregationKind::none,'',1,1);
+ 	
+	sectionAssociation .applyStereotype(sectionAssociation .getApplicableStereotype('CDA::AssociationValidation'));
+
+	self.ownedAttribute->map bar(package,section);
+	self.ownedAttribute->map foo(package,section,useCase);
+}
+
+mapping uml::Property::foo(inout package : uml::Package,inout source : uml::Class,in useCase : uml::UseCase) when { package.ownedType->select(name=self.type.name)->isEmpty() and self.association != null}
+{
+
+
+	var cdaClass : uml::Class :=  package.createOwnedClass(self.type.name,false); 
+	var cdaType : String = 'Act';
+	
+	if (not self.type.ownedComment->getMappings('cdatype=')->asSequence()->isEmpty()
+	and self.type.ownedComment->getMappings('cdatype=')->asSequence()->first().length() > 0 ) then
+	{
+		cdaType  :=  self.type.ownedComment->getMappings('cdatype=')->asSequence()->first();
+	} endif;
+	
+	cdaClass.general  := getCDAClass(cdaType);
+	
+	var association : uml::Type := source.createAssociation(true,uml::AggregationKind::none,self.name,1,1,cdaClass,false,uml::AggregationKind::none,'',1,1);
+//	association .applyStereotype(association.getApplicableStereotype('CDA::AssociationValidation'));
+	var typeClass : uml::Class := self.type.oclAsType(uml::Class);
+	if (useCase.getNearestPackage().name.equalsIgnoreCase(typeClass.getNearestPackage().name)) then {
+		typeClass.ownedAttribute->map foo(package,cdaClass,useCase);	
+	} else {
+	//	log('NotMapping source '+source.qualifiedName);
+	//	log('NotMapping type '+typeClass.qualifiedName);
+	//	log(source.getNearestPackage().name);
+	//	log(typeClass.getNearestPackage().name);
+		
+	}endif;
+	
+
+	 
+	
+	cdaClass.ownedAttribute += self.type.oclAsType(uml::Class).ownedAttribute->map bar(package,cdaClass);
+	
+	
+	//log('aaaaaaaa'+self.type.qualifiedName);
+//	self.type.oclAsType(uml::Class).general.ownedComment->map displayComment();
+//	cdaClass.ownedComment += self.type.oclAsType(uml::Class).general.ownedComment;
+	cdaClass.ownedComment += self.type.oclAsType(uml::Class).ownedComment;
+	//log('bbbbbb'+cdaClass.qualifiedName);
+	self.type.oclAsType(uml::Class).general[uml::Class]->map transferComments(cdaClass);
+}
+
+mapping uml::Property::bar(inout package : uml::Package,in  cdaBaseClass : uml::Class) : uml::Property when {self.association = null} {
+
+
+	result.name := self.name;
+	var mappedAttributeName : String; 	
+	mappedAttributeName := self.ownedComment->getMappings('cdaProperty=')->asSequence()->first();
+	if ( mappedAttributeName.oclIsTypeOf(String) and mappedAttributeName.length() > 0) then 	{
+		result.name := mappedAttributeName;
+	} endif;
+	
+	if(not cdaBaseClass.getAllAttributes()->select(name = result.name)->isEmpty()) then {
+		result.type := cdaBaseClass.getAllAttributes()->select(name = result.name)->asSequence()->first().type;
+	} else{
+		result.type := getDatatype("CD");	
+	} endif;
+	
+	
+	result.lower := self.lower;	
+	result.upper := self.upper;	
+
+	
+	var s : cda::PropertyValidation :=	object cda::PropertyValidation {
+		if (result.lower != 0) then {
+			severity := SeverityKind::ERROR;
+		} else {
+			severity := SeverityKind::WARNING;
+		} endif;
+			base_Property := result;
+	};			
+	
+
+	if (self.isStereotypeApplied(self.getApplicableStereotype('Terminology::ValueSetConstraint'))) then
+	{	
+		var vsv : term::ValueSetVersion := self.getValue(self.getAppliedStereotype('Terminology::ValueSetConstraint'),'reference').oclAsType(term::ValueSetVersion);	
+		vsv.base_Enumeration.name;
+		var vsc := object term::ValueSetConstraint
+		{
+			reference := getTerminologyEnumeration(vsv.base_Enumeration); 
+			identifier := self.getValue(self.getAppliedStereotype('Terminology::ValueSetConstraint'),'identifier').oclAsType(String);
+			version := self.getValue(self.getAppliedStereotype('Terminology::ValueSetConstraint'),'version').oclAsType(String);
+			base_Property := result;
+		};	
+	} else{
+		self.redefinedProperty->map mapRedefinedProperty(result);	
+	} endif;
+
+	result.ownedComment += self.redefinedProperty.ownedComment;	
+}
+
+mapping uml::Stereotype::fff()
+{
+	log(self.repr());
+}
+mapping uml::Property::mapRedefinedProperty(inout p : uml::Property){
+
+//	log('Checking '+self.qualifiedName);
+	
+//	var vsvaa : term::ValueSetVersion := self.getValue(self.getAppliedStereotype('Terminology::ValueSetConstraint'),'reference').oclAsType(term::ValueSetVersion);
+//	log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'+vsvaa.repr());
+	
+	if (self.isStereotypeApplied(self.getAppliedStereotype('Terminology::ValueSetConstraint'))) then
+	{
+		log(' Found a constraint to use' +self.qualifiedName);	
+		var vsv : term::ValueSetVersion := self.getValue(self.getAppliedStereotype('Terminology::ValueSetConstraint'),'reference').oclAsType(term::ValueSetVersion);	
+		vsv.base_Enumeration.name;
+		var vsc := object term::ValueSetConstraint
+		{
+			reference := getTerminologyEnumeration(vsv.base_Enumeration); 
+			identifier := self.getValue(self.getAppliedStereotype('Terminology::ValueSetConstraint'),'identifier').oclAsType(String);
+			version := self.getValue(self.getAppliedStereotype('Terminology::ValueSetConstraint'),'version').oclAsType(String);
+			base_Property := p;
+		};	
+	} else {
+		//log(' continuing ' +self.qualifiedName);	
+
+		self.redefinedProperty->map mapRedefinedProperty(p);
+	} endif;
+
+}
+
+mapping uml::Association::mapAssociations(inout package : uml::Package,inout source : uml::Class)
+{
+	var targetClass := 	self.endType[uml::Class]->first();
+	var cdaClass : uml::Class :=  package.createOwnedClass(targetClass.name,false); 
+	var cdaType : String = '';
+	cdaType  :=  targetClass.ownedComment->getMappings('cdatype=')->asSequence()->first();
+	cdaClass.general  := getCDAClass(cdaType);
+	source.getAssociations()->map mapAssociations(package,source);
+}
+
+
+
+mapping uml::Profile::applyProfiles(inout package : uml::Package) {
+	package.applyProfile(self);
+}
+
+
+
+mapping uml::Class::transferComments(inout theClass : uml::Class) 
+{
+	log("tc" + self.qualifiedName);
+	self.ownedComment->map displayComment();
+	theClass.ownedComment += self.ownedComment;
+	//theClass.ownedComment->map displayComment();
+	self.general[uml::Class]->map transferComments(theClass);
+}
+
+mapping inout uml::Package::addEnumeration(in enumeration : uml::Enumeration)
+{
+	self.ownedType += enumeration;
+}
+query getCDAClass(in cdaClassName: String ) : uml::Class
+{   
+	if (cdaBaseModel.objectsOfType(uml::Package).ownedType[uml::Class]->select(cdaClassName=name)->asSequence()->first().oclIsTypeOf(uml::Class)) then {
+		return cdaBaseModel.objectsOfType(uml::Package).ownedType[uml::Class]->select(cdaClassName=name)->asSequence()->first();
+	} endif;
+	
+	return cdaBaseModel.objectsOfType(uml::PackageImport).importedPackage.ownedType[uml::Class]->select(cdaClassName=name)->asSequence()->first();
+	
+}
+
+query getDatatype(in dataTypeName: String ) : uml::Class
+{   
+	return datatypesModel.objectsOfType(uml::Package).ownedType[uml::Class]->select(dataTypeName=name)->asSequence()->first();
+}
+
+query getTerminologyEnumeration(in termEnumeration: uml::Enumeration ) : term::ValueSetVersion 
+{
+log(termEnumeration.qualifiedName);
+	var vsv : term::ValueSetVersion;
+	var theEnumeration :  uml::Enumeration;
+	if (not cdaTermModel.objectsOfType(uml::Package).ownedType[uml::Enumeration]->select(termEnumeration.name=name)->asSequence()->isEmpty()) then {
+		theEnumeration  := cdaTermModel.objectsOfType(uml::Package).ownedType[uml::Enumeration]->select(termEnumeration.name=name)->asSequence()->first();
+		if (termEnumeration.isStereotypeApplied(termEnumeration.getApplicableStereotype('Terminology::ValueSetVersion'))) then 
+		{		
+		  return termEnumeration.getAppliedStereotype('Terminology::ValueSetConstraint').oclAsType(term::ValueSetVersion);
+		} endif;		
+	}  else 
+	{
+		theEnumeration := termEnumeration.deepclone().oclAsType(uml::Enumeration);
+		cdaTermModel.rootObjects()[uml::Package]->map addEnumeration(theEnumeration);
+		if (termEnumeration.isStereotypeApplied(termEnumeration.getApplicableStereotype('Terminology::ValueSetVersion'))) then 
+		{				
+			vsv := object term::ValueSetVersion {
+						
+			};		
+			vsv.identifier := termEnumeration.getValue(termEnumeration.getAppliedStereotype('Terminology::ValueSetVersion'),'identifier').oclAsType(String);
+			vsv.version := termEnumeration.getValue(termEnumeration.getAppliedStereotype('Terminology::ValueSetVersion'),'version').oclAsType(String);
+			vsv.fullName := termEnumeration.getValue(termEnumeration.getAppliedStereotype('Terminology::ValueSetVersion'),'fullName').oclAsType(String);
+			vsv.source := termEnumeration.getValue(termEnumeration.getAppliedStereotype('Terminology::ValueSetVersion'),'source').oclAsType(String);
+			vsv.url := termEnumeration.getValue(termEnumeration.getAppliedStereotype('Terminology::ValueSetVersion'),'url').oclAsType(String);
+			vsv.definition := termEnumeration.getValue(termEnumeration.getAppliedStereotype('Terminology::ValueSetVersion'),'definition').oclAsType(String);
+			vsv.effectiveDate := termEnumeration.getValue(termEnumeration.getAppliedStereotype('Terminology::ValueSetVersion'),'effectiveDate').oclAsType(String);
+			vsv.expirationDate := termEnumeration.getValue(termEnumeration.getAppliedStereotype('Terminology::ValueSetVersion'),'expirationDate').oclAsType(String);
+			vsv.releaseDate := termEnumeration.getValue(termEnumeration.getAppliedStereotype('Terminology::ValueSetVersion'),'releaseDate').oclAsType(String);
+			vsv.revisionDate := termEnumeration.getValue(termEnumeration.getAppliedStereotype('Terminology::ValueSetVersion'),'revisionDate').oclAsType(String);
+			vsv.status := termEnumeration.getValue(termEnumeration.getAppliedStereotype('Terminology::ValueSetVersion'),'status').oclAsType(term::StatusKind);
+			vsv.statusDate := termEnumeration.getValue(termEnumeration.getAppliedStereotype('Terminology::ValueSetVersion'),'statusDate').oclAsType(String);
+			vsv.type := termEnumeration.getValue(termEnumeration.getAppliedStereotype('Terminology::ValueSetVersion'),'type').oclAsType(term::ValueSetType);
+			vsv.binding := termEnumeration.getValue(termEnumeration.getAppliedStereotype('Terminology::ValueSetVersion'),'binding').oclAsType(term::BindingKind);
+			vsv.codeSystem := termEnumeration.getValue(termEnumeration.getAppliedStereotype('Terminology::ValueSetVersion'),'codeSystem').oclAsType(term::CodeSystemVersion);
+			vsv.base_Enumeration := theEnumeration;
+			
+			theEnumeration.applyStereotype(vsv.oclAsType(uml::Stereotype));
+			
+			return vsv;		
+		} endif;
+	} endif;
+	
+	return vsv;	
+}
+
+
+
+
+
+
+
+ 
+ 
+
