@@ -1,0 +1,801 @@
+import FHIMLibrary;
+import Strings;
+
+modeltype uml uses 'http://www.eclipse.org/uml2/3.0.0/UML';
+modeltype ecore "strict" uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+modeltype term uses 'http://www.openhealthtools.org/mdht/schemas/term/1';
+modeltype xmlprimitive uses 'http:///XMLPrimitiveTypes.ecore';
+modeltype modelpackage uses 'http://www.omg.org/spec/NIEM-UML/20120501/Model_Package_Description_Profile';
+modeltype niempimprofile uses 'http://www.omg.org/spec/NIEM-UML/20120501/NIEM_PIM_Profile';
+modeltype niemprofile uses 'http://www.omg.org/spec/NIEM-UML/20120501/NIEM_Common_Profile';
+
+
+transformation fhim2niem(in fhimModel : uml,in niemCoreModel : uml,  out niemModel : uml );
+
+property aStack : String = "";
+property mpdPackage : uml::Package = null; 
+property extensionPackage : uml::Package = null;
+property exchangePackage : uml::Package = null;
+property mpdUsage : uml::Usage = null;
+
+
+main() {
+
+	aStack := aStack + "ffff";
+	log('Start Transforming Federal Health Information Model (PIM) to National Information Exchange Model (PSM)');
+	
+	fhimModel.rootObjects()[uml::Package].ownedElement[uml::UseCase]-> map toNIEMDataModel();
+	
+	log('Done Transforming Federal Health Information Model (PIM) to National Information Exchange Model (PSM)');
+}
+
+mapping uml::UseCase::toNIEMDataModel() : uml::Model
+{
+	log ('Start Data Package Mapping');
+	result.name := "Data";		
+	result.packagedElement += 	self->map toNIEMExchangeModel();
+	log ('End Data Package Mapping');
+}
+
+mapping uml::UseCase::toNIEMExchangeModel() : uml::Model
+{
+	log ('Start Exchange Package Mapping');
+	result.name := self.name + "Exchange";
+	result.packagedElement += 	self->map toMPDModel();			
+	result.packagedElement += 	self->map toXMLschemas();
+	log ('End Exchange Package Mapping');
+}
+
+mapping uml::UseCase::toMPDModel() : uml::Package
+{
+	name := 'MPD Model';
+	 
+	var mpdComponent :  uml::Component := object uml::Component {
+		name := self.name.toLower() + 'iepd';
+	};
+	
+	var modelPackageDescription : modelpackage::ModelPackageDescription := object modelpackage::ModelPackageDescription
+	{
+		base_Component := mpdComponent;
+		mpdBaseURI := 'http://gov.us.fhim/' +self.namespace.name;
+		descriptionText:=self.name;
+		mpdClassCode:=ModelPackageDescriptionClassCode::iepd; 
+		mpdVersionID:='1.0';
+		SecurityMarkingText:='Unclassified/public';
+		ASName:=self.name+'IEPD'; 
+		PurposeText:= self.name;
+		KeywordText:= self.name;		
+		DomainText := self.name;
+	};
+	 
+	packagedElement += mpdComponent;
+	
+	mpdUsage   := object uml::Usage {
+	name := 'ExchangeUsage';
+		client := result;	
+	};
+
+	
+	result.clientDependency += mpdUsage;
+	
+	
+	mpdPackage := result;
+
+}
+ 
+mapping uml::UseCase::toXMLschemas() : uml::Package
+{
+	name := 'XMLschemas';
+
+ 	var extensionPackage : uml::Package := object uml::Package
+ 	{
+ 		name := 'extension';
+ 	};
+
+	extensionPackage.packagedElement += self->map toExtensionModel();
+	
+	extensionPackage.packagedElement[uml::Package]->map mapUsage();
+	
+	packagedElement += extensionPackage;
+	
+	
+   var exchangePackage : uml::Package := object uml::Package  {
+		name := 'exchange';
+	};
+	
+	exchangePackage.packagedElement += self->map toExchangeModel();
+	
+	exchangePackage.packagedElement[uml::Package]->map mapUsage();
+	
+	packagedElement += exchangePackage;
+
+
+} 
+
+mapping inout uml::Package::mapUsage() {
+	self.packagedElement +=  object uml::Usage {
+	name := self.name + 'Usage';
+	client := self;		
+	supplier := self.owner.oclAsType(uml::NamedElement);
+	}; 
+}
+
+mapping uml::UseCase::toExtensionModel() : uml::Package
+{
+	name := 'Extension Model';
+	
+
+	
+	extensionPackage := result;
+	
+	ownedType += self.getRelationships()[uml::Usage].supplier[uml::Class]->map mapExchange();
+	var informationModel : niempimprofile::InformationModel := object niempimprofile::InformationModel
+	{
+		base_Package := result;
+		isConformant:=true;
+		version:='1'; 
+		targetNamespace:='http://gov.us.fhim/' +self.namespace.name;
+		defaultPurpose:=DefaultPurposeCode::extension;
+		 
+	} ;
+	
+
+	
+}
+
+mapping inout uml::Component::addElementImport( p : uml::Package)
+{
+	self.elementImport += object uml::ElementImport
+	{
+		importedElement := p;
+	};
+}
+
+
+mapping uml::UseCase::toExchangeModel() : uml::Package
+{
+	name := 'ExchangeModel';
+	
+	mpdPackage.packagedElement[uml::Component]->map addElementImport(result);
+	
+
+	
+	var informationModel : niempimprofile::InformationModel := object niempimprofile::InformationModel
+	{
+		base_Package := result;
+		isConformant:=true;
+		version:='1'; 
+		targetNamespace:='http://gov.us.fhim/' +self.namespace.name;
+		defaultPurpose:=DefaultPurposeCode::exchange;
+		 
+	} ;
+	 
+	
+	var exchanges : uml::Class := object uml::Class{
+		name := 'Exchanges';
+		
+	};
+	
+	exchanges.ownedAttribute  += extensionPackage.ownedType[uml::Class]->select(name.endsWith('Exchange'))->map toExchanges();
+
+	ownedType += exchanges;
+	
+	//exchangeUsage.supplier := result; 	
+	
+	mpdUsage.supplier := result;
+	
+}
+
+mapping uml::Class::toExchanges() : uml::Property
+{
+	name := self.name.toLowerCase();
+	type := self;
+}
+ 
+ //
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//// Start of original transformation
+
+
+
+mapping uml::Profile::applyProfile(inout umlpackage : uml::Package){
+	var profileApplication: uml::ProfileApplication=new uml::ProfileApplication();
+	profileApplication.applyingPackage:=umlpackage;
+	profileApplication.appliedProfile:=self;
+	umlpackage.profileApplication += profileApplication;
+} 
+
+
+
+//mapping uml::Component::mapModelPackageDescription() : niemmdp::ModelPackageDescription {
+//	result.descriptionText := 'THIS IS A DESCRIPTION';
+//	result.base_Component := self;
+//}
+
+
+mapping xmlprimitive::string() 
+{
+	
+}
+
+mapping uml::UseCase::toNIEMIEPD() : uml::Package
+{
+	log ('Start IEPD Package Mapping');
+
+	name := self.name + 'IEPD';
+	var component : uml::Component := object uml::Component {
+		elementImport := object uml::ElementImport {
+			name := self.name + 'IEPD';
+			importedElement := niemModel.objectsOfType(uml::Package)->select(name.endsWith("Exchange"))->asSequence()->first().oclAsType(uml::Package);
+		};
+	};
+		
+	//component->map mapModelPackageDescription();
+		
+	result.packagedElement += component;
+
+	log ('End IEPD Package Mapping');
+}
+mapping uml::UseCase::toNIEMPIM() : uml::Package
+{
+
+	log ('Start PIM Package Mapping');
+
+	// Create the 3 niem iepd packages 
+	extensionPackage := object uml::Package  {
+		name := self.name + 'Extension';
+	}	;
+	
+   var exchangePackage : uml::Package := object uml::Package  {
+		name := self.name + 'Exchange';
+	};
+	
+	var subsetPackage : uml::Package := object uml::Package  {
+		name := self.name + 'NIEMCoreSubset';
+	};
+	
+
+	result.packagedElement += extensionPackage;
+
+	result.packagedElement += exchangePackage;
+
+	result.packagedElement += subsetPackage;
+	
+	exchangePackage.packagedElement += object uml::Usage { 
+		client := exchangePackage; 
+		supplier := extensionPackage;
+  };
+
+	extensionPackage.packagedElement += object uml::Usage { 
+		client := extensionPackage; 
+		supplier := subsetPackage;
+  };
+  
+  //	self.getRelationships()[uml::Usage]->map mapExtensions();
+  	
+  	self.getRelationships()[uml::Usage]->map mapExchange(exchangePackage);
+		
+	result.name := self.name+"PIM";
+	
+	extensionPackage.ownedType[uml::Class]->map mapExtensions2(); 
+
+	log ('End PIM Package Mapping');
+	
+}
+
+
+	
+mapping uml::Class::cloneClass(inout subsetPackage : uml::Package) : uml::Class
+{
+	init{
+		result := self.deepclone().oclAsType(uml::Class);
+		result.generalization.destroy();
+	}
+
+	var neimClass : uml::Class := getNiemClass(self.ownedComment->getMappings('niema=')->asSequence()->first());
+	
+	var neimSubsetClass : uml::Class := neimClass.deepclone().oclAsType(uml::Class);
+	
+	result.generalization += object Generalization {
+		general := neimSubsetClass;	
+	};
+	
+	var realization : uml::Realization := object uml::Realization {
+		client := neimSubsetClass;
+		supplier := neimClass;
+	};
+	
+	subsetPackage.packagedElement += realization;
+	
+	realization.applyStereotype(realization.getApplicableStereotype('NIEM_Common_Profile::References'));
+
+	neimSubsetClass.clientDependency += realization;
+
+	neimSubsetClass.generalization.destroy();
+	
+	
+	subsetPackage.ownedType +=  neimSubsetClass;
+	
+	
+//	self.attribute->select(type != null and isStereotypeApplied(getApplicableStereotype('CDA::ValueSetConstraint'))) ->map mapCodeConstraint(result,codesPackage);
+}
+
+mapping uml::Generalization::toRealizations() : uml::Realization 
+{
+
+	result.client += self.specific;
+	result.supplier += self.general;
+	
+}
+mapping uml::Property::mapCodeConstraint(inout cloneClass : uml::Class,inout codesPackage : uml::Package){
+
+	var termstereotype : uml::Stereotype := self.getAppliedStereotype('CDA::ValueSetConstraint');
+
+	var enumerationSource : uml::Enumeration := getTerminologyEnumeration(self.getValue(termstereotype,"reference").repr());		
+	
+	cloneClass.ownedAttribute->select(name=self.name)->asSequence()[uml::Property]->first().type := codesPackage.ownedType->select(name=enumerationSource.name)->asSequence()[uml::Type]->first();	
+}
+
+mapping uml::Class::mapEnumerations(inout codesPackage : uml::Package)
+{
+	codesPackage.ownedType += self.attribute->select(type != null and isStereotypeApplied(getApplicableStereotype('CDA::ValueSetConstraint'))) ->map mapTerminology();
+}
+
+mapping inout uml::Package::applyAppInfo()
+{
+	ownedComment += object uml::Comment{
+		body := '<xsd:appinfo><i:ConformantIndicator>true</i:ConformantIndicator></xsd:appinfo>';	
+	};	
+	
+	ownedComment->map applyAppInfo();
+}
+
+mapping inout uml::Comment::applyAppInfo()
+{
+	var xsdDocumentation : uml::Stereotype := getApplicableStereotype('XMLSchema::Documentation');
+	var xsdAppInfo : uml::Stereotype := getApplicableStereotype('XMLSchema::AppInfo');
+
+	applyStereotype(xsdDocumentation);
+	applyStereotype(xsdAppInfo);
+
+}
+
+mapping uml::Class::mapExtensionProperties() 
+{
+
+
+	extensionPackage.ownedType +=  self.ownedAttribute->map mapExtensionProperties();
+}
+
+
+
+
+mapping uml::Property::mapExtensionProperties() : uml::Class when {self.type <> null and self.type.oclIsTypeOf(uml::Class)}
+{
+init{
+	self.type.deepclone();
+}
+	
+}
+
+mapping uml::Class::mapGeneralizations() : uml::Generalization
+{
+	result.general := self;
+}  
+
+// map generalizations to niem core
+mapping  inout uml::Generalization::mapGeneralizations() 
+{
+	log('Maping FHIM generalizations');	
+
+	var niemClassName : String = '';
+	
+	niemClassName :=  self.owner.ownedComment->getMappings('niem=')->asSequence()->first();
+
+log('Maping FHIM generalizations' + niemClassName);	
+
+	if (not niemClassName.oclIsInvalid()) then
+	{
+		self.general := getNiemClass(niemClassName);	
+	} endif;
+	
+
+}
+
+mapping uml::Classifier::mapGenerals(inout extensionClass : uml::Class)
+{
+	var attributePosition : Integer := 1;
+	var attribute : uml::Property;
+	while (attributePosition <= self.attribute->size()) {
+		attribute := self.attribute->asSequence()->at(attributePosition);
+		if (extensionClass.ownedAttribute->select(name=attribute.name)->isEmpty()) then
+		{
+			extensionClass.ownedAttribute += attribute;
+		} endif;
+		attributePosition  := attributePosition  + 1;	
+	};
+}
+
+mapping  uml::Usage::mapExtensions() {
+//	self.supplier[uml::Class]->map mapExtensions();
+}
+	
+mapping  uml::Usage::mapExchange(inout exchangePackage : uml::Package) {
+	exchangePackage.ownedType += self.supplier[uml::Class]->map mapExchange();
+}
+	
+mapping uml::Class::mapExchange() : uml::Class
+{
+	name := self.name+'Exchange';
+	
+	log('Map Exchange Class ' + self.name);
+	result.ownedAttribute += self.ownedAttribute->map mapExchange() ;
+	
+} 	
+	
+mapping uml::Property::mapExchange() : uml::Property
+{
+
+	name := self.name;
+	
+	if (self.type.oclIsTypeOf(uml::Class)) then {
+		var extensionClass := self.type.oclAsType(uml::Class)->map mapExtensions();
+		//extensionPackage.ownedType  += extensionClass;
+		type := extensionClass->asSequence()->first();
+	} endif;
+
+}	
+
+mapping  uml::Class::mapExtensionsa(inout extensionClass : uml::Class) {
+	extensionClass.ownedAttribute += object uml::Property {
+		type := self;
+		lower := 1;
+		upper := -1;
+		name  := self.name.toLower();
+	};
+	
+}
+
+mapping uml::Class::aa() : uml::Property
+{
+	result.lower
+}
+
+mapping uml::Comment::mapComments() : uml::Comment
+{
+	result.body := self.body;
+}
+mapping uml::Class::mapExtensions() : uml::Class
+{
+	
+	log('Map Extension Class ' + self.name);
+
+
+	name := self.name;
+	
+	result.ownedComment += self.allParents().ownedComment->map mapComments();
+	result.ownedComment += self.ownedComment->map mapComments();
+
+	result.ownedAttribute+=self.getAllAttributes()->select(association = null)->map mapDatatypesExtensions();
+	result.ownedAttribute+=self.ownedAttribute->select(association != null)->map mapExtensions();
+
+	var niemClassName : String = '';
+	
+	niemClassName :=  self.ownedComment->getMappings('niem=')->asSequence()->first();
+	
+	if (not niemClassName.oclIsInvalid() and niemClassName.size() > 0) then
+	{
+		result.general += getNiemClass(niemClassName);	
+	} else{
+		niemClassName :=  self.parents().ownedComment->getMappings('niem=')->asSequence()->first();
+		if (not niemClassName.oclIsInvalid() and niemClassName.size() > 0) then
+		{
+			result.general += getNiemClass(niemClassName);	
+		} endif;
+	} endif;
+
+}
+
+mapping uml::Class::Extensionaaa() : uml::Class
+{
+		log('Maping FHIM generalizations');	
+
+	var niemClassName : String = '';
+	
+	niemClassName :=  self.owner.ownedComment->getMappings('niem=')->asSequence()->first();
+
+	if (not niemClassName.oclIsInvalid()) then
+	{
+	//	result := getNiemClass('ComplexObjectType');	
+	} else {
+		result := getNiemClass(niemClassName);	
+	} endif;
+}
+
+mapping uml::Property::display() 
+{
+	log('uuuuuuuuuuuuuuu'+self.repr());
+
+	
+	
+}
+mapping uml::Association::mapExtensions()
+{
+	
+}
+
+mapping uml::Property::mapCodeConstraintAA(inout cloneClass : uml::Class,inout codesPackage : uml::Package){
+
+	var termstereotype : uml::Stereotype := self.getAppliedStereotype('CDA::ValueSetConstraint');
+
+	var enumerationSource : uml::Enumeration := getTerminologyEnumeration(self.getValue(termstereotype,"reference").repr());		
+	
+	cloneClass.ownedAttribute->select(name=self.name)->asSequence()[uml::Property]->first().type := codesPackage.ownedType->select(name=enumerationSource.name)->asSequence()[uml::Type]->first();	
+}
+
+
+
+
+mapping uml::EnumerationLiteral::mapEnumerationLiteral() : uml::EnumerationLiteral {
+	
+	init {
+		result := self.clone().oclAsType(uml::EnumerationLiteral);
+	}
+	
+	result.ownedComment += object uml::Comment {
+			body := self.getStereotypeApplications()[term::ValueSetCode]->asSequence()->first().oclAsType(term::ValueSetCode).conceptName;
+		} ;
+}
+
+mapping term::ValueSetConstraint::mapEnumeration(inout p : uml::Property) : uml::Enumeration
+{
+init {
+//		result := self.reference.base_Enumeration.deepclone().oclAsType(uml::Enumeration);
+		
+		
+}
+
+result.name := self.name;
+
+		result.ownedLiteral += self.reference.base_Enumeration.ownedLiteral->map mapEnumerationLiteral();
+
+
+		result.ownedComment += object uml::Comment {
+			body := self.reference.fullName;
+		} ;
+		
+		p.type := result;
+		log(self.reference.base_Enumeration.qualifiedName);
+}
+
+
+mapping uml::Property::mapDatatypesExtensions() : uml::Property
+{
+	var niemDataType : String :=  self.type.ownedComment->getMappings('niemdatatype=')->asSequence()->first();
+	
+	if (not self.getStereotypeApplications()[term::ValueSetConstraint]->isEmpty()) then 	{
+		extensionPackage.ownedType += self.getStereotypeApplications()[term::ValueSetConstraint]->map mapEnumeration(result) ;		
+	} else {
+		if (not niemDataType.oclIsInvalid() and niemDataType.size() > 0 ) then {
+			result.type := getNiemDataType(niemDataType);
+		} else {
+			result.type := getNiemDataType('TextType');
+		} endif;
+	} endif;
+	
+	result.name := self.name;	
+}
+
+mapping  inout uml::Class::mapExtensions2() 
+{
+self.ownedAttribute->select(not type.qualifiedName.startsWith('niem'))->mapExtensions2();	 
+}
+
+mapping  inout uml::Property::mapExtensions2() 
+{
+	self.type := getExtension(self.type.name);
+}
+
+mapping  uml::Property::mapExtensions() : uml::Property when {self.lower > 0 and aStack.find(self.type.qualifiedName)=0}
+{
+	result.name := self.name;
+	if (aStack.find(self.type.qualifiedName)=0) then {
+		aStack := aStack + self.type.qualifiedName + '##';	
+	    var extensionClass : uml::Class := self.type.oclAsType(uml::Class)->map mapExtensions()->asSequence()->first();
+	    extensionPackage.ownedType += extensionClass;
+	    result.type := extensionClass;   	  
+	} 
+	else{
+	
+	extensionPackage.ownedType.resolve();
+	result.type :=  extensionPackage.ownedType->select(name = self.type.name)->asSequence()->first();
+//	self.type;
+
+	}
+	endif;
+
+}
+
+mapping uml::Class::displayElement() {
+}
+
+mapping inout uml::Class::mapTerminology(inout codesPackage : uml::Package, inout extensionPackage : uml::Package) {
+	
+	codesPackage.ownedType += self.ownedAttribute-> select(type != null and isStereotypeApplied(getApplicableStereotype('CDA::ValueSetConstraint'))) ->map mapTerminology();
+	
+	// Appying xsd after the add so the profile is available
+	codesPackage.ownedType[uml::Class]->map applyXSD(); 	
+}
+
+
+mapping inout uml::Class::mapNiemNaming() {
+	name := name +'Type';
+}
+
+mapping  uml::Class::mapConstraintsToExchange(in focalName : String ) : uml::Property when { self.name=focalName } {
+
+	init {
+		result := object uml::Property {
+			name := self.name;
+			type := self;
+		};	
+	}
+	
+	
+}
+
+mapping inout uml::Property::mapApplyXSDGlobalElement()  {
+
+	var xsdGlobalStereotype : uml::Stereotype := getApplicableStereotype('XMLSchema::GlobalElement');
+
+	applyStereotype(xsdGlobalStereotype);
+	
+}
+
+mapping in uml::Stereotype::logAppliedStereotypes(in statusApplied : String)
+{
+	log(self.qualifiedName + ' is ' + statusApplied);
+}
+
+
+mapping inout uml::Property::mapDatatype(in niemDataType : String )
+{	
+log(niemDataType);
+ 	self.type := getNiemDataType(niemDataType);
+log(self.type.repr()); 	
+}
+
+
+
+ 
+mapping uml::Property::mapTerminology() : uml::Enumeration 
+{	
+	init {
+		var termstereotype : uml::Stereotype := self.getAppliedStereotype('CDA::ValueSetConstraint');
+		var enumerationSource : uml::Enumeration := getTerminologyEnumeration(self.getValue(termstereotype,"reference").repr());		
+		result.name := enumerationSource.name;	
+		result := enumerationSource.deepclone().oclAsType(uml::Enumeration );		
+		result.general += getXSDType('token'); 	
+		//var termstereotype2 : uml::Stereotype := enumerationSource.getAppliedStereotype('Terminology::ValueSetVersion');
+	//	self.type := result;
+	}
+	
+	log ('Creating Enumeration from '+self.qualifiedName);
+}
+
+mapping  inout uml::Property::applyXSD() 
+{	
+	if (name = 'valueSetId') then
+	{
+		var xsdstereotype : uml::Stereotype := getApplicableStereotype('XMLSchema::Attribute');
+		applyStereotype(xsdstereotype);
+	
+	}endif;
+	 
+}
+
+
+mapping  inout uml::Class::applyXSD() 
+{
+	self.ownedAttribute[uml::Property] ->map applyXSD();
+}
+
+
+query getXSDType(in xsdTypeName : String): uml::DataType {	
+	var xsdPackage :=  niemCoreModel.rootObjects()[uml::Model]->getPackageImport('XSDDataTypes')->asSequence()->first(); 
+	var xsdType := xsdPackage.allSubobjects()[uml::DataType]->asSequence()->select(xsdTypeName=name)->first();	
+	return xsdType;
+}
+
+
+query getNiemPackage(in niemPackageName: String ) : uml::PackageableElement
+{   
+	return  niemCoreModel.rootObjects()[uml::Model].packagedElement->select(name=niemPackageName)->asSequence()->first();
+}
+
+	
+query getNiemClass(in niemClassName: String ) : uml::Class
+{   
+log('getNiemClass'+niemClassName);
+   return niemCoreModel.objectsOfType(uml::Class)->asSequence()->select(niemClassName=name)->first();
+}
+
+query getNiemDataType(in niemClassName: String ) : uml::Type
+{   
+	return niemCoreModel.objectsOfType(uml::Type)->asSequence()->select(name=niemClassName)->first();
+}
+
+mapping uml::Type::displayType()
+{
+	log ('what is the ffffnnname
+	      '+self.name);
+	log ('aadt      '+self.repr());
+}
+
+query getFHIMProperty(in fhimPropertyName: String ) : uml::Property
+{   
+   return fhimModel.objectsOfType(uml::Property)->asSequence()->select(fhimPropertyName=qualifiedName)->first();
+}
+
+
+//query getUmlProfile(in profileName: String ) : uml::Profile
+//{
+//	return niemProfileModel.objectsOfType(uml::Profile)->asSequence()->select(profileName=name)->first();
+//}
+
+
+
+query getTerminologyEnumeration(in termClassName: String ) : uml::Enumeration
+{
+	var vocabularyPackage :=  fhimModel.rootObjects()[uml::Package].getImportedPackages()->select(name='HITSP-C80')->asSequence()->first();  	 
+ 	var enumeration := vocabularyPackage.allSubobjects()[uml::Enumeration]->asSequence()->select(termClassName=qualifiedName)->first();
+	return enumeration;
+  
+}
+
+
+query getExtension(in extensionClassName: String ) : uml::Type
+{
+log('look for' + extensionClassName);
+
+	return  niemModel.objectsOfType(uml::Type)->select(name=extensionClassName)->asSequence()->first();
+}
+
+
+ 
+
