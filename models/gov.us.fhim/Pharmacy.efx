@@ -567,7 +567,7 @@
           </children>
           <children xmi:type="notation:BasicDecorationNode" xmi:id="_90behNNlEeGRnPi2MLPE0g" type="Stereotype"/>
           <children xmi:type="notation:BasicDecorationNode" xmi:id="_90behdNlEeGRnPi2MLPE0g" type="CommentBody"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_90a3cdNlEeGRnPi2MLPE0g" x="40259" y="23458" width="6638" height="4098"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_90a3cdNlEeGRnPi2MLPE0g" x="40259" y="23458" width="7590" height="3780"/>
         </children>
         <element xsi:nil="true"/>
         <edges xmi:type="umlnotation:UMLConnector" xmi:id="_reMjUNM_EeGRnPi2MLPE0g" element="_420A62FD03B64586FA270029" source="_mcTWwNM_EeGRnPi2MLPE0g" target="_reFOkNM_EeGRnPi2MLPE0g" fontName="Arial" fontHeight="10" lineColor="3342489" lineWidth="1" showStereotype="Text">
@@ -2603,21 +2603,30 @@
       <body>Please see the Orders domain for more details on the generic Order and Promise class properties</body>
     </ownedComment>
     <ownedComment xmi:id="_90aQYNNlEeGRnPi2MLPE0g">
-      <body>Important!  Much more detail is available on Medications in the Common Product package.  OrderablePharmacyItem and DispensedDrug both point to other constructs in that package.  Please see the Common Product package for more details.</body>
+      <body>Important!  Much more detail is available on Medications in the Common Product package (a separate package within the Common domain).   OrderablePharmacyItem and DispensedDrug both point to other constructs in that package.  Please see the Common Product package for more details.</body>
     </ownedComment>
     <packagedElement xmi:type="uml:Class" xmi:id="_yrve8FlfEeCyw5g2lQh-Ug" name="TelcomPatient">
+      <ownedComment xmi:id="_4WoP0CVREeO_iaEYDPvTaA" annotatedElement="_yrve8FlfEeCyw5g2lQh-Ug">
+        <body>This class contains patient information that is unique to the NCPDP Telecommunication standard.  This class is modeled as a separate sub-type of Patient in order to illustrate the differences between different standards.</body>
+      </ownedComment>
       <generalization xmi:id="_hrmvIJdiEeCiab3ndHzX4g">
         <general xmi:type="uml:Class" href="PersonDemographics.efx#_l0XegO_4Ed6OG-vjYTopTQ?FHIM/Person/HumanPatient?"/>
       </generalization>
       <ownedAttribute xmi:id="_0-LboFlfEeCyw5g2lQh-Ug" name="isPregnant" visibility="public">
+        <ownedComment xmi:id="_9WM9oCVQEeO_iaEYDPvTaA" annotatedElement="_0-LboFlfEeCyw5g2lQh-Ug">
+          <body>&quot;Code indicating the patient as pregnant or non-pregnant.&quot; - NCPDP Telecommunication (Field 335-2C, Data Dictionary 201104).</body>
+        </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_6sfCQFlfEeCyw5g2lQh-Ug" name="isSmoker" visibility="public">
+        <ownedComment xmi:id="_1Uz6ECVQEeO_iaEYDPvTaA" annotatedElement="_6sfCQFlfEeCyw5g2lQh-Ug">
+          <body>&quot;Code indicating the patient as a smoker or non-smoker.&quot; - NCPDP Telecommunication (Field 334-1C, Data Dictionary 201104).</body>
+        </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_oOfAcFlgEeCyw5g2lQh-Ug" name="residenceType" visibility="public">
         <ownedComment xmi:id="_t4KlwFlgEeCyw5g2lQh-Ug" annotatedElement="_oOfAcFlgEeCyw5g2lQh-Ug">
-          <body>N2</body>
+          <body>&quot;Code identifying the patient’s place of residence.&quot; - NCPDP Telecommunication (Field 384-4X, Data Dictionary 201104).  Possible values include: Home; Skilled Nursing Facility; Nursing Facility; Assisted Living Facility; Custodial Care Facility; Group Home; Inpatient Psychiatric Facility; Psychiatric Facility – Partial Hospitalization; Intermediate Care Facility/Mentally Retarded; Residential Substance Abuse Treatment Facility; Hospice; Psychiatric Residential Treatment Facility; Comprehensive Inpatient Rehabilitation Facility; Homeless Shelter; Correctional Institution.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
@@ -2635,9 +2644,7 @@
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B641886F630221?FHIM/Datatypes/PhysicalQuantity?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B6446E0D6303E4" name="dateTimeDispensed" visibility="public">
-        <eAnnotations xmi:id="_d_bxEEcPEeKfi9U1UyJHLg" source="http://www.eclipse.org/uml2/2.0.0/UML">
-          <details xmi:id="_d_bxEUcPEeKfi9U1UyJHLg" key="cc"/>
-        </eAnnotations>
+        <eAnnotations xmi:id="_d_bxEEcPEeKfi9U1UyJHLg" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <ownedComment xmi:id="_NYSYEuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6446E0D6303E4">
           <body>Indicates when the pharmaceutical/treatment left the control of the pharmacy.  This may be when the medication was picked up or mailed (outpatient), or delivered to a ward (inpatient).  Note that this differs from the &quot;fill date/time&quot; in that the fill date is when the pharmaceutical/treatment was removed from inventory (e.g., when the pharmacist filled a bottle with tablets from inventory); once filled, the medication may remain in the pharmacy awaiting pick-up.  Once delivered to the patient or another caregiver, the medication is then considered &quot;dispensed.&quot;&#xD;
 Dispense = &quot;to make up and distribute (medicine), esp. on prescription.&quot; - Random House Unabridged Dictionary.&#xD;
@@ -2657,7 +2664,9 @@ Dispense = &quot;to make up and distribute (medicine), esp. on prescription.&quo
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B6419901DD0065" name="daysSupply" visibility="public">
         <ownedComment xmi:id="_NbkVmeLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6419901DD0065">
-          <body>The length of time in days that the quantity dispensed will last if consumed at the rate prescribed.  For example if the patient is instructed to take 2 pills a day, 60 pills will last 30 days.</body>
+          <body>The length of time in days that the quantity dispensed will last if consumed at the rate prescribed.  For example if the patient is instructed to take 2 pills a day, 60 pills will last 30 days.&#xD;
+&quot;Estimated number of days the prescription will last.&quot; - NCPDP Telecommunication (Field 405-D5, Data Dictionary 201104).&#xD;
+</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Mf0qsfUxEdyqkvQ4FycnSQ" value="1"/>
@@ -2666,7 +2675,7 @@ Dispense = &quot;to make up and distribute (medicine), esp. on prescription.&quo
       <ownedAttribute xmi:id="_3X-dkNQXEeG6j-OawvA6JA" name="dispenseCategory" visibility="public">
         <ownedComment xmi:id="_PHBs0NQYEeG6j-OawvA6JA" annotatedElement="_3X-dkNQXEeG6j-OawvA6JA">
           <body>&quot;This is the type of dispensing event that occurred.&quot; - HL7 Version 2.8, RXA-26 and RXO-27.  Valid values (from HL7 Table 0484) include: Trial Quantity Balance; Compassionate Fill; New/Renew - Full Fill; New/Renew - Part Fill; Refill - Part Fill; Refill - Full Fill; Manufacturer Sample; Trial Quantity; Non-Prescription Fill.&#xD;
-Note that this overlaps somewhat with the NCPDP usage of the fillSequenceNumber.</body>
+&quot;Code indicating the quantity dispensed is a partial fill or the completion of a partial fill. Used only in situations where inventory shortages do not allow the full quantity to be dispensed.&quot; - NCPDP Telecommunication (Field 343-HD, Data Dictionary 201104).  Possible values include: Partial Fill; Completion of Partial Fill.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
@@ -2694,16 +2703,22 @@ Note that this overlaps somewhat with the NCPDP usage of the fillSequenceNumber.
       </ownedAttribute>
       <ownedAttribute xmi:id="_wbEHcF7eEeCcBvMgXNMeOQ" name="fillSequenceNumber" visibility="public">
         <ownedComment xmi:id="_Zwf_4BIbEeGplcxjJOwMxw" annotatedElement="_wbEHcF7eEeCcBvMgXNMeOQ">
-          <body>&quot;The code indicating whether the prescription is an original or a refill.&quot; Valid values are 0=original; 1-99=refills. - NCPDP Data Element 403-D3    |Telecom^Claim^4 3-D3^Fill Number|  |Script^SRC^030^7897^Fill Number|</body>
+          <body>&quot;This field starts with 1 the first time that medication/treatment is delivered/dispensed for this order.  Increments by one with each additional issuance.&quot; - HL7 Version 2.8, RXD-1.&#xD;
+&quot;The code indicating whether the prescription is an original or a refill.&quot; - NCPDP Telecommunication (Field 403-D3, Data Dictionary 201104).  Note that while the NCPDP Telecommunication structure treats this field as a code, it contains a number from 0-99, where zero is the original fill, and 1-99 are refills.</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_NWgcYDubEeCQ7Mi7IS1BrQ" name="id" visibility="public">
         <ownedComment xmi:id="_dxavoDubEeCQ7Mi7IS1BrQ" annotatedElement="_NWgcYDubEeCQ7Mi7IS1BrQ">
-          <body>The unique identifier for this dispense, also known as a &quot;Fill Id&quot;.&#xD;
-&quot;This field starts with 1 the first time that medication/treatment is delivered/dispensed for this order.  Increments by one with each additional issuance.&quot; - HL7 Version 2.8, RXD-1.</body>
+          <body>The unique identifier for this dispense, also known as a &quot;Fill Id&quot;.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_n_hlkCaxEeOyp-Ce3y08Wg" name="isCompound" visibility="public" isDerived="true">
+        <ownedComment xmi:id="_AuFKACayEeOyp-Ce3y08Wg" annotatedElement="_n_hlkCaxEeOyp-Ce3y08Wg">
+          <body>&quot;Code indicating whether or not the prescription is a compound.&quot; - NCPDP Telecommunication (Field 406-D6, Data Dictionary 201104).  Note that the NCPDP Telecommunication structure treats this as a code, but the values are essentially Yes (Compound), No (Not a compound), and Not Specified.  Note also that this property could be derived from the medication dispensed.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_L8abINONEeGputPQx0HXoA" name="needsHumanReview" visibility="public">
         <ownedComment xmi:id="_L8abIdONEeGputPQx0HXoA" annotatedElement="_L8abINONEeGputPQx0HXoA">
@@ -2713,15 +2728,25 @@ Note that this overlaps somewhat with the NCPDP usage of the fillSequenceNumber.
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_L8abItONEeGputPQx0HXoA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_L8abI9ONEeGputPQx0HXoA"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_Tln68Ca2EeOyp-Ce3y08Wg" name="productSelectionCode" visibility="public">
+        <ownedComment xmi:id="_W_OUACa2EeOyp-Ce3y08Wg" annotatedElement="_Tln68Ca2EeOyp-Ce3y08Wg">
+          <body>&quot;Code indicating whether or not the prescriber’s instructions regarding generic substitution were followed.&quot; - NCPDP Telecommunication (Field 408-D8, Data Dictionary 201104).  Possible values include: Substitution Not Allowed by Prescriber; Substitution Not Allowed-Brand Drug Mandated by Law; Substitution Allowed-Patient Requested Product Dispensed; Substitution Allowed-Pharmacist Selected Product Dispensed; Substitution Allowed-Generic Drug Not in Stock; Substitution Allowed-Brand Drug Dispensed as a Generic; Substitution Allowed-Generic Drug Not Available in Marketplace; Substitution Allowed By Prescriber but Plan Requests Brand; Override; No Product Selection Indicated.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+      </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B641991130035F" name="quantityDispensed" visibility="public">
         <ownedComment xmi:id="_NYJOK-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B641991130035F">
-          <body>The quanitity of the medication dispensed to this patient in fulfillment of a request.</body>
+          <body>The quanitity of the medication dispensed to this patient in fulfillment of a request.&#xD;
+&quot;Quantity dispensed expressed in metric decimal units.&quot; - NCPDP Telecommunication (Field 442-E7, Data Dictionary 201104).</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B641886F630221?FHIM/Datatypes/PhysicalQuantity?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_O_pXEUuTEdyGhN1DL5AQjA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_O_pXEEuTEdyGhN1DL5AQjA"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_La7GUGYVEeC_U5wVHbS9Yw" name="specialPackaging" visibility="public">
+        <ownedComment xmi:id="_ZypPICa8EeOyp-Ce3y08Wg" annotatedElement="_La7GUGYVEeC_U5wVHbS9Yw">
+          <body>&quot;Code indicating the type of dispensing dose.&quot; - NCPDP Telecommunication (Field 429-DT, Data Dictionary 201104).  Possible values include: Not Unit Dose; Manufacturer Unit Dose; Pharmacy Unit Dose; Pharmacy Unit Dose Patient Compliance Packaging; Pharmacy Multi-drug Patient Compliance Packaging; Remote Device Unit Dose; Remote Device Multi- drug Compliance; Manufacturer Unit of Use Package (not unit dose); Not Specified.</body>
+        </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_rlbiMNOLEeGputPQx0HXoA" name="totalDailyDose" visibility="public">
@@ -2744,6 +2769,9 @@ Note that this overlaps somewhat with the NCPDP usage of the fillSequenceNumber.
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zfFkwNKIEeGtfrdPU3R3yA"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_YUyHoGnZEeCyXraDASYTcQ" name="dispenseRecipient" visibility="public" type="_0KbgMGnWEeCyXraDASYTcQ" association="_YUsBAGnZEeCyXraDASYTcQ">
+        <ownedComment xmi:id="_0Mp5gCagEeOyp-Ce3y08Wg" annotatedElement="_YUyHoGnZEeCyXraDASYTcQ">
+          <body>Identifies the person who picked up (i.e., took custody of) the dispensed medication, if that person is someone other than the patient.</body>
+        </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_YU1K8WnZEeCyXraDASYTcQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YU1K8GnZEeCyXraDASYTcQ"/>
       </ownedAttribute>
@@ -2867,7 +2895,8 @@ Note that this overlaps somewhat with the NCPDP usage of the fillSequenceNumber.
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B64592C90801F1" name="orderModality" visibility="public">
         <ownedComment xmi:id="_NZVg8uLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64592C90801F1">
-          <body>This is the method the provider used to communicate to the user to enter (or take any other action) on the order.  Examples include: Written, Telephoned, Verbal, Electronically Entered, Policy, Service Correction, Duplicate, etc.</body>
+          <body>This is the method the provider used to communicate to the user to enter (or take any other action) on the order.  Examples include: Written, Telephoned, Verbal, Electronically Entered, Policy, Service Correction, Duplicate, etc.&#xD;
+&quot;Code indicating the origin of the prescription.&quot; - NCPDP Telecommunication (Field 419-DJ, Data Dictionary 201104).  Possible values include: Written; Telephone; Electronic; Facsimile; Pharmacy; Not Known.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
@@ -3027,6 +3056,9 @@ Note that this overlaps somewhat with the NCPDP usage of the fillSequenceNumber.
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_sera4GuWEeCZQ_Ui4wPHHw" name="salesTransactionId" visibility="public">
+        <ownedComment xmi:id="_uB1kICbvEeOyp-Ce3y08Wg" annotatedElement="_sera4GuWEeCZQ_Ui4wPHHw">
+          <body>&quot;A reference identifier assigned to the sale transaction as assigned by the merchant.&quot; - NCPDP Telecommunication (Field 681-ZF, Data Dictionary 201104).</body>
+        </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5vsbQfaOEeCbn6MPgQ_rxg" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_5vsbQPaOEeCbn6MPgQ_rxg"/>
@@ -3049,6 +3081,9 @@ Note that this overlaps somewhat with the NCPDP usage of the fillSequenceNumber.
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Na-rYPUxEdyqkvQ4FycnSQ" value="1"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_js9_wHpfEeCYy4DzyFpAzQ" name="couponRedemption" visibility="public" association="_js68cHpfEeCYy4DzyFpAzQ">
+        <ownedComment xmi:id="_qwGSYCPVEeOWt_Gp5Q0GJA" annotatedElement="_js9_wHpfEeCYy4DzyFpAzQ">
+          <body>Pointer to information about the patient's use of a manufacturers coupon to reduce the patient's out-of-pocket cost for the prescription.</body>
+        </ownedComment>
         <type xmi:type="uml:Class" href="EnrollEligCOB.efx#_B95dEHpfEeCYy4DzyFpAzQ?FHIM/EnrollEligCOB/CouponRedemption?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jtBDEHpfEeCYy4DzyFpAzQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_js9_wXpfEeCYy4DzyFpAzQ"/>
@@ -3175,7 +3210,8 @@ Indicates the form of the material making up a single dose (as opposed to how th
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B642703FB801D7" name="numberOfRefillsAuthorized" visibility="public">
         <ownedComment xmi:id="_NJGFg-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B642703FB801D7">
-          <body>&quot;Defines the number of times the requested dispense amount can be given to the patient, subject to local regulation.  Refers to outpatient only.&quot; - HL7 Version 2.8, RXO-13.</body>
+          <body>&quot;Defines the number of times the requested dispense amount can be given to the patient, subject to local regulation.  Refers to outpatient only.&quot; - HL7 Version 2.8, RXO-13.&#xD;
+&quot;Number of refills authorized by the prescriber.&quot; - NCPDP Telecommunication (Field 415-DF, Data Dictionary 201104).  Note that while the NCPDP Telecommunication structure treats this field as a code, it contains a number from 0-99, where zero means no refills authorized, and 1-98 are the number of refills authorized, and 99 means unlimited refills authorized.</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Hi3CMMuQEeGZENvAz6pEGw" value="1"/>
@@ -3388,7 +3424,7 @@ This property carries both the low (aka minimum), and high (aka maximum) amounts
       <ownedAttribute xmi:id="__MPY0Bd5EeC9Abp3tFVARg" name="professionalServiceCode" visibility="public">
         <ownedComment xmi:id="_PilYcCT1EeGLU77N-kQBww" annotatedElement="__MPY0Bd5EeC9Abp3tFVARg">
           <body>Categorizes the action taken by a pharmacist or prescriber in response to a conflict or the result of a pharmacist's professional service.&#xD;
-&quot;Action taken by a pharmacist or prescriber in response to a conflict or the result of a pharmacist's professional service.&quot; - NCPDP Telecommunication (Field 441-E6, Data Dictionary 201104)&#xD;
+&quot;Code identifying pharmacist intervention when a conflict code has been identified or service has been rendered.&quot; - NCPDP Telecommunication (Field 440-E5, Data Dictionary 201104).  Possible values include: Patient assessment; Coordination of care; Dosing evaluation/determination; Dosage evaluated; Formulary enforcement; Generic product selection; Prescriber consulted; Medication administration; Overriding benefit; Medication review; Previous patient tolerance; Patient education/instruction; Patient medication history; Patient monitoring; Patient consulted; Perform laboratory test; Pharmacist consulted other source; Recommend laboratory test; Self-care consultation; Literature search/review; Therapeutic product interchange; Other Acknowledgement; No intervention.&#xD;
 &quot;Action taken in response to a conflict.&quot; - NCPDP Script (Field 7882, Data Dictionary 201104)</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
@@ -3556,10 +3592,19 @@ This property carries both the low (aka minimum), and high (aka maximum) amounts
       </ownedEnd>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_0KbgMGnWEeCyXraDASYTcQ" name="DispenseRecipient">
+      <ownedComment xmi:id="_084ckCagEeOyp-Ce3y08Wg" annotatedElement="_0KbgMGnWEeCyXraDASYTcQ">
+        <body>Identifies the person who picked up (i.e., took custody of) the dispensed medication, if that person is someone other than the patient.</body>
+      </ownedComment>
       <ownedAttribute xmi:id="_W-nQ0GnXEeCyXraDASYTcQ" name="id" visibility="public">
+        <ownedComment xmi:id="_CUKmwCahEeOyp-Ce3y08Wg" annotatedElement="_W-nQ0GnXEeCyXraDASYTcQ">
+          <body>A unique identifier for the person who picked up the dispensed medication, typically a drivers license number.</body>
+        </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_AUH4EJXYEeCD7vwmJe8BlA" name="relationshipToPatient" visibility="public">
+        <ownedComment xmi:id="_K0RmoCahEeOyp-Ce3y08Wg" annotatedElement="_AUH4EJXYEeCD7vwmJe8BlA">
+          <body>Indicates how the person who picked up the medication is related to the intended recipient (i.e., the patient).</body>
+        </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_X_G8IJXXEeCD7vwmJe8BlA" name="asPerson" visibility="public" association="_X_D40JXXEeCD7vwmJe8BlA">
@@ -3883,4 +3928,16 @@ Substitution Allowed By Prescriber but Plan Requests Brand - Patient's Plan Requ
   <RIM:Supply xmi:id="_DfSXEJXZEeCD7vwmJe8BlA" base_Class="_pyJDcJXYEeCD7vwmJe8BlA"/>
   <RIM:Supply xmi:id="_FA81wNNJEeGRnPi2MLPE0g" base_Class="_420A62FD03B641B4BDD30213"/>
   <RIM:Supply xmi:id="_GrqrINNJEeGRnPi2MLPE0g" base_Class="_420A62FD03B64592AF50014B"/>
+  <Default:Documentation xmi:id="_qwPcUCPVEeOWt_Gp5Q0GJA" base_Comment="_qwGSYCPVEeOWt_Gp5Q0GJA"/>
+  <Default:Documentation xmi:id="_1U6AsCVQEeO_iaEYDPvTaA" base_Comment="_1Uz6ECVQEeO_iaEYDPvTaA"/>
+  <Default:Documentation xmi:id="_9WWHkCVQEeO_iaEYDPvTaA" base_Comment="_9WM9oCVQEeO_iaEYDPvTaA"/>
+  <Default:Documentation xmi:id="_4WxZwCVREeO_iaEYDPvTaA" base_Comment="_4WoP0CVREeO_iaEYDPvTaA"/>
+  <Default:Documentation xmi:id="_0M0RkCagEeOyp-Ce3y08Wg" base_Comment="_0Mp5gCagEeOyp-Ce3y08Wg"/>
+  <Default:Documentation xmi:id="_09BmgCagEeOyp-Ce3y08Wg" base_Comment="_084ckCagEeOyp-Ce3y08Wg"/>
+  <Default:Documentation xmi:id="_CUTwsCahEeOyp-Ce3y08Wg" base_Comment="_CUKmwCahEeOyp-Ce3y08Wg"/>
+  <Default:Documentation xmi:id="_K0awkCahEeOyp-Ce3y08Wg" base_Comment="_K0RmoCahEeOyp-Ce3y08Wg"/>
+  <Default:Documentation xmi:id="_AuKCgCayEeOyp-Ce3y08Wg" base_Comment="_AuFKACayEeOyp-Ce3y08Wg"/>
+  <Default:Documentation xmi:id="_W_SlcCa2EeOyp-Ce3y08Wg" base_Comment="_W_OUACa2EeOyp-Ce3y08Wg"/>
+  <Default:Documentation xmi:id="_Zy0OQCa8EeOyp-Ce3y08Wg" base_Comment="_ZypPICa8EeOyp-Ce3y08Wg"/>
+  <Default:Documentation xmi:id="_uB_VICbvEeOyp-Ce3y08Wg" base_Comment="_uB1kICbvEeOyp-Ce3y08Wg"/>
 </xmi:XMI>
