@@ -128,6 +128,264 @@
     <packageImport xmi:id="_ZLwkpZ1cEeKGRqm0H7Eu1A">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
     </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_lxfhAB2oEd-4VI-lpu-JjQ" name="AncillaryService">
+      <ownedComment xmi:id="_u9vZsBHCEeCBuOUrBnIXmQ" annotatedElement="_lxfhAB2oEd-4VI-lpu-JjQ">
+        <body>A facility or provider, other than the patient's physician, that provides healthcare services to patients. For example, a laboratory, or a radiologist who reads a radiograph for the patient's physician.</body>
+      </ownedComment>
+      <generalization xmi:id="_6-Vd0PjtEeCL4956HPvowQ">
+        <general xmi:type="uml:Class" href="Provider.efx#_420A62FD03B64242CAB30303?FHIM/Provider/ServiceDeliveryLocation?"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B64243082500AD" name="ServiceDepartment" visibility="private">
+      <eAnnotations xmi:id="_L-SfQOLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+      <ownedComment xmi:id="_L-IuTuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64243082500AD">
+        <body>An organizational unit defined by the type of service that it provides to patients.  Examples include Surgery, Dentistry, Mental Health.  This is equivalent to File 49 in Vista.</body>
+      </ownedComment>
+      <generalization xmi:id="_bDiYEB19Ed-4VI-lpu-JjQ">
+        <general xmi:type="uml:Class" href="Provider.efx#_420A62FD03B6418AA15801A9?FHIM/Provider/Organization?"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_6chccCQuEdy5q9ASLdZxEA" name="MedicalSpecialty" visibility="private">
+      <eAnnotations xmi:id="_rsBl8CaGEdyiJKb4ZqIfnw" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+      <ownedComment xmi:id="_BcQcEBHGEeCBuOUrBnIXmQ" annotatedElement="_6chccCQuEdy5q9ASLdZxEA">
+        <body>&quot;A branch of medicine or surgery in which a physician specializes; the field or practice of a specialist.&quot; - The American Heritage Stedman's Medical Dictionary.  This class is equivalent to File 723 in Vista.</body>
+      </ownedComment>
+      <generalization xmi:id="_-rwMsB2IEd-4VI-lpu-JjQ">
+        <general xmi:type="uml:Class" href="Provider.efx#_420A62FD03B6418AA15801A9?FHIM/Provider/Organization?"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B64553860202C7" name="Division">
+      <eAnnotations xmi:id="_MA0O4-LiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+      <ownedComment xmi:id="_JAVG8BHFEeCBuOUrBnIXmQ" annotatedElement="_420A62FD03B64553860202C7">
+        <body>Division: &quot;A part of a government, business, country, etc, that has been made into a unit for administrative, political, or other reasons.&quot; - Collins English Dictionary. The part of the organization responsible for the actions taken in the provision of healthcare services to the patient.  This class is primarily used for the tracking of financial and workload information.  This class is equivalent to File 40.8 in Vista.</body>
+      </ownedComment>
+      <generalization xmi:id="_dI5iEB19Ed-4VI-lpu-JjQ">
+        <general xmi:type="uml:Class" href="Provider.efx#_420A62FD03B6418AA15801A9?FHIM/Provider/Organization?"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_VtZUIMK5EeCnJaPxQitB6A" name="Bed">
+      <ownedAttribute xmi:id="_Z1o74MK5EeCnJaPxQitB6A" name="id" visibility="public">
+        <type xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_atNdEMK5EeCnJaPxQitB6A" name="serialNbr" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_cfPbYMK5EeCnJaPxQitB6A" name="manufacturer" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_d6TEIMK5EeCnJaPxQitB6A" name="software" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B6455385C00085" name="RoomLocation" visibility="private">
+      <eAnnotations xmi:id="_MA0O3-LiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+      <ownedComment xmi:id="_D1DoMCQmEdy5q9ASLdZxEA" annotatedElement="_420A62FD03B6455385C00085">
+        <body>Identifies a room in which services may be provided to a patient.  This is equivalent to file 405.4 in VistA.</body>
+      </ownedComment>
+      <generalization xmi:id="_gjhDQB2HEd-4VI-lpu-JjQ">
+        <general xmi:type="uml:Class" href="Provider.efx#_Q4Q-QB16Ed-4VI-lpu-JjQ?FHIM/Provider/Location?"/>
+      </generalization>
+      <ownedAttribute xmi:id="_A-Z64B2AEd-4VI-lpu-JjQ" name="description" visibility="public">
+        <ownedComment xmi:id="_zJLOoBHeEeCBuOUrBnIXmQ" annotatedElement="_A-Z64B2AEd-4VI-lpu-JjQ">
+          <body>A description or comment concerning the room in which services may be provided to a patient.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_A-Z64R2AEd-4VI-lpu-JjQ" name="isInService" visibility="public">
+        <ownedComment xmi:id="_4F8qoBHeEeCBuOUrBnIXmQ" annotatedElement="_A-Z64R2AEd-4VI-lpu-JjQ">
+          <body>Indicates whether the room is in a condition to accomodate a patient.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B64242CCAC02AF" name="BedLocation" visibility="private">
+      <eAnnotations xmi:id="_L-IuS-LiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+      <ownedComment xmi:id="_opYDMBHDEeCBuOUrBnIXmQ" annotatedElement="_420A62FD03B64242CCAC02AF">
+        <body>Identifies a bed at which services may be provided to a patient.  This is equivalent to file 405.4 in VistA.</body>
+      </ownedComment>
+      <generalization xmi:id="_RD2QQB2HEd-4VI-lpu-JjQ">
+        <general xmi:type="uml:Class" href="Provider.efx#_Q4Q-QB16Ed-4VI-lpu-JjQ?FHIM/Provider/Location?"/>
+      </generalization>
+      <ownedAttribute xmi:id="_krnasB1_Ed-4VI-lpu-JjQ" name="description" visibility="public">
+        <ownedComment xmi:id="_2jq-0PGNEd-ZlYn0p4HjQw" annotatedElement="_krnasB1_Ed-4VI-lpu-JjQ">
+          <body>A description or comment concerning the bed at which services may be provided to a patient.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_nd1DoB1_Ed-4VI-lpu-JjQ" name="isInService" visibility="public">
+        <ownedComment xmi:id="_SyVM8PGOEd-ZlYn0p4HjQw" annotatedElement="_nd1DoB1_Ed-4VI-lpu-JjQ">
+          <body>Indicates whether the bed is in a condition and location to accomodate a patient.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B6431F30820249" name="Ward" visibility="private">
+      <eAnnotations xmi:id="_L_n8C-LiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+      <ownedComment xmi:id="_L_n8BeLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6431F30820249">
+        <body>&quot;1. A room in a hospital usually holding six or more patients.  2. A division in a hospital for the care of a particular group of patients&quot;  The American Heritage Stedman's Medical Dictionary.  This is equivalent to File 42 in Vista.</body>
+      </ownedComment>
+      <generalization xmi:id="_WKVB4B2HEd-4VI-lpu-JjQ">
+        <general xmi:type="uml:Class" href="Provider.efx#_420A62FD03B64242CAB30303?FHIM/Provider/ServiceDeliveryLocation?"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_LCE3cHwpEdybWNIzS8Vktw" name="VisitLocation" visibility="private">
+      <eAnnotations xmi:id="_LCE3cXwpEdybWNIzS8Vktw" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+      <ownedComment xmi:id="_LCE3cnwpEdybWNIzS8Vktw" annotatedElement="_LCE3cHwpEdybWNIzS8Vktw">
+        <body>A location at which an outpatient visit can take place.  This is equivalent to File 9999999.06 in Vista.</body>
+      </ownedComment>
+      <generalization xmi:id="_qZ-MMB2hEd-4VI-lpu-JjQ">
+        <general xmi:type="uml:Class" href="Provider.efx#_420A62FD03B64242CAB30303?FHIM/Provider/ServiceDeliveryLocation?"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_WvSkMJBfEeCMBO4kb261_A" name="LongTermCareFacility">
+      <generalization xmi:id="_elqDgJBfEeCMBO4kb261_A">
+        <general xmi:type="uml:Class" href="Provider.efx#_420A62FD03B64242CAB30303?FHIM/Provider/ServiceDeliveryLocation?"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B645784009029B" name="Institution">
+      <eAnnotations xmi:id="_MB3Xt-LiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+      <ownedComment xmi:id="_iYfpEBHFEeCBuOUrBnIXmQ" annotatedElement="_420A62FD03B645784009029B">
+        <body>&quot;An established or organised society or corporation; an establishment, especially of a public character, or affecting a community; ... also, a building or the buildings occupied or used by such organization&quot;.  This class is equivalent to File 4 in Vista.</body>
+      </ownedComment>
+      <generalization xmi:id="_ZwIsIB2hEd-4VI-lpu-JjQ">
+        <general xmi:type="uml:Class" href="Provider.efx#_420A62FD03B64242CAB30303?FHIM/Provider/ServiceDeliveryLocation?"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B6431F30AF01A4" name="HospitalLocation">
+      <eAnnotations xmi:id="_L_xtA-LiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+      <ownedComment xmi:id="_XGM1cBHFEeCBuOUrBnIXmQ" annotatedElement="_420A62FD03B6431F30AF01A4">
+        <body>&quot;A facility, often associated with a hospital or medical school, that is devoted to the diagnosis and care of outpatients.&quot;  The American Heritage Stedman's Medical Dictionary.  This class is equivalent to File 44 (Hospital Location) in Vista.</body>
+      </ownedComment>
+      <generalization xmi:id="_hEU00B2IEd-4VI-lpu-JjQ">
+        <general xmi:type="uml:Class" href="Provider.efx#_420A62FD03B64242CAB30303?FHIM/Provider/ServiceDeliveryLocation?"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B6423F4B4C001F" name="FacilityTreatingSpecialty">
+      <eAnnotations xmi:id="_L-bpNeLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+      <ownedComment xmi:id="_QzBnMBHFEeCBuOUrBnIXmQ" annotatedElement="_420A62FD03B6423F4B4C001F">
+        <body>Provides an indication of the medical specialty of the organization-location. Examples include Medicine, Surgery, Psychiatry, etc.  This class is equivalent to File 45.7 in Vista.</body>
+      </ownedComment>
+      <generalization xmi:id="_3TzkMB2HEd-4VI-lpu-JjQ">
+        <general xmi:type="uml:Class" href="Provider.efx#_420A62FD03B64242CAB30303?FHIM/Provider/ServiceDeliveryLocation?"/>
+      </generalization>
+      <ownedAttribute xmi:id="_420A62FD03B645871A220303" name="specialtyCode" visibility="public">
+        <ownedComment xmi:id="_v_cmYPGZEd-ZlYn0p4HjQw" annotatedElement="_420A62FD03B645871A220303">
+          <body>Identifies the specialty.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B6424309BD032B" name="linicStop">
+      <eAnnotations xmi:id="_L-SfRuLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+      <ownedComment xmi:id="__vlw0BHDEeCBuOUrBnIXmQ" annotatedElement="_420A62FD03B6424309BD032B">
+        <body>Identifies various nodes within a workflow process that is typically performed by a Medical Service.  Used to facilitate collection of workload and financial information.  This is equivalent to File 40.7 in Vista.</body>
+      </ownedComment>
+      <generalization xmi:id="_zNEbwJdXEeCiab3ndHzX4g">
+        <general xmi:type="uml:Class" href="Provider.efx#_420A62FD03B64242CAB30303?FHIM/Provider/ServiceDeliveryLocation?"/>
+      </generalization>
+      <ownedAttribute xmi:id="_420A62FD03B645E318550288" name="stopCode" visibility="public">
+        <ownedComment xmi:id="_jHMlcFWqEdybD6UtZ9jHUQ" annotatedElement="_420A62FD03B645E318550288">
+          <body>Identifies various nodes within a workflow process that is typically performed by the Service.  Used to facilitate collection of workload and financial information.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B6438D2B8700C8" name="EventCapture">
+      <eAnnotations xmi:id="_MnRK0-LiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+      <ownedComment xmi:id="_Mm0e5OLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6438D2B8700C8">
+        <body>Captures Procedures performed for the patient.  Could be an encounter or  actual service not clinically related i.e. CWT, compensatory thearapy  work that the patient was being paid for.        </body>
+      </ownedComment>
+      <ownedAttribute xmi:id="_420A62FD03B6438D2B0A0096" name="id" visibility="public">
+        <ownedComment xmi:id="_Mmqt6eLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6438D2B0A0096">
+          <body>Unique Identifier for the EventCapture for the Patient</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_KG9F4Cs-EdyLCs37ijh6Kg" name="checkoutTime" visibility="public">
+        <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_420A62FD03B6439D942502B0" name="eventCaptureCategory" visibility="public">
+        <ownedComment xmi:id="_Mm9o0uLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6439D942502B0">
+          <body>Identfies the procedure code type that determines whether this is a uses the CPT or the NAtional Procedure codeSet</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="___Do0Cs9EdyLCs37ijh6Kg" name="isInpatient" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_420A62FD03B643C681E5027D" name="nbrOfProcedures" visibility="public">
+        <ownedComment xmi:id="_MnHZ1eLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B643C681E5027D">
+          <body>Contains the number of times the designated procedure was performed on the patient.  </body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B641886F630086?FHIM/Datatypes/IntegerInterval?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_420A62FD03B6438D2B9C019B" name="procedureDate" visibility="public">
+        <ownedComment xmi:id="_Mm0e5-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6438D2B9C019B">
+          <body>Date/Time of procedure/service performed.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_420A62FD03B643C67CA900BE" name="procedureModifierText" visibility="public">
+        <ownedComment xmi:id="_MnHZ0uLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B643C67CA900BE">
+          <body>Captures Procedures performed for the patient.  Could be an encounter or  actual service not clinically related i.e. CWT, compensatory thearapy  work that the patient was being paid for. </body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_420A62FD03B643BD4AE7006B" name="procedureReason" visibility="public">
+        <ownedComment xmi:id="_Mm9o3-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B643BD4AE7006B">
+          <body>Contains the codeset for the Reason for the procedure.  </body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_420A62FD03B643D8F7DA02C0" name="clinic" visibility="public" type="_420A62FD03B6431F30AF01A4" isUnique="false" association="_420A62FD03B643D8F7D900B6">
+        <ownedComment xmi:id="_ModdqeLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B643D8F7DA02C0">
+          <body>&quot;A facility, often associated with a hospital or medical school, that is devoted to the diagnosis and care of outpatients.&quot;  The American Heritage Stedman's Medical Dictionary </body>
+        </ownedComment>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ModdrOLiEduGJrQyRGTO1A" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Moddq-LiEduGJrQyRGTO1A" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_tVRasSaREdyiJKb4ZqIfnw" name="dssId" visibility="public" type="_420A62FD03B6424309BD032B" association="_tVRasCaREdyiJKb4ZqIfnw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tVRasyaREdyiJKb4ZqIfnw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tVRasiaREdyiJKb4ZqIfnw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_grYPESQtEdy5q9ASLdZxEA" name="location" visibility="public" type="_420A62FD03B645784009029B" association="_grYPECQtEdy5q9ASLdZxEA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gr07ASQtEdy5q9ASLdZxEA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gr07ACQtEdy5q9ASLdZxEA" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_R5cNISaQEdyiJKb4ZqIfnw" name="orderingSection" visibility="public" type="_6chccCQuEdy5q9ASLdZxEA" association="_R5cNICaQEdyiJKb4ZqIfnw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_R5cNIyaQEdyiJKb4ZqIfnw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_R5cNIiaQEdyiJKb4ZqIfnw" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_nbBUsSaPEdyiJKb4ZqIfnw" name="procedure" visibility="public" association="_nbBUsCaPEdyiJKb4ZqIfnw">
+        <type xmi:type="uml:Class" href="Common.efx#_rr-pACaOEdyiJKb4ZqIfnw?FHIM/Common/Procedure?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nbKeoCaPEdyiJKb4ZqIfnw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nbBUsiaPEdyiJKb4ZqIfnw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_a6fjoSQvEdy5q9ASLdZxEA" name="section" visibility="public" type="_6chccCQuEdy5q9ASLdZxEA" association="_a6fjoCQvEdy5q9ASLdZxEA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a6otkCQvEdy5q9ASLdZxEA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a6fjoiQvEdy5q9ASLdZxEA" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_q3TQgSQtEdy5q9ASLdZxEA" name="service" visibility="public" type="_420A62FD03B64243082500AD" association="_q3TQgCQtEdy5q9ASLdZxEA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_q3TQgyQtEdy5q9ASLdZxEA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_q3TQgiQtEdy5q9ASLdZxEA" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_JiGJoPOeEeGMQvy2b7FvNg" name="dataEnterer" visibility="public" association="_JiDGUPOeEeGMQvy2b7FvNg">
+        <type xmi:type="uml:Class" href="Common.efx#_HxX44Aq7Ed-426xscrxYmQ?FHIM/Common/DataEnterer?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JiH-0POeEeGMQvy2b7FvNg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JiHXwPOeEeGMQvy2b7FvNg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_N-zlgPOeEeGMQvy2b7FvNg" name="primaryPerformer" visibility="public" association="_N-v7IPOeEeGMQvy2b7FvNg">
+        <type xmi:type="uml:Class" href="Common.efx#_7NSfgH_lEd-Ure_vzgD_TA?FHIM/Common/PrimaryPerformer?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N-0zofOeEeGMQvy2b7FvNg" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N-0zoPOeEeGMQvy2b7FvNg"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_olItUB2oEd-4VI-lpu-JjQ" name="Laboratory">
+      <ownedComment xmi:id="_tFSJEPGeEd-ZlYn0p4HjQw" annotatedElement="_olItUB2oEd-4VI-lpu-JjQ">
+        <body>A place equipped for experimental study in a science or for testing and analysis. This term is used for both the  location at which analyis is performed and the organization which performs such analysis.</body>
+      </ownedComment>
+      <generalization xmi:id="_seDfoB2oEd-4VI-lpu-JjQ" general="_lxfhAB2oEd-4VI-lpu-JjQ"/>
+    </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_hFfdUJaREeCWW4VssVugdQ" name="NationallyIdentifiedProvider">
       <ownedAttribute xmi:id="_P6ILQJaWEeCWW4VssVugdQ" name="effectiveDateRange" visibility="public">
         <ownedComment xmi:id="_P6ILQZaWEeCWW4VssVugdQ" annotatedElement="_P6ILQJaWEeCWW4VssVugdQ">
@@ -2426,6 +2684,58 @@ Possible values include (from HL7 V2 Table 9): No functional limitations; Ambula
     <packagedElement xmi:type="uml:Association" xmi:id="_31G8cEm8EeCuWJu-uLQQaQ" name="obsoleteAct_author" memberEnd="_3aJez0m8EeCuWJu-uLQQaQ _31G8cUm8EeCuWJu-uLQQaQ">
       <ownedEnd xmi:id="_31G8cUm8EeCuWJu-uLQQaQ" name="" visibility="private" type="_3aJewEm8EeCuWJu-uLQQaQ" association="_31G8cEm8EeCuWJu-uLQQaQ"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_a6fjoCQvEdy5q9ASLdZxEA" name="eventCapture_section" memberEnd="_a6fjoSQvEdy5q9ASLdZxEA _a6otkSQvEdy5q9ASLdZxEA">
+      <eAnnotations xmi:id="_iNjdACs_EdyLCs37ijh6Kg" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+      <ownedEnd xmi:id="_a6otkSQvEdy5q9ASLdZxEA" name="" visibility="private" type="_420A62FD03B6438D2B8700C8" association="_a6fjoCQvEdy5q9ASLdZxEA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a6otkyQvEdy5q9ASLdZxEA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a6otkiQvEdy5q9ASLdZxEA" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_q3TQgCQtEdy5q9ASLdZxEA" name="eventCapture_service" memberEnd="_q3TQgSQtEdy5q9ASLdZxEA _q3TQhCQtEdy5q9ASLdZxEA">
+      <eAnnotations xmi:id="_iNZsACs_EdyLCs37ijh6Kg" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+      <ownedEnd xmi:id="_q3TQhCQtEdy5q9ASLdZxEA" name="" visibility="private" type="_420A62FD03B6438D2B8700C8" association="_q3TQgCQtEdy5q9ASLdZxEA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_q3TQhiQtEdy5q9ASLdZxEA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_q3TQhSQtEdy5q9ASLdZxEA" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_grYPECQtEdy5q9ASLdZxEA" name="eventCapture_location" memberEnd="_grYPESQtEdy5q9ASLdZxEA _gr07AiQtEdy5q9ASLdZxEA">
+      <eAnnotations xmi:id="_iNQiECs_EdyLCs37ijh6Kg" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+      <ownedEnd xmi:id="_gr07AiQtEdy5q9ASLdZxEA" name="" visibility="private" type="_420A62FD03B6438D2B8700C8" association="_grYPECQtEdy5q9ASLdZxEA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gr07BCQtEdy5q9ASLdZxEA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gr07AyQtEdy5q9ASLdZxEA" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_nbBUsCaPEdyiJKb4ZqIfnw" name="eventCapture_procedure" memberEnd="_nbBUsSaPEdyiJKb4ZqIfnw _nbKeoSaPEdyiJKb4ZqIfnw">
+      <eAnnotations xmi:id="_iNtOACs_EdyLCs37ijh6Kg" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+      <ownedEnd xmi:id="_nbKeoSaPEdyiJKb4ZqIfnw" name="" visibility="private" type="_420A62FD03B6438D2B8700C8" association="_nbBUsCaPEdyiJKb4ZqIfnw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nbKeoyaPEdyiJKb4ZqIfnw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nbKeoiaPEdyiJKb4ZqIfnw" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N-v7IPOeEeGMQvy2b7FvNg" name="eventCapture_primaryPerformer" memberEnd="_N-zlgPOeEeGMQvy2b7FvNg _N-4eAPOeEeGMQvy2b7FvNg">
+      <ownedEnd xmi:id="_N-4eAPOeEeGMQvy2b7FvNg" name="" visibility="private" type="_420A62FD03B6438D2B8700C8" association="_N-v7IPOeEeGMQvy2b7FvNg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_R5cNICaQEdyiJKb4ZqIfnw" name="eventCapture_orderingSection" memberEnd="_R5cNISaQEdyiJKb4ZqIfnw _R5cNJCaQEdyiJKb4ZqIfnw">
+      <eAnnotations xmi:id="_iN2X8Cs_EdyLCs37ijh6Kg" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+      <ownedEnd xmi:id="_R5cNJCaQEdyiJKb4ZqIfnw" name="" visibility="private" type="_420A62FD03B6438D2B8700C8" association="_R5cNICaQEdyiJKb4ZqIfnw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_R5cNJiaQEdyiJKb4ZqIfnw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_R5cNJSaQEdyiJKb4ZqIfnw" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_420A62FD03B643D8F7D900B6" name="eventCapture_clinic" memberEnd="_420A62FD03B643D8F7DA02C0 _420A62FD03B643D8F7DA02C2">
+      <eAnnotations xmi:id="_iMg7MCs_EdyLCs37ijh6Kg" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+      <ownedEnd xmi:id="_420A62FD03B643D8F7DA02C2" name="" visibility="public" type="_420A62FD03B6438D2B8700C8" isUnique="false" association="_420A62FD03B643D8F7D900B6"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_tVRasCaREdyiJKb4ZqIfnw" name="eventCapture_dssId" memberEnd="_tVRasSaREdyiJKb4ZqIfnw _tVRatCaREdyiJKb4ZqIfnw">
+      <eAnnotations xmi:id="_iOTD4Cs_EdyLCs37ijh6Kg" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+      <ownedEnd xmi:id="_tVRatCaREdyiJKb4ZqIfnw" name="" visibility="private" type="_420A62FD03B6438D2B8700C8" association="_tVRasCaREdyiJKb4ZqIfnw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tVbLsSaREdyiJKb4ZqIfnw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tVbLsCaREdyiJKb4ZqIfnw" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_JiDGUPOeEeGMQvy2b7FvNg" name="eventCapture_dataEnterer" memberEnd="_JiGJoPOeEeGMQvy2b7FvNg _JiLCIPOeEeGMQvy2b7FvNg">
+      <ownedEnd xmi:id="_JiLCIPOeEeGMQvy2b7FvNg" name="" visibility="private" type="_420A62FD03B6438D2B8700C8" association="_JiDGUPOeEeGMQvy2b7FvNg"/>
+    </packagedElement>
     <profileApplication xmi:id="_JnNDsFKQEd6S47BJxSzcxQ">
       <eAnnotations xmi:id="_JnNDsVKQEd6S47BJxSzcxQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://HL7_PROFILES/RIM.profile.uml#_fvsB8AH4Ed6VH-9W1IVKXA"/>
@@ -2643,4 +2953,47 @@ Possible values include (from HL7 V2 Table 9): No functional limitations; Ambula
   <Default:Documentation xmi:id="_P6ILQpaWEeCWW4VssVugdQ" base_Comment="_P6ILQZaWEeCWW4VssVugdQ"/>
   <Default:Documentation xmi:id="_QSnOpZaUEeCWW4VssVugdQ" base_Comment="_QSnOopaUEeCWW4VssVugdQ"/>
   <RIM:Role xmi:id="_0r8fgJaREeCWW4VssVugdQ" base_Class="_hFfdUJaREeCWW4VssVugdQ"/>
+  <Default:Documentation xmi:id="_tFb6EPGeEd-ZlYn0p4HjQw" base_Comment="_tFSJEPGeEd-ZlYn0p4HjQw"/>
+  <RIM:Role xmi:id="_UNX0UPGeEd-ZlYn0p4HjQw" base_Class="_olItUB2oEd-4VI-lpu-JjQ"/>
+  <Default:Documentation xmi:id="_IYd5EiaDEdyiJKb4ZqIfnw" base_Comment="_Mmqt6eLiEduGJrQyRGTO1A"/>
+  <Default:Documentation xmi:id="_Mm0e5eLiEduGJrQyRGTO1A" base_Comment="_Mm0e5OLiEduGJrQyRGTO1A"/>
+  <Default:Documentation xmi:id="_Mm0e6OLiEduGJrQyRGTO1A" base_Comment="_Mm0e5-LiEduGJrQyRGTO1A"/>
+  <Default:Documentation xmi:id="_Mm9o0-LiEduGJrQyRGTO1A" base_Comment="_Mm9o0uLiEduGJrQyRGTO1A"/>
+  <Default:Documentation xmi:id="_MnHZ0-LiEduGJrQyRGTO1A" base_Comment="_MnHZ0uLiEduGJrQyRGTO1A"/>
+  <Default:Documentation xmi:id="_MnHZ0OLiEduGJrQyRGTO1A" base_Comment="_Mm9o3-LiEduGJrQyRGTO1A"/>
+  <Default:Documentation xmi:id="_MnHZ1uLiEduGJrQyRGTO1A" base_Comment="_MnHZ1eLiEduGJrQyRGTO1A"/>
+  <Default:Documentation xmi:id="_ModdquLiEduGJrQyRGTO1A" base_Comment="_ModdqeLiEduGJrQyRGTO1A"/>
+  <RIM:Procedure xmi:id="_sv_O4FLeEd6-4-oWZUjasQ" base_Class="_420A62FD03B6438D2B8700C8"/>
+  <Default:Documentation xmi:id="_jHMlcVWqEdybD6UtZ9jHUQ" base_Comment="_jHMlcFWqEdybD6UtZ9jHUQ"/>
+  <Default:Documentation xmi:id="__vlw0RHDEeCBuOUrBnIXmQ" base_Comment="__vlw0BHDEeCBuOUrBnIXmQ"/>
+  <RIM:Role xmi:id="_WS9IcFYQEd6WMdl70LfmUg" base_Class="_420A62FD03B6424309BD032B"/>
+  <Default:Documentation xmi:id="_QzKxIBHFEeCBuOUrBnIXmQ" base_Comment="_QzBnMBHFEeCBuOUrBnIXmQ"/>
+  <Default:Documentation xmi:id="_v_m-cPGZEd-ZlYn0p4HjQw" base_Comment="_v_cmYPGZEd-ZlYn0p4HjQw"/>
+  <RIM:Role xmi:id="_WS9IclYQEd6WMdl70LfmUg" base_Class="_420A62FD03B6423F4B4C001F"/>
+  <Default:Documentation xmi:id="_XGV_YBHFEeCBuOUrBnIXmQ" base_Comment="_XGM1cBHFEeCBuOUrBnIXmQ"/>
+  <RIM:Role xmi:id="_WS9Ic1YQEd6WMdl70LfmUg" base_Class="_420A62FD03B6431F30AF01A4"/>
+  <Default:Documentation xmi:id="_iYozABHFEeCBuOUrBnIXmQ" base_Comment="_iYfpEBHFEeCBuOUrBnIXmQ"/>
+  <RIM:Role xmi:id="_dsmhsB2hEd-4VI-lpu-JjQ" base_Class="_420A62FD03B645784009029B"/>
+  <RIM:Role xmi:id="_Z3wJ8JBfEeCMBO4kb261_A" base_Class="_WvSkMJBfEeCMBO4kb261_A"/>
+  <Default:Documentation xmi:id="_LCE3dHwpEdybWNIzS8Vktw" base_Comment="_LCE3cnwpEdybWNIzS8Vktw"/>
+  <RIM:Role xmi:id="_9BCw0BHMEeCBuOUrBnIXmQ" base_Class="_LCE3cHwpEdybWNIzS8Vktw"/>
+  <Default:Documentation xmi:id="_L_n8BuLiEduGJrQyRGTO1A" base_Comment="_L_n8BeLiEduGJrQyRGTO1A"/>
+  <RIM:Role xmi:id="_WS9IfFYQEd6WMdl70LfmUg" base_Class="_420A62FD03B6431F30820249"/>
+  <Default:Documentation xmi:id="_2j8roPGNEd-ZlYn0p4HjQw" base_Comment="_2jq-0PGNEd-ZlYn0p4HjQw"/>
+  <Default:Documentation xmi:id="_opYDMRHDEeCBuOUrBnIXmQ" base_Comment="_opYDMBHDEeCBuOUrBnIXmQ"/>
+  <Default:Documentation xmi:id="_SygMEPGOEd-ZlYn0p4HjQw" base_Comment="_SyVM8PGOEd-ZlYn0p4HjQw"/>
+  <RIM:Place xmi:id="_DrT34FYQEd6WMdl70LfmUg" base_Class="_420A62FD03B64242CCAC02AF"/>
+  <Default:Documentation xmi:id="_4GF0kBHeEeCBuOUrBnIXmQ" base_Comment="_4F8qoBHeEeCBuOUrBnIXmQ"/>
+  <Default:Documentation xmi:id="_D1NZMCQmEdy5q9ASLdZxEA" base_Comment="_D1DoMCQmEdy5q9ASLdZxEA"/>
+  <Default:Documentation xmi:id="_zJUYkBHeEeCBuOUrBnIXmQ" base_Comment="_zJLOoBHeEeCBuOUrBnIXmQ"/>
+  <RIM:Place xmi:id="_DrT34VYQEd6WMdl70LfmUg" base_Class="_420A62FD03B6455385C00085"/>
+  <RIM:ManufacturedMaterial xmi:id="_Yrxw0MK5EeCnJaPxQitB6A" base_Class="_VtZUIMK5EeCnJaPxQitB6A"/>
+  <Default:Documentation xmi:id="_JAoo8BHFEeCBuOUrBnIXmQ" base_Comment="_JAVG8BHFEeCBuOUrBnIXmQ"/>
+  <RIM:Organization xmi:id="_FgeeQB2IEd-4VI-lpu-JjQ" base_Class="_420A62FD03B64553860202C7"/>
+  <Default:Documentation xmi:id="_BcZmABHGEeCBuOUrBnIXmQ" base_Comment="_BcQcEBHGEeCBuOUrBnIXmQ"/>
+  <RIM:Organization xmi:id="_FgeeQx2IEd-4VI-lpu-JjQ" base_Class="_6chccCQuEdy5q9ASLdZxEA"/>
+  <Default:Documentation xmi:id="_L-IuT-LiEduGJrQyRGTO1A" base_Comment="_L-IuTuLiEduGJrQyRGTO1A"/>
+  <RIM:Organization xmi:id="_FgeeQR2IEd-4VI-lpu-JjQ" base_Class="_420A62FD03B64243082500AD"/>
+  <Default:Documentation xmi:id="_u95KsBHCEeCBuOUrBnIXmQ" base_Comment="_u9vZsBHCEeCBuOUrBnIXmQ"/>
+  <RIM:Role xmi:id="_SpGlMPGeEd-ZlYn0p4HjQw" base_Class="_lxfhAB2oEd-4VI-lpu-JjQ"/>
 </xmi:XMI>
