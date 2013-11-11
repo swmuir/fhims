@@ -3604,11 +3604,21 @@ This is the criteron by which the reference range is valid.  Different reference
       <ownedComment xmi:id="_M6yjxuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64230FFB100BB">
         <body>The organism identified as being present within a specimen sample.  &quot;Organism&quot; as used here is not the full spectrum of possible living things, but rather is limited to a member of the following: Bacteria, Fungus, Mycobacterium, Parasite, or Virus.</body>
       </ownedComment>
-      <ownedAttribute xmi:id="_420A62FD03B64586C1770123" name="organism" visibility="public">
+      <ownedAttribute xmi:id="_420A62FD03B64586C1770123" name="organismTaxon" visibility="public">
         <ownedComment xmi:id="_M6yjyeLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64586C1770123">
           <body>&lt;p>The organism identified. Since this unique identifier is a coded element, it contains both a code and a display name.&lt;/p>&lt;p>Could be Gram Positive Bacilli, &lt;/p></body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_CrZtENrOEd-fKY5dgJoxiA" name="strain" visibility="public">
+        <ownedComment xmi:id="_3shnQO6uEd-crcWiXVDZrQ" annotatedElement="_CrZtENrOEd-fKY5dgJoxiA">
+          <body>A more precise subdivision of the value in the organism taxon, for example, the H1N1 form of Influenza.  Because of the multitude of strains and the speed at which they are discovered, the organism taxon coding system may not provide such values.  This property is therefore modeled as a string, rather than a code, as one might expect.&#xD;
+&quot;Contains the specific strain of animal.  It can also be expanded to include strain of any living organism and is not restricted to animals.&quot; - HL7 Version 2.8, PID-37.&#xD;
+&quot;The body of descendants of a common ancestor, as a family or stock.  A variety, especially of microorganisms.&quot; - Dictionary.com</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_c3KwgWy2EeKS_YH7dVt7vw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_c3KwgGy2EeKS_YH7dVt7vw"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B642DD3EE4017D" name="PathologyResult">
@@ -5905,4 +5915,5 @@ It is recommended that LOINC be used.  Note that VA's VistA system uses the VA N
   <RIM:Procedure xmi:id="_fdAxgMdCEeCIprBOg4W6Sw" base_Class="_420A62FD03B64589A6CD0176"/>
   <RIM:Procedure xmi:id="_wF_r8FLfEd6-4-oWZUjasQ" base_Class="_420A62FD03B64266BCE800E0"/>
   <RIM:Procedure xmi:id="_wF_r8VLfEd6-4-oWZUjasQ" base_Class="_420A62FD03B64263CF150098"/>
+  <Default:Documentation xmi:id="_hncj0EF5EeOWAYGYxfkLag" base_Comment="_3shnQO6uEd-crcWiXVDZrQ"/>
 </xmi:XMI>

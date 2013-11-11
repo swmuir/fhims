@@ -104,6 +104,23 @@
     <packageImport xmi:id="_ZLwkpZ1cEeKGRqm0H7Eu1A">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
     </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_eSQaMBs1Ed--ZY2-pbJ-Pw" name="ProviderNormalSchedule">
+      <ownedComment xmi:id="_i6-BIEcfEeOPSKtS95Q8Uw" annotatedElement="_eSQaMBs1Ed--ZY2-pbJ-Pw">
+        <body>This class represents the provider's typical schedule while at the owning practice.  This class is intended to be used to populate a scheduling tool, allowing patients or office personnel to manage appointments with the provider.  Note that this class doesn't contain appointment information, rather, it contains necessary information to determine when the provider might be available, and the size of the time blocks in which the provider may be scheduled.  For example, Dr. Smith might be at Smith and Associates on Mondays, Wednesday, and Fridays from 8:00 to 6:00, where his appointments are blocked in 15 minute intervals, and he might be at Mercy Hospital on Tuesdays and Thursdays, where his time is managed in half-hour blocks.</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="_yOwIAEwZEeCc9OmUU3L5_A" name="scheuleCategory" visibility="public">
+        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_DxxS0EwaEeCc9OmUU3L5_A" name="timeBlockSize" visibility="public">
+        <ownedComment xmi:id="_w8dCEEcjEeOPSKtS95Q8Uw" annotatedElement="_DxxS0EwaEeCc9OmUU3L5_A">
+          <body>Identifies the length of time that comprises a &quot;block&quot; of time by which the provider might be scheduled.  For example, some doctors might be schedulable in 15 minute blocks while others might be schedulable in 30 minute blocks.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64239FAA800D9?FHIM/Datatypes/TimeQuantity?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_5IVO8EwZEeCc9OmUU3L5_A" name="validTimeRange" visibility="public">
+        <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B642387187004E?FHIM/Datatypes/TimeInterval?"/>
+      </ownedAttribute>
+    </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_lxfhAB2oEd-4VI-lpu-JjQ" name="AncillaryService">
       <ownedComment xmi:id="_u9vZsBHCEeCBuOUrBnIXmQ" annotatedElement="_lxfhAB2oEd-4VI-lpu-JjQ">
         <body>A facility or provider, other than the patient's physician, that provides healthcare services to patients. For example, a laboratory, or a radiologist who reads a radiograph for the patient's physician.</body>
@@ -2972,4 +2989,7 @@ Possible values include (from HL7 V2 Table 9): No functional limitations; Ambula
   <RIM:Organization xmi:id="_FgeeQR2IEd-4VI-lpu-JjQ" base_Class="_420A62FD03B64243082500AD"/>
   <Default:Documentation xmi:id="_u95KsBHCEeCBuOUrBnIXmQ" base_Comment="_u9vZsBHCEeCBuOUrBnIXmQ"/>
   <RIM:Role xmi:id="_SpGlMPGeEd-ZlYn0p4HjQw" base_Class="_lxfhAB2oEd-4VI-lpu-JjQ"/>
+  <RIM:Act xmi:id="_PMd0gEwaEeCc9OmUU3L5_A" base_Class="_eSQaMBs1Ed--ZY2-pbJ-Pw"/>
+  <Default:Documentation xmi:id="_jBm0oEcfEeOPSKtS95Q8Uw" base_Comment="_i6-BIEcfEeOPSKtS95Q8Uw"/>
+  <Default:Documentation xmi:id="_w8mMAEcjEeOPSKtS95Q8Uw" base_Comment="_w8dCEEcjEeOPSKtS95Q8Uw"/>
 </xmi:XMI>
