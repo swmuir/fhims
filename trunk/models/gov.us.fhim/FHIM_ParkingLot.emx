@@ -104,6 +104,32 @@
     <packageImport xmi:id="_ZLwkpZ1cEeKGRqm0H7Eu1A">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
     </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B641B9FA54023F" name="_PrnEffectivenessObservation">
+      <eAnnotations xmi:id="_NaYCweLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+      <ownedComment xmi:id="_NaORxOLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B641B9FA54023F">
+        <body>Indicates why the nurse determined to administer a medication that was ordered as &quot;Pro re nata&quot; (take as needed).  Includes a narrative of the efficacy of the PRN medication.  </body>
+      </ownedComment>
+      <ownedAttribute xmi:id="_420A62FD03B641B9FFFB02E7" name="effectiveness" visibility="public">
+        <ownedComment xmi:id="_NaORx-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B641B9FFFB02E7">
+          <body>Provides an narrative of the efficacy of a medication that was ordered as &quot;Pro re nata&quot; (take as needed).  </body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_420A62FD03B641B9FFC80316" name="reason" visibility="public">
+        <ownedComment xmi:id="_NaORyuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B641B9FFC80316">
+          <body>Indicates why the nurse determined to administer a medication that was ordered as &quot;Pro re nata&quot; (take as needed).  </body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_HNSu8XpaEd-44ra0dfiJCw" name="author" visibility="public" association="_HNSu8HpaEd-44ra0dfiJCw">
+        <ownedComment xmi:id="_KGz5wHpaEd-44ra0dfiJCw" annotatedElement="_HNSu8XpaEd-44ra0dfiJCw">
+          <body>Captures participation information (who, when, comments) of the person who performed the procedure.    &quot;A party that originates the Act and therefore has responsibility for the information given in the Act and ownership of this Act.  ... The author (or authors) has ownership of the Acts that they originate. This means that a party other than this author (or those authors) cannot cancel, abort, complete or modify the state or content of this Act in any other way. A party other than the author may only amend, reverse, override, replace, or follow up in other ways on this Act, whereby the Act remains intact and is linked to another Act authored by that other party.&quot; (HL7)</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Common.efx#_hXa7cAq6Ed-426xscrxYmQ?FHIM/Common/Author?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HNSu83paEd-44ra0dfiJCw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HNSu8npaEd-44ra0dfiJCw" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_eSQaMBs1Ed--ZY2-pbJ-Pw" name="ProviderNormalSchedule">
       <ownedComment xmi:id="_i6-BIEcfEeOPSKtS95Q8Uw" annotatedElement="_eSQaMBs1Ed--ZY2-pbJ-Pw">
         <body>This class represents the provider's typical schedule while at the owning practice.  This class is intended to be used to populate a scheduling tool, allowing patients or office personnel to manage appointments with the provider.  Note that this class doesn't contain appointment information, rather, it contains necessary information to determine when the provider might be available, and the size of the time blocks in which the provider may be scheduled.  For example, Dr. Smith might be at Smith and Associates on Mondays, Wednesday, and Fridays from 8:00 to 6:00, where his appointments are blocked in 15 minute intervals, and he might be at Mercy Hospital on Tuesdays and Thursdays, where his time is managed in half-hour blocks.</body>
@@ -2610,7 +2636,7 @@ We had modeled subgroupCode, the definition of which was &quot;A coded value spe
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_torQ8cJMEeK_EPjbFxtubQ" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_torQ8MJMEeK_EPjbFxtubQ"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_ctWREAQGEeKZsvne-rOhhA" name="ambulatoryStatus" visibility="public">
+      <ownedAttribute xmi:id="_ctWREAQGEeKZsvne-rOhhA" name="Person_ambulatoryStatus" visibility="public">
         <ownedComment xmi:id="_ctWREQQGEeKZsvne-rOhhA" annotatedElement="_ctWREAQGEeKZsvne-rOhhA">
           <body>&quot;The transient rate of mobility for the next of kin/associated party.&quot; - HL7 Version 2.8, NK1-18.&#xD;
 Possible values include (from HL7 V2 Table 9): No functional limitations; Ambulates with assistive device; Wheelchair/stretcher bound; Comatose - non-responsive; Disoriented; Vision impaired; Hearing impaired; Speech impaired; Non-English speaking; Functional level unknown; Oxygen therapy; Special equipment (tubes, IVs, catheters); Amputee; Mastectomy; Paraplegic; Pregnant.</body>
@@ -2728,6 +2754,9 @@ Possible values include (from HL7 V2 Table 9): No functional limitations; Ambula
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_JiDGUPOeEeGMQvy2b7FvNg" name="eventCapture_dataEnterer" memberEnd="_JiGJoPOeEeGMQvy2b7FvNg _JiLCIPOeEeGMQvy2b7FvNg">
       <ownedEnd xmi:id="_JiLCIPOeEeGMQvy2b7FvNg" name="" visibility="private" type="_420A62FD03B6438D2B8700C8" association="_JiDGUPOeEeGMQvy2b7FvNg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_HNSu8HpaEd-44ra0dfiJCw" name="prnEffectivenessObservation_author" memberEnd="_HNSu8XpaEd-44ra0dfiJCw _HNSu9HpaEd-44ra0dfiJCw">
+      <ownedEnd xmi:id="_HNSu9HpaEd-44ra0dfiJCw" name="" visibility="private" type="_420A62FD03B641B9FA54023F" association="_HNSu8HpaEd-44ra0dfiJCw"/>
     </packagedElement>
     <profileApplication xmi:id="_JnNDsFKQEd6S47BJxSzcxQ">
       <eAnnotations xmi:id="_JnNDsVKQEd6S47BJxSzcxQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
@@ -2992,4 +3021,9 @@ Possible values include (from HL7 V2 Table 9): No functional limitations; Ambula
   <RIM:Act xmi:id="_PMd0gEwaEeCc9OmUU3L5_A" base_Class="_eSQaMBs1Ed--ZY2-pbJ-Pw"/>
   <Default:Documentation xmi:id="_jBm0oEcfEeOPSKtS95Q8Uw" base_Comment="_i6-BIEcfEeOPSKtS95Q8Uw"/>
   <Default:Documentation xmi:id="_w8mMAEcjEeOPSKtS95Q8Uw" base_Comment="_w8dCEEcjEeOPSKtS95Q8Uw"/>
+  <Default:Documentation xmi:id="_KG9DsHpaEd-44ra0dfiJCw" base_Comment="_KGz5wHpaEd-44ra0dfiJCw"/>
+  <Default:Documentation xmi:id="_NaORxeLiEduGJrQyRGTO1A" base_Comment="_NaORxOLiEduGJrQyRGTO1A"/>
+  <Default:Documentation xmi:id="_NaORyOLiEduGJrQyRGTO1A" base_Comment="_NaORx-LiEduGJrQyRGTO1A"/>
+  <Default:Documentation xmi:id="_NaYCwOLiEduGJrQyRGTO1A" base_Comment="_NaORyuLiEduGJrQyRGTO1A"/>
+  <RIM:Observation xmi:id="_br8FCVwTEd6dhZ7uY2XV5Q" base_Class="_420A62FD03B641B9FA54023F"/>
 </xmi:XMI>
