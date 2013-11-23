@@ -3544,6 +3544,9 @@ This is the criteron by which the reference range is valid.  Different reference
       </ownedComment>
       <generalization xmi:id="_kOll4Mp-EeC9Pb3leltpqQ" general="_NglJMH8AEd-6KMbY3gBFOQ"/>
       <ownedAttribute xmi:id="_U48skEYxEeKzQP378IhUpA" name="description" visibility="public">
+        <ownedComment xmi:id="_eQwf0FSIEeOiZrLzx6PDyg" annotatedElement="_U48skEYxEeKzQP378IhUpA">
+          <body>An optional textual description of the microbial observation, which may include other items of note.</body>
+        </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B64230FFBF0068" name="organismObserved" visibility="public" type="_420A62FD03B64230FFB100BB" isUnique="false" association="_420A62FD03B64230FFBD0250">
@@ -3556,7 +3559,6 @@ This is the criteron by which the reference range is valid.  Different reference
       <ownedAttribute xmi:id="_420A62FD03B645870F1B03CA" name="organismQuantity" visibility="public">
         <ownedComment xmi:id="_M9UTVuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B645870F1B03CA">
           <body>The quantification the organism detected.  e.g.,  >100,000 CFU/ML.&#xD;
-&#xD;
 &quot;Contains the value observed by the observation producer....  It is not a required field because some systems will report only the Interpretation Codes.... This field may repeat for multipart, single answer results.&quot; - HL7 Version 2.8, OBX-5.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B641886F630221?FHIM/Datatypes/PhysicalQuantity?"/>
@@ -3583,7 +3585,6 @@ This is the criteron by which the reference range is valid.  Different reference
         <eAnnotations xmi:id="_M6yjweLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <ownedComment xmi:id="_M6oyy-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64586C0D901BC">
           <body>The minimum inhibitory dilution of the serum or body fluid, which inhibits reproduction of the patient's infecting organism.  Fluid is drawn from the patient who is undergoing antibiotic therapy.  Samples of the fluid is diluted between 1:2 and 1:16 and a sample of the infecting organism is cultured in each of the diluted samples.&#xD;
-&#xD;
 &quot;Contains the value observed by the observation producer....  It is not a required field because some systems will report only the Interpretation Codes.... This field may repeat for multipart, single answer results.&quot; - HL7 Version 2.8, OBX-5.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_N-BAoNYeEd62cosTNS-_lw?FHIM/Datatypes/Real?"/>
@@ -3714,7 +3715,10 @@ Pathology results generally take the form of documents, which in turn are compos
       </generalization>
       <ownedAttribute xmi:id="_420A62FD03B64239E125013B" name="intendedDuration" visibility="public">
         <ownedComment xmi:id="_NLU6IuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64239E125013B">
-          <body>The number of days over which one or more LabTestRequests are executed.  </body>
+          <body>Contains the time period over which one or more LabTestRequests are to be executed.&#xD;
+&quot;Contains the duration for which the service is requested.&quot; - HL7 Version 2.8, TQ1-6.&#xD;
+&quot;Indicates the earliest date/time at which the services should be started.&quot; - HL7 Version 2.8, TQ1-7.&#xD;
+&quot;Contain(s) the latest date/time that the service should be performed.  If it has not been performed by the specified time, it should not be performed at all.&quot; - HL7 Version 2.8, TQ1-8.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B642387187004E?FHIM/Datatypes/TimeInterval?"/>
       </ownedAttribute>
@@ -3742,9 +3746,7 @@ Pathology results generally take the form of documents, which in turn are compos
       <ownedAttribute xmi:id="_L1b3oMYfEeGsb4KXw2Babg" name="resultsReleaseCategory" visibility="public">
         <ownedComment xmi:id="_RaajIMYfEeGsb4KXw2Babg" annotatedElement="_L1b3oMYfEeGsb4KXw2Babg">
           <body>&quot;Contains instructions on whether to share the results with the patient, and if so how.&quot; - HL7 Version 2.8, OBX-26.&#xD;
-&#xD;
-Possible values include (from HL7 Table 909): Share To Be Determined: Category to be determined; Share Immediately: Share result with patient immediately; Share Within Normal Limits: Share result in reference/therapeutic range with patient immediately, Share result out of reference/therapeutic ranges with patient after 1 or more business day as agreed to by the systems in play; Share In 1 Day: Share result regardless of reference/therapeutic range after 1 or more business day as agreed to by the systems in play; Share in 1 Day Conditionally: Share result in reference ranges/therapeutic with patient after 1 or more business day as agreed to by the systems in play, Withhold result out of reference/therapeutic range until physician release; Share Withhold: Withhold result regardless of reference/therapeutic ranges.&#xD;
-</body>
+Possible values include (from HL7 Table 909): Share To Be Determined: Category to be determined; Share Immediately: Share result with patient immediately; Share Within Normal Limits: Share result in reference/therapeutic range with patient immediately, Share result out of reference/therapeutic ranges with patient after 1 or more business day as agreed to by the systems in play; Share In 1 Day: Share result regardless of reference/therapeutic range after 1 or more business day as agreed to by the systems in play; Share in 1 Day Conditionally: Share result in reference ranges/therapeutic with patient after 1 or more business day as agreed to by the systems in play, Withhold result out of reference/therapeutic range until physician release; Share Withhold: Withhold result regardless of reference/therapeutic ranges.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PcbMcMYfEeGsb4KXw2Babg" value="*"/>
@@ -3782,7 +3784,8 @@ It should be noted that while a Specimen Collection Promise logically occurs in 
       </ownedComment>
       <ownedAttribute xmi:id="_I8XO0MzDEeCMF_3VBil7Gw" name="collectionAmount" visibility="public">
         <ownedComment xmi:id="__Wm7UAlkEeGe4v7RnpTDUQ" annotatedElement="_I8XO0MzDEeCMF_3VBil7Gw">
-          <body>&quot;Specifies the volume or mass of the collected specimen.&quot; - HL7 Version 2.8, SPM-12.</body>
+          <body>&quot;Specifies the volume or mass of the collected specimen.&quot; - HL7 Version 2.8, SPM-12.&#xD;
+&quot;The volume of a specimen.&quot; - HL7 Version 2.8, OBR-9.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B641886F630221?FHIM/Datatypes/PhysicalQuantity?"/>
       </ownedAttribute>
@@ -3808,21 +3811,18 @@ It should be noted that while a Specimen Collection Promise logically occurs in 
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eu5pJuLjEdutr_MT9HkPyQ" value="1"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B64230FCD502CF" name="dateTime" visibility="public">
-        <eAnnotations xmi:id="_omXO0EhUEeKFm6BiMe_FyA" source="http://www.eclipse.org/uml2/2.0.0/UML">
-          <details xmi:id="_omXO0UhUEeKFm6BiMe_FyA" key="cc"/>
-        </eAnnotations>
+        <eAnnotations xmi:id="_omXO0EhUEeKFm6BiMe_FyA" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <ownedComment xmi:id="_M_2p_eLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64230FCD502CF">
           <body>&quot;The date and time when the specimen was acquired from the source.  The use of the Date Range data type allows for description of specimens collected over a period of time, for example, 24-hour urine collection.  For specimens collected at a point in time, only the first component (start date/time) will be populated.&quot; - HL7 Version 2.8, SPM-17.&#xD;
 &quot;The clinically relevant date/time of the observation.  In the case of observations taken directly from a subject, it is the actual date and time the observation was obtained.  In the case of a specimen associated study, this field shall represent the date and time the specimen was collected or obtained.&quot; - HL7 Version 2.8, OBR-7.&#xD;
 &quot;Contains the end date and time of a study or timed specimen collection.&quot; - HL7 Version 2.8, OBR-8.&#xD;
+&quot;This field is required in two circumstances.  The first is when the observations reported beneath one report header have different dates/times.  This could occur in the case of queries, timed test sequences, or clearance studies where one measurement within a battery may have a different time than another measurement....  The observation date-time is the physiologically relevant date-time or the closest approximation to that date-time.  In the case of tests performed on specimens, the relevant date-time is the specimen’s collection date-time.  In the case of observations taken directly on the patient (e.g., X-ray images, history and physical), the observation date-time is the date-time that the observation was performed.&quot; - HL7 Version 2.8, OBX-14.&#xD;
 Note that this property is a Time Interval.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B642387187004E?FHIM/Datatypes/TimeInterval?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_DHxwkP8sEd-Koe9flR96lw" name="sourceSite" visibility="public">
-        <eAnnotations xmi:id="_EnhzgEhVEeKFm6BiMe_FyA" source="http://www.eclipse.org/uml2/2.0.0/UML">
-          <details xmi:id="_EnhzgUhVEeKFm6BiMe_FyA" key="cc"/>
-        </eAnnotations>
+        <eAnnotations xmi:id="_EnhzgEhVEeKFm6BiMe_FyA" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <ownedComment xmi:id="_TLXI8P8sEd-Koe9flR96lw" annotatedElement="_DHxwkP8sEd-Koe9flR96lw">
           <body>&quot;Specifies the source from which the specimen was obtained.  For example, in the case where a liver biopsy is obtained via a percutaneous needle, the source would be Liver.  Any nationally recognized coding system might be used for this field including SNOMED; alternatively HL7 Table 0163 may be used.&quot; - HL7 Version 2.8, SPM-8.</body>
         </ownedComment>
@@ -4098,7 +4098,6 @@ For antibiotic sensitivity tests, provides an indication of the susceptibility o
       <ownedAttribute xmi:id="_kWOscX8aEd-6KMbY3gBFOQ" name="performer" visibility="public" association="_kWOscH8aEd-6KMbY3gBFOQ">
         <ownedComment xmi:id="_oxf94H8aEd-6KMbY3gBFOQ" annotatedElement="_kWOscX8aEd-6KMbY3gBFOQ">
           <body>&quot;This field identifies the performing technician.&quot; - HL7 Version 2.8, OBR-34&#xD;
-&#xD;
 &quot;This field contains the identifier of the individual directly responsible for the observation (i.e., the person who either performed or verified it).  In a nursing service, the observer is usually the professional who performed the observation (e.g., took the blood pressure).  In a laboratory, the observer is the technician who performed or verified the analysis....&quot; - HL7 Version 2.8, OBX.16</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Provider.efx#_420A62FD03B6418A6B760063?FHIM/Provider/IndividualProvider?"/>
@@ -5139,8 +5138,7 @@ Note that the classes in this package are not full-fledged FHIM classes, and may
       <generalization xmi:id="_PmqGUMqDEeC9Pb3leltpqQ" general="_NglJMH8AEd-6KMbY3gBFOQ"/>
       <ownedAttribute xmi:id="_N4v88GRPEeCsvJrE4KlOMA" name="reason" visibility="public">
         <ownedComment xmi:id="_2yqQIMYYEeGsb4KXw2Babg" annotatedElement="_N4v88GRPEeCsvJrE4KlOMA">
-          <body>Indicates the reason why a test was unable to be performed.  It may indicate that the quantity of specimen was insufficient, that the specimen was contaminated, that the specimen is inappropriate for the kind of test ordered, etc.  Note that this would appear in OBX-5 in an HL7 Version 2 message.&#xD;
-&#xD;
+          <body>Indicates the reason why a test was unable to be performed.  It may indicate that the quantity of specimen was insufficient, that the specimen was contaminated, that the specimen is inappropriate for the kind of test ordered, etc.&#xD;
 &quot;Contains the value observed by the observation producer....  It is not a required field because some systems will report only the Interpretation Codes.... This field may repeat for multipart, single answer results.&quot; - HL7 Version 2.8, OBX-5.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
@@ -5457,6 +5455,8 @@ For chemistry tests, provides an automated indication of the result, based upon 
           <body>&quot;The number of individual specimens of a particular type represented by this instance of a specimen. The use of this field is restricted to specimens upon which all specimen related attributes are identical. This field would only be valued if the [Specimen Role] attribute has the value [Group].&quot; - HL7 Version 2.8, SPM-13.</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xsOIEFSKEeOiZrLzx6PDyg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xsMS4FSKEeOiZrLzx6PDyg"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_yGwwsKqYEeGeRqsN3l6jrA" name="processCategory" visibility="private">
         <ownedComment xmi:id="_j9_nEEWXEeKmiJoj9rWMSg" annotatedElement="_yGwwsKqYEeGeRqsN3l6jrA">
@@ -5916,4 +5916,5 @@ It is recommended that LOINC be used.  Note that VA's VistA system uses the VA N
   <RIM:Procedure xmi:id="_wF_r8FLfEd6-4-oWZUjasQ" base_Class="_420A62FD03B64266BCE800E0"/>
   <RIM:Procedure xmi:id="_wF_r8VLfEd6-4-oWZUjasQ" base_Class="_420A62FD03B64263CF150098"/>
   <Default:Documentation xmi:id="_hncj0EF5EeOWAYGYxfkLag" base_Comment="_3shnQO6uEd-crcWiXVDZrQ"/>
+  <Default:Documentation xmi:id="_eQ97MFSIEeOiZrLzx6PDyg" base_Comment="_eQwf0FSIEeOiZrLzx6PDyg"/>
 </xmi:XMI>
