@@ -3571,6 +3571,9 @@ This is the criteron by which the reference range is valid.  Different reference
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NA5LyOLiEduGJrQyRGTO1A"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_d_E_0EuxEeKeIb_h9Qm4xw" name="microscopyFinding" visibility="public" type="_ZiYyEEuxEeKeIb_h9Qm4xw" association="_d--SIEuxEeKeIb_h9Qm4xw">
+        <ownedComment xmi:id="__Dm48GEMEeO0cp8yTpBD0g" annotatedElement="_d_E_0EuxEeKeIb_h9Qm4xw">
+          <body>Pointer to findings, other than the identification of microorganisms, arrived at by microscopic observation of a specimen.</body>
+        </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_d_cMMEuxEeKeIb_h9Qm4xw" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_d_blIEuxEeKeIb_h9Qm4xw"/>
       </ownedAttribute>
@@ -3607,13 +3610,13 @@ This is the criteron by which the reference range is valid.  Different reference
       </ownedComment>
       <ownedAttribute xmi:id="_420A62FD03B64586C1770123" name="organismTaxon" visibility="public">
         <ownedComment xmi:id="_M6yjyeLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64586C1770123">
-          <body>&lt;p>The organism identified. Since this unique identifier is a coded element, it contains both a code and a display name.&lt;/p>&lt;p>Could be Gram Positive Bacilli, &lt;/p></body>
+          <body>A categorization of the organism identified, i.e., the “type” of organism.  Note that this property is intended to include not only specific species of organisms (e.g., Staphylococcus aureus, SNOMED-CT code 3092008), but also more general classifications that might be found in laboratory results, such as Gram-positive Cocci (SNOMED-CT code 59206002).  Note also that since this property is a coded element, it contains both a code and a display name.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_CrZtENrOEd-fKY5dgJoxiA" name="strain" visibility="public">
         <ownedComment xmi:id="_3shnQO6uEd-crcWiXVDZrQ" annotatedElement="_CrZtENrOEd-fKY5dgJoxiA">
-          <body>A more precise subdivision of the value in the organism taxon, for example, the H1N1 form of Influenza.  Because of the multitude of strains and the speed at which they are discovered, the organism taxon coding system may not provide such values.  This property is therefore modeled as a string, rather than a code, as one might expect.&#xD;
+          <body>A more precise subdivision of the value in the organism taxon, for example, the H1N1 form of Influenza.  Because of the multitude of strains and the speed at which they are discovered, the organism taxon coding system may not provide such values.  This property is therefore modeled as a string, rather than a code, as one might otherwise expect.&#xD;
 &quot;Contains the specific strain of animal.  It can also be expanded to include strain of any living organism and is not restricted to animals.&quot; - HL7 Version 2.8, PID-37.&#xD;
 &quot;The body of descendants of a common ancestor, as a family or stock.  A variety, especially of microorganisms.&quot; - Dictionary.com</body>
         </ownedComment>
@@ -4014,6 +4017,9 @@ Note that the aerobic condition of the culture is included in this concept.  Not
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Dns6ULsgEeGZTLDYkoM_Sw"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_SBcAMFUUEeKxd7-Yw-gPSg" name="negationIndicator" visibility="public">
+        <ownedComment xmi:id="_YtX2gGEPEeO0cp8yTpBD0g" annotatedElement="_SBcAMFUUEeKxd7-Yw-gPSg">
+          <body>This is a placeholder to convey the concept that something looked for was not found.  It is possible that this property might be superfluous and may be removed.</body>
+        </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_a_LFILsiEeGZTLDYkoM_Sw" name="observationSite" visibility="public">
@@ -5458,7 +5464,7 @@ For chemistry tests, provides an automated indication of the result, based upon 
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xsOIEFSKEeOiZrLzx6PDyg" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xsMS4FSKEeOiZrLzx6PDyg"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_yGwwsKqYEeGeRqsN3l6jrA" name="processCategory" visibility="private">
+      <ownedAttribute xmi:id="_yGwwsKqYEeGeRqsN3l6jrA" name="processCategory" visibility="public">
         <ownedComment xmi:id="_j9_nEEWXEeKmiJoj9rWMSg" annotatedElement="_yGwwsKqYEeGeRqsN3l6jrA">
           <body>Identifies the process that was performed.  Possible values include: Aliquot, Pool, Spun, etc.</body>
         </ownedComment>
@@ -5657,9 +5663,12 @@ It is recommended that LOINC be used.  Note that VA's VistA system uses the VA N
       <ownedEnd xmi:id="_q15lkEVAEeKmiJoj9rWMSg" name="" visibility="private" type="_420A62FD03B64266BCE800E0" association="_q117MEVAEeKmiJoj9rWMSg"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_ZiYyEEuxEeKeIb_h9Qm4xw" name="MicroscopyFinding">
+      <ownedComment xmi:id="_7Y1QUGEMEeO0cp8yTpBD0g" annotatedElement="_ZiYyEEuxEeKeIb_h9Qm4xw">
+        <body>This class represents findings, other than the identification of microorganisms, arrived at by microscopic observation of a specimen.  This includes observations made of cells or tissue.  For example, the detection of red blood cells in a urine sample would be reported via this class.</body>
+      </ownedComment>
       <ownedAttribute xmi:id="_pwc8IEuxEeKeIb_h9Qm4xw" name="evaluationFinding" visibility="private">
         <ownedComment xmi:id="_Ap00IFUUEeKxd7-Yw-gPSg" annotatedElement="_pwc8IEuxEeKeIb_h9Qm4xw">
-          <body>&lt;p>Findings of cells that are not organisms by themselves.  For example, red blood cells detected in a urine sample.&lt;/p></body>
+          <body>Findings concerning cells which are not separate microorganisms arrived at by microscopic observation.  These finding might be of normal cells existing in an abnormal location such as the detection of red blood cells in a urine sample.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
@@ -5917,4 +5926,55 @@ It is recommended that LOINC be used.  Note that VA's VistA system uses the VA N
   <RIM:Procedure xmi:id="_wF_r8VLfEd6-4-oWZUjasQ" base_Class="_420A62FD03B64263CF150098"/>
   <Default:Documentation xmi:id="_hncj0EF5EeOWAYGYxfkLag" base_Comment="_3shnQO6uEd-crcWiXVDZrQ"/>
   <Default:Documentation xmi:id="_eQ97MFSIEeOiZrLzx6PDyg" base_Comment="_eQwf0FSIEeOiZrLzx6PDyg"/>
+  <Default:Documentation xmi:id="_7Y8lEGEMEeO0cp8yTpBD0g" base_Comment="_7Y1QUGEMEeO0cp8yTpBD0g"/>
+  <Default:Documentation xmi:id="__DxRAGEMEeO0cp8yTpBD0g" base_Comment="__Dm48GEMEeO0cp8yTpBD0g"/>
+  <Default:Documentation xmi:id="_YthngGEPEeO0cp8yTpBD0g" base_Comment="_YtX2gGEPEeO0cp8yTpBD0g"/>
+  <term:ValueSetConstraint xmi:id="_ZQ040GKDEeOpodBllmJOrw" base_Property="_9g-MQMHPEeCdLPayeDTWtA">
+    <reference href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_vHGJIWHhEeO5pLNjYnguHg"/>
+  </term:ValueSetConstraint>
+  <term:ValueSetConstraint xmi:id="_pjP-cGKDEeOpodBllmJOrw" base_Property="_s5NUVOOaEd-8X4J7aT-aiQ">
+    <reference href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_vJxpsGHhEeO5pLNjYnguHg"/>
+  </term:ValueSetConstraint>
+  <term:CodeSystemConstraint xmi:id="_yofEoGKDEeOpodBllmJOrw" base_Property="_s5OicOOaEd-8X4J7aT-aiQ">
+    <reference href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_XmWRkKRMEeGZ6ueex_Me0w"/>
+  </term:CodeSystemConstraint>
+  <term:CodeSystemConstraint xmi:id="_V1MC8GKEEeOpodBllmJOrw" base_Property="_ZO6GEMYSEeGsb4KXw2Babg">
+    <reference href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_W2h-MKRMEeGZ6ueex_Me0w"/>
+  </term:CodeSystemConstraint>
+  <term:ValueSetConstraint xmi:id="_hK8dcGKIEeOMSdIzGxp3aA" base_Property="_L1b3oMYfEeGsb4KXw2Babg">
+    <reference href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_3qykEWKHEeOpodBllmJOrw"/>
+  </term:ValueSetConstraint>
+  <term:ValueSetConstraint xmi:id="_BavlwGKJEeOMSdIzGxp3aA" base_Property="__FOZQGIUEeCHAoM78Lf2xA">
+    <reference href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_vGzOMWHhEeO5pLNjYnguHg"/>
+  </term:ValueSetConstraint>
+  <term:ValueSetConstraint xmi:id="_NsDmYGKJEeOMSdIzGxp3aA" base_Property="_jMUzIOtMEd-UtpmJtcZCZg">
+    <reference href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_vDOVwWHhEeO5pLNjYnguHg"/>
+  </term:ValueSetConstraint>
+  <term:ValueSetConstraint xmi:id="_SytXIGKJEeOMSdIzGxp3aA" base_Property="_f6wX0MqYEeG4_uv2Hb_AVQ">
+    <reference href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_vDOVwWHhEeO5pLNjYnguHg"/>
+  </term:ValueSetConstraint>
+  <term:ValueSetConstraint xmi:id="_ljmqUGKJEeOMSdIzGxp3aA" base_Property="_QmOvgHpLEeCYy4DzyFpAzQ">
+    <reference href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_hRohsM8DEeK9wcpwFaQlwA"/>
+  </term:ValueSetConstraint>
+  <term:ValueSetConstraint xmi:id="_q9mN0GKJEeOMSdIzGxp3aA" base_Property="__9-akLsfEeGZTLDYkoM_Sw">
+    <reference href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_vJU9wWHhEeO5pLNjYnguHg"/>
+  </term:ValueSetConstraint>
+  <term:ValueSetConstraint xmi:id="_xdebUGKJEeOMSdIzGxp3aA" base_Property="_dFc0wMHSEeCdLPayeDTWtA">
+    <reference href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_vHZEEWHhEeO5pLNjYnguHg"/>
+  </term:ValueSetConstraint>
+  <term:ValueSetConstraint xmi:id="_1NDrcGKJEeOMSdIzGxp3aA" base_Property="_jNUK4MHSEeCdLPayeDTWtA">
+    <reference href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_vEkZkWHhEeO5pLNjYnguHg"/>
+  </term:ValueSetConstraint>
+  <term:ValueSetConstraint xmi:id="_G9TZ8GKKEeOMSdIzGxp3aA" base_Property="_KYTcwn8YEd-6KMbY3gBFOQ">
+    <reference href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_vD0ysWHhEeO5pLNjYnguHg"/>
+  </term:ValueSetConstraint>
+  <term:ValueSetConstraint xmi:id="_KeKRkGKKEeOMSdIzGxp3aA" base_Property="_TlsUgP8sEd-Koe9flR96lw">
+    <reference href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_vGWiQWHhEeO5pLNjYnguHg"/>
+  </term:ValueSetConstraint>
+  <term:ValueSetConstraint xmi:id="_SC_8AGKKEeOMSdIzGxp3aA" base_Property="_dcSkoOcQEeGjtvsfy1ZDDQ">
+    <reference href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_vGWiQWHhEeO5pLNjYnguHg"/>
+  </term:ValueSetConstraint>
+  <term:ValueSetConstraint xmi:id="_YKdCcGKKEeOMSdIzGxp3aA" base_Property="_yGwwsKqYEeGeRqsN3l6jrA">
+    <reference href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_vFUAcWHhEeO5pLNjYnguHg"/>
+  </term:ValueSetConstraint>
 </xmi:XMI>
