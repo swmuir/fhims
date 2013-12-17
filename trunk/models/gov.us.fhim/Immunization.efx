@@ -4149,6 +4149,9 @@ Note that because almost all Contra-Indications are Health Concerns, for example
       </ownedEnd>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_YZzGcKOiEeKXo6wNsb0JpQ" name="ImmunizationHistoryEntry">
+      <ownedComment xmi:id="_N4-qEGdVEeOSXYfwme4xPQ" annotatedElement="_YZzGcKOiEeKXo6wNsb0JpQ">
+        <body>An entry in a Patient's &quot;Immunization List&quot;.  This class allows for entries in the list to be associated with the Immunization clinical events in the EHR, and potentially to be de-duplicated if multiple entries are received from different sources.</body>
+      </ownedComment>
       <ownedAttribute xmi:id="__bNeoKwfEeG4dfTp_XT2yg" name="informationSource" visibility="public">
         <ownedComment xmi:id="_pne-QLGeEeGkU9GcFSzOCA" annotatedElement="__bNeoKwfEeG4dfTp_XT2yg">
           <body>Identifies the source of the information about the vaccination.  Possible values include: Source unspecified; From other provider; From parent’s written record; From parent’s recall; From other registry; From birth certificate; From school record; From public agency.</body>
@@ -4156,10 +4159,16 @@ Note that because almost all Contra-Indications are Health Concerns, for example
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_j_c68KOiEeKXo6wNsb0JpQ" name="vaccinationEvent" visibility="public" type="_HhemkH87EeG8JPxVazzwbQ" association="_j_cT4KOiEeKXo6wNsb0JpQ">
+        <ownedComment xmi:id="_ZlD2sGdVEeOSXYfwme4xPQ" annotatedElement="_j_c68KOiEeKXo6wNsb0JpQ">
+          <body>Pointer to information about the administration of a Vaccine to a Patient.</body>
+        </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_j_eJEaOiEeKXo6wNsb0JpQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_j_eJEKOiEeKXo6wNsb0JpQ" value="1"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_Kg7TMMxUEeKpUOrR1CIFUA" name="vaccinationNonEvent" visibility="public" type="_yBtLQMxTEeKpUOrR1CIFUA" association="_Kg5eAMxUEeKpUOrR1CIFUA">
+        <ownedComment xmi:id="_1n4LwGdWEeOSXYfwme4xPQ" annotatedElement="_Kg7TMMxUEeKpUOrR1CIFUA">
+          <body>Pointer to information about the deliberate act(s) of not administering a scheduled (or otherwise expected) Vaccination to a Patient.</body>
+        </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Kg8hUcxUEeKpUOrR1CIFUA" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Kg8hUMxUEeKpUOrR1CIFUA"/>
       </ownedAttribute>
@@ -4168,7 +4177,13 @@ Note that because almost all Contra-Indications are Health Concerns, for example
       <ownedEnd xmi:id="_j_ewIKOiEeKXo6wNsb0JpQ" name="" visibility="private" type="_YZzGcKOiEeKXo6wNsb0JpQ" association="_j_cT4KOiEeKXo6wNsb0JpQ"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_yBtLQMxTEeKpUOrR1CIFUA" name="VaccinationNonEvent">
+      <ownedComment xmi:id="_AF1fwGdUEeOSXYfwme4xPQ" annotatedElement="_yBtLQMxTEeKpUOrR1CIFUA">
+        <body>This class represents an assertion that an administration of a vaccine to a patient did not occur.  Such information is useful when an administration would normally be expected, and this class serves to document that it indeed did not occur (as opposed to leaving the medical record blank).  This class may contain (via associations) information regarding why the administration did not occur such as documentation of an Exemption, a Contraindication, or of an established Immunity Status.</body>
+      </ownedComment>
       <ownedAttribute xmi:id="_K4GdEMxUEeKpUOrR1CIFUA" name="exemption" visibility="public" type="_3V9HYKwiEeG4dfTp_XT2yg" association="_K4FO8MxUEeKpUOrR1CIFUA">
+        <ownedComment xmi:id="_MEfiwGdXEeOSXYfwme4xPQ" annotatedElement="_K4GdEMxUEeKpUOrR1CIFUA">
+          <body>Pointer to a record of an assertion by the patient, the patient guardian, or someone else in authority that the medication should not be administered.</body>
+        </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_K4HrMcxUEeKpUOrR1CIFUA" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_K4HrMMxUEeKpUOrR1CIFUA"/>
       </ownedAttribute>
@@ -4177,8 +4192,17 @@ Note that because almost all Contra-Indications are Health Concerns, for example
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Lj4lAMxUEeKpUOrR1CIFUA"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_MriwoMxUEeKpUOrR1CIFUA" name="immunityStatus" visibility="public" type="_q3qd4MIfEeGx0M-CyAbegA" association="_MrhigMxUEeKpUOrR1CIFUA">
+        <ownedComment xmi:id="_GGbMYGdYEeOSXYfwme4xPQ" annotatedElement="_MriwoMxUEeKpUOrR1CIFUA">
+          <body>Pointer to information regarding the immunological state of the patient with respect to a given disease.</body>
+        </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_MrjXscxUEeKpUOrR1CIFUA" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MrjXsMxUEeKpUOrR1CIFUA"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_MC4gkGdUEeOSXYfwme4xPQ" name="dateRecorded" visibility="public">
+        <ownedComment xmi:id="_MC4gkWdUEeOSXYfwme4xPQ" annotatedElement="_MC4gkGdUEeOSXYfwme4xPQ">
+          <body>Represents the date upon which the Vaccination Event was deliberately not performed.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_Kg5eAMxUEeKpUOrR1CIFUA" name="immunizationHistoryEntry_vaccinationNonEvent" memberEnd="_Kg7TMMxUEeKpUOrR1CIFUA _Kg9vcMxUEeKpUOrR1CIFUA">
@@ -4357,4 +4381,11 @@ Note that because almost all Contra-Indications are Health Concerns, for example
   <RIM:Role xmi:id="_x1VWQIAWEeGE1-mzJa42fw" base_Class="_Off64H82EeG8JPxVazzwbQ"/>
   <RIM:RoleLink xmi:id="_VGVe0NKiEeGtfrdPU3R3yA" base_Class="_AyJDEKwlEeG4dfTp_XT2yg"/>
   <RIM:SubstanceAdministration xmi:id="_srr74IAWEeGE1-mzJa42fw" base_Class="_HhemkH87EeG8JPxVazzwbQ"/>
+  <Default:Documentation xmi:id="_AKU-MGdUEeOSXYfwme4xPQ" base_Comment="_AF1fwGdUEeOSXYfwme4xPQ"/>
+  <Default:Documentation xmi:id="_MC5usGdUEeOSXYfwme4xPQ" base_Comment="_MC4gkWdUEeOSXYfwme4xPQ"/>
+  <Default:Documentation xmi:id="_N5IbEGdVEeOSXYfwme4xPQ" base_Comment="_N4-qEGdVEeOSXYfwme4xPQ"/>
+  <Default:Documentation xmi:id="_ZlNAoGdVEeOSXYfwme4xPQ" base_Comment="_ZlD2sGdVEeOSXYfwme4xPQ"/>
+  <Default:Documentation xmi:id="_1oBVsGdWEeOSXYfwme4xPQ" base_Comment="_1n4LwGdWEeOSXYfwme4xPQ"/>
+  <Default:Documentation xmi:id="_MEossGdXEeOSXYfwme4xPQ" base_Comment="_MEfiwGdXEeOSXYfwme4xPQ"/>
+  <Default:Documentation xmi:id="_GGkWUGdYEeOSXYfwme4xPQ" base_Comment="_GGbMYGdYEeOSXYfwme4xPQ"/>
 </xmi:XMI>
