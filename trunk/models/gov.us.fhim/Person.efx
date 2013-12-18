@@ -4434,6 +4434,23 @@ Note that breed is no longer a stand-alone concept, as this information is inclu
       <ownedComment xmi:id="_Fk6AMJ1kEeKGRqm0H7Eu1A" annotatedElement="_Np3dgJ1WEeKGRqm0H7Eu1A">
         <body>This class records observations regarding the usual occupation of a person, and what industries the person has worked in.  This information is needed primarily for occupation safety and workplace-related illness tracking purposes, but it is often asked for other non-healthcare related reasons, such as insurance.</body>
       </ownedComment>
+      <ownedAttribute xmi:id="_FmDz4E42EeOOotSac0xoEA" name="currentIndustryClassification" visibility="public">
+        <ownedComment xmi:id="_FmDz4U42EeOOotSac0xoEA" annotatedElement="_FmDz4E42EeOOotSac0xoEA">
+          <body>A categorization of the type of activity in which an organization is engaged.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_i5jP4OZSEeGuIoEQ4Mvu0w?FHIM/Datatypes/CodeWithOriginalText?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_FmDz4k42EeOOotSac0xoEA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_FmDz4042EeOOotSac0xoEA"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_BSY_QE42EeOOotSac0xoEA" name="currentOccupation" visibility="public">
+        <ownedComment xmi:id="_BSY_QU42EeOOotSac0xoEA" annotatedElement="_BSY_QE42EeOOotSac0xoEA">
+          <body>&quot;A value that qualifies the classification of 'kind-of-work' based upon a recognized industry or jurisdictional standard.&quot; - HL7 Version 3 RIM.&#xD;
+&quot;The employer's job code and the employee classification used for the next of kin/associated parties at their place of employment. However, if the contact role is the patient's employer, this field contains the job code/class of the patient at their place of employment.&quot; - HL7 Version 2.8, NK1-11.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_i5jP4OZSEeGuIoEQ4Mvu0w?FHIM/Datatypes/CodeWithOriginalText?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BSY_Qk42EeOOotSac0xoEA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_BSY_Q042EeOOotSac0xoEA"/>
+      </ownedAttribute>
       <ownedAttribute xmi:id="_k_CfAEGrEeOEEpWN37sQ2g" name="dateObserved" visibility="public">
         <ownedComment xmi:id="_vnUFQEGrEeOEEpWN37sQ2g" annotatedElement="_k_CfAEGrEeOEEpWN37sQ2g">
           <body>The date upon which the observation of the Person's Occupational History was made.</body>
@@ -4441,6 +4458,14 @@ Note that breed is no longer a stand-alone concept, as this information is inclu
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pdIa8EGrEeOEEpWN37sQ2g" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pdHz4EGrEeOEEpWN37sQ2g"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_OvALkOV1EeGA8s9JtidNVQ" name="usualIndustry" visibility="public">
+        <ownedComment xmi:id="_OvALk-V1EeGA8s9JtidNVQ" annotatedElement="_OvALkOV1EeGA8s9JtidNVQ">
+          <body>The kind of industry in which the Person normally works; generally this will be the industry in which the Person has longest worked.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_i5jP4OZSEeGuIoEQ4Mvu0w?FHIM/Datatypes/CodeWithOriginalText?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OvALlOV1EeGA8s9JtidNVQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OvALleV1EeGA8s9JtidNVQ"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="__IYcAOV0EeGA8s9JtidNVQ" name="usualOccupation" visibility="public">
         <ownedComment xmi:id="__IYcAuV0EeGA8s9JtidNVQ" annotatedElement="__IYcAOV0EeGA8s9JtidNVQ">
@@ -4453,14 +4478,6 @@ Note that the definition of this property needs to be refined.</body>
         <type xmi:type="uml:Class" href="Datatypes.efx#_i5jP4OZSEeGuIoEQ4Mvu0w?FHIM/Datatypes/CodeWithOriginalText?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="__IYcA-V0EeGA8s9JtidNVQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="__IYcBOV0EeGA8s9JtidNVQ"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_OvALkOV1EeGA8s9JtidNVQ" name="usualIndustry" visibility="public">
-        <ownedComment xmi:id="_OvALk-V1EeGA8s9JtidNVQ" annotatedElement="_OvALkOV1EeGA8s9JtidNVQ">
-          <body>The kind of industry in which the Person normally works; generally this will be the industry in which the Person has longest worked.</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_i5jP4OZSEeGuIoEQ4Mvu0w?FHIM/Datatypes/CodeWithOriginalText?"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OvALlOV1EeGA8s9JtidNVQ" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OvALleV1EeGA8s9JtidNVQ"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_7wk0sEcGEeKYw8d4t3T9cw" name="yearsInCurrentOccupation" visibility="public">
         <ownedComment xmi:id="_7wk0sUcGEeKYw8d4t3T9cw" annotatedElement="_7wk0sEcGEeKYw8d4t3T9cw">
@@ -4477,23 +4494,6 @@ Note that the definition of this property needs to be refined.</body>
         <type xmi:type="uml:Class" href="Datatypes.efx#_N-BAoNYeEd62cosTNS-_lw?FHIM/Datatypes/Real?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZSg_0BSXEeKpJeaG5gXc6Q" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ZSgYwBSXEeKpJeaG5gXc6Q"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_BSY_QE42EeOOotSac0xoEA" name="currentOccupation" visibility="public">
-        <ownedComment xmi:id="_BSY_QU42EeOOotSac0xoEA" annotatedElement="_BSY_QE42EeOOotSac0xoEA">
-          <body>&quot;A value that qualifies the classification of 'kind-of-work' based upon a recognized industry or jurisdictional standard.&quot; - HL7 Version 3 RIM.&#xD;
-&quot;The employer's job code and the employee classification used for the next of kin/associated parties at their place of employment. However, if the contact role is the patient's employer, this field contains the job code/class of the patient at their place of employment.&quot; - HL7 Version 2.8, NK1-11.</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_i5jP4OZSEeGuIoEQ4Mvu0w?FHIM/Datatypes/CodeWithOriginalText?"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BSY_Qk42EeOOotSac0xoEA" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_BSY_Q042EeOOotSac0xoEA"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_FmDz4E42EeOOotSac0xoEA" name="currentIndustryClassification" visibility="public">
-        <ownedComment xmi:id="_FmDz4U42EeOOotSac0xoEA" annotatedElement="_FmDz4E42EeOOotSac0xoEA">
-          <body>A categorization of the type of activity in which an organization is engaged.</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_i5jP4OZSEeGuIoEQ4Mvu0w?FHIM/Datatypes/CodeWithOriginalText?"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_FmDz4k42EeOOotSac0xoEA" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_FmDz4042EeOOotSac0xoEA"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_9_9I8AQAEeKZsvne-rOhhA" name="OrganizationalRepresentative">
@@ -4624,16 +4624,6 @@ Removed educationLevel (4/4/2013) until we have a clear use case for it.  It's i
 We had an ethnicityGroup and raceCategory to handle more coarse-grained codesets, but removed them as the ethnicity and race codes are expected to use hierarchical fine-grained codesets.  The groups or categories can be calculated from the fine ones.</body>
       </ownedComment>
       <generalization xmi:id="_Z5rJgBA2Ed-2E9qx-lgHBg" general="_KBfhMOEVEd6EKMSYA1gKjA"/>
-      <ownedAttribute xmi:id="___TaIMF0EeKM54AtDRfO0A" name="handicap" visibility="public">
-        <ownedComment xmi:id="___TaIcF0EeKM54AtDRfO0A" annotatedElement="___TaIMF0EeKM54AtDRfO0A">
-          <body>&quot;Indicates the nature of the patient's permanent handicapped condition (e.g., deaf, blind).  A handicapped condition is defined as a physical or mental disability that is permanent.&quot; - HL7 Version 2.8, PD1-6.&#xD;
-&#xD;
-Note that this property is included in the FHIM for compatibility to HL7 V2, although we have not yet identified a particular need for it by partner agencies.  It is therefore modeled as an optional element.  In addition, the potential values for this field are currently unknown.  Therefore we have modeled it as a String rather than a Code, because we currently do not have a use case which requires a particular set of values.  Note also that HL7 identifies a Code Table (Table 295) for this property, but does not provide any suggested values.</body>
-        </ownedComment>
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="___TaIsF0EeKM54AtDRfO0A" value="*"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="___TaI8F0EeKM54AtDRfO0A"/>
-      </ownedAttribute>
       <ownedAttribute xmi:id="_LM4rUHwDEeCp-57mUxyZlg" name="administrativeGender" visibility="public">
         <ownedComment xmi:id="_LM4rUXwDEeCp-57mUxyZlg" annotatedElement="_LM4rUHwDEeCp-57mUxyZlg">
           <body>&quot;Gender is used to refer to administrative sex rather than biological sex and therefore should easily be classified into female and male. It is included in the exchange for purposes of linking to insurance information and other patient identification linkages and the value chosen by the patient should reflect the information under which any insurance or financial information will be filed, as well as the same information given to other healthcare providers, institutions or health data exchange networks&quot; - HITSP C154&#xD;
@@ -4686,6 +4676,16 @@ HL7 Version 2 has the following suggested values (table 189): Hispanic or Latino
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_LxgC8dmHEeChWYqvVB0Hpw" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LxgC8NmHEeChWYqvVB0Hpw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="___TaIMF0EeKM54AtDRfO0A" name="handicap" visibility="public">
+        <ownedComment xmi:id="___TaIcF0EeKM54AtDRfO0A" annotatedElement="___TaIMF0EeKM54AtDRfO0A">
+          <body>&quot;Indicates the nature of the patient's permanent handicapped condition (e.g., deaf, blind).  A handicapped condition is defined as a physical or mental disability that is permanent.&quot; - HL7 Version 2.8, PD1-6.&#xD;
+&#xD;
+Note that this property is included in the FHIM for compatibility to HL7 V2, although we have not yet identified a particular need for it by partner agencies.  It is therefore modeled as an optional element.  In addition, the potential values for this field are currently unknown.  Therefore we have modeled it as a String rather than a Code, because we currently do not have a use case which requires a particular set of values.  Note also that HL7 identifies a Code Table (Table 295) for this property, but does not provide any suggested values.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="___TaIsF0EeKM54AtDRfO0A" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="___TaI8F0EeKM54AtDRfO0A"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_nHLWMJNgEeCyufOLCDZkFA" name="identityReliabilityCode" visibility="public">
         <ownedComment xmi:id="_agf7AJX8EeCD7vwmJe8BlA" annotatedElement="_nHLWMJNgEeCyufOLCDZkFA">
@@ -5681,4 +5681,7 @@ Possible values include (from HL7 Table 140): US Army; US Navy; US Air Force; US
   <Default:Documentation xmi:id="_FmEa8E42EeOOotSac0xoEA" base_Comment="_FmDz4U42EeOOotSac0xoEA"/>
   <RIM:Employee xmi:id="_QepfUE48EeOOotSac0xoEA" base_Class="_420A62FD03B6418A501902C7"/>
   <Default:Documentation xmi:id="_nMszEFO3EeOPsNTFFieZWw" base_Comment="_B_P0QO6vEd-crcWiXVDZrQ"/>
+  <term:ValueSetConstraint xmi:id="_Kt7NoGf1EeOFsd2HWkmwvQ" base_Property="_eXxsYJXtEeCD7vwmJe8BlA">
+    <reference href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_zpSIcGQyEeODL8RnVGcWEw"/>
+  </term:ValueSetConstraint>
 </xmi:XMI>
