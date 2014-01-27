@@ -9,7 +9,7 @@
       <references xmi:type="uml:Package" href="FHIM.emx#420A62FD03B6?FHIM?"/>
     </eAnnotations>
     <eAnnotations xmi:id="_DVsqUAY0EeGz0dkadElrkQ" source="uml2.diagrams" references="_DVsqUQY0EeGz0dkadElrkQ">
-      <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_DVsqUQY0EeGz0dkadElrkQ" type="Class" name="_CarePlan">
+      <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_DVsqUQY0EeGz0dkadElrkQ" type="Class" name="CarePlan">
         <children xmi:type="umlnotation:UMLShape" xmi:id="_MuIZUAY0EeGz0dkadElrkQ" fontName="Arial" fontHeight="10" showListVisibility="None" fillColor="8519679" lineColor="3342489" showParent="Name" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_MuJAYAY0EeGz0dkadElrkQ" type="ImageCompartment">
             <layoutConstraint xmi:type="notation:Size" xmi:id="_MuJAYQY0EeGz0dkadElrkQ" width="1320" height="1320"/>
@@ -1134,8 +1134,22 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9tuvsAZIEeGz0dkadElrkQ" value="1"/>
       </ownedAttribute>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_GY1OsAY1EeGz0dkadElrkQ" name="CarePlanTeamMember">
+    <packagedElement xmi:type="uml:Class" xmi:id="_GY1OsAY1EeGz0dkadElrkQ" name="CareTeamMember">
+      <ownedComment xmi:id="_rxlQYH7hEeOYQJZKXKAJnw" annotatedElement="_GY1OsAY1EeGz0dkadElrkQ">
+        <body>&quot;In an advanced primary care model the care team would include anyone actively involved in the patient's care such as the PCMH team, the patient’s designees, entities providing care and all additional caregivers designated by the PCP or designated provider.&quot; - ONC S&amp;I Clinical Element Data Dictionary (CEDD), March 2012.</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="_S9o1oH7hEeOYQJZKXKAJnw" name="role" visibility="public">
+        <ownedComment xmi:id="_QP5AgH7iEeOYQJZKXKAJnw" annotatedElement="_S9o1oH7hEeOYQJZKXKAJnw">
+          <body>&quot;The role on the care team. Includes non-physician providers such as physical therapist, LCSW, nutritionist, who might be part of care team.&quot; - ONC S&amp;I Clinical Element Data Dictionary (CEDD), March 2012.  Note that this property is used distinguish between the roles a person might be playing, rather than the degree or specialty that they have.  So, despite the implication in the CEDD defintion above, this property might contain Primary Care Physician or Designated Provider, but specialty information like LCSW or Physical Therapist would be in the provider's specialty instance.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Xyj9MH7hEeOYQJZKXKAJnw" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XyjWIH7hEeOYQJZKXKAJnw"/>
+      </ownedAttribute>
       <ownedAttribute xmi:id="_cWpw4AY1EeGz0dkadElrkQ" name="individualProvider" visibility="public" association="_cWnUoAY1EeGz0dkadElrkQ">
+        <ownedComment xmi:id="_3Atl0H7iEeOYQJZKXKAJnw" annotatedElement="_cWpw4AY1EeGz0dkadElrkQ">
+          <body>Pointer to the Provider(s) who are members of the Care Team.</body>
+        </ownedComment>
         <type xmi:type="uml:Class" href="Provider.efx#_420A62FD03B6418A6B760063?FHIM/Provider/IndividualProvider?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cWq_AAY1EeGz0dkadElrkQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cWqX8AY1EeGz0dkadElrkQ" value="1"/>
@@ -1175,7 +1189,10 @@
       <ownedAttribute xmi:id="_UE4dEAY3EeGz0dkadElrkQ" name="patientInstructions" visibility="private">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_eDCaMAY1EeGz0dkadElrkQ" name="carePlanTeamMember" visibility="public" type="_GY1OsAY1EeGz0dkadElrkQ" association="_eDAlAAY1EeGz0dkadElrkQ">
+      <ownedAttribute xmi:id="_eDCaMAY1EeGz0dkadElrkQ" name="careTeamMember" visibility="public" type="_GY1OsAY1EeGz0dkadElrkQ" association="_eDAlAAY1EeGz0dkadElrkQ">
+        <ownedComment xmi:id="_dEG54H7iEeOYQJZKXKAJnw" annotatedElement="_eDCaMAY1EeGz0dkadElrkQ">
+          <body>Pointer to a set of persons involved in the care of the Patient.</body>
+        </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eDCaMgY1EeGz0dkadElrkQ" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eDCaMQY1EeGz0dkadElrkQ"/>
       </ownedAttribute>
@@ -1360,4 +1377,8 @@
   <RIM:Participation xmi:id="_fEx5IAY3EeGz0dkadElrkQ" base_Class="_bIrP8AY3EeGz0dkadElrkQ"/>
   <RIM:Participation xmi:id="_Y5vlIAY1EeGz0dkadElrkQ" base_Class="_GY1OsAY1EeGz0dkadElrkQ"/>
   <RIM:Participation xmi:id="__hhokAZIEeGz0dkadElrkQ" base_Class="_hugEsAZIEeGz0dkadElrkQ"/>
+  <Default:Documentation xmi:id="_rxxdoH7hEeOYQJZKXKAJnw" base_Comment="_rxlQYH7hEeOYQJZKXKAJnw"/>
+  <Default:Documentation xmi:id="_QP8q4H7iEeOYQJZKXKAJnw" base_Comment="_QP5AgH7iEeOYQJZKXKAJnw"/>
+  <Default:Documentation xmi:id="_dEPcwH7iEeOYQJZKXKAJnw" base_Comment="_dEG54H7iEeOYQJZKXKAJnw"/>
+  <Default:Documentation xmi:id="_3A1hoH7iEeOYQJZKXKAJnw" base_Comment="_3Atl0H7iEeOYQJZKXKAJnw"/>
 </xmi:XMI>
