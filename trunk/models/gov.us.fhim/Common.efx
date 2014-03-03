@@ -9,7 +9,7 @@
       <references xmi:type="uml:Package" href="FHIM.emx#420A62FD03B6?FHIM?"/>
     </eAnnotations>
     <eAnnotations xmi:id="_MFcQLeLiEduGJrQyRGTO1A" source="uml2.diagrams" references="_pnOiQAoSEeCTNeGQJWjJDA">
-      <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_pnOiQAoSEeCTNeGQJWjJDA" type="Class" name="_Common">
+      <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_pnOiQAoSEeCTNeGQJWjJDA" type="Class" name="Common">
         <children xmi:type="notation:Shape" xmi:id="_taBecQoSEeCTNeGQJWjJDA" type="Note" fontName="Arial" fontHeight="10" description="FHIM Common Classes" fillColor="16777088" lineColor="0" lineWidth="1">
           <children xmi:type="notation:BasicDecorationNode" xmi:id="_taBecgoSEeCTNeGQJWjJDA" type="DiagramName">
             <element xsi:nil="true"/>
@@ -1026,6 +1026,8 @@
           <body>&quot;Contains any known or suspected specimen hazards, e.g., exceptionally infectious agent or blood from a hepatitis patient.&quot; - HL7 Version 2.8, SPM-16.  Possible values include (from HL7 Table 489): Biological; Corrosive; Escape Risk; Aggressive; MaterialDangerInflammable; Explosive; MaterialDangerInfectious; Biohazard; Injury Hazard; Poison; Radioactive.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_d52bUJ_tEeOScYv3wgSwlA" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_d510QJ_tEeOScYv3wgSwlA"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B6456B46A2001C" name="description" visibility="public">
         <ownedComment xmi:id="_M_jvCuLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B6456B46A2001C">
@@ -1040,6 +1042,8 @@
           <body>&quot;Describes how the specimen and/or container need to be handled from the time of collection through the initiation of testing.&quot; - HL7 Version 2.8, SPM-15.  Possible values include (from HL7 Table 376): Body temperature; Ambient temperature; Critical ambient temperature; Refrigerated temperature; Critical refrigerated temperature; Frozen temperature; Critical frozen temperature; Deep frozen; Ultra frozen; Liquid nitrogen; Protect from light; Protect from air; Dry; No shock; Do not shake; Upright; Metal Free.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cLCwIJ_tEeOScYv3wgSwlA" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cLCJEJ_tEeOScYv3wgSwlA"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B64586B8830199" name="id" visibility="public">
         <ownedComment xmi:id="_M_Z-DeLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B64586B8830199">
@@ -1080,6 +1084,8 @@ Replicate (of patient sample as a control);&#xD;
 Verifying Calibrator, used for periodic calibration checks.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gEUu0J_tEeOScYv3wgSwlA" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gEUHwJ_tEeOScYv3wgSwlA"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B642DBE407001C" name="specimenType" visibility="public">
         <ownedComment xmi:id="_M_jvBOLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B642DBE407001C">
@@ -1092,7 +1098,7 @@ Verifying Calibrator, used for periodic calibration checks.</body>
           <body>&quot;Contains modifying or qualifying description(s) about the specimen type.  The use of this attribute is to modify, qualify or further specify, the entity described by [SpecimenType].  This is particularly useful when the code set used in [SpecimenType] does not provide the precision required to fully describe the specimen.  For example, if the specimen was precisely described as capillary venous blood but the code set employed only provided venous blood, this attribute could be employed to add the modifier capillary.&quot; - HL7 Version 2.8, SPM-5.  Note that HL7 identifies a Code Table (Table 541) for this property, but does not provide any suggested values.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dQOPMP8jEd-Koe9flR96lw" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dQOPMP8jEd-Koe9flR96lw" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dQNoIP8jEd-Koe9flR96lw"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_Y6MwoPZQEd-e1vPpWfL-Bw" name="specimenContainer" visibility="public" association="_Y6KUYPZQEd-e1vPpWfL-Bw">
@@ -1589,7 +1595,7 @@ Note that this class used to contain an optional property called commentCategory
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_SH75INNUEeGRnPi2MLPE0g" name="CommonProduct">
       <eAnnotations xmi:id="_SH9uUNNUEeGRnPi2MLPE0g" source="uml2.diagrams" references="_2bg1gVANEeCNoo8JCSlflA">
-        <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_2bg1gVANEeCNoo8JCSlflA" type="Class" name="_CommonProduct">
+        <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_2bg1gVANEeCNoo8JCSlflA" type="Class" name="CommonProduct">
           <children xmi:type="umlnotation:UMLShape" xmi:id="_PY-a0VAdEeCNoo8JCSlflA" element="_PY-a0FAdEeCNoo8JCSlflA" fontName="Arial" fontHeight="10" showListVisibility="None" fillColor="16763850" lineColor="12632258" showStereotype="Label">
             <eAnnotations xmi:id="_PZIL0FAdEeCNoo8JCSlflA" source="com.ibm.xtools.uml.ui.diagram.internal.styles">
               <details xmi:id="_PZIL0VAdEeCNoo8JCSlflA" key="ImageModeStyle" value="true"/>
@@ -1663,7 +1669,7 @@ Note that this class used to contain an optional property called commentCategory
             <children xmi:type="notation:SemanticListCompartment" xmi:id="__90-gdNmEeGRnPi2MLPE0g" visible="false" type="OperationCompartment"/>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="__90-gtNmEeGRnPi2MLPE0g" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="__90-g9NmEeGRnPi2MLPE0g" visible="false" type="StructureCompartment"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="__9zwYdNmEeGRnPi2MLPE0g" x="23458" y="6023"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="__9zwYdNmEeGRnPi2MLPE0g" x="23458" y="6340"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_B1rQ8NNnEeGRnPi2MLPE0g" element="_420A62FD03B645919EF10138" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8519553" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_B1r4ANNnEeGRnPi2MLPE0g" type="ImageCompartment">
@@ -1767,7 +1773,7 @@ Note that this class used to contain an optional property called commentCategory
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_RCRW8NNnEeGRnPi2MLPE0g" visible="false" type="OperationCompartment"/>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_RCRW8dNnEeGRnPi2MLPE0g" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_RCRW8tNnEeGRnPi2MLPE0g" visible="false" type="StructureCompartment"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RCOTodNnEeGRnPi2MLPE0g" x="21873" y="27896"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RCOTodNnEeGRnPi2MLPE0g" x="22507" y="27579"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_fbs6oNNnEeGRnPi2MLPE0g" element="_jToVcM_3Ed-YeMSrwW6svA" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8519679" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_fbthsNNnEeGRnPi2MLPE0g" type="ImageCompartment">
@@ -2038,6 +2044,20 @@ Note that this class used to contain an optional property called commentCategory
             <children xmi:type="notation:BasicDecorationNode" xmi:id="_Fij74JxpEeKr3rM97UE05g" type="Stereotype"/>
             <children xmi:type="notation:BasicDecorationNode" xmi:id="_Fij74ZxpEeKr3rM97UE05g" type="CommentBody"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FihfoZxpEeKr3rM97UE05g" x="4121" y="1268" width="10132" height="2509"/>
+          </children>
+          <children xmi:type="umlnotation:UMLShape" xmi:id="_WszNcKCrEeO-_tuxzOR0Jg" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8519553" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
+            <children xmi:type="notation:DecorationNode" xmi:id="_Wsz0gKCrEeO-_tuxzOR0Jg" type="ImageCompartment">
+              <layoutConstraint xmi:type="notation:Size" xmi:id="_Wsz0gaCrEeO-_tuxzOR0Jg" width="1320" height="1320"/>
+            </children>
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_Ws0bkKCrEeO-_tuxzOR0Jg" type="Stereotype"/>
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_Ws0bkaCrEeO-_tuxzOR0Jg" type="Name"/>
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_Ws0bkqCrEeO-_tuxzOR0Jg" type="Parent"/>
+            <children xmi:type="notation:SemanticListCompartment" xmi:id="_Ws0bk6CrEeO-_tuxzOR0Jg" type="AttributeCompartment"/>
+            <children xmi:type="notation:SemanticListCompartment" xmi:id="_Ws0blKCrEeO-_tuxzOR0Jg" visible="false" type="OperationCompartment"/>
+            <children xmi:type="notation:SemanticListCompartment" xmi:id="_Ws1CoKCrEeO-_tuxzOR0Jg" visible="false" type="SignalCompartment"/>
+            <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_Ws1CoaCrEeO-_tuxzOR0Jg" visible="false" type="StructureCompartment"/>
+            <element xmi:type="uml:Class" href="Provider.efx#_420A62FD03B6418AA15801A9?FHIM/Provider/Organization?"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WszNcaCrEeO-_tuxzOR0Jg" x="28213" y="17752"/>
           </children>
           <element xsi:nil="true"/>
           <edges xmi:type="umlnotation:UMLConnector" xmi:id="_5otPgNNmEeGRnPi2MLPE0g" element="_tTU5MPQcEd-ZkqyOlLYO5g" source="_ljs8QOrLEeCgerddwRbJUw" target="_5oplINNmEeGRnPi2MLPE0g" fontName="Arial" fontHeight="10" routing="Rectilinear" lineColor="3342489" lineWidth="1" showStereotype="Text">
@@ -3496,6 +3516,86 @@ Note that this class used to contain an optional property called commentCategory
             <element xsi:nil="true"/>
             <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_r9YnodNpEeGRnPi2MLPE0g" points="[-7, 71, 6, -111]$[-18, 208, -5, 26]"/>
           </edges>
+          <edges xmi:type="umlnotation:UMLConnector" xmi:id="_YaAWIKCrEeO-_tuxzOR0Jg" element="_YZ1-EKCrEeO-_tuxzOR0Jg" source="_Mqp2cNNnEeGRnPi2MLPE0g" target="_WszNcKCrEeO-_tuxzOR0Jg" fontName="Arial" fontHeight="10" lineColor="3342489" lineWidth="1" showStereotype="Text">
+            <children xmi:type="notation:DecorationNode" xmi:id="_YaAWIqCrEeO-_tuxzOR0Jg" visible="false" type="NameLabel">
+              <children xmi:type="notation:BasicDecorationNode" xmi:id="_YaA9MKCrEeO-_tuxzOR0Jg" type="Stereotype"/>
+              <children xmi:type="notation:BasicDecorationNode" xmi:id="_YaA9MaCrEeO-_tuxzOR0Jg" type="Name"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YaAWI6CrEeO-_tuxzOR0Jg" y="-186"/>
+            </children>
+            <children xmi:type="notation:DecorationNode" xmi:id="_YaA9MqCrEeO-_tuxzOR0Jg" visible="false" type="ToMultiplicityLabel" element="_YZ4aUKCrEeO-_tuxzOR0Jg">
+              <children xmi:type="notation:BasicDecorationNode" xmi:id="_YaA9NKCrEeO-_tuxzOR0Jg" type="ToMultiplicity"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_YaA9M6CrEeO-_tuxzOR0Jg" y="396"/>
+            </children>
+            <children xmi:type="notation:DecorationNode" xmi:id="_YaBkQKCrEeO-_tuxzOR0Jg" type="ToRoleLabel" element="_YZ4aUKCrEeO-_tuxzOR0Jg">
+              <children xmi:type="notation:BasicDecorationNode" xmi:id="_YaBkQqCrEeO-_tuxzOR0Jg" type="ToRole"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_YaBkQaCrEeO-_tuxzOR0Jg" y="-397"/>
+            </children>
+            <children xmi:type="notation:DecorationNode" xmi:id="_YaBkQ6CrEeO-_tuxzOR0Jg" type="FromMultiplicityLabel" element="_YZ3MMKCrEeO-_tuxzOR0Jg">
+              <children xmi:type="notation:BasicDecorationNode" xmi:id="_YaBkRaCrEeO-_tuxzOR0Jg" type="FromMultiplicity"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_YaBkRKCrEeO-_tuxzOR0Jg" y="396"/>
+            </children>
+            <children xmi:type="notation:DecorationNode" xmi:id="_YaBkRqCrEeO-_tuxzOR0Jg" type="FromRoleLabel" element="_YZ3MMKCrEeO-_tuxzOR0Jg">
+              <children xmi:type="notation:BasicDecorationNode" xmi:id="_YaCLUKCrEeO-_tuxzOR0Jg" type="FromRole"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_YaBkR6CrEeO-_tuxzOR0Jg" y="-397"/>
+            </children>
+            <children xmi:type="notation:DecorationNode" xmi:id="_YaCLUaCrEeO-_tuxzOR0Jg" visible="false" type="ToQualifierLabel" element="_YZ4aUKCrEeO-_tuxzOR0Jg">
+              <children xmi:type="notation:SemanticListCompartment" xmi:id="_YaCLU6CrEeO-_tuxzOR0Jg" type="QualifierCompartment"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_YaCLUqCrEeO-_tuxzOR0Jg" y="-186"/>
+            </children>
+            <children xmi:type="notation:DecorationNode" xmi:id="_YaCLVKCrEeO-_tuxzOR0Jg" visible="false" type="FromQualifierLabel" element="_YZ3MMKCrEeO-_tuxzOR0Jg">
+              <children xmi:type="notation:SemanticListCompartment" xmi:id="_YaCLVqCrEeO-_tuxzOR0Jg" type="QualifierCompartment"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_YaCLVaCrEeO-_tuxzOR0Jg" y="-186"/>
+            </children>
+            <children xmi:type="notation:DecorationNode" xmi:id="_YaCyYKCrEeO-_tuxzOR0Jg" visible="false" type="ToConstraintLabel" element="_YZ4aUKCrEeO-_tuxzOR0Jg">
+              <children xmi:type="notation:ListCompartment" xmi:id="_YaCyYqCrEeO-_tuxzOR0Jg" type="ToConstraintCompartment"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_YaCyYaCrEeO-_tuxzOR0Jg" y="1058"/>
+            </children>
+            <children xmi:type="notation:DecorationNode" xmi:id="_YaCyY6CrEeO-_tuxzOR0Jg" visible="false" type="FromConstraintLabel" element="_YZ3MMKCrEeO-_tuxzOR0Jg">
+              <children xmi:type="notation:ListCompartment" xmi:id="_YaCyZaCrEeO-_tuxzOR0Jg" type="FromConstraintCompartment"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_YaCyZKCrEeO-_tuxzOR0Jg" y="1058"/>
+            </children>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_YaAWIaCrEeO-_tuxzOR0Jg" points="[104, 22, -292, -72]$[485, 91, 89, -3]"/>
+          </edges>
+          <edges xmi:type="umlnotation:UMLConnector" xmi:id="_gwop4KCrEeO-_tuxzOR0Jg" element="_gwe44KCrEeO-_tuxzOR0Jg" source="_NTPgcNNnEeGRnPi2MLPE0g" target="_WszNcKCrEeO-_tuxzOR0Jg" fontName="Arial" fontHeight="10" lineColor="3342489" lineWidth="1" showStereotype="Text">
+            <children xmi:type="notation:DecorationNode" xmi:id="_gwpQ8KCrEeO-_tuxzOR0Jg" visible="false" type="NameLabel">
+              <children xmi:type="notation:BasicDecorationNode" xmi:id="_gwpQ8qCrEeO-_tuxzOR0Jg" type="Stereotype"/>
+              <children xmi:type="notation:BasicDecorationNode" xmi:id="_gwpQ86CrEeO-_tuxzOR0Jg" type="Name"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gwpQ8aCrEeO-_tuxzOR0Jg" y="-186"/>
+            </children>
+            <children xmi:type="notation:DecorationNode" xmi:id="_gwpQ9KCrEeO-_tuxzOR0Jg" visible="false" type="ToMultiplicityLabel" element="_gwh8MKCrEeO-_tuxzOR0Jg">
+              <children xmi:type="notation:BasicDecorationNode" xmi:id="_gwpQ9qCrEeO-_tuxzOR0Jg" type="ToMultiplicity"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_gwpQ9aCrEeO-_tuxzOR0Jg" y="396"/>
+            </children>
+            <children xmi:type="notation:DecorationNode" xmi:id="_gwp4AKCrEeO-_tuxzOR0Jg" type="ToRoleLabel" element="_gwh8MKCrEeO-_tuxzOR0Jg">
+              <children xmi:type="notation:BasicDecorationNode" xmi:id="_gwp4AqCrEeO-_tuxzOR0Jg" type="ToRole"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_gwp4AaCrEeO-_tuxzOR0Jg" y="-397"/>
+            </children>
+            <children xmi:type="notation:DecorationNode" xmi:id="_gwp4A6CrEeO-_tuxzOR0Jg" type="FromMultiplicityLabel" element="_gwgHAKCrEeO-_tuxzOR0Jg">
+              <children xmi:type="notation:BasicDecorationNode" xmi:id="_gwp4BaCrEeO-_tuxzOR0Jg" type="FromMultiplicity"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_gwp4BKCrEeO-_tuxzOR0Jg" y="396"/>
+            </children>
+            <children xmi:type="notation:DecorationNode" xmi:id="_gwp4BqCrEeO-_tuxzOR0Jg" type="FromRoleLabel" element="_gwgHAKCrEeO-_tuxzOR0Jg">
+              <children xmi:type="notation:BasicDecorationNode" xmi:id="_gwqfEKCrEeO-_tuxzOR0Jg" type="FromRole"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_gwp4B6CrEeO-_tuxzOR0Jg" y="-397"/>
+            </children>
+            <children xmi:type="notation:DecorationNode" xmi:id="_gwqfEaCrEeO-_tuxzOR0Jg" visible="false" type="ToQualifierLabel" element="_gwh8MKCrEeO-_tuxzOR0Jg">
+              <children xmi:type="notation:SemanticListCompartment" xmi:id="_gwqfE6CrEeO-_tuxzOR0Jg" type="QualifierCompartment"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_gwqfEqCrEeO-_tuxzOR0Jg" y="-186"/>
+            </children>
+            <children xmi:type="notation:DecorationNode" xmi:id="_gwqfFKCrEeO-_tuxzOR0Jg" visible="false" type="FromQualifierLabel" element="_gwgHAKCrEeO-_tuxzOR0Jg">
+              <children xmi:type="notation:SemanticListCompartment" xmi:id="_gwqfFqCrEeO-_tuxzOR0Jg" type="QualifierCompartment"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_gwqfFaCrEeO-_tuxzOR0Jg" y="-186"/>
+            </children>
+            <children xmi:type="notation:DecorationNode" xmi:id="_gwrGIKCrEeO-_tuxzOR0Jg" visible="false" type="ToConstraintLabel" element="_gwh8MKCrEeO-_tuxzOR0Jg">
+              <children xmi:type="notation:ListCompartment" xmi:id="_gwrGIqCrEeO-_tuxzOR0Jg" type="ToConstraintCompartment"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_gwrGIaCrEeO-_tuxzOR0Jg" y="1058"/>
+            </children>
+            <children xmi:type="notation:DecorationNode" xmi:id="_gwrGI6CrEeO-_tuxzOR0Jg" visible="false" type="FromConstraintLabel" element="_gwgHAKCrEeO-_tuxzOR0Jg">
+              <children xmi:type="notation:ListCompartment" xmi:id="_gwrGJaCrEeO-_tuxzOR0Jg" type="FromConstraintCompartment"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_gwrGJKCrEeO-_tuxzOR0Jg" y="1058"/>
+            </children>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_gwop4aCrEeO-_tuxzOR0Jg" points="[36, -5, -392, 5]$[339, -5, -89, 5]"/>
+          </edges>
         </contents>
       </eAnnotations>
       <ownedComment xmi:id="_kEvs4NNoEeGRnPi2MLPE0g" annotatedElement="_9SrG0M_2Ed-YeMSrwW6svA">
@@ -3545,6 +3645,14 @@ A product must be distinguished from one that is just packaging.  Examples for p
 Examples for devices are chest tube, wound dressing, dental chair, and ventilator machine.  Devices are any kind of product  used for medical purposes or in conjunction with medical services, including, but not limited to, direct use for  therapeutic purposes (e.g., orthopedic screw), diagnostic purposes (e.g. EKG machine), usage as applicator devices for the administration of medicines (e.g., syringes), or as tools (e.g., dental chair).  [Note, while it may seem unusual to classify a wound dressing as a device, this is the practice in the regulatory context, in other contexts, these items are sometimes called &quot;supplies&quot;].&#xD;
 A kit is a product that contains multiple parts administered together or used together in some intricate way.  Some of the parts of a kit may be medicinal substances (medicines), and others may be devices, e.g., applicator devices.  Kits are described as a primary product of form code meaning &quot;kit&quot; with parts.&quot;  - HL7 Version 3 (ManufacturedMaterial->Product).</body>
         </ownedComment>
+        <ownedAttribute xmi:id="_kp2MYs_1Ed-YeMSrwW6svA" name="brandName" visibility="public">
+          <ownedComment xmi:id="_kp2MY8_1Ed-YeMSrwW6svA" annotatedElement="_kp2MYs_1Ed-YeMSrwW6svA">
+            <body>“The name of the product kind described.  If this is a specific manufactured (brand) product, this would be the proprietary name.  For general product class descriptions this would be a non-proprietary name.  This attribute may sometimes be used instead of a code and descriptive data elements when no suitable coding system is available.  The data type for the name allows for suffixes and also other name parts, which might hold proprietary dose form (e.g., &quot;capsil&quot;, &quot;discus&quot;, &quot;injection system&quot;) or other name parts which may be required for recognition of the product among health professionals.  Note that these name parts are never to be used instead of proper descriptive data elements (formCode, ingredients and their quantities, etc.).” - HL7 Version 3 (ManufacturedMaterial.name).</body>
+          </ownedComment>
+          <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Ca2Gwe6REd-crcWiXVDZrQ" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Ca2GwO6REd-crcWiXVDZrQ"/>
+        </ownedAttribute>
         <ownedAttribute xmi:id="_BsxwEM_2Ed-YeMSrwW6svA" name="code" visibility="public">
           <ownedComment xmi:id="_8Z008O6PEd-crcWiXVDZrQ" annotatedElement="_BsxwEM_2Ed-YeMSrwW6svA">
             <body>“The code given to this kind of product, i.e., NDC code to medicines in the U.S., EAN or UPC codes to food items or devices.  A code given to a device may also be known as &quot;unique device identifier&quot;.  Unlike a device instance identifier, however, this is a code for the specific kind of device analogously to the NDC code or UPC code that is a code of a manufactured kind of product respectively.  The words &quot;product code&quot; &quot;unique device identifiers&quot; may have certain specific connotations in different regulatory contexts, to side-step such unwanted connotations, one may call this code the &quot;Item Code&quot;, for it is the code for the item (product, medicine, thing, or class thereof) that is so described.” - HL7 Version 3 (ManufacturedMaterial.code).</body>
@@ -3616,14 +3724,6 @@ A kit is a product that contains multiple parts administered together or used to
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UIjLcTh7EeC17O99ZX8o-w" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UIjLcDh7EeC17O99ZX8o-w"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:id="_kp2MYs_1Ed-YeMSrwW6svA" name="brandName" visibility="public">
-          <ownedComment xmi:id="_kp2MY8_1Ed-YeMSrwW6svA" annotatedElement="_kp2MYs_1Ed-YeMSrwW6svA">
-            <body>“The name of the product kind described.  If this is a specific manufactured (brand) product, this would be the proprietary name.  For general product class descriptions this would be a non-proprietary name.  This attribute may sometimes be used instead of a code and descriptive data elements when no suitable coding system is available.  The data type for the name allows for suffixes and also other name parts, which might hold proprietary dose form (e.g., &quot;capsil&quot;, &quot;discus&quot;, &quot;injection system&quot;) or other name parts which may be required for recognition of the product among health professionals.  Note that these name parts are never to be used instead of proper descriptive data elements (formCode, ingredients and their quantities, etc.).” - HL7 Version 3 (ManufacturedMaterial.name).</body>
-          </ownedComment>
-          <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Ca2Gwe6REd-crcWiXVDZrQ" value="*"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Ca2GwO6REd-crcWiXVDZrQ"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_420A62FD03B6424083C50135" name="controlledSubstanceSchedule" visibility="public">
           <eAnnotations xmi:id="_MDM0eeLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
@@ -3940,15 +4040,23 @@ A kit is a product that contains multiple parts administered together or used to
           <ownedComment xmi:id="_Z9aEEhFvEeKu1LfuaJwFHw" annotatedElement="_Z9aEEBFvEeKu1LfuaJwFHw">
             <body>Identifies the kind of the product, as assigned by a distributor or other organization responsible for ordering and supplying of equipment.</body>
           </ownedComment>
-          <type xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
+          <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Z9aEExFvEeKu1LfuaJwFHw" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Z9aEFBFvEeKu1LfuaJwFHw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_mGRZMKMZEeOzLfgeAZKSFA" name="commonDeviceName" visibility="public">
+          <ownedComment xmi:id="_G39toKMaEeOzLfgeAZKSFA" annotatedElement="_mGRZMKMZEeOzLfgeAZKSFA">
+            <body>A generic name for the device, as opposed to a brand name specific to a particular manufacturer's product.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yXujwKMZEeOzLfgeAZKSFA" value="1"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yXtVoKMZEeOzLfgeAZKSFA"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_420A62FD03B6425C00A30062" name="modelId" visibility="public">
           <ownedComment xmi:id="_4cLYIBHEEeCBuOUrBnIXmQ" annotatedElement="_420A62FD03B6425C00A30062">
             <body>Identifies the kind of the product, as assigned by the manufacturer.</body>
           </ownedComment>
-          <type xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
+          <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_etkMcuLjEdutr_MT9HkPyQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_etkMceLjEdutr_MT9HkPyQ"/>
         </ownedAttribute>
@@ -3969,6 +4077,14 @@ A kit is a product that contains multiple parts administered together or used to
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sY7OcvbnEeGoRqAZLJ6Mwg" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sY7Oc_bnEeGoRqAZLJ6Mwg"/>
         </ownedAttribute>
+        <ownedAttribute xmi:id="_0KjMQKMZEeOzLfgeAZKSFA" name="procode" visibility="private">
+          <ownedComment xmi:id="_I-D3cKMaEeOzLfgeAZKSFA" annotatedElement="_0KjMQKMZEeOzLfgeAZKSFA">
+            <body>Short for FDA Product Code, this code is assigned by the FDA to categorize medical devices.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4ELJMKMZEeOzLfgeAZKSFA" value="1"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4EKiIKMZEeOzLfgeAZKSFA"/>
+        </ownedAttribute>
         <ownedAttribute xmi:id="_420A62FD03B643FB63BE0318" name="softwareName" visibility="public">
           <eAnnotations xmi:id="_L-4VI-LiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
           <ownedComment xmi:id="_L-4VIeLiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B643FB63BE0318">
@@ -3982,8 +4098,8 @@ A kit is a product that contains multiple parts administered together or used to
           <ownedComment xmi:id="_ICc4ADNpEeKkw_YjK6aRcw" annotatedElement="_uT7PwFPxEeC3dvg3Ss2k0Q">
             <body>Identifies an individual device belonging to the class of devices represented by the Device class on the other end of the association.  For example, the Device class might describe a Color LaserJet Model CMJ1312 made by Hewlett Packard.  The DeviceInstance class might describe the machine that has serial number 1234.  Other information about the device instance, such as the cost, date placed into service, date last serviced, etc. may be added to the DeviceInstance class in the future.  For now, we are just interested in the serial number (the Id property).</body>
           </ownedComment>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uT7PwlPxEeC3dvg3Ss2k0Q" value="1"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_uT7PwVPxEeC3dvg3Ss2k0Q" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7UecUKMZEeOzLfgeAZKSFA" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7Ud1QKMZEeOzLfgeAZKSFA"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_824gIOrREeCgerddwRbJUw" name="manufacturer" visibility="public" type="_420A62FD03B6419905DB00FB" association="_82uvIOrREeCgerddwRbJUw">
           <ownedComment xmi:id="_TFPFsNOSEeGputPQx0HXoA" annotatedElement="_824gIOrREeCgerddwRbJUw">
@@ -4029,10 +4145,11 @@ A kit is a product that contains multiple parts administered together or used to
         </ownedAttribute>
         <ownedAttribute xmi:id="_oJDGcKc2EeCkJ6Eur_P0ag" name="id" visibility="public">
           <ownedComment xmi:id="_oJDGcac2EeCkJ6Eur_P0ag" annotatedElement="_oJDGcKc2EeCkJ6Eur_P0ag">
-            <body>&quot;A unique identifier for this instance. If the product instance represents a single individual product (quantity = 1) then  this id is also called the &quot;serial number&quot;. If the product instance represents a product lot, the id is also called the  &quot;lot number&quot;.&quot; - HL7 V3</body>
+            <body>Identifies the individual device.  This may be a Serial Number assigned by the manufacturer, or some other unique identifer assigned by the owning organization (e.g., an asset control number).&#xD;
+&quot;A unique identifier for this instance. If the product instance represents a single individual product (quantity = 1) then  this id is also called the &quot;serial number&quot;. If the product instance represents a product lot, the id is also called the  &quot;lot number&quot;.&quot; - HL7 V3</body>
           </ownedComment>
           <type xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oJDGcqc2EeCkJ6Eur_P0ag" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oJDGcqc2EeCkJ6Eur_P0ag" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oJDGc6c2EeCkJ6Eur_P0ag"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_420A62FD03B6425C00B1009E" name="localRemoteControlState" visibility="public">
@@ -4225,6 +4342,14 @@ This property indicates whether the ingredient represented by this class is acti
           </ownedComment>
           <type xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
         </ownedAttribute>
+        <ownedAttribute xmi:id="_gwgHAKCrEeO-_tuxzOR0Jg" name="organization" visibility="public" association="_gwe44KCrEeO-_tuxzOR0Jg">
+          <ownedComment xmi:id="_p-wmUKCrEeO-_tuxzOR0Jg" annotatedElement="_gwgHAKCrEeO-_tuxzOR0Jg">
+            <body>Pointer to the Organization (i.e., corporation) that labeled and marketed the product.</body>
+          </ownedComment>
+          <type xmi:type="uml:Class" href="Provider.efx#_420A62FD03B6418AA15801A9?FHIM/Provider/Organization?"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gwguEaCrEeO-_tuxzOR0Jg" value="1"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gwguEKCrEeO-_tuxzOR0Jg" value="1"/>
+        </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B6419905DB00FB" name="Manufacturer">
         <eAnnotations xmi:id="_MEZHSuLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
@@ -4249,6 +4374,14 @@ This property indicates whether the ingredient represented by this class is acti
             <body>Uniquely identifies the manufacturer, for those products that are vaccines.  This property is a code from HL7 Table 0227, Manufacturers of Vaccines (MVX), which is maintained by the CDC's National Center for Immunization and Respiratory Diseases (NCIRD).</body>
           </ownedComment>
           <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_YZ3MMKCrEeO-_tuxzOR0Jg" name="organization" visibility="public" association="_YZ1-EKCrEeO-_tuxzOR0Jg">
+          <ownedComment xmi:id="_ga0K4KCrEeO-_tuxzOR0Jg" annotatedElement="_YZ3MMKCrEeO-_tuxzOR0Jg">
+            <body>Pointer to the Organization (i.e., corporation) that manufactured the product.</body>
+          </ownedComment>
+          <type xmi:type="uml:Class" href="Provider.efx#_420A62FD03B6418AA15801A9?FHIM/Provider/Organization?"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_YZ3zQaCrEeO-_tuxzOR0Jg" value="1"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YZ3zQKCrEeO-_tuxzOR0Jg" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_2iS00FPwEeC3dvg3Ss2k0Q" name="ManufacturingLot">
@@ -4414,6 +4547,12 @@ This property indicates whether the ingredient represented by this class is acti
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LgZ34V7xEeCcBvMgXNMeOQ" value="1"/>
         </ownedEnd>
       </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_YZ1-EKCrEeO-_tuxzOR0Jg" name="manufacturer_organization" memberEnd="_YZ3MMKCrEeO-_tuxzOR0Jg _YZ4aUKCrEeO-_tuxzOR0Jg">
+        <ownedEnd xmi:id="_YZ4aUKCrEeO-_tuxzOR0Jg" name="" visibility="private" type="_420A62FD03B6419905DB00FB" association="_YZ1-EKCrEeO-_tuxzOR0Jg"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_gwe44KCrEeO-_tuxzOR0Jg" name="labeler_organization" memberEnd="_gwgHAKCrEeO-_tuxzOR0Jg _gwh8MKCrEeO-_tuxzOR0Jg">
+        <ownedEnd xmi:id="_gwh8MKCrEeO-_tuxzOR0Jg" name="" visibility="private" type="_XteGcIAfEeGE1-mzJa42fw" association="_gwe44KCrEeO-_tuxzOR0Jg"/>
+      </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_cWnUoAY1EeGz0dkadElrkQ" memberEnd="_cWpw4AY1EeGz0dkadElrkQ _cWs0MAY1EeGz0dkadElrkQ">
       <ownedEnd xmi:id="_cWs0MAY1EeGz0dkadElrkQ" name="" visibility="private" type="_GY1OsAY1EeGz0dkadElrkQ" association="_cWnUoAY1EeGz0dkadElrkQ"/>
@@ -4428,9 +4567,6 @@ This property indicates whether the ingredient represented by this class is acti
   <term:CodeSystemConstraint xmi:id="_WqfMEPbnEeGoRqAZLJ6Mwg" base_Property="_TkY4kM_7Ed-YeMSrwW6svA">
     <reference href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_W5Os4KRMEeGZ6ueex_Me0w"/>
   </term:CodeSystemConstraint>
-  <term:ValueSetConstraint xmi:id="_ArBOoPboEeGoRqAZLJ6Mwg" base_Property="_kp2MYs_1Ed-YeMSrwW6svA">
-    <reference href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_XeBcAKRMEeGZ6ueex_Me0w"/>
-  </term:ValueSetConstraint>
   <Default:Documentation xmi:id="_-mMfBVZPEeCNYNwvTI8hbQ" base_Comment="_-mMfAlZPEeCNYNwvTI8hbQ"/>
   <Default:Documentation xmi:id="_-rxcsCw6EeKmqZ4YenSzAg" base_Comment="_-rqH8Cw6EeKmqZ4YenSzAg"/>
   <Default:Documentation xmi:id="_06LP4Pa9EeGoRqAZLJ6Mwg" base_Comment="_06Be4Pa9EeGoRqAZLJ6Mwg"/>
@@ -4588,7 +4724,6 @@ This property indicates whether the ingredient represented by this class is acti
   <Default:Documentation xmi:id="_XNkMwDNoEeKkw_YjK6aRcw" base_Comment="_XNc4ADNoEeKkw_YjK6aRcw"/>
   <Default:Documentation xmi:id="_XSQQMAF5EeC0SO5AWIN0Qg" base_Comment="_MDM0d-LiEduGJrQyRGTO1A"/>
   <Default:Documentation xmi:id="_XYgB4O6QEd-crcWiXVDZrQ" base_Comment="_XYWQ4O6QEd-crcWiXVDZrQ"/>
-  <Default:Documentation xmi:id="_yCZ_cPbnEeGoRqAZLJ6Mwg" base_Comment="_kp2MY8_1Ed-YeMSrwW6svA"/>
   <Default:Documentation xmi:id="_yJMDwI8nEeG2ar1Lc1hB1g" base_Comment="_yJBEoI8nEeG2ar1Lc1hB1g"/>
   <Default:Documentation xmi:id="_Yuc4cOwwEd-kfrmay8LxLw" base_Comment="_YuTHcOwwEd-kfrmay8LxLw"/>
   <Default:Documentation xmi:id="_yUKcwBHfEeCBuOUrBnIXmQ" base_Comment="_yUB54BHfEeCBuOUrBnIXmQ"/>
@@ -4675,4 +4810,9 @@ This property indicates whether the ingredient represented by this class is acti
   <Default:Documentation xmi:id="_rxxdoH7hEeOYQJZKXKAJnw" base_Comment="_rxlQYH7hEeOYQJZKXKAJnw"/>
   <Default:Documentation xmi:id="_QP8q4H7iEeOYQJZKXKAJnw" base_Comment="_QP5AgH7iEeOYQJZKXKAJnw"/>
   <Default:Documentation xmi:id="_3A1hoH7iEeOYQJZKXKAJnw" base_Comment="_3Atl0H7iEeOYQJZKXKAJnw"/>
+  <Default:Documentation xmi:id="_ga974KCrEeO-_tuxzOR0Jg" base_Comment="_ga0K4KCrEeO-_tuxzOR0Jg"/>
+  <Default:Documentation xmi:id="_p_Ad8KCrEeO-_tuxzOR0Jg" base_Comment="_p-wmUKCrEeO-_tuxzOR0Jg"/>
+  <Default:Documentation xmi:id="_3I63UKMYEeOzLfgeAZKSFA" base_Comment="_kp2MY8_1Ed-YeMSrwW6svA"/>
+  <Default:Documentation xmi:id="_G4J64KMaEeOzLfgeAZKSFA" base_Comment="_G39toKMaEeOzLfgeAZKSFA"/>
+  <Default:Documentation xmi:id="_I-NocKMaEeOzLfgeAZKSFA" base_Comment="_I-D3cKMaEeOzLfgeAZKSFA"/>
 </xmi:XMI>
