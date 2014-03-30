@@ -30,6 +30,19 @@
 		[/for]
 	[/for]
 
+	[for (aClass : Class | aPackage.eContents(Class)->select(visibility = uml::VisibilityKind::public)->sortedBy(name))]
+		[for (property : Property | aClass.ownedAttribute->select(association = null))]
+			[for (csc: CodeSystemConstraint| property.getStereotypeApplications()->select(oclIsTypeOf(CodeSystemConstraint)).oclAsType(CodeSystemConstraint))]
+				[let csv  : CodeSystemVersion = csc.reference]
+					[let ee : Enumeration = csv.base_Enumeration.oclAsType(Enumeration)]
+						[generateClassTopicTemplate(ee)/]
+						[generateCodeSystemTopic(ee,csv)/]			
+					[/let]
+				[/let]
+			[/for]
+		[/for]
+	[/for]
+
 
 [generateContentBookMap(aPackage)/]
 
@@ -136,6 +149,26 @@
 
 
 
+[if (not aPackage.eAnnotations->select(source='uml2.diagrams')->isEmpty())]
+	[for (ea  : EAnnotation | aPackage.eAnnotations->select(source='uml2.diagrams'))]	
+		[for (eo : EObject | ea.contents)]
+			[if (eo.oclIsTypeOf(UMLDiagram))]
+				[let diagram : UMLDiagram = eo.oclAsType(UMLDiagram)]
+[for (child : Node | diagram.children)]
+
+[/for]
+
+
+				[/let]
+			[/if]		
+		[/for]		
+	[/for]
+[/if]
+
+
+
+
+
 [if (not aPackage.eContents(Class)->isEmpty())]
 <topichead navtitle="Definitions">
 	[for (aClass : Class | aPackage.eContents(Class)->select(visibility = uml::VisibilityKind::public)->sortedBy(name))]
@@ -146,11 +179,25 @@
 
 [if (not aPackage.eContents(Class).ownedAttribute->select(association = null).getStereotypeApplications()->select(oclIsTypeOf(ValueSetConstraint))->isEmpty())]
 <topichead navtitle="Terminology">	
+
+<topichead navtitle="Value Sets">
 	[for (eee : Enumeration |  aPackage.eContents(Class).ownedAttribute->select(association = null).getStereotypeApplications()->select(oclIsTypeOf(ValueSetConstraint)).oclAsType(ValueSetConstraint).reference.base_Enumeration.oclAsType(Enumeration)->sortedBy(name)->asOrderedSet())]
 		[let ee : Enumeration = eee.oclAsType(Enumeration)]
 <topicref href="../topics/t_[ee.qualifiedName.replaceAll('\\W+','').replaceAll(':+','')/].dita" type="topic" />
 		[/let]
 	[/for]
+</topichead>
+
+[if (not aPackage.eContents(Class).ownedAttribute->select(association = null).getStereotypeApplications()->select(oclIsTypeOf(CodeSystemConstraint))->isEmpty())]
+<topichead navtitle="Code Systems">
+	[for (eee : Enumeration |  aPackage.eContents(Class).ownedAttribute->select(association = null).getStereotypeApplications()->select(oclIsTypeOf(CodeSystemConstraint)).oclAsType(CodeSystemConstraint).reference.base_Enumeration.oclAsType(Enumeration)->sortedBy(name)->asOrderedSet())]
+		[let ee : Enumeration = eee.oclAsType(Enumeration)]
+<topicref href="../topics/t_[ee.qualifiedName.replaceAll('\\W+','').replaceAll(':+','')/].dita" type="topic" />
+		[/let]
+	[/for]
+</topichead>
+[/if]
+
 </topichead>	
 [/if]
 
@@ -261,6 +308,29 @@
 [/file]
 [/template]
 
+[template public generateCodeSystemTopic(enumeration : Enumeration, csv : CodeSystemVersion)]
+[file ('topics/generated/_'+enumeration.qualifiedName.replaceAll('\\W+','').replaceAll(':+','')+'.dita', false, 'UTF-8')]
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="[enumeration.qualifiedName.replaceAll('\\W+','').replaceAll(':+','')/]" xml:lang="en-us">
+<title id="title">[generateClassTitle(enumeration)/]</title>
+<shortdesc id="shortdesc">[generateClassShortDescription(enumeration)/]</shortdesc>
+<body id="body" >
+
+<section id="definition">
+<table><tgroup cols="2"> <colspec colname="col1" colwidth="1*"/> <colspec colname="col2" colwidth="4*"/> <tbody>
+<row><entry>Code System</entry><entry>[enumeration.name/] [csv.identifier /] </entry></row>
+<row><entry>Full Name </entry><entry>[csv.fullName /] </entry></row>
+<row><entry>URL  </entry><entry>[csv.url /] </entry></row>
+</tbody></tgroup></table>
+</section>
+
+
+</body>
+</topic>
+[/file]
+[/template]
+
 
 [template public generateClassTitle(ne  : NamedElement)]
 [ne.name/]
@@ -362,6 +432,15 @@
 					[/let]
 				[/let]
 			[/for]
+
+		[for (csc: CodeSystemConstraint | property.getStereotypeApplications()->select(oclIsTypeOf(CodeSystemConstraint)).oclAsType(CodeSystemConstraint))]
+				[let csv  : CodeSystemVersion = csc.reference]
+					[let ee : Enumeration = csv.base_Enumeration.oclAsType(Enumeration)]
+<p>See <xref href="../t_[ee.qualifiedName.replaceAll('\\W+','').replaceAll(':+','')/].dita">[ee.name/]</xref> definition for code system information.</p>
+					[/let]
+				[/let]
+			[/for]
+
 </stentry>
   <stentry><p>[for (aComment : Comment | property.ownedComment)]
 				[ escapeXml(aComment._body).replaceAll('\\n', '</p><p>') /]

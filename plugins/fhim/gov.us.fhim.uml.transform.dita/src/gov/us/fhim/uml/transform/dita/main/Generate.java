@@ -23,6 +23,8 @@ import org.eclipse.emf.common.util.Monitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint;
+import org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint;
 
 /**
  * Entry point of the 'Generate' generation module.
@@ -43,6 +45,8 @@ public class Generate extends AbstractAcceleoGenerator {
      * @generated
      */
     public static final String[] TEMPLATE_NAMES = { "generateElement" };
+    
+    ValueSetConstraint cs;
     
     /**
      * The list of properties files from the launch parameters (Launch configuration).
@@ -343,14 +347,8 @@ public class Generate extends AbstractAcceleoGenerator {
         if (!isInWorkspace(org.eclipse.uml2.uml.UMLPackage.class)) {
             resourceSet.getPackageRegistry().put(org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getNsURI(), org.eclipse.uml2.uml.UMLPackage.eINSTANCE);
         }
-        if (!isInWorkspace(org.openhealthtools.mdht.uml.term.core.profile.TermPackage.class)) {
-            resourceSet.getPackageRegistry().put(org.openhealthtools.mdht.uml.term.core.profile.TermPackage.eINSTANCE.getNsURI(), org.openhealthtools.mdht.uml.term.core.profile.TermPackage.eINSTANCE);
-        }
         if (!isInWorkspace(org.eclipse.emf.ecore.EcorePackage.class)) {
             resourceSet.getPackageRegistry().put(org.eclipse.emf.ecore.EcorePackage.eINSTANCE.getNsURI(), org.eclipse.emf.ecore.EcorePackage.eINSTANCE);
-        }
-        if (!isInWorkspace(org.openhealthtools.mdht.uml.term.core.profile.TermPackage.class)) {
-            resourceSet.getPackageRegistry().put(org.openhealthtools.mdht.uml.term.core.profile.TermPackage.eINSTANCE.getNsURI(), org.openhealthtools.mdht.uml.term.core.profile.TermPackage.eINSTANCE);
         }
         if (!isInWorkspace(com.ibm.xtools.umlnotation.UmlnotationPackage.class)) {
             resourceSet.getPackageRegistry().put(com.ibm.xtools.umlnotation.UmlnotationPackage.eINSTANCE.getNsURI(), com.ibm.xtools.umlnotation.UmlnotationPackage.eINSTANCE);
