@@ -1370,7 +1370,7 @@ Note that because all we need is the Person's name and contact information (name
       </ownedAttribute>
       <ownedAttribute xmi:id="_5HiSQRcBEeOL3Nw-k5HkNw" name="observationQualifier" visibility="public" type="_wBabQBcBEeOL3Nw-k5HkNw" association="_5HiSQBcBEeOL3Nw-k5HkNw">
         <ownedComment xmi:id="_caNfQBcOEeOL3Nw-k5HkNw" annotatedElement="_5HiSQRcBEeOL3Nw-k5HkNw">
-          <body>A pointer to a set (zero to many) of observations or information that may provide additional context to the owning Clinical Observation.  This information may likely alter a clinician's interpretation of the value in the owning Clinical Observation class.</body>
+          <body>A pointer to a set (zero to many) of observations or information that may provide additional context to the owning clinical observation (i.e., the owning ClinicalStatement class).  This information may likely alter a clinician's interpretation of the value in the owning ClinicalStatement class.</body>
         </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5HiSQxcBEeOL3Nw-k5HkNw" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_5HiSQhcBEeOL3Nw-k5HkNw"/>
@@ -1548,7 +1548,7 @@ Note that in VistA, this concept is generally called Observed if observed by a c
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_wBabQBcBEeOL3Nw-k5HkNw" name="ObservationQualifier">
       <ownedComment xmi:id="_zmpAEBcCEeOL3Nw-k5HkNw" annotatedElement="_wBabQBcBEeOL3Nw-k5HkNw">
-        <body>This class contains observations or information that may provide additional context to the owning Clinical Observation.  The information recorded in this class may likely alter a clinician's interpretation of the value in the owning Clinical Observation class.  For example, a blood pressure of 124/77 would be considered normal if the patient was sitting and resting, but abnormal if the patient had just been on a treadmill for five minutes.  In this example, the blood pressure of 124/77 is in the Clinical Observation class, the observation that the blood pressure was taken while patient was sitting and resting or immediately after five minutes on a treadmill would be recorded in this Observation Qualifier class.</body>
+        <body>This class contains observations or information that may provide additional context to the owning clinical observation (i.e., the owning ClinicalStatement class).  The information recorded in this class may likely alter a clinician's interpretation of the value in the owning ClinicalStatement class.  For example, a blood pressure of 140/95 would be considered abnormal if the patient was sitting and resting, but normal if the patient had just been on a treadmill for five minutes.  In this example, the blood pressure of 140/95 is in the ClinicalStatement class, the observation that the blood pressure was taken while patient was sitting and resting or immediately after five minutes on a treadmill would be recorded in this ObservationQualifier class.</body>
       </ownedComment>
       <ownedAttribute xmi:id="_yzWXYBcBEeOL3Nw-k5HkNw" name="category" visibility="public">
         <ownedComment xmi:id="_nG6TgBcDEeOL3Nw-k5HkNw" annotatedElement="_yzWXYBcBEeOL3Nw-k5HkNw">
