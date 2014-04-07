@@ -1455,7 +1455,7 @@ The FHIM uses simple or “primitive” datatypes wherever possible, but does de
     </ownedComment>
     <packagedElement xmi:type="uml:Package" xmi:id="_IA_wsFjGEeG6Pp3Py7p1bw" name="BirthCertificate">
       <eAnnotations xmi:id="_IBBl4FjGEeG6Pp3Py7p1bw" source="uml2.diagrams" references="_IBBl4VjGEeG6Pp3Py7p1bw">
-        <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_IBBl4VjGEeG6Pp3Py7p1bw" type="Class" name="_BirthCertificate" description="The Birth Certificate Diagram shows those classes involved in describing a Person's Birth Certificate.  The &quot;focal class&quot; is the Person class, which has zero-to-many association to the BirthCertificate class.  The BirthCertificate class is modeled as an Act, as we are focusing on the act of reporting a live birth, not so much on the record itself.  The properties of the class are all sourced from the U.S. Standard Certificate of Live Birth, Revision 11/2003, and the definitions of each property contain a reference to which field in the form that the property represents.  In cases where a block on the form allows multiple-choice response, we elected to model these as separate Observations with an association to each of them, as opposed to having a single repeatable property (i.e., having a cardinality of zero-to-many) on Birth Certificate class, in keeping with the FHIM modeling style guide.  The Mother and Father classes contain information about the infant's mother and father, and are modeled as Roles that might be played by other Person instances.  While this is logically the case, implementers may choose not to instantiate separate records for the mother and father, and store the mother's and/or father's information as part of the Birth Certificate.">
+        <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_IBBl4VjGEeG6Pp3Py7p1bw" type="Class" name="BirthCertificate" description="The Birth Certificate Diagram shows those classes involved in describing a Person's Birth Certificate.  The &quot;focal class&quot; is the Person class, which has zero-to-many association to the BirthCertificate class.  The BirthCertificate class is modeled as an Act, as we are focusing on the act of reporting a live birth, not so much on the record itself.  The properties of the class are all sourced from the U.S. Standard Certificate of Live Birth, Revision 11/2003, and the definitions of each property contain a reference to which field in the form that the property represents.  In cases where a block on the form allows multiple-choice response, we elected to model these as separate Observations with an association to each of them, as opposed to having a single repeatable property (i.e., having a cardinality of zero-to-many) on Birth Certificate class, in keeping with the FHIM modeling style guide.  The Mother and Father classes contain information about the infant's mother and father, and are modeled as Roles that might be played by other Person instances.  While this is logically the case, implementers may choose not to instantiate separate records for the mother and father, and store the mother's and/or father's information as part of the Birth Certificate.">
           <children xmi:type="notation:Shape" xmi:id="_MpEDAH2cEeGy1_tR17zNdw" type="Note" fontName="Arial" fontHeight="10" description="FHIM Birth Certificate Domain" fillColor="16777088" transparency="0" lineColor="0" lineWidth="1">
             <children xmi:type="notation:BasicDecorationNode" xmi:id="_MpEDAX2cEeGy1_tR17zNdw" type="DiagramName">
               <element xsi:nil="true"/>
@@ -3041,7 +3041,7 @@ The FHIM uses simple or “primitive” datatypes wherever possible, but does de
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_E_Oo0FjGEeG6Pp3Py7p1bw" name="DeathCertificate">
       <eAnnotations xmi:id="_E_ZA4FjGEeG6Pp3Py7p1bw" source="uml2.diagrams" references="_XcwUEFjGEeG6Pp3Py7p1bw">
-        <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_XcwUEFjGEeG6Pp3Py7p1bw" type="Class" name="_DeathCertificate">
+        <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_XcwUEFjGEeG6Pp3Py7p1bw" type="Class" name="DeathCertificate">
           <children xmi:type="umlnotation:UMLShape" xmi:id="_XcwUHFjGEeG6Pp3Py7p1bw" element="_KBfhMOEVEd6EKMSYA1gKjA" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8519553" lineColor="3342489" showParent="Name" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_XcwUHVjGEeG6Pp3Py7p1bw" type="ImageCompartment">
               <layoutConstraint xmi:type="notation:Size" xmi:id="_XcwUHljGEeG6Pp3Py7p1bw" width="1320" height="1320"/>
@@ -4597,14 +4597,6 @@ Note, for public health reporting purposes, this status indicates the active/ina
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-xnv41-OEd-WjrW-OJ9BNQ" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-xnv4l-OEd-WjrW-OJ9BNQ"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_UNTu4PkfEeGFnccz7SeroA" name="patientStatusChange" visibility="public" association="_UNMaIPkfEeGFnccz7SeroA">
-        <ownedComment xmi:id="_QfERgKCiEeKNT6obAX9SKQ" annotatedElement="_UNTu4PkfEeGFnccz7SeroA">
-          <body>A record of changes to a Patient record's status with a given Healthcare Provider.  This class provides a history of status changes, the dates on which those changes occurred, and provides a reason for the change.</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="FHIM_ParkingLot.emx#_REe8wPkfEeGFnccz7SeroA?FHIM_ParkingLot/PatientStatusChange?"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UNXZQPkfEeGFnccz7SeroA" value="*"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UNWyMPkfEeGFnccz7SeroA"/>
-      </ownedAttribute>
       <ownedAttribute xmi:id="_ZibxoIx3EeCBU92aoqPk5w" name="primaryCareProvider" visibility="public" association="_ZiYuUIx3EeCBU92aoqPk5w">
         <ownedComment xmi:id="_hAn18IyBEeCBU92aoqPk5w" annotatedElement="_ZibxoIx3EeCBU92aoqPk5w">
           <body>A pointer to the doctor selected by the patient to be the first physician contacted for any medical problem. The doctor acts as the patient's regular physician and coordinates any other care the patient needs, such as a visit to a specialist or hospitalization.</body>
@@ -5202,9 +5194,6 @@ Possible values include (from HL7 Table 140): US Army; US Navy; US Air Force; US
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ZigqIIx3EeCBU92aoqPk5w" value="1"/>
       </ownedEnd>
     </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_UNMaIPkfEeGFnccz7SeroA" name="patient_patientStatusChange" memberEnd="_UNTu4PkfEeGFnccz7SeroA _UNcRwPkfEeGFnccz7SeroA">
-      <ownedEnd xmi:id="_UNcRwPkfEeGFnccz7SeroA" name="" visibility="private" type="_420A62FD03B6418A4E500034" association="_UNMaIPkfEeGFnccz7SeroA"/>
-    </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_cGP7oJ1jEeKGRqm0H7Eu1A" name="humanPatient_occupationalHistory" memberEnd="_cGTmAJ1jEeKGRqm0H7Eu1A _cGWCQJ1jEeKGRqm0H7Eu1A">
       <ownedEnd xmi:id="_cGWCQJ1jEeKGRqm0H7Eu1A" name="" visibility="private" type="_420A62FD03B6425125E800E0" association="_cGP7oJ1jEeKGRqm0H7Eu1A"/>
     </packagedElement>
@@ -5286,7 +5275,6 @@ Possible values include (from HL7 Table 140): US Army; US Navy; US Air Force; US
   <Default:Documentation xmi:id="_0QgMIMiEEeKVX7oj83E-Mw" base_Comment="_UutWUO6qEd-crcWiXVDZrQ"/>
   <Default:Documentation xmi:id="_0qPacMiHEeKmIMgFaq6xTg" base_Comment="_xRZ0kH8rEeGaaPUCLjdvag"/>
   <Default:Documentation xmi:id="_0yfSUMiZEeKKLKT6mm7fPg" base_Comment="_22ly0DG4EeGoIvbvHHPRDA"/>
-  <Default:Documentation xmi:id="_16VQsMiEEeKVX7oj83E-Mw" base_Comment="_QfERgKCiEeKNT6obAX9SKQ"/>
   <Default:Documentation xmi:id="_1dc64MiZEeKKLKT6mm7fPg" base_Comment="_WNi9UNmCEeChWYqvVB0Hpw"/>
   <Default:Documentation xmi:id="_1EJPkMiEEeKVX7oj83E-Mw" base_Comment="_XPxocBqREd-j8JC21F3W2A"/>
   <Default:Documentation xmi:id="_1ffDYMhmEeKZ5qLCaMpP2Q" base_Comment="_J0AYwDA7Ed-1aYBV65Lrnw"/>

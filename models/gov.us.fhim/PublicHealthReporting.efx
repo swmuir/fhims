@@ -178,7 +178,7 @@
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_OO1CkAinEeKmtKel3KkMBA" visible="false" type="OperationCompartment"/>
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_OO1poAinEeKmtKel3KkMBA" visible="false" type="SignalCompartment"/>
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_OO2QsAinEeKmtKel3KkMBA" visible="false" type="StructureCompartment"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OOqDcQinEeKmtKel3KkMBA" x="1585" y="19020"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OOqDcQinEeKmtKel3KkMBA" x="-634" y="21873"/>
         </children>
         <children xmi:type="umlnotation:UMLShape" xmi:id="_i8s14BIVEeK0rPN86AJEog" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8519679" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_i8xuYBIVEeK0rPN86AJEog" type="ImageCompartment">
@@ -726,13 +726,17 @@ In fact, a provider organization might act as an information source and might no
       <ownedAttribute xmi:id="_kdEf8LF_EeGkU9GcFSzOCA" name="reportDateTime" visibility="public">
         <eAnnotations xmi:id="_74idEBGAEeKu1LfuaJwFHw" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <ownedComment xmi:id="_7tm_cBGAEeKu1LfuaJwFHw" annotatedElement="_kdEf8LF_EeGkU9GcFSzOCA">
-          <body>Date and time the report is being sent to public health agencies.</body>
+          <body>Date and time the report is being sent to public health agencies.&#xD;
+&quot;This data element has the function of a timestamp and represents the equivalent of a version number for the ICSR. Every ICSR and every iteration (e.g. version) of an ICSR in a safety message must have a different value for Date of Creation. The most recent version of an ICSR will have the most recent date; previous versions of an ICSR will have older dates.&quot; - ICH E2B(R3), C.1.2&#xD;
+The date that the Med Watch report was created.  Medwatch 3500 form question B.4; Medwatch 3500A form question B.4; Medwatch 3500B form question D.2; VAERS-1 form question 6.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_EAviELGAEeGkU9GcFSzOCA" name="reportId" visibility="public">
         <ownedComment xmi:id="_c5KycKCSEeO-_tuxzOR0Jg" annotatedElement="_EAviELGAEeGkU9GcFSzOCA">
-          <body>A unique identifier assigned to the report by the author.</body>
+          <body>A unique identifier assigned to the report by the author.&#xD;
+&#xD;
+&quot;An identifier for the ICSR that is unique&quot; - ICH E2B(R3), C.1.1</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
       </ownedAttribute>
@@ -749,6 +753,9 @@ In fact, a provider organization might act as an information source and might no
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_H1atkLGAEeGkU9GcFSzOCA" name="status" visibility="public">
+        <ownedComment xmi:id="_KAnl8LxbEeOKUOXGtjETEg" annotatedElement="_H1atkLGAEeGkU9GcFSzOCA">
+          <body>&quot;Indicate[s] that a previously transmitted ICSR is either considered completely void (nullified)..., or amended&quot; - ICH E2B(R3), C.1.11.1.</body>
+        </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_aibvsLPYEeGd84AyH8JgAw" name="careGiver" visibility="public" association="_aiW3MLPYEeGd84AyH8JgAw">
@@ -764,7 +771,10 @@ In fact, a provider organization might act as an information source and might no
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5OWJwMxKEeGPzLWdRElHZQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_5OVisMxKEeGPzLWdRElHZQ"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_OVSFEMw8EeGPzLWdRElHZQ" name="labTestPromise" visibility="public" association="_OVNzoMw8EeGPzLWdRElHZQ">
+      <ownedAttribute xmi:id="_OVSFEMw8EeGPzLWdRElHZQ" name="relevantLabTests" visibility="public" association="_OVNzoMw8EeGPzLWdRElHZQ">
+        <ownedComment xmi:id="_bC1rEKYFEeOpGqPhI0EtmQ" annotatedElement="_OVSFEMw8EeGPzLWdRElHZQ">
+          <body>Lab tests and data, including dates, that are relevant to the reportable event.  Medwatch 3500 form question B.6; Medwatch 3500A form question B.6; Medwatch 3500B form question A.5; VAERS-1 form question 12.</body>
+        </ownedComment>
         <type xmi:type="uml:Class" href="Lab.efx#_420A62FD03B64230F39A02CC?FHIM/Lab/LabTestPromise?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OVT6Qcw8EeGPzLWdRElHZQ" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OVT6QMw8EeGPzLWdRElHZQ"/>
@@ -3372,7 +3382,7 @@ Note, for public health reporting purposes, this statusiIndicates the active/ina
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_MS174eVZEeGXKJmgI97urQ" visible="false" type="OperationCompartment"/>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_MS2i8OVZEeGXKJmgI97urQ" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_MS2i8eVZEeGXKJmgI97urQ" visible="false" type="StructureCompartment"/>
-            <element xmi:type="uml:Class" href="AdverseEventReporting.efx#_420A62FD03B642A5D0A00279?FHIM/AdverseEventReporting/AdverseReactionReportingEvent?"/>
+            <element xmi:type="uml:Class" href="AdverseEventReporting.efx#_420A62FD03B642A5D0A00279?FHIM/AdverseEventReporting/_deprecated_AdverseReactionReportingEvent?"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MSzfoeVZEeGXKJmgI97urQ" x="14582" y="634"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_N164MOVZEeGXKJmgI97urQ" element="_O851ELC5EeGGPqUAHxbNLQ" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8487423" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
@@ -5969,4 +5979,6 @@ Note, for public health reporting purposes, this statusiIndicates the active/ina
   <Default:Documentation xmi:id="_c5Y04KCSEeO-_tuxzOR0Jg" base_Comment="_c5KycKCSEeO-_tuxzOR0Jg"/>
   <Default:Documentation xmi:id="_o0YnQKCSEeO-_tuxzOR0Jg" base_Comment="_o0PdUKCSEeO-_tuxzOR0Jg"/>
   <Default:Documentation xmi:id="_AmyFcKCTEeO-_tuxzOR0Jg" base_Comment="_AmpikKCTEeO-_tuxzOR0Jg"/>
+  <Default:Documentation xmi:id="_bC-1AKYFEeOpGqPhI0EtmQ" base_Comment="_bC1rEKYFEeOpGqPhI0EtmQ"/>
+  <Default:Documentation xmi:id="_KAx-ALxbEeOKUOXGtjETEg" base_Comment="_KAnl8LxbEeOKUOXGtjETEg"/>
 </xmi:XMI>

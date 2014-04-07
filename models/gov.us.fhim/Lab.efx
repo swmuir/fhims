@@ -4056,7 +4056,7 @@ Note that the aerobic condition of the culture is included in this concept.  Not
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_QmOvgHpLEeCYy4DzyFpAzQ" name="reportStatus" visibility="public">
+      <ownedAttribute xmi:id="_QmOvgHpLEeCYy4DzyFpAzQ" name="resultStatus" visibility="public">
         <ownedComment xmi:id="_fupOULsJEeGZTLDYkoM_Sw" annotatedElement="_QmOvgHpLEeCYy4DzyFpAzQ">
           <body>&quot;Contains the observation result status.... This field reflects the current completion status of the results for one Observation Identifier....&quot; - HL7 Version 2.8, OBX-11.</body>
         </ownedComment>
@@ -5149,6 +5149,10 @@ Note that the classes in this package are not full-fledged FHIM classes, and may
       <ownedAttribute xmi:id="_N4v88GRPEeCsvJrE4KlOMA" name="reason" visibility="public">
         <ownedComment xmi:id="_2yqQIMYYEeGsb4KXw2Babg" annotatedElement="_N4v88GRPEeCsvJrE4KlOMA">
           <body>Indicates the reason why a test was unable to be performed.  It may indicate that the quantity of specimen was insufficient, that the specimen was contaminated, that the specimen is inappropriate for the kind of test ordered, etc.&#xD;
+Note that when the reason that a test could not be performed is due to some aspect of the specimen, the specimen appropriateness and/or speciment condition should be used instead of this property.&#xD;
+&#xD;
+&quot;As best practice in the future, a combination of SPM-21 and SPM-24 should be used to provide the most detailed coded information about the specimen reject reason and the specific specimen condition, if applicable. Use of SPM-21 is the ideal way to communicate when a test order is canceled due to specimen rejection as it codifies the reason for cancellation. Because disposition of a specimen is a CLIA requirement this reason needs to be retained and displayed in the patient record and incorporated into any type of report regardless of the medium of that report (paper, displayed on screen). The IG has identified HL70490 table as the value set for SPM-21, though the content needs improvement. The SNOMED finding hierarchy also has some appropriate terms, but is not complete. Future work on these vocabularies will expand the content. Use of SPM-24 can be very useful for communicating specimen condition information that does not meet the laboratory’s standard for acceptability (HL70493). The SNOMED finding hierarchy also has some appropriate terms, but is not complete. Future work on these vocabularies will expand the content. If a laboratory system cannot use SPM-21 and SPM-24, then this information shall be communicated using OBX-5 and NTE segment(s)&quot;&#xD;
+&#xD;
 &quot;Contains the value observed by the observation producer....  It is not a required field because some systems will report only the Interpretation Codes.... This field may repeat for multipart, single answer results.&quot; - HL7 Version 2.8, OBX-5.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
@@ -5259,9 +5263,10 @@ Note that we need to model more details regarding chain of custody in general an
       </ownedComment>
       <ownedAttribute xmi:id="_dJUBEMHSEeCdLPayeDTWtA" name="appropriateness" visibility="public">
         <ownedComment xmi:id="_dJUBEcHSEeCdLPayeDTWtA" annotatedElement="_dJUBEMHSEeCdLPayeDTWtA">
-          <body>&quot;The suitability of the specimen for the particular planned use as determined by the filler.&quot; - HL7 Version 2.8, SPM-23.  Possible values include (from HL7 Table 492): Preferred; Appropriate; Inappropriate; Inappropriate due to....</body>
+          <body>This field is deprecated in favor of using Reject Reason (SPM-21) and Specimen Condition (SPM-24).  This field is retained for backward compatibility for legacy HL7 V2 messaging.&#xD;
+&quot;The suitability of the specimen for the particular planned use as determined by the filler.&quot; - HL7 Version 2.8, SPM-23.  Possible values include (from HL7 Table 492): Preferred; Appropriate; Inappropriate; Inappropriate due to....</body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OyJcYZ_tEeOScYv3wgSwlA" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OyJcYJ_tEeOScYv3wgSwlA"/>
       </ownedAttribute>
