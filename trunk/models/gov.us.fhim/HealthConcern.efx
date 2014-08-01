@@ -2045,6 +2045,16 @@
           <body>&quot;Contains the perseverance of a problem (e.g., acute, chronic, etc.).&quot; - HL7 Version 2.8, PRB-12.  Note that HL7does not provide any suggested values for this code.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OGJaIBgfEeSGA92rpTJu_w" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OGIzEBgfEeSGA92rpTJu_w"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_OgOOYBgcEeSfB8OsSP5QtQ" name="concernContext" visibility="public">
+        <ownedComment xmi:id="_qfShUBgcEeSfB8OsSP5QtQ" annotatedElement="_OgOOYBgcEeSfB8OsSP5QtQ">
+          <body>describes whether the condition exists or doesn't exist.  Other values are potentially possible including rule in / rule out.  Align with SNOMED situation with explicit context.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vswkYBgfEeSGA92rpTJu_w" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vsv9UBgfEeSGA92rpTJu_w"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_lygBwBF6EeKu1LfuaJwFHw" name="dateDiagnosed" visibility="public">
         <ownedComment xmi:id="_iuP7sBF8EeKu1LfuaJwFHw" annotatedElement="_lygBwBF6EeKu1LfuaJwFHw">
@@ -2100,18 +2110,25 @@ Note that while the datatype for this concept should likely be a code, it is cur
           <body>&quot;Contains a quantitative or numeric representation of the certainty that the problem exists for this patient.  This field has a valid range of 0 to 1.  For example, a healthcare provider may be 75% (.75) sure that the problem has been correctly identified.&quot; - HL7 Version 2.8, PRB-20</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_N-BAoNYeEd62cosTNS-_lw?FHIM/Datatypes/Real?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sUEKQRgfEeSGA92rpTJu_w" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sUEKQBgfEeSGA92rpTJu_w"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_kUe_ILZ2EeGWl-7OlqBMDw" name="prognosis" visibility="public">
         <ownedComment xmi:id="_xR7F8LZ2EeGWl-7OlqBMDw" annotatedElement="_kUe_ILZ2EeGWl-7OlqBMDw">
           <body>&quot;Contains the prognosis for the individual's problem (e.g., good, poor, etc.).&quot; - HL7 Version 2.8, PRB-22.  Note that HL7does not provide any suggested values for this code.</body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NAQJEBgfEeSGA92rpTJu_w" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NAOT4BgfEeSGA92rpTJu_w"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_T-pjsLZ3EeGWl-7OlqBMDw" name="sensitivity" visibility="public">
         <ownedComment xmi:id="_T-pjsbZ3EeGWl-7OlqBMDw" annotatedElement="_T-pjsLZ3EeGWl-7OlqBMDw">
-          <body>&quot;Contains information about the level of security and/or sensitivity surrounding the problem (e.g., highly sensitive, not sensitive, sensitive, etc.).&quot; - HL7 Version 2.8, PRB-25.  Note that HL7does not provide any suggested values for this code.</body>
+          <body>&quot;Contains information about the level of security and/or sensitivity surrounding the problem (e.g., highly sensitive, not sensitive, sensitive, etc.).&quot; - HL7 Version 2.8, PRB-25.  Note that HL7does not provide any suggested values for this code.&#xD;
+Note that this property may be removed or altered based on the outcome of the Security and Privacy modeling.</body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Z58_YBgfEeSGA92rpTJu_w" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Z58YUBgfEeSGA92rpTJu_w"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_Hc0b8PHtEeGWjrqT5CRABg" name="wasCauseOfDeath" visibility="public">
         <ownedComment xmi:id="_X5d0kPHtEeGWjrqT5CRABg" annotatedElement="_Hc0b8PHtEeGWjrqT5CRABg">
@@ -2299,17 +2316,6 @@ Note that while the datatype for this concept should likely be a code, it is cur
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BWYgkBJXEeKEjrc2hUE4_Q" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_BWX5gBJXEeKEjrc2hUE4_Q"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_V4wYcBJXEeKEjrc2hUE4_Q" name="healthConcern" visibility="public">
-        <eAnnotations xmi:id="_WvgDwIefEeOX_brmw15GsQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
-          <details xmi:id="_Wvgq0IefEeOX_brmw15GsQ" key="redefine?"/>
-        </eAnnotations>
-        <ownedComment xmi:id="_V4wYcRJXEeKEjrc2hUE4_Q" annotatedElement="_V4wYcBJXEeKEjrc2hUE4_Q">
-          <body>Identifies the Problem or Health Concern experienced by a person related to the Patient.  Note that this healthConcern property in this FamilyHistory class is re-defining the healthConcern in the HealthConcern supertype.  The FamilyHistory health concern might be Diabetes, in that my father had diabetes.  The Health Concern class health concern code property would then contain Family History of Diabetes.&#xD;
-&#xD;
-&quot;Identifies the problem. This is the identifier from an institution's master list of problems.&quot; - HL7 Version 2.8, PRB-3</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
-      </ownedAttribute>
       <ownedAttribute xmi:id="_knp-cPHtEeGWjrqT5CRABg" name="medicalHistory" visibility="public">
         <ownedComment xmi:id="_toS4gPHtEeGWjrqT5CRABg" annotatedElement="_knp-cPHtEeGWjrqT5CRABg">
           <body>Details about problems or diagnoses for this genetic relative.  Note that this might be implemented as a Document Section.</body>
@@ -2321,14 +2327,6 @@ Note that while the datatype for this concept should likely be a code, it is cur
       <ownedAttribute xmi:id="_SsKesPHsEeGWjrqT5CRABg" name="relative" visibility="public" type="_MKlBAPHsEeGWjrqT5CRABg" association="_SsFmMPHsEeGWjrqT5CRABg">
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SsLs0PHsEeGWjrqT5CRABg" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SsLFwPHsEeGWjrqT5CRABg" value="1"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_0ki48PHtEeGWjrqT5CRABg" name="status" visibility="public">
-        <ownedComment xmi:id="_0kjgAvHtEeGWjrqT5CRABg" annotatedElement="_0ki48PHtEeGWjrqT5CRABg">
-          <body>Status of the genetic relative’s problem</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ELIgIBJXEeKEjrc2hUE4_Q" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ELH5EBJXEeKEjrc2hUE4_Q"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_bhUsEPHtEeGWjrqT5CRABg" name="wasCauseOfDeath" visibility="public">
         <ownedComment xmi:id="_bhUsEfHtEeGWjrqT5CRABg" annotatedElement="_bhUsEPHtEeGWjrqT5CRABg">
@@ -2411,7 +2409,6 @@ Note that while the datatype for this concept should likely be a code, it is cur
   <term:ValueSetConstraint xmi:id="_pvua8AgnEeKpi5AGmkKVpg" base_Property="_Zr0aUHiaEd-xd69YcOIcPA">
     <reference href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_XzBboKRMEeGZ6ueex_Me0w"/>
   </term:ValueSetConstraint>
-  <Default:Documentation xmi:id="_0kjgA_HtEeGWjrqT5CRABg" base_Comment="_0kjgAvHtEeGWjrqT5CRABg"/>
   <Default:Documentation xmi:id="_4kJWYrZ2EeGWl-7OlqBMDw" base_Comment="_4kJWYbZ2EeGWl-7OlqBMDw"/>
   <Default:Documentation xmi:id="_bhVTIPHtEeGWjrqT5CRABg" base_Comment="_bhUsEfHtEeGWjrqT5CRABg"/>
   <Default:Documentation xmi:id="_c--UYge5EeCPOdVNW49Akw" base_Comment="_kUJV0XiYEd-xd69YcOIcPA"/>
@@ -2438,7 +2435,6 @@ Note that while the datatype for this concept should likely be a code, it is cur
   <Default:Documentation xmi:id="_TcmG4LZ0EeGWl-7OlqBMDw" base_Comment="_TceLELZ0EeGWl-7OlqBMDw"/>
   <Default:Documentation xmi:id="_toa0UPHtEeGWjrqT5CRABg" base_Comment="_toS4gPHtEeGWjrqT5CRABg"/>
   <Default:Documentation xmi:id="_Uzb-ALZ0EeGWl-7OlqBMDw" base_Comment="_UzTbILZ0EeGWl-7OlqBMDw"/>
-  <Default:Documentation xmi:id="_V4w_gBJXEeKEjrc2hUE4_Q" base_Comment="_V4wYcRJXEeKEjrc2hUE4_Q"/>
   <Default:Documentation xmi:id="_x2TWoLZ8EeGWl-7OlqBMDw" base_Comment="_x2KzwLZ8EeGWl-7OlqBMDw"/>
   <Default:Documentation xmi:id="_X5jUIPHtEeGWjrqT5CRABg" base_Comment="_X5d0kPHtEeGWjrqT5CRABg"/>
   <Default:Documentation xmi:id="_xfh90AMYEeC6TLUcQZx_GQ" base_Comment="_xfYM0AMYEeC6TLUcQZx_GQ"/>
@@ -2464,4 +2460,5 @@ Note that while the datatype for this concept should likely be a code, it is cur
   <RIM:Observation xmi:id="__TXWkAMXEeC6TLUcQZx_GQ" base_Class="_55AJkPc4Ed-hU-zq4VwY5Q"/>
   <RIM:Role xmi:id="_QpW5cPHsEeGWjrqT5CRABg" base_Class="_MKlBAPHsEeGWjrqT5CRABg"/>
   <Default:Documentation xmi:id="_xT6g8J10EeO_7b9hT5majA" base_Comment="_xTx-EJ10EeO_7b9hT5majA"/>
+  <Default:Documentation xmi:id="_qff8sBgcEeSfB8OsSP5QtQ" base_Comment="_qfShUBgcEeSfB8OsSP5QtQ"/>
 </xmi:XMI>
