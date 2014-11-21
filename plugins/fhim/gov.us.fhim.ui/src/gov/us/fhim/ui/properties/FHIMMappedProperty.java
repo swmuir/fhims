@@ -34,9 +34,7 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertyConstants;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 import org.eclipse.uml2.uml.Element;
-import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Stereotype;
-import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.ui.properties.sections.ResettableModelerPropertySection;
 
 public class FHIMMappedProperty extends ResettableModelerPropertySection {
@@ -91,17 +89,12 @@ public class FHIMMappedProperty extends ResettableModelerPropertySection {
 		this.modelElement = (Element) element;
 	}
 
-	protected Stereotype getFHIMStereotype() {
-		String qname = ICDAProfileConstants.CDA_PROFILE_NAME + NamedElement.SEPARATOR + ICDAProfileConstants.TEXT_VALUE;
-		Stereotype stereotype = modelElement.getApplicableStereotype(qname);
-		return stereotype;
-	}
-
 	private void update(final Table table) {
 		try {
 			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(modelElement);
 
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
+
 				@Override
 				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 
@@ -172,7 +165,7 @@ public class FHIMMappedProperty extends ResettableModelerPropertySection {
 		editor.horizontalAlignment = SWT.LEFT;
 		editor.grabHorizontal = true;
 		table.addListener(SWT.MouseDown, new Listener() {
-			@Override
+
 			public void handleEvent(Event event) {
 				Rectangle clientArea = table.getClientArea();
 				Point pt = new Point(event.x, event.y);
@@ -196,7 +189,7 @@ public class FHIMMappedProperty extends ResettableModelerPropertySection {
 								}
 
 								Listener textListener = new Listener() {
-									@Override
+
 									public void handleEvent(final Event e) {
 										switch (e.type) {
 											case SWT.FocusOut:
@@ -227,7 +220,7 @@ public class FHIMMappedProperty extends ResettableModelerPropertySection {
 								final Text text = new Text(table, SWT.NONE);
 
 								Listener textListener = new Listener() {
-									@Override
+
 									public void handleEvent(final Event e) {
 										switch (e.type) {
 											case SWT.FocusOut:
