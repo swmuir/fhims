@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   
+
+
+  
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs contributorId="org.openhealthtools.mdht.uml.ui.properties">     
+         <propertyTab
+               category="domain"
+               label="FHIM"
+               afterTab="property.tab.GeneralPropertySection"
+               id="property.tab.FHIMPropertySection">           
+         </propertyTab> 
+      </propertyTabs>
+   </extension>
+ 
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+       <propertySections contributorId="org.openhealthtools.mdht.uml.ui.properties">
+     
+          <propertySection tab="property.tab.FHIMPropertySection" 
+	 	     class="gov.us.fhim.ui.properties.FHIMMappedProperty" 
+	 	     id="property.section.fhim.PropertySection"
+             filter="gov.us.fhim.ui.filters.PropertyFilter"/>
+             
+      
+             
+      </propertySections>
+   </extension> 
+</plugin>
