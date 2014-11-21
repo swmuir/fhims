@@ -4,13 +4,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
-		<groupId>gov.us.fhim</groupId>
-		<artifactId>gov.us.fhim.plugins</artifactId>
-		<version>0.9.0-SNAPSHOT</version>
+	<groupId>gov.us.fhim</groupId>
+	<artifactId>gov.us.fhim.plugins</artifactId>
+	<version>0.9.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
-
 	<properties>
 		<tycho-version>0.19.0</tycho-version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<repositories>
 		<repository>
@@ -18,21 +18,35 @@
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/releases/kepler</url>
 		</repository>
+		<repository>
+			<id>cdatools.com</id>
+			<name>cdatools.com-releases</name>
+			<url>http://cdatools.com:8081/artifactory/ext-snapshot-local</url>
+		</repository>
 	</repositories>
-	
 	<modules>
-	 
-	 
+		<module>gov.us.fhim.resource</module>
+		<module>gov.us.fhim.ui</module>
 	</modules>
 	<build>
 		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.0</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>tycho-maven-plugin</artifactId>
 				<version>${tycho-version}</version>
 				<extensions>true</extensions>
+				<configuration>
+					<pomDependencies>consider</pomDependencies>
+				</configuration>
 			</plugin>
-
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>target-platform-configuration</artifactId>
