@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:term="http://www.openhealthtools.org/mdht/schemas/term/1" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML">
+  <uml:Package xmi:id="_-8LR4GdtEeC2Bo_BG2At6Q" name="immunizations">
+    <packageImport xmi:id="_A8ktYFFaEeSsH5I2Zw5EZA">
+      <importedPackage href="../../gov.us.fhim/Immunization.efx#_420A62FD03B64294DF9F0087"/>
+    </packageImport>
+    <packageImport xmi:id="_srmM4FFsEeSsH5I2Zw5EZA">
+      <importedPackage href="../../gov.us.fhim.terminology/model/fhim-vocab.uml#_eIuzQMBVEeGOjJTiA9qJ1w"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_NLvn8FC1EeSqZ_7locB0Ww" clientDependency="_rQ_K8FC6EeSuY_C0isF88A" name="ImmunizationExchange">
+      <ownedComment xmi:id="_bmOukFFEEeSuY_C0isF88A">
+        <body>cdadocumenttype=ClinicalDocument
+
+cdatype=Act
+
+cdadocumenttemplate=1234567890</body>
+      </ownedComment>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_hIaYcFC6EeSuY_C0isF88A" name="ImmunizationContainer">
+      <ownedComment xmi:id="_hY8rYFFVEeSnyMCuj5VzCQ">
+        <body>cdatype=Section</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="_4QbZcFFVEeSnyMCuj5VzCQ" name="immunizationActivity" type="_0lZ5MFFVEeSnyMCuj5VzCQ" association="_4QcAglFVEeSnyMCuj5VzCQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6GhYYVFVEeSnyMCuj5VzCQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6GhYYFFVEeSnyMCuj5VzCQ" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_rQ_K8FC6EeSuY_C0isF88A" client="_NLvn8FC1EeSqZ_7locB0Ww" supplier="_hIaYcFC6EeSuY_C0isF88A"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_0lZ5MFFVEeSnyMCuj5VzCQ" name="ImmunizationActivity">
+      <generalization xmi:id="_HcsygFFaEeSsH5I2Zw5EZA">
+        <general xmi:type="uml:Class" href="../../gov.us.fhim/Immunization.efx#_HhemkH87EeG8JPxVazzwbQ"/>
+      </generalization>
+      <ownedAttribute xmi:id="_7KlmAFFsEeSsH5I2Zw5EZA" name="fundingSource" visibility="public">
+        <ownedComment xmi:id="_NWGCQFFvEeSsH5I2Zw5EZA">
+          <body>cdaProperty=code</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="../../gov.us.fhim/Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_827zEVFsEeSsH5I2Zw5EZA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_827zEFFsEeSsH5I2Zw5EZA" value="1"/>
+        <redefinedProperty href="../../gov.us.fhim/Immunization.efx#_egUl8AlpEeKmMfGXbG9elQ"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_4QcAglFVEeSnyMCuj5VzCQ" memberEnd="_4QbZcFFVEeSnyMCuj5VzCQ _4QcAg1FVEeSnyMCuj5VzCQ">
+      <ownedEnd xmi:id="_4QcAg1FVEeSnyMCuj5VzCQ" type="_hIaYcFC6EeSuY_C0isF88A" association="_4QcAglFVEeSnyMCuj5VzCQ"/>
+    </packagedElement>
+    <profileApplication xmi:id="_OFZVEFFrEeSsH5I2Zw5EZA">
+      <eAnnotations xmi:id="_OFbKQFFrEeSsH5I2Zw5EZA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.openhealthtools.org/mdht/schemas/term/1#/"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://MDHT_TERM_PROFILES/Terminology.profile.uml#_cxOJEIEVEd6H8o-hO3-B4Q"/>
+    </profileApplication>
+    <profileApplication xmi:id="_OanPwFFuEeSsH5I2Zw5EZA">
+      <eAnnotations xmi:id="_OanPwVFuEeSsH5I2Zw5EZA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.openhealthtools.org/mdht/schemas/cda/4#/"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://CDA_PROFILES/CDA.profile.uml#_cxOJEIEVEd6H8o-hO3-B4Q"/>
+    </profileApplication>
+  </uml:Package>
+  <term:ValueSetConstraint xmi:id="_7KmNEFFsEeSsH5I2Zw5EZA" base_Property="_7KlmAFFsEeSsH5I2Zw5EZA">
+    <reference href="../../gov.us.fhim.terminology/model/fhim-vocab.uml#_XWnMcKRMEeGZ6ueex_Me0w"/>
+  </term:ValueSetConstraint>
+</xmi:XMI>
