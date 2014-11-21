@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+
+
+   
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      
+      <package
+            uri="http://gov.us.fhim/profile/1"
+            class="gov.us.fhim.profile.FHIMPackage"
+            genModel="model/fhim.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+     
+      <parser
+            type="fhim"
+            class="gov.us.fhim.profile.util.FHIMResourceFactoryImpl"/>
+   </extension>
+   
+   
+    <extension
+         id="FHIMProfiles"
+         name="FHIM Profiles"
+         point="org.eclipse.gmf.runtime.emf.core.Pathmaps">
+      <pathmap
+            name="FHIM_PROFILES"
+            path="model"
+            plugin="gov.us.fhim.resource"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.uri_mapping">
+      <mapping
+            source="pathmap://FHIM_PROFILES/"
+            target="model/">
+      </mapping>
+   </extension>
+   
+   
+     <extension point="org.eclipse.uml2.uml.generated_package">
+      <profile
+            uri="http://gov.us.fhim/profile/1"
+            location="pathmap://FHIM_PROFILES/fhim.profile.uml#_Vgc4AAK0EeS6g7XLt9rX8g">
+      </profile>
+   </extension>
+   
+</plugin>
