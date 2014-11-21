@@ -37,7 +37,7 @@ public class Generate extends AbstractAcceleoGenerator {
      *
      * @generated
      */
-    public static final String MODULE_FILE_NAME = "/gov/us/fhim/uml/transform/dita/main/generate";
+    public static final String MODULE_FILE_NAME = "generate";
     
     /**
      * The name of the templates that are to be generated.
@@ -347,11 +347,14 @@ public class Generate extends AbstractAcceleoGenerator {
         if (!isInWorkspace(org.eclipse.uml2.uml.UMLPackage.class)) {
             resourceSet.getPackageRegistry().put(org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getNsURI(), org.eclipse.uml2.uml.UMLPackage.eINSTANCE);
         }
+        if (!isInWorkspace(org.openhealthtools.mdht.uml.term.core.profile.TermPackage.class)) {
+            resourceSet.getPackageRegistry().put(org.openhealthtools.mdht.uml.term.core.profile.TermPackage.eINSTANCE.getNsURI(), org.openhealthtools.mdht.uml.term.core.profile.TermPackage.eINSTANCE);
+        }
         if (!isInWorkspace(org.eclipse.emf.ecore.EcorePackage.class)) {
             resourceSet.getPackageRegistry().put(org.eclipse.emf.ecore.EcorePackage.eINSTANCE.getNsURI(), org.eclipse.emf.ecore.EcorePackage.eINSTANCE);
         }
-        if (!isInWorkspace(com.ibm.xtools.umlnotation.UmlnotationPackage.class)) {
-            resourceSet.getPackageRegistry().put(com.ibm.xtools.umlnotation.UmlnotationPackage.eINSTANCE.getNsURI(), com.ibm.xtools.umlnotation.UmlnotationPackage.eINSTANCE);
+        if (!isInWorkspace(org.openhealthtools.mdht.uml.term.core.profile.TermPackage.class)) {
+            resourceSet.getPackageRegistry().put(org.openhealthtools.mdht.uml.term.core.profile.TermPackage.eINSTANCE.getNsURI(), org.openhealthtools.mdht.uml.term.core.profile.TermPackage.eINSTANCE);
         }
         
         /*
