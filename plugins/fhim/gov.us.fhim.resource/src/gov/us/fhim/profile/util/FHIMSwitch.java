@@ -6,7 +6,6 @@ import gov.us.fhim.profile.FHIMPackage;
 import gov.us.fhim.profile.Index;
 import gov.us.fhim.profile.Iso11179;
 import gov.us.fhim.profile.Mapping;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
@@ -53,6 +52,7 @@ public class FHIMSwitch<T> extends Switch<T> {
 	 * @return whether this is a switch for the given package.
 	 * @generated
 	 */
+
 	@Override
 	protected boolean isSwitchFor(EPackage ePackage) {
 		return ePackage == modelPackage;
@@ -65,6 +65,7 @@ public class FHIMSwitch<T> extends Switch<T> {
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
+
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
@@ -153,6 +154,7 @@ public class FHIMSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated
 	 */
+
 	@Override
 	public T defaultCase(EObject object) {
 		return null;

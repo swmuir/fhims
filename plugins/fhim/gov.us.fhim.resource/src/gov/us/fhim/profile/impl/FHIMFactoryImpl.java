@@ -8,7 +8,6 @@ import gov.us.fhim.profile.Index;
 import gov.us.fhim.profile.Iso11179;
 import gov.us.fhim.profile.Mapping;
 import gov.us.fhim.profile.StandardOrProject;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -56,6 +55,7 @@ public class FHIMFactoryImpl extends EFactoryImpl implements FHIMFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
@@ -75,6 +75,7 @@ public class FHIMFactoryImpl extends EFactoryImpl implements FHIMFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
@@ -91,6 +92,7 @@ public class FHIMFactoryImpl extends EFactoryImpl implements FHIMFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
@@ -107,7 +109,7 @@ public class FHIMFactoryImpl extends EFactoryImpl implements FHIMFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+
 	public Mapping createMapping() {
 		MappingImpl mapping = new MappingImpl();
 		return mapping;
@@ -118,7 +120,7 @@ public class FHIMFactoryImpl extends EFactoryImpl implements FHIMFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+
 	public Index createIndex() {
 		IndexImpl index = new IndexImpl();
 		return index;
@@ -129,7 +131,7 @@ public class FHIMFactoryImpl extends EFactoryImpl implements FHIMFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+
 	public Iso11179 createIso11179() {
 		Iso11179Impl iso11179 = new Iso11179Impl();
 		return iso11179;
@@ -165,7 +167,7 @@ public class FHIMFactoryImpl extends EFactoryImpl implements FHIMFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+
 	public FHIMPackage getFHIMPackage() {
 		return (FHIMPackage) getEPackage();
 	}
