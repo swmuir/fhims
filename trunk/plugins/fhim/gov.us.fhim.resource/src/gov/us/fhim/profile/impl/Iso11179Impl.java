@@ -134,6 +134,7 @@ public class Iso11179Impl extends MinimalEObjectImpl.Container implements Iso111
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+
 	@Override
 	protected EClass eStaticClass() {
 		return FHIMPackage.Literals.ISO11179;
@@ -144,7 +145,7 @@ public class Iso11179Impl extends MinimalEObjectImpl.Container implements Iso111
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+
 	public String getId() {
 		return id;
 	}
@@ -154,7 +155,7 @@ public class Iso11179Impl extends MinimalEObjectImpl.Container implements Iso111
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+
 	public void setId(String newId) {
 		String oldId = id;
 		id = newId;
@@ -168,7 +169,7 @@ public class Iso11179Impl extends MinimalEObjectImpl.Container implements Iso111
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+
 	public String getCodeSystem() {
 		return codeSystem;
 	}
@@ -178,7 +179,7 @@ public class Iso11179Impl extends MinimalEObjectImpl.Container implements Iso111
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+
 	public void setCodeSystem(String newCodeSystem) {
 		String oldCodeSystem = codeSystem;
 		codeSystem = newCodeSystem;
@@ -193,7 +194,7 @@ public class Iso11179Impl extends MinimalEObjectImpl.Container implements Iso111
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+
 	public String getCode() {
 		return code;
 	}
@@ -203,7 +204,7 @@ public class Iso11179Impl extends MinimalEObjectImpl.Container implements Iso111
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+
 	public void setCode(String newCode) {
 		String oldCode = code;
 		code = newCode;
@@ -217,7 +218,7 @@ public class Iso11179Impl extends MinimalEObjectImpl.Container implements Iso111
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+
 	public String getSource() {
 		return source;
 	}
@@ -227,7 +228,7 @@ public class Iso11179Impl extends MinimalEObjectImpl.Container implements Iso111
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+
 	public void setSource(String newSource) {
 		String oldSource = source;
 		source = newSource;
@@ -241,7 +242,7 @@ public class Iso11179Impl extends MinimalEObjectImpl.Container implements Iso111
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+
 	public Property getBase_Property() {
 		if (base_Property != null && base_Property.eIsProxy()) {
 			InternalEObject oldBase_Property = (InternalEObject) base_Property;
@@ -271,7 +272,7 @@ public class Iso11179Impl extends MinimalEObjectImpl.Container implements Iso111
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+
 	public void setBase_Property(Property newBase_Property) {
 		Property oldBase_Property = base_Property;
 		base_Property = newBase_Property;
@@ -286,6 +287,7 @@ public class Iso11179Impl extends MinimalEObjectImpl.Container implements Iso111
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -311,6 +313,7 @@ public class Iso11179Impl extends MinimalEObjectImpl.Container implements Iso111
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -338,6 +341,7 @@ public class Iso11179Impl extends MinimalEObjectImpl.Container implements Iso111
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
@@ -365,6 +369,7 @@ public class Iso11179Impl extends MinimalEObjectImpl.Container implements Iso111
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
@@ -395,6 +400,7 @@ public class Iso11179Impl extends MinimalEObjectImpl.Container implements Iso111
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+
 	@Override
 	public String toString() {
 		if (eIsProxy()) {

@@ -754,7 +754,7 @@ public enum StandardOrProject implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+
 	public int getValue() {
 		return value;
 	}
@@ -764,7 +764,7 @@ public enum StandardOrProject implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+
 	public String getName() {
 		return name;
 	}
@@ -774,7 +774,7 @@ public enum StandardOrProject implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+
 	public String getLiteral() {
 		return literal;
 	}
@@ -785,6 +785,7 @@ public enum StandardOrProject implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+
 	@Override
 	public String toString() {
 		return literal;

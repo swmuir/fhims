@@ -31,6 +31,7 @@ public class FHIMResourceFactoryImpl extends ResourceFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+
 	@Override
 	public Resource createResource(URI uri) {
 		XMLResource result = new FHIMResourceImpl(uri);

@@ -6,7 +6,6 @@ import gov.us.fhim.profile.FHIMPackage;
 import gov.us.fhim.profile.Index;
 import gov.us.fhim.profile.Iso11179;
 import gov.us.fhim.profile.Mapping;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
@@ -49,6 +48,7 @@ public class FHIMAdapterFactory extends AdapterFactoryImpl {
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
+
 	@Override
 	public boolean isFactoryForType(Object object) {
 		if (object == modelPackage) {
@@ -96,6 +96,7 @@ public class FHIMAdapterFactory extends AdapterFactoryImpl {
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
+
 	@Override
 	public Adapter createAdapter(Notifier target) {
 		return modelSwitch.doSwitch((EObject) target);

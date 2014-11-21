@@ -92,6 +92,7 @@ public class MappingImpl extends MinimalEObjectImpl.Container implements Mapping
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+
 	@Override
 	protected EClass eStaticClass() {
 		return FHIMPackage.Literals.MAPPING;
@@ -102,7 +103,7 @@ public class MappingImpl extends MinimalEObjectImpl.Container implements Mapping
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+
 	public EList<Index> getIndex() {
 		if (index == null) {
 			index = new EObjectContainmentEList<Index>(Index.class, this, FHIMPackage.MAPPING__INDEX);
@@ -115,7 +116,7 @@ public class MappingImpl extends MinimalEObjectImpl.Container implements Mapping
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+
 	public Classifier getBase_Classifier() {
 		if (base_Classifier != null && base_Classifier.eIsProxy()) {
 			InternalEObject oldBase_Classifier = (InternalEObject) base_Classifier;
@@ -145,7 +146,7 @@ public class MappingImpl extends MinimalEObjectImpl.Container implements Mapping
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+
 	public void setBase_Classifier(Classifier newBase_Classifier) {
 		Classifier oldBase_Classifier = base_Classifier;
 		base_Classifier = newBase_Classifier;
@@ -160,7 +161,7 @@ public class MappingImpl extends MinimalEObjectImpl.Container implements Mapping
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+
 	public Property getBase_Property() {
 		if (base_Property != null && base_Property.eIsProxy()) {
 			InternalEObject oldBase_Property = (InternalEObject) base_Property;
@@ -189,7 +190,7 @@ public class MappingImpl extends MinimalEObjectImpl.Container implements Mapping
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+
 	public void setBase_Property(Property newBase_Property) {
 		Property oldBase_Property = base_Property;
 		base_Property = newBase_Property;
@@ -204,7 +205,7 @@ public class MappingImpl extends MinimalEObjectImpl.Container implements Mapping
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+
 	public EList<String> getAttribute() {
 		if (attribute == null) {
 			attribute = new EDataTypeUniqueEList<String>(String.class, this, FHIMPackage.MAPPING__ATTRIBUTE);
@@ -217,6 +218,7 @@ public class MappingImpl extends MinimalEObjectImpl.Container implements Mapping
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -231,6 +233,7 @@ public class MappingImpl extends MinimalEObjectImpl.Container implements Mapping
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -284,6 +287,7 @@ public class MappingImpl extends MinimalEObjectImpl.Container implements Mapping
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
@@ -308,6 +312,7 @@ public class MappingImpl extends MinimalEObjectImpl.Container implements Mapping
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
@@ -328,6 +333,7 @@ public class MappingImpl extends MinimalEObjectImpl.Container implements Mapping
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+
 	@Override
 	public String toString() {
 		if (eIsProxy()) {

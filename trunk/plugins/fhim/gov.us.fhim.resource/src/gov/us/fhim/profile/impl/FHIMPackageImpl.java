@@ -125,7 +125,7 @@ public class FHIMPackageImpl extends EPackageImpl implements FHIMPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+
 	public EClass getMapping() {
 		return mappingEClass;
 	}
@@ -135,7 +135,7 @@ public class FHIMPackageImpl extends EPackageImpl implements FHIMPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+
 	public EReference getMapping_Index() {
 		return (EReference) mappingEClass.getEStructuralFeatures().get(0);
 	}
@@ -145,7 +145,7 @@ public class FHIMPackageImpl extends EPackageImpl implements FHIMPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+
 	public EReference getMapping_Base_Classifier() {
 		return (EReference) mappingEClass.getEStructuralFeatures().get(1);
 	}
@@ -155,7 +155,7 @@ public class FHIMPackageImpl extends EPackageImpl implements FHIMPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+
 	public EReference getMapping_Base_Property() {
 		return (EReference) mappingEClass.getEStructuralFeatures().get(2);
 	}
@@ -165,7 +165,7 @@ public class FHIMPackageImpl extends EPackageImpl implements FHIMPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+
 	public EAttribute getMapping_Attribute() {
 		return (EAttribute) mappingEClass.getEStructuralFeatures().get(3);
 	}
@@ -175,7 +175,7 @@ public class FHIMPackageImpl extends EPackageImpl implements FHIMPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+
 	public EClass getIndex() {
 		return indexEClass;
 	}
@@ -185,7 +185,7 @@ public class FHIMPackageImpl extends EPackageImpl implements FHIMPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+
 	public EAttribute getIndex_StandardOrProject() {
 		return (EAttribute) indexEClass.getEStructuralFeatures().get(0);
 	}
@@ -195,7 +195,7 @@ public class FHIMPackageImpl extends EPackageImpl implements FHIMPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+
 	public EAttribute getIndex_Value() {
 		return (EAttribute) indexEClass.getEStructuralFeatures().get(1);
 	}
@@ -205,7 +205,7 @@ public class FHIMPackageImpl extends EPackageImpl implements FHIMPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+
 	public EClass getIso11179() {
 		return iso11179EClass;
 	}
@@ -215,7 +215,7 @@ public class FHIMPackageImpl extends EPackageImpl implements FHIMPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+
 	public EAttribute getIso11179_Id() {
 		return (EAttribute) iso11179EClass.getEStructuralFeatures().get(0);
 	}
@@ -225,7 +225,7 @@ public class FHIMPackageImpl extends EPackageImpl implements FHIMPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+
 	public EAttribute getIso11179_CodeSystem() {
 		return (EAttribute) iso11179EClass.getEStructuralFeatures().get(1);
 	}
@@ -235,7 +235,7 @@ public class FHIMPackageImpl extends EPackageImpl implements FHIMPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+
 	public EAttribute getIso11179_Code() {
 		return (EAttribute) iso11179EClass.getEStructuralFeatures().get(2);
 	}
@@ -245,7 +245,7 @@ public class FHIMPackageImpl extends EPackageImpl implements FHIMPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+
 	public EAttribute getIso11179_Source() {
 		return (EAttribute) iso11179EClass.getEStructuralFeatures().get(3);
 	}
@@ -255,7 +255,7 @@ public class FHIMPackageImpl extends EPackageImpl implements FHIMPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+
 	public EReference getIso11179_Base_Property() {
 		return (EReference) iso11179EClass.getEStructuralFeatures().get(4);
 	}
@@ -265,7 +265,7 @@ public class FHIMPackageImpl extends EPackageImpl implements FHIMPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+
 	public EEnum getStandardOrProject() {
 		return standardOrProjectEEnum;
 	}
@@ -275,7 +275,7 @@ public class FHIMPackageImpl extends EPackageImpl implements FHIMPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+
 	public FHIMFactory getFHIMFactory() {
 		return (FHIMFactory) getEFactoryInstance();
 	}
