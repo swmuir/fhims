@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="MDHT CDA Developer Edition" uid="cda.developer.product.id" id="cda.developer.product" application="org.eclipse.ui.ide.workbench" version="2.0.0.qualifier" useFeatures="true" includeLaunchers="true">
+<product name="FHIM UML Model Extensions" uid="fhim.modeler.product.id" application="org.eclipse.equinox.p2.publisher.UpdateSitePublisher" version="0.9.0.qualifier" useFeatures="true" includeLaunchers="false">
+
 
    <configIni use="default">
    </configIni>
@@ -17,12 +18,14 @@
 
    <windowImages/>
 
+
    <launcher>
       <solaris/>
       <win useIco="false">
          <bmp/>
       </win>
    </launcher>
+
 
    <vm>
    </vm>
@@ -82,14 +85,5 @@ Java and all Java-based trademarks are trademarks of Sun Microsystems, Inc. in t
       <feature id="gov.us.fhim.uml" version="0.9.0.qualifier"/>
    </features>
 
-   <configurations>
-      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="4" />
-      <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
-      <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="2" />
-      <plugin id="org.eclipse.equinox.p2.reconciler.dropins" autoStart="true" startLevel="4" />
-      <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
-      <plugin id="org.eclipse.update.configurator" autoStart="true" startLevel="4" />
-      <property name="org.eclipse.update.reconcile" value="false" />
-   </configurations>
 
 </product>
