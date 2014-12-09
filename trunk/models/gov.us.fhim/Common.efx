@@ -950,6 +950,21 @@
     <ownedComment xmi:id="_badHMNXiEeGG7JUIKyvuAg" annotatedElement="_SH75INNUEeGRnPi2MLPE0g">
       <body>The Common Product package contains medications and devices</body>
     </ownedComment>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ZOqIEHGiEeSUPN3DMaTGrQ" name="PersonOrOrganizationChoice">
+      <ownedComment xmi:id="_eAhPYHG0EeSUPN3DMaTGrQ" annotatedElement="_ZOqIEHGiEeSUPN3DMaTGrQ">
+        <body>This class represents an &quot;Entity Choice&quot;, which is used when an association is needed to either a Person or an Organization.  This class will be used by various Roles where it is not known at design time whether the Entity playing a Role is a Person or an Organization.  It is noted that for most Roles modeled in the FHIM, it can be known beforehand whether a person or organization is expected.  For example, a DataEnterer is always a person.  It is also noted that there are two prominent classes which deal with this issue in a different manner: Patient has two subtypes for Person and Animal patients; HealthcareProvider has subtypes for Organizational Provider and Individual Provider.  These two hierarchies are modeled differently because different properties are needed depending on whether the related entity is a person or not.  This generic structure is used when there is no other distinctions between organization and person entities.  </body>
+      </ownedComment>
+      <ownedAttribute xmi:id="_ksWTYHGiEeSUPN3DMaTGrQ" name="organization" visibility="public" association="_ksT3IHGiEeSUPN3DMaTGrQ">
+        <type xmi:type="uml:Class" href="Provider.efx#_420A62FD03B6418AA15801A9?FHIM/Provider/Organization?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ksYIkHGiEeSUPN3DMaTGrQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ksXhgHGiEeSUPN3DMaTGrQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_lC7AUHGiEeSUPN3DMaTGrQ" name="person" visibility="public" association="_lC5yMHGiEeSUPN3DMaTGrQ">
+        <type xmi:type="uml:Class" href="Person.efx#_420A62FD03B6425125E800E0?FHIM/Person/Person?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lC7nYXGiEeSUPN3DMaTGrQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lC7nYHGiEeSUPN3DMaTGrQ"/>
+      </ownedAttribute>
+    </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_GY1OsAY1EeGz0dkadElrkQ" name="CareTeamMember">
       <ownedComment xmi:id="_rxlQYH7hEeOYQJZKXKAJnw" annotatedElement="_GY1OsAY1EeGz0dkadElrkQ">
         <body>&quot;In an advanced primary care model the care team would include anyone actively involved in the patient's care such as the PCMH team, the patient’s designees, entities providing care and all additional caregivers designated by the PCP or designated provider.&quot; - ONC S&amp;I Clinical Element Data Dictionary (CEDD), March 2012.</body>
@@ -4648,6 +4663,12 @@ This property indicates whether the ingredient represented by this class is acti
     <packagedElement xmi:type="uml:Association" xmi:id="_cWnUoAY1EeGz0dkadElrkQ" name="careTeamMember_individualProvider" memberEnd="_cWpw4AY1EeGz0dkadElrkQ _cWs0MAY1EeGz0dkadElrkQ">
       <ownedEnd xmi:id="_cWs0MAY1EeGz0dkadElrkQ" name="" visibility="private" type="_GY1OsAY1EeGz0dkadElrkQ" association="_cWnUoAY1EeGz0dkadElrkQ"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_ksT3IHGiEeSUPN3DMaTGrQ" name="personOrOrganizationChoice_organization" memberEnd="_ksWTYHGiEeSUPN3DMaTGrQ _ksYvoHGiEeSUPN3DMaTGrQ">
+      <ownedEnd xmi:id="_ksYvoHGiEeSUPN3DMaTGrQ" name="" visibility="private" type="_ZOqIEHGiEeSUPN3DMaTGrQ" association="_ksT3IHGiEeSUPN3DMaTGrQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_lC5yMHGiEeSUPN3DMaTGrQ" name="personOrOrganizationChoice_person" memberEnd="_lC7AUHGiEeSUPN3DMaTGrQ _lC81gHGiEeSUPN3DMaTGrQ">
+      <ownedEnd xmi:id="_lC81gHGiEeSUPN3DMaTGrQ" name="" visibility="private" type="_ZOqIEHGiEeSUPN3DMaTGrQ" association="_lC5yMHGiEeSUPN3DMaTGrQ"/>
+    </packagedElement>
   </uml:Package>
   <term:ValueSetConstraint xmi:id="_xsez0POnEeGMQvy2b7FvNg" base_Property="_qIKSYIAaEeGE1-mzJa42fw">
     <reference href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_Xdq2saRMEeGZ6ueex_Me0w"/>
@@ -4908,4 +4929,6 @@ This property indicates whether the ingredient represented by this class is acti
   <Default:Documentation xmi:id="_62qAcMyxEeO7XY1kXX1jtw" base_Comment="_62lvAMyxEeO7XY1kXX1jtw"/>
   <Default:Documentation xmi:id="_BN1k8MyyEeO7XY1kXX1jtw" base_Comment="_BN094cyyEeO7XY1kXX1jtw"/>
   <Default:Documentation xmi:id="_KX0BMMyyEeO7XY1kXX1jtw" base_Comment="_KXml0MyyEeO7XY1kXX1jtw"/>
+  <RIM:Entity xmi:id="_2atykHGiEeSUPN3DMaTGrQ" base_Class="_ZOqIEHGiEeSUPN3DMaTGrQ"/>
+  <Default:Documentation xmi:id="_eAsOgHG0EeSUPN3DMaTGrQ" base_Comment="_eAhPYHG0EeSUPN3DMaTGrQ"/>
 </xmi:XMI>
