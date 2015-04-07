@@ -67,7 +67,7 @@
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_7ifh42KQEeKl3I3Lt5ZAXg" visible="false" type="OperationCompartment"/>
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_7ifh5GKQEeKl3I3Lt5ZAXg" visible="false" type="SignalCompartment"/>
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_7ifh5WKQEeKl3I3Lt5ZAXg" visible="false" type="StructureCompartment"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7iVw4WKQEeKl3I3Lt5ZAXg" x="11729" y="10144"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7iVw4WKQEeKl3I3Lt5ZAXg" x="11095" y="10144"/>
         </children>
         <children xmi:type="umlnotation:UMLShape" xmi:id="_CuXSsGKREeKl3I3Lt5ZAXg" element="_UmgNAI8GEd-XNpj2tjovxA" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="13434879" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_CuXSsmKREeKl3I3Lt5ZAXg" type="ImageCompartment">
@@ -598,7 +598,7 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_5vmygmKREeKl3I3Lt5ZAXg"/>
       </ownedAttribute>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B642DFB7AB0068" name="AssessmentInstrumentQuestion" isAbstract="true">
+    <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B642DFB7AB0068" name="AssessmentInstrumentQuestion(Abstract)">
       <eAnnotations xmi:id="_NFNrEeLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
       <ownedComment xmi:id="_NFEhJ-LiEduGJrQyRGTO1A" annotatedElement="_420A62FD03B642DFB7AB0068">
         <body>This class represents a question on an Assessment Instrument as well as informatin regarding the possible response to that question.  Note that the response might be entered by an interviewer, entered by the interviewee, or populated by a software system (e.g., a system could automatically populate a question such as Date Created).  Note also that this class defines both the question, which is the same for every instance of an edition of a questionaire, and the response which is populated for each administration of the instrument.  For a given Assessment Instrument, the question part would be hard-coded while the response would be populated at run-time.</body>
@@ -1306,7 +1306,7 @@
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Usage" xmi:id="_nvsNIGKNEeKl3I3Lt5ZAXg" supplier="_fWFfIHCJEeKknILXOCcS7w" client="_5W5w4GKMEeKl3I3Lt5ZAXg"/>
-      <packagedElement xmi:type="uml:Class" xmi:id="_w2fAUHB0EeKknILXOCcS7w" name="MorseFallScaleQuestion" isAbstract="true">
+      <packagedElement xmi:type="uml:Class" xmi:id="_w2fAUHB0EeKknILXOCcS7w" name="MorseFallScaleQuestion(Abstract)">
         <ownedComment xmi:id="_QbBYkHCKEeKknILXOCcS7w" annotatedElement="_w2fAUHB0EeKknILXOCcS7w">
           <body>This class represents a question on the Morse Fall Scale Assessment Instrument.  This abstract class exists primarily to re-define the generic AssessmentInstrument:assessmentInstrumentQuestion property to the MorseFallScale:assessmentInstrumentQuestion.  In other words, of all the possible questions on all the possible assessment instruments, we are explicitly identifying the six Morse Fall Scale questions.  Note that because both this class and its parent AssessmentInstrumentQuestion class are abstract, implementers would likely not instantiate either class, but rather the six concrete sub classes.</body>
         </ownedComment>

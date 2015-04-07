@@ -2259,7 +2259,7 @@
                 <children xmi:type="notation:SemanticListCompartment" xmi:id="_2-KUiGJjEeKl3I3Lt5ZAXg" visible="false" type="OperationCompartment"/>
                 <children xmi:type="notation:SemanticListCompartment" xmi:id="_2-KUiWJjEeKl3I3Lt5ZAXg" visible="false" type="SignalCompartment"/>
                 <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_2-KUimJjEeKl3I3Lt5ZAXg" visible="false" type="StructureCompartment"/>
-                <element xmi:type="uml:Class" href="HealthConcern.efx#_GvZT0Ae5EeCPOdVNW49Akw?FHIM/HealthConcern/HealthConcernEntry?"/>
+                <element xmi:type="uml:Class" href="HealthConcern.efx#_GvZT0Ae5EeCPOdVNW49Akw?FHIM/HealthConcern/HealthConcernListEntry?"/>
                 <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2-KUgWJjEeKl3I3Lt5ZAXg" x="31700" y="2219"/>
               </children>
               <children xmi:type="umlnotation:UMLShape" xmi:id="_6BNOwGJjEeKl3I3Lt5ZAXg" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="12303359" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
@@ -3847,7 +3847,7 @@
                   <children xmi:type="notation:SemanticListCompartment" xmi:id="_dwktUnCeEeKknILXOCcS7w" visible="false" type="OperationCompartment"/>
                   <children xmi:type="notation:SemanticListCompartment" xmi:id="_dwlUYHCeEeKknILXOCcS7w" visible="false" type="SignalCompartment"/>
                   <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_dwlUYXCeEeKknILXOCcS7w" visible="false" type="StructureCompartment"/>
-                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dwi4IXCeEeKknILXOCcS7w" x="6657" y="11729"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dwi4IXCeEeKknILXOCcS7w" x="6340" y="11729"/>
                 </children>
                 <children xmi:type="umlnotation:UMLShape" xmi:id="_0Jw84HCeEeKknILXOCcS7w" element="_UmWi2o8GEd-XNpj2tjovxA" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8487423" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
                   <children xmi:type="notation:DecorationNode" xmi:id="_0Jxj8HCeEeKknILXOCcS7w" type="ImageCompartment">
@@ -4716,7 +4716,7 @@
                   <children xmi:type="notation:SemanticListCompartment" xmi:id="_H63iIXCaEeKknILXOCcS7w" visible="false" type="OperationCompartment"/>
                   <children xmi:type="notation:SemanticListCompartment" xmi:id="_H63iInCaEeKknILXOCcS7w" visible="false" type="SignalCompartment"/>
                   <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_H64JMHCaEeKknILXOCcS7w" visible="false" type="StructureCompartment"/>
-                  <element xmi:type="uml:Class" href="Assessment.efx#_420A62FD03B642DFB7AB0068?FHIM/Assessment/AssessmentInstrumentQuestion?"/>
+                  <element xmi:type="uml:Class" href="Assessment.efx#_420A62FD03B642DFB7AB0068?FHIM/Assessment/AssessmentInstrumentQuestion(Abstract)?"/>
                   <layoutConstraint xmi:type="notation:Bounds" xmi:id="_H61s8XCaEeKknILXOCcS7w" x="2536" y="634"/>
                 </children>
                 <children xmi:type="umlnotation:UMLShape" xmi:id="_VGVd4HCaEeKknILXOCcS7w" element="_UmWiu48GEd-XNpj2tjovxA" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8487423" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
@@ -5040,12 +5040,13 @@
                 <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B641886F630221?FHIM/Datatypes/PhysicalQuantity?"/>
               </ownedAttribute>
             </packagedElement>
-            <packagedElement xmi:type="uml:Class" xmi:id="_UmWitI8GEd-XNpj2tjovxA" name="Question" isAbstract="true">
+            <packagedElement xmi:type="uml:Class" xmi:id="_UmWitI8GEd-XNpj2tjovxA" name="Question(Abstract)">
               <eAnnotations xmi:id="_KucdAHCaEeKknILXOCcS7w" source="http://www.eclipse.org/uml2/2.0.0/UML">
                 <details xmi:id="_KucdAXCaEeKknILXOCcS7w" key="deprecated"/>
               </eAnnotations>
               <ownedComment xmi:id="_UmWitY8GEd-XNpj2tjovxA" annotatedElement="_UmWitI8GEd-XNpj2tjovxA">
-                <body>This class represents the abstract base class for all the questions contained                   in the assessment questionnaire.</body>
+                <body>This class represents the abstract base class for all the questions contained in the assessment questionnaire.&#xD;
+This class is deprecated - use the AssessmentInstrumentQuestion class instead.</body>
               </ownedComment>
               <ownedAttribute xmi:id="_UmWito8GEd-XNpj2tjovxA" name="question" visibility="public">
                 <ownedComment xmi:id="_UmWit48GEd-XNpj2tjovxA" annotatedElement="_UmWito8GEd-XNpj2tjovxA">
@@ -5134,7 +5135,7 @@
                 <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64239FAA800D9?FHIM/Datatypes/TimeQuantity?"/>
               </ownedAttribute>
             </packagedElement>
-            <packagedElement xmi:type="uml:Class" xmi:id="_UmWi8o8GEd-XNpj2tjovxA" name="BehavioralHealthAssessmentDomain" clientDependency="_UmWjC48GEd-XNpj2tjovxA _UmWjCI8GEd-XNpj2tjovxA _UmWjCY8GEd-XNpj2tjovxA _UmWjDI8GEd-XNpj2tjovxA _UmWjCo8GEd-XNpj2tjovxA" isAbstract="true">
+            <packagedElement xmi:type="uml:Class" xmi:id="_UmWi8o8GEd-XNpj2tjovxA" name="BehavioralHealthAssessmentDomain(Abstract)" clientDependency="_UmWjC48GEd-XNpj2tjovxA _UmWjCI8GEd-XNpj2tjovxA _UmWjCY8GEd-XNpj2tjovxA _UmWjDI8GEd-XNpj2tjovxA _UmWjCo8GEd-XNpj2tjovxA">
               <eAnnotations xmi:id="_UmWi848GEd-XNpj2tjovxA" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
               <ownedComment xmi:id="_UmWi9I8GEd-XNpj2tjovxA" annotatedElement="_UmWi8o8GEd-XNpj2tjovxA">
                 <body>This class is container for a set of questions and answers needed to evaluate behavioral health issues. This class description is consistent with the HL7 Implementation Guide for CDA Release 2: CDA Framework for Questionnaire Assessments, Release 1.</body>
@@ -5450,7 +5451,7 @@
                   <children xmi:type="notation:SemanticListCompartment" xmi:id="_frXGUXFfEeKSx4Trt5CWxw" visible="false" type="OperationCompartment"/>
                   <children xmi:type="notation:SemanticListCompartment" xmi:id="_frXtYHFfEeKSx4Trt5CWxw" visible="false" type="SignalCompartment"/>
                   <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_frXtYXFfEeKSx4Trt5CWxw" visible="false" type="StructureCompartment"/>
-                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_frUqEXFfEeKSx4Trt5CWxw" x="634" y="2536"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_frUqEXFfEeKSx4Trt5CWxw" x="1268" y="2853"/>
                 </children>
                 <children xmi:type="umlnotation:UMLShape" xmi:id="_jfVuQHFfEeKSx4Trt5CWxw" element="_UmgLjY8GEd-XNpj2tjovxA" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8487423" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
                   <children xmi:type="notation:DecorationNode" xmi:id="_jfW8YHFfEeKSx4Trt5CWxw" type="ImageCompartment">
@@ -5594,7 +5595,7 @@
                   <styles xmi:type="notation:TextStyle" xmi:id="_Ov0pgwEuEeOaJLou62rrrA"/>
                   <styles xmi:type="notation:LineTypeStyle" xmi:id="_Ov0phAEuEeOaJLou62rrrA"/>
                   <element xsi:nil="true"/>
-                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ov0phQEuEeOaJLou62rrrA" x="-10778" y="-1585"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ov0phQEuEeOaJLou62rrrA" x="-11729" y="-1585"/>
                 </children>
                 <element xsi:nil="true"/>
                 <edges xmi:type="umlnotation:UMLConnector" xmi:id="_WiJUgHFeEeKSx4Trt5CWxw" element="_UmgLrI8GEd-XNpj2tjovxA" source="_WiCm0HFeEeKSx4Trt5CWxw" target="_R0rf0HFeEeKSx4Trt5CWxw" fontName="Arial" fontHeight="10" lineColor="3342489" lineWidth="1" showStereotype="Text">
@@ -6034,7 +6035,7 @@
             <ownedComment xmi:id="_UmgLjI8GEd-XNpj2tjovxA" annotatedElement="_UmWjio8GEd-XNpj2tjovxA">
               <body>This section describes the structure and information objects needed to exchange                 Behavioral Health records between various stakeholders. The information detailed in                 this section is intended to address the information requirements of the &amp;amp;apos;Report                 Behavioral Health Records to Public Health&amp;amp;apos; use case - see Section 3.</body>
             </ownedComment>
-            <packagedElement xmi:type="uml:Class" xmi:id="_UmgLjY8GEd-XNpj2tjovxA" name="HistoryOfAbuseOrNeglectRecord" clientDependency="_UmgL248GEd-XNpj2tjovxA" isAbstract="true">
+            <packagedElement xmi:type="uml:Class" xmi:id="_UmgLjY8GEd-XNpj2tjovxA" name="HistoryOfAbuseOrNeglectRecord(Abstract)" clientDependency="_UmgL248GEd-XNpj2tjovxA">
               <ownedComment xmi:id="_UmgLjo8GEd-XNpj2tjovxA" annotatedElement="_UmgLjY8GEd-XNpj2tjovxA">
                 <body>This class is intended to capture details related to any past abuse/violence and/or neglect.  Violence is a significant problem in the United States.  From infants to the elderly, it affects people in all stages of life. In 2006, 18,573 people died as a result of homicide and 33,300 took their own life.  The number of violent deaths tells only part of the story.  Many more survive violence and are left with permanent physical and emotional scars.  Violence also erodes communities by reducing productivity, decreasing property values, and disrupting social services.  In 1979, violent behavior was identified by the U.S. Surgeon General as a key public health priority.  Shortly thereafter, in 1980, CDC began studying patterns of violence.  These early activities grew into a national program to reduce the death and disability associated with injuries outside the workplace.  In 1992, CDC established the National Center for Injury Prevention and Control (NCIPC) as the lead federal organization for violence prevention.  The Division of Violence Prevention (DVP) is one of three divisions within NCIPC.</body>
               </ownedComment>
