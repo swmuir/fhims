@@ -3,6 +3,74 @@
 <?com.ibm.xtools.emf.core.signature <signature id="com.ibm.xtools.uml.msl.profile" version="7.0.0"><feature description="" name="com.ibm.xtools.ruml.feature" url="" version="7.0.0"/></signature>?>
 <uml:Profile xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.3/Umlnotation" xmi:id="_Vgc4AAK0EeS6g7XLt9rX8g" name="fhim" metamodelReference="_VloS8AK0EeS6g7XLt9rX8g">
   <eAnnotations xmi:id="_VmOI0AK0EeS6g7XLt9rX8g" source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <contents xmi:type="ecore:EPackage" xmi:id="_PhHRsNoOEeSdPcnORr-kJQ" name="fhim" nsURI="http:///schemas/fhim/_PhE1cNoOEeSdPcnORr-kJQ/6" nsPrefix="fhim">
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_PhHRsdoOEeSdPcnORr-kJQ" name="Mapping">
+        <eAnnotations xmi:id="_PhHRstoOEeSdPcnORr-kJQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_Zlk6UAK0EeS6g7XLt9rX8g"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_PhHRs9oOEeSdPcnORr-kJQ" name="index" ordered="false" upperBound="-1" eType="_PhHRudoOEeSdPcnORr-kJQ" containment="true"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_PhHRtdoOEeSdPcnORr-kJQ" name="base_Classifier" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Classifier"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_PhHRt9oOEeSdPcnORr-kJQ" name="base_Property" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_PhHRudoOEeSdPcnORr-kJQ" name="Index">
+        <eAnnotations xmi:id="_PhHRutoOEeSdPcnORr-kJQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_fTxzQAK0EeS6g7XLt9rX8g"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_PhHRu9oOEeSdPcnORr-kJQ" name="standardOrProject" ordered="false" lowerBound="1" eType="_PhHRv9oOEeSdPcnORr-kJQ"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_PhHRvdoOEeSdPcnORr-kJQ" name="value" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EEnum" xmi:id="_PhHRv9oOEeSdPcnORr-kJQ" name="StandardOrProject">
+        <eAnnotations xmi:id="_PhHRwNoOEeSdPcnORr-kJQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_0QCKwAK0EeS6g7XLt9rX8g"/>
+        <eLiterals xmi:id="_PhHRwdoOEeSdPcnORr-kJQ" name="C-CDA"/>
+        <eLiterals xmi:id="_PhHRwtoOEeSdPcnORr-kJQ" name="HL7 CDA" value="1"/>
+        <eLiterals xmi:id="_PhHRw9oOEeSdPcnORr-kJQ" name="HL7 FHIR" value="2"/>
+        <eLiterals xmi:id="_PhHRxNoOEeSdPcnORr-kJQ" name="HL7 v2" value="3"/>
+        <eLiterals xmi:id="_PhHRxdoOEeSdPcnORr-kJQ" name="HL7 v3" value="4"/>
+        <eLiterals xmi:id="_PhHRxtoOEeSdPcnORr-kJQ" name="NCPDP Script" value="5"/>
+        <eLiterals xmi:id="_PhHRx9oOEeSdPcnORr-kJQ" name="NCPDP Telecom" value="6"/>
+        <eLiterals xmi:id="_PhHRyNoOEeSdPcnORr-kJQ" name="X12" value="7"/>
+        <eLiterals xmi:id="_PhHRydoOEeSdPcnORr-kJQ" name="ONC S&amp;I BlueButton" value="8"/>
+        <eLiterals xmi:id="_PhHRytoOEeSdPcnORr-kJQ" name="ONC S&amp;I CQF" value="9"/>
+        <eLiterals xmi:id="_PhHRy9oOEeSdPcnORr-kJQ" name="ONC S&amp;I DAF" value="10"/>
+        <eLiterals xmi:id="_PhHRzNoOEeSdPcnORr-kJQ" name="ONC S&amp;I DPROV" value="11"/>
+        <eLiterals xmi:id="_PhHRzdoOEeSdPcnORr-kJQ" name="ONC S&amp;I DS4P" value="12"/>
+        <eLiterals xmi:id="_PhHRztoOEeSdPcnORr-kJQ" name="ONC S&amp;I esMD" value="13"/>
+        <eLiterals xmi:id="_PhHRz9oOEeSdPcnORr-kJQ" name="ONC S&amp;I EU/US eHealth" value="14"/>
+        <eLiterals xmi:id="_PhHR0NoOEeSdPcnORr-kJQ" name="ONC S&amp;I HeD" value="15"/>
+        <eLiterals xmi:id="_PhHR0doOEeSdPcnORr-kJQ" name="ONC S&amp;I LCC" value="16"/>
+        <eLiterals xmi:id="_PhHR0toOEeSdPcnORr-kJQ" name="ONC S&amp;I LOI" value="17"/>
+        <eLiterals xmi:id="_PhHR09oOEeSdPcnORr-kJQ" name="ONC S&amp;I LRI" value="18"/>
+        <eLiterals xmi:id="_PhHR1NoOEeSdPcnORr-kJQ" name="ONC S&amp;I PD" value="19"/>
+        <eLiterals xmi:id="_PhHR1doOEeSdPcnORr-kJQ" name="ONC S&amp;I PDMP" value="20"/>
+        <eLiterals xmi:id="_PhHR1toOEeSdPcnORr-kJQ" name="ONC S&amp;I PublicHealth" value="21"/>
+        <eLiterals xmi:id="_PhHR19oOEeSdPcnORr-kJQ" name="ONC S&amp;I QH" value="22"/>
+        <eLiterals xmi:id="_PhHR2NoOEeSdPcnORr-kJQ" name="ONC S&amp;I RHEx" value="23"/>
+        <eLiterals xmi:id="_PhHR2doOEeSdPcnORr-kJQ" name="ONC S&amp;I SDC" value="24"/>
+        <eLiterals xmi:id="_PhHR2toOEeSdPcnORr-kJQ" name="ONC S&amp;I TOC" value="25"/>
+        <eLiterals xmi:id="_PhHR29oOEeSdPcnORr-kJQ" name="MU 2" value="26"/>
+        <eLiterals xmi:id="_PhHR3NoOEeSdPcnORr-kJQ" name="MU 3" value="27"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_PhHR3doOEeSdPcnORr-kJQ" name="Iso11179">
+        <eAnnotations xmi:id="_PhHR3toOEeSdPcnORr-kJQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_PBHnoAK1EeS6g7XLt9rX8g"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_PhHR39oOEeSdPcnORr-kJQ" name="id" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_PhHR4doOEeSdPcnORr-kJQ" name="codeSystem" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_PhHR49oOEeSdPcnORr-kJQ" name="code" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_PhHR5doOEeSdPcnORr-kJQ" name="source" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_PhHR59oOEeSdPcnORr-kJQ" name="base_Property" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
     <contents xmi:type="ecore:EPackage" xmi:id="_bbk84A3cEeSGTazHdUQojA" name="fhim" nsURI="http:///schemas/fhim/_bbjuwA3cEeSGTazHdUQojA/5" nsPrefix="fhim">
       <eClassifiers xmi:type="ecore:EClass" xmi:id="_bblj8A3cEeSGTazHdUQojA" name="Mapping">
         <eAnnotations xmi:id="_bblj8Q3cEeSGTazHdUQojA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_Zlk6UAK0EeS6g7XLt9rX8g"/>
@@ -401,9 +469,14 @@
         <details xmi:id="_SA1akwuIEeS_uN9_4YAXXQ" key="addedInVersion" value="4"/>
       </eAnnotations>
     </ownedLiteral>
-    <ownedLiteral xmi:id="_hhnvQAuFEeS_uN9_4YAXXQ" name="NCPDP" classifier="_0QCKwAK0EeS6g7XLt9rX8g">
+    <ownedLiteral xmi:id="_hhnvQAuFEeS_uN9_4YAXXQ" name="NCPDP Script" classifier="_0QCKwAK0EeS6g7XLt9rX8g">
       <eAnnotations xmi:id="_SA1alAuIEeS_uN9_4YAXXQ" source="uml2.extensions">
         <details xmi:id="_SA1alQuIEeS_uN9_4YAXXQ" key="addedInVersion" value="4"/>
+      </eAnnotations>
+    </ownedLiteral>
+    <ownedLiteral xmi:id="_Ggha8NoOEeSdPcnORr-kJQ" name="NCPDP Telecom" classifier="_0QCKwAK0EeS6g7XLt9rX8g">
+      <eAnnotations xmi:id="_PhJG4NoOEeSdPcnORr-kJQ" source="uml2.extensions">
+        <details xmi:id="_PhJG4doOEeSdPcnORr-kJQ" key="addedInVersion" value="6"/>
       </eAnnotations>
     </ownedLiteral>
     <ownedLiteral xmi:id="_kyUD8AuFEeS_uN9_4YAXXQ" name="X12" classifier="_0QCKwAK0EeS6g7XLt9rX8g">
@@ -499,6 +572,16 @@
     <ownedLiteral xmi:id="_CxsW4AuIEeS_uN9_4YAXXQ" name="ONC S&amp;I TOC" classifier="_0QCKwAK0EeS6g7XLt9rX8g">
       <eAnnotations xmi:id="_SA321AuIEeS_uN9_4YAXXQ" source="uml2.extensions">
         <details xmi:id="_SA321QuIEeS_uN9_4YAXXQ" key="addedInVersion" value="4"/>
+      </eAnnotations>
+    </ownedLiteral>
+    <ownedLiteral xmi:id="_JhJ6YNoOEeSdPcnORr-kJQ" name="MU 2" classifier="_0QCKwAK0EeS6g7XLt9rX8g">
+      <eAnnotations xmi:id="_PhJG4toOEeSdPcnORr-kJQ" source="uml2.extensions">
+        <details xmi:id="_PhJG49oOEeSdPcnORr-kJQ" key="addedInVersion" value="6"/>
+      </eAnnotations>
+    </ownedLiteral>
+    <ownedLiteral xmi:id="_NSv8sNoOEeSdPcnORr-kJQ" name="MU 3" classifier="_0QCKwAK0EeS6g7XLt9rX8g">
+      <eAnnotations xmi:id="_PhJG5NoOEeSdPcnORr-kJQ" source="uml2.extensions">
+        <details xmi:id="_PhJG5doOEeSdPcnORr-kJQ" key="addedInVersion" value="6"/>
       </eAnnotations>
     </ownedLiteral>
   </packagedElement>
