@@ -1840,7 +1840,7 @@ This class represents the measurement (or “clinical observation”) of the pat
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_nWp00JdZEeOCbc0pwOBboA" name="BloodPressureCuffSizeQualifier" clientDependency="_00dgwMESEeSx2-rVmArpvQ">
         <ownedComment xmi:id="_t3w5QN0-EeSZfdq7h5ueSA" annotatedElement="_nWp00JdZEeOCbc0pwOBboA">
-          <body>The most common method of measuring blood pressure involves the use of an inflatable (Riva-Rocci) cuff to constrict the blood flow during measurement.  These cuffs are designed to operate on a specific range of body-part (e.g., arm, thigh) circumferences.  Occasionally a cuff is used that is not of the ideal size for the given patient (i.e., the patient may be an infant or an obese adult), usually because the appropriate sized cuff is not available.  The use of a non-ideal sized cuff may result in an inaccurate reading, and therefore must be noted.  This class records represents an observation of the cuff size that was used to obtain the Blood Pressure measurement.</body>
+          <body>The most common method of measuring blood pressure involves the use of an inflatable (Riva-Rocci) cuff to constrict the blood flow during measurement.  These cuffs are designed to operate on a specific range of body-part (e.g., arm, thigh) circumferences.  Occasionally a cuff is used that is not of the ideal size for the given patient (i.e., the patient may be an infant or an obese adult), usually because the appropriate sized cuff is not available.  The use of a non-ideal sized cuff may result in an inaccurate reading, and therefore must be noted.  This class represents an observation of the cuff size that was used to obtain the Blood Pressure measurement.</body>
         </ownedComment>
         <generalization xmi:id="_nWp00ZdZEeOCbc0pwOBboA">
           <general xmi:type="uml:Class" href="ClinicalObservations.efx#_wBabQBcBEeOL3Nw-k5HkNw?FHIM/ClinicalObservation/ObservationQualifier?"/>
@@ -1876,7 +1876,7 @@ This class represents the measurement (or “clinical observation”) of the pat
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_38Q8MJdZEeOCbc0pwOBboA" name="BloodPressureBodyPositionQualifier" clientDependency="_uqzdQLxkEeSyBtXdDFDzRA">
         <ownedComment xmi:id="_1PifcN07EeSZfdq7h5ueSA" annotatedElement="_38Q8MJdZEeOCbc0pwOBboA">
-          <body>Certain disease states can be detected by observing differences in Blood Pressure when the patient’s body is in different positions (e.g., sitting, standing, etc.).  It therefore may be necessary to record the patient’s body position when recording the Blood Pressure observation.  This class records represents an observation of the patient’s body position during the time the Blood Pressure was observed.</body>
+          <body>Certain disease states can be detected by observing differences in Blood Pressure when the patient’s body is in different positions (e.g., sitting, standing, etc.).  It therefore may be necessary to record the patient’s body position when recording the Blood Pressure observation.  This class records an observation of the patient’s body position during the time the Blood Pressure was observed.</body>
         </ownedComment>
         <generalization xmi:id="_38Q8MZdZEeOCbc0pwOBboA">
           <general xmi:type="uml:Class" href="ClinicalObservations.efx#_wBabQBcBEeOL3Nw-k5HkNw?FHIM/ClinicalObservation/ObservationQualifier?"/>
@@ -1979,7 +1979,7 @@ This class represents the measurement (or “clinical observation”) of the pat
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_9-mOMIewEeS2mpjRRlxFgQ" name="BloodPressureSleepStatusQualifier" clientDependency="_Hc5jEL7EEeSMg-kgsnPV3w">
         <ownedComment xmi:id="_WXXUkN0_EeSZfdq7h5ueSA" annotatedElement="_9-mOMIewEeS2mpjRRlxFgQ">
-          <body>Blood pressure normally rises and falls depending on whether a person is awake or asleep.  This class records represents an observation of whether the patient was awake or asleep at the time that the Blood Pressure measurement was taken.</body>
+          <body>Blood pressure normally rises and falls depending on whether a person is awake or asleep.  This class records an observation of whether the patient was awake or asleep at the time that the Blood Pressure measurement was taken.</body>
         </ownedComment>
         <generalization xmi:id="_9-mOMYewEeS2mpjRRlxFgQ">
           <general xmi:type="uml:Class" href="ClinicalObservations.efx#_wBabQBcBEeOL3Nw-k5HkNw?FHIM/ClinicalObservation/ObservationQualifier?"/>
@@ -2032,6 +2032,11 @@ This class represents the measurement (or “clinical observation”) of the pat
         <supplier xmi:type="uml:Enumeration" href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_OxHxsMEAEeSD-sVrqweICQ"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_DQ5wcMNpEeSFjdDJNF9NPA" name="BloodPressureDiastolicEndpoint" clientDependency="_xIY2cMNpEeSFjdDJNF9NPA">
+        <ownedComment xmi:id="_-kSx0N4LEeS6r4gmxAzL5Q" annotatedElement="_DQ5wcMNpEeSFjdDJNF9NPA">
+          <body>Of the five sounds defined by Korotkof early in the 20th century, there has been disagreement on whether diastolic pressure should be measured at phase IV (muffling of sound) or phase V (disappearance of sound). In some patients, the measurements can differ significantly. In cases where the distinction is significant, local policy may specify one point or the other: in at least these cases, and potentially all, the phase, or &quot;end point,&quot; at which the measurement is taken should be recorded. - Adapted from Practical Management of Hypertension (Birkenhäger, ed.); ABC of Hypertension (Beevers et al); The 5-minute Pediatric Consult (Schwartz, ed).&#xD;
+&#xD;
+This class records an observation of the phase at which the diastolic pressure was measured.</body>
+        </ownedComment>
         <generalization xmi:id="_DQ5wccNpEeSFjdDJNF9NPA">
           <general xmi:type="uml:Class" href="ClinicalObservations.efx#_wBabQBcBEeOL3Nw-k5HkNw?FHIM/ClinicalObservation/ObservationQualifier?"/>
         </generalization>
@@ -2772,7 +2777,7 @@ This class represents the measurement (or “clinical observation”) of the pat
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_o8TWwIdwEeOZ2vW3WfDP5Q" name="HeartRatePatientPosition" clientDependency="_x0IkUMN4EeSFjdDJNF9NPA">
         <ownedComment xmi:id="_Gfq9MNy9EeS8W_uFU6RjUw" annotatedElement="_o8TWwIdwEeOZ2vW3WfDP5Q">
-          <body>Certain disease states can be detected by observing differences in heart rate when the patient’s body is in different positions (e.g., sitting, standing, etc.).  It therefore may be necessary to record the patient’s body position when recording the heart rate observation.  This class records represents an observation of the patient’s body position during the time the heart rate was observed.</body>
+          <body>Certain disease states can be detected by observing differences in heart rate when the patient’s body is in different positions (e.g., sitting, standing, etc.).  It therefore may be necessary to record the patient’s body position when recording the heart rate observation.  This class records an observation of the patient’s body position during the time the heart rate was observed.</body>
         </ownedComment>
         <generalization xmi:id="_rCu3wIdwEeOZ2vW3WfDP5Q">
           <general xmi:type="uml:Class" href="ClinicalObservations.efx#_wBabQBcBEeOL3Nw-k5HkNw?FHIM/ClinicalObservation/ObservationQualifier?"/>
@@ -3441,7 +3446,7 @@ This class represents the measurement (or “clinical observation”) of the pat
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_jPpAEYd5EeOZ2vW3WfDP5Q" name="HeightQualifier" clientDependency="_BurWcMNuEeSFjdDJNF9NPA">
         <ownedComment xmi:id="_B1-oEN0nEeSZfdq7h5ueSA" annotatedElement="_jPpAEYd5EeOZ2vW3WfDP5Q">
-          <body>Occasionally, the patient’s Height cannot be measured directly, leading the clinician to estimate the Height, or rely on the patient’s stated Height.  This class records represents an observation of how the patient’s Height was determined.</body>
+          <body>Occasionally, the patient’s Height cannot be measured directly, leading the clinician to estimate the Height, or rely on the patient’s stated Height.  This class records an observation of how the patient’s Height was determined.</body>
         </ownedComment>
         <generalization xmi:id="_jPpAEod5EeOZ2vW3WfDP5Q">
           <general xmi:type="uml:Class" href="ClinicalObservations.efx#_wBabQBcBEeOL3Nw-k5HkNw?FHIM/ClinicalObservation/ObservationQualifier?"/>
@@ -4865,7 +4870,7 @@ This class represents the measurement (or “clinical observation”) of the pat
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_dbS3O4eDEeOZ2vW3WfDP5Q" name="RespirationExertionQualifier" clientDependency="_r7hDwMN7EeSFjdDJNF9NPA">
         <ownedComment xmi:id="_shgrQN0uEeSZfdq7h5ueSA" annotatedElement="_dbS3O4eDEeOZ2vW3WfDP5Q">
-          <body>Respiration naturally varies depending on whether the patient is at rest, or during or shortly after exercise.  This class records represents an observation of whether the patient was at rest, exercising, or recently had been exercising at the time of the Respiration Rate measurement.</body>
+          <body>Respiration naturally varies depending on whether the patient is at rest, or during or shortly after exercise.  This class records an observation of whether the patient was at rest, exercising, or recently had been exercising at the time of the Respiration Rate measurement.</body>
         </ownedComment>
         <generalization xmi:id="_dbS3PIeDEeOZ2vW3WfDP5Q">
           <general xmi:type="uml:Class" href="ClinicalObservations.efx#_wBabQBcBEeOL3Nw-k5HkNw?FHIM/ClinicalObservation/ObservationQualifier?"/>
@@ -6234,7 +6239,7 @@ This class represents the measurement (or “clinical observation”) of the pat
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_MNSj-4eMEeOZ2vW3WfDP5Q" name="WeightDeterminationMethod" clientDependency="_xDOLIMOAEeSFjdDJNF9NPA">
         <ownedComment xmi:id="_qlu_QN0nEeSZfdq7h5ueSA" annotatedElement="_MNSj-4eMEeOZ2vW3WfDP5Q">
-          <body>Occasionally, the patient’s Weight cannot be measured directly, leading the clinician to estimate the Weight, or rely on the patient’s stated Weight.  This class records represents an observation of how the patient’s Height was determined.</body>
+          <body>Occasionally, the patient’s Weight cannot be measured directly, leading the clinician to estimate the Weight, or rely on the patient’s stated Weight.  This class records an observation of how the patient’s Height was determined.</body>
         </ownedComment>
         <generalization xmi:id="_ulzRAMOBEeSFjdDJNF9NPA">
           <general xmi:type="uml:Class" href="ClinicalObservations.efx#_wBabQBcBEeOL3Nw-k5HkNw?FHIM/ClinicalObservation/ObservationQualifier?"/>
@@ -6270,7 +6275,7 @@ This class represents the measurement (or “clinical observation”) of the pat
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_8o7osIeMEeOZ2vW3WfDP5Q" name="ClothingQualifier" clientDependency="_KizEMMN-EeSFjdDJNF9NPA">
         <ownedComment xmi:id="_MVE80N0qEeSZfdq7h5ueSA" annotatedElement="_8o7osIeMEeOZ2vW3WfDP5Q">
-          <body>In order to arrive at a more precise understanding of the patient’s weight, it will occasionally be necessary to note the amount of clothing or bedding that is included in the patient’s weight.  This class records represents an observation of how much clothing or bedding was included.</body>
+          <body>In order to arrive at a more precise understanding of the patient’s weight, it will occasionally be necessary to note the amount of clothing or bedding that is included in the patient’s weight.  This class records an observation of how much clothing or bedding was included.</body>
         </ownedComment>
         <generalization xmi:id="_8o7osYeMEeOZ2vW3WfDP5Q">
           <general xmi:type="uml:Class" href="ClinicalObservations.efx#_wBabQBcBEeOL3Nw-k5HkNw?FHIM/ClinicalObservation/ObservationQualifier?"/>
@@ -6474,4 +6479,5 @@ This class represents the measurement (or “clinical observation”) of the pat
   <Default:Documentation xmi:id="_1PsQcN07EeSZfdq7h5ueSA" base_Comment="_1PifcN07EeSZfdq7h5ueSA"/>
   <Default:Documentation xmi:id="_t31xwN0-EeSZfdq7h5ueSA" base_Comment="_t3w5QN0-EeSZfdq7h5ueSA"/>
   <Default:Documentation xmi:id="_WXhFkN0_EeSZfdq7h5ueSA" base_Comment="_WXXUkN0_EeSZfdq7h5ueSA"/>
+  <Default:Documentation xmi:id="_-kwr4N4LEeS6r4gmxAzL5Q" base_Comment="_-kSx0N4LEeS6r4gmxAzL5Q"/>
 </xmi:XMI>
