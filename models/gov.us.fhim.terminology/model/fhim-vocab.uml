@@ -409,7 +409,7 @@ These are documented in CDC local codes table, CDCPHINVS (Value set OID 2.16.840
       </packagedElement>
       <packagedElement xmi:type="uml:Enumeration" xmi:id="_Xdjh8KRMEeGZ6ueex_Me0w" name="LanguageAbilityMode"/>
       <packagedElement xmi:type="uml:Enumeration" xmi:id="_Xd45IKRMEeGZ6ueex_Me0w" name="MaritalStatus"/>
-      <packagedElement xmi:type="uml:Enumeration" xmi:id="_XyDLQKRMEeGZ6ueex_Me0w" name="Personal Relationship Role Type Value Set">
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_XyDLQKRMEeGZ6ueex_Me0w" name="PersonalRelationshipRoleType">
         <ownedLiteral xmi:id="_gkI_AM8CEeK9wcpwFaQlwA" name="ADOPT"/>
         <ownedLiteral xmi:id="_gmvAAM8CEeK9wcpwFaQlwA" name="AUNT"/>
         <ownedLiteral xmi:id="_gmvAAs8CEeK9wcpwFaQlwA" name="CHILD"/>
@@ -1656,7 +1656,7 @@ These are documented in CDC local codes table, CDCPHINVS (Value set OID 2.16.840
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_FLpScAgFEeKLN6LVEEd_rw" name="ProblemListVocab">
-      <packagedElement xmi:type="uml:Enumeration" xmi:id="_XyiTcKRMEeGZ6ueex_Me0w" name="Problem Severity Value Set">
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_XyiTcKRMEeGZ6ueex_Me0w" name="ProblemSeverity">
         <ownedLiteral xmi:id="_XypBIKRMEeGZ6ueex_Me0w" name="399166001 (fatal)"/>
         <ownedLiteral xmi:id="_XypBIqRMEeGZ6ueex_Me0w" name="255604002 (mild)"/>
         <ownedLiteral xmi:id="_XypoMKRMEeGZ6ueex_Me0w" name="371923003 (mild to moderate)"/>
@@ -1664,25 +1664,49 @@ These are documented in CDC local codes table, CDCPHINVS (Value set OID 2.16.840
         <ownedLiteral xmi:id="_XypoNKRMEeGZ6ueex_Me0w" name="371924009 (moderate to severe)"/>
         <ownedLiteral xmi:id="_XyqPQaRMEeGZ6ueex_Me0w" name="24484000 (severe)"/>
       </packagedElement>
-      <packagedElement xmi:type="uml:Enumeration" xmi:id="_XyxkAKRMEeGZ6ueex_Me0w" name="Problem Type Value Set">
-        <ownedLiteral xmi:id="_Xy3qoKRMEeGZ6ueex_Me0w" name="404684003"/>
-        <ownedLiteral xmi:id="_Xy3qoqRMEeGZ6ueex_Me0w" name="409586006"/>
-        <ownedLiteral xmi:id="_Xy4RsKRMEeGZ6ueex_Me0w" name="282291009"/>
-        <ownedLiteral xmi:id="_Xy4RsqRMEeGZ6ueex_Me0w" name="64572001"/>
-        <ownedLiteral xmi:id="_Xy4RtKRMEeGZ6ueex_Me0w" name="248536006"/>
-        <ownedLiteral xmi:id="_Xy44waRMEeGZ6ueex_Me0w" name="418799008"/>
-        <ownedLiteral xmi:id="_Xy44w6RMEeGZ6ueex_Me0w" name="55607006"/>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_XyxkAKRMEeGZ6ueex_Me0w" name="ProblemType">
+        <ownedLiteral xmi:id="_Xy3qoKRMEeGZ6ueex_Me0w" name="404684003 (Finding)"/>
+        <ownedLiteral xmi:id="_Xy3qoqRMEeGZ6ueex_Me0w" name="409586006 (Complaint)"/>
+        <ownedLiteral xmi:id="_Xy4RsKRMEeGZ6ueex_Me0w" name="282291009 (Diagnosis)"/>
+        <ownedLiteral xmi:id="_Xy4RsqRMEeGZ6ueex_Me0w" name="64572001 (Condition)"/>
+        <ownedLiteral xmi:id="_Xy4RtKRMEeGZ6ueex_Me0w" name="248536006 (Functional limitation)"/>
+        <ownedLiteral xmi:id="_Xy44waRMEeGZ6ueex_Me0w" name="418799008 (Symptom)"/>
+        <ownedLiteral xmi:id="_Xy44w6RMEeGZ6ueex_Me0w" name="55607006 (Problem)"/>
       </packagedElement>
-      <packagedElement xmi:type="uml:Enumeration" xmi:id="_XzA0kKRMEeGZ6ueex_Me0w" name="Problem Value Set"/>
-      <packagedElement xmi:type="uml:Enumeration" xmi:id="_X7pMIKRMEeGZ6ueex_Me0w" name="Social History Type Value Set">
-        <ownedLiteral xmi:id="_X7v50KRMEeGZ6ueex_Me0w" name="160573003"/>
-        <ownedLiteral xmi:id="_X7wg4aRMEeGZ6ueex_Me0w" name="363908000"/>
-        <ownedLiteral xmi:id="_X7wg46RMEeGZ6ueex_Me0w" name="364703007"/>
-        <ownedLiteral xmi:id="_X7xH8aRMEeGZ6ueex_Me0w" name="256235009"/>
-        <ownedLiteral xmi:id="_X7xH86RMEeGZ6ueex_Me0w" name="228272008"/>
-        <ownedLiteral xmi:id="_X7xH9aRMEeGZ6ueex_Me0w" name="364393001"/>
-        <ownedLiteral xmi:id="_X7xvAaRMEeGZ6ueex_Me0w" name="229819007"/>
-        <ownedLiteral xmi:id="_X7xvA6RMEeGZ6ueex_Me0w" name="425400000"/>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_XzA0kKRMEeGZ6ueex_Me0w" name="Problem"/>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_X7pMIKRMEeGZ6ueex_Me0w" name="SocialHistoryType">
+        <ownedLiteral xmi:id="_X7v50KRMEeGZ6ueex_Me0w" name="160573003 (ETOH (Alcohol) Use)"/>
+        <ownedLiteral xmi:id="_X7wg4aRMEeGZ6ueex_Me0w" name="363908000 (Drug Use)"/>
+        <ownedLiteral xmi:id="_X7wg46RMEeGZ6ueex_Me0w" name="364703007 (Employment)"/>
+        <ownedLiteral xmi:id="_X7xH8aRMEeGZ6ueex_Me0w" name="256235009 (Exercise)"/>
+        <ownedLiteral xmi:id="_X7xH86RMEeGZ6ueex_Me0w" name="228272008 (Other Social History)"/>
+        <ownedLiteral xmi:id="_X7xH9aRMEeGZ6ueex_Me0w" name="364393001 (Diet)"/>
+        <ownedLiteral xmi:id="_X7xvAaRMEeGZ6ueex_Me0w" name="229819007 (Smoking)"/>
+        <ownedLiteral xmi:id="_X7xvA6RMEeGZ6ueex_Me0w" name="425400000 (Toxic Exposure)"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_qL-NsN-TEeSF_8LAIPpUEQ" name="ProblemStatus">
+        <ownedLiteral xmi:id="_7n2OsN-TEeSF_8LAIPpUEQ" name="370996005 (resolved)"/>
+        <ownedLiteral xmi:id="_RwEDAN-UEeSF_8LAIPpUEQ" name="-newCode- (erroneous)"/>
+        <ownedLiteral xmi:id="_WcA0wN-UEeSF_8LAIPpUEQ" name="55561003 (active)"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_0q6CAN-kEeSzEeYgFgxEPA" name="ConcernContext">
+        <ownedLiteral xmi:id="_beVPYN-lEeSzEeYgFgxEPA" name="410519009 (at risk)"/>
+        <ownedLiteral xmi:id="_ey7MoN-lEeSzEeYgFgxEPA" name="410605003 (confirmed present)"/>
+        <ownedLiteral xmi:id="_fhcfgN-lEeSzEeYgFgxEPA" name="410594000 (definitely not present)"/>
+        <ownedLiteral xmi:id="_ghjRoN-lEeSzEeYgFgxEPA" name="410518001 (goal)"/>
+        <ownedLiteral xmi:id="_hQLSMN-lEeSzEeYgFgxEPA" name="410596003 (likely outcome)"/>
+        <ownedLiteral xmi:id="_iRzuUN-lEeSzEeYgFgxEPA" name="428263003 (not suspected)"/>
+        <ownedLiteral xmi:id="_jQzGIN-lEeSzEeYgFgxEPA" name="410593006 (probably not present)"/>
+        <ownedLiteral xmi:id="_j_hNUN-lEeSzEeYgFgxEPA" name="410592001 (probably present)"/>
+        <ownedLiteral xmi:id="_k6TakN-lEeSzEeYgFgxEPA" name="415684004 (suspected)"/>
+        <ownedLiteral xmi:id="_ltBQ8N-lEeSzEeYgFgxEPA" name="261665006 (unknown)"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_074LUN-mEeSzEeYgFgxEPA" name="ConditionCourse">
+        <ownedLiteral xmi:id="_AhmRQN-nEeSzEeYgFgxEPA" name="424124008 (acute)"/>
+        <ownedLiteral xmi:id="_HhjF8N-nEeSzEeYgFgxEPA" name="90734009 (chronic)"/>
+        <ownedLiteral xmi:id="_LZqnAN-nEeSzEeYgFgxEPA" name="-newCode- (congenital)"/>
+        <ownedLiteral xmi:id="_N-FrkN-nEeSzEeYgFgxEPA" name="255318003 (relapsing)"/>
+        <ownedLiteral xmi:id="_SHNdEN-nEeSzEeYgFgxEPA" name="19939008 (subacute)"/>
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_vURsYBJeEeKBDeGP59RrVA" name="LabVocab">
@@ -2828,57 +2852,20 @@ The following is an example coded concept:</body>
       <packagedElement xmi:type="uml:Enumeration" xmi:id="_RPOQ8MQjEeSaFayJQBK5xQ" name="InterpretationOfQuantity"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_l-73wNlMEeS93fJLUdBkhg" name="AllergyVocab">
-      <packagedElement xmi:type="uml:Enumeration" xmi:id="_LZ6FYNoGEeSdPcnORr-kJQ" name="Reactant">
-        <ownedAttribute xmi:id="_vKEgoNoHEeSdPcnORr-kJQ" name="fDA Substance reactant" visibility="public" type="_9hnDYNoGEeSdPcnORr-kJQ" aggregation="composite" association="_vKAPMNoHEeSdPcnORr-kJQ">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vKFuwdoHEeSdPcnORr-kJQ" value="*"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vKFuwNoHEeSdPcnORr-kJQ"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:id="_wTLdwNoHEeSdPcnORr-kJQ" name="medication Clinical Drug Name Value Set" visibility="public" type="_PJF3cNoHEeSdPcnORr-kJQ" aggregation="composite" association="_wTK2sNoHEeSdPcnORr-kJQ">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wTME0doHEeSdPcnORr-kJQ" value="*"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wTME0NoHEeSdPcnORr-kJQ"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:id="_2kY9INoHEeSdPcnORr-kJQ" name="sCT substance reactant" visibility="public" type="_vv2jsNoGEeSdPcnORr-kJQ" aggregation="composite" association="_2kXvANoHEeSdPcnORr-kJQ">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2kZkMdoHEeSdPcnORr-kJQ" value="*"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_2kZkMNoHEeSdPcnORr-kJQ"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:id="_3K7YsNoHEeSdPcnORr-kJQ" name="medication reactant class" visibility="public" type="_FlHm0NoHEeSdPcnORr-kJQ" aggregation="composite" association="_3K6xoNoHEeSdPcnORr-kJQ">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3K7_wdoHEeSdPcnORr-kJQ" value="*"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3K7_wNoHEeSdPcnORr-kJQ"/>
-        </ownedAttribute>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Enumeration" xmi:id="_vv2jsNoGEeSdPcnORr-kJQ" name="SCT substance reactant"/>
-      <packagedElement xmi:type="uml:Enumeration" xmi:id="_9hnDYNoGEeSdPcnORr-kJQ" name="FDA Substance reactant"/>
-      <packagedElement xmi:type="uml:Enumeration" xmi:id="_FlHm0NoHEeSdPcnORr-kJQ" name="Medication reactant class"/>
-      <packagedElement xmi:type="uml:Enumeration" xmi:id="_PJF3cNoHEeSdPcnORr-kJQ" name="Medication Clinical Drug Name Value Set"/>
-      <packagedElement xmi:type="uml:Association" xmi:id="_vKAPMNoHEeSdPcnORr-kJQ" memberEnd="_vKEgoNoHEeSdPcnORr-kJQ _vKGV0NoHEeSdPcnORr-kJQ">
-        <ownedEnd xmi:id="_vKGV0NoHEeSdPcnORr-kJQ" name="" visibility="private" type="_LZ6FYNoGEeSdPcnORr-kJQ" association="_vKAPMNoHEeSdPcnORr-kJQ">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vKG84doHEeSdPcnORr-kJQ" value="1"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vKG84NoHEeSdPcnORr-kJQ" value="1"/>
-        </ownedEnd>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Association" xmi:id="_wTK2sNoHEeSdPcnORr-kJQ" memberEnd="_wTLdwNoHEeSdPcnORr-kJQ _wTMr4NoHEeSdPcnORr-kJQ">
-        <ownedEnd xmi:id="_wTMr4NoHEeSdPcnORr-kJQ" name="" visibility="private" type="_LZ6FYNoGEeSdPcnORr-kJQ" association="_wTK2sNoHEeSdPcnORr-kJQ">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wTNS8NoHEeSdPcnORr-kJQ" value="1"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wTMr4doHEeSdPcnORr-kJQ" value="1"/>
-        </ownedEnd>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Association" xmi:id="_2kXvANoHEeSdPcnORr-kJQ" memberEnd="_2kY9INoHEeSdPcnORr-kJQ _2kaLQNoHEeSdPcnORr-kJQ">
-        <ownedEnd xmi:id="_2kaLQNoHEeSdPcnORr-kJQ" name="" visibility="private" type="_LZ6FYNoGEeSdPcnORr-kJQ" association="_2kXvANoHEeSdPcnORr-kJQ">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2kayUdoHEeSdPcnORr-kJQ" value="1"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_2kayUNoHEeSdPcnORr-kJQ" value="1"/>
-        </ownedEnd>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Association" xmi:id="_3K6xoNoHEeSdPcnORr-kJQ" memberEnd="_3K7YsNoHEeSdPcnORr-kJQ _3K8m0NoHEeSdPcnORr-kJQ">
-        <ownedEnd xmi:id="_3K8m0NoHEeSdPcnORr-kJQ" name="" visibility="private" type="_LZ6FYNoGEeSdPcnORr-kJQ" association="_3K6xoNoHEeSdPcnORr-kJQ">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3K9N4doHEeSdPcnORr-kJQ" value="1"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3K9N4NoHEeSdPcnORr-kJQ" value="1"/>
-        </ownedEnd>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Enumeration" xmi:id="_WLLn4NoMEeSdPcnORr-kJQ" name="Problem criticality">
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_LZ6FYNoGEeSdPcnORr-kJQ" name="Reactant"/>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_vv2jsNoGEeSdPcnORr-kJQ" name="SCTSubstanceReactant"/>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_9hnDYNoGEeSdPcnORr-kJQ" name="FDASubstanceReactant"/>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_FlHm0NoHEeSdPcnORr-kJQ" name="MedicationReactantClass"/>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_PJF3cNoHEeSdPcnORr-kJQ" name="MedicationClinicalDrugName"/>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_WLLn4NoMEeSdPcnORr-kJQ" name="ProblemCriticality">
         <ownedLiteral xmi:id="_xiYpkNoMEeSdPcnORr-kJQ" name="C70667 (severe)"/>
         <ownedLiteral xmi:id="_5jvQ4NoMEeSdPcnORr-kJQ" name="C82508 (life-threatening)"/>
         <ownedLiteral xmi:id="_8GapANoMEeSdPcnORr-kJQ" name="C61376 (moderate)"/>
         <ownedLiteral xmi:id="__vGm8NoMEeSdPcnORr-kJQ" name="C82508 (mild)"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_zttF0N-XEeSLwbHBnRFGvw" name="Mechanism">
+        <ownedLiteral xmi:id="_8jR_YN-XEeSLwbHBnRFGvw" name="37523008 (immunologic)"/>
+        <ownedLiteral xmi:id="_BU3fEN-YEeSLwbHBnRFGvw" name="-newCode- (not immunologic)"/>
       </packagedElement>
     </packagedElement>
     <profileApplication xmi:id="_2B97WxSVEeGGzu7fmW9pXw">
@@ -5431,4 +5418,28 @@ The following is an example coded concept:</body>
   <term:ValueSetCode xmi:id="_deUDAdonEeSOxtrN8-7DcQ" conceptName="observed by recording clinician" base_EnumerationLiteral="_deUDANonEeSOxtrN8-7DcQ"/>
   <term:ValueSetCode xmi:id="_eJEQMNonEeSOxtrN8-7DcQ" conceptName="observed by other clinician" base_EnumerationLiteral="_eJDpINonEeSOxtrN8-7DcQ"/>
   <term:ValueSetCode xmi:id="_e1USMdonEeSOxtrN8-7DcQ" conceptName="bracelet" base_EnumerationLiteral="_e1USMNonEeSOxtrN8-7DcQ"/>
+  <term:ValueSetVersion xmi:id="_qMAC4N-TEeSF_8LAIPpUEQ" identifier="2.16.840.1.113762.1.4.1062.1" url="TBD" definition="Whether the identified condition is known to be germane" base_Enumeration="_qL-NsN-TEeSF_8LAIPpUEQ"/>
+  <term:ValueSetCode xmi:id="_7n21wN-TEeSF_8LAIPpUEQ" conceptName="resolved" base_EnumerationLiteral="_7n2OsN-TEeSF_8LAIPpUEQ"/>
+  <term:ValueSetCode xmi:id="_RwEDAd-UEeSF_8LAIPpUEQ" conceptName="erroneous" base_EnumerationLiteral="_RwEDAN-UEeSF_8LAIPpUEQ"/>
+  <term:ValueSetCode xmi:id="_WcA0wd-UEeSF_8LAIPpUEQ" conceptName="active" base_EnumerationLiteral="_WcA0wN-UEeSF_8LAIPpUEQ"/>
+  <term:ValueSetVersion xmi:id="_zwHgoN-XEeSLwbHBnRFGvw" identifier="TBD" url="TBD" base_Enumeration="_zttF0N-XEeSLwbHBnRFGvw"/>
+  <term:ValueSetCode xmi:id="_8jSmcN-XEeSLwbHBnRFGvw" conceptName="immunologic" base_EnumerationLiteral="_8jR_YN-XEeSLwbHBnRFGvw"/>
+  <term:ValueSetCode xmi:id="_BU3fEd-YEeSLwbHBnRFGvw" conceptName="not immunologic" base_EnumerationLiteral="_BU3fEN-YEeSLwbHBnRFGvw"/>
+  <term:ValueSetVersion xmi:id="_0udsUN-kEeSzEeYgFgxEPA" identifier="2.16.840.1.113883.3.2074.1.1.45" url="TBD" definition="Ontological state of a concern; i.e., whether it is a risk, a fact, ruled out, etc." codeSystem="_WwluQaRMEeGZ6ueex_Me0w" base_Enumeration="_0q6CAN-kEeSzEeYgFgxEPA"/>
+  <term:ValueSetCode xmi:id="_beV2cN-lEeSzEeYgFgxEPA" conceptName="at risk" base_EnumerationLiteral="_beVPYN-lEeSzEeYgFgxEPA"/>
+  <term:ValueSetCode xmi:id="_ey8awN-lEeSzEeYgFgxEPA" conceptName="confirmed present" base_EnumerationLiteral="_ey7MoN-lEeSzEeYgFgxEPA"/>
+  <term:ValueSetCode xmi:id="_fhcfgd-lEeSzEeYgFgxEPA" conceptName="definitely not present" base_EnumerationLiteral="_fhcfgN-lEeSzEeYgFgxEPA"/>
+  <term:ValueSetCode xmi:id="_ghj4sN-lEeSzEeYgFgxEPA" conceptName="goal" base_EnumerationLiteral="_ghjRoN-lEeSzEeYgFgxEPA"/>
+  <term:ValueSetCode xmi:id="_hQL5QN-lEeSzEeYgFgxEPA" conceptName="likely outcome" base_EnumerationLiteral="_hQLSMN-lEeSzEeYgFgxEPA"/>
+  <term:ValueSetCode xmi:id="_iRzuUd-lEeSzEeYgFgxEPA" conceptName="not suspected" base_EnumerationLiteral="_iRzuUN-lEeSzEeYgFgxEPA"/>
+  <term:ValueSetCode xmi:id="_jQzGId-lEeSzEeYgFgxEPA" conceptName="probably not present" base_EnumerationLiteral="_jQzGIN-lEeSzEeYgFgxEPA"/>
+  <term:ValueSetCode xmi:id="_j_h0YN-lEeSzEeYgFgxEPA" conceptName="probably present" base_EnumerationLiteral="_j_hNUN-lEeSzEeYgFgxEPA"/>
+  <term:ValueSetCode xmi:id="_k6UBoN-lEeSzEeYgFgxEPA" conceptName="suspected" base_EnumerationLiteral="_k6TakN-lEeSzEeYgFgxEPA"/>
+  <term:ValueSetCode xmi:id="_ltB4AN-lEeSzEeYgFgxEPA" conceptName="unknown" base_EnumerationLiteral="_ltBQ8N-lEeSzEeYgFgxEPA"/>
+  <term:ValueSetVersion xmi:id="_074yYN-mEeSzEeYgFgxEPA" identifier="2.16.840.1.113883.3.2074.1.1.43" url="TBD" definition="The natural history of a condition, indicating its sequence, speed, and temporal finiteness" base_Enumeration="_074LUN-mEeSzEeYgFgxEPA"/>
+  <term:ValueSetCode xmi:id="_Ahm4UN-nEeSzEeYgFgxEPA" conceptName="acute" usageNote="acute (sudden onset AND/OR short duration)" base_EnumerationLiteral="_AhmRQN-nEeSzEeYgFgxEPA"/>
+  <term:ValueSetCode xmi:id="_HhjtAN-nEeSzEeYgFgxEPA" conceptName="chronic" base_EnumerationLiteral="_HhjF8N-nEeSzEeYgFgxEPA"/>
+  <term:ValueSetCode xmi:id="_LZrOEN-nEeSzEeYgFgxEPA" conceptName="congenital" base_EnumerationLiteral="_LZqnAN-nEeSzEeYgFgxEPA"/>
+  <term:ValueSetCode xmi:id="_N-GSoN-nEeSzEeYgFgxEPA" conceptName="relapsing" base_EnumerationLiteral="_N-FrkN-nEeSzEeYgFgxEPA"/>
+  <term:ValueSetCode xmi:id="_SHNdEd-nEeSzEeYgFgxEPA" conceptName="subacute" base_EnumerationLiteral="_SHNdEN-nEeSzEeYgFgxEPA"/>
 </xmi:XMI>
