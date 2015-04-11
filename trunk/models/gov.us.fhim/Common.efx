@@ -1758,9 +1758,15 @@ Note that in VistA, this concept is generally called Observed if observed by a c
         <ownedComment xmi:id="_u0i8UHilEeODk9Eid2o3dQ" annotatedElement="_JGgF0RcBEeOL3Nw-k5HkNw">
           <body>Pointer to the Service Delivery Location at which or under whose auspices the Clinical Information was created.  This pointer implies which Organization &quot;owns&quot; the Clinical Information record.&#xD;
 &#xD;
+&#xD;
 Represents &quot;the section of the diagnostic service where the observation was performed.  If the study was performed by an outside service, the identification of that service should be recorded here&quot; - HL7 Version 2.8, OBR-24.&#xD;
 &quot;Contains the name of the organization/service responsible for performing the service.&quot; - HL7 Version 2.8, OBX-23.&#xD;
-&quot;Contains the address of the organization/service responsible for performing the service.&quot; - HL7 Version 2.8, OBX-24.</body>
+&quot;Contains the address of the organization/service responsible for performing the service.&quot; - HL7 Version 2.8, OBX-24.&#xD;
+&#xD;
+&quot;Contains the name of the organization providing the update to the allergy&quot; - HL7 Version 2.8, IAM-19.&#xD;
+&quot;Contains the name of the organization that initially recorded the allergy&quot; - HL7 Version 2.8, IAM-28.&#xD;
+&quot;Contains the name of the organization that modified the allergy&quot; - HL7 Version 2.8, IAM-29.&#xD;
+&quot;Contains the name of the organization that inactivated the allergy&quot; - HL7 Version 2.8, IAM-30.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Provider.efx#_420A62FD03B64242CAB30303?FHIM/Provider/ServiceDeliveryLocation?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JGgF0xcBEeOL3Nw-k5HkNw" value="*"/>
@@ -5619,7 +5625,11 @@ For Observations, this is a pointer to any device(s) that generated the Clinical
 &quot;A party that originates the Act and therefore has responsibility for the information given in the Act and ownership of this Act.&quot; - HL7 V3&#xD;
 &quot;Who was responsible for asserting the observed value as true.&quot; - HL7 FHIR, Observation.performer.&#xD;
 &quot;Person who takes responsibility for asserting the existence of the condition as part of the electronic record.&quot; - HL7 FHIR, Condition resource.&#xD;
-&quot;This field contains the identity of the person who initiated the event represented by the corresponding order control code.  For example, if the order control code is CA (cancel order request), this field represents the person who requested the order cancellation.  This person is typically a care provider but may not always be the same as ORC-12 ordering provider&quot; - HL7 Version 2.8, ORC-19</body>
+&quot;This field contains the identity of the person who initiated the event represented by the corresponding order control code.  For example, if the order control code is CA (cancel order request), this field represents the person who requested the order cancellation.  This person is typically a care provider but may not always be the same as ORC-12 ordering provider&quot; - HL7 Version 2.8, ORC-19&#xD;
+&quot;Identifies the provider who assigned the clinical status to the allergy&quot; - HL7 Version 2.8, IAM-18.&#xD;
+&quot;Identifies the user that inactivated the record entry about the patient’s allergy&quot; - HL7 Version 2.8, IAM-21.&#xD;
+&quot;Identifies the user that created the entry in the record stating the allergy&quot; - HL7 Version 2.8, IAM-23.&#xD;
+&quot;Identifies the user that modified the allergy&quot; - HL7 Version 2.8, IAM-25.</body>
         </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SI9hoRb9EeOL3Nw-k5HkNw" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SI9hoBb9EeOL3Nw-k5HkNw"/>
