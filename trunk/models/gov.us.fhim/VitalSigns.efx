@@ -796,6 +796,42 @@ Individual organizations or medical specialties will often include other common 
 &#xD;
 This package contains sub-packages for each of the seven vital signs.  These sub-packages contain an example &quot;Detailed Clinical Model&quot; (DCM) in which we constrain (using UML re-defines) and extend the generic clinical Observation to define a particular vital sign.  These sub-packages are meant to show how such DCMs would be modeled.  Note that a DCM is analogous to a FHIR Profile.</body>
     </ownedComment>
+    <packagedElement xmi:type="uml:Class" xmi:id="_dbS3O4eDEeOZ2vW3WfDP5Q" name="PatientStateExertionQualifier" clientDependency="_r7hDwMN7EeSFjdDJNF9NPA _vzIsUOQ6EeSuxrYeYCfuhA">
+      <ownedComment xmi:id="_shgrQN0uEeSZfdq7h5ueSA" annotatedElement="_dbS3O4eDEeOZ2vW3WfDP5Q">
+        <body>Heart Rate, Blood Pressure, Respiration, and Blood Oxygen levels naturally vary depending on whether the patient is at rest, or during or shortly after exercise.  This class records an observation of whether the patient was at rest, exercising, or recently had been exercising at the time of the measurement.</body>
+      </ownedComment>
+      <generalization xmi:id="_dbS3PIeDEeOZ2vW3WfDP5Q">
+        <general xmi:type="uml:Class" href="ClinicalObservations.efx#_wBabQBcBEeOL3Nw-k5HkNw?FHIM/ClinicalObservation/ObservationQualifier?"/>
+      </generalization>
+      <ownedAttribute xmi:id="_dbS3PYeDEeOZ2vW3WfDP5Q" name="observedCharacteristic" visibility="public">
+        <eAnnotations xmi:id="_dbS3PoeDEeOZ2vW3WfDP5Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:id="_dbS3P4eDEeOZ2vW3WfDP5Q" key="redefine"/>
+        </eAnnotations>
+        <ownedComment xmi:id="_dbS3QIeDEeOZ2vW3WfDP5Q" annotatedElement="_dbS3PYeDEeOZ2vW3WfDP5Q">
+          <body>This property defines what was observed that “qualifies” the primary, or “owning” Observation.  This property defines what was observed by citing a value from a nationally recognized coding system.  In this case, the value to be hard-coded for Patient Exertion has yet to be determined.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_dbS3QYeDEeOZ2vW3WfDP5Q" value="cs=TBD, c=TBD">
+          <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_dbS3QoeDEeOZ2vW3WfDP5Q" name="value" visibility="public">
+        <eAnnotations xmi:id="_dbS3Q4eDEeOZ2vW3WfDP5Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:id="_dbS3RIeDEeOZ2vW3WfDP5Q" key="redefine"/>
+        </eAnnotations>
+        <ownedComment xmi:id="_dbS3RYeDEeOZ2vW3WfDP5Q" annotatedElement="_dbS3QoeDEeOZ2vW3WfDP5Q">
+          <body>This property contains the result, or value of the qualifying Observation.  In the generic Observation Qualifier class, the data type for this property can be anything.  In this sub-type, the value is constrained to be one of a set of codes from the SNOMED-CT coding system that indicates whether the patient was resting, exercising, or recently had been exercising.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dbS3RoeDEeOZ2vW3WfDP5Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dbS3R4eDEeOZ2vW3WfDP5Q" value="1"/>
+        <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_pL-7YMN7EeSFjdDJNF9NPA">
+          <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
+          <language></language>
+          <body>(PatientMeasurementExertionStatus)</body>
+        </defaultValue>
+      </ownedAttribute>
+    </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_sXpXgH-1EeOzENpLs8HIcg" name="VitalSignsObservationList">
       <ownedComment xmi:id="_w0TJAH-1EeOzENpLs8HIcg" annotatedElement="_sXpXgH-1EeOzENpLs8HIcg">
         <body>This class contains a collection of clinical Observations traditionally called “Vital Signs” because they are measurements of the body’s basic functions.  The absence of a pulse, respiration, or blood pressure are indications that the patient is dead, hence the term “vital” in the name.  Traditionally, there are four vital signs: Heart rate or pulse; Respiration rate, Blood pressure, and Body temperature.  Body height and Body weight are also often included among vital signs because these measurements are often used (in conjunction with other observations) to provide a gross indication of potential health concerns.  The FHIM includes a seventh vital sign, Blood oxygen saturation, as the human body requires a specific balance of oxygen in the blood below which organ function may be compromised.&#xD;
@@ -832,7 +868,7 @@ Individual organizations or medical specialties will often include other common 
             <styles xmi:type="notation:TextStyle" xmi:id="_-GWKw5dXEeOCbc0pwOBboA"/>
             <styles xmi:type="notation:LineTypeStyle" xmi:id="_-GWKxJdXEeOCbc0pwOBboA"/>
             <element xsi:nil="true"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-GWKxZdXEeOCbc0pwOBboA" x="-20288" y="8876" width="59574" height="13621"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-GWKxZdXEeOCbc0pwOBboA" x="-23458" y="8876" width="65295" height="13621"/>
           </children>
           <children xmi:type="notation:Shape" xmi:id="_i9wRgIdsEeOZ2vW3WfDP5Q" type="Note" fontName="Arial" fontHeight="10" description="FHIM Vital Signs Domain&#xD;&#xA;    Blood Pressure Observation" fillColor="16777088" transparency="0" lineColor="0" lineWidth="1">
             <children xmi:type="notation:BasicDecorationNode" xmi:id="_i9wRgYdsEeOZ2vW3WfDP5Q" type="DiagramName">
@@ -844,7 +880,7 @@ Individual organizations or medical specialties will often include other common 
             <styles xmi:type="notation:TextStyle" xmi:id="_i9wRg4dsEeOZ2vW3WfDP5Q"/>
             <styles xmi:type="notation:LineTypeStyle" xmi:id="_i9wRhIdsEeOZ2vW3WfDP5Q"/>
             <element xsi:nil="true"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i9wRhYdsEeOZ2vW3WfDP5Q" x="-19654" y="-5072"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i9wRhYdsEeOZ2vW3WfDP5Q" x="-23141" y="-4755"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_i9w4kIdsEeOZ2vW3WfDP5Q" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" fillColor="8487423" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_i9w4kYdsEeOZ2vW3WfDP5Q" type="ImageCompartment">
@@ -858,7 +894,7 @@ Individual organizations or medical specialties will often include other common 
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_i9w4mIdsEeOZ2vW3WfDP5Q" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_i9w4mYdsEeOZ2vW3WfDP5Q" visible="false" type="StructureCompartment"/>
             <element xmi:type="uml:Class" href="ClinicalObservations.efx#_nbH1LVaeEd6rJ7jpZ7LBFg?FHIM/ClinicalObservation/Observation?"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i9w4modsEeOZ2vW3WfDP5Q" x="14582" y="3170"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i9w4modsEeOZ2vW3WfDP5Q" x="18703" y="3170"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_i9w4m4dsEeOZ2vW3WfDP5Q" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" fillColor="8487423" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_i9w4nIdsEeOZ2vW3WfDP5Q" type="ImageCompartment">
@@ -872,7 +908,7 @@ Individual organizations or medical specialties will often include other common 
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_i9w4o4dsEeOZ2vW3WfDP5Q" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_i9w4pIdsEeOZ2vW3WfDP5Q" visible="false" type="StructureCompartment"/>
             <element xmi:type="uml:Class" href="ClinicalObservations.efx#_wBabQBcBEeOL3Nw-k5HkNw?FHIM/ClinicalObservation/ObservationQualifier?"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i9w4pYdsEeOZ2vW3WfDP5Q" x="-12997" y="4121"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i9w4pYdsEeOZ2vW3WfDP5Q" x="-8876" y="4121"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_i9xfoIdsEeOZ2vW3WfDP5Q" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" fillColor="8487423" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_i9xfoYdsEeOZ2vW3WfDP5Q" type="ImageCompartment">
@@ -886,7 +922,7 @@ Individual organizations or medical specialties will often include other common 
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_i9xfqIdsEeOZ2vW3WfDP5Q" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_i9xfqYdsEeOZ2vW3WfDP5Q" visible="false" type="StructureCompartment"/>
             <element xmi:type="uml:Class" href="Common.efx#_W_aIoBb8EeOL3Nw-k5HkNw?FHIM/Common/ClinicalProvenance?"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i9xfqodsEeOZ2vW3WfDP5Q" x="23775" y="1268"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i9xfqodsEeOZ2vW3WfDP5Q" x="27896" y="1268"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_i9xfq4dsEeOZ2vW3WfDP5Q" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" fillColor="8519679" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_i9xfrIdsEeOZ2vW3WfDP5Q" type="ImageCompartment">
@@ -900,7 +936,7 @@ Individual organizations or medical specialties will often include other common 
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_i9xfs4dsEeOZ2vW3WfDP5Q" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_i9xftIdsEeOZ2vW3WfDP5Q" visible="false" type="StructureCompartment"/>
             <element xmi:type="uml:Class" href="Person.efx#_420A62FD03B6418A4E500034?FHIM/Person/Patient?"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i9xftYdsEeOZ2vW3WfDP5Q" x="2853"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i9xftYdsEeOZ2vW3WfDP5Q" x="6974"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_i9yGsIdsEeOZ2vW3WfDP5Q" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" fillColor="16777088" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_i9yGsYdsEeOZ2vW3WfDP5Q" type="ImageCompartment">
@@ -914,7 +950,7 @@ Individual organizations or medical specialties will often include other common 
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_i9yGuIdsEeOZ2vW3WfDP5Q" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_i9yGuYdsEeOZ2vW3WfDP5Q" visible="false" type="StructureCompartment"/>
             <element xmi:type="uml:Class" href="Common.efx#_hXa7cAq6Ed-426xscrxYmQ?FHIM/Common/Author?"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i9yGuodsEeOZ2vW3WfDP5Q" x="35187" y="-2853"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i9yGuodsEeOZ2vW3WfDP5Q" x="39308" y="-2853"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_i9yGu4dsEeOZ2vW3WfDP5Q" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" fillColor="16777088" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_i9yGvIdsEeOZ2vW3WfDP5Q" type="ImageCompartment">
@@ -928,7 +964,7 @@ Individual organizations or medical specialties will often include other common 
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_i9yGw4dsEeOZ2vW3WfDP5Q" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_i9yGxIdsEeOZ2vW3WfDP5Q" visible="false" type="StructureCompartment"/>
             <element xmi:type="uml:Class" href="Common.efx#_HxX44Aq7Ed-426xscrxYmQ?FHIM/Common/DataEnterer?"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i9yGxYdsEeOZ2vW3WfDP5Q" x="35187" y="-317"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i9yGxYdsEeOZ2vW3WfDP5Q" x="39308" y="-317"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_i9ytwIdsEeOZ2vW3WfDP5Q" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" fillColor="16777088" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_i9ytwYdsEeOZ2vW3WfDP5Q" type="ImageCompartment">
@@ -942,7 +978,7 @@ Individual organizations or medical specialties will often include other common 
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_i9ytyIdsEeOZ2vW3WfDP5Q" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_i9ytyYdsEeOZ2vW3WfDP5Q" visible="false" type="StructureCompartment"/>
             <element xmi:type="uml:Class" href="Common.efx#_H1ZdQAq7Ed-426xscrxYmQ?FHIM/Common/Verifier?"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i9ytyodsEeOZ2vW3WfDP5Q" x="35187" y="2219"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i9ytyodsEeOZ2vW3WfDP5Q" x="39308" y="2219"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_i9zU24dsEeOZ2vW3WfDP5Q" element="_sXpXgH-1EeOzENpLs8HIcg" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" fillColor="8487423" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_i9zU3IdsEeOZ2vW3WfDP5Q" type="ImageCompartment">
@@ -955,7 +991,7 @@ Individual organizations or medical specialties will often include other common 
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_i9zU4odsEeOZ2vW3WfDP5Q" visible="false" type="OperationCompartment"/>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_i9zU44dsEeOZ2vW3WfDP5Q" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_i9zU5IdsEeOZ2vW3WfDP5Q" visible="false" type="StructureCompartment"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i9zU5YdsEeOZ2vW3WfDP5Q" x="5072" y="-2536"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i9zU5YdsEeOZ2vW3WfDP5Q" x="9193" y="-2536"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_UgWSoJdYEeOCbc0pwOBboA" element="_JZJUsJdYEeOCbc0pwOBboA" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8487423" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_UgYu4JdYEeOCbc0pwOBboA" type="ImageCompartment">
@@ -968,7 +1004,7 @@ Individual organizations or medical specialties will often include other common 
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_UgZ9AJdYEeOCbc0pwOBboA" visible="false" type="OperationCompartment"/>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_UgZ9AZdYEeOCbc0pwOBboA" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_UgakEJdYEeOCbc0pwOBboA" visible="false" type="StructureCompartment"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UgWSoZdYEeOCbc0pwOBboA" x="11412" y="11095"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UgWSoZdYEeOCbc0pwOBboA" x="15533" y="11095"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_Zt7KwJdYEeOCbc0pwOBboA" element="_X9r8MJdYEeOCbc0pwOBboA" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8487423" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_Zt7x0JdYEeOCbc0pwOBboA" type="ImageCompartment">
@@ -981,7 +1017,7 @@ Individual organizations or medical specialties will often include other common 
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_Zt8Y4pdYEeOCbc0pwOBboA" visible="false" type="OperationCompartment"/>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_Zt8Y45dYEeOCbc0pwOBboA" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_Zt8Y5JdYEeOCbc0pwOBboA" visible="false" type="StructureCompartment"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Zt7KwZdYEeOCbc0pwOBboA" x="12680" y="14582"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Zt7KwZdYEeOCbc0pwOBboA" x="16801" y="14582"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_vr_vIJdZEeOCbc0pwOBboA" element="_nWp00JdZEeOCbc0pwOBboA" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8487423" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_vsAWMJdZEeOCbc0pwOBboA" type="ImageCompartment">
@@ -994,7 +1030,7 @@ Individual organizations or medical specialties will often include other common 
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_vsA9RJdZEeOCbc0pwOBboA" visible="false" type="OperationCompartment"/>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_vsBkUJdZEeOCbc0pwOBboA" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_vsBkUZdZEeOCbc0pwOBboA" visible="false" type="StructureCompartment"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vr_vIZdZEeOCbc0pwOBboA" x="-12046" y="11412"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vr_vIZdZEeOCbc0pwOBboA" x="-7925" y="11412"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_6Ka10JdZEeOCbc0pwOBboA" element="_38Q8MJdZEeOCbc0pwOBboA" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8487423" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_6Kbc4JdZEeOCbc0pwOBboA" type="ImageCompartment">
@@ -1007,7 +1043,7 @@ Individual organizations or medical specialties will often include other common 
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_6KcD9JdZEeOCbc0pwOBboA" visible="false" type="OperationCompartment"/>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_6KcrAJdZEeOCbc0pwOBboA" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_6KcrAZdZEeOCbc0pwOBboA" visible="false" type="StructureCompartment"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6Ka10ZdZEeOCbc0pwOBboA" x="-19654" y="9193"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6Ka10ZdZEeOCbc0pwOBboA" x="-15533" y="9193"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_fkXHwJdaEeOCbc0pwOBboA" element="_aZAdMJdaEeOCbc0pwOBboA" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8487423" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_fkXu0JdaEeOCbc0pwOBboA" type="ImageCompartment">
@@ -1020,7 +1056,7 @@ Individual organizations or medical specialties will often include other common 
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_fkYV4pdaEeOCbc0pwOBboA" visible="false" type="OperationCompartment"/>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_fkYV45daEeOCbc0pwOBboA" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_fkY88JdaEeOCbc0pwOBboA" visible="false" type="StructureCompartment"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fkXHwZdaEeOCbc0pwOBboA" x="6340" y="19020"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fkXHwZdaEeOCbc0pwOBboA" x="10461" y="19020"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_hFlp8JdaEeOCbc0pwOBboA" element="_adk0IJdaEeOCbc0pwOBboA" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8487423" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_hFmRAJdaEeOCbc0pwOBboA" type="ImageCompartment">
@@ -1033,7 +1069,7 @@ Individual organizations or medical specialties will often include other common 
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_hFm4EpdaEeOCbc0pwOBboA" visible="false" type="OperationCompartment"/>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_hFm4E5daEeOCbc0pwOBboA" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_hFnfIJdaEeOCbc0pwOBboA" visible="false" type="StructureCompartment"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hFlp8ZdaEeOCbc0pwOBboA" x="19971" y="19020"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hFlp8ZdaEeOCbc0pwOBboA" x="24092" y="19020"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_Rn5JAIexEeS2mpjRRlxFgQ" element="_9-mOMIewEeS2mpjRRlxFgQ" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8487423" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_Rn5wEIexEeS2mpjRRlxFgQ" type="ImageCompartment">
@@ -1046,7 +1082,7 @@ Individual organizations or medical specialties will often include other common 
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_Rn6-MYexEeS2mpjRRlxFgQ" visible="false" type="OperationCompartment"/>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_Rn7lQIexEeS2mpjRRlxFgQ" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_Rn7lQYexEeS2mpjRRlxFgQ" visible="false" type="StructureCompartment"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Rn5JAYexEeS2mpjRRlxFgQ" x="1585" y="11729"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Rn5JAYexEeS2mpjRRlxFgQ" x="5706" y="11729"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_q2MjMLxkEeSyBtXdDFDzRA" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="13434879" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_q2NxULxkEeSyBtXdDFDzRA" type="ImageCompartment">
@@ -1060,7 +1096,7 @@ Individual organizations or medical specialties will often include other common 
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_q2OYY7xkEeSyBtXdDFDzRA" visible="false" type="AttributeCompartment"/>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_q2OYZLxkEeSyBtXdDFDzRA" visible="false" type="OperationCompartment"/>
             <element xmi:type="uml:Enumeration" href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_IbyfILxREeSyBtXdDFDzRA"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_q2MjMbxkEeSyBtXdDFDzRA" x="-18703" y="12997"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_q2MjMbxkEeSyBtXdDFDzRA" x="-14582" y="12997"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_jKp20L60EeSMg-kgsnPV3w" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8487423" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_jKqd4L60EeSMg-kgsnPV3w" type="ImageCompartment">
@@ -1074,7 +1110,7 @@ Individual organizations or medical specialties will often include other common 
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_jKrsAL60EeSMg-kgsnPV3w" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_jKrsAb60EeSMg-kgsnPV3w" visible="false" type="StructureCompartment"/>
             <element xmi:type="uml:Class" href="Common.efx#_terqkLxzEeSLwM7JIxbinw?FHIM/Common/Provenance(Abstract)?"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jKp20b60EeSMg-kgsnPV3w" x="23458" y="-3170"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jKp20b60EeSMg-kgsnPV3w" x="27579" y="-3170"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_GjvtgL7EEeSMg-kgsnPV3w" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="13434879" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_GjwUkL7EEeSMg-kgsnPV3w" type="ImageCompartment">
@@ -1088,7 +1124,7 @@ Individual organizations or medical specialties will often include other common 
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_Gjw7pL7EEeSMg-kgsnPV3w" visible="false" type="AttributeCompartment"/>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_GjxisL7EEeSMg-kgsnPV3w" visible="false" type="OperationCompartment"/>
             <element xmi:type="uml:Enumeration" href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_kH664L61EeSMg-kgsnPV3w"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Gjvtgb7EEeSMg-kgsnPV3w" x="2853" y="16484"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Gjvtgb7EEeSMg-kgsnPV3w" x="6974" y="16484"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_y5b-gMESEeSx2-rVmArpvQ" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="13434879" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_y5fo4MESEeSx2-rVmArpvQ" type="ImageCompartment">
@@ -1102,7 +1138,7 @@ Individual organizations or medical specialties will often include other common 
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_y5g3AMESEeSx2-rVmArpvQ" visible="false" type="AttributeCompartment"/>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_y5g3AcESEeSx2-rVmArpvQ" visible="false" type="OperationCompartment"/>
             <element xmi:type="uml:Enumeration" href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_OCbtcMEFEeSD-sVrqweICQ"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_y5b-gcESEeSx2-rVmArpvQ" x="-10461" y="15216"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_y5b-gcESEeSx2-rVmArpvQ" x="-6340" y="15216"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_SR58YMNnEeSFjdDJNF9NPA" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="13434879" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_SR6jcMNnEeSFjdDJNF9NPA" type="ImageCompartment">
@@ -1116,7 +1152,7 @@ Individual organizations or medical specialties will often include other common 
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_SR8YoMNnEeSFjdDJNF9NPA" visible="false" type="AttributeCompartment"/>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_SR8YocNnEeSFjdDJNF9NPA" visible="false" type="OperationCompartment"/>
             <element xmi:type="uml:Enumeration" href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_OxHxsMEAEeSD-sVrqweICQ"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SR58YcNnEeSFjdDJNF9NPA" x="29481" y="14265"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SR58YcNnEeSFjdDJNF9NPA" x="33602" y="14265"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_I_4h8MNoEeSFjdDJNF9NPA" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="13434879" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_I_5JAMNoEeSFjdDJNF9NPA" type="ImageCompartment">
@@ -1130,7 +1166,7 @@ Individual organizations or medical specialties will often include other common 
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_I_5wFMNoEeSFjdDJNF9NPA" visible="false" type="AttributeCompartment"/>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_I_6XIMNoEeSFjdDJNF9NPA" visible="false" type="OperationCompartment"/>
             <element xmi:type="uml:Enumeration" href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_LuKo8MD-EeSD-sVrqweICQ"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I_4h8cNoEeSFjdDJNF9NPA" x="27262" y="10144"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I_4h8cNoEeSFjdDJNF9NPA" x="31383" y="10144"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_Ke7dYMNpEeSFjdDJNF9NPA" element="_DQ5wcMNpEeSFjdDJNF9NPA" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8487423" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_Ke8rgMNpEeSFjdDJNF9NPA" type="ImageCompartment">
@@ -1143,7 +1179,7 @@ Individual organizations or medical specialties will often include other common 
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_Ke9SkMNpEeSFjdDJNF9NPA" visible="false" type="OperationCompartment"/>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_Ke9SkcNpEeSFjdDJNF9NPA" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_Ke95oMNpEeSFjdDJNF9NPA" visible="false" type="StructureCompartment"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ke7dYcNpEeSFjdDJNF9NPA" x="-6023" y="9193"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ke7dYcNpEeSFjdDJNF9NPA" x="-1902" y="9193"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_SVctsMNpEeSFjdDJNF9NPA" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="13434879" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_SVd70MNpEeSFjdDJNF9NPA" type="ImageCompartment">
@@ -1157,7 +1193,7 @@ Individual organizations or medical specialties will often include other common 
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_SVei4cNpEeSFjdDJNF9NPA" visible="false" type="AttributeCompartment"/>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_SVei4sNpEeSFjdDJNF9NPA" visible="false" type="OperationCompartment"/>
             <element xmi:type="uml:Enumeration" href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_ZCu6gMNoEeSFjdDJNF9NPA"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SVctscNpEeSFjdDJNF9NPA" x="-5072" y="13948"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SVctscNpEeSFjdDJNF9NPA" x="-951" y="13948"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_76wA8MdHEeSNEod3mqifkA" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8487423" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_76xPEMdHEeSNEod3mqifkA" type="ImageCompartment">
@@ -1171,7 +1207,34 @@ Individual organizations or medical specialties will often include other common 
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_76x2IcdHEeSNEod3mqifkA" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_76x2IsdHEeSNEod3mqifkA" visible="false" type="StructureCompartment"/>
             <element xmi:type="uml:Class" href="Common.efx#_Wu4MgKMyEeSjK-UNpoDZuQ?FHIM/Common/ClinicalInformation(Abstract)?"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_76woAMdHEeSNEod3mqifkA" x="14265" y="-3170"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_76woAMdHEeSNEod3mqifkA" x="18386" y="-3170"/>
+          </children>
+          <children xmi:type="umlnotation:UMLShape" xmi:id="_CPpD4OQ7EeSuxrYeYCfuhA" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="13434879" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
+            <children xmi:type="notation:DecorationNode" xmi:id="_CPpq8OQ7EeSuxrYeYCfuhA" type="ImageCompartment">
+              <layoutConstraint xmi:type="notation:Size" xmi:id="_CPpq8eQ7EeSuxrYeYCfuhA" width="1320" height="1320"/>
+            </children>
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_CPpq8uQ7EeSuxrYeYCfuhA" type="Stereotype"/>
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_CPqSAOQ7EeSuxrYeYCfuhA" type="Kind"/>
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_CPqSAeQ7EeSuxrYeYCfuhA" type="Name"/>
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_CPqSAuQ7EeSuxrYeYCfuhA" type="Parent"/>
+            <children xmi:type="notation:SemanticListCompartment" xmi:id="_CPqSA-Q7EeSuxrYeYCfuhA" type="EnumerationCompartment"/>
+            <children xmi:type="notation:SemanticListCompartment" xmi:id="_CPqSBOQ7EeSuxrYeYCfuhA" visible="false" type="AttributeCompartment"/>
+            <children xmi:type="notation:SemanticListCompartment" xmi:id="_CPq5EOQ7EeSuxrYeYCfuhA" visible="false" type="OperationCompartment"/>
+            <element xmi:type="uml:Enumeration" href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_Drv0MMN7EeSFjdDJNF9NPA"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CPpD4eQ7EeSuxrYeYCfuhA" x="-22190" y="15216"/>
+          </children>
+          <children xmi:type="umlnotation:UMLShape" xmi:id="_JvkZIOQ7EeSuxrYeYCfuhA" element="_dbS3O4eDEeOZ2vW3WfDP5Q" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8487423" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
+            <children xmi:type="notation:DecorationNode" xmi:id="_JvlAMOQ7EeSuxrYeYCfuhA" type="ImageCompartment">
+              <layoutConstraint xmi:type="notation:Size" xmi:id="_JvlAMeQ7EeSuxrYeYCfuhA" width="1320" height="1320"/>
+            </children>
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_JvlAMuQ7EeSuxrYeYCfuhA" type="Stereotype"/>
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_JvlnQOQ7EeSuxrYeYCfuhA" type="Name"/>
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_JvlnQeQ7EeSuxrYeYCfuhA" type="Parent"/>
+            <children xmi:type="notation:SemanticListCompartment" xmi:id="_JvlnQuQ7EeSuxrYeYCfuhA" type="AttributeCompartment"/>
+            <children xmi:type="notation:SemanticListCompartment" xmi:id="_JvlnQ-Q7EeSuxrYeYCfuhA" visible="false" type="OperationCompartment"/>
+            <children xmi:type="notation:SemanticListCompartment" xmi:id="_JvlnROQ7EeSuxrYeYCfuhA" visible="false" type="SignalCompartment"/>
+            <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_JvmOUOQ7EeSuxrYeYCfuhA" visible="false" type="StructureCompartment"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JvkZIeQ7EeSuxrYeYCfuhA" x="-23141" y="11729"/>
           </children>
           <element xsi:nil="true"/>
           <edges xmi:type="umlnotation:UMLConnector" xmi:id="_i91KAIdsEeOZ2vW3WfDP5Q" source="_i9w4kIdsEeOZ2vW3WfDP5Q" target="_i9w4m4dsEeOZ2vW3WfDP5Q" fontName="Arial" fontHeight="10" lineColor="3342489" lineWidth="1" showStereotype="Text">
@@ -1326,7 +1389,7 @@ Individual organizations or medical specialties will often include other common 
               <children xmi:type="notation:BasicDecorationNode" xmi:id="_vsCydZdZEeOCbc0pwOBboA" type="Name"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vsCyc5dZEeOCbc0pwOBboA" y="-186"/>
             </children>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_vsCycZdZEeOCbc0pwOBboA" points="[-18, 17, -70, 67]$[20, -19, -32, 31]"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_vsCycZdZEeOCbc0pwOBboA" points="[0, -963, 2539, 6130]$[0, -4147, 2539, 2946]$[-1182, -4147, 1357, 2946]$[-1182, -5932, 1357, 1161]"/>
           </edges>
           <edges xmi:type="umlnotation:UMLConnector" xmi:id="_6Kd5IJdZEeOCbc0pwOBboA" element="_38Q8MZdZEeOCbc0pwOBboA" source="_6Ka10JdZEeOCbc0pwOBboA" target="_i9w4m4dsEeOZ2vW3WfDP5Q" fontName="Arial" fontHeight="10" routing="Tree" lineColor="3342489" lineWidth="1" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_6KegMJdZEeOCbc0pwOBboA" type="NameLabel">
@@ -1334,7 +1397,7 @@ Individual organizations or medical specialties will often include other common 
               <children xmi:type="notation:BasicDecorationNode" xmi:id="_6KegM5dZEeOCbc0pwOBboA" type="Name"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6KegMZdZEeOCbc0pwOBboA" y="-186"/>
             </children>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_6Kd5IZdZEeOCbc0pwOBboA" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_6Kd5IZdZEeOCbc0pwOBboA" points="[40, -963, -4725, 3911]$[40, -1928, -4725, 2946]$[6122, -1928, 1357, 2946]$[6122, -3713, 1357, 1161]"/>
           </edges>
           <edges xmi:type="umlnotation:UMLConnector" xmi:id="_jwJLsJdaEeOCbc0pwOBboA" element="_joaMAJdaEeOCbc0pwOBboA" source="_Zt7KwJdYEeOCbc0pwOBboA" target="_UgWSoJdYEeOCbc0pwOBboA" fontName="Arial" fontHeight="10" lineColor="3342489" lineWidth="1" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_jwJLspdaEeOCbc0pwOBboA" type="NameLabel">
@@ -1446,7 +1509,7 @@ Individual organizations or medical specialties will often include other common 
               <children xmi:type="notation:BasicDecorationNode" xmi:id="_RoAdw4exEeS2mpjRRlxFgQ" type="Name"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RoAdwYexEeS2mpjRRlxFgQ" y="-186"/>
             </children>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Rn_2sYexEeS2mpjRRlxFgQ" points="[1, 1, 83, 66]$[-43, -34, 39, 31]"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Rn_2sYexEeS2mpjRRlxFgQ" points="[39, -963, 16209, 6447]$[39, -4464, 16209, 2946]$[-14813, -4464, 1357, 2946]$[-14813, -6249, 1357, 1161]"/>
           </edges>
           <edges xmi:type="umlnotation:UMLConnector" xmi:id="_uq7ZELxkEeSyBtXdDFDzRA" element="_uqzdQLxkEeSyBtXdDFDzRA" source="_6Ka10JdZEeOCbc0pwOBboA" target="_q2MjMLxkEeSyBtXdDFDzRA" fontName="Arial" fontHeight="10" lineColor="3342489" lineWidth="1" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_uq8nMLxkEeSyBtXdDFDzRA" type="NameLabel">
@@ -1651,7 +1714,7 @@ Individual organizations or medical specialties will often include other common 
               <children xmi:type="notation:BasicDecorationNode" xmi:id="_KfAV4MNpEeSFjdDJNF9NPA" type="Name"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ke_u08NpEeSFjdDJNF9NPA" y="-186"/>
             </children>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Ke_u0cNpEeSFjdDJNF9NPA" points="[-2, -3, 36, 66]$[-21, -38, 17, 31]"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Ke_u0cNpEeSFjdDJNF9NPA" points="[40, -963, 9488, 3911]$[40, -1928, 9488, 2946]$[-8091, -1928, 1357, 2946]$[-8091, -3713, 1357, 1161]"/>
           </edges>
           <edges xmi:type="umlnotation:UMLConnector" xmi:id="_xIcg0MNpEeSFjdDJNF9NPA" element="_xIY2cMNpEeSFjdDJNF9NPA" source="_Ke7dYMNpEeSFjdDJNF9NPA" target="_SVctsMNpEeSFjdDJNF9NPA" fontName="Arial" fontHeight="10" lineColor="3342489" lineWidth="1" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_xIdH4MNpEeSFjdDJNF9NPA" type="NameLabel">
@@ -1718,6 +1781,22 @@ Individual organizations or medical specialties will often include other common 
             </children>
             <element xmi:type="uml:Association" href="Common.efx#__Vv-oLOzEeS3iYN4R_wsuw?FHIM/Common/clinicalInformation_provenance?"/>
             <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_7605c8dHEeSNEod3mqifkA" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+          </edges>
+          <edges xmi:type="umlnotation:UMLConnector" xmi:id="_JvnccOQ7EeSuxrYeYCfuhA" element="_vzIsUOQ6EeSuxrYeYCfuhA" source="_JvkZIOQ7EeSuxrYeYCfuhA" target="_CPpD4OQ7EeSuxrYeYCfuhA" fontName="Arial" fontHeight="10" lineColor="3342489" lineWidth="1" showStereotype="Text">
+            <children xmi:type="notation:DecorationNode" xmi:id="_JvnccuQ7EeSuxrYeYCfuhA" type="NameLabel">
+              <children xmi:type="notation:BasicDecorationNode" xmi:id="_JvncdOQ7EeSuxrYeYCfuhA" type="Stereotype"/>
+              <children xmi:type="notation:BasicDecorationNode" xmi:id="_JvoDgOQ7EeSuxrYeYCfuhA" type="Name"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Jvncc-Q7EeSuxrYeYCfuhA" y="-186"/>
+            </children>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_JvncceQ7EeSuxrYeYCfuhA" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+          </edges>
+          <edges xmi:type="umlnotation:UMLConnector" xmi:id="_JvoqlOQ7EeSuxrYeYCfuhA" element="_dbS3PIeDEeOZ2vW3WfDP5Q" source="_JvkZIOQ7EeSuxrYeYCfuhA" target="_i9w4m4dsEeOZ2vW3WfDP5Q" fontName="Arial" fontHeight="10" routing="Tree" lineColor="3342489" lineWidth="1" showStereotype="Text">
+            <children xmi:type="notation:DecorationNode" xmi:id="_JvpRoOQ7EeSuxrYeYCfuhA" type="NameLabel">
+              <children xmi:type="notation:BasicDecorationNode" xmi:id="_JvpRouQ7EeSuxrYeYCfuhA" type="Stereotype"/>
+              <children xmi:type="notation:BasicDecorationNode" xmi:id="_JvpRo-Q7EeSuxrYeYCfuhA" type="Name"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JvpRoeQ7EeSuxrYeYCfuhA" y="-186"/>
+            </children>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_JvoqleQ7EeSuxrYeYCfuhA" points="[0, -963, -12254, 6447]$[0, -4464, -12254, 2946]$[13611, -4464, 1357, 2946]$[13611, -6249, 1357, 1161]"/>
           </edges>
         </contents>
       </eAnnotations>
@@ -2086,7 +2165,7 @@ This class records an observation of the phase at which the diastolic pressure w
             <styles xmi:type="notation:TextStyle" xmi:id="_thDM8YdzEeOZ2vW3WfDP5Q"/>
             <styles xmi:type="notation:LineTypeStyle" xmi:id="_thDM8odzEeOZ2vW3WfDP5Q"/>
             <element xsi:nil="true"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_thDM84dzEeOZ2vW3WfDP5Q" x="1268" y="11095" width="39607" height="12036"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_thDM84dzEeOZ2vW3WfDP5Q" x="315" y="11095" width="41512" height="12036"/>
           </children>
           <children xmi:type="notation:Shape" xmi:id="_hSRVMIduEeOZ2vW3WfDP5Q" type="Note" fontName="Arial" fontHeight="10" description="FHIM Vital Signs Domain&#xD;&#xA;    Pulse Rate (Heart Rate) Observation" fillColor="16777088" transparency="0" lineColor="0" lineWidth="1">
             <children xmi:type="notation:BasicDecorationNode" xmi:id="_hSRVMYduEeOZ2vW3WfDP5Q" type="DiagramName">
@@ -2111,7 +2190,7 @@ This class records an observation of the phase at which the diastolic pressure w
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_7J4MYYduEeOZ2vW3WfDP5Q" visible="false" type="OperationCompartment"/>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_7J4MYoduEeOZ2vW3WfDP5Q" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_7J4MY4duEeOZ2vW3WfDP5Q" visible="false" type="StructureCompartment"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7J2-QYduEeOZ2vW3WfDP5Q" x="13948" y="12680"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7J2-QYduEeOZ2vW3WfDP5Q" x="19020" y="12997"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_o8WaEIdwEeOZ2vW3WfDP5Q" element="_o8TWwIdwEeOZ2vW3WfDP5Q" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8487423" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_o8XBIIdwEeOZ2vW3WfDP5Q" type="ImageCompartment">
@@ -2124,7 +2203,7 @@ This class records an observation of the phase at which the diastolic pressure w
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_o8XoMIdwEeOZ2vW3WfDP5Q" visible="false" type="OperationCompartment"/>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_o8XoMYdwEeOZ2vW3WfDP5Q" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_o8XoModwEeOZ2vW3WfDP5Q" visible="false" type="StructureCompartment"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_o8WaEYdwEeOZ2vW3WfDP5Q" x="1902" y="12680"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_o8WaEYdwEeOZ2vW3WfDP5Q" x="634" y="12997"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_r6ow67uiEeSu6tW34laYTQ" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" fillColor="8487423" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_r6ow7LuiEeSu6tW34laYTQ" type="ImageCompartment">
@@ -2235,7 +2314,7 @@ This class records an observation of the phase at which the diastolic pressure w
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_ywZHwruiEeSu6tW34laYTQ" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_ywZHw7uiEeSu6tW34laYTQ" visible="false" type="StructureCompartment"/>
             <element xmi:type="uml:Class" href="ClinicalObservations.efx#_wBabQBcBEeOL3Nw-k5HkNw?FHIM/ClinicalObservation/ObservationQualifier?"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ywX5obuiEeSu6tW34laYTQ" x="1902" y="6974"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ywX5obuiEeSu6tW34laYTQ" x="951" y="6974"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_qjz1sL60EeSMg-kgsnPV3w" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8487423" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_qj0cwL60EeSMg-kgsnPV3w" type="ImageCompartment">
@@ -2263,7 +2342,7 @@ This class records an observation of the phase at which the diastolic pressure w
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_5Wy2wMNzEeSFjdDJNF9NPA" visible="false" type="AttributeCompartment"/>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_5Wy2wcNzEeSFjdDJNF9NPA" visible="false" type="OperationCompartment"/>
             <element xmi:type="uml:Enumeration" href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_ZwU_UMNzEeSFjdDJNF9NPA"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5WxBkcNzEeSFjdDJNF9NPA" x="16484" y="18703"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5WxBkcNzEeSFjdDJNF9NPA" x="21239" y="19099"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_VXnV0MN3EeSFjdDJNF9NPA" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="13434879" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_VXoj8MN3EeSFjdDJNF9NPA" type="ImageCompartment">
@@ -2277,7 +2356,7 @@ This class records an observation of the phase at which the diastolic pressure w
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_VXpLAMN3EeSFjdDJNF9NPA" visible="false" type="AttributeCompartment"/>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_VXpLAcN3EeSFjdDJNF9NPA" visible="false" type="OperationCompartment"/>
             <element xmi:type="uml:Enumeration" href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_A8YIEMN0EeSFjdDJNF9NPA"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VXnV0cN3EeSFjdDJNF9NPA" x="31383" y="12363"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VXnV0cN3EeSFjdDJNF9NPA" x="32334" y="12363"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_nUWywMN4EeSFjdDJNF9NPA" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="13434879" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_nUXZ0MN4EeSFjdDJNF9NPA" type="ImageCompartment">
@@ -2291,7 +2370,7 @@ This class records an observation of the phase at which the diastolic pressure w
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_nUYA5cN4EeSFjdDJNF9NPA" visible="false" type="AttributeCompartment"/>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_nUYn8MN4EeSFjdDJNF9NPA" visible="false" type="OperationCompartment"/>
             <element xmi:type="uml:Enumeration" href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_IbyfILxREeSyBtXdDFDzRA"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nUWywcN4EeSFjdDJNF9NPA" x="3170" y="16484"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nUWywcN4EeSFjdDJNF9NPA" x="1902" y="16801"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_EINxoMdIEeSNEod3mqifkA" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8487423" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_EIOYsMdIEeSNEod3mqifkA" type="ImageCompartment">
@@ -2306,6 +2385,33 @@ This class records an observation of the phase at which the diastolic pressure w
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_EIPm0sdIEeSNEod3mqifkA" visible="false" type="StructureCompartment"/>
             <element xmi:type="uml:Class" href="Common.efx#_Wu4MgKMyEeSjK-UNpoDZuQ?FHIM/Common/ClinicalInformation(Abstract)?"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EINxocdIEeSNEod3mqifkA" x="16801" y="-1902"/>
+          </children>
+          <children xmi:type="umlnotation:UMLShape" xmi:id="_i3nboOQ7EeSuxrYeYCfuhA" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="13434879" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
+            <children xmi:type="notation:DecorationNode" xmi:id="_i3oCsOQ7EeSuxrYeYCfuhA" type="ImageCompartment">
+              <layoutConstraint xmi:type="notation:Size" xmi:id="_i3oCseQ7EeSuxrYeYCfuhA" width="1320" height="1320"/>
+            </children>
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_i3oCsuQ7EeSuxrYeYCfuhA" type="Stereotype"/>
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_i3oCs-Q7EeSuxrYeYCfuhA" type="Kind"/>
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_i3oCtOQ7EeSuxrYeYCfuhA" type="Name"/>
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_i3opwOQ7EeSuxrYeYCfuhA" type="Parent"/>
+            <children xmi:type="notation:SemanticListCompartment" xmi:id="_i3opweQ7EeSuxrYeYCfuhA" type="EnumerationCompartment"/>
+            <children xmi:type="notation:SemanticListCompartment" xmi:id="_i3opwuQ7EeSuxrYeYCfuhA" visible="false" type="AttributeCompartment"/>
+            <children xmi:type="notation:SemanticListCompartment" xmi:id="_i3opw-Q7EeSuxrYeYCfuhA" visible="false" type="OperationCompartment"/>
+            <element xmi:type="uml:Enumeration" href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_Drv0MMN7EeSFjdDJNF9NPA"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i3nboeQ7EeSuxrYeYCfuhA" x="10461" y="16801"/>
+          </children>
+          <children xmi:type="umlnotation:UMLShape" xmi:id="_kv2IkOQ7EeSuxrYeYCfuhA" element="_dbS3O4eDEeOZ2vW3WfDP5Q" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8487423" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
+            <children xmi:type="notation:DecorationNode" xmi:id="_kv2voOQ7EeSuxrYeYCfuhA" type="ImageCompartment">
+              <layoutConstraint xmi:type="notation:Size" xmi:id="_kv2voeQ7EeSuxrYeYCfuhA" width="1320" height="1320"/>
+            </children>
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_kv2vouQ7EeSuxrYeYCfuhA" type="Stereotype"/>
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_kv2vo-Q7EeSuxrYeYCfuhA" type="Name"/>
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_kv2vpOQ7EeSuxrYeYCfuhA" type="Parent"/>
+            <children xmi:type="notation:SemanticListCompartment" xmi:id="_kv3WsOQ7EeSuxrYeYCfuhA" type="AttributeCompartment"/>
+            <children xmi:type="notation:SemanticListCompartment" xmi:id="_kv3WseQ7EeSuxrYeYCfuhA" visible="false" type="OperationCompartment"/>
+            <children xmi:type="notation:SemanticListCompartment" xmi:id="_kv3WsuQ7EeSuxrYeYCfuhA" visible="false" type="SignalCompartment"/>
+            <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_kv3Ws-Q7EeSuxrYeYCfuhA" visible="false" type="StructureCompartment"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kv2IkeQ7EeSuxrYeYCfuhA" x="9827" y="12997"/>
           </children>
           <element xsi:nil="true"/>
           <edges xmi:type="umlnotation:UMLConnector" xmi:id="_xSUnQLuiEeSu6tW34laYTQ" element="_9yMi0H-1EeOzENpLs8HIcg" source="_r6r0MLuiEeSu6tW34laYTQ" target="_xSRj8LuiEeSu6tW34laYTQ" fontName="Arial" fontHeight="10" lineColor="3342489" lineWidth="1" showStereotype="Text">
@@ -2404,14 +2510,6 @@ This class records an observation of the phase at which the diastolic pressure w
             </children>
             <element xmi:type="uml:Association" href="ClinicalObservations.efx#_evZN8BcOEeOL3Nw-k5HkNw?FHIM/ClinicalObservation/observationStatement_patient?"/>
             <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xSYRpbuiEeSu6tW34laYTQ" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
-          </edges>
-          <edges xmi:type="umlnotation:UMLConnector" xmi:id="_ywaV4LuiEeSu6tW34laYTQ" element="_rCu3wIdwEeOZ2vW3WfDP5Q" source="_o8WaEIdwEeOZ2vW3WfDP5Q" target="_ywX5oLuiEeSu6tW34laYTQ" fontName="Arial" fontHeight="10" lineColor="3342489" lineWidth="1" showStereotype="Text">
-            <children xmi:type="notation:DecorationNode" xmi:id="_ywaV4ruiEeSu6tW34laYTQ" type="NameLabel">
-              <children xmi:type="notation:BasicDecorationNode" xmi:id="_ywa88LuiEeSu6tW34laYTQ" type="Stereotype"/>
-              <children xmi:type="notation:BasicDecorationNode" xmi:id="_ywa88buiEeSu6tW34laYTQ" type="Name"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ywaV47uiEeSu6tW34laYTQ" y="-186"/>
-            </children>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ywaV4buiEeSu6tW34laYTQ" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
           </edges>
           <edges xmi:type="umlnotation:UMLConnector" xmi:id="_ywa88ruiEeSu6tW34laYTQ" source="_xSRj8LuiEeSu6tW34laYTQ" target="_ywX5oLuiEeSu6tW34laYTQ" fontName="Arial" fontHeight="10" lineColor="3342489" lineWidth="1" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_ywa89LuiEeSu6tW34laYTQ" visible="false" type="NameLabel">
@@ -2700,6 +2798,30 @@ This class records an observation of the phase at which the diastolic pressure w
             <element xmi:type="uml:Association" href="Common.efx#__Vv-oLOzEeS3iYN4R_wsuw?FHIM/Common/clinicalInformation_provenance?"/>
             <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_EISDEcdIEeSNEod3mqifkA" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
           </edges>
+          <edges xmi:type="umlnotation:UMLConnector" xmi:id="_ARdVYOQ6EeSuxrYeYCfuhA" element="_ARX10OQ6EeSuxrYeYCfuhA" source="_o8WaEIdwEeOZ2vW3WfDP5Q" target="_ywX5oLuiEeSu6tW34laYTQ" fontName="Arial" fontHeight="10" lineColor="3342489" lineWidth="1" showStereotype="Text">
+            <children xmi:type="notation:DecorationNode" xmi:id="_ARdVYuQ6EeSuxrYeYCfuhA" type="NameLabel">
+              <children xmi:type="notation:BasicDecorationNode" xmi:id="_ARfKkOQ6EeSuxrYeYCfuhA" type="Stereotype"/>
+              <children xmi:type="notation:BasicDecorationNode" xmi:id="_ARfxoOQ6EeSuxrYeYCfuhA" type="Name"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ARdVY-Q6EeSuxrYeYCfuhA" y="-186"/>
+            </children>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ARdVYeQ6EeSuxrYeYCfuhA" points="[14, -36, -32, 184]$[162, -176, 116, 44]"/>
+          </edges>
+          <edges xmi:type="umlnotation:UMLConnector" xmi:id="_kv4k0OQ7EeSuxrYeYCfuhA" element="_vzIsUOQ6EeSuxrYeYCfuhA" source="_kv2IkOQ7EeSuxrYeYCfuhA" target="_i3nboOQ7EeSuxrYeYCfuhA" fontName="Arial" fontHeight="10" lineColor="3342489" lineWidth="1" showStereotype="Text">
+            <children xmi:type="notation:DecorationNode" xmi:id="_kv4k0uQ7EeSuxrYeYCfuhA" type="NameLabel">
+              <children xmi:type="notation:BasicDecorationNode" xmi:id="_kv4k1OQ7EeSuxrYeYCfuhA" type="Stereotype"/>
+              <children xmi:type="notation:BasicDecorationNode" xmi:id="_kv4k1eQ7EeSuxrYeYCfuhA" type="Name"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kv4k0-Q7EeSuxrYeYCfuhA" y="-186"/>
+            </children>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_kv4k0eQ7EeSuxrYeYCfuhA" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+          </edges>
+          <edges xmi:type="umlnotation:UMLConnector" xmi:id="_kv5L4OQ7EeSuxrYeYCfuhA" element="_dbS3PIeDEeOZ2vW3WfDP5Q" source="_kv2IkOQ7EeSuxrYeYCfuhA" target="_ywX5oLuiEeSu6tW34laYTQ" fontName="Arial" fontHeight="10" lineColor="3342489" lineWidth="1" showStereotype="Text">
+            <children xmi:type="notation:DecorationNode" xmi:id="_kv5L4uQ7EeSuxrYeYCfuhA" type="NameLabel">
+              <children xmi:type="notation:BasicDecorationNode" xmi:id="_kv5L5OQ7EeSuxrYeYCfuhA" type="Stereotype"/>
+              <children xmi:type="notation:BasicDecorationNode" xmi:id="_kv5L5eQ7EeSuxrYeYCfuhA" type="Name"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kv5L4-Q7EeSuxrYeYCfuhA" y="-186"/>
+            </children>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_kv5L4eQ7EeSuxrYeYCfuhA" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+          </edges>
         </contents>
       </eAnnotations>
       <ownedComment xmi:id="_fsInoNynEeS8W_uFU6RjUw" annotatedElement="_gY2Z4IduEeOZ2vW3WfDP5Q">
@@ -2779,7 +2901,7 @@ This class represents the measurement (or “clinical observation”) of the pat
         <ownedComment xmi:id="_Gfq9MNy9EeS8W_uFU6RjUw" annotatedElement="_o8TWwIdwEeOZ2vW3WfDP5Q">
           <body>Certain disease states can be detected by observing differences in heart rate when the patient’s body is in different positions (e.g., sitting, standing, etc.).  It therefore may be necessary to record the patient’s body position when recording the heart rate observation.  This class records an observation of the patient’s body position during the time the heart rate was observed.</body>
         </ownedComment>
-        <generalization xmi:id="_rCu3wIdwEeOZ2vW3WfDP5Q">
+        <generalization xmi:id="_ARX10OQ6EeSuxrYeYCfuhA">
           <general xmi:type="uml:Class" href="ClinicalObservations.efx#_wBabQBcBEeOL3Nw-k5HkNw?FHIM/ClinicalObservation/ObservationQualifier?"/>
         </generalization>
         <ownedAttribute xmi:id="_xX5DAIdwEeOZ2vW3WfDP5Q" name="observedCharacteristic" visibility="public">
@@ -3497,9 +3619,9 @@ This class represents the measurement (or “clinical observation”) of the pat
             <styles xmi:type="notation:TextStyle" xmi:id="_7n4HRod_EeOZ2vW3WfDP5Q"/>
             <styles xmi:type="notation:LineTypeStyle" xmi:id="_7n4HR4d_EeOZ2vW3WfDP5Q"/>
             <element xsi:nil="true"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7n4HSId_EeOZ2vW3WfDP5Q" x="-1585" y="10144" width="32967" height="16164"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7n4HSId_EeOZ2vW3WfDP5Q" x="-1585" y="10144" width="39608" height="18069"/>
           </children>
-          <children xmi:type="notation:Shape" xmi:id="_7n4HSYd_EeOZ2vW3WfDP5Q" type="Note" fontName="Arial" fontHeight="10" description="FHIM Vital Signs Domain&#xD;&#xA;    PulseOximetry / O2 Saturation Observation" fillColor="16777088" transparency="0" lineColor="0" lineWidth="1">
+          <children xmi:type="notation:Shape" xmi:id="_7n4HSYd_EeOZ2vW3WfDP5Q" type="Note" fontName="Arial" fontHeight="10" description="FHIM Vital Signs Domain&#xD;&#xA;    Oxygen Saturation / PulseOximetry Observation" fillColor="16777088" transparency="0" lineColor="0" lineWidth="1">
             <children xmi:type="notation:BasicDecorationNode" xmi:id="_7n4HSod_EeOZ2vW3WfDP5Q" type="DiagramName">
               <element xsi:nil="true"/>
             </children>
@@ -3523,7 +3645,7 @@ This class represents the measurement (or “clinical observation”) of the pat
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_7n4HYod_EeOZ2vW3WfDP5Q" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_7n4HY4d_EeOZ2vW3WfDP5Q" visible="false" type="StructureCompartment"/>
             <element xmi:type="uml:Class" href="ClinicalObservations.efx#_wBabQBcBEeOL3Nw-k5HkNw?FHIM/ClinicalObservation/ObservationQualifier?"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7n4HZId_EeOZ2vW3WfDP5Q" y="4755"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7n4HZId_EeOZ2vW3WfDP5Q" x="5706" y="5389"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_7n4uZ4d_EeOZ2vW3WfDP5Q" element="_7n58iId_EeOZ2vW3WfDP5Q" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8487423" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_7n4uaId_EeOZ2vW3WfDP5Q" type="ImageCompartment">
@@ -3536,7 +3658,7 @@ This class represents the measurement (or “clinical observation”) of the pat
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_7n4ubod_EeOZ2vW3WfDP5Q" visible="false" type="OperationCompartment"/>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_7n4ub4d_EeOZ2vW3WfDP5Q" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_7n4ucId_EeOZ2vW3WfDP5Q" visible="false" type="StructureCompartment"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7n4ucYd_EeOZ2vW3WfDP5Q" x="16484" y="11412"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7n4ucYd_EeOZ2vW3WfDP5Q" x="21873" y="11412"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_7n4uk4d_EeOZ2vW3WfDP5Q" element="_7n58uYd_EeOZ2vW3WfDP5Q" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8487423" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_7n4ulId_EeOZ2vW3WfDP5Q" type="ImageCompartment">
@@ -3549,7 +3671,7 @@ This class represents the measurement (or “clinical observation”) of the pat
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_7n4umod_EeOZ2vW3WfDP5Q" visible="false" type="OperationCompartment"/>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_7n4um4d_EeOZ2vW3WfDP5Q" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_7n4unId_EeOZ2vW3WfDP5Q" visible="false" type="StructureCompartment"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7n4unYd_EeOZ2vW3WfDP5Q" x="-1585" y="11412"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7n4unYd_EeOZ2vW3WfDP5Q" x="4015" y="13710"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_RF-T8LxEEeSXi4SjuiPeKQ" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" fillColor="8487423" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_RF-T8bxEEeSXi4SjuiPeKQ" type="ImageCompartment">
@@ -3563,7 +3685,7 @@ This class represents the measurement (or “clinical observation”) of the pat
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_RF-T-LxEEeSXi4SjuiPeKQ" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_RF-T-bxEEeSXi4SjuiPeKQ" visible="false" type="StructureCompartment"/>
             <element xmi:type="uml:Class" href="Common.efx#_W_aIoBb8EeOL3Nw-k5HkNw?FHIM/Common/ClinicalProvenance?"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RF-T-rxEEeSXi4SjuiPeKQ" x="27579" y="951"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RF-T-rxEEeSXi4SjuiPeKQ" x="32968" y="951"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_RF-T-7xEEeSXi4SjuiPeKQ" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" fillColor="8519679" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_RF-T_LxEEeSXi4SjuiPeKQ" type="ImageCompartment">
@@ -3591,7 +3713,7 @@ This class represents the measurement (or “clinical observation”) of the pat
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_RF-7CLxEEeSXi4SjuiPeKQ" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_RF-7CbxEEeSXi4SjuiPeKQ" visible="false" type="StructureCompartment"/>
             <element xmi:type="uml:Class" href="Common.efx#_hXa7cAq6Ed-426xscrxYmQ?FHIM/Common/Author?"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RF-7CrxEEeSXi4SjuiPeKQ" x="36455" y="-2959"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RF-7CrxEEeSXi4SjuiPeKQ" x="41844" y="-2959"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_RF-7C7xEEeSXi4SjuiPeKQ" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" fillColor="16777088" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_RF-7DLxEEeSXi4SjuiPeKQ" type="ImageCompartment">
@@ -3605,7 +3727,7 @@ This class represents the measurement (or “clinical observation”) of the pat
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_RF-7E7xEEeSXi4SjuiPeKQ" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_RF-7FLxEEeSXi4SjuiPeKQ" visible="false" type="StructureCompartment"/>
             <element xmi:type="uml:Class" href="Common.efx#_HxX44Aq7Ed-426xscrxYmQ?FHIM/Common/DataEnterer?"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RF-7FbxEEeSXi4SjuiPeKQ" x="36455" y="-317"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RF-7FbxEEeSXi4SjuiPeKQ" x="41844" y="-317"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_RF_iELxEEeSXi4SjuiPeKQ" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" fillColor="16777088" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_RF_iEbxEEeSXi4SjuiPeKQ" type="ImageCompartment">
@@ -3619,7 +3741,7 @@ This class represents the measurement (or “clinical observation”) of the pat
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_RF_iGLxEEeSXi4SjuiPeKQ" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_RF_iGbxEEeSXi4SjuiPeKQ" visible="false" type="StructureCompartment"/>
             <element xmi:type="uml:Class" href="Common.efx#_H1ZdQAq7Ed-426xscrxYmQ?FHIM/Common/Verifier?"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RF_iGrxEEeSXi4SjuiPeKQ" x="36455" y="2219"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RF_iGrxEEeSXi4SjuiPeKQ" x="41844" y="2219"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_RF_iG7xEEeSXi4SjuiPeKQ" element="_sXpXgH-1EeOzENpLs8HIcg" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" fillColor="8487423" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_RF_iHLxEEeSXi4SjuiPeKQ" type="ImageCompartment">
@@ -3646,7 +3768,7 @@ This class represents the measurement (or “clinical observation”) of the pat
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_Vz0jI7xEEeSXi4SjuiPeKQ" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_Vz1KMLxEEeSXi4SjuiPeKQ" visible="false" type="StructureCompartment"/>
             <element xmi:type="uml:Class" href="ClinicalObservations.efx#_nbH1LVaeEd6rJ7jpZ7LBFg?FHIM/ClinicalObservation/Observation?"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VzzVAbxEEeSXi4SjuiPeKQ" x="17118" y="3804"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VzzVAbxEEeSXi4SjuiPeKQ" x="22507" y="3804"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_20cg4L60EeSMg-kgsnPV3w" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8487423" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_20dH8L60EeSMg-kgsnPV3w" type="ImageCompartment">
@@ -3660,7 +3782,7 @@ This class represents the measurement (or “clinical observation”) of the pat
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_20dvA760EeSMg-kgsnPV3w" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_20dvBL60EeSMg-kgsnPV3w" visible="false" type="StructureCompartment"/>
             <element xmi:type="uml:Class" href="Common.efx#_terqkLxzEeSLwM7JIxbinw?FHIM/Common/Provenance(Abstract)?"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_20cg4b60EeSMg-kgsnPV3w" x="27262" y="-3487"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_20cg4b60EeSMg-kgsnPV3w" x="32651" y="-3487"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_XhVdkMOGEeSFjdDJNF9NPA" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="13434879" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_XhWrsMOGEeSFjdDJNF9NPA" type="ImageCompartment">
@@ -3674,7 +3796,7 @@ This class represents the measurement (or “clinical observation”) of the pat
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_XhXSwcOGEeSFjdDJNF9NPA" visible="false" type="AttributeCompartment"/>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_XhXSwsOGEeSFjdDJNF9NPA" visible="false" type="OperationCompartment"/>
             <element xmi:type="uml:Enumeration" href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_LeZXgMODEeSFjdDJNF9NPA"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XhVdkcOGEeSFjdDJNF9NPA" x="6657" y="15216"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XhVdkcOGEeSFjdDJNF9NPA" x="-317" y="17118"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_87X2IMOGEeSFjdDJNF9NPA" element="_5eaAAMOGEeSFjdDJNF9NPA" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8487423" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_87YdMMOGEeSFjdDJNF9NPA" type="ImageCompartment">
@@ -3687,7 +3809,7 @@ This class represents the measurement (or “clinical observation”) of the pat
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_87ZERMOGEeSFjdDJNF9NPA" visible="false" type="OperationCompartment"/>
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_87ZrUMOGEeSFjdDJNF9NPA" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_87ZrUcOGEeSFjdDJNF9NPA" visible="false" type="StructureCompartment"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_87X2IcOGEeSFjdDJNF9NPA" x="7291" y="11412"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_87X2IcOGEeSFjdDJNF9NPA" x="-1268" y="11095"/>
           </children>
           <children xmi:type="umlnotation:UMLShape" xmi:id="_NJ08EMdIEeSNEod3mqifkA" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8487423" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_NJ1jIMdIEeSNEod3mqifkA" type="ImageCompartment">
@@ -3701,7 +3823,34 @@ This class represents the measurement (or “clinical observation”) of the pat
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_NJ2xQcdIEeSNEod3mqifkA" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_NJ2xQsdIEeSNEod3mqifkA" visible="false" type="StructureCompartment"/>
             <element xmi:type="uml:Class" href="Common.efx#_Wu4MgKMyEeSjK-UNpoDZuQ?FHIM/Common/ClinicalInformation(Abstract)?"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NJ08EcdIEeSNEod3mqifkA" x="18386" y="-3170"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NJ08EcdIEeSNEod3mqifkA" x="23775" y="-3170"/>
+          </children>
+          <children xmi:type="umlnotation:UMLShape" xmi:id="_EIPZsOQ6EeSuxrYeYCfuhA" element="_dbS3O4eDEeOZ2vW3WfDP5Q" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8487423" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
+            <children xmi:type="notation:DecorationNode" xmi:id="_EIQAwOQ6EeSuxrYeYCfuhA" type="ImageCompartment">
+              <layoutConstraint xmi:type="notation:Size" xmi:id="_EIQAweQ6EeSuxrYeYCfuhA" width="1320" height="1320"/>
+            </children>
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_EIQAwuQ6EeSuxrYeYCfuhA" type="Stereotype"/>
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_EIQn0OQ6EeSuxrYeYCfuhA" type="Name"/>
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_EIQn0eQ6EeSuxrYeYCfuhA" type="Parent"/>
+            <children xmi:type="notation:SemanticListCompartment" xmi:id="_EIQn0uQ6EeSuxrYeYCfuhA" type="AttributeCompartment"/>
+            <children xmi:type="notation:SemanticListCompartment" xmi:id="_EIQn0-Q6EeSuxrYeYCfuhA" visible="false" type="OperationCompartment"/>
+            <children xmi:type="notation:SemanticListCompartment" xmi:id="_EIRO4OQ6EeSuxrYeYCfuhA" visible="false" type="SignalCompartment"/>
+            <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_EIRO4eQ6EeSuxrYeYCfuhA" visible="false" type="StructureCompartment"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EIPZseQ6EeSuxrYeYCfuhA" x="9510" y="11095"/>
+          </children>
+          <children xmi:type="umlnotation:UMLShape" xmi:id="_H_EhUOQ6EeSuxrYeYCfuhA" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="13434879" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
+            <children xmi:type="notation:DecorationNode" xmi:id="_H_FvcOQ6EeSuxrYeYCfuhA" type="ImageCompartment">
+              <layoutConstraint xmi:type="notation:Size" xmi:id="_H_FvceQ6EeSuxrYeYCfuhA" width="1320" height="1320"/>
+            </children>
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_H_FvcuQ6EeSuxrYeYCfuhA" type="Stereotype"/>
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_H_Fvc-Q6EeSuxrYeYCfuhA" type="Kind"/>
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_H_GWgOQ6EeSuxrYeYCfuhA" type="Name"/>
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_H_GWgeQ6EeSuxrYeYCfuhA" type="Parent"/>
+            <children xmi:type="notation:SemanticListCompartment" xmi:id="_H_GWguQ6EeSuxrYeYCfuhA" type="EnumerationCompartment"/>
+            <children xmi:type="notation:SemanticListCompartment" xmi:id="_H_GWg-Q6EeSuxrYeYCfuhA" visible="false" type="AttributeCompartment"/>
+            <children xmi:type="notation:SemanticListCompartment" xmi:id="_H_G9kOQ6EeSuxrYeYCfuhA" visible="false" type="OperationCompartment"/>
+            <element xmi:type="uml:Enumeration" href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_Drv0MMN7EeSFjdDJNF9NPA"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_H_EhUeQ6EeSuxrYeYCfuhA" x="10461" y="17435"/>
           </children>
           <element xsi:nil="true"/>
           <edges xmi:type="umlnotation:UMLConnector" xmi:id="_7n58eYd_EeOZ2vW3WfDP5Q" element="_7n58uod_EeOZ2vW3WfDP5Q" source="_7n4uk4d_EeOZ2vW3WfDP5Q" target="_7n4HWod_EeOZ2vW3WfDP5Q" fontName="Arial" fontHeight="10" lineColor="3342489" lineWidth="1" showStereotype="Text">
@@ -4088,6 +4237,22 @@ This class represents the measurement (or “clinical observation”) of the pat
             <element xmi:type="uml:Association" href="Common.efx#__Vv-oLOzEeS3iYN4R_wsuw?FHIM/Common/clinicalInformation_provenance?"/>
             <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_NJ5NgcdIEeSNEod3mqifkA" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
           </edges>
+          <edges xmi:type="umlnotation:UMLConnector" xmi:id="_EIR18OQ6EeSuxrYeYCfuhA" element="_dbS3PIeDEeOZ2vW3WfDP5Q" source="_EIPZsOQ6EeSuxrYeYCfuhA" target="_7n4HWod_EeOZ2vW3WfDP5Q" fontName="Arial" fontHeight="10" lineColor="3342489" lineWidth="1" showStereotype="Text">
+            <children xmi:type="notation:DecorationNode" xmi:id="_EISdAOQ6EeSuxrYeYCfuhA" type="NameLabel">
+              <children xmi:type="notation:BasicDecorationNode" xmi:id="_EISdAuQ6EeSuxrYeYCfuhA" type="Stereotype"/>
+              <children xmi:type="notation:BasicDecorationNode" xmi:id="_EISdA-Q6EeSuxrYeYCfuhA" type="Name"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EISdAeQ6EeSuxrYeYCfuhA" y="-186"/>
+            </children>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_EIR18eQ6EeSuxrYeYCfuhA" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+          </edges>
+          <edges xmi:type="umlnotation:UMLConnector" xmi:id="_vzOy8OQ6EeSuxrYeYCfuhA" element="_vzIsUOQ6EeSuxrYeYCfuhA" source="_EIPZsOQ6EeSuxrYeYCfuhA" target="_H_EhUOQ6EeSuxrYeYCfuhA" fontName="Arial" fontHeight="10" lineColor="3342489" lineWidth="1" showStereotype="Text">
+            <children xmi:type="notation:DecorationNode" xmi:id="_vzPaAOQ6EeSuxrYeYCfuhA" type="NameLabel">
+              <children xmi:type="notation:BasicDecorationNode" xmi:id="_vzPaAuQ6EeSuxrYeYCfuhA" type="Stereotype"/>
+              <children xmi:type="notation:BasicDecorationNode" xmi:id="_vzPaA-Q6EeSuxrYeYCfuhA" type="Name"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vzPaAeQ6EeSuxrYeYCfuhA" y="-186"/>
+            </children>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_vzOy8eQ6EeSuxrYeYCfuhA" points="[12, 37, -38, -211]$[134, 203, 84, -45]"/>
+          </edges>
         </contents>
       </eAnnotations>
       <ownedComment xmi:id="_wLy5ANycEeS8W_uFU6RjUw" annotatedElement="_7n4HQId_EeOZ2vW3WfDP5Q">
@@ -4095,7 +4260,7 @@ This class represents the measurement (or “clinical observation”) of the pat
 &#xD;
 This package represents the measurement (or “clinical observation”) of the patient’s blood oxygen saturation level.  It contains an Observation sub-type that constrains the type of observation to that of oxygen saturation in arterial blood, and contains two observation qualifier classes that indicate whether and how the patient was on supplemental observation at the time of the observation.</body>
       </ownedComment>
-      <packagedElement xmi:type="uml:Class" xmi:id="_7n58iId_EeOZ2vW3WfDP5Q" name="O2SaturationObservation">
+      <packagedElement xmi:type="uml:Class" xmi:id="_7n58iId_EeOZ2vW3WfDP5Q" name="OxygenSaturationObservation">
         <ownedComment xmi:id="_lWtNgNyWEeS8W_uFU6RjUw" annotatedElement="_7n58iId_EeOZ2vW3WfDP5Q">
           <body>“Oxygen saturation is a term referring to the fraction of oxygen-saturated hemoglobin relative to total hemoglobin (unsaturated + saturated) in the blood. The human body requires and regulates a very precise and specific balance of oxygen in the blood. Normal blood oxygen levels in humans are considered 95-100 percent. ... Levels below 80 percent may compromise organ function, such as the brain and heart” – Wikipedia.&#xD;
 &#xD;
@@ -4256,7 +4421,7 @@ This class represents the measurement (or “clinical observation”) of the pat
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_dbRpGIeDEeOZ2vW3WfDP5Q" visible="false" type="StructureCompartment"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dbRpGYeDEeOZ2vW3WfDP5Q" x="14899" y="11412"/>
           </children>
-          <children xmi:type="umlnotation:UMLShape" xmi:id="_dbRpO4eDEeOZ2vW3WfDP5Q" element="_dbS3O4eDEeOZ2vW3WfDP5Q" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8487423" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
+          <children xmi:type="umlnotation:UMLShape" xmi:id="_dbRpO4eDEeOZ2vW3WfDP5Q" element="_dbS3O4eDEeOZ2vW3WfDP5Q" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8487423" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_dbRpPIeDEeOZ2vW3WfDP5Q" type="ImageCompartment">
               <layoutConstraint xmi:type="notation:Size" xmi:id="_dbRpPYeDEeOZ2vW3WfDP5Q" width="1320" height="1320"/>
             </children>
@@ -4867,45 +5032,6 @@ This class represents the measurement (or “clinical observation”) of the pat
           </ownedComment>
           <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B641886F63021C?FHIM/Datatypes/RateQuantity?"/>
         </ownedAttribute>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_dbS3O4eDEeOZ2vW3WfDP5Q" name="RespirationExertionQualifier" clientDependency="_r7hDwMN7EeSFjdDJNF9NPA">
-        <ownedComment xmi:id="_shgrQN0uEeSZfdq7h5ueSA" annotatedElement="_dbS3O4eDEeOZ2vW3WfDP5Q">
-          <body>Respiration naturally varies depending on whether the patient is at rest, or during or shortly after exercise.  This class records an observation of whether the patient was at rest, exercising, or recently had been exercising at the time of the Respiration Rate measurement.</body>
-        </ownedComment>
-        <generalization xmi:id="_dbS3PIeDEeOZ2vW3WfDP5Q">
-          <general xmi:type="uml:Class" href="ClinicalObservations.efx#_wBabQBcBEeOL3Nw-k5HkNw?FHIM/ClinicalObservation/ObservationQualifier?"/>
-        </generalization>
-        <ownedAttribute xmi:id="_dbS3PYeDEeOZ2vW3WfDP5Q" name="observedCharacteristic" visibility="public">
-          <eAnnotations xmi:id="_dbS3PoeDEeOZ2vW3WfDP5Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
-            <details xmi:id="_dbS3P4eDEeOZ2vW3WfDP5Q" key="redefine"/>
-          </eAnnotations>
-          <ownedComment xmi:id="_dbS3QIeDEeOZ2vW3WfDP5Q" annotatedElement="_dbS3PYeDEeOZ2vW3WfDP5Q">
-            <body>This property defines what was observed that “qualifies” the primary, or “owning” Observation.  This property defines what was observed by citing a value from a nationally recognized coding system.  In this case, the value to be hard-coded for Patient Exertion has yet to be determined.</body>
-          </ownedComment>
-          <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
-          <defaultValue xmi:type="uml:LiteralString" xmi:id="_dbS3QYeDEeOZ2vW3WfDP5Q" value="cs=TBD, c=TBD">
-            <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
-          </defaultValue>
-        </ownedAttribute>
-        <ownedAttribute xmi:id="_dbS3QoeDEeOZ2vW3WfDP5Q" name="value" visibility="public">
-          <eAnnotations xmi:id="_dbS3Q4eDEeOZ2vW3WfDP5Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
-            <details xmi:id="_dbS3RIeDEeOZ2vW3WfDP5Q" key="redefine"/>
-          </eAnnotations>
-          <ownedComment xmi:id="_dbS3RYeDEeOZ2vW3WfDP5Q" annotatedElement="_dbS3QoeDEeOZ2vW3WfDP5Q">
-            <body>This property contains the result, or value of the qualifying Observation.  In the generic Observation Qualifier class, the data type for this property can be anything.  In this sub-type, the value is constrained to be one of a set of codes from the SNOMED-CT coding system that indicates whether the patient was resting, exercising, or recently had been exercising.</body>
-          </ownedComment>
-          <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dbS3RoeDEeOZ2vW3WfDP5Q" value="1"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dbS3R4eDEeOZ2vW3WfDP5Q" value="1"/>
-          <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_pL-7YMN7EeSFjdDJNF9NPA">
-            <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
-            <language></language>
-            <body>(PatientMeasurementExertionPhase)</body>
-          </defaultValue>
-        </ownedAttribute>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Dependency" xmi:id="_r7hDwMN7EeSFjdDJNF9NPA" client="_dbS3O4eDEeOZ2vW3WfDP5Q">
-        <supplier xmi:type="uml:Enumeration" href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_Drv0MMN7EeSFjdDJNF9NPA"/>
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_6SUBgIeKEeOZ2vW3WfDP5Q" name="Temperature">
@@ -6318,6 +6444,12 @@ This class represents the measurement (or “clinical observation”) of the pat
       <packagedElement xmi:type="uml:Dependency" xmi:id="_xDOLIMOAEeSFjdDJNF9NPA" client="_MNSj-4eMEeOZ2vW3WfDP5Q">
         <supplier xmi:type="uml:Enumeration" href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_sjs9wMN-EeSFjdDJNF9NPA"/>
       </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_r7hDwMN7EeSFjdDJNF9NPA" client="_dbS3O4eDEeOZ2vW3WfDP5Q">
+      <supplier xmi:type="uml:Enumeration" href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_Drv0MMN7EeSFjdDJNF9NPA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_vzIsUOQ6EeSuxrYeYCfuhA" client="_dbS3O4eDEeOZ2vW3WfDP5Q">
+      <supplier xmi:type="uml:Enumeration" href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_Drv0MMN7EeSFjdDJNF9NPA"/>
     </packagedElement>
   </uml:Package>
   <Default:Documentation xmi:id="_w0c6AH-1EeOzENpLs8HIcg" base_Comment="_w0TJAH-1EeOzENpLs8HIcg"/>
