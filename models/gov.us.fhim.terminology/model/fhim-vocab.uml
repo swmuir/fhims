@@ -2776,7 +2776,7 @@ The following is an example coded concept:</body>
         <ownedLiteral xmi:id="_AgVP0MN1EeSFjdDJNF9NPA" name="368503001 (Structure Of Right Radial Artery)"/>
         <ownedLiteral xmi:id="_AgVP0sN1EeSFjdDJNF9NPA" name="368505008 (Structure Of Right Ulnar Artery)"/>
       </packagedElement>
-      <packagedElement xmi:type="uml:Enumeration" xmi:id="_Drv0MMN7EeSFjdDJNF9NPA" name="PatientMeasurementExertionPhase">
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_Drv0MMN7EeSFjdDJNF9NPA" name="PatientMeasurementExertionStatus">
         <ownedLiteral xmi:id="_LOhCEMN7EeSFjdDJNF9NPA" name="255214003 (After Exercise)"/>
         <ownedLiteral xmi:id="_UbQecMN7EeSFjdDJNF9NPA" name="263678003 (At Rest)"/>
         <ownedLiteral xmi:id="_XUR6AMN7EeSFjdDJNF9NPA" name="309604004 (During Exercise)"/>
@@ -2866,6 +2866,28 @@ The following is an example coded concept:</body>
       <packagedElement xmi:type="uml:Enumeration" xmi:id="_zttF0N-XEeSLwbHBnRFGvw" name="Mechanism">
         <ownedLiteral xmi:id="_8jR_YN-XEeSLwbHBnRFGvw" name="37523008 (immunologic)"/>
         <ownedLiteral xmi:id="_BU3fEN-YEeSLwbHBnRFGvw" name="-newCode- (not immunologic)"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="__IkXgOQ1EeSuxrYeYCfuhA" name="ReactionSeverity">
+        <ownedLiteral xmi:id="__Ik-kOQ1EeSuxrYeYCfuhA" name="255604002 (mild)"/>
+        <ownedLiteral xmi:id="__Ik-kuQ1EeSuxrYeYCfuhA" name="6736007 (moderate)"/>
+        <ownedLiteral xmi:id="__Ik-lOQ1EeSuxrYeYCfuhA" name="24484000 (severe)"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_vKq68OQ2EeSuxrYeYCfuhA" name="AllergyIntoleranceCriticality">
+        <ownedLiteral xmi:id="_ANY1EOQ3EeSuxrYeYCfuhA" name="low (Low Risk)">
+          <ownedComment xmi:id="_GLAqEOQ3EeSuxrYeYCfuhA">
+            <body>The potential clinical impact of a future reaction is estimated as low risk: exposure to substance is unlikely to result in a life threatening or organ system threatening outcome. Future exposure to the Substance is considered a relative contra-indication.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:id="_HBT_8OQ3EeSuxrYeYCfuhA" name="high (High Risk)">
+          <ownedComment xmi:id="_Ofj6MOQ3EeSuxrYeYCfuhA">
+            <body>The potential clinical impact of a future reaction is estimated as high risk: exposure to substance may result in a life threatening or organ system threatening outcome. Future exposure to the Substance may be considered an absolute contra-indication.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:id="_QDB4EOQ3EeSuxrYeYCfuhA" name="unassessible (Unable to determine)">
+          <ownedComment xmi:id="_UdIE0OQ3EeSuxrYeYCfuhA">
+            <body>Unable to assess the potential clinical impact with the information available.</body>
+          </ownedComment>
+        </ownedLiteral>
       </packagedElement>
     </packagedElement>
     <profileApplication xmi:id="_2B97WxSVEeGGzu7fmW9pXw">
@@ -5247,10 +5269,10 @@ The following is an example coded concept:</body>
   <term:ValueSetCode xmi:id="_fBgXgb6xEeSTouYqAfEsQw" conceptName="Diagnosis (used for Encounter Diagnosis template)" base_EnumerationLiteral="_fBgXgL6xEeSTouYqAfEsQw"/>
   <term:ValueSetCode xmi:id="_iLF-ob6xEeSTouYqAfEsQw" conceptName="Preoperative Diagnosis" base_EnumerationLiteral="_iLF-oL6xEeSTouYqAfEsQw"/>
   <term:ValueSetCode xmi:id="_k5kXEb6xEeSTouYqAfEsQw" conceptName="Postoperative Diagnosis" base_EnumerationLiteral="_k5kXEL6xEeSTouYqAfEsQw"/>
-  <term:ValueSetVersion xmi:id="_kKJvgL61EeSMg-kgsnPV3w" identifier="2.16.840.1.113883.3.2074.1.1.47" fullName="Patient Measurement Sleep Status Value Set" source="FHIM" url="TBD" definition="The temporal relationship of the patient to exertion" codeSystem="_WwluQaRMEeGZ6ueex_Me0w" base_Enumeration="_kH664L61EeSMg-kgsnPV3w"/>
+  <term:ValueSetVersion xmi:id="_kKJvgL61EeSMg-kgsnPV3w" identifier="2.16.840.1.113883.3.2074.1.1.47" fullName="Patient Measurement Sleep Status Value Set" source="FHIM" url="TBD" definition="Whether the patient is asleep at the time of measurement" codeSystem="_WwluQaRMEeGZ6ueex_Me0w" base_Enumeration="_kH664L61EeSMg-kgsnPV3w"/>
   <term:ValueSetCode xmi:id="_15CzIb61EeSMg-kgsnPV3w" conceptName="Awake [SCT 248218005]" base_EnumerationLiteral="_15CzIL61EeSMg-kgsnPV3w"/>
   <term:ValueSetCode xmi:id="_EkdesL62EeSMg-kgsnPV3w" conceptName="Asleep [SCT 248220008]" base_EnumerationLiteral="_Ekc3oL62EeSMg-kgsnPV3w"/>
-  <term:ValueSetVersion xmi:id="_LwY2gMD-EeSD-sVrqweICQ" identifier="2.16.840.1.113883.3.2074.1.1.50" fullName="Blood Pressure Measurement Method  Value Set" source="FHIM" url="TBD" definition="Technique for ascertaining blood pressure  (or, of identifying Korotkoff sound transitions?)" codeSystem="_WwluQaRMEeGZ6ueex_Me0w" base_Enumeration="_LuKo8MD-EeSD-sVrqweICQ"/>
+  <term:ValueSetVersion xmi:id="_LwY2gMD-EeSD-sVrqweICQ" identifier="2.16.840.1.113883.3.2074.1.1.50" fullName="Blood Pressure Measurement Method  Value Set" source="FHIM" url="TBD" definition="Technique for ascertaining blood pressure" codeSystem="_WwluQaRMEeGZ6ueex_Me0w" base_Enumeration="_LuKo8MD-EeSD-sVrqweICQ"/>
   <term:ValueSetCode xmi:id="_sIniEMD-EeSD-sVrqweICQ" conceptName="Palpation" base_EnumerationLiteral="_sIm7AMD-EeSD-sVrqweICQ"/>
   <term:ValueSetCode xmi:id="_79AA0MD-EeSD-sVrqweICQ" conceptName="Arterial Pressure Monitoring, Invasive Method" base_EnumerationLiteral="_78_ZwMD-EeSD-sVrqweICQ"/>
   <term:ValueSetCode xmi:id="_YJfEsMD_EeSD-sVrqweICQ" conceptName="Automatic Cuff" base_EnumerationLiteral="_YJedoMD_EeSD-sVrqweICQ"/>
@@ -5331,7 +5353,7 @@ The following is an example coded concept:</body>
   <term:ValueSetCode xmi:id="_AgV24sN1EeSFjdDJNF9NPA" conceptName="Structure Of Right Ulnar Artery" base_EnumerationLiteral="_AgVP0sN1EeSFjdDJNF9NPA"/>
   <term:ValueSetCode xmi:id="_AgV248N1EeSFjdDJNF9NPA" conceptName="Structure Of Left Ulnar Artery" base_EnumerationLiteral="_AgVP08N1EeSFjdDJNF9NPA"/>
   <term:ValueSetCode xmi:id="_J-GKwcN1EeSFjdDJNF9NPA" conceptName="Structure Of Right Posterior Tibial Artery" base_EnumerationLiteral="_J-GKwMN1EeSFjdDJNF9NPA"/>
-  <term:ValueSetVersion xmi:id="_Drv0McN7EeSFjdDJNF9NPA" identifier="2.16.840.1.113883.3.2074.1.1.46" fullName="Patient Measurement Exertion Phase Value Set" source="FHIM" url="TBD" definition="The temporal relationship of the patient to exertion" codeSystem="_WwluQaRMEeGZ6ueex_Me0w" base_Enumeration="_Drv0MMN7EeSFjdDJNF9NPA"/>
+  <term:ValueSetVersion xmi:id="_Drv0McN7EeSFjdDJNF9NPA" identifier="2.16.840.1.113883.3.2074.1.1.46" fullName="Patient Measurement Exertion Phase Value Set" source="FHIM" url="TBD" definition="The relationship between patient exertion and a measurement" codeSystem="_WwluQaRMEeGZ6ueex_Me0w" base_Enumeration="_Drv0MMN7EeSFjdDJNF9NPA"/>
   <term:ValueSetCode xmi:id="_LOhpIMN7EeSFjdDJNF9NPA" conceptName="After Exercise" base_EnumerationLiteral="_LOhCEMN7EeSFjdDJNF9NPA"/>
   <term:ValueSetCode xmi:id="_UbQeccN7EeSFjdDJNF9NPA" conceptName="At Rest" base_EnumerationLiteral="_UbQecMN7EeSFjdDJNF9NPA"/>
   <term:ValueSetCode xmi:id="_XUShEMN7EeSFjdDJNF9NPA" conceptName="During Exercise" base_EnumerationLiteral="_XUR6AMN7EeSFjdDJNF9NPA"/>
@@ -5442,4 +5464,12 @@ The following is an example coded concept:</body>
   <term:ValueSetCode xmi:id="_LZrOEN-nEeSzEeYgFgxEPA" conceptName="congenital" base_EnumerationLiteral="_LZqnAN-nEeSzEeYgFgxEPA"/>
   <term:ValueSetCode xmi:id="_N-GSoN-nEeSzEeYgFgxEPA" conceptName="relapsing" base_EnumerationLiteral="_N-FrkN-nEeSzEeYgFgxEPA"/>
   <term:ValueSetCode xmi:id="_SHNdEd-nEeSzEeYgFgxEPA" conceptName="subacute" base_EnumerationLiteral="_SHNdEN-nEeSzEeYgFgxEPA"/>
+  <term:ValueSetVersion xmi:id="__Ip3EOQ1EeSuxrYeYCfuhA" identifier="2.16.840.1.113883.3.2074.1.1.64" version="1" fullName="Reaction Severity Value Set" url="TBD" definition="This is a description of the level of the severity of the problem." revisionDate="07/23/2009" codeSystem="_WwluQaRMEeGZ6ueex_Me0w" base_Enumeration="__IkXgOQ1EeSuxrYeYCfuhA"/>
+  <term:ValueSetCode xmi:id="__Ip3EuQ1EeSuxrYeYCfuhA" conceptName="mild" usageNote="SNOMED-CT" base_EnumerationLiteral="__Ik-kOQ1EeSuxrYeYCfuhA"/>
+  <term:ValueSetCode xmi:id="__Ip3FOQ1EeSuxrYeYCfuhA" conceptName="moderate" usageNote="SNOMED-CT" base_EnumerationLiteral="__Ik-kuQ1EeSuxrYeYCfuhA"/>
+  <term:ValueSetCode xmi:id="__Ip3FuQ1EeSuxrYeYCfuhA" conceptName="severe" usageNote="SNOMED-CT" base_EnumerationLiteral="__Ik-lOQ1EeSuxrYeYCfuhA"/>
+  <term:ValueSetVersion xmi:id="_vNSKEOQ2EeSuxrYeYCfuhA" identifier="2.16.840.1.113883.4.642.2.479" fullName="AllergyIntoleranceCriticality" source="FHIR" url="http://hl7.org/fhir/2015May/allergy-intolerance-criticality.html" definition="Estimate of the potential clinical harm, or seriousness, of a reaction to an identified Substance" base_Enumeration="_vKq68OQ2EeSuxrYeYCfuhA"/>
+  <term:ValueSetCode xmi:id="_ANZcIOQ3EeSuxrYeYCfuhA" conceptName="Low Risk" base_EnumerationLiteral="_ANY1EOQ3EeSuxrYeYCfuhA"/>
+  <term:ValueSetCode xmi:id="_HBUnAOQ3EeSuxrYeYCfuhA" conceptName="High Risk" base_EnumerationLiteral="_HBT_8OQ3EeSuxrYeYCfuhA"/>
+  <term:ValueSetCode xmi:id="_QDB4EeQ3EeSuxrYeYCfuhA" conceptName="Unable to determine" base_EnumerationLiteral="_QDB4EOQ3EeSuxrYeYCfuhA"/>
 </xmi:XMI>
