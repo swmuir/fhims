@@ -1291,6 +1291,39 @@ These are documented in CDC local codes table, CDCPHINVS (Value set OID 2.16.840
         <ownedLiteral xmi:id="_eJDpINonEeSOxtrN8-7DcQ" name="-newCode- (observed by other clinician)"/>
         <ownedLiteral xmi:id="_e1USMNonEeSOxtrN8-7DcQ" name="-newCode- (bracelet)"/>
       </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_zuRTAOUoEeSggrPnnbyhMg" name="AddressUse">
+        <ownedLiteral xmi:id="_9A9mYOUoEeSggrPnnbyhMg" name="BA (Bad Address)"/>
+        <ownedLiteral xmi:id="__oisoOUoEeSggrPnnbyhMg" name="BI (Billing Address)"/>
+        <ownedLiteral xmi:id="_DDuaEOUpEeSggrPnnbyhMg" name="N (Birth Address)"/>
+        <ownedLiteral xmi:id="_HaPuYOUpEeSggrPnnbyhMg" name="BDL (Birth delivery location)"/>
+        <ownedLiteral xmi:id="_JqaaMOUpEeSggrPnnbyhMg" name="F (Country Of Origin)"/>
+        <ownedLiteral xmi:id="_OTW7QOUpEeSggrPnnbyhMg" name="B (Firm/Business)"/>
+        <ownedLiteral xmi:id="_PWBSIOUpEeSggrPnnbyhMg" name="H (Home Address)"/>
+        <ownedLiteral xmi:id="_TflIgOUpEeSggrPnnbyhMg" name="L (Legal Address)"/>
+        <ownedLiteral xmi:id="_XQJQEOUpEeSggrPnnbyhMg" name="M (Mailing)"/>
+        <ownedLiteral xmi:id="_b7SJgOUpEeSggrPnnbyhMg" name="O (Office/Business (Work))"/>
+        <ownedLiteral xmi:id="_iYKtYOUpEeSggrPnnbyhMg" name="BR (Residence at birth)"/>
+        <ownedLiteral xmi:id="_jmVJoOUpEeSggrPnnbyhMg" name="S (Service Location)"/>
+        <ownedLiteral xmi:id="_mZqz8OUpEeSggrPnnbyhMg" name="SH (Shipping Address)"/>
+        <ownedLiteral xmi:id="_oq52wOUpEeSggrPnnbyhMg" name="V (Vacation)"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_RhXikOXdEeSM-JoX4jOe4g" name="ContactPointUse">
+        <ownedLiteral xmi:id="__VVagOXdEeSM-JoX4jOe4g" name="EMR (Emergency Number)"/>
+        <ownedLiteral xmi:id="_Dr05oOXeEeSM-JoX4jOe4g" name="ORN (Other Residence Number)"/>
+        <ownedLiteral xmi:id="_GuHl8OXeEeSM-JoX4jOe4g" name="PRN (Primary Residence Number)"/>
+        <ownedLiteral xmi:id="_IwmbEOXeEeSM-JoX4jOe4g" name="PRS (Personal)"/>
+        <ownedLiteral xmi:id="_LRit0OXeEeSM-JoX4jOe4g" name="VHN (Vacation Home Number)"/>
+        <ownedLiteral xmi:id="_OEbFIOXeEeSM-JoX4jOe4g" name="WPN (Work Number)"/>
+        <ownedLiteral xmi:id="_NA6u0OXgEeSM-JoX4jOe4g" name="temp (Temp (from FHIR))"/>
+        <ownedLiteral xmi:id="_SrqEEOXgEeSM-JoX4jOe4g" name="old (Old (from FHIR))"/>
+        <ownedLiteral xmi:id="_U6tVkOXgEeSM-JoX4jOe4g" name="mobile (Mobile (from FHIR))"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_zXSh4OXiEeSM-JoX4jOe4g" name="ContactPointSystem">
+        <ownedLiteral xmi:id="_DUgzkOXjEeSM-JoX4jOe4g" name="email (Email)"/>
+        <ownedLiteral xmi:id="_GleOAOXjEeSM-JoX4jOe4g" name="fax (Fax)"/>
+        <ownedLiteral xmi:id="_MTW94OXjEeSM-JoX4jOe4g" name="phone (Phone)"/>
+        <ownedLiteral xmi:id="_NtQwEOXjEeSM-JoX4jOe4g" name="url (URL)"/>
+      </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_ilRJYPaiEeGpCd694FcdqQ" name="CommonProductVocab">
       <packagedElement xmi:type="uml:Enumeration" xmi:id="_XViOYKRMEeGZ6ueex_Me0w" name="NDC-FDA Drug Registration and Listing System"/>
@@ -5472,4 +5505,34 @@ The following is an example coded concept:</body>
   <term:ValueSetCode xmi:id="_ANZcIOQ3EeSuxrYeYCfuhA" conceptName="Low Risk" base_EnumerationLiteral="_ANY1EOQ3EeSuxrYeYCfuhA"/>
   <term:ValueSetCode xmi:id="_HBUnAOQ3EeSuxrYeYCfuhA" conceptName="High Risk" base_EnumerationLiteral="_HBT_8OQ3EeSuxrYeYCfuhA"/>
   <term:ValueSetCode xmi:id="_QDB4EeQ3EeSuxrYeYCfuhA" conceptName="Unable to determine" base_EnumerationLiteral="_QDB4EOQ3EeSuxrYeYCfuhA"/>
+  <term:ValueSetVersion xmi:id="_zwfgkOUoEeSggrPnnbyhMg" source="HL7 v2 Table 0191" url="http://hl7.org/fhir/2015May/v2/0190/" definition="This valueset identifies the circumstances under which an address is normally used. This valueset draws primarily from HL7 V2 Table 0190" base_Enumeration="_zuRTAOUoEeSggrPnnbyhMg"/>
+  <term:ValueSetCode xmi:id="_9A9mYeUoEeSggrPnnbyhMg" conceptName="Bad Address" base_EnumerationLiteral="_9A9mYOUoEeSggrPnnbyhMg"/>
+  <term:ValueSetCode xmi:id="__oisoeUoEeSggrPnnbyhMg" conceptName="Billing Address" base_EnumerationLiteral="__oisoOUoEeSggrPnnbyhMg"/>
+  <term:ValueSetCode xmi:id="_DDuaEeUpEeSggrPnnbyhMg" conceptName="Birth Address" base_EnumerationLiteral="_DDuaEOUpEeSggrPnnbyhMg"/>
+  <term:ValueSetCode xmi:id="_HaQVcOUpEeSggrPnnbyhMg" conceptName="Birth delivery location" base_EnumerationLiteral="_HaPuYOUpEeSggrPnnbyhMg"/>
+  <term:ValueSetCode xmi:id="_JqbBQOUpEeSggrPnnbyhMg" conceptName="Country Of Origin" base_EnumerationLiteral="_JqaaMOUpEeSggrPnnbyhMg"/>
+  <term:ValueSetCode xmi:id="_OTW7QeUpEeSggrPnnbyhMg" conceptName="Firm/Business" base_EnumerationLiteral="_OTW7QOUpEeSggrPnnbyhMg"/>
+  <term:ValueSetCode xmi:id="_PWBSIeUpEeSggrPnnbyhMg" conceptName="Home Address" base_EnumerationLiteral="_PWBSIOUpEeSggrPnnbyhMg"/>
+  <term:ValueSetCode xmi:id="_TflIgeUpEeSggrPnnbyhMg" conceptName="Legal Address" base_EnumerationLiteral="_TflIgOUpEeSggrPnnbyhMg"/>
+  <term:ValueSetCode xmi:id="_XQJ3IOUpEeSggrPnnbyhMg" conceptName="Mailing" base_EnumerationLiteral="_XQJQEOUpEeSggrPnnbyhMg"/>
+  <term:ValueSetCode xmi:id="_b7SJgeUpEeSggrPnnbyhMg" conceptName="Office/Business (Work)" base_EnumerationLiteral="_b7SJgOUpEeSggrPnnbyhMg"/>
+  <term:ValueSetCode xmi:id="_iYKtYeUpEeSggrPnnbyhMg" conceptName="Residence at birth" base_EnumerationLiteral="_iYKtYOUpEeSggrPnnbyhMg"/>
+  <term:ValueSetCode xmi:id="_jmVJoeUpEeSggrPnnbyhMg" conceptName="Service Location" base_EnumerationLiteral="_jmVJoOUpEeSggrPnnbyhMg"/>
+  <term:ValueSetCode xmi:id="_mZrbAOUpEeSggrPnnbyhMg" conceptName="Shipping Address" base_EnumerationLiteral="_mZqz8OUpEeSggrPnnbyhMg"/>
+  <term:ValueSetCode xmi:id="_oq52weUpEeSggrPnnbyhMg" conceptName="Vacation" base_EnumerationLiteral="_oq52wOUpEeSggrPnnbyhMg"/>
+  <term:ValueSetVersion xmi:id="_Rju6EOXdEeSM-JoX4jOe4g" fullName="Telecommunications Contact Point Use" source="HL7 v2 Table 0201 and FHIR ContactPointUse" url="http://hl7.org/fhir/2015May/v2/0201/" definition="This valueset identifies the circumstances under which communications device is normally used. This valueset draws primarily from HL7 V2 Table 0201, but addes the FHIR concepts of Temporary, Mobile, and Old." base_Enumeration="_RhXikOXdEeSM-JoX4jOe4g"/>
+  <term:ValueSetCode xmi:id="__VWBkOXdEeSM-JoX4jOe4g" conceptName="Emergency Number" base_EnumerationLiteral="__VVagOXdEeSM-JoX4jOe4g"/>
+  <term:ValueSetCode xmi:id="_Dr1gsOXeEeSM-JoX4jOe4g" conceptName="Other Residence Number" base_EnumerationLiteral="_Dr05oOXeEeSM-JoX4jOe4g"/>
+  <term:ValueSetCode xmi:id="_GuHl8eXeEeSM-JoX4jOe4g" conceptName="Primary Residence Number" base_EnumerationLiteral="_GuHl8OXeEeSM-JoX4jOe4g"/>
+  <term:ValueSetCode xmi:id="_IwnCIOXeEeSM-JoX4jOe4g" conceptName="Personal" base_EnumerationLiteral="_IwmbEOXeEeSM-JoX4jOe4g"/>
+  <term:ValueSetCode xmi:id="_LRjU4OXeEeSM-JoX4jOe4g" conceptName="Vacation Home Number" base_EnumerationLiteral="_LRit0OXeEeSM-JoX4jOe4g"/>
+  <term:ValueSetCode xmi:id="_OEbsMOXeEeSM-JoX4jOe4g" conceptName="Work Number" base_EnumerationLiteral="_OEbFIOXeEeSM-JoX4jOe4g"/>
+  <term:ValueSetCode xmi:id="_NA6u0eXgEeSM-JoX4jOe4g" conceptName="Temp" base_EnumerationLiteral="_NA6u0OXgEeSM-JoX4jOe4g"/>
+  <term:ValueSetCode xmi:id="_SrqEEeXgEeSM-JoX4jOe4g" conceptName="Old" base_EnumerationLiteral="_SrqEEOXgEeSM-JoX4jOe4g"/>
+  <term:ValueSetCode xmi:id="_U6tVkeXgEeSM-JoX4jOe4g" conceptName="Mobile" base_EnumerationLiteral="_U6tVkOXgEeSM-JoX4jOe4g"/>
+  <term:ValueSetVersion xmi:id="_zXTI8OXiEeSM-JoX4jOe4g" fullName="Contact Point System" url="http://hl7.org/fhir/2015May/contact-point-system.html" base_Enumeration="_zXSh4OXiEeSM-JoX4jOe4g"/>
+  <term:ValueSetCode xmi:id="_DUgzkeXjEeSM-JoX4jOe4g" conceptName="Email" base_EnumerationLiteral="_DUgzkOXjEeSM-JoX4jOe4g"/>
+  <term:ValueSetCode xmi:id="_GleOAeXjEeSM-JoX4jOe4g" conceptName="Fax" base_EnumerationLiteral="_GleOAOXjEeSM-JoX4jOe4g"/>
+  <term:ValueSetCode xmi:id="_MTXk8OXjEeSM-JoX4jOe4g" conceptName="Phone" base_EnumerationLiteral="_MTW94OXjEeSM-JoX4jOe4g"/>
+  <term:ValueSetCode xmi:id="_NtQwEeXjEeSM-JoX4jOe4g" conceptName="URL" base_EnumerationLiteral="_NtQwEOXjEeSM-JoX4jOe4g"/>
 </xmi:XMI>
