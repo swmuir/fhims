@@ -2891,7 +2891,7 @@ The FHIM uses simple or “primitive” datatypes wherever possible, but does de
           <ownedComment xmi:id="_O22JYH3BEeGy1_tR17zNdw" annotatedElement="_QPLw8H2jEeGy1_tR17zNdw">
             <body>[US Standard Certificate Of Birth Field 08d].  The birthplace (limited to State, Territory, or Foreign Country) of the infant's mother.</body>
           </ownedComment>
-          <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B6418A46B702C7?FHIM/Datatypes/BirthAddress?"/>
+          <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B6418A8DCD02C2?FHIM/Datatypes/Address?"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_xyKN0H2iEeGy1_tR17zNdw" name="mothersCurrentLegalName" visibility="public" isDerived="true">
           <ownedComment xmi:id="_bOsFQH3AEeGy1_tR17zNdw" annotatedElement="_xyKN0H2iEeGy1_tR17zNdw">
@@ -2983,7 +2983,7 @@ The FHIM uses simple or “primitive” datatypes wherever possible, but does de
           <ownedComment xmi:id="_S_lgYH3BEeGy1_tR17zNdw" annotatedElement="_fQw88H2nEeGy1_tR17zNdw">
             <body>[US Standard Certificate Of Birth Field 10c].  The birthplace (limited to State, Territory, or Foreign Country) of the infant's father.</body>
           </ownedComment>
-          <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B6418A46B702C7?FHIM/Datatypes/BirthAddress?"/>
+          <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B6418A8DCD02C2?FHIM/Datatypes/Address?"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_YiAl8H2nEeGy1_tR17zNdw" name="fathersCurrentLegalName" visibility="public" isDerived="true">
           <ownedComment xmi:id="_fvCD8H3AEeGy1_tR17zNdw" annotatedElement="_YiAl8H2nEeGy1_tR17zNdw">
@@ -4267,7 +4267,7 @@ The FHIM uses simple or “primitive” datatypes wherever possible, but does de
         <ownedComment xmi:id="_1ZWA4BqNEd-j8JC21F3W2A" annotatedElement="_aP2xsBAyEd-2E9qx-lgHBg">
           <body>The person's office telephone number.  First choice for business related contacts during business hours.</body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_fImbAAEYEd-ZUM5xZsXWyw?FHIM/Datatypes/Telecommunications?"/>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_fImbAAEYEd-ZUM5xZsXWyw?FHIM/Datatypes/ContactPoint?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_og5XcMJPEeK_EPjbFxtubQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_og4wYMJPEeK_EPjbFxtubQ"/>
       </ownedAttribute>
@@ -4543,7 +4543,7 @@ Note that the definition of this property needs to be refined.</body>
         <ownedComment xmi:id="_SEkAVQS9EeKZRNRj-xVwIw" annotatedElement="_SEkAVAS9EeKZRNRj-xVwIw">
           <body>&quot;The telephone numbers of the contact person depending on the value of the relationship defined in NK1-3 - Relationship.  This field is typically needed when the NK1 is an organization.&quot; - HL7 Version 2.8, NK1-31.</body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_fImbAAEYEd-ZUM5xZsXWyw?FHIM/Datatypes/Telecommunications?"/>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_fImbAAEYEd-ZUM5xZsXWyw?FHIM/Datatypes/ContactPoint?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_d5ohAMJTEeK_EPjbFxtubQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_d5n58MJTEeK_EPjbFxtubQ"/>
       </ownedAttribute>
@@ -4667,7 +4667,7 @@ HL7 Version 2 has the following suggested values (table 1): Female; Male; Other;
 &#xD;
 &quot;Indicates the location of the patient's birth&quot; - HL7 Version 2.8, PID-23.</body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B6418A46B702C7?FHIM/Datatypes/BirthAddress?"/>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B6418A8DCD02C2?FHIM/Datatypes/Address?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_evNLLeLjEdutr_MT9HkPyQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_evNLLOLjEdutr_MT9HkPyQ"/>
       </ownedAttribute>
@@ -4854,7 +4854,7 @@ Note that HL7 Version 2 table 6 lists 85 suggested values for this field.</body>
           <body>The number for a telecommunication device that moves and stays with its owner. Suitable for urgent matters, the mobile phone is not the first choice for routine business.  Note that in HL7, the Telecommunications data type contains a type code to indicate what kind of telecommunications address that is being referenced.  The FHIM explicitly models the telecommunications type, so in this case the attribute name is &quot;Mobile Phone&quot;, and the type code would be set to &quot;mobile contact&quot; when targeting an HL7 implementation.&#xD;
 &quot;Contains the patient's personal telecommunication contact information.&quot; - HL7 Version 2.8, PID-40.</body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_fImbAAEYEd-ZUM5xZsXWyw?FHIM/Datatypes/Telecommunications?"/>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_fImbAAEYEd-ZUM5xZsXWyw?FHIM/Datatypes/ContactPoint?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_V5Z_4CKUEeCBocG0Z_rtrQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_V5QO4CKUEeCBocG0Z_rtrQ"/>
       </ownedAttribute>
@@ -4863,7 +4863,7 @@ Note that HL7 Version 2 table 6 lists 85 suggested values for this field.</body>
           <body>The number of a paging device suitable to solicit a callback or to leave a very short message.  Note that in HL7, the Telecommunications data type contains a type code to indicate what kind of telecommunications address that is being referenced.  The FHIM explicitly models the telecommunications type, so in this case the attribute name is &quot;Pager&quot;, and the type code would be set to &quot;pager&quot; when targeting an HL7 implementation.&#xD;
 &quot;Contains the patient's personal telecommunication contact information.&quot; - HL7 Version 2.8, PID-40.</body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_fImbAAEYEd-ZUM5xZsXWyw?FHIM/Datatypes/Telecommunications?"/>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_fImbAAEYEd-ZUM5xZsXWyw?FHIM/Datatypes/ContactPoint?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZaMmESKUEeCBocG0Z_rtrQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ZaMmECKUEeCBocG0Z_rtrQ"/>
       </ownedAttribute>
@@ -4881,7 +4881,7 @@ Note that HL7 Version 2 table 6 lists 85 suggested values for this field.</body>
           <body>The email address that a person uses while at their primary home, to reach a person after business hours.  Note that in HL7, the Telecommunications data type contains a type code to indicate what kind of telecommunications address that is being referenced.  The FHIM explicitly models the telecommunications type, so in this case the attribute name is &quot;Primary Home Email&quot;, and the type code would be set to &quot;primary home&quot; when targeting an HL7 implementation.&#xD;
 &quot;Contains the patient's personal telecommunication contact information.&quot; - HL7 Version 2.8, PID-40.</body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_fImbAAEYEd-ZUM5xZsXWyw?FHIM/Datatypes/Telecommunications?"/>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_fImbAAEYEd-ZUM5xZsXWyw?FHIM/Datatypes/ContactPoint?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_awo0kSKUEeCBocG0Z_rtrQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_awo0kCKUEeCBocG0Z_rtrQ"/>
       </ownedAttribute>
@@ -4891,7 +4891,7 @@ Note that HL7 Version 2 table 6 lists 85 suggested values for this field.</body>
 &quot;Contains the patient's personal phone numbers.&quot; - HL7 Version 2.8, PID-13.&#xD;
 &quot;Contains the patient's personal telecommunication contact information.&quot; - HL7 Version 2.8, PID-40.</body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_fImbAAEYEd-ZUM5xZsXWyw?FHIM/Datatypes/Telecommunications?"/>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_fImbAAEYEd-ZUM5xZsXWyw?FHIM/Datatypes/ContactPoint?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bYgs4SKUEeCBocG0Z_rtrQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bYgs4CKUEeCBocG0Z_rtrQ"/>
       </ownedAttribute>
@@ -4909,7 +4909,7 @@ Note that HL7 Version 2 table 6 lists 85 suggested values for this field.</body>
           <body>An telephone number at which a person may be contacted while away from their primary home residence.  For example, the person may be staying at a hotel to be nearer to a treatment facility, or while on vacation.  Note that in HL7, the Telecommunications data type contains a type code to indicate what kind of telecommunications address that is being referenced.  The FHIM explicitly models the telecommunications type, so in this case the attribute name is &quot;Temporary Phone&quot;, and the type code would be set to &quot;temporary address&quot; when targeting an HL7 implementation.&#xD;
 &quot;Contains the patient's personal telecommunication contact information.&quot; - HL7 Version 2.8, PID-40.</body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_fImbAAEYEd-ZUM5xZsXWyw?FHIM/Datatypes/Telecommunications?"/>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_fImbAAEYEd-ZUM5xZsXWyw?FHIM/Datatypes/ContactPoint?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dlPqMSKUEeCBocG0Z_rtrQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dlPqMCKUEeCBocG0Z_rtrQ"/>
       </ownedAttribute>
@@ -4927,7 +4927,7 @@ Note that HL7 Version 2 table 6 lists 85 suggested values for this field.</body>
           <body>The email address that a person uses while at their place of business.  First choice for business related contacts during business hours.  Note that in HL7, the Telecommunications data type contains a type code to indicate what kind of telecommunications address that is being referenced.  The FHIM explicitly models the telecommunications type, so in this case the attribute name is &quot;Work Email&quot;, and the type code would be set to &quot;workplace&quot; when targeting an HL7 implementation.&#xD;
 &quot;Contains the patient's personal telecommunication contact information.&quot; - HL7 Version 2.8, PID-40.</body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_fImbAAEYEd-ZUM5xZsXWyw?FHIM/Datatypes/Telecommunications?"/>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_fImbAAEYEd-ZUM5xZsXWyw?FHIM/Datatypes/ContactPoint?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eu4y0SKUEeCBocG0Z_rtrQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eu4y0CKUEeCBocG0Z_rtrQ"/>
       </ownedAttribute>
@@ -4937,7 +4937,7 @@ Note that HL7 Version 2 table 6 lists 85 suggested values for this field.</body>
 &quot;Contains the patient's business telephone numbers.&quot; - HL7 Version 2.8, PID-14.&#xD;
 &quot;Contains the patient's personal telecommunication contact information.&quot; - HL7 Version 2.8, PID-40.</body>
         </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_fImbAAEYEd-ZUM5xZsXWyw?FHIM/Datatypes/Telecommunications?"/>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_fImbAAEYEd-ZUM5xZsXWyw?FHIM/Datatypes/ContactPoint?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fT8AoSKUEeCBocG0Z_rtrQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fT8AoCKUEeCBocG0Z_rtrQ"/>
       </ownedAttribute>
