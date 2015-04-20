@@ -37,7 +37,7 @@ public class Generate extends AbstractAcceleoGenerator {
      *
      * @generated
      */
-    public static final String MODULE_FILE_NAME = "generate";
+    public static final String MODULE_FILE_NAME = "/gov/us/fhim/uml/transform/dita/main/generate";
     
     /**
      * The name of the templates that are to be generated.
@@ -177,6 +177,7 @@ public class Generate extends AbstractAcceleoGenerator {
      *             This will be thrown if any of the output files cannot be saved to disk.
      * @generated
      */
+    
     @Override
     public void doGenerate(Monitor monitor) throws IOException {
         /*
@@ -212,6 +213,7 @@ public class Generate extends AbstractAcceleoGenerator {
      * @return List of listeners that are to be notified when text is generated through this launch.
      * @generated
      */
+    
     @Override
     public List<IAcceleoTextGenerationListener> getGenerationListeners() {
         List<IAcceleoTextGenerationListener> listeners = super.getGenerationListeners();
@@ -245,6 +247,7 @@ public class Generate extends AbstractAcceleoGenerator {
      * @return The generation strategy that is to be used for generations launched through this launcher.
      * @generated
      */
+    
     @Override
     public IAcceleoGenerationStrategy getGenerationStrategy() {
         return super.getGenerationStrategy();
@@ -257,6 +260,7 @@ public class Generate extends AbstractAcceleoGenerator {
      * @return The name of the module that is to be launched.
      * @generated
      */
+    
     @Override
     public String getModuleName() {
         return MODULE_FILE_NAME;
@@ -271,6 +275,7 @@ public class Generate extends AbstractAcceleoGenerator {
      * @see java.util.ResourceBundle#getBundle(String)
      * @generated
      */
+    
     @Override
     public List<String> getProperties() {
         /*
@@ -318,6 +323,7 @@ public class Generate extends AbstractAcceleoGenerator {
      * @generated
      * @since 3.1
      */
+    
     @Override
     public void addPropertiesFile(String propertiesFile) {
         this.propertiesFiles.add(propertiesFile);
@@ -329,6 +335,7 @@ public class Generate extends AbstractAcceleoGenerator {
      * @return The list of templates to call on the module {@link #getModuleName()}.
      * @generated
      */
+    
     @Override
     public String[] getTemplateNames() {
         return TEMPLATE_NAMES;
@@ -341,20 +348,18 @@ public class Generate extends AbstractAcceleoGenerator {
      *            The resource set which registry has to be updated.
      * @generated
      */
+    
     @Override
     public void registerPackages(ResourceSet resourceSet) {
         super.registerPackages(resourceSet);
         if (!isInWorkspace(org.eclipse.uml2.uml.UMLPackage.class)) {
             resourceSet.getPackageRegistry().put(org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getNsURI(), org.eclipse.uml2.uml.UMLPackage.eINSTANCE);
         }
-        if (!isInWorkspace(org.openhealthtools.mdht.uml.term.core.profile.TermPackage.class)) {
-            resourceSet.getPackageRegistry().put(org.openhealthtools.mdht.uml.term.core.profile.TermPackage.eINSTANCE.getNsURI(), org.openhealthtools.mdht.uml.term.core.profile.TermPackage.eINSTANCE);
-        }
         if (!isInWorkspace(org.eclipse.emf.ecore.EcorePackage.class)) {
             resourceSet.getPackageRegistry().put(org.eclipse.emf.ecore.EcorePackage.eINSTANCE.getNsURI(), org.eclipse.emf.ecore.EcorePackage.eINSTANCE);
         }
-        if (!isInWorkspace(org.openhealthtools.mdht.uml.term.core.profile.TermPackage.class)) {
-            resourceSet.getPackageRegistry().put(org.openhealthtools.mdht.uml.term.core.profile.TermPackage.eINSTANCE.getNsURI(), org.openhealthtools.mdht.uml.term.core.profile.TermPackage.eINSTANCE);
+        if (!isInWorkspace(com.ibm.xtools.umlnotation.UmlnotationPackage.class)) {
+            resourceSet.getPackageRegistry().put(com.ibm.xtools.umlnotation.UmlnotationPackage.eINSTANCE.getNsURI(), com.ibm.xtools.umlnotation.UmlnotationPackage.eINSTANCE);
         }
         
         /*
@@ -397,6 +402,7 @@ public class Generate extends AbstractAcceleoGenerator {
      *            The resource set which registry has to be updated.
      * @generated
      */
+    
     @Override
     public void registerResourceFactories(ResourceSet resourceSet) {
         super.registerResourceFactories(resourceSet);
