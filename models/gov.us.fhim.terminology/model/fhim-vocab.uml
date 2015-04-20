@@ -1740,6 +1740,7 @@ These are documented in CDC local codes table, CDCPHINVS (Value set OID 2.16.840
         <ownedLiteral xmi:id="_LZqnAN-nEeSzEeYgFgxEPA" name="-newCode- (congenital)"/>
         <ownedLiteral xmi:id="_N-FrkN-nEeSzEeYgFgxEPA" name="255318003 (relapsing)"/>
         <ownedLiteral xmi:id="_SHNdEN-nEeSzEeYgFgxEPA" name="19939008 (subacute)"/>
+        <ownedLiteral xmi:id="_IYTfoOd6EeSlqtEJq7r6DQ" name="-newCode- (peracute)"/>
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_vURsYBJeEeKBDeGP59RrVA" name="LabVocab">
@@ -2921,6 +2922,28 @@ The following is an example coded concept:</body>
             <body>Unable to assess the potential clinical impact with the information available.</body>
           </ownedComment>
         </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_Ovvj0OdvEeSKGaa1qzZLJg" name="IntoleranceCategory(HITSP)">
+        <ownedLiteral xmi:id="_dW4MUOdvEeSKGaa1qzZLJg" name="419199007 (Allergy to substance (disorder))"/>
+        <ownedLiteral xmi:id="_hTRJYOdvEeSKGaa1qzZLJg" name="416098002 (Drug allergy (disorder))"/>
+        <ownedLiteral xmi:id="_l5yokOdvEeSKGaa1qzZLJg" name="59037007 (Drug intolerance (disorder)"/>
+        <ownedLiteral xmi:id="_pxkLYOdvEeSKGaa1qzZLJg" name="414285001 (Food allergy (disorder))"/>
+        <ownedLiteral xmi:id="_q-zakOdvEeSKGaa1qzZLJg" name="235719002 (Food intolerance (disorder))"/>
+        <ownedLiteral xmi:id="_uxRmoOdvEeSKGaa1qzZLJg" name="420134006 (Propensity to adverse reactions (disorder))"/>
+        <ownedLiteral xmi:id="_yERBYOdvEeSKGaa1qzZLJg" name="419511003 (Propensity to adverse reactions to drug (disorder))"/>
+        <ownedLiteral xmi:id="_1EIr0OdvEeSKGaa1qzZLJg" name="418471000 (Propensity to adverse reactions to food (disorder))"/>
+        <ownedLiteral xmi:id="_4gHqgOdvEeSKGaa1qzZLJg" name="418038007 (Propensity to adverse reactions to substance (disorder))"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_gGBdsOdwEeSKGaa1qzZLJg" name="AllergyIntoleranceCategory">
+        <ownedLiteral xmi:id="_nFlQ0OdwEeSKGaa1qzZLJg" name="food"/>
+        <ownedLiteral xmi:id="_psEx8OdwEeSKGaa1qzZLJg" name="medication"/>
+        <ownedLiteral xmi:id="_uWfSoOdwEeSKGaa1qzZLJg" name="environment"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_RTvfsOdxEeSKGaa1qzZLJg" name="AdverseClinicalReaction"/>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="__elmkOdxEeSKGaa1qzZLJg" name="AllergyIntoleranceCertainty">
+        <ownedLiteral xmi:id="_FhUlEOdyEeSKGaa1qzZLJg" name="unlikely"/>
+        <ownedLiteral xmi:id="_I0V1AOdyEeSKGaa1qzZLJg" name="likely"/>
+        <ownedLiteral xmi:id="_KqgscOdyEeSKGaa1qzZLJg" name="confirmed"/>
       </packagedElement>
     </packagedElement>
     <profileApplication xmi:id="_2B97WxSVEeGGzu7fmW9pXw">
@@ -5535,4 +5558,24 @@ The following is an example coded concept:</body>
   <term:ValueSetCode xmi:id="_GleOAeXjEeSM-JoX4jOe4g" conceptName="Fax" base_EnumerationLiteral="_GleOAOXjEeSM-JoX4jOe4g"/>
   <term:ValueSetCode xmi:id="_MTXk8OXjEeSM-JoX4jOe4g" conceptName="Phone" base_EnumerationLiteral="_MTW94OXjEeSM-JoX4jOe4g"/>
   <term:ValueSetCode xmi:id="_NtQwEeXjEeSM-JoX4jOe4g" conceptName="URL" base_EnumerationLiteral="_NtQwEOXjEeSM-JoX4jOe4g"/>
+  <term:ValueSetVersion xmi:id="_Oy2iMOdvEeSKGaa1qzZLJg" identifier="2.16.840.1.113883.3.88.12.3221.6.2" url="https://phinvads.cdc.gov/vads/ViewValueSet.action?id=7AFDBFB5-A277-DE11-9B52-0015173D1785" definition="This describes the type of product and intolerance suffered by the patient" codeSystem="_WwluQaRMEeGZ6ueex_Me0w" base_Enumeration="_Ovvj0OdvEeSKGaa1qzZLJg"/>
+  <term:ValueSetCode xmi:id="_dW4zYOdvEeSKGaa1qzZLJg" conceptName="Allergy to substance (disorder)" base_EnumerationLiteral="_dW4MUOdvEeSKGaa1qzZLJg"/>
+  <term:ValueSetCode xmi:id="_hTRJYedvEeSKGaa1qzZLJg" conceptName="Drug allergy (disorder)" base_EnumerationLiteral="_hTRJYOdvEeSKGaa1qzZLJg"/>
+  <term:ValueSetCode xmi:id="_l5zPoOdvEeSKGaa1qzZLJg" conceptName="Drug intolerance (disorder)" base_EnumerationLiteral="_l5yokOdvEeSKGaa1qzZLJg"/>
+  <term:ValueSetCode xmi:id="_pxkLYedvEeSKGaa1qzZLJg" conceptName="Food allergy (disorder)" base_EnumerationLiteral="_pxkLYOdvEeSKGaa1qzZLJg"/>
+  <term:ValueSetCode xmi:id="_q-0BoOdvEeSKGaa1qzZLJg" conceptName="Food intolerance (disorder)" base_EnumerationLiteral="_q-zakOdvEeSKGaa1qzZLJg"/>
+  <term:ValueSetCode xmi:id="_uxSNsOdvEeSKGaa1qzZLJg" conceptName="Propensity to adverse reactions (disorder)" base_EnumerationLiteral="_uxRmoOdvEeSKGaa1qzZLJg"/>
+  <term:ValueSetCode xmi:id="_yERBYedvEeSKGaa1qzZLJg" conceptName="Propensity to adverse reactions to drug (disorder)" base_EnumerationLiteral="_yERBYOdvEeSKGaa1qzZLJg"/>
+  <term:ValueSetCode xmi:id="_1EJS4OdvEeSKGaa1qzZLJg" conceptName="Propensity to adverse reactions to food (disorder)" base_EnumerationLiteral="_1EIr0OdvEeSKGaa1qzZLJg"/>
+  <term:ValueSetCode xmi:id="_4gIRkOdvEeSKGaa1qzZLJg" conceptName="Propensity to adverse reactions to substance (disorder)" base_EnumerationLiteral="_4gHqgOdvEeSKGaa1qzZLJg"/>
+  <term:ValueSetVersion xmi:id="_gGBdsedwEeSKGaa1qzZLJg" identifier="2.16.840.1.113883.4.642.2.481" url="http://hl7.org/fhir/vs/allergy-intolerance-category" base_Enumeration="_gGBdsOdwEeSKGaa1qzZLJg"/>
+  <term:ValueSetCode xmi:id="_nFl34OdwEeSKGaa1qzZLJg" conceptName="Food" base_EnumerationLiteral="_nFlQ0OdwEeSKGaa1qzZLJg"/>
+  <term:ValueSetCode xmi:id="_psEx8edwEeSKGaa1qzZLJg" conceptName="Medication" base_EnumerationLiteral="_psEx8OdwEeSKGaa1qzZLJg"/>
+  <term:ValueSetCode xmi:id="_uWfSoedwEeSKGaa1qzZLJg" conceptName="Environment" base_EnumerationLiteral="_uWfSoOdwEeSKGaa1qzZLJg"/>
+  <term:ValueSetVersion xmi:id="_RTwGwOdxEeSKGaa1qzZLJg" identifier="2.16.840.1.113883.3.2074.1.1.30" url="https://vsac.nlm.nih.gov/" definition="Signs, symptoms and disorders resulting from allergic, intolerant, or other reactions to substances. This list originally derived from IMHC, KP, and VA and based on frequencies." base_Enumeration="_RTvfsOdxEeSKGaa1qzZLJg"/>
+  <term:ValueSetVersion xmi:id="__emNoOdxEeSKGaa1qzZLJg" identifier="2.16.840.1.113883.4.642.2.482" url="http://hl7.org/fhir/vs/reaction-event-certainty" base_Enumeration="__elmkOdxEeSKGaa1qzZLJg"/>
+  <term:ValueSetCode xmi:id="_FhUlEedyEeSKGaa1qzZLJg" conceptName="Unlikely" base_EnumerationLiteral="_FhUlEOdyEeSKGaa1qzZLJg"/>
+  <term:ValueSetCode xmi:id="_I0V1AedyEeSKGaa1qzZLJg" conceptName="Likely" base_EnumerationLiteral="_I0V1AOdyEeSKGaa1qzZLJg"/>
+  <term:ValueSetCode xmi:id="_KqhTgOdyEeSKGaa1qzZLJg" conceptName="Confirmed" base_EnumerationLiteral="_KqgscOdyEeSKGaa1qzZLJg"/>
+  <term:ValueSetCode xmi:id="_Ia3rcOd6EeSlqtEJq7r6DQ" conceptName="peracute" base_EnumerationLiteral="_IYTfoOd6EeSlqtEJq7r6DQ"/>
 </xmi:XMI>
