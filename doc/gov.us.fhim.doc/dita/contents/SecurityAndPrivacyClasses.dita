@@ -4,46 +4,46 @@
 <topic id="topicId" xml:lang="en-us">
 	<title>SecurityAndPrivacy Domain</title>
 	<body>	
-			<p>Permissions are related to privacy operations</p><p>Example operations include: Collection, Access, Use, and Disclose</p>
-			<p>Dr. Ioana</p>
-			<p>This diagram shows all of the Terminology classes from the Security and Privacy package of the FHIM Terminology Model</p>
-			<p>i.e, What you&apos;re credentialled for - Nurse</p>
-			<p>The HL7 DAM contains two subclasses to illustrate the type of security/privacy policies that are inherent from the healthcare payment source.  Those two subclasses are examples of many potential kinds of policies, and would be &apos;fleshed out&apos; in the terminology referenced by the code.</p>
-			<p>Add mime type to the uri</p>
-			<p>High-level Security And Privacy classes resulting from discussions of Oct. 3rd.  Note the double underscores in front of the class names are used to distinguish these classes from the &quot;real&quot; classes.  These classes will be deleted once we have reached consensus on the overall structure and the &quot;real&quot; classes have been re-factored accordingly.</p>
-			<p>Access to patient&apos;s HIV records is limited to users who are a)a doctor, b) a medical director, and c) a member of Project Gutenberg</p>
-			<p>The HL7 DAM has several subtypes, including Access, Collection, Disclosure, and Use.  These subclasses may be handled in the taxonomy referenced by the Code.</p>
-			<p>The Composite Contract combines a set of Basic (e.g., Atomic, or individual) Contracts or Policies to form a new, named Contract.</p><p>e.g., &quot;Super User&quot; might combine several individual security policies, or &quot;42CFR&quot; might combine several individual privacy policies</p>
-			<p>In practice, we&apos;re talking about the Patient&apos;s Record, not the Patient</p>
-			<p>Rename to Entity</p>
-			<p>This diagram contains all of the current Security and Privacy classes under consideration.  This is a work in progress, as we attempt now to refactor the model</p><p>See also the HighLevelOverview1 and HighLevelOverview2 diagrams</p>
-			<p>i.e., reflects a situational duty, e.g., Head Nurse</p>
-			<p>This might need to be deleted.  While this makes sense in RBAC, it&apos;s at the wrong level wrt Consent</p>
-			<p>e.g., Permission</p>
-			<p>e.g., must encrypt, do not redisclose</p>
-			<p>Add a &quot;representation&quot;to the policy so we can indicate what form the policy (contract) is in (e.g., scanned image, etc</p>
-			<p>I can encrypt (or maybe: I promise I will encrypt)</p>
-			<p>HL7 DAM has UserIdentity linked to WorkstationLocation.  iEHR has it linked to CareSite</p>
 			<p>e.g. Doctor</p>
+			<p>Do we still need hierarchical group?</p>
+			<p>I can encrypt (or maybe: I promise I will encrypt)</p>
+			<p>Access, Collect, Use, Disclose</p>
+			<p>e.g., Medical Director</p>
+			<p>Security</p>
+			<p>A care team is a good example of a functional group</p>
+			<p>Permissions are related to privacy operations</p><p>Example operations include: Collection, Access, Use, and Disclose</p>
+			<p>i.e, What you&apos;re credentialled for - Nurse</p>
+			<p>The Grantee is the User</p>
+			<p>e.g., Project Gutenberg</p>
 			<p>The FHIM Security and Privacy domain models information related to access-control policies and their enforcement.  While historically security and patient-defined consent have been viewed as separate subjects, in effect they are enforced the same way, especially in a distributed environment.  For example, there is no functional difference between the enforcement of a corporate policy that declares that only mental health specialists can see mental health data and the enforcement of a patient&#8217;s directive to grant visibility of their mental-health related medications to their primary physician, but not to their dentist.</p><p>The FHIM Security and Privacy domain is closely based on the HL7 Security and Privacy Domain Analysis Model (DAM) of May 2010.  There are however, several important differences between this FHIM model and the DAM:  a) The DAM has SecurityRole as a subtype of CompositePolicy.  We made it an association instead.  Then, because both BasicPolicy and CompositePolicy have associations to SecurityRole, we moved the association to Policy, which is the common supertype of both BasicPolicy and CompositePolicy.  b) The DAM models JurisdictionalOrganization and ProviderOrganization as subtypes of Authority.  Indeed, ProviderOrganization is also a subtype of Grantee (multiple-inheritance).  In the FHIM, ProviderOrganization and JurisidictionalOrganization are existing stand-alone concepts.  So we changed the inheritance relationship to association relationships.  c) The DAM models Patient and Population as subtypes of SubjectOfRecord.  In the FHIM, Patient and Population are existing stand-alone concepts.  So we changed the inheritance relationship to association relationships.</p><p>There are some outstanding issues as well.  We need to better understand the PrivateInsurance and PublicServices classes.  These appear to mimic E/E/COB classes, but the purpose for these is unclear.  HL7 already has an exhaustive list of coverage types.  Should OrganizationalProvider be an Entity rather than a Role?</p>
 			<p>This class may need to be replaced by existing EHR concepts such as &apos;Problem&apos; or &apos;Diagnosis&apos;</p>
-			<p>Question for SEcurity WG:</p>
-			<p>e.g., Medical Director</p>
-			<p>Access, Collect, Use, Disclose</p>
-			<p>Security</p>
-			<p>The Grantee is the User</p>
-			<p>We&apos;re assuming that Security Role is a collection of Permissions.  Therefore, we&apos;ve changed Functional Role and Structural Role from subtypes of Security Role to composites instead (because otherwise a security role could be a &quot;plain&quot; security role, a functional role, or a structural role, but never both a functional role and a security role at the same time.  Need to validate this.  If Security Role were recursive, then we could change back to subtypes rather than composites, if desired.</p>
-			<p>e.g., Project Gutenberg</p>
-			<p>Do we still need hierarchical group?</p>
-			<p>The Authority is the Grantor</p>
-			<p>Permissions are related to security operations, not privacy operations</p><p>Example operations include: Create, Read, Update, Delete, Execute</p>
-			<p>e.g., Patient 123&apos;s HIV records</p>
-			<p>This class represents an atomic, standalone Policy.  It is abstract, and will be concretized by one of the subclasses.  It may be composed along with other atomic policies to form a Composite policy</p>
-			<p>High-level Security And Privacy classes resulting from discussions of Oct, 17th, 24th, and 31st.  Note the double underscores in front of the class names are used to distinguish these classes from the &quot;real&quot; classes.  These classes will be deleted once we have reached consensus on the overall structure and the &quot;real&quot; classes have been re-factored accordingly.</p>
-			<p>A care team is a good example of a functional group</p>
 			<p>CRUDE</p>
-			<p>e.g., HIV records</p>
 			<p>Captain or better</p>
+			<p>This class represents an atomic, standalone Policy.  It is abstract, and will be concretized by one of the subclasses.  It may be composed along with other atomic policies to form a Composite policy</p>
+			<p>The Authority is the Grantor</p>
+			<p>Add mime type to the uri</p>
+			<p>e.g., Patient 123&apos;s HIV records</p>
+			<p>High-level Security And Privacy classes resulting from discussions of Oct, 17th, 24th, and 31st.  Note the double underscores in front of the class names are used to distinguish these classes from the &quot;real&quot; classes.  These classes will be deleted once we have reached consensus on the overall structure and the &quot;real&quot; classes have been re-factored accordingly.</p>
+			<p>This diagram shows all of the Terminology classes from the Security and Privacy package of the FHIM Terminology Model</p>
+			<p>e.g., HIV records</p>
+			<p>Rename to Entity</p>
+			<p>i.e., reflects a situational duty, e.g., Head Nurse</p>
+			<p>Dr. Ioana</p>
+			<p>High-level Security And Privacy classes resulting from discussions of Oct. 3rd.  Note the double underscores in front of the class names are used to distinguish these classes from the &quot;real&quot; classes.  These classes will be deleted once we have reached consensus on the overall structure and the &quot;real&quot; classes have been re-factored accordingly.</p>
+			<p>Access to patient&apos;s HIV records is limited to users who are a)a doctor, b) a medical director, and c) a member of Project Gutenberg</p>
+			<p>The Composite Contract combines a set of Basic (e.g., Atomic, or individual) Contracts or Policies to form a new, named Contract.</p><p>e.g., &quot;Super User&quot; might combine several individual security policies, or &quot;42CFR&quot; might combine several individual privacy policies</p>
+			<p>This diagram contains all of the current Security and Privacy classes under consideration.  This is a work in progress, as we attempt now to refactor the model</p><p>See also the HighLevelOverview1 and HighLevelOverview2 diagrams</p>
+			<p>The HL7 DAM contains two subclasses to illustrate the type of security/privacy policies that are inherent from the healthcare payment source.  Those two subclasses are examples of many potential kinds of policies, and would be &apos;fleshed out&apos; in the terminology referenced by the code.</p>
+			<p>The HL7 DAM has several subtypes, including Access, Collection, Disclosure, and Use.  These subclasses may be handled in the taxonomy referenced by the Code.</p>
+			<p>In practice, we&apos;re talking about the Patient&apos;s Record, not the Patient</p>
+			<p>HL7 DAM has UserIdentity linked to WorkstationLocation.  iEHR has it linked to CareSite</p>
+			<p>Add a &quot;representation&quot;to the policy so we can indicate what form the policy (contract) is in (e.g., scanned image, etc</p>
+			<p>This might need to be deleted.  While this makes sense in RBAC, it&apos;s at the wrong level wrt Consent</p>
+			<p>We&apos;re assuming that Security Role is a collection of Permissions.  Therefore, we&apos;ve changed Functional Role and Structural Role from subtypes of Security Role to composites instead (because otherwise a security role could be a &quot;plain&quot; security role, a functional role, or a structural role, but never both a functional role and a security role at the same time.  Need to validate this.  If Security Role were recursive, then we could change back to subtypes rather than composites, if desired.</p>
+			<p>Question for SEcurity WG:</p>
+			<p>e.g., must encrypt, do not redisclose</p>
+			<p>e.g., Permission</p>
+			<p>Permissions are related to security operations, not privacy operations</p><p>Example operations include: Create, Read, Update, Delete, Execute</p>
 
 
 
@@ -51,5 +51,11 @@
 
 
 
+
+
+
+
+
+ 
 	</body>
 </topic>
