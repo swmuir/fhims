@@ -9,7 +9,18 @@
 [template public generateElement(aPackage : Package)]
 [comment @main/]
 
-[generatePackageTopicTemplate(aPackage)/]
+[generateForPackage(aPackage)/]
+
+[for (subPackage : Package | aPackage.nestedPackage)]
+	[generateForPackage(subPackage)/]
+[/for]
+
+
+[/template]
+
+[template public generateForPackage(aPackage : Package)]
+
+	[generatePackageTopicTemplate(aPackage)/]
 [generatePackageTopicGenerated(aPackage)/]
 	[for (aClass : Class | aPackage.eContents(Class)->select(visibility = uml::VisibilityKind::public))]
 		[generateClassTopicTemplate(aClass)/]
@@ -48,11 +59,13 @@
 
 [generateMaps(aPackage)/]
 
-
-
 [/template]
 
+
+
 [template public generateContentBookMap(aPackage : Package)]
+
+
 [file ('contents/'+aPackage.name.toLower()+'classes.ditamap', false, 'UTF-8')]
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd">
@@ -64,8 +77,12 @@
 	</chapter>
 
 </bookmap>
+
+
 	
 [/file]
+
+
 
 [file ('contents/'+aPackage.name+'Classes.dita', false, 'UTF-8')]
 <?xml version="1.0" encoding="UTF-8"?>
@@ -78,7 +95,7 @@
 		[for (aComment : Comment | aPackage.ownedComment)]
 			<p>[ escapeXml(aComment._body).replaceAll('\\n', '</p><p>') /]</p>
 		[/for]
-
+[/if]
 [if (not aPackage.eAnnotations->select(source='uml2.diagrams')->isEmpty())]
 	[for (ea  : EAnnotation | aPackage.eAnnotations->select(source='uml2.diagrams'))]	
 		[for (eo : EObject | ea.contents)]
@@ -90,8 +107,10 @@
 			[/if]		
 		[/for]		
 	[/for]
+[else]
+
 [/if]
-	[/if]
+ 
 	</body>
 </topic>
 [/file]
@@ -154,10 +173,6 @@
 		[for (eo : EObject | ea.contents)]
 			[if (eo.oclIsTypeOf(UMLDiagram))]
 				[let diagram : UMLDiagram = eo.oclAsType(UMLDiagram)]
-[for (child : Node | diagram.children)]
-
-[/for]
-
 
 				[/let]
 			[/if]		
@@ -243,6 +258,8 @@
 [/template]
 
 [template public generateDiagramTopicTemplate(aDiagram : UMLDiagram)]
+
+
 [file ('topics/t_'+aDiagram.name.replaceAll('\\W+','').replaceAll(':+','')+'Diagram.dita', false, 'UTF-8')]
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
