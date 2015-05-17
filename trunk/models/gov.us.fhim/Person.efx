@@ -9,8 +9,8 @@
       <references xmi:type="uml:Package" href="FHIM.emx#420A62FD03B6?FHIM?"/>
     </eAnnotations>
     <eAnnotations xmi:id="_MMqqEEDFEeO2aaQpQxRerg" source="uml2.diagrams" references="_420A62FD03B6418A401B00BC">
-      <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_420A62FD03B6418A401B00BC" type="Class" name="Person" description="The properties that humans and animals (may) have in common are modeled in an abstract class called &quot;Biological Entity.&quot; This class would never be instantiated on its own, but rather Person or NonPersonLivingSubject would be instantiated, and each would have the common properties of birthdate, age, etc.  Therefore, when mapping to the FHIM, one would create an entry for Person.dateOfBirth, not BiologicalEntity.dateOfBirth. In object-oriented software, subtypes (also known as subclasses), automatically access the properties of their supertypes (aka superclasses) directly. So in Java, a person's date of birth would be represented as Person.dateOfBirth. Conversely, a superclass can be &quot;downcasted&quot; to a subclass if the writer of software doesn't know in advance which subtype will be acted upon at runtime. This is evident in the Patient hierarchy, where a lab test refers to a Patient, and the patient might be either a person or an animal. Notice that both the Person and the NonPersonLivingSubject are accessed from HumanPatient and AnimalPatient by an association with the end-name of &quot;subject&quot;. Thus, the person or animal can be accessed by Patient.subject. However, information specific to one or the other can only be retrieved if the proper one is instantiated. For example, patient.subject.maritalStatus will fail if the subject is an animal; similarly patient.subject.species will fail if the subject is a person.&#xD;&#xA;&#xD;&#xA;Some properties, such as BiologicalEntity.age may be calculated based on other fields. These properties technically do not need to be in the model, as they can be calculated on the fly, however, the logical concept of age is often needed. Therefore, these properties are modeled, but marked as &quot;derived&quot;, which is indicated in UML by a slash character in front of the property name. This is particularly evident in the birth certificate package, where much of the information about the newborn's parents could be calculated from their Person records. This technique is not used often in other parts of the FHIM.&#xD;&#xA;&#xD;&#xA;The ContactParty class is used for both persons to contact under given situations and for relatives. The circumstances under which a person is acting as a point of contact for the patient is identified in the contactCategory property. The relationship between the contact person and the patient (if any) is identified in the relationshipCategory property. This class was previously modeled as two separate classes, but the overlaps between the two were so great that they were combined. Note that this class is even used to identify a person who holds power of attorney for a person.&#xD;&#xA;&#xD;&#xA;Information about a Person’s role as a Student is often needed, especially for children, as schools often maintain immunization records for their students, and may provide vaccinations.  The purpose of the Student class is to identify Student information about a Person at particular points in time; it is not intended that a Person’s entire academic experience be constructed by aggregation of individual Student records.  Other constructs to do this are modeled in the Provider package, where academic history is needed for credentialing purposes.&#xD;&#xA;&#xD;&#xA;Similarly, information concerning a Person’s employment is modeled in this package for occupational health purposes, and should not be relied upon to provide a complete picture of a person’s employment history.  The package also contains concepts related to an observation of the Person’s occupational history, which is associated with HumanPatient, as such an observation is only important when dealing with persons who are patients.&#xD;&#xA;&#xD;&#xA;It is important to note that the Patient Role class defines concepts related to an entity (a Person or an Animal) as they are acting in the role of a Patient.  One subtlety easily overlooked is that a Person will have multiple Patient role instances, as determined by the Healthcare Provider.  One way to think of it is that the Patient role represents a medical record as assigned by the healthcare provider.  One Person may be patient A at Dr. Smith’s office, and patient B and Dr. Jones’ office.  Hospitals often assign separate patient IDs for each admission, so the same person at the same hospital may have multiple Patient “records”.  This is why the Patient class has an association with the HealthcareProvider class, which, in HL7-speak, “scopes” the Patient instance.&#xD;&#xA;  &#xD;&#xA;There is a subtle difference between a Patient Role and the associated HealthRecord for the Patient, as the HealthRecord is a controlled set of records about the Patient.  The HealthRecord represents that information which may be the subject of Privacy-related or Consent-related Directives initiated or authorized by the Patient.">
-        <children xmi:type="umlnotation:UMLShape" xmi:id="_OCRlEBAzEd-2E9qx-lgHBg" element="_oYIbwO_4Ed6OG-vjYTopTQ" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8519679" lineColor="3342489" showStereotype="Text">
+      <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_420A62FD03B6418A401B00BC" type="Class" name="Person" description="The properties that humans and animals (may) have in common are modeled in an abstract class called &quot;Biological Entity.&quot; This class would never be instantiated on its own, but rather Person or Animal would be instantiated, and each would have the common properties of birthdate, age, etc.  Therefore, when mapping person information to the FHIM, one would create an entry for Person.dateOfBirth, not BiologicalEntity.dateOfBirth. In object-oriented software, subtypes (also known as subclasses), automatically access the properties of their supertypes (aka superclasses) directly. So in Java, a person's date of birth would be represented as Person.dateOfBirth. Conversely, a superclass can be &quot;downcasted&quot; to a subclass if the writer of software doesn't know in advance which subtype will be acted upon at runtime. This is evident in the Patient hierarchy, where a lab test refers to a Patient, and the patient might be either a person or an animal. Notice that both the Person and the Amimal are accessed from HumanPatient and AnimalPatient by an association with the end-name of &quot;subject&quot;. Thus, the person or animal can be accessed by Patient.subject. However, information specific to one or the other can only be retrieved if the proper one is instantiated. For example, patient.subject.maritalStatus will fail if the subject is an animal; similarly patient.subject.organismTaxon will fail if the subject is a person.&#xD;&#xA;&#xD;&#xA;Some properties, such as BiologicalEntity.age may be calculated based on other fields. These properties technically do not need to be in the model, as they can be calculated on the fly, however, the logical concept of age is often needed. Therefore, these properties are modeled, but marked as &quot;derived&quot;, which is indicated in UML by a slash character in front of the property name. This is particularly evident in the birth certificate package, where much of the information about the newborn's parents could be calculated from their Person records. This technique is not used often in other parts of the FHIM.&#xD;&#xA;&#xD;&#xA;The ContactParty class is used for both persons to contact under given situations. The circumstances under which a person is acting as a point of contact for the patient is identified in the contactCategory property.&#xD;&#xA;A separate class, PersonalRelationship, is used to indicate how two persons are related to each other.  Because a contact parties are often relatives, the same two Person records may have relationships via ContactParty and PersonalRelationship.&#xD;&#xA;&#xD;&#xA;Information about a Person’s role as a Student is often needed, especially for children, as schools often maintain immunization records for their students, and may provide vaccinations.  The purpose of the Student class is to identify Student information about a Person at particular points in time; it is not intended that a Person’s entire academic experience be constructed by aggregation of individual Student records.  Other constructs to do this are modeled in the Provider package, where academic history is needed for credentialing purposes.&#xD;&#xA;&#xD;&#xA;Similarly, information concerning a Person’s employment is modeled in this package for occupational health purposes, and should not be relied upon to provide a complete picture of a person’s employment history.&#xD;&#xA;&#xD;&#xA;It is important to note that the Patient Role class defines concepts related to an entity (a Person or an Animal) as they are acting in the role of a Patient.  One subtlety easily overlooked is that a Person will have multiple Patient role instances, as determined by the Healthcare Provider.  One way to think of it is that the Patient role represents a medical record as assigned by the healthcare provider.  One Person may be patient A at Dr. Smith’s office, and patient Z at Dr. Jones’ office.  Hospitals often assign separate patient IDs for each admission, so the same person at the same hospital may have multiple Patient “records”.  This is why the Patient class has an association with the HealthcareProvider class, which, in HL7-speak, “scopes” the Patient instance.&#xD;&#xA;  &#xD;&#xA;There is a subtle difference between a Patient Role and the associated HealthRecord for the Patient, as the HealthRecord is a controlled set of records about the Patient.  The HealthRecord represents that information which may be the subject of Privacy-related or Consent-related Directives initiated or authorized by the Patient.">
+        <children xmi:type="umlnotation:UMLShape" xmi:id="_OCRlEBAzEd-2E9qx-lgHBg" element="_oYIbwO_4Ed6OG-vjYTopTQ" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8519679" lineColor="3342489" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_OCRlExAzEd-2E9qx-lgHBg" type="ImageCompartment">
             <layoutConstraint xmi:type="notation:Size" xmi:id="_OCRlFBAzEd-2E9qx-lgHBg" width="1320" height="1320"/>
           </children>
@@ -23,7 +23,7 @@
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_OCRlHhAzEd-2E9qx-lgHBg" visible="false" type="StructureCompartment"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OCRlEhAzEd-2E9qx-lgHBg" x="10144" y="11095"/>
         </children>
-        <children xmi:type="umlnotation:UMLShape" xmi:id="_OCRlIBAzEd-2E9qx-lgHBg" element="_KBfhMOEVEd6EKMSYA1gKjA" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8519553" lineColor="3342489" showStereotype="Text">
+        <children xmi:type="umlnotation:UMLShape" xmi:id="_OCRlIBAzEd-2E9qx-lgHBg" element="_KBfhMOEVEd6EKMSYA1gKjA" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8519553" lineColor="3342489" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_OCRlIxAzEd-2E9qx-lgHBg" type="ImageCompartment">
             <layoutConstraint xmi:type="notation:Size" xmi:id="_OCRlJBAzEd-2E9qx-lgHBg" width="1320" height="1320"/>
           </children>
@@ -36,7 +36,7 @@
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_OCRlLhAzEd-2E9qx-lgHBg" visible="false" type="StructureCompartment"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OCRlIhAzEd-2E9qx-lgHBg" x="23775" y="4755"/>
         </children>
-        <children xmi:type="umlnotation:UMLShape" xmi:id="_OCRlQBAzEd-2E9qx-lgHBg" element="_MF0JYOEVEd6EKMSYA1gKjA" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8519553" lineColor="3342489" showStereotype="Text">
+        <children xmi:type="umlnotation:UMLShape" xmi:id="_OCRlQBAzEd-2E9qx-lgHBg" element="_MF0JYOEVEd6EKMSYA1gKjA" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8519553" lineColor="3342489" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_OCRlQxAzEd-2E9qx-lgHBg" type="ImageCompartment">
             <layoutConstraint xmi:type="notation:Size" xmi:id="_OCRlRBAzEd-2E9qx-lgHBg" width="1320" height="1320"/>
           </children>
@@ -49,7 +49,7 @@
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_OCavAhAzEd-2E9qx-lgHBg" visible="false" type="StructureCompartment"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OCRlQhAzEd-2E9qx-lgHBg" x="24726" y="1268"/>
         </children>
-        <children xmi:type="umlnotation:UMLShape" xmi:id="_OCavJBAzEd-2E9qx-lgHBg" element="_l0XegO_4Ed6OG-vjYTopTQ" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8519679" lineColor="3342489" showStereotype="Text">
+        <children xmi:type="umlnotation:UMLShape" xmi:id="_OCavJBAzEd-2E9qx-lgHBg" element="_l0XegO_4Ed6OG-vjYTopTQ" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8519679" lineColor="3342489" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_OCavJxAzEd-2E9qx-lgHBg" type="ImageCompartment">
             <layoutConstraint xmi:type="notation:Size" xmi:id="_OCavKBAzEd-2E9qx-lgHBg" width="1320" height="1320"/>
           </children>
@@ -62,7 +62,7 @@
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_OCavMhAzEd-2E9qx-lgHBg" visible="false" type="StructureCompartment"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OCavJhAzEd-2E9qx-lgHBg" x="3804" y="11095"/>
         </children>
-        <children xmi:type="umlnotation:UMLShape" xmi:id="_OCavNBAzEd-2E9qx-lgHBg" element="_420A62FD03B6418A95BD037E" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="16744833" lineColor="3342489" showStereotype="Text">
+        <children xmi:type="umlnotation:UMLShape" xmi:id="_OCavNBAzEd-2E9qx-lgHBg" element="_420A62FD03B6418A95BD037E" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="16744833" lineColor="3342489" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_OCavNxAzEd-2E9qx-lgHBg" type="ImageCompartment">
             <layoutConstraint xmi:type="notation:Size" xmi:id="_OCavOBAzEd-2E9qx-lgHBg" width="1320" height="1320"/>
           </children>
@@ -75,7 +75,7 @@
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_OCavQhAzEd-2E9qx-lgHBg" visible="false" type="StructureCompartment"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OCavNhAzEd-2E9qx-lgHBg" x="40259" y="16801"/>
         </children>
-        <children xmi:type="umlnotation:UMLShape" xmi:id="_OCkgCRAzEd-2E9qx-lgHBg" element="_N8vOgOaWEd6YGfoXAoNmMA" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8519553" lineColor="3342489" showStereotype="Text">
+        <children xmi:type="umlnotation:UMLShape" xmi:id="_OCkgCRAzEd-2E9qx-lgHBg" element="_N8vOgOaWEd6YGfoXAoNmMA" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8519553" lineColor="3342489" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_OCkgDBAzEd-2E9qx-lgHBg" type="ImageCompartment">
             <layoutConstraint xmi:type="notation:Size" xmi:id="_OCkgDRAzEd-2E9qx-lgHBg" width="1320" height="1320"/>
           </children>
@@ -88,7 +88,7 @@
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_OCkgFxAzEd-2E9qx-lgHBg" visible="false" type="StructureCompartment"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OCkgCxAzEd-2E9qx-lgHBg" x="17752" y="12046"/>
         </children>
-        <children xmi:type="umlnotation:UMLShape" xmi:id="_OCkgGRAzEd-2E9qx-lgHBg" element="_420A62FD03B6418A4E500034" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8519679" lineColor="3342489" showStereotype="Text">
+        <children xmi:type="umlnotation:UMLShape" xmi:id="_OCkgGRAzEd-2E9qx-lgHBg" element="_420A62FD03B6418A4E500034" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8519679" lineColor="3342489" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_OCkgHBAzEd-2E9qx-lgHBg" type="ImageCompartment">
             <layoutConstraint xmi:type="notation:Size" xmi:id="_OCkgHRAzEd-2E9qx-lgHBg" width="1320" height="1320"/>
           </children>
@@ -101,7 +101,7 @@
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_OCkgJxAzEd-2E9qx-lgHBg" visible="false" type="StructureCompartment"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OCkgGxAzEd-2E9qx-lgHBg" x="6023" y="5706"/>
         </children>
-        <children xmi:type="umlnotation:UMLShape" xmi:id="_OCkgORAzEd-2E9qx-lgHBg" element="_420A62FD03B6425125E800E0" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8519553" lineColor="3342489" showStereotype="Text">
+        <children xmi:type="umlnotation:UMLShape" xmi:id="_OCkgORAzEd-2E9qx-lgHBg" element="_420A62FD03B6425125E800E0" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8519553" lineColor="3342489" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_OCtp8BAzEd-2E9qx-lgHBg" type="ImageCompartment">
             <layoutConstraint xmi:type="notation:Size" xmi:id="_OCtp8RAzEd-2E9qx-lgHBg" width="1320" height="1320"/>
           </children>
@@ -114,7 +114,7 @@
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_OCtp-xAzEd-2E9qx-lgHBg" visible="false" type="StructureCompartment"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OCkgOxAzEd-2E9qx-lgHBg" x="25677" y="12046"/>
         </children>
-        <children xmi:type="umlnotation:UMLShape" xmi:id="_of9vYBA0Ed-2E9qx-lgHBg" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8519553" lineColor="3342489" showParent="Name" showStereotype="Text">
+        <children xmi:type="umlnotation:UMLShape" xmi:id="_of9vYBA0Ed-2E9qx-lgHBg" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8519553" lineColor="3342489" showParent="Name" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_of9vYxA0Ed-2E9qx-lgHBg" type="ImageCompartment">
             <layoutConstraint xmi:type="notation:Size" xmi:id="_of9vZBA0Ed-2E9qx-lgHBg" width="1320" height="1320"/>
           </children>
@@ -126,9 +126,9 @@
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_of9vbBA0Ed-2E9qx-lgHBg" visible="false" type="SignalCompartment"/>
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_of9vbhA0Ed-2E9qx-lgHBg" visible="false" type="StructureCompartment"/>
           <element xmi:type="uml:Class" href="Provider.efx#_420A62FD03B6418AA15801A9?FHIM/Provider/Organization?"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_of9vYhA0Ed-2E9qx-lgHBg" x="5706" y="33285"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_of9vYhA0Ed-2E9qx-lgHBg" x="6023" y="32968"/>
         </children>
-        <children xmi:type="umlnotation:UMLShape" xmi:id="_tdIQoBsvEd--ZY2-pbJ-Pw" element="_mHCz4BsvEd--ZY2-pbJ-Pw" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8519553" lineColor="3342489" showStereotype="Text">
+        <children xmi:type="umlnotation:UMLShape" xmi:id="_tdIQoBsvEd--ZY2-pbJ-Pw" element="_mHCz4BsvEd--ZY2-pbJ-Pw" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8519553" lineColor="3342489" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_tdIQoxsvEd--ZY2-pbJ-Pw" type="ImageCompartment">
             <layoutConstraint xmi:type="notation:Size" xmi:id="_tdIQpBsvEd--ZY2-pbJ-Pw" width="1320" height="1320"/>
           </children>
@@ -141,7 +141,7 @@
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_tdSBphsvEd--ZY2-pbJ-Pw" visible="false" type="StructureCompartment"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tdIQohsvEd--ZY2-pbJ-Pw" x="46599" y="9510"/>
         </children>
-        <children xmi:type="umlnotation:UMLShape" xmi:id="_aoxLEGtbEeCaten32mlCMw" element="_am_CYGtbEeCaten32mlCMw" fontName="Arial" fontHeight="10" showListVisibility="None" fillColor="8487423" lineColor="3342489" showStereotype="Text">
+        <children xmi:type="umlnotation:UMLShape" xmi:id="_aoxLEGtbEeCaten32mlCMw" element="_am_CYGtbEeCaten32mlCMw" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8487423" lineColor="3342489" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_aoxLE2tbEeCaten32mlCMw" type="ImageCompartment">
             <layoutConstraint xmi:type="notation:Size" xmi:id="_aoxLFGtbEeCaten32mlCMw" width="1320" height="1320"/>
           </children>
@@ -154,7 +154,7 @@
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_aoxLHmtbEeCaten32mlCMw" visible="false" type="StructureCompartment"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aoxLEmtbEeCaten32mlCMw" x="43112" y="25994"/>
         </children>
-        <children xmi:type="umlnotation:UMLShape" xmi:id="_W3fOUIx3EeCBU92aoqPk5w" fontName="Arial" fontHeight="10" showListVisibility="None" fillColor="16777088" lineColor="3342489" showParent="Name" showStereotype="Text">
+        <children xmi:type="umlnotation:UMLShape" xmi:id="_W3fOUIx3EeCBU92aoqPk5w" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="16777088" lineColor="3342489" showParent="Name" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_W3gccIx3EeCBU92aoqPk5w" type="ImageCompartment">
             <layoutConstraint xmi:type="notation:Size" xmi:id="_W3gccYx3EeCBU92aoqPk5w" width="1320" height="1320"/>
           </children>
@@ -166,9 +166,9 @@
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_W3hqlIx3EeCBU92aoqPk5w" visible="false" type="SignalCompartment"/>
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_W3iRoIx3EeCBU92aoqPk5w" visible="false" type="StructureCompartment"/>
           <element xmi:type="uml:Class" href="Common.efx#_W2UwsIx3EeCBU92aoqPk5w?FHIM/Common/PrimaryCareProvider?"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_W3fOUox3EeCBU92aoqPk5w" x="317" y="951"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_W3fOUox3EeCBU92aoqPk5w" x="-634" y="1268"/>
         </children>
-        <children xmi:type="umlnotation:UMLShape" xmi:id="_sdz-0I0tEeCD3bb30FJGhQ" element="_sdrb8I0tEeCD3bb30FJGhQ" fontName="Arial" fontHeight="10" showListVisibility="None" fillColor="8487423" lineColor="3342489" showStereotype="Text">
+        <children xmi:type="umlnotation:UMLShape" xmi:id="_sdz-0I0tEeCD3bb30FJGhQ" element="_sdrb8I0tEeCD3bb30FJGhQ" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8487423" lineColor="3342489" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_sd1M8I0tEeCD3bb30FJGhQ" type="ImageCompartment">
             <layoutConstraint xmi:type="notation:Size" xmi:id="_sd1M8Y0tEeCD3bb30FJGhQ" width="1320" height="1320"/>
           </children>
@@ -181,7 +181,7 @@
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_sd3CII0tEeCD3bb30FJGhQ" visible="false" type="StructureCompartment"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sdz-0o0tEeCD3bb30FJGhQ" x="41527" y="20288"/>
         </children>
-        <children xmi:type="umlnotation:UMLShape" xmi:id="_x4dN0JNoEeCyufOLCDZkFA" element="_420A62FD03B6456362E4028D" fontName="Arial" fontHeight="10" showListVisibility="None" fillColor="8519679" lineColor="3342489" showStereotype="Text">
+        <children xmi:type="umlnotation:UMLShape" xmi:id="_x4dN0JNoEeCyufOLCDZkFA" element="_420A62FD03B6456362E4028D" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8519679" lineColor="3342489" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_x4dN05NoEeCyufOLCDZkFA" type="ImageCompartment">
             <layoutConstraint xmi:type="notation:Size" xmi:id="_x4dN1JNoEeCyufOLCDZkFA" width="1320" height="1320"/>
           </children>
@@ -192,9 +192,9 @@
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_x4dN2pNoEeCyufOLCDZkFA" visible="false" type="OperationCompartment"/>
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_x4dN3JNoEeCyufOLCDZkFA" visible="false" type="SignalCompartment"/>
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_x4dN3pNoEeCyufOLCDZkFA" visible="false" type="StructureCompartment"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_x4dN0pNoEeCyufOLCDZkFA" x="32968" y="28530"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_x4dN0pNoEeCyufOLCDZkFA" x="33285" y="27896"/>
         </children>
-        <children xmi:type="umlnotation:UMLShape" xmi:id="_91ckQJNoEeCyufOLCDZkFA" element="_rcGNABsvEd--ZY2-pbJ-Pw" fontName="Arial" fontHeight="10" showListVisibility="None" fillColor="8519679" lineColor="3342489" showStereotype="Text">
+        <children xmi:type="umlnotation:UMLShape" xmi:id="_91ckQJNoEeCyufOLCDZkFA" element="_rcGNABsvEd--ZY2-pbJ-Pw" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8519679" lineColor="3342489" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_91ckQ5NoEeCyufOLCDZkFA" type="ImageCompartment">
             <layoutConstraint xmi:type="notation:Size" xmi:id="_91ckRJNoEeCyufOLCDZkFA" width="1320" height="1320"/>
           </children>
@@ -207,7 +207,7 @@
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_91ckTpNoEeCyufOLCDZkFA" visible="false" type="StructureCompartment"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_91ckQpNoEeCyufOLCDZkFA" x="38357" y="9510"/>
         </children>
-        <children xmi:type="umlnotation:UMLShape" xmi:id="_e1SpcJNpEeCyufOLCDZkFA" element="_420A62FD03B6418A501902C7" fontName="Arial" fontHeight="10" showListVisibility="None" fillColor="8519679" lineColor="3342489" showStereotype="Text">
+        <children xmi:type="umlnotation:UMLShape" xmi:id="_e1SpcJNpEeCyufOLCDZkFA" element="_420A62FD03B6418A501902C7" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8519679" lineColor="3342489" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_e1Spc5NpEeCyufOLCDZkFA" type="ImageCompartment">
             <layoutConstraint xmi:type="notation:Size" xmi:id="_e1SpdJNpEeCyufOLCDZkFA" width="1320" height="1320"/>
           </children>
@@ -218,9 +218,9 @@
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_e1SpepNpEeCyufOLCDZkFA" visible="false" type="OperationCompartment"/>
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_e1SpfJNpEeCyufOLCDZkFA" visible="false" type="SignalCompartment"/>
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_e1SpfpNpEeCyufOLCDZkFA" visible="false" type="StructureCompartment"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_e1SpcpNpEeCyufOLCDZkFA" x="14582" y="28847"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_e1SpcpNpEeCyufOLCDZkFA" x="14899" y="26945"/>
         </children>
-        <children xmi:type="umlnotation:UMLShape" xmi:id="_Y5i-kJXsEeCD7vwmJe8BlA" element="_420A62FD03B64248829E032E" fontName="Arial" fontHeight="10" showListVisibility="None" fillColor="8519679" lineColor="3342489" showStereotype="Text">
+        <children xmi:type="umlnotation:UMLShape" xmi:id="_Y5i-kJXsEeCD7vwmJe8BlA" element="_420A62FD03B64248829E032E" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8519679" lineColor="3342489" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_Y5i-k5XsEeCD7vwmJe8BlA" type="ImageCompartment">
             <layoutConstraint xmi:type="notation:Size" xmi:id="_Y5i-lJXsEeCD7vwmJe8BlA" width="1320" height="1320"/>
           </children>
@@ -231,7 +231,7 @@
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_Y5i-mpXsEeCD7vwmJe8BlA" visible="false" type="OperationCompartment"/>
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_Y5i-nJXsEeCD7vwmJe8BlA" visible="false" type="SignalCompartment"/>
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_Y5i-npXsEeCD7vwmJe8BlA" visible="false" type="StructureCompartment"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Y5i-kpXsEeCD7vwmJe8BlA" x="4121" y="18069"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Y5i-kpXsEeCD7vwmJe8BlA" x="4438" y="16484"/>
         </children>
         <children xmi:type="umlnotation:UMLShape" xmi:id="_FAOHUFjGEeG6Pp3Py7p1bw" element="_E_Oo0FjGEeG6Pp3Py7p1bw" fontName="Arial" fontHeight="10" showListVisibility="None" fillColor="13434879" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_FAWDIFjGEeG6Pp3Py7p1bw" type="ImageCompartment">
@@ -265,7 +265,7 @@
           <element xsi:nil="true"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_baZG81jJEeG6Pp3Py7p1bw" x="-8559" y="317"/>
         </children>
-        <children xmi:type="umlnotation:UMLShape" xmi:id="_rbKnYLZJEeGWl-7OlqBMDw" element="_rbFH0LZJEeGWl-7OlqBMDw" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8519679" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
+        <children xmi:type="umlnotation:UMLShape" xmi:id="_rbKnYLZJEeGWl-7OlqBMDw" element="_rbFH0LZJEeGWl-7OlqBMDw" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8519679" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_rbL1gLZJEeGWl-7OlqBMDw" type="ImageCompartment">
             <layoutConstraint xmi:type="notation:Size" xmi:id="_rbL1gbZJEeGWl-7OlqBMDw" width="1320" height="1320"/>
           </children>
@@ -276,9 +276,9 @@
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_rbNDobZJEeGWl-7OlqBMDw" visible="false" type="OperationCompartment"/>
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_rbNDorZJEeGWl-7OlqBMDw" visible="false" type="SignalCompartment"/>
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_rbNDo7ZJEeGWl-7OlqBMDw" visible="false" type="StructureCompartment"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rbKnYbZJEeGWl-7OlqBMDw" x="13948" y="34553"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rbKnYbZJEeGWl-7OlqBMDw" x="13948" y="33919"/>
         </children>
-        <children xmi:type="umlnotation:UMLShape" xmi:id="_S6X-wNK8EeGM_q-T8BDlPg" element="_vDN9UF-OEd-WjrW-OJ9BNQ" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8487423" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
+        <children xmi:type="umlnotation:UMLShape" xmi:id="_S6X-wNK8EeGM_q-T8BDlPg" element="_vDN9UF-OEd-WjrW-OJ9BNQ" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8487423" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_S6Yl0NK8EeGM_q-T8BDlPg" type="ImageCompartment">
             <layoutConstraint xmi:type="notation:Size" xmi:id="_S6Yl0dK8EeGM_q-T8BDlPg" width="1320" height="1320"/>
           </children>
@@ -289,9 +289,9 @@
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_S6Zz8dK8EeGM_q-T8BDlPg" visible="false" type="OperationCompartment"/>
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_S6Zz8tK8EeGM_q-T8BDlPg" visible="false" type="SignalCompartment"/>
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_S6abANK8EeGM_q-T8BDlPg" visible="false" type="StructureCompartment"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_S6X-wdK8EeGM_q-T8BDlPg" x="7291" y="1268"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_S6X-wdK8EeGM_q-T8BDlPg" x="6023" y="1268"/>
         </children>
-        <children xmi:type="umlnotation:UMLShape" xmi:id="_aBvUgNgWEeG3E4mt6RKX5Q" element="_aA2jsNgWEeG3E4mt6RKX5Q" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8519679" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
+        <children xmi:type="umlnotation:UMLShape" xmi:id="_aBvUgNgWEeG3E4mt6RKX5Q" element="_aA2jsNgWEeG3E4mt6RKX5Q" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8519679" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_aBzl8NgWEeG3E4mt6RKX5Q" type="ImageCompartment">
             <layoutConstraint xmi:type="notation:Size" xmi:id="_aBzl8dgWEeG3E4mt6RKX5Q" width="1320" height="1320"/>
           </children>
@@ -302,9 +302,9 @@
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_aB0NA9gWEeG3E4mt6RKX5Q" visible="false" type="OperationCompartment"/>
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_aB00ENgWEeG3E4mt6RKX5Q" visible="false" type="SignalCompartment"/>
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_aB00EdgWEeG3E4mt6RKX5Q" visible="false" type="StructureCompartment"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aBvUgdgWEeG3E4mt6RKX5Q" x="27896" y="27896"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aBvUgdgWEeG3E4mt6RKX5Q" x="26628" y="27896"/>
         </children>
-        <children xmi:type="umlnotation:UMLShape" xmi:id="_jPtf8NgWEeG3E4mt6RKX5Q" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8519553" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
+        <children xmi:type="umlnotation:UMLShape" xmi:id="_jPtf8NgWEeG3E4mt6RKX5Q" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8519553" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_jPuHANgWEeG3E4mt6RKX5Q" type="ImageCompartment">
             <layoutConstraint xmi:type="notation:Size" xmi:id="_jPuHAdgWEeG3E4mt6RKX5Q" width="1320" height="1320"/>
           </children>
@@ -316,9 +316,9 @@
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_jPv8MdgWEeG3E4mt6RKX5Q" visible="false" type="SignalCompartment"/>
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_jPv8MtgWEeG3E4mt6RKX5Q" visible="false" type="StructureCompartment"/>
           <element xmi:type="uml:Class" href="Provider.efx#_-PDq0BsxEd--ZY2-pbJ-Pw?FHIM/Provider/EducationalInstitution?"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jPtf8dgWEeG3E4mt6RKX5Q" x="27262" y="33602"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jPtf8dgWEeG3E4mt6RKX5Q" x="26628" y="33602"/>
         </children>
-        <children xmi:type="umlnotation:UMLShape" xmi:id="_QMoHsPkfEeGFnccz7SeroA" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8519679" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
+        <children xmi:type="umlnotation:UMLShape" xmi:id="_QMoHsPkfEeGFnccz7SeroA" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8519679" transparency="0" lineColor="3342489" lineWidth="1" showParent="Name" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_QMtnQPkfEeGFnccz7SeroA" type="ImageCompartment">
             <layoutConstraint xmi:type="notation:Size" xmi:id="_QMtnQfkfEeGFnccz7SeroA" width="1320" height="1320"/>
           </children>
@@ -330,9 +330,9 @@
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_QMu1YfkfEeGFnccz7SeroA" visible="false" type="SignalCompartment"/>
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_QMvccPkfEeGFnccz7SeroA" visible="false" type="StructureCompartment"/>
           <element xmi:type="uml:Class" href="Provider.efx#_aW26cBsbEd--ZY2-pbJ-Pw?FHIM/Provider/HealthcareProvider?"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QMoHsfkfEeGFnccz7SeroA" x="-7925" y="4121"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QMoHsfkfEeGFnccz7SeroA" x="-8242" y="4438"/>
         </children>
-        <children xmi:type="umlnotation:UMLShape" xmi:id="_-BBf8AQAEeKZsvne-rOhhA" element="_9_9I8AQAEeKZsvne-rOhhA" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8519679" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
+        <children xmi:type="umlnotation:UMLShape" xmi:id="_-BBf8AQAEeKZsvne-rOhhA" element="_9_9I8AQAEeKZsvne-rOhhA" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8519679" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_-BKC0AQAEeKZsvne-rOhhA" type="ImageCompartment">
             <layoutConstraint xmi:type="notation:Size" xmi:id="_-BKC0QQAEeKZsvne-rOhhA" width="1320" height="1320"/>
           </children>
@@ -343,9 +343,9 @@
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_-BMfEAQAEeKZsvne-rOhhA" visible="false" type="OperationCompartment"/>
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_-BNGIAQAEeKZsvne-rOhhA" visible="false" type="SignalCompartment"/>
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_-BNtMAQAEeKZsvne-rOhhA" visible="false" type="StructureCompartment"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-BBf8QQAEeKZsvne-rOhhA" x="6340" y="28847"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-BBf8QQAEeKZsvne-rOhhA" x="6974" y="23141"/>
         </children>
-        <children xmi:type="umlnotation:UMLShape" xmi:id="_NqRGIJ1WEeKGRqm0H7Eu1A" element="_Np3dgJ1WEeKGRqm0H7Eu1A" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8487423" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
+        <children xmi:type="umlnotation:UMLShape" xmi:id="_NqRGIJ1WEeKGRqm0H7Eu1A" element="_Np3dgJ1WEeKGRqm0H7Eu1A" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8487423" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_NqTiYJ1WEeKGRqm0H7Eu1A" type="ImageCompartment">
             <layoutConstraint xmi:type="notation:Size" xmi:id="_NqTiYZ1WEeKGRqm0H7Eu1A" width="1320" height="1320"/>
           </children>
@@ -358,7 +358,7 @@
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_NqV-oJ1WEeKGRqm0H7Eu1A" visible="false" type="StructureCompartment"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NqRGIZ1WEeKGRqm0H7Eu1A" x="42161" y="29798"/>
         </children>
-        <children xmi:type="umlnotation:UMLShape" xmi:id="_rO-iELmuEeKNk65TvHDTLQ" element="_7TcCINmTEeChWYqvVB0Hpw" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8487423" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
+        <children xmi:type="umlnotation:UMLShape" xmi:id="_rO-iELmuEeKNk65TvHDTLQ" element="_7TcCINmTEeChWYqvVB0Hpw" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8487423" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_rPBlYLmuEeKNk65TvHDTLQ" type="ImageCompartment">
             <layoutConstraint xmi:type="notation:Size" xmi:id="_rPBlYbmuEeKNk65TvHDTLQ" width="1320" height="1320"/>
           </children>
@@ -371,7 +371,7 @@
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_rPEBoLmuEeKNk65TvHDTLQ" visible="false" type="StructureCompartment"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rO-iEbmuEeKNk65TvHDTLQ" x="33919" y="6023"/>
         </children>
-        <children xmi:type="umlnotation:UMLShape" xmi:id="_11QlQEJbEeOM0Zvgf2xtag" element="_PhnrMEJbEeOM0Zvgf2xtag" fontName="Arial" fontHeight="10" showListStereotype="Text" showListVisibility="None" fillColor="8519679" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
+        <children xmi:type="umlnotation:UMLShape" xmi:id="_11QlQEJbEeOM0Zvgf2xtag" element="_PhnrMEJbEeOM0Zvgf2xtag" fontName="Arial" fontHeight="10" showListStereotype="None" showListVisibility="None" showListSignature="true" fillColor="8519679" transparency="0" lineColor="3342489" lineWidth="1" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_11TokEJbEeOM0Zvgf2xtag" type="ImageCompartment">
             <layoutConstraint xmi:type="notation:Size" xmi:id="_11TokUJbEeOM0Zvgf2xtag" width="1320" height="1320"/>
           </children>
@@ -382,7 +382,7 @@
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_11U2sUJbEeOM0Zvgf2xtag" visible="false" type="OperationCompartment"/>
           <children xmi:type="notation:SemanticListCompartment" xmi:id="_11VdwEJbEeOM0Zvgf2xtag" visible="false" type="SignalCompartment"/>
           <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_11WE0EJbEeOM0Zvgf2xtag" visible="false" type="StructureCompartment"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_11QlQUJbEeOM0Zvgf2xtag" x="5389" y="22824"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_11QlQUJbEeOM0Zvgf2xtag" x="4438" y="19654"/>
         </children>
         <children xmi:type="umlnotation:UMLShape" xmi:id="_EaSrcFO0EeOPsNTFFieZWw" element="_EaFQEFO0EeOPsNTFFieZWw" fontName="Segoe UI" showListStereotype="Text" showListVisibility="None" fillColor="16763850" transparency="0" lineColor="16744576" lineWidth="1" showStereotype="Text">
           <eAnnotations xmi:id="_EaVuwFO0EeOPsNTFFieZWw" source="com.ibm.xtools.uml.ui.diagram.internal.styles">
@@ -890,7 +890,7 @@
             <children xmi:type="notation:ListCompartment" xmi:id="_Y5vL1ZXsEeCD7vwmJe8BlA" type="FromConstraintCompartment"/>
             <layoutConstraint xmi:type="notation:Location" xmi:id="_Y5vL1JXsEeCD7vwmJe8BlA" y="1058"/>
           </children>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Y5pFMpXsEeCD7vwmJe8BlA" points="[-92, -27, 17853, -484]$[-14242, -27, 3703, -484]"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Y5pFMpXsEeCD7vwmJe8BlA" points="[-63, -662, 18105, -143]$[-15034, -662, 3134, -143]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_CTlHEC0nEeOIi7L4ZmH8UQ" id="(0.009904153354632588,0.49075572974354603)"/>
         </edges>
         <edges xmi:type="umlnotation:UMLConnector" xmi:id="_Y5vL15XsEeCD7vwmJe8BlA" element="_mCNIgGtbEeCaten32mlCMw" source="_aoxLEGtbEeCaten32mlCMw" target="_OCkgORAzEd-2E9qx-lgHBg" fontName="Arial" fontHeight="10" lineColor="3342489" lineWidth="1" showStereotype="Text">
@@ -1232,7 +1232,7 @@
             <children xmi:type="notation:ListCompartment" xmi:id="_p5JMwAMxEeKTM4I4vlc5xg" type="FromConstraintCompartment"/>
             <layoutConstraint xmi:type="notation:Location" xmi:id="_p5IltAMxEeKTM4I4vlc5xg" y="1058"/>
           </children>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_p5B4AQMxEeKTM4I4vlc5xg" points="[3703, 495, -18805, 1032]$[17853, 495, -4655, 1032]"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_p5B4AQMxEeKTM4I4vlc5xg" points="[3134, 810, -18197, 817]$[18105, 810, -3226, 817]"/>
         </edges>
         <edges xmi:type="umlnotation:UMLConnector" xmi:id="_cGmg8J1jEeKGRqm0H7Eu1A" element="_cGP7oJ1jEeKGRqm0H7Eu1A" source="_OCkgORAzEd-2E9qx-lgHBg" target="_NqRGIJ1WEeKGRqm0H7Eu1A" fontName="Arial" fontHeight="10" lineColor="3342489" lineWidth="1" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_cGnIAJ1jEeKGRqm0H7Eu1A" visible="false" type="NameLabel">
@@ -1402,7 +1402,7 @@
             <children xmi:type="notation:ListCompartment" xmi:id="_11cygkJbEeOM0Zvgf2xtag" type="FromConstraintCompartment"/>
             <layoutConstraint xmi:type="notation:Location" xmi:id="_11cygUJbEeOM0Zvgf2xtag" y="1058"/>
           </children>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_11X6AUJbEeOM0Zvgf2xtag" points="[2685, 607, -19574, 5477]$[17604, 607, -4655, 5477]"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_11X6AUJbEeOM0Zvgf2xtag" points="[3134, 602, -18197, 3357]$[18105, 602, -3226, 3357]"/>
         </edges>
         <edges xmi:type="umlnotation:UMLConnector" xmi:id="_73LrcEJbEeOM0Zvgf2xtag" element="_727z0EJbEeOM0Zvgf2xtag" source="_OCkgORAzEd-2E9qx-lgHBg" target="_11QlQEJbEeOM0Zvgf2xtag" fontName="Arial" fontHeight="10" routing="Rectilinear" lineColor="3342489" lineWidth="1" showStereotype="Text">
           <children xmi:type="notation:DecorationNode" xmi:id="_73MSgEJbEeOM0Zvgf2xtag" type="NameLabel">
@@ -1442,8 +1442,48 @@
             <children xmi:type="notation:ListCompartment" xmi:id="_73PV0EJbEeOM0Zvgf2xtag" type="FromConstraintCompartment"/>
             <layoutConstraint xmi:type="notation:Location" xmi:id="_73Oux0JbEeOM0Zvgf2xtag" y="1058"/>
           </children>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_73LrcUJbEeOM0Zvgf2xtag" points="[-4655, 4287, 14926, -553]$[-19574, 4287, 7, -553]"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_73LrcUJbEeOM0Zvgf2xtag" points="[-3226, 2405, 14980, -531]$[-18197, 2405, 9, -531]"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="__0XSsEJbEeOM0Zvgf2xtag" id="(0.9987151248164464,0.594059405940594)"/>
+        </edges>
+        <edges xmi:type="umlnotation:UMLConnector" xmi:id="_tIhR4Pm_EeSJ3abZ9RQzyQ" element="_tIPlEPm_EeSJ3abZ9RQzyQ" source="_OCkgGRAzEd-2E9qx-lgHBg" target="_QMoHsPkfEeGFnccz7SeroA" fontName="Arial" fontHeight="10" lineColor="3342489" lineWidth="1" showStereotype="Text">
+          <children xmi:type="notation:DecorationNode" xmi:id="_tIkVMPm_EeSJ3abZ9RQzyQ" visible="false" type="NameLabel">
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_tIk8QPm_EeSJ3abZ9RQzyQ" type="Stereotype"/>
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_tIk8Qfm_EeSJ3abZ9RQzyQ" type="Name"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tIkVMfm_EeSJ3abZ9RQzyQ" y="-186"/>
+          </children>
+          <children xmi:type="notation:DecorationNode" xmi:id="_tImKYPm_EeSJ3abZ9RQzyQ" type="ToMultiplicityLabel" element="_tIUdkPm_EeSJ3abZ9RQzyQ">
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_tImxcPm_EeSJ3abZ9RQzyQ" type="ToMultiplicity"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_tImKYfm_EeSJ3abZ9RQzyQ" y="396"/>
+          </children>
+          <children xmi:type="notation:DecorationNode" xmi:id="_tImxcfm_EeSJ3abZ9RQzyQ" type="ToRoleLabel" element="_tIUdkPm_EeSJ3abZ9RQzyQ">
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_tImxc_m_EeSJ3abZ9RQzyQ" type="ToRole"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_tImxcvm_EeSJ3abZ9RQzyQ" y="-397"/>
+          </children>
+          <children xmi:type="notation:DecorationNode" xmi:id="_tImxdPm_EeSJ3abZ9RQzyQ" type="FromMultiplicityLabel" element="_tISoYPm_EeSJ3abZ9RQzyQ">
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_tInYgPm_EeSJ3abZ9RQzyQ" type="FromMultiplicity"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_tImxdfm_EeSJ3abZ9RQzyQ" y="396"/>
+          </children>
+          <children xmi:type="notation:DecorationNode" xmi:id="_tInYgfm_EeSJ3abZ9RQzyQ" type="FromRoleLabel" element="_tISoYPm_EeSJ3abZ9RQzyQ">
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_tIn_kPm_EeSJ3abZ9RQzyQ" type="FromRole"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_tInYgvm_EeSJ3abZ9RQzyQ" y="-397"/>
+          </children>
+          <children xmi:type="notation:DecorationNode" xmi:id="_tIn_kfm_EeSJ3abZ9RQzyQ" type="ToQualifierLabel" element="_tIUdkPm_EeSJ3abZ9RQzyQ">
+            <children xmi:type="notation:SemanticListCompartment" xmi:id="_tIn_k_m_EeSJ3abZ9RQzyQ" type="QualifierCompartment"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_tIn_kvm_EeSJ3abZ9RQzyQ" y="-186"/>
+          </children>
+          <children xmi:type="notation:DecorationNode" xmi:id="_tIn_lPm_EeSJ3abZ9RQzyQ" type="FromQualifierLabel" element="_tISoYPm_EeSJ3abZ9RQzyQ">
+            <children xmi:type="notation:SemanticListCompartment" xmi:id="_tIomoPm_EeSJ3abZ9RQzyQ" type="QualifierCompartment"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_tIn_lfm_EeSJ3abZ9RQzyQ" y="-186"/>
+          </children>
+          <children xmi:type="notation:DecorationNode" xmi:id="_tIomofm_EeSJ3abZ9RQzyQ" type="ToConstraintLabel" element="_tIUdkPm_EeSJ3abZ9RQzyQ">
+            <children xmi:type="notation:ListCompartment" xmi:id="_tIpNsPm_EeSJ3abZ9RQzyQ" type="ToConstraintCompartment"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_tIomovm_EeSJ3abZ9RQzyQ" y="1058"/>
+          </children>
+          <children xmi:type="notation:DecorationNode" xmi:id="_tIpNsfm_EeSJ3abZ9RQzyQ" type="FromConstraintLabel" element="_tISoYPm_EeSJ3abZ9RQzyQ">
+            <children xmi:type="notation:ListCompartment" xmi:id="_tIpNs_m_EeSJ3abZ9RQzyQ" type="FromConstraintCompartment"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_tIpNsvm_EeSJ3abZ9RQzyQ" y="1058"/>
+          </children>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_tIhR4fm_EeSJ3abZ9RQzyQ" points="[-2446, 1229, 10020, 1139]$[-5003, 2514, 7463, 2424]$[-8538, 1365, 3928, 1275]"/>
         </edges>
       </contents>
     </eAnnotations>
@@ -2387,7 +2427,7 @@ The FHIM uses simple or “primitive” datatypes wherever possible, but does de
           <ownedComment xmi:id="_sfyDMH8sEeGaaPUCLjdvag" annotatedElement="_bIjvcH29EeGy1_tR17zNdw">
             <body>[US Standard Certificate Of Birth Field 49].  The weight of the infant at birth.  Can be expressed in either pounds/ounces or grams.  The use of grams is preferred.</body>
           </ownedComment>
-          <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B641886F630221?FHIM/Datatypes/PhysicalQuantity?"/>
+          <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B641886F630221?FHIM/Datatypes/Quantity?"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_kkmOEH2nEeGy1_tR17zNdw" name="certifierName" visibility="public">
           <ownedComment xmi:id="_wHzzwH3BEeGy1_tR17zNdw" annotatedElement="_kkmOEH2nEeGy1_tR17zNdw">
@@ -2485,19 +2525,19 @@ The FHIM uses simple or “primitive” datatypes wherever possible, but does de
           <ownedComment xmi:id="_sWY4IH3jEeGy1_tR17zNdw" annotatedElement="_ARtTsH27EeGy1_tR17zNdw">
             <body>[US Standard Certificate Of Birth Field 31].  Indicates the infant's mother height (displayed in feet/inches).</body>
           </ownedComment>
-          <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B641886F630221?FHIM/Datatypes/PhysicalQuantity?"/>
+          <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B641886F630221?FHIM/Datatypes/Quantity?"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_JyPOwH27EeGy1_tR17zNdw" name="mothersPrePregnancyWeight" visibility="public">
           <ownedComment xmi:id="_V0M0sH3PEeGy1_tR17zNdw" annotatedElement="_JyPOwH27EeGy1_tR17zNdw">
             <body>[US Standard Certificate Of Birth Field 32].  Indicates the weight, in pounds, that the infant's mother normally weighed before this pregnancy.</body>
           </ownedComment>
-          <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B641886F630221?FHIM/Datatypes/PhysicalQuantity?"/>
+          <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B641886F630221?FHIM/Datatypes/Quantity?"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_QKsloH27EeGy1_tR17zNdw" name="mothersWeightAtDelivery" visibility="public">
           <ownedComment xmi:id="_aYXjcH3PEeGy1_tR17zNdw" annotatedElement="_QKsloH27EeGy1_tR17zNdw">
             <body>[US Standard Certificate Of Birth Field 33].  Indicates the weight, in pounds, that the infant's mother weighed just before delivery.</body>
           </ownedComment>
-          <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B641886F630221?FHIM/Datatypes/PhysicalQuantity?"/>
+          <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B641886F630221?FHIM/Datatypes/Quantity?"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_SY1kEH2uEeGy1_tR17zNdw" name="motherTransferedFromFacility" visibility="public">
           <ownedComment xmi:id="_RNFVEH3OEeGy1_tR17zNdw" annotatedElement="_SY1kEH2uEeGy1_tR17zNdw">
@@ -4036,7 +4076,8 @@ The FHIM uses simple or “primitive” datatypes wherever possible, but does de
           <body>The date and time of the birth or hatching of the living subject.&#xD;
 &#xD;
 &quot;The patient's date and time of birth.&quot; - HL7 Version 2.8, PID-7.&#xD;
-&quot;The next of kin/associated party's birth date and time.&quot; - HL7 Version 2.8, NK1-16.</body>
+&quot;The next of kin/associated party's birth date and time.&quot; - HL7 Version 2.8, NK1-16.&#xD;
+&quot;The birth date for the person.&quot; - HL7 FHIR, Person.birthDate.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_d_E_gcJEEeK_EPjbFxtubQ" value="1"/>
@@ -4045,7 +4086,8 @@ The FHIM uses simple or “primitive” datatypes wherever possible, but does de
       <ownedAttribute xmi:id="_420A62FD03B645538E6E008E" name="dateOfDeath" visibility="public">
         <eAnnotations xmi:id="_NQP2YeLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <ownedComment xmi:id="_24iYMBqMEd-j8JC21F3W2A" annotatedElement="_420A62FD03B645538E6E008E">
-          <body>&quot;Contains the date and time at which the patient death occurred.&quot; - HL7 Version 2.8, PID-29.</body>
+          <body>&quot;Contains the date and time at which the patient death occurred.&quot; - HL7 Version 2.8, PID-29.&#xD;
+&quot;The birth date for the person.&quot; - HL7 FHIR, Person.birthDate.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B64244824602F5?FHIM/Datatypes/PointInTime?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_evNLL-LjEdutr_MT9HkPyQ" value="1"/>
@@ -4054,7 +4096,8 @@ The FHIM uses simple or “primitive” datatypes wherever possible, but does de
       <ownedAttribute xmi:id="_420A62FD03B645538E6E00AD" name="isDeceased" visibility="public">
         <eAnnotations xmi:id="_NQP2b-LiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <ownedComment xmi:id="_7SKq4BqMEd-j8JC21F3W2A" annotatedElement="_420A62FD03B645538E6E00AD">
-          <body>&quot;Indicates whether the patient is deceased.&quot; - HL7 Version 2.8, PID-30.</body>
+          <body>&quot;Indicates whether the patient is deceased.&quot; - HL7 Version 2.8, PID-30.&#xD;
+&quot;Indicates if the individual is deceased or not.&quot; - HL7 FHIR, Patient.deceased[x].</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_evNLNeLjEdutr_MT9HkPyQ" value="1"/>
@@ -4063,7 +4106,8 @@ The FHIM uses simple or “primitive” datatypes wherever possible, but does de
       <ownedAttribute xmi:id="_Q_1pgOm_Ed6i8ZcSzaiIHw" name="multipleBirthOrder" visibility="public">
         <ownedComment xmi:id="_AM4RYBqNEd-j8JC21F3W2A" annotatedElement="_Q_1pgOm_Ed6i8ZcSzaiIHw">
           <body>If the biological entity was born along with other siblings, this property indicates the order the entity was born.  For example, for a set of twins, this property indicates which twin was born first and which was born second.  This property is primarily used to distinguish records for newborn infants who have not yet have been given names.  This property may also be used in research situations to distinguish individuals who were part of a multi-child pregnancy.&#xD;
-&quot;When a patient was part of a multiple birth, a value (number) indicating the patient's birth order is entered in this field.&quot; - HL7 Version 2.8, PID-25.</body>
+&quot;When a patient was part of a multiple birth, a value (number) indicating the patient's birth order is entered in this field.&quot; - HL7 Version 2.8, PID-25.&#xD;
+&quot;Indicates whether the patient is part of a multiple or indicates the actual birth order.&quot; - HL7 FHIR, Patient.multipleBirth[x].</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_FBH68QIMEd-VSqNkiZ4fOA" value="1"/>
@@ -4073,7 +4117,8 @@ The FHIM uses simple or “primitive” datatypes wherever possible, but does de
         <eAnnotations xmi:id="_NQ1sROLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <ownedComment xmi:id="_I9UMQBqNEd-j8JC21F3W2A" annotatedElement="_420A62FD03B645538E6E007E">
           <body>This property serves as an indication as to whether the person was born along with other siblings as part of a single pregnancy.  This property is primarily used to distinguish records for newborn infants who have not yet have been given names.  This property may also be used in research situations to distinguish individuals who were part of a multi-child pregnancy.&#xD;
-&quot;Indicates whether the patient was part of a multiple birth.&quot; - HL7 Version 2.8, PID-24.</body>
+&quot;Indicates whether the patient was part of a multiple birth.&quot; - HL7 Version 2.8, PID-24.&#xD;
+&quot;Indicates whether the patient is part of a multiple or indicates the actual birth order.&quot; - HL7 FHIR, Patient.multipleBirth[x].</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_evNLR-LjEdutr_MT9HkPyQ" value="1"/>
@@ -4153,7 +4198,8 @@ The FHIM uses simple or “primitive” datatypes wherever possible, but does de
       <ownedAttribute xmi:id="_420A62FD03B6455390F101F8" name="contactCategory" visibility="public">
         <ownedComment xmi:id="_JPzRIBqSEd-j8JC21F3W2A" annotatedElement="_420A62FD03B6455390F101F8">
           <body>Indicates the circumstances under which this person is the contact party for the person identified in the owning Person class.&#xD;
-&quot;Indicates the specific relationship role....  This field specifies the role that the next of kin/associated parties plays with regard to the patient.&quot; - HL7 Version 2.8, NK1-7.  See HL7 Table 131 for suggested values.</body>
+&quot;Indicates the specific relationship role....  This field specifies the role that the next of kin/associated parties plays with regard to the patient.&quot; - HL7 Version 2.8, NK1-7.  See HL7 Table 131 for suggested values.&#xD;
+&quot;The nature of the relationship between the patient and the contact person.&quot; - HL7 FHIR, Patient.contact.relationship.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XQYIAeoEEeCkWsmL2aWuUQ" value="1"/>
@@ -4171,7 +4217,8 @@ The FHIM uses simple or “primitive” datatypes wherever possible, but does de
         <ownedComment xmi:id="_LSoEgBqSEd-j8JC21F3W2A" annotatedElement="_420A62FD03B64248831F005A">
           <body>The date range during which this person is a contact party for the patient.&#xD;
 &quot;The start date of the contact role.&quot; - HL7 Version 2.8, NK1-8.&#xD;
-&quot;The end date of the contact role.&quot; - HL7 Version 2.8, NK1-9.</body>
+&quot;The end date of the contact role.&quot; - HL7 Version 2.8, NK1-9.&#xD;
+&quot;The period during which this contact person or organization is valid to be contacted relating to this patient.&quot; - HL7 FHIR, Patient.contact.period.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B642387187004E?FHIM/Datatypes/TimeInterval?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dwQ74MJOEeK_EPjbFxtubQ" value="1"/>
@@ -4308,7 +4355,8 @@ The FHIM uses simple or “primitive” datatypes wherever possible, but does de
       <ownedAttribute xmi:id="_8ABmQBsXEd--ZY2-pbJ-Pw" name="id" visibility="public">
         <ownedComment xmi:id="_RcE4IBsYEd--ZY2-pbJ-Pw" annotatedElement="_8ABmQBsXEd--ZY2-pbJ-Pw">
           <body>An identifier that uniquely identifies the individual.  Note that this property can hold more than one value, and that the datatype contains an indicator of the kind of identifier that is assigned.  For example, a Person record might contain an SSN, a driver's license number, and a locally-assigned id.  These identifiers, while different, all identify the same individual.  However, the FHIM calls out certain Ids that are specifically required.  For example, the Person class explictly contains an SSN property.  In the case when an Id is explicitly modeled, that Id type should not be included in this property.  Therefore, an SSN should not be instantiated in this property, because a separate SSN field exists for that purpose.&#xD;
-&quot;This field contains the list of identifiers (one or more) used by the healthcare facility to uniquely identify a patient (e.g., medical record number, billing number, birth registry, national unique individual identifier, etc.).&quot; - HL7 Version 2.8, PID-3</body>
+&quot;This field contains the list of identifiers (one or more) used by the healthcare facility to uniquely identify a patient (e.g., medical record number, billing number, birth registry, national unique individual identifier, etc.).&quot; - HL7 Version 2.8, PID-3&#xD;
+&quot;Identifier for a person within a particular scope.&quot; - HL7 FHIR, Person.identifier.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_to7N8IAbEeGE1-mzJa42fw" value="*"/>
@@ -4360,7 +4408,8 @@ We removed veryImportantPerson code (4/4/2013) because we do not have a use-case
       <ownedAttribute xmi:id="_420A62FD03B6418A994A0104" name="isPreferred" visibility="public">
         <eAnnotations xmi:id="_NQ_dROLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <ownedComment xmi:id="_I4KUkBqPEd-j8JC21F3W2A" annotatedElement="_420A62FD03B6418A994A0104">
-          <body>Specifies whether or not the language is preferred by the person for the associated method of expression.</body>
+          <body>Specifies whether or not the language is preferred by the person for the associated method of expression.&#xD;
+&quot;Indicates whether or not the Patient prefers this language (over other languages he masters up a certain level).&quot; - HL7 FHIR, Patient.communication.preferred.</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_evNLSeLjEdutr_MT9HkPyQ" value="1"/>
@@ -4370,7 +4419,8 @@ We removed veryImportantPerson code (4/4/2013) because we do not have a use-case
         <ownedComment xmi:id="_KjvsoBqPEd-j8JC21F3W2A" annotatedElement="_420A62FD03B6418A96D500A5">
           <body>A language for which the Person has some level of proficiency for written or spoken communication.&#xD;
 &quot;The patient's primary language.  HL7 recommends using ISO table 639&quot; - HL7 Version 2.8, PID-15.&#xD;
-&quot;The next of kin/associated party's primary speaking language.&quot; - HL7 Version 2.8, NK1-20.</body>
+&quot;The next of kin/associated party's primary speaking language.&quot; - HL7 Version 2.8, NK1-20.&#xD;
+&quot;The ISO-639-1 alpha 2 code in lower case for the language, optionally followed by a hyphen and the ISO-3166-1 alpha 2 code for the region in upper case. E.g. &quot;en&quot; for English, or &quot;en-US&quot; for American English versus &quot;en-EN&quot; for England English.&quot; - HL7 FHIR, Patient.communication.language.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_evNLS-LjEdutr_MT9HkPyQ" value="1"/>
@@ -4419,7 +4469,8 @@ We removed veryImportantPerson code (4/4/2013) because we do not have a use-case
       </ownedAttribute>
       <ownedAttribute xmi:id="_QGMWELKLEeK_s63jeeMxMg" name="isNeutered" visibility="public">
         <ownedComment xmi:id="_602C4LKLEeK_s63jeeMxMg" annotatedElement="_QGMWELKLEeK_s63jeeMxMg">
-          <body>Indicates whether the animal has been altered such that they cannot procreate.  Note that information that the animal has been neutered can also be modeled in a clinical domain as a procedure or observation, however it is captured in this domain as a simple property.</body>
+          <body>Indicates whether the animal has been altered such that they cannot procreate.  Note that information that the animal has been neutered can also be modeled in a clinical domain as a procedure or observation, however it is captured in this domain as a simple property.&#xD;
+&quot;Indicates the current state of the animal's reproductive organs.&quot; - HL7 FHIR, Patient.animal.genderStatus.  Note that FHIR models this concept as a code with values Neutered, Intact.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_yQqY4LyGEeGK2djLWlLFew?FHIM/Datatypes/NullableBoolean?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_agfKsLKLEeK_s63jeeMxMg" value="1"/>
@@ -4436,9 +4487,12 @@ We removed veryImportantPerson code (4/4/2013) because we do not have a use-case
       <ownedAttribute xmi:id="_KpChwIVKEd-6PJo369YzhQ" name="organismTaxon" visibility="public">
         <ownedComment xmi:id="_0JMqcO6uEd-crcWiXVDZrQ" annotatedElement="_KpChwIVKEd-6PJo369YzhQ">
           <body>A categorization of non-human biological entities. Possible values include canine, German Shepherd, staphylococcus aureus, etc.&#xD;
+Note that breed is no longer a stand-alone concept, as this information is included in the SNOMED species hierarchy.  Thus, this property handles both species and breed, and the separate breed property was removed.&#xD;
+&#xD;
 &quot;The species of living organism.  This may include the common or scientific name, based on the coding system(s) used.  SNOMED is the recommended coding system.&quot; - HL7 Version 2.8, PID-35.&#xD;
 &quot;The specific breed of animal.  This field, unlike Species and Strain is specific to animals and cannot be generally used for all living organisms.  SNOMED is the recommended coding system.&quot; - HL7 Version 2.8, PID-36.&#xD;
-Note that breed is no longer a stand-alone concept, as this information is included in the SNOMED species hierarchy.  Thus, the species property handles both species and breed, and the separate breed property was removed.</body>
+&quot;Identifies the high level taxonomic categorization of the kind of animal.&quot; - HL7 FHIR, Patient.animal.species.&#xD;
+&quot;Identifies the detailed categorization of the kind of animal.&quot; - HL7 FHIR, Patient.animal.breed.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eWtQoGy2EeKS_YH7dVt7vw" value="1"/>
@@ -4516,35 +4570,50 @@ Note that the definition of this property needs to be refined.</body>
         <body>Represents an organization that has an interest in or may represent a Person, for example, a Veteran Service Organization.&#xD;
 &quot;The name of the organization that serves as a next of kin/associated party or as the next of kin of the patient.  This field may also be used to communicate the name of the organization at which the associated party works.&quot; - HL7 Version 2.8, NK1-13.</body>
       </ownedComment>
+      <ownedAttribute xmi:id="_SEkAUAS9EeKZRNRj-xVwIw" name="address" visibility="public">
+        <ownedComment xmi:id="_SEkAUQS9EeKZRNRj-xVwIw" annotatedElement="_SEkAUAS9EeKZRNRj-xVwIw">
+          <body>&quot;The addresses of the contact person depending on the value of the relationship defined in NK1-3 - Relationship.  This field is typically used when the NK1 is an organization.&quot; - HL7 Version 2.8, NK1-32.&#xD;
+&quot;Address for the contact person.&quot; - HL7 FHIR, Patient.contact.address.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B6418A8DCD02C2?FHIM/Datatypes/Address?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SEkAUgS9EeKZRNRj-xVwIw" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SEkAUwS9EeKZRNRj-xVwIw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ecamoPm7EeSJ3abZ9RQzyQ" name="effectiveDateRange" visibility="public">
+        <ownedComment xmi:id="_ecamofm7EeSJ3abZ9RQzyQ" annotatedElement="_ecamoPm7EeSJ3abZ9RQzyQ">
+          <body>The date range during which this person is a contact party for the patient.&#xD;
+&quot;The start date of the contact role.&quot; - HL7 Version 2.8, NK1-8.&#xD;
+&quot;The end date of the contact role.&quot; - HL7 Version 2.8, NK1-9.&#xD;
+&quot;The period during which this contact person or organization is valid to be contacted relating to this patient.&quot; - HL7 FHIR, Patient.contact.period.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B642387187004E?FHIM/Datatypes/TimeInterval?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ecamovm7EeSJ3abZ9RQzyQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ecamo_m7EeSJ3abZ9RQzyQ"/>
+      </ownedAttribute>
       <ownedAttribute xmi:id="_DoRcUAQBEeKZsvne-rOhhA" name="name" visibility="public">
         <ownedComment xmi:id="_G7xNYAQBEeKZsvne-rOhhA" annotatedElement="_DoRcUAQBEeKZsvne-rOhhA">
-          <body>&quot;The name of the organization that serves as a next of kin/associated party or as the next of kin of the patient.  This field may also be used to communicate the name of the organization at which the associated party works.&quot; - HL7 Version 2.8, NK1-13.</body>
+          <body>&quot;The name of the organization that serves as a next of kin/associated party or as the next of kin of the patient.  This field may also be used to communicate the name of the organization at which the associated party works.&quot; - HL7 Version 2.8, NK1-13.&#xD;
+&quot;Organization on behalf of which the contact is acting or for which the contact is working.&quot; - HL7 FHIR, Patient.contact.organization.</body>
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_SEiyMAS9EeKZRNRj-xVwIw" name="pointOfContactName" visibility="public">
         <eAnnotations xmi:id="_SEiyMQS9EeKZRNRj-xVwIw" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <ownedComment xmi:id="_SEiyMwS9EeKZRNRj-xVwIw" annotatedElement="_SEiyMAS9EeKZRNRj-xVwIw">
-          <body>&quot;Contains one or more of the names of the person to contact, depending on the value of the relationship defined in NK1-3 - Relationship.  This field is typically needed when the NK1 is an organization.&quot; - HL7 Version 2.8, NK1-30.</body>
+          <body>&quot;Contains one or more of the names of the person to contact, depending on the value of the relationship defined in NK1-3 - Relationship.  This field is typically needed when the NK1 is an organization.&quot; - HL7 Version 2.8, NK1-30.&#xD;
+&quot;A name associated with the contact person.&quot; - HL7 FHIR, Patient.contact.name.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_3lzSEFVyEdyaooytdRFnxQ?FHIM/Datatypes/PersonName?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SEiyNAS9EeKZRNRj-xVwIw" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SEiyNQS9EeKZRNRj-xVwIw"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_SEkAUAS9EeKZRNRj-xVwIw" name="address" visibility="public">
-        <ownedComment xmi:id="_SEkAUQS9EeKZRNRj-xVwIw" annotatedElement="_SEkAUAS9EeKZRNRj-xVwIw">
-          <body>&quot;The addresses of the contact person depending on the value of the relationship defined in NK1-3 - Relationship.  This field is typically used when the NK1 is an organization.&quot; - HL7 Version 2.8, NK1-32.</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B6418A8DCD02C2?FHIM/Datatypes/Address?"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SEkAUgS9EeKZRNRj-xVwIw" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SEkAUwS9EeKZRNRj-xVwIw"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_SEkAVAS9EeKZRNRj-xVwIw" name="phone" visibility="public">
+      <ownedAttribute xmi:id="_SEkAVAS9EeKZRNRj-xVwIw" name="telecom" visibility="public">
         <ownedComment xmi:id="_SEkAVQS9EeKZRNRj-xVwIw" annotatedElement="_SEkAVAS9EeKZRNRj-xVwIw">
-          <body>&quot;The telephone numbers of the contact person depending on the value of the relationship defined in NK1-3 - Relationship.  This field is typically needed when the NK1 is an organization.&quot; - HL7 Version 2.8, NK1-31.</body>
+          <body>&quot;The telephone numbers of the contact person depending on the value of the relationship defined in NK1-3 - Relationship.  This field is typically needed when the NK1 is an organization.&quot; - HL7 Version 2.8, NK1-31.&#xD;
+&quot;A contact detail for the person, e.g. a telephone number or an email address.&quot; - HL7 FHIR, Patient.contact.telecom.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_fImbAAEYEd-ZUM5xZsXWyw?FHIM/Datatypes/ContactPoint?"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_d5ohAMJTEeK_EPjbFxtubQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_d5ohAMJTEeK_EPjbFxtubQ" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_d5n58MJTEeK_EPjbFxtubQ"/>
       </ownedAttribute>
     </packagedElement>
@@ -4581,7 +4650,8 @@ Note that the definition of this property needs to be refined.</body>
       <ownedAttribute xmi:id="_420A62FD03B6422B959E03BD" name="patientId" visibility="public">
         <ownedComment xmi:id="_XPxocBqREd-j8JC21F3W2A" annotatedElement="_420A62FD03B6422B959E03BD">
           <body>A unique identifier for the Person or Animal while in the role of Patient.  Note that the patient Id is assigned by the Healthcare Provider (organization), and that the Id data type includes an assigning authority component which identifies the organization that assigned the id.  A single Person will typically have multiple patient Ids; one at each organization which considers that Person a Patient.&#xD;
-&quot;Contains the list of identifiers (one or more) used by the healthcare facility to uniquely identify a patient (e.g., medical record number, billing number, birth registry, national unique individual identifier, etc.).&quot; - HL7 Version 2.8, PID-3.</body>
+&quot;Contains the list of identifiers (one or more) used by the healthcare facility to uniquely identify a patient (e.g., medical record number, billing number, birth registry, national unique individual identifier, etc.).&quot; - HL7 Version 2.8, PID-3.&#xD;
+&quot;An identifier for this patient.&quot; - HL7 FHIR, Patient.identifier.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_evDaL-LjEdutr_MT9HkPyQ" value="1"/>
@@ -4597,9 +4667,10 @@ Note, for public health reporting purposes, this status indicates the active/ina
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_evDaLeLjEdutr_MT9HkPyQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_evDaLOLjEdutr_MT9HkPyQ" value="1"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_8AqXcNgeEeG3E4mt6RKX5Q" name="healthcareProvider" visibility="public" association="_8AmGANgeEeG3E4mt6RKX5Q">
+      <ownedAttribute xmi:id="_8AqXcNgeEeG3E4mt6RKX5Q" name="managingOrganization" visibility="public" association="_8AmGANgeEeG3E4mt6RKX5Q">
         <ownedComment xmi:id="_kgiRMKChEeKNT6obAX9SKQ" annotatedElement="_8AqXcNgeEeG3E4mt6RKX5Q">
-          <body>Pointer to the Healthcare Provider that has established a Patient record for the Person or Animal being treated.  Note that the Patient class represents a Role that the Person or Animal is playing; the Healthcare Provider is &quot;scoping&quot; that role.  A single Person will have multiple Patient roles with different Healthcare Providers, and may have more than one with the same Provider, especially in in-patient settings.</body>
+          <body>Pointer to the Healthcare Provider that has established a Patient record for the Person or Animal being treated.  Note that the Patient class represents a Role that the Person or Animal is playing; the Healthcare Provider is &quot;scoping&quot; that role.  A single Person will have multiple Patient roles with different Healthcare Providers, and may have more than one with the same Provider, especially in in-patient settings.&#xD;
+&quot;Organization that is the custodian of the patient record.&quot; - HL7 FHIR, Patient.managingOrganization.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Provider.efx#_aW26cBsbEd--ZY2-pbJ-Pw?FHIM/Provider/HealthcareProvider?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8ArlkdgeEeG3E4mt6RKX5Q" value="1"/>
@@ -4625,6 +4696,14 @@ Note, for public health reporting purposes, this status indicates the active/ina
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_U3oSQayOEeSUSIBAyhZNow" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_U3oSQKyOEeSUSIBAyhZNow"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_tISoYPm_EeSJ3abZ9RQzyQ" name="careProvider" visibility="public" association="_tIPlEPm_EeSJ3abZ9RQzyQ">
+        <ownedComment xmi:id="_z9HLIPm_EeSJ3abZ9RQzyQ" annotatedElement="_tISoYPm_EeSJ3abZ9RQzyQ">
+          <body>&quot;Patient's nominated care provider.&quot; - HL7 FHIR, Patient.careProvider.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Provider.efx#_aW26cBsbEd--ZY2-pbJ-Pw?FHIM/Provider/HealthcareProvider?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tITPcfm_EeSJ3abZ9RQzyQ" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tITPcPm_EeSJ3abZ9RQzyQ"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_420A62FD03B6425125E800E0" name="Person" clientDependency="_THb5oFjGEeG6Pp3Py7p1bw _Tuy0kFjGEeG6Pp3Py7p1bw">
       <eAnnotations xmi:id="_NQ1sRuLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
@@ -4636,6 +4715,17 @@ Removed educationLevel (4/4/2013) until we have a clear use case for it.  It's i
 We had an ethnicityGroup and raceCategory to handle more coarse-grained codesets, but removed them as the ethnicity and race codes are expected to use hierarchical fine-grained codesets.  The groups or categories can be calculated from the fine ones.</body>
       </ownedComment>
       <generalization xmi:id="_Z5rJgBA2Ed-2E9qx-lgHBg" general="_KBfhMOEVEd6EKMSYA1gKjA"/>
+      <ownedAttribute xmi:id="_BfKyMBAlEd-2E9qx-lgHBg" name="address" visibility="public">
+        <ownedComment xmi:id="_Z8iewBqTEd-j8JC21F3W2A" annotatedElement="_BfKyMBAlEd-2E9qx-lgHBg">
+          <body>A physical address at which the person is located or can be reached. The datatype for this property is Address which contains a type code to indicate what kind of address is being referenced. Note that this property can contain more than one entry.&#xD;
+&#xD;
+&quot;Contains the address of the patient.  Multiple addresses for the same person may be sent.&quot; - HL7 Version 2.8, PID-11.&#xD;
+&quot;One or more addresses for the person.&quot; - HL7 FHIR, Person.address.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B6418A8DCD02C2?FHIM/Datatypes/Address?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_YLpIQCKUEeCBocG0Z_rtrQ" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YLf-UCKUEeCBocG0Z_rtrQ"/>
+      </ownedAttribute>
       <ownedAttribute xmi:id="_LM4rUHwDEeCp-57mUxyZlg" name="administrativeGender" visibility="public">
         <ownedComment xmi:id="_LM4rUXwDEeCp-57mUxyZlg" annotatedElement="_LM4rUHwDEeCp-57mUxyZlg">
           <body>&quot;Gender is used to refer to administrative sex rather than biological sex and therefore should easily be classified into female and male. It is included in the exchange for purposes of linking to insurance information and other patient identification linkages and the value chosen by the patient should reflect the information under which any insurance or financial information will be filed, as well as the same information given to other healthcare providers, institutions or health data exchange networks&quot; - HITSP C154&#xD;
@@ -4646,19 +4736,10 @@ Note that the this concept is restricted to those societal roles as perceived in
 &#xD;
 &quot;The patient's sex.&quot; - HL7 Version 2.8, PID-8.&#xD;
 &quot;The next of kin/associated party's sex.&quot; - HL7 Version 2.8, NK1-15.&#xD;
-HL7 Version 2 has the following suggested values (table 1): Female; Male; Other; Unknown; Ambiguous; Not applicable.</body>
+HL7 Version 2 has the following suggested values (table 1): Female; Male; Other; Unknown; Ambiguous; Not applicable.&#xD;
+&quot;Administrative Gender.&quot; - HL7 FHIR, Person.gender.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_mARwQOZSEeGuIoEQ4Mvu0w?FHIM/Datatypes/NullableCode?"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_WiXGgHo0EeOKnMBxUzvJfA" name="alternateName" visibility="public">
-        <ownedComment xmi:id="_WiXGgXo0EeOKnMBxUzvJfA" annotatedElement="_WiXGgHo0EeOKnMBxUzvJfA">
-          <body>A self asserted name that the person is using or has used.  Note that the data type for this property is a PersonName, which includes the various parts that make up a person's name such as family name, prefixes, suffixes, etc.  Note that in HL7, the PersonName data type contains a type code to indicate what kind of name is being referenced.  The FHIM explicitly models the name type, so in this case the attribute name is &quot;AlternateName&quot;, and the type code would be set to &quot;Pseudonym&quot; when targeting an HL7 implementation.  &quot;AlternateName is equivalent Pseudonym.&#xD;
-&#xD;
-&quot;Contains one or more of the names of the patient....&quot; - HL7 Version 2.8, PID-5.</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_3lzSEFVyEdyaooytdRFnxQ?FHIM/Datatypes/PersonName?"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WiXGgno0EeOKnMBxUzvJfA" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WiXGg3o0EeOKnMBxUzvJfA"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B645538E6E004F" name="birthAddress" visibility="public">
         <eAnnotations xmi:id="_NQGFauLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
@@ -4719,6 +4800,15 @@ Note that this property is included in the FHIM for compatibility to HL7 V2, alt
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bGQ6gZX8EeCD7vwmJe8BlA" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bGQ6gJX8EeCD7vwmJe8BlA"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_4r-noPm3EeSJ3abZ9RQzyQ" name="isActive" visibility="public">
+        <ownedComment xmi:id="_4r-nofm3EeSJ3abZ9RQzyQ" annotatedElement="_4r-noPm3EeSJ3abZ9RQzyQ">
+          <body>This optional property can be used to indicate whether the Person's record is active. It is included for compatibility to FHIR.&#xD;
+&quot;Whether this person's record is in active use.&quot; - HL7 FHIR, Person.active.</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4r-novm3EeSJ3abZ9RQzyQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4r-no_m3EeSJ3abZ9RQzyQ"/>
+      </ownedAttribute>
       <ownedAttribute xmi:id="_3YL9wJ2sEeCX5OUDTSXncA" name="isIdentityUnknown" visibility="public">
         <ownedComment xmi:id="_Xku9wJ2tEeCX5OUDTSXncA" annotatedElement="_3YL9wJ2sEeCX5OUDTSXncA">
           <body>&quot;Indicates whether or not the patient's/person's identity is known.&quot; - HL7 Version 2.8, PID-31.</body>
@@ -4751,16 +4841,6 @@ Note that this property is included in the FHIM for compatibility to HL7 V2, alt
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Zehd4GyvEeKS_YH7dVt7vw" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Zeg20GyvEeKS_YH7dVt7vw"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_oFBQoOwVEd6PwKowkorMOw" name="legalName" visibility="public">
-        <ownedComment xmi:id="_FeCvYBqVEd-j8JC21F3W2A" annotatedElement="_oFBQoOwVEd6PwKowkorMOw">
-          <body>The name by which a person is known or legally identified such as the name on a driver's license or passport.  Note that the data type for this property is a PersonName, which includes the various parts that make up a person's name such as family name, prefixes, suffixes, etc.  Note that in HL7, the PersonName data type contains a type code to indicate what kind of name is being referenced.  The FHIM explicitly models the name type, so in this case the attribute name is &quot;Legal Name&quot;, and the type code would be set to &quot;Legal Name&quot; when targeting an HL7 implementation.&#xD;
-&#xD;
-&quot;Contains one or more of the names of the patient....&quot; - HL7 Version 2.8, PID-5.</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_3lzSEFVyEdyaooytdRFnxQ?FHIM/Datatypes/PersonName?"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oFBQo-wVEd6PwKowkorMOw" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oFBQpOwVEd6PwKowkorMOw"/>
-      </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B6431DAFC00244" name="livingArrangement" visibility="public">
         <eAnnotations xmi:id="_NPDjneLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <ownedComment xmi:id="_KT_KoBqVEd-j8JC21F3W2A" annotatedElement="_420A62FD03B6431DAFC00244">
@@ -4786,12 +4866,23 @@ Possible values include (from HL7 V2 Table 223): Spouse Dependent; Medical Super
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_B1moAwQFEeKZsvne-rOhhA" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_B1moBAQFEeKZsvne-rOhhA"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_6Hu-gPm4EeSJ3abZ9RQzyQ" name="managingOrganization" visibility="public">
+        <eAnnotations xmi:id="_6Hu-gfm4EeSJ3abZ9RQzyQ" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+        <ownedComment xmi:id="_KeFh4Pm5EeSJ3abZ9RQzyQ" annotatedElement="_6Hu-gPm4EeSJ3abZ9RQzyQ">
+          <body>This optional property can be used to identify the organization or organizational component that owns or manages the record of the Person. This property has been included for compatibility with FHIR.&#xD;
+&quot;The Organization that is the custodian of the person record.&quot; - HL7 FHIR, Person.managingOrganization.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6Hu-g_m4EeSJ3abZ9RQzyQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6Hu-hPm4EeSJ3abZ9RQzyQ"/>
+      </ownedAttribute>
       <ownedAttribute xmi:id="_420A62FD03B645538E8A0291" name="maritalStatus" visibility="public">
         <ownedComment xmi:id="_QOezIBqVEd-j8JC21F3W2A" annotatedElement="_420A62FD03B645538E8A0291">
-          <body>&quot;The domestic partnership status of a person.&quot; - HL7 Version 3 RIM.&#xD;
-&quot;Contains the patient's marital (civil) status.&quot; - HL7 Version 2.8, PID-16.&#xD;
+          <body>&quot;Contains the patient's marital (civil) status.&quot; - HL7 Version 2.8, PID-16.&#xD;
 &quot;Contains the next of kin/associated party's marital status.&quot; - HL7 Version 2.8, NK1-14.&#xD;
-HL7 Version 2 has the following suggested values (table 2): Separated; Divorced; Married; Single; Widowed; Common law; Living together; Domestic partner; Registered domestic partner; Legally Separated; Annulled; Interlocutory; Unmarried; Unknown; Other; Unreported.</body>
+HL7 Version 2 has the following suggested values (table 2): Separated; Divorced; Married; Single; Widowed; Common law; Living together; Domestic partner; Registered domestic partner; Legally Separated; Annulled; Interlocutory; Unmarried; Unknown; Other; Unreported.&#xD;
+&quot;The domestic partnership status of a person.&quot; - HL7 Version 3 RIM.&#xD;
+&quot;This field contains a patient's most recent marital (civil) status.&quot; - HL7 FHIR, Patient.maritalStatus.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_GmKqYGAfEd6a0qoC8Dh7hA?FHIM/Datatypes/Code?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_evNLOeLjEdutr_MT9HkPyQ" value="1"/>
@@ -4807,6 +4898,25 @@ This property is typically used for identity management purposes, especially to 
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_evNLO-LjEdutr_MT9HkPyQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_evNLOuLjEdutr_MT9HkPyQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_oFBQoOwVEd6PwKowkorMOw" name="name" visibility="public">
+        <ownedComment xmi:id="_FeCvYBqVEd-j8JC21F3W2A" annotatedElement="_oFBQoOwVEd6PwKowkorMOw">
+          <body>The name by which a person is known or legally identified such as the name on a driver's license or passport.  Note that the data type for this property is a PersonName, which includes the various parts that make up a person's name such as family name, prefixes, suffixes, etc.  Note that in HL7, the PersonName data type contains a type code to indicate what kind of name is being referenced.  The FHIM explicitly models the name type, so in this case the attribute name is &quot;Legal Name&quot;, and the type code would be set to &quot;Legal Name&quot; when targeting an HL7 implementation.&#xD;
+&#xD;
+&quot;Contains one or more of the names of the patient....&quot; - HL7 Version 2.8, PID-5.&#xD;
+&quot;A name associated with the person.&quot; - HL7 FHIR, Person.name.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Datatypes.efx#_3lzSEFVyEdyaooytdRFnxQ?FHIM/Datatypes/PersonName?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oFBQo-wVEd6PwKowkorMOw" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oFBQpOwVEd6PwKowkorMOw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_Nj4b4Pm-EeSJ3abZ9RQzyQ" name="photo" visibility="public">
+        <ownedComment xmi:id="_aINfIPm-EeSJ3abZ9RQzyQ" annotatedElement="_Nj4b4Pm-EeSJ3abZ9RQzyQ">
+          <body>&quot;An image that can be displayed as a thumbnail of the person to enhance the identification of the individual.&quot; - HL7 FHIR, Person.photo.</body>
+        </ownedComment>
+        <type xmi:type="uml:Class" href="Common.efx#_420A62FD03B64586C73900D7?FHIM/Common/Image?"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_TDJg8Pm-EeSJ3abZ9RQzyQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_TDIS0Pm-EeSJ3abZ9RQzyQ"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_ReTt8FjtEeG6Pp3Py7p1bw" name="preferredContactMethod" visibility="public">
         <ownedComment xmi:id="_LBPucFjuEeG6Pp3Py7p1bw" annotatedElement="_ReTt8FjtEeG6Pp3Py7p1bw">
@@ -4843,103 +4953,23 @@ Note that HL7 Version 2 table 6 lists 85 suggested values for this field.</body>
       <ownedAttribute xmi:id="_420A62FD03B6426E869603AC" name="ssn" visibility="public">
         <eAnnotations xmi:id="_NQixWeLiEduGJrQyRGTO1A" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <ownedComment xmi:id="_4fCs4BqVEd-j8JC21F3W2A" annotatedElement="_420A62FD03B6426E869603AC">
-          <body>A nine digit identification number assigned to a person by the US Social Security Administration.  Used primarily for identification purposes.  Note that HIPAA forbids the use of SSN as a primary identifier.  Maps to HL7 Version 2.8, PID-18.  Note that while Social Security Number is a type of Id, and could be modeled as simply one of the possible instances of the &quot;id&quot; property, it is explicitly modeled because it is a particular kind of identifier that is needed for various business processes.</body>
+          <body>A nine digit identification number assigned to a person by the US Social Security Administration.  Used primarily for identification purposes.  Note that HIPAA forbids the use of SSN as a primary identifier.  Maps to HL7 Version 2.8, PID-18.  Note that while Social Security Number is a type of Id, and could be modeled as simply one of the possible instances of the &quot;id&quot; property, it is explicitly modeled because it is a particular kind of identifier that is needed for various business processes.&#xD;
+&quot;Identifier for a person within a particular scope.&quot; - HL7 FHIR, Person.identifier.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_mZFS8ERREdyvWauSJSvkeQ?FHIM/Datatypes/Id?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_evNLQeLjEdutr_MT9HkPyQ" value="1"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_evNLQOLjEdutr_MT9HkPyQ"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_7MEDIBApEd-2E9qx-lgHBg" name="mobilePhone" visibility="public">
+      <ownedAttribute xmi:id="_7MEDIBApEd-2E9qx-lgHBg" name="telecom" visibility="public">
         <ownedComment xmi:id="_723EoBqSEd-j8JC21F3W2A" annotatedElement="_7MEDIBApEd-2E9qx-lgHBg">
-          <body>The number for a telecommunication device that moves and stays with its owner. Suitable for urgent matters, the mobile phone is not the first choice for routine business.  Note that in HL7, the Telecommunications data type contains a type code to indicate what kind of telecommunications address that is being referenced.  The FHIM explicitly models the telecommunications type, so in this case the attribute name is &quot;Mobile Phone&quot;, and the type code would be set to &quot;mobile contact&quot; when targeting an HL7 implementation.&#xD;
-&quot;Contains the patient's personal telecommunication contact information.&quot; - HL7 Version 2.8, PID-40.</body>
+          <body>Indicates how and at what address that the person can be reached via electronic communications. The datatype for this property is ContactPoint, which can be used for telephone numbers as well as email, etc.  The ContactPoint data  type contains a type code to indicate what kind of telecommunications address that is being referenced. Note that this property can contain more than one entry.&#xD;
+&#xD;
+&quot;Contains the patient's personal telecommunication contact information.&quot; - HL7 Version 2.8, PID-40.&#xD;
+&quot;A contact detail for the person, e.g. a telephone number or an email address.&quot; - HL7 FHIR, Person.telecom.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_fImbAAEYEd-ZUM5xZsXWyw?FHIM/Datatypes/ContactPoint?"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_V5Z_4CKUEeCBocG0Z_rtrQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_V5Z_4CKUEeCBocG0Z_rtrQ" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_V5QO4CKUEeCBocG0Z_rtrQ"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_7RRTQBApEd-2E9qx-lgHBg" name="pager" visibility="public">
-        <ownedComment xmi:id="_ZTLGwBqVEd-j8JC21F3W2A" annotatedElement="_7RRTQBApEd-2E9qx-lgHBg">
-          <body>The number of a paging device suitable to solicit a callback or to leave a very short message.  Note that in HL7, the Telecommunications data type contains a type code to indicate what kind of telecommunications address that is being referenced.  The FHIM explicitly models the telecommunications type, so in this case the attribute name is &quot;Pager&quot;, and the type code would be set to &quot;pager&quot; when targeting an HL7 implementation.&#xD;
-&quot;Contains the patient's personal telecommunication contact information.&quot; - HL7 Version 2.8, PID-40.</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_fImbAAEYEd-ZUM5xZsXWyw?FHIM/Datatypes/ContactPoint?"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZaMmESKUEeCBocG0Z_rtrQ" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ZaMmECKUEeCBocG0Z_rtrQ"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_BfKyMBAlEd-2E9qx-lgHBg" name="primaryHomeAddress" visibility="public">
-        <ownedComment xmi:id="_Z8iewBqTEd-j8JC21F3W2A" annotatedElement="_BfKyMBAlEd-2E9qx-lgHBg">
-          <body>A physical address for the person's primary place of residence.  Note that in HL7, the Address data type contains a type code to indicate what kind of address is being referenced.  The FHIM explicitly models the address type, so in this case the attribute name is &quot;Primary Home Address&quot;, and the type code would be set to &quot;Primary Home&quot; when targeting an HL7 implementation.&#xD;
-&quot;Contains the address of the patient.  Multiple addresses for the same person may be sent.&quot; - HL7 Version 2.8, PID-11.</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B6418A8DCD02C2?FHIM/Datatypes/Address?"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_YLpIQCKUEeCBocG0Z_rtrQ" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YLf-UCKUEeCBocG0Z_rtrQ"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_Fd--4BAqEd-2E9qx-lgHBg" name="primaryHomeEmail" visibility="public">
-        <ownedComment xmi:id="_jsL-cBqUEd-j8JC21F3W2A" annotatedElement="_Fd--4BAqEd-2E9qx-lgHBg">
-          <body>The email address that a person uses while at their primary home, to reach a person after business hours.  Note that in HL7, the Telecommunications data type contains a type code to indicate what kind of telecommunications address that is being referenced.  The FHIM explicitly models the telecommunications type, so in this case the attribute name is &quot;Primary Home Email&quot;, and the type code would be set to &quot;primary home&quot; when targeting an HL7 implementation.&#xD;
-&quot;Contains the patient's personal telecommunication contact information.&quot; - HL7 Version 2.8, PID-40.</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_fImbAAEYEd-ZUM5xZsXWyw?FHIM/Datatypes/ContactPoint?"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_awo0kSKUEeCBocG0Z_rtrQ" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_awo0kCKUEeCBocG0Z_rtrQ"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_Nlp7gBAoEd-2E9qx-lgHBg" name="primaryHomePhone" visibility="public">
-        <ownedComment xmi:id="_xqCrUBqSEd-j8JC21F3W2A" annotatedElement="_Nlp7gBAoEd-2E9qx-lgHBg">
-          <body>The phone number of a person at their primary home, to reach a person after business hours.  Note that in HL7, the Telecommunications data type contains a type code to indicate what kind of telecommunications address that is being referenced.  The FHIM explicitly models the telecommunications type, so in this case the attribute name is &quot;Primary Home Phone&quot;, and the type code would be set to &quot;Primary Home&quot; when targeting an HL7 implementation.&#xD;
-&quot;Contains the patient's personal phone numbers.&quot; - HL7 Version 2.8, PID-13.&#xD;
-&quot;Contains the patient's personal telecommunication contact information.&quot; - HL7 Version 2.8, PID-40.</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_fImbAAEYEd-ZUM5xZsXWyw?FHIM/Datatypes/ContactPoint?"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bYgs4SKUEeCBocG0Z_rtrQ" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bYgs4CKUEeCBocG0Z_rtrQ"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_KWe0UBApEd-2E9qx-lgHBg" name="temporaryAddress" visibility="public">
-        <ownedComment xmi:id="_986q0BqVEd-j8JC21F3W2A" annotatedElement="_KWe0UBApEd-2E9qx-lgHBg">
-          <body>An address at which a person may be contacted while away from their primary home residence.  For example, the person may be staying at a hotel to be nearer to a treatment facility, or while on vacation.  Note that in HL7, the Address data type contains a type code to indicate what kind of address is being referenced.  The FHIM explicitly models the address type, so in this case the attribute name is &quot;Temporary Address&quot;, and the type code would be set to &quot;Temporary Address&quot; when targeting an HL7 implementation.&#xD;
-&quot;Contains the address of the patient.  Multiple addresses for the same person may be sent.&quot; - HL7 Version 2.8, PID-11.</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B6418A8DCD02C2?FHIM/Datatypes/Address?"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_c1C8USKUEeCBocG0Z_rtrQ" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_c1C8UCKUEeCBocG0Z_rtrQ"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_KWe0URApEd-2E9qx-lgHBg" name="temporaryPhone" visibility="public">
-        <ownedComment xmi:id="_eKyggBqWEd-j8JC21F3W2A" annotatedElement="_KWe0URApEd-2E9qx-lgHBg">
-          <body>An telephone number at which a person may be contacted while away from their primary home residence.  For example, the person may be staying at a hotel to be nearer to a treatment facility, or while on vacation.  Note that in HL7, the Telecommunications data type contains a type code to indicate what kind of telecommunications address that is being referenced.  The FHIM explicitly models the telecommunications type, so in this case the attribute name is &quot;Temporary Phone&quot;, and the type code would be set to &quot;temporary address&quot; when targeting an HL7 implementation.&#xD;
-&quot;Contains the patient's personal telecommunication contact information.&quot; - HL7 Version 2.8, PID-40.</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_fImbAAEYEd-ZUM5xZsXWyw?FHIM/Datatypes/ContactPoint?"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dlPqMSKUEeCBocG0Z_rtrQ" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dlPqMCKUEeCBocG0Z_rtrQ"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_QsLLEBApEd-2E9qx-lgHBg" name="workAddress" visibility="public">
-        <ownedComment xmi:id="_xwN54BqUEd-j8JC21F3W2A" annotatedElement="_QsLLEBApEd-2E9qx-lgHBg">
-          <body>The person's office address.  First choice for business related contacts during business hours.  Note that in HL7, the Address data type contains a type code to indicate what kind of address is being referenced.  The FHIM explicitly models the address type, so in this case the attribute name is &quot;Work Address&quot;, and the type code would be set to &quot;Workplace&quot; when targeting an HL7 implementation.&#xD;
-&quot;Contains the address of the patient.  Multiple addresses for the same person may be sent.&quot; - HL7 Version 2.8, PID-11.</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B6418A8DCD02C2?FHIM/Datatypes/Address?"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eLoUwSKUEeCBocG0Z_rtrQ" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eLoUwCKUEeCBocG0Z_rtrQ"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_lvKi0BqUEd-j8JC21F3W2A" name="workEmail" visibility="public">
-        <ownedComment xmi:id="_lvKi0RqUEd-j8JC21F3W2A" annotatedElement="_lvKi0BqUEd-j8JC21F3W2A">
-          <body>The email address that a person uses while at their place of business.  First choice for business related contacts during business hours.  Note that in HL7, the Telecommunications data type contains a type code to indicate what kind of telecommunications address that is being referenced.  The FHIM explicitly models the telecommunications type, so in this case the attribute name is &quot;Work Email&quot;, and the type code would be set to &quot;workplace&quot; when targeting an HL7 implementation.&#xD;
-&quot;Contains the patient's personal telecommunication contact information.&quot; - HL7 Version 2.8, PID-40.</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_fImbAAEYEd-ZUM5xZsXWyw?FHIM/Datatypes/ContactPoint?"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eu4y0SKUEeCBocG0Z_rtrQ" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eu4y0CKUEeCBocG0Z_rtrQ"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_QsU8EBApEd-2E9qx-lgHBg" name="workPhone" visibility="public">
-        <ownedComment xmi:id="_WUERkBAyEd-2E9qx-lgHBg" annotatedElement="_QsU8EBApEd-2E9qx-lgHBg">
-          <body>The phone number for a person at their office location. First choice for business related contacts during business hours.  Note that in HL7, the Telecommunications data type contains a type code to indicate what kind of telecommunications address that is being referenced.  The FHIM explicitly models the telecommunications type, so in this case the attribute name is &quot;Work Email&quot;, and the type code would be set to &quot;workplace&quot; when targeting an HL7 implementation.&#xD;
-&quot;Contains the patient's business telephone numbers.&quot; - HL7 Version 2.8, PID-14.&#xD;
-&quot;Contains the patient's personal telecommunication contact information.&quot; - HL7 Version 2.8, PID-40.</body>
-        </ownedComment>
-        <type xmi:type="uml:Class" href="Datatypes.efx#_fImbAAEYEd-ZUM5xZsXWyw?FHIM/Datatypes/ContactPoint?"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fT8AoSKUEeCBocG0Z_rtrQ" value="1"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fT8AoCKUEeCBocG0Z_rtrQ"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_0vtjkI0tEeCD3bb30FJGhQ" name="advanceDirective" visibility="public" type="_sdrb8I0tEeCD3bb30FJGhQ" association="_0vqgQI0tEeCD3bb30FJGhQ">
         <ownedComment xmi:id="_tRKPkJX6EeCD7vwmJe8BlA" annotatedElement="_0vtjkI0tEeCD3bb30FJGhQ">
@@ -4995,7 +5025,8 @@ Note that HL7 Version 2 table 6 lists 85 suggested values for this field.</body>
       </ownedAttribute>
       <ownedAttribute xmi:id="_vVsMcAIPEd-VSqNkiZ4fOA" name="contactParty" visibility="public" type="_420A62FD03B64248829E032E" association="_vVibcAIPEd-VSqNkiZ4fOA">
         <ownedComment xmi:id="_2T8LcBqOEd-j8JC21F3W2A" annotatedElement="_vVsMcAIPEd-VSqNkiZ4fOA">
-          <body>Pointer to the (Role of the) Person who should be contacted on the patients behalf under specified situations.</body>
+          <body>Pointer to the (Role of the) Person who should be contacted on the patients behalf under specified situations.&#xD;
+&quot;A contact party (e.g. guardian, partner, friend) for the patient.&quot; - HL7 FHIR, Patient.contact.</body>
         </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vVsMcgIPEd-VSqNkiZ4fOA" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vVsMcQIPEd-VSqNkiZ4fOA"/>
@@ -5011,7 +5042,8 @@ Note that HL7 Version 2 table 6 lists 85 suggested values for this field.</body>
         <ownedComment xmi:id="_APEJEBqVEd-j8JC21F3W2A" annotatedElement="_420A62FD03B645633C3803C4">
           <body>A pointer to information regarding the language communication capabilities for a Person.&#xD;
 &quot;The patient's primary language.  HL7 recommends using ISO table 639&quot; - HL7 Version 2.8, PID-15.&#xD;
-&quot;The next of kin/associated party's primary speaking language.&quot; - HL7 Version 2.8, NK1-20.</body>
+&quot;The next of kin/associated party's primary speaking language.&quot; - HL7 Version 2.8, NK1-20.&#xD;
+&quot;Languages which may be used to communicate with the patient about his or her health&quot; - HL7 FHIR, Patient.communication.</body>
         </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NUtfuOLiEduGJrQyRGTO1A" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NUtft-LiEduGJrQyRGTO1A"/>
@@ -5032,7 +5064,8 @@ Note that HL7 Version 2 table 6 lists 85 suggested values for this field.</body>
       </ownedAttribute>
       <ownedAttribute xmi:id="_QaaZIMFeEeKM54AtDRfO0A" name="organizationalRepresentative" visibility="public" type="_9_9I8AQAEeKZsvne-rOhhA" association="_QaXV0MFeEeKM54AtDRfO0A">
         <ownedComment xmi:id="_SrFbQMFeEeKM54AtDRfO0A" annotatedElement="_QaaZIMFeEeKM54AtDRfO0A">
-          <body>&quot;The name of the organization that serves as a next of kin/associated party or as the next of kin of the patient.  This field may also be used to communicate the name of the organization at which the associated party works.&quot; - HL7 Version 2.8, NK1-13.</body>
+          <body>&quot;The name of the organization that serves as a next of kin/associated party or as the next of kin of the patient.  This field may also be used to communicate the name of the organization at which the associated party works.&quot; - HL7 Version 2.8, NK1-13.&#xD;
+&quot;Organization on behalf of which the contact is acting or for which the contact is working.&quot; - HL7 FHIR, Patient.contact.organization.</body>
         </ownedComment>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QacOUMFeEeKM54AtDRfO0A" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_QabnQMFeEeKM54AtDRfO0A"/>
@@ -5202,7 +5235,7 @@ Possible values include (from HL7 Table 140): US Army; US Navy; US Air Force; US
       </ownedEnd>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_8AmGANgeEeG3E4mt6RKX5Q" name="healthcareProvider_patient">
-      <memberEnd href="#_8AqXcNgeEeG3E4mt6RKX5Q?FHIM/Person/Patient/healthcareProvider?"/>
+      <memberEnd href="#_8AqXcNgeEeG3E4mt6RKX5Q?FHIM/Person/Patient/managingOrganization?"/>
       <memberEnd href="Provider.efx#_8Av3ANgeEeG3E4mt6RKX5Q?FHIM/Provider/HealthcareProvider/patient?"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_-xnv4F-OEd-WjrW-OJ9BNQ" name="patient_healthRecord" memberEnd="_-xnv4V-OEd-WjrW-OJ9BNQ _-xnv5F-OEd-WjrW-OJ9BNQ">
@@ -5272,7 +5305,8 @@ Possible values include (from HL7 Table 140): US Army; US Navy; US Air Force; US
         <ownedComment xmi:id="_loxAEUMtEeO6WpAQAnLQ-g" annotatedElement="_loxAEEMtEeO6WpAQAnLQ-g">
           <body>The date range during which this person is a contact party for the patient.&#xD;
 &quot;The start date of the contact role.&quot; - HL7 Version 2.8, NK1-8.&#xD;
-&quot;The end date of the contact role.&quot; - HL7 Version 2.8, NK1-9.</body>
+&quot;The end date of the contact role.&quot; - HL7 Version 2.8, NK1-9.&#xD;
+&quot;The period during which this contact person or organization is valid to be contacted relating to this patient.&quot; - HL7 FHIR, Patient.contact.period.</body>
         </ownedComment>
         <type xmi:type="uml:Class" href="Datatypes.efx#_420A62FD03B642387187004E?FHIM/Datatypes/TimeInterval?"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_loxAEkMtEeO6WpAQAnLQ-g" value="1"/>
@@ -5287,6 +5321,9 @@ Possible values include (from HL7 Table 140): US Army; US Navy; US Air Force; US
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_U3UwQKyOEeSUSIBAyhZNow" name="patient_encounter" memberEnd="_U3ehQKyOEeSUSIBAyhZNow _U3oSQqyOEeSUSIBAyhZNow">
       <ownedEnd xmi:id="_U3oSQqyOEeSUSIBAyhZNow" name="" visibility="private" type="_420A62FD03B6418A4E500034" association="_U3UwQKyOEeSUSIBAyhZNow"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_tIPlEPm_EeSJ3abZ9RQzyQ" memberEnd="_tISoYPm_EeSJ3abZ9RQzyQ _tIUdkPm_EeSJ3abZ9RQzyQ">
+      <ownedEnd xmi:id="_tIUdkPm_EeSJ3abZ9RQzyQ" name="" visibility="private" type="_420A62FD03B6418A4E500034" association="_tIPlEPm_EeSJ3abZ9RQzyQ"/>
     </packagedElement>
   </uml:Package>
   <Default:Documentation xmi:id="_-6lo4MiHEeKmIMgFaq6xTg" base_Comment="_Aj8jIH3PEeGy1_tR17zNdw"/>
@@ -5354,7 +5391,6 @@ Possible values include (from HL7 Table 140): US Army; US Navy; US Air Force; US
   <Default:Documentation xmi:id="_Bugc0MiaEeKKLKT6mm7fPg" base_Comment="_2ZpGMDG6EeGoIvbvHHPRDA"/>
   <Default:Documentation xmi:id="_BxorUMiEEeKVX7oj83E-Mw" base_Comment="_2T8LcBqOEd-j8JC21F3W2A"/>
   <Default:Documentation xmi:id="_c78UAMfVEeKnEbt4LwGVaA" base_Comment="_OP9UQJXtEeCD7vwmJe8BlA"/>
-  <Default:Documentation xmi:id="_cNw58MiGEeKVX7oj83E-Mw" base_Comment="_986q0BqVEd-j8JC21F3W2A"/>
   <Default:Documentation xmi:id="_cNZL4MiZEeKKLKT6mm7fPg" base_Comment="_ruqMcH8lEeGaaPUCLjdvag"/>
   <Default:Documentation xmi:id="_CPzzEMiaEeKKLKT6mm7fPg" base_Comment="_xXHAcDG6EeGoIvbvHHPRDA"/>
   <Default:Documentation xmi:id="_cVm04MhmEeKZ5qLCaMpP2Q" base_Comment="_24iYMBqMEd-j8JC21F3W2A"/>
@@ -5364,7 +5400,6 @@ Possible values include (from HL7 Table 140): US Army; US Navy; US Air Force; US
   <Default:Documentation xmi:id="_d0gTsMfVEeKnEbt4LwGVaA" base_Comment="_roDrkDG9EeGoIvbvHHPRDA"/>
   <Default:Documentation xmi:id="_D6uM0MiGEeKVX7oj83E-Mw" base_Comment="_StrSoDGyEeGoIvbvHHPRDA"/>
   <Default:Documentation xmi:id="_Da2vEMiIEeKmIMgFaq6xTg" base_Comment="_nRjtMJB3EeGFF50UGueAcQ"/>
-  <Default:Documentation xmi:id="_dEwzYMiGEeKVX7oj83E-Mw" base_Comment="_eKyggBqWEd-j8JC21F3W2A"/>
   <Default:Documentation xmi:id="_DGBZcMiGEeKVX7oj83E-Mw" base_Comment="_9TUx8mrUEeCJbfIpPWFXRg"/>
   <Default:Documentation xmi:id="_DGt4oMhoEeKZ5qLCaMpP2Q" base_Comment="_H7pI8DA7Ed-1aYBV65Lrnw"/>
   <Default:Documentation xmi:id="_dH7HAMiEEeKVX7oj83E-Mw" base_Comment="_sjImEO6wEd-crcWiXVDZrQ"/>
@@ -5379,10 +5414,8 @@ Possible values include (from HL7 Table 140): US Army; US Navy; US Air Force; US
   <Default:Documentation xmi:id="_Eu_QcMiIEeKmIMgFaq6xTg" base_Comment="_Vzv78H6DEeGaaPUCLjdvag"/>
   <Default:Documentation xmi:id="_Ew80wMiHEeKmIMgFaq6xTg" base_Comment="_CsNtAKCfEeKNT6obAX9SKQ"/>
   <Default:Documentation xmi:id="_Ex1D4MiaEeKKLKT6mm7fPg" base_Comment="_DbdooDG5EeGoIvbvHHPRDA"/>
-  <Default:Documentation xmi:id="_eXZf8MiGEeKVX7oj83E-Mw" base_Comment="_xwN54BqUEd-j8JC21F3W2A"/>
   <Default:Documentation xmi:id="_ezGIAMiHEeKmIMgFaq6xTg" base_Comment="_0mC4oH3MEeGy1_tR17zNdw"/>
   <Default:Documentation xmi:id="_e_Kv8MiZEeKKLKT6mm7fPg" base_Comment="_M08wgH8pEeGaaPUCLjdvag"/>
-  <Default:Documentation xmi:id="_f22ggMiGEeKVX7oj83E-Mw" base_Comment="_lvKi0RqUEd-j8JC21F3W2A"/>
   <Default:Documentation xmi:id="_F9w9cMiYEeKKLKT6mm7fPg" base_Comment="_YMhF8H6KEeGaaPUCLjdvag"/>
   <Default:Documentation xmi:id="_fc1jYMiZEeKKLKT6mm7fPg" base_Comment="_EXPkYH8pEeGaaPUCLjdvag"/>
   <Default:Documentation xmi:id="_ffkzgMiHEeKmIMgFaq6xTg" base_Comment="_2hWuwH3MEeGy1_tR17zNdw"/>
@@ -5394,7 +5427,6 @@ Possible values include (from HL7 Table 140): US Army; US Navy; US Air Force; US
   <Default:Documentation xmi:id="_G-_AIMhnEeKZ5qLCaMpP2Q" base_Comment="_LBPucFjuEeG6Pp3Py7p1bw"/>
   <Default:Documentation xmi:id="_G2I6cMiZEeKKLKT6mm7fPg" base_Comment="__ngmgH3CEeGy1_tR17zNdw"/>
   <Default:Documentation xmi:id="_G4DJgMiaEeKKLKT6mm7fPg" base_Comment="_oc1CgDG5EeGoIvbvHHPRDA"/>
-  <Default:Documentation xmi:id="_g7TAEMiGEeKVX7oj83E-Mw" base_Comment="_WUERkBAyEd-2E9qx-lgHBg"/>
   <Default:Documentation xmi:id="_g9s-YMiHEeKmIMgFaq6xTg" base_Comment="_M5BnQH3AEeGy1_tR17zNdw"/>
   <Default:Documentation xmi:id="_gIZo8MfVEeKnEbt4LwGVaA" base_Comment="_df5CIJXtEeCD7vwmJe8BlA"/>
   <Default:Documentation xmi:id="_gJG4sMiHEeKmIMgFaq6xTg" base_Comment="_II07wH3NEeGy1_tR17zNdw"/>
@@ -5514,7 +5546,6 @@ Possible values include (from HL7 Table 140): US Army; US Navy; US Air Force; US
   <Default:Documentation xmi:id="_QTY4AMiZEeKKLKT6mm7fPg" base_Comment="_Hwf4IH3JEeGy1_tR17zNdw"/>
   <Default:Documentation xmi:id="_r32fIMiEEeKVX7oj83E-Mw" base_Comment="_G7xNYAQBEeKZsvne-rOhhA"/>
   <Default:Documentation xmi:id="_RDnbEMiZEeKKLKT6mm7fPg" base_Comment="_Yz_Y4H3KEeGy1_tR17zNdw"/>
-  <Default:Documentation xmi:id="_Ri7u8MiGEeKVX7oj83E-Mw" base_Comment="_ZTLGwBqVEd-j8JC21F3W2A"/>
   <Default:Documentation xmi:id="_ROfroMhoEeKZ5qLCaMpP2Q" base_Comment="_cFvOoBqNEd-j8JC21F3W2A"/>
   <Default:Documentation xmi:id="_RQamIMiHEeKmIMgFaq6xTg" base_Comment="_A9Is0BqREd-j8JC21F3W2A"/>
   <Default:Documentation xmi:id="_rtSGgMiHEeKmIMgFaq6xTg" base_Comment="_HMx2EH6EEeGaaPUCLjdvag"/>
@@ -5537,7 +5568,6 @@ Possible values include (from HL7 Table 140): US Army; US Navy; US Air Force; US
   <Default:Documentation xmi:id="_VdULwMiEEeKVX7oj83E-Mw" base_Comment="_I4KUkBqPEd-j8JC21F3W2A"/>
   <Default:Documentation xmi:id="_VlttQMiZEeKKLKT6mm7fPg" base_Comment="_ODAlcH8xEeGaaPUCLjdvag"/>
   <Default:Documentation xmi:id="_vLwYgMiHEeKmIMgFaq6xTg" base_Comment="_LjbEkLvtEeGQGoDxtoz2mA"/>
-  <Default:Documentation xmi:id="_VqGYoMiGEeKVX7oj83E-Mw" base_Comment="_jsL-cBqUEd-j8JC21F3W2A"/>
   <Default:Documentation xmi:id="_VtkfAMhoEeKZ5qLCaMpP2Q" base_Comment="_5uJ58LZLEeGWl-7OlqBMDw"/>
   <Default:Documentation xmi:id="_vUh9AMhmEeKZ5qLCaMpP2Q" base_Comment="_NMLG4On-EeCkWsmL2aWuUQ"/>
   <Default:Documentation xmi:id="_vWUkkMiZEeKKLKT6mm7fPg" base_Comment="_xrWEsDGyEeGoIvbvHHPRDA"/>
@@ -5557,7 +5587,6 @@ Possible values include (from HL7 Table 140): US Army; US Navy; US Air Force; US
   <Default:Documentation xmi:id="_xldiMMiEEeKVX7oj83E-Mw" base_Comment="_Gbo6MKChEeKNT6obAX9SKQ"/>
   <Default:Documentation xmi:id="_xlqJ8MiZEeKKLKT6mm7fPg" base_Comment="_akbXADGzEeGoIvbvHHPRDA"/>
   <Default:Documentation xmi:id="_XNl2kMiEEeKVX7oj83E-Mw" base_Comment="_MFyuMBqPEd-j8JC21F3W2A"/>
-  <Default:Documentation xmi:id="_XXS6QMiGEeKVX7oj83E-Mw" base_Comment="_xqCrUBqSEd-j8JC21F3W2A"/>
   <Default:Documentation xmi:id="_Xyh_kMiYEeKKLKT6mm7fPg" base_Comment="_Fz0XwH3DEeGy1_tR17zNdw"/>
   <Default:Documentation xmi:id="_Y4GrEMiZEeKKLKT6mm7fPg" base_Comment="_RNRXoH9VEeG8JPxVazzwbQ"/>
   <Default:Documentation xmi:id="_YDth4MhmEeKZ5qLCaMpP2Q" base_Comment="_TzgNcC6SEd6RGqZb7W4v4w"/>
@@ -5705,5 +5734,9 @@ Possible values include (from HL7 Table 140): US Army; US Navy; US Air Force; US
   <term:ValueSetConstraint xmi:id="_Kt7NoGf1EeOFsd2HWkmwvQ" base_Property="_eXxsYJXtEeCD7vwmJe8BlA">
     <reference href="platform:/resource/gov.us.fhim.terminology/model/fhim-vocab.uml#_zpSIcGQyEeODL8RnVGcWEw"/>
   </term:ValueSetConstraint>
-  <Default:Documentation xmi:id="_WiY7sHo0EeOKnMBxUzvJfA" base_Comment="_WiXGgXo0EeOKnMBxUzvJfA"/>
+  <Default:Documentation xmi:id="_4sC5EPm3EeSJ3abZ9RQzyQ" base_Comment="_4r-nofm3EeSJ3abZ9RQzyQ"/>
+  <Default:Documentation xmi:id="_KeTkUPm5EeSJ3abZ9RQzyQ" base_Comment="_KeFh4Pm5EeSJ3abZ9RQzyQ"/>
+  <Default:Documentation xmi:id="_ecb0wPm7EeSJ3abZ9RQzyQ" base_Comment="_ecamofm7EeSJ3abZ9RQzyQ"/>
+  <Default:Documentation xmi:id="_aIYeQPm-EeSJ3abZ9RQzyQ" base_Comment="_aINfIPm-EeSJ3abZ9RQzyQ"/>
+  <Default:Documentation xmi:id="_z9Q8IPm_EeSJ3abZ9RQzyQ" base_Comment="_z9HLIPm_EeSJ3abZ9RQzyQ"/>
 </xmi:XMI>
