@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMHealthConcernHealthRisk" xml:lang="en-us">
+<title id="title">HealthRisk</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	HealthRisk is a kind of <xref href="../t_FHIMHealthConcernHealthConcern.dita">HealthConcern</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>&quot;Risks may represent clinically significant potential concerns to the patient&#8217;s health.  They are captured in order to monitor and mitigate the manifestation of a future concern. Risks may be raised based on clinical evidences or they may capture a provider&#8217;s judgment.&quot; - HL7 Care Plan Domain Analysis Model.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>description :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Names or describes the risk&quot; - HL7 Care Plan Domain Analysis Model.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>effectiveTime :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Date/time at which the risk is identified.&quot; - HL7 Care Plan Domain Analysis Model.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>levelOfRisk :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;A risk is clinically significant but the level may be low, medium or high depending on care team judgment.&quot; - HL7 Care Plan Domain Analysis Model.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>resolvedTime :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The date the risk is no longer a threat to the health of the patient. &quot; - HL7 Care Plan Domain Analysis Model.
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

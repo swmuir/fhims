@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMSecurityAndPrivacyConsentDirective" xml:lang="en-us">
+<title id="title">ConsentDirective</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	ConsentDirective is a kind of <xref href="../t_FHIMSecurityAndPrivacyCompositePrivacyPolicy.dita">CompositePrivacyPolicy</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class is the focal class representing a set of consent directives issued by a consenter on behalf of self or someone else. This class is the root class or the entry class into the Consent Directive structure.</p><p></p><p>Note: There used to be a class called &quot;PublishedConsent&quot; the definition of which was: &gt;&gt;This specialization of the ConsentDirective class is used to describe a consent directive published to a registry. If a client s consent directive is published, a URL/URI is made available for reference. The client may use this URI to allow providers access to the consent directive created by the consenter.&lt;&lt;.  I&apos;ve moved the uri property to this class and deleted the Published Consent class.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>_delete_revocationReason :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This attribute is used to specify the reason for revoking a Consent Directive, e.g., requested vs. correction/error.  An error would be a discrepancy between the intent of Consent Directive (as communicated by the Consenter) and that which was entered into the Consent Directive Management System (CDMS).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>category :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				A categorization of the Consent Directive.  Added due to CEDD mapping.  Possible values include New; Update.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>documentImage :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This optional attribute references a signed paper document containing the client&apos;s consent directive.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>effectiveTime :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This attribute specifies the date when the policy/consent is in effect.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>expirationTime :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				 This attribute specifies when the consent directive automatically expires.  A consent directive may be revoked prior to its expiration date.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>id :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				 Unique identifier that refers to a specific Consent Directive instance.  This id or the published URI may be used to lookup the client&apos;s consent directives in order to apply them to the collection, access, use, or disclosure of health records.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>status :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This attribute indicates whether the consent directive is active or not.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>uri :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				If a specific consent directive (for a client) is published, this attribute provides the means to locate and download the consent directive from a registry.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>consentAuthor : <xref href="../t_FHIMSecurityAndPrivacyConsentAuthor.dita" >ConsentAuthor</xref> (1..1)</p></stentry>
+  <stentry><p>				Identifies the person who created or &apos;authored&apos; the consent directive
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>consenter : <xref href="../t_FHIMSecurityAndPrivacyConsenter.dita" >Consenter</xref> (0..*)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>dataEnterer : <xref href="../t_FHIMCommonDataEnterer.dita" >DataEnterer</xref> (0..*)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>replacesDirective : <xref href="../t_FHIMSecurityAndPrivacyConsentDirective.dita" >ConsentDirective</xref> (0..1)</p></stentry>
+  <stentry><p>				Points to a previous Consent Directive superseded by the current instance.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>subjectOfConsent : <xref href="../t_FHIMPersonPatient.dita" >Patient</xref> (1..1)</p></stentry>
+  <stentry><p>				Identifies the person to whom the consent directive applies.  This person may or may not be the same person as the consent author, as in the case where the patient is a minor child or an incapacitated person.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>witness : <xref href="../t_FHIMCommonWitness.dita" >Witness</xref> (0..*)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

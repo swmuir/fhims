@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMPersonPatient" xml:lang="en-us">
+<title id="title">Patient</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+<section id="specializations"  audience="developer, modeler">
+	<title>Derivations</title>
+	<ul>
+<li><xref href="../t_FHIMPersonAnimalPatient.dita">AnimalPatient </xref> is a kind of  Patient </li>
+<li><xref href="../t_FHIMPersonHumanPatient.dita">HumanPatient </xref> is a kind of  Patient </li>
+	</ul>
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>A role of a person or animal as a recipient of health care services from a healthcare provider.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>beginDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The first date upon which the Person or Animal was a Patient of the associated Healthcare Provider.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>endDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The last date upon which the Person or Animal was a Patient of the associated Healthcare Provider.  For inactive patients, particularly in outpatient situations, this date is often not known.  Each organization will set its own rules regarding when a patient is no longer considered active, often if they have not seen nor heard from the patient in over a year.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>mothersIdentifier :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (0..*)</p> 
+
+
+</stentry>
+  <stentry><p>				A unique identifer for the person&apos;s mother.</p><p>&quot;This field is used, for example, as a link field for newborns.  Typically a patient ID or account number may be used.  This field can contain multiple identifiers for the same mother.&quot; - HL7 Version 2.8, PID-21.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>patientId :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				A unique identifier for the Person or Animal while in the role of Patient.  Note that the patient Id is assigned by the Healthcare Provider (organization), and that the Id data type includes an assigning authority component which identifies the organization that assigned the id.  A single Person will typically have multiple patient Ids; one at each organization which considers that Person a Patient.</p><p>&quot;Contains the list of identifiers (one or more) used by the healthcare facility to uniquely identify a patient (e.g., medical record number, billing number, birth registry, national unique individual identifier, etc.).&quot; - HL7 Version 2.8, PID-3.</p><p>&quot;An identifier for this patient.&quot; - HL7 FHIR, Patient.identifier.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>status :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+<p>See <xref href="../t_fhimvocabPersonVocabFHIM_RoleStatus.dita">FHIM_RoleStatus</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				Indicates the state of the Patient Role instance.  This property is used, among other purposes, to determine whether the Patient should be included in a particular population, such as the &quot;denominator&quot; for various quality-reporting criteria.  Possible values are Active, Inactive-Moved or gone elsewhere, Inactive-Lost to follow up, Inactive-Unspecified, Inactive-Permanently.  Note that the preceeding four Inactive states correspond to the V3 Terminated state.</p><p></p><p>Note that for public health reporting purposes, this status indicates the active/inactive status of the patient at the provider site level. See MIROW &#8220;Management of Moved or Gone Elsewhere (MOGE) and Other Patient Status Designations in IIS guidelines.</p><p></p><p>&quot;Whether this patient record is in active use.&quot; - HL7 FHIR, Patient.active.  Note that FHIR has a boolean field indicating that the patient is active or not, while the FHIM has a more expressive set of statuses.  A FHIM value of Active would correspond to true in FHIR, while all of the Inactive status types would correspond to a false in FHIR.  When migrating from FHIR to FHIM, a false would translate to Inactive-Unspecified.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>careProvider : <xref href="../t_FHIMProviderHealthcareProvider.dita" >HealthcareProvider</xref> (0..*)</p></stentry>
+  <stentry><p>				&quot;Patient&apos;s nominated care provider.&quot; - HL7 FHIR, Patient.careProvider.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>encounter : <xref href="../t_FHIMEncounterAbstractEncounter.dita" >AbstractEncounter</xref> (0..*)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>healthRecord : <xref href="../t_FHIMPersonHealthRecord.dita" >HealthRecord</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to records regarding the Patient&apos;s healthcare that are subject to the consent rules in Consent Directives.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>managingOrganization : <xref href="../t_FHIMProviderHealthcareProvider.dita" >HealthcareProvider</xref> (1..1)</p></stentry>
+  <stentry><p>				Pointer to the Healthcare Provider that has established a Patient record for the Person or Animal being treated.  Note that the Patient class represents a Role that the Person or Animal is playing; the Healthcare Provider is &quot;scoping&quot; that role.  A single Person will have multiple Patient roles with different Healthcare Providers, and may have more than one with the same Provider, especially in in-patient settings.</p><p>&quot;Organization that is the custodian of the patient record.&quot; - HL7 FHIR, Patient.managingOrganization.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>primaryCareProvider : <xref href="../t_FHIMCommonPrimaryCareProvider.dita" >PrimaryCareProvider</xref> (0..1)</p></stentry>
+  <stentry><p>				A pointer to the doctor selected by the patient to be the first physician contacted for any medical problem. The doctor acts as the patient&apos;s regular physician and coordinates any other care the patient needs, such as a visit to a specialist or hospitalization.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

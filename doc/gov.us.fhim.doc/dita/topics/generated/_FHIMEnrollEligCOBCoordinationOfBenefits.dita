@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMEnrollEligCOBCoordinationOfBenefits" xml:lang="en-us">
+<title id="title">CoordinationOfBenefits</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class represents the results of prior Billing Events, including previous payments, which are used in part to determine the liability of the Payer and of the Patient for the current Billing Event.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>benefitStageCount :  Integer (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Count of Benefit Stage Amount occurrences.&quot; - NCPDP Telecommunication (Field 392-MU, Data Dictionary 201104).  Note that this property is marked as derived, since this number can be calculated from the number of Benefit Stage class instances.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateAdjudicated :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Payment or denial date of the claim submitted to the other payer. Used for coordination of benefits.&quot; - NCPDP Telecommunication (Field 443-E8, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>internalControlId :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Number assigned by the processor to identify an adjudicated claim when supplied in payer-to-payer coordination of benefits only.&quot; - NCPDP Telecommunication (Field 993-A7, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>otherPayerId :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;ID assigned to the payer.&quot; - NCPDP Telecommunication (Field 340-7C, Data Dictionary 201104).  Note that the NCPDP Telecommunication structure uses a separate &quot;qualifier&quot; field (339-6C) to identify what kind of id is being used here (i.e., who issued the id).  Possible values include: National Provider Identifier (NPI); Medicare; Medicaid; Health Industry Number (HIN); Bank Information Number (BIN); National Association of Insurance Commissioners (NAIC); Medicare Carrier Number; Other.  The FHIM does not model this concept separately, as it is built-in to the the Id data type structure.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>previousPatientResponsibilityCount :  Integer (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Count of Other Payer-Patient Responsibility Amount and Other Payer-Patient Responsibility Amount Qualifier occurrences.&quot; - NCPDP Telecommunication (Field 353-NR, Data Dictionary 201104).  Note that this property is marked as derived, since this number can be calculated from the number of Previous Patient Responsibility class instances.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>previousPaymentCount :  Integer (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Count of the payer amount paid occurrences.&quot; - NCPDP Telecommunication (Field 341-HB, Data Dictionary 201104).  Note that this property is marked as derived, since this number can be calculated from the number of Previous Payment class instances.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>previousRejectionCount :  Integer (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Count of Other Payer Reject Code occurrences.&quot; - NCPDP Telecommunication (Field 471-5E, Data Dictionary 201104).  Note that this property is marked as derived, since this number can be calculated from the number of Previous Rejection class instances.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>benefitStage : <xref href="../t_FHIMEnrollEligCOBBenefitStage.dita" >BenefitStage</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to a record of the number and dollar amount of payments made in each Medicare Part D stage.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>billingSequence : <xref href="../t_FHIMEnrollEligCOBBillingSequence.dita" >BillingSequence</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to the Billing Event(s) for which Health Plans have previously made payments for the Billable Service.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>previousPatientResponsibility : <xref href="../t_FHIMEnrollEligCOBPreviousPatientResponsibility.dita" >PreviousPatientResponsibility</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to a set of amounts previously determined by other payers to be the responsibility of the Patient.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>previousPayment : <xref href="../t_FHIMEnrollEligCOBPreviousPayment.dita" >PreviousPayment</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to a set of amounts and categories of any payment(s) known by the pharmacy from other sources.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>previousRejection : <xref href="../t_FHIMEnrollEligCOBPreviousRejection.dita" >PreviousRejection</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to a set of rejections previously made by other payers.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

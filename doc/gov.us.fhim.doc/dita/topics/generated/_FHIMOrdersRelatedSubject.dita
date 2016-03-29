@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMOrdersRelatedSubject" xml:lang="en-us">
+<title id="title">RelatedSubject</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class relates two or more persons or things that are subjects of a healthcare activity to each other.  For example, samples from multiple bags of chicken feed might be combined (&quot;pooled&quot;), against which tests might be performed.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>relatedSubjectCategory :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Indicates how the &quot;subject&quot; is related to the &quot;related subject&quot;.  Examples include Parent, Child, Replaces, Replaced By, etc.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>subject : <xref href="../t_FHIMOrdersSubject.dita" >Subject</xref> (1..1)</p></stentry>
+  <stentry><p>				Points to the Subject (i.e., the &quot;target Subject&quot;) to which the &quot;source Subject&quot; (i.e., the Subject that points to this class) is somehow related.  
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

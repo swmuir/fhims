@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMBehavioralHealthBehavioralHealthDomain2Model2BehavioralHealthInformationModel24SummaryInformationExchangeClassesBehavioralHealthSummaryReport" xml:lang="en-us">
+<title id="title">BehavioralHealthSummaryReport</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	BehavioralHealthSummaryReport is a kind of <xref href="../t_FHIMClinicalDocumentClinicalDocumentEvent.dita">ClinicalDocumentEvent</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class specifies the summary report intended to exchange selected information relevant across specialties.  It may not include the details of an assessment but it will contain many data elements that are based on the information collected through the assessment and generated from its processing.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>confidentialityCode :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This attribute is used to specify that the content of this clinical document is sensitive because it contains Behavioral Health information.  This attribute corresponds to the Act.confidentialityCode in the HL7 Version 3 RIM but is constrained to specify sensitivity and for the purpose of data segmentation.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>alertsSection : <xref href="../t_FHIMBehavioralHealthBehavioralHealthDomain2Model2BehavioralHealthInformationModel24SummaryInformationExchangeClassesAlertsSection.dita" >AlertsSection</xref> (0..*)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>behavioralHealthSection : <xref href="../t_FHIMBehavioralHealthBehavioralHealthDomain2Model2BehavioralHealthInformationModel24SummaryInformationExchangeClassesResultsSection.dita" >ResultsSection</xref> (0..*)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>functionalStatusSection : <xref href="../t_FHIMBehavioralHealthBehavioralHealthDomain2Model2BehavioralHealthInformationModel24SummaryInformationExchangeClassesFunctionalStatusSection.dita" >FunctionalStatusSection</xref> (0..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>personDemographics : <xref href="../t_FHIMBehavioralHealthBehavioralHealthDomain2Model2BehavioralHealthInformationModel21CommonBehavioralHealthClassesPatientBehavioralHealth.dita" >PatientBehavioralHealth</xref> (0..*)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>problemSection : <xref href="../t_FHIMBehavioralHealthBehavioralHealthDomain2Model2BehavioralHealthInformationModel24SummaryInformationExchangeClassesProblemSection.dita" >ProblemSection</xref> (0..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>socialHistorySection : <xref href="../t_FHIMBehavioralHealthBehavioralHealthDomain2Model2BehavioralHealthInformationModel24SummaryInformationExchangeClassesSocialHistorySection.dita" >SocialHistorySection</xref> (0..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMEncounterCensusEvent" xml:lang="en-us">
+<title id="title">CensusEvent</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>Date that an Inpatient or ShortStay Encounter was included in the Census. Census is taken 3 or 4 times a year at 11:59 pm.  Only those Encounters that are active (admitted), at the time the Census Event triggers receive a date timestamps.  </p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>censusDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This field contains the date the census was taken for this Encounter  
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>inpatientCensus : <xref href="../t_FHIMEncounterInpatientEncounterEvent.dita" >InpatientEncounterEvent</xref> (0..*)</p></stentry>
+  <stentry><p>				Inpatient Encounter was included in the Census. Census is taken 3 or 4 times a year at 11:59 pm.  Only those Encounters that are active (admitted), at the time the Census Event triggers receive a date timestamps.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>shortstayCensus : <xref href="../t_FHIMEncounterShortStay.dita" >ShortStay</xref> (0..*)</p></stentry>
+  <stentry><p>				ShortStay Encounter was included in the Census. Census is taken 3 or 4 times a year at 11:59 pm.  Only those Encounters that are active (admitted), at the time the Census Event triggers receive a date timestamps.  
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

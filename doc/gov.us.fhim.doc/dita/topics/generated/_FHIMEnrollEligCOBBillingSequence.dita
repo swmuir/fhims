@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMEnrollEligCOBBillingSequence" xml:lang="en-us">
+<title id="title">BillingSequence</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class links the Billable Service with the Billing Events in which the Health Plans are invoiced for the service.  There will typically be one or more Billing Events for a Billable Service: one if benefits are not coordinated among multiple payers (assuming no re-billing is needed); many if benefits coordination takes place (or if some kind of re-billing is needed for a single payer).  This relationship is modeled as zero to many because a Billable Service may exist before a Billing Event is created for it, and it is possible that no Billing Event might occur in the case of cash payments or if the fee is written off.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>sequenceNbr :  Integer (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;If the insurance works in conjunction with other insurance plans, this field contains priority sequence.  Values are: 1, 2, 3, etc.&quot; - HL7 Version 2.8, IN1-22.</p><p>&quot;Code identifying the type of Other Payer ID&quot; - NCPDP Telecommunication (Field 338-5C, Data Dictionary 201104).  Possible values are 1-9.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>billingEvent : <xref href="../t_FHIMEnrollEligCOBBillingEvent.dita" >BillingEvent</xref> (1..1)</p></stentry>
+  <stentry><p>				Pointer to an instance of an invoice or bill for a Billable Service.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

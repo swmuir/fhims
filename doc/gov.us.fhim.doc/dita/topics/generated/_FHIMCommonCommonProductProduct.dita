@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMCommonCommonProductProduct" xml:lang="en-us">
+<title id="title">Product</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+<section id="specializations"  audience="developer, modeler">
+	<title>Derivations</title>
+	<ul>
+<li><xref href="../t_FHIMCommonCommonProductMedicinalProduct.dita">MedicinalProduct </xref> is a kind of  Product </li>
+<li><xref href="../t_FHIMCommonCommonProductDevice.dita">Device </xref> is a kind of  Product </li>
+	</ul>
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>&quot;The product, e.g., a medicine or device or food item, that is the primary unit which is manufactured and the object of an intended administration.  It represents an entity, either in its real or actual form as something made, or described specifically, or more conceptually, generically, or &quot;virtually&quot;.</p><p>A product must be distinguished from one that is just packaging.  Examples for products are tablet, capsule, solution for injection, powder, and device.  Conversely, vial, bottle, pouch, and carton are containers, which though sometimes necessary for handling of the product, are not themselves administered, but emptied into some other container, or used with an injection or inhalation device.  Even though a capsule can be considered a container holding granules, a capsule is still considered primary Product not PackagedProduct, because the capsule is the unit normally intended for administration, and so the capsule is the Product.  In this way, a solution packaged in an administration unit, such as a dragee or a prefilled syringe may be considered primary Product rather than PackagedProduct, if it is intended to be applied completely as one unit, and not subdivided.  This requires that the ingredients of such products are specified as a total amount per complete application rather than as a concentration.</p><p>Examples for devices are chest tube, wound dressing, dental chair, and ventilator machine.  Devices are any kind of product  used for medical purposes or in conjunction with medical services, including, but not limited to, direct use for  therapeutic purposes (e.g., orthopedic screw), diagnostic purposes (e.g. EKG machine), usage as applicator devices for the administration of medicines (e.g., syringes), or as tools (e.g., dental chair).  [Note, while it may seem unusual to classify a wound dressing as a device, this is the practice in the regulatory context, in other contexts, these items are sometimes called &quot;supplies&quot;].</p><p>A kit is a product that contains multiple parts administered together or used together in some intricate way.  Some of the parts of a kit may be medicinal substances (medicines), and others may be devices, e.g., applicator devices.  Kits are described as a primary product of form code meaning &quot;kit&quot; with parts.&quot;  - HL7 Version 3 (ManufacturedMaterial-&gt;Product).</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>brandName :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..*)</p> 
+
+
+</stentry>
+  <stentry><p>				&#8220;The name of the product kind described.  If this is a specific manufactured (brand) product, this would be the proprietary name.  For general product class descriptions this would be a non-proprietary name.  This attribute may sometimes be used instead of a code and descriptive data elements when no suitable coding system is available.  The data type for the name allows for suffixes and also other name parts, which might hold proprietary dose form (e.g., &quot;capsil&quot;, &quot;discus&quot;, &quot;injection system&quot;) or other name parts which may be required for recognition of the product among health professionals.  Note that these name parts are never to be used instead of proper descriptive data elements (formCode, ingredients and their quantities, etc.).&#8221; - HL7 Version 3 (ManufacturedMaterial.name).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>code :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&#8220;The code given to this kind of product, i.e., NDC code to medicines in the U.S., EAN or UPC codes to food items or devices.  A code given to a device may also be known as &quot;unique device identifier&quot;.  Unlike a device instance identifier, however, this is a code for the specific kind of device analogously to the NDC code or UPC code that is a code of a manufactured kind of product respectively.  The words &quot;product code&quot; &quot;unique device identifiers&quot; may have certain specific connotations in different regulatory contexts, to side-step such unwanted connotations, one may call this code the &quot;Item Code&quot;, for it is the code for the item (product, medicine, thing, or class thereof) that is so described.&#8221; - HL7 Version 3 (ManufacturedMaterial.code).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>description :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&#8220;A text description of the product&#8230;.  The description attribute is mainly to be used for brief descriptions which users of product catalogs can use to quickly distinguish this product from other similar products in a list of products.&#8221; - HL7 Version 3 (ManufacturedMaterial.desc).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>formCode :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&#8220;The principle form of a product, such as dosage form of a medicine.  Values may be drawn from the MaterialForm HL7 vocabulary table or from other external code value sources.  Notice the difference between an (Administered) Medicine and a PackagedMedicine.  Both have formCodes.  A box or vial is usually not a medicine Product.formCode but a PackageProduct.formCode, unless the entire box or the entire vial is meant for direct administration as a single unit.  In principle, the formCode is a very coarsely-grained (high level) product class that focuses on physical appearance.  At the top, it usually distinguishes between physical state of matter (solid, liquid, gaseous), and, because solids may be amorphous (e.g., powders), would allow distinguishing solid shaped from amorphous masses.  The former can be individually handled and counted, whereas the latter (amorphous masses) can only be measured and require primary containers for handling.  Thus the formCode has implications for how the product is quantified (counted vs. measured) and whether a primary container (e.g., vial) may be expected.&#8221; - HL7 Version 3 (ManufacturedMaterial.formCode).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>handlingCode :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&#8220;An indicator of special handling requirements for the product, e.g., keep at room temperature, store upright.&#8221; - HL7 Version 3 (ManufacturedMaterial.handlingCode).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>riskCode :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&#8220;Indicates a type of hazard or threat associated with the product.&#8221; - HL7 Version 3 (ManufacturedMaterial.riskCode).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>shelfLife :  <xref href="../t_FHIMDatatypesTimeQuantity.dita" >TimeQuantity</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&#8220;The amount of time after date of manufacture that the manufacturer no longer ensures the safety, quality, and/or proper functioning of the material.  Only the interval width is valued.&#8221; - HL7 Version 3 (ManufacturedMaterial.expirationTime).
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>equivalentTo : <xref href="../t_FHIMCommonCommonProductMaterialCategory.dita" >MaterialCategory</xref> (0..*)</p></stentry>
+  <stentry><p>				&#8220;A code specifying in what way the equivalent entity (player) is considered equivalent to its reference entity (scoper). This is used to reference materials submitted from another source (e.g., repackagers, OTC, etc.)  Examples: No known or suspected bioequivalence problems; Potential bioequivalence problems have been resolved with evidence supporting bioequivalence; Bioequivalence problems have not been fully resolved.&#8221; &#8211; HL7 Version 3 (Role.code).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>specializationOf : <xref href="../t_FHIMCommonCommonProductMaterialCategory.dita" >MaterialCategory</xref> (0..*)</p></stentry>
+  <stentry><p>				&#8220;May specify a certain use of the generalization relationship.  Since things may be classified in various ways, this code may be used to allow systems with limited understanding of the classes to show the classes in distinguished slots (e.g., product by effect, by mechanism of action, by chemical nature, etc.) Note that this code cannot influence the simple interpretation of the relationship as an &quot;is-a&quot; relationship, i.e., the specialized kind role should not be used to indicate classes that may sometimes hold but not all the time, or that only hold under specific considerations.  The latter might be an example of a similarity relationship, for which the &quot;equivalent entity&quot; role should be used instead.&#8221; &#8211; HL7 Version 3 (Role.code).
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMProviderProviderAffiliation" xml:lang="en-us">
+<title id="title">ProviderAffiliation</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+<section id="specializations"  audience="developer, modeler">
+	<title>Derivations</title>
+	<ul>
+<li><xref href="../t_FHIMProviderNetworkAffliliation.dita">NetworkAffliliation </xref> is a kind of  ProviderAffiliation </li>
+<li><xref href="../t_FHIMProviderPracticeAffiliation.dita">PracticeAffiliation </xref> is a kind of  ProviderAffiliation </li>
+<li><xref href="../t_FHIMProviderHospitalAffiliation.dita">HospitalAffiliation </xref> is a kind of  ProviderAffiliation </li>
+	</ul>
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>Represents information about the association between an Individual Healthcare Provider and an Organizational Healthcare Provider.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>description :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Contains miscellaneous additional information related to the staff member&apos;s membership in the professional organization.&quot; - HL7 Version 2.8, AFF-5.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>effectiveDateRange :  <xref href="../t_FHIMDatatypesTimeInterval.dita" >TimeInterval</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Contains the period the staff member started and ended membership in the professional organization.&quot; - HL7 Version 2.8, AFF-4.</p><p>&quot;The period during which the person is authorized to act as a practitioner in these role(s) for the organization.&quot; - HL7 FHIR, Practitioner.practitionerRole.period.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>status :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>organizationalProvider : <xref href="../t_FHIMProviderOrganizationalProvider.dita" >OrganizationalProvider</xref> (1..1)</p></stentry>
+  <stentry><p>				Pointer to the Organizational Provider with which the Individual Provider is associated.</p><p>&quot;The organization where the Practitioner performs the roles associated.&quot; - HL7 FHIR, Practitioner.practitionerRole.managingOrganization.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>position : <xref href="../t_FHIMProviderPosition.dita" >Position</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to the Position that the Individual Provider holds at the Organizational Provider.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>privilegeOrResponsibility : <xref href="../t_FHIMProviderPrivilegeOrResponsibility.dita" >PrivilegeOrResponsibility</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to the Priviledges and/or Responsibilities that the Individual Provider holds at the Organizational Provider.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

@@ -1,0 +1,1059 @@
+
+<html xmlns:Standard="http://www.eclipse.org/uml2/schemas/Standard/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:fhim="http:///schemas/fhim/_bbjuwA3cEeSGTazHdUQojA/5" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:term="http://www.openhealthtools.org/mdht/schemas/term/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:xmi="http://www.omg.org/XMI" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.3/Umlnotation" xmlns:Default="http:///schemas/Default/_fNm3AAqoEd6-N_NOT9vsCA/2" xmlns:CDA="http://www.openhealthtools.org/mdht/schemas/cda/4" xmlns:Default_1="http:///schemas/Default/1" xmlns:RIM="http:///schemas/RIM/_fvnwgAH4Ed6VH-9W1IVKXA/4" xmlns:SketchNotation="http://www.ibm.com/ccl/soa/sketch/notation/1.0.0/">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>2.2 Behavioral Health Assessment Exchange Classes Domain</title>
+   </head>
+   <body style="font-family:Courier;font-size:14px">
+      <h1>2.2 Behavioral Health Assessment Exchange Classes Domain</h1>
+      <p> The purpose of this review is to identify the data elements required for the
+         interoperable exchange for the 2.2 Behavioral Health Assessment Exchange Classes domain including dependencies. A column is
+         provided at the far right of the table for you to enter comments related to each
+         data element. If the class or domain is missing data elements, please add a row
+         at the bottom of the sheet and specify a name, description, and type of data
+         (e.g. numeric, string, date/time, code). 
+      </p>
+      <p> Once you have reviewed the data elements, please review the value sets
+         associated with the coded data elements. Please provide feedback by adding
+         comments in the column provided at the right of item/row or by adding rows at
+         the bottom table. For any new coded concepts without a valid code yet, our team
+         will propose them for addition in the source coding system. 
+      </p>
+      <ul>
+         <li><a href=""> <i><b>2.2 Behavioral Health Assessment Exchange Classes</b> </i> Domain </a></li>
+       </ul>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font-family:Courier">
+         <tr bgcolor="#98FB98" style="font-size:18px" align="left">
+            <td colspan="1"><b><a id=""> '2.2 Behavioral Health Assessment Exchange Classes' Domain
+                     </a></b></td>
+            <td colspan="4" style="font-size:12px">Note that the Information Source hierarchy is in the Common domain, and is not shown here.</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+      </table>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font-family:Courier">
+         <tr>
+            <th width="20%">Element Name</th>
+            <th width="20%">Element Description</th>
+            <th width="15%">Format/Type</th>
+            <th width="15%">Value Set Name</th>
+            <th width="15%">Optionality/<br>Repetition
+            </th>
+            <th width="15%">Reviewer's Comments</th>
+         </tr>
+ 
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>BehavioralHealthAssessment</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This is class describes a Behavioral Health Assessment containing both mental health and substance abuse related questions.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">BehavioralHealthAssessment.<b>patient</b></div>
+            </td>
+            <td><p> This directed association describes the relationship between a                     client/patient and their behavioral health assessments. </p></td>
+            <td valign="top"> <b>PatientBehavioralHealth</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">BehavioralHealthAssessment.<b>problemArea</b></div>
+            </td>
+            <td><p>This association is used to identify the logical problem areas (e.g., FamilySocialHistoryArea, DrugUseHistoryArea, MedicationsArea, etc.) contained in the assessment.</p></td>
+            <td valign="top"> <b>BehavioralHealthAssessmentDomain(Abstract)</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>BehavioralHealthAssessmentDomain(Abstract)</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class is container for a set of questions and answers needed to evaluate behavioral health issues. This class description is consistent with the HL7 Implementation Guide for CDA Release 2: CDA Framework for Questionnaire Assessments, Release 1.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">BehavioralHealthAssessmentDomain(Abstract).<b>codedQuestion</b></div>
+            </td>
+            <td><p>This attribute corresponds to the set of questions that require a coded response.</p></td>
+            <td valign="top"> CodedQuestion </td>
+            <td></td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">BehavioralHealthAssessmentDomain(Abstract).<b>frequencyQuestion</b></div>
+            </td>
+            <td><p>This attribute corresponds to the set of questions that require a frequency response.</p></td>
+            <td valign="top"> FrequencyQuestion </td>
+            <td></td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">BehavioralHealthAssessmentDomain(Abstract).<b>numericQuestion</b></div>
+            </td>
+            <td><p>This attribute corresponds to the set of questions that require a numeric response.</p></td>
+            <td valign="top"> NumericQuestion </td>
+            <td></td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">BehavioralHealthAssessmentDomain(Abstract).<b>quantityQuestion</b></div>
+            </td>
+            <td><p>This attribute corresponds to the set of questions that require a quantity response.</p></td>
+            <td valign="top"> QuantityQuestion </td>
+            <td></td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">BehavioralHealthAssessmentDomain(Abstract).<b>trueFalseQuestion</b></div>
+            </td>
+            <td><p>This attribute corresponds to the set of questions that require a true or a false (boolean) response.</p></td>
+            <td valign="top"> TrueFalseQuestion </td>
+            <td></td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">BehavioralHealthAssessmentDomain(Abstract).<b>outcome</b></div>
+            </td>
+            <td><p>This is a directed association describing the relationship between an assessment and the outcome measurements related to that assessment.</p></td>
+            <td valign="top"> <b>Outcome</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>CodedQuestion</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class represents a question that requires an answer based on a predefined terminology/value set.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">CodedQuestion.<b>response</b></div>
+            </td>
+            <td><p>This attribute represents response as a coded value to a specific assessment                     question. If a response is not provided, then the null value may be qualified by                     a ASKU (asked but unknown) null flavor.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>DiagnosticSummary</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This area of the assessment is used to record answers related to the client/patient&apos;s diagnoses that may be pertinent to their behavioral health problems.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DiagnosticSummary.<b>diagnosis</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>Diagnosis</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>DrugUseHistory</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class is intended to specify the information exchanged to describe drug use history.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>Education</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class is used to record the answers related to the education situation of the patient (e.g. education level as well as enrollment status for those who should be enrolled in school).</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Education.<b>level</b></div>
+            </td>
+            <td><p>This attribute is used to specify the highest education level achieved by the patient.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Education.<b>status</b></div>
+            </td>
+            <td><p>This coded attribute is used to specify whether patients are enrolled, not enrolled, or has completed their education.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>EmploymentStatus</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> </td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">EmploymentStatus.<b>income</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> MonetaryAmount </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">EmploymentStatus.<b>status</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>FamilySocialHistory</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This area of the assessment is used to record answers related to family and social history that may predispose the patient to a specific type of problem.  This includes living arrangement.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">FamilySocialHistory.<b>traumaHistory</b></div>
+            </td>
+            <td><p>This coded attribute specifies whether the patient may have a history of physical or mental trauma even though it has not yet manifested as a diagnosis.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">FamilySocialHistory.<b>householdComposition</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>HouseholdComposition</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">FamilySocialHistory.<b>livingArrangement</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>LivingArrangement</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">FamilySocialHistory.<b>socialNetwork</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>SocialNetwork</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>FrequencyQuestion</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class represents a question that requires an answer specifying the number a times (repetitions) an event occurred during a unit of time (e.g. number of drinks per week).</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">FrequencyQuestion.<b>response</b></div>
+            </td>
+            <td><p> This coded attribute is used to specify the number of occurrences within a                     given period of time. If a response is not provided, the null value may be                     qualified by an ASKU (asked but unknown) null flavor. </p></td>
+            <td valign="top"> TimeQuantity </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>HouseholdComposition</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This section identifies specific household traits of the patient.  This section may help identify whether substance abuse is present in the household since it is often a pre-condition to staying sober.  Other household traits (e.g. primary source of income) are derived from this assessment section.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">HouseholdComposition.<b>presenceofSubstanceAbuse</b></div>
+            </td>
+            <td><p>This boolean attribute specifies the presence of substance abuse in the household shared by the patient.</p></td>
+            <td valign="top"> Boolean </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">HouseholdComposition.<b>sourceOfIncome</b></div>
+            </td>
+            <td><p>This coded attribute specifies the type of income (e.g. supplemental social security insurance, food stamps, employment).</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>LegalProblem</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class is used to record answers related to any criminal justice issues (e.g., criminal record, parole status).</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>LivingArrangement</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This section identifies the living arrangements for a client/patient.   class may have overlaps with FamilySocialHistoryArea so this may go away.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">LivingArrangement.<b>code</b></div>
+            </td>
+            <td><p>The value sets for this attribute are based on the HL7 Living Arrangements coding system (2.16.840.1.113883.5.63) used to specify whether the patient is homeless, transient, living in a community shelter, or institutionalized.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>Medication</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This problem area/section of the assessment is used to identify the medications administered to the patient.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Medication.<b>medicationAdministered</b></div>
+            </td>
+            <td><p>This directed association describes the relationship between the Medications                     that the client/patient is taking as defined in the Medications Area of the                     assessment.</p></td>
+            <td valign="top"> <b>PharmacyPromise</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>MentalHealthAssessment</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This type of assessment is intended to evaluate the mental health problems affecting the patient.  This class is a specialization/restriction of the BehavioralHealthAssessment class.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>NumericQuestion</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class represents a question that requires a numeric answer.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">NumericQuestion.<b>response</b></div>
+            </td>
+            <td><p>This attribute represents a numeric response as a numeric to a specific                     assessment question. If a response is not provided, the null value may be                     qualified by an ASKU (asked but unknown) null flavor.</p></td>
+            <td valign="top"> Real </td>
+            <td></td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>Outcome</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class is used specify the outcome of Behavioral Health treatment as described by changes to the patient&#8217;s state reflected in his or her responses to assessment questions.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Outcome.<b>startDate</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Outcome.<b>endDate</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Outcome.<b>performanceMeasure</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Id </td>
+            <td></td>
+            <td>(1..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>PhysicalHealth</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p> This class is used to specify the non-mental health problems or diagnoses of the patient.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PhysicalHealth.<b>diagnosis</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>Diagnosis</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>PsychiatricProblem</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This section of the assessment is used to identify the psychiatric problems of a patient.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PsychiatricProblem.<b>psychiatricDiagnosis</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>PsychiatricDiagnosis</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>QuantityQuestion</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class is used to specify the response to questions that are expressed by a quantity (e.g., years of use).</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">QuantityQuestion.<b>response</b></div>
+            </td>
+            <td><p>If a response requires a quantity (e.g. years), this attribute specifies its                     coded value. If a response is not provided, the null value may be qualified by                     an ASKU (asked but unknown) null flavor.</p></td>
+            <td valign="top"> Quantity </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>Question(Abstract)</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class represents the abstract base class for all the questions contained in the assessment questionnaire.</p><p>This class is deprecated - use the AssessmentInstrumentQuestion class instead.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Question(Abstract).<b>question</b></div>
+            </td>
+            <td><p>The question in a questionnaire (e.g. Assessment instrument) may be based on                     a common value set. Therefore, the question may be a coded attribute.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>ServiceHistory</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>Identifies the type of services provided to determine if frequent inpatient detox vs. on-going treatment is more prevalent.  This section is used to determine the effectiveness of the various services.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ServiceHistory.<b>serviceCode</b></div>
+            </td>
+            <td><p>This is a coded attribute describing the type of service that has been rendered to the client/patient that appears in this area of the behavioral health assessment.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>SocialNetwork</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class identifies whether a person is in environment where others are abusing alcohol or other substances.  The National Outcomes Measures (NOMs) set performance targets for State and Federally funded initiatives and programs for substance abuse prevention and mental health promotion, early intervention, and treatment services.  Social network risk factors are one component of these measures.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>Substance</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class is used to specify the type of substance (e.g. alcohol, controlled substances) that is abused by a patient.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Substance.<b>code</b></div>
+            </td>
+            <td><p>This coded attribute is used to specify the specific substance abused by patient (e.g. cocaine, oxycodone, etc.,) rather than a code for the type of substance (e.g., narcotics, alcohol, pharmaceutical drugs).</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>SubstanceAbuseAssessment</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class represents any type of assessment used to identify the substance abuse problems of a patient.  This class is a specialization/restriction of the BehavioralHealthAssessment class.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>SubstanceOfChoice</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This role class is used to identify the properties of a substance that is identified as a substance of choice based on the answers provided by the patient to the questions in Drug Use History section of a Behavioral Health or Substance Abuse assessment.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SubstanceOfChoice.<b>code</b></div>
+            </td>
+            <td><p>This coded attribute is used to specify the type of substance used by patient (e.g. alcohol, narcotics, pharmaceutical drugs) rather than a code for the specific substance.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SubstanceOfChoice.<b>substance</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>Substance</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>TargetSubstance</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This association class is used to describe the priority of the SubstanceOfChoice abused by the client/patient defined by the sequence attribute and is used to distinguish primary from secondary and tertiary substances.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">TargetSubstance.<b>sequence</b></div>
+            </td>
+            <td><p>This attribute defines whether the abused Substance is the primary SubstanceOfChoice or secondary, tertiary, etc.  This is captured to determine whether different treatments are effective depending on whether the substance is the primary one being abused or incidental to the primary substance.</p></td>
+            <td valign="top"> Integer </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>TrueFalseQuestion</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class represents a question that requires a true of false answer.  Both the question and the answer are identified. Ideally, the question code would identify the issue or assertion confirmed or denied by the answer.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">TrueFalseQuestion.<b>response</b></div>
+            </td>
+            <td><p>This attribute represents a response as a boolean (true/false) response to a                     specific assessment question. If a response is not provided, the null value may                     be qualified by an ASKU (asked but unknown) null flavor.</p></td>
+            <td valign="top"> Boolean </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+  </table>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font">
+         <tr>
+            <th>Value Set Constraint</th>
+            <th>Element Description</th>
+         </tr>
+       
+
+
+
+
+</table>
+

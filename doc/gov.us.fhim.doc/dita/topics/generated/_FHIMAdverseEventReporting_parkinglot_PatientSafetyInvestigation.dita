@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMAdverseEventReporting_parkinglot_PatientSafetyInvestigation" xml:lang="en-us">
+<title id="title">_parkinglot_PatientSafetyInvestigation</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>Information for, and activity related to, the act of investigating and recording the results of the investigation. It is expected that additional classes such as observation are needed to capture all the data recorded for an investigation.  Note the Act class code INVSTG (Investigation) is defined as &quot;An official inquiry into the circumstances surrounding a particular unplanned event or potential event for the purposes of identifying possible causes and contributing factors for the event. This investigation could be conducted at a local institutional level or at the level of a local or national government.&quot; (adapted from HL7 V3 ICSR DAM)</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>category :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Implementation Guide for Electronic Transmission of ICSRs, element C.1.3: Type of Report.  Possible values include: Spontaneous report; Report from study; Other; Not available to sender (unknown).  See OID: 2.16.840.1.113883.3.989.2.1.1.2.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateReported :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Date when the adverse reaction or suspected reaction reported.</p><p>Implementation Guide for Electronic Transmission of ICSRs, element C.1.2: Date of Creation
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>eventDateTime :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				(Placeholder: Modeling is still in progress on this element)
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>id :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Implementation Guide for Electronic Transmission of ICSRs, element C.1.1: Sender&#8217;s (case) Safety Report Unique Identifier.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>informationAvailableDateTime :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				(Placeholder: Modeling is still in progress on this element)
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>status :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				A code specifying the state of the Intolerance Condition Observation record.  See HL7 V3 Act.statusCode.  When the StatusCode is set to &apos;Nullified&apos; iindicates the allergy was entered in error.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>author : <xref href="../t_FHIMCommonAuthor.dita" >Author</xref> (1..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>primaryPerformer : <xref href="../t_FHIMCommonPrimaryPerformer.dita" >PrimaryPerformer</xref> (0..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

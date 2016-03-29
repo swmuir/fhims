@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMLabReportableResult" xml:lang="en-us">
+<title id="title">ReportableResult</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+<section id="specializations"  audience="developer, modeler">
+	<title>Derivations</title>
+	<ul>
+<li><xref href="../t_FHIMLabMicrobeIdentification.dita">MicrobeIdentification </xref> is a kind of  ReportableResult </li>
+<li><xref href="../t_FHIMLabTestException.dita">TestException </xref> is a kind of  ReportableResult </li>
+<li><xref href="../t_FHIMLabMeasurementWithReferenceRangeResult.dita">MeasurementWithReferenceRangeResult </xref> is a kind of  ReportableResult </li>
+<li><xref href="../t_FHIMLabAntibioticSensitivityObservationEvent.dita">AntibioticSensitivityObservationEvent </xref> is a kind of  ReportableResult </li>
+<li><xref href="../t_FHIMLabPathologyResult.dita">PathologyResult </xref> is a kind of  ReportableResult </li>
+	</ul>
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class represents a test result or observation that may be reported.  Some tests, such as an microbiology identification may have multiple results reported over time, for example a preliminary gram stain result might be initially reported, followed by the identification and relative number of organisms, followed by an antibiotic senstivity test results.  Each one of these results would manifest as a separate instance of this class, each with their own date/times, performers, etc.</p><p></p><p>&quot;The OBX segment is used to transmit a single observation or observation fragment.  It represents the smallest indivisible unit of a report.&quot; - HL7 Version 2.8, OBX</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>dateDeemedReportable :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Specifies the date/time when the results were reported or status changed.  This conditional field is required whenever [Report Status] is valued.  This field is used to indicate the date and time that the results are composed into a report and released, or that [Healthcare Order status] is entered or changed.&quot; - HL7 Version 2.8, OBR-22.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateTimeObserved :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;This field is required in two circumstances.  The first is when the observations reported beneath one report header have different dates/times.  This could occur in the case of queries, timed test sequences, or clearance studies where one measurement within a battery may have a different time than another measurement....  The observation date-time is the physiologically relevant date-time or the closest approximation to that date-time.  In the case of tests performed on specimens, the relevant date-time is the specimen&#8217;s collection date-time.  In the case of observations taken directly on the patient (e.g., X-ray images, history and physical), the observation date-time is the date-time that the observation was performed.&quot; - HL7 Version 2.8, OBX.14
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateTimeOfAnalysis :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The time stamp associated with generation of the analytical result by the instrument specified in [the deviceInstance]&quot; - HL7 Version 2.8, OBX.19
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>id :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Contains a unique identifier for this observation.&quot; - HL7 Version 2.8, OBX-21.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>negationIndicator :  Boolean (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This is a placeholder to convey the concept that something looked for was not found.  It is possible that this property might be superfluous and may be removed.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>observationMethod :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..*)</p> 
+<p>See <xref href="../t_fhimvocabLabVocabLabObservationMethod.dita">Lab Observation Method</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				&quot;The method or procedure by which an observation was obtained when the sending system wishes to distinguish among one measurement obtained by different methods and the distinction is not implicit in the test ID.  Chemistry laboratories do not usually distinguish between two different methods used to measure a given serum constituent (e.g., serum potassium) as part of the test name....&quot; - HL7 Version 2.8, OBX-17.</p><p></p><p>Note that the aerobic condition of the culture is included in this concept.  Note also that this property can repeat.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>observationSite :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+<p>See <xref href="../t_fhimvocabEncounterVocabBodySiteHL7.dita">Body Site (HL7)</xref> definition for code system information.</p>
+
+</stentry>
+  <stentry><p>				&quot;Contains the body site(s) where the measurement being reported was obtained.   This field should not be used for a specimen source or specimen collection site.  This information is of particular importance if the clinical meaning of a value is modified either directly by the site (for example, is the temperature central or peripheral?) or if the site of one measurement impacts the value of another measurement (for example, is the finger SpO2 probe on the same arm as the NIBP cuff?).  In most cases these observations are performed directly upon the patient and do not involve a specimen.&quot; - HL7 Version 2.8, OBX-20.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>probability :  <xref href="../t_FHIMDatatypesReal.dita" >Real</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Contains the probability of a result being true for results with categorical values.  It mainly applies to discrete coded results.  It is a decimal number ... between 0 and 1, inclusive.&quot; - HL7 Version 2.8, OBX-9.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>reReleaseReason :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Indicates the root cause for the reissue of a previously released lab report.  This element is used in conjunction with OBX-11 Observation Result Status to define the root cause for a reissued laboratory report in the case of a corrected, amended, appended, or revised report.&quot; - HL7 Version 2.8, OBX-27.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>reportDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Specifies the date/time when the results were reported or status changed.  This conditional field is required whenever [Report Status] is valued.  This field is used to indicate the date and time that the results are composed into a report and released, or that [Healthcare Order status] is entered or changed.&quot; - HL7 Version 2.8, OBR-22.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>resultStatus :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+<p>See <xref href="../t_fhimvocabCommonAndDatatypesVocabActInstanceStatus.dita">Act Instance Status</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				&quot;Contains the observation result status.... This field reflects the current completion status of the results for one Observation Identifier....&quot; - HL7 Version 2.8, OBX-11.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>userDefinedAccessCheck :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;This field permits the producer to record results-dependent codes for classifying the observation at the receiving system.  This field should be needed only rarely...&quot; - HL7 Version 2.8, OBX-13.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>commentEvent : <xref href="../t_FHIMCommonCommentEvent.dita" >CommentEvent</xref> (0..*)</p></stentry>
+  <stentry><p>				Contains any comments pertinent to the result of the lab test.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>deviceInstance : <xref href="../t_FHIMCommonCommonProductDeviceInstance.dita" >DeviceInstance</xref> (0..1)</p></stentry>
+  <stentry><p>				&quot;Identifies the Equipment Instance (e.g., Analyzer, Analyzer module, group of Analyzers, etc.) responsible for the production of the observation....&quot; - HL7 Version 2.8, OBX-18.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>interpretation : <xref href="../t_FHIMClinicalObservationInterpretationEvent.dita" >InterpretationEvent</xref> (0..*)</p></stentry>
+  <stentry><p>				&quot;One or more codes specifying a categorical assessment of the observation value, such as &quot;Normal&quot;, &quot;Abnormal&quot;, &quot;Positive&quot;, &quot;Negative&quot;, &quot;Resistant&quot;, &quot;Susceptible&quot;, etc....&quot; - HL7 Version 2.8, OBX-8.</p><p></p><p>For chemistry tests, provides an automated indication of the result, based upon &quot;normal&quot; values as indicated by the reference range.  Examples include High, Low, Critically High, Critically Low, etc.</p><p></p><p>For antibiotic sensitivity tests, provides an indication of the susceptibility of the identified organism to the test antibiotic.  Possible values include: Intermediate, Moderately Susceptible, Resistant, Susceptible.  In addition, Not Tested may occasionally used when an antibiotic that would commonly be tested was not for some reason.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>labTestPerformed : <xref href="../t_FHIMLabLabTest.dita" >LabTest</xref> (1..*)</p></stentry>
+  <stentry><p>				&quot;Contains a unique identifier for the observation....  In most systems the identifier will point to a master observation table that will provide other attributes of the observation that may be used by the receiving system to process the observations it receives&quot;. - HL7 Version 2.8, OBX-3.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>laboratoryDirector : <xref href="../t_FHIMProviderIndividualProvider.dita" >IndividualProvider</xref> (0..1)</p></stentry>
+  <stentry><p>				This is the director of the laboratory that is reporting the result to the Orderer.  This person may or may not be the director of the organization that actually performed the analysis, rather of the reporting organization.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>performer : <xref href="../t_FHIMProviderIndividualProvider.dita" >IndividualProvider</xref> (1..1)</p></stentry>
+  <stentry><p>				&quot;This field identifies the performing technician.&quot; - HL7 Version 2.8, OBR-34</p><p>&quot;This field contains the identifier of the individual directly responsible for the observation (i.e., the person who either performed or verified it).  In a nursing service, the observer is usually the professional who performed the observation (e.g., took the blood pressure).  In a laboratory, the observer is the technician who performed or verified the analysis....&quot; - HL7 Version 2.8, OBX.16
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>relatedResult : <xref href="../t_FHIMLabRelatedResult.dita" >RelatedResult</xref> (0..*)</p></stentry>
+  <stentry><p>				Identifies other Reportable Result(s) to which this Reportable Result is somehow related.</p><p>&quot;This field is defined to make it available for other types of linkages (e.g., toxicology).  This important information, together with the information in OBR-29 or OBR-57, uniquely identifies the parent result&apos;s OBX segment related to this order.&quot; - HL7 Version 2, OBX-26.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>transcription : <xref href="../t_FHIMLabTranscriptionEvent.dita" >TranscriptionEvent</xref> (0..*)</p></stentry>
+  <stentry><p>				Transcribe: &quot;to make a written copy, especially a typewritten copy, of (dictated material, notes taken during a lecture, or other spoken material).&quot; - Dictionary.com.  This association points to information about who transcribed the provider&apos;s dictated notes, and when that transcription occurred.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

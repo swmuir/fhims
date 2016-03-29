@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMProviderElectronicServiceInformation" xml:lang="en-us">
+<title id="title">ElectronicServiceInformation</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>&quot;This class captures information on a unique electronic service. It is defined to support information interchange requirements that are focused on exchanging or querying for specific information on an electronic address.&quot; - ONC S&amp;I Clinical Element Data Dictionary (CEDD), March 2012.</p><p></p><p>Electronic Service Information = &quot;All information reasonably necessary to define an electronic destination&#8217;s ability to receive and consume a specific type of information (e.g. discharge summary, patient summary, laboratory report, query for patient/provider/healthcare data). The information should include the type of information (e.g. patient summaryor query) the destination&#8217;s Electronic Address, the Messaging Framework supported (e.g. SMTP, HTTP/SOAP), Security information supported or required (e.g. digital certificate) and specific payload definitions (e.g. CCD C32 V2.5). In addition, this information may include labels which help identify the type of recipient (e.g. medical records department).&quot; - ONC S&amp;I Query for Electronic Service Information Including Electronic Address Use Case Initiative Glossary.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>address :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The address of the Electronic Service&quot; - ONC S&amp;I Clinical Element Data Dictionary (CEDD), March 2012.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>id :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;An identifier assigned by the provider directory whose purpose is to uniquely identify a unique ESI for an individual, organization, individual-organization relationship.&quot; - ONC S&amp;I Clinical Element Data Dictionary (CEDD), March 2012.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>integrationProfile :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Identifies the integration profile which describes the transport and valid contents&quot; - ONC S&amp;I Clinical Element Data Dictionary (CEDD), March 2012.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>integrationProfileOptions :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Options defined for the specific Integration Profile&quot; - ONC S&amp;I Clinical Element Data Dictionary (CEDD), March 2012.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>integrationProfileVersion :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The version(s) of the integration profile supported&quot; - ONC S&amp;I Clinical Element Data Dictionary (CEDD), March 2012.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>preferredMethod :  Integer (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Integer between 0 and 99 indicating the preferred order of the service, where 0 is the most preferred service and 99 is the least preferred&quot; - ONC S&amp;I Clinical Element Data Dictionary (CEDD), March 2012.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>providerDirectoryContentProfile : <xref href="../t_FHIMProviderProviderDirectoryContentProfile.dita" >ProviderDirectoryContentProfile</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to Content Profile(s) supported by the electronic health record destination. A content profile may be necessary to support those services which demand a content wrapper.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>providerDirectorySecurityProfile : <xref href="../t_FHIMProviderProviderDirectorySecurityProfile.dita" >ProviderDirectorySecurityProfile</xref> (0..*)</p></stentry>
+  <stentry><p>				&quot;Pointer to Security Profile(s) supported by the service.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

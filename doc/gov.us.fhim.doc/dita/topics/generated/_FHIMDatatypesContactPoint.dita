@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMDatatypesContactPoint" xml:lang="en-us">
+<title id="title">ContactPoint</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>A collection of electronic addresses at which the person or organization may be reached. This includes telephones, email addresses, etc.</p><p>&quot;Details for all kinds of technology-mediated contact points for a person or organization, including telephone, email, etc. &quot; - HL7 FHIR, ContactPoint.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>effectiveDateRange :  <xref href="../t_FHIMDatatypesTimeInterval.dita" >TimeInterval</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The time period during which the phone number or communications address is valid for the person or organization. The data type is a TimeInterval, which includes both a start date and end date, either of which may be empty.</p><p>&quot;Time period when the contact point was/is in use.&quot; - HL7 FHIR, ContactPoint.period.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>isTextMessageEnabled :  Boolean (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Indicates whether the endpoint can receive text messages.  Used for phone numbers only.  Added for ONC S&amp;I Clinical Element Data Dictionary (CEDD).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>system :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+<p>See <xref href="../t_fhimvocabCommonAndDatatypesVocabContactPointSystem.dita">ContactPointSystem</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				&quot;Telecommunications form for contact point - what communications system is required to make use of the contact.&quot; - HL7 FHIR, ContactPoint.system.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>use :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+<p>See <xref href="../t_fhimvocabCommonAndDatatypesVocabContactPointUse.dita">ContactPointUse</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				Indicates the kind of communications address that is contained within this class.  Examples include primaryHome, Work, etc.  This facilitates the selection of a particular communications address from a list of contact points that may apply to the person or organization.</p><p>&quot;Identifies the purpose for the contact point.&quot; - HL7 FHIR, ContactPoint.use.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>value :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Represents a telecommunications address at which the person or organization may be reached.  Note that this property is a simply a string, the formatting of which will depend on the type of communications address employed.</p><p>&quot;The actual contact point details, in a form that is meaningful to the designated communication system (i.e. phone number or email address).&quot; - HL7 FHIR, ContactPoint.value.
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

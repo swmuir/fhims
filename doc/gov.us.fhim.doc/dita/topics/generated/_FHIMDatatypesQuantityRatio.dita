@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMDatatypesQuantityRatio" xml:lang="en-us">
+<title id="title">QuantityRatio</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>A ratio (numerator : denominator) specifying the relative quantities of the Entity playing the Role in the Entity scoping the Role, used for Roles that represent composition relationships between the scoping and playing Entities.</p>
+
+	<p>This data type represents a Ratio, where the Low and High Limits are Physical Quantities.  A Ratio is &quot; A quantity constructed as the quotient of a numerator quantity divided by a denominator quantity.&quot; - HL7 V3  A Physical Quantity is &quot;a dimensioned quantity expressing the result of measuring&quot; - HL7 V3</p><p>&quot;A relationship of two Quantity values - expressed as a numerator and a denominator.&quot; - HL7 FHIR, Ratio.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>denominator :  <xref href="../t_FHIMDatatypesQuantity.dita" >Quantity</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The quantity that devides the numerator in the ratio. The default is the integer number 1 (one). The denominator SHALL not be zero.&quot; - HL7 V3</p><p>&quot;The value of the denominator.&quot; - HL7 FHIR, Ratio.denominator.
+				The quantity that divides the numerator in the ratio. The default is the integer number 1 (one.) The denominator must not be zero.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>numerator :  <xref href="../t_FHIMDatatypesQuantity.dita" >Quantity</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The quantity that is being divided in the ratio. The default is the integer number 1
+				&quot;The quantity that is being divided in the ratio. The default is the integer number 1 (one).&quot; - HL7 V3</p><p>&quot;The value of the numerator.&quot; - HL7 FHIR, Ratio.numerator.
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

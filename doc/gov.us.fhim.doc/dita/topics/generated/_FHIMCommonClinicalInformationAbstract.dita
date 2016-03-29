@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMCommonClinicalInformationAbstract" xml:lang="en-us">
+<title id="title">ClinicalInformation(Abstract)</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This abstract class provides properties and behaviors common to all medical records, or in terms of the HL7 QIDAM, to all &quot;statements of occurance&quot; as well as &quot;statements of non-occurance&quot;.  This class allows for common representations data provenance, including the Author, the Data Enterer, the Verifier, etc.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>id :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Uniquely identifies the Clinical Information/Record.  This property is akin to a record number.  While the record number by itself may not be unique outside of the organization that created it, the Id datatype allows for an assigning authority, which when combined with the local identifier should make the Id unique.  Among other purposes, the id property enables other records to be linked together.  This is particularly needful for Condiions (a sub type of Observations), where on-going Observations made on the same initial Health Concern (aka Problem) or Intolerance Condition can be tracked.</p><p></p><p>&quot;Contains a value that uniquely identifies a single allergy for a person&quot; - HL7 Version 2.8, IAM-7</p><p>&quot;Contains the identifier assigned by an initiating system to an instance of a problem.&quot; - HL7 Version 2.8, PRB-4</p><p>&quot;A unique identifier for the simple observation.&quot; - HL7 FHIR, Observation.identifier.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>recordStatus :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+<p>See <xref href="../t_fhimvocabCommonAndDatatypesVocabActInstanceStatus.dita">Act Instance Status</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				The state of the Clinical Information record, as defined in the state-transition model in the HL7 RIM.  Possible values include: Aborted, Active, Cancelled, Completed, Held, New, Nullified, Obsolete.  Note that this property represents the state of the clinical record, not the state of the thing being recorded (which is an especially important distinction when dealing with Observations).  When the state of the thing being obverved is needed (e.g., in remission), a separate property will be used.  Note also that VistA and RPMS have the concept of being &quot;Entered in Error&quot; which is equivalent to a status of Nullified.  For the Condition subtype of Observation, this property summarizes the current state of the Condition (or subtype such as Health Concern (aka Problem) or Intolerance Condition), as indicated by the last observation made on the Condition.</p><p></p><p>&quot;Indicates the verification status for the allergy.&quot; - HL7 Version 2.8, IAM-17.  HL7 Version 2 has the following suggested values (table 438): Unconfirmed; Pending; Suspect; Confirmed or verified; Confirmed but inactive; Erroneous; Doubt raised.</p><p>&quot;Contains the observation result status.... This field reflects the current completion status of the results for one Observation Identifier....&quot; - HL7 Version 2.8, OBX-11.</p><p>&quot;Contains the current status of the problem at this particular date/time (e.g., active, active-improving, active-stable, active-worsening, inactive, resolved, etc.).&quot; - HL7 Version 2.8, PRB-14</p><p>&quot;The status of the result value.&quot; - HL7 FHIR, Observation.status.  Note that the possible values for status in FHIR are: Registered, Preliminary, Final, Amended, Cancelled, Entered in Error.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>provenance : <xref href="../t_FHIMCommonProvenanceAbstract.dita" >Provenance(Abstract)</xref> (0..*)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>relatedClinicalInformation : <xref href="../t_FHIMCommonRelatedClinicalInformation.dita" >RelatedClinicalInformation</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to other Clinical Information record(s) to which this Clinical Information record is related in some manner.</p><p></p><p>&quot;Related observations - either components, or previous observations, or statements of derivation.&quot; - HL7 FHIR, Observation.related.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

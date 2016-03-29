@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMAdverseEventReportingAbstractReportSubjectObservation" xml:lang="en-us">
+<title id="title">AbstractReportSubjectObservation</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+<section id="specializations"  audience="developer, modeler">
+	<title>Derivations</title>
+	<ul>
+<li><xref href="../t_FHIMAdverseEventReportingReportSubjectObservation.dita">ReportSubjectObservation </xref> is a kind of  AbstractReportSubjectObservation </li>
+<li><xref href="../t_FHIMAdverseEventReportingRelatedPersonObservation.dita">RelatedPersonObservation </xref> is a kind of  AbstractReportSubjectObservation </li>
+	</ul>
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class contains demographic observations made about a Patient at a given point of time.  Each of the properties in the class exist in the Patient or Person classes.  They are repeated here to emphasize that they are point-in-time observations that are needed for a particular report.  Note that each of these properties are marked as derived - all of the properties can be calculated from the Patient and Person classes.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>ageAtOnset :  <xref href="../t_FHIMDatatypesTimeQuantity.dita" >TimeQuantity</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This property contains age of the person in question at the time that the event occured.  Note that if the person&apos;s date of birth is known, this property can be derived from the patient&apos;s Person demographics information.  However, in general, this property is used only when the date of birth is not known, thereby conveying the approximate age of the person at the time of the first reaction or event.</p><p></p><p>If the person in question is the patient, this is their age when the event or reaction first occurred to them.  See ICH E2B(R3), D.2.2.a and D.2.2b.</p><p>If the person in question is a parent (typically the mother) of the patient, this is their age at the time that the event or reaction first occurred to the child or fetus.  ICH E2B(R3), D.10.2.2a and D.10.2.2b.</p><p>If the person in question is a sibling of the patient, this is their age when the date/time the event or reaction first occurred to the sibling.  Note that ICH does not include siblings.</p><p></p><p>Medwatch 3500 form question A.2.a; Medwatch 3500A form question A.2.a; Medwatch 3500B form question D.3.a; VAERS-1 form question 4.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateOfBirth :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The date of birth of the person in question, which would be used to calculate their age at time that the adverse event or reaction occurred.  Note that this property can be derived from the person&apos;s demographics information.</p><p></p><p>If the person in question is the patient, see ICH E2B(R3), D.2.1</p><p>If the person in question is a parent (typically the mother) of the patient, see ICH E2B(R3), D.10.2.1</p><p>It is noted that ICH does not support sibling information.</p><p></p><p>Medwatch 3500 form question A.2.b; Medwatch 3500A form question A.2.b; Medwatch 3500B form question D.3.b; VAERS-1 form question 3.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>initials :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The first letter of each part of a proper name. This property stores the initials of a person&apos;s name, which is used  in research studies to identify the patient without divulging the person&apos;s entire name.  Note that this property can be derived from the patient&apos;s Person demographics information.</p><p>Medwatch 3500B form question D.1.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>race :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The patient&apos;s race.  Note that this property can be derived from the patient&apos;s Person demographics information.</p><p>Medwatch 3500B form question D.5.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>releventMedicalHistoryText :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Information about any other medical history that could not be coded in [the structured relevant medical history / concurrent conditions].&quot; - ICH E2B(R3), D.7.2 and D.10.7.2.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>sex :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The sex of the person in question.  Note that this property can be derived from the person&apos;s demographics information.</p><p></p><p>If the person in question is the patient, see ICH E2B(R3), D.2.1</p><p>If the person in question is a parent (typically the mother) of the patient, see ICH E2B(R3), D.10.6.</p><p>It is noted that ICH does not support sibling information.</p><p></p><p>Medwatch 3500 form question A.3; Medwatch 3500A form question A.3; Medwatch 3500B form question D.2; VAERS-1 form question 5.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>heightObservation : <xref href="../t_FHIMVitalSignsHeightHeightObservation.dita" >HeightObservation</xref> (0..1)</p></stentry>
+  <stentry><p>				Pointer to the reported height in centimeters of the person in question at the time that the adverse event or reaction first occured.</p><p></p><p>If the person in question is the patient, this is their reported height when the event or reaction first occurred to them.  See ICH E2B(R3), D.4.</p><p>If the person in question is a parent (typically the mother) of the patient, this is the reported height of the parent at the time that the event or reaction first occurred to the child or fetus.  See ICH E2B(R3), D.10.5.</p><p>If the person in question is a sibling of the patient, this property will likely not be used.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>lastMenstrualPeriodObservation : <xref href="../t_FHIMAdverseEventReportingLastMenstrualPeriodObservation.dita" >LastMenstrualPeriodObservation</xref> (0..1)</p></stentry>
+  <stentry><p>				Pointer to a Clinical Observation of when the patient&apos;s last menstrual period began, if applicable.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>relevantLabTest : <xref href="../t_FHIMAdverseEventReportingRelevantLabResult.dita" >RelevantLabResult</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to laboratory test information pertinent to understanding the case.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>relevantPastDrugHistory : <xref href="../t_FHIMAdverseEventReportingRelevantPastDrugHistory.dita" >RelevantPastDrugHistory</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to relevant drugs previously administered and which have been stopped before the Adverse Event onset.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>releventMedicalHistory : <xref href="../t_FHIMAdverseEventReportingReleventMedicalHistory.dita" >ReleventMedicalHistory</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to information pertinent to understanding the case (such as diseases, conditions such as pregnancy, surgical procedures, psychological trauma, risk factors, etc.).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>weightObservation : <xref href="../t_FHIMVitalSignsWeightWeightObservation.dita" >WeightObservation</xref> (0..1)</p></stentry>
+  <stentry><p>				Pointer to the reported body weight of the person in question at the time that the adverse event or reaction first occured.  </p><p></p><p>If the person in question is the patient, this is their reported body weight when the event or reaction first occurred to them.  See ICH E2B(R3), D.3.</p><p>If the person in question is a parent (typically the mother) of the patient, this is the reported body weight of the parent at the time that the event or reaction first occurred to the child or fetus.  See ICH E2B(R3), D.10.4.</p><p>If the person in question is a sibling of the patient, this propery will likely not be used.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMAssessmentAssessmentResponse" xml:lang="en-us">
+<title id="title">AssessmentResponse</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class represents a response to an Assessment Instrument question upon the administration of the Assessment Instrument.  It contains a pointer to the question as well as the response itself.  Note that the response might be entered by an interviewer, entered by the interviewee, or populated by a software system (e.g., a system could automatically populate a question such as Date Administered).</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>response :  <xref href="../t_FHIMDatatypesAny.dita" >Any</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This property represents the possible responses to a question on an Assessment Instrument.  It defines the permissible data type, and if the question is a multiple choice, will define the list of valid responses by using an enumeration.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>assessmentInstrumentQuestion : <xref href="../t_FHIMAssessmentAssessmentInstrumentQuestionAbstract.dita" >AssessmentInstrumentQuestion(Abstract)</xref> (1..1)</p></stentry>
+  <stentry><p>				This property represents the specific question to which the response is associated.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

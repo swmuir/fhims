@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMEnrollEligCOBHealthcarePolicy" xml:lang="en-us">
+<title id="title">HealthcarePolicy</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>An Insurance Policy is a contract between an benefits provider (e.g. an insurance company or a government agency) and an individual or his/her sponsor (e.g. an employer or union).</p><p></p><p>A Payer will generally offer one or more pre-defined sets of benefits, to which we assigned the generic term, &quot;Health Plan&quot;.  An Insurance Policy is an instance of a Health Plan.  For example, Payer A might offer a Gold Plan and a Silver Plan.  John Smith may have a Gold Plan Policy number 123, and Jane Doe may have Gold Plan Policy number 456.  ABC Motors may purchase the Silver Plan (Policy number 789) for their employees.</p><p></p><p>Claims for reimbursement will cite the Insurance Policy number, and sometimes a Group Number, if applicable.  In the above example, ABC Motors&apos; Insurance Policy is a Group Policy, so individual employees will cite the Group Number.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>policyId :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				A unique identifier that the payer or information source uses to identify the Policy Holder as belonging to a specific Plan.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>policyTerm :  <xref href="../t_FHIMDatatypesTimeInterval.dita" >TimeInterval</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The time period during which the Healthcare Policy is / will be in effect.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>healthPlan : <xref href="../t_FHIMEnrollEligCOBHealthPlan.dita" >HealthPlan</xref> (1..1)</p></stentry>
+  <stentry><p>				Pointer to the Plan which defines the set of benefits available to the Policy.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>subscriber : <xref href="../t_FHIMEnrollEligCOBSubscriber.dita" >Subscriber</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to (a Role of) the Person who is named as a beneficiary of a Health Policy.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

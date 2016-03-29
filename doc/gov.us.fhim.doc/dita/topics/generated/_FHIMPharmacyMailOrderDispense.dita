@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMPharmacyMailOrderDispense" xml:lang="en-us">
+<title id="title">MailOrderDispense</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	MailOrderDispense is a kind of <xref href="../t_FHIMPharmacyOutpatientMedicationDispense.dita">OutpatientMedicationDispense</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class contains information about the provision of a medication to a patient or care provider under the authority of the owning Pharmacy Promise in an mail-order setting.  This class adds shipping information to the properties defined in the parent Outpatient Medication Dispense class.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>carrier :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				A carrier is &#8220;an individual or company, as a railroad or steamship line, engaged in transporting passengers or goods for profit&#8221; (dictionary.com).  This property identifies the shipping organization that took custody of the medication in order to deliver it to the patient.  This property is currently modeled as a string although it is conceivable that it could be modeled as a code or an id if one wanted to have a controlled list of carriers.  Since such a list is not readily available, and because there are many smaller carriers, we chose to leave this as a string.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateTimeMailed :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The date and time that a shipping organization took custody of the medication in order to deliver it to the patient.  This date/time effectively becomes the dispense date/time as this is when the medication leaves the control of the pharmacy.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateTimeReceived :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The date and time that the shipping organization delivered the medication to the patient, as reported by the shipping organization.  This property is optional, as not all deliveries require delivery confirmation.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>trackingId :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				An identifier issued by the shipping organization used to determine the shipment as it progresses through the various steps of the delivery process.  It is used primarily for the patient or mail order pharmacy to inquire on the status of the delivery.
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

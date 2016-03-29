@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMCommonPractitionerParticipation" xml:lang="en-us">
+<title id="title">PractitionerParticipation</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+<section id="specializations"  audience="developer, modeler">
+	<title>Derivations</title>
+	<ul>
+<li><xref href="../t_FHIMCommonManagedParticipation.dita">ManagedParticipation </xref> is a kind of  PractitionerParticipation </li>
+	</ul>
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>&quot;An association between an Act and a Role with an Entity playing that Role. Each Entity (in a Role) involved in an Act in a certain way is linked to the act by one Participation-instance.&quot; - HL7 V3.  This class speficially points to IndividualProvider to handle participations in which the participation is by a clinician and contains those HL7 attributes most commonly used.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>comment :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Contains any comments or notes made by the practitioner in reference to the action in which they participated.&quot; - HL7 V3.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>modeCode :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The modality by which the Entity playing the Role is participating in the Act.  UsageNotes: For author (originator) participants, this is used to specify whether the information represented by the act was initially provided verbally, (hand-)written, or electronically. Examples: Physically present, over the telephone, written communication.&quot; - HL7 V3
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>signatureCode :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Whether the participant has attested participation through a signature, or whether such a signature is needed.&quot; - HL7 V3
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>signatureText :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;A textual or multimedia depiction of the signature by which the participant endorses and accepts responsibility for his or her participation in the Act as specified in the Participation.typeCode.&quot; - HL7 V3
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>time :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;An interval of time specifying the time during which the participant is involved in the act through this Participation.&quot; - HL7 V3.  
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>practitioner : <xref href="../t_FHIMProviderIndividualProvider.dita" >IndividualProvider</xref> (1..1)</p></stentry>
+  <stentry><p>				Represents information about a person who is authorized to provide health care services in the role of practitioner for a health care provider organization.  The role of practitioner includes all functions performed for a health care provider organization in order to provide patient care and treatment.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

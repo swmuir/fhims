@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMCarePlanActivityOutcomeReview" xml:lang="en-us">
+<title id="title">ActivityOutcomeReview</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class documents an evaluation of whether the activities that were undertaken have helped the patient meet their health goal.  In other words, &quot;did what we did make a difference?&quot;</p><p>&quot;An activity outcome review measures the result of individual implemented action (observational or interventional) against goal success criteria. The action outcome review might address only a subset of goal success criteria.&quot; - HL7 Care Plan Domain Analysis Model</p><p></p><p>WARNING: it is held by some that the efficacy of the Activity towards achieving the Goal is not necessarily knowable, rather one can only know whether the Goal was achieved or not. Therefore, it has been recommended that this class be deleted.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>comments :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Specifies optional comments for the review&quot; - HL7 Care Plan Domain Analysis Model
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>effectiveDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Specifies the date/time of the review&quot; - HL7 Care Plan Domain Analysis Model
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>interventionEffectiveness :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Indicates a judgment evaluation regarding the intervention effectiveness&quot; - HL7 Care Plan Domain Analysis Model
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>outcome :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Details of what&apos;s changed (or not changed).&quot; - HL7 FHIR, Goal.outcome.result[x].</p><p>&quot;Specifies the type of outcome determined based on the review&quot; - HL7 Care Plan Domain Analysis Model
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>observationStatement : <xref href="../t_FHIMClinicalObservationObservation.dita" >Observation</xref> (0..1)</p></stentry>
+  <stentry><p>				Pointer to an Observation of the measurable goal.  For example, if the goal was to loose weight with a target weight of 180 pounds, and the patient reached 189 pounds, this association will point to a weight measurement of 189 pounds.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

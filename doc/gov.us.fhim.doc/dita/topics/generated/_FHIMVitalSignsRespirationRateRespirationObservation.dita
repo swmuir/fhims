@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMVitalSignsRespirationRateRespirationObservation" xml:lang="en-us">
+<title id="title">RespirationObservation</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	RespirationObservation is a kind of <xref href="../t_FHIMClinicalObservationObservation.dita">Observation</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>&#8220;The respiratory rate (RR), also known as the respiration rate, ventilation rate, ventilatory rate, ventilation frequency (Vf), respiration frequency (Rf), pulmonary ventilation rate, or breathing frequency, is the rate (frequency) of ventilation, that is, the number of breaths (inhalation-exhalation cycles) taken within a set amount of time (typically 60 seconds)&#8221; &#8211; Wikipedia.</p><p></p><p>This class represents the measurement (or &#8220;clinical observation&#8221;) of the patient&#8217;s Respiration Rate.  This class re-defines the generic clinical Observation class to fix the observed characteristic to LOINC 9279-1 and to set the data type of the observation value to a Physical Quantity.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>observedCharacteristic :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This property defines what was observed by using a value from a nationally recognized coding system.  In this case, we&#8217;re stating that the concept being observed is the Respiration Rate, which is LOINC 9279-1.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>value :  <xref href="../t_FHIMDatatypesRateQuantity.dita" >RateQuantity</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This property contains the result, or value of the clinical Observation.  In the generic clinical Observation class, the data type for this property can be anything.  Respiration Rate is generally expressed in terms of breaths per minute.  Therefore, this property has been re-defined to constrain the data type to be a Rate Quantity.
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

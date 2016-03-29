@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMVitalSignsWeightWeightDeterminationMethod" xml:lang="en-us">
+<title id="title">WeightDeterminationMethod</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	WeightDeterminationMethod is a kind of <xref href="../t_FHIMClinicalObservationObservationQualifier.dita">ObservationQualifier</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>Occasionally, the patient&#8217;s Weight cannot be measured directly, leading the clinician to estimate the Weight, or rely on the patient&#8217;s stated Weight.  This class records an observation of how the patient&#8217;s Height was determined.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>observedCharacteristic :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This property defines what was observed that &#8220;qualifies&#8221; the primary, or &#8220;owning&#8221; Observation.  This property defines what was observed by citing a value from a nationally recognized coding system.  In this case, the value to be hard-coded for the Weight determination has yet to be determined.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>value :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+<p>See <xref href="../t_fhimvocabVitalSignsVocabPatientWeightDeterminationMethod.dita">PatientWeightDeterminationMethod</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				This property contains the result, or value of the qualifying Observation.  In the generic Observation Qualifier class, the data type for this property can be anything.  In this sub type, the value is constrained to be one of a set of codes from the SNOMED-CT coding system that represent how the patient&#8217;s Weight was determined.
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMPharmacyPharmacyRequest" xml:lang="en-us">
+<title id="title">PharmacyRequest</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	PharmacyRequest is a kind of <xref href="../t_FHIMOrdersHealthcareOrderAbstact.dita">HealthcareOrder(Abstact)</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class contains information about a Pharmacy Order, commonly referred to as a prescription.  This class is a subtype of the more general Healthcare Order, which describes properties common to all types or Orders &#8211; this class adds those properties which are specific to medication orders.  It can be said that this represent the prescription from the perspective of the ordering system whereas the Pharmacy Promise represents the prescription from the filling system (i.e., the pharmacy).  This class is called Pharmacy Request rather than Pharmacy Order following the HL7 V3 convention to use the term Request instead of Order.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>appointmentTime :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This is the appointment date/time for an outpatient order. It is entered when an inpatient medication is ordered for an outpatient.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>areRefillsAuthorizedAsNeeded :  Boolean (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Indicates whether the prescriber has authorized additional fills of this order as needed.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dispensingInstructions :  String (0..*)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Identifies the ordering provider&apos;s instructions to the pharmacy or the non-pharmacy treatment provider (e.g., respiratory therapy).&quot; - HL7 Version 2.8, RXO-6.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dosage :  <xref href="../t_FHIMDatatypesPhysicalQuantityInterval.dita" >PhysicalQuantityInterval</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The measured quantity of a therapeutic agent to be taken at one time.&quot; (MedlinePlus/Merriam-Webster).</p><p>Note that this field is currently modeled as a Physical Quanity Interval, rather than calling out the low dosage and high dosage.</p><p>&quot;This field is the ordered amount.  In a variable dose order, this is the minimum ordered amount.  In a non-varying dose order, this is the exact amount of the order.&quot; - HL7 Version 2.8, RXO-2.</p><p>&quot;In a variable dose order, this is the maximum ordered amount.  In a non-varying dose order, this field is not used.&quot; - HL7 Version 2.8, RXO-3.</p><p>&quot;Indicates the units for the give amount.&quot; - HL7 Version 2.8, RXO-4.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>doseForm :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+<p>See <xref href="../t_fhimvocabPharmacyVocabStrengthForm.dita">StrengthForm</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				Form: &quot;The shape and structure of something as distinguished from its material&quot; (Webster&apos;s Medical Dictionary).</p><p>Indicates the form of the material making up a single dose (as opposed to how the dose is packaged).  Possible values include Tablet, Drop, Lozenge, Cream, etc.</p><p>&quot;Indicates the manner in which the treatment is aggregated for dispensing, e.g., tablets, capsules, suppositories.&quot; - HL7 Version 2.8, RXO-5.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>doseQuantity :  <xref href="../t_FHIMDatatypesPhysicalQuantityInterval.dita" >PhysicalQuantityInterval</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The amount of the described medication to be administered to the patient in a single point in time.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>doseUnit :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;This field indicates the units for the give amount.&quot; - HL7 Version 2.8, RXO-4  &quot;An amount of a biologically active agent (as a drug or antigen) required to produce a specific result under strictly controlled conditions.&quot; (Merriam-Webster)
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>expirationDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The date after which the order may no longer be filled.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>frequency :  <xref href="../t_FHIMDatatypesTimeInterval.dita" >TimeInterval</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Specifies when the service is to be performed and how frequently.  Note that this is a complex data type that may indicate specific times or intervals (e.g., 10:00 AM, MWF, etc).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>frequencyCode :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Specifies when the service is to be performed and how frequently.  This optional property allows for the frequency to be expressed as a code (or possibly a string), in order to accomodate non-numeric expressions, such as every morning, or during the afternoon shift.  Added for Davita, 1/23/2015.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>infusionRate :  <xref href="../t_FHIMDatatypesRateQuantity.dita" >RateQuantity</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Infusion: &quot;Introduction of a solution into the body through a vein for therapeutic purposes.&quot;  (American Heritage Stedman&apos;s Medical Dictionary).  This is the rate at which the solution is introduced into the body.  Expressed as volume/time (e.g., 500 ml/hr) 
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>intendedDuration :  <xref href="../t_FHIMDatatypesTimeInterval.dita" >TimeInterval</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The period of time over which a medication order should be given.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>intendedDurationCode :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Specifies the period of time over which a medication order should be given.  This optional property allows for the intended duration to be expressed as a code (or possibly a string), in order to accomodate non-numeric expressions.  Added for Davita, 1/23/2015.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>neededNoLaterThan :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Conditional composite for the facility to relay to the long term care pharmacy the timeframe when medication is needed for delivery.  When a facility transmits either a new medication order (NEWRX) or request for the re-supply of a medication (RESUPP) to a pharmacy, it would optionally indicate the time by which the medication is needed. The facility could also provide a textual reason why the medication is needed by the time specified. The long term care pharmacy would then use this information to determine whether a special delivery is required, or whether the order could go out with the next scheduled delivery.&quot; - NCPDP Script (Field I006)
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>needsHumanReview :  Boolean (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Indicates whether &quot;the pharmacist or non-pharmacist treatment supplier filling the order needs to pay special attention to the text in the [Dispensing Instructions].  A warning is present.&quot; - HL7 Version 2.8, RXO-16.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>numberOfRefillsAuthorized :  Integer (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Defines the number of times the requested dispense amount can be given to the patient, subject to local regulation.  Refers to outpatient only.&quot; - HL7 Version 2.8, RXO-13.</p><p>&quot;Number of refills authorized by the prescriber.&quot; - NCPDP Telecommunication (Field 415-DF, Data Dictionary 201104).  Note that while the NCPDP Telecommunication structure treats this field as a code, it contains a number from 0-99, where zero means no refills authorized, and 1-98 are the number of refills authorized, and 99 means unlimited refills authorized.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>patientInstructions :  String (0..*)</p> 
+
+
+</stentry>
+  <stentry><p>				The complete textual representation of the &quot;sig&quot; (from the Latin &quot;signare&quot; meaning &quot;to sign or mark&quot;), for the prescription.  Contains all relevant information about the dosage instructions for the medication prescribed. For example, the sig might say &quot;take twice daily with food&quot;.</p><p></p><p>&quot;Identifies the ordering provider&apos;s instructions to the patient or to the provider administering the drug or treatment.&quot; - HL7 Version 2.8, RXO-7.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>pharmacyOrderCategory :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+<p>See <xref href="../t_fhimvocabPharmacyVocabPharmacyOrder.dita">PharmacyOrder</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				&quot;Defines the general category of pharmacy order which may be used to determine the processing path the order will take....  This field may also be used for grouping of related orders for processing and/or reports.  For example, Medication Administration Records often group large volume solutions, medications and small volume solutions differently based upon site-specific workflow.&quot; - HL7 Version 2.8, RXA-26, RXD-32, and RXO-27.  Valid values (from HL7 Table 0480) include: Medication; IV Large Volume Solutions; Other solution as medication orders.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>quanityOrdered :  <xref href="../t_FHIMDatatypesPhysicalQuantityInterval.dita" >PhysicalQuantityInterval</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;This field is the ordered amount.  In a variable dose order, this is the minimum ordered amount.  In a non-varying dose order, this is the exact amount of the order.&quot; - HL7 Version 2.8, RXO-2.</p><p>&quot;In a variable dose order, this is the maximum ordered amount.  In a non-varying dose order, this field is not used.&quot; - HL7 Version 2.8, RXO-3.</p><p>This property carries both the low (aka minimum), and high (aka maximum) amounts.  For example, given the order &quot;Acetaminophen 300 mg / codeine 30 mg (Tylenol 3).  Take 2-3 tablets every 4-6 hours as needed for pain for 7 days&quot;, this property would contain 2 (low) and 3 (high).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>route :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;This field is the route of administration.&quot; - HL7 Version 2.8, RXR-1</p><p>&quot;The method of introducing the therapeutic material into or onto the subject.&quot; - HL7 Version 3
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>schedule :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This is the number of Units (tablets, capsules, etc.) to be dispensed as a dose for this order. String type used to handle VistA data with dose quantity and units in same field.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>sig :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Signa -- used to introduce the signature in writing a prescription.&quot; (MedlinePlus/Merriam-Webster) Note: this attribute is a placeholder for a concept which will be modeled in a future iteration. 
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>startDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The date on which the patient is to begin (or began, if historical) consuming the ordered medication.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>stopDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The date on which the patient is to discontinue (or discontinued, if historical) consuming the ordered medication.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>substitutionCode :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				If the Pharmacist has changed the kind of medication to be dispensed to the patient from the one originally ordered by the prescriber, this field provides a categorization of the kind of substitution that was made.</p><p>&quot;Refer to HL7 Table 0167 - Substitution Status in Chapter 2C for suggested values.&quot; - HL7 Version 2.8, RXD-11.</p><p>&quot;Product/Service Substitution, coded&quot; - NCPDP Script (Field 4457, Data Dictionary 201104)</p><p>&quot;Code indicating whether or not the prescriber&#8217;s instructions regarding generic substitution were followed.&quot; - NCPDP Telecommunication (Field 408-D8, Data Dictionary 201104).</p><p>-----</p><p>Possible values include (from HL7 Table 167): </p><p>No substitute was dispensed.  This is equivalent to the default (null) value; </p><p>A generic substitution was dispensed; </p><p>A therapeutic substitution was dispensed; </p><p>No product selection indicated; </p><p>Substitution not allowed by prescriber; </p><p>Substitution allowed - patient requested product dispensed; </p><p>Substitution allowed - pharmacist selected product dispensed; </p><p>Substitution allowed - generic drug not in stock; </p><p>Substitution allowed - brand drug dispensed as a generic; </p><p>Substitution not allowed - brand drug mandated by law; </p><p>Substitution allowed - generic drug not available in marketplace.</p><p>-----</p><p>Possible values include (From NCPDP ECL):</p><p>No Product Selection Indicated</p><p>Substitution Not Allowed by Prescriber</p><p>Substitution Allowed - Patient Requested Product Dispensed</p><p>Substitution Allowed - Pharmacist Selected Product Dispensed</p><p>Substitution Allowed - Generic Drug Not in Stock</p><p>Substitution Allowed - Brand Drug Dispensed as a Generic Override</p><p>Substitution Not Allowed - Brand Drug Mandated by Law</p><p>Substitution Allowed - Generic Drug Not Available in Marketplace</p><p>Substitution Allowed By Prescriber but Plan Requests Brand - Patient&apos;s Plan Requested Brand Product To Be Dispensed
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>deliverTo : <xref href="../t_FHIMProviderHealthcareProvider.dita" >HealthcareProvider</xref> (0..1)</p></stentry>
+  <stentry><p>				Pointer to the clinical provider or agency to which the mediction will be delivered.  Added 3/18/2015 to handle the designation in the order of a specialty drug of the provider which should receive for example.  For example, an IV medication would not be sent to the patient&apos;s home but to the home infusion agency that will administer the medication.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>deliverToLocation : <xref href="../t_FHIMProviderServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (1..1)</p></stentry>
+  <stentry><p>				&quot;Specifies the location of the patient to whom the pharmaceutical substance is to be delivered.&quot; - HL7 Version 2.8, RXO-34.</p><p>&quot;Specifies the address, either mailing or physical, to which the prescription should be mailed or delivered.&quot; - HL7 Version 2.8, RXO-35.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>drugCoverageStatus : <xref href="../t_FHIMPharmacyDrugCoverageStatus.dita" >DrugCoverageStatus</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to a set of (zero to many) coverage statuses for the prescribed drug.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>drugUseEvaluation : <xref href="../t_FHIMPharmacyDrugUseEvaluation.dita" >DrugUseEvaluation</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to the results of a Drug Use Evaluation (DUE) or a Drug Utilization Review (DUR).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>indication : <xref href="../t_FHIMCommonIndication.dita" >Indication</xref> (0..*)</p></stentry>
+  <stentry><p>				&quot;Identifies the condition or problem for which the drug/treatment was prescribed.&quot; - HL7 Version 2.8, RXO-20.</p><p>&quot;Contains the identifier of the condition or problem for which the drug/treatment was prescribed.  May repeat if multiple indications are relevant.&quot; - HL7 Version 2.8, RXD-21.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>orderedItem : <xref href="../t_FHIMCommonCommonProductOrderablePharmacyItem.dita" >OrderablePharmacyItem</xref> (1..1)</p></stentry>
+  <stentry><p>				&quot;Identifies the treatment product or treatment ordered to be given to the patient.... Examples ... include medications and certain devices or supplies, e.g., inhaler spacers, blood glucose monitors, syringes, infusion sets, which might require prescription.&quot; - HL7 Version 2.8, RXO-1.</p><p>&quot;This field accommodates the identification of any codes that might be associated with the pharmaceutical substance. Common codes include: the Generic Product Identifier (GPI), Generic Code Number_Sequence Number (GCN_SEQNO), National Drug Code (NDC).&quot; - HL7 Version 2.8, RXO-24.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>pharmacy : <xref href="../t_FHIMProviderPharmacy.dita" >Pharmacy</xref> (0..1)</p></stentry>
+  <stentry><p>				&quot;Specifies the pharmacy that will dispense or has dispensed the prescription.&quot; - HL7 Version 2.8, RXO-32.</p><p>&quot;Specifies the address of the dispensing facility.&quot; - HL7 Version 2.8, RXO-33.</p><p>&quot;Contains the telecommunication contact information for the pharmacy.&quot; - HL7 Version 2.8, RXO-36.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>prescriberAgent : <xref href="../t_FHIMCommonAgent.dita" >Agent</xref> (0..1)</p></stentry>
+  <stentry><p>				A person who has been designated to act on behalf of the prescriber.  For example, a physician&apos;s assistant may be authorized to telephonically authorize refill requests for the prescriber.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>priorAuthorization : <xref href="../t_FHIMEnrollEligCOBPriorAuthorization.dita" >PriorAuthorization</xref> (0..1)</p></stentry>
+  <stentry><p>				Pointer to information concerning a prior authorization already issued by a payer.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>supervisor : <xref href="../t_FHIMProviderIndividualProvider.dita" >IndividualProvider</xref> (0..1)</p></stentry>
+  <stentry><p>				Pointer to the person who is managerially responsible for the prescriber.  Usually used in long-term care settings.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

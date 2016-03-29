@@ -1,0 +1,3072 @@
+
+<html xmlns:Standard="http://www.eclipse.org/uml2/schemas/Standard/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:fhim="http:///schemas/fhim/_bbjuwA3cEeSGTazHdUQojA/5" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:term="http://www.openhealthtools.org/mdht/schemas/term/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:xmi="http://www.omg.org/XMI" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.3/Umlnotation" xmlns:Default="http:///schemas/Default/_fNm3AAqoEd6-N_NOT9vsCA/2" xmlns:CDA="http://www.openhealthtools.org/mdht/schemas/cda/4" xmlns:Default_1="http:///schemas/Default/1" xmlns:RIM="http:///schemas/RIM/_fvnwgAH4Ed6VH-9W1IVKXA/4" xmlns:SketchNotation="http://www.ibm.com/ccl/soa/sketch/notation/1.0.0/">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>AdverseEventReporting Domain</title>
+   </head>
+   <body style="font-family:Courier;font-size:14px">
+      <h1>AdverseEventReporting Domain</h1>
+      <p> The purpose of this review is to identify the data elements required for the
+         interoperable exchange for the AdverseEventReporting domain including dependencies. A column is
+         provided at the far right of the table for you to enter comments related to each
+         data element. If the class or domain is missing data elements, please add a row
+         at the bottom of the sheet and specify a name, description, and type of data
+         (e.g. numeric, string, date/time, code). 
+      </p>
+      <p> Once you have reviewed the data elements, please review the value sets
+         associated with the coded data elements. Please provide feedback by adding
+         comments in the column provided at the right of item/row or by adding rows at
+         the bottom table. For any new coded concepts without a valid code yet, our team
+         will propose them for addition in the source coding system. 
+      </p>
+      <ul>
+         <li><a href=""> <i><b>AdverseEventReporting</b> </i> Domain </a></li>
+       </ul>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font-family:Courier">
+         <tr bgcolor="#98FB98" style="font-size:18px" align="left">
+            <td colspan="1"><b><a id=""> 'AdverseEventReporting' Domain
+                     </a></b></td>
+            <td colspan="4" style="font-size:12px">Note that the Information Source hierarchy is in the Common domain, and is not shown here.</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+      </table>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font-family:Courier">
+         <tr>
+            <th width="20%">Element Name</th>
+            <th width="20%">Element Description</th>
+            <th width="15%">Format/Type</th>
+            <th width="15%">Value Set Name</th>
+            <th width="15%">Optionality/<br>Repetition
+            </th>
+            <th width="15%">Reviewer's Comments</th>
+         </tr>
+ 
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>AbstractReportSubjectObservation</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class contains demographic observations made about a Patient at a given point of time.  Each of the properties in the class exist in the Patient or Person classes.  They are repeated here to emphasize that they are point-in-time observations that are needed for a particular report.  Note that each of these properties are marked as derived - all of the properties can be calculated from the Patient and Person classes.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AbstractReportSubjectObservation.<b>ageAtOnset</b></div>
+            </td>
+            <td><p>This property contains age of the person in question at the time that the event occured.  Note that if the person&apos;s date of birth is known, this property can be derived from the patient&apos;s Person demographics information.  However, in general, this property is used only when the date of birth is not known, thereby conveying the approximate age of the person at the time of the first reaction or event.</p><p></p><p>If the person in question is the patient, this is their age when the event or reaction first occurred to them.  See ICH E2B(R3), D.2.2.a and D.2.2b.</p><p>If the person in question is a parent (typically the mother) of the patient, this is their age at the time that the event or reaction first occurred to the child or fetus.  ICH E2B(R3), D.10.2.2a and D.10.2.2b.</p><p>If the person in question is a sibling of the patient, this is their age when the date/time the event or reaction first occurred to the sibling.  Note that ICH does not include siblings.</p><p></p><p>Medwatch 3500 form question A.2.a; Medwatch 3500A form question A.2.a; Medwatch 3500B form question D.3.a; VAERS-1 form question 4.</p></td>
+            <td valign="top"> TimeQuantity </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AbstractReportSubjectObservation.<b>dateOfBirth</b></div>
+            </td>
+            <td><p>The date of birth of the person in question, which would be used to calculate their age at time that the adverse event or reaction occurred.  Note that this property can be derived from the person&apos;s demographics information.</p><p></p><p>If the person in question is the patient, see ICH E2B(R3), D.2.1</p><p>If the person in question is a parent (typically the mother) of the patient, see ICH E2B(R3), D.10.2.1</p><p>It is noted that ICH does not support sibling information.</p><p></p><p>Medwatch 3500 form question A.2.b; Medwatch 3500A form question A.2.b; Medwatch 3500B form question D.3.b; VAERS-1 form question 3.</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AbstractReportSubjectObservation.<b>initials</b></div>
+            </td>
+            <td><p>The first letter of each part of a proper name. This property stores the initials of a person&apos;s name, which is used  in research studies to identify the patient without divulging the person&apos;s entire name.  Note that this property can be derived from the patient&apos;s Person demographics information.</p><p>Medwatch 3500B form question D.1.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AbstractReportSubjectObservation.<b>race</b></div>
+            </td>
+            <td><p>The patient&apos;s race.  Note that this property can be derived from the patient&apos;s Person demographics information.</p><p>Medwatch 3500B form question D.5.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AbstractReportSubjectObservation.<b>releventMedicalHistoryText</b></div>
+            </td>
+            <td><p>&quot;Information about any other medical history that could not be coded in [the structured relevant medical history / concurrent conditions].&quot; - ICH E2B(R3), D.7.2 and D.10.7.2.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AbstractReportSubjectObservation.<b>sex</b></div>
+            </td>
+            <td><p>The sex of the person in question.  Note that this property can be derived from the person&apos;s demographics information.</p><p></p><p>If the person in question is the patient, see ICH E2B(R3), D.2.1</p><p>If the person in question is a parent (typically the mother) of the patient, see ICH E2B(R3), D.10.6.</p><p>It is noted that ICH does not support sibling information.</p><p></p><p>Medwatch 3500 form question A.3; Medwatch 3500A form question A.3; Medwatch 3500B form question D.2; VAERS-1 form question 5.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AbstractReportSubjectObservation.<b>releventMedicalHistory</b></div>
+            </td>
+            <td><p>Pointer to information pertinent to understanding the case (such as diseases, conditions such as pregnancy, surgical procedures, psychological trauma, risk factors, etc.).</p></td>
+            <td valign="top"> <b>ReleventMedicalHistory</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AbstractReportSubjectObservation.<b>relevantPastDrugHistory</b></div>
+            </td>
+            <td><p>Pointer to relevant drugs previously administered and which have been stopped before the Adverse Event onset.</p></td>
+            <td valign="top"> <b>RelevantPastDrugHistory</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AbstractReportSubjectObservation.<b>heightObservation</b></div>
+            </td>
+            <td><p>Pointer to the reported height in centimeters of the person in question at the time that the adverse event or reaction first occured.</p><p></p><p>If the person in question is the patient, this is their reported height when the event or reaction first occurred to them.  See ICH E2B(R3), D.4.</p><p>If the person in question is a parent (typically the mother) of the patient, this is the reported height of the parent at the time that the event or reaction first occurred to the child or fetus.  See ICH E2B(R3), D.10.5.</p><p>If the person in question is a sibling of the patient, this property will likely not be used.</p></td>
+            <td valign="top"> <b>HeightObservation</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AbstractReportSubjectObservation.<b>weightObservation</b></div>
+            </td>
+            <td><p>Pointer to the reported body weight of the person in question at the time that the adverse event or reaction first occured.  </p><p></p><p>If the person in question is the patient, this is their reported body weight when the event or reaction first occurred to them.  See ICH E2B(R3), D.3.</p><p>If the person in question is a parent (typically the mother) of the patient, this is the reported body weight of the parent at the time that the event or reaction first occurred to the child or fetus.  See ICH E2B(R3), D.10.4.</p><p>If the person in question is a sibling of the patient, this propery will likely not be used.</p></td>
+            <td valign="top"> <b>WeightObservation</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AbstractReportSubjectObservation.<b>lastMenstrualPeriodObservation</b></div>
+            </td>
+            <td><p>Pointer to a Clinical Observation of when the patient&apos;s last menstrual period began, if applicable.</p></td>
+            <td valign="top"> <b>LastMenstrualPeriodObservation</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AbstractReportSubjectObservation.<b>relevantLabTest</b></div>
+            </td>
+            <td><p>Pointer to laboratory test information pertinent to understanding the case.</p></td>
+            <td valign="top"> <b>RelevantLabResult</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>DeviceObservation</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>Contains information describing any medical devices (whether suspect or concommittant) used by the subject near the time of the adverse event occurred.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DeviceObservation.<b>dateImplanted</b></div>
+            </td>
+            <td><p>The date the patient began to use the product.  Medwatch 3500 form question E.6; Medwatch 3500A form question D.6; Medwatch 3500B form question C.6.</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DeviceObservation.<b>dateExplanted</b></div>
+            </td>
+            <td><p>The date the patient stopped using the product.  Medwatch 3500 form question E.7; Medwatch 3500A form question D.7; Medwatch 3500B form question C.7.</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DeviceObservation.<b>deviceOperator</b></div>
+            </td>
+            <td><p>Is this product meant to be used only one time (i.e., single-use), but was reprocessed and/or reused?  Medwatch 3500 form question E.8; Medwatch 3500A form question D.8.</p></td>
+            <td valign="top"> enumDeviceOperator </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DeviceObservation.<b>otherUserText</b></div>
+            </td>
+            <td><p>Was the operator or user of the device neither the patient nor a healthcare professional?  If yes, the other user text should be valued.  Medwatch 3500 form question E.5; Medwatch 3500A form question D.5; Medwatch 3500B form question C.5.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DeviceObservation.<b>therapyStartDate</b></div>
+            </td>
+            <td><p>Medwatch 3500A form question D.11.</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DeviceObservation.<b>therapyStopDate</b></div>
+            </td>
+            <td><p>Medwatch 3500A form question D.11.</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DeviceObservation.<b>wasSingleUseReprocessed</b></div>
+            </td>
+            <td><p>Is this product meant to be used only one time (i.e., single-use), but was reprocessed and/or reused?</p><p>MedWatch 3500 form question E.8.</p><p>MedWatch 3500A form question D.8.</p><p>(note that the MedWatch 3500B and the VAERS-1 forms do not have this element).</p></td>
+            <td valign="top"> Boolean </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DeviceObservation.<b>deviceInstance</b></div>
+            </td>
+            <td><p>Pointer to the Device Instance (and therefore more generic information about the device product) that is suspected to have caused the adverse event, product problem, or product use error.</p><p>Medwatch 3500A form question D.1 (brand name), D.2 (commond device name), D.2.b (Procom), 5, box 2.</p></td>
+            <td valign="top"> <b>DeviceInstance</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>DocumentsHeldBySender</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class contains a description (and optionally the content) of any documents held by the sender relevant to this ICSR.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DocumentsHeldBySender.<b>content</b></div>
+            </td>
+            <td><p>&quot;This data element contains the actual content of [the document] if the sender chooses to send the document.&quot; - ICH E2B(R3), C.1.6.1.r.1</p></td>
+            <td valign="top"> Any </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DocumentsHeldBySender.<b>description</b></div>
+            </td>
+            <td><p>&quot;A description of the documents held by the sender relevant to this ICSR (e.g. clinical records, hospital records, autopsy reports, ECG strips, chest X-ray, or photographs) should be listed individually in this data element.&quot; - ICH E2B(R3), C.1.6.1.r.1</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>DrugDosage</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>Contains information describing the amount, timing, and route of administration of medicinal products (whether suspect or concommittant) given to or taken by the subject near the time of the adverse event occurred.  Corresponds to ICH E2B(R3), G.k.4.r.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DrugDosage.<b>dosageText</b></div>
+            </td>
+            <td><p>&quot;Free text information when structured dosage information is not possible, or to provide more detail on structured dosage data elements. There is no need to duplicate information provided in the structured dosage data elements.&quot;  - ICH E2B(R3), G.k.4.r.8.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DrugDosage.<b>dose</b></div>
+            </td>
+            <td><p>The amount of medication taken at one time.</p><p></p><p>&quot;The value (number) of each administered dose.&quot;  - ICH E2B(R3), G.k.4.r.1a</p><p>&quot;The unit for the dose value in G.k.4.r.1a.&quot;  - ICH E2B(R3), G.k.4.r.1b</p><p></p><p>Medwatch 3500 form question D.2; Medwatch 3500A form question C.2; Medwatch 3500B form question B.7.</p></td>
+            <td valign="top"> Quantity </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DrugDosage.<b>drugFormText</b></div>
+            </td>
+            <td><p>&quot;Free text description of the pharmaceutical dose form when the Pharmaceutical Dose Form TermID is not available.&quot;  - ICH E2B(R3), G.k.4.r.9.1.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DrugDosage.<b>duration</b></div>
+            </td>
+            <td><p>The length of time that the patient used the product, if known.  Used when exact dates are unknown.</p><p>&quot;This section will usually be computed from the start/end date and time of the administration. However, there might be situations in which the precise duration of the drug administration can be useful, such as minutes or hours. Also, this item should be used in addition to dates if exact dates of drug administration are not available at the time of the report, but there is information concerning the duration of drug administration. In such a case, populate 1 data element for the date (start or end date) and this Section. The information requested is the overall duration of drug administration and covers intermittent administration.&quot;  - ICH E2B(R3), G.k.4.r.6a and G.k.4.r.6b.</p><p>MedWatch 3500 form question D.3 (suspect medication); question F (concomitant medication)</p><p>MedWatch 3500A form question C.3 (suspect medication); question C.10 (concomitant medication)</p><p>MedWatch 3500B form question B.11 (suspect medication)</p><p>(note that the VAERS-1 form does not have this element).</p></td>
+            <td valign="top"> TimeInterval </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DrugDosage.<b>frequency</b></div>
+            </td>
+            <td><p>Indicates how often the medication is taken.</p><p></p><p>&quot;The value (amount) for the time interval between each administered dose (G.k.4.r.1a and G.k.4.r.1b) If either G.k.4.r.2 or G.k.4.r.3 is unknown, both should be left blank unless the definition of the time interval unit is Cyclical, As necessary, or Total.&quot;  - ICH E2B(R3), G.k.4.r.2</p><p>&quot;The UCUM code that best describes the unit for the dosing time interval (G.k.4.r.2). When a specific time interval for drug administration is not known, but is confirmed that the drug is used cyclically or as necessary, then Cyclical or As Necessary can be used in this data element. When the total amount of a drug is provided without any particular dose and dosing interval (e.g. in the case of an overdose), the quantity and unit (G.k.4.r.1a and G.k.4.r.1b) is provided along with Total in this data element (G.k.4.r.2 is left blank).&quot;  - ICH E2B(R3), G.k.4.r.3</p><p></p><p>Medwatch 3500 form question D.2; Medwatch 3500A form question C.2; Medwatch 3500B form question B.8.</p></td>
+            <td valign="top"> TimeQuantity </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DrugDosage.<b>parentRoute</b></div>
+            </td>
+            <td><p>&quot;This data element captures the known route of administration of the drug as taken by the parent for the dosage described in G.k.4.r.1 to G.k.4.r.3.&quot;  - ICH E2B(R3), G.k.4.r.11.2a and G.k.4.r.11.2b.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DrugDosage.<b>parentRouteText</b></div>
+            </td>
+            <td><p>&quot;Free text description of the route of administration when the Parent Route of Administration TermID is not available.&quot;  - ICH E2B(R3), G.k.4.r.11.1.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DrugDosage.<b>route</b></div>
+            </td>
+            <td><p>Indicates how the medication is administered (e.g., by mouth, by injection, etc.).</p><p></p><p>&quot;The route of administration.  For a parent-child/foetus report, this data element indicates the route of administration for the child/foetus (patient). This is usually an indirect exposure, such as transmammary, but can include more usual routes of administration for other drugs given to the child. The parent&#8217;s route of administration should be provided in G.k.4.r.11&quot;  - ICH E2B(R3), G.k.4.r.10.2a and G.k.4.r.10.2b</p><p></p><p>Medwatch 3500 form question D.2; Medwatch 3500A form question C.2; Medwatch 3500B form question B.9.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DrugDosage.<b>routeText</b></div>
+            </td>
+            <td><p>&quot;Free text description of the route of administration when the Route of Administration TermID is not available.&quot;  - ICH E2B(R3), G.k.4.r.10.1.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DrugDosage.<b>startDate</b></div>
+            </td>
+            <td><p>The date the patient began to use the product, if known.</p><p>&quot;The date and time when drug administration started.&quot;  - ICH E2B(R3), G.k.4.r.4</p><p>MedWatch 3500 form question D.3 (suspect medication); question F (concomitant medication)</p><p>MedWatch 3500A form question C.3 (suspect medication); question C.10 (concomitant medication)</p><p>MedWatch 3500B form question B.10 (suspect medication)</p><p>VAERS-1 form question 10 (suspect vaccine); question 14 (vaccines given within the past 4 weeks)</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DrugDosage.<b>stopDate</b></div>
+            </td>
+            <td><p>The date the patient stopped using the product, if known.</p><p>&quot;The date and time when drug administration ended. For ongoing drug administration after the onset of the reaction/event, this item should be blank....&quot;  - ICH E2B(R3), G.k.4.r.5</p><p>MedWatch 3500 form question D.3 (suspect medication); question F (concomitant medication)</p><p>MedWatch 3500A form question C.3 (suspect medication); question C.10 (concomitant medication)</p><p>MedWatch 3500B form question B.11 (suspect medication)</p><p>(note that the VAERS-1 form does not have this element).</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>DrugObservation</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>Contains information describing any medicinal products (whether suspect or concommittant) given to or taken by the subject near the time of the adverse event occurred.  Corresponds to ICH E2B(R3), G.k.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DrugObservation.<b>didEventAbate</b></div>
+            </td>
+            <td><p>Did the adverse event abate after the use of the suspect medication was stopped or the dose was reduced?  Medwatch 3500 form question D.5; Medwatch 3500A form question C.5; Medwatch 3500B form question B.13.</p></td>
+            <td valign="top"> Boolean </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DrugObservation.<b>didReappear</b></div>
+            </td>
+            <td><p>Did the adverse event reappear after the the suspect medication was reintroduced?  Medwatch 3500 form question D.8; Medwatch 3500A form question C.8; Medwatch 3500B form question B.14.</p></td>
+            <td valign="top"> Boolean </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DrugObservation.<b>indHolderCountry</b></div>
+            </td>
+            <td><p>&quot;The country where the drug was authorised when the case report is sent to that country if known.&quot;  - ICH E2B(R3), G.k.3.2</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DrugObservation.<b>indHolderName</b></div>
+            </td>
+            <td><p>&quot;The name of the licence holder as indicated on the package.&quot;  - ICH E2B(R3), G.k.3.3</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DrugObservation.<b>lastFillDate</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DrugObservation.<b>nbrOfPreviousDoses</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Integer </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DrugObservation.<b>sig</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DrugObservation.<b>drugDosage</b></div>
+            </td>
+            <td><p>Pointer to information describing the amount, timing, and route of administration of medicinal products (whether suspect or concommittant) given to or taken by the subject near the time of the adverse event occurred.</p></td>
+            <td valign="top"> <b>DrugDosage</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DrugObservation.<b>drugIngredient</b></div>
+            </td>
+            <td><p>Pointer to the active ingredient(s) of the drug.  Used only if the medicinalProduct or the pharmaceuticalProduct are not known.- ICH E2B(R3), G.k.2.3.r</p></td>
+            <td valign="top"> <b>DrugIngredient</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DrugObservation.<b>medicinalProduct</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>MedicinalProduct</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DrugObservation.<b>pharmaceuticalProduct</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>GenericMedicine</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DrugObservation.<b>medicinalProductInstance</b></div>
+            </td>
+            <td><p>Medwatch 3500A form question C.1 (name), C.6 (lot), C.7 (exp date), C.9 (ndc)</p></td>
+            <td valign="top"> <b>MedicinalProductInstance</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>IndvidualCaseSafetyReport</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class contains those properties required for the reporting of product safety-related information (to include product defects) to a regulatory agency. It contains the intersection of the information required for four specific reports: MedWatch 3500, MedWatch 3500A, MedWatch 3500B, and VAERS-1.  It is anticipated that subtypes will be created for these individual reports, which will add report-specific properties and constraints.</p><p></p><p>This class is based in the Individual Case Safety Report (ICSR) series of standards.  An ICSR is a report of information describing adverse event(s) / reaction(s) experienced by an individual patient. The event(s) / reaction(s) can be related to the administration of one or more medicinal products at a particular point in time. The ICSR can also be used for exchange of other information, such as medication error(s) that do not involve adverse events(s)/reaction(s).</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">IndvidualCaseSafetyReport.<b>areAdditionalDocumentsAvailable</b></div>
+            </td>
+            <td><p>&quot;When retransmitting information, the sender (retransmitter) indicates &#8216;true&#8217; in this data element only if they have the documents available.&quot; - ICH E2B(R3), C.1.6.1</p></td>
+            <td valign="top"> Boolean </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">IndvidualCaseSafetyReport.<b>caseSummary</b></div>
+            </td>
+            <td><p>&quot;A focused, factual and clear description of the case, including the words or short phrases used by the reporter.&quot; - ICH E2B(R3), H.1.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">IndvidualCaseSafetyReport.<b>caseSummaryInNativeLanguage</b></div>
+            </td>
+            <td><p>&quot;Information on the clinical course of the case, therapeutic measures, outcome and other relevant information, as well as the reporter&#8217;s comments on the case in a language [other than English].  [Also used] to transmit the sender&#8217;s and receiver&#8217;s comments in a language other than English, as required in some countries and regions.&quot; - ICH E2B(R3), H.5.r.1a.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">IndvidualCaseSafetyReport.<b>caseSummaryLanguage</b></div>
+            </td>
+            <td><p>&quot;The language used in [caseSummaryInNativeLanguage]&quot; - ICH E2B(R3), H.5.r.1b.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">IndvidualCaseSafetyReport.<b>dateOfMostRecentInfo</b></div>
+            </td>
+            <td><p>&quot;This data element captures the date each time follow-up information is received by the sender from a primary source.  However, if the case is amended for any other reason (e.g. after internal review by the sender) this date should not be changed....&quot; - ICH E2B(R3), C.1.5</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">IndvidualCaseSafetyReport.<b>dateReportFirstReceived</b></div>
+            </td>
+            <td><p>&quot;For organisations transmitting an initial case, this data element should be the date when the information was received from the primary source.... When retransmitting information received from another regulatory agency or another company or any other secondary source, [this] should be the date the retransmitter first received the information.&quot; - ICH E2B(R3), C.1.4</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">IndvidualCaseSafetyReport.<b>descriptionOfEvent</b></div>
+            </td>
+            <td><p>Description of the event, or problem.  Medwatch 3500 form question B.5; Medwatch 3500A form question B.5; Medwatch 3500B form question A.4; VAERS-1 form question 7.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">IndvidualCaseSafetyReport.<b>icsrReportCategory</b></div>
+            </td>
+            <td><p>&quot;Captures the type of report independently of its source.&quot; - ICH E2B(R3), C.1.3.  Possible values include: Spontaneous report; Report from study; Other; Not available to sender (unknown).</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">IndvidualCaseSafetyReport.<b>meetsExpeditedCriteria</b></div>
+            </td>
+            <td><p>&quot;This data element should be used by the sender to indicate whether the case fulfils the local expedited requirements.&quot; - ICH E2B(R3), C.1.7</p><p>Note that this property is included for compatibility to the ICH and the ICSR, but does not appear to be currently needed by U.S. Federal agencies, therefore, the cardinality of this property has been set to zero.</p></td>
+            <td valign="top"> Boolean </td>
+            <td></td>
+            <td>(0..0)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">IndvidualCaseSafetyReport.<b>nullificationOrAmendmentReason</b></div>
+            </td>
+            <td><p>&quot;Indicate[s] the reason why a previously transmitted ICSR is either considered completely void (nullified)..., or amended&quot; - ICH E2B(R3), C.1.11.2.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">IndvidualCaseSafetyReport.<b>originalSenderCategory</b></div>
+            </td>
+            <td><p>&quot;Identifies the type of sender that created and transmitted the original electronic ICSR.&quot; - ICH E2B(R3), C.1.8.2.  Possible values include: Regulator; Other.</p><p>Note that this property is included for compatibility to the ICH and the ICSR, but does not appear to be currently needed by U.S. Federal agencies, therefore, the cardinality of this property has been set to zero.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..0)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">IndvidualCaseSafetyReport.<b>relatedReportId</b></div>
+            </td>
+            <td><p>&quot;Identifier of another report or case that warrants being evaluated together with this ICSR. This includes, but is not limited to, a mother/parent-child pair where both had events/reactions, siblings with common exposure, several reports involving the same patient, an ICSR previously sent via paper without a conformant E2B Worldwide Unique Case Identification Number, or several similar reports from same reporter (cluster).&quot; - ICH E2B(R3), C.1.10.r.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">IndvidualCaseSafetyReport.<b>reportersComments</b></div>
+            </td>
+            <td><p>&quot;The reporter&apos;s comments on the diagnosis, causality assessment or other issues considered relevant.&quot; - ICH E2B(R3), H.2.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">IndvidualCaseSafetyReport.<b>sendersComments</b></div>
+            </td>
+            <td><p>&quot;The sender&apos;s assessment of the case and can be used to describe disagreement with, and/or alternatives to the diagnoses given by the reporter(s). Also, in case of linkage of multiple ICSRs using C.1.10.r, the reason should be provided in these comments.&quot; - ICH E2B(R3), H.4.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">IndvidualCaseSafetyReport.<b>sendersDiagnosis</b></div>
+            </td>
+            <td><p>&quot;This data element provides the sender with an opportunity to combine signs and symptoms that were reported into a succinct diagnosis. Supporting rationale for the term selection is included in Section H.4.A MedDRA LLT code should be used.&quot; - ICH E2B(R3), H.3.r.1a and H.3.r.1b.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">IndvidualCaseSafetyReport.<b>uniqueCaseId</b></div>
+            </td>
+            <td><p>A unique identifier that is assigned to the report by the author and that is globally unique. - ICH E2B(R3), C.1.8.1</p></td>
+            <td valign="top"> Id </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">IndvidualCaseSafetyReport.<b>wasAutopsyPerformed</b></div>
+            </td>
+            <td><p>&quot;Indicates if an autopsy was done.&quot; - ICH E2B(R3), D.9.3.</p></td>
+            <td valign="top"> Boolean </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">IndvidualCaseSafetyReport.<b>wereOtherCaseIdsUsed</b></div>
+            </td>
+            <td><p>This property will be true in &quot;...the event that the ICSR either has been exchanged by the two parties in the past using a different identifier or that it is exchanged simultaneously with a different identifier....&quot; - ICH E2B(R3), C.1.9.1.</p></td>
+            <td valign="top"> Boolean </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">IndvidualCaseSafetyReport.<b>documentsHeldBySender</b></div>
+            </td>
+            <td><p>Pinter to a description (and optionally the content) of any documents held by the sender relevant to this ICSR.</p></td>
+            <td valign="top"> <b>DocumentsHeldBySender</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">IndvidualCaseSafetyReport.<b>informationReporter</b></div>
+            </td>
+            <td><p>Pointer to the primary source(s) of the facts about the ICSR.</p></td>
+            <td valign="top"> <b>InformationReporter</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">IndvidualCaseSafetyReport.<b>literatureReference</b></div>
+            </td>
+            <td><p>Pointer to literature article(s) that describe individual case(s), but not for articles used for data analysis.</p></td>
+            <td valign="top"> <b>LiteratureReference</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">IndvidualCaseSafetyReport.<b>otherCaseIdentifier</b></div>
+            </td>
+            <td><p>Pointer to other case identifiers for this case used in ICH ICSR electronic transmissions.</p></td>
+            <td valign="top"> <b>OtherCaseIdentifier</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">IndvidualCaseSafetyReport.<b>productRole</b></div>
+            </td>
+            <td><p>Pointer to the medical product(s) (i.e., medical device or drug) that is either suspected to have caused an adverse event, or that was in use at the time of the adverse event and which may or may not have contributed to the event.</p></td>
+            <td valign="top"> <b>ProductRole</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">IndvidualCaseSafetyReport.<b>reactionOrEvent</b></div>
+            </td>
+            <td><p>Pointer to the set of reaction(s) or adverse event(s) that are being reported.</p></td>
+            <td valign="top"> <b>ReactionOrEvent</b> </td>
+            <td>NA</td>
+            <td>(1..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">IndvidualCaseSafetyReport.<b>relatedPersonObservation</b></div>
+            </td>
+            <td><p>Pointer to information about a person related to the subject of the report (i.e., related to the patient).</p></td>
+            <td valign="top"> <b>RelatedPersonObservation</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">IndvidualCaseSafetyReport.<b>reportSubjectObservation</b></div>
+            </td>
+            <td><p>Pointer to observations made about a patient or a person related to the patient at a given point of time (i.e., at the time of the Report).</p></td>
+            <td valign="top"> <b>ReportSubjectObservation</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">IndvidualCaseSafetyReport.<b>sender</b></div>
+            </td>
+            <td><p>Pointer to the person and/or organization that sent the ICSR.</p></td>
+            <td valign="top"> <b>Sender</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">IndvidualCaseSafetyReport.<b>study</b></div>
+            </td>
+            <td><p>Pointer to any study(-ies) (e.g., a clinical trial) in which the patient was participating in a study when the adverse reaction or event occurred.</p></td>
+            <td valign="top"> <b>Study</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>InformationReporter</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>&quot;The primary source of the information is the person who provides the facts about the ICSR. In case of multiple sources, the &quot;Primary Source for Regulatory Purposes&quot; (C.2.r.5) is the person who first reported the facts to the sender. The primary source should be distinguished from senders and retransmitters; the latter is captured in Section C.3.&quot; - ICH E2B(R3), C.2.r.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">InformationReporter.<b>departmentName</b></div>
+            </td>
+            <td><p>The name of the department (if any) with which the Person who provided facts about the ICSR is associated. From ICH E2B(R3), C.2.r.2.2.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">InformationReporter.<b>isPrimarySource</b></div>
+            </td>
+            <td><p>&quot;Identifies which primary source to use for regulatory purposes and in case of multiple sources, it identifies the source of the World Wide Case Unique Identification number; this source should identify where the case occurred.&quot; - ICH E2B(R3), C.2.r.5.</p></td>
+            <td valign="top"> Boolean </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">InformationReporter.<b>isHealthProfessional</b></div>
+            </td>
+            <td><p>Is the person reporting the Adverse Event is a Health Care Provider?  Medwatch 3500A form question E.2.</p></td>
+            <td valign="top"> Boolean </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">InformationReporter.<b>name</b></div>
+            </td>
+            <td><p>The name of the Person who provided facts about the ICSR. From ICH E2B(R3), C.2.r.1.1 - C.2.r.1.4.</p></td>
+            <td valign="top"> PersonName </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">InformationReporter.<b>organizationName</b></div>
+            </td>
+            <td><p>The name of the organization with which the Person who provided facts about the ICSR is associated. From ICH E2B(R3), C.2.r.2.1.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">InformationReporter.<b>qualification</b></div>
+            </td>
+            <td><p>Provides an indication of the level of professional training held by the Person who provided facts about the ICSR. From ICH E2B(R3), C.2.r.4.  Possible values include: Physician; Pharmacist; Other health professional; Lawyer; Consumer or other non health professional; Unknown (null flavor).</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">InformationReporter.<b>address</b></div>
+            </td>
+            <td><p>The address of the Person who provided facts about the ICSR. From ICH E2B(R3), C.2.r.2.3 - C.2.r.2.6.</p></td>
+            <td valign="top"> Address </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">InformationReporter.<b>email</b></div>
+            </td>
+            <td><p>The email address that a person uses while at their place of business.  First choice for business related contacts during business hours.</p></td>
+            <td valign="top"> ContactPoint </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">InformationReporter.<b>phone</b></div>
+            </td>
+            <td><p>The telephone number of the Person who provided facts about the ICSR. From ICH E2B(R3), C.2.r.2.7.</p></td>
+            <td valign="top"> ContactPoint </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">InformationReporter.<b>occupation</b></div>
+            </td>
+            <td><p>The occupation of the person reporting the Adverse Event.  May be used to determine the qualification property identified by ICSR.</p><p>Medwatch 3500A form question E.3.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">InformationReporter.<b>doNotDiscloseIdentity</b></div>
+            </td>
+            <td><p>This property is set to true if the Initial Reporter indicated that he/she does NOT want his/her identity disclosed to the manufacturer.</p><p>Medwatch 3500 form question G.5.</p></td>
+            <td valign="top"> Boolean </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">InformationReporter.<b>alsoReportedTo</b></div>
+            </td>
+            <td><p>This property indicates whether the Initial Reporter also reported the adverse event / reaction to the the manufacturer, user facility, or distributor/importer.</p><p>Medwatch 3500 form question G.4.</p></td>
+            <td valign="top"> enumReportedTo </td>
+            <td></td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>LastMenstrualPeriodObservation</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>For women patients, this class represents an observation of when the patient&apos;s last menstrual period began.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">LastMenstrualPeriodObservation.<b>observedCharacteristic</b></div>
+            </td>
+            <td><p>This property indicates what was observed.  In this case, it is hard-coded to LOINC code 8665-2, which means that the characteristic observed is the date that the patient&apos;s latest menstrual period began.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">LastMenstrualPeriodObservation.<b>value</b></div>
+            </td>
+            <td><p>Contains the value of the clinical observation.</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>LiteratureReference</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class is used for literature article(s) that describe individual case(s), but not for articles used for data analysis. From ICH E2B(R3), C.4.r.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">LiteratureReference.<b>content</b></div>
+            </td>
+            <td><p>&quot;Contains the actual content referenced in [LiteratureReference.name] when the sender chooses to send a copy of the literature article.&quot; - ICH E2B(R3), C.4.r.2.</p></td>
+            <td valign="top"> Any </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">LiteratureReference.<b>name</b></div>
+            </td>
+            <td><p>&quot;This data element should be used for literature article(s) that describe individual case(s), but not for articles used for data analysis. Citations should be provided in the style specified by the Vancouver Convention, known as &#8216;Vancouver style&#8217;, which has been developed by the International Committee of Medical Journal Editors.&quot; - ICH E2B(R3), C.4.r.1.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>OtherCaseIdentifier</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class contains all other case identifiers for this case used in ICH ICSR electronic transmissions.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">OtherCaseIdentifier.<b>caseId</b></div>
+            </td>
+            <td><p>&quot;Provide[s] all other case identifiers for this case used in ICH ICSR electronic transmissions. If the case has been received from another sender, all other case identifiers ... should be retransmitted.&quot; - ICH E2B(R3), C.1.9.1.r.2.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">OtherCaseIdentifier.<b>caseIdSource</b></div>
+            </td>
+            <td><p>&quot;Provide[s] all sources (organisation&#8217;s name) of electronic transmissions for this case. If the case has been received from another sender, all other case identifiers ... should be retransmitted.&quot; - ICH E2B(R3), C.1.9.1.r.1.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>ProductEventAssessment</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>An assessment of whether the reaction / adverse event may have been caused by or exacerbated by the product cited by the owning ProductEventRelationship class.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ProductEventAssessment.<b>method</b></div>
+            </td>
+            <td><p>&quot;The method of the assessment provided in G.k.9.i.2.r.3.For example global introspection, algorithm, Bayesian calculation, etc.&quot; - ICH E2B(R3), G.k.9.i.2.r.2.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ProductEventAssessment.<b>result</b></div>
+            </td>
+            <td><p>&quot;The result of the assessment for relatedness. The value will depend on the method used for the assessment&quot; - ICH E2B(R3), G.k.9.i.2.r.3.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ProductEventAssessment.<b>source</b></div>
+            </td>
+            <td><p>&quot;The source of the assessment provided in G.k.9.i.2.r.3.&quot; - ICH E2B(R3), G.k.9.i.2.r.1.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>ProductEventRelationship</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class links a reaction or adverse event with the various medical products (medical devices and/or drugs) that were being used by the patient, and provides an assessment of whether the reaction / adverse event may have been caused by or exacerbated by the product.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ProductEventRelationship.<b>didReactionRecur</b></div>
+            </td>
+            <td><p>&quot;Indicates both if the patient was rechallenged with the drug and the known outcome. This data element should not be coded if it was not reported whether or not a rechallenge was done.&quot; - ICH E2B(R3), G.k.9.i.4.  Possible values include: Yes-Yes (rechallenge was done, reaction recurred); Yes-No (rechallenge was done, reaction did not recur); Yes-Unk (rechallenge was done, outcome unknown); No&#8211;N/A (no rechallenge was done, recurrence is not applicable).</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ProductEventRelationship.<b>timeFromAdminStart</b></div>
+            </td>
+            <td><p>&quot;The interval of time between the start of drug administration and the onset of the reaction. Even when other dates are provided, this data element is useful also to be transmitted for circumstances where, for example the interval is very short minutes, such as in anaphylaxis, or in which only imprecise dates are known but more information concerning the interval is known. If the sender wants to provide time intervals as well as dates, then the date of the first day of administration should be counted as Day 1 of the interval.&quot; - ICH E2B(R3), G.k.9.i.3.1a and G.k.9.i.3.1b.  Note that ICH requires that the unit of time measurement should come from UCUM.</p></td>
+            <td valign="top"> TimeQuantity </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ProductEventRelationship.<b>timeFromAdminStop</b></div>
+            </td>
+            <td><p>&quot;The interval of time between the end of drug administration and the onset of the reaction. Even when other dates are provided, this data element is useful also to be transmitted for circumstances where, for e.g. the interval is very short minutes, such as in anaphylaxis, or in which only imprecise dates are known but more information concerning the interval is known. If the sender wants to provide time intervals as well as dates, then the date of the last day of administration should be counted as Day 1 of the interval.&quot; - ICH E2B(R3), G.k.9.i.3.2a and G.k.9.i.3.2b.  Note that ICH requires that the unit of time measurement should come from UCUM.</p></td>
+            <td valign="top"> TimeQuantity </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ProductEventRelationship.<b>productEventAssessment</b></div>
+            </td>
+            <td><p>Pointer to an assessment of whether the reaction / adverse event may have been caused by or exacerbated by the product cited by the owning ProductEventRelationship class.</p></td>
+            <td valign="top"> <b>ProductEventAssessment</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ProductEventRelationship.<b>reactionOrEvent</b></div>
+            </td>
+            <td><p>Pointer to the ReactionOrEvent for which an assessment of the causal relationship to the Drug is being made.</p><p></p><p>&quot;Captures a technical reference within the message that is used to identify which reaction / event in Section E.i is being assessed. This is not a user entered element.&quot; - ICH E2B(R3), G.k.9.i.1.</p></td>
+            <td valign="top"> <b>ReactionOrEvent</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>ProductRole</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class provides information on the medical product(s) (i.e., medical device or drug) that is either suspected to have caused an adverse event, or that was in use at the time of the adverse event and which may or may not have contributed to the event.  Note that this class is used to navigate from the Case Safety Report to observations about the drug or device, which in turn point to the drug and device classes.</p><p>&quot;The characterisation of the drug role as provided by the primary reporter or, if this information is missing, by the sender. All spontaneous reports should have at least one suspect drug....&quot;  - ICH E2B(R3), G.k.1.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ProductRole.<b>actionTaken</b></div>
+            </td>
+            <td><p>If the product in question is a drug, this property describes what changes were made to the drug administration as a result of the adverse event.  This property is not used when the product is a device.</p><p>&quot;The action taken with the drug as a result of the reaction(s) / event(s). The value Drug withdrawn, taken together with the Outcome of Reaction /Event at the Time of Last Observation (E.i.7), describe the dechallenge. Not applicable should be used in circumstances such as when the patient has died or the treatment had been completed prior to reaction(s) /event(s) or the Characterisation of Drug Role (G.k.1) is Drug Not Administered. When Not applicable is used, details should be captured in Section H.&quot;  - ICH E2B(R3), G.k.8.  Possible values include: Drug withdrawn; Dose reduced; Dose increased; Dose not changed; Unknown; Not applicable.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ProductRole.<b>additionalInformationCoded</b></div>
+            </td>
+            <td><p>&quot;Any additional information pertinent to the case that is not covered by the sections above.&quot; - ICH E2B(R3), G.k.10.r.  Possible values include: Counterfeit; Overdose; Drug taken by the father; Drug taken beyond expiry date; Batch and lot tested and found within specifications; Batch and lot tested and found not within specifications; Medication error; Misuse; Abuse; Occupational exposure; Off label use.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ProductRole.<b>additionalInformationText</b></div>
+            </td>
+            <td><p>&quot;Any additional drug information in free text format not described in G.k.10.r. For example, expiry date for the lot number described in G.k.4.r.7 would be captured in this data element.&quot; - ICH E2B(R3), G.k.11.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ProductRole.<b>countryWhereObtained</b></div>
+            </td>
+            <td><p>&quot;The country where the medicinal was obtained.&quot;  - ICH E2B(R3), G.k.2.4</p><p>Note that this property is included for compatibility to the ICH and the ICSR, but does not appear to be currently needed by U.S. Federal agencies, therefore, the cardinality of this property has been set to zero.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..0)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ProductRole.<b>cumulativeDose</b></div>
+            </td>
+            <td><p>&quot;The cumulative dose administered until the onset of the first sign, symptom or reaction/event.&quot;  - ICH E2B(R3), G.k.5a and G.k.5b.</p></td>
+            <td valign="top"> Quantity </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ProductRole.<b>dateReturnedToMfr</b></div>
+            </td>
+            <td><p>If the product was returned to manufacturer, this property will contain the date it was returned.</p><p>MedWatch 3500 form question C.1.</p><p>MedWatch 3500A form question D.10.</p><p>(note that the MedWatch 3500B and the VAERS-1 forms do not have this element).</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ProductRole.<b>gestationalAgeAtExposure</b></div>
+            </td>
+            <td><p>&quot;The gestational age at the time of the earliest exposure.&quot;  - ICH E2B(R3), G.k.6a and G.k.6b.</p></td>
+            <td valign="top"> TimeQuantity </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ProductRole.<b>indication</b></div>
+            </td>
+            <td><p>Identifies what the medication was intended to treat (i.e., diagnosis).</p><p></p><p>&quot;The indication of the medicinal product.&quot;  - ICH E2B(R3), G.k.7.r.2a and G.k.7.r.2b.</p><p></p><p>Medwatch 3500 form question D.4; Medwatch 3500A form question C.4; Medwatch 3500B form question B.12.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ProductRole.<b>indicationText</b></div>
+            </td>
+            <td><p>&quot;The original reporter&apos;s words and / or short phrases used to describe the indication for drug use in an English translation for international transmission.&quot;  - ICH E2B(R3), G.k.7.r.1.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ProductRole.<b>isAvailableForEvaluation</b></div>
+            </td>
+            <td><p>Is the product available for evaluation by the FDA?  Possible answers are: Yes; No; Returned to manufacturer.  If Returned to Manufacturer is selected, the date returned to manufacturer should be valued.</p><p>MedWatch 3500 form question C.1.</p><p>MedWatch 3500A form question D.10.</p><p>MedWatch 3500B form question B.15 (note that the 3500B only has yes or no).</p><p>(note that the VAERS-1 form does not have this element).</p></td>
+            <td valign="top"> enumProductAvailabiltiy </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ProductRole.<b>isBlinded</b></div>
+            </td>
+            <td><p>&quot;This data element is applicable only to ICSRs from clinical trials. The ICH E2A guideline recommends that the case safety reports with blinded therapy should not be reported. However, if it is important to exchange a blinded case safety report during a clinical trial, this data element should be used as follows: until the investigational product is un-blinded, the status Blinded should be indicated by using True in this data element. When this data element is True, Section G.k.2 Drug Identification should be populated with the characteristics of the investigational product. When more than one investigational product is potentially suspect, each suspect product should be represented in separate G.k blocks. After un-blinding, if appropriate, Placebo should be reported in G.k.2.3.r as a suspect drug.&quot;  - ICH E2B(R3), G.k.2.5</p></td>
+            <td valign="top"> Boolean </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ProductRole.<b>productNameReported</b></div>
+            </td>
+            <td><p>&quot;The name of the medicinal product as used by the reporter. It is recognized that a single product can have different proprietary names in different countries, even when it is produced by a single manufacturer.&quot;  - ICH E2B(R3), G.k.2.2.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ProductRole.<b>productRole</b></div>
+            </td>
+            <td><p>&quot;The characterisation of the drug role as provided by the primary reporter or, if this information is missing, by the sender. All spontaneous reports should have at least one suspect drug.... If the reporter indicates a suspected interaction with other drug(s), Interacting should be selected for all suspected interacting drug(s). If an interaction is suspected with food or other non-drug compounds, Interacting should be selected for the suspect drug. For evaluation purposes, all interacting drugs are considered to be suspect drugs....  Drug not administered can be used in two circumstances: In clinical trial: if the adverse event occurred after the informed consent was signed but prior to the administration of the study drug (e.g. during the screening period or the washout procedure), the adverse event should in general be reported as per the trial procedure....  Medication error: if the patient did not receive the actual prescribed drug but another one, repeatable Sections G should be completed with the information about the prescribed drug (including the fact that it was not administered), as well as the information on the dispensed drug as the Suspect drug....&quot;  - ICH E2B(R3), G.k.1.  Possible values include: Suspect; Concomitant; Interacting; Drug Not Administered.</p></td>
+            <td valign="top"> enumProductRole </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ProductRole.<b>deviceObservation</b></div>
+            </td>
+            <td><p>Pointer to any medical devices (whether suspect or concommittant) used by the subject near the time of the adverse event occurred.</p></td>
+            <td valign="top"> <b>DeviceObservation</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ProductRole.<b>drugObservation</b></div>
+            </td>
+            <td><p>Pointer to any medicinal products (whether suspect or concommittant) given to or taken by the subject near the time of the adverse event occurred.</p></td>
+            <td valign="top"> <b>DrugObservation</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ProductRole.<b>productEventRelationship</b></div>
+            </td>
+            <td><p>Pointer to a structures that link a reaction or adverse event with the various medical products (medical devices and/or drugs) that were being used by the patient, and provides an assessment of whether the reaction / adverse event may have been caused by or exacerbated by the product.</p></td>
+            <td valign="top"> <b>ProductEventRelationship</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>ReactionOrEvent</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class contains information describing the reaction(s) or adverse event(s) that are being reported.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ReactionOrEvent.<b>adverseEventSeriousness</b></div>
+            </td>
+            <td><p>&quot;The seriousness criteria of the reaction/event should be based on the definitions provided in the ICH E2A and E2D guidelines. More than one seriousness criteria can be chosen. If the event is not serious, all of these data elements should be left blank. It is assumed that the event seriousness is provided by the reporter; otherwise, it is assessed by the sender. In cases of foetal demise such as miscarriage, (where the ICSR should be prepared only for the parent), the seriousness criterion is Other medically important condition. Furthermore, depending if the parent experienced complications, the seriousness criterion could also include Life-threatening and/or Hospitalisation.&quot; - ICH E2B(R3), E.i.3.2.</p></td>
+            <td valign="top"> enumAESeriousness </td>
+            <td></td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ReactionOrEvent.<b>countryOfOccurrence</b></div>
+            </td>
+            <td><p>&quot;This data element captures the country where the reaction occurred. For example a patient living in Country A experienced headache while travelling in Country B; this headache was suspected to be an adverse drug reaction and was reported by a health professional in Country C. The data element C.2.r.3 should be populated with Country C, and the data element E.i.9 should be populated with Country B.&quot; - ICH E2B(R3), E.i.9.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ReactionOrEvent.<b>descriptionInNativeLanguage</b></div>
+            </td>
+            <td><p>&quot;The original reporter&apos;s words and/or short phrases used to describe the reaction/event. Text should be provided in the native language it was received, when it is received in a language other than English.&quot; - ICH E2B(R3), E.i.1.1a.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ReactionOrEvent.<b>descriptionLanguage</b></div>
+            </td>
+            <td><p>&quot;The language used in [descriptionInNativeLanguage]&quot; - ICH E2B(R3), E.i.1.1b.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ReactionOrEvent.<b>descriptionTranslation</b></div>
+            </td>
+            <td><p>&quot;The original reporter&apos;s words and/or short phrases used to describe the reaction/event should be provided in an English translation for international transmission.&quot; - ICH E2B(R3), E.i.1.2.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ReactionOrEvent.<b>duration</b></div>
+            </td>
+            <td><p>&quot;This section will usually be computed from the start/end date and time of the reaction/event. However, there might be situations in which the precise duration of the reaction/event and date can be useful, such as for a reaction/event of short duration such as anaphylaxis or arrhythmia. In such a case, populate 1 data element for the date (start or end date) and this data element.&quot; - ICH E2B(R3), E.i.6a and E.i.6b.</p></td>
+            <td valign="top"> TimeQuantity </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ReactionOrEvent.<b>endDate</b></div>
+            </td>
+            <td><p>&quot;The reaction/event is reported as resolved/recovered or resolved/recoveredwithsequelae (E.i.7). When multiple terms are reported (e.g. diagnosis with signs and symptoms) and the reporter does not provide a specific stop date for each reaction/event, this data element should be populated with the end date of the last symptom.&quot; - ICH E2B(R3), E.i.5.</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ReactionOrEvent.<b>outcomeAtLastObservation</b></div>
+            </td>
+            <td><p>&quot;The latest outcome of the reaction / event at the time of the report. In case of irreversible congenital anomalies, the choice not recovered/not resolved/ongoing should be used. For other irreversible medical conditions, recovered/resolved with sequelae should be used. Fatal should be used when death is possibly related to the reaction/event. Considering the difficulty of deciding between Reaction/event caused death and Reaction/event contributed significantly to death, both concepts are grouped in a single category. Where the death is unrelated to the reaction/event, according to both the reporter and the sender, Fatal should NOT be selected here; nevertheless, death should be reported under Section D.9.&quot; - ICH E2B(R3), E.i.7.  Possible values include: Recovered/resolved; Recovering/resolving; Not recovered/not resolved/ongoing; Recovered/resolved with sequelae; Fatal; Unknown.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ReactionOrEvent.<b>reactionOrEventType</b></div>
+            </td>
+            <td><p>&quot;The [code] most closely corresponding to the reaction/event as reported by the primary source. In the exceptional circumstance when a ... term cannot be found, the sender should use clinical judgment to complete this item with the best ... approximation&quot; - ICH E2B(R3), E.i.2.1a and E.i.2.1b (MedDRA version and code).</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ReactionOrEvent.<b>seriousness</b></div>
+            </td>
+            <td><p>&quot;A highlighted term is a reaction/event that the primary source indicated was a major concern or reason for reporting the case. If the information is not explicitly provided by the initial reporter the term should not be considered a highlighted term. This data element should be populated only if the medical concept conveyed in E.i.1 is consistent with the reason why the reporter contacted the sender. For example, this data element can be used to indicate the specific diagnosis that was identified by the reporter. Suppose the reporter specifies flu-like syndrome comprising of fever, chills, sneezing, myalgia and headache, then flu-like syndrome is the highlighted term. If only one event is cited in a case report, this one is by implication considered highlighted by the reporter. It is assumed that the event seriousness is provided by the reporter; otherwise, it is assessed by the sender.&quot; - ICH E2B(R3), E.i.3.1.  Possible values include: Yes, highlighted by the reporter, NOT serious; No, not highlighted by the reporter, NOT serious; Yes, highlighted by the reporter, SERIOUS; No, not highlighted by the reporter, SERIOUS.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ReactionOrEvent.<b>startDate</b></div>
+            </td>
+            <td><p>&quot;The date of the start of the reaction/event. When multiple terms are reported (e.g. diagnosis with signs and symptoms) and the reporter does not provide a specific onset date for each reaction/event, this data element should be populated with the start date of the first symptom.&quot; - ICH E2B(R3), E.i.4.</p><p>MedWatch 3500 form question B.3.</p><p>MedWatch 3500A form question B.3.</p><p>MedWatch 3500B form question A.3.</p><p>VAERS-1 form question 8, box 11.  Note that VAERS also includes the time of the event.</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ReactionOrEvent.<b>wasConfirmedByMedicalProfessional</b></div>
+            </td>
+            <td><p>&quot;If an event is reported by a non healthcare professional (e.g. lawyers, consumers), this data element indicates whether the occurrence of the event was subsequently confirmed by a healthcare professional. If the healthcare professional also provides an assessment of causality (related or not to the suspect drug), that should be recorded in G.k.9. [Note that] False means the event is not confirmed, it does not mean the event did not occur&quot;. - ICH E2B(R3), E.i.8.</p></td>
+            <td valign="top"> Boolean </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>RelatedPersonObservation</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class contains information about a person related to the subject of the report (i.e., related to the patient).  The ICH implementation guide limits this information to the parent of a child or fetus (usually the mother).  However, this class is meant to handle other relevant related persons such as siblings of a child who had an adverse reaction to a vaccine.  Note that each of the properties in the class exist in the Patient or Person classes.  They are repeated here to emphasize that they are point-in-time observations that are needed for a particular report.  Therefore, each of these properties are marked as derived - all of the properties can be calculated from the Patient and Person classes.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">RelatedPersonObservation.<b>name</b></div>
+            </td>
+            <td><p>The name or initials of the related person.  From ICH E2B(R3), D.10.1.</p></td>
+            <td valign="top"> PersonName </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">RelatedPersonObservation.<b>relationshipCategory</b></div>
+            </td>
+            <td><p>Indicates how the person whose observations are being recorded is related to the person who is the subject of the report.  It is noted that ICH only has the notion of &quot;parent&quot;, which in the majority of the cases is the mother of the child or fetus.  VAERS requests information on siblings.</p></td>
+            <td valign="top"> enumRelationship </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>RelevantLabResult</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> </td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">RelevantLabResult.<b>comment</b></div>
+            </td>
+            <td><p>&quot;Any relevant comments made by the reporter about the test result.&quot; - ICH E2B(R3), F.r.6.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">RelevantLabResult.<b>isMoreInfoAvailable</b></div>
+            </td>
+            <td><p>&quot;Indicates if more information is held by the sender about the test and test result. For example, True means that more documentation is available upon request e.g. ECG strips, chest X-ray. False means that no more documentation is available from the sender.&quot; - ICH E2B(R3), F.r.7.</p></td>
+            <td valign="top"> Boolean </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">RelevantLabResult.<b>labTest</b></div>
+            </td>
+            <td><p>Pointer to the laboratory results which are relevant to the case being reported.</p></td>
+            <td valign="top"> <b>ReportableResult</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>RelevantPastDrugHistory</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class details &quot;relevant drugs previously administered and which have been stopped before the Adverse Event onset. It does not concern drugs taken concomitantly or drugs which might have potentially been involved in the current reaction(s)/event(s). Medical judgment should be exercised in [determining which drug(s) to include]. Medications that have been stopped might be considered suspect based on the elimination half-life of the drug and the known pharmacodynamic effects of the drug in a particular patient (for example, a patient with known renal or liver impairment).... The information provided here can also include previous experience with similar drugs.&quot; - ICH E2B(R3), D.8.r.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">RelevantPastDrugHistory.<b>indication</b></div>
+            </td>
+            <td><p>&quot;The indication of the medicinal product.&quot; - ICH E2B(R3), D.8.r.6a and D.8.r.6b; D.10.8.r.6a and D.10.8.r.6b (MedDRA code and version)</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">RelevantPastDrugHistory.<b>previousReaction</b></div>
+            </td>
+            <td><p>&quot;Describes previous experience with the drug described [in the medication list]&quot; - ICH E2B(R3), D.8.r.7a and D.8.r.7b; D.10.8.r.7a and D.10.8.r.7b (MedDRA code and version)</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">RelevantPastDrugHistory.<b>medicationList</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>MedicationList</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>ReleventMedicalHistory</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class contains information pertinent to understanding the case (such as diseases, conditions such as pregnancy, surgical procedures, psychological trauma, risk factors, etc.).  Medical judgment should be exercised in order to limit the use of this class to those data pertinent to the case.  From ICH E2B(R3), D.7.1.r and D.10.7.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ReleventMedicalHistory.<b>comments</b></div>
+            </td>
+            <td><p>&quot;Additional relevant information about the medical condition in D.7.1.r.1b that could not be captured otherwise in a structured data element.&quot; - ICH E2B(R3), D.7.1.r.5 and D.10.7.1.r.5.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ReleventMedicalHistory.<b>isContinuing</b></div>
+            </td>
+            <td><p>&quot;Indicates if the medical condition in D.7.1.r.1b is known to be still present at the time of this report.&quot; - ICH E2B(R3), D.7.1.r.3 and D.10.7.1.r.3.</p></td>
+            <td valign="top"> Boolean </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ReleventMedicalHistory.<b>healthConcern</b></div>
+            </td>
+            <td><p>Pointer to the HealthConcern that is relevant to the case being reported.</p></td>
+            <td valign="top"> <b>HealthConcern</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>ReportSubjectObservation</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> </td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ReportSubjectObservation.<b>ageGroup</b></div>
+            </td>
+            <td><p>If the patient&apos;s date of birth is not known, this property is used to provide a characterization of the age of the person at the time of the first reaction or event. From ICH E2B(R3), D.2.3.  Possible values include: Foetus; Neonate (Preterm and Term newborns); Infant; Child; Adolescent; Adult; Elderly.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ReportSubjectObservation.<b>autopsyDeterminedCauseOfDeath</b></div>
+            </td>
+            <td><p>&quot;The autopsy-determined cause of death.&quot; - ICH E2B(R3), D.9.4.r.1a and D.9.4.r.1b (MedDRA code and version).  Note that this property can repeat.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ReportSubjectObservation.<b>autopsyDeterminedCauseOfDeathText</b></div>
+            </td>
+            <td><p>&quot;The original reporter&apos;s words and/or short phrases used to describe the autopsy-determined cause of death.&quot; - ICH E2B(R3), D.9.4.r.2.  Note that this property can repeat.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ReportSubjectObservation.<b>dateOfDeath</b></div>
+            </td>
+            <td><p>The reported date of death of the patient.  An imprecise date can be used if the exact date is not known.  Note that this property can be derived from the person&apos;s demographics information.  See ICH E2B(R3), D.9.1.</p><p></p><p>Date that the patient died as an outcome attributed to the Adverse Event.  Medwatch 3500A form question A.2, box 1.</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ReportSubjectObservation.<b>gestationalAgeAtOnset</b></div>
+            </td>
+            <td><p>If the reaction or adverse event affected an unborn child, this property is used to convey the gestational period (age) of the fetus at the time of the first reaction or event. Note that the units could include trimester as well as days, weeks, or months.  From ICH E2B(R3), D.2.2.1.a and D.2.2.1b.</p></td>
+            <td valign="top"> TimeQuantity </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ReportSubjectObservation.<b>reportedCauseOfDeath</b></div>
+            </td>
+            <td><p>&quot;The reported cause of death.&quot; - ICH E2B(R3), D.9.2.r.1a and D.9.2.r.1b (MedDRA code and version).  Note that this property can repeat.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ReportSubjectObservation.<b>reportedCauseOfDeathText</b></div>
+            </td>
+            <td><p>&quot;The original reporter&apos;s words and/or short phrases used to describe the cause of death.&quot; - ICH E2B(R3), D.9.2.r.2.  Note that this property can repeat.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>Sender</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>The person and/or organization that sent the ICSR.  From ICH E2B(R3), C.3.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Sender.<b>name</b></div>
+            </td>
+            <td><p>&quot;The name of person in the company or agency who is responsible for the authorisation of report dissemination. This would usually be the same person who signs the covering memo for paper submissions.&quot; - ICH E2B(R3), C.3.3.1 - C.3.3.5.</p></td>
+            <td valign="top"> PersonName </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Sender.<b>organizationName</b></div>
+            </td>
+            <td><p>The name of the organization (e.g., company name or regulatory authority name) under whose auspices the ICSR was sent. From ICH E2B(R3), C.3.2.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Sender.<b>departmentName</b></div>
+            </td>
+            <td><p>The name of the organizational department (if any) under whose auspices the ICSR was sent. From ICH E2B(R3), C.3.3.1.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Sender.<b>address</b></div>
+            </td>
+            <td><p>The address of the person or organization who sent the ICSR. From ICH E2B(R3), C.3.4.1 - C.3.4.5.</p></td>
+            <td valign="top"> Address </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Sender.<b>phone</b></div>
+            </td>
+            <td><p>The telephone number of the person or organization who sent the ICSR. From ICH E2B(R3), C.3.4.6.</p></td>
+            <td valign="top"> ContactPoint </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Sender.<b>category</b></div>
+            </td>
+            <td><p>&quot;Captures the type of sender organisation or individual.&quot; - ICH E2B(R3), C.3.1.  Possible values include: Pharmaceutical Company; Regulatory Authority; Health Professional; Regional Pharmacovigilance Centre; WHO collaborating centres for international drug monitoring; Other (e.g. distributor or other organisation); Patient/Consumer.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Sender.<b>isPrimarySource</b></div>
+            </td>
+            <td><p>&quot;Identifies which primary source to use for regulatory purposes and in case of multiple sources, it identifies the source of the World Wide Case Unique Identification number; this source should identify where the case occurred.&quot; - ICH E2B(R3), C.2.r.5.</p></td>
+            <td valign="top"> Boolean </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Sender.<b>fax</b></div>
+            </td>
+            <td><p>The facsimile number of the person or organization who sent the ICSR. From ICH E2B(R3), C.3.4.7.</p></td>
+            <td valign="top"> ContactPoint </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Sender.<b>email</b></div>
+            </td>
+            <td><p>The email address of the person or organization who sent the ICSR. From ICH E2B(R3), C.3.4.8.</p></td>
+            <td valign="top"> ContactPoint </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>Study</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>If the adverse reaction or event occured while the patient was participating in a study (e.g., a clinical trial), this class will contain identifying information about that study.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Study.<b>category</b></div>
+            </td>
+            <td><p>&quot;This information should be provided if the &quot;Type of Report&quot; (C.1.3) has been populated with &quot;Report from study&quot;.&quot; - ICH E2B(R3), C.5.4.  Possible values include: Clinical trials; Individual patient use (e.g. &quot;compassionate use&quot; or &quot;named patient basis&quot;); Other studies (e.g. pharmacoepidemiology, pharmacoeconomics, intensive monitoring).</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Study.<b>id</b></div>
+            </td>
+            <td><p>&quot;This repeatable data element should be populated with the study registration number as assigned in a reporting region.&quot; - ICH E2B(R3), C.5.1.r.1.</p></td>
+            <td valign="top"> Id </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Study.<b>name</b></div>
+            </td>
+            <td><p>Name of the Study. From ICH E2B(R3), C.5.2.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Study.<b>sponsorsStudyId</b></div>
+            </td>
+            <td><p>&quot;This data element should be completed only if the sender is the study sponsor or has been informed of the study number by the sponsor.&quot; - ICH E2B(R3), C.5.3.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>_parkinglot_PatientSafetyInvestigation</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>Information for, and activity related to, the act of investigating and recording the results of the investigation. It is expected that additional classes such as observation are needed to capture all the data recorded for an investigation.  Note the Act class code INVSTG (Investigation) is defined as &quot;An official inquiry into the circumstances surrounding a particular unplanned event or potential event for the purposes of identifying possible causes and contributing factors for the event. This investigation could be conducted at a local institutional level or at the level of a local or national government.&quot; (adapted from HL7 V3 ICSR DAM)</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">_parkinglot_PatientSafetyInvestigation.<b>id</b></div>
+            </td>
+            <td><p>Implementation Guide for Electronic Transmission of ICSRs, element C.1.1: Sender&#8217;s (case) Safety Report Unique Identifier.</p></td>
+            <td valign="top"> Id </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">_parkinglot_PatientSafetyInvestigation.<b>dateReported</b></div>
+            </td>
+            <td><p>Date when the adverse reaction or suspected reaction reported.</p><p>Implementation Guide for Electronic Transmission of ICSRs, element C.1.2: Date of Creation</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">_parkinglot_PatientSafetyInvestigation.<b>eventDateTime</b></div>
+            </td>
+            <td><p>(Placeholder: Modeling is still in progress on this element)</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">_parkinglot_PatientSafetyInvestigation.<b>informationAvailableDateTime</b></div>
+            </td>
+            <td><p>(Placeholder: Modeling is still in progress on this element)</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">_parkinglot_PatientSafetyInvestigation.<b>category</b></div>
+            </td>
+            <td><p>Implementation Guide for Electronic Transmission of ICSRs, element C.1.3: Type of Report.  Possible values include: Spontaneous report; Report from study; Other; Not available to sender (unknown).  See OID: 2.16.840.1.113883.3.989.2.1.1.2.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">_parkinglot_PatientSafetyInvestigation.<b>status</b></div>
+            </td>
+            <td><p>A code specifying the state of the Intolerance Condition Observation record.  See HL7 V3 Act.statusCode.  When the StatusCode is set to &apos;Nullified&apos; iindicates the allergy was entered in error.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">_parkinglot_PatientSafetyInvestigation.<b>primaryPerformer</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>PrimaryPerformer</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">_parkinglot_PatientSafetyInvestigation.<b>author</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>Author</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>_parkinglot_ProductRelatedAdverseEventReport</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>(Placeholder: Modeling is still in progress on this element)</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">_parkinglot_ProductRelatedAdverseEventReport.<b>dateOfEvent</b></div>
+            </td>
+            <td><p>The date that the adverse event, product problem, or product use error occurred.  Medwatch 3500 form question B.3; Medwatch 3500A form question B.3; Medwatch 3500B form question A.3.</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">_parkinglot_ProductRelatedAdverseEventReport.<b>zdidInitalReporterSendToFda</b></div>
+            </td>
+            <td><p>Did the Intial Reporter also send a report to the FDA?  Medwatch 3500A form question E.4.</p></td>
+            <td valign="top"> Boolean </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">_parkinglot_ProductRelatedAdverseEventReport.<b>zAdverseEventOutcome</b></div>
+            </td>
+            <td><p>(Placeholder: Modeling is still in progress on this element)</p></td>
+            <td valign="top"> invalid </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>_parkinglot_SuspectedProduct</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>(Placeholder: Modeling is still in progress on this element)</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">_parkinglot_SuspectedProduct.<b>adverseReactionLikelihood</b></div>
+            </td>
+            <td><p>(Placeholder: Modeling is still in progress on this element)</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">_parkinglot_SuspectedProduct.<b>wasAdminStopped</b></div>
+            </td>
+            <td><p>(Placeholder: Modeling is still in progress on this element)</p></td>
+            <td valign="top"> Boolean </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">_parkinglot_SuspectedProduct.<b>wasDueToPtCondition</b></div>
+            </td>
+            <td><p>(Placeholder: Modeling is still in progress on this element)</p></td>
+            <td valign="top"> Boolean </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">_parkinglot_SuspectedProduct.<b>wasReadministered</b></div>
+            </td>
+            <td><p>(Placeholder: Modeling is still in progress on this element)</p></td>
+            <td valign="top"> Boolean </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+  </table>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font">
+         <tr>
+            <th>Value Set Constraint</th>
+            <th>Element Description</th>
+         </tr>
+       
+
+
+
+
+</table>
+

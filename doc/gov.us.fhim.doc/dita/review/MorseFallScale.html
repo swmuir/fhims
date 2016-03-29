@@ -1,0 +1,751 @@
+
+<html xmlns:Standard="http://www.eclipse.org/uml2/schemas/Standard/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:fhim="http:///schemas/fhim/_bbjuwA3cEeSGTazHdUQojA/5" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:term="http://www.openhealthtools.org/mdht/schemas/term/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:xmi="http://www.omg.org/XMI" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.3/Umlnotation" xmlns:Default="http:///schemas/Default/_fNm3AAqoEd6-N_NOT9vsCA/2" xmlns:CDA="http://www.openhealthtools.org/mdht/schemas/cda/4" xmlns:Default_1="http:///schemas/Default/1" xmlns:RIM="http:///schemas/RIM/_fvnwgAH4Ed6VH-9W1IVKXA/4" xmlns:SketchNotation="http://www.ibm.com/ccl/soa/sketch/notation/1.0.0/">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>MorseFallScale Domain</title>
+   </head>
+   <body style="font-family:Courier;font-size:14px">
+      <h1>MorseFallScale Domain</h1>
+      <p> The purpose of this review is to identify the data elements required for the
+         interoperable exchange for the MorseFallScale domain including dependencies. A column is
+         provided at the far right of the table for you to enter comments related to each
+         data element. If the class or domain is missing data elements, please add a row
+         at the bottom of the sheet and specify a name, description, and type of data
+         (e.g. numeric, string, date/time, code). 
+      </p>
+      <p> Once you have reviewed the data elements, please review the value sets
+         associated with the coded data elements. Please provide feedback by adding
+         comments in the column provided at the right of item/row or by adding rows at
+         the bottom table. For any new coded concepts without a valid code yet, our team
+         will propose them for addition in the source coding system. 
+      </p>
+      <ul>
+         <li><a href=""> <i><b>MorseFallScale</b> </i> Domain </a></li>
+       </ul>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font-family:Courier">
+         <tr bgcolor="#98FB98" style="font-size:18px" align="left">
+            <td colspan="1"><b><a id=""> 'MorseFallScale' Domain
+                     </a></b></td>
+            <td colspan="4" style="font-size:12px">Note that the Information Source hierarchy is in the Common domain, and is not shown here.</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+      </table>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font-family:Courier">
+         <tr>
+            <th width="20%">Element Name</th>
+            <th width="20%">Element Description</th>
+            <th width="15%">Format/Type</th>
+            <th width="15%">Value Set Name</th>
+            <th width="15%">Optionality/<br>Repetition
+            </th>
+            <th width="15%">Reviewer's Comments</th>
+         </tr>
+ 
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>AmbulatoryAid</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>&quot;Ambulatory aids: This is scored as 0 if the patient walks without a walking aid (even if assisted by a nurse), uses a wheelchair, or is on a bed rest and does not get out of bed at all. If the patient uses crutches, a cane, or a walker, this item scores 15; if the patient ambulates clutching onto the furniture for support, score this item 30.&quot; - LOINC</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AmbulatoryAid.<b>assessmentQuestion</b></div>
+            </td>
+            <td><p>This property uniquely identifies the question being asked within the Assessment Instrument.  This is treated as a code because the Name and Version of the Assessment Instrument plus the Question Number serves as an identifier, while the text of the question can be represented as the associated text.  For example, the Addiction Severity Index, 5th Edition question G.4 is the &quot;Date of Admission&quot;.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AmbulatoryAid.<b>possibleResponse</b></div>
+            </td>
+            <td><p>This property represents the possible responses to a question on an Assessment Instrument.  For the Morse Fall Scale Ambulatory Aid question, the response must be a member of the AmbulatoryAidType enumeration.</p></td>
+            <td valign="top"> AmbulatoryAidType </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>AmbulatoryAidType</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>&quot;Ambulatory aids: This is scored as 0 if the patient walks without a walking aid (even if assisted by a nurse), uses a wheelchair, or is on a bed rest and does not get out of bed at all. If the patient uses crutches, a cane, or a walker, this item scores 15; if the patient ambulates clutching onto the furniture for support, score this item 30.&quot; - LOINC</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AmbulatoryAidType.<b>Bed rest/nurse assist</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> CodeWithValue </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AmbulatoryAidType.<b>Crutches/cane/walker</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> CodeWithValue </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AmbulatoryAidType.<b>Furniture</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> CodeWithValue </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>Gait</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>&quot;Gait: A normal gait is characterized by the patient walking with head erect, arms swinging freely at the side, and striding without hesitant. This gait scores 0. With a weak gait (score as 10), the patient is stooped but is able to lift the head while walking without losing balance. Steps are short and the patient may shuffle. With an impaired gait (score 20), the patient may have difficulty rising from the chair, attempting to get up by pushing on the arms of the chair/or by bouncing (i.e., by using several attempts to rise). The patient&#8217;s head is down, and he or she watches the ground when walking. Because the patient&#8217;s balance is poor, the patient grasps onto the furniture, a support person, or a walking aid for support and cannot walk without this assistance.&quot; - LOINC</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Gait.<b>assessmentQuestion</b></div>
+            </td>
+            <td><p>This property uniquely identifies the question being asked within the Assessment Instrument.  This is treated as a code because the Name and Version of the Assessment Instrument plus the Question Number serves as an identifier, while the text of the question can be represented as the associated text.  For example, the Addiction Severity Index, 5th Edition question G.4 is the &quot;Date of Admission&quot;.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Gait.<b>possibleResponse</b></div>
+            </td>
+            <td><p>This property represents the possible responses to a question on an Assessment Instrument.  For the Morse Fall Scale Gait question, the response must be a member of the GaitType enumeration.</p></td>
+            <td valign="top"> GaitType </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>GaitType</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>&quot;Gait: A normal gait is characterized by the patient walking with head erect, arms swinging freely at the side, and striding without hesitant. This gait scores 0. With a weak gait (score as 10), the patient is stooped but is able to lift the head while walking without losing balance. Steps are short and the patient may shuffle. With an impaired gait (score 20), the patient may have difficulty rising from the chair, attempting to get up by pushing on the arms of the chair/or by bouncing (i.e., by using several attempts to rise). The patient&#8217;s head is down, and he or she watches the ground when walking. Because the patient&#8217;s balance is poor, the patient grasps onto the furniture, a support person, or a walking aid for support and cannot walk without this assistance.&quot; - LOINC</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">GaitType.<b>Normal/bedrest/immobile</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> CodeWithValue </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">GaitType.<b>Weak</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> CodeWithValue </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">GaitType.<b>Impaired</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> CodeWithValue </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>HistoryOfFalling</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>&quot;History of falling: This is scored as 25 if the patient has fallen during the present hospital admission or if there was an immediate history of physiological falls, such as from seizures or an impaired gait prior to admission. If the patient has not fallen, this is scored 0. Note: If a patient falls for the first time, then his or her score immediately increases by 25.&quot; - LOINC</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">HistoryOfFalling.<b>assessmentQuestion</b></div>
+            </td>
+            <td><p>This property uniquely identifies the question being asked within the Assessment Instrument.  This is treated as a code because the Name and Version of the Assessment Instrument plus the Question Number serves as an identifier, while the text of the question can be represented as the associated text.  For example, the Addiction Severity Index, 5th Edition question G.4 is the &quot;Date of Admission&quot;.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">HistoryOfFalling.<b>possibleResponse</b></div>
+            </td>
+            <td><p>This property represents the possible responses to a question on an Assessment Instrument.  For the Morse Fall Scale History Of Falling question, the response must be a member of the HistoryOfFallingType enumeration.</p></td>
+            <td valign="top"> HistoryOfFallingType </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>HistoryOfFallingType</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>&quot;History of falling: This is scored as 25 if the patient has fallen during the present hospital admission or if there was an immediate history of physiological falls, such as from seizures or an impaired gait prior to admission. If the patient has not fallen, this is scored 0. Note: If a patient falls for the first time, then his or her score immediately increases by 25.&quot; - LOINC</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">HistoryOfFallingType.<b>No</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> CodeWithValue </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">HistoryOfFallingType.<b>Yes</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> CodeWithValue </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>IvOrIvAccess</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>&quot;Intravenous therapy: This is scored as 20 if the patient has an intravenous apparatus or a heparin lock inserted; if not, score 0.&quot; - LOINC</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">IvOrIvAccess.<b>assessmentQuestion</b></div>
+            </td>
+            <td><p>This property uniquely identifies the question being asked within the Assessment Instrument.  This is treated as a code because the Name and Version of the Assessment Instrument plus the Question Number serves as an identifier, while the text of the question can be represented as the associated text.  For example, the Addiction Severity Index, 5th Edition question G.4 is the &quot;Date of Admission&quot;.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">IvOrIvAccess.<b>possibleResponse</b></div>
+            </td>
+            <td><p>This property represents the possible responses to a question on an Assessment Instrument.  For the Morse Fall Scale IV or IV Access question, the response must be a member of the IvOrIvAccessType enumeration.</p></td>
+            <td valign="top"> IvOrIvAccessType </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>IvOrIvAccessType</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>&quot;Intravenous therapy: This is scored as 20 if the patient has an intravenous apparatus or a heparin lock inserted; if not, score 0.&quot; - LOINC</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">IvOrIvAccessType.<b>No</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> CodeWithValue </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">IvOrIvAccessType.<b>Yes</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> CodeWithValue </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>MentalStatus</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>&quot;Mental status: When using this Scale, mental status is measured by checking the patient&#8217;s own self-assessment of his or her own abilities. Ask the patient, &#8220;Are you able to go the bathroom alone or do you need assistance?&#8221; If the patient&#8217;s reply judging his or her own ability is consistent with the ambulatory nursing order, the patient is rated as &#8220;normal&#8221; and scored 0. If the patient&#8217;s response is not consistent with the nursing orders or if the patient&#8217;s response is unrealistic, then the patient is considered to overestimate his or her own abilities and to be forgetful of limitations and scored as 15.&quot; - LOINC</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">MentalStatus.<b>assessmentQuestion</b></div>
+            </td>
+            <td><p>This property uniquely identifies the question being asked within the Assessment Instrument.  This is treated as a code because the Name and Version of the Assessment Instrument plus the Question Number serves as an identifier, while the text of the question can be represented as the associated text.  For example, the Addiction Severity Index, 5th Edition question G.4 is the &quot;Date of Admission&quot;.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">MentalStatus.<b>possibleResponse</b></div>
+            </td>
+            <td><p>This property represents the possible responses to a question on an Assessment Instrument.  For the Morse Fall Scale Mental Status question, the response must be a member of the MentalStatusType enumeration.</p></td>
+            <td valign="top"> MentalStatusType </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>MentalStatusType</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>&quot;Mental status: When using this Scale, mental status is measured by checking the patient&#8217;s own self-assessment of his or her own abilities. Ask the patient, &#8220;Are you able to go the bathroom alone or do you need assistance?&#8221; If the patient&#8217;s reply judging his or her own ability is consistent with the ambulatory nursing order, the patient is rated as &#8220;normal&#8221; and scored 0. If the patient&#8217;s response is not consistent with the nursing orders or if the patient&#8217;s response is unrealistic, then the patient is considered to overestimate his or her own abilities and to be forgetful of limitations and scored as 15.&quot; - LOINC</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">MentalStatusType.<b>Oriented to own ability</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> CodeWithValue </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">MentalStatusType.<b>Forgets limitations</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> CodeWithValue </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>MorseFallScale</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>&quot;The Morse Fall Scale (MFS) is a rapid and simple method of determining a patient&#8217;s likelihood of falling.... The MFS consists of six variables that are quick and easy to score, and it has been shown to have predictive validity and interrater reliability. The MFS is used widely in acute care, hospital, rehabilitation and nursing homes.&quot; - LOINC</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">MorseFallScale.<b>code</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">MorseFallScale.<b>name</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">MorseFallScale.<b>totalScoreConcept</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">MorseFallScale.<b>totalScoreMeaning</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">MorseFallScale.<b>assessmentInstrumentQuestion</b></div>
+            </td>
+            <td><p>This property represents the collection of six questions on the Morse Fall Scale Assessment Instrument.  Note that the questions also include the response to the question.</p></td>
+            <td valign="top"> <b>MorseFallScaleQuestion(Abstract)</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>MorseFallScaleQuestion(Abstract)</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class represents a question on the Morse Fall Scale Assessment Instrument.  This abstract class exists primarily to re-define the generic AssessmentInstrument:assessmentInstrumentQuestion property to the MorseFallScale:assessmentInstrumentQuestion.  In other words, of all the possible questions on all the possible assessment instruments, we are explicitly identifying the six Morse Fall Scale questions.  Note that because both this class and its parent AssessmentInstrumentQuestion class are abstract, implementers would likely not instantiate either class, but rather the six concrete sub classes.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>SecondaryDiagnosis</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>&quot;Secondary diagnosis: This is scored as 15 if more than one medical diagnosis is listed on the patient&#8217;s chart; if not, score 0.&quot; - LOINC</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecondaryDiagnosis.<b>assessmentQuestion</b></div>
+            </td>
+            <td><p>This property uniquely identifies the question being asked within the Assessment Instrument.  This is treated as a code because the Name and Version of the Assessment Instrument plus the Question Number serves as an identifier, while the text of the question can be represented as the associated text.  For example, the Addiction Severity Index, 5th Edition question G.4 is the &quot;Date of Admission&quot;.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecondaryDiagnosis.<b>possibleResponse</b></div>
+            </td>
+            <td><p>This property represents the possible responses to a question on an Assessment Instrument.  For the Morse Fall Scale Secondary Diagnosis question, the response must be a member of the SecondaryDiagnosisType enumeration.</p></td>
+            <td valign="top"> SecondaryDiagnosisType </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>SecondaryDiagnosisType</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>&quot;Secondary diagnosis: This is scored as 15 if more than one medical diagnosis is listed on the patient&#8217;s chart; if not, score 0.&quot; - LOINC</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecondaryDiagnosisType.<b>No</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> CodeWithValue </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecondaryDiagnosisType.<b>Yes</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> CodeWithValue </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+  </table>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font">
+         <tr>
+            <th>Value Set Constraint</th>
+            <th>Element Description</th>
+         </tr>
+       
+
+
+
+
+</table>
+

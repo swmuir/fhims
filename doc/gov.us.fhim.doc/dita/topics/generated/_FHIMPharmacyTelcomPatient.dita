@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMPharmacyTelcomPatient" xml:lang="en-us">
+<title id="title">TelcomPatient</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	TelcomPatient is a kind of <xref href="../t_FHIMPersonHumanPatient.dita">HumanPatient</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class contains patient information that is unique to the NCPDP Telecommunication standard.  This class is modeled as a separate sub-type of Patient in order to illustrate the differences between different standards.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>isPregnant :  Boolean (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Code indicating the patient as pregnant or non-pregnant.&quot; - NCPDP Telecommunication (Field 335-2C, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>isSmoker :  Boolean (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Code indicating the patient as a smoker or non-smoker.&quot; - NCPDP Telecommunication (Field 334-1C, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>residenceType :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Code identifying the patient&#8217;s place of residence.&quot; - NCPDP Telecommunication (Field 384-4X, Data Dictionary 201104).  Possible values include: Home; Skilled Nursing Facility; Nursing Facility; Assisted Living Facility; Custodial Care Facility; Group Home; Inpatient Psychiatric Facility; Psychiatric Facility &#8211; Partial Hospitalization; Intermediate Care Facility/Mentally Retarded; Residential Substance Abuse Treatment Facility; Hospice; Psychiatric Residential Treatment Facility; Comprehensive Inpatient Rehabilitation Facility; Homeless Shelter; Correctional Institution.
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

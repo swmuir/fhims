@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMHealthConcernHealthConcern" xml:lang="en-us">
+<title id="title">HealthConcern</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	HealthConcern is a kind of <xref href="../t_FHIMCommonClinicalInformationAbstract.dita">ClinicalInformation(Abstract)</xref>	
+</section>
+
+
+
+<section id="specializations"  audience="developer, modeler">
+	<title>Derivations</title>
+	<ul>
+<li><xref href="../t_FHIMHealthConcernFamilyHistoryConcern.dita">FamilyHistoryConcern </xref> is a kind of  HealthConcern </li>
+<li><xref href="../t_FHIMHealthConcernSocialHistoryConcern.dita">SocialHistoryConcern </xref> is a kind of  HealthConcern </li>
+<li><xref href="../t_FHIMHealthConcernEmploymentConcen.dita">EmploymentConcen </xref> is a kind of  HealthConcern </li>
+<li><xref href="../t_FHIMHealthConcernHealthRisk.dita">HealthRisk </xref> is a kind of  HealthConcern </li>
+	</ul>
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>&quot;This class is used to track a patient&apos;s health concern observed by various providers at various points in time and locations. The name and nature of the concern is derived from the first health concern observation made, which could be an indication of a negative assertion for an health concern, if necessary (e.g. not a diabetic).&quot; - HL7 v3.  A &quot;health concern&quot; can be anything that a clinician wishes to track about the patient, including items which the patient might not consider to be a &quot;problem&quot;, such as the fact that the patient smokes.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>ageAtOnset :  <xref href="../t_FHIMDatatypesTimeQuantity.dita" >TimeQuantity</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The age of the patient or subject at onset of the Condition.  Note that this property could potentially be derived.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>category :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+<p>See <xref href="../t_fhimvocabProblemListVocabProblemType.dita">ProblemType</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				This property provides a categorization of the Condition.  Because there are (currently) different generalizations (i.e., subtypes) of Concern, it is likely that the potential categorizations may differ from one subtype to another.  It is therefore likely that the subtypes may redefine this property to bind to specific value sets.  For now, this property is bound to the Problem Type value set.  For Health Concern, the possible values include: Symptom, Behavior (e.g., smoking), a diagnosed disease, a suspected disease, a disease to be ruled out, etc.</p><p></p><p>&quot;A category assigned to the condition. E.g. complaint | symptom | finding | diagnosis.&quot; - HL7 FHIR, Condition resource.</p><p>&quot;Indicates the kind of problem.  This field can be used to categorize problems so that they may be managed and viewed independently within different applications (e.g., admission, final, post-operative, pre-operative, outpatient, discharge, etc.).&quot; - HL7 Version 2.8, PRB-10.  Note that HL7does not provide any suggested values for this code.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>certainty :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The degree of confidence that this condition is correct.&quot; - HL7 FHIR, Condition resource.</p><p>&quot;Contains a qualitative representation of the certainty of a problem&quot; (e.g., high, low, medium, etc.) - HL7 Version 2.8, PRB-19
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>chronicity :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Contains the perseverance of a problem (e.g., acute, chronic, etc.).&quot; - HL7 Version 2.8, PRB-12.  Note that HL7does not provide any suggested values for this code.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>concernContext :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+<p>See <xref href="../t_fhimvocabProblemListVocabConcernContext.dita">ConcernContext</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				Describes whether the condition exists or doesn&apos;t exist.  Other values are potentially possible including rule in / rule out.  Align with SNOMED situation with explicit context.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>conditionCourse :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+<p>See <xref href="../t_fhimvocabProblemListVocabConditionCourse.dita">ConditionCourse</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>conditionStatus :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+<p>See <xref href="../t_fhimvocabProblemListVocabProblemStatus.dita">ProblemStatus</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				&quot;The clinical status of the condition.&quot; - HL7 FHIR, Condition resource.  Possible values include: Provisional; Working; Confirmed; Refuted.</p><p>&quot;Indicates the verification status for the allergy&quot; - HL7 Version 2.8, IAM-17.  HL7 Version 2 has the following suggested values (table 438): Unconfirmed; Pending; Suspect; Confirmed or verified; Confirmed but inactive; Erroneous; Doubt raised.</p><p>&quot;Contains the verification status of a problem (e.g., confirmed, differential, provisional, rule-out, etc.).&quot; - HL7 Version 2.8, PRB-13.  Note that HL7does not provide any suggested values for this code.</p><p>
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateAbated :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Date upon which this particular Condition is no longer an active concern.</p><p></p><p>&quot;The date or estimated date that the condition resolved or went into remission. This is called &quot;abatement&quot; because of the many overloaded connotations associated with &quot;remission&quot; or &quot;resolution&quot; - Conditions are never really resolved, but they can abate.&quot; - HL7 FHIR, Condition resource.</p><p>&quot;Contains the date/time that the problem was actually resolved.&quot; - HL7 Version 2.8, PRB-9
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateDiagnosed :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Date and time the health problem was diagnosed.  Added for Public Health Reporting Initiative, 10/5/2012.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateLastModified :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The date and time that the Problem being described was last modified.  It is assumed that the status of the problem is valid as of the last modified date.  Note that this property could potentially be derived from the HealthConcernLifeCycle entries.</p><p>&quot;Indicates the effective date/time of the current problem life cycle status.&quot; - HL7 Version 2.8, PRB-15
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateOfOnset :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Date when this particular Condition first manifested itself or was confirmed via testing if it had not yet manifested itself.  Note that this date may be inprecise (e.g., &quot;sometime in 2006&quot;).</p><p></p><p>&quot;Contains the actual date of the first reaction.&quot; - HL7 Version 2.8, IAM-11</p><p>&quot;Contains the date/time when the problem began.&quot; - HL7 Version 2.8, PRB-16.</p><p>&quot;Estimated or actual date the condition began, in the opinion of the clinician.&quot; - HL7 FHIR, Condition resource.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateOfOnsetText :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Textual description of the time period when this particular Condition first manifested itself or was confirmed via testing if it had not yet manifested itself.</p><p></p><p>&quot;Contains a text description of the time period of the first reaction when an exact date is not known (e.g., adolescence, childhood, spring 1990).&quot; - HL7 Version 2.8, IAM-12</p><p>&quot;This field allows for a textual representation of the time when the problem began.&quot; - HL7 Version 2.8, PRB-17
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>familyPrognosisAwareness :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Indicates the individual&apos;s family or significant other&apos;s comprehension of the actual problem/prognosis.&quot; - HL7 Version 2.8, PRB-24</p><p>Note that while the datatype for this concept should likely be a code, it is currently a string as we have insufficient requirements to warrant a closed value-set.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>healthConcern :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+<p>See <xref href="../t_fhimvocabProblemListVocabProblem.dita">Problem</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				Identifies the Health Concern or Problem being described.  This property is a code, which should come from an approved subset of SNOMED-CT, e.g., the &quot;VA-KP Problem List Subset.&quot;</p><p>Note that there is a separate class for Family History Concerns, which is a generalization of the Health Concern class.  Therefore, this property should never contain a concept that has &quot;Family History Of&quot; built into it (i.e., a pre-coordinated concept), such as &quot;Family History of Diabetes&quot;.  When such infomation needs to be conveyed, this property should contain &quot;Diabetes,&quot; and the FamiliyHistoryConcern subclass will indicate that the Diabetes was observed in a family member and will identify the relationship of that family member (e.g., Father, Mother) to the patient.  Thus, in effect, we are creating a structure that explicity post-coordinates the concept of Family History Of with the concept of the disease that the family member had.</p><p></p><p>&quot;Identifies the problem. This is the identifier from an institution&apos;s master list of problems.&quot; - HL7 Version 2.8, PRB-3</p><p>&quot;Category for the risk.&quot; - HL7 Care Plan Domain Analysis Model.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>patientsProblemAwareness :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Contains the individual&apos;s comprehension of the problem (e.g., full, marginal, partial, etc.).&quot; - HL7 Version 2.8, PRB-21.  Note that HL7 does not provide any suggested values for this code.</p><p>Note that while the datatype for this concept should likely be a code, it is currently a string as we have insufficient requirements to warrant a closed value-set.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>patientsPrognosisAwareness :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Contains the individual&apos;s comprehension of the prognosis for the problem (e.g., full, marginal, partial, etc.).&quot; - HL7 Version 2.8, PRB-23.  Note that HL7 does not provide any suggested values for this code.</p><p>Note that while the datatype for this concept should likely be a code, it is currently a string as we have insufficient requirements to warrant a closed value-set.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>probability :  <xref href="../t_FHIMDatatypesReal.dita" >Real</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Contains a quantitative or numeric representation of the certainty that the problem exists for this patient.  This field has a valid range of 0 to 1.  For example, a healthcare provider may be 75% (.75) sure that the problem has been correctly identified.&quot; - HL7 Version 2.8, PRB-20
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>prognosis :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Contains the prognosis for the individual&apos;s problem (e.g., good, poor, etc.).&quot; - HL7 Version 2.8, PRB-22.  Note that HL7does not provide any suggested values for this code.</p><p>Note that while the datatype for this concept should likely be a code, it is currently a string as we have insufficient requirements to warrant a closed value-set.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>sensitivity :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Contains information about the level of security and/or sensitivity surrounding the problem (e.g., highly sensitive, not sensitive, sensitive, etc.).&quot; - HL7 Version 2.8, PRB-25.  Note that HL7does not provide any suggested values for this code.</p><p>Note that while the datatype for this concept should likely be a code, it is currently a string as we have insufficient requirements to warrant a closed value-set.</p><p>Note that this property may be removed or altered based on the outcome of the Security and Privacy modeling.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>severity :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+<p>See <xref href="../t_fhimvocabProblemListVocabProblemSeverity.dita">ProblemSeverity</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				&quot;A subjective assessment of the severity of the condition as evaluated by the clinician.&quot; - HL7 FHIR, Condition resource.  Possible values include: Mild; Moderate; Severe; Fatal.</p><p>&quot;Indicates the general severity of the allergy.&quot; - HL7 Version 2.8, AL1.4 and IAM-4.  HL7 Version 2 has the following suggested values (table 128): Severe; Moderate; Mild; Unknown.</p><p>&quot;Indicates the severity of the Problem.&quot; - HL7 Version 2.8, PRB-26.  Note that HL7 does not suggest values for this code.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>wasCauseOfDeath :  <xref href="../t_FHIMDatatypesNullableBoolean.dita" >NullableBoolean</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				If the patient is deceased, this property indicates whether the Health Concern (aka Problem) was (one of) the cause(s) of death.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>concernStatusChangeEvent : <xref href="../t_FHIMHealthConcernConcernStatusChangeEvent.dita" >ConcernStatusChangeEvent</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to a history of updates to the Health Concern record, and relates the Health Concern record to various encounters over time.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>diagnosisList : <xref href="../t_FHIMCommonDiagnosisListEntry.dita" >DiagnosisListEntry</xref> (0..*)</p></stentry>
+  <stentry><p>				Provides a list of diagnoses that are related to the Health Concern
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>externalCause : <xref href="../t_FHIMHealthConcernExternalCause.dita" >ExternalCause</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to the Accident, Injury, or Exposure that caused the Health Concern.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>observation : <xref href="../t_FHIMClinicalObservationObservation.dita" >Observation</xref> (0..*)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>problemManagementDiscipline : <xref href="../t_FHIMHealthConcernProblemManagementDiscipline.dita" >ProblemManagementDiscipline</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to the category of caregiver with responsibility for managing this specific problem.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>responsibleClinic : <xref href="../t_FHIMProviderServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (0..1)</p></stentry>
+  <stentry><p>				Identifies the organization/location responsible for treating the Health Concern.  Used primarily in inpatient situations.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>responsibleProvider : <xref href="../t_FHIMCommonResponsibleParty.dita" >ResponsibleParty</xref> (0..1)</p></stentry>
+  <stentry><p>				Identifies the provider responsible for treating the Health Concern.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

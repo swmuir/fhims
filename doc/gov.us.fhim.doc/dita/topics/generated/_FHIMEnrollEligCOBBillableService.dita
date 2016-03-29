@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMEnrollEligCOBBillableService" xml:lang="en-us">
+<title id="title">BillableService</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+<section id="specializations"  audience="developer, modeler">
+	<title>Derivations</title>
+	<ul>
+<li><xref href="../t_FHIMEnrollEligCOBDmeProvision.dita">DmeProvision </xref> is a kind of  BillableService </li>
+<li><xref href="../t_FHIMEnrollEligCOBProfessionalServiceProvision.dita">ProfessionalServiceProvision </xref> is a kind of  BillableService </li>
+<li><xref href="../t_FHIMEnrollEligCOBDrugProvision.dita">DrugProvision </xref> is a kind of  BillableService </li>
+	</ul>
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class represents the provision of a healthcare-related product, procedure, or service that may be charged to the patient or to the patient&apos;s Health Plan.  This class serves to connect the clinical information that may be recorded in an EHR, such as a procedure or the dispensing of a drug, to the financial information detailing the billing and adjudication of charges for that clinical activity.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>associatedTransactionDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Contains the Transaction Date of a related Billable Service.  Typically used to relate a completed fill to a partial fill for the same prescription.</p><p>&quot;Date of the Associated Prescription/Service Reference Number.&quot; - NCPDP Telecommunication (Field 457-EP, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>associatedTransactionId :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Contains the Transaction Id of a related Billable Service.  Typically used to relate a completed fill to a partial fill for the same prescription.</p><p>&quot;Related Prescription/Service Reference Number to which the service is associated.&quot; - NCPDP Telecommunication (Field 456-EN, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>canBenefitsBeCoordinated :  Boolean (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Indicates whether this insurance works in conjunction with other insurance plans, or if it provides independent coverage and payment of benefits regardless of other insurance that might be available to the patient.&quot; - HL7 Version 2.8, IN1-21.  Note that HL7 Version 2 models this as a code with possible values (Table 173) of: Coordination, Independent.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>doesPatientAssignBenefits :  Boolean (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Indicates whether the insured agreed to assign the insurance benefits to the healthcare provider.  If so, the insurance will pay the provider directly.&quot; - HL7 Version 2.8, IN1-20.  Note that HL7 Version 2 models this as a code with possible values (Table 135) of: &quot;Yes&quot;, &quot;No&quot;, and &quot;Modified Assignment&quot;.</p><p>&quot;Code to indicate a patient&#8217;s choice on assignment of benefits.&quot; - NCPDP Telecommunication (Field 391-MT, Data Dictionary 201104).  Note that while this is a code in the NCPDP Telecommunication structure, the valid values are Yes and No.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>doesProviderAcceptAssignment :  Boolean (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Code indicating whether the provider accepts assignment.&quot; - NCPDP Telecommunication (Field 361-2D, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>eligibilityClarificationCode :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Code indicating that the pharmacy is clarifying eligibility for a patient.  Example: The patient has become a student but eligibility has not yet been updated. The pharmacy can indicate [Full Time Student] so that the carrier may override eligibility for this patient.&quot; - NCPDP Telecommunication (Field 309-C9, Data Dictionary 201104).  Possible values include: No Override; Override; Full Time Student; Disabled  Dependent; Dependent Parent; Significant Other; Not Specified.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>medicaidTransactionId :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This is the Medicaid Subrogation Internal Control Number / Transaction Control Number (ICN/TCN).</p><p>&quot;Claim number assigned by the Medicaid Agency.&quot; - NCPDP Telecommunication (Field 114-N4, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>otherCoverageCode :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Code indicating whether or not the patient has other insurance coverage.&quot; - NCPDP Telecommunication (Field 420-DK, Data Dictionary 201104).  Possible values include: Not Specified by patient; No other coverage; Other coverage exists-payment collected; Other Coverage Billed &#8211; claim not covered; Other coverage exists-payment not collected; Claim is billing for patient financial responsibility only.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>productServiceId :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;ID of the product dispensed or service provided.&quot; - NCPDP Telecommunication (Field 407-D7, Data Dictionary 201104).  Note that the NCPDP Telecommunication structure uses a separate qualifier field (436-E1 ) to indicate what kind of data is in this field.  Possible values include: NDC, UPC, HRI, and 37 other codes.  This is not modeled as a separate property in the FHIM, rather this can be handled by the Code data type.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>serviceDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The date and/or time upon which the Billable Service was performed.</p><p>&quot;Identifies date the prescription was filled or professional service rendered or subsequent payer began coverage following Part A expiration in a long-term care setting only.&quot; - NCPDP Telecommunication (Field 401-D1, Data Dictionary 201104).</p><p>&quot;The time at which the service is performed as local time that will correspond with the actual date of service.&quot; - NCPDP Telecommunication (Field 678-Y6, Data Dictionary 201104).  Used primarily for controlled substance reporting.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>submissionClarificationCode :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..*)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Code indicating that the pharmacist is clarifying the submission.&quot; - NCPDP Telecommunication (Field 420-DK, Data Dictionary 201104).  Possible values include: No Override; Other Override; Vacation Supply; Lost Prescription; Therapy Change; Starter Dose; Medically Necessary; Process Compound For Approved Ingredients; Encounters; Meets Plan Limitations; Certification on File; DME Replacement Indicator; Payer-Recognized Emergency/Disaster Assistance Request; Long Term Care Leave of Absence; Long Term Care Replacement Medication; Long Term Care Emergency box (kit) or automated dispensing machine; Long Term Care Emergency supply remainder; Long Term Care Patient Admit/Readmit Indicator; Split Billing; Section 340B; LTC dispensing (NCPDP has 15 additional codes for Long Term Care dispensing mostly differentiating on the number of days supply); Other.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>transactionId :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Reference number assigned by the provider for the dispensed drug/product and/or service provided.&quot; - NCPDP Telecommunication (Field 402-D2, Data Dictionary 201104).  Note that the NCPDP Telecommunication structure uses a separate qualifier field (455-EM) to indicate what kind of data is in this field.  Possible values include: Rx Billing; Service Billing.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>billableProcedure : <xref href="../t_FHIMCommonProcedure.dita" >Procedure</xref> (0..1)</p></stentry>
+  <stentry><p>				Identifies a healthcare procedure which is being invoiced or which is associated with the service being invoiced.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>billingSequence : <xref href="../t_FHIMEnrollEligCOBBillingSequence.dita" >BillingSequence</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to the Billing Event(s) in which the Health Plans are invoiced for the Billable Service.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>certificateOfMedicalNecessity : <xref href="../t_FHIMEnrollEligCOBCertificateOfMedicalNecessity.dita" >CertificateOfMedicalNecessity</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to additional documentation, especially Certificate(s) of Medical Necessity which justify the eligibility of the Billable Service for payment.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>patient : <xref href="../t_FHIMEnrollEligCOBCoveredPatient.dita" >CoveredPatient</xref> (1..1)</p></stentry>
+  <stentry><p>				Identifies the Person who is the recipient of the Billable Service.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>patientCaseManagement : <xref href="../t_FHIMEnrollEligCOBPatientCaseManagement.dita" >PatientCaseManagement</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to the Case that is applicable to the Billable Event.  In other words, the Billable Event must cite the appropriate Case (if applicable) in order to be reimbursed.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>priorAuthorizationRequest : <xref href="../t_FHIMEnrollEligCOBPriorAuthorizationRequest.dita" >PriorAuthorizationRequest</xref> (0..*)</p></stentry>
+  <stentry><p>				&quot;Based on the type of insurance, some coverage plans require that an authorization number or code be obtained prior to all non-emergency admissions, and within 48 hours of an emergency admission.  Insurance billing would not be permitted without this number.  The date and source of authorization are the components of this field.&quot; - HL7 Version 2.8, IN1-14.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>serviceDeliveryLocation : <xref href="../t_FHIMProviderServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (0..1)</p></stentry>
+  <stentry><p>				Pointer to the location where the billable service took place.</p><p>&quot;Code identifying the place where a drug or service is dispensed or administered.&quot; - NCPDP Telecommunication (Field 3&#216;7-C7, Data Dictionary 201104).  Use CMS&apos;s Place of Service Codes for Professional Claims.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

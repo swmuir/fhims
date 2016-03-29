@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMEnrollEligCOBDrugProvision" xml:lang="en-us">
+<title id="title">DrugProvision</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	DrugProvision is a kind of <xref href="../t_FHIMEnrollEligCOBBillableService.dita">BillableService</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class represents the billable aspects of a pharmacy dispense.  It serves to link the clinical data related to a dispense to the administrative data needed to bill for the dispense.  As a sub-type of Billable Service, it inherits all of the data related to billing and Coodination Of Benefits, adds some data elements specifically needed to bill for the pharmacy dispense, and points to the Pharmacy Dispense clinical data for any remaining data needed for billing.  Note that this class also points to Professional Service Provision to handle any professional servies charges related to the dispense, such as patient counseling.  Note that this class contains some properties that are clearly billing oriented, which are modeled here rather than in Billable Service, because they&apos;re only needed for the billing of Drug Provision.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>benefitLimitationOverrideCategory :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>benefitLimitationOverrideId :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>billingUnitOfMeasure :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;NCPDP standard product billing codes.&quot; - NCPDP Telecommunication (Field 600-28, Data Dictionary 201104).  Possible values include: Each; Grams; Milliliters.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>claimDelayReason :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Code to specify the reason that submission of the transactions has been delayed.&quot; - NCPDP Telecommunication (Field 357-NV, Data Dictionary 201104).  Possible values include: Proof of eligibility unknown or unavailable; Litigation; Authorization delays; Delay in certifying provider; Delay in supplying billing forms; Delay in delivery of custom-made appliances; Third party processing delay; Delay in eligibility determination; Original claims rejected or denied due to a reason unrelated to the billing limitation rules; Administration delay in the prior approval process; Received late with no exceptions; Substantial damage by fire, etc to provider records; Theft, sabotage/other willful acts by employee; Other.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>intermediaryAuthorizationCategory :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This property, in conjunction with intermediaryAuthorizationId, is used to inform an intermediary (i.e., a switch) to override edit(s) that they normally perform on the claim due to some special circumstance, which has been pre-arranged with the intermediary or the Payer.</p><p>&quot;Value indicating that authorization occurred for intermediary processing.&quot; - NCPDP Telecommunication (Field 463-EW, Data Dictionary 201104).  Possible values include: Intermediary Authorization; Other Override; Not Specified.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>intermediaryAuthorizationId :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This property, in conjunction with intermediaryAuthorizationCategory, is used to inform an intermediary (i.e., a switch) to override edit(s) that they normally perform on the claim due to some special circumstance, which has been pre-arranged with the intermediary or the Payer.</p><p>&quot;Value indicating intermediary authorization occurred.&quot; - NCPDP Telecommunication (Field 464-EX, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>levelOfService :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Coding indicating the type of service the provider rendered.&quot; - NCPDP Telecommunication (Field 418-DI, Data Dictionary 201104).  Possible values include: Patient consultation; Home delivery; Emergency; 24 hour service; Patient consultation regarding generic product selection; In-Home Service; Not Specified.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>pharmacyType :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>medicationDispense : <xref href="../t_FHIMPharmacyPharmacyDispenseAbstract.dita" >PharmacyDispense(Abstract)</xref> (0..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>priorAuthorization : <xref href="../t_FHIMEnrollEligCOBPriorAuthorization.dita" >PriorAuthorization</xref> (0..*)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>serviceProvision : <xref href="../t_FHIMEnrollEligCOBProfessionalServiceProvision.dita" >ProfessionalServiceProvision</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to the billable aspects of the provision of professional services.  This class will link the clinical data related to professional services to the administrative data needed to bill for the services.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

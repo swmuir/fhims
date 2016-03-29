@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMCommonClinicalProvenance" xml:lang="en-us">
+<title id="title">ClinicalProvenance</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	ClinicalProvenance is a kind of <xref href="../t_FHIMCommonProvenanceAbstract.dita">Provenance(Abstract)</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>The term &quot;provenance&quot; originally refers to the chronology of the ownership, custody or location of a historical object, but has come to mean any information about the history of any object.  This class conveys information about who provided the information about a clinically relevant assertion (such as a Clinical Observation), and when that information was recorded, entered, verified, etc.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>dateReported :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The date that the Clinical Observation was reported to the Practitioner who &quot;owns&quot; the record of the observation.  This date is potentially different from the time that the underlying condition occurred or was actually observed.</p><p>&quot;Contains the date/time the allergy was reported to a caregiver.&quot; - HL7 Version 2.8, IAM-13
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>informationSource :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+<p>See <xref href="../t_fhimvocabCommonAndDatatypesVocabInformationSource.dita">InformationSource</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				The property categorizes the source of the clinically relevant information.  This categorization provides an indication of the trustworthiness of the information.  For example, a Practitioner might place a higher degree of confidence in information provided by another Practitioner over information provide by a Patient&apos;s relative.  Possible values include: Patient, Patient Guardian, Other Practitioner, Records Review, Clinical Evidence, etc.  When the information source is someone other than the Author of the record (i.e., the Practitioner who &quot;owns&quot; the record, or the Patient, the name of that Person may be recorded in the Information Reporter class.</p><p></p><p>Note that in VistA, this concept is generally called Observed if observed by a clinician, or Historical if patient-reported.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>isPatientReported :  Boolean (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This property indicates whether the clinically relevant information was provided by the Patient (or by a Patient&apos;s relative or guardian), and therefore provides an indication of the trustworthiness of the information.  Note that this property can be derived from the informationSource property, and therefore might not be stored as a separate concept in some implementations.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>informationReporter : <xref href="../t_FHIMCommonInformationReporter.dita" >InformationReporter</xref> (0..1)</p></stentry>
+  <stentry><p>				Pointer to a Person who reported information on the patient&apos;s behalf.  This may be the Patient him/herself, a spouse or relative, or another clinician.</p><p>&quot;Contains the name of the person reporting the allergy to a caregiver at the time reported in Reported Date/Time.&quot; - HL7 Version 2.8, IAM-14.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>serviceDeliveryLocation : <xref href="../t_FHIMProviderServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to the Service Delivery Location at which or under whose auspices the Clinical Information was created.  This pointer implies which Organization &quot;owns&quot; the Clinical Information record.</p><p></p><p></p><p>Represents &quot;the section of the diagnostic service where the observation was performed.  If the study was performed by an outside service, the identification of that service should be recorded here&quot; - HL7 Version 2.8, OBR-24.</p><p>&quot;Contains the name of the organization/service responsible for performing the service.&quot; - HL7 Version 2.8, OBX-23.</p><p>&quot;Contains the address of the organization/service responsible for performing the service.&quot; - HL7 Version 2.8, OBX-24.</p><p></p><p>&quot;Contains the name of the organization providing the update to the allergy&quot; - HL7 Version 2.8, IAM-19.</p><p>&quot;Contains the name of the organization that initially recorded the allergy&quot; - HL7 Version 2.8, IAM-28.</p><p>&quot;Contains the name of the organization that modified the allergy&quot; - HL7 Version 2.8, IAM-29.</p><p>&quot;Contains the name of the organization that inactivated the allergy&quot; - HL7 Version 2.8, IAM-30.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMCommonCommonProductDeviceInstance" xml:lang="en-us">
+<title id="title">DeviceInstance</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class identifies an individual device.  The Id property is commonly known as a serial number.</p><p>&quot;Identifies the Equipment Instance (e.g., Analyzer, Analyzer module, group of Analyzers, etc.) responsible for the production of the observation....&quot; - HL7 Version 2.8, OBX-18.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>alertLevel :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The current functional status of an automated device.&quot; - HL7 V3. Possible values include: Normal, Warning, Critical, etc.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateAcquired :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Date and time equipment was installed or affixed&quot; - ONC S&amp;I Clinical Element Data Dictionary (CEDD), March 2012.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateDisposed :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Date and time equipment was removed or uninstalled&quot; - ONC S&amp;I Clinical Element Data Dictionary (CEDD), March 2012.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateLastCalibrated :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The date and time the device was last calibrated.&quot; - HL7 V3
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>id :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (0..*)</p> 
+
+
+</stentry>
+  <stentry><p>				Identifies the individual device.  This may be a Serial Number assigned by the manufacturer, or some other unique identifer assigned by the owning organization (e.g., an asset control number).</p><p>&quot;A unique identifier for this instance. If the product instance represents a single individual product (quantity = 1) then  this id is also called the &quot;serial number&quot;. If the product instance represents a product lot, the id is also called the  &quot;lot number&quot;.&quot; - HL7 V3
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>localRemoteControlState :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The state of control of the device. A device can either work autonomously or it can be controlled by another system. The  control status of a device must be communicated between devices prior to remote commands being transmitted. If the device  is not in &quot;Remote&quot; status, external commands will be ignored.&quot; - HL7 V3
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>device : <xref href="../t_FHIMCommonCommonProductDevice.dita" >Device</xref> (1..1)</p></stentry>
+  <stentry><p>				Identifies a class of devices characterized by their manufacturer, model name/number, software version, etc.  This class differs from the Device Instance class on the other end of the association in that this class represents all instances of a kind of device whereas the Device Instance class represents one individual.  For example, the Device class might describe a Color LaserJet Model CMJ1312 made by Hewlett Packard.  The DeviceInstance class might describe the machine that has serial number 1234.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>manufacturingLot : <xref href="../t_FHIMCommonCommonProductManufacturingLot.dita" >ManufacturingLot</xref> (0..1)</p></stentry>
+  <stentry><p>				Identifies a batch of material or products that were manufactured over a defined time period.  Identifies the batch or lot in which the device was manufactured.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>reprocessor : <xref href="../t_FHIMCommonCommonProductReprocessor.dita" >Reprocessor</xref> (0..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

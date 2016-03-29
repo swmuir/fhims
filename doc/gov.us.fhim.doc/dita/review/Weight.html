@@ -1,0 +1,279 @@
+
+<html xmlns:Standard="http://www.eclipse.org/uml2/schemas/Standard/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:fhim="http:///schemas/fhim/_bbjuwA3cEeSGTazHdUQojA/5" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:term="http://www.openhealthtools.org/mdht/schemas/term/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:xmi="http://www.omg.org/XMI" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.3/Umlnotation" xmlns:Default="http:///schemas/Default/_fNm3AAqoEd6-N_NOT9vsCA/2" xmlns:CDA="http://www.openhealthtools.org/mdht/schemas/cda/4" xmlns:Default_1="http:///schemas/Default/1" xmlns:RIM="http:///schemas/RIM/_fvnwgAH4Ed6VH-9W1IVKXA/4" xmlns:SketchNotation="http://www.ibm.com/ccl/soa/sketch/notation/1.0.0/">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>Weight Domain</title>
+   </head>
+   <body style="font-family:Courier;font-size:14px">
+      <h1>Weight Domain</h1>
+      <p> The purpose of this review is to identify the data elements required for the
+         interoperable exchange for the Weight domain including dependencies. A column is
+         provided at the far right of the table for you to enter comments related to each
+         data element. If the class or domain is missing data elements, please add a row
+         at the bottom of the sheet and specify a name, description, and type of data
+         (e.g. numeric, string, date/time, code). 
+      </p>
+      <p> Once you have reviewed the data elements, please review the value sets
+         associated with the coded data elements. Please provide feedback by adding
+         comments in the column provided at the right of item/row or by adding rows at
+         the bottom table. For any new coded concepts without a valid code yet, our team
+         will propose them for addition in the source coding system. 
+      </p>
+      <ul>
+         <li><a href=""> <i><b>Weight</b> </i> Domain </a></li>
+       </ul>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font-family:Courier">
+         <tr bgcolor="#98FB98" style="font-size:18px" align="left">
+            <td colspan="1"><b><a id=""> 'Weight' Domain
+                     </a></b></td>
+            <td colspan="4" style="font-size:12px">Note that the Information Source hierarchy is in the Common domain, and is not shown here.</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+      </table>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font-family:Courier">
+         <tr>
+            <th width="20%">Element Name</th>
+            <th width="20%">Element Description</th>
+            <th width="15%">Format/Type</th>
+            <th width="15%">Value Set Name</th>
+            <th width="15%">Optionality/<br>Repetition
+            </th>
+            <th width="15%">Reviewer's Comments</th>
+         </tr>
+ 
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>WeightDeterminationMethod</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>Occasionally, the patient&#8217;s Weight cannot be measured directly, leading the clinician to estimate the Weight, or rely on the patient&#8217;s stated Weight.  This class records an observation of how the patient&#8217;s Height was determined.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">WeightDeterminationMethod.<b>observedCharacteristic</b></div>
+            </td>
+            <td><p>This property defines what was observed that &#8220;qualifies&#8221; the primary, or &#8220;owning&#8221; Observation.  This property defines what was observed by citing a value from a nationally recognized coding system.  In this case, the value to be hard-coded for the Weight determination has yet to be determined.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">WeightDeterminationMethod.<b>value</b></div>
+            </td>
+            <td><p>This property contains the result, or value of the qualifying Observation.  In the generic Observation Qualifier class, the data type for this property can be anything.  In this sub type, the value is constrained to be one of a set of codes from the SNOMED-CT coding system that represent how the patient&#8217;s Weight was determined.</p></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#Patient Weight Determination Method Value Set">Patient Weight Determination Method Value Set</a> 
+					
+					 
+</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>WeightObservation</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>Human body weight refers &#8220;to a person&apos;s mass or weight. Body weight is measured in kilograms &#8230; or pounds. Strictly speaking, body weight is the measurement of weight without items located on the person. Practically though, body weight is measured with clothes on, but without shoes or heavy accessories such as mobile phones and wallets and using manual or digital weighing scales. Excess or reduced body weight is regarded as an indicator of determining a person&apos;s health, with body volume measurement providing an extra dimension by calculating the distribution of body weight.&#8221; &#8211; Wikipedia.</p><p></p><p>This class represents the measurement (or &#8220;clinical observation&#8221;) of the patient&#8217;s Weight.  This class re-defines the generic clinical Observation class to fix the observed characteristic to LOINC 3141-9 and to set the data type of the observation value to a Physical Quantity.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">WeightObservation.<b>observedCharacteristic</b></div>
+            </td>
+            <td><p>This property defines what was observed by using a value from a nationally recognized coding system.  In this case, we&#8217;re stating that the concept being observed is the Weight, which is LOINC 3141-9.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">WeightObservation.<b>observationMethod</b></div>
+            </td>
+            <td><p>This property contains a code that specifies additional detail about the means or technique used to ascertain the Observation.  In the generic clinical Observation class, this code is not &#8220;bound&#8221; to a particular value set.  In this class, the property is re-defined to a set of values that are appropriate to heart rate measurements.  These values come from the SNOMED-CT coding system.</p></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#Patient WeightDetermination Device  Value Set">Patient WeightDetermination Device  Value Set</a> 
+					
+					 
+</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">WeightObservation.<b>value</b></div>
+            </td>
+            <td><p>This property contains the result, or value of the clinical Observation.  In the generic clinical Observation class, the data type for this property can be anything.  Weight is generally expressed in terms of kilograms or pounds.  Therefore, this property has been re-defined to constrain the data type to be a Physical Quantity.</p></td>
+            <td valign="top"> Quantity </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+  </table>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font">
+         <tr>
+            <th>Value Set Constraint</th>
+            <th>Element Description</th>
+         </tr>
+       
+
+
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID="Patient Weight Determination Method Value Set">Patient Weight Determination Method Value Set</a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">  Patient Weight Determination Method Value Set   <br/> <p>This property contains the result, or value of the qualifying Observation.  In the generic Observation Qualifier class, the data type for this property can be anything.  In this sub type, the value is constrained to be one of a set of codes from the SNOMED-CT coding system that represent how the patient&#8217;s Weight was determined.</p><br> TBD
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>-newcode- (Calculated)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>414135002 (Estimated)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>258104002 (Measured (Actual))</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>-newcode- (Stated)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+ 
+
+
+       
+		
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID="Patient WeightDetermination Device  Value Set">Patient WeightDetermination Device  Value Set</a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">  Patient WeightDetermination Device  Value Set   <br/> <p>This property contains a code that specifies additional detail about the means or technique used to ascertain the Observation.  In the generic clinical Observation class, this code is not &#8220;bound&#8221; to a particular value set.  In this class, the property is re-defined to a set of values that are appropriate to heart rate measurements.  These values come from the SNOMED-CT coding system.</p><br> TBD
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>-newcode- (Bed)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>-newcode- (Chair)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>-newcode- (Lift Scale)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>-newcode- (Standing Weight)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>-newcode- (Wheelchair Scale)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+ 
+
+
+       
+		
+
+
+</table>
+

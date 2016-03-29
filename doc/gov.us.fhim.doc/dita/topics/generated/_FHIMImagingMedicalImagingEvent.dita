@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMImagingMedicalImagingEvent" xml:lang="en-us">
+<title id="title">MedicalImagingEvent</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	MedicalImagingEvent is a kind of <xref href="../t_FHIMImagingImagingEventAbstract.dita">ImagingEvent(Abstract)</xref>	
+</section>
+
+
+
+<section id="specializations"  audience="developer, modeler">
+	<title>Derivations</title>
+	<ul>
+<li><xref href="../t_FHIMImagingSpecimenImagingEvent.dita">SpecimenImagingEvent </xref> is a kind of  MedicalImagingEvent </li>
+	</ul>
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class contains attributes associated with Radiology or Nuclear Medicine imaging examinations. Historically, both diagnostic imaging and the scanning and retrieval of paper documents have been included in the &quot;imaging&quot; domain as they both share certain characteristics in terms of the equipment used to store and retrieve the images.  Yet a distinction is often made with respect to the amount and type of metadata associated with the images. For example, &quot;Diagnostic Images&quot; are those stored and retrieved in Picture Archive and Communications Systems (PACS) which require certain codified information regarding the modality of the image, body site, etc., and are organized into Studies, Series, Images, and subsets (regions) of images. In contrast, scanned documents do not require any of these metadata.  As patient-generated images become more commonplace, we foresee a need to store these images (for example, a patient uses a smart phone to take a picture of a wound and emails it to a clinician) as well. We would foresee such images stored in the &quot;Medical Imaging Event&quot; hierarchy, even if a relatively-empty Study and Series construct would be required to contain such images.  However, scanned documents simply need a pointer to the resulting image(s), and we therefore find it useful to continue with a logical separation of the two kinds of images.</p><p></p><p>Note that this class represents information about the act of performing the medical imaging event, with the majority of the results stored in the Study, Series, Image hierarchy.  From a DICOM point of view, the Study and the Imaging Event are roughly synonymous, with the activities surrounding the production of the Study being implied in the resulting data.  We make the distinction primarily in order to be consistent with how orders and accessions (aka promises) are treated elsewhere in the FHIM.  Therefore this class could easily be merged with the Study class in resulting implementations.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>status :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+<p>See <xref href="../t_fhimvocabImagingVocabImageEventStatus.dita">ImageEventStatus</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				Indicates the status of this exam.  This should be a code from File 72.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>wasContrastMediaUsed :  Boolean (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Indicate if an intravascular contrast was used during this Rad/Nuc Med exam.  Possible values are Yes, No; etc.  
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>contrastMediaAdministration : <xref href="../t_FHIMEncounterMedicationAdministrationEvent.dita" >MedicationAdministrationEvent</xref> (0..1)</p></stentry>
+  <stentry><p>				Identifies Constrat Media associated with the Examination
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>diagnosis : <xref href="../t_FHIMCommonDiagnosisListEntry.dita" >DiagnosisListEntry</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to an ordered list of findings or diagnoses which have been established as a result of the imaging study.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>encounter : <xref href="../t_FHIMEncounterEncounterEvent.dita" >EncounterEvent</xref> (1..1)</p></stentry>
+  <stentry><p>				The encounter during which the Radiologic Examination took place.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>principalClinic : <xref href="../t_FHIMProviderServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (1..1)</p></stentry>
+  <stentry><p>				Th name of the principal clinic that referred the patient to Radiology/Nuclear Medicine for the exam.  Equivalent to File 44.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>procedure : <xref href="../t_FHIMCommonProcedureListEntry.dita" >ProcedureListEntry</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to an ordered list of actions that were performed during the performance of the imaging study. These procedures are often tracked for billing or workload purposes.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>radioPharmaceuticalAdministration : <xref href="../t_FHIMImagingRadioPharmaceuticalAdministration.dita" >RadioPharmaceuticalAdministration</xref> (0..1)</p></stentry>
+  <stentry><p>				A radiopharmaceutical associated with this examination should be entered here. Equivalent to a pointer to File 71.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>report : <xref href="../t_FHIMImagingImageInterpretationReport.dita" >ImageInterpretationReport</xref> (1..1)</p></stentry>
+  <stentry><p>				Represents the radiology/nuclear medicine report as known by the originating VistA system.  Equivalent to a pointer to File 74.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>study : <xref href="../t_FHIMImagingStudy.dita" >Study</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to content produced in a DICOM imaging study.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

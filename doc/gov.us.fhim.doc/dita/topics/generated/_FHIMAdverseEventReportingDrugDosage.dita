@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMAdverseEventReportingDrugDosage" xml:lang="en-us">
+<title id="title">DrugDosage</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>Contains information describing the amount, timing, and route of administration of medicinal products (whether suspect or concommittant) given to or taken by the subject near the time of the adverse event occurred.  Corresponds to ICH E2B(R3), G.k.4.r.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>dosageText :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Free text information when structured dosage information is not possible, or to provide more detail on structured dosage data elements. There is no need to duplicate information provided in the structured dosage data elements.&quot;  - ICH E2B(R3), G.k.4.r.8.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dose :  <xref href="../t_FHIMDatatypesQuantity.dita" >Quantity</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The amount of medication taken at one time.</p><p></p><p>&quot;The value (number) of each administered dose.&quot;  - ICH E2B(R3), G.k.4.r.1a</p><p>&quot;The unit for the dose value in G.k.4.r.1a.&quot;  - ICH E2B(R3), G.k.4.r.1b</p><p></p><p>Medwatch 3500 form question D.2; Medwatch 3500A form question C.2; Medwatch 3500B form question B.7.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>drugFormText :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Free text description of the pharmaceutical dose form when the Pharmaceutical Dose Form TermID is not available.&quot;  - ICH E2B(R3), G.k.4.r.9.1.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>duration :  <xref href="../t_FHIMDatatypesTimeInterval.dita" >TimeInterval</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The length of time that the patient used the product, if known.  Used when exact dates are unknown.</p><p>&quot;This section will usually be computed from the start/end date and time of the administration. However, there might be situations in which the precise duration of the drug administration can be useful, such as minutes or hours. Also, this item should be used in addition to dates if exact dates of drug administration are not available at the time of the report, but there is information concerning the duration of drug administration. In such a case, populate 1 data element for the date (start or end date) and this Section. The information requested is the overall duration of drug administration and covers intermittent administration.&quot;  - ICH E2B(R3), G.k.4.r.6a and G.k.4.r.6b.</p><p>MedWatch 3500 form question D.3 (suspect medication); question F (concomitant medication)</p><p>MedWatch 3500A form question C.3 (suspect medication); question C.10 (concomitant medication)</p><p>MedWatch 3500B form question B.11 (suspect medication)</p><p>(note that the VAERS-1 form does not have this element).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>frequency :  <xref href="../t_FHIMDatatypesTimeQuantity.dita" >TimeQuantity</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Indicates how often the medication is taken.</p><p></p><p>&quot;The value (amount) for the time interval between each administered dose (G.k.4.r.1a and G.k.4.r.1b) If either G.k.4.r.2 or G.k.4.r.3 is unknown, both should be left blank unless the definition of the time interval unit is Cyclical, As necessary, or Total.&quot;  - ICH E2B(R3), G.k.4.r.2</p><p>&quot;The UCUM code that best describes the unit for the dosing time interval (G.k.4.r.2). When a specific time interval for drug administration is not known, but is confirmed that the drug is used cyclically or as necessary, then Cyclical or As Necessary can be used in this data element. When the total amount of a drug is provided without any particular dose and dosing interval (e.g. in the case of an overdose), the quantity and unit (G.k.4.r.1a and G.k.4.r.1b) is provided along with Total in this data element (G.k.4.r.2 is left blank).&quot;  - ICH E2B(R3), G.k.4.r.3</p><p></p><p>Medwatch 3500 form question D.2; Medwatch 3500A form question C.2; Medwatch 3500B form question B.8.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>parentRoute :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;This data element captures the known route of administration of the drug as taken by the parent for the dosage described in G.k.4.r.1 to G.k.4.r.3.&quot;  - ICH E2B(R3), G.k.4.r.11.2a and G.k.4.r.11.2b.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>parentRouteText :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Free text description of the route of administration when the Parent Route of Administration TermID is not available.&quot;  - ICH E2B(R3), G.k.4.r.11.1.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>route :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Indicates how the medication is administered (e.g., by mouth, by injection, etc.).</p><p></p><p>&quot;The route of administration.  For a parent-child/foetus report, this data element indicates the route of administration for the child/foetus (patient). This is usually an indirect exposure, such as transmammary, but can include more usual routes of administration for other drugs given to the child. The parent&#8217;s route of administration should be provided in G.k.4.r.11&quot;  - ICH E2B(R3), G.k.4.r.10.2a and G.k.4.r.10.2b</p><p></p><p>Medwatch 3500 form question D.2; Medwatch 3500A form question C.2; Medwatch 3500B form question B.9.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>routeText :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Free text description of the route of administration when the Route of Administration TermID is not available.&quot;  - ICH E2B(R3), G.k.4.r.10.1.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>startDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The date the patient began to use the product, if known.</p><p>&quot;The date and time when drug administration started.&quot;  - ICH E2B(R3), G.k.4.r.4</p><p>MedWatch 3500 form question D.3 (suspect medication); question F (concomitant medication)</p><p>MedWatch 3500A form question C.3 (suspect medication); question C.10 (concomitant medication)</p><p>MedWatch 3500B form question B.10 (suspect medication)</p><p>VAERS-1 form question 10 (suspect vaccine); question 14 (vaccines given within the past 4 weeks)
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>stopDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The date the patient stopped using the product, if known.</p><p>&quot;The date and time when drug administration ended. For ongoing drug administration after the onset of the reaction/event, this item should be blank....&quot;  - ICH E2B(R3), G.k.4.r.5</p><p>MedWatch 3500 form question D.3 (suspect medication); question F (concomitant medication)</p><p>MedWatch 3500A form question C.3 (suspect medication); question C.10 (concomitant medication)</p><p>MedWatch 3500B form question B.11 (suspect medication)</p><p>(note that the VAERS-1 form does not have this element).
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

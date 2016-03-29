@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMEnrollEligCOBBillingEvent" xml:lang="en-us">
+<title id="title">BillingEvent</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class represents an invoice or bill for a Billable Service.  A single Billable Service may have multiple Billing Events due to the coordination of multiple payers (e.g.,, Health Plan A is billed for 70%, Health Plan B is billed for 20%, and the Patient is billed for the remaining 10%), and a single Payer may be billed multiple times as payment is negotiated electronically (e.g., the Payer might initially reject a bill, and may accept it upon submission of a second bill containing more information).</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>amountPaid :  <xref href="../t_FHIMDatatypesMonetaryAmount.dita" >MonetaryAmount</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Total amount to be paid by the claims processor (i.e. pharmacy receivable).  Represents a sum of Ingredient Cost Paid, Dispensing Fee Paid, Flat Sales Tax Amount Paid, Percentage Sales Tax Amount Paid, Incentive Amount Paid, Professional Service Fee Paid, and Other Amount Paid, less Patient Pay Amount and Other Payer Amount Recognized.&quot; - NCPDP Telecommunication (Field 509-F9, Data Dictionary 201104).  Note that this field may be calculated and has therefore been modeled as a derived field.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>amountSubmitted :  <xref href="../t_FHIMDatatypesMonetaryAmount.dita" >MonetaryAmount</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Total price claimed from all sources. For prescription claim requests, field represents a sum of Ingredient Cost Submitted, Dispensing Fee Submitted, Flat Sales Tax Amount Submitted, Percentage Sales Tax Amount Submitted, Incentive Amount Submitted, and Other Amount Claimed. For service claim requests, field represents a sum of Professional Services Fee Submitted, Flat Sales Tax Amount Submitted, Percentage Sales Tax Amount Submitted, and Other Amount&quot; - NCPDP Telecommunication (Field 430-DU, Data Dictionary 201104).  Note that this field may be calculated and has therefore been modeled as a derived field.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>billingResponse : <xref href="../t_FHIMEnrollEligCOBBillingResponse.dita" >BillingResponse</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to a set of data sent by a Payer in response to a Billing Event detailing the components and reasons for any payments made or not made.</p><p>Note: this may need to be 0..1, not 0..*.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>billingSubmission : <xref href="../t_FHIMEnrollEligCOBBillingSubmission.dita" >BillingSubmission</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to set of data sent to a Payer as part of a Billing Event detailing the components and reasons for the charges being billed.</p><p>Note: this may need to be 0..1, not 0..*.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>coordinationOfBenefits : <xref href="../t_FHIMEnrollEligCOBCoordinationOfBenefits.dita" >CoordinationOfBenefits</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to a set of the results of prior Billing Events, including previous payments, which are used in part to determine the liability of the Payer and of the Patient for the current Billing Event.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>payee : <xref href="../t_FHIMEnrollEligCOBPayee.dita" >Payee</xref> (0..1)</p></stentry>
+  <stentry><p>				Pointer to the entity to receive payment for the claim.  The entity might be the billing physician, an agent, or a third party.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>processor : <xref href="../t_FHIMEnrollEligCOBProcessor.dita" >Processor</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to an organization that serves as an intermediary between the Biller and the Payer, and performs various value-added services, including routing of electronic payments.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

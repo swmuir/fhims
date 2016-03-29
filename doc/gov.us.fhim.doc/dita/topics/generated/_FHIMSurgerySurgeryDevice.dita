@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMSurgerySurgeryDevice" xml:lang="en-us">
+<title id="title">SurgeryDevice</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>A piece of equipment and or a mechanism designed to serve a special purpose or perform a special function.  This class represents devices used to perform a surgery, such as lasers, as well as devices that might be implanted in the patient as a result of the surgery, such as a prosthesis or a stent.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>deviceId :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Uniquely identifies the device as assigned by the owner of the device (as opposed to the lotOrSerialId, which is assigned by the manufacturer.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>deviceName :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The descriptive name for the  Surgical device being used.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>deviceType :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Provices a categorization of the device.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>lotId :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Identifies the manufacturing lot during which this device was produced.  This property is optional, as it generally applies to commodity items rather than specialized equipment, which would use the serial Id instead.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>model :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Manufacturers model name or number for the surgical device
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>quantity :  <xref href="../t_FHIMDatatypesQuantity.dita" >Quantity</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Contains the number of device(s) involved in the surgical procedure
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>serialId :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				A unique identifier assigned by the manufacture of the device.  This property is optional, as commodity items are typically not uniquely identified, but may be associated with a manufacturing lot instead.  This property is particularly important for prosthetic devices.
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

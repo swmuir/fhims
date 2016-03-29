@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMBehavioralHealthBehavioralHealthDomain2Model2BehavioralHealthInformationModel21CommonBehavioralHealthClassesPsychiatricDiagnosis" xml:lang="en-us">
+<title id="title">PsychiatricDiagnosis</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	PsychiatricDiagnosis is a kind of <xref href="../t_FHIMCommonDiagnosis.dita">Diagnosis</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class is intended to specialize a generic diagnosis class by adding support for Diagnostic and Statistical Manual of Mental Disorders (DSM) codes and supports any extensions required to communicate information about Behavioral Health diagnoses between organizations and providers.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>confidentialityCode :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This code may be used to specify whether the diagnosis is sensitive (e.g., carries a social stigma).  This attribute relies on the sensitivity value set specified by HL7 Confidentiality coding system.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dsmAxis1 :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The DSM-IV organizes each psychiatric diagnosis into five dimensions (axes) relating to different aspects of disorder or disability:</p><p>Axis I: Clinical disorders, including major mental disorders, and learning disorders
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dsmAxis2 :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The DSM-IV organizes each psychiatric diagnosis into five dimensions (axes) relating to different aspects of disorder or disability:</p><p>Axis II: Personality disorders and intellectual disabilities (although developmental disorders, such as Autism, were coded on Axis II in the previous edition, these disorders are now included on Axis I)
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dsmAxis3 :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The DSM-IV organizes each psychiatric diagnosis into five dimensions (axes) relating to different aspects of disorder or disability:</p><p>Axis III: Acute medical conditions and physical disorders
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dsmAxis4 :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The DSM-IV organizes each psychiatric diagnosis into five dimensions (axes) relating to different aspects of disorder or disability:</p><p>Axis IV: Psychosocial and environmental factors contributing to the disorder
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dsmAxis5 :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The DSM-IV organizes each psychiatric diagnosis into five dimensions (axes) relating to different aspects of disorder or disability:</p><p>Axis V: Global Assessment of Functioning or Children&apos;s Global Assessment Scale for children and teens under the age of 18
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>globalAssessmentOfFunctioning :  Integer (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The Global Assessment of Functioning (GAF) is part of the diagnosis on Axis 5.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>snomedDiagnosisCode :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This attribute is intended to store the code for the diagnosis in SNOMED-CT.  Since both the DSM IV and the ICD codes corresponding to the psychiatric diagnosis are mapped to SNOMED-CT should be sufficient to represent psychiatric diagnoses.
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

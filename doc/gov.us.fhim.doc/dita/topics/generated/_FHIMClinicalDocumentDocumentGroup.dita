@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMClinicalDocumentDocumentGroup" xml:lang="en-us">
+<title id="title">DocumentGroup</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This is a flat level document. The purpose of DocumentGroup class is to link a set of documents about a patient in clinically meaningful ways at the point-of-use.    &quot;Specialization of Act to add the characteristics unique to document management services.&quot; (HL7 3.0)    </p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>dateRange :  <xref href="../t_FHIMDatatypesTimeInterval.dita" >TimeInterval</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This is a date range of the date and time for which the 1st document in the group is created and the date and time for which the recent document in the group is created.        
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>groupId :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				A unique identifier for the Act.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>groupName :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				A textual description of a  collection of documents in clinically meaningful ways.  
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>document : <xref href="../t_FHIMClinicalDocumentClinicalDocumentEvent.dita" >ClinicalDocumentEvent</xref> (0..*)</p></stentry>
+  <stentry><p>				Documents can be aggregated into clinically meaningfully groups; each document in the group will usually reference the same patient.  A clinical document will typically belong to at most one Document Group.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMEnrollEligCOBBillingResponse" xml:lang="en-us">
+<title id="title">BillingResponse</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class contains data sent by a Payer in response to a Billing Event detailing the components and reasons for any payments made or not made.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>accumulatedDeductibleAmount :  <xref href="../t_FHIMDatatypesMonetaryAmount.dita" >MonetaryAmount</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Amount in dollars met by the patient/family in a deductible plan.&quot; - NCPDP Telecommunication (Field 512-FC, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>amountAppliedToDeductible :  <xref href="../t_FHIMDatatypesMonetaryAmount.dita" >MonetaryAmount</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Amount to be collected from a patient that is included in Patient Pay Amount that is applied to a periodic deductible.&quot; - NCPDP Telecommunication (Field 517-FH, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>amountAttributableToSalesTax :  <xref href="../t_FHIMDatatypesMonetaryAmount.dita" >MonetaryAmount</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Amount to be collected from the patient that is included in Patient Pay Amount that is due to sales tax paid.&quot; - NCPDP Telecommunication (Field 523-FN, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>amountAttributedToBrandNonFormularySelection :  <xref href="../t_FHIMDatatypesMonetaryAmount.dita" >MonetaryAmount</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Amount to be collected from the patient that is included in Patient Pay Amount that is due to the patient&#8217;s selection of a Brand Non-Preferred Formulary product.&quot; - NCPDP Telecommunication (Field 136-UN, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>amountAttributedToBrandSelection :  <xref href="../t_FHIMDatatypesMonetaryAmount.dita" >MonetaryAmount</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Amount to be collected from the patient that is included in Patient Pay Amount that is due to the patient&#8217;s selection of a Brand product.&quot; - NCPDP Telecommunication (Field 134-UK, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>amountAttributedToCoverageGap :  <xref href="../t_FHIMDatatypesMonetaryAmount.dita" >MonetaryAmount</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Amount to be collected from the patient that is included in Patient Pay Amount that is due to the patient being in the coverage gap (for example Medicare Part D Coverage Gap (donut hole)). A coverage gap is defined as the period or amount during which the previous coverage ends and before an additional coverage begins.&quot; - NCPDP Telecommunication (Field 137-UP, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>amountAttributedToNonFormularySelection :  <xref href="../t_FHIMDatatypesMonetaryAmount.dita" >MonetaryAmount</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Amount to be collected from the patient that is included in Patient Pay Amount that is due to the patient&#8217;s selection of a Non-Preferred Formulary product.&quot; - NCPDP Telecommunication (Field 135-UM, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>amountAttributedToProviderNetworkSelection :  <xref href="../t_FHIMDatatypesMonetaryAmount.dita" >MonetaryAmount</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Amount to be collected from the patient that is included in Patient Pay Amount that is due to the patient&#8217;s provider network selection.&quot; - NCPDP Telecommunication (Field 133-UJ, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>amountExceedingBenefitMaximum :  <xref href="../t_FHIMDatatypesMonetaryAmount.dita" >MonetaryAmount</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Amount to be collected from the patient that is included in Patient Pay Amount that is due to the patient exceeding a periodic benefit maximum.&quot; - NCPDP Telecommunication (Field 520-FK, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>amountOfCoinsurance :  <xref href="../t_FHIMDatatypesMonetaryAmount.dita" >MonetaryAmount</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Amount to be collected from the patient that is included in Patient Pay Amount that is due to a per prescription coinsurance.&quot; - NCPDP Telecommunication (Field 572-4U, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>amountOfCopay :  <xref href="../t_FHIMDatatypesMonetaryAmount.dita" >MonetaryAmount</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Amount to be collected from the patient that is included in Patient Pay Amount that is due to a per prescription copay.&quot; - NCPDP Telecommunication (Field 518-FI, Data Dictionary 201104).</p><p>
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>amountOfProcessingFee :  <xref href="../t_FHIMDatatypesMonetaryAmount.dita" >MonetaryAmount</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Amount to be collected from the patient that is included in Patient Pay Amount that is due to the processing fee imposed by the processor.&quot; - NCPDP Telecommunication (Field 571-NZ, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>basisOfCalculationCoInsurance :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Code indicating how the Coinsurance reimbursement amount was calculated for Patient Pay Amount.&quot; - NCPDP Telecommunication (Field 573-4V, Data Dictionary 201104).  Possible values include: Quantity Dispensed; Quantity Intended To Be Dispensed; Usual and Customary/Prorated; Waived Due To Partial Fill; Other.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>basisOfCalculationCopay :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Code indicating how the Copay reimbursement amount was calculated for Patient Pay Amount.&quot; - NCPDP Telecommunication (Field 347-HJ, Data Dictionary 201104).  Possible values include: Quantity Dispensed; Quantity Intended To Be Dispensed; Usual and Customary/Prorated; Waived Due To Partial Fill; Other.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>basisOfCalculationDispensingFee :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Code indicating how the reimbursement amount was calculated for Dispensing Fee Paid&quot; - NCPDP Telecommunication (Field 346-HH, Data Dictionary 201104).  Possible values include: Quantity Dispensed; Quantity Intended To Be Dispensed; Usual and Customary/Prorated; Waived Due To Partial Fill; Other.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>basisOfCalculationFlatSalesTax :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Code indicating how the reimbursement amount was calculated for Flat Sales Tax Amount Paid&quot; - NCPDP Telecommunication (Field 348-HK, Data Dictionary 201104).  Possible values include: Quantity Dispensed; Quantity Intended To Be Dispensed.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>basisOfCalculationPercentageSalesTax :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Code indicating how the reimbursement amount was calculated for Percentage Sales Tax Amount Paid.&quot; - NCPDP Telecommunication (Field 349-HM, Data Dictionary 201104).  Possible values include: Quantity Dispensed; Quantity Intended To Be Dispensed.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>basisOfReimbursementDetermination :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Code identifying how the reimbursement amount was calculated for &quot;Ingredient Cost Paid.&quot; - NCPDP Telecommunication (Field 522-FM, Data Dictionary 201104).  Possible values include: Default; AWP (Average Wholesale Price); Local Wholesaler; Direct; EAC (Estimated Acquisition Cost); Acquisition; MAC (Maximum Allowable Cost); Usual &amp; Customary; 340B /Disproportionate Share Pricing/Public Health Service; ASP (Average Sales Price); AMP (Average Manufacturer Price); WAC (Wholesale Acquisition Cost); Special Patient Pricing; Other.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>benefitStageCount :  Integer (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Count of Benefit Stage Amount occurrences.&quot; - NCPDP Telecommunication (Field 392-MU, Data Dictionary 201104).  Note that this property is marked as derived, since this number can be calculated from the number of Benefit Stage class instances.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dispensingFee :  <xref href="../t_FHIMDatatypesMonetaryAmount.dita" >MonetaryAmount</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Dispensing fee paid included in the Total Amount Paid&quot; - NCPDP Telecommunication (Field 507-F7, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dispensingFeeAmount :  <xref href="../t_FHIMDatatypesMonetaryAmount.dita" >MonetaryAmount</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Informational field used when Other Payer-Patient Responsibility Amount or Patient Pay Amount is used for reimbursement. Amount is equal to contracted or reimbursable dispensing fee for product being dispensed.&quot; - NCPDP Telecommunication (Field 149-U9, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>estimatedGenericSavings :  <xref href="../t_FHIMDatatypesMonetaryAmount.dita" >MonetaryAmount</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The amount, not included in the Total Amount Paid, that the patient would have saved if they had chosen the generic drug instead of the brand drug.&quot; - NCPDP Telecommunication (Field 577-G3, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>flatSalesTaxAmount :  <xref href="../t_FHIMDatatypesMonetaryAmount.dita" >MonetaryAmount</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Flat sales tax paid which is included in the Total Amount Paid&quot; - NCPDP Telecommunication (Field 558-AW, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>healthPlanFundedAssistanceAmount :  <xref href="../t_FHIMDatatypesMonetaryAmount.dita" >MonetaryAmount</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The amount from the health plan-funded assistance account for the patient that was applied to reduce Patient Pay Amount. This amount is used in Healthcare Reimbursement Account (HRA) benefits only. This field is always a negative amount or zero. The Health Plan-funded Assistance Amount is part of the patient pay amount calculation and is used to report back to the provider and patient the portion of Patient Pay Amount that was reduced due to this plan-funded assistance. NOTE: There is no credit card transaction involved in this type of Patient Spending Assistance, as in a Flexible Spending Account (FSA).&quot; - NCPDP Telecommunication (Field 129-UD, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>incentiveAmount :  <xref href="../t_FHIMDatatypesMonetaryAmount.dita" >MonetaryAmount</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Amount represents the contractually agreed upon incentive fee paid for specific services rendered. Amount is included in the Total Amount Paid.&quot; - NCPDP Telecommunication (Field 521-FL, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>ingredientCost :  <xref href="../t_FHIMDatatypesMonetaryAmount.dita" >MonetaryAmount</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Drug ingredient cost paid included in the Total Amount Paid.&quot; - NCPDP Telecommunication (Field 506-F6, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>ingredientCostAmount :  <xref href="../t_FHIMDatatypesMonetaryAmount.dita" >MonetaryAmount</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Informational field used when Other Payer-Patient Responsibility Amount or Patient Pay Amount  is used for reimbursement. Amount is equal to contracted or reimbursable amount for product being dispensed.&quot; - NCPDP Telecommunication (Field 148-U8, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>otherAmountPaidCount :  Integer (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Count of the other amount paid occurrences.&quot; - NCPDP Telecommunication (Field 563-J2, Data Dictionary 201104).  Note that this property could potentially be calculated based on the number of instances of the Other Amount class.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>otherPayerAmountRecognized :  <xref href="../t_FHIMDatatypesMonetaryAmount.dita" >MonetaryAmount</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Total amount recognized by the processor of any payment from another source.&quot; - NCPDP Telecommunication (Field 566-J5, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>patientPayAmount :  <xref href="../t_FHIMDatatypesMonetaryAmount.dita" >MonetaryAmount</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Amount that is calculated by the processor and returned to the pharmacy as the TOTAL amount to be paid by the patient to the pharmacy; the patient&#8217;s total cost share, including copayments, amounts applied to deductible, over maximum amounts, penalties, etc.&quot; - NCPDP Telecommunication (Field 505-F5, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>patientSalesTaxAmount :  <xref href="../t_FHIMDatatypesMonetaryAmount.dita" >MonetaryAmount</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Patient sales tax responsibility. This field is not a component of the Patient Pay Amount formula.&quot; - NCPDP Telecommunication (Field 575-EQ, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>percentageSalesTaxAmount :  <xref href="../t_FHIMDatatypesMonetaryAmount.dita" >MonetaryAmount</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Amount of percentage sales tax paid which is included in the Total Amount Paid&quot; - NCPDP Telecommunication (Field 559-AX, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>percentageSalesTaxBasis :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Code indicating the percentage sales tax paid basis.&quot; - NCPDP Telecommunication (Field 561-AZ, Data Dictionary 201104).  Possible values include: Ingredient Cost; Ingredient Cost plus Dispensing Fee; Not Specified.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>percentageSalesTaxRate :  <xref href="../t_FHIMDatatypesReal.dita" >Real</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Percentage sales tax rate used to calculate Percentage Sales Tax Amount Paid&quot; - NCPDP Telecommunication (Field 560-AY, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>planSalesTaxAmount :  <xref href="../t_FHIMDatatypesMonetaryAmount.dita" >MonetaryAmount</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Plan sales tax responsibility. This field is not a component of the Patient Pay Amount formula.&quot; - NCPDP Telecommunication (Field 574-2Y, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>professionalServiceFee :  <xref href="../t_FHIMDatatypesMonetaryAmount.dita" >MonetaryAmount</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Amount representing the contractually agreed upon fee for professional services rendered.  This amount is included in the Total Amount Paid.&quot; - NCPDP Telecommunication (Field 562-J1, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>remainingBenefitAmount :  <xref href="../t_FHIMDatatypesMonetaryAmount.dita" >MonetaryAmount</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Amount remaining in a patient/family plan with a periodic maximum benefit.&quot; - NCPDP Telecommunication (Field 514-FE, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>remainingDeductibleAmount :  <xref href="../t_FHIMDatatypesMonetaryAmount.dita" >MonetaryAmount</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Amount not met by the patient/family in the deductible plan.&quot; - NCPDP Telecommunication (Field 513-FD, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>spendingAccountAmountRemaining :  <xref href="../t_FHIMDatatypesMonetaryAmount.dita" >MonetaryAmount</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The balance from the patient&#8217;s spending account after this transaction was applied.&quot; - NCPDP Telecommunication (Field 128-UC, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>taxExemptCategory :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Code indicating the payer and/or the patient is exempt from taxes.&quot; - NCPDP Telecommunication (Field 557-AV, Data Dictionary 201104).  Possible values include: Payer/Plan is Tax Exempt; Patient is Tax Exempt; Payer/Plan and Patient are Tax Exempt.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>benefitStage : <xref href="../t_FHIMEnrollEligCOBBenefitStage.dita" >BenefitStage</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to a record of the number and dollar amount of payments made in each Medicare Part D stage.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>otherAmount : <xref href="../t_FHIMEnrollEligCOBOtherAmount.dita" >OtherAmount</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to a set of additional costs associated with a dispensed prescription or service that were reimbursed.  Examples of such costs include shipping, compound preparation, incentives, and taxes.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

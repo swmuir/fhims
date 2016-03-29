@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMSecurityAndPrivacyAtomicSecurityPolicyAbstract" xml:lang="en-us">
+<title id="title">AtomicSecurityPolicy(Abstract)</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	AtomicSecurityPolicy(Abstract) is a kind of <xref href="../t_FHIMSecurityAndPrivacyAtomicPolicyAbstract.dita">AtomicPolicy(Abstract)</xref>	
+</section>
+
+
+
+<section id="specializations"  audience="developer, modeler">
+	<title>Derivations</title>
+	<ul>
+<li><xref href="../t_FHIMSecurityAndPrivacyPrivacyMarkPolicy.dita">PrivacyMarkPolicy </xref> is a kind of  AtomicSecurityPolicy(Abstract) </li>
+<li><xref href="../t_FHIMSecurityAndPrivacyPurposeOfUsePolicy.dita">PurposeOfUsePolicy </xref> is a kind of  AtomicSecurityPolicy(Abstract) </li>
+<li><xref href="../t_FHIMSecurityAndPrivacyObligationPolicy.dita">ObligationPolicy </xref> is a kind of  AtomicSecurityPolicy(Abstract) </li>
+<li><xref href="../t_FHIMSecurityAndPrivacySecurityLabelingPolicy.dita">SecurityLabelingPolicy </xref> is a kind of  AtomicSecurityPolicy(Abstract) </li>
+<li><xref href="../t_FHIMSecurityAndPrivacyRefrainPolicy.dita">RefrainPolicy </xref> is a kind of  AtomicSecurityPolicy(Abstract) </li>
+<li><xref href="../t_FHIMSecurityAndPrivacyDelegationPolicy.dita">DelegationPolicy </xref> is a kind of  AtomicSecurityPolicy(Abstract) </li>
+<li><xref href="../t_FHIMSecurityAndPrivacyAuthorizationPolicy.dita">AuthorizationPolicy </xref> is a kind of  AtomicSecurityPolicy(Abstract) </li>
+	</ul>
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>+(renamed from BasicPolicy 11/2014 as part of high-level refactoring)</p><p></p><p>This is the base class for a variety of policy types. It extends the abstract Policy class and provides additional attributes. This class may be used to instantiate specific policies. ISO-22600 specifies a security policy as &apos;plan or course of action adopted for providing computer security&apos;. BasicPolicy a specialization of the abstract Policy class and thus inherits all its attributes. It also defines additional attributes and associations:</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+
+ <strow>
+  <stentry><p>informationReference : <xref href="../t_FHIMSecurityAndPrivacyInformationTarget.dita" >InformationTarget</xref> (0..*)</p></stentry>
+  <stentry><p>				This association references the attributes of the information referenced in the policy. 
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>operationType (delete??) : <xref href="../t_FHIMSecurityAndPrivacyPrivacyOperation.dita" >PrivacyOperation</xref> (0..*)</p></stentry>
+  <stentry><p>				This association refers to the operation associated with the policy.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

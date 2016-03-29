@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMPersonLanguageCapability" xml:lang="en-us">
+<title id="title">LanguageCapability</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>The language communication capabilities for a Person.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>isPreferred :  Boolean (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Specifies whether or not the language is preferred by the person for the associated method of expression.</p><p>&quot;Indicates whether or not the Patient prefers this language (over other languages he masters up a certain level).&quot; - HL7 FHIR, Patient.communication.preferred.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>language :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				A language for which the Person has some level of proficiency for written or spoken communication.</p><p>&quot;The patient&apos;s primary language.  HL7 recommends using ISO table 639&quot; - HL7 Version 2.8, PID-15.</p><p>&quot;The next of kin/associated party&apos;s primary speaking language.&quot; - HL7 Version 2.8, NK1-20.</p><p>&quot;The ISO-639-1 alpha 2 code in lower case for the language, optionally followed by a hyphen and the ISO-3166-1 alpha 2 code for the region in upper case. E.g. &quot;en&quot; for English, or &quot;en-US&quot; for American English versus &quot;en-EN&quot; for England English.&quot; - HL7 FHIR, Patient.communication.language.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>methodOfExpression :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+<p>See <xref href="../t_fhimvocabPersonVocabLanguageAbilityModeValueSet.dita">LanguageAbilityMode Value Set</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				The means by which the person is capable of communicating in the language.  Examples of method of expression would be written and spoken.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>proficiencyLevel :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+<p>See <xref href="../t_fhimvocabPersonVocabHL7_LanguageAbilityProficiency.dita">HL7_LanguageAbilityProficiency</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				&quot;A value representing the level of proficiency in a language.&quot; - HL7 V3.
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMEnrollEligCOBPriorAuthorization" xml:lang="en-us">
+<title id="title">PriorAuthorization</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>Prior authorization is a requirement that a prescribing physician obtain approval from the patient&apos;s health plan to prescribe a specific medication. Without this prior approval, the patient&apos;s health plan may not provide coverage, or pay for, the medication.  This class contains information concerning a prior authorization already issued by a payer so that (among other reasons) the pharmacy would be aware of the prior authorization and may cite the prior authorization details to the payer on a claim in order to ensure that the payer recognizes the claim as authorized and therefore improves the chances of payment.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>category :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Code clarifying the Prior Authorization Number Submitted or benefit/plan exemption.&quot; - NCPDP Telecommunication (Field 461-EU, Data Dictionary 201104).  Possible values include: Prior Authorization; Medical Certification; Early Periodic Screening Diagnosis Treatment; Exemption from Copay and/or Coinsurance; Exemption from RX; Family Planning Indicator; Temporary Assistance for Needy Families; Payer Defined Exemption; Emergency Preparedness; Not Specified.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateProcessed :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This is the date that the Processor issued or processed the prior authorization.  Provided by the Processor to the Pharmacy.</p><p>&quot;Date the prior authorization was processed&quot; - NCPDP Telecommunication (Field 498-PR, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>effectiveDateRange :  <xref href="../t_FHIMDatatypesTimeInterval.dita" >TimeInterval</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The time period during which medication which would ordinarily not be covered by the payer may be dispensed under the understanding that the payer will pay for the medication as per the pre-authorization.</p><p>&quot;Date the prior authorization became effective&quot; and &quot;Date the prior authorization ends&quot; - NCPDP Telecommunication (Fields 498-PS and 498-PT, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>id :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Identifies the pre-authorization.  This Id is assigned by the Processor.</p><p>&quot;Unique number identifying the prior authorization asigned by the processor&quot; - NCPDP Telecommunication (Field 498-PY, Data Dictionary 201104).</p><p>&quot;Number submitted by the provider to identify the prior authorization.&quot; - NCPDP Telecommunication (Field 462-EV, Data Dictionary 201104).</p><p>&quot;Based on the type of insurance, some coverage plans require that an authorization number or code be obtained prior to all non-emergency admissions, and within 48 hours of an emergency admission.  Insurance billing would not be permitted without this number.  The date and source of authorization are the components of this field.&quot; - HL7 Version 2.8, IN1-14.</p><p>&quot;Contains the number assigned by the certification agency.&quot; - HL7 Version 2.8, IN3-2.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>maximumQuantity :  <xref href="../t_FHIMDatatypesQuantity.dita" >Quantity</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The quantity of medication which would ordinarily not be covered by the payer that may be dispensed under the understanding that the payer will pay for the medication as per the pre-authorization.</p><p>&quot;Amount authorized expressed in decimal units.&quot; - NCPDP Telecommunication (Field 498-RA, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>moneyAuthorized :  <xref href="../t_FHIMDatatypesMonetaryAmount.dita" >MonetaryAmount</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The dollar amount authorized for the dispensing of a medication that otherwise would not have been covered by the Payer.</p><p>&quot;Amount authorized in the prior authorization.&quot; - NCPDP Telecommunication (Field 498-RB, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>nbrOfRefillsAuthorized :  <xref href="../t_FHIMDatatypesReal.dita" >Real</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Number of refills authorized by the prior authorization.&quot; - NCPDP Telecommunication (Field 498-PW, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>quantityAccumulated :  <xref href="../t_FHIMDatatypesQuantity.dita" >Quantity</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The amount of medication previously dispensed and paid for under this authorization.  Used to determine the quantity remaining for billing under this authorization.</p><p>&quot;Accumulated authorized amount expressed in metric decimal units.&quot; - NCPDP Telecommunication (Field 498-PX, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>status :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The status of the prescription&#8217;s prior authorization as known by the sender.&quot; - NCPDP Script (Field 7891, Data Dictionary 201104)
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>orderablePharmacyItem : <xref href="../t_FHIMCommonCommonProductOrderablePharmacyItem.dita" >OrderablePharmacyItem</xref> (0..1)</p></stentry>
+  <stentry><p>				Pointer to the medicinal product that is the subject of the pre-authorization request.  Note that this property may seem redundant as the Pharmacy Order contains an ordered item and points to the Prior Authorization class that owns this property.  It is not redundant, however, as the pre-authorization may have occurred before the order occurs, and may be for a (slightly) different orderable medication, for example, the prior authorization may have been for a brand name drug, but a generic version is ordered.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

@@ -1,0 +1,331 @@
+
+<html xmlns:Standard="http://www.eclipse.org/uml2/schemas/Standard/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:fhim="http:///schemas/fhim/_bbjuwA3cEeSGTazHdUQojA/5" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:term="http://www.openhealthtools.org/mdht/schemas/term/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:xmi="http://www.omg.org/XMI" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.3/Umlnotation" xmlns:Default="http:///schemas/Default/_fNm3AAqoEd6-N_NOT9vsCA/2" xmlns:CDA="http://www.openhealthtools.org/mdht/schemas/cda/4" xmlns:Default_1="http:///schemas/Default/1" xmlns:RIM="http:///schemas/RIM/_fvnwgAH4Ed6VH-9W1IVKXA/4" xmlns:SketchNotation="http://www.ibm.com/ccl/soa/sketch/notation/1.0.0/">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>VitalSigns Domain</title>
+   </head>
+   <body style="font-family:Courier;font-size:14px">
+      <h1>VitalSigns Domain</h1>
+      <p> The purpose of this review is to identify the data elements required for the
+         interoperable exchange for the VitalSigns domain including dependencies. A column is
+         provided at the far right of the table for you to enter comments related to each
+         data element. If the class or domain is missing data elements, please add a row
+         at the bottom of the sheet and specify a name, description, and type of data
+         (e.g. numeric, string, date/time, code). 
+      </p>
+      <p> Once you have reviewed the data elements, please review the value sets
+         associated with the coded data elements. Please provide feedback by adding
+         comments in the column provided at the right of item/row or by adding rows at
+         the bottom table. For any new coded concepts without a valid code yet, our team
+         will propose them for addition in the source coding system. 
+      </p>
+      <ul>
+         <li><a href=""> <i><b>VitalSigns</b> </i> Domain </a></li>
+       </ul>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font-family:Courier">
+         <tr bgcolor="#98FB98" style="font-size:18px" align="left">
+            <td colspan="1"><b><a id=""> 'VitalSigns' Domain
+                     </a></b></td>
+            <td colspan="4" style="font-size:12px">Note that the Information Source hierarchy is in the Common domain, and is not shown here.</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+      </table>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font-family:Courier">
+         <tr>
+            <th width="20%">Element Name</th>
+            <th width="20%">Element Description</th>
+            <th width="15%">Format/Type</th>
+            <th width="15%">Value Set Name</th>
+            <th width="15%">Optionality/<br>Repetition
+            </th>
+            <th width="15%">Reviewer's Comments</th>
+         </tr>
+ 
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>PatientPositionQualifier</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>Certain disease states can be detected by observing differences in heart rate, blood pressure, or respiration when the patient&#8217;s body is in different positions (e.g., sitting, standing, etc.).  It therefore may be necessary to record the patient&#8217;s body position when recording the primary observation.  This class records an observation of the patient&#8217;s body position during the time the heart rate, blood pressure, or respiration rate was observed.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PatientPositionQualifier.<b>observedCharacteristic</b></div>
+            </td>
+            <td><p>This property defines what was observed that &#8220;qualifies&#8221; the primary, or &#8220;owning&#8221; Observation.  This property defines what was observed by citing a value from a nationally recognized coding system.  In this case, the value will hard-coded to SNOMED 9851009, which is patient position.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PatientPositionQualifier.<b>value</b></div>
+            </td>
+            <td><p>This property contains the result, or value of the qualifying Observation.  In the generic Observation Qualifier class, the data type for this property can be anything.  In this sub-type, the value is constrained to be one of a set of codes from the SNOMED-CT coding system that represent patient positions that are valid for a Heart rate, Blood pressure, or Respiration rate measurement.</p></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#Patient Measurement Body Position Value Set">Patient Measurement Body Position Value Set</a> 
+					
+					 
+</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>PatientStateExertionQualifier</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>Heart Rate, Blood Pressure, Respiration, and Blood Oxygen levels naturally vary depending on whether the patient is at rest, or during or shortly after exercise.  This class records an observation of whether the patient was at rest, exercising, or recently had been exercising at the time of the measurement.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PatientStateExertionQualifier.<b>observedCharacteristic</b></div>
+            </td>
+            <td><p>This property defines what was observed that &#8220;qualifies&#8221; the primary, or &#8220;owning&#8221; Observation.  This property defines what was observed by citing a value from a nationally recognized coding system.  In this case, the value to be hard-coded for Patient Exertion has yet to be determined.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PatientStateExertionQualifier.<b>value</b></div>
+            </td>
+            <td><p>This property contains the result, or value of the qualifying Observation.  In the generic Observation Qualifier class, the data type for this property can be anything.  In this sub-type, the value is constrained to be one of a set of codes from the SNOMED-CT coding system that indicates whether the patient was resting, exercising, or recently had been exercising.</p></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#Patient Measurement Exertion Phase Value Set">Patient Measurement Exertion Phase Value Set</a> 
+					
+					 
+</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>VitalSignsObservationList</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class contains a collection of clinical Observations traditionally called &#8220;Vital Signs&#8221; because they are measurements of the body&#8217;s basic functions.  The absence of a pulse, respiration, or blood pressure are indications that the patient is dead, hence the term &#8220;vital&#8221; in the name.  Traditionally, there are four vital signs: Heart rate or pulse; Respiration rate, Blood pressure, and Body temperature.  Body height and Body weight are also often included among vital signs because these measurements are often used (in conjunction with other observations) to provide a gross indication of potential health concerns.  The FHIM includes a seventh vital sign, Blood oxygen saturation, as the human body requires a specific balance of oxygen in the blood below which organ function may be compromised.</p><p></p><p>Another reason why vital signs are treated separately from other observations is that historically, vital signs have been located in a particular location in a paper medical record.</p><p></p><p>Individual organizations or medical specialties will often include other common clinical observation under the heading of &#8220;vital signs&#8221;, such as a Pain scale or Head circumference (for newborns).  The FHIM treats these measurements as simply other kinds of clinical observations.  Again, there is no difference between a vital sign observation and a non-vital sign observation, other than vital signs are a named set of observations.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">VitalSignsObservationList.<b>observation</b></div>
+            </td>
+            <td><p>Pointer to a set (of zero to many) of Clinical Observations which are of a type considered to be a &quot;vital sign&quot;.  Although the structure does allow for the observations to be from multiple patients, this set will almost always be for a single patient.</p></td>
+            <td valign="top"> <b>Observation</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+  </table>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font">
+         <tr>
+            <th>Value Set Constraint</th>
+            <th>Element Description</th>
+         </tr>
+       
+
+
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID="Patient Measurement Body Position Value Set">Patient Measurement Body Position Value Set</a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">  Patient Measurement Body Position Value Set   <br/> <p>This property contains the result, or value of the qualifying Observation.  In the generic Observation Qualifier class, the data type for this property can be anything.  In this sub-type, the value is constrained to be one of a set of codes from the SNOMED-CT coding system that represent patient positions that are valid for a Heart rate, Blood pressure, or Respiration rate measurement.</p><br> TBD
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>26527006 (Inverse Trendelenburg)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>102538003 (Lying)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>102536004 (Lying on left side)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>102535000 (Lying on right side)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>33586001 (Seated)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>10904000 (Standing)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>40199007 (Supine)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>414585002 (Supine with left lateral tilt)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>30212006 (Supine, head raised)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>34106002 (Trendelenburg)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>1240000 (Prone)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+ 
+
+
+       
+		
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID="Patient Measurement Exertion Phase Value Set">Patient Measurement Exertion Phase Value Set</a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">  Patient Measurement Exertion Phase Value Set   <br/> <p>This property contains the result, or value of the qualifying Observation.  In the generic Observation Qualifier class, the data type for this property can be anything.  In this sub-type, the value is constrained to be one of a set of codes from the SNOMED-CT coding system that indicates whether the patient was resting, exercising, or recently had been exercising.</p><br> TBD
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>255214003 (After Exercise)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>263678003 (At Rest)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>309604004 (During Exercise)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+ 
+
+
+       
+		
+
+
+</table>
+

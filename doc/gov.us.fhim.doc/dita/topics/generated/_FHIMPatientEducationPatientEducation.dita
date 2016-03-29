@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMPatientEducationPatientEducation" xml:lang="en-us">
+<title id="title">PatientEducation</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	PatientEducation is a kind of <xref href="../t_FHIMCommonClinicalInformationAbstract.dita">ClinicalInformation(Abstract)</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class captures information about counselling or education provided to the Patient or to the Patient&apos;s representative and provides a means to note how well the Patient understood the information provided.  Patient Education may be in the form of written instructions &#8211; either pre-defined materials, or personalized instructions &#8211; as well as oral counseling.  In the case of pre-defined written materials, the predefinedMaterial property may be used to identify the kind of material provided rather than reproducing the text of that material in this class.  When personalized written instructions are provided, the text of such instructions can be placed in the textProvided property.  The textProvided property may also be used to store a summary of an oral conversation with the Patient.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>comment :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Comment related to the patient&apos;s education.     
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>duration :  <xref href="../t_FHIMDatatypesTimeInterval.dita" >TimeInterval</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The period of time in which the education ocurred.  Note that this property is a TimeInterval, which contains both a begin and end date/time.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>educationTopic :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This property categorizes the subject or topic that was discussed with the Patient.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>predefinedMaterial :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..*)</p> 
+
+
+</stentry>
+  <stentry><p>				This property identifies any pre-defined written materials provided to the Patient.  In many cases, Patient Education is accomplished by the provision of standardized materials produced based on the Patient&apos;s condition or based on a Procedure that the Patient has undergone.  For example, there is a standardized Discharge Instructions for Diverticulitis.  Use this property to identify any pre-printed materials provided to the patient.  Use the textProvided property to identify any other personalized instructions.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>textProvided :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This property contains the contents of any written materials (usually personalized materials) provided to the Patient.  This property may also be used to summarize an oral communication with the Patient.  Note that the identification of pre-defined materials should be accomplished using the predefinedMaterial property rather than reproducing the content of such materials here.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>levelOfUnderstanding : <xref href="../t_FHIMPatientEducationLevelOfUnderstanding.dita" >LevelOfUnderstanding</xref> (0..1)</p></stentry>
+  <stentry><p>				Impression of how well the patient understood the education or counseling received.      
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>location : <xref href="../t_FHIMProviderServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (0..1)</p></stentry>
+  <stentry><p>				The location at which the patient education or counseling was provided.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>patient : <xref href="../t_FHIMPersonPatient.dita" >Patient</xref> (1..1)</p></stentry>
+  <stentry><p>				The person to whom the education or counseling was provided.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>performer : <xref href="../t_FHIMCommonPrimaryPerformer.dita" >PrimaryPerformer</xref> (0..*)</p></stentry>
+  <stentry><p>				Identifies the clinician who provided the patient education.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>service : <xref href="../t_FHIMProviderServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (0..1)</p></stentry>
+  <stentry><p>				The service department at which the patient education or counseling was provided.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>visit : <xref href="../t_FHIMEncounterEncounterEvent.dita" >EncounterEvent</xref> (0..1)</p></stentry>
+  <stentry><p>				The visit during which the education or counseling was provided.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

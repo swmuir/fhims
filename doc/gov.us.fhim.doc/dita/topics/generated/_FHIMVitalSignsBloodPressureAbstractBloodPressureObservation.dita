@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMVitalSignsBloodPressureAbstractBloodPressureObservation" xml:lang="en-us">
+<title id="title">AbstractBloodPressureObservation</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	AbstractBloodPressureObservation is a kind of <xref href="../t_FHIMClinicalObservationObservation.dita">Observation</xref>	
+</section>
+
+
+
+<section id="specializations"  audience="developer, modeler">
+	<title>Derivations</title>
+	<ul>
+<li><xref href="../t_FHIMVitalSignsBloodPressureSystolicBloodPressureObservation.dita">SystolicBloodPressureObservation </xref> is a kind of  AbstractBloodPressureObservation </li>
+<li><xref href="../t_FHIMVitalSignsBloodPressureBloodPressureObservation.dita">BloodPressureObservation </xref> is a kind of  AbstractBloodPressureObservation </li>
+<li><xref href="../t_FHIMVitalSignsBloodPressureDiastolicBloodPressureObservation.dita">DiastolicBloodPressureObservation </xref> is a kind of  AbstractBloodPressureObservation </li>
+	</ul>
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>&quot;Blood pressure (BP) is the pressure exerted by circulating blood upon the walls of blood vessels and is one of the principal vital signs. When used without further specification, &quot;blood pressure&quot; usually refers to the arterial pressure of the systemic circulation, usually measured at a person&apos;s upper arm. A person&#8217;s blood pressure is usually expressed in terms of the systolic (maximum) pressure over diastolic (minimum) pressure and is measured in millimeters of mercury (mm Hg). &#8230; Blood pressure varies depending on situation, activity, and disease states, and is regulated by the nervous and endocrine systems. &#8230; Chronic hypertension is a risk factor for many diseases, including kidney failure, heart attack, and stroke.&quot; &#8211; Wikipedia.</p><p></p><p>Blood pressure is typically expressed in terms of the systolic pressure over diastolic pressure as if this were a single observation, yet in fact these are two separate observations taken moments apart.  In some situations only one of these two are needed and recorded, and some medical devices record only one (either the diastolic or the systolic).  Therefore, this abstract class defines those properties that are common to individual systolic and diastolic observations as well as the classic &#8220;blood pressure&#8221; observation that contains both systolic and diastolic values as if it were one observation.  This class defines the bodySite and method that may be needed in order to interpret the observation, as well as pointers to the four qualifier observations that may affect the interpretation.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>bodySite :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+<p>See <xref href="../t_fhimvocabVitalSignsVocabBloodPressureMeasurementSite.dita">BloodPressureMeasurementSite</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				Certain disease states may cause a person&#8217;s blood pressure to be different in different parts of the body. It is therefore often important to know where on the body the blood pressure was measured, especially when comparing to other blood pressure measurements.</p><p></p><p>This property contains the code that specifies the anatomical site or system that is the focus of the Observation.  In the generic clinical Observation class, this code is not &#8220;bound&#8221; to a particular value set.  In this class, the property is re-defined to a set of values that are appropriate to Blood Pressure measurements.  These values come from the SNOMED-CT coding system.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>observationMethod :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+<p>See <xref href="../t_fhimvocabVitalSignsVocabBloodPressureMeasurementMethod.dita">BloodPressureMeasurementMethod</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				This property contains a code that specifies additional detail about the means or technique used to ascertain the Observation.  In the generic clinical Observation class, this code is not &#8220;bound&#8221; to a particular value set.  In this class, the property is re-defined to a set of values that are appropriate to heart rate measurements.  These values come from the SNOMED-CT coding system.
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

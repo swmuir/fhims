@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMAdverseEventReportingProductRole" xml:lang="en-us">
+<title id="title">ProductRole</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class provides information on the medical product(s) (i.e., medical device or drug) that is either suspected to have caused an adverse event, or that was in use at the time of the adverse event and which may or may not have contributed to the event.  Note that this class is used to navigate from the Case Safety Report to observations about the drug or device, which in turn point to the drug and device classes.</p><p>&quot;The characterisation of the drug role as provided by the primary reporter or, if this information is missing, by the sender. All spontaneous reports should have at least one suspect drug....&quot;  - ICH E2B(R3), G.k.1.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>actionTaken :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				If the product in question is a drug, this property describes what changes were made to the drug administration as a result of the adverse event.  This property is not used when the product is a device.</p><p>&quot;The action taken with the drug as a result of the reaction(s) / event(s). The value Drug withdrawn, taken together with the Outcome of Reaction /Event at the Time of Last Observation (E.i.7), describe the dechallenge. Not applicable should be used in circumstances such as when the patient has died or the treatment had been completed prior to reaction(s) /event(s) or the Characterisation of Drug Role (G.k.1) is Drug Not Administered. When Not applicable is used, details should be captured in Section H.&quot;  - ICH E2B(R3), G.k.8.  Possible values include: Drug withdrawn; Dose reduced; Dose increased; Dose not changed; Unknown; Not applicable.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>additionalInformationCoded :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Any additional information pertinent to the case that is not covered by the sections above.&quot; - ICH E2B(R3), G.k.10.r.  Possible values include: Counterfeit; Overdose; Drug taken by the father; Drug taken beyond expiry date; Batch and lot tested and found within specifications; Batch and lot tested and found not within specifications; Medication error; Misuse; Abuse; Occupational exposure; Off label use.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>additionalInformationText :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Any additional drug information in free text format not described in G.k.10.r. For example, expiry date for the lot number described in G.k.4.r.7 would be captured in this data element.&quot; - ICH E2B(R3), G.k.11.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>countryWhereObtained :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..0)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The country where the medicinal was obtained.&quot;  - ICH E2B(R3), G.k.2.4</p><p>Note that this property is included for compatibility to the ICH and the ICSR, but does not appear to be currently needed by U.S. Federal agencies, therefore, the cardinality of this property has been set to zero.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>cumulativeDose :  <xref href="../t_FHIMDatatypesQuantity.dita" >Quantity</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The cumulative dose administered until the onset of the first sign, symptom or reaction/event.&quot;  - ICH E2B(R3), G.k.5a and G.k.5b.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateReturnedToMfr :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				If the product was returned to manufacturer, this property will contain the date it was returned.</p><p>MedWatch 3500 form question C.1.</p><p>MedWatch 3500A form question D.10.</p><p>(note that the MedWatch 3500B and the VAERS-1 forms do not have this element).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>gestationalAgeAtExposure :  <xref href="../t_FHIMDatatypesTimeQuantity.dita" >TimeQuantity</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The gestational age at the time of the earliest exposure.&quot;  - ICH E2B(R3), G.k.6a and G.k.6b.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>indication :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..*)</p> 
+
+
+</stentry>
+  <stentry><p>				Identifies what the medication was intended to treat (i.e., diagnosis).</p><p></p><p>&quot;The indication of the medicinal product.&quot;  - ICH E2B(R3), G.k.7.r.2a and G.k.7.r.2b.</p><p></p><p>Medwatch 3500 form question D.4; Medwatch 3500A form question C.4; Medwatch 3500B form question B.12.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>indicationText :  String (0..*)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The original reporter&apos;s words and / or short phrases used to describe the indication for drug use in an English translation for international transmission.&quot;  - ICH E2B(R3), G.k.7.r.1.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>isAvailableForEvaluation :  <xref href="../t_FHIMAdverseEventReportingenumProductAvailabiltiy.dita" >enumProductAvailabiltiy</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Is the product available for evaluation by the FDA?  Possible answers are: Yes; No; Returned to manufacturer.  If Returned to Manufacturer is selected, the date returned to manufacturer should be valued.</p><p>MedWatch 3500 form question C.1.</p><p>MedWatch 3500A form question D.10.</p><p>MedWatch 3500B form question B.15 (note that the 3500B only has yes or no).</p><p>(note that the VAERS-1 form does not have this element).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>isBlinded :  Boolean (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;This data element is applicable only to ICSRs from clinical trials. The ICH E2A guideline recommends that the case safety reports with blinded therapy should not be reported. However, if it is important to exchange a blinded case safety report during a clinical trial, this data element should be used as follows: until the investigational product is un-blinded, the status Blinded should be indicated by using True in this data element. When this data element is True, Section G.k.2 Drug Identification should be populated with the characteristics of the investigational product. When more than one investigational product is potentially suspect, each suspect product should be represented in separate G.k blocks. After un-blinding, if appropriate, Placebo should be reported in G.k.2.3.r as a suspect drug.&quot;  - ICH E2B(R3), G.k.2.5
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>productNameReported :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The name of the medicinal product as used by the reporter. It is recognized that a single product can have different proprietary names in different countries, even when it is produced by a single manufacturer.&quot;  - ICH E2B(R3), G.k.2.2.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>productRole :  <xref href="../t_FHIMAdverseEventReportingenumProductRole.dita" >enumProductRole</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The characterisation of the drug role as provided by the primary reporter or, if this information is missing, by the sender. All spontaneous reports should have at least one suspect drug.... If the reporter indicates a suspected interaction with other drug(s), Interacting should be selected for all suspected interacting drug(s). If an interaction is suspected with food or other non-drug compounds, Interacting should be selected for the suspect drug. For evaluation purposes, all interacting drugs are considered to be suspect drugs....  Drug not administered can be used in two circumstances: In clinical trial: if the adverse event occurred after the informed consent was signed but prior to the administration of the study drug (e.g. during the screening period or the washout procedure), the adverse event should in general be reported as per the trial procedure....  Medication error: if the patient did not receive the actual prescribed drug but another one, repeatable Sections G should be completed with the information about the prescribed drug (including the fact that it was not administered), as well as the information on the dispensed drug as the Suspect drug....&quot;  - ICH E2B(R3), G.k.1.  Possible values include: Suspect; Concomitant; Interacting; Drug Not Administered.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>deviceObservation : <xref href="../t_FHIMAdverseEventReportingDeviceObservation.dita" >DeviceObservation</xref> (0..1)</p></stentry>
+  <stentry><p>				Pointer to any medical devices (whether suspect or concommittant) used by the subject near the time of the adverse event occurred.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>drugObservation : <xref href="../t_FHIMAdverseEventReportingDrugObservation.dita" >DrugObservation</xref> (0..1)</p></stentry>
+  <stentry><p>				Pointer to any medicinal products (whether suspect or concommittant) given to or taken by the subject near the time of the adverse event occurred.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>productEventRelationship : <xref href="../t_FHIMAdverseEventReportingProductEventRelationship.dita" >ProductEventRelationship</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to a structures that link a reaction or adverse event with the various medical products (medical devices and/or drugs) that were being used by the patient, and provides an assessment of whether the reaction / adverse event may have been caused by or exacerbated by the product.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

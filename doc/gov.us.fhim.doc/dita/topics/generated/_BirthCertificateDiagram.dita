@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="BirthCertificate" xml:lang="en-us">
+<title id="title">BirthCertificate</title>
+<shortdesc id="shortdesc">Class Diagram</shortdesc>
+<body id="body" >
+<p>The Birth Certificate Diagram shows those classes involved in describing a Person&apos;s Birth Certificate.  The &quot;focal class&quot; is the Person class, which has zero-to-many association to the BirthCertificate class.  The BirthCertificate class is modeled as an Act, as we are focusing on the act of reporting a live birth, not so much on the record itself.  The properties of the class are all sourced from the U.S. Standard Certificate of Live Birth, Revision 11/2003, and the definitions of each property contain a reference to which field in the form that the property represents.  In cases where a block on the form allows multiple-choice response, we elected to model these as separate Observations with an association to each of them, as opposed to having a single repeatable property (i.e., having a cardinality of zero-to-many) on Birth Certificate class, in keeping with the FHIM modeling style guide.  The Mother and Father classes contain information about the infant&apos;s mother and father, and are modeled as Roles that might be played by other Person instances.  While this is logically the case, implementers may choose not to instantiate separate records for the mother and father, and store the mother&apos;s and/or father&apos;s information as part of the Birth Certificate.</p>
+<p><image href="../../diagrams/Class/BirthCertificate.jpg" height="10in" width="7in" /></p>
+</body>
+</topic>

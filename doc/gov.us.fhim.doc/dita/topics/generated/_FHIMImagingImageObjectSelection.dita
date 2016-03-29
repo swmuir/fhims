@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMImagingImageObjectSelection" xml:lang="en-us">
+<title id="title">ImageObjectSelection</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	ImageObjectSelection is a kind of <xref href="../t_FHIMCommonClinicalInformationAbstract.dita">ClinicalInformation(Abstract)</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>&quot;A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances). The referenced SOP Instances (images or other content) are for a single patient, and may be from one or more studies. The referenced SOP Instances have been selected for a purpose, such as quality assurance, conference, or consult. Reflecting that range of purposes, typical ImagingObjectSelection resources may include all SOP Instances in a study (perhaps for sharing through a Health Information Exchange); key images from multiple studies (for reference by a referring or treating physician); a multi-frame ultrasound instance (&quot;cine&quot; video clip) and a set of measurements taken from that instance (for inclusion in a teaching file); and so on.&quot; - HL7 FHIR, ImagingObjectSelection</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>description :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Text description of the DICOM SOP instances selected in the ImagingObjectSelection. This should be aligned with the content of the title element, and can provide further explanation of the SOP instances in the selection.&quot; - HL7 FHIR, ImagingObjectSelection.description
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>kosTitle :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+<p>See <xref href="../t_fhimvocabImagingVocabKOSTitle.dita">KOSTitle</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				&quot;The reason for, or significance of, the selection of objects referenced in the resource.&quot; - HL7 FHIR, ImagingObjectSelection.title
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>patient : <xref href="../t_FHIMPersonPatient.dita" >Patient</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to the Person(s) (playing the role of Patient) whose images are included in the set of selected objects.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>study : <xref href="../t_FHIMImagingStudy.dita" >Study</xref> (0..*)</p></stentry>
+  <stentry><p>				&quot;Study identity and locating information of the DICOM SOP instances in the selection.&quot; - HL7 FHIR, ImagingObjectSelection.study.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

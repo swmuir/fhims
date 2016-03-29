@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMWomensHealthWomensHealthProcedure" xml:lang="en-us">
+<title id="title">WomensHealthProcedure</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class captures information about the procedures a patient has undergone and will undergo in future.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>accessionId :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Accession number of the procedure associated with this patient&apos;s notification. (composed of the procedure&apos;s abbreviated code, a four digit year and a sequential number).     
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>datePerformed :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The date on which the procedure was performed. Dates in the future may not be entered.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateRequired :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The date used to determine that this procedure record is delinquent when a closed status has not been entered in the record.     
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>status :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Contains the status of the procedure record.   
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>performer : <xref href="../t_FHIMCommonPrimaryPerformer.dita" >PrimaryPerformer</xref> (1..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>procedure : <xref href="../t_FHIMCommonProcedure.dita" >Procedure</xref> (1..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>procedureResult : <xref href="../t_FHIMWomensHealthWomensHealthProcedureResult.dita" >WomensHealthProcedureResult</xref> (0..1)</p></stentry>
+  <stentry><p>				Indicates the procedure result after the procedure is done to a patient.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>relatedProcedure : <xref href="../t_FHIMWomensHealthRelatedProcedure.dita" >RelatedProcedure</xref> (0..*)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>treatmentFacility : <xref href="../t_FHIMProviderServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (1..1)</p></stentry>
+  <stentry><p>				The name of the health care facility where this procedure was performed.  
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

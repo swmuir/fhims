@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMCommonRelatedClinicalInformation" xml:lang="en-us">
+<title id="title">RelatedClinicalInformation</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class links two Clinical Information records that are related to each other in some way.  This class is intended to only link two records of the same type together.  For example, to link an Order with another Order, or an Observation with another Observation.  Relationships between different kinds (i.e., different subtypes) should be modeled explicitly.</p><p></p><p>In general, there are two reasons why a Clinical Information record is related to another Clinical Information record: a) if one record is replacing another; or b) if one record has subordinate record(s) (often called a &#8220;parent/child&#8221; relationship).  The relatedInformationCategory property indicates how the referenced Clinical Information record is related to the &quot;owning&quot; Clinical Information record.  This construct allows the relationship to be traversed in either direction: for example, the &#8220;parent&#8221; record to point to the &#8220;children&#8221; records, or the &#8220;children&#8221; records could point to the &#8220;parent&#8221;, or both could be the case.  Thus the vocabulary for the relatedInformationCategory code will contain entries for either directionality, that is: &#8220;parent&#8221;, &#8220;child&#8221;, &#8220;replaces&#8221;, and &#8220;replaced by&#8221;.</p><p></p><p>For example, say that Order1 and Order2 are instances of Order, and that Order2 is replacing Order1.  Then: </p><p>a1) Order1. relatedClinicalInformation. relatedInformationCategory is set to (a code that means) &quot;replaced by&quot; and</p><p>a2) Order1. relatedClinicalInformation. clinicalInformation points to Order2, and/or</p><p>b1) Order2. relatedClinicalInformation. relatedInformationCategory is set to (a code that means) &quot;replaces&quot;, and</p><p>b2) Order2. relatedClinicalInformation. clinicalInformation points to Order1.</p><p></p><p>&quot;Relates a child to its parent when a parent child relationship exists.&quot; - HL7 Version 2, ORC-8.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>relatedInformationCategory :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This property indicates how the &quot;owning&quot; and &quot;target&quot; Clinical Information records are related to each other.  Possible values include: Replaces, Replaced By, Parent, Child, has Component, is Component of, has Member, is Member of, Derived from, ?, Sequel to, ?, Qualified by, Qualifies, Interfered by, Interfers with, etc.</p><p></p><p>&quot;A code specifying the kind of relationship that exists with the target observation.&quot; - HL7 FHIR, Observation.related.type.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>clinicalInformation : <xref href="../t_FHIMCommonClinicalInformationAbstract.dita" >ClinicalInformation(Abstract)</xref> (1..1)</p></stentry>
+  <stentry><p>				Pointer to another Clinical Information record (aka the target) to which the Clinical Information that points to this class (aka the &quot;owning&quot; record) is related in some manner.</p><p></p><p>&quot;A reference to the observation that is related to this observation.&quot; - HL7 FHIR, Observation.related.target.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

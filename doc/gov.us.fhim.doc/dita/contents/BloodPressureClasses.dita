@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN"
+ "topic.dtd">
+<topic id="topicId" xml:lang="en-us">
+	<title>BloodPressure Domain</title>
+	<body>	
+			<p>&#8220;Blood pressure (BP) is the pressure exerted by circulating blood upon the walls of blood vessels and is one of the principal vital signs. When used without further specification, &quot;blood pressure&quot; usually refers to the arterial pressure of the systemic circulation, usually measured at a person&apos;s upper arm. A person&#8217;s blood pressure is usually expressed in terms of the systolic (maximum) pressure over diastolic (minimum) pressure and is measured in millimeters of mercury (mm Hg). &#8230; Blood pressure varies depending on situation, activity, and disease states, and is regulated by the nervous and endocrine systems. &#8230; Chronic hypertension is a risk factor for many diseases, including kidney failure, heart attack, and stroke.&#8221; &#8211; Wikipedia.</p><p></p><p>This package represents the measurement (or &#8220;clinical observation&#8221;) of the patient&#8217;s Blood Pressure.  Blood pressure is typically expressed in terms of the systolic pressure over diastolic pressure as if this were a single observation, yet in fact these are two separate observations taken moments apart.  In some situations only one of these two are needed and recorded, and some medical devices record only one (either the diastolic or the systolic).  Therefore, this package describes the classic &#8220;blood pressure observation&#8221; as a set of one systolic and one diastolic observation, each of which can be stand-alone observations in their own right.  To avoid duplicating such qualifying information as body site and method when collecting a diastolic and systolic observation into a blood pressure observation, these three observation types are modeled as subtypes of an AbstractBloodPressureObservation, which contains properties common to all three types.  Thus from this model, one could instantiate a diastolic observation, a systolic observation, or a blood pressure observation with a systolic and diastolic value.</p><p></p><p>Blood pressure measurements can be affected by the device used, the patient&#8217;s body position, whether the patient was awake or asleep, etc.  This package contains four qualifier classes to carry this information.</p>
+
+
+
+
+ 
+	</body>
+</topic>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMDatatypesCode" xml:lang="en-us">
+<title id="title">Code</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+<section id="specializations"  audience="developer, modeler">
+	<title>Derivations</title>
+	<ul>
+<li><xref href="../t_FHIMDatatypesCodeWithValue.dita">CodeWithValue </xref> is a kind of  Code </li>
+	</ul>
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>&quot;A word, letter, number, or other symbol used in a code system to mark, represent, or identify something.&quot; - Dictionary.com.  This *abstract* data type represents a &quot;coded element&quot; - some label made up of a series of letters or numbers which can be referenced in a code system or value set.  A code must be unique within a given coding system, but may not be unique across coding systems.  For example, &quot;AU&quot; might mean &quot;Gold&quot; in a chemistry coding system, while it might mean &quot;Australia&quot; in a country coding system.  This is why this coded element class contains both the code and the coding system in which it is defined (one can think of a coding system as a namespace in some respects).</p><p>This class is abstract because each standard (which we are treating as &quot;platforms&quot; in a model-driven architecture sense) represents coded concepts differently.  Some standards, like HL7 v2 have multiple &quot;flavors&quot; of coded concepts.  When generating artifacts based on a particular standard, this data type will be substituted with a specific structure particular to the target standard.</p><p>Note that HL7 FHIR contains an additional element, &quot;primary&quot;, which is not in the FHIM.  Primary is used to signify which code in a collection of codes is the one that was chosen by the user (as opposed to translations of that code).</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>code :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This property is a unique identifier of or label for an entry in a coding system. </p><p>Note that this property will be replaced by some other concept or group of concepts when this abstract class is replaced by a specific class for a given target platform.</p><p>&quot;A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).&quot; - HL7 FHIR, Coding.code.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>displayText :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This property contains the &quot;display text&quot; or &quot;designation&quot;, which is the human-readable string representing the concept. </p><p>Note that this property will be replaced by some other concept or group of concepts when this abstract class is replaced by a specific class for a given target platform.</p><p>&quot;A representation of the meaning of the code in the system, following the rules of the system.&quot; - HL7 FHIR, Coding.display.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>nullFlavor :  <xref href="../t_FHIMDatatypesNullFlavor.dita" >NullFlavor</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This property indicates why the value property is empty.  It uses the NullFlavor enumeration.  This property must be valued when the value property is empty, and must be empty when the value property is valued.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>originalText :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The text as seen and/or selected by the user who entered the data which represents the intended meaning of the user.&quot; - HL7 V3
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>codeSystem : <xref href="../t_FHIMDatatypesCodeSystem.dita" >CodeSystem</xref> (1..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

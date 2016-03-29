@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMClinicalObservationInterpretationEvent" xml:lang="en-us">
+<title id="title">InterpretationEvent</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class represents an assessment of the value or result of the Clinical Observation or Laboratory Test.  For example, a blood pressure measurement of an adult at rest with a value of 147/94 mmHg would be considered abnormally high (i.e., falls within the definition of high blood pressure).  For chemistry tests, provides an indication of the result (usually automated), based upon &quot;normal&quot; values as indicated by the reference range.  Examples include High, Low, Critically High, Critically Low, etc.  For antibiotic sensitivity tests, provides an indication of the susceptibility of the identified organism to the test antibiotic.  Possible values include: Intermediate, Moderately Susceptible, Resistant, Susceptible.  In addition, Not Tested may occasionally used when an antibiotic that would commonly be tested was not for some reason.</p><p></p><p>&quot;One or more codes specifying a categorical assessment of the observation value, such as &quot;Normal&quot;, &quot;Abnormal&quot;, &quot;Positive&quot;, &quot;Negative&quot;, &quot;Resistant&quot;, &quot;Susceptible&quot;, etc....&quot; - HL7 Version 2.8, OBX-8.</p><p>&quot;The assessment made based on the result of the observation.&quot; - HL7 FHIR, Observation resource.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>interpretatationText :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Contains the clinician&apos;s assessment based on the observation.  This property is used for textual assessments as opposed to a coded interpretation.  This property is used more often for pathology observations where pathologist&apos;s interpretation may be several sentences long, as opposed to &quot;chemistry&quot; tests, which are often automated and which produce a coded interpretation.</p><p></p><p>When used with a &quot;Vital Sign&quot; Observation, this text is an abbreviated interpretation of the Vital Sign Observation, e.g., Normal, Abnormal, High, etc.  Required by the Public Health Reporting Initiative, 10/5/2012.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>interpretation :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+<p>See <xref href="../t_fhimvocabLabVocabObservationInterpretation.dita">Observation Interpretation</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				&quot;One or more codes specifying a categorical assessment of the observation value, such as &quot;Normal&quot;, &quot;Abnormal&quot;, &quot;Positive&quot;, &quot;Negative&quot;, &quot;Resistant&quot;, &quot;Susceptible&quot;, etc....&quot; - HL7 Version 2.8, OBX-8</p><p></p><p>For chemistry tests, provides an automated indication of the result, based upon &quot;normal&quot; values as indicated by the reference range.  Examples include High, Low, Critically High, Critically Low, etc.  For antibiotic sensitivity tests, provides an indication of the susceptibility of the identified organism to the test antibiotic.  Possible values include: Intermediate, Moderately Susceptible, Resistant, Susceptible.  In addition, Not Tested may occasionally used when an antibiotic that would commonly be tested was not for some reason.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>assistantResultInterpreter : <xref href="../t_FHIMProviderIndividualProvider.dita" >IndividualProvider</xref> (0..1)</p></stentry>
+  <stentry><p>				&quot;Identifies the clinical observer who assisted with the interpretation of this study.&quot; - HL7 Version 2.8, OBR-33.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>principalResultInterpreter : <xref href="../t_FHIMProviderIndividualProvider.dita" >IndividualProvider</xref> (0..1)</p></stentry>
+  <stentry><p>				&quot;Identifies the physician or other clinician who interpreted the observation and is responsible for the report content.&quot; - HL7 Version 2.8, OBR-32.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

@@ -1,0 +1,3838 @@
+
+<html xmlns:Standard="http://www.eclipse.org/uml2/schemas/Standard/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:fhim="http:///schemas/fhim/_bbjuwA3cEeSGTazHdUQojA/5" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:term="http://www.openhealthtools.org/mdht/schemas/term/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:xmi="http://www.omg.org/XMI" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.3/Umlnotation" xmlns:Default="http:///schemas/Default/_fNm3AAqoEd6-N_NOT9vsCA/2" xmlns:CDA="http://www.openhealthtools.org/mdht/schemas/cda/4" xmlns:Default_1="http:///schemas/Default/1" xmlns:RIM="http:///schemas/RIM/_fvnwgAH4Ed6VH-9W1IVKXA/4" xmlns:SketchNotation="http://www.ibm.com/ccl/soa/sketch/notation/1.0.0/">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>Pharmacy Domain</title>
+   </head>
+   <body style="font-family:Courier;font-size:14px">
+      <h1>Pharmacy Domain</h1>
+      <p> The purpose of this review is to identify the data elements required for the
+         interoperable exchange for the Pharmacy domain including dependencies. A column is
+         provided at the far right of the table for you to enter comments related to each
+         data element. If the class or domain is missing data elements, please add a row
+         at the bottom of the sheet and specify a name, description, and type of data
+         (e.g. numeric, string, date/time, code). 
+      </p>
+      <p> Once you have reviewed the data elements, please review the value sets
+         associated with the coded data elements. Please provide feedback by adding
+         comments in the column provided at the right of item/row or by adding rows at
+         the bottom table. For any new coded concepts without a valid code yet, our team
+         will propose them for addition in the source coding system. 
+      </p>
+      <ul>
+         <li><a href=""> <i><b>Pharmacy</b> </i> Domain </a></li>
+       </ul>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font-family:Courier">
+         <tr bgcolor="#98FB98" style="font-size:18px" align="left">
+            <td colspan="1"><b><a id=""> 'Pharmacy' Domain
+                     </a></b></td>
+            <td colspan="4" style="font-size:12px">Note that the Information Source hierarchy is in the Common domain, and is not shown here.</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+      </table>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font-family:Courier">
+         <tr>
+            <th width="20%">Element Name</th>
+            <th width="20%">Element Description</th>
+            <th width="15%">Format/Type</th>
+            <th width="15%">Value Set Name</th>
+            <th width="15%">Optionality/<br>Repetition
+            </th>
+            <th width="15%">Reviewer's Comments</th>
+         </tr>
+ 
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>CoAgent</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>&quot;Identifies the co-existing agent contributing to the DUR event (drug or disease conflicting with the prescribed drug or prompting pharmacist professional service).&quot; - NCPDP Telecommunication (Field 476-H6, Data Dictionary 201104).</p><p>&quot;Identifies the co-existing agent contributing to the DUR event (drug or disease) conflicting with the prescribed drug.&quot; - NCPDP Script (Field 7883, Data Dictionary 201104)</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">CoAgent.<b>code</b></div>
+            </td>
+            <td><p>&quot;Identifies the co-existing agent contributing to the DUR event (drug or disease conflicting with the prescribed drug or prompting pharmacist professional service).&quot; - NCPDP Telecommunication (Field 476-H6, Data Dictionary 201104).</p><p>&quot;Identifies the co-existing agent contributing to the DUR event (drug or disease) conflicting with the prescribed drug.&quot; - NCPDP Script (Field 7883, Data Dictionary 201104)</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>DispenseRecipient</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>Identifies the Person who picked up (i.e., took custody of) the dispensed medication, if that person is someone other than the patient.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DispenseRecipient.<b>id</b></div>
+            </td>
+            <td><p>A unique identifier for the person who picked up the dispensed medication, typically a drivers license number.</p></td>
+            <td valign="top"> Id </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DispenseRecipient.<b>relationshipToPatient</b></div>
+            </td>
+            <td><p>Indicates how the Person who picked up the medication is related to the intended recipient (i.e., the patient).</p></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#Personal Relationship Role Type Value Set">Personal Relationship Role Type Value Set</a> 
+					
+					 
+</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DispenseRecipient.<b>asPerson</b></div>
+            </td>
+            <td><p>Pointer to the Person who is playing the Role of DispenseRecipient</p></td>
+            <td valign="top"> <b>Person</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>DrugCoverageStatus</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class identifies the coverage status of the prescribed drug.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DrugCoverageStatus.<b>drugCoverageCode</b></div>
+            </td>
+            <td><p>&quot;Code identifying the coverage status of the prescribed drug.&quot; - NCPDP Script (Field 7885, Data Dictionary 201104).  Possible values include: Approved, Differential Co-Pay, Non Formulary, Not Reimbursed, Preferred, Prior Authorization Required, Signed Prescription, Step Therapy Required, Unknown.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>DrugUseEvaluation</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class represents the results of a Drug Use Evaluation (DUE) or a Drug Utilization Review (DUR).  If a prescriber or pharmacy has determined that the patient is on another medication that can interact with the drug associated with the current order, this class can communicate what the problem is and what the co-agent(s) are.  A DUR tends to be after the fact, while DUE tends to be before the fact, but basically the processes and the information captured are similar.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DrugUseEvaluation.<b>dateTime</b></div>
+            </td>
+            <td><p>The date (and optionally time) upon which the Drug Use Evaluation was performed.</p><p>Note that neither NCPDP SCRIPT nor NCPDP Telecom contain this information directly in their Drug Use segments, but this date may correspond to the Service Date (SCRIPT I006, Telecommunication 457-EP).</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DrugUseEvaluation.<b>professionalServiceCode</b></div>
+            </td>
+            <td><p>Categorizes the action taken by a pharmacist or prescriber in response to a conflict or the result of a pharmacist&apos;s professional service.</p><p>&quot;Code identifying pharmacist intervention when a conflict code has been identified or service has been rendered.&quot; - NCPDP Telecommunication (Field 440-E5, Data Dictionary 201104).  Possible values include: Patient assessment; Coordination of care; Dosing evaluation/determination; Dosage evaluated; Formulary enforcement; Generic product selection; Prescriber consulted; Medication administration; Overriding benefit; Medication review; Previous patient tolerance; Patient education/instruction; Patient medication history; Patient monitoring; Patient consulted; Perform laboratory test; Pharmacist consulted other source; Recommend laboratory test; Self-care consultation; Literature search/review; Therapeutic product interchange; Other Acknowledgement; No intervention.</p><p>&quot;Action taken in response to a conflict.&quot; - NCPDP Script (Field 7881, Data Dictionary 201104)</p></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#Due Professional Service">Due Professional Service</a> 
+					
+					 
+</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DrugUseEvaluation.<b>reasonForService</b></div>
+            </td>
+            <td><p>Categorizes the type of drug utilization conflict detected by the prescriber or the pharmacist or the reason for the pharmacist&apos;s professional service.  Examples include: Drug-Drug Interaction, Dose Range Conflict, Ingredient Duplication, etc.</p><p>&quot;Code identifying the type of utilization conflict detected by the prescriber or the pharmacist or the reason for the pharmacist s professional service.&quot; - NCPDP Telecommunication (Field 439-E4, Data Dictionary 201104).</p><p>&quot;For further explanation, conflict, or clarification of services related to drug use evaluation.... Code identifying the type of conflict detected.  When this composite is used, DUE Reason For Service Code is mandatory.&quot; - NCPDP Script (Field 7880, Data Dictionary 201104).</p></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#Due Reason For Service">Due Reason For Service</a> 
+					
+					 
+</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DrugUseEvaluation.<b>serviceResultCode</b></div>
+            </td>
+            <td><p>&quot;Action taken by a pharmacist or prescriber in response to a conflict or the result of a pharmacist&#8217;s professional service.&quot; - NCPDP Telecommunication (Field 441-E6, Data Dictionary 201104).</p><p>&quot;Action taken in response to a conflict.&quot; - NCPDP Script (Field 7882, Data Dictionary 201104)</p></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#Due Result Of Service">Due Result Of Service</a> 
+					
+					 
+</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DrugUseEvaluation.<b>author</b></div>
+            </td>
+            <td><p>Pointer to the medical professional who performed the Drug Use Evaluation.</p><p>Note that neither NCPDP SCRIPT nor NCPDP Telecom contain this information directly in their Drug Use segments, but this data may correspond to the Provider (SCRIPT 4705, Telecommunication 444-E9) in the respective Provider segments.</p></td>
+            <td valign="top"> <b>Author</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DrugUseEvaluation.<b>coAgent</b></div>
+            </td>
+            <td><p>&quot;Identifies the co-existing agent contributing to the DUR event (drug or disease conflicting with the prescribed drug or prompting pharmacist professional service).&quot; - NCPDP Telecommunication (Field 476-H6, Data Dictionary 201104).</p><p>&quot;Identifies the co-existing agent contributing to the DUR event (drug or disease) conflicting with the prescribed drug.&quot; - NCPDP Script (Field 7883, Data Dictionary 201104)</p></td>
+            <td valign="top"> <b>CoAgent</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>InfusionPromise</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>An inpatient request for intravenous medication to be administered for this patient.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">InfusionPromise.<b>infusionRate</b></div>
+            </td>
+            <td><p>Infusion: &quot;Introduction of a solution into the body through a vein for therapeutic purposes.&quot;  (American Heritage Stedman&apos;s Medical Dictionary).  This is the rate at which the solution is introduced into the body.  Expressed as volume/time (e.g., 500 ml/hr)</p></td>
+            <td valign="top"> RateQuantity </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">InfusionPromise.<b>infusionSite</b></div>
+            </td>
+            <td><p>The site of the patient&apos;s body at which the infusion takes place.  Note that there is a question, in cases where the patient is receiving multiple infusions simultaneously, whether this code should include something about the specific line, or whether there needs to be another attribtue.</p></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#Infusion Site">Infusion Site</a> 
+					
+					 
+</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">InfusionPromise.<b>infusionVelocity</b></div>
+            </td>
+            <td><p>Indicates whether the infusion is Continuous or Intermittant. (or Bolus?)    Another possible name is infustionPersistance?    (May need a better name)</p></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#Infusion Velocity">Infusion Velocity</a> 
+					
+					 
+</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">InfusionPromise.<b>ivType</b></div>
+            </td>
+            <td><p>Categorizes the intravenous infusion to occur.  Possible values include Admixture, Piggyback, or Syringe.    (May need a better name)</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">InfusionPromise.<b>requestedIvLimitation</b></div>
+            </td>
+            <td><p>This is the maximum length of time or the maximum volume to administer, for IV fluid orders. The value may be in milliliters, liters, hours, or days.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>InpatientMedicationDispense</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class contains information about the provision of a medication to a patient or care provider under the authority of the owning Pharmacy Promise in an inpatient setting.  This class includes medications placed in a medication cart for a caregiver (usually a nurse) to administer to the patient during scheduled rounds.  Note that while this class does not currently contain any properties in addition to those defined in the Pharmacy Dispense supertype, it functions to make the class concrete, as the Pharmacy Dispense class is abstract.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">InpatientMedicationDispense.<b>ward</b></div>
+            </td>
+            <td><p>The ward where the dispense took place.</p></td>
+            <td valign="top"> <b>ServiceDeliveryLocation</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>MailOrderDispense</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class contains information about the provision of a medication to a patient or care provider under the authority of the owning Pharmacy Promise in an mail-order setting.  This class adds shipping information to the properties defined in the parent Outpatient Medication Dispense class.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">MailOrderDispense.<b>carrier</b></div>
+            </td>
+            <td><p>A carrier is &#8220;an individual or company, as a railroad or steamship line, engaged in transporting passengers or goods for profit&#8221; (dictionary.com).  This property identifies the shipping organization that took custody of the medication in order to deliver it to the patient.  This property is currently modeled as a string although it is conceivable that it could be modeled as a code or an id if one wanted to have a controlled list of carriers.  Since such a list is not readily available, and because there are many smaller carriers, we chose to leave this as a string.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">MailOrderDispense.<b>dateTimeMailed</b></div>
+            </td>
+            <td><p>The date and time that a shipping organization took custody of the medication in order to deliver it to the patient.  This date/time effectively becomes the dispense date/time as this is when the medication leaves the control of the pharmacy.</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">MailOrderDispense.<b>dateTimeReceived</b></div>
+            </td>
+            <td><p>The date and time that the shipping organization delivered the medication to the patient, as reported by the shipping organization.  This property is optional, as not all deliveries require delivery confirmation.</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">MailOrderDispense.<b>trackingId</b></div>
+            </td>
+            <td><p>An identifier issued by the shipping organization used to determine the shipment as it progresses through the various steps of the delivery process.  It is used primarily for the patient or mail order pharmacy to inquire on the status of the delivery.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>MedicationList</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class represents a list of medications that the patient is taking.  This list may contain information from prescription data (Pharmacy Requests), pharmacy data (Pharmacy Promises) and/or Patient-Reported Medications.  Because the list may be an aggregation of data from multiple sources, duplicate information may potentially exist.  This class contains a reconciliation date which, when valued, indicates when a medical professional last validated the list of medications.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">MedicationList.<b>dateOfReconciliation</b></div>
+            </td>
+            <td><p>&quot;The date of the last active medication list reconciliation&quot; - ONC S&amp;I Clinical Element Data Dictionary (CEDD), March 2012.</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">MedicationList.<b>patientReportedMedication</b></div>
+            </td>
+            <td><p>Pointer to information about medications which the patient has received or is receiving, as reported by the patient.</p></td>
+            <td valign="top"> <b>PatientReportedMedication</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">MedicationList.<b>pharmacyRequest</b></div>
+            </td>
+            <td><p>Pointer to information about medications which the patient has received or is receiving, as reported by an ordering physician.</p></td>
+            <td valign="top"> <b>PharmacyRequest</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">MedicationList.<b>pharmacyPromise</b></div>
+            </td>
+            <td><p>Pointer to information about medications which the patient has received or is receiving, as reported by a pharmacy.</p></td>
+            <td valign="top"> <b>PharmacyPromise</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>OutpatientMedicationDispense</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class contains information about the provision of a medication to a patient or care provider under the authority of the owning Pharmacy Promise in an outpatient or retail setting.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">OutpatientMedicationDispense.<b>dateTimeReleased</b></div>
+            </td>
+            <td><p>The date and time that the medication was dispensed.  Dispense = &quot;to make up and distribute (medicine), esp. on prescription.&quot;  (Random House Unabridged Dictionary)  </p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">OutpatientMedicationDispense.<b>deliveryModality</b></div>
+            </td>
+            <td><p>Indicates whether the medication dispensed will be mailed to the patient, or the patient will pick up the medication at the pharmacy window, or home delivery.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">OutpatientMedicationDispense.<b>levelOfUnderstanding</b></div>
+            </td>
+            <td><p>Impression of how well the patient understood the education received.  Example values include: Poor, Fair, Good, Group - no assessment, Refused, etc.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">OutpatientMedicationDispense.<b>numberOfRefillsRemaining</b></div>
+            </td>
+            <td><p>Represents the calculated value of number of refills. CHDR sends number of refills but not enough information such as numberofrefillsauthorized to properly calculate the value.</p></td>
+            <td valign="top"> Integer </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">OutpatientMedicationDispense.<b>partialFillStatus</b></div>
+            </td>
+            <td><p>Indicates that the pharmacist provided a quantity less than authorized to the patient, and provides a reason why this occured.  Typically this occurs when the pharmacy does not have sufficient quantity on hand to meet demand, and it is then expected that the pharmacy will fill the remaining quantity after supplies have been replenished.  In NCPDP SCRIPT, this information is conveyed in a Response Segment in response to a Prescription Fill Status request.</p><p>&quot;Code indicating the quantity dispensed is a partial fill or the completion of a partial fill. Used only in situations where inventory shortages do not allow the full quantity to be dispensed.&quot; - NCPDP Telecommunication (Field 343-HD, Data Dictionary 201104).</p></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#Dispensing Status">Dispensing Status</a> 
+					
+					 
+</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">OutpatientMedicationDispense.<b>paymentType</b></div>
+            </td>
+            <td><p>&quot;The type of prescription benefit plan that adjudicated and paid for the prescription.&quot; - NCPDP Telecommunication (Field A29-ZS, Data Dictionary 201104).</p></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#Reported Payment Type">Reported Payment Type</a> 
+					
+					 
+</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">OutpatientMedicationDispense.<b>salesTransactionId</b></div>
+            </td>
+            <td><p>&quot;A reference identifier assigned to the sale transaction as assigned by the merchant.&quot; - NCPDP Telecommunication (Field 681-ZF, Data Dictionary 201104).</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">OutpatientMedicationDispense.<b>salesTransactionTime</b></div>
+            </td>
+            <td><p>The actual date and time the medication was released for inventory purposes and copay billing if applicable. (VistA)    In the commercial world, &quot;release date&quot; typically corresponds to the date/time that the patient took possession of the medication.  Need to verifiy the VistA usage.  </p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">OutpatientMedicationDispense.<b>wasPatientCounseled</b></div>
+            </td>
+            <td><p>Captures whether or not the patient received counseling regarding the dispensed medication.</p></td>
+            <td valign="top"> Boolean </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">OutpatientMedicationDispense.<b>couponRedemption</b></div>
+            </td>
+            <td><p>Pointer to information about the patient&apos;s use of a manufacturers coupon to reduce the patient&apos;s out-of-pocket cost for the prescription.</p></td>
+            <td valign="top"> <b>CouponRedemption</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>PatientReportedMedication</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>Contains information about a medication which the patient has received or is receiving, as reported by the patient.    </p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PatientReportedMedication.<b>discontinueDate</b></div>
+            </td>
+            <td><p>This is the date the patient stopped taking the patient reported Medication.</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PatientReportedMedication.<b>dosage</b></div>
+            </td>
+            <td><p>The amount of the described medication to be administered to the patient in a single point in time.</p></td>
+            <td valign="top"> PhysicalQuantityInterval </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PatientReportedMedication.<b>orderablePharmacyItem</b></div>
+            </td>
+            <td><p>Pointer to the medicinal product that the patient reported that he/she is taking.</p></td>
+            <td valign="top"> <b>OrderablePharmacyItem</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>PharmacyDispense(Abstract)</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class contains information about the provision of a medication to a patient or care provider under the authority of the owning Pharmacy Promise.  This class includes medications placed in a medication cart for a caregiver (usually a nurse) to administer to the patient during scheduled rounds, as well as other inpatient settings, outpatient, retail and even mail-order settings.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyDispense(Abstract).<b>actualStrength</b></div>
+            </td>
+            <td><p>&quot;Use when [DispensedDrug] does not specify the strength.  This is the numeric part of the strength, of a single dosage unit of the dispensed product&quot; - HL7 Version 2.8, RXD-16.</p><p>&quot;Use when [DispensedDrug] does not specify the strength.  This is the unit of the strength, of a single dosage unit of the dispensed product&quot; - HL7 Version 2.8, RXD-17.</p></td>
+            <td valign="top"> Quantity </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyDispense(Abstract).<b>dateTimeDispensed</b></div>
+            </td>
+            <td><p>Indicates when the pharmaceutical/treatment left the control of the pharmacy.  This may be when the medication was picked up or mailed (outpatient), or delivered to a ward (inpatient).  Note that this differs from the &quot;fill date/time&quot; in that the fill date is when the pharmaceutical/treatment was removed from inventory (e.g., when the pharmacist filled a bottle with tablets from inventory); once filled, the medication may remain in the pharmacy awaiting pick-up.  Once delivered to the patient or another caregiver, the medication is then considered &quot;dispensed.&quot;</p><p>Dispense = &quot;to make up and distribute (medicine), esp. on prescription.&quot; - Random House Unabridged Dictionary.</p><p>&quot;Indicates when the pharmaceutical/treatment is dispensed from the pharmacy or treatment supplier.&quot; - HL7 Version 2.8, RXD-3.</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyDispense(Abstract).<b>dateTimeFilled</b></div>
+            </td>
+            <td><p>Indicates when the pharmaceutical/treatment was removed from inventory and prepared for delivery to the patient.  Note that this differs from the &quot;dispense date/time&quot; in that the fill date is when the pharmaceutical/treatment was removed from inventory (e.g., when the pharmacist filled a bottle with tablets from inventory); once filled, the medication may remain in the pharmacy awaiting pick-up, where as the dispense date/time is when the mediation leaves the control of the pharmacy.  Once delivered to the patient or another caregiver, the medication is then considered &quot;dispensed.&quot;</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyDispense(Abstract).<b>daysSupply</b></div>
+            </td>
+            <td><p>The length of time in days that the quantity dispensed will last if consumed at the rate prescribed.  For example if the patient is instructed to take 2 pills a day, 60 pills will last 30 days.</p><p>&quot;Estimated number of days the prescription will last.&quot; - NCPDP Telecommunication (Field 405-D5, Data Dictionary 201104).</p><p></p></td>
+            <td valign="top"> Integer </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyDispense(Abstract).<b>dispenseCategory</b></div>
+            </td>
+            <td><p>&quot;This is the type of dispensing event that occurred.&quot; - HL7 Version 2.8, RXA-26 and RXO-27.  Valid values (from HL7 Table 0484) include: Trial Quantity Balance; Compassionate Fill; New/Renew - Full Fill; New/Renew - Part Fill; Refill - Part Fill; Refill - Full Fill; Manufacturer Sample; Trial Quantity; Non-Prescription Fill.</p><p>&quot;Code indicating the quantity dispensed is a partial fill or the completion of a partial fill. Used only in situations where inventory shortages do not allow the full quantity to be dispensed.&quot; - NCPDP Telecommunication (Field 343-HD, Data Dictionary 201104).  Possible values include: Partial Fill; Completion of Partial Fill.</p></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#Dispense Type">Dispense Type</a> 
+					
+					 
+</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyDispense(Abstract).<b>dispenseMethod</b></div>
+            </td>
+            <td><p>&quot;Contains the method by which treatment is dispensed.&quot; - HL7 Version 2.8, RXD-24.  Possible values (from HL7 Table 321) include: Traditional; Unit Dose; Floor Stock; Automatic Dispensing.</p></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#Dispense Method">Dispense Method</a> 
+					
+					 
+</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyDispense(Abstract).<b>dispenseNotes</b></div>
+            </td>
+            <td><p>&quot;Contains free text notes to the person dispensing the medication/treatment (may include the ordering provider&apos;s original notes, as well as any notes from the formulary or the pharmacy or treatment supplier).  This may contain free text describing a custom IV, mixture, or salve for example.&quot; - HL7 Version 2.8, RXD-9.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyDispense(Abstract).<b>dispensingInstructions</b></div>
+            </td>
+            <td><p>&quot;Contains pharmacy or treatment supplier-generated special instructions to the provider dispensing/administering the order.&quot; - HL7 Version 2.8, RXD-15.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyDispense(Abstract).<b>fillSequenceNumber</b></div>
+            </td>
+            <td><p>&quot;This field starts with 1 the first time that medication/treatment is delivered/dispensed for this order.  Increments by one with each additional issuance.&quot; - HL7 Version 2.8, RXD-1.</p><p>&quot;The code indicating whether the prescription is an original or a refill.&quot; - NCPDP Telecommunication (Field 403-D3, Data Dictionary 201104).  Note that while the NCPDP Telecommunication structure treats this field as a code, it contains a number from 0-99, where zero is the original fill, and 1-99 are refills.</p></td>
+            <td valign="top"> Integer </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyDispense(Abstract).<b>id</b></div>
+            </td>
+            <td><p>The unique identifier for this dispense, also known as a &quot;Fill Id&quot;.</p></td>
+            <td valign="top"> Id </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyDispense(Abstract).<b>isCompound</b></div>
+            </td>
+            <td><p>&quot;Code indicating whether or not the prescription is a compound.&quot; - NCPDP Telecommunication (Field 406-D6, Data Dictionary 201104).  Note that the NCPDP Telecommunication structure treats this as a code, but the values are essentially Yes (Compound), No (Not a compound), and Not Specified.  Note also that this property could be derived from the medication dispensed.</p></td>
+            <td valign="top"> Boolean </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyDispense(Abstract).<b>needsHumanReview</b></div>
+            </td>
+            <td><p>Indicates whether &quot;the application receiving the dispense order needs to warn the person dispensing/administering the drug or treatment to pay attention to the text in [Dispensing Instructions].&quot; - HL7 Version 2.8, RXD-14.</p></td>
+            <td valign="top"> Boolean </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyDispense(Abstract).<b>productSelectionCode</b></div>
+            </td>
+            <td><p>&quot;Code indicating whether or not the prescriber&#8217;s instructions regarding generic substitution were followed.&quot; - NCPDP Telecommunication (Field 408-D8, Data Dictionary 201104).  Possible values include: Substitution Not Allowed by Prescriber; Substitution Not Allowed-Brand Drug Mandated by Law; Substitution Allowed-Patient Requested Product Dispensed; Substitution Allowed-Pharmacist Selected Product Dispensed; Substitution Allowed-Generic Drug Not in Stock; Substitution Allowed-Brand Drug Dispensed as a Generic; Substitution Allowed-Generic Drug Not Available in Marketplace; Substitution Allowed By Prescriber but Plan Requests Brand; Override; No Product Selection Indicated.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyDispense(Abstract).<b>quantityDispensed</b></div>
+            </td>
+            <td><p>The quanitity of the medication dispensed to this patient in fulfillment of a request.</p><p>&quot;Quantity dispensed expressed in metric decimal units.&quot; - NCPDP Telecommunication (Field 442-E7, Data Dictionary 201104).</p></td>
+            <td valign="top"> Quantity </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyDispense(Abstract).<b>specialPackaging</b></div>
+            </td>
+            <td><p>&quot;Code indicating the type of dispensing dose.&quot; - NCPDP Telecommunication (Field 429-DT, Data Dictionary 201104).  Possible values include: Not Unit Dose; Manufacturer Unit Dose; Pharmacy Unit Dose; Pharmacy Unit Dose Patient Compliance Packaging; Pharmacy Multi-drug Patient Compliance Packaging; Remote Device Unit Dose; Remote Device Multi- drug Compliance; Manufacturer Unit of Use Package (not unit dose); Not Specified.</p></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#Special Packaging Indicator">Special Packaging Indicator</a> 
+					
+					 
+</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyDispense(Abstract).<b>totalDailyDose</b></div>
+            </td>
+            <td><p>&quot;Contains the total daily dose being dispensed as expressed in terms of the actual dispense units.&quot; - HL7 Version 2.8, RXD-12.</p></td>
+            <td valign="top"> Quantity </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyDispense(Abstract).<b>attender</b></div>
+            </td>
+            <td><p>Indicates the current Attending Physician assigned to the Patient.  This information is needed because the physician attending the patient may be different from the clinician who ordered the medication.  This is especially true in long-term care settings.</p></td>
+            <td valign="top"> <b>Attender</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyDispense(Abstract).<b>dispensedDrug</b></div>
+            </td>
+            <td><p>&quot;Identifies the medical substance or treatment ordered to be given to the patient; it is equivalent to [the Ordered Item].&quot; - HL7 Version 2.8, RXD-2.</p></td>
+            <td valign="top"> <b>DispensedDrug</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyDispense(Abstract).<b>dispenseRecipient</b></div>
+            </td>
+            <td><p>Identifies the person who picked up (i.e., took custody of) the dispensed medication, if that person is someone other than the patient.</p></td>
+            <td valign="top"> <b>DispenseRecipient</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyDispense(Abstract).<b>dispenseToLocation</b></div>
+            </td>
+            <td><p>&quot;Contains the inpatient or outpatient location where the drug or treatment was dispensed (if applicable).  The default (null) value is the current census location for the patient.&quot; - HL7 Version 2.8, RXD-13.</p></td>
+            <td valign="top"> <b>ServiceDeliveryLocation</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyDispense(Abstract).<b>dispensingDevice</b></div>
+            </td>
+            <td><p>Pointer to information about the automated equipment which was used to fill the prescription.</p></td>
+            <td valign="top"> <b>Device</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyDispense(Abstract).<b>dispenser</b></div>
+            </td>
+            <td><p>Pointer to the person who dispensed the prescription.  The dispenser is the person who facilitated the release of the medication from the pharmacy&apos;s control, as opposed to the filler who is the person who measured out and packaged the medication.  For example, the person who counted out the pills and put them in the bottle is the filler, the person who gave the bottle of pills to the patient is the dispenser.  The person playing the filler role and the person playing the dispenser role may be the same person.</p><p>&quot;Contains the provider ID of the person dispensing the pharmaceutical.&quot; - HL7 Version 2.8, RXD-10.</p></td>
+            <td valign="top"> <b>IndividualProvider</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyDispense(Abstract).<b>filler</b></div>
+            </td>
+            <td><p>Pointer to the person who filled the prescription.  The filler is the person who measured out and packaged the medication, as opposed to the dispenser who is the person who facilitated the release of the medication from the pharmacy&apos;s control.  For example, the person who counted out the pills and put them in the bottle is the filler, the person who gave the bottle of pills to the patient is the dispenser.  The person playing the filler role and the person playing the dispenser role may be the same person.</p></td>
+            <td valign="top"> <b>IndividualProvider</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyDispense(Abstract).<b>pharmacy</b></div>
+            </td>
+            <td><p>&quot;Specifies the pharmacy that will dispense or has dispensed the prescription.&quot; - HL7 Version 2.8, RXD-30.</p><p>&quot;Specifies the address of the dispensing facility or the patient&apos;s location where the dispensing will occur.&quot; - HL7 Version 2.8, RXD-31.</p></td>
+            <td valign="top"> <b>Pharmacy</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyDispense(Abstract).<b>pharmacist</b></div>
+            </td>
+            <td><p>The pharmacist responsible for filling the medication for this outpatient order.</p></td>
+            <td valign="top"> <b>IndividualProvider</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>PharmacyGeneratedOrderModification</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>The pharmacist has the authority to make certain changes to the clinician&#8217;s order without having to seek a replacement order from the prescriber.  This class contains information concerning any such changes.  For example, if the prescriber cited a brand name drug, but also indicated that a generic drug could be substituted for it, this class will point to a new copy of the order with the generic drug instead of the brand-name drug.  Another potential change might be where the prescriber indicated 20mg tablets, but the pharmacy only has 10 mg tablets.  In this case, the sig may need to be changed from &#8220;take 1 tablet&#8230;&#8221; to &#8220;take 2 tablets&#8230;&#8221; to reflect that the tablets are now half the strength as originally prescribed.  Again, this class is used to hold this new information.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyGeneratedOrderModification.<b>reason</b></div>
+            </td>
+            <td><p>This property provides an optional textual description why the pharmacist changed the original prescriber&apos;s order.  In most cases, the substitution code will be sufficient, but in some cases the pharmacist may wish to document a more detailed reason.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyGeneratedOrderModification.<b>revisedSig</b></div>
+            </td>
+            <td><p>If the pharmacist has changed the instructions to the patient (i.e., the &quot;sig&quot;) from the one originally ordered by the prescriber, this field contains the new instructions.  For example, if the prescriber indicated 20mg tablets, but the pharmacy only has 10 mg tablets, the sig may need to be changed from &#8220;take 1 tablet&#8230;&#8221; to &#8220;take 2 tablets&#8230;&#8221; to reflect that the tablets are now half the strength as originally prescribed.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyGeneratedOrderModification.<b>revisedAdministrationInstructions</b></div>
+            </td>
+            <td><p>If the pharmacist has changed the instructions to the person administering the medication (usually a nurse in an inpatient situation) from the one originally ordered by the prescriber, this field contains the new instructions.  For example, if the prescriber indicated 20mg tablets, but the pharmacy only has 10 mg tablets, the sig may need to be changed from &#8220;give 1 tablet&#8230;&#8221; to &#8220;give 2 tablets&#8230;&#8221; to reflect that the tablets are now half the strength as originally prescribed.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyGeneratedOrderModification.<b>revisedPatientInstructions</b></div>
+            </td>
+            <td><p>If the pharmacist has changed any &quot;additional instructions&quot; to the patient from the one originally ordered by the prescriber, this field contains the new instructions.  For example, if the prescriber indicated that the medication should be taken with milk, but the pharmacist made a therapeutic substitution to different medication the new instructions may now say &quot;take on an empty stomach&quot; to reflect the characteristics of the new medication.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyGeneratedOrderModification.<b>pharmacyPromise</b></div>
+            </td>
+            <td><p>Pointer to a new Pharmacy Promise record created as a result of a change made to the original order by the pharmacist.</p></td>
+            <td valign="top"> <b>PharmacyPromise</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>PharmacyPromise</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class contains information about a Pharmacy Order, commonly referred to as a prescription.  This class represents the prescription from the perspective of the filling system (i.e., the pharmacy) whereas the Pharmacy Request represents the prescription from the ordering system (i.e., the prescriber).  This class is a subtype of the more general Healthcare Promise, which describes properties common to all types or Orders from the filling system perspective&#8211; this class adds those properties which are specific to medication orders.  This class is called Pharmacy Promise rather than Pharmacy Order following the HL7 V3 convention to use the term Promise to indicate that it is from the filling system&#8217;s perspective.  There are many properties which are identical to the Order; this is because the pharmacy may change the order, within prescribed limits, for example substituting a generic drug for a brand-named one.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyPromise.<b>appointmentTime</b></div>
+            </td>
+            <td><p>Date and time of the appointment for this clinic location.</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyPromise.<b>discontinueDate</b></div>
+            </td>
+            <td><p>This is the date the order was discontinued.</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyPromise.<b>expirationDate</b></div>
+            </td>
+            <td><p>The date after which the order may no longer be filled.</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyPromise.<b>isHospitalSuppliedSelfAdministered</b></div>
+            </td>
+            <td><p>A flag indicating that the medication given to the patient is to be self administered and is to be supplied by the hospitals pharmacy while they are an inpatient. </p></td>
+            <td valign="top"> Boolean </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyPromise.<b>isSelfAdministered</b></div>
+            </td>
+            <td><p>A flag indicating that the medication given to the patient is to be self administered.</p></td>
+            <td valign="top"> Boolean </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyPromise.<b>lastDispenseDate</b></div>
+            </td>
+            <td><p>The most recent date the order was filled.</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyPromise.<b>medicationType</b></div>
+            </td>
+            <td><p>This identifies the type of medication ordered: A=Admixture, C=Chemotherapy, P=Piggy Back, T=TPN, U=Unit Dose.    Note: this might correspond to Administration Unit Code?  Verify.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyPromise.<b>numberOfRefillsRemaining</b></div>
+            </td>
+            <td><p>Indicates the number of times the order may be filled without additional authorization.</p><p>&quot;This field is conditional because it is required when a prescription is dispensed to an outpatient. It is not relevant to inpatient treatment orders.&quot; - HL7 Version 2.8, RXD-8.</p></td>
+            <td valign="top"> Integer </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyPromise.<b>orderModality</b></div>
+            </td>
+            <td><p>This is the method the provider used to communicate to the user to enter (or take any other action) on the order.  Examples include: Written, Telephoned, Verbal, Electronically Entered, Policy, Service Correction, Duplicate, etc.</p><p>&quot;Code indicating the origin of the prescription.&quot; - NCPDP Telecommunication (Field 419-DJ, Data Dictionary 201104).  Possible values include: Written; Telephone; Electronic; Facsimile; Pharmacy; Not Known.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyPromise.<b>requestedAdministrationTime</b></div>
+            </td>
+            <td><p>Specifies when the service is to be performed and how frequently.  Note that this is a complex data type that may indicate specific times or intervals (e.g., 10:00 AM, MWF, etc).</p></td>
+            <td valign="top"> TimeInterval </td>
+            <td></td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyPromise.<b>requestedDuration</b></div>
+            </td>
+            <td><p>The duration of an order as requested by the ordering clinician.  The duration would be expressed as a number of days, weeks, hours, etc.  Note that this length of time might be determined by a business rule of the facilty.  For example, most facilties will have a limit of 7 days for antibiotics, and 3 days for schedule 1 drugs.</p></td>
+            <td valign="top"> TimeQuantity </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyPromise.<b>scheduleType</b></div>
+            </td>
+            <td><p>&quot;This describes the type of schedule for the dispensing of the medication(s) that make up the order.  PRE-OP orders are usually considered to be ON-CALL orders, and orders dispensed as MULTI-DOSE CONTAINERS are usually considered to be FILL ON REQUEST orders. C=Continuous, O=One Time, P=PRN, R=Fill On Request, OC=On Call.&quot; (VistA)  </p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyPromise.<b>dataEnterer</b></div>
+            </td>
+            <td><p>Pointer to person who actually keyed the Promise (i.e., the prescription) into the filling application (i.e., the pharmacy application).</p></td>
+            <td valign="top"> <b>DataEnterer</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyPromise.<b>dispense</b></div>
+            </td>
+            <td><p>Pointer to information about the provision of a medication to a patient or care provider under the authority of the owning Pharmacy Promise.</p></td>
+            <td valign="top"> <b>PharmacyDispense(Abstract)</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyPromise.<b>finisher</b></div>
+            </td>
+            <td><p>The party who completed the Outpatient Pharmacy order.</p></td>
+            <td valign="top"> <b>IndividualProvider</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyPromise.<b>patientReportedMedication</b></div>
+            </td>
+            <td><p>Contains information about a medication which the patient has received or is receiving, as reported by the patient.</p></td>
+            <td valign="top"> <b>PatientReportedMedication</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyPromise.<b>pharmacyInferredDiagnosis</b></div>
+            </td>
+            <td><p>Many claims require a diagnosis in order to be adjudicated, especially in workers compensation situations or where multiple payers are involved.  In those cases and where the pharmacy does not have a diagnosis supplied by the prescriber, the pharmacy may infer a diagnosis based on the medication or services ordered.  See field 6813 of the NCPDP SCRIPT DRU segment.</p></td>
+            <td valign="top"> <b>DiagnosisListEntry</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyPromise.<b>return</b></div>
+            </td>
+            <td><p>Pointer to information about the reversal of a provision of a medication to a patient or care provider under the authority of the owning Pharmacy Promise.</p></td>
+            <td valign="top"> <b>Return</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyPromise.<b>pharmacy</b></div>
+            </td>
+            <td><p>&quot;Specifies the pharmacy that will dispense or has dispensed the prescription.&quot; - HL7 Version 2.8, RXO-32.</p><p>&quot;Specifies the address of the dispensing facility.&quot; - HL7 Version 2.8, RXO-33.</p><p>&quot;Contains the telecommunication contact information for the pharmacy.&quot; - HL7 Version 2.8, RXO-36.</p></td>
+            <td valign="top"> <b>Pharmacy</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyPromise.<b>pharmacyGeneratedOrderModification</b></div>
+            </td>
+            <td><p>Pointer to information concerning any changes made to the original order by the pharmacist.</p></td>
+            <td valign="top"> <b>PharmacyGeneratedOrderModification</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>PharmacyRequest</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class contains information about a Pharmacy Order, commonly referred to as a prescription.  This class is a subtype of the more general Healthcare Order, which describes properties common to all types or Orders &#8211; this class adds those properties which are specific to medication orders.  It can be said that this represent the prescription from the perspective of the ordering system whereas the Pharmacy Promise represents the prescription from the filling system (i.e., the pharmacy).  This class is called Pharmacy Request rather than Pharmacy Order following the HL7 V3 convention to use the term Request instead of Order.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyRequest.<b>appointmentTime</b></div>
+            </td>
+            <td><p>This is the appointment date/time for an outpatient order. It is entered when an inpatient medication is ordered for an outpatient.</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyRequest.<b>areRefillsAuthorizedAsNeeded</b></div>
+            </td>
+            <td><p>Indicates whether the prescriber has authorized additional fills of this order as needed.</p></td>
+            <td valign="top"> Boolean </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyRequest.<b>dispensingInstructions</b></div>
+            </td>
+            <td><p>&quot;Identifies the ordering provider&apos;s instructions to the pharmacy or the non-pharmacy treatment provider (e.g., respiratory therapy).&quot; - HL7 Version 2.8, RXO-6.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyRequest.<b>dosage</b></div>
+            </td>
+            <td><p>&quot;The measured quantity of a therapeutic agent to be taken at one time.&quot; (MedlinePlus/Merriam-Webster).</p><p>Note that this field is currently modeled as a Physical Quanity Interval, rather than calling out the low dosage and high dosage.</p><p>&quot;This field is the ordered amount.  In a variable dose order, this is the minimum ordered amount.  In a non-varying dose order, this is the exact amount of the order.&quot; - HL7 Version 2.8, RXO-2.</p><p>&quot;In a variable dose order, this is the maximum ordered amount.  In a non-varying dose order, this field is not used.&quot; - HL7 Version 2.8, RXO-3.</p><p>&quot;Indicates the units for the give amount.&quot; - HL7 Version 2.8, RXO-4.</p></td>
+            <td valign="top"> PhysicalQuantityInterval </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyRequest.<b>doseForm</b></div>
+            </td>
+            <td><p>Form: &quot;The shape and structure of something as distinguished from its material&quot; (Webster&apos;s Medical Dictionary).</p><p>Indicates the form of the material making up a single dose (as opposed to how the dose is packaged).  Possible values include Tablet, Drop, Lozenge, Cream, etc.</p><p>&quot;Indicates the manner in which the treatment is aggregated for dispensing, e.g., tablets, capsules, suppositories.&quot; - HL7 Version 2.8, RXO-5.</p></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#Strength Form">Strength Form</a> 
+					
+					 
+</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyRequest.<b>doseQuantity</b></div>
+            </td>
+            <td><p>The amount of the described medication to be administered to the patient in a single point in time.</p></td>
+            <td valign="top"> PhysicalQuantityInterval </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyRequest.<b>doseUnit</b></div>
+            </td>
+            <td><p>&quot;This field indicates the units for the give amount.&quot; - HL7 Version 2.8, RXO-4  &quot;An amount of a biologically active agent (as a drug or antigen) required to produce a specific result under strictly controlled conditions.&quot; (Merriam-Webster)</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyRequest.<b>expirationDate</b></div>
+            </td>
+            <td><p>The date after which the order may no longer be filled.</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyRequest.<b>frequency</b></div>
+            </td>
+            <td><p>Specifies when the service is to be performed and how frequently.  Note that this is a complex data type that may indicate specific times or intervals (e.g., 10:00 AM, MWF, etc).</p></td>
+            <td valign="top"> TimeInterval </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyRequest.<b>frequencyCode</b></div>
+            </td>
+            <td><p>Specifies when the service is to be performed and how frequently.  This optional property allows for the frequency to be expressed as a code (or possibly a string), in order to accomodate non-numeric expressions, such as every morning, or during the afternoon shift.  Added for Davita, 1/23/2015.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyRequest.<b>infusionRate</b></div>
+            </td>
+            <td><p>Infusion: &quot;Introduction of a solution into the body through a vein for therapeutic purposes.&quot;  (American Heritage Stedman&apos;s Medical Dictionary).  This is the rate at which the solution is introduced into the body.  Expressed as volume/time (e.g., 500 ml/hr) </p></td>
+            <td valign="top"> RateQuantity </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyRequest.<b>intendedDuration</b></div>
+            </td>
+            <td><p>The period of time over which a medication order should be given.</p></td>
+            <td valign="top"> TimeInterval </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyRequest.<b>intendedDurationCode</b></div>
+            </td>
+            <td><p>Specifies the period of time over which a medication order should be given.  This optional property allows for the intended duration to be expressed as a code (or possibly a string), in order to accomodate non-numeric expressions.  Added for Davita, 1/23/2015.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyRequest.<b>neededNoLaterThan</b></div>
+            </td>
+            <td><p>&quot;Conditional composite for the facility to relay to the long term care pharmacy the timeframe when medication is needed for delivery.  When a facility transmits either a new medication order (NEWRX) or request for the re-supply of a medication (RESUPP) to a pharmacy, it would optionally indicate the time by which the medication is needed. The facility could also provide a textual reason why the medication is needed by the time specified. The long term care pharmacy would then use this information to determine whether a special delivery is required, or whether the order could go out with the next scheduled delivery.&quot; - NCPDP Script (Field I006)</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyRequest.<b>needsHumanReview</b></div>
+            </td>
+            <td><p>Indicates whether &quot;the pharmacist or non-pharmacist treatment supplier filling the order needs to pay special attention to the text in the [Dispensing Instructions].  A warning is present.&quot; - HL7 Version 2.8, RXO-16.</p></td>
+            <td valign="top"> Boolean </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyRequest.<b>numberOfRefillsAuthorized</b></div>
+            </td>
+            <td><p>&quot;Defines the number of times the requested dispense amount can be given to the patient, subject to local regulation.  Refers to outpatient only.&quot; - HL7 Version 2.8, RXO-13.</p><p>&quot;Number of refills authorized by the prescriber.&quot; - NCPDP Telecommunication (Field 415-DF, Data Dictionary 201104).  Note that while the NCPDP Telecommunication structure treats this field as a code, it contains a number from 0-99, where zero means no refills authorized, and 1-98 are the number of refills authorized, and 99 means unlimited refills authorized.</p></td>
+            <td valign="top"> Integer </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyRequest.<b>patientInstructions</b></div>
+            </td>
+            <td><p>The complete textual representation of the &quot;sig&quot; (from the Latin &quot;signare&quot; meaning &quot;to sign or mark&quot;), for the prescription.  Contains all relevant information about the dosage instructions for the medication prescribed. For example, the sig might say &quot;take twice daily with food&quot;.</p><p></p><p>&quot;Identifies the ordering provider&apos;s instructions to the patient or to the provider administering the drug or treatment.&quot; - HL7 Version 2.8, RXO-7.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyRequest.<b>pharmacyOrderCategory</b></div>
+            </td>
+            <td><p>&quot;Defines the general category of pharmacy order which may be used to determine the processing path the order will take....  This field may also be used for grouping of related orders for processing and/or reports.  For example, Medication Administration Records often group large volume solutions, medications and small volume solutions differently based upon site-specific workflow.&quot; - HL7 Version 2.8, RXA-26, RXD-32, and RXO-27.  Valid values (from HL7 Table 0480) include: Medication; IV Large Volume Solutions; Other solution as medication orders.</p></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#Pharmacy Order">Pharmacy Order</a> 
+					
+					 
+</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyRequest.<b>quanityOrdered</b></div>
+            </td>
+            <td><p>&quot;This field is the ordered amount.  In a variable dose order, this is the minimum ordered amount.  In a non-varying dose order, this is the exact amount of the order.&quot; - HL7 Version 2.8, RXO-2.</p><p>&quot;In a variable dose order, this is the maximum ordered amount.  In a non-varying dose order, this field is not used.&quot; - HL7 Version 2.8, RXO-3.</p><p>This property carries both the low (aka minimum), and high (aka maximum) amounts.  For example, given the order &quot;Acetaminophen 300 mg / codeine 30 mg (Tylenol 3).  Take 2-3 tablets every 4-6 hours as needed for pain for 7 days&quot;, this property would contain 2 (low) and 3 (high).</p></td>
+            <td valign="top"> PhysicalQuantityInterval </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyRequest.<b>route</b></div>
+            </td>
+            <td><p>&quot;This field is the route of administration.&quot; - HL7 Version 2.8, RXR-1</p><p>&quot;The method of introducing the therapeutic material into or onto the subject.&quot; - HL7 Version 3</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyRequest.<b>schedule</b></div>
+            </td>
+            <td><p>This is the number of Units (tablets, capsules, etc.) to be dispensed as a dose for this order. String type used to handle VistA data with dose quantity and units in same field.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyRequest.<b>sig</b></div>
+            </td>
+            <td><p>&quot;Signa -- used to introduce the signature in writing a prescription.&quot; (MedlinePlus/Merriam-Webster) Note: this attribute is a placeholder for a concept which will be modeled in a future iteration. </p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyRequest.<b>startDate</b></div>
+            </td>
+            <td><p>The date on which the patient is to begin (or began, if historical) consuming the ordered medication.</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyRequest.<b>stopDate</b></div>
+            </td>
+            <td><p>The date on which the patient is to discontinue (or discontinued, if historical) consuming the ordered medication.</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyRequest.<b>substitutionCode</b></div>
+            </td>
+            <td><p>If the Pharmacist has changed the kind of medication to be dispensed to the patient from the one originally ordered by the prescriber, this field provides a categorization of the kind of substitution that was made.</p><p>&quot;Refer to HL7 Table 0167 - Substitution Status in Chapter 2C for suggested values.&quot; - HL7 Version 2.8, RXD-11.</p><p>&quot;Product/Service Substitution, coded&quot; - NCPDP Script (Field 4457, Data Dictionary 201104)</p><p>&quot;Code indicating whether or not the prescriber&#8217;s instructions regarding generic substitution were followed.&quot; - NCPDP Telecommunication (Field 408-D8, Data Dictionary 201104).</p><p>-----</p><p>Possible values include (from HL7 Table 167): </p><p>No substitute was dispensed.  This is equivalent to the default (null) value; </p><p>A generic substitution was dispensed; </p><p>A therapeutic substitution was dispensed; </p><p>No product selection indicated; </p><p>Substitution not allowed by prescriber; </p><p>Substitution allowed - patient requested product dispensed; </p><p>Substitution allowed - pharmacist selected product dispensed; </p><p>Substitution allowed - generic drug not in stock; </p><p>Substitution allowed - brand drug dispensed as a generic; </p><p>Substitution not allowed - brand drug mandated by law; </p><p>Substitution allowed - generic drug not available in marketplace.</p><p>-----</p><p>Possible values include (From NCPDP ECL):</p><p>No Product Selection Indicated</p><p>Substitution Not Allowed by Prescriber</p><p>Substitution Allowed - Patient Requested Product Dispensed</p><p>Substitution Allowed - Pharmacist Selected Product Dispensed</p><p>Substitution Allowed - Generic Drug Not in Stock</p><p>Substitution Allowed - Brand Drug Dispensed as a Generic Override</p><p>Substitution Not Allowed - Brand Drug Mandated by Law</p><p>Substitution Allowed - Generic Drug Not Available in Marketplace</p><p>Substitution Allowed By Prescriber but Plan Requests Brand - Patient&apos;s Plan Requested Brand Product To Be Dispensed</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyRequest.<b>deliverToLocation</b></div>
+            </td>
+            <td><p>&quot;Specifies the location of the patient to whom the pharmaceutical substance is to be delivered.&quot; - HL7 Version 2.8, RXO-34.</p><p>&quot;Specifies the address, either mailing or physical, to which the prescription should be mailed or delivered.&quot; - HL7 Version 2.8, RXO-35.</p></td>
+            <td valign="top"> <b>ServiceDeliveryLocation</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyRequest.<b>drugCoverageStatus</b></div>
+            </td>
+            <td><p>Pointer to a set of (zero to many) coverage statuses for the prescribed drug.</p></td>
+            <td valign="top"> <b>DrugCoverageStatus</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyRequest.<b>drugUseEvaluation</b></div>
+            </td>
+            <td><p>Pointer to the results of a Drug Use Evaluation (DUE) or a Drug Utilization Review (DUR).</p></td>
+            <td valign="top"> <b>DrugUseEvaluation</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyRequest.<b>orderedItem</b></div>
+            </td>
+            <td><p>&quot;Identifies the treatment product or treatment ordered to be given to the patient.... Examples ... include medications and certain devices or supplies, e.g., inhaler spacers, blood glucose monitors, syringes, infusion sets, which might require prescription.&quot; - HL7 Version 2.8, RXO-1.</p><p>&quot;This field accommodates the identification of any codes that might be associated with the pharmaceutical substance. Common codes include: the Generic Product Identifier (GPI), Generic Code Number_Sequence Number (GCN_SEQNO), National Drug Code (NDC).&quot; - HL7 Version 2.8, RXO-24.</p></td>
+            <td valign="top"> <b>OrderablePharmacyItem</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyRequest.<b>prescriberAgent</b></div>
+            </td>
+            <td><p>A person who has been designated to act on behalf of the prescriber.  For example, a physician&apos;s assistant may be authorized to telephonically authorize refill requests for the prescriber.</p></td>
+            <td valign="top"> <b>Agent</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyRequest.<b>priorAuthorization</b></div>
+            </td>
+            <td><p>Pointer to information concerning a prior authorization already issued by a payer.</p></td>
+            <td valign="top"> <b>PriorAuthorization</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyRequest.<b>supervisor</b></div>
+            </td>
+            <td><p>Pointer to the person who is managerially responsible for the prescriber.  Usually used in long-term care settings.</p></td>
+            <td valign="top"> <b>IndividualProvider</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyRequest.<b>indication</b></div>
+            </td>
+            <td><p>&quot;Identifies the condition or problem for which the drug/treatment was prescribed.&quot; - HL7 Version 2.8, RXO-20.</p><p>&quot;Contains the identifier of the condition or problem for which the drug/treatment was prescribed.  May repeat if multiple indications are relevant.&quot; - HL7 Version 2.8, RXD-21.</p></td>
+            <td valign="top"> <b>Indication</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyRequest.<b>pharmacy</b></div>
+            </td>
+            <td><p>&quot;Specifies the pharmacy that will dispense or has dispensed the prescription.&quot; - HL7 Version 2.8, RXO-32.</p><p>&quot;Specifies the address of the dispensing facility.&quot; - HL7 Version 2.8, RXO-33.</p><p>&quot;Contains the telecommunication contact information for the pharmacy.&quot; - HL7 Version 2.8, RXO-36.</p></td>
+            <td valign="top"> <b>Pharmacy</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PharmacyRequest.<b>deliverTo</b></div>
+            </td>
+            <td><p>Pointer to the clinical provider or agency to which the mediction will be delivered.  Added 3/18/2015 to handle the designation in the order of a specialty drug of the provider which should receive for example.  For example, an IV medication would not be sent to the patient&apos;s home but to the home infusion agency that will administer the medication.</p></td>
+            <td valign="top"> <b>HealthcareProvider</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>Return</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class contains information about the reversal of a provision of a medication to a patient or care provider under the authority of the owning Pharmacy Promise.  In inpatient settings, returns often occur when an as-needed (PRN) medication is dispensed to a medication cart and the patient does not need the medication, or a medication order is changed after the cart was prepared; in either casethe cart is returned to the pharmacy at the end of the shift and remaining medication is returned to stock.  In outpatient settings, returns rarely occur after control of the medication has left the pharmacy, however, if the patient never picks up the medication, it will be returned to stock after some set period of time.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Return.<b>dateReturned</b></div>
+            </td>
+            <td><p>The date (and optionally, time) that the pharmaceutical products were returned to stock.</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Return.<b>quantityReturned</b></div>
+            </td>
+            <td><p>The amount of the pharmaceutical product that was returned to stock.  For example, 3 tablets.</p></td>
+            <td valign="top"> Quantity </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>ScriptDue</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class represents two properties that the DUE composite in the NCPDP SCRIPT standard has that the NCPDP Telecommunication standard does not.  In practice, this class&apos; two properties, along with the one property that the Telecommunication standard uniquely contains would likely be moved to the DUE superclass, and we could have modeled it that way, but we&apos;ve chosen to separate the subclasses in order to visually depict the differences between the two standards.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ScriptDue.<b>acknowledgementReason</b></div>
+            </td>
+            <td><p>&quot;Additional textual information regarding intervention and/or acknowledgment associated with a DUE conflict.&quot; - NCPDP Script (Field 7998, Data Dictionary 201104)</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ScriptDue.<b>clinicalSignifanceCode</b></div>
+            </td>
+            <td><p>&quot;Code identifying the significance or severity level of a clinical event as contained in the originating database.Code identifying the significance or severity level of a clinical event as contained in the originating database.&quot; - NCPDP Script (Field 7997, Data Dictionary 201104)</p></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#Clinical Significance">Clinical Significance</a> 
+					
+					 
+</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>TelcomPatient</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class contains patient information that is unique to the NCPDP Telecommunication standard.  This class is modeled as a separate sub-type of Patient in order to illustrate the differences between different standards.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">TelcomPatient.<b>isPregnant</b></div>
+            </td>
+            <td><p>&quot;Code indicating the patient as pregnant or non-pregnant.&quot; - NCPDP Telecommunication (Field 335-2C, Data Dictionary 201104).</p></td>
+            <td valign="top"> Boolean </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">TelcomPatient.<b>isSmoker</b></div>
+            </td>
+            <td><p>&quot;Code indicating the patient as a smoker or non-smoker.&quot; - NCPDP Telecommunication (Field 334-1C, Data Dictionary 201104).</p></td>
+            <td valign="top"> Boolean </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">TelcomPatient.<b>residenceType</b></div>
+            </td>
+            <td><p>&quot;Code identifying the patient&#8217;s place of residence.&quot; - NCPDP Telecommunication (Field 384-4X, Data Dictionary 201104).  Possible values include: Home; Skilled Nursing Facility; Nursing Facility; Assisted Living Facility; Custodial Care Facility; Group Home; Inpatient Psychiatric Facility; Psychiatric Facility &#8211; Partial Hospitalization; Intermediate Care Facility/Mentally Retarded; Residential Substance Abuse Treatment Facility; Hospice; Psychiatric Residential Treatment Facility; Comprehensive Inpatient Rehabilitation Facility; Homeless Shelter; Correctional Institution.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>TelecomDue</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class represents the one property that the NCPDP Telecommunications DUE segment defines that the NCPDP SCRIPT standard does not.  In practice, this class&apos; one property, along with the two properties that the SCRIPT standard uniquely contains would likely be moved to the DUE superclass, and we could have modeled it that way, but we&apos;ve chosen to separate the subclasses in order to visually depict the differences between the two standards.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">TelecomDue.<b>levelOfEffort</b></div>
+            </td>
+            <td><p>&quot;Code indicating the level of effort as determined by the complexity of decision-making or resources utilized by a pharmacist to perform a professional service.&quot; - NCPDP Telecommunication (Field 474-8E, Data Dictionary 201104).</p></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#Dur Pps Level Of Effort">Dur Pps Level Of Effort</a> 
+					
+					 
+</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+  </table>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font">
+         <tr>
+            <th>Value Set Constraint</th>
+            <th>Element Description</th>
+         </tr>
+       
+
+
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID="Personal Relationship Role Type Value Set">Personal Relationship Role Type Value Set</a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">  Personal Relationship Role Type Value Set   <br/> <p>Indicates how the Person who picked up the medication is related to the intended recipient (i.e., the patient).</p><br> 
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>ADOPT</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>AUNT</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>CHILD</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>CHLDINLAW</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>COUSN</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>DOMPART</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>FAMMEMB</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>CHLDFOST</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>GRNDCHILD</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>GPARNT</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>GRPRN</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>GGRPRN</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>HSIB</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>MAUNT</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>MCOUSN</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>MGRPRN</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>MGGRPRN</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>MUNCLE</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>NCHILD</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>NPRN</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>NSIB</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>NBOR</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>NIENEPH</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>PRN</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>PRNINLAW</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>PAUNT</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>PCOUSN</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>PGRPRN</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>PGGRPRN</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>PUNCLE</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>ROOM</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>SIB</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>SIBINLAW</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>SIGOTHR</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>SPS</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>STEP</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>STPPRN</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>STPSIB</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>UNCLE</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>FRND</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+ 
+
+
+       
+		
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID="Due Professional Service">Due Professional Service</a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">  Due Professional Service   <br/> <p>Categorizes the action taken by a pharmacist or prescriber in response to a conflict or the result of a pharmacist&apos;s professional service.</p><p>&quot;Code identifying pharmacist intervention when a conflict code has been identified or service has been rendered.&quot; - NCPDP Telecommunication (Field 440-E5, Data Dictionary 201104).  Possible values include: Patient assessment; Coordination of care; Dosing evaluation/determination; Dosage evaluated; Formulary enforcement; Generic product selection; Prescriber consulted; Medication administration; Overriding benefit; Medication review; Previous patient tolerance; Patient education/instruction; Patient medication history; Patient monitoring; Patient consulted; Perform laboratory test; Pharmacist consulted other source; Recommend laboratory test; Self-care consultation; Literature search/review; Therapeutic product interchange; Other Acknowledgement; No intervention.</p><p>&quot;Action taken in response to a conflict.&quot; - NCPDP Script (Field 7881, Data Dictionary 201104)</p><br> http://fhim.onc.us.gov/terms/temporary/NcpdpprofessionalServiceCodeValueSet
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>00 (No intervention)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>AS (Patient assessment)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>CC (Coordination of care)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>DE (Dosing evaluation/determination)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>DP (Dosage evaluated)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>FE (Formulary enforcement)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>GP (Generic product selection)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>M0 (Prescriber consulted)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>MA (Medication administration)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>MB (Overriding benefit)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>MP (Patient will be monitored)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>MR (Medication review)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>PA (Previous patient tolerance)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>PE (Patient education/instruction)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>PH (Patient medication history)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>PM (Patient monitoring)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>P0 (Patient consulted)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>PT (Perform laboratory test)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>R0 (Pharmacist consulted other source)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>RT (Recommend laboratory test)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>SC (Self-care consultation)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>SW (Literature search/review)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>TC (Payer/processor consulted)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>TH (Therapeutic product interchange)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>ZZ (Other Acknowledgement)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+ 
+
+
+       
+		
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID="Due Reason For Service">Due Reason For Service</a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">  Due Reason For Service   <br/> <p>Categorizes the type of drug utilization conflict detected by the prescriber or the pharmacist or the reason for the pharmacist&apos;s professional service.  Examples include: Drug-Drug Interaction, Dose Range Conflict, Ingredient Duplication, etc.</p><p>&quot;Code identifying the type of utilization conflict detected by the prescriber or the pharmacist or the reason for the pharmacist s professional service.&quot; - NCPDP Telecommunication (Field 439-E4, Data Dictionary 201104).</p><p>&quot;For further explanation, conflict, or clarification of services related to drug use evaluation.... Code identifying the type of conflict detected.  When this composite is used, DUE Reason For Service Code is mandatory.&quot; - NCPDP Script (Field 7880, Data Dictionary 201104).</p><br> http://fhim.onc.us.gov/terms/temporary/NcpdpreasonForServiceValueSet
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+ 
+
+
+       
+		
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID="Due Result Of Service">Due Result Of Service</a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">  Due Result Of Service   <br/> <p>&quot;Action taken by a pharmacist or prescriber in response to a conflict or the result of a pharmacist&#8217;s professional service.&quot; - NCPDP Telecommunication (Field 441-E6, Data Dictionary 201104).</p><p>&quot;Action taken in response to a conflict.&quot; - NCPDP Script (Field 7882, Data Dictionary 201104)</p><br> http://fhim.onc.us.gov/terms/temporary/NcpdpserviceResultCodeValueSet
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>1A (Filled As Is, False Positive)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>1B (Filled Prescription As Is)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>1C (Filled, With Different Dose)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>1D (Filled, With Different Directions)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>1E (Filled, With Different Drug)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>1F (Filled, With Different Quantity)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>1G (Filled, With Prescriber Approval)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>1H (Brand-to-Generic Change)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>1J (Rx-to-OTC Change)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>1K (Filled with Different Dosage Form)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>2A (Prescription Not Filled)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>2B (Not Filled, Directions Clarified)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>3A (Recommendation Accepted)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>3B (Recommendation Not Accepted)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>3C (Discontinued Drug)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>3D (Regimen Changed)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>3E (Therapy Changed)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>3F (Therapy Changed)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>3G (Drug Therapy Unchanged)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>3H (Follow-Up/Report)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>3J (Patient Referral)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>3K (Instructions Understood)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>3M (Compliance Aid Provided)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>3N (Medication Administered)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>00 (Not Specified)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>4A (Prescribed with acknowledgements)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+ 
+
+
+       
+		
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID="Infusion Site">Infusion Site</a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">  Infusion Site   <br/> <p>The site of the patient&apos;s body at which the infusion takes place.  Note that there is a question, in cases where the patient is receiving multiple infusions simultaneously, whether this code should include something about the specific line, or whether there needs to be another attribtue.</p><br> tbd
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>128553008 (antecubital vein)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>71585003 (external jugular vein)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>83419000 (femoral vein)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>278015009 (foot vein)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>308046002 (superficial forearm vein)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>363577004 (vein of hand)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>12123001 (internal jugular vein)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>29850006 (iliac crest)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>310652005 (distal femur)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>64605006 (distal tibia)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>119535006 (sternum)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>20285007 (proximal tibia)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>61685007 (lower limb)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>421466002 (peripheral vein)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>41695006 (scalp)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>9454009 (subclavian vein)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>78220002 (umbilical structure)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>40983000 (upper arm)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>52359001 (radial vein)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>85050009 (humerus)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+ 
+
+
+       
+		
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID="Infusion Velocity">Infusion Velocity</a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">  Infusion Velocity   <br/> <p>Indicates whether the infusion is Continuous or Intermittant. (or Bolus?)    Another possible name is infustionPersistance?    (May need a better name)</p><br> tbd
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>261754007 (Continuous infusion)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>397801003 (Single bolus)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+ 
+
+
+       
+		
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID="Dispensing Status">Dispensing Status</a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">  Dispensing Status   <br/> <p>Indicates that the pharmacist provided a quantity less than authorized to the patient, and provides a reason why this occured.  Typically this occurs when the pharmacy does not have sufficient quantity on hand to meet demand, and it is then expected that the pharmacy will fill the remaining quantity after supplies have been replenished.  In NCPDP SCRIPT, this information is conveyed in a Response Segment in response to a Prescription Fill Status request.</p><p>&quot;Code indicating the quantity dispensed is a partial fill or the completion of a partial fill. Used only in situations where inventory shortages do not allow the full quantity to be dispensed.&quot; - NCPDP Telecommunication (Field 343-HD, Data Dictionary 201104).</p><br> http://fhim.onc.us.gov/terms/temporary/NcpdppartialFillStatusValueSet
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>P (Partial Fill)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>C (Completion of Partial Fill)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+ 
+
+
+       
+		
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID="Reported Payment Type">Reported Payment Type</a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">  Reported Payment Type   <br/> <p>&quot;The type of prescription benefit plan that adjudicated and paid for the prescription.&quot; - NCPDP Telecommunication (Field A29-ZS, Data Dictionary 201104).</p><br> http://fhim.onc.us.gov/terms/temporary/NcpdppaymentTypeValueSet
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>1 (Medicaid)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>2 (Medicare)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>3 (Commercial)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>4 (Workers Compensation)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>5 (Discount Program)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>6 (Coupon)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>7 (Voucher)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>8 (Military / VA)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>99 (Other)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>0 (Cash)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+ 
+
+
+       
+		
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID="Dispense Type">Dispense Type</a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">  Dispense Type   <br/> <p>&quot;This is the type of dispensing event that occurred.&quot; - HL7 Version 2.8, RXA-26 and RXO-27.  Valid values (from HL7 Table 0484) include: Trial Quantity Balance; Compassionate Fill; New/Renew - Full Fill; New/Renew - Part Fill; Refill - Part Fill; Refill - Full Fill; Manufacturer Sample; Trial Quantity; Non-Prescription Fill.</p><p>&quot;Code indicating the quantity dispensed is a partial fill or the completion of a partial fill. Used only in situations where inventory shortages do not allow the full quantity to be dispensed.&quot; - NCPDP Telecommunication (Field 343-HD, Data Dictionary 201104).  Possible values include: Partial Fill; Completion of Partial Fill.</p><br> http://hl7.org/fhir/v2/0484
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>B (Trial Quantity Balance)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>C (Compassionate Fill)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>N (New/Renew - Full Fill)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>P (New/Renew - Part Fill)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>Q (Refill - Part Fill)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>R (Refill - Full Fill)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>S (Manufacturer Sample)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>T (Trial Quantity)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>Z (Non-Prescription Fill)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+ 
+
+
+       
+		
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID="Dispense Method">Dispense Method</a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">  Dispense Method   <br/> <p>&quot;Contains the method by which treatment is dispensed.&quot; - HL7 Version 2.8, RXD-24.  Possible values (from HL7 Table 321) include: Traditional; Unit Dose; Floor Stock; Automatic Dispensing.</p><br> http://hl7.org/fhir/v2/0321
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>AD (Automatic Dispensing)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>F (Floor Stock)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>TR (Traditional)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>UD (Unit Dose)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+ 
+
+
+       
+		
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID="Special Packaging Indicator">Special Packaging Indicator</a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">  Special Packaging Indicator   <br/> <p>&quot;Code indicating the type of dispensing dose.&quot; - NCPDP Telecommunication (Field 429-DT, Data Dictionary 201104).  Possible values include: Not Unit Dose; Manufacturer Unit Dose; Pharmacy Unit Dose; Pharmacy Unit Dose Patient Compliance Packaging; Pharmacy Multi-drug Patient Compliance Packaging; Remote Device Unit Dose; Remote Device Multi- drug Compliance; Manufacturer Unit of Use Package (not unit dose); Not Specified.</p><br> http://fhim.onc.us.gov/terms/temporary/NcpdpspecialPackagingValueSet
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>1 (Not Unit Dose)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>2 (Manufacturer Unit Dose)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>3 (Pharmacy Unit Dose)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>4 (Pharmacy Unit Dose Patient Compliance Packaging)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>5 (Pharmacy Multi-drug Patient Compliance Packaging)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>6 (Remote Device Unit Dose)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>7 (Remote Device Multi- drug Compliance)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>8 (Manufacturer Unit of Use Package (not unit dose))</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>0 (Not Specified)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+ 
+
+
+       
+		
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID="Strength Form">Strength Form</a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">  Strength Form   <br/> <p>Form: &quot;The shape and structure of something as distinguished from its material&quot; (Webster&apos;s Medical Dictionary).</p><p>Indicates the form of the material making up a single dose (as opposed to how the dose is packaged).  Possible values include Tablet, Drop, Lozenge, Cream, etc.</p><p>&quot;Indicates the manner in which the treatment is aggregated for dispensing, e.g., tablets, capsules, suppositories.&quot; - HL7 Version 2.8, RXO-5.</p><br> 
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+ 
+
+
+       
+		
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID="Pharmacy Order">Pharmacy Order</a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">  Pharmacy Order   <br/> <p>&quot;Defines the general category of pharmacy order which may be used to determine the processing path the order will take....  This field may also be used for grouping of related orders for processing and/or reports.  For example, Medication Administration Records often group large volume solutions, medications and small volume solutions differently based upon site-specific workflow.&quot; - HL7 Version 2.8, RXA-26, RXD-32, and RXO-27.  Valid values (from HL7 Table 0480) include: Medication; IV Large Volume Solutions; Other solution as medication orders.</p><br> http://hl7.org/fhir/v2/0480
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>M (Medication)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>O (Other solution as medication orders)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>S (IV Large Volume Solutions)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+ 
+
+
+       
+		
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID="Clinical Significance">Clinical Significance</a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">  Clinical Significance   <br/> <p>&quot;Code identifying the significance or severity level of a clinical event as contained in the originating database.Code identifying the significance or severity level of a clinical event as contained in the originating database.&quot; - NCPDP Script (Field 7997, Data Dictionary 201104)</p><br> http://fhim.onc.us.gov/terms/temporary/NcpdpclinicalSignifanceCodeValueSet
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>1 (Major)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>2 (Moderate)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>3 (Minor)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>9 (Undetermined)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>(blank) (Not Specified)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+ 
+
+
+       
+		
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID="Dur Pps Level Of Effort">Dur Pps Level Of Effort</a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">  Dur Pps Level Of Effort   <br/> <p>&quot;Code indicating the level of effort as determined by the complexity of decision-making or resources utilized by a pharmacist to perform a professional service.&quot; - NCPDP Telecommunication (Field 474-8E, Data Dictionary 201104).</p><br> http://fhim.onc.us.gov/terms/temporary/NcpdplevelOfEffortValueSet
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>11 (Level 1 (Lowest))</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>12 (Level 2 (Low Complexity))</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>13 (Level 3 (Moderate Complexity))</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>14 (Level 4 (High Complexity))</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>15 (Level 5 (Highest))</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>0 (Not Specified)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+ 
+
+
+       
+		
+
+
+</table>
+

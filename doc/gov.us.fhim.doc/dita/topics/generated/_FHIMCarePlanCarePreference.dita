@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMCarePlanCarePreference" xml:lang="en-us">
+<title id="title">CarePreference</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	CarePreference is a kind of <xref href="../t_FHIMCommonClinicalInformationAbstract.dita">ClinicalInformation(Abstract)</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>&quot;A care preference is a statement expressed by the patient, custodian or caretaker responsible for the patient in order to influence how their care is delivered. A preference expresses a personal choice and may be driven by cultural, religious and moral principles. As such it is a principal component of patient centered care and autonomy. Care preferences serve as modifiers of the Care Plan which influence how the plan is personalized for the individual. A care preference may be specified prospectively to influence future care planning and treatment or it may be expressed and recorded at arbitrary decision points during interventions. A preference expresses a request to fulfill a patient&apos;s choice or desire. The choice may be a strong and absolute statement such as an end of life directive. The request could also be a desire to be fulfilled if possible given care team capabilities and resources.&quot; - HL7 Care Plan Domain Analysis Model</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>effectiveTime :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The date/time the preference becomes effective for consideration when providing care&quot; - HL7 Care Plan Domain Analysis Model.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>media :  String (0..*)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Optional link to external documentation supporting the preference (e.g. scanned advance directive or legal documents on file).&quot; - HL7 Care Plan Domain Analysis Model
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>notes :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Optional notes about the preference. The note captures a text narrative, date of the note and the individual making the note.&quot; - HL7 Care Plan Domain Analysis Model.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>preference :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Descriptive code which specifies the type of the patient preference.&quot; - HL7 Care Plan Domain Analysis Model.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>reason :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Captures a reason indicator for the preference. The reason may be classified as cultural, religious, moral/ethical. The reason is a factor which should already be included in considering the strength of the preference. It is explicitly indicated in the model in order to provide context for handling with sensibility.&quot; - HL7 Care Plan Domain Analysis Model.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>strength :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Note that this property may be removed as part of the harmonization with Advance Directive</p><p>&quot;The strength indicates flexibility in the interpretation of the patient&apos;s choice by the care team participants. The strength may be High and indicate an absolute choice driven by moral principles, cultural or religious principles. Or it may indicate an important desire which the patient has but for which the patient has flexibility. The strength may have a value of either High (absolute choice) or Low (desired choice).&quot; - HL7 Care Plan Domain Analysis Model.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>unfulfilledReason :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Note that this property may be removed as part of the harmonization with Advance Directive</p><p>&quot;Captures the reason why a preference cannot be applied during an intervention in which the preference should apply. This property can only be set for preferences associated with a Health Activity &quot; - HL7 Care Plan Domain Analysis Model
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>acceptanceReview : <xref href="../t_FHIMCarePlanAcceptanceReview.dita" >AcceptanceReview</xref> (0..*)</p></stentry>
+  <stentry><p>				Captures acceptance or acknowledgement of the preference by one or more care team members. Acceptance represents alignment of the patient and providers understanding. 
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>alternatePreference : <xref href="../t_FHIMCarePlanCarePreference.dita" >CarePreference</xref> (0..*)</p></stentry>
+  <stentry><p>				&quot;A list of ordered alternate preferences acceptable to the patient or caretaker in case the primary preference cannot be fulfilled. The ordering indicates the next best alternative for the patient.&quot; - HL7 Care Plan Domain Analysis Model
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

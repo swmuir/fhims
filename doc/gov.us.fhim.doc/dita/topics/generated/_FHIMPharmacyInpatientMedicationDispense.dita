@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMPharmacyInpatientMedicationDispense" xml:lang="en-us">
+<title id="title">InpatientMedicationDispense</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	InpatientMedicationDispense is a kind of <xref href="../t_FHIMPharmacyPharmacyDispenseAbstract.dita">PharmacyDispense(Abstract)</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class contains information about the provision of a medication to a patient or care provider under the authority of the owning Pharmacy Promise in an inpatient setting.  This class includes medications placed in a medication cart for a caregiver (usually a nurse) to administer to the patient during scheduled rounds.  Note that while this class does not currently contain any properties in addition to those defined in the Pharmacy Dispense supertype, it functions to make the class concrete, as the Pharmacy Dispense class is abstract.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+
+ <strow>
+  <stentry><p>ward : <xref href="../t_FHIMProviderServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (1..1)</p></stentry>
+  <stentry><p>				The ward where the dispense took place.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

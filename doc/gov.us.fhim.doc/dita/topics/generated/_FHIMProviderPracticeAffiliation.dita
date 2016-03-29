@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMProviderPracticeAffiliation" xml:lang="en-us">
+<title id="title">PracticeAffiliation</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	PracticeAffiliation is a kind of <xref href="../t_FHIMProviderProviderAffiliation.dita">ProviderAffiliation</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>A Practice is an Organizational Provider composed of one or more Provider for the purpose of providing medical services.  When the Practice is composed of multiple Providers, it is often called a Group Practice.  This class represents information about the association between an Individual Provider and a Practice.</p><p>Note that the FHIM makes a simplifying assumption that all Providers are associated with at least one Organizational Providers.  Even when a physician is self-employed, we assume that the physician is incorporated, or has some kind of organizational face.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+
+ <strow>
+  <stentry><p>serviceDeliveryLocation : <xref href="../t_FHIMProviderServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to the Service Delivery Locations with which the Individual Provider is associated due to his/her affiliation to the Practice.</p><p>&quot;The location(s) at which this practitioner provides care.&quot; - HL7 FHIR, Practitioner.practitionerRole.location.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

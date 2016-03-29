@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMAdverseEventReportingDeviceObservation" xml:lang="en-us">
+<title id="title">DeviceObservation</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>Contains information describing any medical devices (whether suspect or concommittant) used by the subject near the time of the adverse event occurred.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>dateExplanted :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The date the patient stopped using the product.  Medwatch 3500 form question E.7; Medwatch 3500A form question D.7; Medwatch 3500B form question C.7.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateImplanted :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The date the patient began to use the product.  Medwatch 3500 form question E.6; Medwatch 3500A form question D.6; Medwatch 3500B form question C.6.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>deviceOperator :  <xref href="../t_FHIMAdverseEventReportingenumDeviceOperator.dita" >enumDeviceOperator</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Is this product meant to be used only one time (i.e., single-use), but was reprocessed and/or reused?  Medwatch 3500 form question E.8; Medwatch 3500A form question D.8.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>otherUserText :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Was the operator or user of the device neither the patient nor a healthcare professional?  If yes, the other user text should be valued.  Medwatch 3500 form question E.5; Medwatch 3500A form question D.5; Medwatch 3500B form question C.5.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>therapyStartDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Medwatch 3500A form question D.11.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>therapyStopDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Medwatch 3500A form question D.11.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>wasSingleUseReprocessed :  Boolean (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Is this product meant to be used only one time (i.e., single-use), but was reprocessed and/or reused?</p><p>MedWatch 3500 form question E.8.</p><p>MedWatch 3500A form question D.8.</p><p>(note that the MedWatch 3500B and the VAERS-1 forms do not have this element).
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>deviceInstance : <xref href="../t_FHIMCommonCommonProductDeviceInstance.dita" >DeviceInstance</xref> (1..1)</p></stentry>
+  <stentry><p>				Pointer to the Device Instance (and therefore more generic information about the device product) that is suspected to have caused the adverse event, product problem, or product use error.</p><p>Medwatch 3500A form question D.1 (brand name), D.2 (commond device name), D.2.b (Procom), 5, box 2.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

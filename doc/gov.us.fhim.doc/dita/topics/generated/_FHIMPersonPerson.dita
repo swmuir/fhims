@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMPersonPerson" xml:lang="en-us">
+<title id="title">Person</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	Person is a kind of <xref href="../t_FHIMPersonBiologicalEntityAbstract.dita">BiologicalEntity(Abstract)</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class represents a human being of interest to the enterprise.  The person may potentially play many different roles, including those of a patient, a provider, or an employee.  It is noted that the same person may play different roles at different times.  For example, an employee may also be a licensed healthcare provider and may also at times be a patient.</p><p></p><p>Notes:</p><p>Removed educationLevel (4/4/2013) until we have a clear use case for it.  It&apos;s in the HL7 RIM, but not in V2.  Note that education information for provider credentialling is in Provider.</p><p>We had an ethnicityGroup and raceCategory to handle more coarse-grained codesets, but removed them as the ethnicity and race codes are expected to use hierarchical fine-grained codesets.  The groups or categories can be calculated from the fine ones.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>address :  <xref href="../t_FHIMDatatypesAddress.dita" >Address</xref> (0..*)</p> 
+
+
+</stentry>
+  <stentry><p>				A physical address at which the person is located or can be reached. The datatype for this property is Address which contains a type code to indicate what kind of address is being referenced. Note that this property can contain more than one entry.</p><p></p><p>&quot;Contains the address of the patient.  Multiple addresses for the same person may be sent.&quot; - HL7 Version 2.8, PID-11.</p><p>&quot;One or more addresses for the person.&quot; - HL7 FHIR, Person.address.</p><p>&quot;Addresses for the individual.&quot; - HL7 FHIR, Patient.address.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>administrativeGender :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+<p>See <xref href="../t_fhimvocabPersonVocabFHIM_AdministrativeGender.dita">FHIM_Administrative Gender</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				&quot;Gender is used to refer to administrative sex rather than biological sex and therefore should easily be classified into female and male. It is included in the exchange for purposes of linking to insurance information and other patient identification linkages and the value chosen by the patient should reflect the information under which any insurance or financial information will be filed, as well as the same information given to other healthcare providers, institutions or health data exchange networks&quot; - HITSP C154</p><p></p><p>&quot;The gender (i.e., the behavioral, cultural, or psychological traits typically associated with one sex) of a living subject as defined for administrative purposes.  This attribute does not include terms related to clinical gender.  Gender is a complex physiological, genetic, and sociological concept that requires multiple observations in order to be comprehensively described.  The purpose of this attribute is to provide a high-level classification that can also be used for the appropriate allocation of inpatient bed assignment. - HL7 Version 3 RIM.</p><p></p><p>Note that the this concept is restricted to those societal roles as perceived in the United States and other Western cultures.</p><p></p><p>&quot;The patient&apos;s sex.&quot; - HL7 Version 2.8, PID-8.</p><p>&quot;The next of kin/associated party&apos;s sex.&quot; - HL7 Version 2.8, NK1-15.</p><p>HL7 Version 2 has the following suggested values (table 1): Female; Male; Other; Unknown; Ambiguous; Not applicable.</p><p>&quot;Administrative Gender.&quot; - HL7 FHIR, Person.gender.</p><p>&quot;Administrative Gender - the gender that the patient is considered to have for administration and record keeping purposes.&quot; - HL7 FHIR, Patient.gender.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>birthAddress :  <xref href="../t_FHIMDatatypesAddress.dita" >Address</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The city, state (or other designation such as province or region) and country where a person was born.  Used for both identification and statistical purposes.</p><p></p><p>&quot;Indicates the location of the patient&apos;s birth&quot; - HL7 Version 2.8, PID-23.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>birthName :  <xref href="../t_FHIMDatatypesPersonName.dita" >PersonName</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				A name that a person had shortly after being born. Usually for family names but may be used to mark given names at birth that may have changed later.  In western cultures, this name can be used for &quot;maiden name.&quot;  Note that the data type for this property is a PersonName, which includes the various parts that make up a person&apos;s name such as family name, prefixes, suffixes, etc.    &quot;This field contains one or more of the names of the patient.&quot; - HL7 Version 2.8, PID-5  Note that in HL7, the PersonName data type contains a type code to indicate what kind of name is being referenced.  The FHIM explicitly models the name type, so in this case the attribute name is &quot;Birth Name&quot;, and the type code would be set to &quot;birth name&quot; when targeting an HL7 implementation.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>ethnicity :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..*)</p> 
+<p>See <xref href="../t_fhimvocabPersonVocabDetailedEthnicity.dita">Detailed Ethnicity</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				A group of people whose members identify with each other, through a common heritage, often consisting of a common language, a common culture (often including a shared religion) and an ideology that stresses common ancestry or endogamy .  In addition, an ethnic group often shares an interest in a homeland connected with a specific geographical area and common traditions, including food preferences  (Wikipedia).  Note that unlike race, which concentrates on a person s physical heritage, ethnicity is concerned with the cultural heritage with which a person identifies themselves.  Examples of ethnicity include: German, Scandinavian, Italian, Irish, etc.  These ethnic groups are of the same race (Caucasian, or  white ).  Note also that the set of ethnicity values used may vary based on the purpose for collecting this information.  The U.S. Office of Management and Budget (OMB) issues a set to be used for census purposes.  See OMB publication 15.  This property may contain more than one ethnicity for a given person, identified in no particular order.</p><p>&quot;This field further defines the patient&apos;s ancestry.&quot; - HL7 Version 2.8, PID-22.</p><p>&quot;The next of kin/associated party&apos;s ethnic group.&quot; - HL7 Version 2.8, NK1-28.</p><p>HL7 Version 2 has the following suggested values (table 189): Hispanic or Latino; Not Hispanic or Latino; Unknown.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>fathersName :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The name of the father of the person.  Used primarily for identification purposes.  Added for VRM, but other use cases are anticipated.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>handicap :  String (0..*)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Indicates the nature of the patient&apos;s permanent handicapped condition (e.g., deaf, blind).  A handicapped condition is defined as a physical or mental disability that is permanent.&quot; - HL7 Version 2.8, PD1-6.</p><p></p><p>Note that this property is included in the FHIM for compatibility to HL7 V2, although we have not yet identified a particular need for it by partner agencies.  It is therefore modeled as an optional element.  In addition, the potential values for this field are currently unknown.  Therefore we have modeled it as a String rather than a Code, because we currently do not have a use case which requires a particular set of values.  Note also that HL7 identifies a Code Table (Table 295) for this property, but does not provide any suggested values.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>identityReliabilityCode :  String (0..*)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Contains a coded value used to communicate information regarding the reliability of patient/person identifying data transmitted via a transaction.  Values could indicate that certain fields on a PID segment for a given patient/person are known to be false (e.g., use of default or system-generated values for Date of Birth or Social Security Number).&quot; - HL7 Version 2.8, PID-32.  HL7 Version 2 has the following suggested values (table 445): Unknown/Default Social Security Number; Unknown/Default Date of Birth; Unknown/Default Address; Patient/Person Name is an Alias.  Suggest that the FHIM use something like: Unreliable Social Security Number, Unreliable Date of Birth, Unreliable Address; Unreliable Name.</p><p></p><p>Note that this property is included in the FHIM for compatibility to HL7 V2, although we have not yet identified a particular need for it by partner agencies.  It is therefore modeled as an optional element.  In addition, the potential values for this field are currently unknown.  Therefore we have modeled it as a String rather than a Code, because we currently do not have a use case which requires a particular set of values.  Note also that HL7 identifies a Code Table (Table 445) for this property, but does not provide any suggested values.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>isActive :  Boolean (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This optional property can be used to indicate whether the Person&apos;s record is active. It is included for compatibility to FHIR.</p><p>&quot;Whether this person&apos;s record is in active use.&quot; - HL7 FHIR, Person.active.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>isIdentityUnknown :  Boolean (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Indicates whether or not the patient&apos;s/person&apos;s identity is known.&quot; - HL7 Version 2.8, PID-31.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>isTranslatorNeeded :  Boolean (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Indicates whether this person needs translation services due to an inability to speak English.  Added for Public Health Reporting 6/14/2012.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>lastUpdateDateTime :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Contains the last update date and time for the patient&apos;s/person&apos;s identifying and demographic data, as defined in the PID segment....&quot; - HL7 Version 2.8, PID-33.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>lastUpdateFacility :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Identifies the facility of the last update to a patient&apos;s/person&apos;s identifying and demographic data, as defined in the PID segment....&quot; - HL7 Version 2.8, PID-34.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>livingArrangement :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+<p>See <xref href="../t_fhimvocabPersonVocabFHIM_LivingArrangement.dita">FHIM_LivingArrangement</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				&quot;The housing situation of a person.  This attribute is used for discharge planning, social service assessment, and psychosocial evaluation.&quot; - HL7 Version 3 RIM.</p><p>&quot;The situation in which the patient lives at his residential address.  Examples might include Alone, Family, Relatives, Institution, etc.&quot; - HL7 Version 2.8, PD1-2.</p><p>&quot;The situation that the associated party lives in at his/her residential address.&quot; - HL7 Version 2.8, NK1-21.</p><p>Possible values include (from HL7 Table 220): Alone; Family; Institution; Relative; Unknown; Spouse Only.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>livingDependency :  String (0..*)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Identifies specific living conditions (e.g., spouse dependent on patient, walk-up) that are relevant to an evaluation of the patient&apos;s healthcare needs.  This information can be used for discharge planning. This field repeats because, for example, &quot;spouse dependent&quot; and &quot;medical supervision required&quot; can apply at the same time.&quot; - HL7 Version 2.8, PD1-1.</p><p></p><p>&quot;Identifies specific living conditions (e.g., spouse dependent on patient, walk-up) that are relevant to an evaluation of the patient&apos;s healthcare needs.  This information can be used for discharge planning.  Examples might include Spouse Dependent, Medical Supervision Required, Small Children Dependent.&quot; - HL7 Version 2.8, NK1-17.</p><p></p><p>Possible values include (from HL7 V2 Table 223): Spouse Dependent; Medical Supervision Required; Small Children Dependent; Other; Unknown.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>managingOrganization :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This optional property can be used to identify the organization or organizational component that owns or manages the record of the Person. This property has been included for compatibility with FHIR.</p><p>&quot;The Organization that is the custodian of the person record.&quot; - HL7 FHIR, Person.managingOrganization.</p><p>&quot;Organization that is the custodian of the patient record.&quot; - HL7 FHIR, Patient.managingOrganization.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>maritalStatus :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+<p>See <xref href="../t_fhimvocabPersonVocabMaritalStatusValueSet.dita">Marital Status Value Set</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				&quot;Contains the patient&apos;s marital (civil) status.&quot; - HL7 Version 2.8, PID-16.</p><p>&quot;Contains the next of kin/associated party&apos;s marital status.&quot; - HL7 Version 2.8, NK1-14.</p><p>HL7 Version 2 has the following suggested values (table 2): Separated; Divorced; Married; Single; Widowed; Common law; Living together; Domestic partner; Registered domestic partner; Legally Separated; Annulled; Interlocutory; Unmarried; Unknown; Other; Unreported.</p><p>&quot;The domestic partnership status of a person.&quot; - HL7 Version 3 RIM.</p><p>&quot;This field contains a patient&apos;s most recent marital (civil) status.&quot; - HL7 FHIR, Patient.maritalStatus.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>mothersMaidenName :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The family name under which the [person&apos;s] mother was born (i.e., before marriage). It is used to distinguish between patients with the same last name.&quot; - HL7 Version 2.8, PID-6.</p><p>&quot;The maiden name of the next of kin/associated party&apos;s mother.&quot; - HL7 Version 2.8, NK1-26.</p><p>This property is typically used for identity management purposes, especially to distinguish between persons who may have similar or identical names.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>name :  <xref href="../t_FHIMDatatypesPersonName.dita" >PersonName</xref> (0..*)</p> 
+
+
+</stentry>
+  <stentry><p>				The name by which a person is known or legally identified such as the name on a driver&apos;s license or passport.  Note that the data type for this property is a PersonName, which includes the various parts that make up a person&apos;s name such as family name, prefixes, suffixes, etc.  Note that in HL7, the PersonName data type contains a type code to indicate what kind of name is being referenced.  The FHIM explicitly models the name type, so in this case the attribute name is &quot;Legal Name&quot;, and the type code would be set to &quot;Legal Name&quot; when targeting an HL7 implementation.</p><p></p><p>&quot;Contains one or more of the names of the patient....&quot; - HL7 Version 2.8, PID-5.</p><p>&quot;A name associated with the person.&quot; - HL7 FHIR, Person.name.</p><p>&quot;A name associated with the individual.&quot; - HL7 FHIR, Patient.name
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>photo :  <xref href="../t_FHIMDatatypesImage.dita" >Image</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;An image that can be displayed as a thumbnail of the person to enhance the identification of the individual.&quot; - HL7 FHIR, Person.photo.</p><p>&quot;Image of the patient.&quot; - HL7 FHIR, Patient.photo.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>preferredContactMethod :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The preferred method by which this person should be contacted.  Possible values include: primaryHomePhone, temporaryEmail, etc.  Added for MyHealtheVet.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>race :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..*)</p> 
+<p>See <xref href="../t_fhimvocabPersonVocabRaceValueSet.dita">Race Value Set</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				A classification of humans into large and distinct populations or groups by factors such as heritable phenotypic characteristics or geographic ancestry, but also often influenced by and correlated with traits such as appearance, culture, ethnicity, and socio-economic status.  (Wikipedia).  This property may contain more than one race for a given person, identified in no particular order.</p><p>&quot;This field refers to the patient&apos;s race.&quot; - HL7 Version 2.8, PID-10.</p><p>&quot;The race of the next of kin/associated party.&quot; - HL7 Version 2.8, NK1-35.</p><p>HL7 Version 2 has the following suggested values (table 5): American Indian or Alaska Native; Asian; Black or African American; Native Hawaiian or Other Pacific Islander; White; Other Race.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>religiousAffiliation :  String (0..*)</p> 
+<p>See <xref href="../t_fhimvocabPersonVocabReligiousAffiliationValueSet.dita">Religious Affiliation Value Set</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				Identifies a set of spiritual beliefs to which the person adheres.  This property is used primarily to accommodate the person&apos;s religious preferences in clinical settings.</p><p>&quot;The ... religious preference of a person (e.g. Hinduism, Islam, Roman Catholic). - HL7 Version 3 RIM.</p><p>&quot;Contains the patient&apos;s religion.&quot; - HL7 Version 2.8, PID-17.</p><p>&quot;The type of religion practiced by the next of kin/associated party.&quot; - HL7 Version 2.8, NK1-25.</p><p>Note that HL7 Version 2 table 6 lists 85 suggested values for this field.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>ssn :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				A nine digit identification number assigned to a person by the US Social Security Administration.  Used primarily for identification purposes.  Note that HIPAA forbids the use of SSN as a primary identifier.  Maps to HL7 Version 2.8, PID-18.  Note that while Social Security Number is a type of Id, and could be modeled as simply one of the possible instances of the &quot;id&quot; property, it is explicitly modeled because it is a particular kind of identifier that is needed for various business processes.</p><p>&quot;Identifier for a person within a particular scope.&quot; - HL7 FHIR, Person.identifier.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>telecom :  <xref href="../t_FHIMDatatypesContactPoint.dita" >ContactPoint</xref> (0..*)</p> 
+
+
+</stentry>
+  <stentry><p>				Indicates how and at what address that the person can be reached via electronic communications. The datatype for this property is ContactPoint, which can be used for telephone numbers as well as email, etc.  The ContactPoint data  type contains a type code to indicate what kind of telecommunications address that is being referenced. Note that this property can contain more than one entry.</p><p></p><p>&quot;Contains the patient&apos;s personal telecommunication contact information.&quot; - HL7 Version 2.8, PID-40.</p><p>&quot;A contact detail for the person, e.g. a telephone number or an email address.&quot; - HL7 FHIR, Person.telecom.</p><p>&quot;A contact detail (e.g. a telephone number or an email address) by which the individual may be contacted.&quot; - HL7 FHIR, Patient.telecom.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>advanceDirective : <xref href="../t_FHIMPersonAdvanceDirective.dita" >AdvanceDirective</xref> (0..*)</p></stentry>
+  <stentry><p>				A pointer to a set of instructions provided in advance by the person specifying what actions may be taken on their behalf.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>asCitizen : <xref href="../t_FHIMPersonCitizen.dita" >Citizen</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to a person&apos;s role as a &quot;native or naturalized member of a state or nation who owes allegiance to its government and is entitled to its protection&quot; - Dictionary.com.</p><p>&quot;Information related to a person&apos;s country citizenship.  For country citizenship HL7 recommends using ISO table 3166....  This field repeats since persons can be citizens of more than one country.&quot; - HL7 Version 2.8, PID-26.</p><p>&quot;Identif(ies) the next of kin/associated party&apos;s citizenship.&quot; - HL7 Version 2.8, NK1-19.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>asEmployee : <xref href="../t_FHIMPersonEmployee.dita" >Employee</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to the Role a Person plays as an Employee of some Organization.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>asProvider : <xref href="../t_FHIMProviderIndividualProvider.dita" >IndividualProvider</xref> (0..1)</p></stentry>
+  <stentry><p>				Pointer to the role information of a person who is authorized to provide health care services.  The role of practitioner includes all functions performed for a health care provider organization in order to provide patient care and treatment.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>asStudent : <xref href="../t_FHIMPersonStudent.dita" >Student</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to the Role a Person plays as a Student at some School.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>asUniformedServicePerson : <xref href="../t_FHIMPersonUSUniformedServicesPerson.dita" >USUniformedServicesPerson</xref> (0..1)</p></stentry>
+  <stentry><p>				Pointer to the role a person plays as a past or present member of a uniformed service.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>birthCertificate : <xref href="../t_FHIMPersonBirthCertificateBirthCertificate.dita" >BirthCertificate</xref> (0..*)</p></stentry>
+  <stentry><p>				A pointer to a record of the person&apos;s birth.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>contactParty : <xref href="../t_FHIMPersonContactParty.dita" >ContactParty</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to the (Role of the) Person who should be contacted on the patients behalf under specified situations.</p><p>&quot;A contact party (e.g. guardian, partner, friend) for the patient.&quot; - HL7 FHIR, Patient.contact.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>deathCertificate : <xref href="../t_FHIMPersonDeathCertificateDeathCertificate.dita" >DeathCertificate</xref> (0..*)</p></stentry>
+  <stentry><p>				A pointer to a record of the person&apos;s death.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>languageCapability : <xref href="../t_FHIMPersonLanguageCapability.dita" >LanguageCapability</xref> (0..*)</p></stentry>
+  <stentry><p>				A pointer to information regarding the language communication capabilities for a Person.</p><p>&quot;The patient&apos;s primary language.  HL7 recommends using ISO table 639&quot; - HL7 Version 2.8, PID-15.</p><p>&quot;The next of kin/associated party&apos;s primary speaking language.&quot; - HL7 Version 2.8, NK1-20.</p><p>&quot;Languages which may be used to communicate with the patient about his or her health&quot; - HL7 FHIR, Patient.communication.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>link : <xref href="../t_FHIMPersonLink.dita" >Link</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to a record that links this Person record with another Person record referring to the same real-world person.</p><p>&quot;Link to a resource that concerns the same actual person&quot; - HL7 FHIR, Person.link
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>occupationalHistory : <xref href="../t_FHIMPersonOccupationalHistoryObservation.dita" >OccupationalHistoryObservation</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to a set of observations regarding the usual occupation of a person, and what industries the person has worked in.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>organizationalRepresentative : <xref href="../t_FHIMPersonOrganizationalRepresentative.dita" >OrganizationalRepresentative</xref> (0..*)</p></stentry>
+  <stentry><p>				&quot;The name of the organization that serves as a next of kin/associated party or as the next of kin of the patient.  This field may also be used to communicate the name of the organization at which the associated party works.&quot; - HL7 Version 2.8, NK1-13.</p><p>&quot;Organization on behalf of which the contact is acting or for which the contact is working.&quot; - HL7 FHIR, Patient.contact.organization.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>relatedPerson : <xref href="../t_FHIMPersonPersonalRelationship.dita" >PersonalRelationship</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to the (Role of the) Person to whom the originating Person is related in some way.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

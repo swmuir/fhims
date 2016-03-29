@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMDatatypesOtherCountryMailingAddress" xml:lang="en-us">
+<title id="title">OtherCountryMailingAddress</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	OtherCountryMailingAddress is a kind of <xref href="../t_FHIMDatatypesAddress.dita">Address</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>A specialization of Address that is used for addresses in countries other than the United States or Canada.  The purpose of this sub-type is to provide a mechanism to add a jurisdiction property which is not bound to any valueset (in fact it is merely a string, not a code), so as to be able to record the state or province as needed by that country&apos;s postal designation conventions without having to know or maintain a closed list of possible jurisdictions beforehand.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>jurisdiction :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This property is a string for the &quot;jurisdiction&quot;, which would have the state or province as needed by the country&apos;s postal  designation conventions. In some cases, this property will be blank, and the jurisdiction would be part of one of the  street address lines.</p><p>&quot;Sub-unit of a country with limited sovereignty in a federally organized country. A code may be used if codes are in common use (i.e. US 2 letter state codes).&quot; - HL7 FHIR, Address.state
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

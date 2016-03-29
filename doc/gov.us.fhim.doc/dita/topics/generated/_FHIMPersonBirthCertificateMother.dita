@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMPersonBirthCertificateMother" xml:lang="en-us">
+<title id="title">Mother</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>Contains demographic information about the newborn&apos;s mother.  Note that the properties of this class can be derived from Person and therefore are all marked as Derived, yet we wanted to clearly show where the specific fields on the birth certificate can be found, so they are in this class for logical model purposes.   This class would probably not be instantiated in actual implentations.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>isMotherMarried :  Boolean (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				[US Standard Certificate Of Birth Field 15].  Indicates whether the infant&apos;s mother was married at birth, conception, or any time in between.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>isMothersMailingAddressSameAsResidence :  Boolean (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				[US Standard Certificate Of Birth Field 14].  Indicates whether the mother&apos;s mailing address and the mother&apos;s residence address at the time of the infant&apos;s birth are the same or different.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>isMothersResidenceInsideCityLimits :  Boolean (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				[US Standard Certificate Of Birth Field 09g].  Indicates whether the mother&apos;s residence at the time of the infant&apos;s birth is within city limits.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>motherHispanicOriginCategory :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				[US Standard Certificate Of Birth Field 21].  Indicates whether the infant&apos;s mother is of Hispanic origin, and if so, further categorizes her ethnicity.  Possible values include: No, not Spanish/Hispanic/Latina; Yes, Mexican, Mexican American, Chicana; Yes, Puerto Rican; Yes, Cuban; and Yes, other Spanish/Hispanic/Latina.  If &quot;Yes, other Spanish/Hispanic/Latina&quot; is chosen, then the motherHispanicOriginOther is used to further specify.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>motherHispanicOriginOther :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				[US Standard Certificate Of Birth Field 21].  If motherHispanicOriginCategory is &quot;Yes, other Spanish/Hispanic/Latina&quot;, then this free text property is used to further specify the infant&apos;s mother&apos;s ethnicity.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>mothersBirthAddress :  <xref href="../t_FHIMDatatypesAddress.dita" >Address</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				[US Standard Certificate Of Birth Field 08d].  The birthplace (limited to State, Territory, or Foreign Country) of the infant&apos;s mother.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>mothersCurrentLegalName :  <xref href="../t_FHIMDatatypesPersonName.dita" >PersonName</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				[US Standard Certificate Of Birth Field 08a].  The legal name of the infant&apos;s mother at the time of the infant&apos;s birth.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>mothersDateOfBirth :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				[US Standard Certificate Of Birth Field 08b].  The infant&apos;s mother&apos;s date of birth.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>mothersEducationLevel :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				[US Standard Certificate Of Birth Field 20].  Categorizes the degree or level of school completed by the infant&apos;s mother at the time of delivery.  Possible values include: 8th grade or less; 9th-12th grade, no diploma; High school graduate or GED completed; Some college credit, but no degree; Associate degree (e.g., AA, AS); Bachelor&apos;s degree (e.g., BA, AB, BS); Master&apos;s degree (e.g., MA, MS, MEng, MSW, MBA); Doctorate (e.g., PhD, EdD), or Professional degree (e.g., MD, DDS, DVM, LLB, JD).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>mothersMaidenName :  <xref href="../t_FHIMDatatypesPersonName.dita" >PersonName</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				[US Standard Certificate Of Birth Field 08c].  The legal name of the infant&apos;s mother at the time of her birth.  Note that this might be derived from the infant&apos;s Person record, as this is used as a Person Demographic property for purposes of Identity Management.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>mothersMailingAddress :  <xref href="../t_FHIMDatatypesAddress.dita" >Address</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				[US Standard Certificate Of Birth Field 14].  The mailing address of the mother at the time of the infant&apos;s birth.  Used if different than the mothersResidenceAddress
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>mothersMedicalRecordId :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				[US Standard Certificate Of Birth Field 40].  Uniquely identifies the mother&apos;s medical record within the institution&apos;s set of records.  Note that this is modeled as a string, as this is all that is called for by the form, but it might be more properly modeled as an Id.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>mothersRaceCategory :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..*)</p> 
+
+
+</stentry>
+  <stentry><p>				[US Standard Certificate Of Birth Field 22].  Indicates the race(s) that the infant&apos;s mother considers herself to be.  Possible values include: White; Black, or African American; American Indian or Alaska Native**; Asian Indian; Chinese; Filipino; Japanese; Korean; Vietnamese; Other Asian**; Native Hawaiian; Guamanian or Chamorro; Samoan; Other Pacific Islander**; Other**.  **If Alaska Native is chosen, the mothersRaceOther free text field is used to specify the name of her enrolled or principal tribe; if Other Asian, Other Pacific Islander, or Other is chosen, the mothersRaceOther free text field is used to provide further specificity.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>mothersRaceOther :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				[US Standard Certificate Of Birth Field 22].  Provides further specificity for the infant&apos;s mother&apos;s race.  Used only if mothersRaceCategory is Alaska Native, Other Asian, Other Pacific Islander, or Other.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>mothersResidenceAddress :  <xref href="../t_FHIMDatatypesAddress.dita" >Address</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				[US Standard Certificate Of Birth Field 09a-f].  The address of the mother&apos;s residence at the time of the infant&apos;s birth.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>mothersSsn :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				[US Standard Certificate Of Birth Field 18].  The Social Security Number of the infant&apos;s mother.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>asPerson : <xref href="../t_FHIMPersonPerson.dita" >Person</xref> (1..1)</p></stentry>
+  <stentry><p>				A pointer to the Person record of the newborn&apos;s mother.  This shows the logical relationship between the Mother role and the Person class, yet this property might not be actually instantiated.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

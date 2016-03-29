@@ -1,0 +1,542 @@
+
+<html xmlns:Standard="http://www.eclipse.org/uml2/schemas/Standard/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:fhim="http:///schemas/fhim/_bbjuwA3cEeSGTazHdUQojA/5" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:term="http://www.openhealthtools.org/mdht/schemas/term/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:xmi="http://www.omg.org/XMI" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.3/Umlnotation" xmlns:Default="http:///schemas/Default/_fNm3AAqoEd6-N_NOT9vsCA/2" xmlns:CDA="http://www.openhealthtools.org/mdht/schemas/cda/4" xmlns:Default_1="http:///schemas/Default/1" xmlns:RIM="http:///schemas/RIM/_fvnwgAH4Ed6VH-9W1IVKXA/4" xmlns:SketchNotation="http://www.ibm.com/ccl/soa/sketch/notation/1.0.0/">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>PublicHealthReporting Domain</title>
+   </head>
+   <body style="font-family:Courier;font-size:14px">
+      <h1>PublicHealthReporting Domain</h1>
+      <p> The purpose of this review is to identify the data elements required for the
+         interoperable exchange for the PublicHealthReporting domain including dependencies. A column is
+         provided at the far right of the table for you to enter comments related to each
+         data element. If the class or domain is missing data elements, please add a row
+         at the bottom of the sheet and specify a name, description, and type of data
+         (e.g. numeric, string, date/time, code). 
+      </p>
+      <p> Once you have reviewed the data elements, please review the value sets
+         associated with the coded data elements. Please provide feedback by adding
+         comments in the column provided at the right of item/row or by adding rows at
+         the bottom table. For any new coded concepts without a valid code yet, our team
+         will propose them for addition in the source coding system. 
+      </p>
+      <ul>
+         <li><a href=""> <i><b>PublicHealthReporting</b> </i> Domain </a></li>
+       </ul>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font-family:Courier">
+         <tr bgcolor="#98FB98" style="font-size:18px" align="left">
+            <td colspan="1"><b><a id=""> 'PublicHealthReporting' Domain
+                     </a></b></td>
+            <td colspan="4" style="font-size:12px">Note that the Information Source hierarchy is in the Common domain, and is not shown here.</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+      </table>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font-family:Courier">
+         <tr>
+            <th width="20%">Element Name</th>
+            <th width="20%">Element Description</th>
+            <th width="15%">Format/Type</th>
+            <th width="15%">Value Set Name</th>
+            <th width="15%">Optionality/<br>Repetition
+            </th>
+            <th width="15%">Reviewer's Comments</th>
+         </tr>
+ 
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>CommunicableDiseaseReport</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> </td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>NotificationReport</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>&quot;Information about a specific instance of reporting of the information associated with an incident or impact. As a general matter, this is information pulled together by an investigation. In the context of a particular investigation, this concept includes both reports received by the party responsible for the investigation, as well as reports received by that party.  In particular, the class comprises the initial report. This is an account provided by the PERSON who originally provided information about the event.&quot; - ICSR DAM, May 2006.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">NotificationReport.<b>alertDateTime</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">NotificationReport.<b>reportCategory</b></div>
+            </td>
+            <td><p>A categorization of the kind of report.</p></td>
+            <td valign="top"> NotificationReportCategory </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">NotificationReport.<b>reportDateTime</b></div>
+            </td>
+            <td><p>Date and time the report is being sent to public health agencies.</p><p>&quot;This data element has the function of a timestamp and represents the equivalent of a version number for the ICSR. Every ICSR and every iteration (e.g. version) of an ICSR in a safety message must have a different value for Date of Creation. The most recent version of an ICSR will have the most recent date; previous versions of an ICSR will have older dates.&quot; - ICH E2B(R3), C.1.2</p><p>The date that the Med Watch report was created.  Medwatch 3500 form question B.4; Medwatch 3500A form question B.4; Medwatch 3500B form question D.2; VAERS-1 form question 6.</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">NotificationReport.<b>reportId</b></div>
+            </td>
+            <td><p>A unique identifier assigned to the report by the author.</p><p></p><p>&quot;An identifier for the ICSR that is unique&quot; - ICH E2B(R3), C.1.1</p></td>
+            <td valign="top"> Id </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">NotificationReport.<b>reportingSystem</b></div>
+            </td>
+            <td><p>The system used to generate the report.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">NotificationReport.<b>sendingSystem</b></div>
+            </td>
+            <td><p>Information about the sending system.  May be the same as the &apos;reporting system&apos; but does not have to be (e.g., HIE)</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">NotificationReport.<b>status</b></div>
+            </td>
+            <td><p>&quot;Indicate[s] that a previously transmitted ICSR is either considered completely void (nullified)..., or amended&quot; - ICH E2B(R3), C.1.11.1.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">NotificationReport.<b>careGiver</b></div>
+            </td>
+            <td><p>Identifies the person who provided care for the subject of the report.</p></td>
+            <td valign="top"> <b>IndividualProvider</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">NotificationReport.<b>encounterEvent</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>EncounterEvent</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">NotificationReport.<b>medicationHistory</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>MedicationList</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">NotificationReport.<b>moreInformationlProvider</b></div>
+            </td>
+            <td><p>This information relates to the current or past provider information that may be contacted for additional follow up information.  The HCP may or may not be the report sender or primary source reporter</p></td>
+            <td valign="top"> <b>IndividualProvider</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">NotificationReport.<b>reportCreatedBy</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>HealthcareProvider</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">NotificationReport.<b>reportSentBy</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>HealthcareProvider</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">NotificationReport.<b>reportSentTo</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>Organization</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">NotificationReport.<b>reportSubject</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>Patient</b> </td>
+            <td>NA</td>
+            <td>(1..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">NotificationReport.<b>serviceDeliveryLocation</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>ServiceDeliveryLocation</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">NotificationReport.<b>exposure</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>Exposure</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">NotificationReport.<b>pregnancyMenstrualStatus</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>PregnancyMenstrualStatus</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>VitalRecordsOrganization</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> </td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">VitalRecordsOrganization.<b>beginDate</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">VitalRecordsOrganization.<b>endDate</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">VitalRecordsOrganization.<b>id</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Id </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">VitalRecordsOrganization.<b>name</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">VitalRecordsOrganization.<b>jurisdiction</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>Jurisdiction</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>VitalRecordsOrganizationClient</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> </td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">VitalRecordsOrganizationClient.<b>beginDate</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">VitalRecordsOrganizationClient.<b>endDate</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">VitalRecordsOrganizationClient.<b>id</b></div>
+            </td>
+            <td><p>An identification of the Person or Animal while in the role of Patient.  This Identifier is basically an &quot;account number&quot;.  A single person will have multiple Patient Ids at various healthcare providers.  It is not uncommon for a person to have multiple Patient Ids or &quot;account numbers&quot; at a single institution - often a new account number is created for each episode of care.  This is also the case in long-term care situations, where a new account number may be created each month in order to facilitate monthly billing.</p><p></p><p>&quot;Contains the list of identifiers (one or more) used by the healthcare facility to uniquely identify a patient (e.g., medical record number, billing number, birth registry, national unique individual identifier, etc.).&quot; - HL7 Version 2.8, PID-3.</p><p>&quot;Contains the patient account number assigned by accounting to which all charges, payments, etc., are recorded.  It is used to identify the patient&apos;s account.&quot; - HL7 Version 2.8, PID-18.</p></td>
+            <td valign="top"> Id </td>
+            <td></td>
+            <td>(1..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">VitalRecordsOrganizationClient.<b>status</b></div>
+            </td>
+            <td><p>Indicates the state of the Patient&apos;s record, as defined in the state-transition model in the HL7 RIM.  Examples include Active, Pending, Terminated, etc.  Additional states might be defined such as &apos;Temporary&apos; or &apos;Permanent&apos;.</p><p></p><p>Note, for public health reporting purposes, this statusiIndicates the active/inactive status of the patient at the provider site level. See MIROW &#8220;Management of Moved or Gone Elsewhere (MOGE) and Other Patient Status Designations in IIS guidelines.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+  </table>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font">
+         <tr>
+            <th>Value Set Constraint</th>
+            <th>Element Description</th>
+         </tr>
+       
+
+
+
+
+</table>
+

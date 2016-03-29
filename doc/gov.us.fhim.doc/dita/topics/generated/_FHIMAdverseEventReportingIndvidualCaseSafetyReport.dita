@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMAdverseEventReportingIndvidualCaseSafetyReport" xml:lang="en-us">
+<title id="title">IndvidualCaseSafetyReport</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	IndvidualCaseSafetyReport is a kind of <xref href="../t_FHIMPublicHealthReportingNotificationReport.dita">NotificationReport</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class contains those properties required for the reporting of product safety-related information (to include product defects) to a regulatory agency. It contains the intersection of the information required for four specific reports: MedWatch 3500, MedWatch 3500A, MedWatch 3500B, and VAERS-1.  It is anticipated that subtypes will be created for these individual reports, which will add report-specific properties and constraints.</p><p></p><p>This class is based in the Individual Case Safety Report (ICSR) series of standards.  An ICSR is a report of information describing adverse event(s) / reaction(s) experienced by an individual patient. The event(s) / reaction(s) can be related to the administration of one or more medicinal products at a particular point in time. The ICSR can also be used for exchange of other information, such as medication error(s) that do not involve adverse events(s)/reaction(s).</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>areAdditionalDocumentsAvailable :  Boolean (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;When retransmitting information, the sender (retransmitter) indicates &#8216;true&#8217; in this data element only if they have the documents available.&quot; - ICH E2B(R3), C.1.6.1
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>caseSummary :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;A focused, factual and clear description of the case, including the words or short phrases used by the reporter.&quot; - ICH E2B(R3), H.1.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>caseSummaryInNativeLanguage :  String (0..*)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Information on the clinical course of the case, therapeutic measures, outcome and other relevant information, as well as the reporter&#8217;s comments on the case in a language [other than English].  [Also used] to transmit the sender&#8217;s and receiver&#8217;s comments in a language other than English, as required in some countries and regions.&quot; - ICH E2B(R3), H.5.r.1a.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>caseSummaryLanguage :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..*)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The language used in [caseSummaryInNativeLanguage]&quot; - ICH E2B(R3), H.5.r.1b.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateOfMostRecentInfo :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;This data element captures the date each time follow-up information is received by the sender from a primary source.  However, if the case is amended for any other reason (e.g. after internal review by the sender) this date should not be changed....&quot; - ICH E2B(R3), C.1.5
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateReportFirstReceived :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;For organisations transmitting an initial case, this data element should be the date when the information was received from the primary source.... When retransmitting information received from another regulatory agency or another company or any other secondary source, [this] should be the date the retransmitter first received the information.&quot; - ICH E2B(R3), C.1.4
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>descriptionOfEvent :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Description of the event, or problem.  Medwatch 3500 form question B.5; Medwatch 3500A form question B.5; Medwatch 3500B form question A.4; VAERS-1 form question 7.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>icsrReportCategory :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Captures the type of report independently of its source.&quot; - ICH E2B(R3), C.1.3.  Possible values include: Spontaneous report; Report from study; Other; Not available to sender (unknown).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>meetsExpeditedCriteria :  Boolean (0..0)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;This data element should be used by the sender to indicate whether the case fulfils the local expedited requirements.&quot; - ICH E2B(R3), C.1.7</p><p>Note that this property is included for compatibility to the ICH and the ICSR, but does not appear to be currently needed by U.S. Federal agencies, therefore, the cardinality of this property has been set to zero.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>nullificationOrAmendmentReason :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Indicate[s] the reason why a previously transmitted ICSR is either considered completely void (nullified)..., or amended&quot; - ICH E2B(R3), C.1.11.2.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>originalSenderCategory :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..0)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Identifies the type of sender that created and transmitted the original electronic ICSR.&quot; - ICH E2B(R3), C.1.8.2.  Possible values include: Regulator; Other.</p><p>Note that this property is included for compatibility to the ICH and the ICSR, but does not appear to be currently needed by U.S. Federal agencies, therefore, the cardinality of this property has been set to zero.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>relatedReportId :  String (0..*)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Identifier of another report or case that warrants being evaluated together with this ICSR. This includes, but is not limited to, a mother/parent-child pair where both had events/reactions, siblings with common exposure, several reports involving the same patient, an ICSR previously sent via paper without a conformant E2B Worldwide Unique Case Identification Number, or several similar reports from same reporter (cluster).&quot; - ICH E2B(R3), C.1.10.r.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>reportersComments :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The reporter&apos;s comments on the diagnosis, causality assessment or other issues considered relevant.&quot; - ICH E2B(R3), H.2.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>sendersComments :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The sender&apos;s assessment of the case and can be used to describe disagreement with, and/or alternatives to the diagnoses given by the reporter(s). Also, in case of linkage of multiple ICSRs using C.1.10.r, the reason should be provided in these comments.&quot; - ICH E2B(R3), H.4.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>sendersDiagnosis :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;This data element provides the sender with an opportunity to combine signs and symptoms that were reported into a succinct diagnosis. Supporting rationale for the term selection is included in Section H.4.A MedDRA LLT code should be used.&quot; - ICH E2B(R3), H.3.r.1a and H.3.r.1b.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>uniqueCaseId :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				A unique identifier that is assigned to the report by the author and that is globally unique. - ICH E2B(R3), C.1.8.1
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>wasAutopsyPerformed :  Boolean (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Indicates if an autopsy was done.&quot; - ICH E2B(R3), D.9.3.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>wereOtherCaseIdsUsed :  Boolean (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This property will be true in &quot;...the event that the ICSR either has been exchanged by the two parties in the past using a different identifier or that it is exchanged simultaneously with a different identifier....&quot; - ICH E2B(R3), C.1.9.1.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>documentsHeldBySender : <xref href="../t_FHIMAdverseEventReportingDocumentsHeldBySender.dita" >DocumentsHeldBySender</xref> (0..*)</p></stentry>
+  <stentry><p>				Pinter to a description (and optionally the content) of any documents held by the sender relevant to this ICSR.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>informationReporter : <xref href="../t_FHIMAdverseEventReportingInformationReporter.dita" >InformationReporter</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to the primary source(s) of the facts about the ICSR.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>literatureReference : <xref href="../t_FHIMAdverseEventReportingLiteratureReference.dita" >LiteratureReference</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to literature article(s) that describe individual case(s), but not for articles used for data analysis.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>otherCaseIdentifier : <xref href="../t_FHIMAdverseEventReportingOtherCaseIdentifier.dita" >OtherCaseIdentifier</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to other case identifiers for this case used in ICH ICSR electronic transmissions.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>productRole : <xref href="../t_FHIMAdverseEventReportingProductRole.dita" >ProductRole</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to the medical product(s) (i.e., medical device or drug) that is either suspected to have caused an adverse event, or that was in use at the time of the adverse event and which may or may not have contributed to the event.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>reactionOrEvent : <xref href="../t_FHIMAdverseEventReportingReactionOrEvent.dita" >ReactionOrEvent</xref> (1..*)</p></stentry>
+  <stentry><p>				Pointer to the set of reaction(s) or adverse event(s) that are being reported.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>relatedPersonObservation : <xref href="../t_FHIMAdverseEventReportingRelatedPersonObservation.dita" >RelatedPersonObservation</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to information about a person related to the subject of the report (i.e., related to the patient).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>reportSubjectObservation : <xref href="../t_FHIMAdverseEventReportingReportSubjectObservation.dita" >ReportSubjectObservation</xref> (1..1)</p></stentry>
+  <stentry><p>				Pointer to observations made about a patient or a person related to the patient at a given point of time (i.e., at the time of the Report).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>sender : <xref href="../t_FHIMAdverseEventReportingSender.dita" >Sender</xref> (1..1)</p></stentry>
+  <stentry><p>				Pointer to the person and/or organization that sent the ICSR.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>study : <xref href="../t_FHIMAdverseEventReportingStudy.dita" >Study</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to any study(-ies) (e.g., a clinical trial) in which the patient was participating in a study when the adverse reaction or event occurred.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

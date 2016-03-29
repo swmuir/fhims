@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMAdverseEventReportingDrugObservation" xml:lang="en-us">
+<title id="title">DrugObservation</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>Contains information describing any medicinal products (whether suspect or concommittant) given to or taken by the subject near the time of the adverse event occurred.  Corresponds to ICH E2B(R3), G.k.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>didEventAbate :  Boolean (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Did the adverse event abate after the use of the suspect medication was stopped or the dose was reduced?  Medwatch 3500 form question D.5; Medwatch 3500A form question C.5; Medwatch 3500B form question B.13.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>didReappear :  Boolean (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Did the adverse event reappear after the the suspect medication was reintroduced?  Medwatch 3500 form question D.8; Medwatch 3500A form question C.8; Medwatch 3500B form question B.14.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>indHolderCountry :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The country where the drug was authorised when the case report is sent to that country if known.&quot;  - ICH E2B(R3), G.k.3.2
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>indHolderName :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The name of the licence holder as indicated on the package.&quot;  - ICH E2B(R3), G.k.3.3
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>lastFillDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>nbrOfPreviousDoses :  Integer (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>sig :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>drugDosage : <xref href="../t_FHIMAdverseEventReportingDrugDosage.dita" >DrugDosage</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to information describing the amount, timing, and route of administration of medicinal products (whether suspect or concommittant) given to or taken by the subject near the time of the adverse event occurred.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>drugIngredient : <xref href="../t_FHIMCommonCommonProductDrugIngredient.dita" >DrugIngredient</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to the active ingredient(s) of the drug.  Used only if the medicinalProduct or the pharmaceuticalProduct are not known.- ICH E2B(R3), G.k.2.3.r
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>medicinalProduct : <xref href="../t_FHIMCommonCommonProductMedicinalProduct.dita" >MedicinalProduct</xref> (0..*)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>medicinalProductInstance : <xref href="../t_FHIMCommonCommonProductMedicinalProductInstance.dita" >MedicinalProductInstance</xref> (1..1)</p></stentry>
+  <stentry><p>				Medwatch 3500A form question C.1 (name), C.6 (lot), C.7 (exp date), C.9 (ndc)
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>pharmaceuticalProduct : <xref href="../t_FHIMCommonCommonProductGenericMedicine.dita" >GenericMedicine</xref> (0..*)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

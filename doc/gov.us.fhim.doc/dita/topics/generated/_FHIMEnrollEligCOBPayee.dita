@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMEnrollEligCOBPayee" xml:lang="en-us">
+<title id="title">Payee</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class identifies the entity to receive payment for the claim.  The entity might be the billing physician, an agent, or a third party.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>address :  <xref href="../t_FHIMDatatypesUsMailingAddress.dita" >UsMailingAddress</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Mailing address of the entity to receive payment for claim (street address, city, state, and zipcode). - NCPDP Telecommunication (Fields 121-TV, 122-TW, 123-TX, and 124-TY).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>billingType :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;A code that identifies the entity submitting the billing transaction.&quot; - NCPDP Telecommunication (Field 117-TR, Data Dictionary 201104).  Possible values include: Provider Submitted-Pay to Provider; Provider Submitted-Pay to Another Party; Agent Submitted-Pay to Agent; Agent Submitted-Pay to Another Party.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>id :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Identifying number of the entity to receive payment for claim.&quot; - NCPDP Telecommunication (Field 119-TT, Data Dictionary 201104).</p><p>Note that the NCPDP Telecommunication structure uses a separate &quot;qualifier&quot; field (118-TS) to identify what kind of id is being used here (i.e., who issued the id).  Possible values include: National Provider Identifier (NPI); Blue Cross; Blue Shield; Medicare; Medicaid; UPIN (Unique Physician/Practitioner Identification Number); NCPDP Provider Identification Number (deprecated); State License; CHAMPUS (Civilian Health and Medical Program of the Uniformed Services); Health Industry Number (HIN); Federal Tax ID; Drug Enforcement Administration (DEA) Number; State Issued; Plan Specific; HCID (HC IDea); Combat Methamphetamine Epidemic Act (CMEA) Certificate ID; Other.  The FHIM does not model this concept separately, as it is built-in to the the Id data type structure.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>name :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Name of the entity to receive payment for claim.&quot; - NCPDP Telecommunication (Field 120-TU, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

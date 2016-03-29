@@ -1,0 +1,463 @@
+
+<html xmlns:Standard="http://www.eclipse.org/uml2/schemas/Standard/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:fhim="http:///schemas/fhim/_bbjuwA3cEeSGTazHdUQojA/5" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:term="http://www.openhealthtools.org/mdht/schemas/term/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:xmi="http://www.omg.org/XMI" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.3/Umlnotation" xmlns:Default="http:///schemas/Default/_fNm3AAqoEd6-N_NOT9vsCA/2" xmlns:CDA="http://www.openhealthtools.org/mdht/schemas/cda/4" xmlns:Default_1="http:///schemas/Default/1" xmlns:RIM="http:///schemas/RIM/_fvnwgAH4Ed6VH-9W1IVKXA/4" xmlns:SketchNotation="http://www.ibm.com/ccl/soa/sketch/notation/1.0.0/">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>ImmunizationForecast Domain</title>
+   </head>
+   <body style="font-family:Courier;font-size:14px">
+      <h1>ImmunizationForecast Domain</h1>
+      <p> The purpose of this review is to identify the data elements required for the
+         interoperable exchange for the ImmunizationForecast domain including dependencies. A column is
+         provided at the far right of the table for you to enter comments related to each
+         data element. If the class or domain is missing data elements, please add a row
+         at the bottom of the sheet and specify a name, description, and type of data
+         (e.g. numeric, string, date/time, code). 
+      </p>
+      <p> Once you have reviewed the data elements, please review the value sets
+         associated with the coded data elements. Please provide feedback by adding
+         comments in the column provided at the right of item/row or by adding rows at
+         the bottom table. For any new coded concepts without a valid code yet, our team
+         will propose them for addition in the source coding system. 
+      </p>
+      <ul>
+         <li><a href=""> <i><b>ImmunizationForecast</b> </i> Domain </a></li>
+       </ul>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font-family:Courier">
+         <tr bgcolor="#98FB98" style="font-size:18px" align="left">
+            <td colspan="1"><b><a id=""> 'ImmunizationForecast' Domain
+                     </a></b></td>
+            <td colspan="4" style="font-size:12px">Note that the Information Source hierarchy is in the Common domain, and is not shown here.</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+      </table>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font-family:Courier">
+         <tr>
+            <th width="20%">Element Name</th>
+            <th width="20%">Element Description</th>
+            <th width="15%">Format/Type</th>
+            <th width="15%">Value Set Name</th>
+            <th width="15%">Optionality/<br>Repetition
+            </th>
+            <th width="15%">Reviewer's Comments</th>
+         </tr>
+ 
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>ImmunizationSchedule</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>The Immunization Schedule is a set of published rules for evaluating vaccines administered and for forecasting next doses due.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ImmunizationSchedule.<b>publishedSchedule</b></div>
+            </td>
+            <td><p>Uniquely identifies the Immunization Schedule.</p><p>A designation of the Immunization Schedule, which may include a version number or release date to distinguish it from other instances.</p></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#Immunization Schedule Identifier (IIS)">Immunization Schedule Identifier (IIS)</a> 
+					
+					 
+</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ImmunizationSchedule.<b>name</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ImmunizationSchedule.<b>releaseDate</b></div>
+            </td>
+            <td><p>The date upon which the Immunization Schedule was published.  Used to distinguish between different versions of the schedule for the same vaccine.</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ImmunizationSchedule.<b>scheduleRule</b></div>
+            </td>
+            <td><p>This is a collection of the rules that apply to the entire schedule. These are uncommon.</p></td>
+            <td valign="top"> <b>Rule</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ImmunizationSchedule.<b>vaccineSeries</b></div>
+            </td>
+            <td><p>A series is one path to meet the goals for assuming protection against a target disease. </p></td>
+            <td valign="top"> <b>VaccineSeries</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>NextDoseForecast</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>The recommended next dose of a particular vaccine for a given patient.  It does not deal with usage projections over a population.  This forecast is based on application of the rules of the series dose.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">NextDoseForecast.<b>earliestDate</b></div>
+            </td>
+            <td><p>The date that is the earliest recommended date.  This is not always the earliest date that a dose administered will be acceptable.</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">NextDoseForecast.<b>latestDate</b></div>
+            </td>
+            <td><p>The latest date patient should receive the vaccine</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">NextDoseForecast.<b>overdueDate</b></div>
+            </td>
+            <td><p>The date when patient is considered behind schedule.</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">NextDoseForecast.<b>recommendedDate</b></div>
+            </td>
+            <td><p>The ideal date upon which the patient should receive the next dose of the vaccine.</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>Rule</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>A statement of a condition that must be met.  The evaluation of facts against a rule results in a value of true or false.  Rules can be evaluated by humans or by computers; this class is intended to contain rules that are human-readable as well as those that can be evaluated by a rules engine.  An example of a Rule would be that the second dose of a vaccine must be administered between six and eight weeks after the first dose.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Rule.<b>comments</b></div>
+            </td>
+            <td><p>Contains any remarks about the rule.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Rule.<b>rule</b></div>
+            </td>
+            <td><p>Contains the rule, in either a human-readable or computer-readable format.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Rule.<b>ruleName</b></div>
+            </td>
+            <td><p>A designation for the rule, for ease in locating a given rule.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>VaccineSeries</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>A series is one path to meet the goals for assuming protection against a target disease. </p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">VaccineSeries.<b>numberOfDoses</b></div>
+            </td>
+            <td><p>The total number of doses defined by the series.</p></td>
+            <td valign="top"> Integer </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">VaccineSeries.<b>seriesName</b></div>
+            </td>
+            <td><p>A designation for the Vaccine Series, for ease in locating a given series.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">VaccineSeries.<b>vaccineSeriesDose</b></div>
+            </td>
+            <td><p>A Series Dose is a specification of how to determine if a particular dose administered meets the goals for that dose in the series.</p></td>
+            <td valign="top"> <b>VaccineSeriesDoseNumber</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">VaccineSeries.<b>seriesRule</b></div>
+            </td>
+            <td><p>This is the collection of rules which are specific to this series. Series rules are not common.  Most are associated with series doses.</p></td>
+            <td valign="top"> <b>Rule</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">VaccineSeries.<b>patientSeries</b></div>
+            </td>
+            <td><p>Patient Series is an instantiation in time of the Vaccine Series that represents one path towards the goal of protection against a disease.  It consists of a number of Target Doses.</p></td>
+            <td valign="top"> <b>PatientSeries</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>VaccineSeriesDoseNumber</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>A Series Dose is a specification of how to determine if a particular dose administered meets the goals for that dose in the series.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">VaccineSeriesDoseNumber.<b>doseNumber</b></div>
+            </td>
+            <td><p>Indicates the individual dose within a series of doses to which the Dose Rule applies.</p></td>
+            <td valign="top"> Integer </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">VaccineSeriesDoseNumber.<b>doseRule</b></div>
+            </td>
+            <td><p>This is the collection of all rules which apply to this dose.</p></td>
+            <td valign="top"> <b>Rule</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+  </table>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font">
+         <tr>
+            <th>Value Set Constraint</th>
+            <th>Element Description</th>
+         </tr>
+       
+
+
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID="Immunization Schedule Identifier (IIS)">Immunization Schedule Identifier (IIS)</a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">  Immunization Schedule Identifier (IIS)   <br/> <p>Uniquely identifies the Immunization Schedule.</p><p>A designation of the Immunization Schedule, which may include a version number or release date to distinguish it from other instances.</p><br> https://phinvads.cdc.gov/vads/ViewValueSet.action?id=E9F83060-ACB9-DF11-9BDD-0015173D1785
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>VXC16</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+ 
+
+
+       
+		
+
+
+</table>
+

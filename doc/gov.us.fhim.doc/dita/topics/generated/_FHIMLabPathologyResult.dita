@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMLabPathologyResult" xml:lang="en-us">
+<title id="title">PathologyResult</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	PathologyResult is a kind of <xref href="../t_FHIMLabReportableResult.dita">ReportableResult</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class documents the results of a Pathology observation event.  Note that the VA makes a distinction between AnatomicalPathology, Cytopathology, ElectronMicroscopy, and SurgicalPathology, all of which are handled by this one class.  Also, a large portion of Autopy observations take the form of pathology reports.</p><p></p><p>Pathology results generally take the form of documents, which in turn are composed of sections containing free-form text.  The College of American Pathologists lists a number of sections that a well-formed pathology report should or may contain.  The Pathology Result class therefore is comprised of Lab Report Sections, the Section Title of which should come from some pre-defined vocabulary.  The report may also contain images and diagnoses.  It is noted that this entire structure could easily be replaced by a Clinical Document; in the future we may point to Clinical Document rather than maintain a separate Pathology Result structure.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+
+ <strow>
+  <stentry><p>anatomicPathologist : <xref href="../t_FHIMProviderIndividualProvider.dita" >IndividualProvider</xref> (1..1)</p></stentry>
+  <stentry><p>				A clinician who is board certifified in the field of Anatomic Pathology.  This person may or may not also be board certified in the field of Clinical Pathology.  This person is responsible for applying clinical judgement to arrive at an interpretation of the subject of the study.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>clinicalPathologist : <xref href="../t_FHIMProviderIndividualProvider.dita" >IndividualProvider</xref> (0..1)</p></stentry>
+  <stentry><p>				A clinician who is board certifified in the field of Clinical Pathology.  This person may or may not also be board certified in the field of Anatomic Pathology.  This person is responsible for applying clinical judgement to arrive at an interpretation of the subject of the study, but limited to the clinical, non-anatomic pathology testing (e.g., hematology, chemistry)
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>dataEnterer : <xref href="../t_FHIMProviderIndividualProvider.dita" >IndividualProvider</xref> (1..1)</p></stentry>
+  <stentry><p>				The person in the role of data enterer.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>diagnosis : <xref href="../t_FHIMCommonDiagnosis.dita" >Diagnosis</xref> (0..*)</p></stentry>
+  <stentry><p>				Diagnoses associated with the Pathology Report.  Such diagnoses are typically determined by the pathologist based on the observations made and documented in the report.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>image : <xref href="../t_FHIMDatatypesImage.dita" >Image</xref> (0..*)</p></stentry>
+  <stentry><p>				An image associated with the Pathology Report.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>pathologyReportSection : <xref href="../t_FHIMLabLabReportSection.dita" >LabReportSection</xref> (0..*)</p></stentry>
+  <stentry><p>				A section of a Pathology Report.  Pathology results generally take the form of documents, which in turn are composed of sections containing free-form text.  The College of American Pathologists lists a number of sections that a well-formed pathology report should or may contain.  The Pathology Result class therefore is comprised of Lab Report Sections, the Section Title of which should come from some pre-defined vocabulary.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>residentAnatomicPathologist : <xref href="../t_FHIMProviderIndividualProvider.dita" >IndividualProvider</xref> (1..1)</p></stentry>
+  <stentry><p>				A clinician who is currently undergoing a Anatomic Pathology residency program.  This person is responsible for applying clinical judgement to arrive at an interpretation of the subject of the study, subject to the delegated authority and confirmation from the anatomic pathologist.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

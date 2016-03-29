@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMCarePlanHealthGoal" xml:lang="en-us">
+<title id="title">HealthGoal</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	HealthGoal is a kind of <xref href="../t_FHIMCommonClinicalInformationAbstract.dita">ClinicalInformation(Abstract)</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>An objective intended to be realized by the successful execution of the Care Plan. </p><p>&quot;Describes the intended objective(s) of carrying out the Care Plan.&quot; - HL7 FHIR, Care Plan Resource.</p><p>&quot;A health goal specifies a future target or achievement towards which the effort of care planning and execution is directed. Goals represent concrete targets to reduce or eliminate concerns or risks. A Goal may exist in the absence of concerns or risks. For example, a patient may have a goal to improve their fitness level. The plan always has at least one goal.&quot; - HL7 Care Plan Domain Analysis Model.</p><p></p><p>Note that a goal might be constructed of sub-goals, which might each be associated with a single outcome.  For example, a goal to loose 5 pounds per week over 6 weeks might spawn 6 child goals to loose 5 pounds in week 1, week 2, etc.  Each child goal would be associated with one actual outcome (i.e., lost 4 pounds in week 1; lost 6 pounds in week 2, etc).  Then the &quot;parent&quot; goal outcome could be the total (e.g., lost 28 pounds in 6 weeks).  </p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>category :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+<p>See <xref href="../t_fhimvocabCarePlanVocabGoalCategory.dita">GoalCategory</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				&quot;Names or describes the goal&quot; - HL7 Care Plan Domain Analysis Model</p><p>&quot;Indicates a category the goal falls within.&quot; - HL7 FHIR, Goal.category
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateEstablished :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The date (and optionally, the time) on which the Health Goal was agreed upon.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>description :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				A summary of the health objective, whether articulated by the patient or by a clinician. Note that this description may include an indication of whether the goal is to achieve, maintain, manage or avoid a particular condition or circumstance.</p><p>&quot;Human-readable description of a specific desired objective of the care plan.&quot; - HL7 FHIR, Goal.description.</p><p>&quot;The goal intent is a modifier of the goal purpose and indicates whether the goal target is something to achieve, maintain, manage or avoid. For example, in late stage diabetes the only path may be to simply manage or control the condition.&quot; - HL7 Care Plan Domain Analysis Model
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>goalAchievementState :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+<p>See <xref href="../t_fhimvocabCarePlanVocabGoalAchievementState.dita">GoalAchievementState</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				&quot;Specifies a judgment on the goal achievement state&quot; - HL7 Care Plan Domain Analysis Model
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>goalIntent :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The goal intent is a modifier of the goal purpose and indicates whether the goal target is something to achieve, maintain, manage or avoid. For example, in late stage diabetes the only path may be to simply manage or control the condition.&quot; - HL7 Care Plan Domain Analysis Model
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>id :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (0..*)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;This records identifiers associated with this care plan that are defined by business processed and/ or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).&quot; - HL7 FHIR, Goal.identifier.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>narrative :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Captures comments or notes about the goal&quot; - HL7 Care Plan Domain Analysis Model</p><p>&quot;Any comments related to the goal.&quot; - HL7 FHIR, Goal.notes.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>priority :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Indicates the preference order to use for care planning purposes. The goal supports multiple priorities in order to support multiple care team perspectives and eventual harmonization.&quot; - HL7 Care Plan Domain Analysis Model.</p><p>&quot;Identifies the level of importance associated with reaching/sustaining the goal.&quot; - HL7 FHIR, Goal.priority.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>status :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+<p>See <xref href="../t_fhimvocabCarePlanVocabHealthGoalStatus.dita">HealthGoalStatus</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				This property indicates the state of the Health Goal within a workflow or within its life-cycle.  Possible values include proposed, accepted, on hold, etc.  Note that the progress of the patient towards the goal, or status of the achievement of the goal is not defined by this field, but rather in the goalAchievementState property.</p><p>&quot;Indicates the implementation stage for the goal and related plan components.&quot; - HL7 Care Plan Domain Analysis Model.</p><p>&quot;Indicates whether the goal has been reached and is still considered relevant.&quot; - HL7 FHIR, Goal.status.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>statusDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Identifies when the current status. I.e. When initially created, when achieved, when cancelled, etc.&quot; - HL7 FHIR, Goal.statusDate.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>targetDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Desired target date for meeting the goal.&quot; - HL7 Care Plan Domain Analysis Model.</p><p>&quot;Indicates when the goal is intended to be reached.&quot; - HL7 FHIR, Goal.targetDate.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>careIntervention : <xref href="../t_FHIMCarePlanCareIntervention.dita" >CareIntervention</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to a (set of) action(s) (treatment, procedure, or activity) designed to achieve an outcome for a diagnosis for which the clinician is accountable.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>goalReview : <xref href="../t_FHIMCarePlanGoalReview.dita" >GoalReview</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to a (set of) assessments of the progress made toward reaching a Goal of the Care Plan.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>goalSuccessCriterion : <xref href="../t_FHIMCarePlanGoalSuccessCriterion.dita" >GoalSuccessCriterion</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to a statement of a desired future state, expressed as an Observation.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>healthConcern : <xref href="../t_FHIMHealthConcernHealthConcern.dita" >HealthConcern</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to the Health Concern(s) (aka Problem(s)) which the Goal is intended to improve.</p><p>&quot;The identified conditions that this goal relates to - the condition that caused it to be created, or that it is intended to address.&quot; - HL7 FHIR, Goal.concern.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

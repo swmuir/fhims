@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMEnrollEligCOBCertificateOfMedicalNecessity" xml:lang="en-us">
+<title id="title">CertificateOfMedicalNecessity</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>A Certificate of Medical Necessity is a document required by Centers for Medicare and Medicaid Services to substantiate the medical necessity of an item (e.g., a durable medical equipment) or service furnished to a Medicare beneficiary.  Medical necessity is a legal doctrine, related to activities which may be justified as reasonable, necessary, and/or appropriate, based on evidence-based clinical standards of care.  By statute, Medicare may only pay for items and services that are &quot;reasonable and necessary for the diagnosis or treatment of illness or injury or to improve the functioning of a malformed body member&quot;, unless there is another statutory authorization for payment. - adapted from wikipedia.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>category :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Unique identifier for the data being submitted.&quot; - NCPDP Telecommunication (Field 369-2Q, Data Dictionary 201104).  Possible values include: Hospital Beds; Support Surfaces; Motorized Wheel Chair; Manual Wheelchair; Continuous Positive Airway Pressure (CPAP); Lymphedema Pumps; Osteogenesis Stimulator; Transcutaneous Electrical Nerve Stimulator TENS); Seat Lift Mechanisms; Power Operated Vehicles (POV); Immunosuppressive Drugs; Infusion Pump; Parenteral Nutrition; Enteral Nutrition; Oxygen.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateBegin :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The beginning date of need.&quot; - NCPDP Telecommunication (Field 374-2V, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateRevisedOrRecertified :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The effective date of the revision or re-certification provided by the certifying physician.&quot; - NCPDP Telecommunication (Field 375-2W, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateSigned :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The date the form was completed and signed by the ordering physician.&quot; - NCPDP Telecommunication (Field 372-2T, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>lengthOfNeed :  <xref href="../t_FHIMDatatypesTimeQuantity.dita" >TimeQuantity</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Length of time the physician expects the patient to require use of the ordered item.&quot; - NCPDP Telecommunication (Field 370-2R, Data Dictionary 201104).  Note that the NCPDP Telecommunication structure uses a separate &quot;qualifier&quot; field (371-2S) to provide the units of measure for the time quantity represented in 370-2R.  Possible values include: Hours; Days; Weeks; Months; Years; Lifetime; Not Specified.  Note that each of these units, except for &quot;Lifetime&quot; are handled in the TimeQuantity datatype.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>narrative :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Free text message&quot; - NCPDP Telecommunication (Field 376-2X, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>questionCount :  Integer (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Count of Question Number/Letter occurrences.&quot; - NCPDP Telecommunication (Field 377-2Z, Data Dictionary 201104).  Note that this is modeled as a derived property as it may potentially be calculated based on the number of Assessment Instrument Response instances.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>requestStatus :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Code identifying type of request.&quot; - NCPDP Telecommunication (Field 373-2U, Data Dictionary 201104).  Possible values include: Initial; Revision; Recertification; Not Specified.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>assessmentResponse : <xref href="../t_FHIMAssessmentAssessmentResponse.dita" >AssessmentResponse</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to a set of questions and answers.  The FHIM reuses a structure built for this purpose from the Assessment domain.  This association to the assessment response/question corresponds to the following fields in the NCPDP Telecommunication standard: 378-4B, Question Number/Letter; 379-4D, Question Percent Response; 379-4D, Question Date Response; 381-4H, Question Dollar Amount Response; 382-4J, Question Numeric Response; 383-4K, Question Alphanumeric Response.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

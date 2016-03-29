@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMLabRelatedResult" xml:lang="en-us">
+<title id="title">RelatedResult</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>&quot;This field is defined to make it available for other types of linkages (e.g., toxicology).  This important information, together with the information in OBR-29 or OBR-57, uniquely identifies the parent result&apos;s OBX segment related to this order.&quot; - HL7 Version 2, OBX-26.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>relatedResultCategory :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+<p>See <xref href="../t_fhimvocabLabVocabLaboratorytestrelationship.dita">Laboratory test relationship</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				Indicates how the &quot;target Result&quot; is related to the &quot;source Result&quot;.  Examples include Parent, Child, Replaces, Replaced By, etc.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>reportableResult : <xref href="../t_FHIMLabReportableResult.dita" >ReportableResult</xref> (1..1)</p></stentry>
+  <stentry><p>				Points to the Reportable Result (i.e., the &quot;target Reportable Result&quot;) to which the &quot;source Reportable Result&quot; (i.e., the Reportable Result that points to this class) is somehow related.</p><p>&quot;This field is defined to make it available for other types of linkages (e.g., toxicology).  This important information, together with the information in OBR-29 or OBR-57, uniquely identifies the parent result&apos;s OBX segment related to this order.&quot; - HL7 Version 2, OBX-26.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMEnrollEligCOBWorkersCompClaim" xml:lang="en-us">
+<title id="title">WorkersCompClaim</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	WorkersCompClaim is a kind of <xref href="../t_FHIMEnrollEligCOBPatientCaseManagement.dita">PatientCaseManagement</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>&quot;Workers&apos; compensation is a form of insurance providing wage replacement and medical benefits to employees injured in the course of employment in exchange for mandatory relinquishment of the employee&apos;s right to sue his or her employer for the tort of negligence.&quot; - Wikipedia.  This class represents a Workers&apos; Compensation Claim, which identifies a particular work-related injury and the employer, and which accumulates the costs for billable medical services related to treatment of the injury.  Claims for reimbursement must cite the case identifier in order to be processed.  Note that the FHIM treats Workers Compensation Claims as a type of Patient Case Management, in that they share a certain amount of active oversight by a case manager.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>dateOfInjury :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Date on which the injury occurred.&quot; - NCPDP Telecommunication (Field 434-DY, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>employerAddress :  <xref href="../t_FHIMDatatypesUsMailingAddress.dita" >UsMailingAddress</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Mailing address of the employer (street address, city, state, and zipcode). - NCPDP Telecommunication (Fields 316-CG, 317-CH, 318-CI, and 319-CJ).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>employerId :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;ID assigned to employer.  Required if required by law as defined in the HIPAA final Privacy regulations....  Required if needed for Workers&#8217; Compensation billing.&quot; - NCPDP Telecommunication (Field 333-CZ, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>employerName :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Complete name of employer.&quot; - NCPDP Telecommunication (Field 315-CF, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>employerPhone :  <xref href="../t_FHIMDatatypesContactPoint.dita" >ContactPoint</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Ten-digit phone number of employer.&quot; - NCPDP Telecommunication (Field 320-CK, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>employerPointOfContact :  <xref href="../t_FHIMDatatypesPersonName.dita" >PersonName</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Employer primary contact.&quot; - NCPDP Telecommunication (Field 321-CL, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>healthcarePolicy : <xref href="../t_FHIMEnrollEligCOBHealthcarePolicy.dita" >HealthcarePolicy</xref> (1..1)</p></stentry>
+  <stentry><p>				Pointer to the Insurance Policy (a contract between an benefits provider and an individual or his/her sponsor to pay for a set of benefits) being cited by the Workmans&apos; Compensation claim for payment.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

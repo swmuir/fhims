@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMCarePlanCareIntervention" xml:lang="en-us">
+<title id="title">CareIntervention</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	CareIntervention is a kind of <xref href="../t_FHIMCommonClinicalInformationAbstract.dita">ClinicalInformation(Abstract)</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>A single action (treatment, procedure, or activity) designed to achieve an outcome for a diagnosis for which the clinician is accountable. Note that actions include the following categories: Assess/Monitor, Perform, Teach, Manage.</p><p></p><p>&quot;An intervention is a combination of program elements or strategies designed to produce behavior changes or improve health status among individuals or an entire population.  interventions may include treatments and procedures, wellness activities, educational programs, new or stronger policies, improvements in the environment, or a health promotion campaign. Interventions that include multiple strategies are typically the most effective in producing desired and lasting change.&quot; - DoD/VA iEHR Care and Disease Management model.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>applicability :  <xref href="../t_FHIMDatatypesTimeInterval.dita" >TimeInterval</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Applicability time point or time frame in which the activity may be carried out.&quot; - HL7 Care Plan Domain Analysis Model.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>classification :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This property is used to categorize the Care Intervention.  Note that this property is currently modeled as a string because a single suitable valuset could not be identified at this time.</p><p>&quot;A classification of the activity such as Patient Instruction, Medication Administration, Self Blood Glucose Monitoring, etc.&quot; - HL7 Care Plan Domain Analysis Model.</p><p>&quot;High-level categorization of the type of activity in a care plan.&quot; - HL7 FHIR, CarePlan.activity.detail.category
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>description :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;A sub-classification of an activity such as &#8220;wound care&#8221; which modifies the &#8220;patient instruction&#8221; classification.&quot; - HL7 Care Plan Domain Analysis Model.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>endDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The end date/time of the activity.&quot; - HL7 Care Plan Domain Analysis Model.</p><p>&quot;The period, timing or frequency upon which the described activity is to occur.&quot; - HL7 FHIR, CarePlan.activity.detail.scheduled[x] (Note that FHIR allows multiple timeframes).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>frequency :  <xref href="../t_FHIMDatatypesRateQuantity.dita" >RateQuantity</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Specification of repeating frequency of an activity.&quot; - HL7 Care Plan Domain Analysis Model
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>isProhibited :  Boolean (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;If true, indicates that the described activity is one that must NOT be engaged in when following the plan.&quot; - HL7 FHIR CarePlan.activity.detail.prohibited
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>kind :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+<p>See <xref href="../t_fhimvocabCarePlanVocabCarePlanActivity.dita">CarePlanActivity</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				&quot;Detailed description of the type of planned activity. E.g. What lab test, what procedure, what kind of encounter.&quot; - HL7 FHIR, CarePlan.activity.detail.code
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>notes :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;This provides a textual description of constraints on the intended activity occurrence, including relation to other activities. It may also include objectives, pre-conditions and end-conditions. Finally, it may convey specifics about the activity such as body site, method, route, etc.&quot; - HL7 FHIR CarePlan.activity.detail.note
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>planningStatus :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+<p>See <xref href="../t_fhimvocabCarePlanVocabInterventionPlanningStatus.dita">InterventionPlanningStatus</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				The state of the Care Intervention with respect to the negotiation process. Possible values include: Proposed, Accepted, Rejected. This property has been modeled separately from the status property which only is used when the Care Intervention has been accepted. It is possible that these two kinds of statuses may be combined into a larger workflow-aware status, but they are modeled separately for now for compatibility with FHIR.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>postCondition :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Any conditions expected to be true after the activity is carried out.&quot; - HL7 Care Plan Domain Analysis Model
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>preCondition :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Any required preconditions which must be before the activity can be carried out.&quot; - HL7 Care Plan Domain Analysis Model
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>startDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The actual start instant of the activity.&quot; - HL7 Care Plan Domain Analysis Model.</p><p>&quot;The period, timing or frequency upon which the described activity is to occur.&quot; - HL7 FHIR, CarePlan.activity.detail.scheduled[x] (Note that FHIR allows multiple timeframes).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>status :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+<p>See <xref href="../t_fhimvocabCarePlanVocabCarePlanActivityStatus.dita">CarePlanActivityStatus</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				&quot;Identifies what progress is being made for the specific activity.&quot; - HL7 FHIR CarePlan.activity.detail.status
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>statusText :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Provides further detail of the state of the Care Intervention beyond simply active and inactive, which is indicated by the status property.</p><p>&quot;Provides reason why the activity isn&apos;t yet started, is on hold, was cancelled, etc.&quot; - HL7 FHIR, CarePlan.activity.detail.statusReason
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>acceptanceReview : <xref href="../t_FHIMCarePlanAcceptanceReview.dita" >AcceptanceReview</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to a (set of) appraisals during which agreements to adopt proposed Care Plan actions are affirmed
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>activityOutcomeReview : <xref href="../t_FHIMCarePlanActivityOutcomeReview.dita" >ActivityOutcomeReview</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to an Observation describing any changes that resulted from the pursuit of the HealthGoal.</p><p>&quot;Identifies the change (or lack of change) at the point where the goal was deemed to be cancelled or achieved.&quot; - HL7 FHIR, Goal.outcome.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>healthGoal : <xref href="../t_FHIMCarePlanHealthGoal.dita" >HealthGoal</xref> (0..*)</p></stentry>
+  <stentry><p>				&quot;Internal reference that identifies the goals that this activity is intended to contribute towards meeting.&quot; - HL7 FHIR, CarePlan.activity.detail.goal
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>reason : <xref href="../t_FHIMHealthConcernHealthConcern.dita" >HealthConcern</xref> (1..*)</p></stentry>
+  <stentry><p>				&quot;Provides the health condition(s) or other rationale that drove the inclusion of this particular activity as part of the plan.&quot; - HL7 FHIR, CarePlan.activity.detail.reason[x]
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>resourceAllocation : <xref href="../t_FHIMCarePlanResourceAllocation.dita" >ResourceAllocation</xref> (0..*)</p></stentry>
+  <stentry><p>				&quot;Identifies the food, drug or other product to be consumed or supplied in the activity.&quot; - HL7 FHIR CarePlan.activity.detail.product
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>responsibleParty : <xref href="../t_FHIMCommonResponsibleParty.dita" >ResponsibleParty</xref> (0..*)</p></stentry>
+  <stentry><p>				Identifies the Care Team Member (typically a Provider) who is responsible for the performance of the Care Intervention.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

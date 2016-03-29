@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMEnrollEligCOBBillingSubmission" xml:lang="en-us">
+<title id="title">BillingSubmission</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class contains data sent to a Payer as part of a Billing Event detailing the components and reasons for the charges being billed.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>basisOfCostDetermination :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Code indicating the method by which Ingredient Cost Submitted was calculated.&quot; - NCPDP Telecommunication (Field 423-DN, Data Dictionary 201104).  Possible values include: Default; AWP (Average Wholesale Price); Local Wholesaler; Direct; EAC (Estimated Acquisition Cost); Acquisition; MAC (Maximum Allowable Cost); Usual &amp; Customary; 340B /Disproportionate Share Pricing/Public Health Service; ASP (Average Sales Price); AMP (Average Manufacturer Price); WAC (Wholesale Acquisition Cost); Special Patient Pricing; Other.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dispensingFee :  <xref href="../t_FHIMDatatypesMonetaryAmount.dita" >MonetaryAmount</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Dispensing fee submitted by the pharmacy. This amount is included in the Gross Amount Due&quot; - NCPDP Telecommunication (Field 412-DC, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>flatSalesTaxAmount :  <xref href="../t_FHIMDatatypesMonetaryAmount.dita" >MonetaryAmount</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Flat sales tax submitted for prescription. This amount is included in the Gross Amount Due.&quot; - NCPDP Telecommunication (Field 481-HA, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>incentiveAmount :  <xref href="../t_FHIMDatatypesMonetaryAmount.dita" >MonetaryAmount</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Amount represents a fee that is submitted by the pharmacy for contractually agreed upon services. This amount is included in the Gross Amount Due.&quot; - NCPDP Telecommunication (Field 438-E3, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>ingredientCost :  <xref href="../t_FHIMDatatypesMonetaryAmount.dita" >MonetaryAmount</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Submitted product component cost of the dispensed prescription. This amount is included in the Gross Amount Due&quot; - NCPDP Telecommunication (Field 409-D9, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>medicaidPaidAmount :  <xref href="../t_FHIMDatatypesMonetaryAmount.dita" >MonetaryAmount</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Amount paid by the Medicaid Agency.  Required if affects pricing in Medicaid Subrogation (contains the amount paid to the pharmacy). See Medicaid Subrogation Implementation Guide.&quot; - NCPDP Telecommunication (Field 113-N3, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>narrative :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Contains any comments to describe the billable event or to provide justification for payment.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>otherAmountSubmittedCount :  Integer (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Count of other amount claimed submitted occurrences.&quot; - NCPDP Telecommunication (Field 478-H7, Data Dictionary 201104).  Note that this property could potentially be calculated based on the number of instances of the Other Amount class.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>patientPaidAmount :  <xref href="../t_FHIMDatatypesMonetaryAmount.dita" >MonetaryAmount</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Amount the pharmacy received from the patient for the prescription dispensed.&quot; - NCPDP Telecommunication (Field 433-DX, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>percentageSalesTaxAmount :  <xref href="../t_FHIMDatatypesMonetaryAmount.dita" >MonetaryAmount</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Percentage sales tax submitted. This amount is included in the Gross Amount Due.&quot; - NCPDP Telecommunication (Field 482-GE, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>percentageSalesTaxBasis :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Code indicating the basis for percentage sales tax.&quot; - NCPDP Telecommunication (Field 483-HE, Data Dictionary 201104).  Possible values include: Ingredient Cost; Ingredient Cost plus Dispensing Fee; Not Specified.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>percentageSalesTaxRate :  <xref href="../t_FHIMDatatypesReal.dita" >Real</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Percentage sales tax rate used to calculate Percentage Sales Tax Amount Submitted&quot; - NCPDP Telecommunication (Field 483-HE, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>professionalServiceFee :  <xref href="../t_FHIMDatatypesMonetaryAmount.dita" >MonetaryAmount</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Amount submitted by the provider for professional services rendered.&quot; - NCPDP Telecommunication (Field 477-BE, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>usualAndCustomaryCharge :  <xref href="../t_FHIMDatatypesMonetaryAmount.dita" >MonetaryAmount</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Amount charged cash customers for the prescription exclusive of sales tax or other amounts claimed.&quot; - NCPDP Telecommunication (Field 426-DQ, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>otherAmount : <xref href="../t_FHIMEnrollEligCOBOtherAmount.dita" >OtherAmount</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to a set of additional costs incurred or claimed for a dispensed prescription or service.  Examples of such costs include shipping, compound preparation, incentives, and taxes.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

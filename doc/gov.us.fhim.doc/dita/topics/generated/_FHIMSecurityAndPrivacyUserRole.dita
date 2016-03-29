@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMSecurityAndPrivacyUserRole" xml:lang="en-us">
+<title id="title">UserRole</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class is used to specify the role of a user of a computer system. The role is typically associated with the Information Requester and specifies what capabilities are available to a specific type of computer user (i.e., in the Windows operating system, a user may have the role of Administrator which enables the capability to add new users). </p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>allowedSensitivity :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Coded attribute that describes the level sensitivity of the protected information (including IIHI) that the user may access or use. Sensitivity is a characteristic of a resource which implies its value or importance.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>name :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This attribute is used to specify the role name, if available.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>roleCode :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This coded descriptor is used to specify a user role. It is an identifier of a hierarchical group in which membership is asserted, for example, organizational position. Structural roles provide authorizations on objects at a global level without regard to internal details (ASTM E2595). Examples include authorization to participate in a session, connect authorization to a database, authorization to participate in an order workflow, or connection to a protected uniform resource locator (URL). A structural role applies to the business process task as a group. This attribute refers to a coded structural role specified by an external coding system.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>roleId :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This attribute is used to represent a unique role identifier.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>functionalRole : <xref href="../t_FHIMSecurityAndPrivacyFunctionalRole.dita" >FunctionalRole</xref> (0..*)</p></stentry>
+  <stentry><p>				This attribute refers to a coded structural role specified by an external coding system.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>organizationalProvider : <xref href="../t_FHIMProviderOrganizationalProvider.dita" >OrganizationalProvider</xref> (0..*)</p></stentry>
+  <stentry><p>				The organizational provider with which the user is associated.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

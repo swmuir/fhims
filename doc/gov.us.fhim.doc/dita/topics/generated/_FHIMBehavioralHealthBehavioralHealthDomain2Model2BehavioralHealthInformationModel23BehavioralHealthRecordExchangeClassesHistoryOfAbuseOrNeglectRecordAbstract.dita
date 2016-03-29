@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMBehavioralHealthBehavioralHealthDomain2Model2BehavioralHealthInformationModel23BehavioralHealthRecordExchangeClassesHistoryOfAbuseOrNeglectRecordAbstract" xml:lang="en-us">
+<title id="title">HistoryOfAbuseOrNeglectRecord(Abstract)</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+<section id="specializations"  audience="developer, modeler">
+	<title>Derivations</title>
+	<ul>
+<li><xref href="../t_FHIMBehavioralHealthBehavioralHealthDomain2Model2BehavioralHealthInformationModel23BehavioralHealthRecordExchangeClassesVictimOfAbuseOrNeglectRecord.dita">VictimOfAbuseOrNeglectRecord </xref> is a kind of  HistoryOfAbuseOrNeglectRecord(Abstract) </li>
+<li><xref href="../t_FHIMBehavioralHealthBehavioralHealthDomain2Model2BehavioralHealthInformationModel23BehavioralHealthRecordExchangeClassesPerpetratorOfAbuseOrNeglectRecord.dita">PerpetratorOfAbuseOrNeglectRecord </xref> is a kind of  HistoryOfAbuseOrNeglectRecord(Abstract) </li>
+	</ul>
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class is intended to capture details related to any past abuse/violence and/or neglect.  Violence is a significant problem in the United States.  From infants to the elderly, it affects people in all stages of life. In 2006, 18,573 people died as a result of homicide and 33,300 took their own life.  The number of violent deaths tells only part of the story.  Many more survive violence and are left with permanent physical and emotional scars.  Violence also erodes communities by reducing productivity, decreasing property values, and disrupting social services.  In 1979, violent behavior was identified by the U.S. Surgeon General as a key public health priority.  Shortly thereafter, in 1980, CDC began studying patterns of violence.  These early activities grew into a national program to reduce the death and disability associated with injuries outside the workplace.  In 1992, CDC established the National Center for Injury Prevention and Control (NCIPC) as the lead federal organization for violence prevention.  The Division of Violence Prevention (DVP) is one of three divisions within NCIPC.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>clinicalNoteText :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>code :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This is the coded attribute describing the type of abuse or neglect.  It is not currently associated with any particular value set, but this may be captured using ICD-9-CM diagnostic codes.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateOfOnset :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This attribute is the date when the neglect or abuse started (e.g. first incident).  An imprecise date would be appropriate.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>mostRecentIncidentDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This attribute is the date of the most recent incident of neglect or abuse that has been identified by the assessment.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>statusCode :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This attribute indicates s whether the abuse or neglect is still in progress (active) or was in the past (completed).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>typeCode :  <xref href="../t_FHIMBehavioralHealthBehavioralHealthDomain2Model2BehavioralHealthInformationModel25TerminologyAnalysisAbuseType.dita" >AbuseType</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This attribute specifies whether the history of abuse refers to neglect, physical, or sexual abuse.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>historyOfAbuseOrNeglect : <xref href="../t_FHIMBehavioralHealthBehavioralHealthDomain2Model2BehavioralHealthInformationModel23BehavioralHealthRecordExchangeClassesHistoryOfAbuseOrNeglectRecordAbstract.dita" >HistoryOfAbuseOrNeglectRecord(Abstract)</xref> (0..1)</p></stentry>
+  <stentry><p>				This attribute links to other HistoryOfAbuseOrNeglect records.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>patientbehavioralhealth : <xref href="../t_FHIMBehavioralHealthBehavioralHealthDomain2Model2BehavioralHealthInformationModel21CommonBehavioralHealthClassesPatientBehavioralHealth.dita" >PatientBehavioralHealth</xref> (1..1)</p></stentry>
+  <stentry><p>				This is an association between a client/patient and their History of Abuse                     and Neglect records.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>riskOfViolence : <xref href="../t_FHIMBehavioralHealthBehavioralHealthDomain2Model2BehavioralHealthInformationModel23BehavioralHealthRecordExchangeClassesViolentBehaviorRisk.dita" >ViolentBehaviorRisk</xref> (0..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

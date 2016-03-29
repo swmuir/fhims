@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMClinicalDocumentAdministrativeClosureAct" xml:lang="en-us">
+<title id="title">AdministrativeClosureAct</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class contains attributes associated with the closure of a document by an Administrative Action.  Whether the document was closed manually by an administrative person (in order to satisfy authentication requirements), or automatically by scanning a paper document bearing the signature of the patient (e.g., Consents, Advanced Directives, etc.) and not requiring the signature of an author. </p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>comment :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Contains any remarks about the administrative closure.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateTime :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The date/time that the document was closed by administrative action.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>mode :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Indicates whether the document was closed manually by an administrative person (in order to satisfy authentication requirements), or automatically by scanning a paper document bearing the signature of the patient (e.g., Consents, Advanced Directives, etc.) and not requiring the signature of an author.  Possible values include Manual or Scanned document
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>reason :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Provides a reason why the document was administratively closed.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>author : <xref href="../t_FHIMProviderIndividualProvider.dita" >IndividualProvider</xref> (1..1)</p></stentry>
+  <stentry><p>				Identifies the person who closed the document.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

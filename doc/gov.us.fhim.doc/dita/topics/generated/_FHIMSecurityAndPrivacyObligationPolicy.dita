@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMSecurityAndPrivacyObligationPolicy" xml:lang="en-us">
+<title id="title">ObligationPolicy</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	ObligationPolicy is a kind of <xref href="../t_FHIMSecurityAndPrivacyAtomicSecurityPolicyAbstract.dita">AtomicSecurityPolicy(Abstract)</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>An obligation policy may be used to specify additional privacy preferences specified by a client/patient. An obligation policy may be specified in addition to a ConstraintPolicy to fully describe a patient&apos;s access control preferences. In some cases an obligation policy may be used to indicate that the receiver of an information object may not be allowed to re-disclose it or persist that information object indefinitely. According to ISO 22600-2, ObligationPolicy instances &apos;are event-triggered and define actions to be performed by manager agent&apos;.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>obligationPolicyType :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..*)</p> 
+
+
+</stentry>
+  <stentry><p>				This attribute identifies the action required before completing the step in the workflow. We assume it is coded concept but in today&apos;s implementations it&apos;s primarily an ad-hoc rule reference (e.g., the name of a data base stored procedure). An obligation may be associated with the release of an object. For example, it may require a signature. This information is passed as rule for an application to enforce. In other cases it may require that an audit record be created.
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMEnrollEligCOBProcessor" xml:lang="en-us">
+<title id="title">Processor</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>A Processor is an organization that performs various tasks upon claim data in order to ensure that the Payer&apos;s systems can accept that data.  Some processors assist the Payer in certain adjudication tasks.  This organization is an intermediary between the Biller and the Payer, and performs various value-added services, including routing of electronic payments.  Note that a Processor might be a Third Party Administrator or a Pharmacy Benefits Manager.  For the purposes of claims processing, we do not need to distinguish these.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>bankIdNumber :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The secondary, tertiary, etc. card issuer or bank ID number used for network routing.&quot; - NCPDP Telecommunication (Field 990-MG, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>planId :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Assigned by the processor to identify a set of parameters, benefit, or coverage criteria used to adjudicate a claim.&quot; - NCPDP Telecommunication (Field 524-FO, Data Dictionary 201104).</p><p>Note that this property may relate more to the Health Plan than to the Processor, in which case it would be a duplicate of HealthPlan.id.  In that case this property may need to be removed.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>processorControlNumber :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Number assigned by the processor.&quot; - NCPDP Telecommunication (Field 104-A4, Data Dictionary 201104).</p><p>Note that this property may relate more to the transaction than to the Processor, in which case it will need to move to the Billing Event.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>payer : <xref href="../t_FHIMEnrollEligCOBPayer.dita" >Payer</xref> (0..1)</p></stentry>
+  <stentry><p>				Pointer to the Payer for which the Processor is acting as an intermediary for claims processing.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

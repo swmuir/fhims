@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMPersonHumanPatient" xml:lang="en-us">
+<title id="title">HumanPatient</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	HumanPatient is a kind of <xref href="../t_FHIMPersonPatient.dita">Patient</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>A specialization of the Patient role containing information specific to only human patients (such as confidentiality code).</p><p></p><p>Notes:</p><p>We removed veryImportantPerson code (4/4/2013) because we do not have a use-case for it.  It was perhaps more useful pre-HIPAA for privacy reasons, or intra-organizational for special treatment purposes, but we do not foresee any inter-organizational requirements at this time.  Note that this property mapped to PV1-16.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+
+ <strow>
+  <stentry><p>subject : <xref href="../t_FHIMPersonPerson.dita" >Person</xref> (1..1)</p></stentry>
+  <stentry><p>				Pointer to the person who is playing the role of patient (HumanPatient).
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

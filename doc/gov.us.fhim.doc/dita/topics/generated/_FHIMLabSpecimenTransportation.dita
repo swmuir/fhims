@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMLabSpecimenTransportation" xml:lang="en-us">
+<title id="title">SpecimenTransportation</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	SpecimenTransportation is a kind of <xref href="../t_FHIMLabSpecimenHandling.dita">SpecimenHandling</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class contains information regarding the transportation of a specimen.  This class currently contains the shipment identifier and the method of transportation, but will be augmented in future iterations as we intend to model more details regarding chain of custody.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>shipmentId :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The identifier assigned by the shipment transportation provider that uniquely identifies this shipment from all other shipments by the same provider.  The addressee for the shipment should be able to use this identifier to match a physical shipment with the electronic manifest for the shipment.&quot; - HL7 Version 2.8, SPM-32.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>transportationMethod :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Indicates &quot;the means by which a sample reaches the diagnostic service provider.  This information is to aid the lab in scheduling or interpretation of results.  Possible answers: routine transport van, public postal service, etc.&quot; - HL7 Version 2.8, OBR-38.
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

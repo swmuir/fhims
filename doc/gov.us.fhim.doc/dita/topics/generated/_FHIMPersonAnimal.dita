@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMPersonAnimal" xml:lang="en-us">
+<title id="title">Animal</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	Animal is a kind of <xref href="../t_FHIMPersonBiologicalEntityAbstract.dita">BiologicalEntity(Abstract)</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>A subtype of LivingSubject that includes all animals except the species homo sapiens which might be the subject of Healthcare-related activities.  Note that this class does not include microorganisms, insects, plants, etc.  A separate MicroOrganism class exists in Laboratory to handle identification of microorganisms in Laboratory Tests.</p><p>*** Note: This class serves as a placeholder for information needed to support future use cases. ***</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>biologicalSex :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+<p>See <xref href="../t_fhimvocabPersonVocabFHIM_BiologicalSex.dita">FHIM_BiologicalSex</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				The sex of a living subject.  Note that the biological sex is different from administrative gender which is defined for administrative purposes.  This attribute reflects the karyotypic sex of the patient, regardless of whether sexual organs may have been altered.  For example, a neutered dog will still have the same underlying chromosomes.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>isNeutered :  <xref href="../t_FHIMDatatypesNullableBoolean.dita" >NullableBoolean</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Indicates whether the animal has been altered such that they cannot procreate.  Note that information that the animal has been neutered can also be modeled in a clinical domain as a procedure or observation, however it is captured in this domain as a simple property.</p><p>&quot;Indicates the current state of the animal&apos;s reproductive organs.&quot; - HL7 FHIR, Patient.animal.genderStatus.  Note that FHIR models this concept as a code with values Neutered, Intact.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>name :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				A name used to identify the non-human individual.  Typically used only when the individual is a pet or a beast of burden.  Examples include &quot;Spot&quot;, &quot;Fido&quot;, &quot;Seattle Slew&quot;. Note that this property is typically not used when the subject is a lower order organism or a stock animal.</p><p>&quot;Contains one or more of the names of the patient....  For animals, if a Name Type of &quot;R&quot; is used, use &quot;Name Context&quot; to identify the authority with which the animal&apos;s name is registered.&quot; - HL7 Version 2.8, PID-5.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>organismTaxon :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+<p>See <xref href="../t_fhimvocabPersonVocabFHIM_OrganismTaxon.dita">FHIM_OrganismTaxon</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				A categorization of non-human biological entities. Possible values include canine, German Shepherd, staphylococcus aureus, etc.</p><p>Note that breed is no longer a stand-alone concept, as this information is included in the SNOMED species hierarchy.  Thus, this property handles both species and breed, and the separate breed property was removed.</p><p></p><p>&quot;The species of living organism.  This may include the common or scientific name, based on the coding system(s) used.  SNOMED is the recommended coding system.&quot; - HL7 Version 2.8, PID-35.</p><p>&quot;The specific breed of animal.  This field, unlike Species and Strain is specific to animals and cannot be generally used for all living organisms.  SNOMED is the recommended coding system.&quot; - HL7 Version 2.8, PID-36.</p><p>&quot;Identifies the high level taxonomic categorization of the kind of animal.&quot; - HL7 FHIR, Patient.animal.species.</p><p>&quot;Identifies the detailed categorization of the kind of animal.&quot; - HL7 FHIR, Patient.animal.breed.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>primaryIntent :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The primary use for which the living subject was bred or grown.&quot; - HL7 Version 2.8, PID-38.
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

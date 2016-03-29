@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMPersonEmployee" xml:lang="en-us">
+<title id="title">Employee</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class represents information about a person in the role of an employee of some organization.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>employeeId :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The number that the employer assigns to the employee that is acting as next of kin/associated parties. However, if the contact role is the patient&apos;s employer, this field contains the employee number of the patient at their place of employment.&quot; - HL7 Version 2.8, NK1-12.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>employmentDuration :  <xref href="../t_FHIMDatatypesTimeInterval.dita" >TimeInterval</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The date range during which a person is an employee in a given employment relationship.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>employmentStatus :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Indicates the state of the Employee instance, as defined in the Role state-transition model in the HL7 RIM.  Possible values include: Pending, Canceled, Active, Suspended, Terminated, and Nullified.</p><p>&quot;The next of kin/associated party&apos;s job status.&quot; - HL7 Version 2.8, NK1-34. Possible values include (from HL7 Table 311): Permanent; Temporary; Other; Unknown.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>jobTitle :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&apos;The title of the job held, for example, Vice President, Senior Technical Analyst. This is a local name for the employee&apos;s occupation that doesn&apos;t necessarily correspond to any scheme for categorizing occupation.&apos; (HL7 v3)</p><p>&quot;The title of the next of kin/associated parties at their place of employment.  However, if the contact role is the patient&apos;s employer, this field contains the job title of the patient at their place of employment.&quot; - HL7 Version 2.8, NK1-10.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>occupation :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+<p>See <xref href="../t_fhimvocabPersonVocabOccupationCensus.dita">Occupation (Census)</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				&quot;A value that qualifies the classification of &apos;kind-of-work&apos; based upon a recognized industry or jurisdictional standard.&quot; - HL7 Version 3 RIM.</p><p>&quot;The employer&apos;s job code and the employee classification used for the next of kin/associated parties at their place of employment. However, if the contact role is the patient&apos;s employer, this field contains the job code/class of the patient at their place of employment.&quot; - HL7 Version 2.8, NK1-11.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>workAddress :  <xref href="../t_FHIMDatatypesAddress.dita" >Address</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The person&apos;s office address.  First choice for business related contacts during business hours.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>workPhone :  <xref href="../t_FHIMDatatypesContactPoint.dita" >ContactPoint</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The person&apos;s office telephone number.  First choice for business related contacts during business hours.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>employer : <xref href="../t_FHIMPersonEmployer.dita" >Employer</xref> (1..1)</p></stentry>
+  <stentry><p>				Pointer to the employer for which this person is an employee.</p><p>&quot;The name of the organization that serves as a next of kin/associated party or as the next of kin of the patient.  This field may also be used to communicate the name of the organization at which the associated party works.&quot; - HL7 Version 2.8, NK1-13.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

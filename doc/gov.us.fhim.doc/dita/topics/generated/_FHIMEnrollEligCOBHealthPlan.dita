@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMEnrollEligCOBHealthPlan" xml:lang="en-us">
+<title id="title">HealthPlan</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>A Health Plan is a contract between an benefits provider (e.g. an insurance company or a government agency) and an individual or his/her sponsor (e.g. an employer or union).  The type and amount of health care costs that will be covered by the health insurance provider are specified in writing, in a member contract or &quot;Evidence of Coverage&quot; booklet for private insurance, or in a national health policy for public insurance.  For example, the Department of Veterans Affairs (VA) annually publishes the &quot;Federal Benefits for Veterans and Dependents,&quot; describing the benefits available during that year.  An insurance company will often offer multiple Health Plans.</p><p></p><p>This class represents the contract, or the defined set of benefits that are promised by the benefits provider.  It is noted that we had difficulty finding a single generic term for the concept defined by this class, as many commonly used terms have specific meanings in different settings.  In some settings, this might be called an Insurance Plan, but that term doesn&apos;t fit VA&apos;s benefit package, or Medicare.</p><p></p><p>While the set of benefits may be very closely associated with the organization that offers it (e.g., &quot;Medicare&quot;), the organization is a separate concept (for which we have chosen the generic term, &quot;Payer&quot;).  The term Health Plan includes not only Private Insurance Plans, but also Public Health Plans, Military Health Programs, and State Health Insurance Programs.</p><p></p><p>Note that Private Insurance Plan, Public Health Plan, Military Health Program, and State Health Insurance Program were once modeled as subclasses of Health Plan, but were removed as these might be better represented by a type code instead.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>deductibleAmount :  <xref href="../t_FHIMDatatypesMonetaryAmount.dita" >MonetaryAmount</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Represents the amount of money for which patient is responsible for the provision of a medical product, procedure, or service, expressed as a periodic (usually annual) monetary limit.  For example, a plan may cover all doctor&apos;s visits after the first $200.  In this example, this property would contain $200.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>effectivePeriod :  <xref href="../t_FHIMDatatypesTimeInterval.dita" >TimeInterval</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Contains the date that the insurance goes into effect.&quot; - HL7 Version 2.8, IN1-12.</p><p>&quot;Indicates the last date of service that the insurance will cover or be responsible for.&quot; - HL7 Version 2.8, IN1-13.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>homePlan :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Code identifying the Blue Cross or Blue Shield plan ID which indicates where the member&#8217;s coverage has been designated. Usually where the member lives or purchased their coverage.  This field is used for interstate processing between Blue Cross and Blue Shield plans.&quot; - NCPDP Telecommunication (Field 314-CE, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>id :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				A unique identifier that the payer or information source uses to identify the Health Plan.</p><p>&quot;Contains a unique identifier for the insurance plan.&quot; - HL7 Version 2.8, IN1-2.</p><p>&quot;Assigned by the processor to identify a set of parameters, benefit, or coverage criteria used to adjudicate a claim.&quot; - NCPDP Telecommunication (Field 524-FO, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>insuranceType :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+<p>See <xref href="../t_fhimvocabEECOBVocabSourceofPaymentTypologyPHDSC.dita">Source of Payment Typology (PHDSC)</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				Such as HMO, PPO, Medicare, etc.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>planName :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The name of the Plan as assigned by the Payer.  Should this be &apos;description&apos; instead of &apos;name&apos;? 
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>requiresNoticeOfAdmission :  Boolean (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Indicates whether the insurance company requires a written notice of admission from the healthcare provider.&quot; - HL7 Version 2.8, IN1-23.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>sendsReportOfEligibility :  Boolean (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Indicates whether this insurance carrier sends a report that indicates that the patient is eligible for benefits and whether it identifies those benefits.&quot; - HL7 Version 2.8, IN1-25.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>coveredBenefit : <xref href="../t_FHIMEnrollEligCOBCoveredBenefit.dita" >CoveredBenefit</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to a set of healthcare-related procedures or services, to include medications and durable equipment, that is anticipated to be funded, in full or in part, by a given Health Plan on behalf of holders of Policies written against that Plan.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>financialArrangement : <xref href="../t_FHIMEnrollEligCOBFinancialArrangement.dita" >FinancialArrangement</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to a predefined scheme(s) for payment or reimbursement to healthcare providers that are applicable to the owning Health Plan.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>group : <xref href="../t_FHIMEnrollEligCOBGroupCoverage.dita" >GroupCoverage</xref> (1..1)</p></stentry>
+  <stentry><p>				Pointer to the Group Health Insurance Policies established for a particular Health Plan.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>healthcarePolicy : <xref href="../t_FHIMEnrollEligCOBHealthcarePolicy.dita" >HealthcarePolicy</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to the Insurance Policies written against the Health Plan.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>payer : <xref href="../t_FHIMEnrollEligCOBPayer.dita" >Payer</xref> (1..1)</p></stentry>
+  <stentry><p>				Pointer to the Payer which offers the Health Plan.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>planNetworkAffliliation : <xref href="../t_FHIMProviderPlanNetworkAffliliation.dita" >PlanNetworkAffliliation</xref> (1..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>providerPlanParticipation : <xref href="../t_FHIMProviderProviderPlanParticipation.dita" >ProviderPlanParticipation</xref> (0..*)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

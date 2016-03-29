@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMPharmacyReturn" xml:lang="en-us">
+<title id="title">Return</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class contains information about the reversal of a provision of a medication to a patient or care provider under the authority of the owning Pharmacy Promise.  In inpatient settings, returns often occur when an as-needed (PRN) medication is dispensed to a medication cart and the patient does not need the medication, or a medication order is changed after the cart was prepared; in either casethe cart is returned to the pharmacy at the end of the shift and remaining medication is returned to stock.  In outpatient settings, returns rarely occur after control of the medication has left the pharmacy, however, if the patient never picks up the medication, it will be returned to stock after some set period of time.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>dateReturned :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The date (and optionally, time) that the pharmaceutical products were returned to stock.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>quantityReturned :  <xref href="../t_FHIMDatatypesQuantity.dita" >Quantity</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The amount of the pharmaceutical product that was returned to stock.  For example, 3 tablets.
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMImagingImagingRequest" xml:lang="en-us">
+<title id="title">ImagingRequest</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	ImagingRequest is a kind of <xref href="../t_FHIMOrdersObservationRequestAbstract.dita">ObservationRequest(Abstract)</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>The Imaging Order from the perspective of the ordering organization. Note that nearly all of the properties needed for the Imaging Request are inherited from the generic Healthcare Request class which is its parent, so this class adds only those few properties unique to imaging requests.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>clinicalHistory :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Clinical history of the patient that might be relevant to this case as well as instructions to the interpreting physician
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>preOpAppointmentTime :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The date/time this patient is scheduled for pre-operative image
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>researchSource :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				If the study is being / was conducted as part of a research study, this property will contain the name of the research source that referred the patient to for the exam.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>cumulativeRadiationExposure : <xref href="../t_FHIMImagingRadiationExposureObservation.dita" >RadiationExposureObservation</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to the amount of radiation to which the Patient has been known to have been exposed previously. This information can help clinicians determine if the benefit from the diagnostic information provided by an individual examination (or additional examinations) outweigh the risk that may be associated with a proposed imaging exam. This information may also influence the Radiologist to choose an alternative methodology if the patient has already been exposed to excessive radiation.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>pregnancyMenstrualStatus : <xref href="../t_FHIMEncounterPregnancyMenstrualStatus.dita" >PregnancyMenstrualStatus</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to an Observation of whether the Patient is known to be expecting and/or when the Patient last experienced a menstrual cycle.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

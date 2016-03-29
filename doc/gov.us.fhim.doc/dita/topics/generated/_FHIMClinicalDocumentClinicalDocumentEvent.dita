@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMClinicalDocumentClinicalDocumentEvent" xml:lang="en-us">
+<title id="title">ClinicalDocumentEvent</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>&quot;Document:  &quot;Specialization of Act to add the characteristics unique to document management services.&quot; (HL7 3.0)  &quot;ClinicalDocument:  &quot;A clinical document is a documentation of clinical observations and services, as defined in.&quot; (HL7 3.0 CDA 2.0)  &quot;An actual occurrence of an event (i.e., the documentation act already happened and is not just a request, intent, plan or promise to document).&quot;   (HL7 3.0)  This class servers the purpose of the Header.  &quot;The header identifies and classifies the document; provides information on authentication, the encounter, the patient, and the provider; and sets the context for the document as a whole.&quot; (HL7 3.0)    </p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>archiveDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&amp;amp;lt;p&amp;amp;gt;      This contains the date this document was archived.  &amp;amp;lt;/p&amp;amp;gt;
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>confidentiality :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Confidentiality is a required contextual component of CDA, where the value expressed in the header holds true for the entire document, unless overridden by a nested value (as further described in CDA Context (  4.4 )).&quot;  (HL7 V3)  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dispensation :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				A code depicting the storage status of a Clinical Document. Possible Values Include: Active, Archived, Purged etc.    
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>documentTitle :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Represents the title of the document. It is commonly the case that clinical documents do not have a title, and are collectively referred to by the display name of ClinicalDocument.code (e.g. a &quot;consultation&quot; or &quot;progress note&quot;). Where these display names are rendered to the clinician, or where the document has a unique title, the ClinicalDocument.title component should be used.&quot; (HL7 3.0)  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>documentType :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Classifies the document.  In VistA this is a pointer to file 8925.1.   In HL7 CDA, this is: &quot;The code specifying the particular kind of document (e.g. History and Physical, Discharge Summary, Progress Note). The value set is drawn from LOINC, and has a CWE coding strength.&quot; (HL7 3.0)      
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>id :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Represents the unique instance identifier of a clinical document&quot;  (HL7 3.0)
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>isCosignatureNeeded :  Boolean (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Indicates whether or not a cosignature is needed.    
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>language :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Specifies the human language of character data (whether they be in contents or attribute values). The values of the attribute are language identifiers as defined by the IETF (Internet Engineering Task Force) RFC 3066 for the Identification of Languages, ed. H. Alvestrand. 1995, which obsoletes RFC 1766. Language is a contextual component of CDA., where the value expressed in the header holds true for the entire document, unless overridden by a nested value (as further described in CDA Context (  4.4 )).&quot;   (HL7 3.0 CDA 2.0)  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>referenceDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				In VistA, &quot;this is the Date (and time) by which the clinician will reference the document.  For Progress Notes, this will likely be the date of the provider&apos;s encounter with the patient.  For documents which have been dictated, and transcribed (e.g., discharge summaries), it will correspond to the dictation date of the record.  In all cases, this is the date by which the document will be referenced and sorted.&quot;    In CDA, this is the creation date: &quot;Signifies the document creation time, when the document first came into being. &quot; (HL7 3.0, CDA 2.0)
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>status :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The current status of a given clinical document.  Possible values include: undictated, untranscribed, unreleased, unverified, unsigned, uncosigned, completed, etc.     Displayed in CPRS. And is an automatic system change when updated (never through a prompt to the user).   
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>treatmentBeginDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The date/time at which the treatment episode associated with this document was initiated (e.g., Admission date/time for a discharge summary, Visit date/time for a clinic note, Transfer date/time for an interim summary)
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>treatmentEndDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The ending date/time for the treatment episode associated with this document (e.g.Time is optional)
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>updateDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&amp;amp;lt;HTML&amp;amp;gt;&amp;amp;lt;HEAD&amp;amp;gt;  &amp;amp;lt;META content=&quot;MSHTML 6.00.2900.3492&quot; name=GENERATOR&amp;amp;gt;&amp;amp;lt;/HEAD&amp;amp;gt;  &amp;amp;lt;BODY&amp;amp;gt;This contains the date and time this document was updated.&amp;amp;lt;/BODY&amp;amp;gt;&amp;amp;lt;/HTML&amp;amp;gt;
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>version :  Integer (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;An integer value used to version successive replacement documents.&quot;  (HL7 V3)    
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>administrativeClosure : <xref href="../t_FHIMClinicalDocumentAdministrativeClosureAct.dita" >AdministrativeClosureAct</xref> (0..1)</p></stentry>
+  <stentry><p>				This document was closed by Administrative Action.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>amendment : <xref href="../t_FHIMClinicalDocumentAmendmentAct.dita" >AmendmentAct</xref> (0..1)</p></stentry>
+  <stentry><p>				Records the amendment of a clinical document.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>attender : <xref href="../t_FHIMCommonAttender.dita" >Attender</xref> (0..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>author : <xref href="../t_FHIMCommonAuthor.dita" >Author</xref> (1..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>divsion : <xref href="../t_FHIMProviderServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (0..1)</p></stentry>
+  <stentry><p>				This is the institution associated with the document. It is extracted from the document&apos;s hospital location if known; otherwise it is extracted from the user&apos;s log-on division.   Equivalent to a pointer to File #4.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>documentGroup : <xref href="../t_FHIMClinicalDocumentDocumentGroup.dita" >DocumentGroup</xref> (0..*)</p></stentry>
+  <stentry><p>				Documents can be aggregated into clinically meaningfully groups; each document in the group will usually reference the same patient.  A clinical document will typically belong to at most one Document Group.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>hospitalCreditStop : <xref href="../t_FHIMProviderServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (1..1)</p></stentry>
+  <stentry><p>				Identifies a node within a workflow process that is typically performed by the Service to facilitate collection of workload and financial information.   
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>hospitalLocation : <xref href="../t_FHIMProviderServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (1..1)</p></stentry>
+  <stentry><p>				Hospital Location assiciated with this document.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>image : <xref href="../t_FHIMDatatypesImage.dita" >Image</xref> (0..1)</p></stentry>
+  <stentry><p>				The pointer to the Image File.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>linkedDataObject : <xref href="../t_FHIMClinicalDocumentLinkedDataObject.dita" >LinkedDataObject</xref> (0..1)</p></stentry>
+  <stentry><p>				The document for which the linkage is beding made.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>patientTransfer : <xref href="../t_FHIMEncounterPatientTransfer.dita" >PatientTransfer</xref> (0..1)</p></stentry>
+  <stentry><p>				The inpatient movement with which the document is associated. 
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>procedureSummary : <xref href="../t_FHIMClinicalDocumentProcedureSummary.dita" >ProcedureSummary</xref> (0..*)</p></stentry>
+  <stentry><p>				The summary for the clinical procedure performed.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>recordTarget : <xref href="../t_FHIMPersonPatient.dita" >Patient</xref> (1..1)</p></stentry>
+  <stentry><p>				A Role of a Person as a recipient of health care services from a healthcare provider.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>relatedDocument : <xref href="../t_FHIMClinicalDocumentRelatedDocument.dita" >RelatedDocument</xref> (0..*)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>retraction : <xref href="../t_FHIMCommonNullifyAct.dita" >NullifyAct</xref> (0..1)</p></stentry>
+  <stentry><p>				Records the retraction, or &quot;nullification&quot; of a clinical document.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>section : <xref href="../t_FHIMClinicalDocumentClinicalDocumentSection.dita" >ClinicalDocumentSection</xref> (1..*)</p></stentry>
+  <stentry><p>				A clinical document body is comprised of one or more document sections.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>service : <xref href="../t_FHIMProviderServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (0..1)</p></stentry>
+  <stentry><p>				The treating speciality associated with this document.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>treatingSpecialty : <xref href="../t_FHIMProviderServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (0..1)</p></stentry>
+  <stentry><p>				The treating speciality associated with this document.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>visit : <xref href="../t_FHIMEncounterOutpatientVisit.dita" >OutpatientVisit</xref> (0..1)</p></stentry>
+  <stentry><p>				Indicates the visit to which the clinical document is related.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>visitLocation : <xref href="../t_FHIMProviderServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (0..1)</p></stentry>
+  <stentry><p>				This is the Admitting/Screening Clinic associated with this document     
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMVitalSignsO2SaturationOxygenSaturationObservation" xml:lang="en-us">
+<title id="title">OxygenSaturationObservation</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	OxygenSaturationObservation is a kind of <xref href="../t_FHIMClinicalObservationObservation.dita">Observation</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>&#8220;Oxygen saturation is a term referring to the fraction of oxygen-saturated hemoglobin relative to total hemoglobin (unsaturated + saturated) in the blood. The human body requires and regulates a very precise and specific balance of oxygen in the blood. Normal blood oxygen levels in humans are considered 95-100 percent. ... Levels below 80 percent may compromise organ function, such as the brain and heart&#8221; &#8211; Wikipedia.</p><p></p><p>This class represents the measurement (or &#8220;clinical observation&#8221;) of the patient&#8217;s blood oxygen saturation level.  This class re-defines the generic clinical Observation class to fix the observed characteristic to LOINC 2708-6 and to set the data type of the observation value to a Physical Quantity.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>observedCharacteristic :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This property defines what was observed by using a value from a nationally recognized coding system.  In this case, we&#8217;re stating that the concept being observed is the Oxygen saturation in arterial blood, which is LOINC 2708-6.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>value :  <xref href="../t_FHIMDatatypesQuantity.dita" >Quantity</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This property contains the result, or value of the clinical Observation.  In the generic clinical Observation class, the data type for this property can be anything.  Blood oxygen saturation is expressed as a percentage of the total hemoglobin that is oxygen-saturated.  Therefore, this property has been re-defined to constrain the data type to be a Physical Quantity (where the unit of measure is per cent).
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

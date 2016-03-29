@@ -1,0 +1,523 @@
+
+<html xmlns:Standard="http://www.eclipse.org/uml2/schemas/Standard/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:fhim="http:///schemas/fhim/_bbjuwA3cEeSGTazHdUQojA/5" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:term="http://www.openhealthtools.org/mdht/schemas/term/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:xmi="http://www.omg.org/XMI" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.3/Umlnotation" xmlns:Default="http:///schemas/Default/_fNm3AAqoEd6-N_NOT9vsCA/2" xmlns:CDA="http://www.openhealthtools.org/mdht/schemas/cda/4" xmlns:Default_1="http:///schemas/Default/1" xmlns:RIM="http:///schemas/RIM/_fvnwgAH4Ed6VH-9W1IVKXA/4" xmlns:SketchNotation="http://www.ibm.com/ccl/soa/sketch/notation/1.0.0/">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>Autopsy Domain</title>
+   </head>
+   <body style="font-family:Courier;font-size:14px">
+      <h1>Autopsy Domain</h1>
+      <p> The purpose of this review is to identify the data elements required for the
+         interoperable exchange for the Autopsy domain including dependencies. A column is
+         provided at the far right of the table for you to enter comments related to each
+         data element. If the class or domain is missing data elements, please add a row
+         at the bottom of the sheet and specify a name, description, and type of data
+         (e.g. numeric, string, date/time, code). 
+      </p>
+      <p> Once you have reviewed the data elements, please review the value sets
+         associated with the coded data elements. Please provide feedback by adding
+         comments in the column provided at the right of item/row or by adding rows at
+         the bottom table. For any new coded concepts without a valid code yet, our team
+         will propose them for addition in the source coding system. 
+      </p>
+      <ul>
+         <li><a href=""> <i><b>Autopsy</b> </i> Domain </a></li>
+       </ul>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font-family:Courier">
+         <tr bgcolor="#98FB98" style="font-size:18px" align="left">
+            <td colspan="1"><b><a id=""> 'Autopsy' Domain
+                     </a></b></td>
+            <td colspan="4" style="font-size:12px">Note that the Information Source hierarchy is in the Common domain, and is not shown here.</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+      </table>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font-family:Courier">
+         <tr>
+            <th width="20%">Element Name</th>
+            <th width="20%">Element Description</th>
+            <th width="15%">Format/Type</th>
+            <th width="15%">Value Set Name</th>
+            <th width="15%">Optionality/<br>Repetition
+            </th>
+            <th width="15%">Reviewer's Comments</th>
+         </tr>
+ 
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>AnatomicMeasurement</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class contains measurements of various organs and structures to include the entire body.  The bodySite property indicates the organ or structure to be measured, e.g., Brain.  The measurementType indicates whether we&apos;re measuring the length, volume, or weight.  The measurementValue property holds the actual measurement e.g., 1500 grams.    In VA&apos;s VistA system, the following fields are specificaly called out, which would be contained in this class, along with potentially others: Body Height, Body Weight, Length Of Aortic Valve, Length Of Mitral Valve, Length Of Pulmonic Valve, Length Of Tricuspid Valve, Length Of Ventricle (Left), Length Of Ventricle (Right), Volume Of Pericardial Cavity, Volume Of Peritoneal Cavity, Volume Of Pleural Cavity (Left), Volume Of Pleural Cavity (Right), Weight Of Adrenal Gland (Left), Weight Of Adrenal Gland(Right), Weight Of Brain , Weight Of Heart , Weight Of Kidney (Left), Weight Of Kidney (Right), Weight Of Liver, Weight Of Lung (Left), Weight Of Lung (Right), Weight Of Ovary (Left), Weight Of Ovary (Right), Weight Of Pancreas, Weight Of Parathyroid (Left Lower), Weight Of Parathyroid (Left Upper), Weight Of Parathyroid (Right Lower), Weight Of Parathyroid (Right Upper), Weight Of Pituitary Gland, Weight Of Spleen, Weight Of Testis (Left), Weight Of Testis (Right), Weight Of Thyroid Gland</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AnatomicMeasurement.<b>bodySite</b></div>
+            </td>
+            <td><p>This property indicates the organ or structure that is being measured, e.g., the Brain.  Note that this property will require an extensive effort by the terminology team to define fully.        </p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AnatomicMeasurement.<b>measurementType</b></div>
+            </td>
+            <td><p>Identifies the kind of measurement that is contained in the measurement value such as weight, length, or volume.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AnatomicMeasurement.<b>measurementValue</b></div>
+            </td>
+            <td><p>Contains the actual measurement of the organ or bodily structure measured.  Note that this is a physical quantity, so the datatype contains both the measurement value and the unit of measure (e.g., 1500 grams).</p></td>
+            <td valign="top"> Quantity </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>AutopsyDocumentReference</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>Contains all documentation produced as a result of the autopsy.   </p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AutopsyDocumentReference.<b>dateModified</b></div>
+            </td>
+            <td><p>This is the date the report was modified if it was modified after it was electronically signed/released.</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AutopsyDocumentReference.<b>referenceDate</b></div>
+            </td>
+            <td><p>This is the date and time that the autopsy SF515 was stored in TIU. </p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AutopsyDocumentReference.<b>wasDiagnosisModified</b></div>
+            </td>
+            <td><p>Diagnosis modified after report was electronically signed/released. 1=  &apos; YES&apos;   or 0 = &apos;NO&apos;.</p></td>
+            <td valign="top"> Boolean </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>AutopsyEvent</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>Clinical documents commonly have &apos;Subjective&apos; and &apos;Objective&apos; findings, both of which are kinds of Observations. In addition, clinical documents commonly contain &apos;Assessments&apos;, which are also kinds of Observations. Thus, the establishment of a diagnosis is an Observation.    </p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AutopsyEvent.<b>ageAtDeath</b></div>
+            </td>
+            <td><p>Contains the age of the patient at the time of death.</p></td>
+            <td valign="top"> Quantity </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AutopsyEvent.<b>autopsyDate</b></div>
+            </td>
+            <td><p>The date and time when the autopsy assessment is completed.  Also the date of the final diagnosis of cause of death.</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AutopsyEvent.<b>autopsyType</b></div>
+            </td>
+            <td><p>Anatomical areas of the body the autopsy is performed on.  This can be as broad as a full autopsy or grouping of the body region such as chest, trunk, head. lower body.    </p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AutopsyEvent.<b>clinicalDiagnoses</b></div>
+            </td>
+            <td><p>Contains information in textual format about the autopsy.    </p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AutopsyEvent.<b>comments</b></div>
+            </td>
+            <td><p>Contains information in textual format about the autopsy.    </p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AutopsyEvent.<b>dateOfDeath</b></div>
+            </td>
+            <td><p>This is the date and time of the death of the patient.    </p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AutopsyEvent.<b>diagnosisClarificationCode</b></div>
+            </td>
+            <td><p>Contains the Code value to indicate whether the  clinical dx insufficient (ex. Intracranial hemorrhage) did autopsy clarify the dx (ex. ruptured aneurysm) ?  &apos;1&apos; FOR YES; &apos;0&apos; FOR NO; &apos;2&apos; FOR CONFIRMED;      </p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AutopsyEvent.<b>finalDiagnosisDate</b></div>
+            </td>
+            <td><p>This is the date and time the final diagnosis was given.    </p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AutopsyEvent.<b>isMajorDxDisagreement</b></div>
+            </td>
+            <td><p>Contains the Code value to indicate whether there is major disagreement with the clinical Diagnoses. 0 = No  1 = Yes.     </p></td>
+            <td valign="top"> Boolean </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AutopsyEvent.<b>pathologicalDiagnoses</b></div>
+            </td>
+            <td><p>These are the pathological diagnoses in textual format.    </p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AutopsyEvent.<b>provisionalDiagnosisDate</b></div>
+            </td>
+            <td><p>Contains the date provisional anatomic diagnoses reported.     </p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AutopsyEvent.<b>serviceCode</b></div>
+            </td>
+            <td><p>Contains the code set that identifies the reason for autopsy service performed.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AutopsyEvent.<b>autopsyAssistant</b></div>
+            </td>
+            <td><p>The practitioner who assisted in performing the autopsy. </p></td>
+            <td valign="top"> <b>IndividualProvider</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AutopsyEvent.<b>diagnosis</b></div>
+            </td>
+            <td><p>An association from AutopsyEvent2 to Diagnosis identifying a dignosis associated to the autopsy event.</p></td>
+            <td valign="top"> <b>Diagnosis</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AutopsyEvent.<b>document</b></div>
+            </td>
+            <td><p>An association from AutopayEvent2 to AutopsyDocumnetReference identifying the document referencing the autopsy.</p></td>
+            <td valign="top"> <b>AutopsyDocumentReference</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AutopsyEvent.<b>grossImage</b></div>
+            </td>
+            <td><p>Images associated with Autopsy Organ/Tissue reports are stored in this multiple within the Autopsy Organ/Tissue field of the Lab Data (#63) file.</p></td>
+            <td valign="top"> <b>Image</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AutopsyEvent.<b>measurement</b></div>
+            </td>
+            <td><p>Measurement value is the actual value of the result and its unit of measure.</p></td>
+            <td valign="top"> <b>AnatomicMeasurement</b> </td>
+            <td>NA</td>
+            <td>(1..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AutopsyEvent.<b>microscopicImage</b></div>
+            </td>
+            <td><p>Images associated with Autopsy Organ/Tissue reports are stored in this multiple within the Autopsy Organ/Tissue field of the Lab Data file.</p></td>
+            <td valign="top"> <b>Image</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AutopsyEvent.<b>residentPathologist</b></div>
+            </td>
+            <td><p>Resident Pathologist who authored the autopsy assessment.</p></td>
+            <td valign="top"> <b>IndividualProvider</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AutopsyEvent.<b>seniorPathologist</b></div>
+            </td>
+            <td><p>Senior Pathologist who verified and approved autopsy assessment.</p></td>
+            <td valign="top"> <b>IndividualProvider</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AutopsyEvent.<b>treatingSpecialtyAtDeath</b></div>
+            </td>
+            <td><p>An association from AutopsyEvent2 to FacilityTreatingSpeciality identifying the Treating specialist at death.</p></td>
+            <td valign="top"> <b>ServiceDeliveryLocation</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+  </table>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font">
+         <tr>
+            <th>Value Set Constraint</th>
+            <th>Element Description</th>
+         </tr>
+       
+
+
+
+
+</table>
+

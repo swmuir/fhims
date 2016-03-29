@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMSecurityAndPrivacyGrantee" xml:lang="en-us">
+<title id="title">Grantee</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class is used to designate who/what has been delegated a specific right. For example, in the case of substance abuse related information, under certain conditions the authority to grant, withhold, or withdraw consent to the disclosure of the information, is granted to the client.  In another example, a Clearinghouse may act an agent/proxy for a provider organization as an intermediary and therefore can be a grantee as well.    </p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+
+ <strow>
+  <stentry><p>authority : <xref href="../t_FHIMSecurityAndPrivacyAuthority.dita" >Authority</xref> (0..*)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>clearingHouse : <xref href="../t_FHIMSecurityAndPrivacyIntermediary.dita" >Intermediary</xref> (0..1)</p></stentry>
+  <stentry><p>				Additional information about the grantee when the grantee is a clearinghouse.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>organizationalProvider : <xref href="../t_FHIMProviderOrganizationalProvider.dita" >OrganizationalProvider</xref> (1..1)</p></stentry>
+  <stentry><p>				Additional information about the grantee when the grantee is an organizational provider.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

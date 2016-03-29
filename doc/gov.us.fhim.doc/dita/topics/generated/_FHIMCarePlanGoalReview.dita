@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMCarePlanGoalReview" xml:lang="en-us">
+<title id="title">GoalReview</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	GoalReview is a kind of <xref href="../t_FHIMCommonClinicalInformationAbstract.dita">ClinicalInformation(Abstract)</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>An assessment of progress made toward reaching a Goal of the Care Plan.  For example, if the Goal is for the Patient to reduce their weight by 10 pounds by a certain date, an observation would be made on or near that date of the patient&#8217;s actual weight, and this weight compared to the goal weight.</p><p>&quot;Goal reviews reference multiple action outcomes reviews which support overall assessment of a HealthGoal.&quot; - HL7 Care Plan Domain Analysis Model</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>comments :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Specifies optional comments for the review&quot; - HL7 Care Plan Domain Analysis Model
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>effectiveDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Specifies the date/time of the review&quot; - HL7 Care Plan Domain Analysis Model
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>goalAchievementState :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Specifies a judgment on the goal achievement state&quot; - HL7 Care Plan Domain Analysis Model
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>nextScheduledReview :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Specifies the date/time of the next review&quot; - HL7 Care Plan Domain Analysis Model
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>reviewFrequency :  <xref href="../t_FHIMDatatypesRateQuantity.dita" >RateQuantity</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Specifies a periodic frequency for future reviews&quot; - HL7 Care Plan Domain Analysis Model
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>activityOutcomeReview : <xref href="../t_FHIMCarePlanActivityOutcomeReview.dita" >ActivityOutcomeReview</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to an evaluation of whether the activities that were undertaken have helped the patient meet their health goal.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>goalSuccessCriterion : <xref href="../t_FHIMCarePlanGoalSuccessCriterion.dita" >GoalSuccessCriterion</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to a statement of a desired future state, expressed as an Observation.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>observation : <xref href="../t_FHIMClinicalObservationObservation.dita" >Observation</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to an Observation of the measurable goal.  For example, if the goal was to loose weight with a target weight of 180 pounds, and the patient reached 189 pounds, this association will point to a weight measurement of 189 pounds.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

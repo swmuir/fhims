@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMOrdersSetOfOrders" xml:lang="en-us">
+<title id="title">SetOfOrders</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	SetOfOrders is a kind of <xref href="../t_FHIMOrdersHealthcareOrderAbstact.dita">HealthcareOrder(Abstact)</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>An aggregation of Orders that are assembled so that they might be managed as a group.  The member Orders will generally be for a single Patient, and commonly issued by a single Provider, but otherwise these orders will have no other inherent relationships between themselves.  This concept is different from an Order Set, Panel, or Battery, in that the SetOfOrders is composed after the orders have been created; wheras the latter concepts are defined before the order is created.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>id :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Contains a unique identifier for the Placer Group as referenced by the Placer application, the Filler application, or both.&quot; - HL7 Version 2.8, ORC-4
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>priority :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				A code (e.g., routine, emergency), specifying the urgency under which the SetOfOrders is requested to happen.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>status :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				A code specifying the status of the SetOfOrders.  Valid status codes should reflect the HL7 state machine, e.g., Active, Held, Canceled, Aborted, New, Nullified, Obsolete).  Note that operationally, this status will likely represent the aggregate statuses of the member Orders.  For example, in a set of five Orders, if four orders are &quot;Completed&quot; and one is &quot;Active&quot;, this status would likely be &quot;Active&quot;.  When all five Orders are &quot;Completed&quot;, this status might change to &quot;Completed&quot;.  Note that the model does not dictate how this status should be computed.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>healthcareOrder : <xref href="../t_FHIMOrdersHealthcareOrderAbstact.dita" >HealthcareOrder(Abstact)</xref> (0..*)</p></stentry>
+  <stentry><p>				An Order that is a member of a Set of Orders.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

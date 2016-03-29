@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMOrdersHealthcarePromiseAbstract" xml:lang="en-us">
+<title id="title">HealthcarePromise(Abstract)</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	HealthcarePromise(Abstract) is a kind of <xref href="../t_FHIMCommonClinicalInformationAbstract.dita">ClinicalInformation(Abstract)</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This abstract class contains those properties which are common to all Promise classes (e.g., LabPromise, PharmacyPromise, etc.).  A Promise is an intent to perform a service that has the strength of a commitment, i.e., other parties may rely on the originator of such promise that said originator will see to it that the promised act will be fulfilled. A promise can be either solicited or unsolicited.  The entity that makes such a promise is also called a &quot;filler&quot;, while the entity that requests the service is also called a &quot;placer&quot;.  The Promise can be looked at as the Order from the filler&apos;s point of view.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>chargeToPracticeCode :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;This field is the charge to the ordering entity for the studies performed when applicable. The first component is a dollar amount when known by the filler.  The second is a charge code when known by the filler (results only)&quot; - HL7 Version 2.8, OBR-23.  This property contains the charge code, if available.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>chargeToPracticeCost :  <xref href="../t_FHIMDatatypesMonetaryAmount.dita" >MonetaryAmount</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;This field is the charge to the ordering entity for the studies performed when applicable. The first component is a dollar amount when known by the filler.  The second is a charge code when known by the filler (results only).&quot; - HL7 Version 2.8, OBR-23.  This property contains the dollar amount, if available.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateAccepted :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The date/time on which the ordered service was accepted by the filler.  In other words, the creation date of the Promise record.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>expectedAvailabilityDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Specifies the date/time the filler expects the services to be available.  For example when a prescription is ready for pickup or when a supply will be sent or picked up, or for when a laboratory result is expected to be available.&quot; - HL7 Version 2.8, ORC-27
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>fillerOrderId :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				A unique identifier of the order from the filling organization&apos;s point of view.  Note that different terms have been historically been used for the filler order id in different domains.  For example, in Pharmacy, the &quot;filler order id&quot; is typically called a &quot;prescription number&quot;.  Similarly in Lab, it is typically called an &quot;accession number&quot;.</p><p>&quot;This field is the order number associated with the filling application....&quot; - HL7 Version 2.8, ORC-3 and OBR-3.</p><p>&quot;This field is equivalent in uniqueness to the pharmacy/treatment supplier filler order number.  At some sites, this may be the pharmacy/treatment supplier (internal) sequential form.  At other sites, this may be an external number.&quot; - HL7 Version 2.8, RXD-7.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>fillerSupplementalInfo :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Contains supplemental service information sent from the filler system to the placer system for the procedure code reported in OBR-4 Universal Service ID.  This field will be used to report ordering information detail that is not available in other specific fields in the OBR segment.  Typically it will reflect the same information as was sent to the filler system in OBR-46-Placer supplemental service information unless the order was modified, in which case the filler system will report what was actually performed using this field....&quot; - HL7 Version 2.8, OBR-47.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>priority :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Describes the urgency of the request. If this field is blank, the default is [Routine]&quot; - HL7 Version 2.8, TQ1-9.  Possible values include (from HL7 Table 122): Stat; ASAP; Routine; Preop; Callback; Timing critical*; As needed.  *Note that the Timing Critical has a syntax that allows more information, e.g., Timing Critical within 15 minutes.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>scheduledDateTime :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The date/time the filler scheduled an observation, when applicable (e.g., action code in OBR-11-specimen action code = &quot;S&quot;).  This is a result of a request to schedule a particular test and provides a way to inform the placer of the date/time a study is scheduled (result only).&quot; - HL7 Version 2.8, OBR.36
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>status :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Contains the status of results for this order.&quot; - HL7 Version 2.8, OBR-25
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>statusChangeDateTime :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Specifies the date/time when the results were reported or status changed.  This conditional field is required whenever [Report Status] is valued.  This field is used to indicate the date and time that the results are composed into a report and released, or that [Healthcare Order status] is entered or changed.&quot; - HL7 Version 2.8, OBR-22.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>statusModifier :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;This field is a modifier or refiner of the ORC-5-Order status field. This field may be used to provide additional levels of specificity or additional information for the defined order status codes.&quot; - HL7 Version 2.8, ORC-25
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>precautionProtocolInvoked : <xref href="../t_FHIMOrdersPrecautionProtocol.dita" >PrecautionProtocol</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to a list of zero-to-many procedures that is invoked as a precaution to prevent harm to the patient, guests, or healthcare workers in response to a known situation where a potential danger may exist.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

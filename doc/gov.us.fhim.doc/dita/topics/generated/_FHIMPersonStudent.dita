@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMPersonStudent" xml:lang="en-us">
+<title id="title">Student</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>A student is someone who is formally engaged in learning, especially on enrolled in an educational institution.  This class represents information about a Person actively playing the Role of a Student, but is not intended to be used to determine one&apos;s cumulative or highest level of educational achievement.  While one could theoretically arrive at these data by examining a longitudinal collection of every instance of Person&apos;s scholastic activity, we do not require nor anticipate that such information be available.  The primary use case for this Student and associated School information is to support Immunization tracking of school-age children, but it is also used for financial purposes, including adults who are in school rather than employed.  If the Student is attending a higher-learning institution (i.e., college, post-graduate), the grade property is not used.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>departDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The last date upon which the Person was a Student at the associated School.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>enrollDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The first date upon which the Person was a Student at the associated School.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>grade :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;A single division of a school classified according to the age or progress of the pupils. In the U.S., public schools are commonly divided into twelve grades below college.&quot; - Dictionary.com
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>id :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				An identifier assigned by the associated School to the Student.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>studentCategory :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Indicates if the patient is currently a student or not, and whether the patient is a full-time or a part-time student.  This field does not indicate the student&apos;s degree level (high school, college, elementary) or the student&apos;s field of study (accounting, engineering, etc.).&quot; - HL7 Version 2.8, PD1-5.</p><p>&quot;Identifies whether the next of kin/associated party is currently a student or not, and whether the next of kin/associated party is a full- or a part-time student.  This field does not indicate the degree (high school, college) of the student or the field of study.&quot; - HL7 Version 2.8, NK1-24.</p><p>Possible values include (from HL7 Table 231):  Full-time student; Part-time student; Not a student.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>school : <xref href="../t_FHIMProviderEducationalInstitution.dita" >EducationalInstitution</xref> (0..1)</p></stentry>
+  <stentry><p>				Pointer to the Institution at which the Person is a Student.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

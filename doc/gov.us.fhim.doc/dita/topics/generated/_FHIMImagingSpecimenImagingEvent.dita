@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMImagingSpecimenImagingEvent" xml:lang="en-us">
+<title id="title">SpecimenImagingEvent</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	SpecimenImagingEvent is a kind of <xref href="../t_FHIMImagingMedicalImagingEvent.dita">MedicalImagingEvent</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This sub-type of Imaging Event contains additional properties applicable when the subject of the study is a sample taken from the Patient rather than the Patient him/herself. For example, a mass of tissue may be extracted from the patient and sent to the radiology department for an assessment of whether that mass may be cancerous. This class contains information concerning any stain technique used, and the magnification used to produce the image. In addition, properties of the specimen itself are referenced.</p><p>Note that as a sub-type of Imaging Event, Specimen Imaging Event includes all of the properties of Imaging Event, including the Study, Series, and Image classes.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>microscopicObjective :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The microscopic objective is the magnification used when taking the image and/or examining the sample. This datum is recorded along with the image for use by future reviewers.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>stainDescription :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Description of the Histological Stain used in the preparation of the specimen.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>specimen : <xref href="../t_FHIMCommonSpecimen.dita" >Specimen</xref> (0..1)</p></stentry>
+  <stentry><p>				Pointer to a physical entity that is part representative of a larger whole that is the target of an observation or analysis for the purpose of drawing conclusions about whole. In other words, a portion taken from the patient for the purpose of study.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMCarePlanCarePlanEpisode" xml:lang="en-us">
+<title id="title">CarePlanEpisode</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	CarePlanEpisode is a kind of <xref href="../t_FHIMCommonClinicalInformationAbstract.dita">ClinicalInformation(Abstract)</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class represents a set of planned actions and goals for a Patient dealing with a given set of issues or concerns.  The set of problems being managed may be complex and intertwined, and the Care Plan Episode will likely cover an extended period of time.  However, the Care Plan Episode differs from the Longitudinal Care Plan in that the Longitudinal Care Plan covers all Care Plans over the life of the Patient, including those that have been terminated because the undlying condition had been resolved.  The Care Plan Episode is focused on the set of issues that is being managed over a particular period of time.  Note that the HL7 Care Plan DAM includes a confidentiality property that we do not model, as confidentiality is expected to be handled by constructs in the Security and Privacy domain.</p><p>&quot;The Plan captures the shared attributes for Care Plan, Plan of Care and Treatment Plan.&quot; - HL7 Care Plan Domain Analysis Model</p><p>&quot;Describes the intention of how one or more practitioners intend to deliver care for a particular patient for a period of time, possibly limited to care for a specific condition or set of conditions.&quot; - HL7 FHIR, CarePlan resource.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>dateCompleted :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Specifies when the plan status is changed to complete (e.g. when all goals are achieved, health concerns resolved)&quot; - HL7 Care Plan Domain Analysis Model</p><p>&quot;Indicates when the plan did (or is intended to) come into effect and end.&quot; - HL7 FHIR, CarePlan.period.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateCreated :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Specifies when the plan was created&quot; - HL7 Care Plan Domain Analysis Model
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateEffective :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Specifies the start of the plan implementation&quot; - HL7 Care Plan Domain Analysis Model</p><p>&quot;Indicates when the plan did (or is intended to) come into effect and end.&quot; - HL7 FHIR, CarePlan.period.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateModified :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Specifies the last date/time the plan was changed&quot; - HL7 Care Plan Domain Analysis Model</p><p>&quot;Identifies the most recent date on which the plan has been revised.&quot; - HL7 FHIR, CarePlan.modified.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>description :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Indicates a descriptive coded type for the plan&quot; - HL7 Care Plan Domain Analysis Model</p><p>&quot;Notes about the execution of the activity.&quot; - HL7 FHIR, CarePlan.notes.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>displayName :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Descriptive display name for the plan&quot; - HL7 Care Plan Domain Analysis Model
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>id :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (0..*)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;A unique identifier for the plan&quot; - HL7 Care Plan Domain Analysis Model</p><p>&quot;This records identifiers associated with this care plan that are defined by business processed and/ or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).&quot; - HL7 FHIR, CarePlan.identifier.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>kind :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This property categorizes the Care Plan Episode - typically by problem, but possibly by discipline or setting or some of combination of the three. </p><p>&quot;Identifies what &quot;kind&quot; of plan this is to support differentiation between multiple co-existing plans. E.g. &quot;Home health&quot;, &quot;psychiatric&quot;, &quot;asthma&quot;, &quot;disease management&quot;, etc.&quot; - HL7 FHIR, CarePlan.category.</p><p>&quot;Specifies zero or more discipline or clinical specialties viewpoints represented in the plan&quot; - HL7 Care Plan Domain Analysis Model - Note that the DAM has this a separate field, but it was determined that category covers the discipline as well.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>notes :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;General notes about the care plan not covered elsewhere.&quot; - HL7 FHIR, CarePlan.notes
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>status :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Indicates whether the plan is currently being acted upon, represents future intentions or is now just historical record.&quot; - HL7 FHIR, CarePlan.status
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>version :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;A value indicating some changes (e.g. concern, goal, risk, proposed actions) in a plan and denoting that it is different from the previously published form. &quot; - HL7 Care Plan Domain Analysis Model
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>acceptanceReview : <xref href="../t_FHIMCarePlanAcceptanceReview.dita" >AcceptanceReview</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to a (set of) appraisals during which agreements to adopt proposed Care Plan actions are affirmed
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>careBarrier : <xref href="../t_FHIMCarePlanCareBarrier.dita" >CareBarrier</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to a (set of) impediments which may reduce or block quality of care and/or increase cost, and which may hinder the achievement of the goal(s).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>careIntervention : <xref href="../t_FHIMCarePlanCareIntervention.dita" >CareIntervention</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to a set of actions or interventions intended to fulfill the the Care Plan.</p><p>&quot;Identifies a planned action to occur as part of the plan. For example, a medication to be used, lab tests to perform, self-monitoring, education, etc.&quot; - HL7 FHIR, CarePlan.activity.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>carePlanGuideline : <xref href="../t_FHIMCarePlanCarePlanGuideline.dita" >CarePlanGuideline</xref> (0..1)</p></stentry>
+  <stentry><p>				Pointer to a (set of) statement(s) expressed by a professional organization describing &quot;best practice&quot; with respect to plans of care for a particular condition.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>careTeamMember : <xref href="../t_FHIMCommonCareTeamMember.dita" >CareTeamMember</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to a set of Persons or Organizations involved in the care of the Patient.</p><p>&quot;Identifies all people and organizations who are expected to be involved in the care envisioned by this plan.&quot; - HL7 FHIR, CarePlan.participant.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>communication : <xref href="../t_FHIMCarePlanConversation.dita" >Conversation</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to a set of Communications among individual Care Team Members as they coordinate their activities for the execution of the Care Plan.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>healthConcern : <xref href="../t_FHIMHealthConcernHealthConcern.dita" >HealthConcern</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to the Patietn&apos;s condition or &quot;problem&quot; upon which the Care Plan is focused.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>healthGoal : <xref href="../t_FHIMCarePlanHealthGoal.dita" >HealthGoal</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to a set of objectives intended to be realized by the successful execution of the Care Plan. </p><p>&quot;Describes the intended objective(s) of carrying out the Care Plan.&quot; - HL7 FHIR, CarePlan.goal.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>patient : <xref href="../t_FHIMPersonPatient.dita" >Patient</xref> (0..1)</p></stentry>
+  <stentry><p>				&quot;Identifies the patient/subject whose intended care is described by the plan.&quot; - HL7 FHIR, CarePlan.patient.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>planReview : <xref href="../t_FHIMCarePlanPlanReview.dita" >PlanReview</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to a (set of) evaluation(s) of the overall consistency, appropriateness, completeness and effectiveness of the plan especially with respect to its efficacy towards achievement of the Care Plan Goal(s).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>planSteward : <xref href="../t_FHIMCarePlanPlanSteward.dita" >PlanSteward</xref> (0..1)</p></stentry>
+  <stentry><p>				Pointer to the Person or Organization accountable for maintaining some aspect of the Care Plan.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>supportingInformation : <xref href="../t_FHIMCommonClinicalInformationAbstract.dita" >ClinicalInformation(Abstract)</xref> (0..*)</p></stentry>
+  <stentry><p>				&quot;Identifies portions of the patient&apos;s record that specifically influenced the formation of the plan. These might include co-morbidities, recent procedures, limitations, recent assessments, etc.&quot; - HL7 FHIR, CarePlan.support
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

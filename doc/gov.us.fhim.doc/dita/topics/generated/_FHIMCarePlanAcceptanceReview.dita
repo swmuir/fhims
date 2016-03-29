@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMCarePlanAcceptanceReview" xml:lang="en-us">
+<title id="title">AcceptanceReview</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>&quot;Acceptance reviews capture understanding and agreement to adopt a proposal for health goals, interventional actions or the plan itself. E.g. Upon review of the goals and actions a care manager (e.g. nurse case manager, social worker, physical therapist, pharmacist), PCP, nurse and patient will indicate understanding and acceptance of the Care Plan. Acceptance reviews may be used to indicate a provider&#8217;s  authorization to perform an intervention and another&#8217;s provider acknowledgement.&quot; - HL7 Care Plan Domain Analysis Model</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>acceptance :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Indicates the type of acceptance expressed by the care team member and/or patient.&quot; - HL7 Care Plan Domain Analysis Model
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>applicability :  <xref href="../t_FHIMDatatypesTimeInterval.dita" >TimeInterval</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Indicted if there is an applicable time period for the acceptance. The acceptance is invalid when outside the specified time period.&quot; - HL7 Care Plan Domain Analysis Model
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>comments :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Specifies optional comments for the review&quot; - HL7 Care Plan Domain Analysis Model
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>effectiveDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Specifies the date/time of the review&quot; - HL7 Care Plan Domain Analysis Model
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>patientPreference :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				A statement expressed by the patient or a proxy for the patient describing how he or she would prefered to be treated.  Note that this concept is modeled as a class in the HL7 DAM, which includes attributes such as the strength of the preference, reason, date range, and an indication of why the preference might not have been fulfilled.  The FHIM models these concepts collectively as a single text property because it was deemed to be unlikely that any current or near-future systems would need to compute on such properties of the patient&apos;s preferences.</p><p></p><p>&quot;A care preference is a statement expressed by the patient, custodian or caretaker responsible for the patient in order to influence how their care is delivered. A preference expresses a personal choice and may be driven by cultural, religious and moral principles. As such it is a principal component of patient centered care and autonomy. Care preferences serve as modifiers of the Care Plan which influence how the plan is personalized for the individual. A care preference may be specified prospectively to influence future care planning and treatment or it may be expressed and recorded at arbitrary decision points during interventions. A preference expresses a request to fulfill a patient&apos;s choice or desire. The choice may be a strong and absolute statement such as an end of life directive. The request could also be a desire to be fulfilled if possible given care team capabilities and resources.&quot; - HL7 Care Plan Domain Analysis Model
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

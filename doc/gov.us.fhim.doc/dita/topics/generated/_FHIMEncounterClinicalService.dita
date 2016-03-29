@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMEncounterClinicalService" xml:lang="en-us">
+<title id="title">ClinicalService</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+<section id="specializations"  audience="developer, modeler">
+	<title>Derivations</title>
+	<ul>
+<li><xref href="../t_FHIMEncounterExaminationEvent.dita">ExaminationEvent </xref> is a kind of  ClinicalService </li>
+<li><xref href="../t_FHIMEncounterDialysisEvent.dita">DialysisEvent </xref> is a kind of  ClinicalService </li>
+	</ul>
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>The provision of healthcare-related service(s) within the context of an encounter.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>clinicalServceId :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Unique Identifier for this Clinical service .
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>typeOfService :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Clinical Speciality ID
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>clinicalProcedureRecord : <xref href="../t_FHIMEncounterClinicalProcedureRecord.dita" >ClinicalProcedureRecord</xref> (0..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

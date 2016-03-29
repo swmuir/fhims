@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMAdverseEventReportingReactionOrEvent" xml:lang="en-us">
+<title id="title">ReactionOrEvent</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class contains information describing the reaction(s) or adverse event(s) that are being reported.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>adverseEventSeriousness :  <xref href="../t_FHIMAdverseEventReportingenumAESeriousness.dita" >enumAESeriousness</xref> (0..*)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The seriousness criteria of the reaction/event should be based on the definitions provided in the ICH E2A and E2D guidelines. More than one seriousness criteria can be chosen. If the event is not serious, all of these data elements should be left blank. It is assumed that the event seriousness is provided by the reporter; otherwise, it is assessed by the sender. In cases of foetal demise such as miscarriage, (where the ICSR should be prepared only for the parent), the seriousness criterion is Other medically important condition. Furthermore, depending if the parent experienced complications, the seriousness criterion could also include Life-threatening and/or Hospitalisation.&quot; - ICH E2B(R3), E.i.3.2.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>countryOfOccurrence :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;This data element captures the country where the reaction occurred. For example a patient living in Country A experienced headache while travelling in Country B; this headache was suspected to be an adverse drug reaction and was reported by a health professional in Country C. The data element C.2.r.3 should be populated with Country C, and the data element E.i.9 should be populated with Country B.&quot; - ICH E2B(R3), E.i.9.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>descriptionInNativeLanguage :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The original reporter&apos;s words and/or short phrases used to describe the reaction/event. Text should be provided in the native language it was received, when it is received in a language other than English.&quot; - ICH E2B(R3), E.i.1.1a.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>descriptionLanguage :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The language used in [descriptionInNativeLanguage]&quot; - ICH E2B(R3), E.i.1.1b.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>descriptionTranslation :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The original reporter&apos;s words and/or short phrases used to describe the reaction/event should be provided in an English translation for international transmission.&quot; - ICH E2B(R3), E.i.1.2.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>duration :  <xref href="../t_FHIMDatatypesTimeQuantity.dita" >TimeQuantity</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;This section will usually be computed from the start/end date and time of the reaction/event. However, there might be situations in which the precise duration of the reaction/event and date can be useful, such as for a reaction/event of short duration such as anaphylaxis or arrhythmia. In such a case, populate 1 data element for the date (start or end date) and this data element.&quot; - ICH E2B(R3), E.i.6a and E.i.6b.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>endDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The reaction/event is reported as resolved/recovered or resolved/recoveredwithsequelae (E.i.7). When multiple terms are reported (e.g. diagnosis with signs and symptoms) and the reporter does not provide a specific stop date for each reaction/event, this data element should be populated with the end date of the last symptom.&quot; - ICH E2B(R3), E.i.5.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>outcomeAtLastObservation :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The latest outcome of the reaction / event at the time of the report. In case of irreversible congenital anomalies, the choice not recovered/not resolved/ongoing should be used. For other irreversible medical conditions, recovered/resolved with sequelae should be used. Fatal should be used when death is possibly related to the reaction/event. Considering the difficulty of deciding between Reaction/event caused death and Reaction/event contributed significantly to death, both concepts are grouped in a single category. Where the death is unrelated to the reaction/event, according to both the reporter and the sender, Fatal should NOT be selected here; nevertheless, death should be reported under Section D.9.&quot; - ICH E2B(R3), E.i.7.  Possible values include: Recovered/resolved; Recovering/resolving; Not recovered/not resolved/ongoing; Recovered/resolved with sequelae; Fatal; Unknown.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>reactionOrEventType :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The [code] most closely corresponding to the reaction/event as reported by the primary source. In the exceptional circumstance when a ... term cannot be found, the sender should use clinical judgment to complete this item with the best ... approximation&quot; - ICH E2B(R3), E.i.2.1a and E.i.2.1b (MedDRA version and code).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>seriousness :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;A highlighted term is a reaction/event that the primary source indicated was a major concern or reason for reporting the case. If the information is not explicitly provided by the initial reporter the term should not be considered a highlighted term. This data element should be populated only if the medical concept conveyed in E.i.1 is consistent with the reason why the reporter contacted the sender. For example, this data element can be used to indicate the specific diagnosis that was identified by the reporter. Suppose the reporter specifies flu-like syndrome comprising of fever, chills, sneezing, myalgia and headache, then flu-like syndrome is the highlighted term. If only one event is cited in a case report, this one is by implication considered highlighted by the reporter. It is assumed that the event seriousness is provided by the reporter; otherwise, it is assessed by the sender.&quot; - ICH E2B(R3), E.i.3.1.  Possible values include: Yes, highlighted by the reporter, NOT serious; No, not highlighted by the reporter, NOT serious; Yes, highlighted by the reporter, SERIOUS; No, not highlighted by the reporter, SERIOUS.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>startDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The date of the start of the reaction/event. When multiple terms are reported (e.g. diagnosis with signs and symptoms) and the reporter does not provide a specific onset date for each reaction/event, this data element should be populated with the start date of the first symptom.&quot; - ICH E2B(R3), E.i.4.</p><p>MedWatch 3500 form question B.3.</p><p>MedWatch 3500A form question B.3.</p><p>MedWatch 3500B form question A.3.</p><p>VAERS-1 form question 8, box 11.  Note that VAERS also includes the time of the event.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>wasConfirmedByMedicalProfessional :  Boolean (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;If an event is reported by a non healthcare professional (e.g. lawyers, consumers), this data element indicates whether the occurrence of the event was subsequently confirmed by a healthcare professional. If the healthcare professional also provides an assessment of causality (related or not to the suspect drug), that should be recorded in G.k.9. [Note that] False means the event is not confirmed, it does not mean the event did not occur&quot;. - ICH E2B(R3), E.i.8.
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

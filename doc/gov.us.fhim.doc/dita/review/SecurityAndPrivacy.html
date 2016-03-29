@@ -1,0 +1,4462 @@
+
+<html xmlns:Standard="http://www.eclipse.org/uml2/schemas/Standard/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:fhim="http:///schemas/fhim/_bbjuwA3cEeSGTazHdUQojA/5" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:term="http://www.openhealthtools.org/mdht/schemas/term/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:xmi="http://www.omg.org/XMI" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.3/Umlnotation" xmlns:Default="http:///schemas/Default/_fNm3AAqoEd6-N_NOT9vsCA/2" xmlns:CDA="http://www.openhealthtools.org/mdht/schemas/cda/4" xmlns:Default_1="http:///schemas/Default/1" xmlns:RIM="http:///schemas/RIM/_fvnwgAH4Ed6VH-9W1IVKXA/4" xmlns:SketchNotation="http://www.ibm.com/ccl/soa/sketch/notation/1.0.0/">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>SecurityAndPrivacy Domain</title>
+   </head>
+   <body style="font-family:Courier;font-size:14px">
+      <h1>SecurityAndPrivacy Domain</h1>
+      <p> The purpose of this review is to identify the data elements required for the
+         interoperable exchange for the SecurityAndPrivacy domain including dependencies. A column is
+         provided at the far right of the table for you to enter comments related to each
+         data element. If the class or domain is missing data elements, please add a row
+         at the bottom of the sheet and specify a name, description, and type of data
+         (e.g. numeric, string, date/time, code). 
+      </p>
+      <p> Once you have reviewed the data elements, please review the value sets
+         associated with the coded data elements. Please provide feedback by adding
+         comments in the column provided at the right of item/row or by adding rows at
+         the bottom table. For any new coded concepts without a valid code yet, our team
+         will propose them for addition in the source coding system. 
+      </p>
+      <ul>
+         <li><a href=""> <i><b>SecurityAndPrivacy</b> </i> Domain </a></li>
+       </ul>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font-family:Courier">
+         <tr bgcolor="#98FB98" style="font-size:18px" align="left">
+            <td colspan="1"><b><a id=""> 'SecurityAndPrivacy' Domain
+                     </a></b></td>
+            <td colspan="4" style="font-size:12px">Note that the Information Source hierarchy is in the Common domain, and is not shown here.</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+      </table>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font-family:Courier">
+         <tr>
+            <th width="20%">Element Name</th>
+            <th width="20%">Element Description</th>
+            <th width="15%">Format/Type</th>
+            <th width="15%">Value Set Name</th>
+            <th width="15%">Optionality/<br>Repetition
+            </th>
+            <th width="15%">Reviewer's Comments</th>
+         </tr>
+ 
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>AccessPoint</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>+(renamed from WorkstationLocation 11/2014 as part of high-level refactoring)</p><p></p><p>Access may be granted only to initiators on specific end-systems, workstations or terminals, or only to initiators in a specific physical location. This class is required to support user authorization as specified by the business requirements (use case S.1).</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AccessPoint.<b>macAddress</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AccessPoint.<b>ipAddress</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AccessPoint.<b>organizationalProvider</b></div>
+            </td>
+            <td><p>The organizational provider with which the workstation is associated.</p></td>
+            <td valign="top"> <b>OrganizationalProvider</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AccessPoint.<b>serviceDeliveryLocation</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>ServiceDeliveryLocation</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AccessPoint.<b>accessDeviceInstance</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>DeviceInstance</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>AtomicPolicy(Abstract)</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>*(added 11/2014 as part of high-level refactoring)</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AtomicPolicy(Abstract).<b>ruleText</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> invalid </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AtomicPolicy(Abstract).<b>implementableRule</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> invalid </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>AtomicPrivacyPolicy</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This is the main/focal class for electronic privacy policies. It contains a set of rules that are intended to be enforced by security systems and are used as the basis for client consent directives.</p><p></p><p>Note: There used to be a class called &quot;PublishedPrivacyPolicy&quot; the definition of which was: &gt;&gt;This class encapsulates the location of a human-readable version of the Electronic Privacy Policy. The human-readable version is accessible to any authorized system and user via the supplied URI.&lt;&lt;.  I deleted the Published Consent class on 11/14/14.  The only property of that class was a uri, which is in the base class (Policy(Abstract)) of this class, so I did not have to move it.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AtomicPrivacyPolicy.<b>privacyPolicyType</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AtomicPrivacyPolicy.<b>grantee</b></div>
+            </td>
+            <td><p>Designates who/what has been delegated a specific right.</p></td>
+            <td valign="top"> <b>Grantee</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AtomicPrivacyPolicy.<b>privacyRuleList</b></div>
+            </td>
+            <td><p>A list of zero or more privacy rules applicable to this consent directive.  A privacy rule specifies the permission allowed to a user type by the consenter for a specific type of information. The person consenting may be either the subject of the record or a designated Substitute Decision Maker. One or more consent rules comprise a consent directive or privacy policy.</p></td>
+            <td valign="top"> <b>PrivacyRuleList</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AtomicPrivacyPolicy.<b>privacyRule</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>PrivacyRule</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>AtomicSecurityPolicy(Abstract)</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>+(renamed from BasicPolicy 11/2014 as part of high-level refactoring)</p><p></p><p>This is the base class for a variety of policy types. It extends the abstract Policy class and provides additional attributes. This class may be used to instantiate specific policies. ISO-22600 specifies a security policy as &apos;plan or course of action adopted for providing computer security&apos;. BasicPolicy a specialization of the abstract Policy class and thus inherits all its attributes. It also defines additional attributes and associations:</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AtomicSecurityPolicy(Abstract).<b>informationReference</b></div>
+            </td>
+            <td><p>This association references the attributes of the information referenced in the policy. </p></td>
+            <td valign="top"> <b>InformationTarget</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AtomicSecurityPolicy(Abstract).<b>operationType (delete??)</b></div>
+            </td>
+            <td><p>This association refers to the operation associated with the policy.</p></td>
+            <td valign="top"> <b>PrivacyOperation</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>AuthenicationToken</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> </td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AuthenicationToken.<b>levelOfAssurance</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AuthenicationToken.<b>tokenTypeCode</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AuthenicationToken.<b>claimedClearance</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>Authority</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This abstract class is used to designate the authority that issues the policy.  Authority is an organization (either Jurisdictional or Provider) that is responsible for the Privacy Policy.  This is the authority that grants authorization described in the privacy policy. This class is consistent with the &#8220;Security Authority&#8221; specified by the ISO/IEC 15816 standard as &#8220;The entity accountable for the administration of a security policy within a security domain&#8221;.</p><p></p><p></p><p>11/18/14:  The Authority is source of the Policy.  Authority is used for both Privacy and Security policies.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Authority.<b>authorityType</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Authority.<b>domain</b></div>
+            </td>
+            <td><p>The registered domain name of the healthcare organization that issues a specific privacy policy, used to uniquely identify the Authority.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Authority.<b>jurisdiction</b></div>
+            </td>
+            <td><p>Represents a territorial authority organization that may be issuing privacy policies for a territory.</p></td>
+            <td valign="top"> <b>Jurisdiction</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Authority.<b>organizationalProvider</b></div>
+            </td>
+            <td><p>Specifies a healthcare organization that which will promulgate privacy policies for use within its organization.</p></td>
+            <td valign="top"> <b>OrganizationalProvider</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Authority.<b>person</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>Person</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>AuthorizationManager</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> </td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>AuthorizationPolicy</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class is used to describe an authorization policy that may be exchanged across domains. An AuthorizationPolicy instance specifies &apos;permitted actions&apos; according to ISO 22600-2. A positive/negative authorization policy defines the actions ( &apos;OperationType &apos;) that a subject is permitted/forbidden to perform on a target. Actions encoded using the &apos;OperationType &apos; class represent the operations defined in the interface of a target object contrary to obligations/refrain policies, which are interpreted by the subject while the object might be open in this perspective.  The following are the attributes of an AuthorizationPolicy: </p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AuthorizationPolicy.<b>authorizationPolicyType</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AuthorizationPolicy.<b>enablesAuthorization</b></div>
+            </td>
+            <td><p>This attribute is used to specify if the policy enables or declines an authorization. If this attribute is set to &apos;true&apos; the policy authorizes the actions and conditions pertaining to the resources referenced by the policy. Otherwise the authorization is declined.</p></td>
+            <td valign="top"> Boolean </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AuthorizationPolicy.<b>levelOfAssurance</b></div>
+            </td>
+            <td><p> Level of Assurance (LoA) refers to the degree of certainty that (1) a resource owner has that a person&apos;s physical self has been adequately verified before credentials are issued by a registration authority, and (2) a user indeed owns the credentials they are subsequently presenting to access the resource.  The requirements for the level of certainty at both ends of that set of transactions should be driven by a risk assessment based on the value of the resources being protected. LoA is relevant to authentication, authorization, and access control in an SOA environment. Relevant references: &apos;InCommon Credential Assessment Profile r0.3&apos;, &apos;NIST 800-63: Electronic Authentication Guideline&apos;, and &apos;NIST 800-53: Recommended Security Controls for Federal Information Systems&apos;. Access may only be granted when authentication mechanisms of at least a given strength are used. That is indicated using the Level of Assurance. </p></td>
+            <td valign="top"> Integer </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AuthorizationPolicy.<b>allowableAccessTime</b></div>
+            </td>
+            <td><p>An access may be allowed only during specific time periods of the day (e.g., 9 am to 5 pm).</p></td>
+            <td valign="top"> TimeInterval </td>
+            <td></td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AuthorizationPolicy.<b>route</b></div>
+            </td>
+            <td><p>This attribute specifies whether access to protected information may only be granted for a specified route of access.  For example, access may be restricted to remote users using a Virtual Private Network (VPN). The route is a context qualifier as specified by ISO/IEC 10164-9.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>AuthorizationToken</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> </td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>ClassificationLabel</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> </td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ClassificationLabel.<b>confidentialityCode</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>Clearance</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> </td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Clearance.<b>__SecurityClassification</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>SecurityClassification</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Clearance.<b>__HierarchicalGroup</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>HierarchicalGroup</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Clearance.<b>zz_SecurityLabel</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>SecurityLabel</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>ClearanceProvisioningPolicy</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> </td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ClearanceProvisioningPolicy.<b>__Clearance</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>Clearance</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>Compartment</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class represents a project or some kind of grouping to which a person must belong in order to be granted access to a particular set of resources.  For example, a person might play the Structural Role of Pharmacist, a Functional Role of Lead Pharmacist for VA isolation unit facility, but would need to belong to the Compartment of &#8220;national ebola research&#8221; in order to access.  The Compartment clearance allows the ability to restrict access to those persons who are involved in the project.</p><p></p><p>Renamed from &quot;Group&quot;</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Compartment.<b>description</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Compartment.<b>groupId</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Id </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Compartment.<b>name</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Compartment.<b>_new_FunctionalGroup</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>FunctionalGroup</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Compartment.<b>_new_Compartment</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>Compartment</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>CompositePrivacyPolicy</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> </td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">CompositePrivacyPolicy.<b>combiningAlgorythm</b></div>
+            </td>
+            <td><p>This attribute is used to specify the policy combining algorithm that is used to process the contained policies.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">CompositePrivacyPolicy.<b>privacyPolicy</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>AtomicPrivacyPolicy</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">CompositePrivacyPolicy.<b>zz_PrivacyPolicyInformationFile</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>PrivacyPolicyInformationFile</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>CompositeSecurityPolicy</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class is the main/focal class for electronic privacy policies. It contains a set of basic policies that work together to enforce a privacy policy, organizational standard operating procedure, or a consent directive. Its basic characteristic is that it contains other policies. An instance of a CompositePolicy may include several Authorization, Delegation, Refrain, or Obligation policies. A CompositePolicy is specialization of Policy and inherits all its attributes and associations. In addition to the attributes it inherits from its base class (&apos;Policy&apos;) this type of class contains the following association and attribute:</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">CompositeSecurityPolicy.<b>combiningAlgorythm</b></div>
+            </td>
+            <td><p>This attribute is used to specify the policy combining algorithm that is used to process the contained policies.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">CompositeSecurityPolicy.<b>containedPolicy</b></div>
+            </td>
+            <td><p>This association specifies the policies contained in a CompositionPolicy.</p></td>
+            <td valign="top"> <b>AtomicSecurityPolicy(Abstract)</b> </td>
+            <td>NA</td>
+            <td>(1..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">CompositeSecurityPolicy.<b>zz_SecurityPolicyInformationFile</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>SecurityPolicyInformationFile</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>ConsentAuthor</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>A participation by which a person in the role of &apos;Consenter&apos; creates or &apos;authors&apos; a Consent Directive.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ConsentAuthor.<b>functionCode</b></div>
+            </td>
+            <td><p>Further defines the kind of participation by which a person in the role of &apos;Consenter&apos; creates or &apos;authors&apos; a Consent Directive.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ConsentAuthor.<b>consenter</b></div>
+            </td>
+            <td><p>Identifies the person who created or &apos;authored&apos; the consent directive</p></td>
+            <td valign="top"> <b>Consenter</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>ConsentDirective</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class is the focal class representing a set of consent directives issued by a consenter on behalf of self or someone else. This class is the root class or the entry class into the Consent Directive structure.</p><p></p><p>Note: There used to be a class called &quot;PublishedConsent&quot; the definition of which was: &gt;&gt;This specialization of the ConsentDirective class is used to describe a consent directive published to a registry. If a client s consent directive is published, a URL/URI is made available for reference. The client may use this URI to allow providers access to the consent directive created by the consenter.&lt;&lt;.  I&apos;ve moved the uri property to this class and deleted the Published Consent class.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ConsentDirective.<b>category</b></div>
+            </td>
+            <td><p>A categorization of the Consent Directive.  Added due to CEDD mapping.  Possible values include New; Update.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ConsentDirective.<b>documentImage</b></div>
+            </td>
+            <td><p>This optional attribute references a signed paper document containing the client&apos;s consent directive.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ConsentDirective.<b>effectiveTime</b></div>
+            </td>
+            <td><p>This attribute specifies the date when the policy/consent is in effect.</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ConsentDirective.<b>expirationTime</b></div>
+            </td>
+            <td><p> This attribute specifies when the consent directive automatically expires.  A consent directive may be revoked prior to its expiration date.</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ConsentDirective.<b>id</b></div>
+            </td>
+            <td><p> Unique identifier that refers to a specific Consent Directive instance.  This id or the published URI may be used to lookup the client&apos;s consent directives in order to apply them to the collection, access, use, or disclosure of health records.</p></td>
+            <td valign="top"> Id </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ConsentDirective.<b>_delete_revocationReason</b></div>
+            </td>
+            <td><p>This attribute is used to specify the reason for revoking a Consent Directive, e.g., requested vs. correction/error.  An error would be a discrepancy between the intent of Consent Directive (as communicated by the Consenter) and that which was entered into the Consent Directive Management System (CDMS).</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ConsentDirective.<b>status</b></div>
+            </td>
+            <td><p>This attribute indicates whether the consent directive is active or not.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ConsentDirective.<b>uri</b></div>
+            </td>
+            <td><p>If a specific consent directive (for a client) is published, this attribute provides the means to locate and download the consent directive from a registry.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ConsentDirective.<b>consentAuthor</b></div>
+            </td>
+            <td><p>Identifies the person who created or &apos;authored&apos; the consent directive</p></td>
+            <td valign="top"> <b>ConsentAuthor</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ConsentDirective.<b>replacesDirective</b></div>
+            </td>
+            <td><p>Points to a previous Consent Directive superseded by the current instance.</p></td>
+            <td valign="top"> <b>ConsentDirective</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ConsentDirective.<b>subjectOfConsent</b></div>
+            </td>
+            <td><p>Identifies the person to whom the consent directive applies.  This person may or may not be the same person as the consent author, as in the case where the patient is a minor child or an incapacitated person.</p></td>
+            <td valign="top"> <b>Patient</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ConsentDirective.<b>consenter</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>Consenter</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ConsentDirective.<b>dataEnterer</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>DataEnterer</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ConsentDirective.<b>witness</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>Witness</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>Consenter</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p> This class is intended to capture the properties of a Consenter/Substitute Decision Maker - see &apos;Actors&apos;.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Consenter.<b>relationship</b></div>
+            </td>
+            <td><p>This coded attribute is intended to specify the relationship between the consenter and the client (e.g., the Patient).  This may be a Substitute Decisions Maker, a legal guardian, etc.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Consenter.<b>digitalSignature</b></div>
+            </td>
+            <td><p>This attribute is used to store the consenter&apos;s signature.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Consenter.<b>signatureRecorded</b></div>
+            </td>
+            <td><p>If a digital signature is not allowed by policy, this attribute indicates whether a signature was captured.</p></td>
+            <td valign="top"> Boolean </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Consenter.<b>name</b></div>
+            </td>
+            <td><p>Contains the name of the person who granted consent.</p></td>
+            <td valign="top"> PersonName </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Consenter.<b>client</b></div>
+            </td>
+            <td><p>Identifies the person to whom the consent directive applies.  This person may or may not be the same person as the consent author, as in the case where the patient is a minor child or an incapacitated person.</p></td>
+            <td valign="top"> <b>Patient</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Consenter.<b>grantee</b></div>
+            </td>
+            <td><p>Designates who/what has been delegated a specific right.</p></td>
+            <td valign="top"> <b>Grantee</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>ConstraintPolicy</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> </td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>Contract</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> </td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>DelegationPolicy</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>A delegation policy is intended to delegate access rights to a specific individual or organization (a grantee). ISO 22600-2 defines delegation as &apos;conveyance of privilege from one entity that holds such privilege, to another entity&apos; and a DelegationPolicy as &apos;defines what authorizations can be delegated to whom&apos;.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DelegationPolicy.<b>accessRight</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DelegationPolicy.<b>deligationPolicyType</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DelegationPolicy.<b>grantee</b></div>
+            </td>
+            <td><p>Designates who/what has been delegated a specific right.</p></td>
+            <td valign="top"> <b>Grantee</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>FinancialContract</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> </td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>FunctionalGroup</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> </td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>FunctionalRole</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>Functional Roles can be grouped according to their authorization to access IIHI and perform various operations on health care information. E.g., A health care provider in Organization A is authorized to access protected information (including IIHI) from Organization B (when Organization A &amp;amp;amp;amp; B have entered into a trusted relationship) if that provider is associated with the Functional Group whose permissions grant access per that FunctionalRole. In summary, the functional role defines the access control decision. A functional role is bound to a policy. </p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">FunctionalRole.<b>name</b></div>
+            </td>
+            <td><p>This attribute is used to represent the user role name, if specified.      </p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">FunctionalRole.<b>roleCode</b></div>
+            </td>
+            <td><p>The functional role may specify that the user is part of the healthcare team that is directly involved in the client s care. This attribute refers to a functional role assigned by an organization to computer users.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>Grantee</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class is used to designate who/what has been delegated a specific right. For example, in the case of substance abuse related information, under certain conditions the authority to grant, withhold, or withdraw consent to the disclosure of the information, is granted to the client.  In another example, a Clearinghouse may act an agent/proxy for a provider organization as an intermediary and therefore can be a grantee as well.    </p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Grantee.<b>organizationalProvider</b></div>
+            </td>
+            <td><p>Additional information about the grantee when the grantee is an organizational provider.</p></td>
+            <td valign="top"> <b>OrganizationalProvider</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Grantee.<b>clearingHouse</b></div>
+            </td>
+            <td><p>Additional information about the grantee when the grantee is a clearinghouse.</p></td>
+            <td valign="top"> <b>Intermediary</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Grantee.<b>authority</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>Authority</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>Grantor</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>*(added 6/2014 from iEHR model as part of high-level refactoring)</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>HandlingCaveat</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> </td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>HierarchicalGroup</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> </td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">HierarchicalGroup.<b>__HierarchicalGroup</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>HierarchicalGroup</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>InformationObject</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class represents a reference to specific type of information object that may be referenced by a policy or consent directive (e.g., document, order, etc.). This information object refers to the types of objects that may be used in a permission.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">InformationObject.<b>category</b></div>
+            </td>
+            <td><p>Coded attribute that identifies the type of object referenced in the policy.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">InformationObject.<b>id</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Id </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">InformationObject.<b>sensitivity</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>InformationTarget</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>+(renamed from InformationReference 11/2014 as part of high-level refactoring)</p><p></p><p>This class and it associations specify the attributes of the protected information referenced by a policy (e.g., IIHI).</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">InformationTarget.<b>category</b></div>
+            </td>
+            <td><p>Information category (e.g. medication, allergies, laboratory).</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">InformationTarget.<b>confidentialityIndicator</b></div>
+            </td>
+            <td><p>The confidentiality indicator is a coded attribute that assigns access controls on client health records based on the information or type of access.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">InformationTarget.<b>informationObject</b></div>
+            </td>
+            <td><p>A reference to specific type of information object that may be referenced by a policy or consent directive (e.g., document, order, etc.).</p></td>
+            <td valign="top"> <b>InformationObject</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">InformationTarget.<b>subjectOfRecord</b></div>
+            </td>
+            <td><p>This class represents the patient or population that is the subject of the record in question.</p></td>
+            <td valign="top"> <b>SubjectOfRecord</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">InformationTarget.<b>InformationReference</b></div>
+            </td>
+            <td><p>Identifies the organizational provider that is the custodian of the record in question.</p></td>
+            <td valign="top"> <b>OrganizationalProvider</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">InformationTarget.<b>coverageType</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>PolicyProgramSource</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">InformationTarget.<b>informationRecipient</b></div>
+            </td>
+            <td><p>Identifies the organizational provider that is the intended recipient of the record in question.  </p></td>
+            <td valign="top"> <b>OrganizationalProvider</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>Initiator</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>$$ (from notes (6/13): An older name for &quot;Initiator&quot; is &quot;Authorized Service Endpoint&quot;)</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Initiator.<b>accessControlId</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Id </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Initiator.<b>confidentialityType</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Initiator.<b>effectiveDate</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Initiator.<b>initiatorIntegrityStatus</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Initiator.<b>initiatorName</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Initiator.<b>initiatorType</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Initiator.<b>profileType</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Initiator.<b>_new_AuthenicationToken</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>AuthenicationToken</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Initiator.<b>_new_SecurityContext</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>SecurityContext</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Initiator.<b>userIdentity</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>UserIdentity</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Initiator.<b>userRole</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>UserRole</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Initiator.<b>policy</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>Policy(Abstract)</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Initiator.<b>securityRole</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>SecurityRole</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Initiator.<b>accessPoint</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>AccessPoint</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Initiator.<b>_new_Group</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>Compartment</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Initiator.<b>clearance</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>Clearance</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>Intermediary</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>+(renamed from ClearingHouse 11/2014 as part of high-level refactoring)</p><p></p><p>An organization such as a clearing house (which is an organization that consolidates medical claims from various providers for electronic submission to and payment from various payers) or a Health Information Exchange (HIE) which may need to obtain evidence of patient consent from a requestor of health information.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>ObligationPolicy</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>An obligation policy may be used to specify additional privacy preferences specified by a client/patient. An obligation policy may be specified in addition to a ConstraintPolicy to fully describe a patient&apos;s access control preferences. In some cases an obligation policy may be used to indicate that the receiver of an information object may not be allowed to re-disclose it or persist that information object indefinitely. According to ISO 22600-2, ObligationPolicy instances &apos;are event-triggered and define actions to be performed by manager agent&apos;.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ObligationPolicy.<b>obligationPolicyType</b></div>
+            </td>
+            <td><p>This attribute identifies the action required before completing the step in the workflow. We assume it is coded concept but in today&apos;s implementations it&apos;s primarily an ad-hoc rule reference (e.g., the name of a data base stored procedure). An obligation may be associated with the release of an object. For example, it may require a signature. This information is passed as rule for an application to enforce. In other cases it may require that an audit record be created.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>Permission</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class corresponds to a Role-Based Access Control (RBAC) permission. It specifies an information object and action/operation allowed on that object. A permission contains one operation and precisely one information reference. </p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Permission.<b>description</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Permission.<b>id</b></div>
+            </td>
+            <td><p>This attribute is used to specify the unique identifier of the permission.</p></td>
+            <td valign="top"> Id </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Permission.<b>version</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Permission.<b>informationObject</b></div>
+            </td>
+            <td><p>This association identifies the information resources specified by a permission.</p></td>
+            <td valign="top"> <b>InformationObject</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Permission.<b>operationType</b></div>
+            </td>
+            <td><p>This association identifies the action or operation that is specified by a permission.</p></td>
+            <td valign="top"> <b>PrivacyOperation</b> </td>
+            <td>NA</td>
+            <td>(1..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Permission.<b>securityOperation (CRUDE)</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>SecurityOperation (CRUDE)</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>PermissionCatalog</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>The permission catalog specifies a set of standard permissions. The permission catalog is the subject of separate HL7 standards. This reference is intended to show it relates to the rest of the information classes required to support the use cases.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PermissionCatalog.<b>name</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PermissionCatalog.<b>status</b></div>
+            </td>
+            <td><p>Identifies the current state of the Permission.  The state should correspond to the HL7 Act State machine.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PermissionCatalog.<b>version</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PermissionCatalog.<b>permission</b></div>
+            </td>
+            <td><p>A Role-Based Access Control (RBAC) permission. It specifies an information object and action/operation allowed on that object. A permission contains one operation and precisely one information reference. </p></td>
+            <td valign="top"> <b>Permission</b> </td>
+            <td>NA</td>
+            <td>(1..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>Policy(Abstract)</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>+(renamed from Policy 11/2014 as part of high-level refactoring)</p><p></p><p>The Policy(Abstract) class is the abstract class from which all concrete policy classes in this model are derived and instantiated. Because this class is abstract, it cannot be instantiated as a security policy for healthcare, however, it specifies the properties reused by all policies. ISO 22600-2 specifies a policy as &apos;set of legal, political, organizational, functional and technical obligations for communication and cooperation&apos;. </p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Policy(Abstract).<b>description</b></div>
+            </td>
+            <td><p>This attribute specifies the narrative description of the policy. </p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Policy(Abstract).<b>effectiveTime</b></div>
+            </td>
+            <td><p>This attribute specifies the period of time (e.g., start date, end date) during which the privacy policy described by ePolicy is in effect.</p></td>
+            <td valign="top"> TimeInterval </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Policy(Abstract).<b>id</b></div>
+            </td>
+            <td><p>Uniquely identifies the policy</p></td>
+            <td valign="top"> Id </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Policy(Abstract).<b>name</b></div>
+            </td>
+            <td><p>A human discernible name for the policy</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Policy(Abstract).<b>status</b></div>
+            </td>
+            <td><p>This attribute indicates whether the policy is active or not</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Policy(Abstract).<b>uri</b></div>
+            </td>
+            <td><p>The location of published policy.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Policy(Abstract).<b>authority</b></div>
+            </td>
+            <td><p>This is an association to the Authority that issued the policy.</p></td>
+            <td valign="top"> <b>Authority</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Policy(Abstract).<b>securityRole</b></div>
+            </td>
+            <td><p>ISO-22600 specifies a role as &apos;set of competences and/or performances which is associated with a task&apos;. A role is a specialization of CompositePolicy that define a group of policies (authorization, obligation, delegation and refrain policies).</p></td>
+            <td valign="top"> <b>SecurityRole</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Policy(Abstract).<b>signer</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>Signer</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Policy(Abstract).<b>policyForm</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>PolicyForm</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>PolicyForm</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> </td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>PolicyProgramSource</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>Specifies the source of payment for the healthcare services documented by electronic health records. In order to meet specific privacy policy needs, it is necessary to specify if the information protected by the rule was produced through public healthcare or other type of insurance.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PolicyProgramSource.<b>policyCategory</b></div>
+            </td>
+            <td><p>The HL7 DAM contains two subclasses to illustrate the type of security/privacy policies that are inherent from the healthcare payment source.  Those two subclasses are examples of many potential kinds of policies, and would be &apos;fleshed out&apos; in the terminology referenced by this code.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>Population</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>&apos;2.a) a body of persons or individuals having a quality or characteristic in common.  3) a group of individual persons, objects, or items from which samples are taken for statistical measurement&apos;  - Merriam-Webster&apos;s Medical Dictionary</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Population.<b>description</b></div>
+            </td>
+            <td><p>A textual description of the population</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Population.<b>existenceDateRange</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> TimeInterval </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Population.<b>id</b></div>
+            </td>
+            <td><p>Uniquely identifies the population.</p></td>
+            <td valign="top"> Id </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>PrivacyMarkPolicy</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> </td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PrivacyMarkPolicy.<b>flagTextToBeRendered</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>PrivacyOperation</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This abstract class specifies the permission that is assigned by the consenter to specific users of client health record information. The permission may control collection, access, use, or disclosure of a specific type of protected information (including IIHI).    Note that this class was named &apos;OperationType&apos; in the original DAM.</p><p>Note that these are RBAC operations</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PrivacyOperation.<b>operationCategory</b></div>
+            </td>
+            <td><p>This attribute identifies the operation that is either allowed or prohibited by the permission.    Note that this property was named &apos;OperationCode&apos; in the original DAM.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>PrivacyPolicyInformationFile</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> </td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>PrivacyRule</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>A privacy or consent rule specifies the permission allowed to a user type by the consenter for a specific type of information. The person consenting may be either the subject of the record or a designated Substitute Decision Maker. One or more consent rules comprise a consent directive or privacy policy.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PrivacyRule.<b>accessRestrictionOverride</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PrivacyRule.<b>effectiveTime</b></div>
+            </td>
+            <td><p>This attribute specifies the date/time when the Privacy Policy comes into effect.</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PrivacyRule.<b>enablesOperation</b></div>
+            </td>
+            <td><p>Enables the operation (e.g., disclosure) or disables it depending on its value.</p></td>
+            <td valign="top"> Boolean </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PrivacyRule.<b>refrainCode</b></div>
+            </td>
+            <td><p>This coded attribute specifies a pre-defined obligation associated with a policy or consent.    The Obligation Code is an Act.Code</p><p></p><p>10/2014: This code was really meant to convey refrains, e.g., do not redisclose.  Renamed from obligationCode to RefrainCode</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PrivacyRule.<b>privacyPolicyLawType</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PrivacyRule.<b>purposeOfUse</b></div>
+            </td>
+            <td><p>This attribute is used to specify the purpose to permit a specific type of action/operation according to the policy. Example: TREATMENT    The PurposeCode is an Act.ReasonCode</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PrivacyRule.<b>operation</b></div>
+            </td>
+            <td><p>Identifies the type of operation (i.e., collection, access, use, or disclosure) of a specific type of protected information referenced by the Privacy Rule.</p></td>
+            <td valign="top"> <b>PrivacyOperation</b> </td>
+            <td>NA</td>
+            <td>(1..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PrivacyRule.<b>includedRole</b></div>
+            </td>
+            <td><p>Identifies a particular the role of a user of a computer system that is referenced by the Privacy Rule.</p></td>
+            <td valign="top"> <b>UserRole</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PrivacyRule.<b>informationType</b></div>
+            </td>
+            <td><p>Identifies the type of protected information referenced by the Privacy Rule.</p></td>
+            <td valign="top"> <b>InformationTarget</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PrivacyRule.<b>privacyPolicy</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>AtomicPrivacyPolicy</b> </td>
+            <td>NA</td>
+            <td>(1..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PrivacyRule.<b>_new_Grantor</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>Grantor</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PrivacyRule.<b>securityRole</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>SecurityRole</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PrivacyRule.<b>grantee</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>Grantee</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PrivacyRule.<b>healthcareProvider</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>HealthcareProvider</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PrivacyRule.<b>relatedCondition</b></div>
+            </td>
+            <td><p>The health condition(s) associated with the policy. Conditions when specified, are coded concepts expressed in a standard vocabulary (e.g., LOINC, SNOMED CT, etc.). These may include indications of &apos;substance abuse&apos; or &apos;HIV-related&apos; illnesses, etc. An obligationCode may be implemented as a &apos;condition&apos;.</p></td>
+            <td valign="top"> <b>ProtectedCondition</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>PrivacyRuleList</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>An Act Relationship which describes the sequence in which Privacy Rules are to be processed as part of a Privacy Policy or a Consent Directive.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PrivacyRuleList.<b>sequenceNumber</b></div>
+            </td>
+            <td><p>This attribute specifies the sequence of a specific consent directive in the Consent Directive set.</p></td>
+            <td valign="top"> Integer </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PrivacyRuleList.<b>privacyRule</b></div>
+            </td>
+            <td><p>A privacy or consent rule specifies the permission allowed to a user type by the consenter for a specific type of information. The person consenting may be either the subject of the record or a designated Substitute Decision Maker. One or more consent rules comprise a consent directive or privacy policy.</p></td>
+            <td valign="top"> <b>PrivacyRule</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>ProtectedCondition</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>The health condition(s) associated with the policy. Conditions when specified, are coded concepts expressed in a standard vocabulary (e.g., LOINC, SNOMED CT, etc.). These may include indications of &apos;substance abuse&apos; or &apos;HIV-related&apos; illnesses, etc. An obligationCode may be implemented as a &apos;condition&apos;.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ProtectedCondition.<b>condition</b></div>
+            </td>
+            <td><p>Categorizes the health condition associated with the policy. Conditions when specified, are coded concepts expressed in a standard vocabulary (e.g., LOINC, SNOMED CT, etc.). These may include indications of &apos;substance abuse&apos; or &apos;HIV-related&apos; illnesses, etc.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>PurposeOfUsePolicy</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> </td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PurposeOfUsePolicy.<b>purposeOfUse</b></div>
+            </td>
+            <td><p>This attribute is used to specify the purpose to permit a specific type of action/operation according to the policy. The vocabulary analysis section provides additional illustrative values for the concept embodied by this attribute. </p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PurposeOfUsePolicy.<b>reason</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>RefrainPolicy</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>A refrain policy is used to indicate that a specific action is prohibited based on specific access control attributes (e.g., purpose, information type, user role, etc.). It is a specialization of  BasicPolicy  class. It does not have any additional attributes but implies a different behavior. ISO 22600-2 species that a RefrainPolicy &apos;defines actions the subjects must refrain from performing&apos;.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">RefrainPolicy.<b>refrainPolicyType</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#RefrainPolicy">RefrainPolicy</a> 
+					
+					 
+</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>SecurityCategory__Label</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> </td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecurityCategory__Label.<b>sensitivityField</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecurityCategory__Label.<b>privacyPolicy</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecurityCategory__Label.<b>compartment</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecurityCategory__Label.<b>integrity</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecurityCategory__Label.<b>provenance</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>SecurityClassification</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> </td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>SecurityContext</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> </td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecurityContext.<b>contextId</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Id </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecurityContext.<b>contextType</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecurityContext.<b>description</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecurityContext.<b>effectiveTime</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecurityContext.<b>route</b></div>
+            </td>
+            <td><p>This attribute specifies whether access to protected information may only be granted for a specified route of access.  For example, access may be restricted to remote users using a Virtual Private Network (VPN). The route is a context qualifier as specified by ISO/IEC 10164-9.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecurityContext.<b>status</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecurityContext.<b>_new_Compartment</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>Compartment</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>SecurityHandlingCaveatTagSet</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> </td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecurityHandlingCaveatTagSet.<b>_new_PurposeOfUsePolicy</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>PurposeOfUsePolicy</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecurityHandlingCaveatTagSet.<b>zz_ObligationPolicy</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>ObligationPolicy</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecurityHandlingCaveatTagSet.<b>zz_RefrainPolicy</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>RefrainPolicy</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecurityHandlingCaveatTagSet.<b>_new_PrivacyMarkLabel</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>PrivacyMarkPolicy</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>SecurityLabel</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>Classifies the data that is being stored or transmitted</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecurityLabel.<b>_new_SecurityLabelHeader</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>SecurityLabelHeader</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecurityLabel.<b>_new_ClassificationLabel</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>ClassificationLabel</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecurityLabel.<b>_new_SecurityCategoryLabel</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>SecurityCategory__Label</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecurityLabel.<b>_new_SecurityTrustPolicyLabel</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>SecurityTrustLabel</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecurityLabel.<b>_new_SecurityHandlingCaveatLabel</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>SecurityHandlingCaveatTagSet</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecurityLabel.<b>zz_InformationTarget</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>InformationTarget</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>SecurityLabelHeader</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> </td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecurityLabelHeader.<b>id</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Id </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecurityLabelHeader.<b>_new_SecurityPolicyInformationFile</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>SecurityPolicyInformationFile</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>SecurityLabelingPolicy</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>*(added 11/2014 as part of high-level refactoring)</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecurityLabelingPolicy.<b>informationTarget</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>InformationTarget</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecurityLabelingPolicy.<b>zz_SecurityLabel</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>SecurityLabel</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>SecurityOperation (CRUDE)</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> </td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>SecurityPolicyInformationFile</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>*(added 11/2014 as part of high-level refactoring)</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecurityPolicyInformationFile.<b>id</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Id </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecurityPolicyInformationFile.<b>effectiveDateRange</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> TimeInterval </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>SecurityRole</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>ISO-22600 specifies a role as &apos;set of competences and/or performances which is associated with a task&apos;. A role is a specialization of CompositePolicy that define a group of policies (authorization, obligation, delegation and refrain policies).</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecurityRole.<b>authorityIdentifierName</b></div>
+            </td>
+            <td><p>This attribute is defined by ISO 22600-2 as &apos;String&apos;.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecurityRole.<b>description</b></div>
+            </td>
+            <td><p>This attribute is defined by ISO 22600-2 as &apos;CodedSimpleValue&apos;.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecurityRole.<b>name</b></div>
+            </td>
+            <td><p>This attribute is defined by ISO 22600-2 as &apos;CodedSimpleValue&apos;.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecurityRole.<b>objectIdentifier</b></div>
+            </td>
+            <td><p>This is the role_identifier_ID property in the Security DAM.  The definition of that property is &apos;This attribute is defined by ISO 22600-2 as &apos;ISO ObjectIdentifier&apos;.&apos;    WE RENAMED THIS.  WAS THIS OK TO DO????</p></td>
+            <td valign="top"> Id </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecurityRole.<b>roleIdentifier</b></div>
+            </td>
+            <td><p>This is the role_identifier property in the security DAM, and is defined by ISO 22600-2 as a &quot;Set of InstanceIndentifiers&quot;.</p></td>
+            <td valign="top"> Id </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecurityRole.<b>permission</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>Permission</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecurityRole.<b>policy</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>Policy(Abstract)</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecurityRole.<b>securityRoleRelationship</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>SecurityRoleRelationship</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>SecurityRoleRelationship</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> </td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecurityRoleRelationship.<b>securityRole</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>SecurityRole</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>SecurityRule</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> </td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecurityRule.<b>zz_ProtectedCondition</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>ProtectedCondition</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>SecurityTrustLabel</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> </td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecurityTrustLabel.<b>trustFrameworkLabel</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecurityTrustLabel.<b>trustPolicyLabel</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecurityTrustLabel.<b>trustCertificateLabel</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecurityTrustLabel.<b>trustAccreditationCode</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecurityTrustLabel.<b>trustMechanismLabel</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SecurityTrustLabel.<b>trustAssuranceLabel</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>SensitivityLabelAssignmentPolicy</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>*(added 11/2014 as part of high-level refactoring)</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>SensitivityPolicy</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> </td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SensitivityPolicy.<b>sensitivityCode</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>SensitivityCode</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>SharedSecret</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class represents additional properties of the Patient when communicating with them electronically.  This class was called simply &apos;Patient&apos; in the HL7 Security and Privacy DAM, the definition of which is: &apos;This class is intended to capture the properties of a Consenter/Client or &apos;Patient&apos;. See &apos;Actors&apos; specified in the Use Case Analysis for additional detail. A consenter may be the person whose preferences it represents or their designated Substitute Decision Maker (SDM).&apos;</p><p></p><p>Renamed from PatientITUser to SharedSecret on 11/14/2014</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SharedSecret.<b>sharedSecret</b></div>
+            </td>
+            <td><p>This keyword/shared secret may be used by a patient to provide temporary access to their electronic health records.  This attribute is required to support use case P.12 originated in Canada.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>Signer</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> </td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Signer.<b>signature</b></div>
+            </td>
+            <td><p>The DSIG signature contents in Base64.</p></td>
+            <td valign="top"> UnlimitedNatural </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Signer.<b>type</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>StructuralRole</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>xxx</p><p></p><p>Note that this role is called a &quot;Session Role&quot; in ANSI INCITES</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">StructuralRole.<b>name</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">StructuralRole.<b>roleCode</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>SubjectOfRecord</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class represents the type of subject of record: patient or population.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SubjectOfRecord.<b>sensitivity</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SubjectOfRecord.<b>patient</b></div>
+            </td>
+            <td><p>Captures the properties of a Consenter/Client or &apos;Patient&apos;. See &apos;Actors&apos; specified in the Use Case Analysis for additional detail. A consenter may be the person whose preferences it represents  or their designated Substitute Decision Maker (SDM).</p></td>
+            <td valign="top"> <b>Person</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SubjectOfRecord.<b>population</b></div>
+            </td>
+            <td><p>Specifies that the target of a policy may be an entire population.  This class may be used to specify a privacy policy that applies to a specific group or population.</p></td>
+            <td valign="top"> <b>Population</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>Token</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> </td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Token.<b>tokenId</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Id </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>UserAuthentication</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> </td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>UserIdentity</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class is used to specify the user identification attributes.  Note that the user here is typically a provider.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">UserIdentity.<b>id</b></div>
+            </td>
+            <td><p>This attribute is used to represent the user&apos;s identifier.  Note that the user here is typically a provider.</p></td>
+            <td valign="top"> Id </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">UserIdentity.<b>name</b></div>
+            </td>
+            <td><p>This attribute specifies the user&apos;s name.  Note that the user here is typically a provider.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">UserIdentity.<b>status</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">UserIdentity.<b>serviceDeliveryLocation</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>ServiceDeliveryLocation</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>UserRole</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class is used to specify the role of a user of a computer system. The role is typically associated with the Information Requester and specifies what capabilities are available to a specific type of computer user (i.e., in the Windows operating system, a user may have the role of Administrator which enables the capability to add new users). </p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">UserRole.<b>allowedSensitivity</b></div>
+            </td>
+            <td><p>Coded attribute that describes the level sensitivity of the protected information (including IIHI) that the user may access or use. Sensitivity is a characteristic of a resource which implies its value or importance.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">UserRole.<b>name</b></div>
+            </td>
+            <td><p>This attribute is used to specify the role name, if available.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">UserRole.<b>roleCode</b></div>
+            </td>
+            <td><p>This coded descriptor is used to specify a user role. It is an identifier of a hierarchical group in which membership is asserted, for example, organizational position. Structural roles provide authorizations on objects at a global level without regard to internal details (ASTM E2595). Examples include authorization to participate in a session, connect authorization to a database, authorization to participate in an order workflow, or connection to a protected uniform resource locator (URL). A structural role applies to the business process task as a group. This attribute refers to a coded structural role specified by an external coding system.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">UserRole.<b>roleId</b></div>
+            </td>
+            <td><p>This attribute is used to represent a unique role identifier.</p></td>
+            <td valign="top"> Id </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">UserRole.<b>functionalRole</b></div>
+            </td>
+            <td><p>This attribute refers to a coded structural role specified by an external coding system.</p></td>
+            <td valign="top"> <b>FunctionalRole</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">UserRole.<b>organizationalProvider</b></div>
+            </td>
+            <td><p>The organizational provider with which the user is associated.</p></td>
+            <td valign="top"> <b>OrganizationalProvider</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+  </table>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font">
+         <tr>
+            <th>Value Set Constraint</th>
+            <th>Element Description</th>
+         </tr>
+       
+
+
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID="RefrainPolicy">RefrainPolicy</a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">  RefrainPolicy   <br/> <br> http://www.hl7.org/v3ballotarchive/v3ballot/html/infrastructure/vocabulary/vs_ActCode.html#RefrainPolicy
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+ 
+
+
+       
+		
+
+
+</table>
+

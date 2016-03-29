@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMPharmacyOutpatientMedicationDispense" xml:lang="en-us">
+<title id="title">OutpatientMedicationDispense</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	OutpatientMedicationDispense is a kind of <xref href="../t_FHIMPharmacyPharmacyDispenseAbstract.dita">PharmacyDispense(Abstract)</xref>	
+</section>
+
+
+
+<section id="specializations"  audience="developer, modeler">
+	<title>Derivations</title>
+	<ul>
+<li><xref href="../t_FHIMPharmacyMailOrderDispense.dita">MailOrderDispense </xref> is a kind of  OutpatientMedicationDispense </li>
+	</ul>
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class contains information about the provision of a medication to a patient or care provider under the authority of the owning Pharmacy Promise in an outpatient or retail setting.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>dateTimeReleased :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The date and time that the medication was dispensed.  Dispense = &quot;to make up and distribute (medicine), esp. on prescription.&quot;  (Random House Unabridged Dictionary)  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>deliveryModality :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Indicates whether the medication dispensed will be mailed to the patient, or the patient will pick up the medication at the pharmacy window, or home delivery.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>levelOfUnderstanding :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Impression of how well the patient understood the education received.  Example values include: Poor, Fair, Good, Group - no assessment, Refused, etc.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>numberOfRefillsRemaining :  Integer (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Represents the calculated value of number of refills. CHDR sends number of refills but not enough information such as numberofrefillsauthorized to properly calculate the value.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>partialFillStatus :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+<p>See <xref href="../t_fhimvocabPharmacyVocabDispensingStatus.dita">DispensingStatus</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				Indicates that the pharmacist provided a quantity less than authorized to the patient, and provides a reason why this occured.  Typically this occurs when the pharmacy does not have sufficient quantity on hand to meet demand, and it is then expected that the pharmacy will fill the remaining quantity after supplies have been replenished.  In NCPDP SCRIPT, this information is conveyed in a Response Segment in response to a Prescription Fill Status request.</p><p>&quot;Code indicating the quantity dispensed is a partial fill or the completion of a partial fill. Used only in situations where inventory shortages do not allow the full quantity to be dispensed.&quot; - NCPDP Telecommunication (Field 343-HD, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>paymentType :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+<p>See <xref href="../t_fhimvocabPharmacyVocabReportedPaymentType.dita">ReportedPaymentType</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				&quot;The type of prescription benefit plan that adjudicated and paid for the prescription.&quot; - NCPDP Telecommunication (Field A29-ZS, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>salesTransactionId :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;A reference identifier assigned to the sale transaction as assigned by the merchant.&quot; - NCPDP Telecommunication (Field 681-ZF, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>salesTransactionTime :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The actual date and time the medication was released for inventory purposes and copay billing if applicable. (VistA)    In the commercial world, &quot;release date&quot; typically corresponds to the date/time that the patient took possession of the medication.  Need to verifiy the VistA usage.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>wasPatientCounseled :  Boolean (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Captures whether or not the patient received counseling regarding the dispensed medication.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>couponRedemption : <xref href="../t_FHIMEnrollEligCOBCouponRedemption.dita" >CouponRedemption</xref> (0..1)</p></stentry>
+  <stentry><p>				Pointer to information about the patient&apos;s use of a manufacturers coupon to reduce the patient&apos;s out-of-pocket cost for the prescription.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

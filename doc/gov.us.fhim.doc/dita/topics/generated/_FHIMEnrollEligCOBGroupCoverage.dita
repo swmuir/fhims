@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMEnrollEligCOBGroupCoverage" xml:lang="en-us">
+<title id="title">GroupCoverage</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>&quot;Group Health Insurance: A health insurance plan that provides benefits for employees of a business or members of an organization, as opposed to individual and family health insurance.&quot; - eHealthInsurance.org</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>address :  <xref href="../t_FHIMDatatypesUsMailingAddress.dita" >UsMailingAddress</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				(this property needs to be revisited - it may need to be deleted).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>groupId :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				A unique identifier that the payer or information source uses to identify a specific Group OR an Identifier assigned by the health plan to be used as a key to the group&apos;s contractual benefits.</p><p>&quot;Contains the group number of the insured&#8217;s insurance.&quot; - HL7 Version 2.8, IN1-8.</p><p>&quot;ID assigned to the cardholder group or employer group.&quot; - NCPDP Telecommunication (Field 301-C1, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>groupName :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Contains the group name of the insured&#8217;s insurance.&quot; - HL7 Version 2.8, IN1-9.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>healthPlan : <xref href="../t_FHIMEnrollEligCOBHealthPlan.dita" >HealthPlan</xref> (1..1)</p></stentry>
+  <stentry><p>				Pointer to the Plan (i.e., the the defined set of benefits promised by the Payer) to which the Group has subscribed, thereby defining the set of benefits available to members of the Group.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>planSponsor : <xref href="../t_FHIMEnrollEligCOBPlanSponsor.dita" >PlanSponsor</xref> (1..1)</p></stentry>
+  <stentry><p>				Pointer to the company or organization that assumes financial responsibility for the Group Coverage.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>subscriber : <xref href="../t_FHIMEnrollEligCOBSubscriber.dita" >Subscriber</xref> (1..*)</p></stentry>
+  <stentry><p>				Pointer to (a Role of) the Person who is named as a beneficiary of a Group Coverage Health Policy.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

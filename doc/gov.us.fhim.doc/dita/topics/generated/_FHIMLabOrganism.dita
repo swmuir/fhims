@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMLabOrganism" xml:lang="en-us">
+<title id="title">Organism</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+<section id="specializations"  audience="developer, modeler">
+	<title>Derivations</title>
+	<ul>
+<li><xref href="../t_FHIMLabParasite.dita">Parasite </xref> is a kind of  Organism </li>
+	</ul>
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>The organism identified as being present within a specimen sample.  &quot;Organism&quot; as used here is not the full spectrum of possible living things, but rather is limited to a member of the following: Bacteria, Fungus, Mycobacterium, Parasite, or Virus.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>organismTaxon :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+<p>See <xref href="../t_fhimvocabLabVocabOrganismTaxon.dita">Organism Taxon</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				A categorization of the organism identified, i.e., the &#8220;type&#8221; of organism.  Note that this property is intended to include not only specific species of organisms (e.g., Staphylococcus aureus, SNOMED-CT code 3092008), but also more general classifications that might be found in laboratory results, such as Gram-positive Cocci (SNOMED-CT code 59206002).  Note also that since this property is a coded element, it contains both a code and a display name.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>strain :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				A more precise subdivision of the value in the organism taxon, for example, the H1N1 form of Influenza.  Because of the multitude of strains and the speed at which they are discovered, the organism taxon coding system may not provide such values.  This property is therefore modeled as a string, rather than a code, as one might otherwise expect.</p><p>&quot;Contains the specific strain of animal.  It can also be expanded to include strain of any living organism and is not restricted to animals.&quot; - HL7 Version 2.8, PID-37.</p><p>&quot;The body of descendants of a common ancestor, as a family or stock.  A variety, especially of microorganisms.&quot; - Dictionary.com
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

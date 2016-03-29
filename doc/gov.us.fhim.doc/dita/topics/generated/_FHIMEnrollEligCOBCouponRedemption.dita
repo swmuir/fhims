@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMEnrollEligCOBCouponRedemption" xml:lang="en-us">
+<title id="title">CouponRedemption</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class contains information about the patient&apos;s use of a manufacturers coupon to reduce the patient&apos;s out-of-pocket cost for the prescription.</p><p>&quot;A coupon is used to reduce the patient out of pocket prescription cost &#8211; by either reducing the cost of a cash prescription or the patient financial responsibility from a Third Party payer who allows coupon usage. The coupon processor is the LAST payer.  (Note:  Some Federal and State programs do not allow the reduction of patient&#8217;s financial responsibility.)  When a customer has a coupon, the Usual And Customary Charge field is not reduced by the amount of the coupon.&quot; - NCPDP Telecommunication D.6, Coupon Segment.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>category :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Code indicating the type of coupon being used.&quot; - NCPDP Telecommunication (Field 485-KE, Data Dictionary 201104).  Possible values include: Price Discount; Free Product; Other.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>id :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Unique serial number assigned to the prescription coupons.&quot; - NCPDP Telecommunication (Field 485-ME, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>value :  <xref href="../t_FHIMDatatypesMonetaryAmount.dita" >MonetaryAmount</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Value of the coupon.&quot; - NCPDP Telecommunication (Field 485-NE, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

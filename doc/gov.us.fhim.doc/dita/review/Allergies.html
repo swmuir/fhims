@@ -1,0 +1,751 @@
+
+<html xmlns:Standard="http://www.eclipse.org/uml2/schemas/Standard/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:fhim="http:///schemas/fhim/_bbjuwA3cEeSGTazHdUQojA/5" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:term="http://www.openhealthtools.org/mdht/schemas/term/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:xmi="http://www.omg.org/XMI" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.3/Umlnotation" xmlns:Default="http:///schemas/Default/_fNm3AAqoEd6-N_NOT9vsCA/2" xmlns:CDA="http://www.openhealthtools.org/mdht/schemas/cda/4" xmlns:Default_1="http:///schemas/Default/1" xmlns:RIM="http:///schemas/RIM/_fvnwgAH4Ed6VH-9W1IVKXA/4" xmlns:SketchNotation="http://www.ibm.com/ccl/soa/sketch/notation/1.0.0/">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>Allergies Domain</title>
+   </head>
+   <body style="font-family:Courier;font-size:14px">
+      <h1>Allergies Domain</h1>
+      <p> The purpose of this review is to identify the data elements required for the
+         interoperable exchange for the Allergies domain including dependencies. A column is
+         provided at the far right of the table for you to enter comments related to each
+         data element. If the class or domain is missing data elements, please add a row
+         at the bottom of the sheet and specify a name, description, and type of data
+         (e.g. numeric, string, date/time, code). 
+      </p>
+      <p> Once you have reviewed the data elements, please review the value sets
+         associated with the coded data elements. Please provide feedback by adding
+         comments in the column provided at the right of item/row or by adding rows at
+         the bottom table. For any new coded concepts without a valid code yet, our team
+         will propose them for addition in the source coding system. 
+      </p>
+      <ul>
+         <li><a href=""> <i><b>Allergies</b> </i> Domain </a></li>
+       </ul>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font-family:Courier">
+         <tr bgcolor="#98FB98" style="font-size:18px" align="left">
+            <td colspan="1"><b><a id=""> 'Allergies' Domain
+                     </a></b></td>
+            <td colspan="4" style="font-size:12px">Note that the Information Source hierarchy is in the Common domain, and is not shown here.</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+      </table>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font-family:Courier">
+         <tr>
+            <th width="20%">Element Name</th>
+            <th width="20%">Element Description</th>
+            <th width="15%">Format/Type</th>
+            <th width="15%">Value Set Name</th>
+            <th width="15%">Optionality/<br>Repetition
+            </th>
+            <th width="15%">Reviewer's Comments</th>
+         </tr>
+ 
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>IntoleranceCondition</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>Describes an observation of an &quot;Intolerance Condition&quot; of the Patient.  Intolerance Conditions are typically allergies, but the concept of an intolerance condition is broader than just allergies.  For example, an adverse reaction such as the patient becomes nauseous after taking a particular antibiotic is not an allergy, but may serve as a contra-indicator to the use of that antibiotic.  In general, Intolerance Conditions as caused by Food, Drugs, or some environmental factor such as mold, insect venom (i.e., bee stings), or pet dander.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">IntoleranceCondition.<b>alertDevice</b></div>
+            </td>
+            <td><p>&quot;Describes any type of allergy alert device the patient may be carrying or wearing.&quot; - HL7 Version 2.8, IAM-16.  HL7 Version 2 has the following suggested values (table 437): Bracelet; Necklace; Wallet Card.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">IntoleranceCondition.<b>criticality</b></div>
+            </td>
+            <td><p>Provides an indication of the seriousness or intensity of a reaction that the patient would be expected to experience upon a further exposure to the Reactant.</p><p></p><p>&quot;Indicates the general severity of the allergy&quot; - HL7 Version 2.8, AL1-4, IAM-4, and IAR-2.  HL7 Version 2 has the following suggested values (table 128): Severe; Moderate; Mild; Unknown.</p><p>&quot;Estimate of the potential clinical harm, or seriousness, of the reaction to the identified Substance.&quot; - HL7 FHIR AllergyIntolerance.criticality</p><p></p><p>The Common Terminology Criteria for Adverse Events (CTCAE) has the following values:</p><p>Grade 1: Mild; asymptomatic or mild symptoms; clinical or diagnostic observations only; intervention not indicated.</p><p>Grade 2: Moderate; minimal, local or noninvasive intervention indicated; limiting age-appropriate instrumental ADL*.</p><p>Grade 3: Severe or medically significant but not immediately life-threatening; hospitalization or prolongation of hospitalization indicated; disabling; limiting self care ADL**.</p><p>Grade 4: Life-threatening consequences; urgent intervention indicated.</p><p>Grade 5: Death related to AE.</p></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#AllergyIntoleranceCriticality">AllergyIntoleranceCriticality</a> 
+					
+					 
+</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">IntoleranceCondition.<b>intoleranceCategory</b></div>
+            </td>
+            <td><p>Provides a categorization of the Intolerance Condtion.  Possible values are members of the SNOMED Allergy Event value set.  This property is required for Meaningful Use.</p><p></p><p>&quot;Indicates a general allergy category (drug, food, pollen, etc.).&quot; - HL7 Version 2.8, AL1-2 and IAM-2.  HL7 Version 2 has the following suggested values (table 127): Drug allergy; Food allergy; Miscellaneous allergy; Miscellaneous contraindication; Environmental Allergy; Animal Allergy; Plant Allergy; Pollen Allergy.</p></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#"></a> 
+					
+					 
+</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">IntoleranceCondition.<b>isAbsolutelyContraIndicated</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Boolean </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">IntoleranceCondition.<b>lastOccurrence</b></div>
+            </td>
+            <td><p>&quot;Represents the date and/or time of the last known occurence of a reaction event.&quot; - HL7 FHIR, AllergyIntolerance.lastOccurence.</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">IntoleranceCondition.<b>mechanism</b></div>
+            </td>
+            <td><p>Categorizes whether the underlying process (mechanism) of the Intolerance Condition is an Immunoglobulin-E (IgE)-mediated response, an exepected response to a pharmacologic substance, or unknown.    Allergy:  An allergy reaction must have symptoms (reaction) consistent with an actual allergy - rash, hives, severe swelling, redness, itchiness, difficulty breathing (due to swelling around breathing areas), etc.    Pharmacologic:  A pharmacologic reaction is an adverse event rather then an allergy.  It is a reaction based on the pharmacologic properties of the drug and has to do with a reaction that can be expected due to the pharmacologic activity of the drug. It can occur when the patient takes the right amount or an amount greater or less than the recommended doses.  Some examples are: an antidiarrheal agent (like Immodium) causing constipation, a laxative causing diarrhea, a beta blocker causing bradycardia (slow heart rate), furosemide (a diuretic) causing excessive urination, or a blood pressure medication causing low blood pressure (will be fully modeled in a subsequent phase).    Unknown:  An unknown reaction is a reaction experienced by the patient that cannot be explained by either of the other two mechanisms, for example, eating a pear and developing a cough or taking a blood pressure medication and developing right elbow pain. This type of reaction is consistent, disappears upon withdrawing the agent, and reappears when the agent or food item is restarted/eaten again.</p><p></p><p>&quot;Contains the reason why the patient should not be exposed to a substance.&quot; - HL7 Version 2.8, IAM-9 and IAR-3.  HL7 Version 2 has the following suggested values (table 436): Adverse Reaction (Not otherwise classified); Allergy; Contraindication; Intolerance; Side Effect.</p></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#"></a> 
+					
+					 
+</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">IntoleranceCondition.<b>reactant</b></div>
+            </td>
+            <td><p>Identifies the substance to which the patient has an intolerance or allergy.  The reactant will point to a value set, which will be a superset of valuesets for Drug Product, Drug Class, Ingredient, Food Product, and Environmental reactants.</p><p></p><p>&quot;Uniquely identifies a particular allergen.&quot; - HL7 Version 2.8, AL1-3 and IAM-3</p><p>&quot;Identifies the specific allergic reaction that was documented.&quot; - HL7 Version 2.8, IAR-1.</p><p>&quot;Identification of a substance, or a class of substances, that is considered to be responsible for the Adverse reaction risk.&quot; - HL7 FHIR AllergyIntolerance.substance</p></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#Reactant">Reactant</a> 
+					
+					 
+</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">IntoleranceCondition.<b>reactantCategory</b></div>
+            </td>
+            <td><p>Categorizes the reactant to which the patient has demonstrated an intolerance or an allergy.  Possible values include Drug Product, Drug Class, Ingredient, Food Product, and Environmental.  Note that this property may contain more than one value.</p><p>&quot;Category of the identified Substance.&quot; - HL7 FHIR, AllergyIntolerance.category.</p></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#"></a> 
+					
+					 
+</td>
+            <td>(1..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">IntoleranceCondition.<b>reaction</b></div>
+            </td>
+            <td><p>Pointer to a set of Observation(s) of any adverse physiological response(s) attributed to the exposure of the Patient to the given substance.</p><p>&quot;Reactions associated with the sensitivity.&quot; - HL7 FHIR Allergy resource.</p></td>
+            <td valign="top"> <b>ReactionObservation</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">IntoleranceCondition.<b>sensitivityTest</b></div>
+            </td>
+            <td><p>Pointer to a set of Observation(s) (i.e., tests) performed in order to confirm (or refute) the sensitivity, and/or to determine the mechanism of the sensitivity.</p><p>&quot;Observations that confirm or refute the sensitivity.&quot; - HL7 FHIR Allergy resource.</p></td>
+            <td valign="top"> <b>SensitivityTest</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>IntoleranceConditionList</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>A collection of Intolerance Condition (aka Allergy) records.  This class represents the traditional &quot;Allergy List&quot; that is used to inform the Provider of substances that should likely be avoided when treating the Patient.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">IntoleranceConditionList.<b>hasIntoleranceCondition</b></div>
+            </td>
+            <td><p>Indicates whether the Patient has any records of Intolerance Condition(s).  When this property is false, it is equivalent to saying that the Patient has &quot;No Known Allergies&quot;.</p></td>
+            <td valign="top"> Boolean </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">IntoleranceConditionList.<b>intoleranceConditionEntry</b></div>
+            </td>
+            <td><p>Pointer to individual Intolerance Condition (aka Allergy) records that make up the Intolerance Condition List.</p></td>
+            <td valign="top"> <b>IntoleranceCondition</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>ReactionObservation</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class documents an Observation of an adverse physiological response attributed to the exposure of the Patient to the given substance.  Note that the dates may be unspecified, such as when the Patient reports that she breaks out in hives when she eats peanuts.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ReactionObservation.<b>certainty</b></div>
+            </td>
+            <td><p>&quot;Statement about the degree of clinical certainty that the Specific Substance was the cause of the Manifestation in this reaction event.&quot; - HL7 FHIR, AllergyIntolerance.event.certainty.</p></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#"></a> 
+					
+					 
+</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ReactionObservation.<b>description</b></div>
+            </td>
+            <td><p>&quot;Text description about the Reaction as a whole, including details of the manifestation if required.&quot; - HL7 FHIR, AllergyIntolerance.event.description.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ReactionObservation.<b>duration</b></div>
+            </td>
+            <td><p>&quot;The amount of time that the Adverse Reaction persisted.&quot; - HL7 FHIR, AllergyIntolerance.event.duration.</p></td>
+            <td valign="top"> TimeQuantity </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ReactionObservation.<b>exposureRoute</b></div>
+            </td>
+            <td><p>&quot;Identification of the route by which the subject was exposed to the substance.&quot; - HL7 FHIR, AllergyIntolerance.event.exposureRoute.</p><p>Note that FHIR uses a code for this concept, but we modeled this as a string, because we currently do not foresee a need for this property.  Should the partner agencies require the use of this property, a decision would need to be made regarding whether to use SNOMED codes as FHIR recommends, or FDA codes, which is required by Meaningful Use for other kinds of substance administrations.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ReactionObservation.<b>reaction</b></div>
+            </td>
+            <td><p>Indicates the adverse physiological response which is suspected to have been caused by an exposure to the given substance (i.e., the reactant).</p><p></p><p>&quot;Identifies the specific allergic reaction that was documented.&quot; - HL7 Version 2.8, AL1-5 and IAM-5</p><p>&quot;Clinical symptoms and/or signs that are observed or associated with the Adverse Reaction Event.&quot; - HL7 FHIR, AllergyIntolerance.event.manifestation.</p></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#"></a> 
+					
+					 
+</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ReactionObservation.<b>severity</b></div>
+            </td>
+            <td><p>&quot;Clinical assessment of the severity of the reaction event as a whole, potentially considering multiple different manifestations.&quot; - HL7 FHIR, AllergyIntolerance.event.severity.</p></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#Reaction Severity Value Set">Reaction Severity Value Set</a> 
+					
+					 
+</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>SensitivityTest</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class documents an Observation (i.e., a test) performed in order to confirm (or refute) the sensitivity, and/or to determine the mechanism of the sensitivity.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+
+
+  </table>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font">
+         <tr>
+            <th>Value Set Constraint</th>
+            <th>Element Description</th>
+         </tr>
+       
+
+
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID="AllergyIntoleranceCriticality">AllergyIntoleranceCriticality</a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">  AllergyIntoleranceCriticality   <br/> <p>Provides an indication of the seriousness or intensity of a reaction that the patient would be expected to experience upon a further exposure to the Reactant.</p><p></p><p>&quot;Indicates the general severity of the allergy&quot; - HL7 Version 2.8, AL1-4, IAM-4, and IAR-2.  HL7 Version 2 has the following suggested values (table 128): Severe; Moderate; Mild; Unknown.</p><p>&quot;Estimate of the potential clinical harm, or seriousness, of the reaction to the identified Substance.&quot; - HL7 FHIR AllergyIntolerance.criticality</p><p></p><p>The Common Terminology Criteria for Adverse Events (CTCAE) has the following values:</p><p>Grade 1: Mild; asymptomatic or mild symptoms; clinical or diagnostic observations only; intervention not indicated.</p><p>Grade 2: Moderate; minimal, local or noninvasive intervention indicated; limiting age-appropriate instrumental ADL*.</p><p>Grade 3: Severe or medically significant but not immediately life-threatening; hospitalization or prolongation of hospitalization indicated; disabling; limiting self care ADL**.</p><p>Grade 4: Life-threatening consequences; urgent intervention indicated.</p><p>Grade 5: Death related to AE.</p><br> http://hl7.org/fhir/2015May/allergy-intolerance-criticality.html
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>low (Low Risk)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>high (High Risk)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>unassessible (Unable to determine)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+ 
+
+
+       
+		
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID=""></a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">     <br/> <p>Provides a categorization of the Intolerance Condtion.  Possible values are members of the SNOMED Allergy Event value set.  This property is required for Meaningful Use.</p><p></p><p>&quot;Indicates a general allergy category (drug, food, pollen, etc.).&quot; - HL7 Version 2.8, AL1-2 and IAM-2.  HL7 Version 2 has the following suggested values (table 127): Drug allergy; Food allergy; Miscellaneous allergy; Miscellaneous contraindication; Environmental Allergy; Animal Allergy; Plant Allergy; Pollen Allergy.</p><br> https://phinvads.cdc.gov/vads/ViewValueSet.action?id=7AFDBFB5-A277-DE11-9B52-0015173D1785
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>419199007 (Allergy to substance (disorder))</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>416098002 (Drug allergy (disorder))</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>59037007 (Drug intolerance (disorder)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>414285001 (Food allergy (disorder))</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>235719002 (Food intolerance (disorder))</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>420134006 (Propensity to adverse reactions (disorder))</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>419511003 (Propensity to adverse reactions to drug (disorder))</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>418471000 (Propensity to adverse reactions to food (disorder))</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>418038007 (Propensity to adverse reactions to substance (disorder))</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+ 
+
+
+       
+		
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID=""></a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">     <br/> <p>Categorizes whether the underlying process (mechanism) of the Intolerance Condition is an Immunoglobulin-E (IgE)-mediated response, an exepected response to a pharmacologic substance, or unknown.    Allergy:  An allergy reaction must have symptoms (reaction) consistent with an actual allergy - rash, hives, severe swelling, redness, itchiness, difficulty breathing (due to swelling around breathing areas), etc.    Pharmacologic:  A pharmacologic reaction is an adverse event rather then an allergy.  It is a reaction based on the pharmacologic properties of the drug and has to do with a reaction that can be expected due to the pharmacologic activity of the drug. It can occur when the patient takes the right amount or an amount greater or less than the recommended doses.  Some examples are: an antidiarrheal agent (like Immodium) causing constipation, a laxative causing diarrhea, a beta blocker causing bradycardia (slow heart rate), furosemide (a diuretic) causing excessive urination, or a blood pressure medication causing low blood pressure (will be fully modeled in a subsequent phase).    Unknown:  An unknown reaction is a reaction experienced by the patient that cannot be explained by either of the other two mechanisms, for example, eating a pear and developing a cough or taking a blood pressure medication and developing right elbow pain. This type of reaction is consistent, disappears upon withdrawing the agent, and reappears when the agent or food item is restarted/eaten again.</p><p></p><p>&quot;Contains the reason why the patient should not be exposed to a substance.&quot; - HL7 Version 2.8, IAM-9 and IAR-3.  HL7 Version 2 has the following suggested values (table 436): Adverse Reaction (Not otherwise classified); Allergy; Contraindication; Intolerance; Side Effect.</p><br> TBD
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>37523008 (immunologic)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>-newCode- (not immunologic)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+ 
+
+
+       
+		
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID="Reactant">Reactant</a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">  Reactant   <br/> <p>Identifies the substance to which the patient has an intolerance or allergy.  The reactant will point to a value set, which will be a superset of valuesets for Drug Product, Drug Class, Ingredient, Food Product, and Environmental reactants.</p><p></p><p>&quot;Uniquely identifies a particular allergen.&quot; - HL7 Version 2.8, AL1-3 and IAM-3</p><p>&quot;Identifies the specific allergic reaction that was documented.&quot; - HL7 Version 2.8, IAR-1.</p><p>&quot;Identification of a substance, or a class of substances, that is considered to be responsible for the Adverse reaction risk.&quot; - HL7 FHIR AllergyIntolerance.substance</p><br> TBD
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+ 
+
+
+       
+		
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID=""></a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">     <br/> <p>Categorizes the reactant to which the patient has demonstrated an intolerance or an allergy.  Possible values include Drug Product, Drug Class, Ingredient, Food Product, and Environmental.  Note that this property may contain more than one value.</p><p>&quot;Category of the identified Substance.&quot; - HL7 FHIR, AllergyIntolerance.category.</p><br> http://hl7.org/fhir/vs/allergy-intolerance-category
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>food</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>medication</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>environment</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+ 
+
+
+       
+		
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID=""></a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">     <br/> <p>&quot;Statement about the degree of clinical certainty that the Specific Substance was the cause of the Manifestation in this reaction event.&quot; - HL7 FHIR, AllergyIntolerance.event.certainty.</p><br> http://hl7.org/fhir/vs/reaction-event-certainty
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>unlikely</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>likely</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>confirmed</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+ 
+
+
+       
+		
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID=""></a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">     <br/> <p>Indicates the adverse physiological response which is suspected to have been caused by an exposure to the given substance (i.e., the reactant).</p><p></p><p>&quot;Identifies the specific allergic reaction that was documented.&quot; - HL7 Version 2.8, AL1-5 and IAM-5</p><p>&quot;Clinical symptoms and/or signs that are observed or associated with the Adverse Reaction Event.&quot; - HL7 FHIR, AllergyIntolerance.event.manifestation.</p><br> https://vsac.nlm.nih.gov/
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+ 
+
+
+       
+		
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID="Reaction Severity Value Set">Reaction Severity Value Set</a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">  Reaction Severity Value Set   <br/> <p>&quot;Clinical assessment of the severity of the reaction event as a whole, potentially considering multiple different manifestations.&quot; - HL7 FHIR, AllergyIntolerance.event.severity.</p><br> TBD
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>255604002 (mild)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>6736007 (moderate)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>24484000 (severe)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+ 
+
+
+       
+		
+
+
+</table>
+

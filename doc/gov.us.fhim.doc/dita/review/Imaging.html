@@ -1,0 +1,2378 @@
+
+<html xmlns:Standard="http://www.eclipse.org/uml2/schemas/Standard/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:fhim="http:///schemas/fhim/_bbjuwA3cEeSGTazHdUQojA/5" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:term="http://www.openhealthtools.org/mdht/schemas/term/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:xmi="http://www.omg.org/XMI" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.3/Umlnotation" xmlns:Default="http:///schemas/Default/_fNm3AAqoEd6-N_NOT9vsCA/2" xmlns:CDA="http://www.openhealthtools.org/mdht/schemas/cda/4" xmlns:Default_1="http:///schemas/Default/1" xmlns:RIM="http:///schemas/RIM/_fvnwgAH4Ed6VH-9W1IVKXA/4" xmlns:SketchNotation="http://www.ibm.com/ccl/soa/sketch/notation/1.0.0/">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>Imaging Domain</title>
+   </head>
+   <body style="font-family:Courier;font-size:14px">
+      <h1>Imaging Domain</h1>
+      <p> The purpose of this review is to identify the data elements required for the
+         interoperable exchange for the Imaging domain including dependencies. A column is
+         provided at the far right of the table for you to enter comments related to each
+         data element. If the class or domain is missing data elements, please add a row
+         at the bottom of the sheet and specify a name, description, and type of data
+         (e.g. numeric, string, date/time, code). 
+      </p>
+      <p> Once you have reviewed the data elements, please review the value sets
+         associated with the coded data elements. Please provide feedback by adding
+         comments in the column provided at the right of item/row or by adding rows at
+         the bottom table. For any new coded concepts without a valid code yet, our team
+         will propose them for addition in the source coding system. 
+      </p>
+      <ul>
+         <li><a href=""> <i><b>Imaging</b> </i> Domain </a></li>
+       </ul>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font-family:Courier">
+         <tr bgcolor="#98FB98" style="font-size:18px" align="left">
+            <td colspan="1"><b><a id=""> 'Imaging' Domain
+                     </a></b></td>
+            <td colspan="4" style="font-size:12px">Note that the Information Source hierarchy is in the Common domain, and is not shown here.</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+      </table>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font-family:Courier">
+         <tr>
+            <th width="20%">Element Name</th>
+            <th width="20%">Element Description</th>
+            <th width="15%">Format/Type</th>
+            <th width="15%">Value Set Name</th>
+            <th width="15%">Optionality/<br>Repetition
+            </th>
+            <th width="15%">Reviewer's Comments</th>
+         </tr>
+ 
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>DocumentImagingEvent</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class contains attributes associated with scanned documents. Historically, both diagnostic imaging and the scanning and retrieval of paper documents have been included in the &quot;imaging&quot; domain as they both share certain characteristics in terms of the equipment used to store and retrieve the images.  Yet a distinction is often made with respect to the amount and type of metadata associated with the images. For example, &quot;Diagnostic Images&quot; are those stored and retrieved in Picture Archive and Communications Systems (PACS) which require certain codified information regarding the modality of the image, body site, etc., and are organized into Studies, Series, Images, and subsets (regions) of images. In contrast, scanned documents do not require any of these metadata.  As patient-generated images become more commonplace, we foresee a need to store these images (for example, a patient uses a smart phone to take a picture of a wound and emails it to a clinician) as well. We would foresee such images stored in the &quot;Medical Imaging Event&quot; hierarchy, even if a relatively-empty Study and Series construct would be required to contain such images.  However, scanned documents simply need a pointer to the resulting image(s), and we therefore find it useful to continue with a logical separation of the two kinds of images.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DocumentImagingEvent.<b>documentDate</b></div>
+            </td>
+            <td><p>If the item being scanned is a dated document, this property identifies the date of the document.  For example, if on 1/15/2016 a patient&apos;s birth certificate dated 6/17/1961 were scanned, this property would contain the birth certificate date (6/17/1961), while the ImagingEvent.dateTime would contain the date that the document was scanned (1/15/2016).</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DocumentImagingEvent.<b>imageInstance</b></div>
+            </td>
+            <td><p>Pointer to the scanned image (along with metadata to help identify, locate, and classify the image) of the document.</p></td>
+            <td valign="top"> <b>ImageInstance</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">DocumentImagingEvent.<b>acquisitionDevice</b></div>
+            </td>
+            <td><p>Pointer to the individual Device that was used to produce the image.</p></td>
+            <td valign="top"> <b>DeviceInstance</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>Frame</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>&quot;Identity and location information of the frames in the selected instance.&quot; - HL7 FHIR, ImagingObjectSelection.study.series.instance.frames</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Frame.<b>frameNumber</b></div>
+            </td>
+            <td><p>&quot;The frame numbers in the frame set.&quot; - HL7 FHIR, ImagingObjectSelection.study.series.instance.frames.frameNumbers</p></td>
+            <td valign="top"> Integer </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Frame.<b>url</b></div>
+            </td>
+            <td><p>&quot;WADO-RS URL to retrieve the DICOM frames.&quot; - HL7 FHIR, ImagingObjectSelection.study.series.instance.frames.url</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>ImageInstance</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class contains an electronic representation of an optical counterpart or appearance of an object along with metadata to help identify, locate, and classify the image. This class is to be used for both clinical images which may be managed using a PACS and for scanned documents and other informal images.</p><p>&quot;A single SOP Instance within the series, e.g. an image, or presentation state.&quot; - HL7 FHIR, ImagingStudy.series.instance</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ImageInstance.<b>content</b></div>
+            </td>
+            <td><p>An electronic representation of an optical counterpart or appearance of an object. This property contains the binary data of the image.</p></td>
+            <td valign="top"> Image </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ImageInstance.<b>instanceNumber</b></div>
+            </td>
+            <td><p>&quot;The number of instance in the series.&quot; - HL7 FHIR, ImagingStudy.series.instance.number</p></td>
+            <td valign="top"> Integer </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ImageInstance.<b>pacsUID</b></div>
+            </td>
+            <td><p>When an image is created from an external PACS system, this property will contain the unique identifier for the image within that system.</p><p>&quot;Formal identifier for this image or other content.&quot; - HL7 FHIR, ImagingStudy.series.instance.uid</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ImageInstance.<b>sopClass</b></div>
+            </td>
+            <td><p>&quot;DICOM instance type.&quot; - HL7 FHIR, ImagingStudy.series.instance.sopClass</p><p>Note that in FHIR, the data type for this property is an oid. We may wish to make it a code.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ImageInstance.<b>title</b></div>
+            </td>
+            <td><p>&quot;The description of the instance.&quot; - HL7 FHIR, ImagingStudy.series.instance.title</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ImageInstance.<b>type</b></div>
+            </td>
+            <td><p>&quot;A human-friendly SOP Class name.&quot; - HL7 FHIR, ImagingStudy.series.instance.type</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ImageInstance.<b>frame</b></div>
+            </td>
+            <td><p>&quot;Identity and location information of the frames in the selected instance.&quot; - HL7 FHIR, ImagingObjectSelection.study.series.instance.frames</p></td>
+            <td valign="top"> <b>Frame</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>ImageInterpretationReport</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>Represents the radiology/nuclear medicine report as known by the originating system.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ImageInterpretationReport.<b>additionalClinicalHistory</b></div>
+            </td>
+            <td><p>Contain a patient&apos;s clinical history as well as instructions to the interpreting physician.  For example, the  instructions might be for the physician to interpret the exam images to rule out the possibility of the patient having a certain disease. The &apos;additional clinical history&apos; is written by the interpreting physician and is entered into the system by the transcriptionist.  Voice Recognition systems allow the interpreting physician to directly enter this information into the &apos;additional clinical history&apos; field.  </p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ImageInterpretationReport.<b>dateEntered</b></div>
+            </td>
+            <td><p>The date and time that the report was entered into the system by the transcriptionist. </p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ImageInterpretationReport.<b>dateReported</b></div>
+            </td>
+            <td><p>The date that the interpreting physician dictated this report. The transcriptionist enters this date from the dictation tape. If the physician is using a voice recognition system for dictation, this date is entered at the time the report is transmitted to DHCP.  </p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ImageInterpretationReport.<b>id</b></div>
+            </td>
+            <td><p>Uniquely identifies the Report.</p></td>
+            <td valign="top"> Id </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ImageInterpretationReport.<b>impressionText</b></div>
+            </td>
+            <td><p>&apos;Impression text&apos; of the rad/nuc med exam associated with this report. The &apos;impression text&apos; gives a quick summary of the &apos;report text&apos;. </p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ImageInterpretationReport.<b>reportText</b></div>
+            </td>
+            <td><p>Contains the report text for the  imaging exam. The report text is written by the interpreting physician and may be entered into the system by a transcriptionist.  </p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ImageInterpretationReport.<b>status</b></div>
+            </td>
+            <td><p>Iindicate the  status of this report. Possible values are Verified; Released/Not Verified; Problem Draft; Draft.</p></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#Image Event Status">Image Event Status</a> 
+					
+					 
+</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ImageInterpretationReport.<b>image</b></div>
+            </td>
+            <td><p>Image assocated with this Report</p></td>
+            <td valign="top"> <b>ImageInstance</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ImageInterpretationReport.<b>relatedCase</b></div>
+            </td>
+            <td><p>Related case to this report</p></td>
+            <td valign="top"> <b>MedicalImagingEvent</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>ImageObjectSelection</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>&quot;A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances). The referenced SOP Instances (images or other content) are for a single patient, and may be from one or more studies. The referenced SOP Instances have been selected for a purpose, such as quality assurance, conference, or consult. Reflecting that range of purposes, typical ImagingObjectSelection resources may include all SOP Instances in a study (perhaps for sharing through a Health Information Exchange); key images from multiple studies (for reference by a referring or treating physician); a multi-frame ultrasound instance (&quot;cine&quot; video clip) and a set of measurements taken from that instance (for inclusion in a teaching file); and so on.&quot; - HL7 FHIR, ImagingObjectSelection</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ImageObjectSelection.<b>description</b></div>
+            </td>
+            <td><p>&quot;Text description of the DICOM SOP instances selected in the ImagingObjectSelection. This should be aligned with the content of the title element, and can provide further explanation of the SOP instances in the selection.&quot; - HL7 FHIR, ImagingObjectSelection.description</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ImageObjectSelection.<b>kosTitle</b></div>
+            </td>
+            <td><p>&quot;The reason for, or significance of, the selection of objects referenced in the resource.&quot; - HL7 FHIR, ImagingObjectSelection.title</p></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#KOS Title">KOS Title</a> 
+					
+					 
+</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ImageObjectSelection.<b>patient</b></div>
+            </td>
+            <td><p>Pointer to the Person(s) (playing the role of Patient) whose images are included in the set of selected objects.</p></td>
+            <td valign="top"> <b>Patient</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ImageObjectSelection.<b>study</b></div>
+            </td>
+            <td><p>&quot;Study identity and locating information of the DICOM SOP instances in the selection.&quot; - HL7 FHIR, ImagingObjectSelection.study.</p></td>
+            <td valign="top"> <b>Study</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>ImagingEvent(Abstract)</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class contains those attributes and associations common to both Radiology / Nuclear Medicine imaging examinations and the scanning of paper documents into an image storage and retrieval system. Historically, both diagnostic imaging and the scanning and retrieval of paper documents have been included in the &quot;imaging&quot; domain as they both share certain characteristics in terms of the equipment used to store and retrieve the images.  Yet a distinction is often made with respect to the amount and type of metadata associated with the images. For example, &quot;Diagnostic Images&quot; are those stored and retrieved in Picture Archive and Communications Systems (PACS) which require certain codified information regarding the modality of the image, body site, etc., and are organized into Studies, Series, Images, and subsets (regions) of images. In contrast, scanned documents do not require any of these metadata.  As patient-generated images become more commonplace, we foresee a need to store these images (for example, a patient uses a smart phone to take a picture of a wound and emails it to a clinician) as well. We would foresee such images stored in the &quot;Medical Imaging Event&quot; hierarchy, even if a relatively-empty Study and Series construct would be required to contain such images.  However, scanned documents simply need a pointer to the resulting image(s), and we therefore find it useful to continue with a logical separation of the two kinds of images.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ImagingEvent(Abstract).<b>dateTime</b></div>
+            </td>
+            <td><p>The date (and optionally time) that the Imaging Event occurred.</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ImagingEvent(Abstract).<b>description</b></div>
+            </td>
+            <td><p>This property provides further narrative of the imaging event or of the images that were produced as part of the imaging event.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ImagingEvent(Abstract).<b>id</b></div>
+            </td>
+            <td><p>This property is used to uniquely identify the Imaging Event and therefore the set of images resulting from the Imaging Event.</p></td>
+            <td valign="top"> Id </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ImagingEvent(Abstract).<b>imageCategory</b></div>
+            </td>
+            <td><p>A categorization of the image, which can be used for searching and sorting. We can imagine many possible mechanisms or axes by which images can be categorized, but none which can be easily standardized for universal use, so this property is modeled as string rather than a code.  It is anticipated that this one string field may be implemented by one or more coded and/or non-coded fields in any given implementation depending on the categorization needs of the system.</p><p></p><p>It is noted that the VA&apos;s VistA system has several categorization mechanisms that might inform how this field may be used here, for example:</p><p>VistA table 2005.82 which includes: Administrative, Clinical, Admin/Clinical.</p><p>VistA table 2005.83</p><p>VistA table 2005.84 which categorizes the image by specialty/subspecialty</p><p>Another possible axis is to categorize the procedure that generated the image.  Possible values include: Colonoscopy, Surgery, Surgical pathology, Radiology. </p><p>Another possible axis is to categorize the software system or package that generated and/or accesses the image.  Possible values include (from the VA): Radiology, Laboratory, Medicine, Clinical Document, Surgery, Photo ID, etc.</p><p></p><p>When the image is a scanned document, this field might be used to identify the kind of document contained in the image.  Possible values (from the VA) include: Insurance form, Eligibility form, Patient Rights and Responsibilities form, Means Test form, Allied Veteran form, Appointment of a VSO as claimant&apos;s representative, DD214 enlisted record and report of separation, Death certificate, Miscellaneous document, etc.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ImagingEvent(Abstract).<b>author</b></div>
+            </td>
+            <td><p>Pointer to a Practitioner in the Role of Author. This Practitioner is the person who is responsible for the Imaging Event and who &quot;owns&quot; the Imaging Event record.</p></td>
+            <td valign="top"> <b>Author</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ImagingEvent(Abstract).<b>patient</b></div>
+            </td>
+            <td><p>Pointer to the Person (playing the role of Patient) to whom the imaging event pertains. For Medical Imaging Events, this is the person who is the subject of the imaging event (either the person is being imaged in whole or in part, or a sample taken from the patient is being imaged). For Document Imaging Events, this is the person to whom the document applies (e.g., the person who is the subject of a medical record or advance directive).</p></td>
+            <td valign="top"> <b>Patient</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ImagingEvent(Abstract).<b>imagingLocation</b></div>
+            </td>
+            <td><p>Pointer to the organization/location at which the imaging study is to (or did) take place. Note that this property is modeled as zero-to-many in order to handle multiple kinds of organization/location associations such as the ward, bed section, etc.</p></td>
+            <td valign="top"> <b>ServiceDeliveryLocation</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>ImagingPromise</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>The Imaging Order from the perspective of the performing organization. This information is commonly called the Accession. Note that nearly all of the properties needed for the Imaging Promise are inherited from the generic Healthcare Promise class which is its parent, so this class adds only those few properties unique to imaging promises such as the anticipated dose and a pointer to the actual performance of the imaging study.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ImagingPromise.<b>anticipatedDose</b></div>
+            </td>
+            <td><p>The amount of radiation to which the Patient is expected to be exposed upon completion of the imaging study. Note if the object of the study is a specimen taken from the Patient, this property has no meaning and should not be used.</p></td>
+            <td valign="top"> Quantity </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ImagingPromise.<b>cumulativeRadiationExposure</b></div>
+            </td>
+            <td><p>Pointer to the amount of radiation to which the Patient has been known to have been exposed previously. This information can help clinicians determine if the benefit from the diagnostic information provided by an individual examination (or additional examinations) outweigh the risk that may be associated with a proposed imaging exam. This information may also influence the Radiologist to choose an alternative methodology if the patient has already been exposed to excessive radiation.</p></td>
+            <td valign="top"> <b>RadiationExposureObservation</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ImagingPromise.<b>imagingEvent</b></div>
+            </td>
+            <td><p>Pointer to the Act during which the Imaging Event is performed, which includes information about who, when, and where the image event took place along with the results of the action (i.e., the image(s) and associated metadata including the clinical assessment / interpretation of the image(s)).</p></td>
+            <td valign="top"> <b>ImagingEvent(Abstract)</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>ImagingRequest</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>The Imaging Order from the perspective of the ordering organization. Note that nearly all of the properties needed for the Imaging Request are inherited from the generic Healthcare Request class which is its parent, so this class adds only those few properties unique to imaging requests.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ImagingRequest.<b>clinicalHistory</b></div>
+            </td>
+            <td><p>Clinical history of the patient that might be relevant to this case as well as instructions to the interpreting physician</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ImagingRequest.<b>preOpAppointmentTime</b></div>
+            </td>
+            <td><p>The date/time this patient is scheduled for pre-operative image</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ImagingRequest.<b>researchSource</b></div>
+            </td>
+            <td><p>If the study is being / was conducted as part of a research study, this property will contain the name of the research source that referred the patient to for the exam.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ImagingRequest.<b>cumulativeRadiationExposure</b></div>
+            </td>
+            <td><p>Pointer to the amount of radiation to which the Patient has been known to have been exposed previously. This information can help clinicians determine if the benefit from the diagnostic information provided by an individual examination (or additional examinations) outweigh the risk that may be associated with a proposed imaging exam. This information may also influence the Radiologist to choose an alternative methodology if the patient has already been exposed to excessive radiation.</p></td>
+            <td valign="top"> <b>RadiationExposureObservation</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ImagingRequest.<b>pregnancyMenstrualStatus</b></div>
+            </td>
+            <td><p>Pointer to an Observation of whether the Patient is known to be expecting and/or when the Patient last experienced a menstrual cycle.</p></td>
+            <td valign="top"> <b>PregnancyMenstrualStatus</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>MedicalImagingEvent</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class contains attributes associated with Radiology or Nuclear Medicine imaging examinations. Historically, both diagnostic imaging and the scanning and retrieval of paper documents have been included in the &quot;imaging&quot; domain as they both share certain characteristics in terms of the equipment used to store and retrieve the images.  Yet a distinction is often made with respect to the amount and type of metadata associated with the images. For example, &quot;Diagnostic Images&quot; are those stored and retrieved in Picture Archive and Communications Systems (PACS) which require certain codified information regarding the modality of the image, body site, etc., and are organized into Studies, Series, Images, and subsets (regions) of images. In contrast, scanned documents do not require any of these metadata.  As patient-generated images become more commonplace, we foresee a need to store these images (for example, a patient uses a smart phone to take a picture of a wound and emails it to a clinician) as well. We would foresee such images stored in the &quot;Medical Imaging Event&quot; hierarchy, even if a relatively-empty Study and Series construct would be required to contain such images.  However, scanned documents simply need a pointer to the resulting image(s), and we therefore find it useful to continue with a logical separation of the two kinds of images.</p><p></p><p>Note that this class represents information about the act of performing the medical imaging event, with the majority of the results stored in the Study, Series, Image hierarchy.  From a DICOM point of view, the Study and the Imaging Event are roughly synonymous, with the activities surrounding the production of the Study being implied in the resulting data.  We make the distinction primarily in order to be consistent with how orders and accessions (aka promises) are treated elsewhere in the FHIM.  Therefore this class could easily be merged with the Study class in resulting implementations.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">MedicalImagingEvent.<b>status</b></div>
+            </td>
+            <td><p>Indicates the status of this exam.  This should be a code from File 72.</p></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#Image Event Status">Image Event Status</a> 
+					
+					 
+</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">MedicalImagingEvent.<b>wasContrastMediaUsed</b></div>
+            </td>
+            <td><p>Indicate if an intravascular contrast was used during this Rad/Nuc Med exam.  Possible values are Yes, No; etc.  </p></td>
+            <td valign="top"> Boolean </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">MedicalImagingEvent.<b>report</b></div>
+            </td>
+            <td><p>Represents the radiology/nuclear medicine report as known by the originating VistA system.  Equivalent to a pointer to File 74.</p></td>
+            <td valign="top"> <b>ImageInterpretationReport</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">MedicalImagingEvent.<b>contrastMediaAdministration</b></div>
+            </td>
+            <td><p>Identifies Constrat Media associated with the Examination</p></td>
+            <td valign="top"> <b>MedicationAdministrationEvent</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">MedicalImagingEvent.<b>principalClinic</b></div>
+            </td>
+            <td><p>Th name of the principal clinic that referred the patient to Radiology/Nuclear Medicine for the exam.  Equivalent to File 44.  </p></td>
+            <td valign="top"> <b>ServiceDeliveryLocation</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">MedicalImagingEvent.<b>diagnosis</b></div>
+            </td>
+            <td><p>Pointer to an ordered list of findings or diagnoses which have been established as a result of the imaging study.</p></td>
+            <td valign="top"> <b>DiagnosisListEntry</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">MedicalImagingEvent.<b>radioPharmaceuticalAdministration</b></div>
+            </td>
+            <td><p>A radiopharmaceutical associated with this examination should be entered here. Equivalent to a pointer to File 71.  </p></td>
+            <td valign="top"> <b>RadioPharmaceuticalAdministration</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">MedicalImagingEvent.<b>procedure</b></div>
+            </td>
+            <td><p>Pointer to an ordered list of actions that were performed during the performance of the imaging study. These procedures are often tracked for billing or workload purposes.</p></td>
+            <td valign="top"> <b>ProcedureListEntry</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">MedicalImagingEvent.<b>encounter</b></div>
+            </td>
+            <td><p>The encounter during which the Radiologic Examination took place.</p></td>
+            <td valign="top"> <b>EncounterEvent</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">MedicalImagingEvent.<b>study</b></div>
+            </td>
+            <td><p>Pointer to content produced in a DICOM imaging study.</p></td>
+            <td valign="top"> <b>Study</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>RadiationExposureObservation</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>An Observation of the amount of radiation to which the Patient has been or is expected to be exposed. Such data can help clinicians determine if the benefit from the diagnostic information provided by an individual examination (or additional examinations) outweigh the risk that may be associated with a proposed imaging exam. Retrospectively, it may be necessary to know how much radiation to which the Patient was exposed. As an example, if it was later learned that the Patient was pregnant at the time of exposure, it would be helpful to know the kind and quantity of radiation to which the fetus might have been exposed.</p><p></p><p>Radiation exposure is typically measured in equivalent doses, expressed using Sieverts (Sv), or roentgen equivalents in man (rem). The equivalent dose is itself derived from the amount of ionizing radiation (dose) expressed in Gray (Gy) or rad. The dose is derived from the exposure expressed in Coulomb per kilogram (C/kg) or roentgen (R).</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">RadiationExposureObservation.<b>dose</b></div>
+            </td>
+            <td><p>The amount of radiation to which the Patient has been or is expected to be exposed. Radiation exposure is typically measured in equivalent doses, expressed using Sieverts (Sv) or Roentgen Equivalents in Man (rem). The equivalent dose is itself derived from the amount of ionizing radiation (dose) expressed in Gray (Gy) or rad. The dose is derived from the exposure expressed in Coulomb per kilogram (C/kg) or roentgen (R).</p></td>
+            <td valign="top"> Quantity </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>RadioPharmaceuticalAdministration</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>Represents the radiopharmaceutical administration.  Equivalent to File 70.2.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">RadioPharmaceuticalAdministration.<b>activityDrawn</b></div>
+            </td>
+            <td><p>This is the radiopharmaceutical activity drawn to be administered to the patient. The unit of measure is mCi.  </p></td>
+            <td valign="top"> Quantity </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">RadioPharmaceuticalAdministration.<b>dateDrawn</b></div>
+            </td>
+            <td><p>The date and time the radiopharmaceutical was drawn.    </p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">RadioPharmaceuticalAdministration.<b>radiopharmaceutical</b></div>
+            </td>
+            <td><p>A radiopharmaceutical associated with this examination should be entered here. Equivalent to a pointer to File 71.  </p></td>
+            <td valign="top"> <b>OrderablePharmacyItem</b> </td>
+            <td>NA</td>
+            <td>(1..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>Series</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>&quot;Each study has one or more series of images or other content.&quot; - HL7 FHIR, ImagingStudy.series</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Series.<b>availability</b></div>
+            </td>
+            <td><p>This property indicates whether the image series is immediately available, or is stored on a medium that must be located (if available) and loaded. The need for a field like this is based on older technology and is arguably not needed anymore, but is still commonly used in older systems. FHIM is retaining this property for backwards-compatibility to FHIR, but is modeling the property as a string rather than a code in order to avoid the need to maintain a standardized value-set.</p><p></p><p>&quot;Availability of series (online, offline or nearline).&quot; - HL7 FHIR, ImagingStudy.series.availability</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Series.<b>bodySite</b></div>
+            </td>
+            <td><p>&quot;Body part examined. See DICOM Part 16 Annex L for the mapping from DICOM to Snomed CT.&quot; - HL7 FHIR, ImagingStudy.series.bodySite</p></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#Body Site Value Set">Body Site Value Set</a> 
+					
+					 
+</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Series.<b>dateTime</b></div>
+            </td>
+            <td><p>&quot;The date and time the series was started.&quot; - HL7 FHIR, ImagingStudy.series.started</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Series.<b>description</b></div>
+            </td>
+            <td><p>&quot;A description of the series.&quot; - HL7 FHIR, ImagingStudy.series.description</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Series.<b>laterality</b></div>
+            </td>
+            <td><p>&quot;Laterality if body site is paired anatomic structure and laterality is not pre-coordinated in body site code.&quot; - HL7 FHIR, ImagingStudy.series.laterality</p></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#Laterality">Laterality</a> 
+					
+					 
+</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Series.<b>modality</b></div>
+            </td>
+            <td><p>&quot;The modality of this series sequence.&quot; - HL7 FHIR, ImagingStudy.series.modality</p></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#Acquisition Modality Code">Acquisition Modality Code</a> 
+					
+					 
+</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Series.<b>numberOfInstances</b></div>
+            </td>
+            <td><p>&quot;Number of SOP Instances in Series.&quot; - HL7 FHIR, ImagingStudy.series.numberOfInstances</p><p>Note that we have marked this property as derived because this information may be calculated based on the instances that makes up the series.</p></td>
+            <td valign="top"> Integer </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Series.<b>seriesNumber</b></div>
+            </td>
+            <td><p>&quot;The numeric identifier of this series in the study.&quot; - HL7 FHIR, ImagingStudy.series.number</p></td>
+            <td valign="top"> Integer </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Series.<b>url</b></div>
+            </td>
+            <td><p>&quot;URI/URL specifying the location of the referenced series using WADO-RS.&quot; - HL7 FHIR, ImagingStudy.series.url</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Series.<b>deviceInstance</b></div>
+            </td>
+            <td><p>Pointer to the individual Device that was used to produce the image.</p></td>
+            <td valign="top"> <b>DeviceInstance</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Series.<b>imageInstance</b></div>
+            </td>
+            <td><p>Pointer to the medical image (along with metadata to help identify, locate, and classify the image).</p></td>
+            <td valign="top"> <b>ImageInstance</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>SpecimenImagingEvent</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This sub-type of Imaging Event contains additional properties applicable when the subject of the study is a sample taken from the Patient rather than the Patient him/herself. For example, a mass of tissue may be extracted from the patient and sent to the radiology department for an assessment of whether that mass may be cancerous. This class contains information concerning any stain technique used, and the magnification used to produce the image. In addition, properties of the specimen itself are referenced.</p><p>Note that as a sub-type of Imaging Event, Specimen Imaging Event includes all of the properties of Imaging Event, including the Study, Series, and Image classes.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SpecimenImagingEvent.<b>microscopicObjective</b></div>
+            </td>
+            <td><p>The microscopic objective is the magnification used when taking the image and/or examining the sample. This datum is recorded along with the image for use by future reviewers.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SpecimenImagingEvent.<b>stainDescription</b></div>
+            </td>
+            <td><p>Description of the Histological Stain used in the preparation of the specimen.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SpecimenImagingEvent.<b>specimen</b></div>
+            </td>
+            <td><p>Pointer to a physical entity that is part representative of a larger whole that is the target of an observation or analysis for the purpose of drawing conclusions about whole. In other words, a portion taken from the patient for the purpose of study.</p></td>
+            <td valign="top"> <b>Specimen</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>Study</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>&quot;Representation of the content produced in a DICOM imaging study. A study comprises a set of series, each of which includes a set of Service-Object Pair Instances (SOP Instances - images or other data) acquired or produced in a common context. A series is of only one modality (e.g. X-ray, CT, MR, ultrasound), but a study may have multiple series of different modalities.&quot; - HL7 FHIR, ImagingStudy.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Study.<b>availability</b></div>
+            </td>
+            <td><p>This property indicates whether the image is immediately available, or is stored on a medium that must be located (if available) and loaded.  The need for a field like this is based on older technology and is arguably not needed anymore, but is still commonly used in older standards. FHIM is retaining this property for backwards-compatibility to FHIR, but is modeling the property as a string rather than a code in order to avoid the need to maintain a standardized value-set.</p><p>&quot;Availability of study (online, offline or nearline).&quot; - HL7 FHIR, ImagingStudy.availability.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Study.<b>dateTimeStarted</b></div>
+            </td>
+            <td><p>&quot;Date and Time the study started&quot; - HL7 FHIR, ImagingStudy.started</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Study.<b>description</b></div>
+            </td>
+            <td><p>&quot;Institution-generated description or classification of the Study performed.&quot; - HL7 FHIR, ImagingStudy.description</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Study.<b>modalityList</b></div>
+            </td>
+            <td><p>&quot;A list of all the Series.ImageModality values that are actual acquisition modalities, i.e. those in the DICOM Context Group 29 (value set OID 1.2.840.10008.6.1.19)&quot; - HL7 FHIR, ImagingStudy.modalityList.</p><p>Note that we have marked this property as derived because this information may be calculated based on the modalities of the series that makes up the study.</p></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#Acquisition Modality Code">Acquisition Modality Code</a> 
+					
+					 
+</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Study.<b>numberOfInstances</b></div>
+            </td>
+            <td><p>&quot;Number of SOP Instances in Study.&quot; - HL7 FHIR, ImagingStudy.numberOfInstances.</p><p>Note that we have marked this property as derived because this information may be calculated based on the instances that makes up the study.</p></td>
+            <td valign="top"> Integer </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Study.<b>numberOfSeries</b></div>
+            </td>
+            <td><p>&quot;Number of Series in Study.&quot; - HL7 FHIR, ImagingStudy.numberOfSeries.</p><p>Note that we have marked this property as derived because this information may be calculated based on the series that makes up the study.</p></td>
+            <td valign="top"> Integer </td>
+            <td></td>
+            <td>(1..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Study.<b>url</b></div>
+            </td>
+            <td><p>&quot;WADO-RS resource where Study is available.&quot; - HL7 FHIR, ImagingStudy.url</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Study.<b>interpreter</b></div>
+            </td>
+            <td><p>A Provider who is specially trained to arrive at a diagnosis by exercising clinical judgement based on numerical or visual evidence.</p></td>
+            <td valign="top"> <b>IndividualProvider</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Study.<b>series</b></div>
+            </td>
+            <td><p>&quot;Each study has one or more series of images or other content.&quot; - HL7 FHIR, ImagingStudy.series</p></td>
+            <td valign="top"> <b>Series</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+  </table>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font">
+         <tr>
+            <th>Value Set Constraint</th>
+            <th>Element Description</th>
+         </tr>
+       
+
+
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID="Image Event Status">Image Event Status</a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">  Image Event Status   <br/> <p>Iindicate the  status of this report. Possible values are Verified; Released/Not Verified; Problem Draft; Draft.</p><br> tbd
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>R (Results stored not yet verified)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>F (Final results verified)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+ 
+
+
+       
+		
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID="KOS Title">KOS Title</a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">  KOS Title   <br/> <p>&quot;The reason for, or significance of, the selection of objects referenced in the resource.&quot; - HL7 FHIR, ImagingObjectSelection.title</p><br> http://hl7.org/fhir/valueset-kos-title.html
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>113000 (Of Interest)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>113001 (Rejected for Quality Reasons)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>113002 (For Referring Provider)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>113003 (For Surgery)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>113004 (For Teaching)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>113005 (For Conference)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>113006 (For Therapy)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>113007 (For Patient)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>113008 (For Peer Review)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>113009 (For Research)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>113010 (Quality Issue)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>113013 (Best In Set)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>113018 (For Printing)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>113020 (For Report Attachment)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>113021 (For Litigation)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>113030 (Manifest)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>113031 (Signed Manifest)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>113032 (Complete Study Content)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>113033 (Signed Complete Study Content)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>113034 (Complete Acquisition Content)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>113035 (Signed Complete Acquisition Content)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>113036 (Group of Frames for Display)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>113037 (Rejected for Patient Safety Reasons)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>113038 (Incorrect Modality Worklist Entry)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>113039 (Data Retention Policy Expired)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+ 
+
+
+       
+		
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID="Image Event Status">Image Event Status</a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">  Image Event Status   <br/> <p>Indicates the status of this exam.  This should be a code from File 72.</p><br> tbd
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>R (Results stored not yet verified)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>F (Final results verified)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+ 
+
+
+       
+		
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID="Body Site Value Set">Body Site Value Set</a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">  Body Site Value Set   <br/> <p>&quot;Body part examined. See DICOM Part 16 Annex L for the mapping from DICOM to Snomed CT.&quot; - HL7 FHIR, ImagingStudy.series.bodySite</p><br> 
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+ 
+
+
+       
+		
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID="Laterality">Laterality</a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">  Laterality   <br/> <p>&quot;Laterality if body site is paired anatomic structure and laterality is not pre-coordinated in body site code.&quot; - HL7 FHIR, ImagingStudy.series.laterality</p><br> http://hl7.org/fhir/valueset-bodysite-laterality.html
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>419161000 (Unilateral left)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>419465000 (Unilateral right)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>51440002 (Bilateral)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+ 
+
+
+       
+		
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID="Acquisition Modality Code">Acquisition Modality Code</a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">  Acquisition Modality Code   <br/> <p>&quot;The modality of this series sequence.&quot; - HL7 FHIR, ImagingStudy.series.modality</p><br> http://hl7.org/fhir/ValueSet/dicom-cid29
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>AR (Autorefraction)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>BMD (Bone Mineral Densitometry)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>BDUS (Ultrasound Bone Densitometry)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>EPS (Cardiac Electrophysiology)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>CR (Computed Radiography)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>CT (Computed Tomography)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>DX (Digital Radiography)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>ECG (Electrocardiography)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>ES (Endoscopy)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>XC (External-camera Photography)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>GM (General Microscopy)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>HD (Hemodynamic Waveform)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>IO (Intra-oral Radiography)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>IVOCT (Intravascular Optical Coherence Tomography)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>IVUS (Intravascular Ultrasound)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>KER (Keratometry)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>LEN (Lensometry)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>MR (Magnetic Resonance)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>MG (Mammography)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>NM (Nuclear Medicine)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>OAM (Ophthalmic Axial Measurements)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>OCT (Optical Coherence Tomography)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>OPM (Ophthalmic Mapping)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>OP (Ophthalmic Photography)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>OPR (Ophthalmic Refraction)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>OPT (Ophthalmic Tomography)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>OPV (Ophthalmic Visual Field)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>OSS (Optical Surface Scanner)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>PX (Panoramic X-Ray)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>PT (Positron emission tomography)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>RF (Radiofluoroscopy)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>RG (Radiographic imaging)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>SM (Slide Microscopy)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>SRF (Subjective Refraction)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>US (Ultrasound)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>VA (Visual Acuity)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>XA (X-Ray Angiography)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+ 
+
+
+       
+		
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID="Acquisition Modality Code">Acquisition Modality Code</a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">  Acquisition Modality Code   <br/> <p>&quot;A list of all the Series.ImageModality values that are actual acquisition modalities, i.e. those in the DICOM Context Group 29 (value set OID 1.2.840.10008.6.1.19)&quot; - HL7 FHIR, ImagingStudy.modalityList.</p><p>Note that we have marked this property as derived because this information may be calculated based on the modalities of the series that makes up the study.</p><br> http://hl7.org/fhir/ValueSet/dicom-cid29
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>AR (Autorefraction)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>BMD (Bone Mineral Densitometry)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>BDUS (Ultrasound Bone Densitometry)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>EPS (Cardiac Electrophysiology)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>CR (Computed Radiography)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>CT (Computed Tomography)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>DX (Digital Radiography)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>ECG (Electrocardiography)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>ES (Endoscopy)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>XC (External-camera Photography)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>GM (General Microscopy)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>HD (Hemodynamic Waveform)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>IO (Intra-oral Radiography)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>IVOCT (Intravascular Optical Coherence Tomography)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>IVUS (Intravascular Ultrasound)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>KER (Keratometry)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>LEN (Lensometry)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>MR (Magnetic Resonance)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>MG (Mammography)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>NM (Nuclear Medicine)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>OAM (Ophthalmic Axial Measurements)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>OCT (Optical Coherence Tomography)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>OPM (Ophthalmic Mapping)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>OP (Ophthalmic Photography)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>OPR (Ophthalmic Refraction)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>OPT (Ophthalmic Tomography)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>OPV (Ophthalmic Visual Field)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>OSS (Optical Surface Scanner)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>PX (Panoramic X-Ray)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>PT (Positron emission tomography)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>RF (Radiofluoroscopy)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>RG (Radiographic imaging)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>SM (Slide Microscopy)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>SRF (Subjective Refraction)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>US (Ultrasound)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>VA (Visual Acuity)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>XA (X-Ray Angiography)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+ 
+
+
+       
+		
+
+
+</table>
+

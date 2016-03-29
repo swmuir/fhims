@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMLabAccessionEvent" xml:lang="en-us">
+<title id="title">AccessionEvent</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>Accession: &quot;An increase by means of something added to record as acquired&quot; - Websters.  The act of accepting a laboratory test and entering the test into the laboratory&apos;s workload.  While the definition would imply a close alignment with the Lab Test Promise, in practice, the Accession (and the &quot;Accession Number&quot;) are more closely associated with the Specimen, as the Specimen represents a unit of work.  Accession numbers and specimen numbers are often related, and when a specimen is subsetted for some other purpose, a new accession number may be created.  This class represents the act of creating a new accession, and is associated with both the Promise and the Specimen.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>accessionDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The date/time upon which the laboratory accepted the unit of work into its workload.  This date/time might be the same as the Laboratory Promise date, or the date/time that the laboratory received the Specimen(s), depending on local laboratory practice.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>accessionId :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Uniquely identifies the accession.  The accession is closely associated with both the Promise to perform a laboratory test, and the Specimen(s) upon which the tests are performed.  The accession id therefore may be based upon the LabTestPromise.fillerOrderId or the Specimen.id, or conversely, those ids might be based upon this accessionId, depending on local laboratory practice. For example, if the accession id is ABCD, and two samples were received, one sample id might be ABCD-01 and the other ABCD-02.  The accession id therefore may be used to identify the laboratory promise, samples, and results.</p><p></p><p>&quot;This field contains accession identifier(s) associated with the specimen....&quot; - HL7 Version 2.8, SPM-30.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>specimen : <xref href="../t_FHIMCommonSpecimen.dita" >Specimen</xref> (0..*)</p></stentry>
+  <stentry><p>				Identifies the specimen(s) associated with the accession.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

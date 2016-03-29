@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMVitalSignsBloodPressureBloodPressureObservation" xml:lang="en-us">
+<title id="title">BloodPressureObservation</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	BloodPressureObservation is a kind of <xref href="../t_FHIMVitalSignsBloodPressureAbstractBloodPressureObservation.dita">AbstractBloodPressureObservation</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>&quot;Blood pressure (BP) is the pressure exerted by circulating blood upon the walls of blood vessels and is one of the principal vital signs. When used without further specification, &quot;blood pressure&quot; usually refers to the arterial pressure of the systemic circulation, usually measured at a person&apos;s upper arm. A person&#8217;s blood pressure is usually expressed in terms of the systolic (maximum) pressure over diastolic (minimum) pressure and is measured in millimeters of mercury (mm Hg). &#8230; Blood pressure varies depending on situation, activity, and disease states, and is regulated by the nervous and endocrine systems. &#8230; Chronic hypertension is a risk factor for many diseases, including kidney failure, heart attack, and stroke.&quot; &#8211; Wikipedia.</p><p></p><p>This class represents the measurement (or &#8220;clinical observation&#8221;) of the patient&#8217;s Blood Pressure.  Blood pressure is typically expressed in terms of the systolic pressure over diastolic pressure as if this were a single observation, yet in fact these are two separate observations taken moments apart.  Therefore, the value of this &#8220;blood pressure observation&#8221; is made up of a set of one systolic and one diastolic observation.  This class also re-defines the generic clinical Observation class to fix the observed characteristic to LOINC 55284-4.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>observedCharacteristic :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+<p>See <xref href="../t_fhimvocabCommonAndDatatypesVocabLOINC.dita">LOINC</xref> definition for code system information.</p>
+
+</stentry>
+  <stentry><p>				This property defines what was observed by using a value from a nationally recognized coding system.  In this case, we&#8217;re stating that the concept being observed is the Blood Pressure, which is LOINC 55284-4.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>diastolicBloodPressureObservation : <xref href="../t_FHIMVitalSignsBloodPressureDiastolicBloodPressureObservation.dita" >DiastolicBloodPressureObservation</xref> (1..1)</p></stentry>
+  <stentry><p>				Pointer to a measurement (or &#8220;clinical observation&#8221;) of the patient&#8217;s Diastolic Blood Pressure, which is the minimum pressure exerted by circulating blood upon the walls of blood vessels during the heart&#8217;s pumping phase.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>systolicBloodPressureObservation : <xref href="../t_FHIMVitalSignsBloodPressureSystolicBloodPressureObservation.dita" >SystolicBloodPressureObservation</xref> (1..1)</p></stentry>
+  <stentry><p>				Pointer to the measurement (or &#8220;clinical observation&#8221;) of the patient&#8217;s Systolic Blood Pressure, which is the maximum pressure exerted by circulating blood upon the walls of blood vessels during the heart&#8217;s pumping phase.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

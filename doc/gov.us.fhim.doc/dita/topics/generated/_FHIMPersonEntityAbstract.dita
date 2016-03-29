@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMPersonEntityAbstract" xml:lang="en-us">
+<title id="title">Entity(Abstract)</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+<section id="specializations"  audience="developer, modeler">
+	<title>Derivations</title>
+	<ul>
+<li><xref href="../t_FHIMPersonBiologicalEntityAbstract.dita">BiologicalEntity(Abstract) </xref> is a kind of  Entity(Abstract) </li>
+	</ul>
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>&apos;A physical thing, group of physical things or an organization capable of participating in Acts while in a role.  An entity is a physical object that has, had or will have existence. The only exception to this is Organization, which while not having a physical presence, fulfills the other characteristics of an Entity.  Entity stipulates the thing itself, not the Roles it may play: the Role of Patient, e.g., is played by the Person Entity.&apos;  HL7 RIM.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>id :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (0..*)</p> 
+
+
+</stentry>
+  <stentry><p>				An identifier that uniquely identifies the individual.  Note that this property can hold more than one value, and that the datatype contains an indicator of the kind of identifier that is assigned.  For example, a Person record might contain an SSN, a driver&apos;s license number, and a locally-assigned id.  These identifiers, while different, all identify the same individual.  However, the FHIM calls out certain Ids that are specifically required.  For example, the Person class explictly contains an SSN property.  In the case when an Id is explicitly modeled, that Id type should not be included in this property.  Therefore, an SSN should not be instantiated in this property, because a separate SSN field exists for that purpose.</p><p>&quot;This field contains the list of identifiers (one or more) used by the healthcare facility to uniquely identify a patient (e.g., medical record number, billing number, birth registry, national unique individual identifier, etc.).&quot; - HL7 Version 2.8, PID-3</p><p>&quot;Identifier for a person within a particular scope.&quot; - HL7 FHIR, Person.identifier.
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

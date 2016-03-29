@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMPersonAdvanceDirective" xml:lang="en-us">
+<title id="title">AdvanceDirective</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+<section id="specializations"  audience="developer, modeler">
+	<title>Derivations</title>
+	<ul>
+<li><xref href="../t_FHIMPersonPowerOfAttorney.dita">PowerOfAttorney </xref> is a kind of  AdvanceDirective </li>
+	</ul>
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>A legal document (as a living will or durable power of attorney for healthcare) signed by a competent person to provide guidance for medical and health-care decisions (as the termination of life support or organ donation) in the event the person becomes incompetent to make such decisions.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>category :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+<p>See <xref href="../t_fhimvocabPersonVocabFHIM_AdvancedDirectiveKind.dita">FHIM_AdvancedDirectiveKind</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				Categorizes the kind of Advance Directive.</p><p>&quot;Indicates the patient&apos;s instructions to the healthcare facility.&quot; - HL7 Version 2.8, PD1-15.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>comments :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Remarks concerning the Advance Directive.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateLastVerified :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The date that ... the advance directive [was] last validated.&quot; - HL7 Version 2.8, PD1-21.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>effectiveDateRange :  <xref href="../t_FHIMDatatypesTimeInterval.dita" >TimeInterval</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The time period over which the Advance Directive is effective.  Note that the end date is typically blank for active Advance Directives.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>image :  <xref href="../t_FHIMDatatypesImage.dita" >Image</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				A scanned image of the signed paper form, if applicable.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>paperLocator :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Information to locate the original paper form, if applicable.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>status :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+<p>See <xref href="../t_fhimvocabCommonAndDatatypesVocabActInstanceStatus.dita">Act Instance Status</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				Indicates the state of the Advance Directive, as defined in the Act state-transition model in the HL7 RIM.  Possible values include: New, Held, Canceled, Active, Suspended, Aborted, Completed, Nullified, and Obsolete.
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

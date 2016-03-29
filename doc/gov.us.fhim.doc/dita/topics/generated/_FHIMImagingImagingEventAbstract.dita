@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMImagingImagingEventAbstract" xml:lang="en-us">
+<title id="title">ImagingEvent(Abstract)</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+<section id="specializations"  audience="developer, modeler">
+	<title>Derivations</title>
+	<ul>
+<li><xref href="../t_FHIMImagingMedicalImagingEvent.dita">MedicalImagingEvent </xref> is a kind of  ImagingEvent(Abstract) </li>
+<li><xref href="../t_FHIMImagingDocumentImagingEvent.dita">DocumentImagingEvent </xref> is a kind of  ImagingEvent(Abstract) </li>
+	</ul>
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class contains those attributes and associations common to both Radiology / Nuclear Medicine imaging examinations and the scanning of paper documents into an image storage and retrieval system. Historically, both diagnostic imaging and the scanning and retrieval of paper documents have been included in the &quot;imaging&quot; domain as they both share certain characteristics in terms of the equipment used to store and retrieve the images.  Yet a distinction is often made with respect to the amount and type of metadata associated with the images. For example, &quot;Diagnostic Images&quot; are those stored and retrieved in Picture Archive and Communications Systems (PACS) which require certain codified information regarding the modality of the image, body site, etc., and are organized into Studies, Series, Images, and subsets (regions) of images. In contrast, scanned documents do not require any of these metadata.  As patient-generated images become more commonplace, we foresee a need to store these images (for example, a patient uses a smart phone to take a picture of a wound and emails it to a clinician) as well. We would foresee such images stored in the &quot;Medical Imaging Event&quot; hierarchy, even if a relatively-empty Study and Series construct would be required to contain such images.  However, scanned documents simply need a pointer to the resulting image(s), and we therefore find it useful to continue with a logical separation of the two kinds of images.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>dateTime :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The date (and optionally time) that the Imaging Event occurred.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>description :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This property provides further narrative of the imaging event or of the images that were produced as part of the imaging event.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>id :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This property is used to uniquely identify the Imaging Event and therefore the set of images resulting from the Imaging Event.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>imageCategory :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				A categorization of the image, which can be used for searching and sorting. We can imagine many possible mechanisms or axes by which images can be categorized, but none which can be easily standardized for universal use, so this property is modeled as string rather than a code.  It is anticipated that this one string field may be implemented by one or more coded and/or non-coded fields in any given implementation depending on the categorization needs of the system.</p><p></p><p>It is noted that the VA&apos;s VistA system has several categorization mechanisms that might inform how this field may be used here, for example:</p><p>VistA table 2005.82 which includes: Administrative, Clinical, Admin/Clinical.</p><p>VistA table 2005.83</p><p>VistA table 2005.84 which categorizes the image by specialty/subspecialty</p><p>Another possible axis is to categorize the procedure that generated the image.  Possible values include: Colonoscopy, Surgery, Surgical pathology, Radiology. </p><p>Another possible axis is to categorize the software system or package that generated and/or accesses the image.  Possible values include (from the VA): Radiology, Laboratory, Medicine, Clinical Document, Surgery, Photo ID, etc.</p><p></p><p>When the image is a scanned document, this field might be used to identify the kind of document contained in the image.  Possible values (from the VA) include: Insurance form, Eligibility form, Patient Rights and Responsibilities form, Means Test form, Allied Veteran form, Appointment of a VSO as claimant&apos;s representative, DD214 enlisted record and report of separation, Death certificate, Miscellaneous document, etc.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>author : <xref href="../t_FHIMCommonAuthor.dita" >Author</xref> (1..1)</p></stentry>
+  <stentry><p>				Pointer to a Practitioner in the Role of Author. This Practitioner is the person who is responsible for the Imaging Event and who &quot;owns&quot; the Imaging Event record.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>imagingLocation : <xref href="../t_FHIMProviderServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to the organization/location at which the imaging study is to (or did) take place. Note that this property is modeled as zero-to-many in order to handle multiple kinds of organization/location associations such as the ward, bed section, etc.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>patient : <xref href="../t_FHIMPersonPatient.dita" >Patient</xref> (1..1)</p></stentry>
+  <stentry><p>				Pointer to the Person (playing the role of Patient) to whom the imaging event pertains. For Medical Imaging Events, this is the person who is the subject of the imaging event (either the person is being imaged in whole or in part, or a sample taken from the patient is being imaged). For Document Imaging Events, this is the person to whom the document applies (e.g., the person who is the subject of a medical record or advance directive).
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

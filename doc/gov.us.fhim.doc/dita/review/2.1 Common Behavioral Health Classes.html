@@ -1,0 +1,322 @@
+
+<html xmlns:Standard="http://www.eclipse.org/uml2/schemas/Standard/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:fhim="http:///schemas/fhim/_bbjuwA3cEeSGTazHdUQojA/5" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:term="http://www.openhealthtools.org/mdht/schemas/term/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:xmi="http://www.omg.org/XMI" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.3/Umlnotation" xmlns:Default="http:///schemas/Default/_fNm3AAqoEd6-N_NOT9vsCA/2" xmlns:CDA="http://www.openhealthtools.org/mdht/schemas/cda/4" xmlns:Default_1="http:///schemas/Default/1" xmlns:RIM="http:///schemas/RIM/_fvnwgAH4Ed6VH-9W1IVKXA/4" xmlns:SketchNotation="http://www.ibm.com/ccl/soa/sketch/notation/1.0.0/">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>2.1 Common Behavioral Health Classes Domain</title>
+   </head>
+   <body style="font-family:Courier;font-size:14px">
+      <h1>2.1 Common Behavioral Health Classes Domain</h1>
+      <p> The purpose of this review is to identify the data elements required for the
+         interoperable exchange for the 2.1 Common Behavioral Health Classes domain including dependencies. A column is
+         provided at the far right of the table for you to enter comments related to each
+         data element. If the class or domain is missing data elements, please add a row
+         at the bottom of the sheet and specify a name, description, and type of data
+         (e.g. numeric, string, date/time, code). 
+      </p>
+      <p> Once you have reviewed the data elements, please review the value sets
+         associated with the coded data elements. Please provide feedback by adding
+         comments in the column provided at the right of item/row or by adding rows at
+         the bottom table. For any new coded concepts without a valid code yet, our team
+         will propose them for addition in the source coding system. 
+      </p>
+      <ul>
+         <li><a href=""> <i><b>2.1 Common Behavioral Health Classes</b> </i> Domain </a></li>
+       </ul>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font-family:Courier">
+         <tr bgcolor="#98FB98" style="font-size:18px" align="left">
+            <td colspan="1"><b><a id=""> '2.1 Common Behavioral Health Classes' Domain
+                     </a></b></td>
+            <td colspan="4" style="font-size:12px">Note that the Information Source hierarchy is in the Common domain, and is not shown here.</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+      </table>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font-family:Courier">
+         <tr>
+            <th width="20%">Element Name</th>
+            <th width="20%">Element Description</th>
+            <th width="15%">Format/Type</th>
+            <th width="15%">Value Set Name</th>
+            <th width="15%">Optionality/<br>Repetition
+            </th>
+            <th width="15%">Reviewer's Comments</th>
+         </tr>
+ 
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>PatientBehavioralHealth</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class represents a specialization of the Patient role declared in the FHIM Person Demographics domain in which Behavioral Health specific properties are added.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PatientBehavioralHealth.<b>biologicalGender</b></div>
+            </td>
+            <td><p>This attribute is currently in this domain but it will be moved to Person.  It specifies the biological gender of a client/patient.  This attribute is optional (i.e. cardinality [0..1]).  HL7 Version 3 does not currently have a Concept Domain corresponding to Biological Gender.  There is a concept domain for AdministrativeGender which has the definition &#8220;the gender of a person used for administrative purposes (as opposed to clinical gender&#8221;.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PatientBehavioralHealth.<b>custodialStatus</b></div>
+            </td>
+            <td><p>The primary purpose for this attribute is for reporting purposes. Custodial status refers to the legal guardianship according to example enumerations that were provided to this analysis and which appear in the Terminology section of this publication.  There are no values currently defined to indicate prison incarceration however.  This attribute is optional (i.e. cardinality [0..1]).</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PatientBehavioralHealth.<b>immigrationStatus</b></div>
+            </td>
+            <td><p>The primary purpose for this attribute is for reporting purposes, although in some instances, immigration status could be used to determine eligibility for Behavioral Health services.  Example enumerations have been provided for this attribute in the Terminology section of this publication.  This attribute is optional (i.e. cardinality [0..1]).</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PatientBehavioralHealth.<b>historyOfAbuseOrNeglect</b></div>
+            </td>
+            <td><p>This is an association between the patient and their history of abuse or neglect history records.</p></td>
+            <td valign="top"> <b>HistoryOfAbuseOrNeglectRecord(Abstract)</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PatientBehavioralHealth.<b>suicidalIdeation</b></div>
+            </td>
+            <td><p>This is an association between the patient and their records of suicidal ideation, suicide attempts, and alerts.</p></td>
+            <td valign="top"> <b>SuicidalIdeationObservation</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PatientBehavioralHealth.<b>problem</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>HealthConcern</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PatientBehavioralHealth.<b>psychiatricDiagnosis</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>PsychiatricDiagnosis</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>PsychiatricDiagnosis</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class is intended to specialize a generic diagnosis class by adding support for Diagnostic and Statistical Manual of Mental Disorders (DSM) codes and supports any extensions required to communicate information about Behavioral Health diagnoses between organizations and providers.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PsychiatricDiagnosis.<b>confidentialityCode</b></div>
+            </td>
+            <td><p>This code may be used to specify whether the diagnosis is sensitive (e.g., carries a social stigma).  This attribute relies on the sensitivity value set specified by HL7 Confidentiality coding system.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PsychiatricDiagnosis.<b>snomedDiagnosisCode</b></div>
+            </td>
+            <td><p>This attribute is intended to store the code for the diagnosis in SNOMED-CT.  Since both the DSM IV and the ICD codes corresponding to the psychiatric diagnosis are mapped to SNOMED-CT should be sufficient to represent psychiatric diagnoses.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PsychiatricDiagnosis.<b>dsmAxis1</b></div>
+            </td>
+            <td><p>The DSM-IV organizes each psychiatric diagnosis into five dimensions (axes) relating to different aspects of disorder or disability:</p><p>Axis I: Clinical disorders, including major mental disorders, and learning disorders</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PsychiatricDiagnosis.<b>dsmAxis2</b></div>
+            </td>
+            <td><p>The DSM-IV organizes each psychiatric diagnosis into five dimensions (axes) relating to different aspects of disorder or disability:</p><p>Axis II: Personality disorders and intellectual disabilities (although developmental disorders, such as Autism, were coded on Axis II in the previous edition, these disorders are now included on Axis I)</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PsychiatricDiagnosis.<b>dsmAxis3</b></div>
+            </td>
+            <td><p>The DSM-IV organizes each psychiatric diagnosis into five dimensions (axes) relating to different aspects of disorder or disability:</p><p>Axis III: Acute medical conditions and physical disorders</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PsychiatricDiagnosis.<b>dsmAxis4</b></div>
+            </td>
+            <td><p>The DSM-IV organizes each psychiatric diagnosis into five dimensions (axes) relating to different aspects of disorder or disability:</p><p>Axis IV: Psychosocial and environmental factors contributing to the disorder</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PsychiatricDiagnosis.<b>dsmAxis5</b></div>
+            </td>
+            <td><p>The DSM-IV organizes each psychiatric diagnosis into five dimensions (axes) relating to different aspects of disorder or disability:</p><p>Axis V: Global Assessment of Functioning or Children&apos;s Global Assessment Scale for children and teens under the age of 18</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PsychiatricDiagnosis.<b>globalAssessmentOfFunctioning</b></div>
+            </td>
+            <td><p>The Global Assessment of Functioning (GAF) is part of the diagnosis on Axis 5.</p></td>
+            <td valign="top"> Integer </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+  </table>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font">
+         <tr>
+            <th>Value Set Constraint</th>
+            <th>Element Description</th>
+         </tr>
+       
+
+
+
+
+</table>
+

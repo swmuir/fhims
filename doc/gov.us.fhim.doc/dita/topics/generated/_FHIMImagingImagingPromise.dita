@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMImagingImagingPromise" xml:lang="en-us">
+<title id="title">ImagingPromise</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	ImagingPromise is a kind of <xref href="../t_FHIMOrdersHealthcarePromiseAbstract.dita">HealthcarePromise(Abstract)</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>The Imaging Order from the perspective of the performing organization. This information is commonly called the Accession. Note that nearly all of the properties needed for the Imaging Promise are inherited from the generic Healthcare Promise class which is its parent, so this class adds only those few properties unique to imaging promises such as the anticipated dose and a pointer to the actual performance of the imaging study.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>anticipatedDose :  <xref href="../t_FHIMDatatypesQuantity.dita" >Quantity</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The amount of radiation to which the Patient is expected to be exposed upon completion of the imaging study. Note if the object of the study is a specimen taken from the Patient, this property has no meaning and should not be used.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>cumulativeRadiationExposure : <xref href="../t_FHIMImagingRadiationExposureObservation.dita" >RadiationExposureObservation</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to the amount of radiation to which the Patient has been known to have been exposed previously. This information can help clinicians determine if the benefit from the diagnostic information provided by an individual examination (or additional examinations) outweigh the risk that may be associated with a proposed imaging exam. This information may also influence the Radiologist to choose an alternative methodology if the patient has already been exposed to excessive radiation.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>imagingEvent : <xref href="../t_FHIMImagingImagingEventAbstract.dita" >ImagingEvent(Abstract)</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to the Act during which the Imaging Event is performed, which includes information about who, when, and where the image event took place along with the results of the action (i.e., the image(s) and associated metadata including the clinical assessment / interpretation of the image(s)).
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

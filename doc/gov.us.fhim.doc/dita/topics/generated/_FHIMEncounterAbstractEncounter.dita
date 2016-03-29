@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMEncounterAbstractEncounter" xml:lang="en-us">
+<title id="title">AbstractEncounter</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+<section id="specializations"  audience="developer, modeler">
+	<title>Derivations</title>
+	<ul>
+<li><xref href="../t_FHIMEncounterAncillaryServiceEvent.dita">AncillaryServiceEvent </xref> is a kind of  AbstractEncounter </li>
+<li><xref href="../t_FHIMEncounterPractitionerOnlyEvent.dita">PractitionerOnlyEvent </xref> is a kind of  AbstractEncounter </li>
+<li><xref href="../t_FHIMEncounterEncounterEvent.dita">EncounterEvent </xref> is a kind of  AbstractEncounter </li>
+	</ul>
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>Contains properties common to multiple kinds of Encounters.  This class shouldn&apos;t be instantiated, rather one of the concrete subtypes would be.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>comments :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Any remarks concerning this encounter.    
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>confidentiallyCode :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Contains a set of values that control the disclosure of information about this patient 
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>description :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Contains a brief user-defined description of the visit.&quot; - HL7 Version 2.8, PV2-12.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>duration :  <xref href="../t_FHIMDatatypesTimeInterval.dita" >TimeInterval</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The time interval starting with the administrative onset of the encounter (e.g. admission, registration, patient arrival) and ending with the patient&apos;s departure (e.g. discharge). Note_1: for active encounters the end of the effectiveTime range is the anticipated end date-time. Note_2: all messages, except the &quot;nullify&quot; message, require at least a starting time.&quot;  (HL7).   This is the start and end date/times of the Encounter.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>encounterType :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Categorizes the encounter.  Possible values include Phone Call, Outpatient, etc.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>id :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This property uniquely identifies the Encounter.  This property can be used, among other purposes, to associate the current Encounter with other Encounters, or with events that occurred during the Encounter.</p><p></p><p>&quot;Contains the unique number assigned to each patient visit.&quot; - HL7 Version 2.8, PV1-19</p><p>&quot;Contains the identifier of a Service Episode in or for which the visit occurs.&quot; - HL7 Version 2.8, PV1-54
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>priority :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Contains the priority of the visit.&quot; - HL7 Version 2.8, PV2-25    Possible values include (from HL7 Table 217): Emergency; Urgent; Elective
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>status :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				A value specifying the state of this patient encounter (based on the RIM Act class state machine), for example, active, aborted, completed 
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>careTeamMember : <xref href="../t_FHIMCommonCareTeamMember.dita" >CareTeamMember</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to Practitioner(s) who make up a team comprising multiple disciplines in order to provide holistic care for the patient.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>diagnosisList : <xref href="../t_FHIMCommonDiagnosisListEntry.dita" >DiagnosisListEntry</xref> (0..*)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>patient : <xref href="../t_FHIMPersonPatient.dita" >Patient</xref> (1..1)</p></stentry>
+  <stentry><p>				The patient who is the subject of the Episode of Care.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>relatedEncounter : <xref href="../t_FHIMEncounterRelatedEncounter.dita" >RelatedEncounter</xref> (0..*)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>scopingProvider : <xref href="../t_FHIMProviderHealthcareProvider.dita" >HealthcareProvider</xref> (1..1)</p></stentry>
+  <stentry><p>				Pointer to the Healthcare Provider (organization) under whose auspices the Encounter occurred.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

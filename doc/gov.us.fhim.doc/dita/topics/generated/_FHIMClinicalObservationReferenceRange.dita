@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMClinicalObservationReferenceRange" xml:lang="en-us">
+<title id="title">ReferenceRange</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>The range of normal values (low and high) determined for a test or an observation.  For toxicology, this range is the theraputic range.</p><p></p><p>&quot;When the observation quantifies the amount of a toxic substance, then the upper limit of the range identifies the toxic limit.  If the observation quantifies a drug, the lower limits identify the lower therapeutic bounds and the upper limits represent the upper therapeutic bounds above which toxic side effects are common.&quot; - HL7 Version 2.8, OBX-7.</p><p>&quot;Guidance on how to interpret the value by comparison to a normal or recommended range.&quot; - HL7 FHIR, Observation Resource.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>high :  <xref href="../t_FHIMDatatypesQuantity.dita" >Quantity</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The value of the high bound of the reference range. If this is omitted, the high bound of the reference range is assumed to be meaningless. E.g. &gt;5.&quot; - HL7 FHIR, Observation.referenceRange.high.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>low :  <xref href="../t_FHIMDatatypesQuantity.dita" >Quantity</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The value of the low bound of the reference range. If this is omitted, the low bound of the reference range is assumed to be meaningless. E.g. &lt;2.3.&quot; - HL7 FHIR, Observation.referenceRange.low.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>meaning :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Code for the meaning of the reference range.&quot; - HL7 FHIR, Observation.referenceRange.meaning.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>text :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Text based reference range in an observation which may be used when a quantitative range is not appropriate for an observation. An example would be a reference value of &quot;Negative&quot; or a list or table of normal values.&quot; - HL7 FHIR, Observation.referenceRange.text.
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMPersonLink" xml:lang="en-us">
+<title id="title">Link</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class is used to associate two (or more) Person records that refer to the same real-world person.  This class is included for compatibility with FHIR, although we would expect that other attributes such as the date/time the association (or &quot;link&quot;) was made, who made the link, and some explanatory text would necessary in real-world implementations.  In addition, we would expect some kind of &quot;unlink&quot; action to be possible, and metadata about that action would also be recorded.</p><p>&quot;Link to a resource that concerns the same actual person&quot; - HL7 FHIR, Person.link</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>assurance :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Level of assurance that this link is actually associated with the target resource.&quot; - HL7 FHIR, Person.assurance
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>target : <xref href="../t_FHIMPersonPerson.dita" >Person</xref> (1..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

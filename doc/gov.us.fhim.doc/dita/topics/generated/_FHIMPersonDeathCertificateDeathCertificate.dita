@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMPersonDeathCertificateDeathCertificate" xml:lang="en-us">
+<title id="title">DeathCertificate</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>A document issued by a medical practitioner certifying the deceased state of a person.  In the United States, this is typically the U.S. Standard Certificate of Death (Rev. 11/2003).</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>dateFiled :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				[US Standard Certificate Of Death Field 50].  The date the Certificate of Death was filed with the Registrar.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>didTobaccoUseContribute :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				[US Standard Certificate Of Death Field 35].  Indicates whether it is the opinion of the Medical Certifier that the use of tobacco contributed to he person&apos;s death.  Possible values include: Yes, No, Probably, Unknown.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dispositionCategory :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				[US Standard Certificate Of Death Field 18].  Categories the method of the disposition of the body.  Possible values include: Burial, Cremation, Donation, Entombment, Removal from State.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dispositionOther :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				[US Standard Certificate Of Death Field 18].  A textual description of the method of the disposition of the body, when none of possible values of dispositionCategory applies (in other words, a description for &quot;Other&quot;).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>mannerOfDeath :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				[US Standard Certificate Of Death Field 37].  Categorizes the underlying cause of death.  Possible values include: Natural, Homicide, Accident, Suicide, Pending Investigation, Could not be Determined.  For more details, see http://www.cdc.gov/nchs/data/misc/hb_cod.pdf 
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>placeOfDeathCategory :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				[US Standard Certificate Of Death Field 14].  Categories the location of the person&apos;s death.  Possible values include: If death occurred  in a Hospital:  Inpatient, Emergency Room/Outpatient, Dead on Arrival; If death occurred  somewhere other than in a Hospital:  Hospice facility, Nursing home/Long term care facility, Decedent s home.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>placeOfDeathOther :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				[US Standard Certificate Of Death Field 14].  A textual description of the place of death, when none of possible values of placeOfDeath applies (in other words, a description for &quot;Other&quot;).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>pregnancyStatusCategory :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				[US Standard Certificate Of Death Field 36].  If the decedent is female, this property provides an indication of whether she was pregnant at or near the time of death.  This information is important in determining pregnancy-related mortality.  Possible values include: Not pregnant within past year, Pregnant at time of death, Not pregnant, but pregnant within 42 days of death, Not pregnant, but pregnant 43 days to 1 year before death, Unknown if pregnant within the past year.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>survivingSpousesName :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				[US Standard Certificate Of Death Field 10].  If the decedent was married at the time of death, this property contains the full name of the surviving spouse. If the surviving spouse is the wife, her name prior to first marriage should be entered. This item is used in establishing proper insurance settlements and other survivor benefits.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>wasAutopsyFindingsAvailable :  Boolean (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				[US Standard Certificate Of Death Field 34].  If an autopsy was performed, this property indicates whether the autopsy findings were available to complete the cause of death.  This property should be null (i.e., &quot;blank&quot;) if no autopsy was performed.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>wasAutopsyPerformed :  Boolean (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				[US Standard Certificate Of Death Field 33].  Indicates whether either a partial or full autopsy was performed.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>wasEverInArmedForces :  Boolean (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				[US Standard Certificate Of Death Field 8].  Indicates whether the decedent was ever in the U.S. Armed Forces.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>wasResidenceInsideCityLimits :  Boolean (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				[US Standard Certificate Of Death Field 7g].  Indicates whether the decedent&apos;s residence is inside city limits.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>certifier : <xref href="../t_FHIMCommonLegalAuthenticator.dita" >LegalAuthenticator</xref> (1..1)</p></stentry>
+  <stentry><p>				[US Standard Certificate Of Death Fields 45, 47 - 49].  The practitioner who certified the information contained in the Certificate of Death.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>facilityAtDeath : <xref href="../t_FHIMProviderServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (0..1)</p></stentry>
+  <stentry><p>				[US Standard Certificate Of Death Fields 15 - 17].  Place at which death occurred.  If death did not occur at an institution, only the address is used.  Note that the address includes County.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>funeralFacility : <xref href="../t_FHIMProviderOrganizationalProvider.dita" >OrganizationalProvider</xref> (0..1)</p></stentry>
+  <stentry><p>				[US Standard Certificate Of Death Field 21 and 23].  Identifies the funeral facility, including license information.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>informant : <xref href="../t_FHIMPersonDeathCertificateInformant.dita" >Informant</xref> (0..1)</p></stentry>
+  <stentry><p>				[US Standard Certificate Of Death Fields 13a - c].  Identifies the person who informed the authorities  of the decedent&apos;s death.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>injury : <xref href="../t_FHIMPersonDeathCertificateInjury.dita" >Injury</xref> (0..1)</p></stentry>
+  <stentry><p>				[US Standard Certificate Of Death Fields 38 - 44].  Information related to cases where the decedents death was due to injury or poisoning.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>pronouncementOfDeath : <xref href="../t_FHIMPersonDeathCertificatePronouncementOfDeath.dita" >PronouncementOfDeath</xref> (1..1)</p></stentry>
+  <stentry><p>				[US Standard Certificate Of Death Fields 24 - 31].  The opinion or determination, based on a physical assessment, that life has ceased.  A series of steps that need to occur to determine that a death has occurred. Involves examining patients to determine death, notifying families and in recording proper documentation of a death.  Death pronouncements are generally conducted by a physician.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMImmunizationPublicHealthClient" xml:lang="en-us">
+<title id="title">PublicHealthClient</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>A Public Health Client is a Patient from the viewpoint of a Jurisdiction.  For example, John Doe lives in Arizona, and has been seen by two practices, whereby he is patient number 123 at practice A and patient number 456 at practice B.  The state of Arizona will assign a single id to John, say, XYZ.  This id (the recordId property of this class) is correlated to the ids from the two practices.  In other words, each patient will have a separate id and record at each medical practice, but will have one id at the jurisdictional level.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>beginDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The earliest known date upon which the Patient had a service performed or a condition that was reportable to the Public Health Jurisdiction.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>endDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The latest known date upon which the Patient had a service performed or a condition that was reportable to the Public Health Jurisdiction.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>recordId :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Uniquely identifies the patient from a jurisdictional point of view.  This id is used to aggregate data reported from multiple sources within the jurisdiction; each source may have it&apos;s own id for the patient.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>status :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+<p>See <xref href="../t_fhimvocabImmunizationVocabImmunizationRegistryStatusFHIM.dita">Immunization Registry Status (FHIM)</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				Indicates the active/inactive status of the patient in the IIS. This is a jurisdictional status. See MIROW &#8220;Management of Moved or Gone Elsewhere (MOGE) and Other Patient Status Designations in IIS guidelines.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>patient : <xref href="../t_FHIMPersonPatient.dita" >Patient</xref> (0..*)</p></stentry>
+  <stentry><p>				Identifies the Patient (from the Provider&apos;s point of view) that correlates to the Public Health Client record.  For example, John Doe lives in Arizona, and has been seen by two practices, whereby he is patient number 123 at practice A and patient number 456 at practice B.  The state of Arizona will assign a single id to John, say, XYZ.  The Public Health Client class will contain a recordId = XYZ.  This property points to Practice A, patientId=123, and Practice B, patientId=456.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>publicHealthJurisdiction : <xref href="../t_FHIMProviderPublicHealthJurisdiction.dita" >PublicHealthJurisdiction</xref> (1..1)</p></stentry>
+  <stentry><p>				An organization that is responsible for Public Health either at the local, state, or national level.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

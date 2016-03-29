@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMPublicHealthReportingNotificationReport" xml:lang="en-us">
+<title id="title">NotificationReport</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+<section id="specializations"  audience="developer, modeler">
+	<title>Derivations</title>
+	<ul>
+<li><xref href="../t_FHIMPublicHealthReportingCommunicableDiseaseReport.dita">CommunicableDiseaseReport </xref> is a kind of  NotificationReport </li>
+	</ul>
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>&quot;Information about a specific instance of reporting of the information associated with an incident or impact. As a general matter, this is information pulled together by an investigation. In the context of a particular investigation, this concept includes both reports received by the party responsible for the investigation, as well as reports received by that party.  In particular, the class comprises the initial report. This is an account provided by the PERSON who originally provided information about the event.&quot; - ICSR DAM, May 2006.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>alertDateTime :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>reportCategory :  <xref href="../t_FHIMPublicHealthReportingNotificationReportCategory.dita" >NotificationReportCategory</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				A categorization of the kind of report.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>reportDateTime :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Date and time the report is being sent to public health agencies.</p><p>&quot;This data element has the function of a timestamp and represents the equivalent of a version number for the ICSR. Every ICSR and every iteration (e.g. version) of an ICSR in a safety message must have a different value for Date of Creation. The most recent version of an ICSR will have the most recent date; previous versions of an ICSR will have older dates.&quot; - ICH E2B(R3), C.1.2</p><p>The date that the Med Watch report was created.  Medwatch 3500 form question B.4; Medwatch 3500A form question B.4; Medwatch 3500B form question D.2; VAERS-1 form question 6.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>reportId :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				A unique identifier assigned to the report by the author.</p><p></p><p>&quot;An identifier for the ICSR that is unique&quot; - ICH E2B(R3), C.1.1
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>reportingSystem :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The system used to generate the report.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>sendingSystem :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Information about the sending system.  May be the same as the &apos;reporting system&apos; but does not have to be (e.g., HIE)
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>status :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Indicate[s] that a previously transmitted ICSR is either considered completely void (nullified)..., or amended&quot; - ICH E2B(R3), C.1.11.1.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>careGiver : <xref href="../t_FHIMProviderIndividualProvider.dita" >IndividualProvider</xref> (1..1)</p></stentry>
+  <stentry><p>				Identifies the person who provided care for the subject of the report.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>encounterEvent : <xref href="../t_FHIMEncounterEncounterEvent.dita" >EncounterEvent</xref> (0..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>exposure : <xref href="../t_FHIMPublicHealthReportingOccupationalHealthExposure.dita" >Exposure</xref> (0..*)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>medicationHistory : <xref href="../t_FHIMPharmacyMedicationList.dita" >MedicationList</xref> (0..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>moreInformationlProvider : <xref href="../t_FHIMProviderIndividualProvider.dita" >IndividualProvider</xref> (0..*)</p></stentry>
+  <stentry><p>				This information relates to the current or past provider information that may be contacted for additional follow up information.  The HCP may or may not be the report sender or primary source reporter
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>pregnancyMenstrualStatus : <xref href="../t_FHIMEncounterPregnancyMenstrualStatus.dita" >PregnancyMenstrualStatus</xref> (0..*)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>reportCreatedBy : <xref href="../t_FHIMProviderHealthcareProvider.dita" >HealthcareProvider</xref> (1..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>reportSentBy : <xref href="../t_FHIMProviderHealthcareProvider.dita" >HealthcareProvider</xref> (1..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>reportSentTo : <xref href="../t_FHIMProviderOrganization.dita" >Organization</xref> (0..*)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>reportSubject : <xref href="../t_FHIMPersonPatient.dita" >Patient</xref> (1..*)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>serviceDeliveryLocation : <xref href="../t_FHIMProviderServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (0..*)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

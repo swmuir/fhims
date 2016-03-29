@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMEncounterAbstractDurableEncounter" xml:lang="en-us">
+<title id="title">AbstractDurableEncounter</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	AbstractDurableEncounter is a kind of <xref href="../t_FHIMEncounterEncounterEvent.dita">EncounterEvent</xref>	
+</section>
+
+
+
+<section id="specializations"  audience="developer, modeler">
+	<title>Derivations</title>
+	<ul>
+<li><xref href="../t_FHIMEncounterInpatientEncounterEvent.dita">InpatientEncounterEvent </xref> is a kind of  AbstractDurableEncounter </li>
+<li><xref href="../t_FHIMEncounterHomeBasePrimaryCareEncounter.dita">HomeBasePrimaryCareEncounter </xref> is a kind of  AbstractDurableEncounter </li>
+<li><xref href="../t_FHIMEncounterHospice.dita">Hospice </xref> is a kind of  AbstractDurableEncounter </li>
+<li><xref href="../t_FHIMEncounterShortStay.dita">ShortStay </xref> is a kind of  AbstractDurableEncounter </li>
+<li><xref href="../t_FHIMEncounterLongTermCare.dita">LongTermCare </xref> is a kind of  AbstractDurableEncounter </li>
+	</ul>
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>Contains properties common to multiple kinds of Encounters which last more than a few hours.  Such encounters typically include an admission and discharge process.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>admissionDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;This field contains the admit date/time.  It is to be used if the event date/time is different than the admit date and time, i.e., a retroactive update.  This field is also used to reflect the date/time of an outpatient/emergency patient registration.&quot; - HL7 Version 2.8, PV1-44
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>admissionLevelOfCare :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Indicates the acuity level assigned to the patient at the time of admission.&quot; - HL7 Version 2.8, PV2-40.  Possible values include (from HL7 Table 432): Acute; Chronic; Comatose; Critical; Improved; Moribund.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>admissionReason :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Contains the short description of the reason for patient admission.&quot; - HL7 Version 2.8, PV2-3
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>admissionSource :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+<p>See <xref href="../t_fhimvocabEncounterVocabAdmissionSourceHL7.dita">Admission Source (HL7)</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				&quot;Indicates where the patient was admitted....  In the US, this field should use the Official Uniform Billing (UB) 04 2008 numeric codes found on form locator 15 [which is] the Point of Origin for Admission or Visit.&quot; - HL7 Version 2.8, PV1-14.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>admissionType :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+<p>See <xref href="../t_fhimvocabEncounterVocabAdmissionTypeHL7.dita">Admission Type (HL7)</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				&quot;Indicates the circumstances under which the patient was or will be admitted. ...use the official Universal Billing (UB) 04 2008 numeric codes found on form locator 14.&quot; - HL7 Version 2.8, PV1-4.  Possible values include (from HL7 Table 7: Accident; Emergency; </p><p>Labor and Delivery; Routine; Newborn (Birth in healthcare facility); Urgent; Elective.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dietType :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Indicates a special diet type for a patient.&quot; - HL7 Version 2.8, PV1-38.  Note that HL7 does not suggest any values for this code (in User-defined Table 114).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>expectedAdmissionDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Contains the date and time that the patient is expected to be admitted.  This field is also used to reflect the date/time of an outpatient/emergency patient registration.&quot; - HL7 Version 2.8, PV2-8.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>expectedDischargeDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Contains the date and time that the patient is expected to be discharged.  This is a non-event related date used by ancillaries to determine more accurately the projected workloads.  This field is also used to reflect the anticipated discharge date/time of an outpatient/emergency patient, or an inpatient.&quot; - HL7 Version 2.8, PV2-9.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>needsPreAdmitTest :  Boolean (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Indicates whether the patient must have pre admission testing done in order to be admitted.&quot; - HL7 Version 2.8, PV1-12
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>patientCondition :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Indicates the patient&apos;s current medical condition for the purpose of communicating to non-medical outside parties, e.g., family, employer, religious minister, media, etc.&quot; - HL7 Version 2.8, PV2-42.  Possible values include (from HL7 Table 434): Satisfactory; Critical; Poor; Stable; Other; Unknown.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>patientStatus :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Indicates the status of the episode of care.&quot; - HL7 Version 2.8, PV2-24.  Possible values include (from HL7 Table 216): Active Inpatient; Discharged Inpatient.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>preAdmitAccount :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Uniquely identifies the patient&apos;s pre admit account.  Some systems will continue to use the pre admit number as the billing number after the patient has been admitted.&quot; - HL7 Version 2.8, PV1-5
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>precautionCode :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Indicates non-clinical precautions that need to be taken with the patient.&quot; - HL7 Version 2.8, PV2-41.  Possible values include (from HL7 Table 433): Aggressive; Blind; Confused; Deaf; On IV; &quot;No-code&quot; (i.e. Do not resuscitate); Paraplegic; Other; Unknown.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>reAdmissionIndicator :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Indicates that a patient is being re admitted to the healthcare facility and gives the circumstances.&quot; - HL7 Version 2.8, PV1-13.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>admissionDiagnosis : <xref href="../t_FHIMCommonDiagnosisListEntry.dita" >DiagnosisListEntry</xref> (0..*)</p></stentry>
+  <stentry><p>				The diagnosis(es) that was the reason for hospitalization at the time of hospitalization (added for Transition of Care).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>discharge : <xref href="../t_FHIMEncounterDischargeEvent.dita" >DischargeEvent</xref> (0..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

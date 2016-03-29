@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMEnrollEligCOBDependent" xml:lang="en-us">
+<title id="title">Dependent</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class represents the Role that a Person plays when he or she receives healthcare benefits as a Dependent of someone else who is the named beneficiary of a Health Policy.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>relationshipToPatient :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Indicates the insured&#8217;s relationship to the patient.&quot; - HL7 Version 2.8, IN1-17.  Note that HL7 identifies a Code Table (Table 63) for this property, which currently contains 32 suggested values.</p><p>&quot;Code indicating relationship of patient to cardholder.&quot; - NCPDP Telecommunication (Field 306-C6, Data Dictionary 201104).  Possible values include: Cardholder; Spouse; Child; Student; Disabled Dependent; Adult Dependent; Significant Other; Not Specified; Other.</p><p>Note also that this property is derived; the value of this code could potentially be discerned by Role Link classes.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>subscriber : <xref href="../t_FHIMEnrollEligCOBSubscriber.dita" >Subscriber</xref> (1..1)</p></stentry>
+  <stentry><p>				Pointer to (a Role of) the Person who is named as a beneficiary of a Health Policy.  This is the Person of whom the Covered Patient is considered to be a Dependent.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

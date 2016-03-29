@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMEncounterPregnancyMenstrualStatus" xml:lang="en-us">
+<title id="title">PregnancyMenstrualStatus</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>An Observation of whether the Patient is known to be expecting and/or when the Patient last experienced a menstrual cycle. This information is needed in multiple situations where a procedure or medication is being contemplated that could be harmful to a fetus. For example, a clinician may wish to avoid exposing the Patient to X-Rays if she is pregnant. Naturally, this information is only recorded for female patients of childbearing age.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>isPregnant :  <xref href="../t_FHIMDatatypesNullableBoolean.dita" >NullableBoolean</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Indicates whether the Patient is known to be expecting.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>lastMenstrualPeriodDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The date when the Patient last experienced a menstrual cycle. This date may be imprecise (e.g., sometime in February of the current year).
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

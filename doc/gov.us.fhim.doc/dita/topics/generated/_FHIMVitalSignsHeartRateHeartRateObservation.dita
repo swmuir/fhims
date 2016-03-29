@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMVitalSignsHeartRateHeartRateObservation" xml:lang="en-us">
+<title id="title">HeartRateObservation</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	HeartRateObservation is a kind of <xref href="../t_FHIMClinicalObservationObservation.dita">Observation</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>Heart rate is the speed of the heartbeat measured by the number of poundings of the heart per unit of time &#8212; typically beats per minute (bpm).  The heart rate is commonly measured by observing the patient&#8217;s pulse, which is the physical expansion of the artery. The pulse commonly taken is from the radial artery at the wrist. Sometimes the pulse cannot be taken at the wrist and is taken at the elbow (brachial artery), at the neck against the carotid artery (carotid pulse), behind the knee (popliteal artery), or in the foot dorsalis pedis or posterior tibial arteries.  In addition, the heart rate may be measured directly electrocardiography (adapted from Wikipedia).</p><p></p><p>This class represents the measurement (or &#8220;clinical observation&#8221;) of the patient&#8217;s heart rate.  This class re-defines the generic clinical Observation class to fix the observed characteristic to LOINC 8867-4 and to set the data type of the observation value to a Physical Quantity Ratio. It also redefines the bodySite and method properties such that they are bound to the Heart Rate Measurement Site and Heart Rate Measurement Method valuesets, respectively.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>bodySite :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+<p>See <xref href="../t_fhimvocabVitalSignsVocabHeartRateMeasurementSite.dita">HeartRateMeasurementSite</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				This property contains the code that specifies the anatomical site or system that is the focus of the observation.  In the generic clinical Observation class, this code is not &#8220;bound&#8221; to a particular value set.  In this class, the property is re-defined to a set of values that are appropriate to heart rate measurements.  These values come from the SNOMED-CT coding system.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>observationMethod :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+<p>See <xref href="../t_fhimvocabVitalSignsVocabHeartRateMeasurementMethod.dita">HeartRateMeasurementMethod</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				This property contains the code that specifies additional detail about the means or technique used to ascertain the Observation.  In the generic clinical Observation class, this code is not &#8220;bound&#8221; to a particular value set.  In this class, the property is re-defined to a set of values that are appropriate to heart rate measurements.  These values come from the SNOMED-CT coding system.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>observedCharacteristic :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This property defines what was observed by using a value from a nationally recognized coding system.  In this case, we&#8217;re stating that the concept being observed is the Heart rate, which is LOINC 8867-4.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>value :  <xref href="../t_FHIMDatatypesRateQuantity.dita" >RateQuantity</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This property contains the result, or value of the clinical Observation.  In the generic clinical Observation class, the data type for this property can be anything.  Heart rate is expressed in terms of beats per minute.  Therefore, this property has been re-defined to constrain the data type to be a Rate Quantity (where the numerator is the number of beats (unit of measure heartbeat), and the denominator is one minute).
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

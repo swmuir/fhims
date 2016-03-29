@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMDatatypesCodeWithValue" xml:lang="en-us">
+<title id="title">CodeWithValue</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	CodeWithValue is a kind of <xref href="../t_FHIMDatatypesCode.dita">Code</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This subtype of Code adds a numerical value, which could be either a score for codes used to capture potential answers on an assessment instrument, or might be used to provide functionality for &quot;coded ordinals&quot;, which assigns a value to a concept.  In either case, this value is pre-defined in the coding system, and therefore could be looked up in the coding system.  Therefore, this datatype may be removed in the future, as it really isn&apos;t necessary, but may be useful in implementations which may wish to avoid a separate call to a terminology server.  (Note that this datatype was renamed from CodedOrdinal to CodeWithValue to combine the LoincAnswerCode and CodedOrdinal subtypes on 10/15/2015).</p><p></p><p>&quot;Coded data, where the coding system from which the code comes defines a partial or complete order on some or all of the codes in the system.  Codes may be assigned a numerical value, but this is not required. [This datatype] adds semantics related to ordering and/or numerical values....&quot; - HL7 V3.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>value :  <xref href="../t_FHIMDatatypesReal.dita" >Real</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The value assigned to this code in the code System. - HL7 V3.
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

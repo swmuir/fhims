@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMEnrollEligCOBSubscriber" xml:lang="en-us">
+<title id="title">Subscriber</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class represents a Person who is named as a beneficiary of a Health Policy.  Usually, this is the person who is paying for the premiums of the Health Policy, or the person on whose behalf an organization, such as their employer, is paying the premiums.  In the case of government programs, this person is the named beneficiary. </p><p></p><p>The concept which we chose to name &quot;Subscriber&quot; is known by multiple terms, depending on the setting.  For all intents and purposes, Subscriber, Sponsor, Policy Holder, and Contract Holder are synonymous.</p><p></p><p>Other terms which sometimes overlap and sometimes do not include: Insured-Or-Member, Member, Beneficiary, Enrollee, Cardholder, Recipient, and Covered Person.  For the most part, these terms relate closer to the person being treated (what we call the Covered Patient) than to the named Subscriber.  It is worth noting though that not all Insured-Or-Members are necessarily ever patients, only those that have actually been treated are patients.  The person referred to by many of these concepts, especially Insured-Or-Member, may be either a Dependent, or may be the Subscriber (i.e., &quot;self&quot;).</p><p></p><p>The Subscriber may have dependents who may or may not be known by name to the Payer.  The Payer may or may not issue insurances cards to those dependents, so the term &quot;Cardholder&quot; does not distinguish between the Subscriber and their dependents.</p><p></p><p>In the Department of Defense, active duty personnel are automatically enrolled into the &quot;direct care&quot; program as a Subscriber.  Retirees are eligible to enroll in several programs such as Tricare for Life.  In this case, person is still considered a Subscriber.</p><p></p><p>The following definitions are from eHealthInsurance.org:</p><p>Subscriber: &quot;This term may be used in two senses: First, it may refer to the person or organization that pays for health insurance premiums; secondly, it may refer to the person whose employment makes him or her eligible for group health insurance benefits.&quot;</p><p></p><p>Enrollee: &quot;An eligible person or eligible employee who is enrolled in a health insurance plan. Dependents are not referred to as enrollees.&quot;</p><p></p><p>Member: &quot;Anyone covered under a health insurance plan, an enrollee or eligible dependent.&quot;</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>coverageTerm :  <xref href="../t_FHIMDatatypesTimeInterval.dita" >TimeInterval</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Contains the date that the insurance goes into effect.&quot; - HL7 Version 2.8, IN1-12.</p><p>&quot;Indicates the last date of service that the insurance will cover or be responsible for.&quot; - HL7 Version 2.8, IN1-13.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>coverageType :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Contains the coding structure that identifies the various plan types, for example, Medicare, Medicaid, Blue Cross, HMO, etc.&quot; - HL7 Version 2.8, IN1-15.  Note that HL7 links this field to User Defined Table 0086, which contains no suggested values.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>id :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				A unique identifier that the payer or information source can use to identify the person as a Policy Holder.</p><p>&quot;Contains a healthcare institution&#8217;s identifiers for the insured.&quot; - HL7 Version 2.8, IN1-49.</p><p>&quot;Insurance ID assigned to the cardholder or identification number used by the plan.&quot; - NCPDP Telecommunication (Field 302-C2, Data Dictionary 201104).  Note that the some payers issue cards to dependents, some do not; therefore the cardholder might be the patient, the subscriber, or both.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>asPerson : <xref href="../t_FHIMPersonPerson.dita" >Person</xref> (1..1)</p></stentry>
+  <stentry><p>				Pointer to the Person playing the Role of Subscriber.</p><p>&quot;Contains the name of the insured person.  The insured is the person who has an agreement with the insurance company to provide healthcare services to persons covered by the insurance policy.&quot; - HL7 Version 2.8, IN1-16.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>group : <xref href="../t_FHIMEnrollEligCOBGroupCoverage.dita" >GroupCoverage</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to the Group Health Insurance Policy under which the Subscriber is entitled benefits.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>healthcarePolicy : <xref href="../t_FHIMEnrollEligCOBHealthcarePolicy.dita" >HealthcarePolicy</xref> (1..*)</p></stentry>
+  <stentry><p>				Pointer to the Insurance Policy (a contract between an benefits provider and an individual or his/her sponsor to pay for a set of benefits) for which the Subscriber is a beneficiary.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>otherPolicyInfo : <xref href="../t_FHIMEnrollEligCOBOtherPolicyInfo.dita" >OtherPolicyInfo</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to additional information needed by specific payers to properly identify either the subscriber or the health plan.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

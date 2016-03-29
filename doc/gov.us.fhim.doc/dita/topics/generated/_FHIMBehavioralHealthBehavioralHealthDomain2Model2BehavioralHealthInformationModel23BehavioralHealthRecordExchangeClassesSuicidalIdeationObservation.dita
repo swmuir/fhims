@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMBehavioralHealthBehavioralHealthDomain2Model2BehavioralHealthInformationModel23BehavioralHealthRecordExchangeClassesSuicidalIdeationObservation" xml:lang="en-us">
+<title id="title">SuicidalIdeationObservation</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	SuicidalIdeationObservation is a kind of <xref href="../t_FHIMHealthConcernHealthConcern.dita">HealthConcern</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class is used to record thoughts of harming or killing oneself (IOM 2002) and is a specialization of HealthConcern.  The severity of suicidal ideation can be determined by assessing the frequency, intensity, and duration of these thoughts.  The severity of suicidal ideation can be determined by assessing the frequency, intensity, and duration of these thoughts (IOM 2002).  The CDC is in the process of developing Suicide Surveillance: Uniform Definitions and Recommended Data Elements.  This publication is expected to be available starting in 2009.  Reference: Goldsmith, SK; Pellmar, TC; Kleinman, AM; Bunney, WE; eds. Reducing Suicide: A National Imperative.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>code :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The business stakeholders may specify what code is associated with SuicidalIdeationObservation. There is an ICD code attribute in the class SuicideAttemptOrCompletion.  Are there two different codes for these classes?  If so, what is the definition for this code and as the name implies is an ICD-9 code always used to specify this information.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>description :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>frequency :  Integer (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>intensity :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The intensity may be specified using a value set or a scale of integer values.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>previousSuicideAttempts :  Integer (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&#8220;A non-fatal, self-inflicted destructive act with explicit or inferred intent to die.&#8221; - IOM 2002.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>type :  <xref href="../t_FHIMBehavioralHealthBehavioralHealthDomain2Model2BehavioralHealthInformationModel25TerminologyAnalysisSelfDirectedType.dita" >SelfDirectedType</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>alert : <xref href="../t_FHIMBehavioralHealthBehavioralHealthDomain2Model2BehavioralHealthInformationModel23BehavioralHealthRecordExchangeClassesSuicideRisk.dita" >SuicideRisk</xref> (0..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>suicideAttemptOrCompletion : <xref href="../t_FHIMBehavioralHealthBehavioralHealthDomain2Model2BehavioralHealthInformationModel23BehavioralHealthRecordExchangeClassesSuicideAttemptOrCompletion.dita" >SuicideAttemptOrCompletion</xref> (0..*)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMPharmacyPatientReportedMedication" xml:lang="en-us">
+<title id="title">PatientReportedMedication</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>Contains information about a medication which the patient has received or is receiving, as reported by the patient.    </p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>discontinueDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This is the date the patient stopped taking the patient reported Medication.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dosage :  <xref href="../t_FHIMDatatypesPhysicalQuantityInterval.dita" >PhysicalQuantityInterval</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The amount of the described medication to be administered to the patient in a single point in time.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>orderablePharmacyItem : <xref href="../t_FHIMCommonCommonProductOrderablePharmacyItem.dita" >OrderablePharmacyItem</xref> (1..1)</p></stentry>
+  <stentry><p>				Pointer to the medicinal product that the patient reported that he/she is taking.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

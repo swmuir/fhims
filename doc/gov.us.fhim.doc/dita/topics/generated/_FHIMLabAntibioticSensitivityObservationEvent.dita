@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMLabAntibioticSensitivityObservationEvent" xml:lang="en-us">
+<title id="title">AntibioticSensitivityObservationEvent</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	AntibioticSensitivityObservationEvent is a kind of <xref href="../t_FHIMLabReportableResult.dita">ReportableResult</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class represents a drug challenge.   A drug challenge tests the susceptibility of a culture of the identified organism to an antibiotic.  Note that the determination whether a microbe is susceptible or resistant to the antibiotic would be reported in the interpretation class, which is inherited from the Reportable Result super type.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>minimumInhibitoryConcentration :  <xref href="../t_FHIMDatatypesReal.dita" >Real</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The minimum inhibitory dilution of the serum or body fluid, which inhibits reproduction of the patient&apos;s infecting organism.  Fluid is drawn from the patient who is undergoing antibiotic therapy.  Samples of the fluid is diluted between 1:2 and 1:16 and a sample of the infecting organism is cultured in each of the diluted samples.</p><p>&quot;Contains the value observed by the observation producer....  It is not a required field because some systems will report only the Interpretation Codes.... This field may repeat for multipart, single answer results.&quot; - HL7 Version 2.8, OBX-5.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>antibiotic : <xref href="../t_FHIMCommonCommonProductSubstance.dita" >Substance</xref> (1..1)</p></stentry>
+  <stentry><p>				Antibiotic: &quot;A substance, such as penicillin or streptomycin, produced by or derived from certain fungi, bacteria, and other organisms, that can destroy or inhibit the growth of other microorganisms.&quot; - The American Heritage Stedman&apos;s Medical Dictionary.  This association identifies the antibiotic substance used to test the degree of susceptibility of the microorganism to that substance.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

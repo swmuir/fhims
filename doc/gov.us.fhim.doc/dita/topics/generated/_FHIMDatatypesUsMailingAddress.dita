@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMDatatypesUsMailingAddress" xml:lang="en-us">
+<title id="title">UsMailingAddress</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	UsMailingAddress is a kind of <xref href="../t_FHIMDatatypesAddress.dita">Address</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>A specialization of Address that is used for addresses in the United Sates.  Note that the stateOrTerritory property may only contain a code for a U.S. State, territory, or military postal region (APO).  The purpose of this sub-type is to provide a mechanism to add the stateOrTerritory property and to bind it to the valueset of codes valid for United States mail.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>stateOrTerritory :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				An Address Part (ADXP) that contains the state or province. A state or provinces is a sub-unit of a country with limited sovereignty in a federally organized country.</p><p>The State code is defined in the USPS Publication 28.  Note that while technically, each state &quot;code&quot; should be an Id, the enumeration of states has historically treated as a code.</p><p>&quot;Sub-unit of a country with limited sovereignty in a federally organized country. A code may be used if codes are in common use (i.e. US 2 letter state codes).&quot; - HL7 FHIR, Address.state
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

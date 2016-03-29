@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMImagingDocumentImagingEvent" xml:lang="en-us">
+<title id="title">DocumentImagingEvent</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	DocumentImagingEvent is a kind of <xref href="../t_FHIMImagingImagingEventAbstract.dita">ImagingEvent(Abstract)</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class contains attributes associated with scanned documents. Historically, both diagnostic imaging and the scanning and retrieval of paper documents have been included in the &quot;imaging&quot; domain as they both share certain characteristics in terms of the equipment used to store and retrieve the images.  Yet a distinction is often made with respect to the amount and type of metadata associated with the images. For example, &quot;Diagnostic Images&quot; are those stored and retrieved in Picture Archive and Communications Systems (PACS) which require certain codified information regarding the modality of the image, body site, etc., and are organized into Studies, Series, Images, and subsets (regions) of images. In contrast, scanned documents do not require any of these metadata.  As patient-generated images become more commonplace, we foresee a need to store these images (for example, a patient uses a smart phone to take a picture of a wound and emails it to a clinician) as well. We would foresee such images stored in the &quot;Medical Imaging Event&quot; hierarchy, even if a relatively-empty Study and Series construct would be required to contain such images.  However, scanned documents simply need a pointer to the resulting image(s), and we therefore find it useful to continue with a logical separation of the two kinds of images.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>documentDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				If the item being scanned is a dated document, this property identifies the date of the document.  For example, if on 1/15/2016 a patient&apos;s birth certificate dated 6/17/1961 were scanned, this property would contain the birth certificate date (6/17/1961), while the ImagingEvent.dateTime would contain the date that the document was scanned (1/15/2016).
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>acquisitionDevice : <xref href="../t_FHIMCommonCommonProductDeviceInstance.dita" >DeviceInstance</xref> (0..1)</p></stentry>
+  <stentry><p>				Pointer to the individual Device that was used to produce the image.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>imageInstance : <xref href="../t_FHIMImagingImageInstance.dita" >ImageInstance</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to the scanned image (along with metadata to help identify, locate, and classify the image) of the document.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

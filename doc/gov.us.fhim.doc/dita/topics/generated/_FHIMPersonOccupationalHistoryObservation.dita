@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMPersonOccupationalHistoryObservation" xml:lang="en-us">
+<title id="title">OccupationalHistoryObservation</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class records observations regarding the usual occupation of a person, and what industries the person has worked in.  This information is needed primarily for occupation safety and workplace-related illness tracking purposes, but it is often asked for other non-healthcare related reasons, such as insurance.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>currentIndustryClassification :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				A categorization of the type of activity in which an organization is engaged.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>currentOccupation :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;A value that qualifies the classification of &apos;kind-of-work&apos; based upon a recognized industry or jurisdictional standard.&quot; - HL7 Version 3 RIM.</p><p>&quot;The employer&apos;s job code and the employee classification used for the next of kin/associated parties at their place of employment. However, if the contact role is the patient&apos;s employer, this field contains the job code/class of the patient at their place of employment.&quot; - HL7 Version 2.8, NK1-11.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateObserved :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The date upon which the observation of the Person&apos;s Occupational History was made.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>usualIndustry :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+<p>See <xref href="../t_fhimvocabPersonVocabIndustryCensus.dita">Industry (Census)</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				The kind of industry in which the Person normally works; generally this will be the industry in which the Person has longest worked.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>usualOccupation :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+<p>See <xref href="../t_fhimvocabPersonVocabOccupationCensus.dita">Occupation (Census)</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				The kind of work in which the Person has been engaged the most amount of time.</p><p></p><p>&quot;A value that qualifies the classification of &apos;kind-of-work&apos; based upon a recognized industry or jurisdictional standard.&quot; - HL7 Version 3 RIM.</p><p></p><p>Note that the definition of this property needs to be refined.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>yearsInCurrentOccupation :  <xref href="../t_FHIMDatatypesReal.dita" >Real</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The length of time in years in which the Person has been engaged in the occupation in which he or she is currently engaged.  Added for Public Health Reporting Initiative, 10/12/2012.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>yearsInUsualOccupation :  <xref href="../t_FHIMDatatypesReal.dita" >Real</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The length of time in years in which the Person has been engaged in the occupation in which he or she has longest held.  Added for Public Health Reporting Initiative, 10/12/2012.
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

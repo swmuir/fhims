@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMVitalSignsWeightWeightObservation" xml:lang="en-us">
+<title id="title">WeightObservation</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	WeightObservation is a kind of <xref href="../t_FHIMClinicalObservationObservation.dita">Observation</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>Human body weight refers &#8220;to a person&apos;s mass or weight. Body weight is measured in kilograms &#8230; or pounds. Strictly speaking, body weight is the measurement of weight without items located on the person. Practically though, body weight is measured with clothes on, but without shoes or heavy accessories such as mobile phones and wallets and using manual or digital weighing scales. Excess or reduced body weight is regarded as an indicator of determining a person&apos;s health, with body volume measurement providing an extra dimension by calculating the distribution of body weight.&#8221; &#8211; Wikipedia.</p><p></p><p>This class represents the measurement (or &#8220;clinical observation&#8221;) of the patient&#8217;s Weight.  This class re-defines the generic clinical Observation class to fix the observed characteristic to LOINC 3141-9 and to set the data type of the observation value to a Physical Quantity.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>observationMethod :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+<p>See <xref href="../t_fhimvocabVitalSignsVocabPatientWeightDeterminationDevice.dita">PatientWeightDeterminationDevice</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				This property contains a code that specifies additional detail about the means or technique used to ascertain the Observation.  In the generic clinical Observation class, this code is not &#8220;bound&#8221; to a particular value set.  In this class, the property is re-defined to a set of values that are appropriate to heart rate measurements.  These values come from the SNOMED-CT coding system.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>observedCharacteristic :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This property defines what was observed by using a value from a nationally recognized coding system.  In this case, we&#8217;re stating that the concept being observed is the Weight, which is LOINC 3141-9.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>value :  <xref href="../t_FHIMDatatypesQuantity.dita" >Quantity</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This property contains the result, or value of the clinical Observation.  In the generic clinical Observation class, the data type for this property can be anything.  Weight is generally expressed in terms of kilograms or pounds.  Therefore, this property has been re-defined to constrain the data type to be a Physical Quantity.
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

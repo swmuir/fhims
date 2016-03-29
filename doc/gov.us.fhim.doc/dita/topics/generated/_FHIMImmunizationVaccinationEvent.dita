@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMImmunizationVaccinationEvent" xml:lang="en-us">
+<title id="title">VaccinationEvent</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	VaccinationEvent is a kind of <xref href="../t_FHIMEncounterMedicationAdministrationEvent.dita">MedicationAdministrationEvent</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>Information about the administration of a vaccine to a patient.  This class is a sub-class of MedicationAdministrationEvent, and therefore inherits the properties of that class, and then adds vaccination-specific information such as the dose number within a series, and immunity status.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>fundingSource :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+<p>See <xref href="../t_fhimvocabImmunizationVocabImmunizationFundingSourceexcludingnulls.dita">Immunization Funding Source excluding nulls</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				Indicates the source of funds used to pay for the Immunization.  In the CDC Version 2 Implementation Guide, this is implemented as a seperate observation, in OBX-5.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>numberInSeries :  Integer (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;If the order is for a continuous administration (such as an IV), and the rate is changed at a certain time after the start, an RAS message can be issued to record the change.  For such an RAS message, this field records the time the rate was changed to the new value recorded in the RXA-12-Administered Per (time unit) of the same message.&quot; - HL7 Version 2.8, RXA-2
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>evaluation : <xref href="../t_FHIMImmunizationEvaluation.dita" >Evaluation</xref> (1..1)</p></stentry>
+  <stentry><p>				An evaluation of a given vaccination in which an attempt is made to match the vaccination with a target dose number.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>immunityStatus : <xref href="../t_FHIMImmunizationImmunityStatus.dita" >ImmunityStatus</xref> (0..*)</p></stentry>
+  <stentry><p>				The immunological state of the patient with respect to a given disease.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>immunizationFundingEligibility : <xref href="../t_FHIMImmunizationImmunizationFundingEligibility.dita" >ImmunizationFundingEligibility</xref> (0..1)</p></stentry>
+  <stentry><p>				Indicates the eligibility of the Patient to receive a vaccine under a publicly funded vaccine program.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>patientDocumentPresentation : <xref href="../t_FHIMImmunizationPatientDocumentPresentation.dita" >PatientDocumentPresentation</xref> (0..1)</p></stentry>
+  <stentry><p>				The provision of a Vaccine Information Sheet to the patient.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

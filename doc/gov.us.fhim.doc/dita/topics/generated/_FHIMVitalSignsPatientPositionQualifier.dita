@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMVitalSignsPatientPositionQualifier" xml:lang="en-us">
+<title id="title">PatientPositionQualifier</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	PatientPositionQualifier is a kind of <xref href="../t_FHIMClinicalObservationObservationQualifier.dita">ObservationQualifier</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>Certain disease states can be detected by observing differences in heart rate, blood pressure, or respiration when the patient&#8217;s body is in different positions (e.g., sitting, standing, etc.).  It therefore may be necessary to record the patient&#8217;s body position when recording the primary observation.  This class records an observation of the patient&#8217;s body position during the time the heart rate, blood pressure, or respiration rate was observed.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>observedCharacteristic :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This property defines what was observed that &#8220;qualifies&#8221; the primary, or &#8220;owning&#8221; Observation.  This property defines what was observed by citing a value from a nationally recognized coding system.  In this case, the value will hard-coded to SNOMED 9851009, which is patient position.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>value :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+<p>See <xref href="../t_fhimvocabVitalSignsVocabPatientMeasurementBodyPosition.dita">PatientMeasurementBodyPosition</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				This property contains the result, or value of the qualifying Observation.  In the generic Observation Qualifier class, the data type for this property can be anything.  In this sub-type, the value is constrained to be one of a set of codes from the SNOMED-CT coding system that represent patient positions that are valid for a Heart rate, Blood pressure, or Respiration rate measurement.
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

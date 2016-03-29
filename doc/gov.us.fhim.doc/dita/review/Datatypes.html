@@ -1,0 +1,1666 @@
+
+<html xmlns:Standard="http://www.eclipse.org/uml2/schemas/Standard/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:fhim="http:///schemas/fhim/_bbjuwA3cEeSGTazHdUQojA/5" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:term="http://www.openhealthtools.org/mdht/schemas/term/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:xmi="http://www.omg.org/XMI" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.3/Umlnotation" xmlns:Default="http:///schemas/Default/_fNm3AAqoEd6-N_NOT9vsCA/2" xmlns:CDA="http://www.openhealthtools.org/mdht/schemas/cda/4" xmlns:Default_1="http:///schemas/Default/1" xmlns:RIM="http:///schemas/RIM/_fvnwgAH4Ed6VH-9W1IVKXA/4" xmlns:SketchNotation="http://www.ibm.com/ccl/soa/sketch/notation/1.0.0/">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>Datatypes Domain</title>
+   </head>
+   <body style="font-family:Courier;font-size:14px">
+      <h1>Datatypes Domain</h1>
+      <p> The purpose of this review is to identify the data elements required for the
+         interoperable exchange for the Datatypes domain including dependencies. A column is
+         provided at the far right of the table for you to enter comments related to each
+         data element. If the class or domain is missing data elements, please add a row
+         at the bottom of the sheet and specify a name, description, and type of data
+         (e.g. numeric, string, date/time, code). 
+      </p>
+      <p> Once you have reviewed the data elements, please review the value sets
+         associated with the coded data elements. Please provide feedback by adding
+         comments in the column provided at the right of item/row or by adding rows at
+         the bottom table. For any new coded concepts without a valid code yet, our team
+         will propose them for addition in the source coding system. 
+      </p>
+      <ul>
+         <li><a href=""> <i><b>Datatypes</b> </i> Domain </a></li>
+       </ul>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font-family:Courier">
+         <tr bgcolor="#98FB98" style="font-size:18px" align="left">
+            <td colspan="1"><b><a id=""> 'Datatypes' Domain
+                     </a></b></td>
+            <td colspan="4" style="font-size:12px">Note that the Information Source hierarchy is in the Common domain, and is not shown here.</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+      </table>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font-family:Courier">
+         <tr>
+            <th width="20%">Element Name</th>
+            <th width="20%">Element Description</th>
+            <th width="15%">Format/Type</th>
+            <th width="15%">Value Set Name</th>
+            <th width="15%">Optionality/<br>Repetition
+            </th>
+            <th width="15%">Reviewer's Comments</th>
+         </tr>
+ 
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>Address</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>A label for the place or location at which a person or organization may be reached. This class is used primarily for mailing addresses, but includes an optional County property which is often needed for statistical reporting or pricing purposes.  Note that it doesn&#8217;t include a State code, as this code is added in a US-specific subtype.  This is done because states or provinces for other countries will be identified in using different value-sets, if at all.  The state code in the US Mailing Address sub-type is bound to a particular value set, the province code in the Canadian Mailing Address sub-type is bound to a different value set, while the Other Country Mailing Address simply contain as string for the jurisdiction.</p><p>&quot;A postal address. There is a variety of postal address formats defined around the world. Postal addresses are often also used to record a location that can be visited to find a patient or person.&quot; - HL7 FHIR, Address.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Address.<b>effectiveDateRange</b></div>
+            </td>
+            <td><p>The time period during which the address is a valid location for the person or organization.  The data type is a TimeInterval, which includes both a start date and end date, either of which may be empty.</p><p>&quot;Time period when address was/is in use.&quot; - HL7 FHIR, Address.period</p></td>
+            <td valign="top"> TimeInterval </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Address.<b>use</b></div>
+            </td>
+            <td><p>Indicates the kind of address that is contained within this class. Examples include primary home, work, etc.  This facilitates the selection of a particular address from a list of addresses that may apply to the person or organization.</p><p>&quot;The purpose of this address.&quot; - HL7 FHIR, Address.use.</p></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#"></a> 
+					
+					 
+</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Address.<b>line1</b></div>
+            </td>
+            <td><p>The first line of the street address.  While this street address could be broken into several constituent parts (as was done in HL7 V3), for the purpose of this logical model, the whole line is treated as a single concept.  Note that this property is optional because in some cases (such as birth address) it may not be known or collected.</p><p>&quot;This component contains the house number, apartment number, street name, street direction, P.O. Box number, delivery hints, and similar address information.&quot; - HL7 FHIR, Address.line.</p><p>The first line of a mailing address.  Unlike HL7, we have chosen not to break up the parts of each line.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Address.<b>line2</b></div>
+            </td>
+            <td><p>The second line of a mailing address.  Unlike HL7, we have chosen not to break up the parts of each line.</p><p>The second line of the street address.  While this street address could be broken into several constituent parts (as was done in HL7 V3), for the purpose of this logical model, the whole line is treated as a single concept.  </p><p>&quot;This component contains the house number, apartment number, street name, street direction, P.O. Box number, delivery hints, and similar address information.&quot; - HL7 FHIR, Address.line.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Address.<b>line3</b></div>
+            </td>
+            <td><p>The third line of a mailing address.  Unlike HL7, we have chosen not to break up the parts of each line.</p><p>The third line of the street address.  While this street address could be broken into several constituent parts (as was done in HL7 V3), for the purpose of this logical model, the whole line is treated as a single concept.  </p><p>&quot;This component contains the house number, apartment number, street name, street direction, P.O. Box number, delivery hints, and similar address information.&quot; - HL7 FHIR, Address.line.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Address.<b>city</b></div>
+            </td>
+            <td><p>An Address Part (ADXP) that contains the name of the city, town, village, or other community or delivery center.</p><p>&quot;The name of the city, town, village, or other community or delivery center.&quot; - HL7 V3</p><p>&quot;The name of the city, town, village or other community or delivery center.&quot; - HL7 FHIR, Address.city</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Address.<b>county</b></div>
+            </td>
+            <td><p>A region created by territorial division for the purpose of local government.  In the United States, a county (or parish in Louisiana) is the largest administrative district within a state.  This optional property is used primarily for statistical and pricing information (i.e., the same service may be more expensive in an affluent section of the country than in a less-affluent portion).</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Address.<b>country</b></div>
+            </td>
+            <td><p>The state or nation having jurisdiction over the location specified in the address.  This information is needed to properly route correspondence across national boundaries.</p><p>&quot;Country - a nation as commonly understood or generally accepted.&quot; - HL7 FHIR, Address.postalCode</p><p>An Address Part (ADXP) that contains the Country of the address.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Address.<b>postalCode</b></div>
+            </td>
+            <td><p>A string of digits (and in some countries, letters) used as part of a postal address to aid the sorting of mail.  This code is defined by the postal system of the country in which location is contained.</p><p>&quot;A postal code designating a region defined by the postal service.&quot; - HL7 FHIR, Address.postalCode</p><p>An Address Part (ADXP) that contains a postal code designating a region defined by the postal service.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>Any</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This *abstract* class is used to represent a data type that is not known at the logical model level, but rather will be substituted with a (set of) real data type(s) when transformed to a given platform.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>CanadianMailingAddress</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>A specialization of Address that is used for addresses in Canada.  The purpose of this sub-type is to provide a mechanism to add the provinceOrTerritory property and to bind it to the valueset of codes valid for Canadian mail.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">CanadianMailingAddress.<b>provinceOrTerritory</b></div>
+            </td>
+            <td><p>An Address Part (ADXP) that contains the state or province. A state or provinces is a sub-unit of a country with limited sovereignty in a federally organized country.</p><p>The State code is defined in the USPS Publication 28.  Note that while technically, each state &quot;code&quot; should be an Id, the enumeration of states has historically treated as a code.</p><p>&quot;Sub-unit of a country with limited sovereignty in a federally organized country. A code may be used if codes are in common use (i.e. US 2 letter state codes).&quot; - HL7 FHIR, Address.state</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>Code</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>&quot;A word, letter, number, or other symbol used in a code system to mark, represent, or identify something.&quot; - Dictionary.com.  This *abstract* data type represents a &quot;coded element&quot; - some label made up of a series of letters or numbers which can be referenced in a code system or value set.  A code must be unique within a given coding system, but may not be unique across coding systems.  For example, &quot;AU&quot; might mean &quot;Gold&quot; in a chemistry coding system, while it might mean &quot;Australia&quot; in a country coding system.  This is why this coded element class contains both the code and the coding system in which it is defined (one can think of a coding system as a namespace in some respects).</p><p>This class is abstract because each standard (which we are treating as &quot;platforms&quot; in a model-driven architecture sense) represents coded concepts differently.  Some standards, like HL7 v2 have multiple &quot;flavors&quot; of coded concepts.  When generating artifacts based on a particular standard, this data type will be substituted with a specific structure particular to the target standard.</p><p>Note that HL7 FHIR contains an additional element, &quot;primary&quot;, which is not in the FHIM.  Primary is used to signify which code in a collection of codes is the one that was chosen by the user (as opposed to translations of that code).</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Code.<b>code</b></div>
+            </td>
+            <td><p>This property is a unique identifier of or label for an entry in a coding system. </p><p>Note that this property will be replaced by some other concept or group of concepts when this abstract class is replaced by a specific class for a given target platform.</p><p>&quot;A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).&quot; - HL7 FHIR, Coding.code.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Code.<b>displayText</b></div>
+            </td>
+            <td><p>This property contains the &quot;display text&quot; or &quot;designation&quot;, which is the human-readable string representing the concept. </p><p>Note that this property will be replaced by some other concept or group of concepts when this abstract class is replaced by a specific class for a given target platform.</p><p>&quot;A representation of the meaning of the code in the system, following the rules of the system.&quot; - HL7 FHIR, Coding.display.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Code.<b>nullFlavor</b></div>
+            </td>
+            <td><p>This property indicates why the value property is empty.  It uses the NullFlavor enumeration.  This property must be valued when the value property is empty, and must be empty when the value property is valued.</p></td>
+            <td valign="top"> NullFlavor </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Code.<b>originalText</b></div>
+            </td>
+            <td><p>&quot;The text as seen and/or selected by the user who entered the data which represents the intended meaning of the user.&quot; - HL7 V3</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Code.<b>codeSystem</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>CodeSystem</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>CodeSystem</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> </td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">CodeSystem.<b>codeSystemId</b></div>
+            </td>
+            <td><p>This property identifies the coding scheme or coding system of which the code is a member.</p><p>Note that this property will be replaced by some other concept or group of concepts when this abstract class is replaced by a specific class for a given target platform.</p><p>&quot;The identification of the code system that defines the meaning of the symbol in the code.&quot; - HL7 FHIR, Coding.system</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">CodeSystem.<b>codeSystemName</b></div>
+            </td>
+            <td><p>This property identifies the coding scheme or coding system of which the code is a member.</p><p>Note that this property will be replaced by some other concept or group of concepts when this abstract class is replaced by a specific class for a given target platform.</p><p>&quot;The identification of the code system that defines the meaning of the symbol in the code.&quot; - HL7 FHIR, Coding.system</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">CodeSystem.<b>codeSystemVersion</b></div>
+            </td>
+            <td><p>This property identifies the release name or version of the coding scheme or coding system of which the code is a member.  This version number identifies the possible members of a coding system as of a particular time.  If a coding system isn&apos;t formally versioned, such as NDC, the date on which the coding system was published could be used here.</p><p>Note that this property will be replaced by some other concept or group of concepts when this abstract class is replaced by a specific class for a given target platform.</p><p>&quot;The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.&quot; - HL7 FHIR, Coding.version.</p><p></p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>CodeWithValue</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This subtype of Code adds a numerical value, which could be either a score for codes used to capture potential answers on an assessment instrument, or might be used to provide functionality for &quot;coded ordinals&quot;, which assigns a value to a concept.  In either case, this value is pre-defined in the coding system, and therefore could be looked up in the coding system.  Therefore, this datatype may be removed in the future, as it really isn&apos;t necessary, but may be useful in implementations which may wish to avoid a separate call to a terminology server.  (Note that this datatype was renamed from CodedOrdinal to CodeWithValue to combine the LoincAnswerCode and CodedOrdinal subtypes on 10/15/2015).</p><p></p><p>&quot;Coded data, where the coding system from which the code comes defines a partial or complete order on some or all of the codes in the system.  Codes may be assigned a numerical value, but this is not required. [This datatype] adds semantics related to ordering and/or numerical values....&quot; - HL7 V3.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">CodeWithValue.<b>value</b></div>
+            </td>
+            <td><p>The value assigned to this code in the code System. - HL7 V3.</p></td>
+            <td valign="top"> Real </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>ContactPoint</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>A collection of electronic addresses at which the person or organization may be reached. This includes telephones, email addresses, etc.</p><p>&quot;Details for all kinds of technology-mediated contact points for a person or organization, including telephone, email, etc. &quot; - HL7 FHIR, ContactPoint.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ContactPoint.<b>effectiveDateRange</b></div>
+            </td>
+            <td><p>The time period during which the phone number or communications address is valid for the person or organization. The data type is a TimeInterval, which includes both a start date and end date, either of which may be empty.</p><p>&quot;Time period when the contact point was/is in use.&quot; - HL7 FHIR, ContactPoint.period.</p></td>
+            <td valign="top"> TimeInterval </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ContactPoint.<b>isTextMessageEnabled</b></div>
+            </td>
+            <td><p>Indicates whether the endpoint can receive text messages.  Used for phone numbers only.  Added for ONC S&amp;I Clinical Element Data Dictionary (CEDD).</p></td>
+            <td valign="top"> Boolean </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ContactPoint.<b>system</b></div>
+            </td>
+            <td><p>&quot;Telecommunications form for contact point - what communications system is required to make use of the contact.&quot; - HL7 FHIR, ContactPoint.system.</p></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#Contact Point System">Contact Point System</a> 
+					
+					 
+</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ContactPoint.<b>use</b></div>
+            </td>
+            <td><p>Indicates the kind of communications address that is contained within this class.  Examples include primaryHome, Work, etc.  This facilitates the selection of a particular communications address from a list of contact points that may apply to the person or organization.</p><p>&quot;Identifies the purpose for the contact point.&quot; - HL7 FHIR, ContactPoint.use.</p></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#Telecommunications Contact Point Use">Telecommunications Contact Point Use</a> 
+					
+					 
+</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ContactPoint.<b>value</b></div>
+            </td>
+            <td><p>Represents a telecommunications address at which the person or organization may be reached.  Note that this property is a simply a string, the formatting of which will depend on the type of communications address employed.</p><p>&quot;The actual contact point details, in a form that is meaningful to the designated communication system (i.e. phone number or email address).&quot; - HL7 FHIR, ContactPoint.value.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>Id</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>An label that uniquely identifies a thing or object.  This *abstract* data type represents a &quot;identifier&quot; - some series of letters or numbers which uniquely identifies something.  In practice, this data type will be substituted with specific &quot;flavors&quot; of the Id data type for use in particular standards-based payloads.</p><p>&quot;A technical identifier - identifies some entity uniquely and unambiguously.&quot; - HL7 FHIR, Identifier.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Id.<b>effectiveDateRange</b></div>
+            </td>
+            <td><p>The time period during which the id is known to be valid.  The data type is a TimeInterval, which includes both a start date and end date, either of which may be empty.</p><p>&quot;Time period during which identifier is/was valid for use.&quot; - HL7 FHIR, Identifier.period.</p></td>
+            <td valign="top"> TimeInterval </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Id.<b>idType</b></div>
+            </td>
+            <td><p>Indicates what kind of identifier is being represented.  For example, the idType might be represent a Driver&apos;s License, in which case the assigning Authority might be the Virginia Department of Motor Vehicles.</p><p>Note that: a) this information can (and probably should) be also be made clear by the name and definition of the property whose data type is an Id; and b) this property might be an enumeration in the future.</p><p>&quot;A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.&quot; - HL7 FHIR, Identifier.type.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Id.<b>system</b></div>
+            </td>
+            <td><p>A unique identifier of the system (or organization or agency or department) that created the data and/or issued or manages the identifier.</p><p>Note that this property may be replaced by some other concept or group of concepts when this abstract class is replaced by a specific class for a given target platform.</p><p>&quot;Establishes the namespace in which set of possible id values is unique.&quot; - HL7 FHIR, Identifier.assigner.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Id.<b>value</b></div>
+            </td>
+            <td><p>A unique label that identifies an individual entity within a group of entities.  The identifier must be unique within the system that defined it (i.e., the assigningAuthority).</p><p>Note that this property may be replaced by some other concept or group of concepts when this abstract class is replaced by a specific class for a given target platform.</p><p>&quot;The portion of the identifier typically displayed to the user and which is unique within the context of the system.&quot; - HL7 FHIR, Identifier.value.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>Image</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class represents an Image, particularly but not limited to, diagnostic images. The class may also be used for scanned documents and incoming facsimiles.</p><p>Note that this class is equivalent to a the FHIR Attachment data type.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Image.<b>contentType</b></div>
+            </td>
+            <td><p>&quot;Identifies the type of the data in the attachment and allows a method to be chosen to interpret or render the data. Includes mime type parameters such as charset where appropriate.&quot; - HL7 FHIR, Attachment.contentType.</p><p>The FHIM will likely use the system at OID: 2.16.840.1.113883.5.79.  See the IANA site at: http://www.iana.org/assignments/media-types/media-types.xhtml</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Image.<b>data</b></div>
+            </td>
+            <td><p>Contains the image itself.  Note that while this property is modeled as a string, this will usually be implemented using a binary representation such as base64.</p><p>&quot;The actual data of the attachment - a sequence of bytes. In XML, represented using base64.&quot; - HL7 FHIR, Attachment.data.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Image.<b>dateCreated</b></div>
+            </td>
+            <td><p>&quot;The date that the attachment was first created.&quot; - HL7 FHIR, Attachment.creation.</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Image.<b>hash</b></div>
+            </td>
+            <td><p>A hash function is any function that can be used to map data of arbitrary size to data of fixed size.  Note that while this property is modeled as a string, this will usually be implemented using a binary representation such as base64.</p><p>&quot;The calculated hash of the data using SHA-1. Represented using base64.&quot; - HL7 FHIR, Attachment.hash.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Image.<b>language</b></div>
+            </td>
+            <td><p>&quot;The human language of the content. The value can be any valid value according to BCP 47.&quot; - HL7 FHIR, Attachment.language.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Image.<b>size</b></div>
+            </td>
+            <td><p>&quot;The number of bytes of data that make up this attachment.&quot; - HL7 FHIR, Attachment.size.</p></td>
+            <td valign="top"> Integer </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Image.<b>title</b></div>
+            </td>
+            <td><p>&quot;A label or set of text to display in place of the data.&quot; - HL7 FHIR, Attachment.title.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Image.<b>url</b></div>
+            </td>
+            <td><p>&quot;An alternative location where the data can be accessed.&quot; - HL7 FHIR, Attachment.url.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>MonetaryAmount</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>Indicates the monetary amount to be transferred from the debit to the credit account.</p><p>&quot;A quantity expressing an amount of money in some currency. While the monetary amount is a single kind of quantity (money)  the exchange rates between the different units are variable. This is the principle difference between PQ and MO, and the  reason why currency units are not physical units.&quot; - HL7 V3</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">MonetaryAmount.<b>unit</b></div>
+            </td>
+            <td><p>Currencies are the units in which monetary amounts are denominated in different economic regions.</p><p>&quot;The currency unit as defined in ISO 4217&quot; - HL7 V3</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>NullableBoolean</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This data type represents a boolean value which may be unknown.  In other words, this data type can represent Yes, No, and Unknown; unlike a traditional boolean which can only represent True and False.  For this logical model, this class has been modeled in the HL7 V3 style, which has the advantage of being able to account for different kinds of &quot;unknowns&quot;, but has the disadvantage of having two fields, one of which must always be populated while the other must always be empty.  Implementers may choose to implement this class using a single field instead.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">NullableBoolean.<b>value</b></div>
+            </td>
+            <td><p>This property contains either a True or a False (or Yes or No).  If &quot;unknown&quot; is needed, this property will be empty, and the nullFlavor property will be valued.</p></td>
+            <td valign="top"> Boolean </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">NullableBoolean.<b>nullFlavor</b></div>
+            </td>
+            <td><p>This property indicates why the value property is empty.  It uses the NullFlavor enumeration.  This property must be valued when the value property is empty, and must be empty when the value property is valued.</p></td>
+            <td valign="top"> NullFlavor </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>OtherCountryMailingAddress</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>A specialization of Address that is used for addresses in countries other than the United States or Canada.  The purpose of this sub-type is to provide a mechanism to add a jurisdiction property which is not bound to any valueset (in fact it is merely a string, not a code), so as to be able to record the state or province as needed by that country&apos;s postal designation conventions without having to know or maintain a closed list of possible jurisdictions beforehand.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">OtherCountryMailingAddress.<b>jurisdiction</b></div>
+            </td>
+            <td><p>This property is a string for the &quot;jurisdiction&quot;, which would have the state or province as needed by the country&apos;s postal  designation conventions. In some cases, this property will be blank, and the jurisdiction would be part of one of the  street address lines.</p><p>&quot;Sub-unit of a country with limited sovereignty in a federally organized country. A code may be used if codes are in common use (i.e. US 2 letter state codes).&quot; - HL7 FHIR, Address.state</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>PersonName</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>The name of the person.  Uses the VHIM-constrained Person Name data type.</p><p>&quot;A word or term by which a person or thing is commonly and distinctively known.&quot; - Collins English Dictionary.   This data type represents a person&apos;s name.</p><p>&quot;A human&apos;s name with the ability to identify parts and usage.&quot; - HL7 FHIR, HumanName.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PersonName.<b>effectiveDateRange</b></div>
+            </td>
+            <td><p>&quot;Indicates the period of time when this name was valid for the named person.&quot; - HL7 FHIR, HumanName.period.</p></td>
+            <td valign="top"> TimeInterval </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PersonName.<b>prefix</b></div>
+            </td>
+            <td><p>&quot;Contains a set of honorific terms that typically appear before a person&apos;s name, for example Mr., Mrs., Dr., etc. Prefixes have a strong association to the immediately following name part.&quot; -  HL7 V3</p><p>&quot;Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the start of the name.&quot; - HL7 FHIR, HumanName.prefix.</p><p>&apos;A prefix has a strong association to the immediately following name part. A prefix has no implicit trailing white space (it has implicit leading white space though). Note that prefixes can be inverted&apos; (HL7) A Person Name Prefix is usually an academic or nobility title. An Academic title includes a prefix like &apos;Dr.&apos; There are still people with nobility titles (aristocrats). German &apos;von&apos; is generally a nobility title, not a mere voorvoegsel. Others are &apos;Earl of&apos; or &apos;His Majesty King of...&apos; etc. Rarely used nowadays, but some systems do keep track of this. </p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PersonName.<b>given</b></div>
+            </td>
+            <td><p>&apos;Given name (don&apos;t call it &apos;first name&apos; since this given names do not always come first)&apos; (HL7) </p><p>&quot;A set of names given to a person at birth, but not including the family name.  In western cultures, this property would contain the &apos;first&apos; and &apos;middle&apos; names.  Note that in some cultures, the given name is placed after the family name.  Note also that this property contains multiple elements, so it can handle those situations where a person has more than one &apos;middle&apos; name.&quot; - HL7 V3</p><p>&quot;Given name.&quot; - HL7 FHIR, HumanName.given.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PersonName.<b>family</b></div>
+            </td>
+            <td><p>&quot;The portion of a person&apos;s name that reflects the genealogy of the person.  In western cultures, this is the &apos;last&apos; name.  In eastern cultures, the family name appears before the person&apos;s given name(s).  In some cultures (e.g. Eritrea) the family name of a son is the first name of his father.&quot; - HL7 V3</p><p>&quot;The part of a name that links to the genealogy. In some cultures (e.g. Eritrea) the family name of a son is the first name of his father.&quot; - HL7 FHIR, HumanName.family.</p><p>&apos;Family name, this is the name that links to the genealogy&apos; (HL7) </p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PersonName.<b>suffix</b></div>
+            </td>
+            <td><p>&quot;Contains a list of honorific terms that typically appear after a person&apos;s name, for example Jr., Sr., MD, RN, etc. Prefixes have a strong association to the immediately following name part.&quot; - HL7 V3</p><p>&quot;Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the end of the name.&quot; - HL7 FHIR, HumanName.suffix.</p><p>&apos;A suffix has a strong association to the immediately preceding name part. A prefix has no implicit leading white space (it has implicit trailing white space though). Suffices can not be inverted&apos; (HL7) </p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PersonName.<b>initials</b></div>
+            </td>
+            <td><p>The first letter of each part of a proper name. This property stores the initials of a person&apos;s name, which is used  in research studies to identify the patient without divulging the person&apos;s entire name.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PersonName.<b>use</b></div>
+            </td>
+            <td><p>&quot;Identifies the purpose for this name.&quot; - HL7 FHIR, HumanName.use.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>PhysicalQuantityInterval</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This data type represents an Interval, where the Low and High Limits are Physical Quantities.  An Interval is a &quot;set of consecutive values of an ordered base data type.&quot; - HL7 V3  A Physical Quantity is &quot;a dimensioned quantity expressing the result of measuring&quot; - HL7 V3</p><p>The amount of the therapeutic agent or other substance given at one administration event.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PhysicalQuantityInterval.<b>lowValue</b></div>
+            </td>
+            <td><p>The magnitude of the quantity measured in terms of the unit.</p><p>&quot;The low limit of the interval.  The low limit SHALL NOT be positive infinity.&quot; - HL7 V3  This property contains the numeric portion (i.e., not including any units of measure) of the low limit.</p></td>
+            <td valign="top"> Real </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PhysicalQuantityInterval.<b>lowUnit</b></div>
+            </td>
+            <td><p>The unit of measure specified in the Unified Code for Units of Measure (UCUM) [].</p><p>&quot;The low limit of the interval.  The low limit SHALL NOT be positive infinity.&quot; - HL7 V3.  This property containsthe Unit of Measure of the low limit.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PhysicalQuantityInterval.<b>highValue</b></div>
+            </td>
+            <td><p>The magnitude of the quantity measured in terms of the unit.</p><p>&quot;The high limit of the interval.  The high limit SHALL NOT be negative infinity, and SHALL be higher than the low limit if one exists.&quot; - HL7 V3.  This property contains the numeric portion (i.e., not including any units of measure) of the high limit.</p></td>
+            <td valign="top"> Real </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PhysicalQuantityInterval.<b>highUnit</b></div>
+            </td>
+            <td><p>&quot;The high limit of the interval.  The high limit SHALL NOT be negative infinity, and SHALL be higher than the low limit if one exists.&quot; - HL7 V3.  This property contains the Unit of Measure of the high limit.</p><p>The unit of measure specified in the Unified Code for Units of Measure (UCUM) [].</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>PointInTime</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>A data type containing date/time information.  This data type is a placeholder, as various platforms have differing built-in date/time datatypes.  It is anticipated that this data type will be replaced by a different data type when transforming to a particular implementation platform.</p><p>A quantity specifying a point on the axis of natural time. A point in time is most often represented as a calendar expression.  Semantically, however, time is independent from calendars and best described by its relationship to elapsed time (measured as a physical quantity in the dimension of time.) A point in time plus an elapsed time yields another point in time. Inversely, a point in time minus another point in time yields an elapsed time.  As nobody knows when time began, a point in time is conceptualized as the amount of time that has elapsed from some arbitrary zero-point, called an epoch. Because there is no absolute zero-point on the time axis natural time is a difference-scale quantity, where only differences are defined but no ratios. (For example, no point in time is - absolutely speaking - &apos;twice as late&apos; as another point in time.)  Given some arbitrary zero-point, one can express any point in time as an elapsed time measured from that offset. Such an arbitrary zero-point is called an epoch. This epoch-offset form is used as a semantic representation here, without implying that any system would have to implement the TS data type in that way. Systems that do not need to compute distances between points in time will not need any other representation than a calendar expression literal </p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">PointInTime.<b>literal</b></div>
+            </td>
+            <td><p>&quot;TS literals are simple calendar expressions... [which] conform to the constrained ISO 8601... western calendar expressions  begin with the 4-digit year; followed by the 2-digit month of the year; followed by the 2-digit day of the month; followed  by the 2-digit hour of the day (beginning with zero); and so forth. For example, &apos;200004010315&apos; is a valid expression for  April 1, 2000, 3:15 am.  A calendar expression can be of variable precision, omitting parts from the right.  For example, &apos;20000401&apos; is precise  only to the day of the month.  The least defined calendar period (i.e. the second) may be written as a REAL, with the number of integer digits specified,  followed by the decimal point and any number of fractional digits. For example, &apos;20000401031520.34&apos; means April 1, 2000,  3:15 and 20.34 seconds.  When other calendars are used in the future, a prefix &apos;GREG:&apos; can be placed before the western (Gregorian) calendar  expression to disambiguate from other calendars. Each calendar shall have its own prefix. However, the western calendar is  the default if no prefix is present.  In the modern Gregorian calendar (and all calendars where time of day is based on UTC), the calendar expression may contain  a time zone suffix. The time zone suffix begins with a plus (+) or minus (-) followed by digits for the hour and, for non  UTC times, minute cycles. UTC is designated as offset &apos;+00&apos; or &apos;-00&apos;; the ISO 8601 and ISO 8824 suffix &apos;Z&apos; for UTC is not  permitted.&quot; - HL7 V3</p><p>For the default Gregorian calendar the calendar expression literals of this specification conform to the constrained ISO 8601 that is defined in ISO 8824 (ASN.1) under clause 32 (generalized time) and to the HL7 version 2 TS data format.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>Quantity</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>The amount that was or is to be supplied</p><p>&quot;A dimensioned quantity expressing the result of measuring&quot; - HL7 V3</p><p>&quot;A measured amount (or an amount that can potentially be measured). Note that measured amounts include amounts that are not precisely quantified, including amounts involving arbitrary units and floating currencies.&quot; - HL7 FHIR, Quantity.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Quantity.<b>value</b></div>
+            </td>
+            <td><p>The magnitude of the quantity measured in terms of the unit.</p><p>&quot;The magnitude of the quantity measured in terms of the unit&quot; - HL7 V3</p><p>&quot;The magnitude of the Monetary Amount in terms of currency&quot; - HL7 V3</p><p>&quot;The value of the measured amount. The value includes an implicit precision in the presentation of the value.&quot; - HL7 FHIR, Quantity.value.</p></td>
+            <td valign="top"> Real </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Quantity.<b>unit</b></div>
+            </td>
+            <td><p>&quot;The unit of measure specified in the Unified Code for Units of Measure (UCUM). The default unit is 1.&quot; - HL7 V3</p><p>&quot;A computer processable form of the units in some unit representation system.&quot; - HL7 FHIR, Quantity.code.</p><p>The unit of measure specified in the Unified Code for Units of Measure (UCUM) [].</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>QuantityRatio</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>A ratio (numerator : denominator) specifying the relative quantities of the Entity playing the Role in the Entity scoping the Role, used for Roles that represent composition relationships between the scoping and playing Entities.</p><p>This data type represents a Ratio, where the Low and High Limits are Physical Quantities.  A Ratio is &quot; A quantity constructed as the quotient of a numerator quantity divided by a denominator quantity.&quot; - HL7 V3  A Physical Quantity is &quot;a dimensioned quantity expressing the result of measuring&quot; - HL7 V3</p><p>&quot;A relationship of two Quantity values - expressed as a numerator and a denominator.&quot; - HL7 FHIR, Ratio.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">QuantityRatio.<b>numerator</b></div>
+            </td>
+            <td><p>The quantity that is being divided in the ratio. The default is the integer number 1</p><p>&quot;The quantity that is being divided in the ratio. The default is the integer number 1 (one).&quot; - HL7 V3</p><p>&quot;The value of the numerator.&quot; - HL7 FHIR, Ratio.numerator.</p></td>
+            <td valign="top"> Quantity </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">QuantityRatio.<b>denominator</b></div>
+            </td>
+            <td><p>&quot;The quantity that devides the numerator in the ratio. The default is the integer number 1 (one). The denominator SHALL not be zero.&quot; - HL7 V3</p><p>&quot;The value of the denominator.&quot; - HL7 FHIR, Ratio.denominator.</p><p>The quantity that divides the numerator in the ratio. The default is the integer number 1 (one.) The denominator must not be zero.</p></td>
+            <td valign="top"> Quantity </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>QuantityWithComparator</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> </td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">QuantityWithComparator.<b>comparator</b></div>
+            </td>
+            <td><p>&quot;How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues. E.g. if the comparator is &quot;&lt;&quot; , then the real value is &lt; stated value.&quot; - HL7 FHIR, Quantity.comparator.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>RateQuantity</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>Identifies the speed with which the substance is introduced into the subject. Expressed as a physical (extensive) quantity over elapsed time (e.g., examples are 100 mL/h, 1 g/d, 40 mmol/h, etc.)</p><p>Rate: &quot;A certain quantity or amount of one thing considered in relation to a unit of another thing and used as a standard  or measure: at the rate of 60 miles an hour.&quot; - Dictionary.com  This class represents a ratio of some Physical Quantity over a period of time.  This class is structurally similar to  other Ratio classes (e.g., IntegerRatio), except the denominator is by definition a TimeQuantity.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">RateQuantity.<b>numerator</b></div>
+            </td>
+            <td><p>The quantity that is being divided in the ratio. The default is the integer number 1</p><p>&quot;The quantity that is being divided in the ratio. The default is the integer number 1 (one).&quot; - HL7 V3</p></td>
+            <td valign="top"> Quantity </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">RateQuantity.<b>denominator</b></div>
+            </td>
+            <td><p>&quot;The quantity that divides the numerator in the ratio. The denominator SHALL not be zero.&quot; - HL7 V3  This property is by definition a period of time, with the unit almost always one.  For example, one hour, one minute, etc.</p><p>The quantity that divides the numerator in the ratio. The default is the integer number 1 (one.) The denominator must not be zero.</p></td>
+            <td valign="top"> TimeQuantity </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>Real</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This data type represents numbers that may include non-whole numbers. This data type is a placeholder, as various platforms have differing built-in floating-point datatypes. It is anticipated that this data type will be replaced by a different data type when transforming to a particular implementation platform.</p><p>&quot;A scalar magnitude. Typically used whenever quantities are measured, estimated, or computed from other real numbers. The typical representation is decimal, where the number of significant decimal digits is known as the precision.&quot; - HL7 V3</p><p>&quot;Rational numbers that have a decimal representation.&quot; - HL7 FHIR, decimal.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Real.<b>literal</b></div>
+            </td>
+            <td><p>This is a placeholder for an actual data type that will be substituted via transformation to a platform-specific datatype.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>TimeInterval</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This data type represents an Interval, where the Low and High Limits are Points In Time.  An Interval is a &quot;set of consecutive values of an ordered base data type.&quot; - HL7 V3  A PointInTime is &quot;a quantity specifying a point on the axis of natural time. A point in time is most often represented as a  calendar expression.&quot; - HL7 V3</p><p>An interval of time specified as an interval of points in time - TS.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">TimeInterval.<b>start</b></div>
+            </td>
+            <td><p>This is the low limit of the interval.</p><p>&quot;The low limit of the interval.  The low limit SHALL NOT be positive infinity.&quot; - HL7 V3</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">TimeInterval.<b>end</b></div>
+            </td>
+            <td><p>&quot;The high limit of the interval.  The high limit SHALL NOT be negative infinity, and SHALL be higher than the low limit if one exists.&quot; - HL7 V3</p><p>This is the high limit of the interval.</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">TimeInterval.<b>duration</b></div>
+            </td>
+            <td><p>&quot;The difference between HIGH and LOW boundary. The purpose of distinguishing width is to handle all cases of incomplete information symmetrically. In any IVL representation only two of the three properties HIGH, LOW, and width need to be stated: the third can be derived.  When both boundaries are known, width can be derived as HIGH minus LOW. When one boundary and width is known, the other boundary is also known. When no boundary is known, width may still be known. For example, one knows that an activity takes about 30 minutes, but one may not yet know when that activity is started.&quot; - HL7 V3</p><p>The difference between high and low boundary. The purpose of distinguishing a width property is to handle all cases of incomplete information symmetrically. In any interval representation only two of the three properties high, low, and width need to be stated and the third can be derived.</p></td>
+            <td valign="top"> TimeQuantity </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>TimeQuantity</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class represents an amount of time, such as 10 minutes, 3.2 seconds, etc. This class is structurally identical to a Physical Quantity, although the units of measure are by definition time units (e.g., hours), rather than physical units (e.g., kilograms).</p><p>A length of time specified as a Physical Quantity, e.g., 5 minutes, 2.5 hours.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">TimeQuantity.<b>unit</b></div>
+            </td>
+            <td><p>The unit of measure specified in the Unified Code for Units of Measure (UCUM).</p><p>&quot;The unit of measure specified in the Unified Code for Units of Measure (UCUM).&quot; - HL7 V3  The units of measure used by this class are limited to those measuring time (e.g., minutes, hours, years, etc.)</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>UsMailingAddress</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>A specialization of Address that is used for addresses in the United Sates.  Note that the stateOrTerritory property may only contain a code for a U.S. State, territory, or military postal region (APO).  The purpose of this sub-type is to provide a mechanism to add the stateOrTerritory property and to bind it to the valueset of codes valid for United States mail.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">UsMailingAddress.<b>stateOrTerritory</b></div>
+            </td>
+            <td><p>An Address Part (ADXP) that contains the state or province. A state or provinces is a sub-unit of a country with limited sovereignty in a federally organized country.</p><p>The State code is defined in the USPS Publication 28.  Note that while technically, each state &quot;code&quot; should be an Id, the enumeration of states has historically treated as a code.</p><p>&quot;Sub-unit of a country with limited sovereignty in a federally organized country. A code may be used if codes are in common use (i.e. US 2 letter state codes).&quot; - HL7 FHIR, Address.state</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+  </table>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font">
+         <tr>
+            <th>Value Set Constraint</th>
+            <th>Element Description</th>
+         </tr>
+       
+
+
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID=""></a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">     <br/> <p>Indicates the kind of address that is contained within this class. Examples include primary home, work, etc.  This facilitates the selection of a particular address from a list of addresses that may apply to the person or organization.</p><p>&quot;The purpose of this address.&quot; - HL7 FHIR, Address.use.</p><br> http://hl7.org/fhir/2015May/v2/0190/
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>BA (Bad Address)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>BI (Billing Address)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>N (Birth Address)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>BDL (Birth delivery location)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>F (Country Of Origin)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>B (Firm/Business)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>H (Home Address)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>L (Legal Address)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>M (Mailing)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>O (Office/Business (Work))</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>BR (Residence at birth)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>S (Service Location)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>SH (Shipping Address)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>V (Vacation)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+ 
+
+
+       
+		
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID="Contact Point System">Contact Point System</a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">  Contact Point System   <br/> <p>&quot;Telecommunications form for contact point - what communications system is required to make use of the contact.&quot; - HL7 FHIR, ContactPoint.system.</p><br> http://hl7.org/fhir/2015May/contact-point-system.html
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>email</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>fax</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>phone</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>url</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+ 
+
+
+       
+		
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID="Telecommunications Contact Point Use">Telecommunications Contact Point Use</a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">  Telecommunications Contact Point Use   <br/> <p>Indicates the kind of communications address that is contained within this class.  Examples include primaryHome, Work, etc.  This facilitates the selection of a particular communications address from a list of contact points that may apply to the person or organization.</p><p>&quot;Identifies the purpose for the contact point.&quot; - HL7 FHIR, ContactPoint.use.</p><br> http://hl7.org/fhir/2015May/v2/0201/
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>EMR (Emergency Number)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>ORN (Other Residence Number)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>PRN (Primary Residence Number)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>PRS (Personal)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>VHN (Vacation Home Number)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>WPN (Work Number)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>temp (Temp (from FHIR))</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>old (Old (from FHIR))</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>mobile (Mobile (from FHIR))</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+ 
+
+
+       
+		
+
+
+</table>
+

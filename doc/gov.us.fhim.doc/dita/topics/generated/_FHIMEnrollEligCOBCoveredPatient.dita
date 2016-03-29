@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMEnrollEligCOBCoveredPatient" xml:lang="en-us">
+<title id="title">CoveredPatient</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class represents the Role of a Patient from a financial, rather than a clinical point of view.  This class contains information concerning who is going to pay for services / materials provided, and links to Health Plan information via relationships to Subscriber.  Covered Patient serves to link the financial aspects to the clinical Patient without encumbering clinical information with the financial or administrative considerations.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>id :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Payer-assigned identifier for the Patient.</p><p>&quot;Insurance ID assigned to the cardholder or identification number used by the plan.&quot; - NCPDP Telecommunication (Field 302-C2, Data Dictionary 201104).  Note that the some payers issue cards to dependents, some do not; therefore the cardholder might be the patient, the subscriber, or both.</p><p>&quot;ID assigned to the patient.&quot; - NCPDP Telecommunication (Field 332-CY, Data Dictionary 201104).  Note that the NCPDP Telecommunication structure uses a separate field (331-CX) to describe what kind of patient id is found here (i.e., who issued the id).  This information is not modeled as a separate field in the FHIM as it is part of the ID data type.  Possible values for the id type include: Social Security Number; Facility ID Number; Driver&apos;s License Number; U.S. Military ID; Non-SSN-based patient identifier assigned by health plan; SSN-based patient identifier assigned by health plan; Medicaid ID; State Issued ID; Passport ID; Medicare HIC#; Employer Assigned ID; Payer/PBM Assigned ID; Alien Number (Government Permanent Residence Residence Number); Government Student VISA Number; Indian Tribal ID; Medical Record Identification Number; Other.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>patientResidenceType :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Code identifying the patient&#8217;s place of residence.&quot; - NCPDP Telecommunication (Field 384-4X, Data Dictionary 201104).  Possible values include: Home; Skilled Nursing Facility; Nursing Facility; Assisted Living Facility; Custodial Care Facility; Group Home; Inpatient Psychiatric Facility; Psychiatric Facility &#8211; Partial Hospitalization; Intermediate Care Facility/Mentally Retarded; Residential Substance Abuse Treatment Facility; Hospice; Psychiatric Residential Treatment Facility; Comprehensive Inpatient Rehabilitation Facility; Homeless Shelter; Correctional Institution; Not Specified.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>personCode :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Code assigned to a specific person within a family.  Example: 001=Cardholder; 002=Spouse; 003-999=Dependents and Others (including second spouses, etc.).&quot; - NCPDP Telecommunication (Field 303-C3, Data Dictionary 201104).  Note that while the definition implies a Code datatype, NCPDP models this as a string.  In practice, this property acts like an identifier.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>dependent : <xref href="../t_FHIMEnrollEligCOBDependent.dita" >Dependent</xref> (0..1)</p></stentry>
+  <stentry><p>				Pointer to the Role that a Person plays when he or she receives healthcare benefits as a Dependent of someone else who is the named beneficiary of a Health Policy.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>patient : <xref href="../t_FHIMPersonPatient.dita" >Patient</xref> (1..1)</p></stentry>
+  <stentry><p>				Pointer to the Role that a Person plays when he or she is the recipient of healthcare services from a healthcare provider.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>patientSubscriber : <xref href="../t_FHIMEnrollEligCOBPatientSubscriber.dita" >PatientSubscriber</xref> (0..1)</p></stentry>
+  <stentry><p>				Pointer to the Role that a Person plays when he or she is both the Covered Patient and the Subscriber (i.e., &quot;Self&quot;).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>responsibleParty : <xref href="../t_FHIMEnrollEligCOBResponsibleParty.dita" >ResponsibleParty</xref> (0..1)</p></stentry>
+  <stentry><p>				Pointer to the (Role of the) Person who is responsible for the payment of services / materials provided.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

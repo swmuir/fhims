@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMLabLabTestRequest" xml:lang="en-us">
+<title id="title">LabTestRequest</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	LabTestRequest is a kind of <xref href="../t_FHIMOrdersObservationRequestAbstract.dita">ObservationRequest(Abstract)</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class contains attributes associated with a record of the investigative procedure requested to be performed in the laboratory.    Need to flesh out how to model both Panels and individual tests at the same time.  It is not reasonable to expect to be able to standardize panels, but may have to enumerate the tests that make up the panel ordered.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>intendedDuration :  <xref href="../t_FHIMDatatypesTimeInterval.dita" >TimeInterval</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Contains the time period over which one or more LabTestRequests are to be executed.</p><p>&quot;Contains the duration for which the service is requested.&quot; - HL7 Version 2.8, TQ1-6.</p><p>&quot;Indicates the earliest date/time at which the services should be started.&quot; - HL7 Version 2.8, TQ1-7.</p><p>&quot;Contain(s) the latest date/time that the service should be performed.  If it has not been performed by the specified time, it should not be performed at all.&quot; - HL7 Version 2.8, TQ1-8.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>referralType :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				If the test was accepted as a referral from another facility, only portions of the test may need to be performed.  For example, CHCS lists the following: Procedure Only, Report Only, and Outside Films.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>resultsReleaseCategory :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..*)</p> 
+<p>See <xref href="../t_fhimvocabLabVocabResultsReleaseCategorization.dita">Results Release Categorization</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				&quot;Contains instructions on whether to share the results with the patient, and if so how.&quot; - HL7 Version 2.8, OBX-26.</p><p>Possible values include (from HL7 Table 909): Share To Be Determined: Category to be determined; Share Immediately: Share result with patient immediately; Share Within Normal Limits: Share result in reference/therapeutic range with patient immediately, Share result out of reference/therapeutic ranges with patient after 1 or more business day as agreed to by the systems in play; Share In 1 Day: Share result regardless of reference/therapeutic range after 1 or more business day as agreed to by the systems in play; Share in 1 Day Conditionally: Share result in reference ranges/therapeutic with patient after 1 or more business day as agreed to by the systems in play, Withhold result out of reference/therapeutic range until physician release; Share Withhold: Withhold result regardless of reference/therapeutic ranges.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>specimenActionCode :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+<p>See <xref href="../t_fhimvocabLabVocabSpecimenActionCodeHL7.dita">Specimen Action Code (HL7)</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				&quot;Identifies the action to be taken with respect to the specimens that accompany or precede this order.&quot; - HL7 Version 2.8, OBR-11.  Possible values include (from HL7 Table 65): Add ordered tests to the existing specimen; Generated order - reflex order; Lab to obtain specimen from patient; Specimen obtained by service other than Lab; Pending specimen - Order sent prior to delivery; Revised order; Schedule the tests specified below.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>labTestRequested : <xref href="../t_FHIMLabLabTest.dita" >LabTest</xref> (0..*)</p></stentry>
+  <stentry><p>				&quot;This field contains the identifier code for the requested observation/test/battery.&quot; - HL7 Version 2.8, OBR-4
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>requestingLocation : <xref href="../t_FHIMProviderServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (0..1)</p></stentry>
+  <stentry><p>				An association from LabTestRequest to Institution identifying a requesting organization that is devoted to the diagnosis and care. 
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

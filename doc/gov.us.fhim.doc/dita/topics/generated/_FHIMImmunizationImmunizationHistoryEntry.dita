@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMImmunizationImmunizationHistoryEntry" xml:lang="en-us">
+<title id="title">ImmunizationHistoryEntry</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>An entry in a Patient&apos;s &quot;Immunization List&quot;.  This class allows for entries in the list to be associated with the Immunization clinical events in the EHR, and potentially to be de-duplicated if multiple entries are received from different sources.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>informationSource :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+<p>See <xref href="../t_fhimvocabImmunizationVocabImmunizationInformationSourcePHVS_HITSP.dita">Immunization Information Source (PHVS_HITSP)</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				Identifies the source of the information about the vaccination.  Possible values include: Source unspecified; From other provider; From parent&#8217;s written record; From parent&#8217;s recall; From other registry; From birth certificate; From school record; From public agency.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>vaccinationEvent : <xref href="../t_FHIMImmunizationVaccinationEvent.dita" >VaccinationEvent</xref> (1..1)</p></stentry>
+  <stentry><p>				Pointer to information about the administration of a Vaccine to a Patient.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>vaccinationNonEvent : <xref href="../t_FHIMImmunizationVaccinationNonEvent.dita" >VaccinationNonEvent</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to information about the deliberate act(s) of not administering a scheduled (or otherwise expected) Vaccination to a Patient.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

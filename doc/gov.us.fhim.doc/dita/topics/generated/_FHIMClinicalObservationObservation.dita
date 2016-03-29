@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMClinicalObservationObservation" xml:lang="en-us">
+<title id="title">Observation</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	Observation is a kind of <xref href="../t_FHIMCommonClinicalInformationAbstract.dita">ClinicalInformation(Abstract)</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>An event in which a Clinical Observation is recorded.</p><p></p><p>&quot;Measurements and simple assertions made about a patient, device or other subject.&quot; - HL7 FHIR, Observation resource.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>bodySite :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				A code specifying detail about the anatomical site or system that is the focus of the Observation.</p><p>&quot;Indicates the site on the subject&apos;s body where the observation was made ( i.e. the target site).&quot; - HL7 FHIR, Observation.bodySite.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dataAbsentReason :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Provides a reason why the expected value in [value] is missing&quot; - HL7 FHIR, Observation.dataAbsentReason.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateTime :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The date (and optionally, time) that the Observation took place.  Note that this is the clinically-relevant time, for example, the clinically relevant time of a result of a lab test on a blood sample is the time the blood was drawn, not when the test was run.  Note that in FHIR this can be either a point in time or a period (i.e., a TimeInterval).  In the FHIM, this is currently modeled as only a point in time.  Note also that when used by the Condition sub-type of Observation, this is the date that the Condition was first detected or asserted.</p><p></p><p>&quot;This field is required in two circumstances.  The first is when the observations reported beneath one report header have different dates/times.  This could occur in the case of queries, timed test sequences, or clearance studies where one measurement within a battery may have a different time than another measurement....  The observation date-time is the physiologically relevant date-time or the closest approximation to that date-time.  In the case of tests performed on specimens, the relevant date-time is the specimen&#8217;s collection date-time.  In the case of observations taken directly on the patient (e.g., X-ray images, history and physical), the observation date-time is the date-time that the observation was performed.&quot; - HL7 Version 2.8, OBX-14.</p><p>&quot;The time or time-period the observed value is asserted as being true. For biological subjects - e.g. human patients - this is usually called the &quot;physiologically relevant time&quot;. This is usually either the time of the procedure or of specimen collection, but very often the source of the date/time is not known, only the date/time itself.&quot; - HL7 FHIR, Observation.applies.</p><p></p><p>&quot;Contains the date/time when the corresponding problem was initially identified by the caregiver.&quot; - HL7 Version 2.8, PRB-7</p><p>&quot;Estimated or actual date the condition/problem/diagnosis was first detected/suspected.&quot; - HL7 FHIR, Condition resource.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>observationMethod :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..*)</p> 
+
+
+</stentry>
+  <stentry><p>				Provides additional detail about the means or technique used to ascertain the Observation.  The method used may affect how the observation value is interpreted.</p><p>&quot;Indicates the mechanism used to perform the observation.&quot; - HL7 FHIR, Observation.method.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>observedCharacteristic :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Indicates what was observed.  This property may be re-defined in sub-classes to explictly describe a particular kind of observation (e.g., Heart Rate).</p><p>&quot;Describes what was observed. Sometimes this is called the observation code.&quot; - HL7 FHIR, Observation.code.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>reliability :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;An estimate of the degree to which quality issues have impacted on the value reported.&quot; - HL7 FHIR, Observation.reliability.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>value :  <xref href="../t_FHIMDatatypesAny.dita" >Any</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Contains the value of the Clinical Observation.  This property is modeled as an Any datatype in the generic Observation; specific subtypes are expected to re-define this property to the appropriate datatype.</p><p>&quot;The information determined as a result of making the observation, if the information has a simple value.&quot; - HL7 FHIR, Observation.value.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>commentEvent : <xref href="../t_FHIMCommonCommentEvent.dita" >CommentEvent</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to any remarks about the Clinical Observation.</p><p>&quot;May include statements about significant, unexpected or unreliable values, or information about the source of the value where this may be relevant to the interpretation of the result.&quot; - HL7 FHIR, Observation.comments.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>encounter : <xref href="../t_FHIMEncounterEncounterEvent.dita" >EncounterEvent</xref> (0..1)</p></stentry>
+  <stentry><p>				Pointer to the Encounter during which the Observation was made.  When used by the Condition Statement sub-type of Observation Statement, this is the Encounter during which the Condition was first asserted.</p><p>&quot;Encounter during which the condition was first asserted.&quot; - HL7 FHIR, Condition resource.</p><p>&quot;The healthcare event (e.g. a patient and healthcare provider interaction) that relates to this observation.&quot; - HL7 FHIR, Observation.encounter.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>interpretationEvent : <xref href="../t_FHIMClinicalObservationInterpretationEvent.dita" >InterpretationEvent</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to an assessment of the value or result of the Clinical Observation.</p><p>&quot;The assessment made based on the result of the observation.&quot; - HL7 FHIR, Observation.interpretation.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>observationQualifier : <xref href="../t_FHIMClinicalObservationObservationQualifier.dita" >ObservationQualifier</xref> (0..*)</p></stentry>
+  <stentry><p>				A pointer to a set (zero to many) of observations or information that may provide additional context to the owning clinical observation (i.e., the owning ClinicalStatement class).  This information may likely alter a clinician&apos;s interpretation of the value in the owning ClinicalStatement class.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>patient : <xref href="../t_FHIMPersonPatient.dita" >Patient</xref> (1..1)</p></stentry>
+  <stentry><p>				Pointer to the (Person or Animal in the Role of) Patient for which the Clinical Observation was made.</p><p>&quot;The thing the observation is being made about.&quot; - HL7 FHIR, Observation.subject.  Note that FHIR allows observations to be made about Patients, Groups, Devices, or Locations, but in the FHIM, observations are currently limited to Patients.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>referenceRange : <xref href="../t_FHIMClinicalObservationReferenceRange.dita" >ReferenceRange</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to a set of normal or recommended ranges that can be used to compare against the value of the actual observation or test results.</p><p>&quot;Guidance on how to interpret the value by comparison to a normal or recommended range.&quot; - HL7 FHIR, Observation.referenceRange.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

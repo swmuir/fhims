@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMPharmacyMedicationList" xml:lang="en-us">
+<title id="title">MedicationList</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class represents a list of medications that the patient is taking.  This list may contain information from prescription data (Pharmacy Requests), pharmacy data (Pharmacy Promises) and/or Patient-Reported Medications.  Because the list may be an aggregation of data from multiple sources, duplicate information may potentially exist.  This class contains a reconciliation date which, when valued, indicates when a medical professional last validated the list of medications.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>dateOfReconciliation :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The date of the last active medication list reconciliation&quot; - ONC S&amp;I Clinical Element Data Dictionary (CEDD), March 2012.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>patientReportedMedication : <xref href="../t_FHIMPharmacyPatientReportedMedication.dita" >PatientReportedMedication</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to information about medications which the patient has received or is receiving, as reported by the patient.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>pharmacyPromise : <xref href="../t_FHIMPharmacyPharmacyPromise.dita" >PharmacyPromise</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to information about medications which the patient has received or is receiving, as reported by a pharmacy.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>pharmacyRequest : <xref href="../t_FHIMPharmacyPharmacyRequest.dita" >PharmacyRequest</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to information about medications which the patient has received or is receiving, as reported by an ordering physician.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

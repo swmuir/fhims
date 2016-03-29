@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMSecurityAndPrivacySecurityRole" xml:lang="en-us">
+<title id="title">SecurityRole</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+<section id="specializations"  audience="developer, modeler">
+	<title>Derivations</title>
+	<ul>
+<li><xref href="../t_FHIMSecurityAndPrivacyFunctionalRole.dita">FunctionalRole </xref> is a kind of  SecurityRole </li>
+<li><xref href="../t_FHIMSecurityAndPrivacyStructuralRole.dita">StructuralRole </xref> is a kind of  SecurityRole </li>
+	</ul>
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>ISO-22600 specifies a role as &apos;set of competences and/or performances which is associated with a task&apos;. A role is a specialization of CompositePolicy that define a group of policies (authorization, obligation, delegation and refrain policies).</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>authorityIdentifierName :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This attribute is defined by ISO 22600-2 as &apos;String&apos;.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>description :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This attribute is defined by ISO 22600-2 as &apos;CodedSimpleValue&apos;.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>name :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This attribute is defined by ISO 22600-2 as &apos;CodedSimpleValue&apos;.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>objectIdentifier :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This is the role_identifier_ID property in the Security DAM.  The definition of that property is &apos;This attribute is defined by ISO 22600-2 as &apos;ISO ObjectIdentifier&apos;.&apos;    WE RENAMED THIS.  WAS THIS OK TO DO????
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>roleIdentifier :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This is the role_identifier property in the security DAM, and is defined by ISO 22600-2 as a &quot;Set of InstanceIndentifiers&quot;.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>permission : <xref href="../t_FHIMSecurityAndPrivacyPermission.dita" >Permission</xref> (0..*)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>policy : <xref href="../t_FHIMSecurityAndPrivacyPolicyAbstract.dita" >Policy(Abstract)</xref> (0..*)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>securityRoleRelationship : <xref href="../t_FHIMSecurityAndPrivacySecurityRoleRelationship.dita" >SecurityRoleRelationship</xref> (0..*)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

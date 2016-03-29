@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMDieteticsDieteticsRequestAbstract" xml:lang="en-us">
+<title id="title">DieteticsRequest(Abstract)</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	DieteticsRequest(Abstract) is a kind of <xref href="../t_FHIMOrdersHealthcareOrderAbstact.dita">HealthcareOrder(Abstact)</xref>	
+</section>
+
+
+
+<section id="specializations"  audience="developer, modeler">
+	<title>Derivations</title>
+	<ul>
+<li><xref href="../t_FHIMDieteticsStandingOrder.dita">StandingOrder </xref> is a kind of  DieteticsRequest(Abstract) </li>
+<li><xref href="../t_FHIMDieteticsTubefeedingRequest.dita">TubefeedingRequest </xref> is a kind of  DieteticsRequest(Abstract) </li>
+<li><xref href="../t_FHIMDieteticsDietRequest.dita">DietRequest </xref> is a kind of  DieteticsRequest(Abstract) </li>
+<li><xref href="../t_FHIMDieteticsSupplementalFeedingRequest.dita">SupplementalFeedingRequest </xref> is a kind of  DieteticsRequest(Abstract) </li>
+<li><xref href="../t_FHIMDieteticsNutritionalStatus.dita">NutritionalStatus </xref> is a kind of  DieteticsRequest(Abstract) </li>
+<li><xref href="../t_FHIMDieteticsEarlyLateTrayRequest.dita">EarlyLateTrayRequest </xref> is a kind of  DieteticsRequest(Abstract) </li>
+<li><xref href="../t_FHIMDieteticsSpecialMeals.dita">SpecialMeals </xref> is a kind of  DieteticsRequest(Abstract) </li>
+<li><xref href="../t_FHIMDieteticsFoodPreference.dita">FoodPreference </xref> is a kind of  DieteticsRequest(Abstract) </li>
+<li><xref href="../t_FHIMDieteticsRecurringMeals.dita">RecurringMeals </xref> is a kind of  DieteticsRequest(Abstract) </li>
+	</ul>
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>A record of a dietetics request for a patient.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>dietDescription :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Narrative of the recommended diet or daily nutrient intake.&quot; - ONC S&amp;I Clinical Element Data Dictionary (CEDD), March 2012.  Examples include: General Healthful Diet; 80 gm protein + Consistent Carbohydrate + 2g sodium + 2g potassium + 800-1000mg Phosphorus + 1500 mL Fluid Restricted.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dietType :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Set of codes that controls the type of diet modification that a patient should receive or follow.&quot; - ONC S&amp;I Clinical Element Data Dictionary (CEDD), March 2012.  Examples include: DASH (Dietary Approaches to Stop Hypertension), Kosher, or  Vegan.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>foodServiceType :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The type of service requested for this diet order: tray, cafeteria, or dining room. It does not apply to NPO (nothing by mouth) orders.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>foodType :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Indicates what type of food, such as meats, or liquids, which require a  texture modification&quot; - ONC S&amp;I Clinical Element Data Dictionary (CEDD), March 2012.  As an example, a Patient undergoing treatment and rehabilitation following a stroke may require honey-thickened liquids, ground meats and chopped vegetables
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>isNPO :  Boolean (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				A flag indicating whether or not an order was given for the patient to receive nothing by mouth. NPO: nil per os (Latin, meaning nothing by mouth).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>isNutrientModificationRequired :  Boolean (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Indicator specifying whether the patient/client requires  a therapeutic or modified diet to eliminate, decrease, or increase certain substances in the diet (e.g., sodium, potassium)&quot; - ONC S&amp;I Clinical Element Data Dictionary (CEDD), March 2012.  For example, a diabetic patient requires controlled intake of carbohydrates.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>startDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The start date/time for this request.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>stopDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The date/time this request is considered complete.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>foodItem : <xref href="../t_FHIMDieteticsFoodItem.dita" >FoodItem</xref> (0..*)</p></stentry>
+  <stentry><p>				A food item that is part of the requested food preference.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>isolationPrecaution : <xref href="../t_FHIMDieteticsIsolationPrecautions.dita" >IsolationPrecautions</xref> (0..1)</p></stentry>
+  <stentry><p>				Indicates the type of isolation or special precautions the patient is under.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>nutrientModification : <xref href="../t_FHIMDieteticsNutrientModification.dita" >NutrientModification</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to the nutrient which is to be modified (e.g., sodium, potassium).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>performanceMonitors : <xref href="../t_FHIMDieteticsPerformanceMonitors.dita" >PerformanceMonitors</xref> (0..*)</p></stentry>
+  <stentry><p>				Maintains performance measure items to be monitored during the patient&apos;s care.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMClinicalObservationObservationQualifier" xml:lang="en-us">
+<title id="title">ObservationQualifier</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class contains observations or information that may provide additional context to the owning clinical observation (i.e., the owning Observation class).  The information recorded in this class may likely alter a clinician&apos;s interpretation of the value in the owning Observation class.  For example, a blood pressure of 140/95 would be considered abnormal if the patient was sitting and resting, but normal if the patient had just been on a treadmill for five minutes.  In this example, the blood pressure of 140/95 is in the owning Observation class, the observation that the blood pressure was taken while patient was sitting and resting or immediately after five minutes on a treadmill would be recorded in this ObservationQualifier class.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>observedCharacteristic :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+<p>See <xref href="../t_fhimvocabVitalSignsVocabObservationQualifier.dita">ObservationQualifier</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				Identifies the qualifying information (an observation) that may affect the interpretation of the owning clinical Observation.  For example, if the owning clinical Observation is a blood pressure, this class may contain information about the patient&apos;s state (i.e., whether sitting and resting, prone, after exercise, etc.).  In this example, the observedCharacteristic indicates the kind of observation that qualifies the owning Observation (e.g., &quot;patient state&quot;, &quot;cuff size&quot;), while the value contains the corresponding data for the observation (e.g., &quot;after exercise&quot;, &quot;large adult cuff&quot;).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>value :  <xref href="../t_FHIMDatatypesAny.dita" >Any</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Contains the data describing the qualifying information (an observation) that may affect the interpretation of the owning clinical Observation.  For example, if the owning Observation is a blood pressure, this class may contain information about the patient&apos;s state (i.e., whether sitting and resting, prone, after exercise, etc.).  In this example, the category indicates the kind of observation that qualifies the owning Observation (e.g., &quot;patient state&quot;, &quot;cuff size&quot;), while the value contains the corresponding data for the observation (e.g., &quot;after exercise&quot;, &quot;large adult cuff&quot;).
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

@@ -1,0 +1,584 @@
+
+<html xmlns:Standard="http://www.eclipse.org/uml2/schemas/Standard/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:fhim="http:///schemas/fhim/_bbjuwA3cEeSGTazHdUQojA/5" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:term="http://www.openhealthtools.org/mdht/schemas/term/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:xmi="http://www.omg.org/XMI" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.3/Umlnotation" xmlns:Default="http:///schemas/Default/_fNm3AAqoEd6-N_NOT9vsCA/2" xmlns:CDA="http://www.openhealthtools.org/mdht/schemas/cda/4" xmlns:Default_1="http:///schemas/Default/1" xmlns:RIM="http:///schemas/RIM/_fvnwgAH4Ed6VH-9W1IVKXA/4" xmlns:SketchNotation="http://www.ibm.com/ccl/soa/sketch/notation/1.0.0/">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>Assessment Domain</title>
+   </head>
+   <body style="font-family:Courier;font-size:14px">
+      <h1>Assessment Domain</h1>
+      <p> The purpose of this review is to identify the data elements required for the
+         interoperable exchange for the Assessment domain including dependencies. A column is
+         provided at the far right of the table for you to enter comments related to each
+         data element. If the class or domain is missing data elements, please add a row
+         at the bottom of the sheet and specify a name, description, and type of data
+         (e.g. numeric, string, date/time, code). 
+      </p>
+      <p> Once you have reviewed the data elements, please review the value sets
+         associated with the coded data elements. Please provide feedback by adding
+         comments in the column provided at the right of item/row or by adding rows at
+         the bottom table. For any new coded concepts without a valid code yet, our team
+         will propose them for addition in the source coding system. 
+      </p>
+      <ul>
+         <li><a href=""> <i><b>Assessment</b> </i> Domain </a></li>
+       </ul>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font-family:Courier">
+         <tr bgcolor="#98FB98" style="font-size:18px" align="left">
+            <td colspan="1"><b><a id=""> 'Assessment' Domain
+                     </a></b></td>
+            <td colspan="4" style="font-size:12px">Note that the Information Source hierarchy is in the Common domain, and is not shown here.</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+      </table>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font-family:Courier">
+         <tr>
+            <th width="20%">Element Name</th>
+            <th width="20%">Element Description</th>
+            <th width="15%">Format/Type</th>
+            <th width="15%">Value Set Name</th>
+            <th width="15%">Optionality/<br>Repetition
+            </th>
+            <th width="15%">Reviewer's Comments</th>
+         </tr>
+ 
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>AssessmentEvent</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class describes the performance of an assessment of a particular aspect of a patient&#8217;s condition.  Such assessments employ a test or instrument, often a questionnaire, that quantify otherwise subjective observations.  These instruments employ scoring sysystems which have been systemetized and validated.  Standardized assessment tools create scores and (sometimes) sub-scores which are then used to determine the optimal placement and treatment plans for the patient and to track patient progress over time.  Standardized assessment tools facilitate the collection of accurate information in a reliable and consistent manner, provide clinicians and treatment agencies with increased accountability, identify patient progress over time, and provide a basis to adjust treatment plans.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AssessmentEvent.<b>applicability</b></div>
+            </td>
+            <td><p>Specifies whether the Assessment is used for clinical, research, or program evaluation.</p></td>
+            <td valign="top"> ApplicabilityType </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AssessmentEvent.<b>dateTimeAdminstered</b></div>
+            </td>
+            <td><p>The date and time on which the assessment was performed.</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AssessmentEvent.<b>id</b></div>
+            </td>
+            <td><p>A unique identifier for the assessment event.</p></td>
+            <td valign="top"> Id </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AssessmentEvent.<b>remarks</b></div>
+            </td>
+            <td><p>Contains comments regarding the Assessment Event by the administrator of the assessment.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AssessmentEvent.<b>totalScoreConcept</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AssessmentEvent.<b>totalScoreMeaning</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AssessmentEvent.<b>totalScoreValue</b></div>
+            </td>
+            <td><p>The total of the numeric values associated with each response in the Assessment.  The value of the score is used to assert conclusions regarding the condition of the patient, and to decide upon a care or treatment plan to meet the needs of the client/patient.</p></td>
+            <td valign="top"> Real </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AssessmentEvent.<b>assessmentInstrument</b></div>
+            </td>
+            <td><p>Identifies the Assessment Instrument that was used as part of the Assessment.</p></td>
+            <td valign="top"> <b>AssessmentInstrument</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AssessmentEvent.<b>assessmentResponse</b></div>
+            </td>
+            <td><p>This property contains a list of responses to an Assessment Instrument questions upon the administration of the Assessment Instrument.</p></td>
+            <td valign="top"> <b>AssessmentResponse</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AssessmentEvent.<b>dataEnterer</b></div>
+            </td>
+            <td><p>Identifies the person who entered the responses into a computer systems.  This is not used for patient-entered data.</p></td>
+            <td valign="top"> <b>DataEnterer</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AssessmentEvent.<b>interviewer</b></div>
+            </td>
+            <td><p>Identifies the provider who administered the assessment.</p></td>
+            <td valign="top"> <b>PrimaryPerformer</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AssessmentEvent.<b>patient</b></div>
+            </td>
+            <td><p>Identifies the subject of the assessment</p></td>
+            <td valign="top"> <b>Patient</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AssessmentEvent.<b>subScore</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>SubScore</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>AssessmentInstrument</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> </td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AssessmentInstrument.<b>code</b></div>
+            </td>
+            <td><p>Identifies the Assessment Instrument, or Questionnaire that was used, e.g., Morse Fall Scale, Addiction Severity Index.  Note that FHIR models this as an Id, where in the FHIM, we (currently) model this as a code.</p><p>&quot;This records identifiers associated with this question set that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).&quot; - HL7 FHIR, Questionnaire.identifier</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AssessmentInstrument.<b>date</b></div>
+            </td>
+            <td><p>Indicates the date on which the Assessment Instrument was published. Note that implementations might obtain the Assessment Instrument publication date from a knowledge base via the kind of Assessment Instrument, and therefore this property might be derived.</p><p>&quot;The date that this questionnaire was last changed.&quot; - HL7 FHIR, Questionnaire.date</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AssessmentInstrument.<b>name</b></div>
+            </td>
+            <td><p>This optional property provides the designation or appellation of the Assessment Instrument. Note that implementations might obtain the Assessment Instrument name from a knowledge base via the kind of Assessment Instrument, and therefore this property might be derived.</p><p>&quot;The name or label associated with this questionnaire.&quot; - HL7 FHIR, Questionnaire.title</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AssessmentInstrument.<b>publisher</b></div>
+            </td>
+            <td><p>This optional property indicates the organization responsible for the curation of the Assessment Instrument. This property was added for compatibility with FHIR. The original FHIM model did not include this concept as it was held that this information could be obtained from a knowledge base via the kind of Assessment Instrument, and therefore wouldn&apos;t need to be exchanged.</p><p>&quot;Organization or person responsible for developing and maintaining the questionnaire.&quot; - HL7 FHIR, Questionnaire.publisher</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AssessmentInstrument.<b>status</b></div>
+            </td>
+            <td><p>Indicates the current state of the Assessment Instrument publication.  Possible values include Draft, Published, and Retired. Note that implementations might obtain the Assessment Instrument publication status from a knowledge base via the kind of Assessment Instrument, and therefore this property might be derived.</p><p>&quot;The lifecycle status of the questionnaire as a whole.&quot; - HL7 FHIR, Questionnaire.status</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AssessmentInstrument.<b>telecom</b></div>
+            </td>
+            <td><p>This optional property indicates the contact information for the organization responsible for the curation of the Assessment Instrument. This property was added for compatibility with FHIR. The original FHIM model did not include this concept as it was held that this information could be obtained from a knowledge base via the kind of Assessment Instrument, and therefore wouldn&apos;t need to be exchanged.</p><p>&quot;Contact details to assist a user in finding and communicating with the publisher.&quot; - HL7 FHIR, Questionnaire.telecom</p></td>
+            <td valign="top"> ContactPoint </td>
+            <td></td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AssessmentInstrument.<b>version</b></div>
+            </td>
+            <td><p>This optional property identifies the version number of the Assessment Instrument, or Questionnaire, that was used if , e.g., the current Addiction Severity Index is Version 6.</p><p>&quot;The version number assigned by the publisher for business reasons. It may remain the same when the resource is updated.&quot; - HL7 FHIR, Questionnaire.version</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AssessmentInstrument.<b>assessmentInstrumentQuestion</b></div>
+            </td>
+            <td><p>This property represents the collection of questions on a given Assessment Instrument.</p></td>
+            <td valign="top"> <b>AssessmentInstrumentQuestion(Abstract)</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>AssessmentInstrumentQuestion(Abstract)</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class represents a question on an Assessment Instrument as well as informatin regarding the possible response to that question.  Note that the response might be entered by an interviewer, entered by the interviewee, or populated by a software system (e.g., a system could automatically populate a question such as Date Created).  Note also that this class defines both the question, which is the same for every instance of an edition of a questionaire, and the response which is populated for each administration of the instrument.  For a given Assessment Instrument, the question part would be hard-coded while the response would be populated at run-time.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AssessmentInstrumentQuestion(Abstract).<b>assessmentQuestion</b></div>
+            </td>
+            <td><p>This property uniquely identifies the question being asked within the Assessment Instrument.  This is treated as a code because the Name and Version of the Assessment Instrument plus the Question Number serves as an identifier, while the text of the question can be represented as the associated text.  For example, the Addiction Severity Index, 5th Edition question G.4 is the &quot;Date of Admission&quot;.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AssessmentInstrumentQuestion(Abstract).<b>assessmentQuestionId</b></div>
+            </td>
+            <td><p>This property is used to convey the question &quot;number&quot; within the Assessment Instrument. While the assessmentQuestion uniquely identifies the question across all possible Assessment Instruments, it does not necessarily contain the question number as displayed on the Assessment Instrument.  This property therefore is needed to hold that data.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AssessmentInstrumentQuestion(Abstract).<b>possibleResponse</b></div>
+            </td>
+            <td><p>This property represents the possible responses to a question on an Assessment Instrument.  It defines the permissible data type, and if the question is a multiple choice, will define the list of valid responses by using an enumeration.  Note that this property is optional (i.e., cardinality is 0..1), because clinical records will point to the response, which in turn points to the question.  In this case, the list of possible responses is not needed; the actual response is already known and is all that is needed.</p></td>
+            <td valign="top"> Any </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AssessmentInstrumentQuestion(Abstract).<b>questionText</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>AssessmentResponse</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class represents a response to an Assessment Instrument question upon the administration of the Assessment Instrument.  It contains a pointer to the question as well as the response itself.  Note that the response might be entered by an interviewer, entered by the interviewee, or populated by a software system (e.g., a system could automatically populate a question such as Date Administered).</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AssessmentResponse.<b>response</b></div>
+            </td>
+            <td><p>This property represents the possible responses to a question on an Assessment Instrument.  It defines the permissible data type, and if the question is a multiple choice, will define the list of valid responses by using an enumeration.</p></td>
+            <td valign="top"> Any </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">AssessmentResponse.<b>assessmentInstrumentQuestion</b></div>
+            </td>
+            <td><p>This property represents the specific question to which the response is associated.</p></td>
+            <td valign="top"> <b>AssessmentInstrumentQuestion(Abstract)</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>SubScore</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class represents the total of the values associated with a defined subset of the Assessment.  Some Assessment Instruments define a intermediate score(s) for related characteristics along with a total score for the overall instrument.  For example, an overall mental health Assessment instrument may define a sub-score for depression.  Note that many Assessment Instruments contain groupings or sections, which are not necessarily related to sub-scores.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SubScore.<b>subScoreConcept</b></div>
+            </td>
+            <td><p>Identifes the domain or concept that is measured by the subscore.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SubScore.<b>subScoreValue</b></div>
+            </td>
+            <td><p>This attribute holds the numeric value of the subscore.</p></td>
+            <td valign="top"> Real </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+  </table>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font">
+         <tr>
+            <th>Value Set Constraint</th>
+            <th>Element Description</th>
+         </tr>
+       
+
+
+
+
+</table>
+

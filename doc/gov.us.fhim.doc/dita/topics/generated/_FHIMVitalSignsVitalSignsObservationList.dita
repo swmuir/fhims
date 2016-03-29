@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMVitalSignsVitalSignsObservationList" xml:lang="en-us">
+<title id="title">VitalSignsObservationList</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class contains a collection of clinical Observations traditionally called &#8220;Vital Signs&#8221; because they are measurements of the body&#8217;s basic functions.  The absence of a pulse, respiration, or blood pressure are indications that the patient is dead, hence the term &#8220;vital&#8221; in the name.  Traditionally, there are four vital signs: Heart rate or pulse; Respiration rate, Blood pressure, and Body temperature.  Body height and Body weight are also often included among vital signs because these measurements are often used (in conjunction with other observations) to provide a gross indication of potential health concerns.  The FHIM includes a seventh vital sign, Blood oxygen saturation, as the human body requires a specific balance of oxygen in the blood below which organ function may be compromised.</p><p></p><p>Another reason why vital signs are treated separately from other observations is that historically, vital signs have been located in a particular location in a paper medical record.</p><p></p><p>Individual organizations or medical specialties will often include other common clinical observation under the heading of &#8220;vital signs&#8221;, such as a Pain scale or Head circumference (for newborns).  The FHIM treats these measurements as simply other kinds of clinical observations.  Again, there is no difference between a vital sign observation and a non-vital sign observation, other than vital signs are a named set of observations.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+
+ <strow>
+  <stentry><p>observation : <xref href="../t_FHIMClinicalObservationObservation.dita" >Observation</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to a set (of zero to many) of Clinical Observations which are of a type considered to be a &quot;vital sign&quot;.  Although the structure does allow for the observations to be from multiple patients, this set will almost always be for a single patient.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

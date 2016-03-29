@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMSocialWorkSocialWorkPatient" xml:lang="en-us">
+<title id="title">SocialWorkPatient</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p> Patient that is receiving various professional services, activities, or methods concretely concerned with the support, treatment, and material  designed to aid and to increase their welfare as recommended by a Social Worker.  </p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>datePlacedInRchProgram :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Contains the date patient was placed in RCH.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateRemovedFromRchProgram :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Contains the date in which the patient was removed from the home.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>isFalseHighRisk :  Boolean (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This contains information used to indicate that the patient was not a high-risk case.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>isPatientHighRisk :  Boolean (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Contains textual informaion that when patients should they be found to be a possible high-risk case.    
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>wasPatientRemoved :  Boolean (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Identifies whether the patient was removed from the RCH placement.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>wasSeenBySocialWorkService :  Boolean (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Contains information to indicate if the patient was seen by the Social Work Service after being identified as a possible high-risk patient.    
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>patient : <xref href="../t_FHIMPersonPatient.dita" >Patient</xref> (1..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>rchPlacement  : <xref href="../t_FHIMSocialWorkResidentialCareHomePlacement.dita" >ResidentialCareHomePlacement</xref> (0..1)</p></stentry>
+  <stentry><p>				This is the association to the  information used to show and determine what the monthly rate is being paid for residential care home stay
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMPharmacyDrugUseEvaluation" xml:lang="en-us">
+<title id="title">DrugUseEvaluation</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+<section id="specializations"  audience="developer, modeler">
+	<title>Derivations</title>
+	<ul>
+<li><xref href="../t_FHIMPharmacyScriptDue.dita">ScriptDue </xref> is a kind of  DrugUseEvaluation </li>
+<li><xref href="../t_FHIMPharmacyTelecomDue.dita">TelecomDue </xref> is a kind of  DrugUseEvaluation </li>
+	</ul>
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class represents the results of a Drug Use Evaluation (DUE) or a Drug Utilization Review (DUR).  If a prescriber or pharmacy has determined that the patient is on another medication that can interact with the drug associated with the current order, this class can communicate what the problem is and what the co-agent(s) are.  A DUR tends to be after the fact, while DUE tends to be before the fact, but basically the processes and the information captured are similar.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>dateTime :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The date (and optionally time) upon which the Drug Use Evaluation was performed.</p><p>Note that neither NCPDP SCRIPT nor NCPDP Telecom contain this information directly in their Drug Use segments, but this date may correspond to the Service Date (SCRIPT I006, Telecommunication 457-EP).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>professionalServiceCode :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+<p>See <xref href="../t_fhimvocabPharmacyVocabDueProfessionalService.dita">DueProfessionalService</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				Categorizes the action taken by a pharmacist or prescriber in response to a conflict or the result of a pharmacist&apos;s professional service.</p><p>&quot;Code identifying pharmacist intervention when a conflict code has been identified or service has been rendered.&quot; - NCPDP Telecommunication (Field 440-E5, Data Dictionary 201104).  Possible values include: Patient assessment; Coordination of care; Dosing evaluation/determination; Dosage evaluated; Formulary enforcement; Generic product selection; Prescriber consulted; Medication administration; Overriding benefit; Medication review; Previous patient tolerance; Patient education/instruction; Patient medication history; Patient monitoring; Patient consulted; Perform laboratory test; Pharmacist consulted other source; Recommend laboratory test; Self-care consultation; Literature search/review; Therapeutic product interchange; Other Acknowledgement; No intervention.</p><p>&quot;Action taken in response to a conflict.&quot; - NCPDP Script (Field 7881, Data Dictionary 201104)
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>reasonForService :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+<p>See <xref href="../t_fhimvocabPharmacyVocabDueReasonForService.dita">DueReasonForService</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				Categorizes the type of drug utilization conflict detected by the prescriber or the pharmacist or the reason for the pharmacist&apos;s professional service.  Examples include: Drug-Drug Interaction, Dose Range Conflict, Ingredient Duplication, etc.</p><p>&quot;Code identifying the type of utilization conflict detected by the prescriber or the pharmacist or the reason for the pharmacist s professional service.&quot; - NCPDP Telecommunication (Field 439-E4, Data Dictionary 201104).</p><p>&quot;For further explanation, conflict, or clarification of services related to drug use evaluation.... Code identifying the type of conflict detected.  When this composite is used, DUE Reason For Service Code is mandatory.&quot; - NCPDP Script (Field 7880, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>serviceResultCode :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+<p>See <xref href="../t_fhimvocabPharmacyVocabDueResultOfService.dita">DueResultOfService</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				&quot;Action taken by a pharmacist or prescriber in response to a conflict or the result of a pharmacist&#8217;s professional service.&quot; - NCPDP Telecommunication (Field 441-E6, Data Dictionary 201104).</p><p>&quot;Action taken in response to a conflict.&quot; - NCPDP Script (Field 7882, Data Dictionary 201104)
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>author : <xref href="../t_FHIMCommonAuthor.dita" >Author</xref> (0..1)</p></stentry>
+  <stentry><p>				Pointer to the medical professional who performed the Drug Use Evaluation.</p><p>Note that neither NCPDP SCRIPT nor NCPDP Telecom contain this information directly in their Drug Use segments, but this data may correspond to the Provider (SCRIPT 4705, Telecommunication 444-E9) in the respective Provider segments.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>coAgent : <xref href="../t_FHIMPharmacyCoAgent.dita" >CoAgent</xref> (0..1)</p></stentry>
+  <stentry><p>				&quot;Identifies the co-existing agent contributing to the DUR event (drug or disease conflicting with the prescribed drug or prompting pharmacist professional service).&quot; - NCPDP Telecommunication (Field 476-H6, Data Dictionary 201104).</p><p>&quot;Identifies the co-existing agent contributing to the DUR event (drug or disease) conflicting with the prescribed drug.&quot; - NCPDP Script (Field 7883, Data Dictionary 201104)
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

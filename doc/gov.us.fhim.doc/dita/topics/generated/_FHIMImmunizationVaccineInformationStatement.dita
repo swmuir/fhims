@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMImmunizationVaccineInformationStatement" xml:lang="en-us">
+<title id="title">VaccineInformationStatement</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>A vaccine information document is an educational document intended to outline the risks and benefits of the vaccine.  It outlines the impact of infection by the disease causing organism. Also known as a Vaccine Information Sheet (VIS).</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>dateOfPublication :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The date that the Vaccine Information Sheet was published.  In effect, this date serves to identify the version of the VIS.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>documentType :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+<p>See <xref href="../t_fhimvocabImmunizationVocabVISBarCodesIIS.dita">VIS Bar Codes (IIS)</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				The type of Vaccine Information Sheet.  The combination of the document type and the date of publication identifies a particular version of the document.</p><p>Note that the &quot;document title&quot; is in the &quot;text&quot; sub-component of the code datatype.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>language :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+<p>See <xref href="../t_fhimvocabCommonAndDatatypesVocabLanguage.dita">Language</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				The language in which the Vaccine Information Sheet is written.  This would most likely be a code from ISO table 639.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>serialNumber :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Uniquely identifies the Vaccine Information Sheet.  This property allows for individual Vaccine Information Sheets to be enumerated, which is uncommon, but is expected to become more prevelent in the future.  This property is therefore optional.
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

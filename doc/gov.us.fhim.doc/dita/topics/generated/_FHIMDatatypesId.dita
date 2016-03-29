@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMDatatypesId" xml:lang="en-us">
+<title id="title">Id</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>An label that uniquely identifies a thing or object.  This *abstract* data type represents a &quot;identifier&quot; - some series of letters or numbers which uniquely identifies something.  In practice, this data type will be substituted with specific &quot;flavors&quot; of the Id data type for use in particular standards-based payloads.</p><p>&quot;A technical identifier - identifies some entity uniquely and unambiguously.&quot; - HL7 FHIR, Identifier.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>effectiveDateRange :  <xref href="../t_FHIMDatatypesTimeInterval.dita" >TimeInterval</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The time period during which the id is known to be valid.  The data type is a TimeInterval, which includes both a start date and end date, either of which may be empty.</p><p>&quot;Time period during which identifier is/was valid for use.&quot; - HL7 FHIR, Identifier.period.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>idType :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Indicates what kind of identifier is being represented.  For example, the idType might be represent a Driver&apos;s License, in which case the assigning Authority might be the Virginia Department of Motor Vehicles.</p><p>Note that: a) this information can (and probably should) be also be made clear by the name and definition of the property whose data type is an Id; and b) this property might be an enumeration in the future.</p><p>&quot;A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.&quot; - HL7 FHIR, Identifier.type.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>system :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				A unique identifier of the system (or organization or agency or department) that created the data and/or issued or manages the identifier.</p><p>Note that this property may be replaced by some other concept or group of concepts when this abstract class is replaced by a specific class for a given target platform.</p><p>&quot;Establishes the namespace in which set of possible id values is unique.&quot; - HL7 FHIR, Identifier.assigner.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>value :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				A unique label that identifies an individual entity within a group of entities.  The identifier must be unique within the system that defined it (i.e., the assigningAuthority).</p><p>Note that this property may be replaced by some other concept or group of concepts when this abstract class is replaced by a specific class for a given target platform.</p><p>&quot;The portion of the identifier typically displayed to the user and which is unique within the context of the system.&quot; - HL7 FHIR, Identifier.value.
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

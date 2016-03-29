@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMOncologyRegistryCancerCase" xml:lang="en-us">
+<title id="title">CancerCase</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class contains the information for the patient that has cancer such as  patient history, examination, and results of laboratory data.       </p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>accessionNumber :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				A unique identifier for the patient consisting of the year in which the patient was first seen at the reporting facility and the consecutive order in which the patient was abstracted.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>accessionYear :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				ACCESSION YEAR is the year the patient was first seen at the reporting institution for diagnosis and/or treatment of this primary; NOT the year the registrar accession the case.  ACCESSION YEAR relates only to one primary tumor.  A patient with multiple primaries can have a different ACCESSION YEAR on each bstract.                                                        This is used to produce an accession register.  The accession register identifies all primaries first treated or seen at the reporting institution for a given year.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>afipSubmission :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Indicates whether the pathology was sent to the Armed Forces Institute of Pathology (AFIP) for a second opinion.  Possible values are No; Yes; Unknown;  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>associationWithHiv :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Indicates the presence/absence of HIV.  Possible values are Yes; No; Unknown; etc.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>classCategory :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Identifies the category of case, either Analytic or Nonanalytic.  Possible values are NONANALYTIC; &apos;ANALYTIC; etc.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>classOfcase :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Classifies cases recorded in the database.  Possible values are  Dx here, 1st tx ew; Dx here, 1st tx here; Dx ew, 1st tx here; Dx ew, 1st tx ew;  Dx/1st tx before ref date; Dx at autopsy; Dx/1st tx in MD office; Pathology report only; Death cert; Unknown;  etc.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateCaseCompleted :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The date that: (1) the abstractor decided that the case report was complete, and (2) the case passed all edits that were applied.   
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateOfCancerConference :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Indicates the date on which the case was first presented at a cancer conference.  The number of cancer conferences, sites presented, types of presentations, and dates can be analyzed and reported for administration, quality control, and Commission on Cancer survey preparation. Update this item if a patient is presented at a subsequent cancer conference.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>id :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				A unique identifier for the Act. (HL7 3.0)  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>presetationAtCancerConference :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Documents case presentation at a cancer conference and the type or format of presentation.  The number of cancer conferences, sites presented, and types of presentation can be analyzed and reported for administrative use, quality control, and survey preperation.  Possible values are Not presented; Prospective (diagnostic); Prospective (treatment); Prospective (follow-up); Prospective (combinations); Prospective, NOS; Retrospective; Follow-up; Presentation, NOS; Unknown;  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>reportingSourceType :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This a code used by central registries that identifies the source of documents used to abstract the cancer being reported.   Possible values are Hospital inpatient, hospital outpatient clinic; Laboratory only (hospital or private); Physician office/private practitioner; Nursing/convalescent home, hospice; Autopsy only; Death certificate only; etc.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>sequenceNumber :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Indicates the sequence of all reportable neoplasms over the lifetime of the patient.   - Codes 00-35 and 99 indicate reportable neoplasms of malignant or in situ behavior, which the CoC requires to be reported.       - Codes 60-88 indicate other neoplasms that the state registry or the hospital cancer committee has defined as reportable (cases reportable-by-agreement).                                                  - Code 00 only if the patient has a single reportable primary.  If the patient develops a subsequent reportable primary tumor, change the code for the first tumor from 00 to 01, and number subsequent tumors sequentially.                                - Code 60 only if the patient has a single primary reportable by agreement only.  If the patient develops a subsequent primary tumor reportable-by-agreement, change the code for the first tumor from 60 to 61, and assign codes to subsequent tumors reportable-by-agreement sequentially.   
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>summaryStageSeer :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Indicates a site-specific description of the extent of disease at diagnosis.  Possible values are In situ; Localized; Regional by direct extension; Regional to lymph nodes; Regional by extension &amp;amp;amp; to nodes; Regional, NOS; Distant metastasis/systemic disease; Unknown; etc.   
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>textHistologyTitle :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Description of histologic type, behavior, and grade in natural language.(Text)  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>textPrimarySiteTitle :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Description of primary site in natural language.(Text)  
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>abstract : <xref href="../t_FHIMOncologyRegistryAbstract.dita" >Abstract</xref> (1..1)</p></stentry>
+  <stentry><p>				Summary of pertinent information about the patient
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>cancerCase : <xref href="../t_FHIMOncologyRegistryCancerPatientSummary.dita" >CancerPatientSummary</xref> (1..1)</p></stentry>
+  <stentry><p>				Cancer related Case
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>cancerDiagnosis : <xref href="../t_FHIMOncologyRegistryCancerDiagnosisEvent.dita" >CancerDiagnosisEvent</xref> (1..*)</p></stentry>
+  <stentry><p>				The  act or process of identifying or determining the nature and cause of a disease or injury.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>cancerStaging : <xref href="../t_FHIMOncologyRegistryCancerStaging.dita" >CancerStaging</xref> (0..*)</p></stentry>
+  <stentry><p>				Cancer Staging
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>cancerTreatmentList : <xref href="../t_FHIMOncologyRegistryCancerTreatmentListEntry.dita" >CancerTreatmentListEntry</xref> (0..*)</p></stentry>
+  <stentry><p>				The act or process of identifying a single course of treatment regimen, for the patient&apos;s cancer.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>cancerTumor : <xref href="../t_FHIMOncologyRegistryTumorEvaluation.dita" >TumorEvaluation</xref> (1..*)</p></stentry>
+  <stentry><p>				Evaluation of an abnormal growth, of tissue.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>dataEnterer : <xref href="../t_FHIMCommonDataEnterer.dita" >DataEnterer</xref> (1..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>dxWorkup : <xref href="../t_FHIMOncologyRegistryDiagnosticWorkup.dita" >DiagnosticWorkup</xref> (1..*)</p></stentry>
+  <stentry><p>				Follow-up after diagnosis of cancer.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>followingPhysician : <xref href="../t_FHIMCommonAttender.dita" >Attender</xref> (0..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>lymphNode : <xref href="../t_FHIMOncologyRegistryLymphNodeEvaluation.dita" >LymphNodeEvaluation</xref> (0..*)</p></stentry>
+  <stentry><p>				Masses of lymphoid tissue 
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>metastasis : <xref href="../t_FHIMOncologyRegistryMetastasisEvaluation.dita" >MetastasisEvaluation</xref> (0..*)</p></stentry>
+  <stentry><p>				Transmission of pathogenic microorganisms or cancerous cells.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>nonRadiationTreatmentFollowup : <xref href="../t_FHIMOncologyRegistryCancerTreatmentEvaluation.dita" >CancerTreatmentEvaluation</xref> (1..*)</p></stentry>
+  <stentry><p>				Non Radiation Treatment ralated followup
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>palliativeProcedure : <xref href="../t_FHIMOncologyRegistryPalliativeProcedure.dita" >PalliativeProcedure</xref> (1..1)</p></stentry>
+  <stentry><p>				The relieving or soothing the symptoms of the patient&apos;s disease or disorder.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>previousCancerHistory : <xref href="../t_FHIMOncologyRegistryCancerHistory.dita" >CancerHistory</xref> (0..*)</p></stentry>
+  <stentry><p>				prior history of any reportable malignancy.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>primarySurgeon : <xref href="../t_FHIMCommonPrimaryPerformer.dita" >PrimaryPerformer</xref> (0..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>protocol : <xref href="../t_FHIMOncologyRegistryCancerProtocol.dita" >CancerProtocol</xref> (0..1)</p></stentry>
+  <stentry><p>				Cancer Treatment Protocol.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>radiationtreatmentFollowup : <xref href="../t_FHIMOncologyRegistryRadiationTreatmentEvaluation.dita" >RadiationTreatmentEvaluation</xref> (1..*)</p></stentry>
+  <stentry><p>				Radiation Treatment ralated followup
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>recurrenceList : <xref href="../t_FHIMOncologyRegistryRecurrenceListEntry.dita" >RecurrenceListEntry</xref> (0..*)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>reportingHospital : <xref href="../t_FHIMProviderServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (0..1)</p></stentry>
+  <stentry><p>				Identifies the hospital which is reporting this cancer case.  This field contains the value of the INSTITUTION ID NUMBER field from the ONCOLOGY SITE PARAMETERS file.  Possible values are 6020009     ROYAL VICTORIA HOSPITAL; 6020012     ST MARY&apos;S HOSPITAL;   6020015     MONTREAL GENERAL HOSPITAL ;  6030010     KWAJALEIN; 6040005     AGUADILLA GENERAL HOSPITAL; etc.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>subsequentTherapyComment : <xref href="../t_FHIMOncologyRegistrySubsequentTherapyComment.dita" >SubsequentTherapyComment</xref> (1..1)</p></stentry>
+  <stentry><p>				Subsequent Therapy related comments
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>treatmentAssessment : <xref href="../t_FHIMOncologyRegistryPatientTreatmentAssessment.dita" >PatientTreatmentAssessment</xref> (1..*)</p></stentry>
+  <stentry><p>				Patient&apos;s pre treatment assessment.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>tumorStatus : <xref href="../t_FHIMOncologyRegistryTumorStatus.dita" >TumorStatus</xref> (1..*)</p></stentry>
+  <stentry><p>				Cancer Tumor Status.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

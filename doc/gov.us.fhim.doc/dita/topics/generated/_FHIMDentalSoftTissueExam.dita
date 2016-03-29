@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMDentalSoftTissueExam" xml:lang="en-us">
+<title id="title">SoftTissueExam</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class identifies observations outcome related to Soft Tissue (Head &amp;amp;amp; Neck) Exam.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>comments :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Remarks by the Provider on HeadNeck findings.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>headNeckDescription :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Remarks by the Provider on HeadNeck findings.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>id :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This is the unique identifier of the dental encounter record.    
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>isResolved :  Boolean (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Indicates whether or not this head &amp;amp;amp; neck transaction has been resolved.  Possible values are TRUE; FALSE  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>markerColor :  <xref href="../t_FHIMDatatypesReal.dita" >Real</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The color of the marker used to indicate the lesion used in treatment planning  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>markerShape :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The shape of the marker used to indicate the lesion used in treatment planning.   Possible values are rectangle; square; oval; circle; rounded rectangle; rounded square.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>markerSize :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The size of the marker used to indicate the lesion used in treatment planning  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>xCoordinate :  Integer (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This is the X coordinate for the lesion.  DRM Plus Program Specific.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>yCoordinate :  Integer (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This is the Y coordinate for the lesion.   DRM Plus Program Specific.  
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>dentalProcedure : <xref href="../t_FHIMDentalDentalProcedure.dita" >DentalProcedure</xref> (0..1)</p></stentry>
+  <stentry><p>				Dental Procedure provided.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>masterLesionRecord : <xref href="../t_FHIMDentalSoftTissueExam.dita" >SoftTissueExam</xref> (0..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

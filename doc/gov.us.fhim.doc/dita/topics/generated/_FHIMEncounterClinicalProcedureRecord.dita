@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMEncounterClinicalProcedureRecord" xml:lang="en-us">
+<title id="title">ClinicalProcedureRecord</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>Clinical Procedures provided and or performed for the patient during the Encounter.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>bodySite :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Anatomical site where procedure is performed.&quot; For example, &quot;Skin biopsy of the left eyelid.&quot; - ONC S&amp;I Clinical Element Data Dictionary (CEDD), March 2012.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateTime :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The date (and optionaly the time) that the professional service was performed.</p><p>&quot;Date and time of procedure, may include duration.&quot; - ONC S&amp;I Clinical Element Data Dictionary (CEDD), March 2012.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>description :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Textual description of the procedure.</p><p>&quot;Narrative to further describe the procedure.&quot; For example, &quot;A 6 mm sessile polyp was found in the ascending colon and removed by snare, no cautery. Bleeding was controlled. Moderate diverticulosis and hemorrhoids were incidentally noted.&quot; - ONC S&amp;I Clinical Element Data Dictionary (CEDD), March 2012.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>invasivenessOfProcedure :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Describes invasiveness of the procedure.&quot; For example, Non-Invasive (ex: abdominal sonogram); Minimally Invasive (ex: endoscopy); Invasive (open surgery). - ONC S&amp;I Clinical Element Data Dictionary (CEDD), March 2012.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>procedureFacility :  <xref href="../t_FHIMProviderServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Pointer to the location (e.g., the Facility) at which the Procedure was performed.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>procedureFindings :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Records clinically significant observations confirmed or discovered during the procedure or surgery.&quot; For example, &quot;Necrotic left ovarian cyst was discovered and removed.&quot; - ONC S&amp;I Clinical Element Data Dictionary (CEDD), March 2012.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>procedureImplants :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Records any materials placed during the procedure including stents, tubes, and drains.&quot; For example, &quot;A doohickey pacemaker, number 3975359 was placed.&quot; - ONC S&amp;I Clinical Element Data Dictionary (CEDD), March 2012.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>specimensTaken :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Records the tissues, objects, or samples taken from the patient during the procedure including biopsies, aspiration fluid, or other samples sent for pathological analysis.&quot; For example, &quot;a .01x .02 cm biopsy was taken from the left ventricle.&quot; - ONC S&amp;I Clinical Element Data Dictionary (CEDD), March 2012.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>status :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				A value specifying the state of this patient encounter (based on the RIM Act class state machine), for example, active, aborted, completed  
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>complication : <xref href="../t_FHIMEncounterComplicationEvent.dita" >ComplicationEvent</xref> (0..*)</p></stentry>
+  <stentry><p>				An undesirable event experienced by a patient whilst undergoing a clinical procedure, especially if the event was caused by the procedure itself.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>performer : <xref href="../t_FHIMProviderIndividualProvider.dita" >IndividualProvider</xref> (1..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>procedureList : <xref href="../t_FHIMCommonProcedureListEntry.dita" >ProcedureListEntry</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to a list of Procedures (i.e., procedure codes) performed as part of the clinical procedure record.</p><p>&quot;Contains a code indicating a procedure or a non-procedural event involving the patient.  This code could come from various coding systems; typically the Common Procedure Terminology (CPT)&quot;. - ONC S&amp;I Clinical Element Data Dictionary (CEDD), March 2012.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>relatedProcedure : <xref href="../t_FHIMEncounterRelatedProcedure.dita" >RelatedProcedure</xref> (0..*)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMDentalDentalTreatmentPlan" xml:lang="en-us">
+<title id="title">DentalTreatmentPlan</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>Includes information related to the dental plan or chart for the patient.  </p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>dentalAlert :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Lists the dental alerts for the patient - e.g. Antibiotic Premed, Sedation Premed, etc.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>treatmentFlag :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Flags for treatment plan  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>treatmentPlanId :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This is the unique identifier of the dental encounter record.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>treatmentPlanType :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Whether the treatment is planned or completed.  Possible values are Planned, Completed etc.  DRM Plus Program Specific.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>treatmentsInGroup :  Integer (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Number of treatments included in this group.  
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>bedSection : <xref href="../t_FHIMProviderServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (0..1)</p></stentry>
+  <stentry><p>				&quot;A division in a hospital for the care of a particular group of patients&quot;  The American Heritage Stedman&apos;s Medical Dictionary. 
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>dataEnterer : <xref href="../t_FHIMCommonDataEnterer.dita" >DataEnterer</xref> (0..*)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>dentalPatientEncounter : <xref href="../t_FHIMEncounterEncounterEvent.dita" >EncounterEvent</xref> (1..1)</p></stentry>
+  <stentry><p>				Dental Patient Encounter - The patient who is the subject of this dental treatment.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>diagnosis : <xref href="../t_FHIMCommonDiagnosis.dita" >Diagnosis</xref> (1..*)</p></stentry>
+  <stentry><p>				Diagnosis of of a disease or injury.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>division : <xref href="../t_FHIMProviderServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (0..1)</p></stentry>
+  <stentry><p>				An identification of an organization at a location.    
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>lastClassification : <xref href="../t_FHIMDentalDentalClassification.dita" >DentalClassification</xref> (0..1)</p></stentry>
+  <stentry><p>				Last dental classification of the patient.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>practitioner : <xref href="../t_FHIMProviderIndividualProvider.dita" >IndividualProvider</xref> (0..*)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>primaryProvider : <xref href="../t_FHIMProviderIndividualProvider.dita" >IndividualProvider</xref> (0..*)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>treatingSpecialty : <xref href="../t_FHIMProviderServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (1..1)</p></stentry>
+  <stentry><p>				Provides an indication of the medical specialty of the organization-location.  Examples include Medicine, Surgery, Psychiatry, etc.  Related to the &quot;CDR #&quot; in VHA.  (TreatingSpeciality is a role):
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>treatmentPlanService : <xref href="../t_FHIMDentalTreatmentPlanService.dita" >TreatmentPlanService</xref> (0..*)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

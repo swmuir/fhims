@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMPerson" xml:lang="en-us">
+<title id="title">Person</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>The Person domain contains information about Persons and other living entities.  Despite the package name, this package also includes animals, because they might be recipients of care or might be the subject of tests for either research or public health purposes.</p><p></p><p>The Person domain also contains concepts associated with Persons (or Animals) when they are acting in the role of a Patient or other subject of interest in a healthcare setting.  This includes employment and occupational information as well as contact party information and next of kin information.  Concepts associated with Persons acting in the role of a healthcare provider are not modeled here, but rather in a separate Provider package.  That package also contains educational and specialty information suitable for credentialing purposes.</p><p></p><p>This package contains two additional packages, one for birth certificate information and one for death certificate information.  While nearly all Persons will have a birth certificate, and eventually a death certificate, this information is not needed about Persons in every circumstance.  That having been said, some information such as birth date is typically recorded about persons and is also found on the birth certificate.  To handle these overlaps, some information is duplicated in both the Person class and the birth or death certificate observations, some observations are shared between the two (such as cause of death), and others are expected to be derivable.  Implementers have the flexibility to determine how best to instantiate these concepts for their purposes.</p><p></p><p>The Person domain references three other packages: Provider, Common, and Datatypes.</p><p></p><p>Concepts associated with Persons (and Organizations) acting in the role of a healthcare Provider are modeled in the Provider package.</p><p> </p><p>Classes that are used in multiple domains are modeled in the Common package.</p><p></p><p>The FHIM uses simple or &#8220;primitive&#8221; datatypes wherever possible, but does define several common structures.  See the Datatypes package for details on these.</p>
+
+	<p>Note that occasionally the FHIM will contain what appear to be circular references, for example, a Biological Entity can be a Patient (asPatient), which points to Animal and Person (subject).  When implementing the FHIM, one of these paths would be deleted based on the use case.  The FHIM shows that both pathways are potentially possible, but implementations will use different mechanisms to handle this.</p>
+
+	<p>Note that the &quot;main&quot; FHIM model does not distinguish between &quot;enumerated&quot; and &quot;non-enumerated&quot; persons.  Indivudual &quot;Interoperability Models&quot;, which will be derived from the FHIM, will constrain the properties that are applicable to non-enumerated Persons, such as a Person who is acting as a Contact Party.</p>
+
+</section>
+
+
+
+
+
+
+
+</body>
+</topic>

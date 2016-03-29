@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMOrdersDetectedIssueEvent" xml:lang="en-us">
+<title id="title">DetectedIssueEvent</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>&quot;An observation identifying a potential adverse outcome as a result of an Act or combination of Acts.  Examples: Detection of a drug-drug interaction; Identification of a late-submission for an invoice; Requesting discharge for a patient who does not meet hospital-defined discharge criteria.  Discussion: This class is commonly used for identifying &apos;business rule&apos; or &apos;process&apos; problems that may result in a refusal to carry out a particular request. In some circumstances it may be possible to &apos;bypass&apos; a problem by modifying the request to acknowledge the issue and/or by providing some form of mitigation.  Constraints: the Act or Acts that may cause the the adverse outcome are the target of a subject ActRelationship. The subbtypes of this concept indicate the type of problem being detected (e.g. drug-drug interaction) while the Observation.value is used to repesent a specific problem code (e.g. specific drug-drug interaction id).&quot; - HL7 Version 3</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>dangerLevel :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This is the clinical danger level associated with this detected issue. Those having a High danger level will require a justification for override and release. Valid values are High, Moderate, or Low.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>detectedIssue :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Indicates the issue that was detected (also called an &quot;order check&quot;).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>text :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Contains the actual text of the detected issue.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>detectedIssueOrderRevision : <xref href="../t_FHIMOrdersDetectedIssueOrderRevision.dita" >DetectedIssueOrderRevision</xref> (0..1)</p></stentry>
+  <stentry><p>				Provides a record of a revision to the originally proposed Order Action - the resulting revision reflecting a decision to change the Order Action based on information presented by the Detected Issue (aka Order Check).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>detectedIssueOverride : <xref href="../t_FHIMOrdersDetectedIssueOverride.dita" >DetectedIssueOverride</xref> (0..1)</p></stentry>
+  <stentry><p>				Provides a record that the Detected Issue (or &quot;Order Check&quot;) was acknowledged and was disregarded.  For example, perhaps a warning was displayed indicating that the patient has a mild allergy to an antibiotic that the clinician wishes to order.  If the antibiotic is the only one that could possibly save the patient&apos;s life, the clinician would likely choose to order the antibiotic anyway.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

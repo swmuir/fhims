@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMEnrollEligCOBPatientCaseManagement" xml:lang="en-us">
+<title id="title">PatientCaseManagement</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+<section id="specializations"  audience="developer, modeler">
+	<title>Derivations</title>
+	<ul>
+<li><xref href="../t_FHIMEnrollEligCOBWorkersCompClaim.dita">WorkersCompClaim </xref> is a kind of  PatientCaseManagement </li>
+	</ul>
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>Case Management, in the context of a health insurer or health plan, is defined as:  &quot;A method of managing the provision of health care to members with high-cost medical conditions. The goal is to coordinate the care so as to both improve continuity and quality of care and lower costs.&quot;  This class contains properties needed to identify a Case for the purposes of managing costs associated with that Case.  Therefore claims for Billable Services will cite the Case Id contained herein.  Note that a Workers&apos; Compensation Claim is not a single claim as the name implies, but a Case, and is modeled as a sub-type of Case Management.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>caseId :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				A unique identifier assigned to the Patient&apos;s Case.</p><p>&quot;Identifies the claim number assigned by Worker&#8217;s Compensation Program.&quot; - NCPDP Telecommunication (Field 435-DZ, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateRange :  <xref href="../t_FHIMDatatypesTimeInterval.dita" >TimeInterval</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Represents the time period during which the Patient&apos;s case was actively being managed.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>isResidentOfCmsQualifiedFacility :  Boolean (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Indicates that the patient resides in a facility that qualifies for the CMS Part D benefit.&quot; - NCPDP Telecommunication (Field 997-G2, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>clinicalInformation : <xref href="../t_FHIMClinicalObservationObservation.dita" >Observation</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to a set of clinical observation that indicate the patient&apos;s current condition and justify the services needed to treat the patient.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>diagnosisList : <xref href="../t_FHIMCommonDiagnosisListEntry.dita" >DiagnosisListEntry</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to a set of Diagnoses of the Patient&apos;s condition that are the subject of the Managed Case.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>priorAuthorization : <xref href="../t_FHIMEnrollEligCOBPriorAuthorization.dita" >PriorAuthorization</xref> (0..*)</p></stentry>
+  <stentry><p>				&quot;Based on the type of insurance, some coverage plans require that an authorization number or code be obtained prior to all non-emergency admissions, and within 48 hours of an emergency admission.  Insurance billing would not be permitted without this number.  The date and source of authorization are the components of this field.&quot; - HL7 Version 2.8, IN1-14.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

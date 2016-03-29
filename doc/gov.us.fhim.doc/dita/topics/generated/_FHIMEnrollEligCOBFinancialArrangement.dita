@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMEnrollEligCOBFinancialArrangement" xml:lang="en-us">
+<title id="title">FinancialArrangement</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+<section id="specializations"  audience="developer, modeler">
+	<title>Derivations</title>
+	<ul>
+<li><xref href="../t_FHIMEnrollEligCOBDrugFormulary.dita">DrugFormulary </xref> is a kind of  FinancialArrangement </li>
+<li><xref href="../t_FHIMEnrollEligCOBCapitationArrangement.dita">CapitationArrangement </xref> is a kind of  FinancialArrangement </li>
+<li><xref href="../t_FHIMEnrollEligCOBFeeForServiceArrangement.dita">FeeForServiceArrangement </xref> is a kind of  FinancialArrangement </li>
+	</ul>
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>Describes the nature of the financial arrangement or contract between a healthcare provider and a health plan.  Financial Arrangements are commonly based on Fee Schedules, Capitation arrangements, or some kind of combination of the two.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>contractId :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Identifies the legal agreement between a Health Plan and a (group of) provider(s) in which the method and value of payments are defined.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>effectivePeriod :  <xref href="../t_FHIMDatatypesTimeInterval.dita" >TimeInterval</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The time period for which the Financial Arrangement is valid.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>healthPlan : <xref href="../t_FHIMEnrollEligCOBHealthPlan.dita" >HealthPlan</xref> (1..*)</p></stentry>
+  <stentry><p>				Pointer to the healthcare-financing-related product offering which utilizes the Financial Arrangement for payment determination.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

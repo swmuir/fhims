@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMCommonPersonOrOrganizationChoice" xml:lang="en-us">
+<title id="title">PersonOrOrganizationChoice</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class represents an &quot;Entity Choice&quot;, which is used when an association is needed to either a Person or an Organization.  This class will be used by various Roles where it is not known at design time whether the Entity playing a Role is a Person or an Organization.  It is noted that for most Roles modeled in the FHIM, it can be known beforehand whether a person or organization is expected.  For example, a DataEnterer is always a person.  It is also noted that there are two prominent classes which deal with this issue in a different manner: Patient has two subtypes for Person and Animal patients; HealthcareProvider has subtypes for Organizational Provider and Individual Provider.  These two hierarchies are modeled differently because different properties are needed depending on whether the related entity is a person or not.  This generic structure is used when there is no other distinctions between organization and person entities.  </p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+
+ <strow>
+  <stentry><p>organization : <xref href="../t_FHIMProviderOrganization.dita" >Organization</xref> (0..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>person : <xref href="../t_FHIMPersonPerson.dita" >Person</xref> (0..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMProviderHealthcareProvider" xml:lang="en-us">
+<title id="title">HealthcareProvider</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+<section id="specializations"  audience="developer, modeler">
+	<title>Derivations</title>
+	<ul>
+<li><xref href="../t_FHIMProviderIndividualProvider.dita">IndividualProvider </xref> is a kind of  HealthcareProvider </li>
+<li><xref href="../t_FHIMProviderOrganizationalProvider.dita">OrganizationalProvider </xref> is a kind of  HealthcareProvider </li>
+	</ul>
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>A person or organization which is authorized to perform healthcare-related services.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>active :  Boolean (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Whether this practitioner&apos;s record is in active use.&quot; - HL7 FHIR, Practitioner.active.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>address :  <xref href="../t_FHIMDatatypesAddress.dita" >Address</xref> (0..*)</p> 
+
+
+</stentry>
+  <stentry><p>				The physical location at which the Healthcare Provider is located or to which mail can be directed.</p><p>&quot;The postal address where the practitioner can be found or visited or to which mail can be delivered.&quot; - HL7 FHIR, Practitioner.address.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>digitalCertificateDistinguishedName :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Distinguished Name field from digital certificate&quot; - ONC S&amp;I Clinical Element Data Dictionary (CEDD), March 2012.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>digitalCertificateId :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Serial number from the public digital certificate&quot; - ONC S&amp;I Clinical Element Data Dictionary (CEDD), March 2012.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>id :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (1..*)</p> 
+
+
+</stentry>
+  <stentry><p>				Uniquely identifies the practitioner.  This property should not contain the Tax Id or the National Provider Id, as these types of Ids are called out separately.</p><p>&quot;An identifier that applies to this person in this role.&quot; - HL7 FHIR, Practitioner.identifier.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>nationalProviderId :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				An identifier that uniquely identifies all persons and organizations who perform medical services within the United States.  This identifier is mandated by HIPAA and is maintained by CMS.</p><p>&quot;An identifier that applies to this person in this role.&quot; - HL7 FHIR, Practitioner.identifier.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>providerCategory :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+<p>See <xref href="../t_fhimvocabProviderVocabHealthcareProviderTaxonomyHIPAA.dita">Healthcare Provider Taxonomy (HIPAA)</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				Contains a categorization for the practitioner.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>providerRole :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+<p>See <xref href="../t_fhimvocabProviderVocabProviderRoleValueSet.dita">Provider Role Value Set</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				&quot;The list of Roles/Organizations that the Practitioner is associated with.&quot; - HL7 FHIR, Practitioner.practitionerRole.  Note that FHIR does not identify any values for this concept.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>publicDigitalCertificate :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;A base 64 encoded representation of the public digital certificate&quot; - ONC S&amp;I Clinical Element Data Dictionary (CEDD), March 2012.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>taxId :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				An identifier assigned to the Healthcare Provider by a jurisdictional taxing authority. This id is often used for billing purposes.</p><p>&quot;An identifier that applies to this person in this role.&quot; - HL7 FHIR, Practitioner.identifier.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>telecom :  <xref href="../t_FHIMDatatypesContactPoint.dita" >ContactPoint</xref> (0..*)</p> 
+
+
+</stentry>
+  <stentry><p>				Indicates how and at what address that the Healthcare Provider can be reached via electronic communications. The datatype for this property is ContactPoint, which can be used for telephone numbers as well as email, etc.  The ContactPoint data  type contains a type code to indicate what kind of telecommunications address that is being referenced. Note that this property can contain more than one entry.</p><p>&quot;A contact detail for the practitioner, e.g. a telephone number or an email address.&quot; - HL7 FHIR, Practitioner.telecom.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>asLlicensedProvider : <xref href="../t_FHIMProviderLicensedProvider.dita" >LicensedProvider</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to information about the Provider applicable to their Role of a Licensed Provider.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>asMedicaidProvider : <xref href="../t_FHIMProviderMedicaidProvider.dita" >MedicaidProvider</xref> (0..1)</p></stentry>
+  <stentry><p>				Pointer to information about the Provider applicable to their Role of a Medicaid Provider.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>asMedicareProvider : <xref href="../t_FHIMProviderMedicareProvider.dita" >MedicareProvider</xref> (0..1)</p></stentry>
+  <stentry><p>				Pointer to information about the Provider applicable to their Role of a Medicare Provider.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>electronicServiceInformation : <xref href="../t_FHIMProviderElectronicServiceInformation.dita" >ElectronicServiceInformation</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to information concerning electronic capabilities of the Healthcare Provider.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>patient : <xref href="../t_FHIMPersonPatient.dita" >Patient</xref> (1..*)</p></stentry>
+  <stentry><p>				A role of a person or animal as a recipient of health care services from a healthcare provider.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>providerPlanParticipation : <xref href="../t_FHIMProviderProviderPlanParticipation.dita" >ProviderPlanParticipation</xref> (0..*)</p></stentry>
+  <stentry><p>				Represents the participation of a Healthcare Provider (either an Individual or an Organizational Provider) with a Health  Plan for the purpose of providing healthcare services to members (i.e., patients) of that plan.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>specialty : <xref href="../t_FHIMProviderSpecialty.dita" >Specialty</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to the medical Specialty for which the Healthcare Provider has been certified.</p><p>&quot;Specific specialty of the practitioner.&quot; - HL7 FHIR, Practitioner.practitionerRole.specialty.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

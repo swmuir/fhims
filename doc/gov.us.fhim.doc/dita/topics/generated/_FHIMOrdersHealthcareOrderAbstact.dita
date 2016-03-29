@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMOrdersHealthcareOrderAbstact" xml:lang="en-us">
+<title id="title">HealthcareOrder(Abstact)</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	HealthcareOrder(Abstact) is a kind of <xref href="../t_FHIMCommonClinicalInformationAbstract.dita">ClinicalInformation(Abstract)</xref>	
+</section>
+
+
+
+<section id="specializations"  audience="developer, modeler">
+	<title>Derivations</title>
+	<ul>
+<li><xref href="../t_FHIMOrdersObservationRequestAbstract.dita">ObservationRequest(Abstract) </xref> is a kind of  HealthcareOrder(Abstact) </li>
+<li><xref href="../t_FHIMOrdersSetOfOrders.dita">SetOfOrders </xref> is a kind of  HealthcareOrder(Abstact) </li>
+<li><xref href="../t_FHIMOrdersCounselingRequest.dita">CounselingRequest </xref> is a kind of  HealthcareOrder(Abstact) </li>
+	</ul>
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class represents those properties which are common to all orders.  This class is &quot;owned&quot; by the Common package so as to avoid package interdependencies.  Information that is specific to given order types (e.g., Lab, Pharmacy) are contained in subtypes to this class.  These subtype classes are in the the respective domain packages (e.g., the LabRequest class is in the Lab package).</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>alternatePlacerOrderId :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;This field enables a shorter number to be communicated that is unique within other identifiers.&quot; - HL7 Version 2.8, ORC-53.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>callbackPhone :  <xref href="../t_FHIMDatatypesContactPoint.dita" >ContactPoint</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Contains the telephone number to call for clarification of a request or other information regarding the order.&quot; - HL7 Version 2.8, ORC-14.</p><p>&quot;Contains the telephone number for reporting a status or a result&quot; - HL7 Version 2.8, OBR-17.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>confidentialityCode :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;This field contains information about the level of security and/or sensitivity surrounding the order (e.g., highly sensitive, not sensitive, sensitive, etc.).&quot; - HL7 Version 2.8, ORC-28
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dangerCode :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Contains the code and/or text indicating any known or suspected patient or specimen hazards, e.g., patient with active tuberculosis or blood from a hepatitis patient.&quot; - HL7 Version 2.8, OBR-12.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateTimeBegin :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;This field may be specified by the requester, in which case it indicates the earliest date/time at which the services should be started.  In many cases, however, the start date/time will be implied or will be defined by other fields in the service request record (e.g., urgency   STAT).  In such a case, this field will be empty. The filling service will often record a value in this field after receipt of the service request, however, and compute an end time on the basis of the start date/time for the filling service&apos;s internal use.&quot; - HL7 Version 2.8, TQ1-7
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateTimeCompleted :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The date/time this order is considered complete.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateTimeEnd :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;When filled in by the requester of the service, this field should contain the latest date/time that the service should be performed.  If it has not been performed by the specified time, it should not be performed at all.  The requester may not always fill in this value, yet the filling service may fill it in on the basis of the instruction it receives and the actual start time. Regardless of the value of the end date/time, the service should be stopped at the earliest of the date/times specified by either the duration or the end date/time.&quot; - HL7 Version 2.8, TQ1-8
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateTimeOrdered :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The date/time that the order was created by the ordering provider.</p><p>&quot;Date prescription was written.&quot; - NCPDP Telecommunication (Field 414-DE, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>duplicateProcedureReason :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;This field is used to document why the procedure found in OBR-44 - Procedure Code is a duplicate of one ordered/charged previously for the same patient within the same date of service and has been determined to be medically necessary.&quot; - HL7 Version 2.8, OBR-48.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>isEscortRequired :  Boolean (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Indicates whether &quot;the patient needs to be escorted to the diagnostic service department.&quot; - HL7 Version 2.8, OBR-42
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>isInpatientOrder :  Boolean (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;This field indicates whether the order is to be executed in an inpatient setting or an outpatient setting.&quot; - HL7 Version 2.8, ORC-29
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>placerOrderId :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;This field is the placer application&apos;s order number.&quot; - HL7 Version 2.8, ORC-2</p><p>&quot;This field is identical to ORC-2-Placer Order Number....  It identifies an order uniquely among all orders from a particular ordering application.&quot; - HL7 Version 2.8, OBR-2.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>placerSupplementalInfo :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Contains supplemental service information sent from the placer system to the filler system for the universal procedure code reported in OBR-4 Universal Service ID.  This field will be used to provide ordering information detail that is not available in other specific fields in the OBR segment.&quot; - HL7 Version 2.8, OBR-46.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>plannedPatientTransportComment :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Contains &quot;comments on special requirements for the transport of the patient to the diagnostic service department.&quot; - HL7 Version 2.8, OBR-43
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>priority :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;This field describes the urgency of the request.  If this field is blank, the default is R&quot; (Routine) - HL7 Version 2.8, TQ1-9
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>reasonForStudy :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;This is required for some studies to obtain proper reimbursement.&quot; - HL7 Version 2.8, OBR-31.  Used to link various tests or procedures together in order to provide a more complete picture of a patient&apos;s condition.  Also used for billing purposes.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>relevantClinicalInformation :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..*)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Contains the additional clinical information about the patient or specimen.  This field is used to report the suspected diagnosis and clinical findings on requests for interpreted diagnostic studies.  Examples include reporting the amount of inspired carbon dioxide for blood gasses, the point in the menstrual cycle for cervical pap tests, and other conditions that influence test interpretations.&quot; - HL7 Version 2.8, OBR-13.  Possible values include (from HL7 Table 916): Patient was fasting prior to the procedure; The patient indicated they did not fast prior to the procedure; Not Given &#8211; Patient was not asked at the time of the procedure; Fasting not asked of the patient at time of procedure.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>remarks :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				General textual comments about this Order.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>resultHandling :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Information regarding the handling of the result.  For example, an order may specify that the result (e.g., an x-ray film) should be given to the patient for return to the requestor....  If this field is not populated then routine handling is implied.&quot; - HL7 Version 2.8, OBR-49    Note that the HL7 V2 value set only contains values pertinent to Radiology (e.g., give film to patient).  However, it is envisioned that other scenarios might be handled by this property.  This property is optional.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>status :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Specifies the status of an order....  The purpose of this field is to report the status of an order either upon request (solicited), or when the status changes (unsolicited).  It does not initiate action.  It is assumed that the order status always reflects the status as it is known to the sending application at the time that the message is sent.  Only the filler can originate the value of this field.&quot; - HL7 Version 2.8, ORC-5</p><p></p><p>A code specifying the status of the Order.  Valid status codes should reflect the HL7 state machine, e.g., Active, Held, Canceled, Aborted, New, Nullified, Obsolete.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>statusModifier :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;This field is a modifier or refiner of the ORC-5-Order status field. This field may be used to provide additional levels of specificity or additional information for the defined order status codes.&quot; - HL7 Version 2.8, ORC-25
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>suggestedPrecaution :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..*)</p> 
+
+
+</stentry>
+  <stentry><p>				This property indicates the kind of precaution(s) that the orderer suggests be taken in order to prevent transmission of infectious disease.  Possible values include: blood-borne pathogen precaution, airborne pathogen precaution, droplet precaution, contact precautions, etc. This property categorizes the precaution protocol that ought to be invoked.  The actual protocol invoked may be indicated in the PrecautionProtocol class.  Note that a precaution will in some cases be ordered, in which case a separate instance of the HealthcareOrder would be created.  This property is not intended to order a precaution but to suggest one that might be taken while fulfilling the subject order.  For a system that implements a Boolean flag to indicate that the patient is to be in an isolation protocol, one approach would be to set that flag based on the content of this property.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>transportationArrangementResponsibility :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Indicates &quot;who is responsible for arranging transport to the planned diagnostic service.  Examples: Requester, Provider, Patient.&quot; - HL7 Version 2.8, OBR-40.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>transportationMode :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Identifies how (or whether) to transport a patient, when applicable.&quot; - HL7 Version 2.8, OBR-30.  Possible values include (from HL7 Table 124): Cart - patient travels on cart or gurney; The examining device goes to patient&apos;s location; Patient walks to diagnostic service; Wheelchair.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>wasTransportArranged :  Boolean (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Indicates &quot;whether transport arrangements are known to have been made.&quot; - HL7 Version 2.8, OBR-41
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>billingInformation : <xref href="../t_FHIMOrdersBillingInformation.dita" >BillingInformation</xref> (0..*)</p></stentry>
+  <stentry><p>				&quot;Used to provide billing information, on the ordered service, to the filling application.&quot; - HL7 Version 2.8, BLG Segment.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>cosigner : <xref href="../t_FHIMCommonLegalAuthenticator.dita" >LegalAuthenticator</xref> (0..1)</p></stentry>
+  <stentry><p>				Captures participation information (who, when, comments) of the person who co-signed the order.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>diagnosisList : <xref href="../t_FHIMCommonDiagnosisListEntry.dita" >DiagnosisListEntry</xref> (0..*)</p></stentry>
+  <stentry><p>				A (set of) specific confirmed or suspected patient diagnosis associated with a Health Care Order indicating the health care basis for the Healthcare Order.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>encounter : <xref href="../t_FHIMEncounterEncounterEvent.dita" >EncounterEvent</xref> (0..1)</p></stentry>
+  <stentry><p>				The PatientEncounter during which the Order was created.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>healthcareOrder : <xref href="../t_FHIMOrdersHealthcareOrderAbstact.dita" >HealthcareOrder(Abstact)</xref> (1..1)</p></stentry>
+  <stentry><p>				Points to the Healthcare Order in response to which the Healthcare Promise was created.  Note that since both the HealthcareOrder and HealthcarePromise are abstract classes, this association is available to all subclasses, such that LabPromise would point to LabOrder, etc.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>healthcarePromise : <xref href="../t_FHIMOrdersHealthcarePromiseAbstract.dita" >HealthcarePromise(Abstract)</xref> (0..*)</p></stentry>
+  <stentry><p>				Points to the Healthcare Promises (if any) created in response to the Healthcare Order.  Note that since both the HealthcareOrder and HealthcarePromise are abstract classes, this association is available to all subclasses, such that LabPromise would point to LabOrder, etc.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>orderAction : <xref href="../t_FHIMOrdersOrderAction.dita" >OrderAction</xref> (0..*)</p></stentry>
+  <stentry><p>				A record of action has been taken on an order, including the signature and verification required to release to the service.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>patient : <xref href="../t_FHIMPersonPatient.dita" >Patient</xref> (0..1)</p></stentry>
+  <stentry><p>				Identifies the patient which is the subject of the Order.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>patientLocation : <xref href="../t_FHIMProviderServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (0..1)</p></stentry>
+  <stentry><p>				The physical location of the patient.  This information is used to communicate to the performing Service where the Patient might be found, which is particularly important for services that involve the patient (e.g., a Lab Test ordered requires a blood draw).</p><p>&quot;Specifies the location of the patient to whom the pharmaceutical substance is to be delivered.&quot; - HL7 Version 2.8, RXO-34.</p><p>&quot;Specifies the address, either mailing or physical, to which the prescription should be mailed or delivered.&quot; - HL7 Version 2.8, RXO-35.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>precautionProtocolInvoked : <xref href="../t_FHIMOrdersPrecautionProtocol.dita" >PrecautionProtocol</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to a list of zero-to-many procedures that is invoked as a precaution to prevent harm to the patient, guests, or healthcare workers in response to a known situation where a potential danger may exist.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>resultCopiesTo : <xref href="../t_FHIMProviderIndividualProvider.dita" >IndividualProvider</xref> (0..*)</p></stentry>
+  <stentry><p>				&quot;Identifies the people who are to receive copies of the results.&quot; - HL7 Version 2.8, OBR-28.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>setOfOrders : <xref href="../t_FHIMOrdersSetOfOrders.dita" >SetOfOrders</xref> (0..1)</p></stentry>
+  <stentry><p>				An aggregation of Orders that are assembled so that they might be managed as a group.  The member Orders will generally be for a single Patient, and commonly issued by a single Provider, but otherwise these orders will have no other inherent relationships between themselves.  This concept is different from an Order Set, Panel, or Battery, in that the SetOfOrders is composed after the orders have been created; wheras the latter concepts are defined before the order is created.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>standingOrder : <xref href="../t_FHIMOrdersStandingOrder.dita" >StandingOrder</xref> (0..1)</p></stentry>
+  <stentry><p>				An order that is created by policy, and which is not tied to a single patient, but which is generated for a patient when certain conditions are met.  For example, a policy might exist that persons deploying to a particular region must have a particular vaccination administered beforehand.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>subject : <xref href="../t_FHIMOrdersSubject.dita" >Subject</xref> (0..*)</p></stentry>
+  <stentry><p>				Represents the person or thing, other than a patient, that is the subject of a healthcare activity.  For example, the subject might be a research animal, an environmental sample, or a foodstuff sample for food safety testing.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

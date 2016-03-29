@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMPharmacyInfusionPromise" xml:lang="en-us">
+<title id="title">InfusionPromise</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	InfusionPromise is a kind of <xref href="../t_FHIMPharmacyPharmacyPromise.dita">PharmacyPromise</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>An inpatient request for intravenous medication to be administered for this patient.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>infusionRate :  <xref href="../t_FHIMDatatypesRateQuantity.dita" >RateQuantity</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Infusion: &quot;Introduction of a solution into the body through a vein for therapeutic purposes.&quot;  (American Heritage Stedman&apos;s Medical Dictionary).  This is the rate at which the solution is introduced into the body.  Expressed as volume/time (e.g., 500 ml/hr)
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>infusionSite :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+<p>See <xref href="../t_fhimvocabPharmacyVocabInfusionSite.dita">InfusionSite</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				The site of the patient&apos;s body at which the infusion takes place.  Note that there is a question, in cases where the patient is receiving multiple infusions simultaneously, whether this code should include something about the specific line, or whether there needs to be another attribtue.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>infusionVelocity :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+<p>See <xref href="../t_fhimvocabPharmacyVocabInfusionVelocity.dita">InfusionVelocity</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				Indicates whether the infusion is Continuous or Intermittant. (or Bolus?)    Another possible name is infustionPersistance?    (May need a better name)
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>ivType :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Categorizes the intravenous infusion to occur.  Possible values include Admixture, Piggyback, or Syringe.    (May need a better name)
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>requestedIvLimitation :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This is the maximum length of time or the maximum volume to administer, for IV fluid orders. The value may be in milliliters, liters, hours, or days.
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMSecurityAndPrivacyAtomicPrivacyPolicy" xml:lang="en-us">
+<title id="title">AtomicPrivacyPolicy</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	AtomicPrivacyPolicy is a kind of <xref href="../t_FHIMSecurityAndPrivacyAtomicPolicyAbstract.dita">AtomicPolicy(Abstract)</xref>	
+</section>
+
+
+
+<section id="specializations"  audience="developer, modeler">
+	<title>Derivations</title>
+	<ul>
+<li><xref href="../t_FHIMSecurityAndPrivacySensitivityPolicy.dita">SensitivityPolicy </xref> is a kind of  AtomicPrivacyPolicy </li>
+	</ul>
+</section>
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This is the main/focal class for electronic privacy policies. It contains a set of rules that are intended to be enforced by security systems and are used as the basis for client consent directives.</p><p></p><p>Note: There used to be a class called &quot;PublishedPrivacyPolicy&quot; the definition of which was: &gt;&gt;This class encapsulates the location of a human-readable version of the Electronic Privacy Policy. The human-readable version is accessible to any authorized system and user via the supplied URI.&lt;&lt;.  I deleted the Published Consent class on 11/14/14.  The only property of that class was a uri, which is in the base class (Policy(Abstract)) of this class, so I did not have to move it.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>privacyPolicyType :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>grantee : <xref href="../t_FHIMSecurityAndPrivacyGrantee.dita" >Grantee</xref> (0..*)</p></stentry>
+  <stentry><p>				Designates who/what has been delegated a specific right.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>privacyRule : <xref href="../t_FHIMSecurityAndPrivacyPrivacyRule.dita" >PrivacyRule</xref> (0..*)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>privacyRuleList : <xref href="../t_FHIMSecurityAndPrivacyPrivacyRuleList.dita" >PrivacyRuleList</xref> (0..*)</p></stentry>
+  <stentry><p>				A list of zero or more privacy rules applicable to this consent directive.  A privacy rule specifies the permission allowed to a user type by the consenter for a specific type of information. The person consenting may be either the subject of the record or a designated Substitute Decision Maker. One or more consent rules comprise a consent directive or privacy policy.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMSurgeryAnesthesiaSubEvent" xml:lang="en-us">
+<title id="title">AnesthesiaSubEvent</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>A drug used to produce anesthesia. causing a loss of normal sensation or feeling. </p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>approach :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The detailed anatomical site where the medication enters or is applied to the subject.&quot; (HL7 3.0) 
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateTimeExtubated :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This is the exact date and time that the endotracheal tube is pulled for the final time after the surgery. Enter NS if the date and time is unknown, and RI if the patient remains intubated &amp;amp;gt;30 days after surgery.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>route :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Contains a code identifying the route of the  endotracheal tube to the trachea.  Lieke values: O:ORAL, N:NASAL, T:TRACHEOSTOMY., etc.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>technique :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Contains the anesthesia technique used during this encounter corresponding to the American Board of Anesthesiologists universal list of anesthesia techniques.  Such values as a G:GENERAL, M:MONITORED ANESTHESIA CARE,  S:SPINAL,  E:EPIDURAL,  O:OTHER,  L:LOCAL, N:NO ANESTHESIA, etc.  
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>baricity : <xref href="../t_FHIMSurgeryBaricityObservation.dita" >BaricityObservation</xref> (0..1)</p></stentry>
+  <stentry><p>				Baracity is the weight of one substance compared to the weight of an equal volume of another substance at the same temperature.  This class records the baricity of the anesthesia drug fluid vehicle in relationship to the spinal fluid.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>epiduralEvent : <xref href="../t_FHIMSurgeryEpiduralEvent.dita" >EpiduralEvent</xref> (0..1)</p></stentry>
+  <stentry><p>				Contains information concerning the injection of anesthesia into the epidural space of the spine.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>intubation : <xref href="../t_FHIMSurgeryIntubationEvent.dita" >IntubationEvent</xref> (0..1)</p></stentry>
+  <stentry><p>				The introduction of a tube into a hollow organ (as the trachea or intestine) to keep it open or restore its patency if obstructed 
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

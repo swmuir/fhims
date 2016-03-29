@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMEnrollEligCOBBenefitStage" xml:lang="en-us">
+<title id="title">BenefitStage</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>Medicare Part D provides prescription benefits in several &quot;stages&quot;, including an Initial Coverage Benefit Stage, the Coverage Gap or Out-of-Pocket Benefit Stage, and the Catastrophic Coverage Benefit Stage. This class identifies the number and dollar amount of payments made in each stage.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>amount :  <xref href="../t_FHIMDatatypesMonetaryAmount.dita" >MonetaryAmount</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The amount of claim allocated to the Medicare stage identified by the Benefit Stage Qualifier&quot; - NCPDP Telecommunication (Field 393-MW, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>benefitStageType :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Code qualifying the Benefit Stage Amount&quot; - NCPDP Telecommunication (Field 393-MV, Data Dictionary 201104).  Possible values include: Deductible; Initial Benefit; Coverage Gap (donut hole); Catastrophic Coverage; Not paid under Part D, paid under Part C benefit (for MA-PD plan); Not paid under Part D, paid as or under a supplemental benefit only; Part D drug not paid by Part D plan benefit, paid by the beneficiary under plan-sponsored negotiated pricing; Non-Part D drug not paid by Part D plan benefit, paid by the beneficiary under plan-sponsored negotiated pricing.
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

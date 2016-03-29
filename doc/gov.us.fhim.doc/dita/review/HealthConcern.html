@@ -1,0 +1,1564 @@
+
+<html xmlns:Standard="http://www.eclipse.org/uml2/schemas/Standard/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:fhim="http:///schemas/fhim/_bbjuwA3cEeSGTazHdUQojA/5" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:term="http://www.openhealthtools.org/mdht/schemas/term/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:xmi="http://www.omg.org/XMI" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.3/Umlnotation" xmlns:Default="http:///schemas/Default/_fNm3AAqoEd6-N_NOT9vsCA/2" xmlns:CDA="http://www.openhealthtools.org/mdht/schemas/cda/4" xmlns:Default_1="http:///schemas/Default/1" xmlns:RIM="http:///schemas/RIM/_fvnwgAH4Ed6VH-9W1IVKXA/4" xmlns:SketchNotation="http://www.ibm.com/ccl/soa/sketch/notation/1.0.0/">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>HealthConcern Domain</title>
+   </head>
+   <body style="font-family:Courier;font-size:14px">
+      <h1>HealthConcern Domain</h1>
+      <p> The purpose of this review is to identify the data elements required for the
+         interoperable exchange for the HealthConcern domain including dependencies. A column is
+         provided at the far right of the table for you to enter comments related to each
+         data element. If the class or domain is missing data elements, please add a row
+         at the bottom of the sheet and specify a name, description, and type of data
+         (e.g. numeric, string, date/time, code). 
+      </p>
+      <p> Once you have reviewed the data elements, please review the value sets
+         associated with the coded data elements. Please provide feedback by adding
+         comments in the column provided at the right of item/row or by adding rows at
+         the bottom table. For any new coded concepts without a valid code yet, our team
+         will propose them for addition in the source coding system. 
+      </p>
+      <ul>
+         <li><a href=""> <i><b>HealthConcern</b> </i> Domain </a></li>
+       </ul>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font-family:Courier">
+         <tr bgcolor="#98FB98" style="font-size:18px" align="left">
+            <td colspan="1"><b><a id=""> 'HealthConcern' Domain
+                     </a></b></td>
+            <td colspan="4" style="font-size:12px">Note that the Information Source hierarchy is in the Common domain, and is not shown here.</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+      </table>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font-family:Courier">
+         <tr>
+            <th width="20%">Element Name</th>
+            <th width="20%">Element Description</th>
+            <th width="15%">Format/Type</th>
+            <th width="15%">Value Set Name</th>
+            <th width="15%">Optionality/<br>Repetition
+            </th>
+            <th width="15%">Reviewer's Comments</th>
+         </tr>
+ 
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>ConcernStatusChangeEvent</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class contains a history of updates to the Health Concern record, and relates the Health Concern record to various encounters over time.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ConcernStatusChangeEvent.<b>comment</b></div>
+            </td>
+            <td><p>Remarks concerning the status change.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ConcernStatusChangeEvent.<b>entryDate</b></div>
+            </td>
+            <td><p>The date and time that the Observation/Condition Log Entry record was created.</p><p></p><p>&quot;The date and time that this allergy was last statused by the [Intolerance Condition Log Entry Author] in the [Intolerance Condition Log Entry Service Delivery Location]&quot; - HL7 Version 2.8, IAM-20.</p><p>&quot;The date and time that this allergy was inactivated by the [Intolerance Condition Log Entry Author].&quot; - HL7 Version 2.8, IAM-22.</p><p>&quot;The date and time that this allergy entry was created by the [Intolerance Condition Log Entry Author].&quot; - HL7 Version 2.8, IAM-24.</p><p>&quot;The date and time that this allergy was modified by the [Intolerance Condition Log Entry Author]&quot; - HL7 Version 2.8, IAM-26.</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ConcernStatusChangeEvent.<b>fromStatus</b></div>
+            </td>
+            <td><p>Contains the previous status of the Observation/Condition before the change documented by the current instance.  This provides a history of status changes over time.</p></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#"></a> 
+					
+					 
+</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ConcernStatusChangeEvent.<b>reason</b></div>
+            </td>
+            <td><p>Indicates the reason why the status of the associated Observation/Condition record was changed.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ConcernStatusChangeEvent.<b>toStatus</b></div>
+            </td>
+            <td><p>Contains the status of the Observation/Condition as of the entry date.  This provides a history of status changes over time.</p><p>&quot;Contains the current status of the problem at this particular date/time (e.g., active, active-improving, active-stable, active-worsening, inactive, resolved, etc.).&quot; - HL7 Version 2.8, PRB-14.  Note that HL7does not provide any suggested values for this code.</p></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#"></a> 
+					
+					 
+</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ConcernStatusChangeEvent.<b>visit</b></div>
+            </td>
+            <td><p>&quot;Uniquely identifies the episode of care to which this problem applies.&quot; - HL7 Version 2.8, PRB-5</p></td>
+            <td valign="top"> <b>EncounterEvent</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>EmploymentConcen</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>A type of Health Concern that arises from the patient&apos;s occupation or place of employment.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>ExternalCause</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>Identifies the Accident, Injury, or Exposure that caused the Health Concern.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>FamilyHistoryConcern</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>A type of Health Concern that embodies a risk that the patient may be particularly susceptible to a given disease due to the fact that a relative of the patient had experienced the condition.  For example, if a female patient&apos;s mother had breast cancer, then the patient may have a higher risk of breast cancer.  While this class is generally used for conditions to which the patient may be genetically pre-disposed, such as breast cancer, and therefore will generally reference blood relatives, it may also be used to document environmental risks that the patient shares with extended family members.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">FamilyHistoryConcern.<b>details</b></div>
+            </td>
+            <td><p>Textual description about the problems, diagnoses, and genetic markers found in genetic relatives. This field may be used to capture unstructured or structured family history information recorded in clinical records.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">FamilyHistoryConcern.<b>geneticMarkerDescription</b></div>
+            </td>
+            <td><p>Description of risk-related genetic markers identified in this individual.  For example, Patient has had individual genome analysis that revealed BRACA 1.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">FamilyHistoryConcern.<b>duration</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> TimeInterval </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">FamilyHistoryConcern.<b>medicalHistory</b></div>
+            </td>
+            <td><p>Details about problems or diagnoses for this genetic relative.  Note that this might be implemented as a Document Section.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">FamilyHistoryConcern.<b>wasCauseOfDeath</b></div>
+            </td>
+            <td><p>If the patient&apos;s relative is deceased, this property indicates whether the Health Concern (aka Problem) was (one of) the cause(s) of death.</p></td>
+            <td valign="top"> NullableBoolean </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">FamilyHistoryConcern.<b>relative</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>Relative</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>HealthConcern</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>&quot;This class is used to track a patient&apos;s health concern observed by various providers at various points in time and locations. The name and nature of the concern is derived from the first health concern observation made, which could be an indication of a negative assertion for an health concern, if necessary (e.g. not a diabetic).&quot; - HL7 v3.  A &quot;health concern&quot; can be anything that a clinician wishes to track about the patient, including items which the patient might not consider to be a &quot;problem&quot;, such as the fact that the patient smokes.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">HealthConcern.<b>ageAtOnset</b></div>
+            </td>
+            <td><p>The age of the patient or subject at onset of the Condition.  Note that this property could potentially be derived.</p></td>
+            <td valign="top"> TimeQuantity </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">HealthConcern.<b>category</b></div>
+            </td>
+            <td><p>This property provides a categorization of the Condition.  Because there are (currently) different generalizations (i.e., subtypes) of Concern, it is likely that the potential categorizations may differ from one subtype to another.  It is therefore likely that the subtypes may redefine this property to bind to specific value sets.  For now, this property is bound to the Problem Type value set.  For Health Concern, the possible values include: Symptom, Behavior (e.g., smoking), a diagnosed disease, a suspected disease, a disease to be ruled out, etc.</p><p></p><p>&quot;A category assigned to the condition. E.g. complaint | symptom | finding | diagnosis.&quot; - HL7 FHIR, Condition resource.</p><p>&quot;Indicates the kind of problem.  This field can be used to categorize problems so that they may be managed and viewed independently within different applications (e.g., admission, final, post-operative, pre-operative, outpatient, discharge, etc.).&quot; - HL7 Version 2.8, PRB-10.  Note that HL7does not provide any suggested values for this code.</p></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#Problem Type Value Set">Problem Type Value Set</a> 
+					
+					 
+</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">HealthConcern.<b>certainty</b></div>
+            </td>
+            <td><p>&quot;The degree of confidence that this condition is correct.&quot; - HL7 FHIR, Condition resource.</p><p>&quot;Contains a qualitative representation of the certainty of a problem&quot; (e.g., high, low, medium, etc.) - HL7 Version 2.8, PRB-19</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">HealthConcern.<b>chronicity</b></div>
+            </td>
+            <td><p>&quot;Contains the perseverance of a problem (e.g., acute, chronic, etc.).&quot; - HL7 Version 2.8, PRB-12.  Note that HL7does not provide any suggested values for this code.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">HealthConcern.<b>concernContext</b></div>
+            </td>
+            <td><p>Describes whether the condition exists or doesn&apos;t exist.  Other values are potentially possible including rule in / rule out.  Align with SNOMED situation with explicit context.</p></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#"></a> 
+					
+					 
+</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">HealthConcern.<b>conditionCourse</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#"></a> 
+					
+					 
+</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">HealthConcern.<b>conditionStatus</b></div>
+            </td>
+            <td><p>&quot;The clinical status of the condition.&quot; - HL7 FHIR, Condition resource.  Possible values include: Provisional; Working; Confirmed; Refuted.</p><p>&quot;Indicates the verification status for the allergy&quot; - HL7 Version 2.8, IAM-17.  HL7 Version 2 has the following suggested values (table 438): Unconfirmed; Pending; Suspect; Confirmed or verified; Confirmed but inactive; Erroneous; Doubt raised.</p><p>&quot;Contains the verification status of a problem (e.g., confirmed, differential, provisional, rule-out, etc.).&quot; - HL7 Version 2.8, PRB-13.  Note that HL7does not provide any suggested values for this code.</p><p></p></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#"></a> 
+					
+					 
+</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">HealthConcern.<b>dateAbated</b></div>
+            </td>
+            <td><p>Date upon which this particular Condition is no longer an active concern.</p><p></p><p>&quot;The date or estimated date that the condition resolved or went into remission. This is called &quot;abatement&quot; because of the many overloaded connotations associated with &quot;remission&quot; or &quot;resolution&quot; - Conditions are never really resolved, but they can abate.&quot; - HL7 FHIR, Condition resource.</p><p>&quot;Contains the date/time that the problem was actually resolved.&quot; - HL7 Version 2.8, PRB-9</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">HealthConcern.<b>dateDiagnosed</b></div>
+            </td>
+            <td><p>Date and time the health problem was diagnosed.  Added for Public Health Reporting Initiative, 10/5/2012.</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">HealthConcern.<b>dateLastModified</b></div>
+            </td>
+            <td><p>The date and time that the Problem being described was last modified.  It is assumed that the status of the problem is valid as of the last modified date.  Note that this property could potentially be derived from the HealthConcernLifeCycle entries.</p><p>&quot;Indicates the effective date/time of the current problem life cycle status.&quot; - HL7 Version 2.8, PRB-15</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">HealthConcern.<b>dateOfOnset</b></div>
+            </td>
+            <td><p>Date when this particular Condition first manifested itself or was confirmed via testing if it had not yet manifested itself.  Note that this date may be inprecise (e.g., &quot;sometime in 2006&quot;).</p><p></p><p>&quot;Contains the actual date of the first reaction.&quot; - HL7 Version 2.8, IAM-11</p><p>&quot;Contains the date/time when the problem began.&quot; - HL7 Version 2.8, PRB-16.</p><p>&quot;Estimated or actual date the condition began, in the opinion of the clinician.&quot; - HL7 FHIR, Condition resource.</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">HealthConcern.<b>dateOfOnsetText</b></div>
+            </td>
+            <td><p>Textual description of the time period when this particular Condition first manifested itself or was confirmed via testing if it had not yet manifested itself.</p><p></p><p>&quot;Contains a text description of the time period of the first reaction when an exact date is not known (e.g., adolescence, childhood, spring 1990).&quot; - HL7 Version 2.8, IAM-12</p><p>&quot;This field allows for a textual representation of the time when the problem began.&quot; - HL7 Version 2.8, PRB-17</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">HealthConcern.<b>familyPrognosisAwareness</b></div>
+            </td>
+            <td><p>&quot;Indicates the individual&apos;s family or significant other&apos;s comprehension of the actual problem/prognosis.&quot; - HL7 Version 2.8, PRB-24</p><p>Note that while the datatype for this concept should likely be a code, it is currently a string as we have insufficient requirements to warrant a closed value-set.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">HealthConcern.<b>healthConcern</b></div>
+            </td>
+            <td><p>Identifies the Health Concern or Problem being described.  This property is a code, which should come from an approved subset of SNOMED-CT, e.g., the &quot;VA-KP Problem List Subset.&quot;</p><p>Note that there is a separate class for Family History Concerns, which is a generalization of the Health Concern class.  Therefore, this property should never contain a concept that has &quot;Family History Of&quot; built into it (i.e., a pre-coordinated concept), such as &quot;Family History of Diabetes&quot;.  When such infomation needs to be conveyed, this property should contain &quot;Diabetes,&quot; and the FamiliyHistoryConcern subclass will indicate that the Diabetes was observed in a family member and will identify the relationship of that family member (e.g., Father, Mother) to the patient.  Thus, in effect, we are creating a structure that explicity post-coordinates the concept of Family History Of with the concept of the disease that the family member had.</p><p></p><p>&quot;Identifies the problem. This is the identifier from an institution&apos;s master list of problems.&quot; - HL7 Version 2.8, PRB-3</p><p>&quot;Category for the risk.&quot; - HL7 Care Plan Domain Analysis Model.</p></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#Problem Value Set">Problem Value Set</a> 
+					
+					 
+</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">HealthConcern.<b>patientsProblemAwareness</b></div>
+            </td>
+            <td><p>&quot;Contains the individual&apos;s comprehension of the problem (e.g., full, marginal, partial, etc.).&quot; - HL7 Version 2.8, PRB-21.  Note that HL7 does not provide any suggested values for this code.</p><p>Note that while the datatype for this concept should likely be a code, it is currently a string as we have insufficient requirements to warrant a closed value-set.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">HealthConcern.<b>patientsPrognosisAwareness</b></div>
+            </td>
+            <td><p>&quot;Contains the individual&apos;s comprehension of the prognosis for the problem (e.g., full, marginal, partial, etc.).&quot; - HL7 Version 2.8, PRB-23.  Note that HL7 does not provide any suggested values for this code.</p><p>Note that while the datatype for this concept should likely be a code, it is currently a string as we have insufficient requirements to warrant a closed value-set.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">HealthConcern.<b>probability</b></div>
+            </td>
+            <td><p>&quot;Contains a quantitative or numeric representation of the certainty that the problem exists for this patient.  This field has a valid range of 0 to 1.  For example, a healthcare provider may be 75% (.75) sure that the problem has been correctly identified.&quot; - HL7 Version 2.8, PRB-20</p></td>
+            <td valign="top"> Real </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">HealthConcern.<b>prognosis</b></div>
+            </td>
+            <td><p>&quot;Contains the prognosis for the individual&apos;s problem (e.g., good, poor, etc.).&quot; - HL7 Version 2.8, PRB-22.  Note that HL7does not provide any suggested values for this code.</p><p>Note that while the datatype for this concept should likely be a code, it is currently a string as we have insufficient requirements to warrant a closed value-set.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">HealthConcern.<b>sensitivity</b></div>
+            </td>
+            <td><p>&quot;Contains information about the level of security and/or sensitivity surrounding the problem (e.g., highly sensitive, not sensitive, sensitive, etc.).&quot; - HL7 Version 2.8, PRB-25.  Note that HL7does not provide any suggested values for this code.</p><p>Note that while the datatype for this concept should likely be a code, it is currently a string as we have insufficient requirements to warrant a closed value-set.</p><p>Note that this property may be removed or altered based on the outcome of the Security and Privacy modeling.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">HealthConcern.<b>severity</b></div>
+            </td>
+            <td><p>&quot;A subjective assessment of the severity of the condition as evaluated by the clinician.&quot; - HL7 FHIR, Condition resource.  Possible values include: Mild; Moderate; Severe; Fatal.</p><p>&quot;Indicates the general severity of the allergy.&quot; - HL7 Version 2.8, AL1.4 and IAM-4.  HL7 Version 2 has the following suggested values (table 128): Severe; Moderate; Mild; Unknown.</p><p>&quot;Indicates the severity of the Problem.&quot; - HL7 Version 2.8, PRB-26.  Note that HL7 does not suggest values for this code.</p></td>
+            <td valign="top"> Code </td>
+            <td>
+					<a href="#Problem Severity Value Set">Problem Severity Value Set</a> 
+					
+					 
+</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">HealthConcern.<b>wasCauseOfDeath</b></div>
+            </td>
+            <td><p>If the patient is deceased, this property indicates whether the Health Concern (aka Problem) was (one of) the cause(s) of death.</p></td>
+            <td valign="top"> NullableBoolean </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">HealthConcern.<b>diagnosisList</b></div>
+            </td>
+            <td><p>Provides a list of diagnoses that are related to the Health Concern</p></td>
+            <td valign="top"> <b>DiagnosisListEntry</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">HealthConcern.<b>externalCause</b></div>
+            </td>
+            <td><p>Pointer to the Accident, Injury, or Exposure that caused the Health Concern.</p></td>
+            <td valign="top"> <b>ExternalCause</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">HealthConcern.<b>observation</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>Observation</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">HealthConcern.<b>problemManagementDiscipline</b></div>
+            </td>
+            <td><p>Pointer to the category of caregiver with responsibility for managing this specific problem.</p></td>
+            <td valign="top"> <b>ProblemManagementDiscipline</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">HealthConcern.<b>responsibleClinic</b></div>
+            </td>
+            <td><p>Identifies the organization/location responsible for treating the Health Concern.  Used primarily in inpatient situations.</p></td>
+            <td valign="top"> <b>ServiceDeliveryLocation</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">HealthConcern.<b>responsibleProvider</b></div>
+            </td>
+            <td><p>Identifies the provider responsible for treating the Health Concern.</p></td>
+            <td valign="top"> <b>ResponsibleParty</b> </td>
+            <td>NA</td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">HealthConcern.<b>concernStatusChangeEvent</b></div>
+            </td>
+            <td><p>Pointer to a history of updates to the Health Concern record, and relates the Health Concern record to various encounters over time.</p></td>
+            <td valign="top"> <b>ConcernStatusChangeEvent</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>HealthConcernList</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>This class provides a list of a patient&apos;s &quot;health concerns&quot;, otherwise known as &quot;problems&quot;.  Such a list is traditionally called a &quot;problem list&quot;.  This list is made up of entries, some of which may have been collected from other provider organizations.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">HealthConcernList.<b>healthConcernEntry</b></div>
+            </td>
+            <td><p>An entry in a patient&apos;s &quot;problem list&quot;.</p></td>
+            <td valign="top"> <b>HealthConcernListEntry</b> </td>
+            <td>NA</td>
+            <td>(0..*)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">HealthConcernList.<b>patient</b></div>
+            </td>
+            <td><p>The patient whose problems are being  observed and documented.</p></td>
+            <td valign="top"> <b>Patient</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>HealthConcernListEntry</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>An entry in a patient&apos;s &quot;problem list&quot;.  This class allows for entries to be prioritized, and potentially de-duplicated if multiple entries are received from different sources.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">HealthConcernListEntry.<b>priority</b></div>
+            </td>
+            <td><p>Provides an indication of the importance of this Health Concern (or &quot;Problem&quot;) entry vis a vis other entries.</p><p></p><p>&quot;Prioritizes this problem on a list that is maintained for the individual.&quot; - HL7 Version 2.8, PRB-6</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">HealthConcernListEntry.<b>ranking</b></div>
+            </td>
+            <td><p>&quot;Contains a user-defined prioritization of a problem (e.g., numeric ranking, or the use of words such as &quot;primary,&quot; &quot;secondary,&quot; etc.).&quot; - HL7 Version 2.8, PRB-18</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">HealthConcernListEntry.<b>healthConcern</b></div>
+            </td>
+            <td><p>A record of a &quot;health concern&quot;, or &quot;problem&quot; which can be anything that a clinician wishes to track about the patient, including items which the patient might not consider to be a &quot;problem&quot;, such as the fact that the patient smokes.</p></td>
+            <td valign="top"> <b>HealthConcern</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>HealthRisk</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>&quot;Risks may represent clinically significant potential concerns to the patient&#8217;s health.  They are captured in order to monitor and mitigate the manifestation of a future concern. Risks may be raised based on clinical evidences or they may capture a provider&#8217;s judgment.&quot; - HL7 Care Plan Domain Analysis Model.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">HealthRisk.<b>description</b></div>
+            </td>
+            <td><p>&quot;Names or describes the risk&quot; - HL7 Care Plan Domain Analysis Model.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">HealthRisk.<b>effectiveTime</b></div>
+            </td>
+            <td><p>&quot;Date/time at which the risk is identified.&quot; - HL7 Care Plan Domain Analysis Model.</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">HealthRisk.<b>levelOfRisk</b></div>
+            </td>
+            <td><p>&quot;A risk is clinically significant but the level may be low, medium or high depending on care team judgment.&quot; - HL7 Care Plan Domain Analysis Model.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(0..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">HealthRisk.<b>resolvedTime</b></div>
+            </td>
+            <td><p>&quot;The date the risk is no longer a threat to the health of the patient. &quot; - HL7 Care Plan Domain Analysis Model.</p></td>
+            <td valign="top"> PointInTime </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>ProblemManagementDiscipline</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>&quot;Indicates the category of caregiver with responsibility for managing this specific problem (e.g., care team, nursing, medicine, respiratory therapy, occupational therapy, dietary, etc.).&quot; - HL7 Version 2.8, PRB-11</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">ProblemManagementDiscipline.<b>discipline</b></div>
+            </td>
+            <td><p>&quot;Indicates the category of caregiver with responsibility for managing this specific problem (e.g., care team, nursing, medicine, respiratory therapy, occupational therapy, dietary, etc.).&quot; - HL7 Version 2.8, PRB-11.  Note that HL7does not provide any suggested values for this code.</p></td>
+            <td valign="top"> String </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>Relative</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> </td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Relative.<b>relationshipCategory</b></div>
+            </td>
+            <td><p>Indicates how the person is related to the person identified in the owning Person class.  Examples include Spouse, Child, Parent, Legal Guardian, etc.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+ 	 <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">Relative.<b>asPerson</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> <b>Person</b> </td>
+            <td>NA</td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>SocialHistoryConcern</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> <p>Subjective information that addresses occupational and recreational aspects of the patient&apos;s personal life that have the potential to be clinically significant such as sexual history, smoking history and alcohol consumption.</p></td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SocialHistoryConcern.<b>timeSpan</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> TimeInterval </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SocialHistoryConcern.<b>healthConcern</b></div>
+            </td>
+            <td><p>Identifies the Social History Health Concern or Problem being described.  This property is re-defined to &quot;bind&quot; to the SocialHistoryType valueset rather than the generic Problem valueset to which the supertype health concern property is bound.</p></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+ 
+        <tr bgcolor="#87CEFA" style="font-size:16px">
+            <td colspan="1"><a id="_420A62FD03B6418BB10D01EB"><b>SubstanceUse</b></a> Class 
+            </td>
+            <td colspan="1" style="font-size:12px" valign="top"> </td>
+            <td style="font-size:14px" align="left" valign="top">NA</td>
+            <td> </td>
+            <td>NA</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions
+               regarding this element
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SubstanceUse.<b>frequencyOfUse</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> RateQuantity </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+       <tr bgcolor="#AFEEEE" style="font-size:12px" align="left">
+            <td>
+               <div id="_JR8mUMIxEeGx0M-CyAbegA">SubstanceUse.<b>substance</b></div>
+            </td>
+            <td></td>
+            <td valign="top"> Code </td>
+            <td></td>
+            <td>(1..1)</td>
+            <td colspan="1" style="color:gray;font-size:10px">Enter your suggestions regarding this
+               element...
+            </td>
+         </tr>
+
+
+
+
+
+  </table>
+      <table bordercolor="#DCDCDC" border="1" cellspacing="0" cellpadding="7" style="font">
+         <tr>
+            <th>Value Set Constraint</th>
+            <th>Element Description</th>
+         </tr>
+       
+
+
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID=""></a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">     <br/> <p>Contains the previous status of the Observation/Condition before the change documented by the current instance.  This provides a history of status changes over time.</p><br> TBD
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>370996005 (resolved)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>-newCode- (erroneous)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>55561003 (active)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+ 
+
+
+       
+		
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID=""></a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">     <br/> <p>Contains the status of the Observation/Condition as of the entry date.  This provides a history of status changes over time.</p><p>&quot;Contains the current status of the problem at this particular date/time (e.g., active, active-improving, active-stable, active-worsening, inactive, resolved, etc.).&quot; - HL7 Version 2.8, PRB-14.  Note that HL7does not provide any suggested values for this code.</p><br> TBD
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>370996005 (resolved)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>-newCode- (erroneous)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>55561003 (active)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+ 
+
+
+       
+		
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID="Problem Type Value Set">Problem Type Value Set</a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">  Problem Type Value Set   <br/> <p>This property provides a categorization of the Condition.  Because there are (currently) different generalizations (i.e., subtypes) of Concern, it is likely that the potential categorizations may differ from one subtype to another.  It is therefore likely that the subtypes may redefine this property to bind to specific value sets.  For now, this property is bound to the Problem Type value set.  For Health Concern, the possible values include: Symptom, Behavior (e.g., smoking), a diagnosed disease, a suspected disease, a disease to be ruled out, etc.</p><p></p><p>&quot;A category assigned to the condition. E.g. complaint | symptom | finding | diagnosis.&quot; - HL7 FHIR, Condition resource.</p><p>&quot;Indicates the kind of problem.  This field can be used to categorize problems so that they may be managed and viewed independently within different applications (e.g., admission, final, post-operative, pre-operative, outpatient, discharge, etc.).&quot; - HL7 Version 2.8, PRB-10.  Note that HL7does not provide any suggested values for this code.</p><br> https://phinvads.cdc.gov/vads/ViewValueSet.action?id=71FDBFB5-A277-DE11-9B52-0015173D1785
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>404684003 (Finding)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>409586006 (Complaint)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>282291009 (Diagnosis)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>64572001 (Condition)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>248536006 (Functional limitation)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>418799008 (Symptom)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>55607006 (Problem)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+ 
+
+
+       
+		
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID=""></a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">     <br/> <p>Describes whether the condition exists or doesn&apos;t exist.  Other values are potentially possible including rule in / rule out.  Align with SNOMED situation with explicit context.</p><br> TBD
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>410519009 (at risk)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>410605003 (confirmed present)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>410594000 (definitely not present)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>410518001 (goal)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>410596003 (likely outcome)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>428263003 (not suspected)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>410593006 (probably not present)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>410592001 (probably present)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>415684004 (suspected)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>261665006 (unknown)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+ 
+
+
+       
+		
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID=""></a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">     <br/> <br> TBD
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>424124008 (acute)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>90734009 (chronic)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>-newCode- (congenital)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>255318003 (relapsing)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>19939008 (subacute)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>-newCode- (peracute)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+ 
+
+
+       
+		
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID=""></a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">     <br/> <p>&quot;The clinical status of the condition.&quot; - HL7 FHIR, Condition resource.  Possible values include: Provisional; Working; Confirmed; Refuted.</p><p>&quot;Indicates the verification status for the allergy&quot; - HL7 Version 2.8, IAM-17.  HL7 Version 2 has the following suggested values (table 438): Unconfirmed; Pending; Suspect; Confirmed or verified; Confirmed but inactive; Erroneous; Doubt raised.</p><p>&quot;Contains the verification status of a problem (e.g., confirmed, differential, provisional, rule-out, etc.).&quot; - HL7 Version 2.8, PRB-13.  Note that HL7does not provide any suggested values for this code.</p><p></p><br> TBD
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>370996005 (resolved)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>-newCode- (erroneous)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>55561003 (active)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+ 
+
+
+       
+		
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID="Problem Value Set">Problem Value Set</a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">  Problem Value Set   <br/> <p>Identifies the Health Concern or Problem being described.  This property is a code, which should come from an approved subset of SNOMED-CT, e.g., the &quot;VA-KP Problem List Subset.&quot;</p><p>Note that there is a separate class for Family History Concerns, which is a generalization of the Health Concern class.  Therefore, this property should never contain a concept that has &quot;Family History Of&quot; built into it (i.e., a pre-coordinated concept), such as &quot;Family History of Diabetes&quot;.  When such infomation needs to be conveyed, this property should contain &quot;Diabetes,&quot; and the FamiliyHistoryConcern subclass will indicate that the Diabetes was observed in a family member and will identify the relationship of that family member (e.g., Father, Mother) to the patient.  Thus, in effect, we are creating a structure that explicity post-coordinates the concept of Family History Of with the concept of the disease that the family member had.</p><p></p><p>&quot;Identifies the problem. This is the identifier from an institution&apos;s master list of problems.&quot; - HL7 Version 2.8, PRB-3</p><p>&quot;Category for the risk.&quot; - HL7 Care Plan Domain Analysis Model.</p><br> https://phinvads.cdc.gov/vads/ViewValueSet.action?id=70FDBFB5-A277-DE11-9B52-0015173D1785
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+ 
+
+
+       
+		
+  			<tr>
+            <td bgcolor="#F2C3AC" style="font-weight:bold;color:gray;font-size:14px" align="left" width="200px">
+               <div style="color:black" id="__IkXgOQ1EeSuxrYeYCfuhA"><a ID="Problem Severity Value Set">Problem Severity Value Set</a><br>
+                  
+               </div>
+            </td>
+            <td bgcolor="#D4C7C1" style="font-size:12px" align="left" width="400px">  Problem Severity Value Set   <br/> <p>&quot;A subjective assessment of the severity of the condition as evaluated by the clinician.&quot; - HL7 FHIR, Condition resource.  Possible values include: Mild; Moderate; Severe; Fatal.</p><p>&quot;Indicates the general severity of the allergy.&quot; - HL7 Version 2.8, AL1.4 and IAM-4.  HL7 Version 2 has the following suggested values (table 128): Severe; Moderate; Mild; Unknown.</p><p>&quot;Indicates the severity of the Problem.&quot; - HL7 Version 2.8, PRB-26.  Note that HL7 does not suggest values for this code.</p><br> 
+            </td>
+         </tr>
+
+       <tr>
+            <td>Enter comments:</td>
+            <td>...</td>
+         </tr>
+
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>399166001 (fatal)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>255604002 (mild)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>371923003 (mild to moderate)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>6736007 (moderate)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>371924009 (moderate to severe)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+  		<tr>
+            <tr bgcolor="#F2F5A9" style="font-size:12px" align="left">
+               <td> Coded concept <b>24484000 (severe)</b></td>
+               <td colspan="1" style="color:gray;font=size:10px">Enter your suggestions regarding this
+                  code...
+               </td>
+        </tr>
+ 
+
+
+       
+		
+
+
+</table>
+

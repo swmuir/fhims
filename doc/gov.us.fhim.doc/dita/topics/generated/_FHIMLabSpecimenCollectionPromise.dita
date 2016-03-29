@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMLabSpecimenCollectionPromise" xml:lang="en-us">
+<title id="title">SpecimenCollectionPromise</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	SpecimenCollectionPromise is a kind of <xref href="../t_FHIMOrdersHealthcarePromiseAbstract.dita">HealthcarePromise(Abstract)</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class represents an intent to collect one or more Specimens in response to a Request (an Order) from an authorized entity (usually a doctor).  A Promise is an intent to perform a service that has the strength of a commitment, i.e., other parties may rely on the originator of such promise that said originator will see to it that the promised act will be fulfilled.  A promise can be either solicited or unsolicited.  The entity that makes such a promise is also called a &quot;filler&quot;, while the entity that requests the service is also called a &quot;placer&quot;.  The Specimen Collection Promise can be looked at as the Specimen Collection Order from the point of view of the entity collecting the Specimen.</p><p></p><p>It should be noted that while a Specimen Collection Promise logically occurs in response to an order, the notion of a Specimen Collection Promise is rarely implemented as separate concept, because specimen collections typically occur automatically based on policy, procedure, or contract.  Rarely would two computers be exchanging messages requesting and acknowledging specimen collections; most likely this would occur when a patient is sent to the laboratory for specimen collection.  Nevertheless, the class exists in order to support the few cases where an explicit promise is needed.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+
+ <strow>
+  <stentry><p>accessionEvent : <xref href="../t_FHIMLabAccessionEvent.dita" >AccessionEvent</xref> (0..*)</p></stentry>
+  <stentry><p>				This property points to the record of the laboratory&apos;s accepting a laboratory test and entering the test into the laboratory&apos;s workload.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

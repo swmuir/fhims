@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMImagingRadioPharmaceuticalAdministration" xml:lang="en-us">
+<title id="title">RadioPharmaceuticalAdministration</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	RadioPharmaceuticalAdministration is a kind of <xref href="../t_FHIMEncounterMedicationAdministrationEvent.dita">MedicationAdministrationEvent</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>Represents the radiopharmaceutical administration.  Equivalent to File 70.2.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>activityDrawn :  <xref href="../t_FHIMDatatypesQuantity.dita" >Quantity</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This is the radiopharmaceutical activity drawn to be administered to the patient. The unit of measure is mCi.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateDrawn :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The date and time the radiopharmaceutical was drawn.    
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>radiopharmaceutical : <xref href="../t_FHIMCommonCommonProductOrderablePharmacyItem.dita" >OrderablePharmacyItem</xref> (1..*)</p></stentry>
+  <stentry><p>				A radiopharmaceutical associated with this examination should be entered here. Equivalent to a pointer to File 71.  
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

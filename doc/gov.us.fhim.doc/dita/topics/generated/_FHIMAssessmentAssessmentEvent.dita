@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMAssessmentAssessmentEvent" xml:lang="en-us">
+<title id="title">AssessmentEvent</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class describes the performance of an assessment of a particular aspect of a patient&#8217;s condition.  Such assessments employ a test or instrument, often a questionnaire, that quantify otherwise subjective observations.  These instruments employ scoring sysystems which have been systemetized and validated.  Standardized assessment tools create scores and (sometimes) sub-scores which are then used to determine the optimal placement and treatment plans for the patient and to track patient progress over time.  Standardized assessment tools facilitate the collection of accurate information in a reliable and consistent manner, provide clinicians and treatment agencies with increased accountability, identify patient progress over time, and provide a basis to adjust treatment plans.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>applicability :  <xref href="../t_FHIMAssessmentApplicabilityType.dita" >ApplicabilityType</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Specifies whether the Assessment is used for clinical, research, or program evaluation.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateTimeAdminstered :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The date and time on which the assessment was performed.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>id :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				A unique identifier for the assessment event.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>remarks :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Contains comments regarding the Assessment Event by the administrator of the assessment.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>totalScoreConcept :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>totalScoreMeaning :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>totalScoreValue :  <xref href="../t_FHIMDatatypesReal.dita" >Real</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The total of the numeric values associated with each response in the Assessment.  The value of the score is used to assert conclusions regarding the condition of the patient, and to decide upon a care or treatment plan to meet the needs of the client/patient.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>assessmentInstrument : <xref href="../t_FHIMAssessmentAssessmentInstrument.dita" >AssessmentInstrument</xref> (0..*)</p></stentry>
+  <stentry><p>				Identifies the Assessment Instrument that was used as part of the Assessment.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>assessmentResponse : <xref href="../t_FHIMAssessmentAssessmentResponse.dita" >AssessmentResponse</xref> (0..*)</p></stentry>
+  <stentry><p>				This property contains a list of responses to an Assessment Instrument questions upon the administration of the Assessment Instrument.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>dataEnterer : <xref href="../t_FHIMCommonDataEnterer.dita" >DataEnterer</xref> (0..1)</p></stentry>
+  <stentry><p>				Identifies the person who entered the responses into a computer systems.  This is not used for patient-entered data.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>interviewer : <xref href="../t_FHIMCommonPrimaryPerformer.dita" >PrimaryPerformer</xref> (0..1)</p></stentry>
+  <stentry><p>				Identifies the provider who administered the assessment.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>patient : <xref href="../t_FHIMPersonPatient.dita" >Patient</xref> (1..1)</p></stentry>
+  <stentry><p>				Identifies the subject of the assessment
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>subScore : <xref href="../t_FHIMAssessmentSubScore.dita" >SubScore</xref> (0..*)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMCommonDiagnosis" xml:lang="en-us">
+<title id="title">Diagnosis</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>&quot;a.The act or process of identifying or determining the nature and cause of a disease or injury through evaluation of patient history, examination, and/or review of laboratory data. b.The opinion derived from such an evaluation&quot;  American Heritage Dictionary</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>contextCode :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+<p>See <xref href="../t_fhimvocabCommonAndDatatypesVocabDiagnosisContext.dita">DiagnosisContext</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				This optional code is used to categorize the Diagnosis in such a manner as to accommodate LOINC codes that are required by certain implementations (especially CDA).  In the FHIM, the &quot;type&quot; of diagnosis is conveyed by the context of the class pointing to this class.  For example, an association from Surgery to Diagnosis might have a role name of &quot;pre-operative diagnosis&quot;.  This mechanism, however, does not allow binding to the a coded terminology such as LOINC.  This property provides the ability to bind the diagnosis to such a code.  Possible values include:</p><p>59769-0  Postprocedure diagnosis </p><p>11535-2  Hospital discharge diagnosis</p><p>46241-6  Admission diagnosis</p><p>29308-4  Diagnosis (used for Encounter Diagnosis template)</p><p>10219-4  Preoperative Diagnosis</p><p>10218-6  Postoperative Diagnosis
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>diagnosisCode :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Contains a code that most closely identifies the condition or the diagnosis. This code will come from one of several  commonly used coding systems, depending on the branch of medicine involved (e.g., clinical medicine, dentistry, mental  health), and on the purpose (e.g., clinical, billing). The code will likely come from one of the following:  Structured Nomenclature for Medicine (SNOMED), International Classifications of Diseases (ICD), Diagnostic and Statistical  Manual of Mental Disorders (DSM).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>diagnosisModifier :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Contains a &quot;modifier&quot; that more precisely identifies the condition or the diagnosis. Some coding schemes, such as the  International Classifications of Diseases version 9, support the notion of a &quot;modifier&quot;, while others do not. This  property is only to be used when the code property is using a coding scheme that supports a modifier.
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMAdverseEventReportingReleventMedicalHistory" xml:lang="en-us">
+<title id="title">ReleventMedicalHistory</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class contains information pertinent to understanding the case (such as diseases, conditions such as pregnancy, surgical procedures, psychological trauma, risk factors, etc.).  Medical judgment should be exercised in order to limit the use of this class to those data pertinent to the case.  From ICH E2B(R3), D.7.1.r and D.10.7.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>comments :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Additional relevant information about the medical condition in D.7.1.r.1b that could not be captured otherwise in a structured data element.&quot; - ICH E2B(R3), D.7.1.r.5 and D.10.7.1.r.5.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>isContinuing :  Boolean (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Indicates if the medical condition in D.7.1.r.1b is known to be still present at the time of this report.&quot; - ICH E2B(R3), D.7.1.r.3 and D.10.7.1.r.3.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>healthConcern : <xref href="../t_FHIMHealthConcernHealthConcern.dita" >HealthConcern</xref> (1..1)</p></stentry>
+  <stentry><p>				Pointer to the HealthConcern that is relevant to the case being reported.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMCommonCareTeamMember" xml:lang="en-us">
+<title id="title">CareTeamMember</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>&quot;In an advanced primary care model the care team would include anyone actively involved in the patient&apos;s care such as the PCMH team, the patient&#8217;s designees, entities providing care and all additional caregivers designated by the PCP or designated provider.&quot; - ONC S&amp;I Clinical Element Data Dictionary (CEDD), March 2012.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>role :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..*)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The role on the care team. Includes non-physician providers such as physical therapist, LCSW, nutritionist, who might be part of care team.&quot; - ONC S&amp;I Clinical Element Data Dictionary (CEDD), March 2012.  Note that this property is used distinguish between the roles a person might be playing, rather than the degree or specialty that they have.  So, despite the implication in the CEDD defintion above, this property might contain Primary Care Physician or Designated Provider, but specialty information like LCSW or Physical Therapist would be in the provider&apos;s specialty instance.</p><p>&quot;Indicates specific responsibility of an individual within the care plan. E.g. &quot;Primary physician&quot;, &quot;Team coordinator&quot;, &quot;Caregiver&quot;, etc.&quot; - HL7 FHIR, CarePlan.participant.role.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>entity : <xref href="../t_FHIMPersonEntityAbstract.dita" >Entity(Abstract)</xref> (1..1)</p></stentry>
+  <stentry><p>				Identifies the Person or Organization who is Participating as a Care Team Member. This property is a pointer to an Entity rather than a Provider because the Care Team Member might be the Patient him/herself or a member of the Patient&#8217;s family, whereas elsewhere in the FHIM, most Participation classes assume the Participating Entity is a Provider.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>healthcareProvider : <xref href="../t_FHIMProviderHealthcareProvider.dita" >HealthcareProvider</xref> (0..*)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

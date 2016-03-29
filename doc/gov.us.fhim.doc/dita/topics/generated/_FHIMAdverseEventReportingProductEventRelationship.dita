@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMAdverseEventReportingProductEventRelationship" xml:lang="en-us">
+<title id="title">ProductEventRelationship</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class links a reaction or adverse event with the various medical products (medical devices and/or drugs) that were being used by the patient, and provides an assessment of whether the reaction / adverse event may have been caused by or exacerbated by the product.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>didReactionRecur :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Indicates both if the patient was rechallenged with the drug and the known outcome. This data element should not be coded if it was not reported whether or not a rechallenge was done.&quot; - ICH E2B(R3), G.k.9.i.4.  Possible values include: Yes-Yes (rechallenge was done, reaction recurred); Yes-No (rechallenge was done, reaction did not recur); Yes-Unk (rechallenge was done, outcome unknown); No&#8211;N/A (no rechallenge was done, recurrence is not applicable).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>timeFromAdminStart :  <xref href="../t_FHIMDatatypesTimeQuantity.dita" >TimeQuantity</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The interval of time between the start of drug administration and the onset of the reaction. Even when other dates are provided, this data element is useful also to be transmitted for circumstances where, for example the interval is very short minutes, such as in anaphylaxis, or in which only imprecise dates are known but more information concerning the interval is known. If the sender wants to provide time intervals as well as dates, then the date of the first day of administration should be counted as Day 1 of the interval.&quot; - ICH E2B(R3), G.k.9.i.3.1a and G.k.9.i.3.1b.  Note that ICH requires that the unit of time measurement should come from UCUM.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>timeFromAdminStop :  <xref href="../t_FHIMDatatypesTimeQuantity.dita" >TimeQuantity</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The interval of time between the end of drug administration and the onset of the reaction. Even when other dates are provided, this data element is useful also to be transmitted for circumstances where, for e.g. the interval is very short minutes, such as in anaphylaxis, or in which only imprecise dates are known but more information concerning the interval is known. If the sender wants to provide time intervals as well as dates, then the date of the last day of administration should be counted as Day 1 of the interval.&quot; - ICH E2B(R3), G.k.9.i.3.2a and G.k.9.i.3.2b.  Note that ICH requires that the unit of time measurement should come from UCUM.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>productEventAssessment : <xref href="../t_FHIMAdverseEventReportingProductEventAssessment.dita" >ProductEventAssessment</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to an assessment of whether the reaction / adverse event may have been caused by or exacerbated by the product cited by the owning ProductEventRelationship class.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>reactionOrEvent : <xref href="../t_FHIMAdverseEventReportingReactionOrEvent.dita" >ReactionOrEvent</xref> (1..1)</p></stentry>
+  <stentry><p>				Pointer to the ReactionOrEvent for which an assessment of the causal relationship to the Drug is being made.</p><p></p><p>&quot;Captures a technical reference within the message that is used to identify which reaction / event in Section E.i is being assessed. This is not a user entered element.&quot; - ICH E2B(R3), G.k.9.i.1.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

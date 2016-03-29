@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMAdverseEventReportingInformationReporter" xml:lang="en-us">
+<title id="title">InformationReporter</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>&quot;The primary source of the information is the person who provides the facts about the ICSR. In case of multiple sources, the &quot;Primary Source for Regulatory Purposes&quot; (C.2.r.5) is the person who first reported the facts to the sender. The primary source should be distinguished from senders and retransmitters; the latter is captured in Section C.3.&quot; - ICH E2B(R3), C.2.r.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>address :  <xref href="../t_FHIMDatatypesAddress.dita" >Address</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The address of the Person who provided facts about the ICSR. From ICH E2B(R3), C.2.r.2.3 - C.2.r.2.6.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>alsoReportedTo :  <xref href="../t_FHIMAdverseEventReportingenumReportedTo.dita" >enumReportedTo</xref> (0..*)</p> 
+
+
+</stentry>
+  <stentry><p>				This property indicates whether the Initial Reporter also reported the adverse event / reaction to the the manufacturer, user facility, or distributor/importer.</p><p>Medwatch 3500 form question G.4.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>departmentName :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The name of the department (if any) with which the Person who provided facts about the ICSR is associated. From ICH E2B(R3), C.2.r.2.2.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>doNotDiscloseIdentity :  Boolean (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This property is set to true if the Initial Reporter indicated that he/she does NOT want his/her identity disclosed to the manufacturer.</p><p>Medwatch 3500 form question G.5.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>email :  <xref href="../t_FHIMDatatypesContactPoint.dita" >ContactPoint</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The email address that a person uses while at their place of business.  First choice for business related contacts during business hours.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>isHealthProfessional :  Boolean (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Is the person reporting the Adverse Event is a Health Care Provider?  Medwatch 3500A form question E.2.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>isPrimarySource :  Boolean (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Identifies which primary source to use for regulatory purposes and in case of multiple sources, it identifies the source of the World Wide Case Unique Identification number; this source should identify where the case occurred.&quot; - ICH E2B(R3), C.2.r.5.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>name :  <xref href="../t_FHIMDatatypesPersonName.dita" >PersonName</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The name of the Person who provided facts about the ICSR. From ICH E2B(R3), C.2.r.1.1 - C.2.r.1.4.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>occupation :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The occupation of the person reporting the Adverse Event.  May be used to determine the qualification property identified by ICSR.</p><p>Medwatch 3500A form question E.3.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>organizationName :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The name of the organization with which the Person who provided facts about the ICSR is associated. From ICH E2B(R3), C.2.r.2.1.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>phone :  <xref href="../t_FHIMDatatypesContactPoint.dita" >ContactPoint</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The telephone number of the Person who provided facts about the ICSR. From ICH E2B(R3), C.2.r.2.7.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>qualification :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Provides an indication of the level of professional training held by the Person who provided facts about the ICSR. From ICH E2B(R3), C.2.r.4.  Possible values include: Physician; Pharmacist; Other health professional; Lawyer; Consumer or other non health professional; Unknown (null flavor).
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

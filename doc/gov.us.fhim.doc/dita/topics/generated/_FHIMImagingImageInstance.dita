@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMImagingImageInstance" xml:lang="en-us">
+<title id="title">ImageInstance</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class contains an electronic representation of an optical counterpart or appearance of an object along with metadata to help identify, locate, and classify the image. This class is to be used for both clinical images which may be managed using a PACS and for scanned documents and other informal images.</p><p>&quot;A single SOP Instance within the series, e.g. an image, or presentation state.&quot; - HL7 FHIR, ImagingStudy.series.instance</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>content :  <xref href="../t_FHIMDatatypesImage.dita" >Image</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				An electronic representation of an optical counterpart or appearance of an object. This property contains the binary data of the image.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>instanceNumber :  Integer (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The number of instance in the series.&quot; - HL7 FHIR, ImagingStudy.series.instance.number
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>pacsUID :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				When an image is created from an external PACS system, this property will contain the unique identifier for the image within that system.</p><p>&quot;Formal identifier for this image or other content.&quot; - HL7 FHIR, ImagingStudy.series.instance.uid
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>sopClass :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;DICOM instance type.&quot; - HL7 FHIR, ImagingStudy.series.instance.sopClass</p><p>Note that in FHIR, the data type for this property is an oid. We may wish to make it a code.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>title :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The description of the instance.&quot; - HL7 FHIR, ImagingStudy.series.instance.title
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>type :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;A human-friendly SOP Class name.&quot; - HL7 FHIR, ImagingStudy.series.instance.type
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>frame : <xref href="../t_FHIMImagingFrame.dita" >Frame</xref> (0..*)</p></stentry>
+  <stentry><p>				&quot;Identity and location information of the frames in the selected instance.&quot; - HL7 FHIR, ImagingObjectSelection.study.series.instance.frames
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

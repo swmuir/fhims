@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMOncologyRegistryCancerPatientSummary" xml:lang="en-us">
+<title id="title">CancerPatientSummary</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>Epsiode of Cancer in this patient.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>alcoholHistory :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Code the patient&apos;s past or current consumption of alcoholic beverages including wine or beer.  Possible values are Yes; No; Unknown; No history of alcohol use; Current use of alcohol; Past history of alcohol use; Alcohol usage unknown; etc.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>asbestosExposure :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Identifies if the patient was exposed to asbestos. Possible values are  Yes; No; Unknown; etc.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>comments :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This is a comment on the follow-up.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateFollowupDue :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The date of next scheduled follow-up.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>entryStatus :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Indicates whether entry is complete.  Possible values are complete; etc.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>familyHistoryOfCancer :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Identifies whether the patient has a family history of any reportable malignancy.  &apos;Possible values are No; Yes; Unknown; etc.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>id  :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				A unique identifier for the Act. (HL7 3.0)  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>isDeceased :  Boolean (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;An indication that the subject is dead.&quot;&quot;  HL7 V3 RIM Ballot 8   
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>qualityOfSurvival :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Identifies the code describing the patient&apos;s quality of survival.  Possible values are Normal; Symptomatic &amp;amp;amp; Ambulatory; More than 50% Ambulatory; Less than 50% Ambulatory; Bedridden; Not applicable, dead; Unknown or unspecified; etc.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>tobaccoHistory :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Code the patient&apos;s past or current use of tobacco.  Possible values are Yes; No; Unknown; Never used; Cigarette smoker, current; Cigar/Pipe smoker, current; Snuff/Chew/Smokeless, current; Combination use, current; Previous use; Unknown; etc.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>usualOccupation :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Indicates the patient&apos;s usual occupation (that is, the kind of work performed during most of the patient&apos;s working life before diagnosis of this tumor). &quot;retired&quot; is not recorder  patient&apos;s current or most recent occupation or any known occupation is used  If usual occupation is not available or is unknown.   This is the OCCUPATION field of SNOMED.  Possible values are ABLE SEAMAN; ABRASIVE WHEEL MOULDER ; ADMINISTRATION MANAGER; ADVERTISING COPYWRITER; etc.  
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>cancerDeath : <xref href="../t_FHIMOncologyRegistryCancerDeathEvent.dita" >CancerDeathEvent</xref> (0..1)</p></stentry>
+  <stentry><p>				Cancer related Death
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>cancerPatient : <xref href="../t_FHIMPersonPatient.dita" >Patient</xref> (1..1)</p></stentry>
+  <stentry><p>				The patient who is the subject of the cancer patient episode of Care.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>familyHistory : <xref href="../t_FHIMOncologyRegistryFamilyHistory.dita" >FamilyHistory</xref> (0..*)</p></stentry>
+  <stentry><p>				Cancer Family History
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>followup : <xref href="../t_FHIMOncologyRegistryPatientFollowupHistory.dita" >PatientFollowupHistory</xref> (1..*)</p></stentry>
+  <stentry><p>				Followup History
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>modality : <xref href="../t_FHIMOncologyRegistryModality.dita" >Modality</xref> (0..1)</p></stentry>
+  <stentry><p>				A method of treatment.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMEnrollEligCOBPriorAuthorizationRequest" xml:lang="en-us">
+<title id="title">PriorAuthorizationRequest</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>&quot;Based on the type of insurance, some coverage plans require that an authorization number or code be obtained prior to all non-emergency admissions, and within 48 hours of an emergency admission.  Insurance billing would not be permitted without this number.  The date and source of authorization are the components of this field.&quot; - HL7 Version 2.8, IN1-14.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>authorizationId :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Based on the type of insurance, some coverage plans require that an authorization number or code be obtained prior to all non-emergency admissions, and within 48 hours of an emergency admission.  Insurance billing would not be permitted without this number.  The date and source of authorization are the components of this field.&quot; - HL7 Version 2.8, IN1-14.</p><p>&quot;Number assigned by the processor to identify an authorized transaction.&quot; - NCPDP Telecommunication (Field 503-F3, Data Dictionary 201104).</p><p>&quot;Based on the type of insurance, some coverage plans require that an authorization number or code be obtained prior to all non-emergency admissions, and within 48 hours of an emergency admission.  Insurance billing would not be permitted without this number.  The date and source of authorization are the components of this field.&quot; - HL7 Version 2.8, IN1-14.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>effectiveDateRange :  <xref href="../t_FHIMDatatypesTimeInterval.dita" >TimeInterval</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Beginning date for a prior authorization request.&quot; - NCPDP Telecommunication (Field 498-PB, Data Dictionary 201104).</p><p>&quot;Ending date for a prior authorization request.&quot; - NCPDP Telecommunication (Field 498-PC, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>previousAuthorizationId :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Unique number identifying the prior authorization assigned by the processor.  Provided to the pharmacy by the processor to be used by the pharmacy for billing, and if applicable, reversal purposes.&quot; - NCPDP Telecommunication (Field 498-PY, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>requestBasis :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Code describing the reason for prior authorization request.&quot; - NCPDP Telecommunication (Field 498-PD, Data Dictionary 201104).  Possible values include: Medical Exception; Plan Requirement; Increase Plan Limitation.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>requestType :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Code identifying type of prior authorization request.  Used by processor to distinguish reason for prior authorization request.&quot; - NCPDP Telecommunication (Field 498-PA, Data Dictionary 201104).  Possible values include: Initial; Reauthorization; Deferred.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>supportingDocumentation :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Could be used, if applicable, to supply information not already included in NCPDP data fields that may be required to process a prior authorization transaction.&quot; - NCPDP Telecommunication (Field 498-PP, Data Dictionary 201104).
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>authorizedRepresentative : <xref href="../t_FHIMCommonAgent.dita" >Agent</xref> (0..1)</p></stentry>
+  <stentry><p>				Authorized Representative first name, last name, street address, city, state, and zipcode. - NCPDP Telecommunication (Fields 498-PE, 498-PF, 498-PG, 498-PH, 498-PJ, and 498-PK).
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

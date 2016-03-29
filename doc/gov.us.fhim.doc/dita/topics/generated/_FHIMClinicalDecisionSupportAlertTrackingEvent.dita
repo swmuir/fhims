@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMClinicalDecisionSupportAlertTrackingEvent" xml:lang="en-us">
+<title id="title">AlertTrackingEvent</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class contains attributes related to track the content and interactions with an alert.  e.g.  When the alert was generated, package id, Status, each user that the alert was sent to. Note that this class may not be supported by HDR but rather from other repository. </p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>associatedPackage :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Identifies the Package Associated to the alert.  1-30 characters in length.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dataForProcessing :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This is a String of data elements returned to the application when the alert is selected for processing.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateAlertProcessed :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Indicates the date when the processing of the alert was completed.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateCreated :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Date and time that the alert was created.   
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>displayText :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Text diplayed for alert.  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>name :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Name of Alert  
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>status :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Indicates the the status of the alert. Possible values are UNREAD-REMOVED BY DATE; COMPLETELY READ; PARTIALLY READ - REMOVED; etc.   
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>author : <xref href="../t_FHIMProviderIndividualProvider.dita" >IndividualProvider</xref> (1..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>recipientLog : <xref href="../t_FHIMClinicalDecisionSupportAlertRecipientLog.dita" >AlertRecipientLog</xref> (0..*)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

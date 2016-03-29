@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMImmunizationExemption" xml:lang="en-us">
+<title id="title">Exemption</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class is a record of an assertion by the patient, the patient guardian, or someone else in authority that the medication should not be administered.  Examples include a parent refusing an immunization for their child based on religious beliefs.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>dateAsserted :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The date that the assertion was made.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>effectiveTime :  <xref href="../t_FHIMDatatypesTimeInterval.dita" >TimeInterval</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The date range during which the exemption is valid.  Note that the start date may differ from the date asserted, although they typically will be the same.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>id :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (0..*)</p> 
+
+
+</stentry>
+  <stentry><p>				Uniquely identifies the Exemption.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>reason :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+<p>See <xref href="../t_fhimvocabImmunizationVocabSubstanceRefusalReasonexcludingotherFHIM.dita">Substance Refusal Reason excluding 'other' (FHIM)</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				Indicates the basis for the Exemption.</p><p>&quot;Contains the reason the patient refused the medical substance/treatment.  Any entry in the field indicates that the patient did not take the substance.&quot; - HL7 Version 2.8, RXA-18
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>remarks :  String (0..*)</p> 
+
+
+</stentry>
+  <stentry><p>				Any comments concerning the Exemption.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>issuedBy : <xref href="../t_FHIMProviderIndividualProvider.dita" >IndividualProvider</xref> (0..1)</p></stentry>
+  <stentry><p>				Indicates the practitioner who issued the exemption.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

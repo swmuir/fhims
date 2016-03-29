@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMAllergiesReactionObservation" xml:lang="en-us">
+<title id="title">ReactionObservation</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	ReactionObservation is a kind of <xref href="../t_FHIMClinicalObservationObservation.dita">Observation</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class documents an Observation of an adverse physiological response attributed to the exposure of the Patient to the given substance.  Note that the dates may be unspecified, such as when the Patient reports that she breaks out in hives when she eats peanuts.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>certainty :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+<p>See <xref href="../t_fhimvocabAllergyVocabAllergyIntoleranceCertainty.dita">AllergyIntoleranceCertainty</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				&quot;Statement about the degree of clinical certainty that the Specific Substance was the cause of the Manifestation in this reaction event.&quot; - HL7 FHIR, AllergyIntolerance.event.certainty.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>description :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Text description about the Reaction as a whole, including details of the manifestation if required.&quot; - HL7 FHIR, AllergyIntolerance.event.description.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>duration :  <xref href="../t_FHIMDatatypesTimeQuantity.dita" >TimeQuantity</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The amount of time that the Adverse Reaction persisted.&quot; - HL7 FHIR, AllergyIntolerance.event.duration.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>exposureRoute :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Identification of the route by which the subject was exposed to the substance.&quot; - HL7 FHIR, AllergyIntolerance.event.exposureRoute.</p><p>Note that FHIR uses a code for this concept, but we modeled this as a string, because we currently do not foresee a need for this property.  Should the partner agencies require the use of this property, a decision would need to be made regarding whether to use SNOMED codes as FHIR recommends, or FDA codes, which is required by Meaningful Use for other kinds of substance administrations.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>reaction :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+<p>See <xref href="../t_fhimvocabAllergyVocabAdverseClinicalReaction.dita">AdverseClinicalReaction</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				Indicates the adverse physiological response which is suspected to have been caused by an exposure to the given substance (i.e., the reactant).</p><p></p><p>&quot;Identifies the specific allergic reaction that was documented.&quot; - HL7 Version 2.8, AL1-5 and IAM-5</p><p>&quot;Clinical symptoms and/or signs that are observed or associated with the Adverse Reaction Event.&quot; - HL7 FHIR, AllergyIntolerance.event.manifestation.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>severity :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+<p>See <xref href="../t_fhimvocabAllergyVocabReactionSeverity.dita">ReactionSeverity</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				&quot;Clinical assessment of the severity of the reaction event as a whole, potentially considering multiple different manifestations.&quot; - HL7 FHIR, AllergyIntolerance.event.severity.
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

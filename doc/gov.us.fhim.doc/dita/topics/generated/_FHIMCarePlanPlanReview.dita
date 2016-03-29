@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMCarePlanPlanReview" xml:lang="en-us">
+<title id="title">PlanReview</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>&quot;Plan reviews are performed at periodic intervals to assess the overall consistency, appropriateness, completeness and effectiveness of the plan. The plan review includes comprehensive review of all the goals.&quot; - HL7 Care Plan Domain Analysis Model.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>comments :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Specifies optional comments for the review&quot; - HL7 Care Plan Domain Analysis Model
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>effectiveDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Specifies the date/time of the review&quot; - HL7 Care Plan Domain Analysis Model
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>nextScheduledReview :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Indicates the next scheduled review date&quot; - HL7 Care Plan Domain Analysis Model
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>outcome :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Captures a text comment of the outcome review&quot; - HL7 Care Plan Domain Analysis Model
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>reasonForReview :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This optional property describes the circumstances that triggered the review. The assumption is that this property would generally only be used to describe non-routine reasons why a review is/was required. Regularly scheduled reviews would not need to be indicated in this text. For example, a review might be indicated due to a change in the condition of the patient that causes a requirement to revise the care plan.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>reviewFrequency :  <xref href="../t_FHIMDatatypesRateQuantity.dita" >RateQuantity</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Specifies a periodic frequency for future reviews&quot; - HL7 Care Plan Domain Analysis Model
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

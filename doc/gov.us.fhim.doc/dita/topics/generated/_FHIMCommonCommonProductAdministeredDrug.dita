@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMCommonCommonProductAdministeredDrug" xml:lang="en-us">
+<title id="title">AdministeredDrug</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>&quot;Contains the identifier of the medical substance/treatment administered....  If the substance administered is a vaccine, CVX codes may be used to code this field....&quot; - HL7 Version 2.8, RXA-5</p><p>&#8220;A role for the product when merely refered to as one that might be administered.  This is the role through which the product model would be entered for electronic prescribing.&#8221; &#8211; HL7 Version 3 (Role-&gt;AdministerableMaterial).</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>administeredBarcodeId :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;This field contains the pharmacy system&apos;s assigned barcode number for the give occurrence.  For IV orders, many pharmacy systems generate a barcode number to identify a specific bag/bottle of the order. This number can be an instance identifier; unique for the patient, drug combination, and schedule instance or it may be just a drug identifier.&quot; - HL7 Version 2.8, RXA-25
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>administrationTagId :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (0..*)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Contains an identifier for the individual product instance for the dispense occurrence.  This may represent a barcode, RFID or other means of automatically-readable product instance.  Repetitions represent the same instance where more than one barcode, RFID or other identification is present.&quot; - HL7 Version 2.8, RXA-29
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>pharmacyManufacturedProduct : <xref href="../t_FHIMCommonCommonProductLocallyManufacturedProduct.dita" >LocallyManufacturedProduct</xref> (0..1)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>productInstance : <xref href="../t_FHIMCommonCommonProductMedicinalProductInstance.dita" >MedicinalProductInstance</xref> (0..1)</p></stentry>
+  <stentry><p>				Identifies the medicinal product administered.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

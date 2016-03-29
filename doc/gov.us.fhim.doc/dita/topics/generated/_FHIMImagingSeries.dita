@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMImagingSeries" xml:lang="en-us">
+<title id="title">Series</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>&quot;Each study has one or more series of images or other content.&quot; - HL7 FHIR, ImagingStudy.series</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>availability :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This property indicates whether the image series is immediately available, or is stored on a medium that must be located (if available) and loaded. The need for a field like this is based on older technology and is arguably not needed anymore, but is still commonly used in older systems. FHIM is retaining this property for backwards-compatibility to FHIR, but is modeling the property as a string rather than a code in order to avoid the need to maintain a standardized value-set.</p><p></p><p>&quot;Availability of series (online, offline or nearline).&quot; - HL7 FHIR, ImagingStudy.series.availability
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>bodySite :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+<p>See <xref href="../t_fhimvocabCommonAndDatatypesVocabBodySiteValueSet.dita">Body Site Value Set</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				&quot;Body part examined. See DICOM Part 16 Annex L for the mapping from DICOM to Snomed CT.&quot; - HL7 FHIR, ImagingStudy.series.bodySite
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateTime :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The date and time the series was started.&quot; - HL7 FHIR, ImagingStudy.series.started
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>description :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;A description of the series.&quot; - HL7 FHIR, ImagingStudy.series.description
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>laterality :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+<p>See <xref href="../t_fhimvocabCommonAndDatatypesVocabBodySiteLaterality.dita">BodySiteLaterality</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				&quot;Laterality if body site is paired anatomic structure and laterality is not pre-coordinated in body site code.&quot; - HL7 FHIR, ImagingStudy.series.laterality
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>modality :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+<p>See <xref href="../t_fhimvocabImagingVocabAcquisitionModalityCode.dita">AcquisitionModalityCode</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				&quot;The modality of this series sequence.&quot; - HL7 FHIR, ImagingStudy.series.modality
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>numberOfInstances :  Integer (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Number of SOP Instances in Series.&quot; - HL7 FHIR, ImagingStudy.series.numberOfInstances</p><p>Note that we have marked this property as derived because this information may be calculated based on the instances that makes up the series.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>seriesNumber :  Integer (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The numeric identifier of this series in the study.&quot; - HL7 FHIR, ImagingStudy.series.number
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>url :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;URI/URL specifying the location of the referenced series using WADO-RS.&quot; - HL7 FHIR, ImagingStudy.series.url
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>deviceInstance : <xref href="../t_FHIMCommonCommonProductDeviceInstance.dita" >DeviceInstance</xref> (1..1)</p></stentry>
+  <stentry><p>				Pointer to the individual Device that was used to produce the image.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>imageInstance : <xref href="../t_FHIMImagingImageInstance.dita" >ImageInstance</xref> (0..*)</p></stentry>
+  <stentry><p>				Pointer to the medical image (along with metadata to help identify, locate, and classify the image).
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

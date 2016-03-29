@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMSecurityAndPrivacyPrivacyRule" xml:lang="en-us">
+<title id="title">PrivacyRule</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>A privacy or consent rule specifies the permission allowed to a user type by the consenter for a specific type of information. The person consenting may be either the subject of the record or a designated Substitute Decision Maker. One or more consent rules comprise a consent directive or privacy policy.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>accessRestrictionOverride :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>effectiveTime :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This attribute specifies the date/time when the Privacy Policy comes into effect.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>enablesOperation :  Boolean (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Enables the operation (e.g., disclosure) or disables it depending on its value.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>privacyPolicyLawType :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>purposeOfUse :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This attribute is used to specify the purpose to permit a specific type of action/operation according to the policy. Example: TREATMENT    The PurposeCode is an Act.ReasonCode
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>refrainCode :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This coded attribute specifies a pre-defined obligation associated with a policy or consent.    The Obligation Code is an Act.Code</p><p></p><p>10/2014: This code was really meant to convey refrains, e.g., do not redisclose.  Renamed from obligationCode to RefrainCode
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>_new_Grantor : <xref href="../t_FHIMSecurityAndPrivacyGrantor.dita" >Grantor</xref> (0..*)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>grantee : <xref href="../t_FHIMSecurityAndPrivacyGrantee.dita" >Grantee</xref> (0..*)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>healthcareProvider : <xref href="../t_FHIMProviderHealthcareProvider.dita" >HealthcareProvider</xref> (0..*)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>includedRole : <xref href="../t_FHIMSecurityAndPrivacyUserRole.dita" >UserRole</xref> (0..*)</p></stentry>
+  <stentry><p>				Identifies a particular the role of a user of a computer system that is referenced by the Privacy Rule.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>informationType : <xref href="../t_FHIMSecurityAndPrivacyInformationTarget.dita" >InformationTarget</xref> (0..*)</p></stentry>
+  <stentry><p>				Identifies the type of protected information referenced by the Privacy Rule.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>operation : <xref href="../t_FHIMSecurityAndPrivacyPrivacyOperation.dita" >PrivacyOperation</xref> (1..*)</p></stentry>
+  <stentry><p>				Identifies the type of operation (i.e., collection, access, use, or disclosure) of a specific type of protected information referenced by the Privacy Rule.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>privacyPolicy : <xref href="../t_FHIMSecurityAndPrivacyAtomicPrivacyPolicy.dita" >AtomicPrivacyPolicy</xref> (1..*)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>relatedCondition : <xref href="../t_FHIMSecurityAndPrivacyProtectedCondition.dita" >ProtectedCondition</xref> (0..*)</p></stentry>
+  <stentry><p>				The health condition(s) associated with the policy. Conditions when specified, are coded concepts expressed in a standard vocabulary (e.g., LOINC, SNOMED CT, etc.). These may include indications of &apos;substance abuse&apos; or &apos;HIV-related&apos; illnesses, etc. An obligationCode may be implemented as a &apos;condition&apos;.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>securityRole : <xref href="../t_FHIMSecurityAndPrivacySecurityRole.dita" >SecurityRole</xref> (0..*)</p></stentry>
+  <stentry><p>			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

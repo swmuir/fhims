@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMCommonProcedureListEntry" xml:lang="en-us">
+<title id="title">ProcedureListEntry</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class provides a mechanism to associate a record with multiple procedures. Rather than have the traditional  &quot;primary procedure&quot;, &quot;secondary procedure&quot;, etc. in a record, the record will contain a zero-to-many pointer to this class,  which then has a one-to-one pointer to a procedure, with a precedence property to indicate primary, secondary, tertiary,  etc.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>precedence :  Integer (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Provides an indication of whether the procedure is primary, secondary, tertiary, etc.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>procedure : <xref href="../t_FHIMCommonProcedure.dita" >Procedure</xref> (1..1)</p></stentry>
+  <stentry><p>				Indicates the procedure associated with this entry in the list.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

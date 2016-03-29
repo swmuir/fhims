@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMPersonOrganizationalRepresentative" xml:lang="en-us">
+<title id="title">OrganizationalRepresentative</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>Represents an organization that has an interest in or may represent a Person, for example, a Veteran Service Organization.</p><p>&quot;The name of the organization that serves as a next of kin/associated party or as the next of kin of the patient.  This field may also be used to communicate the name of the organization at which the associated party works.&quot; - HL7 Version 2.8, NK1-13.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>address :  <xref href="../t_FHIMDatatypesAddress.dita" >Address</xref> (0..*)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The addresses of the contact person depending on the value of the relationship defined in NK1-3 - Relationship.  This field is typically used when the NK1 is an organization.&quot; - HL7 Version 2.8, NK1-32.</p><p>&quot;Address for the contact person.&quot; - HL7 FHIR, Patient.contact.address.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>effectiveDateRange :  <xref href="../t_FHIMDatatypesTimeInterval.dita" >TimeInterval</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				The date range during which this person is a contact party for the patient.</p><p>&quot;The start date of the contact role.&quot; - HL7 Version 2.8, NK1-8.</p><p>&quot;The end date of the contact role.&quot; - HL7 Version 2.8, NK1-9.</p><p>&quot;The period during which this contact person or organization is valid to be contacted relating to this patient.&quot; - HL7 FHIR, Patient.contact.period.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>name :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The name of the organization that serves as a next of kin/associated party or as the next of kin of the patient.  This field may also be used to communicate the name of the organization at which the associated party works.&quot; - HL7 Version 2.8, NK1-13.</p><p>&quot;Organization on behalf of which the contact is acting or for which the contact is working.&quot; - HL7 FHIR, Patient.contact.organization.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>pointOfContactName :  <xref href="../t_FHIMDatatypesPersonName.dita" >PersonName</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Contains one or more of the names of the person to contact, depending on the value of the relationship defined in NK1-3 - Relationship.  This field is typically needed when the NK1 is an organization.&quot; - HL7 Version 2.8, NK1-30.</p><p>&quot;A name associated with the contact person.&quot; - HL7 FHIR, Patient.contact.name.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>telecom :  <xref href="../t_FHIMDatatypesContactPoint.dita" >ContactPoint</xref> (0..*)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;The telephone numbers of the contact person depending on the value of the relationship defined in NK1-3 - Relationship.  This field is typically needed when the NK1 is an organization.&quot; - HL7 Version 2.8, NK1-31.</p><p>&quot;A contact detail for the person, e.g. a telephone number or an email address.&quot; - HL7 FHIR, Patient.contact.telecom.
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

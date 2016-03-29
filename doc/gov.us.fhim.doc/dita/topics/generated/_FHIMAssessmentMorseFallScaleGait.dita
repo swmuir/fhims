@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMAssessmentMorseFallScaleGait" xml:lang="en-us">
+<title id="title">Gait</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	Gait is a kind of <xref href="../t_FHIMAssessmentMorseFallScaleMorseFallScaleQuestionAbstract.dita">MorseFallScaleQuestion(Abstract)</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>&quot;Gait: A normal gait is characterized by the patient walking with head erect, arms swinging freely at the side, and striding without hesitant. This gait scores 0. With a weak gait (score as 10), the patient is stooped but is able to lift the head while walking without losing balance. Steps are short and the patient may shuffle. With an impaired gait (score 20), the patient may have difficulty rising from the chair, attempting to get up by pushing on the arms of the chair/or by bouncing (i.e., by using several attempts to rise). The patient&#8217;s head is down, and he or she watches the ground when walking. Because the patient&#8217;s balance is poor, the patient grasps onto the furniture, a support person, or a walking aid for support and cannot walk without this assistance.&quot; - LOINC</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>assessmentQuestion :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This property uniquely identifies the question being asked within the Assessment Instrument.  This is treated as a code because the Name and Version of the Assessment Instrument plus the Question Number serves as an identifier, while the text of the question can be represented as the associated text.  For example, the Addiction Severity Index, 5th Edition question G.4 is the &quot;Date of Admission&quot;.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>possibleResponse :  <xref href="../t_FHIMAssessmentMorseFallScaleGaitType.dita" >GaitType</xref> (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This property represents the possible responses to a question on an Assessment Instrument.  For the Morse Fall Scale Gait question, the response must be a member of the GaitType enumeration.
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

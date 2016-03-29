@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMPersonCauseOfDeath" xml:lang="en-us">
+<title id="title">CauseOfDeath</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>The condition(s) that caused or contributed to the death of the organism.    For Humans, the U.S. Standard Certificate of Death (Rev 11/2003) requires the entry of &quot;the chain of events-diseases, injuries, or complications-that directly caused the death&quot;, beginning with the &quot;immediate cause (final disease or condition resulting in death)&quot; and ending with the &quot;underlying cause (disease or injury that initiated the events resulting in death).&quot;  Note the CDC Center for Vital Statistics is required to report this information to the World Health Organization (WHO).  The WHO requires that this data be reported using ICD-10 codes.  For Non-humans, the coding system to be used for non-humans has not been determined at this time.  Added 11/23/2010 for Problem List.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>causeOfDeath :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+<p>See <xref href="../t_fhimvocabPersonVocabCauseofDeathICD10.dita">Cause of Death (ICD-10)</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				[US Standard Certificate Of Death Field 32].  A condition that caused or contributed to the death of the organism.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>precedence :  Integer (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Causal order of the cause of death entries, i.e., primary, secondary, etc.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>timeInterval :  <xref href="../t_FHIMDatatypesTimeQuantity.dita" >TimeQuantity</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				[US Standard Certificate Of Death Field 32].  The approximate interval between onset of the identified condition and death.
+			</p>
+  </stentry>
+  </strow>
+
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMEncounterPatientTransfer" xml:lang="en-us">
+<title id="title">PatientTransfer</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>The act of transferring a patient from one location or responsible organization to another.  Note that a transfer from organization to another will, by definition, trigger a new encounter.  Note that a transfer from one location to another may trigger a new encounter depending on whether the responsible organization has changed.  A movement from one bed within the same ward to another probably will not, but a movement from one ward to another probably would. </p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>category :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Categorizes the patient transfer.  Possible values include Admission, Transfer, Discharge, etc.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>id :  <xref href="../t_FHIMDatatypesId.dita" >Id</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Uniquely identifies the patient transfer
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>movementDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				Date of the movement of the patient.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>transferReason :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Contains the short description of the reason for a patient location change.&quot; - HL7 Version 2.8, PV2-4
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>transferFromLocation : <xref href="../t_FHIMProviderServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (1..1)</p></stentry>
+  <stentry><p>				&quot;Contains the prior patient location if the patient is being transferred.  The old location is null if the patient is new.&quot; - HL7 Version 2.8, PV1-6
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>transferToLocation : <xref href="../t_FHIMProviderServiceDeliveryLocation.dita" >ServiceDeliveryLocation</xref> (1..1)</p></stentry>
+  <stentry><p>				&quot;Contains the prior patient location if the patient is being transferred.  The old location is null if the patient is new.&quot; - HL7 Version 2.8, PV1-6
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

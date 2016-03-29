@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMCarePlanCommunication" xml:lang="en-us">
+<title id="title">Communication</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>This class documents an interaction between two or more Care Team Members regarding the Care Plan for the patient.  This is where the negotiation occurs between providers, or where the care team decides on a course of action during a periodic review.</p><p></p><p>&quot;Communication is ongoing during care coordination. Care team communications is what causes the unfolding of the plan as new participants join, propose actions, change goals, record interventions, review outcomes and assess effectiveness of individual actions and of the overall plan.&quot; - HL7 Care Plan Domain Analysis Model</p><p>Note that the DAM has a &quot;pertainsTo&quot; property which &quot;Links the communication to some clinical object which is the target of the communication&quot;. This property is of type clinical object, which the FHIM doesn&apos;t have at the moment.  It could probably be linked to Observation in the future.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>content :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Specifies the content of the communication&quot; - HL7 Care Plan Domain Analysis Model.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>effectiveDate :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Specifies the date/time of the communication&quot; - HL7 Care Plan Domain Analysis Model.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>formId :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Specifies a formId if the communication is a response to a structured form &quot; - HL7 Care Plan Domain Analysis Model.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>topic :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Specifies the subject of the communication&quot; - HL7 Care Plan Domain Analysis Model.
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>receiver : <xref href="../t_FHIMCommonCareTeamMember.dita" >CareTeamMember</xref> (1..*)</p></stentry>
+  <stentry><p>				&quot;Specifies the receiver of the communication&quot; - HL7 Care Plan Domain Analysis Model.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>source : <xref href="../t_FHIMCommonCareTeamMember.dita" >CareTeamMember</xref> (1..1)</p></stentry>
+  <stentry><p>				&quot;Specifies the source or sender of the communication&quot; - HL7 Care Plan Domain Analysis Model.
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>

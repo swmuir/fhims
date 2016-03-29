@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="FHIMImagingStudy" xml:lang="en-us">
+<title id="title">Study</title>
+<shortdesc id="shortdesc">
+</shortdesc>
+<body id="body" >
+
+<section id="generalizations"  audience="developer, modeler">
+  <title>Hierarchy</title>
+	Study is a kind of <xref href="../t_FHIMCommonClinicalInformationAbstract.dita">ClinicalInformation(Abstract)</xref>	
+</section>
+
+
+
+
+
+<section id="description" audience="developer, modeler, sme">
+  <title>Description</title>
+	<p>&quot;Representation of the content produced in a DICOM imaging study. A study comprises a set of series, each of which includes a set of Service-Object Pair Instances (SOP Instances - images or other data) acquired or produced in a common context. A series is of only one modality (e.g. X-ray, CT, MR, ultrasound), but a study may have multiple series of different modalities.&quot; - HL7 FHIR, ImagingStudy.</p>
+
+
+	
+<simpletable>
+ <sthead>
+  <stentry>Content</stentry>
+  <stentry>Description</stentry>
+ </sthead>
+ <strow>
+
+  <stentry><p>availability :  String (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				This property indicates whether the image is immediately available, or is stored on a medium that must be located (if available) and loaded.  The need for a field like this is based on older technology and is arguably not needed anymore, but is still commonly used in older standards. FHIM is retaining this property for backwards-compatibility to FHIR, but is modeling the property as a string rather than a code in order to avoid the need to maintain a standardized value-set.</p><p>&quot;Availability of study (online, offline or nearline).&quot; - HL7 FHIR, ImagingStudy.availability.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>dateTimeStarted :  <xref href="../t_FHIMDatatypesPointInTime.dita" >PointInTime</xref> (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Date and Time the study started&quot; - HL7 FHIR, ImagingStudy.started
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>description :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Institution-generated description or classification of the Study performed.&quot; - HL7 FHIR, ImagingStudy.description
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>modalityList :  <xref href="../t_FHIMDatatypesCode.dita" >Code</xref> (0..*)</p> 
+<p>See <xref href="../t_fhimvocabImagingVocabAcquisitionModalityCode.dita">AcquisitionModalityCode</xref> definition for values.</p>
+
+
+</stentry>
+  <stentry><p>				&quot;A list of all the Series.ImageModality values that are actual acquisition modalities, i.e. those in the DICOM Context Group 29 (value set OID 1.2.840.10008.6.1.19)&quot; - HL7 FHIR, ImagingStudy.modalityList.</p><p>Note that we have marked this property as derived because this information may be calculated based on the modalities of the series that makes up the study.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>numberOfInstances :  Integer (0..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Number of SOP Instances in Study.&quot; - HL7 FHIR, ImagingStudy.numberOfInstances.</p><p>Note that we have marked this property as derived because this information may be calculated based on the instances that makes up the study.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>numberOfSeries :  Integer (1..*)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;Number of Series in Study.&quot; - HL7 FHIR, ImagingStudy.numberOfSeries.</p><p>Note that we have marked this property as derived because this information may be calculated based on the series that makes up the study.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+
+  <stentry><p>url :  String (1..1)</p> 
+
+
+</stentry>
+  <stentry><p>				&quot;WADO-RS resource where Study is available.&quot; - HL7 FHIR, ImagingStudy.url
+			</p>
+  </stentry>
+  </strow>
+
+ <strow>
+  <stentry><p>interpreter : <xref href="../t_FHIMProviderIndividualProvider.dita" >IndividualProvider</xref> (0..*)</p></stentry>
+  <stentry><p>				A Provider who is specially trained to arrive at a diagnosis by exercising clinical judgement based on numerical or visual evidence.
+			</p>
+  </stentry>
+  </strow>
+ <strow>
+  <stentry><p>series : <xref href="../t_FHIMImagingSeries.dita" >Series</xref> (0..*)</p></stentry>
+  <stentry><p>				&quot;Each study has one or more series of images or other content.&quot; - HL7 FHIR, ImagingStudy.series
+			</p>
+  </stentry>
+  </strow>
+
+</simpletable>
+
+</section>
+
+
+
+
+</body>
+</topic>
